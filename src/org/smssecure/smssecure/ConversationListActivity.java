@@ -21,6 +21,7 @@ import android.database.ContentObserver;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.support.v4.view.MenuItemCompat;
@@ -37,39 +38,34 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 
 public class ConversationListActivity extends PassphraseRequiredActionBarActivity
     implements ConversationListFragment.ConversationSelectedListener
-  {
+{
   private final DynamicTheme    dynamicTheme    = new DynamicTheme   ();
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
 
   private ConversationListFragment fragment;
-  private MasterSecret    masterSecret;
   private ContentObserver observer;
+  private MasterSecret masterSecret;
 
   @Override
-  public void onCreate(Bundle icicle) {
+  protected void onPreCreate() {
     dynamicTheme.onCreate(this);
     dynamicLanguage.onCreate(this);
-    super.onCreate(icicle);
-
-    getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
-
-    setContentView(R.layout.conversation_list_activity);
-
-    getSupportActionBar().setTitle(R.string.app_name);
-
-    initializeResources();
-    initializeContactUpdatesReceiver();
   }
 
   @Override
-  public void onPostCreate(Bundle bundle) {
-    super.onPostCreate(bundle);
+  protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
+    this.masterSecret = masterSecret;
+
+    getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
+    getSupportActionBar().setTitle(R.string.app_name);
+    fragment = initFragment(android.R.id.content, new ConversationListFragment(), masterSecret);
+
+    initializeContactUpdatesReceiver();
   }
 
   @Override
@@ -81,17 +77,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
   @Override
   public void onDestroy() {
-    Log.w("ConversationListActivity", "onDestroy...");
-    MemoryCleaner.clean(masterSecret);
     if (observer != null) getContentResolver().unregisterContentObserver(observer);
     super.onDestroy();
-  }
-
-  @Override
-  public void onMasterSecretCleared() {
-//    this.fragment.setMasterSecret(null);
-    startActivity(new Intent(this, RoutingActivity.class));
-    super.onMasterSecretCleared();
   }
 
   @Override
@@ -103,13 +90,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
     menu.findItem(R.id.menu_clear_passphrase).setVisible(!SMSSecurePreferences.isPasswordDisabled(this));
 
-    if (this.masterSecret != null) {
-      inflater.inflate(R.menu.conversation_list, menu);
-      MenuItem menuItem = menu.findItem(R.id.menu_search);
-      initializeSearch(menuItem);
-    } else {
-      inflater.inflate(R.menu.conversation_list_empty, menu);
-    }
+    inflater.inflate(R.menu.conversation_list, menu);
+    MenuItem menuItem = menu.findItem(R.id.menu_search);
+    initializeSearch(menuItem);
 
     super.onPrepareOptionsMenu(menu);
     return true;
@@ -174,7 +157,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
   private void createGroup() {
     Intent intent = new Intent(this, GroupCreateActivity.class);
-    intent.putExtra("master_secret", masterSecret);
     startActivity(intent);
   }
 
@@ -182,7 +164,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     Intent intent = new Intent(this, ConversationActivity.class);
     intent.putExtra(ConversationActivity.RECIPIENTS_EXTRA, recipients.getIds());
     intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, threadId);
-    intent.putExtra(ConversationActivity.MASTER_SECRET_EXTRA, masterSecret);
     intent.putExtra(ConversationActivity.DISTRIBUTION_TYPE_EXTRA, distributionType);
 
     startActivity(intent);
@@ -190,7 +171,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
   private void handleDisplaySettings() {
     Intent preferencesIntent = new Intent(this, ApplicationPreferencesActivity.class);
-    preferencesIntent.putExtra("master_secret", masterSecret);
     startActivity(preferencesIntent);
   }
 
@@ -201,15 +181,11 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
   }
 
   private void handleImportExport() {
-    final Intent intent = new Intent(this, ImportExportActivity.class);
-    intent.putExtra("master_secret", masterSecret);
-    startActivity(intent);
+    startActivity(new Intent(this, ImportExportActivity.class));
   }
 
   private void handleMyIdentity() {
-    final Intent intent = new Intent(this, ViewLocalIdentityActivity.class);
-    intent.putExtra("master_secret", masterSecret);
-    startActivity(intent);
+    startActivity(new Intent(this, ViewLocalIdentityActivity.class));
   }
 
   private void handleMarkAllRead() {
@@ -234,22 +210,13 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         ConversationListActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ((ConversationListAdapter)fragment.getListAdapter()).notifyDataSetChanged();
-              }
+              ((ConversationListAdapter)fragment.getListAdapter()).notifyDataSetChanged();
+            }
           });
       }
     };
 
     getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI,
                                                  true, observer);
-  }
-
-  private void initializeResources() {
-    this.masterSecret = getIntent().getParcelableExtra("master_secret");
-
-    this.fragment = (ConversationListFragment)this.getSupportFragmentManager()
-                                                  .findFragmentById(R.id.fragment_content);
-
-    this.fragment.setMasterSecret(masterSecret);
   }
 }

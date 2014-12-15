@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
 import android.text.InputType;
@@ -44,7 +45,6 @@ import android.view.View.OnKeyListener;
 import android.view.ViewStub;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +52,7 @@ import com.afollestad.materialdialogs.AlertDialogWrapper;
 import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
+import org.smssecure.smssecure.components.ComposeText;
 import org.smssecure.smssecure.components.EmojiDrawer;
 import org.smssecure.smssecure.components.EmojiToggle;
 import org.smssecure.smssecure.components.SendButton;
@@ -97,7 +98,6 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.Emoji;
 import org.smssecure.smssecure.util.GroupUtil;
-import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
@@ -127,7 +127,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   public static final String RECIPIENTS_EXTRA        = "recipients";
   public static final String THREAD_ID_EXTRA         = "thread_id";
-  public static final String MASTER_SECRET_EXTRA     = "master_secret";
   public static final String DRAFT_TEXT_EXTRA        = "draft_text";
   public static final String DRAFT_IMAGE_EXTRA       = "draft_image";
   public static final String DRAFT_AUDIO_EXTRA       = "draft_audio";
@@ -140,10 +139,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private static final int PICK_CONTACT_INFO = 4;
   private static final int GROUP_EDIT        = 5;
 
-  private MasterSecret masterSecret;
-  private EditText     composeText;
-  private SendButton   sendButton;
-  private TextView     charactersLeft;
+  private MasterSecret         masterSecret;
+  private ComposeText          composeText;
+  private SendButton           sendButton;
+  private TextView             charactersLeft;
+  private ConversationFragment fragment;
 
   private AttachmentTypeSelectorAdapter attachmentAdapter;
   private AttachmentManager             attachmentManager;
@@ -163,14 +163,19 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private DynamicLanguage     dynamicLanguage     = new DynamicLanguage();
 
   @Override
-  protected void onCreate(Bundle state) {
-    overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
+  protected void onPreCreate() {
     dynamicTheme.onCreate(this);
     dynamicLanguage.onCreate(this);
-    super.onCreate(state);
+    overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
+  }
+
+  @Override
+  protected void onCreate(Bundle state, @NonNull MasterSecret masterSecret) {
+    this.masterSecret = masterSecret;
 
     setContentView(R.layout.conversation_activity);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    fragment = initFragment(R.id.fragment_content, new ConversationFragment(), masterSecret);
 
     initializeReceivers();
     initializeViews();
@@ -180,6 +185,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   protected void onNewIntent(Intent intent) {
+    Log.w(TAG, "onNewIntent()");
+
     if (!Util.isEmpty(composeText) || attachmentManager.isAttachmentPresent()) {
       saveDraft();
       attachmentManager.clear();
@@ -187,11 +194,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
 
     setIntent(intent);
-
     initializeResources();
     initializeDraft();
-
-    ConversationFragment fragment = getFragment();
 
     if (fragment != null) {
       fragment.onNewIntent();
@@ -225,10 +229,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   @Override
   protected void onDestroy() {
     saveDraft();
-    recipients.removeListener(this);
-    unregisterReceiver(securityUpdateReceiver);
-    unregisterReceiver(groupUpdateReceiver);
-    MemoryCleaner.clean(masterSecret);
+    if (recipients != null)             recipients.removeListener(this);
+    if (securityUpdateReceiver != null) unregisterReceiver(securityUpdateReceiver);
+    if (groupUpdateReceiver != null)    unregisterReceiver(groupUpdateReceiver);
     super.onDestroy();
   }
 
@@ -339,7 +342,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void handleReturnToConversationList() {
     Intent intent = new Intent(this, ConversationListActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-    intent.putExtra("master_secret", masterSecret);
     startActivity(intent);
     finish();
   }
@@ -351,7 +353,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void handleVerifyIdentity() {
     Intent verifyIdentityIntent = new Intent(this, VerifyIdentityActivity.class);
     verifyIdentityIntent.putExtra("recipient", getRecipients().getPrimaryRecipient().getRecipientId());
-    verifyIdentityIntent.putExtra("master_secret", masterSecret);
     startActivity(verifyIdentityIntent);
   }
 
@@ -426,7 +427,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     Intent intent = new Intent(this, MediaOverviewActivity.class);
     intent.putExtra(MediaOverviewActivity.THREAD_ID_EXTRA, threadId);
     intent.putExtra(MediaOverviewActivity.RECIPIENT_EXTRA, recipients.getPrimaryRecipient().getRecipientId());
-    intent.putExtra(MediaOverviewActivity.MASTER_SECRET_EXTRA, masterSecret);
     startActivity(intent);
   }
 
@@ -473,7 +473,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleEditPushGroup() {
     Intent intent = new Intent(ConversationActivity.this, GroupCreateActivity.class);
-    intent.putExtra(GroupCreateActivity.MASTER_SECRET_EXTRA, masterSecret);
     intent.putExtra(GroupCreateActivity.GROUP_RECIPIENT_EXTRA, recipients.getPrimaryRecipient().getRecipientId());
     startActivityForResult(intent, GROUP_EDIT);
   }
@@ -733,9 +732,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeViews() {
-    sendButton     = (SendButton) findViewById(R.id.send_button);
-    composeText    = (EditText) findViewById(R.id.embedded_text_editor);
-    charactersLeft = (TextView) findViewById(R.id.space_left);
+    sendButton     = (SendButton)  findViewById(R.id.send_button);
+    composeText    = (ComposeText) findViewById(R.id.embedded_text_editor);
+    charactersLeft = (TextView)    findViewById(R.id.space_left);
     emojiDrawer    = Optional.absent();
     emojiToggle    = (EmojiToggle) findViewById(R.id.emoji_toggle);
 
@@ -773,7 +772,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     recipients       = RecipientFactory.getRecipientsForIds(this, getIntent().getLongArrayExtra(RECIPIENTS_EXTRA), true);
     threadId         = getIntent().getLongExtra(THREAD_ID_EXTRA, -1);
     distributionType = getIntent().getIntExtra(DISTRIBUTION_TYPE_EXTRA, ThreadDatabase.DistributionTypes.DEFAULT);
-    masterSecret     = getIntent().getParcelableExtra(MASTER_SECRET_EXTRA);
 
     recipients.addListener(this);
   }
@@ -951,8 +949,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         } else if (threadId > 0) {
           threadDatabase.update(threadId);
         }
-
-        MemoryCleaner.clean(thisMasterSecret);
         return null;
       }
     }.execute(thisThreadId);
@@ -1037,8 +1033,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     boolean refreshFragment = (threadId != this.threadId);
     this.threadId = threadId;
 
-    ConversationFragment fragment = getFragment();
-
     if (fragment == null) {
       return;
     }
@@ -1051,10 +1045,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
 
     fragment.scrollToBottom();
-  }
-
-  private ConversationFragment getFragment() {
-    return (ConversationFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_content);
   }
 
   private void sendMessage() {

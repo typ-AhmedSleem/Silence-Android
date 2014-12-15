@@ -24,6 +24,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -43,7 +44,6 @@ import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.ResUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
@@ -79,18 +79,24 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
 
   @Override
-  protected void onCreate(Bundle icicle) {
+  protected void onPreCreate() {
     dynamicTheme.onCreate(this);
     dynamicLanguage.onCreate(this);
-    super.onCreate(icicle);
+  }
 
+  @Override
+  protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
     this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-    Fragment            fragment            = new ApplicationPreferenceFragment();
-    FragmentManager     fragmentManager     = getSupportFragmentManager();
-    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-    fragmentTransaction.replace(android.R.id.content, fragment);
-    fragmentTransaction.commit();
+    Bundle   fragmentArgs = new Bundle();
+    Fragment fragment     = new ApplicationPreferenceFragment();
+
+    fragmentArgs.putParcelable("master_secret", masterSecret);
+    fragment.setArguments(fragmentArgs);
+
+    getSupportFragmentManager().beginTransaction()
+                               .replace(android.R.id.content, fragment)
+                               .commit();
   }
 
   @Override
@@ -123,12 +129,6 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   }
 
   @Override
-  public void onDestroy() {
-    MemoryCleaner.clean((MasterSecret) getIntent().getParcelableExtra("master_secret"));
-    super.onDestroy();
-  }
-
-  @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     if (key.equals(SMSSecurePreferences.THEME_PREF)) {
       dynamicTheme.onResume(this);
@@ -148,18 +148,19 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
 
       addPreferencesFromResource(R.xml.preferences);
 
+      MasterSecret masterSecret = getArguments().getParcelable("master_secret");
       this.findPreference(PREFERENCE_CATEGORY_SMS_MMS)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_SMS_MMS));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_SMS_MMS));
       this.findPreference(PREFERENCE_CATEGORY_NOTIFICATIONS)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_NOTIFICATIONS));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_NOTIFICATIONS));
       this.findPreference(PREFERENCE_CATEGORY_APP_PROTECTION)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_APP_PROTECTION));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_APP_PROTECTION));
       this.findPreference(PREFERENCE_CATEGORY_APPEARANCE)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_APPEARANCE));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_APPEARANCE));
       this.findPreference(PREFERENCE_CATEGORY_STORAGE)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_STORAGE));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_STORAGE));
       this.findPreference(PREFERENCE_CATEGORY_ADVANCED)
-        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_ADVANCED));
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_ADVANCED));
     }
 
     @Override
@@ -191,10 +192,12 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
     }
 
     private class CategoryClickListener implements Preference.OnPreferenceClickListener {
-      private String category;
+      private MasterSecret masterSecret;
+      private String       category;
 
-      public CategoryClickListener(String category) {
-        this.category = category;
+      public CategoryClickListener(MasterSecret masterSecret, String category) {
+        this.masterSecret = masterSecret;
+        this.category     = category;
       }
 
       @Override
@@ -209,7 +212,10 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
           fragment = new NotificationsPreferenceFragment();
           break;
         case PREFERENCE_CATEGORY_APP_PROTECTION:
+          Bundle args = new Bundle();
+          args.putParcelable("master_secret", masterSecret);
           fragment = new AppProtectionPreferenceFragment();
+          fragment.setArguments(args);
           break;
         case PREFERENCE_CATEGORY_APPEARANCE:
           fragment = new AppearancePreferenceFragment();

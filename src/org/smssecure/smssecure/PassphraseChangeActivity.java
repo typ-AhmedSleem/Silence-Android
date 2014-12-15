@@ -28,7 +28,6 @@ import android.widget.Toast;
 import org.smssecure.smssecure.crypto.InvalidPassphraseException;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
-import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 /**
@@ -103,10 +102,6 @@ public class PassphraseChangeActivity extends PassphraseActivity {
       } else {
         MasterSecret masterSecret = MasterSecretUtil.changeMasterSecretPassphrase(this, original, passphrase);
         SMSSecurePreferences.setPasswordDisabled(this, false);
-
-        MemoryCleaner.clean(original);
-        MemoryCleaner.clean(passphrase);
-        MemoryCleaner.clean(passphraseRepeat);
 
         setMasterSecret(masterSecret);
       }

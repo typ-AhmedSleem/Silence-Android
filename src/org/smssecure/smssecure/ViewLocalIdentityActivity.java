@@ -18,13 +18,14 @@
 package org.smssecure.smssecure;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
+import org.smssecure.smssecure.crypto.MasterSecret;
 
 /**
  * Activity that displays the local identity key and offers the option to regenerate it.
@@ -33,12 +34,13 @@ import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
  */
 public class ViewLocalIdentityActivity extends ViewIdentityActivity {
 
-  public void onCreate(Bundle bundle) {
+  @Override
+  protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
     getIntent().putExtra(ViewIdentityActivity.IDENTITY_KEY,
                          new IdentityKeyParcelable(IdentityKeyUtil.getIdentityKey(this)));
     getIntent().putExtra(ViewIdentityActivity.TITLE,
                          getString(R.string.ViewIdentityActivity_my_identity_fingerprint));
-    super.onCreate(bundle);
+    super.onCreate(icicle, masterSecret);
   }
 
   @Override
