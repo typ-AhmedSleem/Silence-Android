@@ -723,10 +723,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeIme() {
-    if (SMSSecurePreferences.isEnterImeKeyEnabled(this)) {
-      composeText.setInputType(composeText.getInputType() & (~InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE));
+    if (SMSSecurePreferences.isEnterSendsEnabled(this)) {
+      composeText.setInputType (composeText.getInputType()  & ~InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+      composeText.setImeOptions(composeText.getImeOptions() & ~EditorInfo.IME_FLAG_NO_ENTER_ACTION);
     } else {
-      composeText.setInputType(composeText.getInputType() | (InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE));
+      composeText.setInputType (composeText.getInputType()  | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+      composeText.setImeOptions(composeText.getImeOptions() | EditorInfo.IME_FLAG_NO_ENTER_ACTION);
     }
   }
 
@@ -736,10 +738,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     charactersLeft = (TextView) findViewById(R.id.space_left);
     emojiDrawer    = Optional.absent();
     emojiToggle    = (EmojiToggle) findViewById(R.id.emoji_toggle);
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-      emojiToggle.setVisibility(View.GONE);
-    }
 
     attachmentAdapter = new AttachmentTypeSelectorAdapter(this);
     attachmentManager = new AttachmentManager(this, this);
@@ -1185,7 +1183,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
       if (actionId == EditorInfo.IME_ACTION_SEND) {
         sendButton.performClick();
-        composeText.clearFocus();
         return true;
       }
       return false;
