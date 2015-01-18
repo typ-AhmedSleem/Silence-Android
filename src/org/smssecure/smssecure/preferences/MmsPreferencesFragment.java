@@ -90,6 +90,9 @@ public class MmsPreferencesFragment extends PreferenceFragment {
 
       ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_PASSWORD_PREF))
           .setDefaultValue(apnDefaults.getPassword());
+
+      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMS_USER_AGENT))
+          .setDefaultValue(LegacyMmsConnection.USER_AGENT);
     }
   }
 
