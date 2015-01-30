@@ -17,9 +17,13 @@
 package org.SecuredText.SecuredText.mms;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Pair;
 
+import org.SecuredText.SecuredText.R;
 import org.SecuredText.SecuredText.crypto.MasterSecret;
 import org.SecuredText.SecuredText.dom.smil.parser.SmilXmlSerializer;
+import org.SecuredText.SecuredText.util.ListenableFutureTask;
 import org.SecuredText.SecuredText.util.MediaUtil;
 import org.SecuredText.SecuredText.util.SmilUtil;
 import org.SecuredText.SecuredText.util.Util;
@@ -90,8 +94,15 @@ public class SlideDeck {
         return true;
       }
     }
-
     return false;
   }
 
+  public Slide getThumbnailSlide(Context context) {
+    for (Slide slide : slides) {
+      if (slide.hasImage()) {
+        return slide;
+      }
+    }
+    return null;
+  }
 }

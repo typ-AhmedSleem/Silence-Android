@@ -51,7 +51,7 @@ import org.SecuredText.SecuredText.database.DatabaseFactory;
 import org.SecuredText.SecuredText.database.loaders.ConversationListLoader;
 import org.SecuredText.SecuredText.notifications.MessageNotifier;
 import org.SecuredText.SecuredText.recipients.Recipients;
-import org.SecuredText.SecuredText.util.Dialogs;
+import org.SecuredText.SecuredText.util.ResUtil;
 import org.SecuredText.SecuredText.crypto.MasterSecret;
 
 import java.util.Set;
@@ -194,7 +194,7 @@ public class ConversationListFragment extends ListFragment
 
   private void handleDeleteAllSelected() {
     AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-    alert.setIcon(Dialogs.resolveIcon(getActivity(), R.attr.dialog_alert_icon));
+    alert.setIcon(ResUtil.getDrawable(getActivity(), R.attr.dialog_alert_icon));
     alert.setTitle(R.string.ConversationListFragment_delete_threads_question);
     alert.setMessage(R.string.ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads);
     alert.setCancelable(true);

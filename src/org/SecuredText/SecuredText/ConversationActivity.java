@@ -99,6 +99,7 @@ import org.SecuredText.SecuredText.util.DynamicTheme;
 import org.SecuredText.SecuredText.util.Emoji;
 import org.SecuredText.SecuredText.util.GroupUtil;
 import org.SecuredText.SecuredText.util.MemoryCleaner;
+import org.SecuredText.SecuredText.util.ResUtil;
 import org.SecuredText.SecuredText.util.SecuredTextPreferences;
 import org.SecuredText.SecuredText.util.Util;
 import org.whispersystems.libaxolotl.InvalidMessageException;
@@ -392,7 +393,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void handleAbortSecureSession() {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(R.string.ConversationActivity_abort_secure_session_confirmation);
-    builder.setIcon(Dialogs.resolveIcon(this, R.attr.dialog_alert_icon));
+    builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_alert_icon));
     builder.setCancelable(true);
     builder.setMessage(R.string.ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question);
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
@@ -439,7 +440,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(getString(R.string.ConversationActivity_leave_group));
-    builder.setIcon(Dialogs.resolveIcon(this, R.attr.dialog_info_icon));
+    builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_info_icon));
     builder.setCancelable(true);
     builder.setMessage(getString(R.string.ConversationActivity_are_you_sure_you_want_to_leave_this_group));
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
@@ -532,7 +533,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void handleDeleteThread() {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(R.string.ConversationActivity_delete_thread_confirmation);
-    builder.setIcon(Dialogs.resolveIcon(this, R.attr.dialog_alert_icon));
+    builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_alert_icon));
     builder.setCancelable(true);
     builder.setMessage(R.string.ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question);
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {

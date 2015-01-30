@@ -23,6 +23,7 @@ import org.SecuredText.SecuredText.crypto.MasterSecret;
 import org.SecuredText.SecuredText.crypto.MasterSecretUtil;
 import org.SecuredText.SecuredText.service.KeyCachingService;
 import org.SecuredText.SecuredText.util.Dialogs;
+import org.SecuredText.SecuredText.util.ResUtil;
 import org.SecuredText.SecuredText.util.SecuredTextPreferences;
 
 import java.util.concurrent.TimeUnit;
@@ -123,7 +124,7 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.ApplicationPreferencesActivity_disable_storage_encryption);
         builder.setMessage(R.string.ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages);
-        builder.setIcon(Dialogs.resolveIcon(getActivity(), R.attr.dialog_alert_icon));
+        builder.setIcon(ResUtil.getDrawable(getActivity(), R.attr.dialog_alert_icon));
         builder.setPositiveButton(R.string.ApplicationPreferencesActivity_disable, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {

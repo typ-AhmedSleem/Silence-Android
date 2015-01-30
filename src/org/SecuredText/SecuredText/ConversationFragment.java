@@ -40,6 +40,7 @@ import org.SecuredText.SecuredText.util.Dialogs;
 import org.SecuredText.SecuredText.util.DirectoryHelper;
 import org.SecuredText.SecuredText.util.FutureTaskListener;
 import org.SecuredText.SecuredText.util.ProgressDialogAsyncTask;
+import org.SecuredText.SecuredText.util.ResUtil;
 import org.SecuredText.SecuredText.util.SaveAttachmentTask;
 import org.SecuredText.SecuredText.util.SaveAttachmentTask.Attachment;
 
@@ -192,7 +193,7 @@ public class ConversationFragment extends ListFragment
   private void handleDeleteMessages(final List<MessageRecord> messageRecords) {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setTitle(R.string.ConversationFragment_confirm_message_delete);
-    builder.setIcon(Dialogs.resolveIcon(getActivity(), R.attr.dialog_alert_icon));
+    builder.setIcon(ResUtil.getDrawable(getActivity(), R.attr.dialog_alert_icon));
     builder.setCancelable(true);
     builder.setMessage(R.string.ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages);
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {

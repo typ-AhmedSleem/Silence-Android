@@ -45,6 +45,7 @@ import org.SecuredText.SecuredText.util.DynamicLanguage;
 import org.SecuredText.SecuredText.util.DynamicTheme;
 import org.SecuredText.SecuredText.util.MemoryCleaner;
 import org.SecuredText.SecuredText.util.ProgressDialogAsyncTask;
+import org.SecuredText.SecuredText.util.ResUtil;
 import org.SecuredText.SecuredText.util.SecuredTextPreferences;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 import org.whispersystems.textsecure.api.TextSecureAccountManager;
