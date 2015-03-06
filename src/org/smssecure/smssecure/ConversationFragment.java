@@ -103,7 +103,6 @@ public class ConversationFragment extends ListFragment
 
     initializeResources();
     initializeListAdapter();
-    getLoaderManager().restartLoader(0, null, this);
   }
 
   private void initializeResources() {
@@ -116,7 +115,7 @@ public class ConversationFragment extends ListFragment
       this.setListAdapter(new ConversationAdapter(getActivity(), masterSecret, selectionClickListener,
                                                   (!this.recipients.isSingleRecipient()) || this.recipients.isGroupRecipient()));
       getListView().setRecyclerListener((ConversationAdapter)getListAdapter());
-      getLoaderManager().initLoader(0, null, this);
+      getLoaderManager().restartLoader(0, null, this);
     }
   }
 
@@ -126,12 +125,9 @@ public class ConversationFragment extends ListFragment
   }
 
   private void setCorrectMenuVisibility(Menu menu) {
-    ConversationAdapter adapter        = (ConversationAdapter) getListAdapter();
     List<MessageRecord> messageRecords = getSelectedMessageRecords();
 
     if (actionMode != null && messageRecords.size() == 0) {
-      adapter.getBatchSelected().clear();
-      adapter.notifyDataSetChanged();
       actionMode.finish();
       return;
     }
@@ -169,9 +165,11 @@ public class ConversationFragment extends ListFragment
 
   public void reload(Recipients recipients, long threadId) {
     this.recipients = recipients;
-    this.threadId   = threadId;
 
-    initializeListAdapter();
+    if (this.threadId != threadId) {
+      this.threadId = threadId;
+      initializeListAdapter();
+    }
   }
 
   public void scrollToBottom() {
