@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="SMSSecure.IntroTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="SMSSecure.LightIntroTheme" parent="@style/Theme.AppCompat.Light">
         <!--<item name="colorPrimary">@android:color/transparent</item>-->
         <item name="actionBarStyle">@style/SMSSecure.IntroActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:textColorHint">#cc000000</item>
+        <item name="centered_app_title_color">#55000000</item>
+        <item name="ic_arrow_forward">@drawable/ic_arrow_forward_light</item>
+    </style>
+
+    <style name="SMSSecure.DarkIntroTheme" parent="@style/Theme.AppCompat">
+        <item name="actionBarStyle">@style/SMSSecure.IntroActionBar</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:textColorHint">@color/white</item>
+        <item name="centered_app_title_color">@color/gray27</item>
+        <item name="ic_arrow_forward">@drawable/ic_arrow_forward_dark</item>
+        <item name="android:windowBackground">@color/black</item>
     </style>
 
     <style name="SMSSecure.LightTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">

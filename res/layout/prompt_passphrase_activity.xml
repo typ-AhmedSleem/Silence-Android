@@ -35,7 +35,7 @@
                       android:paddingRight="10dp"/>
 
             <ImageButton android:id="@+id/ok_button"
-                         android:src="@drawable/ic_action_forward"
+                         android:src="?ic_arrow_forward"
                          android:contentDescription="@string/prompt_passphrase_activity__unlock"
                          android:background="@null"
                          android:text="@string/prompt_passphrase_activity__unlock"
