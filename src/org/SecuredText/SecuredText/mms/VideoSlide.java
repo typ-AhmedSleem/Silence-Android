@@ -22,10 +22,6 @@ import org.SecuredText.SecuredText.R;
 import org.SecuredText.SecuredText.crypto.MasterSecret;
 import org.SecuredText.SecuredText.util.ListenableFutureTask;
 import org.SecuredText.SecuredText.util.ResUtil;
-import org.SecuredText.SecuredText.util.SmilUtil;
-import org.w3c.dom.smil.SMILDocument;
-import org.w3c.dom.smil.SMILMediaElement;
-import org.w3c.dom.smil.SMILRegionElement;
 
 import ws.com.google.android.mms.pdu.PduPart;
 import android.content.ContentResolver;
@@ -60,23 +56,6 @@ public class VideoSlide extends Slide {
   @Override
   public boolean hasVideo() {
     return true;
-  }
-
-  @Override
-  public SMILRegionElement getSmilRegion(SMILDocument document) {
-    SMILRegionElement region = (SMILRegionElement) document.createElement("region");
-    region.setId("Image");
-    region.setLeft(0);
-    region.setTop(0);
-    region.setWidth(SmilUtil.ROOT_WIDTH);
-    region.setHeight(SmilUtil.ROOT_HEIGHT);
-    region.setFit("meet");
-    return region;
-  }
-
-  @Override
-  public SMILMediaElement getMediaElement(SMILDocument document) {
-    return SmilUtil.createMediaElement("video", document, new String(getPart().getName()));
   }
 
   private static PduPart constructPartFromUri(Context context, Uri uri)

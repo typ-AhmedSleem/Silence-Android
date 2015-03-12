@@ -25,6 +25,7 @@ import org.SecuredText.SecuredText.transport.UndeliverableMessageException;
 import org.SecuredText.SecuredText.util.Hex;
 import org.SecuredText.SecuredText.util.NumberUtil;
 import org.SecuredText.SecuredText.util.TelephonyUtil;
+import org.SecuredText.SecuredText.util.SmilUtil;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
 import org.whispersystems.libaxolotl.NoSessionException;
@@ -106,6 +107,7 @@ public class MmsSendJob extends SendJob {
     MmsRadio radio = MmsRadio.getInstance(context);
 
     try {
+      prepareMessageMedia(masterSecret, message, MediaConstraints.MMS_CONSTRAINTS, true);
       if (isCdmaDevice()) {
         Log.w(TAG, "Sending MMS directly without radio change...");
         try {
@@ -137,9 +139,9 @@ public class MmsSendJob extends SendJob {
         radio.disconnect();
       }
 
-    } catch (MmsRadioException mre) {
-      Log.w(TAG, mre);
-      throw new UndeliverableMessageException(mre);
+    } catch (MmsRadioException | IOException e) {
+      Log.w(TAG, e);
+      throw new UndeliverableMessageException(e);
     }
   }
 
@@ -149,8 +151,6 @@ public class MmsSendJob extends SendJob {
   {
     String  number         = TelephonyUtil.getManager(context).getLine1Number();
     boolean upgradedSecure = false;
-
-    prepareMessageMedia(masterSecret, message, MediaConstraints.MMS_CONSTRAINTS, true);
 
     if (MmsDatabase.Types.isSecureType(message.getDatabaseMessageBox())) {
       message        = getEncryptedMessage(masterSecret, message);
@@ -250,6 +250,12 @@ public class MmsSendJob extends SendJob {
     }
   }
 
-
+  @Override
+  protected void prepareMessageMedia(MasterSecret masterSecret, SendReq message,
+                                     MediaConstraints constraints, boolean toMemory)
+      throws IOException, UndeliverableMessageException {
+    super.prepareMessageMedia(masterSecret, message, constraints, toMemory);
+    message.setBody(SmilUtil.getSmilBody(message.getBody()));
+  }
 
 }
