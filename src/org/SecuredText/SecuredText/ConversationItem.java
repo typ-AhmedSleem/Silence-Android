@@ -341,7 +341,7 @@ public class ConversationItem extends LinearLayout {
   }
 
   private void setEvents(MessageRecord messageRecord) {
-    setClickable(messageRecord.isFailed()||
+      setClickable(batchSelected.isEmpty() &&
                  messageRecord.isPendingSmsFallback()      ||
                  (messageRecord.isKeyExchange()            &&
                   !messageRecord.isCorruptedKeyExchange()  &&
