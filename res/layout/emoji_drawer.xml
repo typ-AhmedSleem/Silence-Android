@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<org.thoughtcrime.securesms.components.KeyboardAwareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<org.BastienLQ.SecuredText.components.KeyboardAwareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                                  android:id="@+id/container"
                                                                  android:orientation="vertical"
                                                                  android:layout_width="match_parent"
@@ -32,4 +32,4 @@
                                        android:layout_height="match_parent"
                                        android:background="#ff333333" />
 
-</org.thoughtcrime.securesms.components.KeyboardAwareLinearLayout>
+</org.BastienLQ.SecuredText.components.KeyboardAwareLinearLayout>

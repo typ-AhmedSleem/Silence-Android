@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="TextSecure.IntroTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="SecuredText.IntroTheme" parent="@style/Theme.AppCompat.Light">
         <!--<item name="colorPrimary">@android:color/transparent</item>-->
-        <item name="actionBarStyle">@style/TextSecure.IntroActionBar</item>
+        <item name="actionBarStyle">@style/SecuredText.IntroActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="TextSecure.LightTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="SecuredText.LightTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="logo">@drawable/actionbar_icon_holo_light</item>
-        <item name="actionBarStyle">@style/TextSecure.LightActionBar</item>
-        <item name="actionBarTabBarStyle">@style/TextSecure.LightActionBar.TabBar</item>
+        <item name="actionBarStyle">@style/SecuredText.LightActionBar</item>
+        <item name="actionBarTabBarStyle">@style/SecuredText.LightActionBar.TabBar</item>
         <item name="colorPrimary">@color/textsecure_primary</item>
         <item name="colorPrimaryDark">@color/textsecure_primary_dark</item>
         <item name="colorAccent">@color/textsecure_primary_dark</item>
@@ -110,10 +110,10 @@
         <item name="app_protect_timeout_picker_color">@style/BetterPickersDialogFragment.Light</item>
     </style>
 
-    <style name="TextSecure.DarkTheme" parent="@style/Theme.AppCompat">
+    <style name="SecuredText.DarkTheme" parent="@style/Theme.AppCompat">
         <item name="logo">@drawable/actionbar_icon_holo_dark</item>
-        <item name="actionBarStyle">@style/TextSecure.DarkActionBar</item>
-        <item name="actionBarTabBarStyle">@style/TextSecure.DarkActionBar.TabBar</item>
+        <item name="actionBarStyle">@style/SecuredText.DarkActionBar</item>
+        <item name="actionBarTabBarStyle">@style/SecuredText.DarkActionBar.TabBar</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="android:textColor">@color/text_color_dark_theme</item>
         <item name="android:textColorSecondary">@color/text_color_secondary_dark_theme</item>
@@ -212,11 +212,11 @@
         <item name="app_protect_timeout_picker_color">@style/BetterPickersDialogFragment</item>
     </style>
 
-    <style name="TextSecure.Light.Dialog"
+    <style name="SecuredText.Light.Dialog"
            parent="Theme.AppCompat.Light.DialogWhenLarge"
            tools:ignore="NewApi">
         <item name="android:windowFrame">@null</item>
-        <item name="android:windowTitleStyle">@style/TextSecureDialogWindowTitle</item>
+        <item name="android:windowTitleStyle">@style/SecuredTextDialogWindowTitle</item>
         <item name="android:windowBackground">@drawable/dialog_full_holo_light</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -226,8 +226,8 @@
 
         <item name="android:colorBackgroundCacheHint">@null</item>
 
-        <item name="android:buttonBarStyle">@style/TextSecureDialogButtonBar</item>
-        <item name="android:borderlessButtonStyle">@style/TextSecureBorderlessButtonSmall</item>
+        <item name="android:buttonBarStyle">@style/SecuredTextDialogButtonBar</item>
+        <item name="android:borderlessButtonStyle">@style/SecuredTextBorderlessButtonSmall</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
