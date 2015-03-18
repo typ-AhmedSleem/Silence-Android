@@ -1,20 +1,20 @@
-Building TextSecure
+Building SecuredText
 =====================
 
 Basics
 ------
 
-TextSecure uses [Gradle](http://gradle.org) to build the project and to maintain
+SecuredText uses [Gradle](http://gradle.org) to build the project and to maintain
 dependencies.
 
-Building TextSecure
+Building SecuredText
 -------------------
 
-The following steps should help you (re)build TextSecure from the command line.
+The following steps should help you (re)build SecuredText from the command line.
 
-1. Checkout the source somewhere on your filesystem with 
+1. Checkout the source somewhere on your filesystem with
 
-        git clone https://github.com/WhisperSystems/TextSecure.git
+        git clone https://github.com/BastienLQ/SecuredText.git
 
 2. Make sure you have the [Android SDK](https://developer.android.com/sdk/index.html) installed somewhere on your system.
 3. Ensure that the following packages are installed from the Android SDK manager:
@@ -38,8 +38,8 @@ Source assets tend to be large binary blobs, which are best stored outside of gi
 Sample command for generating our audio placeholder image:
 
 ```bash
-pngs_from_svg.py ic_audio.svg /path/to/TextSecure/res/ 150 "#000" 0.54 _light
-pngs_from_svg.py ic_audio.svg /path/to/TextSecure/res/ 150 "#fff" 1.0 _dark
+pngs_from_svg.py ic_audio.svg /path/to/SecuredText/res/ 150 "#000" 0.54 _light
+pngs_from_svg.py ic_audio.svg /path/to/SecuredText/res/ 150 "#fff" 1.0 _dark
 ```
 
 Setting up a development environment
@@ -51,7 +51,7 @@ Setting up a development environment
 2. Make sure the "Android Support Repository" is installed in the Android Studio SDK.
 3. Make sure the latest "Android SDK build-tools" is installed in the Android Studio SDK.
 4. Create a new Android Studio project. from the Quickstart pannel (use File > Close Project to see it), choose "Checkout from Version Control" then "git".
-5. Paste the URL for the TextSecure project when prompted (https://github.com/WhisperSystems/TextSecure.git).
+5. Paste the URL for the SecuredText project when prompted (https://github.com/BastienLQ/SecuredText.git).
 6. Android studio should detect the presence of a project file and ask you whether to open it. Click "yes".
 7. Default config options should be good enough.
 8. Project initialisation and build should proceed.
@@ -60,10 +60,3 @@ Contributing code
 -----------------
 
 Code contributions should be sent via github as pull requests, from feature branches [as explained here](https://help.github.com/articles/using-pull-requests).
-
-Mailing list
-------------
-
-Development discussion happens on the whispersystems mailing list.
-[To join](https://lists.riseup.net/www/info/whispersystems)
-Send emails to whispersystems@lists.riseup.net
