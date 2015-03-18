@@ -33,7 +33,6 @@ repositories {
 dependencies {
     compile 'me.leolin:ShortcutBadger:1.0.2-WS2'
     compile 'se.emilsjolander:stickylistheaders:2.2.0'
-    compile 'com.google.android.gms:play-services-base:6.5.87'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'org.w3c:smil:1.0.0'
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
@@ -78,7 +77,6 @@ dependencyVerification {
     verify = [
             'me.leolin:ShortcutBadger:027977c718035e5997035e04e05152d6c72d94df645e8b7099a274ada722bd14',
             'se.emilsjolander:stickylistheaders:89146b46c96fea0e40200474a2625cda10fe94891e4128f53cdb42375091b9b6',
-            'com.google.android.gms:play-services-base:832cb6b3130e871db6a412c4ab585656dbcc5e7948101f190186757785703f75',
             'com.astuetz:pagerslidingtabstrip:f1641396732c7132a7abb837e482e5ee2b0ebb8d10813fc52bbaec2c15c184c2',
             'org.w3c:smil:085dc40f2bb249651578bfa07499fd08b16ad0886dbe2c4078586a408da62f9b',
             'org.apache.httpcomponents:httpclient-android:6f56466a9bd0d42934b90bfbfe9977a8b654c058bf44a12bdc2877c4e1f033f1',
@@ -105,7 +103,6 @@ dependencyVerification {
             'org.whispersystems:axolotl-android:40d3db5004a84749a73f68d2f0d01b2ae35a73c54df96d8c6c6723b96efb6fc0',
             'com.googlecode.libphonenumber:libphonenumber:eba17eae81dd622ea89a00a3a8c025b2f25d342e0d9644c5b62e16f15687c3ab',
             'com.google.protobuf:protobuf-java:e0c1c64575c005601725e7c6a02cebf9e1285e888f756b2a1d73ffa8d725cc74',
-            'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
             'com.fasterxml.jackson.core:jackson-databind:835097bcdd11f5bc8a08378c70d4c8054dfa4b911691cc2752063c75534d198d',
             'org.whispersystems:axolotl-java:6daee739b89d8d7101de6d98f77132fee48495c6ea647d880e77def842f999ea',
             'org.whispersystems:curve25519-android:3c29a4131a69b0d16baaa3d707678deb39602c3a3ffd75805ce7f9db252e5d0d',

@@ -31,8 +31,6 @@ import android.support.v4.preference.PreferenceFragment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-
 import org.BastienLQ.SecuredText.crypto.MasterSecret;
 import org.BastienLQ.SecuredText.preferences.AdvancedPreferenceFragment;
 import org.BastienLQ.SecuredText.preferences.AppProtectionPreferenceFragment;
@@ -148,8 +146,6 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
 
       addPreferencesFromResource(R.xml.preferences);
 
-      initializePushMessagingToggle();
-
       this.findPreference(PREFERENCE_CATEGORY_SMS_MMS)
         .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_SMS_MMS));
       this.findPreference(PREFERENCE_CATEGORY_NOTIFICATIONS)
@@ -225,90 +221,6 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
         fragmentTransaction.commit();
 
         return true;
-      }
-    }
-
-    private void initializePushMessagingToggle() {
-      CheckBoxPreference preference = (CheckBoxPreference)this.findPreference(PUSH_MESSAGING_PREF);
-      preference.setChecked(SecuredTextPreferences.isPushRegistered(getActivity()));
-      preference.setOnPreferenceChangeListener(new PushMessagingClickListener());
-    }
-
-    private class PushMessagingClickListener implements Preference.OnPreferenceChangeListener {
-      private static final int SUCCESS       = 0;
-      private static final int NETWORK_ERROR = 1;
-
-      private class DisablePushMessagesTask extends ProgressDialogAsyncTask<Void, Void, Integer> {
-        private final CheckBoxPreference checkBoxPreference;
-
-        public DisablePushMessagesTask(final CheckBoxPreference checkBoxPreference) {
-          super(getActivity(), R.string.ApplicationPreferencesActivity_unregistering, R.string.ApplicationPreferencesActivity_unregistering_for_data_based_communication);
-          this.checkBoxPreference = checkBoxPreference;
-        }
-
-        @Override
-        protected void onPostExecute(Integer result) {
-          super.onPostExecute(result);
-          switch (result) {
-          case NETWORK_ERROR:
-            Toast.makeText(getActivity(),
-                           R.string.ApplicationPreferencesActivity_error_connecting_to_server,
-                           Toast.LENGTH_LONG).show();
-            break;
-          case SUCCESS:
-            checkBoxPreference.setChecked(false);
-            SecuredTextPreferences.setPushRegistered(getActivity(), false);
-            break;
-          }
-        }
-
-        @Override
-        protected Integer doInBackground(Void... params) {
-          try {
-            Context                  context        = getActivity();
-            TextSecureAccountManager accountManager = SecuredTextCommunicationFactory.createManager(context);
-
-            accountManager.setGcmId(Optional.<String>absent());
-            GoogleCloudMessaging.getInstance(context).unregister();
-
-            return SUCCESS;
-          } catch (AuthorizationFailedException afe) {
-            Log.w(TAG, afe);
-            return SUCCESS;
-          } catch (IOException ioe) {
-            Log.w(TAG, ioe);
-            return NETWORK_ERROR;
-          }
-        }
-      }
-
-      @Override
-      public boolean onPreferenceChange(final Preference preference, Object newValue) {
-        if (((CheckBoxPreference)preference).isChecked()) {
-          AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-          builder.setIcon(Dialogs.resolveIcon(getActivity(), R.attr.dialog_info_icon));
-          builder.setTitle(R.string.ApplicationPreferencesActivity_disable_push_messages);
-          builder.setMessage(R.string.ApplicationPreferencesActivity_this_will_disable_push_messages);
-          builder.setNegativeButton(android.R.string.cancel, null);
-          builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-              new DisablePushMessagesTask((CheckBoxPreference)preference).execute();
-            }
-          });
-          builder.show();
-        } else {
-          Intent nextIntent = new Intent(getActivity(), ApplicationPreferencesActivity.class);
-          nextIntent.putExtra("master_secret", getActivity().getIntent().getParcelableExtra("master_secret"));
-
-          Intent intent = new Intent(getActivity(), RegistrationActivity.class);
-          intent.putExtra("cancel_button", true);
-          intent.putExtra("next_intent", nextIntent);
-          intent.putExtra("master_secret", getActivity().getIntent().getParcelableExtra("master_secret"));
-          startActivity(intent);
-        }
-
-        return false;
       }
     }
   }

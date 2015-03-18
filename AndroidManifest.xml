@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="org.BastienLQ.SecuredText"
-      android:versionCode="1"
-      android:versionName="0.1.0">
+      android:versionCode="2"
+      android:versionName="0.2.0">
 
     <permission android:name="org.BastienLQ.SecuredText.ACCESS_SECRETS"
                 android:label="Access to SecuredText Secrets"
@@ -12,8 +12,6 @@
 	<uses-permission android:name="org.BastienLQ.SecuredText.ACCESS_SECRETS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.WRITE_PROFILE"/>
-    <uses-permission android:name="android.permission.BROADCAST_WAP_PUSH"
-                     tools:ignore="ProtectedPermissions"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -30,20 +28,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
-    <permission android:name="org.BastienLQ.SecuredText.permission.C2D_MESSAGE"
-                android:protectionLevel="signature" />
-    <uses-permission android:name="org.BastienLQ.SecuredText.permission.C2D_MESSAGE" />
 
     <application android:name=".ApplicationContext"
                  android:icon="@drawable/icon"
                  android:label="@string/app_name"
                  android:theme="@style/SecuredText.LightTheme">
-
-        <meta-data android:name="com.google.android.gms.version"
-                   android:value="@integer/google_play_services_version" />
 
         <activity android:name=".RoutingActivity"
                   android:theme="@style/NoAnimation.Theme.BlackScreen"
@@ -160,11 +149,6 @@
               android:windowSoftInputMode="stateVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".PushContactSelectionActivity"
-          android:label="@string/AndroidManifest__select_contacts"
-          android:windowSoftInputMode="stateHidden"
-          android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
-
     <activity android:name=".AutoInitiateActivity"
               android:theme="@style/SecuredText.Light.Dialog"
               android:label="@string/AndroidManifest__textsecure_detected"
@@ -226,10 +210,6 @@
               android:clearTaskOnLaunch="true"
               android:finishOnTaskLaunch="true" />
 
-    <activity android:name=".PlayServicesProblemActivity"
-              android:theme="@android:style/Theme.Translucent.NoTitleBar"
-              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
-
     <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
 
     <service android:enabled="true" android:name=".service.ApplicationMigrationService"/>
@@ -258,13 +238,6 @@
 <!--        		<action android:name="android.intent.action.BOOT_COMPLETED" />-->
 <!--    		</intent-filter>-->
 <!--	</receiver>-->
-
-    <receiver android:name=".gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
-        <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <category android:name="org.BastienLQ.SecuredText" />
-        </intent-filter>
-    </receiver>
 
     <receiver android:name=".service.SmsListener"
               android:permission="android.permission.BROADCAST_SMS"

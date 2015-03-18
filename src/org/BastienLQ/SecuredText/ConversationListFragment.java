@@ -45,7 +45,6 @@ import com.melnykov.fab.FloatingActionButton;
 
 import org.BastienLQ.SecuredText.components.DefaultSmsReminder;
 import org.BastienLQ.SecuredText.components.ExpiredBuildReminder;
-import org.BastienLQ.SecuredText.components.PushRegistrationReminder;
 import org.BastienLQ.SecuredText.components.ReminderView;
 import org.BastienLQ.SecuredText.components.SystemSmsImportReminder;
 import org.BastienLQ.SecuredText.database.DatabaseFactory;
@@ -182,8 +181,6 @@ public class ConversationListFragment extends ListFragment
       reminderView.showReminder(new DefaultSmsReminder(getActivity()));
     } else if (SystemSmsImportReminder.isEligible(getActivity())) {
       reminderView.showReminder(new SystemSmsImportReminder(getActivity(), masterSecret));
-    } else if (PushRegistrationReminder.isEligible(getActivity())) {
-      reminderView.showReminder(new PushRegistrationReminder(getActivity(), masterSecret));
     } else {
       reminderView.hide();
     }
@@ -306,5 +303,3 @@ public class ConversationListFragment extends ListFragment
   }
 
 }
-
-

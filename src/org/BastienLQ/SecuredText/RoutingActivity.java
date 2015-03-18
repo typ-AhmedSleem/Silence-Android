@@ -19,7 +19,6 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
 
   private static final int STATE_CONVERSATION_OR_LIST     = 3;
   private static final int STATE_UPGRADE_DATABASE         = 4;
-  private static final int STATE_PROMPT_PUSH_REGISTRATION = 5;
 
   private MasterSecret masterSecret   = null;
   private boolean      isVisible      = false;
@@ -84,7 +83,6 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
     case STATE_PROMPT_PASSPHRASE:        handlePromptPassphrase();          break;
     case STATE_CONVERSATION_OR_LIST:     handleDisplayConversationOrList(); break;
     case STATE_UPGRADE_DATABASE:         handleUpgradeDatabase();           break;
-    case STATE_PROMPT_PUSH_REGISTRATION: handlePushRegistration();          break;
     }
   }
 
@@ -101,16 +99,7 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
   private void handleUpgradeDatabase() {
     Intent intent = new Intent(this, DatabaseUpgradeActivity.class);
     intent.putExtra("master_secret", masterSecret);
-    intent.putExtra("next_intent", SecuredTextPreferences.hasPromptedPushRegistration(this) ?
-                                   getConversationListIntent() : getPushRegistrationIntent());
 
-    startActivity(intent);
-    finish();
-  }
-
-  private void handlePushRegistration() {
-    Intent intent = getPushRegistrationIntent();
-    intent.putExtra("next_intent", getConversationListIntent());
     startActivity(intent);
     finish();
   }
@@ -161,13 +150,6 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
     return intent;
   }
 
-  private Intent getPushRegistrationIntent() {
-    Intent intent = new Intent(this, RegistrationActivity.class);
-    intent.putExtra("master_secret", masterSecret);
-
-    return intent;
-  }
-
   private int getApplicationState() {
     if (!MasterSecretUtil.isPassphraseInitialized(this))
       return STATE_CREATE_PASSPHRASE;
@@ -177,9 +159,6 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
 
     if (DatabaseUpgradeActivity.isUpdate(this))
       return STATE_UPGRADE_DATABASE;
-
-    if (!SecuredTextPreferences.hasPromptedPushRegistration(this))
-      return STATE_PROMPT_PUSH_REGISTRATION;
 
     return STATE_CONVERSATION_OR_LIST;
   }

@@ -149,14 +149,7 @@ public class SmsListener extends BroadcastReceiver {
   public void onReceive(Context context, Intent intent) {
     Log.w("SMSListener", "Got SMS broadcast...");
 
-    if (SMS_RECEIVED_ACTION.equals(intent.getAction()) && isChallenge(context, intent)) {
-      Log.w("SmsListener", "Got challenge!");
-      Intent challengeIntent = new Intent(RegistrationService.CHALLENGE_EVENT);
-      challengeIntent.putExtra(RegistrationService.CHALLENGE_EXTRA, parseChallenge(context, intent));
-      context.sendBroadcast(challengeIntent);
-
-      abortBroadcast();
-    } else if ((intent.getAction().equals(SMS_DELIVERED_ACTION)) ||
+    if ((intent.getAction().equals(SMS_DELIVERED_ACTION)) ||
                (intent.getAction().equals(SMS_RECEIVED_ACTION)) && isRelevant(context, intent))
     {
       Object[] pdus = (Object[])intent.getExtras().get("pdus");

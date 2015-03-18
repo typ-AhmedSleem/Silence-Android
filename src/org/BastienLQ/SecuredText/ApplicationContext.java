@@ -23,7 +23,6 @@ import org.BastienLQ.SecuredText.crypto.PRNGFixes;
 import org.BastienLQ.SecuredText.dependencies.AxolotlStorageModule;
 import org.BastienLQ.SecuredText.dependencies.InjectableType;
 import org.BastienLQ.SecuredText.dependencies.SecuredTextCommunicationModule;
-import org.BastienLQ.SecuredText.jobs.GcmRefreshJob;
 import org.BastienLQ.SecuredText.jobs.persistence.EncryptingJobSerializer;
 import org.BastienLQ.SecuredText.jobs.requirements.MasterSecretRequirementProvider;
 import org.BastienLQ.SecuredText.jobs.requirements.ServiceRequirementProvider;
@@ -41,8 +40,8 @@ import dagger.ObjectGraph;
 /**
  * Will be called once when the SecuredText process is created.
  *
- * We're using this as an insertion point to patch up the Android PRNG disaster,
- * to initialize the job manager, and to check for GCM registration freshness.
+ * We're using this as an insertion point to patch up the Android PRNG disaster
+ * and to initialize the job manager.
  *
  * @author Moxie Marlinspike
  */
@@ -61,7 +60,6 @@ public class ApplicationContext extends Application implements DependencyInjecto
     initializeLogging();
     initializeDependencyInjection();
     initializeJobManager();
-    initializeGcmCheck();
   }
 
   @Override
@@ -98,14 +96,6 @@ public class ApplicationContext extends Application implements DependencyInjecto
   private void initializeDependencyInjection() {
     this.objectGraph = ObjectGraph.create(new SecuredTextCommunicationModule(this),
                                           new AxolotlStorageModule(this));
-  }
-
-  private void initializeGcmCheck() {
-    if (SecuredTextPreferences.isPushRegistered(this) &&
-        SecuredTextPreferences.getGcmRegistrationId(this) == null)
-    {
-      this.jobManager.add(new GcmRefreshJob(this));
-    }
   }
 
 }
