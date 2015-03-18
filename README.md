@@ -1,9 +1,6 @@
 # SecuredText [![Build Status](https://travis-ci.org/BastienLQ/SecuredText.svg?branch=master)](https://travis-ci.org/BastienLQ/SecuredText)
 
-SecuredText is a messaging app for simple private communication with friends.
-
-SecuredText can use either data (WiFi/3G/4G) or SMS to communicate securely, and all SecuredText
-messages can also be encrypted locally on your device.
+SecuredText is a messaging app for simple private communication with friends to communicate securely.
 
 ## Contributing Bug reports
 We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
