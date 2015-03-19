@@ -55,24 +55,26 @@ import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.crypto.MasterSecret;
 
+import java.util.Locale;
 import java.util.Set;
 
 
 public class ConversationListFragment extends Fragment
   implements LoaderManager.LoaderCallbacks<Cursor>, ActionMode.Callback, ItemClickListener
 {
-
   private MasterSecret         masterSecret;
   private ActionMode           actionMode;
   private RecyclerView         list;
   private ReminderView         reminderView;
   private FloatingActionButton fab;
+  private Locale               locale;
   private String               queryFilter  = "";
 
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
     masterSecret = getArguments().getParcelable("master_secret");
+    locale       = (Locale) getArguments().getSerializable(PassphraseRequiredActionBarActivity.LOCALE_EXTRA);
   }
 
   @Override
@@ -137,7 +139,7 @@ public class ConversationListFragment extends Fragment
   }
 
   private void initializeListAdapter() {
-    list.setAdapter(new ConversationListAdapter(getActivity(), masterSecret, null, this));
+    list.setAdapter(new ConversationListAdapter(getActivity(), masterSecret, locale, null, this));
     list.setRecyclerListener(new RecyclerListener() {
       @Override
       public void onViewRecycled(ViewHolder holder) {

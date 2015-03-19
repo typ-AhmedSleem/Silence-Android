@@ -54,6 +54,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Locale;
 
 /**
  * @author Jake McGinty
@@ -142,7 +143,8 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
       sentDate.setText("-");
       receivedContainer.setVisibility(View.GONE);
     } else {
-      SimpleDateFormat dateFormatter = DateUtils.getDetailedDateFormatter(this);
+      Locale           dateLocale    = dynamicLanguage.getCurrentLocale();
+      SimpleDateFormat dateFormatter = DateUtils.getDetailedDateFormatter(this, dateLocale);
       sentDate.setText(dateFormatter.format(new Date(messageRecord.getDateSent())));
 
       if (messageRecord.getDateReceived() != messageRecord.getDateSent() && !messageRecord.isOutgoing()) {
@@ -164,7 +166,8 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
       toFromRes = R.string.message_details_header__from;
     }
     toFrom.setText(toFromRes);
-    conversationItem.set(masterSecret, messageRecord, new HashSet<MessageRecord>(), new NullSelectionListener(),
+    conversationItem.set(masterSecret, messageRecord, dynamicLanguage.getCurrentLocale(),
+                         new HashSet<MessageRecord>(), new NullSelectionListener(),
                          recipients != messageRecord.getRecipients());
     recipientsList.setAdapter(new MessageDetailsRecipientAdapter(this, masterSecret, messageRecord,
                                                                  recipients));
