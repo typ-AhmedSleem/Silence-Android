@@ -9,6 +9,17 @@ SecuredText focuses on SMS. This fork aims to:
 * Keep SMS encryption
 * Drop Google services dependencies: push messages are not available in SecuredText; if you want to keep them, SecuredText is not for you.
 
+## Migrating from TextSecure to SecuredText
+
+* In TextSecure, export plaintext backup. Warning: the backup will **not** be encrypted.
+* Rename `TextSecurePlaintextBackup.xml` to `SecuredTextPlaintextBackup.xml`.
+* Remove TextSecure.
+* Install SecuredText.
+* In SecuredText, import plaintext backup.
+* Enjoy SecuredText!
+
+Note: You will have to start new secured sessions.
+
 ## Contributing Bug reports
 We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
 
