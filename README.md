@@ -1,6 +1,13 @@
 # SecuredText
 
-SecuredText is a messaging app for simple private communication with friends to communicate securely.
+SecuredText is a messaging app for simple private communication with friends to communicate securely using SMS. This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure), in which SMS encryption is not available anymore.
+
+## Goals of this fork
+
+SecuredText focuses on SMS. This fork aims to:
+
+* Keep SMS encryption
+* Drop Google services dependencies: push messages are not available in SecuredText; if you want to keep them, SecuredText is not for you.
 
 ## Contributing Bug reports
 We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
