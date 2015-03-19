@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="org.BastienLQ.SecuredText"
+          package="org.SecuredText.SecuredText"
       android:versionCode="2"
       android:versionName="0.2.0">
 
-    <permission android:name="org.BastienLQ.SecuredText.ACCESS_SECRETS"
+    <permission android:name="org.SecuredText.SecuredText.ACCESS_SECRETS"
                 android:label="Access to SecuredText Secrets"
                 android:protectionLevel="signature" />
 
-	<uses-permission android:name="org.BastienLQ.SecuredText.ACCESS_SECRETS"/>
+	<uses-permission android:name="org.SecuredText.SecuredText.ACCESS_SECRETS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.WRITE_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -254,7 +254,7 @@
     <receiver android:name=".service.SmsDeliveryListener"
               android:exported="true">
         <intent-filter>
-            <action android:name="org.BastienLQ.SecuredText.services.MESSAGE_SENT"/>
+            <action android:name="org.SecuredText.SecuredText.services.MESSAGE_SENT"/>
         </intent-filter>
     </receiver>
 
@@ -276,7 +276,7 @@
               android:enabled="true"
               android:exported="true">
         <intent-filter>
-            <action android:name="org.BastienLQ.SecuredText.notifications.CLEAR"/>
+            <action android:name="org.SecuredText.SecuredText.notifications.CLEAR"/>
         </intent-filter>
     </receiver>
 
@@ -287,7 +287,7 @@
     <receiver android:name=".service.RegistrationNotifier"
               android:exported="false">
         <intent-filter>
-            <action android:name="org.BastienLQ.SecuredText.REGISTRATION_EVENT" />
+            <action android:name="org.SecuredText.SecuredText.REGISTRATION_EVENT" />
         </intent-filter>
     </receiver>
 
@@ -300,13 +300,13 @@
 
     <receiver android:name=".notifications.MessageNotifier$ReminderReceiver">
         <intent-filter>
-            <action android:name="org.BastienLQ.SecuredText.MessageNotifier.REMINDER_ACTION"/>
+            <action android:name="org.SecuredText.SecuredText.MessageNotifier.REMINDER_ACTION"/>
         </intent-filter>
     </receiver>
 
     <receiver android:name=".notifications.MessageNotifier$DeleteReceiver">
         <intent-filter>
-            <action android:name="org.BastienLQ.SecuredText.MessageNotifier.DELETE_REMINDER_ACTION"/>
+            <action android:name="org.SecuredText.SecuredText.MessageNotifier.DELETE_REMINDER_ACTION"/>
         </intent-filter>
     </receiver>
 </application>

@@ -15,7 +15,7 @@
                 android:title="@string/preferences__make_default_sms_app"
                 android:summary="@string/preferences__make_textsecure_the_default_sms_mms_app" />
 
-    <org.BastienLQ.SecuredText.components.OutgoingSmsPreference
+    <org.SecuredText.SecuredText.components.OutgoingSmsPreference
         android:key="pref_outgoing_sms"
         android:title="@string/preferences__sms_fallback" />
 

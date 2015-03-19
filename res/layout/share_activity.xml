@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <fragment android:id="@+id/fragment_content"
-        android:name="org.BastienLQ.SecuredText.ShareFragment"
+        android:name="org.SecuredText.SecuredText.ShareFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

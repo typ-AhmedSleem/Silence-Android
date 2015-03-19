@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/contact_selection_list_fragment"
-        android:name="org.BastienLQ.SecuredText.PushContactSelectionListFragment">
+        android:name="org.SecuredText.SecuredText.PushContactSelectionListFragment">
         </fragment>
 
 </LinearLayout>

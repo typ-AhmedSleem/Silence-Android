@@ -14,7 +14,7 @@ The following steps should help you (re)build SecuredText from the command line.
 
 1. Checkout the source somewhere on your filesystem with
 
-        git clone https://github.com/BastienLQ/SecuredText.git
+        git clone https://github.com/SecuredText/SecuredText.git
 
 2. Make sure you have the [Android SDK](https://developer.android.com/sdk/index.html) installed somewhere on your system.
 3. Ensure that the following packages are installed from the Android SDK manager:
@@ -51,7 +51,7 @@ Setting up a development environment
 2. Make sure the "Android Support Repository" is installed in the Android Studio SDK.
 3. Make sure the latest "Android SDK build-tools" is installed in the Android Studio SDK.
 4. Create a new Android Studio project. from the Quickstart pannel (use File > Close Project to see it), choose "Checkout from Version Control" then "git".
-5. Paste the URL for the SecuredText project when prompted (https://github.com/BastienLQ/SecuredText.git).
+5. Paste the URL for the SecuredText project when prompted (https://github.com/SecuredText/SecuredText.git).
 6. Android studio should detect the presence of a project file and ask you whether to open it. Click "yes".
 7. Default config options should be good enough.
 8. Project initialisation and build should proceed.

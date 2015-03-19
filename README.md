@@ -1,14 +1,14 @@
-# SecuredText [![Build Status](https://travis-ci.org/BastienLQ/SecuredText.svg?branch=master)](https://travis-ci.org/BastienLQ/SecuredText)
+# SecuredText [![Build Status](https://travis-ci.org/SecuredText/SecuredText.svg?branch=master)](https://travis-ci.org/SecuredText/SecuredText)
 
 SecuredText is a messaging app for simple private communication with friends to communicate securely.
 
 ## Contributing Bug reports
 We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
 
-https://github.com/BastienLQ/SecuredText/issues
+https://github.com/SecuredText/SecuredText/issues
 
 ## Contributing Code
-Instructions on how to setup your development environment and build SecuredText can be found in  [BUILDING.md](https://github.com/BastienLQ/SecuredText/blob/master/BUILDING.md).
+Instructions on how to setup your development environment and build SecuredText can be found in  [BUILDING.md](https://github.com/SecuredText/SecuredText/blob/master/BUILDING.md).
 
 If you're new to the SecuredText codebase, we recommend going through our issues and picking out a simple bug to fix (check the "easy" label in our issues) in order to get yourself familiar.
 

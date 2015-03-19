@@ -4,7 +4,7 @@
              android:layout_height="fill_parent">
 
     <fragment android:id="@+id/fragment_content"
-              android:name="org.BastienLQ.SecuredText.CountrySelectionFragment"
+              android:name="org.SecuredText.SecuredText.CountrySelectionFragment"
               android:layout_width="match_parent"
               android:layout_height="match_parent"/>
 </FrameLayout>
