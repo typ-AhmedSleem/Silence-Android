@@ -1,4 +1,4 @@
-# SecuredText [![Build Status](https://travis-ci.org/SecuredText/SecuredText.svg?branch=master)](https://travis-ci.org/SecuredText/SecuredText)
+# SecuredText
 
 SecuredText is a messaging app for simple private communication with friends to communicate securely.
 
