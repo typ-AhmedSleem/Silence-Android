@@ -13,7 +13,6 @@ SecuredText focuses on SMS. This fork aims to:
 
 * In TextSecure, export plaintext backup. Warning: the backup will **not** be encrypted.
 * Rename `TextSecurePlaintextBackup.xml` to `SecuredTextPlaintextBackup.xml`.
-* Remove TextSecure.
 * Install SecuredText.
 * In SecuredText, import plaintext backup.
 * Enjoy SecuredText!
