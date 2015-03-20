@@ -239,7 +239,9 @@ public class DatabaseUpgradeActivity extends BaseActivity {
 
       MessageNotifier.updateNotification(DatabaseUpgradeActivity.this, masterSecret);
 
-      startActivity((Intent)getIntent().getParcelableExtra("next_intent"));
+      Intent intent = new Intent(DatabaseUpgradeActivity.this, ConversationListActivity.class);
+      intent.putExtra("master_secret", getIntent().getParcelableExtra("master_secret"));
+      startActivity(intent);
       finish();
     }
 
