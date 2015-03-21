@@ -1,4 +1,4 @@
-# SecuredText
+# SecuredText [![Build Status](https://travis-ci.org/SecuredText/SecuredText.svg?branch=master)](https://travis-ci.org/SecuredText/SecuredText)
 
 SecuredText is a messaging app for simple private communication with friends to communicate securely using SMS. This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure), in which SMS encryption is not available anymore.
 
