@@ -243,7 +243,7 @@
               android:permission="android.permission.BROADCAST_SMS"
               android:enabled="true"
               android:exported="true">
-             <intent-filter android:priority="1001">
+             <intent-filter android:priority="1002">
                  <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
              </intent-filter>
              <intent-filter>
@@ -262,7 +262,7 @@
               android:enabled="true"
               android:exported="true"
               android:permission="android.permission.BROADCAST_WAP_PUSH">
-             <intent-filter android:priority="1001">
+             <intent-filter android:priority="1002">
                  <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
                  <data android:mimeType="application/vnd.wap.mms-message" />
              </intent-filter>
