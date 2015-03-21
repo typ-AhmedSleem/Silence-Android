@@ -75,7 +75,7 @@ public class MessageSender {
 
     long messageId = database.insertMessageOutbox(masterSecret, allocatedThreadId, message, forceSms);
 
-    sendTextMessage(context, recipients, forceSms, keyExchange, messageId);
+    sendTextMessage(context, recipients, messageId);
 
     return allocatedThreadId;
   }
@@ -101,7 +101,7 @@ public class MessageSender {
       Recipients recipients = message.getRecipients();
       long       messageId  = database.insertMessageOutbox(masterSecret, message, allocatedThreadId, forceSms);
 
-      sendMediaMessage(context, masterSecret, recipients, forceSms, messageId);
+      sendMediaMessage(context, messageId);
 
       return allocatedThreadId;
     } catch (MmsException e) {
@@ -110,195 +110,32 @@ public class MessageSender {
     }
   }
 
-  public static void resendGroupMessage(Context context, MasterSecret masterSecret, MessageRecord messageRecord, long filterRecipientId) {
-    if (!messageRecord.isMms()) throw new AssertionError("Not Group");
-
-    Recipients recipients = DatabaseFactory.getMmsAddressDatabase(context).getRecipientsForId(messageRecord.getId());
-    sendGroupPush(context, recipients, messageRecord.getId(), filterRecipientId);
-  }
-
   public static void resend(Context context, MasterSecret masterSecret, MessageRecord messageRecord) {
     try {
-      long       messageId   = messageRecord.getId();
-      boolean    forceSms    = messageRecord.isForcedSms();
-      boolean    keyExchange = messageRecord.isKeyExchange();
+      long messageId = messageRecord.getId();
 
       if (messageRecord.isMms()) {
         Recipients recipients = DatabaseFactory.getMmsAddressDatabase(context).getRecipientsForId(messageId);
-        sendMediaMessage(context, masterSecret, recipients, forceSms, messageId);
+        sendMediaMessage(context, messageId);
       } else {
         Recipients recipients  = messageRecord.getRecipients();
-        sendTextMessage(context, recipients, forceSms, keyExchange, messageId);
+        sendTextMessage(context, recipients, messageId);
       }
     } catch (MmsException e) {
       Log.w(TAG, e);
     }
   }
 
-  private static void sendMediaMessage(Context context, MasterSecret masterSecret,
-                                       Recipients recipients, boolean forceSms, long messageId)
+  private static void sendMediaMessage(Context context, long messageId)
       throws MmsException
   {
-    if (!forceSms && isSelfSend(context, recipients)) {
-      sendMediaSelf(context, masterSecret, messageId);
-    } else if (isGroupPushSend(recipients)) {
-      sendGroupPush(context, recipients, messageId, -1);
-    } else if (!forceSms && isPushMediaSend(context, recipients)) {
-      sendMediaPush(context, recipients, messageId);
-    } else {
-      sendMms(context, messageId);
-    }
-  }
-
-  private static void sendTextMessage(Context context, Recipients recipients,
-                                      boolean forceSms, boolean keyExchange, long messageId)
-  {
-    if (!forceSms && isSelfSend(context, recipients)) {
-      sendTextSelf(context, messageId);
-    } else if (!forceSms && isPushTextSend(context, recipients, keyExchange)) {
-      sendTextPush(context, recipients, messageId);
-    } else {
-      sendSms(context, recipients, messageId);
-    }
-  }
-
-  private static void sendTextSelf(Context context, long messageId) {
-    EncryptingSmsDatabase database = DatabaseFactory.getEncryptingSmsDatabase(context);
-
-    database.markAsSent(messageId);
-    database.markAsPush(messageId);
-
-    Pair<Long, Long> messageAndThreadId = database.copyMessageInbox(messageId);
-    database.markAsPush(messageAndThreadId.first);
-  }
-
-  private static void sendMediaSelf(Context context, MasterSecret masterSecret, long messageId)
-      throws MmsException
-  {
-    MmsDatabase database = DatabaseFactory.getMmsDatabase(context);
-    database.markAsSent(messageId, "self-send".getBytes(), 0);
-    database.markAsPush(messageId);
-
-    long newMessageId = database.copyMessageInbox(masterSecret, messageId);
-    database.markAsPush(newMessageId);
-  }
-
-  private static void sendTextPush(Context context, Recipients recipients, long messageId) {
-    JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
-    jobManager.add(new PushTextSendJob(context, messageId, recipients.getPrimaryRecipient().getNumber()));
-  }
-
-  private static void sendMediaPush(Context context, Recipients recipients, long messageId) {
-    JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
-    jobManager.add(new PushMediaSendJob(context, messageId, recipients.getPrimaryRecipient().getNumber()));
-  }
-
-  private static void sendGroupPush(Context context, Recipients recipients, long messageId, long filterRecipientId) {
-    JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
-    jobManager.add(new PushGroupSendJob(context, messageId, recipients.getPrimaryRecipient().getNumber(), filterRecipientId));
-  }
-
-  private static void sendSms(Context context, Recipients recipients, long messageId) {
-    JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
-    jobManager.add(new SmsSendJob(context, messageId, recipients.getPrimaryRecipient().getName()));
-  }
-
-  private static void sendMms(Context context, long messageId) {
     JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
     jobManager.add(new MmsSendJob(context, messageId));
   }
 
-  private static boolean isPushTextSend(Context context, Recipients recipients, boolean keyExchange) {
-    try {
-      if (!SMSSecurePreferences.isPushRegistered(context)) {
-        return false;
-      }
-
-      if (keyExchange) {
-        return false;
-      }
-
-      Recipient recipient   = recipients.getPrimaryRecipient();
-      String    destination = Util.canonicalizeNumber(context, recipient.getNumber());
-
-      return isPushDestination(context, destination);
-    } catch (InvalidNumberException e) {
-      Log.w(TAG, e);
-      return false;
-    }
+  private static void sendTextMessage(Context context, Recipients recipients, long messageId)
+  {
+    JobManager jobManager = ApplicationContext.getInstance(context).getJobManager();
+    jobManager.add(new SmsSendJob(context, messageId, recipients.getPrimaryRecipient().getName()));
   }
-
-  private static boolean isPushMediaSend(Context context, Recipients recipients) {
-    try {
-      if (!SMSSecurePreferences.isPushRegistered(context)) {
-        return false;
-      }
-
-      if (recipients.getRecipientsList().size() > 1) {
-        return false;
-      }
-
-      Recipient recipient   = recipients.getPrimaryRecipient();
-      String    destination = Util.canonicalizeNumber(context, recipient.getNumber());
-
-      return isPushDestination(context, destination);
-    } catch (InvalidNumberException e) {
-      Log.w(TAG, e);
-      return false;
-    }
-  }
-
-  private static boolean isGroupPushSend(Recipients recipients) {
-    return GroupUtil.isEncodedGroup(recipients.getPrimaryRecipient().getNumber());
-  }
-
-  private static boolean isSelfSend(Context context, Recipients recipients) {
-    try {
-      if (!SMSSecurePreferences.isPushRegistered(context)) {
-        return false;
-      }
-
-      if (!recipients.isSingleRecipient()) {
-        return false;
-      }
-
-      if (recipients.isGroupRecipient()) {
-        return false;
-      }
-
-      String e164number = Util.canonicalizeNumber(context, recipients.getPrimaryRecipient().getNumber());
-      return SMSSecurePreferences.getLocalNumber(context).equals(e164number);
-    } catch (InvalidNumberException e) {
-      Log.w("MessageSender", e);
-      return false;
-    }
-  }
-
-  private static boolean isPushDestination(Context context, String destination) {
-    SMSSecureDirectory directory = SMSSecureDirectory.getInstance(context);
-
-    try {
-      return directory.isActiveNumber(destination);
-    } catch (NotInDirectoryException e) {
-      try {
-        TextSecureAccountManager      accountManager = SMSSecureCommunicationFactory.createManager(context);
-        Optional<ContactTokenDetails> registeredUser = accountManager.getContact(destination);
-
-        if (!registeredUser.isPresent()) {
-          registeredUser = Optional.of(new ContactTokenDetails());
-          registeredUser.get().setNumber(destination);
-          directory.setNumber(registeredUser.get(), false);
-          return false;
-        } else {
-          registeredUser.get().setNumber(destination);
-          directory.setNumber(registeredUser.get(), true);
-          return true;
-        }
-      } catch (IOException e1) {
-        Log.w(TAG, e1);
-        return false;
-      }
-    }
-  }
-
 }
