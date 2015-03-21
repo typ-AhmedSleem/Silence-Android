@@ -1,4 +1,9 @@
 language: android
+cache: false
+env:
+  global:
+    - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
+
 android:
   components:
     - platform-tools
