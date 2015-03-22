@@ -168,11 +168,7 @@ public class PushContactSelectionListFragment extends    Fragment
 
   @Override
   public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-    if (getActivity().getIntent().getBooleanExtra(PushContactSelectionActivity.PUSH_ONLY_EXTRA, false)) {
-      return ContactAccessor.getInstance().getCursorLoaderForPushContacts(getActivity(), cursorFilter);
-    } else {
-      return ContactAccessor.getInstance().getCursorLoaderForContacts(getActivity(), cursorFilter);
-    }
+    return ContactAccessor.getInstance().getCursorLoaderForContacts(getActivity(), cursorFilter);
   }
 
   @Override
