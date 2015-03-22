@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="org.smssecure.smssecure"
-      android:versionCode="5"
-      android:versionName="0.3.2">
+      android:versionCode="6"
+      android:versionName="0.3.3">
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
                 android:label="Access to SMSSecure Secrets"
