@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <fragment android:id="@+id/fragment_content"
-        android:name="org.SecuredText.SecuredText.ShareFragment"
+        android:name="org.smssecure.smssecure.ShareFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

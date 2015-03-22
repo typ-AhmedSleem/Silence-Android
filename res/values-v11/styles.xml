@@ -4,11 +4,11 @@
     <style name="Widget.ProgressBar.Horizontal" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
     </style>
 
-    <style name="SecuredTextDialogPrimaryText">
+    <style name="SMSSecureDialogPrimaryText">
         <item name="android:textColor">?conversation_list_item_contact_color</item>
     </style>
 
-    <style name="SecuredTextDialogSecondaryText">
+    <style name="SMSSecureDialogSecondaryText">
         <item name="android:textColor">?conversation_list_item_date_color</item>
     </style>
 

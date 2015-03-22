@@ -16,7 +16,7 @@
 
         <fragment
                 android:id="@+id/fragment_content"
-                android:name="org.SecuredText.SecuredText.ConversationFragment"
+                android:name="org.smssecure.smssecure.ConversationFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@+id/bottom_container" />
@@ -69,7 +69,7 @@
                     android:orientation="horizontal"
                     android:background="?conversation_editor_background">
 
-                <org.SecuredText.SecuredText.components.EmojiToggle
+                <org.smssecure.smssecure.components.EmojiToggle
                         android:id="@+id/emoji_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
@@ -96,7 +96,7 @@
                         android:contentDescription="@string/conversation_activity__compose_description"
                         android:textColor="?conversation_editor_text_color" />
 
-                <org.SecuredText.SecuredText.components.SendButton
+                <org.smssecure.smssecure.components.SendButton
                     android:id="@+id/send_button"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"

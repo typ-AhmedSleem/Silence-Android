@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="org.SecuredText.SecuredText"
+          package="org.smssecure.smssecure"
       android:versionCode="5"
       android:versionName="0.3.2">
 
-    <permission android:name="org.SecuredText.SecuredText.ACCESS_SECRETS"
-                android:label="Access to SecuredText Secrets"
+    <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
+                android:label="Access to SMSSecure Secrets"
                 android:protectionLevel="signature" />
 
-	<uses-permission android:name="org.SecuredText.SecuredText.ACCESS_SECRETS"/>
+	<uses-permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.WRITE_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -32,7 +32,7 @@
     <application android:name=".ApplicationContext"
                  android:icon="@drawable/icon"
                  android:label="@string/app_name"
-                 android:theme="@style/SecuredText.LightTheme">
+                 android:theme="@style/SMSSecure.LightTheme">
 
         <activity android:name=".RoutingActivity"
                   android:theme="@style/NoAnimation.Theme.BlackScreen"
@@ -65,7 +65,7 @@
         </activity>
 
     <activity android:name=".RegistrationProblemsActivity"
-              android:theme="@style/SecuredText.Light.Dialog"
+              android:theme="@style/SMSSecure.Light.Dialog"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".CountrySelectionActivity"
@@ -80,7 +80,7 @@
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".DeviceProvisioningActivity"
-              android:theme="@style/SecuredText.DialogActivity"
+              android:theme="@style/SMSSecure.DialogActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
@@ -133,14 +133,14 @@
     <activity android:name=".PassphraseCreateActivity"
               android:label="@string/AndroidManifest__create_passphrase"
               android:windowSoftInputMode="stateUnchanged"
-              android:theme="@style/SecuredText.IntroTheme"
+              android:theme="@style/SMSSecure.IntroTheme"
               android:launchMode="singleTop"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".PassphrasePromptActivity"
               android:label="@string/AndroidManifest__enter_passphrase"
               android:launchMode="singleTop"
-              android:theme="@style/SecuredText.IntroTheme"
+              android:theme="@style/SMSSecure.IntroTheme"
               android:windowSoftInputMode="stateAlwaysVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -150,7 +150,7 @@
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".AutoInitiateActivity"
-              android:theme="@style/SecuredText.Light.Dialog"
+              android:theme="@style/SMSSecure.Light.Dialog"
               android:label="@string/AndroidManifest__textsecure_detected"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -171,7 +171,7 @@
 
     <activity android:name=".ReceiveKeyActivity"
               android:label="@string/AndroidManifest__complete_key_exchange"
-              android:theme="@style/SecuredText.Light.Dialog"
+              android:theme="@style/SMSSecure.Light.Dialog"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".ApplicationPreferencesActivity"
@@ -254,7 +254,7 @@
     <receiver android:name=".service.SmsDeliveryListener"
               android:exported="true">
         <intent-filter>
-            <action android:name="org.SecuredText.SecuredText.services.MESSAGE_SENT"/>
+            <action android:name="org.smssecure.smssecure.services.MESSAGE_SENT"/>
         </intent-filter>
     </receiver>
 
@@ -276,18 +276,18 @@
               android:enabled="true"
               android:exported="true">
         <intent-filter>
-            <action android:name="org.SecuredText.SecuredText.notifications.CLEAR"/>
+            <action android:name="org.smssecure.smssecure.notifications.CLEAR"/>
         </intent-filter>
     </receiver>
 
     <provider android:name=".providers.PartProvider"
               android:grantUriPermissions="true"
-              android:authorities="org.SecuredText.provider.SecuredText" />
+              android:authorities="org.smssecure.provider.smssecure" />
 
     <receiver android:name=".service.RegistrationNotifier"
               android:exported="false">
         <intent-filter>
-            <action android:name="org.SecuredText.SecuredText.REGISTRATION_EVENT" />
+            <action android:name="org.smssecure.smssecure.REGISTRATION_EVENT" />
         </intent-filter>
     </receiver>
 
@@ -300,13 +300,13 @@
 
     <receiver android:name=".notifications.MessageNotifier$ReminderReceiver">
         <intent-filter>
-            <action android:name="org.SecuredText.SecuredText.MessageNotifier.REMINDER_ACTION"/>
+            <action android:name="org.smssecure.smssecure.MessageNotifier.REMINDER_ACTION"/>
         </intent-filter>
     </receiver>
 
     <receiver android:name=".notifications.MessageNotifier$DeleteReceiver">
         <intent-filter>
-            <action android:name="org.SecuredText.SecuredText.MessageNotifier.DELETE_REMINDER_ACTION"/>
+            <action android:name="org.smssecure.smssecure.MessageNotifier.DELETE_REMINDER_ACTION"/>
         </intent-filter>
     </receiver>
 </application>

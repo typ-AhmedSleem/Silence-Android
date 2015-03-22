@@ -20,11 +20,11 @@ package ws.com.google.android.mms.pdu;
 import android.graphics.Bitmap;
 import android.net.Uri;
 
-import org.SecuredText.SecuredText.crypto.MasterSecret;
-import org.SecuredText.SecuredText.mms.MediaConstraints;
-import org.SecuredText.SecuredText.util.BitmapDecodingException;
-import org.SecuredText.SecuredText.util.BitmapUtil;
-import org.SecuredText.SecuredText.util.Util;
+import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.mms.MediaConstraints;
+import org.smssecure.smssecure.util.BitmapDecodingException;
+import org.smssecure.smssecure.util.BitmapUtil;
+import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
 import java.util.HashMap;

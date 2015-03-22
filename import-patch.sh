@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Import a patch from TextSecure and adapt it for SecuredText
+# Import a patch from TextSecure and adapt it for SMSSecure
 # ../TextSecure must be an updated git tree
 # usage: ./import-patch.sh ID
 

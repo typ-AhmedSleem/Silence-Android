@@ -148,8 +148,8 @@
   <string name="ExportFragment_error_while_writing_to_sd_card">خطأ أثناء الكتابة على بطاقة الذاكرة.</string>
   <string name="ExportFragment_success">تم بنجاح!</string>
   <!--GcmRefreshJob-->
-  <string name="GcmRefreshJob_Permanent_SecuredText_communication_failure">فشل دائما في اتصال تيكست سيكيور!</string>
-  <string name="GcmRefreshJob_SecuredText_was_unable_to_register_with_Google_Play_Services">لم تتم عملية تسجيل تيكست سيكيور مع خدمات جوجل بلاي. تم تقييد اتصال البيانات عبر شبكة الجوال، رجاء محاولة إعادة التسجيل من خلال قائمة إعدادات تيكست سيكيور.</string>
+  <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">فشل دائما في اتصال تيكست سيكيور!</string>
+  <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">لم تتم عملية تسجيل تيكست سيكيور مع خدمات جوجل بلاي. تم تقييد اتصال البيانات عبر شبكة الجوال، رجاء محاولة إعادة التسجيل من خلال قائمة إعدادات تيكست سيكيور.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">مجموعة جديدة</string>
   <string name="GroupCreateActivity_actionbar_update_title">تحديث المجموعة</string>

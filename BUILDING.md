@@ -1,20 +1,20 @@
-Building SecuredText
+Building SMSSecure
 =====================
 
 Basics
 ------
 
-SecuredText uses [Gradle](http://gradle.org) to build the project and to maintain
+SMSSecure uses [Gradle](http://gradle.org) to build the project and to maintain
 dependencies.
 
-Building SecuredText
+Building SMSSecure
 -------------------
 
-The following steps should help you (re)build SecuredText from the command line.
+The following steps should help you (re)build SMSSecure from the command line.
 
 1. Checkout the source somewhere on your filesystem with
 
-        git clone https://github.com/SecuredText/SecuredText.git
+        git clone https://github.com/SMSSecure/SMSSecure.git
 
 2. Make sure you have the [Android SDK](https://developer.android.com/sdk/index.html) installed somewhere on your system.
 3. Ensure that the following packages are installed from the Android SDK manager:
@@ -38,8 +38,8 @@ Source assets tend to be large binary blobs, which are best stored outside of gi
 Sample command for generating our audio placeholder image:
 
 ```bash
-pngs_from_svg.py ic_audio.svg /path/to/SecuredText/res/ 150 "#000" 0.54 _light
-pngs_from_svg.py ic_audio.svg /path/to/SecuredText/res/ 150 "#fff" 1.0 _dark
+pngs_from_svg.py ic_audio.svg /path/to/SMSSecure/res/ 150 "#000" 0.54 _light
+pngs_from_svg.py ic_audio.svg /path/to/SMSSecure/res/ 150 "#fff" 1.0 _dark
 ```
 
 Setting up a development environment
@@ -51,7 +51,7 @@ Setting up a development environment
 2. Make sure the "Android Support Repository" is installed in the Android Studio SDK.
 3. Make sure the latest "Android SDK build-tools" is installed in the Android Studio SDK.
 4. Create a new Android Studio project. from the Quickstart pannel (use File > Close Project to see it), choose "Checkout from Version Control" then "git".
-5. Paste the URL for the SecuredText project when prompted (https://github.com/SecuredText/SecuredText.git).
+5. Paste the URL for the SMSSecure project when prompted (https://github.com/SMSSecure/SMSSecure.git).
 6. Android studio should detect the presence of a project file and ask you whether to open it. Click "yes".
 7. Default config options should be good enough.
 8. Project initialisation and build should proceed.

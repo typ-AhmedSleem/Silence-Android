@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<org.SecuredText.SecuredText.components.SquareLinearLayout
+<org.smssecure.smssecure.components.SquareLinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <org.SecuredText.SecuredText.components.ForegroundImageView
+    <org.smssecure.smssecure.components.ForegroundImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -14,4 +14,4 @@
             android:background="#11ffffff"
             android:contentDescription="@string/media_preview_activity__image_content_description" />
 
-</org.SecuredText.SecuredText.components.SquareLinearLayout>
+</org.smssecure.smssecure.components.SquareLinearLayout>

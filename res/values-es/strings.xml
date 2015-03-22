@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SecuredText</string>
+  <string name="app_name">SMSSecure</string>
   <string name="yes">Sí</string>
   <string name="no">No</string>
   <string name="delete">Borrar</string>
@@ -28,7 +28,7 @@ Tendrá que volver a registrarse con su número de teléfono si quiere volver a 
   <string name="ApplicationPreferencesActivity_sms_enabled">SMS entrantes habilitados</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Pulse para cambiar la aplicación de SMS predeterminada</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS entrantes deshabilitados</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Pulse para que SecuredText sea su aplicación de SMS predeterminada</string>
+  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Pulse para que SMSSecure sea su aplicación de SMS predeterminada</string>
   <string name="ApplicationPreferencesActivity_on">activo</string>
   <string name="ApplicationPreferencesActivity_On">Activo</string>
   <string name="ApplicationPreferencesActivity_off">inactivo</string>
@@ -54,7 +54,7 @@ Tendrá que volver a registrarse con su número de teléfono si quiere volver a 
   <!--ConfirmIdentityDialog-->
   <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">El
 contenido de la clave de identificación de %1$s ha cambiado. Esto puede significar que alguien está
-intentando interceptar sus comunicaciones o simplemente que %2$s ha reinstalado SecuredText y ahora tiene una
+intentando interceptar sus comunicaciones o simplemente que %2$s ha reinstalado SMSSecure y ahora tiene una
 nueva clave de identidad.</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Puede que dese verificar
 este contacto.
@@ -108,9 +108,9 @@ este contacto.
   <string name="ConversationActivity_transport_insecure_mms">MMS no seguro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS seguro</string>
   <string name="ConversationActivity_transport_secure_mms">MMS seguro</string>
-  <string name="ConversationActivity_transport_textsecure">SecuredText</string>
+  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <string name="ConversationActivity_get_with_it">Hágase con él: %s</string>
-  <string name="ConversationActivity_install_textsecure">Instale SecuredText: %s</string>
+  <string name="ConversationActivity_install_textsecure">Instale SMSSecure: %s</string>
   <string name="ConversationActivity_error_leaving_group">Error al dejar el grupo...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalles del mensaje</string>
@@ -130,7 +130,7 @@ Recibido:%4$s</string>
   <string name="ConversationFragment_saving_attachment">Guardando adjunto</string>
   <string name="ConversationFragment_saving_attachment_to_sd_card">Guardando adjunto en el almacenamiento...</string>
   <string name="ConversationFragment_pending">Pendiente...</string>
-  <string name="ConversationFragment_push">Datos (SecuredText)</string>
+  <string name="ConversationFragment_push">Datos (SMSSecure)</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Borrando...</string>
@@ -154,7 +154,7 @@ Recibido:%4$s</string>
   <string name="ExportFragment_export">Exportar</string>
   <string name="ExportFragment_export_plaintext_to_sd_card">¿Exportar texto plano a la tarjeta SD?</string>
   <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Peligro, esto
-exportará a la tarjeta SD el contenido en texto plano de sus mensajes de SecuredText.</string>
+exportará a la tarjeta SD el contenido en texto plano de sus mensajes de SMSSecure.</string>
   <string name="ExportFragment_cancel">Cancelar</string>
   <string name="ExportFragment_exporting">Exportando</string>
   <string name="ExportFragment_exporting_plaintext_to_sd_card">Exportando el texto plano a la tarjeta SD...</string>
@@ -165,15 +165,15 @@ exportará a la tarjeta SD el contenido en texto plano de sus mensajes de Secure
     </string>
   <string name="ExportFragment_success">¡Éxito!</string>
   <!--GcmRefreshJob-->
-  <string name="GcmRefreshJob_Permanent_SecuredText_communication_failure">¡Fallo permanente de comunicación de SecuredText!</string>
-  <string name="GcmRefreshJob_SecuredText_was_unable_to_register_with_Google_Play_Services">SecuredText no pudo registrarse con los Servicios de Google Play. La comunicación sobre el canal de datos ha sido deshabilitada, por favor, intente registrarse de nuevo desde el menú de configuración de SecuredText.</string>
+  <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">¡Fallo permanente de comunicación de SMSSecure!</string>
+  <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">SMSSecure no pudo registrarse con los Servicios de Google Play. La comunicación sobre el canal de datos ha sido deshabilitada, por favor, intente registrarse de nuevo desde el menú de configuración de SMSSecure.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nuevo grupo</string>
   <string name="GroupCreateActivity_actionbar_update_title">Actualizar grupo</string>
   <string name="GroupCreateActivity_group_name_hint">Nombre del grupo</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nuevo grupo de MMS</string>
-  <string name="GroupCreateActivity_contacts_dont_support_push">Ha seleccionado un contacto que no admite grupos de SecuredText, así que este grupo será de MMS.</string>
-  <string name="GroupCreateActivity_you_dont_support_push">No está registrado para usar el canal de datos, así que tiene los grupos SecuredText deshabilitados.</string>
+  <string name="GroupCreateActivity_contacts_dont_support_push">Ha seleccionado un contacto que no admite grupos de SMSSecure, así que este grupo será de MMS.</string>
+  <string name="GroupCreateActivity_you_dont_support_push">No está registrado para usar el canal de datos, así que tiene los grupos SMSSecure deshabilitados.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Un error inesperado hizo fallar la creación del grupo.</string>
   <string name="GroupCreateActivity_contacts_no_members">¡Necesita al menos una persona en su grupo!</string>
   <string name="GroupCreateActivity_contacts_invalid_number">Uno de los miembros de su grupo tiene un número que no puede ser leído correctamente. Por favor arréglelo o elimine ese contacto, e inténtelo de nuevo.</string>
@@ -181,7 +181,7 @@ exportará a la tarjeta SD el contenido en texto plano de sus mensajes de Secure
   <string name="GroupCreateActivity_menu_create_title">Crear grupo</string>
   <string name="GroupCreateActivity_creating_group">Creando %1$s…</string>
   <string name="GroupCreateActivity_updating_group">Actualizando %1$s...</string>
-  <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">No se pueden añadir contactos que no usan SecuredText a un grupo existente de SecuredText.</string>
+  <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">No se pueden añadir contactos que no usan SMSSecure a un grupo existente de SMSSecure.</string>
   <string name="GroupCreateActivity_loading_group_details">Cargando detalles del grupo...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Yo</string>
@@ -192,7 +192,7 @@ exportará a la tarjeta SD el contenido en texto plano de sus mensajes de Secure
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">¿Importar base de datos de SMS del sistema?</string>
   <string name="ImportFragment_this_will_import_messages_from_the_system">Esto importará
-        los mensajes desde la base de datos de SMS del sistema a SecuredText. Si la ha importado
+        los mensajes desde la base de datos de SMS del sistema a SMSSecure. Si la ha importado
         anteriormente, obtendrá mensajes duplicados.
     </string>
   <string name="ImportFragment_import">Importar</string>
@@ -200,7 +200,7 @@ exportará a la tarjeta SD el contenido en texto plano de sus mensajes de Secure
   <string name="ImportFragment_restore_encrypted_backup">¿Restaurar copia de seguridad cifrada?</string>
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
         Restaurar una copia de seguridad cifrada reemplazará completamente sus claves, preferencias y
-        mensajes. Perderá cualquier información que se encuentre en su instalación actual de SecuredText pero no
+        mensajes. Perderá cualquier información que se encuentre en su instalación actual de SMSSecure pero no
        en la copia de seguridad.
     </string>
   <string name="ImportFragment_restore">Restaurar</string>
@@ -220,7 +220,7 @@ importarla de nuevo dará como resultado mensajes duplicados.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">¡No se encontró una clave escaneada!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">¿Instalar Barcode Scanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SecuredText necesita Barcode Scanner para leer códigos QR.</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure necesita Barcode Scanner para leer códigos QR.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Fallo al enviar</string>
   <string name="MessageDetailsRecipient_new_identity">Nueva identidad</string>
@@ -231,7 +231,7 @@ importarla de nuevo dará como resultado mensajes duplicados.</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Mensaje multimedia</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Se recibió un mensaje cifrado con una versión antigua de SecuredText que ya no es admitida.
+  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Se recibió un mensaje cifrado con una versión antigua de SMSSecure que ya no es admitida.
 Por favor pida al remitente que actualice a la versión más reciente y reenvíe el mensaje.</string>
   <string name="MessageRecord_left_group">Ha dejado el grupo.</string>
   <string name="MessageRecord_updated_group">Grupo actualizado.</string>
@@ -256,11 +256,11 @@ Por favor pida al remitente que actualice a la versión más reciente y reenvíe
   <string name="DeviceProvisioningActivity_content_progress_key_error">Código QR no válido.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Introduzca clave de acceso</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Icono de SecuredText</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Icono de SMSSecure</string>
   <string name="PassphrasePromptActivity_ok_button_content_description">Enviar clave de acceso</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">¡Clave de acceso no válida!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La firma en este intercambio de claves es diferente de lo que previamente ha recibido de este contacto. Esto podría significar que alguien está intentando interceptar las comunicaciones o que este contacto simplemente reinstaló SecuredText y ahora tiene una nueva clave de identidad.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La firma en este intercambio de claves es diferente de lo que previamente ha recibido de este contacto. Esto podría significar que alguien está intentando interceptar las comunicaciones o que este contacto simplemente reinstaló SMSSecure y ahora tiene una nueva clave de identidad.</string>
   <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Puede que dese verificar
 este contacto.
 </string>
@@ -271,7 +271,7 @@ de clave completa\' desactivada.
   <string name="ReceiveKeyActivity_processing">Procesando</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Procesando intercambio de claves...</string>
   <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">Conectar con SecuredText</string>
+  <string name="RegistrationActivity_connect_with_textsecure">Conectar con SMSSecure</string>
   <string name="RegistrationActivity_select_your_country">Seleccione su país</string>
   <string name="RegistrationActivity_you_must_specify_your_country_code">Debe especificar su
 código de país
@@ -316,12 +316,12 @@ requieren una cuenta de Google, pero deben tener la aplicación Play Store insta
   <string name="RegistrationProgressActivity_too_many_requests">¡Demasiadas peticiones!</string>
   <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Usted ya ha solicitado recientemente una llamada de voz. Puede pedir otra en 20 minutos.</string>
   <string name="RegistrationProgressActivity_registration_conflict">Confilicto al registrarse</string>
-  <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">Este número ya está registrado en un servidor de SecuredText diferente (¿CyanogenMod?). Debe darse de baja allí antes de registrarse aquí.</string>
+  <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">Este número ya está registrado en un servidor de SMSSecure diferente (¿CyanogenMod?). Debe darse de baja allí antes de registrarse aquí.</string>
   <!--RegistrationService-->
   <string name="RegistrationService_registration_complete">Registro completado</string>
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">El proceso de registro de SecuredText ha finalizado con éxito.</string>
+  <string name="RegistrationService_textsecure_registration_has_successfully_completed">El proceso de registro de SMSSecure ha finalizado con éxito.</string>
   <string name="RegistrationService_registration_error">Error al registrarse</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">El proceso de registro de SecuredText ha encontrado un problema.</string>
+  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">El proceso de registro de SMSSecure ha encontrado un problema.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">¡Se recibió un mensaje corrupto
 de intercambio de claves!
@@ -388,7 +388,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <!--KeyCachingService-->
   <string name="KeyCachingService_textsecure_passphrase_cached">Pulse para abrir.</string>
   <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Pulse para abrir, o pulse el candado para cerrar.</string>
-  <string name="KeyCachingService_passphrase_cached">SecuredText está desbloqueado</string>
+  <string name="KeyCachingService_passphrase_cached">SMSSecure está desbloqueado</string>
   <string name="KeyCachingService_lock">Bloqueado con clave de acceso</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages">(%d) nuevos mensajes</string>
@@ -401,9 +401,9 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MessageNotifier_mark_all_as_read">Marcar todos como leídos</string>
   <string name="MessageNotifier_mark_as_read">Marcar como leídos</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Lo sentimos, ¡la Respuesta Rápida aún no está soportada por SecuredText!</string>
+  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Lo sentimos, ¡la Respuesta Rápida aún no está soportada por SMSSecure!</string>
   <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Ha recibido un mensaje de alguien que tiene soporte para sesiones cifradas de SecuredText. ¿Desea iniciar una sesión segura?</string>
+  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Ha recibido un mensaje de alguien que tiene soporte para sesiones cifradas de SMSSecure. ¿Desea iniciar una sesión segura?</string>
   <string name="auto_initiate_activity__initiate_exchange">Iniciar intercambio</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">CLAVE DE ACCESO ANTERIOR:</string>
@@ -423,7 +423,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">No hay llamadas recientes.</string>
   <!--conversation_activity-->
-  <string name="conversation_activity__type_message_push">Enviar mensaje de SecuredText</string>
+  <string name="conversation_activity__type_message_push">Enviar mensaje de SMSSecure</string>
   <string name="conversation_activity__type_message_sms_secure">Enviar SMS seguro</string>
   <string name="conversation_activity__type_message_sms_insecure">Enviar SMS no seguro</string>
   <string name="conversation_activity__type_message_mms_secure">Enviar MMS seguro</string>
@@ -460,7 +460,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="log_submit_activity__submitting">Enviando</string>
   <string name="log_submit_activity__posting_logs">Publicando registros de actividad en gist...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">¿Le gustaría importar los mensajes de texto existentes a la base de datos cifrada de SecuredText?</string>
+  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">¿Le gustaría importar los mensajes de texto existentes a la base de datos cifrada de SMSSecure?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La base de datos de sistema por defecto no será modificada o alterada de ningún modo.</string>
   <string name="database_migration_activity__skip">Saltar</string>
   <string name="database_migration_activity__import">Importar</string>
@@ -477,7 +477,7 @@ Exportar a la tarjeta SD una copia de seguridad en texto plano compatible con \'
     </string>
   <string name="import_fragment__import_encrypted_backup">Importar copia de seguridad cifrada</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-       Restaurar una copia de seguridad cifrada previamente exportada desde SecuredText.
+       Restaurar una copia de seguridad cifrada previamente exportada desde SMSSecure.
     </string>
   <string name="import_fragment__import_plaintext_backup">Importar copia de seguridad en texto plano</string>
   <string name="import_fragment__import_a_plaintext_backup_file">
@@ -501,13 +501,13 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desbloquear</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SecuredText necesita los datos de configuración de MMS para poder enviar mensajes de grupo a través de su proveedor de telefonía. Su dispositivo no hace pública esta información, cosa que ocurre ocasionalmente para dispositivos bloqueados y otras configuraciones restrictivas.</string>
+  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necesita los datos de configuración de MMS para poder enviar mensajes de grupo a través de su proveedor de telefonía. Su dispositivo no hace pública esta información, cosa que ocurre ocasionalmente para dispositivos bloqueados y otras configuraciones restrictivas.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Para enviar contenido multimedia y mensajes de grupo haga click en \'OK\' y realice la configuración requerida. Las opciones de MMS de su proveedor de telefonía pueden ser encontradas normalmente buscando el \'APN de su proveedor\'. Solo necesitará hacer esto una vez.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Completo</string>
   <!--registration_activity-->
   <string name="registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users">
-Registrarse es gratuito e incrementa la privacidad al enviar mensajes a otros usuarios de SecuredText. Por favor, verifique su número de teléfono.
+Registrarse es gratuito e incrementa la privacidad al enviar mensajes a otros usuarios de SMSSecure. Por favor, verifique su número de teléfono.
 </string>
   <string name="registration_activity__your_country">SU PAÍS</string>
   <string name="registration_activity__your_country_code_and_phone_number">SU CÓDIGO DE PAÍS Y
@@ -525,7 +525,7 @@ son:
   <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
 Algunos clientes de mensajería de terceros, como Handcent o GoSMS, se comportan pobremente e
 interceptan todos los SMS entrantes. Compruebe si ha recibido un mensaje que empiece
-por \'Your SecuredText verification code:\' y, en tal caso, necesitará configurar su
+por \'Your SMSSecure verification code:\' y, en tal caso, necesitará configurar su
 cliente de terceros para que dejé pasar los mensajes.
 </string>
   <string name="registration_problems__incorrect_number">Número incorrecto.</string>
@@ -535,12 +535,12 @@ para su región.
     </string>
   <string name="registration_problems__google_voice">Google Voice.</string>
   <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">
-SecuredText no funcionará con números de Google Voice.
+SMSSecure no funcionará con números de Google Voice.
     </string>
   <!--registration_progress_activity-->
   <string name="registration_progress_activity__voice_verification">Verificación por voz</string>
   <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">
-SecuredText también puede llamarle para verificar su número. Pulse \"Llamarme\' e introduzca
+SMSSecure también puede llamarle para verificar su número. Pulse \"Llamarme\' e introduzca
 debajo el código de seis dígitos que escuche.
     </string>
   <string name="registration_progress_activity__verify">Verificar</string>
@@ -548,7 +548,7 @@ debajo el código de seis dígitos que escuche.
   <string name="registration_progress_activity__edit_number">Editar número</string>
   <string name="registration_progress_activity__connectivity_error">Fallo de conectividad.</string>
   <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">
-SecuredText no se pudo conectar al servicio push.
+SMSSecure no se pudo conectar al servicio push.
 
     </string>
   <string name="registration_progress_activity__some_possible_problems_include">Algunos posibles
@@ -559,7 +559,7 @@ problemas son:
 a la red.
     </string>
   <string name="registration_progress_activity__your_device_needs_network_connectivity">Su
-dispositivo necesita conectividad a la red para usar esta característica de SecuredText. Compruebe
+dispositivo necesita conectividad a la red para usar esta característica de SMSSecure. Compruebe
 que está conectado a 3G o Wi-Fi.
 
 </string>
@@ -567,10 +567,10 @@ que está conectado a 3G o Wi-Fi.
 </string>
   <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
 Si está conectado vía Wi-Fi, es posible que haya un cortafuegos bloqueando el acceso al
-servidor de SecuredText. Pruebe con otra red o con los datos móviles.
+servidor de SMSSecure. Pruebe con otra red o con los datos móviles.
 </string>
   <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-SecuredText ahora verificará automáticamente su número de teléfono con un mensaje SMS de confirmación.
+SMSSecure ahora verificará automáticamente su número de teléfono con un mensaje SMS de confirmación.
 </string>
   <string name="registration_progress_activity__connecting">Conectando...</string>
   <string name="registration_progress_activity__waiting_for_sms_verification">Esperando al SMS
@@ -582,7 +582,7 @@ podría llevar un rato. Por favor, tenga paciencia, le notificaremos cuando su v
 
     </string>
   <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">
-El proceso de registro de SecuredText expiró mientras esperaba el mensaje SMS de verificación.
+El proceso de registro de SMSSecure expiró mientras esperaba el mensaje SMS de verificación.
     </string>
   <string name="registration_progress_activity__sms_verification_failed">Fallo en la verificación
 por SMS.
@@ -610,7 +610,7 @@ por SMS.
   <string name="AndroidManifest__create_passphrase">Crear clave de acceso</string>
   <string name="AndroidManifest__enter_passphrase">Introduzca clave de acceso</string>
   <string name="AndroidManifest__select_contacts">Seleccionar contactos</string>
-  <string name="AndroidManifest__textsecure_detected">SecuredText detectado</string>
+  <string name="AndroidManifest__textsecure_detected">SMSSecure detectado</string>
   <string name="AndroidManifest__public_identity_key">Clave pública de identidad</string>
   <string name="AndroidManifest__change_passphrase">Cambiar clave de acceso</string>
   <string name="AndroidManifest__verify_identity">Verificar identidad</string>
@@ -639,8 +639,8 @@ por SMS.
   <string name="preferences__push_sms_category">Push y SMS</string>
   <string name="preferences__pref_all_sms_title">Recibir todos los SMS</string>
   <string name="preferences__pref_all_mms_title">Recibir todos los MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Usar SecuredText para ver y guardar todos los mensajes de texto entrantes</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Usar SecuredText para ver y guardar todos los mensajes multimedia entrantes</string>
+  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Usar SMSSecure para ver y guardar todos los mensajes de texto entrantes</string>
+  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Usar SMSSecure para ver y guardar todos los mensajes multimedia entrantes</string>
   <string name="preferences__input_settings">Preferencias de escritura</string>
   <string name="preferences__enable_enter_key_title">Habilitar tecla Intro</string>
   <string name="preferences__replace_smiley_with_enter_key">Reemplazar la tecla de emoticono con una tecla Intro</string>
@@ -726,20 +726,20 @@ por SMS.
   <string name="preferences__language">Idioma</string>
   <string name="preferences__language_summary">Idioma %s</string>
   <string name="preferences__make_default_sms_app">Establecer como la aplicación SMS predeterminada</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Establece a SecuredText como la aplicación SMS/MMS predeterminada de su sistema.</string>
+  <string name="preferences__make_textsecure_the_default_sms_mms_app">Establece a SMSSecure como la aplicación SMS/MMS predeterminada de su sistema.</string>
   <string name="preferences__use_data_channel">Mensajes push</string>
   <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-Incremente la privacidad y evite tarifas SMS al usar el canal de datos para comunicarse con otros usuarios de SecuredText
+Incremente la privacidad y evite tarifas SMS al usar el canal de datos para comunicarse con otros usuarios de SMSSecure
 </string>
   <string name="preferences__sms_fallback">SMS/MMS saliente</string>
   <string name="preferences__submit_debug_log">Enviar registro de depuración</string>
-  <string name="preferences__sms_outgoing_push_users">Usuarios de SecuredText</string>
+  <string name="preferences__sms_outgoing_push_users">Usuarios de SMSSecure</string>
   <string name="preferences__sms_fallback_push_users_ask">preguntar primero</string>
   <string name="preferences__sms_fallback_push_users_no_mms">sin MMS</string>
   <string name="preferences__sms_outgoing_push_users_description">Enviar SMS seguros si se perdió la conectividad de datos</string>
   <string name="preferences__sms_fallback_ask_before_sending_sms_mms">Preguntar antes de enviar SMS/MMS</string>
   <string name="preferences__sms_fallback_never_send_mms">Nunca enviar MMS</string>
-  <string name="preferences__sms_fallback_non_push_users">Usuarios que no son de SecuredText</string>
+  <string name="preferences__sms_fallback_non_push_users">Usuarios que no son de SMSSecure</string>
   <string name="preferences__sms_fallback_nobody">Nadie</string>
   <string name="preferences__support_wifi_calling">Modo de compatibilidad \'Llamada por WiFi\'</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Habilítelo si su dispositivo utiliza entrega de SMS/MMS vía WiFi (actívelo sólo cuando \'Llamada por WiFi\' esté activada en su dispositivo).</string>
@@ -757,7 +757,7 @@ Incremente la privacidad y evite tarifas SMS al usar el canal de datos para comu
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Actualizar lista de contactos</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_textsecure_message">Enviar mensaje de SecuredText</string>
+  <string name="conversation_button_context__send_textsecure_message">Enviar mensaje de SMSSecure</string>
   <string name="conversation_button_context__send_secure_sms">Enviar SMS seguro</string>
   <string name="conversation_button_context__send_insecure_sms">Enviar mensaje SMS no seguro</string>
   <string name="conversation_button_context__send_secure_mms">Enviar MMS seguro</string>
@@ -816,13 +816,13 @@ Incremente la privacidad y evite tarifas SMS al usar el canal de datos para comu
   <string name="text_secure_normal__menu_clear_passphrase">Bloquear</string>
   <string name="text_secure_normal__mark_all_as_read">Marcar todos como leídos</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">¡Su versión de SecuredText ha expirado!</string>
+  <string name="reminder_header_expired_build">¡Su versión de SMSSecure ha expirado!</string>
   <string name="reminder_header_expired_build_details">Los mensajes ya no se enviarán con éxito, por favor, actualice a la versión más reciente.</string>
   <string name="reminder_header_sms_default_title">¿Usar como aplicación de SMS por defecto?</string>
-  <string name="reminder_header_sms_default_text">Pulse para hacer que SecuredText sea su aplicación de SMS predeterminada.</string>
+  <string name="reminder_header_sms_default_text">Pulse para hacer que SMSSecure sea su aplicación de SMS predeterminada.</string>
   <string name="reminder_header_sms_import_title">¿Importar SMS del sistema?</string>
   <string name="reminder_header_sms_import_text">Pulse para copiar los mensajes SMS de su teléfono en su base de datos cifrada.</string>
-  <string name="reminder_header_push_title">¿Habilitar mensajes de SecuredText?</string>
+  <string name="reminder_header_push_title">¿Habilitar mensajes de SMSSecure?</string>
   <string name="reminder_header_push_text">Pulse para entrega instantánea, privacidad más robusta y sin cargos por SMS.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Usted</string>
