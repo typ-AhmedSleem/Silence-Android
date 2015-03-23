@@ -450,10 +450,6 @@
     <!-- QuickResponseService -->
     <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Sorry, Quick Response is not yet supported by SMSSecure!</string>
 
-    <!-- auto_initiate_activity -->
-    <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">You have received a message from someone who supports SMSSecure encrypted sessions.  Would you like to initiate a secure session?</string>
-    <string name="auto_initiate_activity__initiate_exchange">Initiate exchange</string>
-
     <!-- change_passphrase_activity -->
     <string name="change_passphrase_activity__old_passphrase">OLD PASSPHRASE:</string>
     <string name="change_passphrase_activity__new_passphrase">NEW PASSPHRASE:</string>
@@ -683,7 +679,6 @@
     <string name="AndroidManifest__create_passphrase">Create passphrase</string>
     <string name="AndroidManifest__enter_passphrase">Enter passphrase</string>
     <string name="AndroidManifest__select_contacts">Select contacts</string>
-    <string name="AndroidManifest__textsecure_detected">SMSSecure detected</string>
     <string name="AndroidManifest__public_identity_key">Public identity key</string>
     <string name="AndroidManifest__change_passphrase">Change passphrase</string>
     <string name="AndroidManifest__verify_identity">Verify identity</string>

@@ -151,7 +151,7 @@
 
     <activity android:name=".AutoInitiateActivity"
               android:theme="@style/SMSSecure.Light.Dialog"
-              android:label="@string/AndroidManifest__textsecure_detected"
+              android:label=""
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".ViewIdentityActivity"
