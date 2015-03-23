@@ -120,7 +120,9 @@ public class SMSSecurePreferences {
   }
 
   public static boolean isFallbackSmsAllowed(Context context) {
-    return getBooleanPreference(context, FALLBACK_SMS_ALLOWED_PREF, true);
+    //TODO: Remove push
+    return false;
+    //return getBooleanPreference(context, FALLBACK_SMS_ALLOWED_PREF, true);
   }
 
   public static void setFallbackSmsAllowed(Context context, boolean allowed) {
@@ -128,7 +130,9 @@ public class SMSSecurePreferences {
   }
 
   public static boolean isFallbackSmsAskRequired(Context context) {
-    return getBooleanPreference(context, FALLBACK_SMS_ASK_REQUIRED_PREF, false);
+    //TODO: Remove push
+    return false;
+    //return getBooleanPreference(context, FALLBACK_SMS_ASK_REQUIRED_PREF, false);
   }
 
   public static void setFallbackSmsAskRequired(Context context, boolean required) {
@@ -136,7 +140,9 @@ public class SMSSecurePreferences {
   }
 
   public static boolean isFallbackMmsEnabled(Context context) {
-    return getBooleanPreference(context, FALLBACK_MMS_ENABLED_PREF, true);
+    //TODO: Remove push
+    return true;
+    //return getBooleanPreference(context, FALLBACK_MMS_ENABLED_PREF, true);
   }
 
   public static void setFallbackMmsEnabled(Context context, boolean enabled) {
@@ -144,7 +150,9 @@ public class SMSSecurePreferences {
   }
 
   public static boolean isDirectSmsAllowed(Context context) {
-    return getBooleanPreference(context, DIRECT_SMS_ALLOWED_PREF, true);
+    //TODO: Remove push
+    return true;
+    //return getBooleanPreference(context, DIRECT_SMS_ALLOWED_PREF, true);
   }
 
   public static void setDirectSmsAllowed(Context context, boolean allowed) {
