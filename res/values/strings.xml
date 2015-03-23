@@ -103,14 +103,11 @@
     <string name="ConversationActivity_transport_insecure_mms">Insecure MMS</string>
     <string name="ConversationActivity_transport_secure_sms">Secure SMS</string>
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
-    <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
     <string name="ConversationActivity_install_smssecure">Install SMSSecure: %s</string>
     <string name="ConversationActivity_error_leaving_group">Error leaving group...</string>
 
     <!-- ConversationFragment -->
     <string name="ConversationFragment_message_details">Message details</string>
-    <string name="ConversationFragment_transport_s_sent_received_s">Transport: %1$s\nSent/Received: %2$s</string>
-    <string name="ConversationFragment_sender_s_transport_s_sent_s_received_s">Sender: %1$s\nTransport: %2$s\nSent: %3$s\nReceived: %4$s</string>
     <string name="ConversationFragment_confirm_message_delete">Confirm message delete</string>
     <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Are you sure that you want to permanently delete all selected messages?</string>
     <string name="ConversationFragment_save_to_sd_card">Save to storage?</string>
@@ -121,7 +118,6 @@
     <string name="ConversationFragment_saving_attachment">Saving attachment</string>
     <string name="ConversationFragment_saving_attachment_to_sd_card">Saving attachment to storage...</string>
     <string name="ConversationFragment_pending">Pending...</string>
-    <string name="ConversationFragment_push">Data (SMSSecure)</string>
     <string name="ConversationFragment_mms">MMS</string>
     <string name="ConversationFragment_sms">SMS</string>
     <string name="ConversationFragment_deleting">Deleting...</string>
@@ -380,7 +376,6 @@
     <string name="contact_selection_recent_activity__no_recent_calls">No recent calls.</string>
 
     <!-- conversation_activity -->
-    <string name="conversation_activity__type_message_push">Send SMSSecure message</string>
     <string name="conversation_activity__type_message_sms_secure">Send secure SMS</string>
     <string name="conversation_activity__type_message_sms_insecure">Send unsecured SMS</string>
     <string name="conversation_activity__type_message_mms_secure">Send secure MMS</string>
@@ -633,7 +628,6 @@
     <string name="push_directory__menu_refresh">Refresh contact list</string>
 
     <!-- conversation_button_context -->
-    <string name="conversation_button_context__send_textsecure_message">Send SMSSecure message</string>
     <string name="conversation_button_context__send_secure_sms">Send secure SMS</string>
     <string name="conversation_button_context__send_insecure_sms">Send unsecured SMS</string>
     <string name="conversation_button_context__send_secure_mms">Send secure MMS</string>
