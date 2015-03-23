@@ -35,7 +35,7 @@
                         android:paddingLeft="4dip"
                         android:paddingRight="4dip"
                         android:src="@drawable/alert"
-                        android:contentDescription="@string/registration_progress_activity__alert"/>
+                        android:contentDescription=""/>
 
                 <TextView
                         style="@style/Registration.Constant"
@@ -45,7 +45,7 @@
                         android:layout_toRightOf="@id/alert"
                         android:paddingLeft="4.0dip"
                         android:paddingRight="8.0dip"
-                        android:text="@string/registration_progress_activity__sms_verification_failed"
+                        android:text=""
                         android:textColor="#333333"
                         android:textSize="16.0sp" />
 
@@ -57,7 +57,7 @@
                         android:layout_below="@+id/alert"
                         android:paddingLeft="4dip"
                         android:paddingRight="4dip"
-                        android:text="@string/registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message" />
+                        android:text="" />
             </RelativeLayout>
 
 
@@ -73,7 +73,7 @@
                            android:paddingLeft="4dip"
                            android:paddingRight="4dip"
                            android:src="@drawable/telephone"
-                           android:contentDescription="@string/registration_progress_activity__telephone"/>
+                           android:contentDescription=""/>
 
                 <TextView style="@style/Registration.Constant"
                           android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                           android:layout_toRightOf="@id/telephone"
                           android:paddingLeft="4dip"
                           android:paddingRight="8dip"
-                          android:text="@string/registration_progress_activity__voice_verification"
+                          android:text=""
                           android:textColor="#333333"
                           android:textSize="16sp"/>
 
@@ -94,7 +94,7 @@
                           android:paddingLeft="4dip"
                           android:paddingRight="4dip"
                           android:paddingBottom="10dip"
-                          android:text="@string/registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number"/>
+                          android:text=""/>
 
                 <LinearLayout android:id="@+id/code_container"
                               android:orientation="horizontal"
@@ -113,7 +113,7 @@
                     <Button android:id="@+id/verify_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/registration_progress_activity__verify"
+                            android:text=""
                             android:enabled="false"/>
 
                 </LinearLayout>
@@ -126,7 +126,7 @@
                         android:paddingLeft="5dip"
                         android:paddingRight="5dip"
                         android:layout_marginTop="10dip"
-                        android:text="@string/registration_progress_activity__call_me"/>
+                        android:text=""/>
 
                 <Button
                         android:id="@+id/verification_failure_edit_button"
@@ -136,7 +136,7 @@
                         android:layout_marginTop="5dip"
                         android:layout_marginBottom="10.0dip"
                         android:gravity="center"
-                        android:text="@string/registration_progress_activity__edit_number"
+                        android:text=""
                         android:textStyle="bold"
                         android:layout_below="@id/call_button"/>
             </RelativeLayout>
@@ -167,7 +167,7 @@
                         android:paddingLeft="4dip"
                         android:paddingRight="4dip"
                         android:src="@drawable/alert"
-                        android:contentDescription="@string/registration_progress_activity__alert"/>
+                        android:contentDescription=""/>
 
                 <TextView
                         style="@style/Registration.Constant"
@@ -177,7 +177,7 @@
                         android:layout_toRightOf="@id/connectivity_alert"
                         android:paddingLeft="4.0dip"
                         android:paddingRight="8.0dip"
-                        android:text="@string/registration_progress_activity__connectivity_error"
+                        android:text=""
                         android:textColor="#333333"
                         android:textSize="16.0sp" />
 
@@ -188,7 +188,7 @@
                         android:layout_below="@+id/connectivity_alert"
                         android:paddingLeft="4dip"
                         android:paddingRight="4dip"
-                        android:text="@string/registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service" />
+                        android:text="" />
             </RelativeLayout>
 
             <Button
@@ -198,7 +198,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="10.0dip"
                     android:gravity="center"
-                    android:text="@string/registration_progress_activity__edit_number"
+                    android:text=""
                     android:textStyle="bold" />
 
             <TextView
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dip"
-                    android:text="@string/registration_progress_activity__some_possible_problems_include" />
+                    android:text="" />
 
             <TableLayout
                     android:layout_width="fill_parent"
@@ -230,7 +230,7 @@
                                 style="@style/Registration.Description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/registration_progress_activity__no_network_connectivity"
+                                android:text=""
                                 android:textStyle="bold" />
 
                         <TextView
@@ -238,7 +238,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingRight="10dip"
-                                android:text="@string/registration_progress_activity__your_device_needs_network_connectivity" />
+                                android:text="" />
                     </LinearLayout>
                 </TableRow>
 
@@ -260,7 +260,7 @@
                                 style="@style/Registration.Description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/registration_progress_activity__restrictive_firewall"
+                                android:text=""
                                 android:textStyle="bold" />
 
                         <TextView
@@ -268,7 +268,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingRight="10dip"
-                                android:text="@string/registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall" />
+                                android:text="" />
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
@@ -289,7 +289,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dip"
                     android:paddingLeft="5dip"
-                    android:text="@string/registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message" />
+                    android:text="" />
 
             <TableLayout
                     android:layout_width="fill_parent"
@@ -318,7 +318,7 @@
                                 android:paddingRight="4dip"
                                 android:src="@drawable/check_dark"
                                 android:visibility="invisible"
-                                android:contentDescription="@string/registration_progress_activity__check"/>
+                                android:contentDescription=""/>
 
                         <ProgressBar
                                 android:id="@+id/connecting_progress"
@@ -340,7 +340,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="4.0dip"
                             android:paddingRight="8.0dip"
-                            android:text="@string/registration_progress_activity__connecting"
+                            android:text=""
                             android:textSize="16.0sp" />
                 </TableRow>
 
@@ -362,7 +362,7 @@
                                 android:paddingRight="4dip"
                                 android:src="@drawable/check_dark"
                                 android:visibility="invisible"
-                                android:contentDescription="@string/registration_progress_activity__check"/>
+                                android:contentDescription=""/>
 
                         <ProgressBar
                                 android:id="@+id/verification_progress"
@@ -384,7 +384,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="4.0dip"
                             android:paddingRight="8.0dip"
-                            android:text="@string/registration_progress_activity__waiting_for_sms_verification"
+                            android:text=""
                             android:textSize="16.0sp" />
                 </TableRow>
 
@@ -406,7 +406,7 @@
                                 android:paddingRight="4dip"
                                 android:src="@drawable/check_dark"
                                 android:visibility="invisible"
-                                android:contentDescription="@string/registration_progress_activity__check"/>
+                                android:contentDescription=""/>
 
                         <ProgressBar
                                 android:id="@+id/generating_keys_progress"
@@ -428,7 +428,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="4.0dip"
                             android:paddingRight="8.0dip"
-                            android:text="@string/registration_progress_activity__generating_keys"
+                            android:text=""
                             android:textSize="16.0sp" />
                 </TableRow>
 
@@ -450,7 +450,7 @@
                                 android:paddingRight="4dip"
                                 android:src="@drawable/check_dark"
                                 android:visibility="invisible"
-                                android:contentDescription="@string/registration_progress_activity__check"/>
+                                android:contentDescription=""/>
 
                         <ProgressBar
                                 android:id="@+id/gcm_registering_progress"
@@ -472,7 +472,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="4.0dip"
                             android:paddingRight="8.0dip"
-                            android:text="@string/registration_progress_activity__registering_with_server"
+                            android:text=""
                             android:textSize="16.0sp" />
                 </TableRow>
 
@@ -483,7 +483,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dip"
-                    android:text="@string/registration_progress_activity__this_couild_take_a_moment_please_be_patient" />
+                    android:text="" />
 
             <RelativeLayout
                     android:id="@+id/timer_progress_layout"
@@ -506,7 +506,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:text="@string/registration_progress_activity__waiting_for_sms_verification"
+                        android:text=""
                         android:textAllCaps="true"
                         android:textSize="12.0sp"
                         android:textStyle="normal" />
@@ -529,7 +529,7 @@
                     android:layout_weight="1.0"
                     android:gravity="center"
                     android:visibility="gone"
-                    android:text="@string/registration_progress_activity__edit_number"
+                    android:text=""
                     android:textStyle="bold" />
         </LinearLayout>
     </FrameLayout>

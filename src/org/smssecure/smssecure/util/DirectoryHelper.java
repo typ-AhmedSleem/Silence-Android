@@ -23,14 +23,12 @@ public class DirectoryHelper {
   public static void refreshDirectoryWithProgressDialog(final Context context, final DirectoryUpdateFinishedListener listener) {
     if (!SMSSecurePreferences.isPushRegistered(context)) {
       Toast.makeText(context.getApplicationContext(),
-                     context.getString(R.string.SingleContactSelectionActivity_you_are_not_registered_with_the_push_service),
+                     "",
                      Toast.LENGTH_LONG).show();
       return;
     }
 
-    new ProgressDialogAsyncTask<Void,Void,Void>(context,
-                                                R.string.SingleContactSelectionActivity_updating_directory,
-                                                R.string.SingleContactSelectionActivity_updating_push_directory)
+    new ProgressDialogAsyncTask<Void,Void,Void>(context, "", "")
     {
       @Override
       protected Void doInBackground(Void... voids) {

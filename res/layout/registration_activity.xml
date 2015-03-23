@@ -16,7 +16,7 @@
         <TextView style="@style/Registration.Label"
                   android:layout_width="fill_parent"
                   android:textAllCaps="true"
-                  android:text="@string/registration_activity__your_country" />
+                  android:text="" />
 
         <Spinner android:id="@+id/country_spinner"
                  android:layout_width="fill_parent"
@@ -26,7 +26,7 @@
         <TextView style="@style/Registration.Label"
                   android:layout_width="fill_parent"
                   android:textAllCaps="true"
-                  android:text="@string/registration_activity__your_country_code_and_phone_number" />
+                  android:text="" />
 
         <LinearLayout android:orientation="horizontal"
                       android:layout_width="fill_parent"
@@ -52,7 +52,7 @@
                       android:layout_height="wrap_content"
                       android:layout_weight="1"
                       android:inputType="phone"
-                      android:hint="@string/registration_activity__phone_number"
+                      android:hint=""
                       android:gravity="center"
                       android:singleLine="true"/>
 
@@ -62,12 +62,12 @@
                   android:layout_width="fill_parent"
                   android:layout_marginBottom="8dip"
                   android:layout_marginTop="16dip"
-                  android:text="@string/registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users"/>
+                  android:text=""/>
 
         <TextView style="@style/Registration.Description"
                   android:layout_width="fill_parent"
                   android:layout_marginBottom="16dip"
-                  android:text="@string/registration_activity__registration_will_transmit_some_contact_information_to_the_server_temporariliy"/>
+                  android:text=""/>
 
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                       android:orientation="horizontal">
 
             <Button android:id="@+id/skipButton"
-                    android:text="@string/registration_activity__skip"
+                    android:text=""
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dip"
@@ -85,7 +85,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <Button android:id="@+id/registerButton"
-                    android:text="@string/registration_activity__register"
+                    android:text=""
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
