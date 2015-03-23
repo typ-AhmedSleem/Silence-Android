@@ -120,8 +120,7 @@
     <string name="ConversationActivity_transport_secure_sms">Secure SMS</string>
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
     <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
-    <string name="ConversationActivity_get_with_it">Get with it: %s</string>
-    <string name="ConversationActivity_install_textsecure">Install SMSSecure: %s</string>
+    <string name="ConversationActivity_install_smssecure">Install SMSSecure: %s</string>
     <string name="ConversationActivity_error_leaving_group">Error leaving group...</string>
 
     <!-- ConversationFragment -->
