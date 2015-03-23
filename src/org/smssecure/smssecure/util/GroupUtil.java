@@ -33,7 +33,7 @@ public class GroupUtil {
 
   public static String getDescription(Context context, String encodedGroup) {
     if (encodedGroup == null) {
-      return context.getString(R.string.GroupUtil_group_updated);
+      return "";
     }
 
     try {
@@ -43,25 +43,25 @@ public class GroupUtil {
       String        title        = groupContext.getName();
 
       if (!members.isEmpty()) {
-        description.append(context.getString(R.string.GroupUtil_joined_the_group, Util.join(members, ", ")));
+        description.append("");
       }
 
       if (title != null && !title.trim().isEmpty()) {
         if (description.length() > 0) description.append(" ");
-        description.append(context.getString(R.string.GroupUtil_title_is_now, title));
+        description.append("");
       }
 
       if (description.length() > 0) {
         return description.toString();
       } else {
-        return context.getString(R.string.GroupUtil_group_updated);
+        return "";
       }
     } catch (InvalidProtocolBufferException e) {
       Log.w("GroupUtil", e);
-      return context.getString(R.string.GroupUtil_group_updated);
+      return "";
     } catch (IOException e) {
       Log.w("GroupUtil", e);
-      return context.getString(R.string.GroupUtil_group_updated);
+      return "";
     }
   }
 }

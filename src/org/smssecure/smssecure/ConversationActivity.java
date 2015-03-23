@@ -435,10 +435,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setTitle(getString(R.string.ConversationActivity_leave_group));
+    builder.setTitle("");
     builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_info_icon));
     builder.setCancelable(true);
-    builder.setMessage(getString(R.string.ConversationActivity_are_you_sure_you_want_to_leave_this_group));
+    builder.setMessage("");
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
