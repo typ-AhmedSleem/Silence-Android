@@ -613,8 +613,7 @@
     <!-- contact_selection_list -->
     <string name="contact_selection_list__menu_select_all">Select all</string>
     <string name="contact_selection_list__menu_unselect_all">Unselect all</string>
-    <string name="contact_selection_list__header_textsecure_users">TEXTSECURE USERS</string>
-    <string name="contact_selection_list__header_other">ALL CONTACTS</string>
+    <string name="contact_selection_list__header">ALL CONTACTS</string>
     <string name="contact_selection_list__unknown_contact">New message to...</string>
 
     <!-- contact_selection -->
