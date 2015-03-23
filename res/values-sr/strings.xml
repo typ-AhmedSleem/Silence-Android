@@ -609,7 +609,7 @@
   <string name="preferences__enable_passphrase">Омогући лозинку</string>
   <string name="preferences__passphrase_summary">Лозинка %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Омогући локално шифровање порука и кључева</string>
-  <string name="preferences__screen_security">Сигурност екрана</string>
+  <string name="preferences__screen_security">Безбедност екрана</string>
   <string name="preferences__screen_security_summary">обезбеђења екрана %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Аутоматски доврши размене кључева за нове сесије или за постојеће сесије са истим кључем идентитета</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Блокирај снимке екрана у списку недавних апликација и унутар апликације</string>
@@ -729,7 +729,7 @@
   <string name="conversation_insecure__invite">Позови</string>
   <!--conversation_insecure_no_push-->
   <string name="conversation_insecure__menu_start_secure_session">Започни безбедну сесију</string>
-  <string name="conversation_insecure__security">Сигурност</string>
+  <string name="conversation_insecure__security">Безбедност</string>
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Обриши изабрано</string>
   <string name="conversation_list_batch__menu_select_all">Изабери све</string>
@@ -741,7 +741,7 @@
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Нова преписка</string>
   <!--conversation_secure_verified-->
-  <string name="conversation_secure_verified__menu_security">Сигурност</string>
+  <string name="conversation_secure_verified__menu_security">Безбедност</string>
   <string name="conversation_secure_verified__menu_verify_identity">Овери идентитет</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Окончај безбедну сесију</string>
   <!--conversation-->
