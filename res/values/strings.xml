@@ -156,10 +156,6 @@
     <string name="ExportFragment_error_while_writing_to_sd_card">Error while writing to SD card.</string>
     <string name="ExportFragment_success">Success!</string>
 
-    <!-- GcmRefreshJob -->
-    <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">Permanent SMSSecure communication failure!</string>
-    <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">SMSSecure was unable to register with Google Play Services. Communication over the data channel has been disabled, please try re-registering from the SMSSecure settings menu.</string>
-
     <!-- GroupCreateActivity -->
     <string name="GroupCreateActivity_actionbar_title">New group</string>
     <string name="GroupCreateActivity_actionbar_update_title">Update group</string>
