@@ -68,12 +68,8 @@
     <string name="ConversationItem_error_received_stale_key_exchange_message">Error, received stale key exchange message.</string>
     <string name="ConversationItem_received_key_exchange_message_click_to_process">Received key exchange message, click to process.</string>
     <string name="ConversationItem_group_action_left">%1$s has left the group.</string>
-    <string name="ConversationItem_click_to_approve_sms">Tap for SMS fallback</string>
-    <string name="ConversationItem_click_to_approve_mms">Tap for MMS fallback</string>
     <string name="ConversationItem_click_for_details">Tap for details</string>
     <string name="ConversationItem_click_to_approve_unencrypted">Tap for unsecured fallback</string>
-    <string name="ConversationItem_click_to_approve_sms_dialog_title">Fallback to SMS?</string>
-    <string name="ConversationItem_click_to_approve_mms_dialog_title">Fallback to MMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Fallback to unencrypted SMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Fallback to unencrypted MMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">This message will <b>not</b> be encrypted because a secure session could not be established.\n\nSend unsecured message?</string>
