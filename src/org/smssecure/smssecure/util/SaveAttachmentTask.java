@@ -1,7 +1,5 @@
 package org.smssecure.smssecure.util;
 
-import android.app.AlertDialog;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.media.MediaScannerConnection;
@@ -11,9 +9,10 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.AlertDialogWrapper;
+
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.mms.PartAuthority;
 
 import java.io.File;
@@ -150,9 +149,9 @@ public class SaveAttachmentTask extends ProgressDialogAsyncTask<SaveAttachmentTa
   }
 
   public static void showWarningDialog(Context context, OnClickListener onAcceptListener) {
-    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
     builder.setTitle(R.string.ConversationFragment_save_to_sd_card);
-    builder.setIcon(ResUtil.getDrawable(context, R.attr.dialog_alert_icon));
+    builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setCancelable(true);
     builder.setMessage(R.string.ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning);
     builder.setPositiveButton(R.string.yes, onAcceptListener);
