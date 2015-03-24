@@ -24,6 +24,11 @@ We use GitHub for bug tracking. Please search the existing issues for your bug a
 
 https://github.com/SMSSecure/SMSSecure/issues
 
+## Contributing Translations
+We use Transifex for our translations. If you'd like to contribute, the project is here:
+
+https://www.transifex.com/projects/p/smssecure/
+
 ## Contributing Code
 Instructions on how to setup your development environment and build SMSSecure can be found in  [BUILDING.md](https://github.com/SMSSecure/SMSSecure/blob/master/BUILDING.md).
 
