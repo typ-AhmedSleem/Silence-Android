@@ -109,7 +109,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     View header = inflater.inflate(R.layout.message_details_header, recipientsList, false);
 
     masterSecret      = getIntent().getParcelableExtra(MASTER_SECRET_EXTRA);
-    itemParent        = (ViewGroup) findViewById(R.id.item_container );
+    itemParent        = (ViewGroup) header.findViewById(R.id.item_container);
     recipientsList    = (ListView ) findViewById(R.id.recipients_list);
     metadataContainer =             header.findViewById(R.id.metadata_container);
     errorText         = (TextView ) header.findViewById(R.id.error_text);
