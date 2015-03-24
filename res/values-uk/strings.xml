@@ -13,9 +13,6 @@
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Вимкнути шифрування сховища?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Увага, це відключить шифрування для всіх повідомлень і ключів. Ваші шифровані сесії продовжать працювати, але будь-яка особа з фізичним доступом до вашого пристрою може переглянути їх.</string>
   <string name="ApplicationPreferencesActivity_disable">Вимкнути</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Видалення реєстрації\u2026</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Видалення реєстрації для обміну повідомленнями через Інтернет</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Помилка підключення до сервера!</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Торкніться, щоб змінити типову програму для SMS</string>
   <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Торкніться аби зробити SMSSecure типовою програмою SMS</string>
   <!--AppProtectionPreferenceFragment-->
@@ -48,9 +45,6 @@
   <string name="ConversationActivity_d_recipients_in_group_singular">1 учасник</string>
   <string name="ConversationActivity_invalid_recipient">Неприпустимий отримувач!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Ваше пристрій мабуть не підтримує голосові дзвінки.</string>
-  <string name="ConversationActivity_leave_group">Покинути групу?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Ви дійсно хочете покинути цю групу?</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Деталі повідомлення</string>
   <string name="ConversationFragment_success_exclamation">Успішно!</string>
@@ -70,7 +64,6 @@
   <string name="ExportFragment_cancel">Скасувати</string>
   <string name="ExportFragment_exporting">Експортування</string>
   <string name="ExportFragment_success">Успішно!</string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_creating_group">Створення %1$s…</string>
   <!--GroupMembersDialog-->
@@ -104,7 +97,6 @@
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Невірна стара фраза!</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Підпис цього обміну ключами відрізняється від отриманого раніше від цього контакту. Це може означати, що хтось намагається перехопити вашу переписку, або цей контакт перевстановив SMSSecure і тепер у нього новий ідентифікаційний ключ.</string>
@@ -112,33 +104,6 @@
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Підпис цього обміну ключами довірений, але ви відключили настройку \'автоматично завершувати обмін ключами\'.</string>
   <string name="ReceiveKeyActivity_processing">Обробка</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Виконується обмін ключами...</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">Підключитися до SMSSecure</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Ви маєте вказати код країни</string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Ви маєте вказати свій номер телефону</string>
-  <string name="RegistrationActivity_invalid_number">Невірний номер</string>
-  <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">Вказаний вами номер (%s) не є дійсним.</string>
-  <string name="RegistrationActivity_unsupported">Не підтримується</string>
-  <string name="RegistrationActivity_continue">Продовжити</string>
-  <string name="RegistrationActivity_edit">Редагувати</string>
-  <!--RegistrationProblemsActivity-->
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Перевірка номера</string>
-  <string name="RegistrationProgressActivity_edit_s">Редагувати %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Реєстрацію завершено!</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">Необхідно ввести отриманий код\u2026</string>
-  <string name="RegistrationProgressActivity_connecting">Підключення</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Підключення до сервера верифікації\u2026</string>
-  <string name="RegistrationProgressActivity_unable_to_connect">Неможливо підключитися. Перевірте підключення до мережі та повторіть спробу.</string>
-  <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">Введений код підтвердження неправильний. Спробуйте ще раз.</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Забагато спроб</string>
-  <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">Занадто багато спроб введення неправильних кодів підтвердження. Зачекайте хвилину і спробуйте знову.</string>
-  <string name="RegistrationProgressActivity_requesting_incoming_call">Виконується запит телефонного дзвінка\u2026</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">На сервері сталася помилка. Будь ласка, спробуйте ще.</string>
-  <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Телефонний дзвінок вже був запитаний. Запросити ще один можна тільки через 20 хвилин.</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">Реєстрація в службі SMSSecure успішно виконана.</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">Виникла помилка при реєстрації на SMSSecure.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Отримано пошкоджене повідомлення обміну ключами!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Отримано повідомлення обміну ключами для неправильної версії протоколу.</string>
@@ -197,8 +162,6 @@
   <string name="MessageNotifier_mark_all_as_read">Позначити все як прочитане</string>
   <string name="MessageNotifier_mark_as_read">Позначити як прочитане</string>
   <!--QuickResponseService-->
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Ви отримали повідомлення від співрозмовника, який підтримує зашифроване спілкування за допомогою SMSSecure. </string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">СТАРА ФРАЗА-КЛЮЧ:</string>
   <string name="change_passphrase_activity__new_passphrase">НОВА ФРАЗА-КЛЮЧ:</string>
@@ -207,7 +170,6 @@
   <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Контактів не знайдено.</string>
   <!--single_contact_selection_activity-->
-  <string name="SingleContactSelectionActivity_updating_directory">Оновлення теки</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Вибрати для</string>
   <!--contact_selection_recent_activity-->
@@ -223,9 +185,6 @@
   <string name="conversation_item_received__download">Завантажити</string>
   <string name="conversation_item_received__downloading">Завантаження</string>
   <!--conversation_fragment_cab-->
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Завантаження країн\u2026</string>
-  <string name="country_selection_fragment__search">Пошук</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Не вдалось захопити журнал відлагодження. Натомість ви можете скористатись ADB, щоб це зробити.</string>
   <string name="log_submit_activity__thanks">Дякуємо за вашу допомогу!</string>
@@ -245,7 +204,6 @@
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
   <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Параметри MMS для вашого телефону потрібно вказати вручну.</string>
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Розблокувати</string>
   <!--prompt_mms_activity-->
@@ -253,37 +211,6 @@
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Щоб мати можливість відправляти MMS-повідомлення, введіть інформацію про APN нижче. Потрібні значення для вашого оператора можна знайти в інтернеті за запитом \'оператор APN\' або в його службі підтримки. Це потрібно зробити тільки один раз.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Виконати</string>
-  <!--registration_activity-->
-  <string name="registration_activity__your_country">ВАША КРАЇНА</string>
-  <string name="registration_activity__your_country_code_and_phone_number">КОД ВАШОЇ КРАЇНИ ТА НОМЕР ТЕЛЕФОНУ
-    </string>
-  <string name="registration_activity__phone_number">НОМЕР ТЕЛЕФОНУ</string>
-  <string name="registration_activity__register">Реєстрація</string>
-  <string name="registration_activity__skip">Пропустити</string>
-  <!--registration_problems-->
-  <string name="registration_problems__some_possible_problems_include">Можливі проблеми:</string>
-  <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">Деякі програми повідомлень інших розробників, такі як Handcent або GoSMS, спрацьовують некоректно і перехоплюють всі вхідні SMS-повідомлення. Перевірте наявність отриманих повідомлень, які починаються з \'Ваш код доступу SMSSecure\', якщо такі повідомлення є, вам потрібно налаштувати ваш додаток повідомлень інших розробників для пропуску текстових повідомлень.</string>
-  <string name="registration_problems__incorrect_number">Неправильний номер.</string>
-  <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">Переконайтеся, що номер введений правильно і має вірний формат.</string>
-  <string name="registration_problems__google_voice">Google Voice.</string>
-  <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">SMSSecure не працюватиме з номерами Голосового пошуку Google.</string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">SMSSecure може зробити дзвінок для перевірки вашого номера. Торкніться \'Подзвонити мені\' і введіть шестизначний код, який ви почуєте, нижче.</string>
-  <string name="registration_progress_activity__verify">Перевірити</string>
-  <string name="registration_progress_activity__edit_number">Редагувати номер</string>
-  <string name="registration_progress_activity__connectivity_error">Помилка взаємозв’яку.</string>
-  <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">SMSSecure не може підключитися до push-сервісу.</string>
-  <string name="registration_progress_activity__some_possible_problems_include">Можливі проблеми:</string>
-  <string name="registration_progress_activity__no_network_connectivity">Відсутня можливість підключення.</string>
-  <string name="registration_progress_activity__restrictive_firewall">Обмежувальні брандмауер.</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">SMSSecure зараз перевірить ваш номер підтверджувальним SMS-повідомленням.</string>
-  <string name="registration_progress_activity__connecting">Підключення\u2026</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">Очікування SMS для перевірки\u2026</string>
-  <string name="registration_progress_activity__registering_with_server">Реєстрація на сервері\u2026</string>
-  <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">Це може зайняти якийсь час. Будь ласка, наберіться терпіння, ми вам повідомимо, коли перевірка завершиться.</string>
-  <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">Минув час очікування SMSSecure перевірочної SMS.</string>
-  <string name="registration_progress_activity__sms_verification_failed">SMS-перевірка не вдалася.</string>
-  <string name="registration_progress_activity__generating_keys">Генерація ключів\u2026</string>
   <!--recipients_panel-->
   <string name="recipients_panel__add_member">Додати учасника</string>
   <!--verify_identity_activity-->
@@ -345,8 +272,6 @@
   <string name="preferences__language">Мова</string>
   <string name="preferences__make_default_sms_app">Встановити типовою програмою для SMS</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Зробити SMSSecure типовою програмою SMS/MMS вашої системи.</string>
-  <string name="preferences__use_data_channel">Використовувати передачу даних</string>
-  <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">Використовувати мобільний інтернет для зв’язку з іншими користувачами SMSSecure</string>
   <string name="preferences__submit_debug_log">Відіслати журнал відлагодження</string>
   <!--****************************************-->
   <!--menus-->

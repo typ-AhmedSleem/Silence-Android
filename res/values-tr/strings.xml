@@ -18,12 +18,6 @@ Uyarı, bu tüm mesaj ve anahtarlar için depolama alanı şifrelemesini etkisiz
 oturumlarınız işlevlerini sürdürür, fakat cihazınıza fiziksel erişimi olan herhangi biri onlara
 erişebilir.</string>
   <string name="ApplicationPreferencesActivity_disable">Etkisizleştir</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Kayıt siliniyor...</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Veri temelli iletişim için kayıt siliniyor</string>
-  <string name="ApplicationPreferencesActivity_disable_push_messages">Anlık bildirimler etkisizleştirilsin mi?</string>
-  <string name="ApplicationPreferencesActivity_this_will_disable_push_messages">
-Bu işlem sunucudan kaydınızı silerek itilen mesajları etkisizleştirir. Gelecekte anında mesajlaşmayı kullanmak isterseniz telefon numaranızı yeniden kaydettirmeniz gerekir.</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Sunucu bağlantı hatası!</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Gelen SMS Etkinleştirildi</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Varsayılan SMS uygulamanızı değiştirmek için dokunun</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Gelen SMS Etkisizleştirildi</string>
@@ -32,7 +26,6 @@ Bu işlem sunucudan kaydınızı silerek itilen mesajları etkisizleştirir. Gel
   <string name="ApplicationPreferencesActivity_On">Açık</string>
   <string name="ApplicationPreferencesActivity_off">kapalı</string>
   <string name="ApplicationPreferencesActivity_Off">Kapalı</string>
-  <string name="ApplicationPreferencesActivity_partial">yarı</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
@@ -59,11 +52,7 @@ isteyebilirsiniz.</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Hata, bozuk anahtar takas mesajı alındı.</string>
   <string name="ConversationItem_received_key_exchange_message_click_to_process">Anahtar takas mesajı alındı, işlemek için tıklayın.</string>
   <string name="ConversationItem_group_action_left">%1$s gruptan ayrıldı.</string>
-  <string name="ConversationItem_click_to_approve_sms">SMS geri düşmesi için hafifçe vur</string>
-  <string name="ConversationItem_click_to_approve_mms">MMS geri düşmesi için hafifçe vur</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Teminatsız geri düşme için hafifçe vur</string>
-  <string name="ConversationItem_click_to_approve_sms_dialog_title">SMS geri düşülmesi?</string>
-  <string name="ConversationItem_click_to_approve_mms_dialog_title">MMS geri düşülmesi?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Şifrelenmemiş SMS geri düşülmesi?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Şifrelenmemiş MMS geri düşülmesi?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Bu mesaj güvenli bir oturum olmaması nedeni ile şifrelenmiş <b>gönderilemiyor</b>.\n\nGüvensiz mesaj gönderilsin mi?</string>
@@ -92,20 +81,13 @@ isteyebilirsiniz.</string>
   <string name="ConversationActivity_invalid_recipient">Geçersiz alıcı!</string>
   <string name="ConversationActivity_calls_not_supported">Aramalar desteklenmiyor</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Bu cihaz arama işlemlerini destekliyor gibi görünmüyor.</string>
-  <string name="ConversationActivity_leave_group">Gruptan ayrıl?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Bu gruptan ayrılmak istediğinize emin misiniz?</string>
   <string name="ConversationActivity_transport_insecure_sms">Güvensiz SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Güvensiz MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Güvenli SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Güvenli MMS</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
-  <string name="ConversationActivity_get_with_it">%s ile alın</string>
-  <string name="ConversationActivity_install_textsecure">SMSSecure Kur: %s</string>
   <string name="ConversationActivity_error_leaving_group">Gruptan ayrılma hatası...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaj detayları</string>
-  <string name="ConversationFragment_transport_s_sent_received_s">Taşıma: %1$s\nGönderme/Alma: %2$s</string>
-  <string name="ConversationFragment_sender_s_transport_s_sent_s_received_s">Gönderici: %1$s\nTaşıma: %2$s\nGönderildi: %3$s\nAlındı: %4$s</string>
   <string name="ConversationFragment_confirm_message_delete">Mesaj silinmesini onayla</string>
   <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Tüm mesajların geri dönülemez şekilde silinmesini istediğinizden emin misiniz?</string>
   <string name="ConversationFragment_save_to_sd_card">Depolama alanına kaydedilsin mi?</string>
@@ -143,17 +125,11 @@ SMSSecure mesajlarınızın şifrelenmemiş açık metin içeriğini SD karta ka
   <string name="ExportFragment_error_unable_to_write_to_sd_card">Hata, açık metin SD karta dışa aktarılamıyor!</string>
   <string name="ExportFragment_error_while_writing_to_sd_card">SD karta kaydelilirken hata.</string>
   <string name="ExportFragment_success">Başarılı!</string>
-  <!--GcmRefreshJob-->
-  <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">SMSSecure iletişiminde sürekli başarısızlık!</string>
-  <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">SMSSecure Google Play Servislerine kayıt olmadı.
-Veri kanallarından iletişim etkisizleştirilmiş, SMSSecure ayarlar menüsünden yeniden kaydolmayı deneyiniz.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Yeni grup</string>
   <string name="GroupCreateActivity_actionbar_update_title">Grubu güncelle</string>
   <string name="GroupCreateActivity_group_name_hint">Grup adı</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Yeni MMS grubu</string>
-  <string name="GroupCreateActivity_contacts_dont_support_push">SMSSecure gruplarını desteklemeyen bir kişi seçtiniz. Bu nedenle grubunuz MMS grubu olacaktır.</string>
-  <string name="GroupCreateActivity_you_dont_support_push">Veri kanallarını kullanmak için kayıt olmadınız, bu nedenle SMSSecure grupları etkisizleştirilmiştir.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Grup yaratılmasına engel olan beklenmedik bir hata oluştu.</string>
   <string name="GroupCreateActivity_contacts_no_members">Grubunuzda en az bir kişi olmalıdır.</string>
   <string name="GroupCreateActivity_contacts_invalid_number">Grubunuzun üyelerinden birinin doğru okunamayan bir numarası var. Lütfen numarayı düzeltiniz veya kişiyi siliniz ve tekrar deneyiniz.</string>
@@ -161,7 +137,6 @@ Veri kanallarından iletişim etkisizleştirilmiş, SMSSecure ayarlar menüsünd
   <string name="GroupCreateActivity_menu_create_title">Grup yarat</string>
   <string name="GroupCreateActivity_creating_group">%1$s yaratılıyor…</string>
   <string name="GroupCreateActivity_updating_group">Güncelleniyor %1$s...</string>
-  <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">Mevcut bir SMSSecure grubuna SMSSecure olmayan kişi eklenemez</string>
   <string name="GroupCreateActivity_loading_group_details">Grup detayları yükleniyor...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ben</string>
@@ -209,21 +184,6 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Parolalar uyuşmuyor!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Yanlış eski şifre!</string>
-  <!--DeviceProvisioningActivity-->
-  <string name="DeviceProvisioningActivity_link_this_device">Bu cihazı bağla?</string>
-  <string name="DeviceProvisioningActivity_cancel">VAZGEÇ</string>
-  <string name="DeviceProvisioningActivity_continue">DEVAM ET</string>
-  <string name="DeviceProvisioningActivity_title">Bu cihazı bağla?</string>
-  <string name="DeviceProvisioningActivity_content_intro">mümkün olacak</string>
-  <string name="DeviceProvisioningActivity_content_bullets">
-- Tüm mesajlarınızı okuyunuz
-\n-Mesajları adınızla gönderiniz</string>
-  <string name="DeviceProvisioningActivity_content_progress_title">Cihaz ekleniyor...</string>
-  <string name="DeviceProvisioningActivity_content_progress_content">Yeni cihaz ekleniyor...</string>
-  <string name="DeviceProvisioningActivity_content_progress_success">Cihaz eklendi!</string>
-  <string name="DeviceProvisioningActivity_content_progress_no_device">Hiç cihaz bulanamadı.</string>
-  <string name="DeviceProvisioningActivity_content_progress_network_error">Ağ hatası.</string>
-  <string name="DeviceProvisioningActivity_content_progress_key_error">Geçersiz QR kodu.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Parola Girin</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikonu</string>
@@ -236,53 +196,6 @@ isteyebilirsiniz.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Bu anahtar değişimdeki imza güvenilir. Ancak, siz \'anahtar değişimlerini otomatik tamamla\' ayarını etkisizleştirmişsiniz.</string>
   <string name="ReceiveKeyActivity_processing">İşleniyor</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Anahtar takası işleniyor...</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">SMSSecure ile Bağlan</string>
-  <string name="RegistrationActivity_select_your_country">Ülkenizi seçin</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Ülke kodunuzu
-        girmelisiniz
-    </string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Telefon numaranızı
-        girmelisiniz
-    </string>
-  <string name="RegistrationActivity_invalid_number">Geçersiz numara</string>
-  <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">Girdiğiniz numara
-        (%s) geçersiz.
-    </string>
-  <string name="RegistrationActivity_unsupported">Desteklenmiyor</string>
-  <string name="RegistrationActivity_sorry_this_device_is_not_supported_for_data_messaging">Üzgünüz, bu cihaz veri mesajlaşmasını desteklemiyor. Android sürümleri 4.0\'dan eski olan cihazların kayıtlı bir Google hesabı olması gerekir. Android sürümü 4.0 ve üstü olan cihazlar için bir Google hesabı gerekmez, fakat Play Store uygulamasının yüklü olması gerekir.</string>
-  <string name="RegistrationActivity_we_will_now_verify_that_the_following_number_is_associated_with_your_device_s">
-Numaranızı ikinci kez kontrol ediniz! Onu bir SMS ile doğrulamak üzereyiz.</string>
-  <string name="RegistrationActivity_continue">Devam Et</string>
-  <string name="RegistrationActivity_edit">Düzenle</string>
-  <!--RegistrationProblemsActivity-->
-  <string name="RegistrationProblemsActivity_possible_problems">Olası sorunlar</string>
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Numara doğrulanıyor</string>
-  <string name="RegistrationProgressActivity_edit_s">Düzenle %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Kayıt tamamlandı!</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">İlk önce aldığınız kodu girmelisiniz...</string>
-  <string name="RegistrationProgressActivity_connecting">Bağlanılıyor</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Doğrulama için bağlanılıyor...</string>
-  <string name="RegistrationProgressActivity_network_error">Ağ hatası!</string>
-  <string name="RegistrationProgressActivity_unable_to_connect">Bağlanılamadı. Lütfen ağ bağlantınızı kontrol edin ve tekrar deneyin.</string>
-  <string name="RegistrationProgressActivity_verification_failed">Doğrulama başarısız!</string>
-  <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">Gönderdiğiniz doğrulama kodu yanlış. Lütfen tekrar deneyin.</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Çok fazla deneme</string>
-  <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">Çok fazla geçersiz doğrulama kodu girdiniz. Lütfen tekrar denemeden önce bir dakika bekleyin.</string>
-  <string name="RegistrationProgressActivity_requesting_call">Çağrı isteniyor</string>
-  <string name="RegistrationProgressActivity_requesting_incoming_call">Gelen doğrulama çağrısı isteniyor...</string>
-  <string name="RegistrationProgressActivity_server_error">Sunucu hatası</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">Sunucu hatası. Lütfen tekrar deneyin.</string>
-  <string name="RegistrationProgressActivity_too_many_requests">Çok fazla istek!</string>
-  <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Zaten bir çağrı istediniz. Tekrar isteyebilmek için 20 dakika beklemelisiniz.</string>
-  <string name="RegistrationProgressActivity_registration_conflict">Kayıt çakışması</string>
-  <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">Bu numara zaten farklı bir SMSSecure sunucusunda kayıtlı. (CyanogenMod?) Burada kaydolmadan önce diğer kaydınızı sildirmelisiniz.</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_registration_complete">Kayıt tamamlandı</string>
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">SMSSecure kaydı başarıyla tamamlandı.</string>
-  <string name="RegistrationService_registration_error">Kayıt hatası</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">SMSSecure kaydı bir sorunla karşılaştı.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Bozulmuş anahtar değişim 
 mesajı alındı!</string>
@@ -360,9 +273,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="MessageNotifier_mark_as_read">Okundu işaretle</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Üzgünüz, Quick Response, SMSSecure tarafından henüz desteklenmiyor!</string>
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">SMSSecure şifreli oturumları destekleyen birinden bir mesaj aldınız. Güvenli bir oturum açmak ister misiniz?</string>
-  <string name="auto_initiate_activity__initiate_exchange">Değiş tokuş başlat</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">ESKİ PAROLA:</string>
   <string name="change_passphrase_activity__new_passphrase">YENİ PAROLA:</string>
@@ -372,16 +282,12 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="contact_selection_group_activity__no_contacts">Kişi yok.</string>
   <string name="contact_selection_group_activity__finding_contacts">Kişiler yükleniyor...</string>
   <!--single_contact_selection_activity-->
-  <string name="SingleContactSelectionActivity_you_are_not_registered_with_the_push_service">İtilen servisine kayıtlı değilsiniz...</string>
-  <string name="SingleContactSelectionActivity_updating_directory">Dizin güncelleniyor</string>
-  <string name="SingleContactSelectionActivity_updating_push_directory">İtilen dizini güncelleniyor...</string>
   <string name="SingleContactSelectionActivity_contact_photo">Kişi Fotosu</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seç</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Yakın zamanda arama yok.</string>
   <!--conversation_activity-->
-  <string name="conversation_activity__type_message_push">SMSSecure mesajı gönder</string>
   <string name="conversation_activity__type_message_sms_secure">Güvenli SMS gönder</string>
   <string name="conversation_activity__type_message_sms_insecure">Teminatsız SMS gönder</string>
   <string name="conversation_activity__type_message_mms_secure">Güvenli MMS gönder</string>
@@ -408,9 +314,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Toplu seçim modu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s seçildi</string>
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Ülkeler yükleniyor...</string>
-  <string name="country_selection_fragment__search">Ara</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Cihazınızdaki loglara erişilemedi. Hata ayıklama loglarını almak için ADB kullanabilirsiniz.</string>
   <string name="log_submit_activity__thanks">Yardımınız için teşekkürler!</string>
@@ -447,10 +350,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="MmsPreferencesFragment__not_set">Ayarlanmamış</string>
   <string name="MmsPreferencesFragment__invalid_uri">Girilen metin geçerli bir URI değil</string>
   <string name="MmsPreferencesFragment__invalid_host">Girilen metin geçerli bir sunucu değil</string>
-  <!--GroupUtil-->
-  <string name="GroupUtil_joined_the_group">%1$s gruba katıldı.</string>
-  <string name="GroupUtil_group_updated">Grup güncellendi.</string>
-  <string name="GroupUtil_title_is_now">Başlık şimdi  \'%1$s\' oldu.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Kilidi aç</string>
   <!--prompt_mms_activity-->
@@ -458,65 +357,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Medya veya grup mesajları gönderebilmek için \'Tamam\' a tıklayınız ve istenen ayarları tamamlayınız. Taşıyıcınızın MMS ayarları genellikle \'taşıyıcı APN\' araştırılarak bulunabilir. Bunu bir kez yapmanız gerekecektir.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Tamamlandı</string>
-  <!--registration_activity-->
-  <string name="registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users">
-        Kayıt olma ücretsiz ve diğer SMSSecure kullanıcılarına mesaj gönderirken gizliliğini arttırır. Lütfen telefon numaranızı doğrulatın.
-    </string>
-  <string name="registration_activity__your_country">ÜLKENİZ</string>
-  <string name="registration_activity__your_country_code_and_phone_number">ÜLKE KODUNUZ VE
-        TELEFON NUMARANIZ
-    </string>
-  <string name="registration_activity__phone_number">TELEFON NUMARASI</string>
-  <string name="registration_activity__register">Kayıt ol</string>
-  <string name="registration_activity__registration_will_transmit_some_contact_information_to_the_server_temporariliy">Kayıt işlemi ile bazı kişi bilgileriniz sunucuya gönderilecek. Fakat bu bilgiler sunucuda saklanmıyor.</string>
-  <string name="registration_activity__skip">Atla</string>
-  <!--registration_problems-->
-  <string name="registration_problems__some_possible_problems_include">Muhtemel sorunlar
-        içinde:
-    </string>
-  <string name="registration_problems__sms_interceptors">SMS yakalayıcılar.</string>
-  <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
-Handcent veya GoSMS gibi üçüncü parti mesaj istemcileri  iyi çalışmamakta ve tüm gelen SMS mesajlarını yakalamaktadır. \'Your TexSecure verification code:\' şeklinde başlayan bir mesaj alıp almadığınızı kontrol ediniz. Eğer almışsanız bu üçüncü parti mesaj uygulamalarını mesajların geçmesini izin verecek şekilde yapılandırmanız gerekecektir.</string>
-  <string name="registration_problems__incorrect_number">Geçersiz numara</string>
-  <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">
-Lütfen girdiğiniz numaranın ve alan kodlarının doğruluğunu kontrol ediniz.</string>
-  <string name="registration_problems__google_voice">Google Voice.</string>
-  <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">
-        SMSSecure Google Voice numaraları ile çalışmaz.
-    </string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__voice_verification">Ses doğrulama</string>
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">
-SMSSecure numaranızı doğrulamak için sizi arayabilir de. \'Beni Ara\' ya hafifçe vurun ve duyduğunuz altı rakamlı kodu aşağıya girin.</string>
-  <string name="registration_progress_activity__verify">Doğrulama</string>
-  <string name="registration_progress_activity__call_me">Beni ara</string>
-  <string name="registration_progress_activity__edit_number">Numarayı düzenle</string>
-  <string name="registration_progress_activity__connectivity_error">Bağlantı hatası.</string>
-  <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">
-        SMSSecure push servisine bağlanamadı.
-    </string>
-  <string name="registration_progress_activity__some_possible_problems_include">Bazı olası problemler:</string>
-  <string name="registration_progress_activity__no_network_connectivity">Ağ bağlantısı
-        yok.
-    </string>
-  <string name="registration_progress_activity__your_device_needs_network_connectivity">Cihazınızın SMSSecure\'un bu özelliğini kullanabilmesi için ağ bağlantısı gerekir. Cihazınızın 3G veya WiFi bağlantısı olduğundan emin olunuz.</string>
-  <string name="registration_progress_activity__restrictive_firewall">Kısıtlayıcı güvenlik duvarı.</string>
-  <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
-Eğer WiFi ile bağlı iseniz, SMSSecure sunucusuna erişimi engelleyen bir güvenlik duvarının bulunması olasılığı vardır. Başka bir ağ veya mobil data bağlantısı ile deneyiniz.</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-SMSSecure şimdi bir doğrulama SMS mesajı ile numaranızı otomatik olarak doğrulacak.</string>
-  <string name="registration_progress_activity__connecting">Bağlanılıyor...</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">SMS doğrulama
-bekleniliyor...
-    </string>
-  <string name="registration_progress_activity__registering_with_server">Sunucuya kaydolunuyor...</string>
-  <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">Bu
-biraz zaman alabilir. Lütfen bekleyiniz, doğrulama tamamlandığında bilgilendirileceksiniz.</string>
-  <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">
-SMS doğrulaması için verilen süre aşılarak TestSecure zaman aşımına uğradı.</string>
-  <string name="registration_progress_activity__sms_verification_failed">SMS doğrulaması
-başarısız.</string>
-  <string name="registration_progress_activity__generating_keys">Anahtarlar üretiliyor...</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Bir ad veya numara girin</small></string>
   <string name="recipients_panel__add_member">Üye ekle</string>
@@ -528,7 +368,6 @@ başarısız.</string>
   <string name="AndroidManifest__create_passphrase">Anahtar parolası oluştur</string>
   <string name="AndroidManifest__enter_passphrase">Parola Girin</string>
   <string name="AndroidManifest__select_contacts">Kişileri seç</string>
-  <string name="AndroidManifest__textsecure_detected">SMSSecure algılandı</string>
   <string name="AndroidManifest__public_identity_key">Kimlik anahtarım</string>
   <string name="AndroidManifest__change_passphrase">Parola Değiştir</string>
   <string name="AndroidManifest__verify_identity">Kimliği doğrula</string>
@@ -541,16 +380,9 @@ başarısız.</string>
   <string name="arrays__import_export">İçeri / Dışarı Aktar</string>
   <string name="arrays__my_identity_key">Kimlik anahtarım</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="other">%d dakika</item>
-  </plurals>
-  <plurals name="hours_ago">
-    <item quantity="other">%d saat</item>
-  </plurals>
   <!--preferences.xml-->
   <string name="preferences__general">Genel</string>
   <string name="preferences__sms_mms">SMS ve MMS</string>
-  <string name="preferences__push_sms_category">İtme ve SMS</string>
   <string name="preferences__pref_all_sms_title">Tüm SMS\'leri al</string>
   <string name="preferences__pref_all_mms_title">Tüm MMS\'leri al</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Gelen tüm mesajların gösterimi ve saklanması için SMSSecure kullan</string>
@@ -632,19 +464,7 @@ başarısız.</string>
   <string name="preferences__language">Dil</string>
   <string name="preferences__make_default_sms_app">Varsayılan SMS uygulaması olarak ayarla</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">SMSSecure\'u varsayılan sisteem SMS/MMS uygulaması yap.</string>
-  <string name="preferences__use_data_channel">İtilen mesajlar</string>
-  <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-Diğer SMSSecure kullanıcıları ile iletişiminiz için veri kanallarını kullanarak gizliliğinizi artırın ve SMS ücretlerinden kaçının </string>
-  <string name="preferences__sms_fallback">Giden SMS/MMS</string>
   <string name="preferences__submit_debug_log">Hata ayıklama kaydı gönder</string>
-  <string name="preferences__sms_outgoing_push_users">SMSSecure kullanıcıları</string>
-  <string name="preferences__sms_fallback_push_users_ask">önce sor</string>
-  <string name="preferences__sms_fallback_push_users_no_mms">MMS yok</string>
-  <string name="preferences__sms_outgoing_push_users_description">Eğer veri bağlantısı kaybolursa güvenli SMS gönder</string>
-  <string name="preferences__sms_fallback_ask_before_sending_sms_mms">SMS/MMS göndermeden önce sor</string>
-  <string name="preferences__sms_fallback_never_send_mms">Hiçbir zaman MMS gönderme</string>
-  <string name="preferences__sms_fallback_non_push_users">SMSSecure kullanıcısı olmayanlar</string>
-  <string name="preferences__sms_fallback_nobody">Hiç kimse</string>
   <string name="preferences__support_wifi_calling">\'WiFi Calling\' uyumluluk modu</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Eğer cihazınız WiFi üzerinden SMS/MMS iletimi kullanıyorsa etkinleştir (sadece cihazınızda \'WiFi Calling\' etkinleştirildiğinde etkinleştirin)</string>
   <!--****************************************-->
@@ -653,15 +473,12 @@ Diğer SMSSecure kullanıcıları ile iletişiminiz için veri kanallarını kul
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Hepsini seç</string>
   <string name="contact_selection_list__menu_unselect_all">Tüm seçimleri kaldır</string>
-  <string name="contact_selection_list__header_textsecure_users">TEXTSECURE KULLANICILARI</string>
-  <string name="contact_selection_list__header_other">TÜM KONTAKTLAR</string>
   <string name="contact_selection_list__unknown_contact">Yeni mesajın gittiği...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Tamamlanmış</string>
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Kişi listesini tazele</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_textsecure_message">SMSSecure mesajı gönder</string>
   <string name="conversation_button_context__send_secure_sms">Güvenli SMS gönder</string>
   <string name="conversation_button_context__send_insecure_sms">Teminatsız SMS gönder</string>
   <string name="conversation_button_context__send_secure_mms">Güvenli MMS gönder</string>
@@ -693,8 +510,6 @@ Diğer SMSSecure kullanıcıları ile iletişiminiz için veri kanallarını kul
   <string name="conversation_secure_verified__menu_abort_secure_session">Güvenli oturumu sonlandır</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Ek ekle</string>
-  <string name="conversation__menu_update_group">Grubu güncelle</string>
-  <string name="conversation__menu_leave_group">Grubtan ayrıl</string>
   <string name="conversation__menu_delete_thread">Başlığı sil</string>
   <string name="conversation__menu_view_media">Tüm resimler</string>
   <!--conversation_callable-->
@@ -721,8 +536,6 @@ Diğer SMSSecure kullanıcıları ile iletişiminiz için veri kanallarını kul
   <string name="reminder_header_sms_default_text">SMSSecure\'u varsayılan SMS uygulamanız yapmak için hafifçe vurun.</string>
   <string name="reminder_header_sms_import_title">Sistem SMS içe aktarılsın mı?</string>
   <string name="reminder_header_sms_import_text">Telefonunuzdaki SMS mesajlarınızı, şifreli veritabanına aktarmak için hafifçe vurun.</string>
-  <string name="reminder_header_push_title">SMSSecure mesajlarını etkinleştir?</string>
-  <string name="reminder_header_push_text">Anında gönderim, güçlü gizlilik ve SMS ücreti ödememek için hafifçe vurun.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Siz</string>
   <string name="MediaPreviewActivity_cant_display">Bu resmin önizlemesi başarısız oldu</string>
