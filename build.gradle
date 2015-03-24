@@ -23,15 +23,12 @@ repositories {
     maven {
         url "https://raw.github.com/whispersystems/maven/master/smil/releases/"
     }
-    maven {
-        url "https://raw.github.com/whispersystems/maven/master/shortcutbadger/releases/"
-    }
     jcenter()
     mavenLocal()
 }
 
 dependencies {
-    compile 'me.leolin:ShortcutBadger:1.0.2-WS2'
+    compile 'me.leolin:ShortcutBadger:1.0.5@aar'
     compile 'se.emilsjolander:stickylistheaders:2.2.0'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'org.w3c:smil:1.0.0'
@@ -75,7 +72,7 @@ dependencies {
 
 dependencyVerification {
     verify = [
-            'me.leolin:ShortcutBadger:027977c718035e5997035e04e05152d6c72d94df645e8b7099a274ada722bd14',
+            'me.leolin:ShortcutBadger:d358a7fe0b8fc3c6765f8a117c7ee017173f862f1fe4f5a205800f855bc2a543',
             'se.emilsjolander:stickylistheaders:89146b46c96fea0e40200474a2625cda10fe94891e4128f53cdb42375091b9b6',
             'com.astuetz:pagerslidingtabstrip:f1641396732c7132a7abb837e482e5ee2b0ebb8d10813fc52bbaec2c15c184c2',
             'org.w3c:smil:085dc40f2bb249651578bfa07499fd08b16ad0886dbe2c4078586a408da62f9b',
