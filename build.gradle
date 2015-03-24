@@ -116,7 +116,7 @@ android {
     buildToolsVersion '21.1.2'
 
     dexOptions {
-        javaMaxHeapSize "4g"
+        javaMaxHeapSize "3g"
     }
 
     defaultConfig {

@@ -14,6 +14,9 @@ android:
 before_script:
      - ps auxww
      - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
-     - emulator -avd test -no-skin -no-audio -no-window &
+     - emulator -avd test -no-skin -no-audio -no-window -memory 256 &
      - android-wait-for-emulator
      - adb shell input keyevent 82 &
+
+script:
+     - ./gradlew connectedCheck -PdisablePreDex -PtaskThreads=1 -PandroidThread=1
