@@ -366,9 +366,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     final Recipient recipient   = getRecipients().getPrimaryRecipient();
     String recipientName        = (recipient.getName() == null ? recipient.getNumber() : recipient.getName());
-    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
     builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
-    builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_info_icon));
+    builder.setIconAttribute(R.attr.dialog_info_icon);
     builder.setCancelable(true);
     builder.setMessage(String.format(getString(R.string.ConversationActivity_initiate_secure_session_with_s_question),
                        recipientName));
