@@ -25,7 +25,6 @@ import java.util.List;
 
 public class SmsMmsPreferenceFragment extends PreferenceFragment {
   private static final String KITKAT_DEFAULT_PREF = "pref_set_default";
-  private static final String OUTGOING_SMS_PREF   = "pref_outgoing_sms";
   private static final String MMS_PREF            = "pref_mms_preferences";
 
   @Override
@@ -33,12 +32,8 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
     super.onCreate(paramBundle);
     addPreferencesFromResource(R.xml.preferences_sms_mms);
 
-    this.findPreference(OUTGOING_SMS_PREF)
-      .setOnPreferenceChangeListener(new OutgoingSmsPreferenceListener());
     this.findPreference(MMS_PREF)
       .setOnPreferenceClickListener(new ApnPreferencesClickListener());
-
-    initializeOutgoingSmsSummary((OutgoingSmsPreference) findPreference(OUTGOING_SMS_PREF));
   }
 
   @Override
@@ -75,50 +70,6 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
     }
   }
 
-  private void initializeOutgoingSmsSummary(OutgoingSmsPreference pref) {
-    pref.setSummary(buildOutgoingSmsDescription());
-  }
-
-  private class OutgoingSmsPreferenceListener implements Preference.OnPreferenceChangeListener {
-
-    @Override
-    public boolean onPreferenceChange(final Preference preference, Object newValue) {
-
-      preference.setSummary(buildOutgoingSmsDescription());
-      return false;
-    }
-  }
-
-  private String buildOutgoingSmsDescription() {
-    final StringBuilder builder         = new StringBuilder();
-    final boolean       dataFallback    = SMSSecurePreferences.isFallbackSmsAllowed(getActivity());
-    final boolean       dataFallbackAsk = SMSSecurePreferences.isFallbackSmsAskRequired(getActivity());
-    final boolean       mmsFallback     = SMSSecurePreferences.isFallbackMmsEnabled(getActivity());
-    final boolean       nonData         = SMSSecurePreferences.isDirectSmsAllowed(getActivity());
-
-    if (dataFallback) {
-      builder.append(getString(R.string.preferences__sms_outgoing_push_users));
-
-      List<String> fallbackOptions = new LinkedList<>();
-      if (dataFallbackAsk) fallbackOptions.add(getString(R.string.preferences__sms_fallback_push_users_ask));
-      if (!mmsFallback)    fallbackOptions.add(getString(R.string.preferences__sms_fallback_push_users_no_mms));
-
-      if (fallbackOptions.size() > 0) {
-        builder.append(" (")
-               .append(TextUtils.join(", ", fallbackOptions))
-               .append(")");
-      }
-    }
-    if (nonData) {
-      if (dataFallback) builder.append(", ");
-      builder.append(getString(R.string.preferences__sms_fallback_non_push_users));
-    }
-    if (!dataFallback && !nonData) {
-      builder.append(getString(R.string.preferences__sms_fallback_nobody));
-    }
-    return builder.toString();
-  }
-
   private class ApnPreferencesClickListener implements Preference.OnPreferenceClickListener {
 
     @Override
@@ -135,7 +86,7 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
   }
 
   public static CharSequence getSummary(Context context) {
-    return getIncomingSmsSummary(context) + ", " + getOutgoingSmsSummary(context);
+    return getIncomingSmsSummary(context);
   }
 
   private static CharSequence getIncomingSmsSummary(Context context) {
@@ -143,7 +94,7 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
     final int offResId         = R.string.ApplicationPreferencesActivity_off;
     final int smsResId         = R.string.ApplicationPreferencesActivity_sms;
     final int mmsResId         = R.string.ApplicationPreferencesActivity_mms;
-    final int incomingSmsResId = R.string.ApplicationPreferencesActivity_incoming_sms_summary;
+    final int incomingSmsResId = R.string.ApplicationPreferencesActivity_incoming_summary;
 
     final int incomingSmsSummary;
     boolean postKitkatSMS = Util.isDefaultSmsProvider(context);
@@ -159,22 +110,5 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
       else                                    incomingSmsSummary = offResId;
     }
     return context.getString(incomingSmsResId, context.getString(incomingSmsSummary));
-  }
-
-  private static CharSequence getOutgoingSmsSummary(Context context) {
-    final int onResId          = R.string.ApplicationPreferencesActivity_on;
-    final int offResId         = R.string.ApplicationPreferencesActivity_off;
-    final int partialResId     = R.string.ApplicationPreferencesActivity_partial;
-    final int outgoingSmsResId = R.string.ApplicationPreferencesActivity_outgoing_sms_summary;
-
-    final int outgoingSmsSummary;
-    if (SMSSecurePreferences.isFallbackSmsAllowed(context) && SMSSecurePreferences.isDirectSmsAllowed(context)) {
-      outgoingSmsSummary = onResId;
-    } else if (SMSSecurePreferences.isFallbackSmsAllowed(context) ^ SMSSecurePreferences.isDirectSmsAllowed(context)) {
-      outgoingSmsSummary = partialResId;
-    } else {
-      outgoingSmsSummary = offResId;
-    }
-    return context.getString(outgoingSmsResId, context.getString(outgoingSmsSummary));
   }
 }

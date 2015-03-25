@@ -14,9 +14,6 @@
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpečné sessions budú naďalej fungovať, ale hocikto s fyzickým prístupom k zariadeniu ich bude schopný čítať.</string>
   <string name="ApplicationPreferencesActivity_disable">Vypnúť</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Neregistrovanie...</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Neregistrovanie pre dátovú komunikáciu</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Chyba spojenia na server!</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Prichádzajúce SMS povolené</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Prichádzajúce SMS zakazané </string>
   <!--AppProtectionPreferenceFragment-->
@@ -55,9 +52,6 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_saved_draft">Uložený koncept</string>
   <string name="ConversationActivity_invalid_recipient">Nesprávny príjemca</string>
   <string name="ConversationActivity_calls_not_supported">Hovory nie sú podporované</string>
-  <string name="ConversationActivity_leave_group">Opustiť skupinu?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Ste si istí že chcete opustiť túto skupinu?</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily správy</string>
   <string name="ConversationFragment_confirm_message_delete">Potvrď zmazanie správy</string>
@@ -83,13 +77,11 @@ exportuje nekryptovaný obsah SMSSecure správy na SD kartu.</string>
   <string name="ExportFragment_cancel">Zrušiť</string>
   <string name="ExportFragment_exporting">Exportujem</string>
   <string name="ExportFragment_success">Úspech!</string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nová skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aktualizuj skupinu</string>
   <string name="GroupCreateActivity_group_name_hint">Názov skupiny</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nová MMS skupina</string>
-  <string name="GroupCreateActivity_you_dont_support_push">Nie ste registrovaný na používanie dátového kanálu, Textsecure skupiny nie sú povolené.</string>
   <string name="GroupCreateActivity_contacts_no_members">Potrebuješ najmenej jednu osobu v tvojej skupine!</string>
   <string name="GroupCreateActivity_avatar_content_description">Obrázok skupiny</string>
   <string name="GroupCreateActivity_menu_create_title">Vytvoriť skupinu</string>
@@ -131,7 +123,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Heslá sa nezhodujú!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Nesprávne staré heslo!</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Zadaj heslo</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikonka</string>
@@ -139,41 +130,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_processing">Spracováva sa</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Spracovávajú sa kľúče vymeny</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">Pripojiť s SMSSecure</string>
-  <string name="RegistrationActivity_select_your_country">Vyber svoju krajinu</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Ty musíš zadať tvoj
-
-kód krajiny
-</string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Ty musíš zadať tvoje
-
-telefónne číslo</string>
-  <string name="RegistrationActivity_invalid_number">Neplatné číslo</string>
-  <string name="RegistrationActivity_unsupported">Nepodporované</string>
-  <string name="RegistrationActivity_continue">Pokračovať</string>
-  <string name="RegistrationActivity_edit">Upraviť </string>
-  <!--RegistrationProblemsActivity-->
-  <string name="RegistrationProblemsActivity_possible_problems">Možné problémy</string>
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Overovanie čísla </string>
-  <string name="RegistrationProgressActivity_edit_s">Upraviť %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Registrácia dokončená.</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">Musíš zadať kód ktorý si dostal prvý...</string>
-  <string name="RegistrationProgressActivity_connecting">Pripájanie</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Pripájanie kvôli overovaniu...</string>
-  <string name="RegistrationProgressActivity_network_error">Chyba siete! </string>
-  <string name="RegistrationProgressActivity_verification_failed">Overovanie zlyhalo!</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Príliš veľa pokusov</string>
-  <string name="RegistrationProgressActivity_requesting_call">Vyžadovanie hovoru</string>
-  <string name="RegistrationProgressActivity_server_error">Chyba servera</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">Na serveri sa vyskytol problém. Prosím skús to zas.</string>
-  <string name="RegistrationProgressActivity_too_many_requests">Príliš veľa požiadaviek!</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_registration_complete">Registrácia dokončená.</string>
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">SMSSecure registrácia bola úspešne dokončená.</string>
-  <string name="RegistrationService_registration_error">Chyba pri registrácii</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">Pri SMSSecure registrácii sa vyskytol problém.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_secure_session_ended">Bezpečné spojenie ukončené.</string>
   <string name="SmsMessageRecord_duplicate_message">Zduplikuj správu.</string>
@@ -235,9 +191,6 @@ telefónne číslo</string>
   <string name="MessageNotifier_mark_all_as_read">Označ všetko ako prečítané</string>
   <string name="MessageNotifier_mark_as_read">Označ ako prečítané</string>
   <!--QuickResponseService-->
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Dostali ste správu od klienta podporujúceho SMSSecure bezpečnú session.  Želáte si vytvoriť bezpečnú session?</string>
-  <string name="auto_initiate_activity__initiate_exchange">Začni vzájomnú výmenu</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staré heslo:</string>
   <string name="change_passphrase_activity__new_passphrase">Nové heslo:</string>
@@ -253,7 +206,6 @@ telefónne číslo</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Žiadne nedávne hovory.</string>
   <!--conversation_activity-->
-  <string name="conversation_activity__type_message_push">Pošli SMSSecure správu </string>
   <string name="conversation_activity__type_message_sms_secure">Pošli šifrovanú SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Pošli šifrovanú MMS</string>
   <string name="conversation_activity__send">Odoslať</string>
@@ -270,9 +222,6 @@ telefónne číslo</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mód hromadného výberu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vybraných</string>
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Načítavanie krajín...</string>
-  <string name="country_selection_fragment__search">Hľadaj</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Ďakujem za tvoju pomoc!</string>
   <string name="log_submit_activity__submitting">Posielanie</string>
@@ -301,47 +250,11 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
   <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Manuálne MMS nastavenia sú vyžadované pre tvoj telefón.</string>
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odomkni</string>
   <!--prompt_mms_activity-->
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Dokončené</string>
-  <!--registration_activity-->
-  <string name="registration_activity__your_country">TVOJA KRAJINA</string>
-  <string name="registration_activity__your_country_code_and_phone_number">Tvoj kód krajiny a
-telefónne číslo</string>
-  <string name="registration_activity__phone_number">TELEFÓNNE ČÍSLO </string>
-  <string name="registration_activity__register">Registrovať</string>
-  <string name="registration_activity__skip">Preskoč</string>
-  <!--registration_problems-->
-  <string name="registration_problems__incorrect_number">Nesprávne číslo.</string>
-  <string name="registration_problems__google_voice">Google hlas</string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__voice_verification">Hlasové overovanie</string>
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">
-SMSSecure Vám môže tiež zavolať kvôli overeniu Vášho čísla. Kliknite \"Zavolaj mi\" a vložte 6 číslic
-kód ktoré budete počuť.
-</string>
-  <string name="registration_progress_activity__verify">Overené</string>
-  <string name="registration_progress_activity__call_me">Zavolaj mi</string>
-  <string name="registration_progress_activity__edit_number">Úprav číslo</string>
-  <string name="registration_progress_activity__connectivity_error">Problém pripojenia.</string>
-  <string name="registration_progress_activity__no_network_connectivity">Žiadne sieťové
-pripojenie.
-</string>
-  <string name="registration_progress_activity__restrictive_firewall">Reštriktívny firewall</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-Teraz SMSSecure automaticky overí tvoje číslo prostredníctvom overovacej SMS správy.
-</string>
-  <string name="registration_progress_activity__connecting">Pripájanie...</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">Čakanie na SMS
-overovanie...</string>
-  <string name="registration_progress_activity__registering_with_server">Registrujem na server...</string>
-  <string name="registration_progress_activity__sms_verification_failed">SMS overovanie
-zlyhalo.
-</string>
-  <string name="registration_progress_activity__generating_keys">Generovanie kľúčov...</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Vlož meno alebo číslo</small></string>
   <string name="recipients_panel__add_member">Pridaj člena</string>
@@ -353,7 +266,6 @@ zlyhalo.
   <string name="AndroidManifest__create_passphrase">Vytvor heslo</string>
   <string name="AndroidManifest__enter_passphrase">Zadaj heslo</string>
   <string name="AndroidManifest__select_contacts">Vyber kontakty</string>
-  <string name="AndroidManifest__textsecure_detected">Detekovaný SMSSecure</string>
   <string name="AndroidManifest__public_identity_key">Kľúč verejnej totožnosti</string>
   <string name="AndroidManifest__change_passphrase">Zmeň heslo</string>
   <string name="AndroidManifest__verify_identity">Over totožnosť</string>
@@ -422,25 +334,18 @@ zlyhalo.
   <string name="preferences__language">Jazyk</string>
   <string name="preferences__make_default_sms_app">Nastav ako predvolebnú SMS aplikáciu</string>
   <string name="preferences__submit_debug_log">Odošli ladiaci log</string>
-  <string name="preferences__sms_outgoing_push_users">SMSSecure používatelia</string>
-  <string name="preferences__sms_outgoing_push_users_description">Pošli bezpečnú SMS pokiaľ pripojenie je nedostupné </string>
-  <string name="preferences__sms_fallback_non_push_users">Nie-SMSSecure používatelia </string>
-  <string name="preferences__sms_fallback_nobody">Nikto</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Vyber všetko</string>
   <string name="contact_selection_list__menu_unselect_all">Odznač všetko</string>
-  <string name="contact_selection_list__header_textsecure_users">TEXTSECURE POUŽÍVATELIA</string>
-  <string name="contact_selection_list__header_other">VŠETKY KONTAKTY</string>
   <string name="contact_selection_list__unknown_contact">Nová správa pre...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Hotovo</string>
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Obnov kontakty</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_textsecure_message">Pošli SMSSecure správu </string>
   <string name="conversation_button_context__send_secure_sms">Pošli šifrovanú SMS</string>
   <string name="conversation_button_context__send_secure_mms">Pošli šifrovanú MMS</string>
   <!--conversation_callable-->
@@ -470,8 +375,6 @@ zlyhalo.
   <string name="conversation_secure_verified__menu_abort_secure_session">Ukonči bezpečnú session</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Pridaj prílohu</string>
-  <string name="conversation__menu_update_group">Aktualizuj skupinu</string>
-  <string name="conversation__menu_leave_group">Opusti skupinu</string>
   <string name="conversation__menu_delete_thread">Zmaž vlákno</string>
   <!--conversation_callable-->
   <!--conversation_group_options-->

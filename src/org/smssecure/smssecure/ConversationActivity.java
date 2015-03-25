@@ -349,13 +349,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleInviteLink() {
-    try {
-      boolean a = SecureRandom.getInstance("SHA1PRNG").nextBoolean();
-      if (a) composeText.setText(getString(R.string.ConversationActivity_get_with_it, "https://github.com/SMSSecure/SMSSecure"));
-      else   composeText.setText(getString(R.string.ConversationActivity_install_textsecure, "https://github.com/SMSSecure/SMSSecure"));
-    } catch (NoSuchAlgorithmException e) {
-      throw new AssertionError(e);
-    }
+    composeText.setText(getString(R.string.ConversationActivity_install_smssecure, "https://github.com/SMSSecure/SMSSecure"));
   }
 
   private void handleVerifyIdentity() {
@@ -441,10 +435,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setTitle(getString(R.string.ConversationActivity_leave_group));
+    builder.setTitle("");
     builder.setIcon(ResUtil.getDrawable(this, R.attr.dialog_info_icon));
     builder.setCancelable(true);
-    builder.setMessage(getString(R.string.ConversationActivity_are_you_sure_you_want_to_leave_this_group));
+    builder.setMessage("");
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
@@ -465,7 +459,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
           initializeEnabledCheck();
         } catch (IOException e) {
           Log.w(TAG, e);
-          Toast.makeText(self, R.string.ConversationActivity_error_leaving_group, Toast.LENGTH_LONG).show();
+          Toast.makeText(self, "", Toast.LENGTH_LONG).show();
         }
       }
     });

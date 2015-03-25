@@ -13,13 +13,6 @@
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desactivar l\'encriptació del magatzem de dades?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Alerta, això desactivarà l\'emmagatzematge encriptat per a tots els missatges i claus. Les teves sessions continuaran funcionant, però qualsevol persona amb accés físic al teu dispositiu podrà accedir-hi.</string>
   <string name="ApplicationPreferencesActivity_disable">Desactiva</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Des-registrant...</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Des-registrant per les comunicacions basades en dades</string>
-  <string name="ApplicationPreferencesActivity_disable_push_messages">Desactivar els missatges push?</string>
-  <string name="ApplicationPreferencesActivity_this_will_disable_push_messages">
-Això desactivarà els missatges push des-registran-te del servidor.
-Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els missatges push una altra vegada.</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Error connectant amb el servidor!</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Toca per canviar la teva app d\'SMS predeterminada</string>
   <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Toca per fer SMSSecure la teva app d\'SMS predeterminada</string>
   <!--AppProtectionPreferenceFragment-->
@@ -52,9 +45,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <string name="ConversationActivity_d_recipients_in_group_singular">1 membre</string>
   <string name="ConversationActivity_invalid_recipient">Destinatari invàlid!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Aquest dispositiu no sembla suportar accions de trucada.</string>
-  <string name="ConversationActivity_leave_group">Deixar el grup?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Estàs segur que vols deixar aquest grup?</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalls del missatge</string>
   <string name="ConversationFragment_success_exclamation">Èxit!</string>
@@ -74,10 +64,7 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <string name="ExportFragment_cancel">Cancel·la</string>
   <string name="ExportFragment_exporting">Exportant</string>
   <string name="ExportFragment_success">Èxit!</string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
-  <string name="GroupCreateActivity_contacts_dont_support_push">Has seleccionat un contacte que no suporta grups de SMSSecure, això farà que aquest grup sigui de MMS.</string>
-  <string name="GroupCreateActivity_you_dont_support_push">No estàs registrat per utilitzar el canal de dades, això farà que els grups de SMSSecure estiguin desactivats.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Ha passat un error inesperat que ha fet que la creació del grup hagi fallat.</string>
   <string name="GroupCreateActivity_contacts_no_members">Necessites almenys una persona dins el teu grup!</string>
   <string name="GroupCreateActivity_contacts_invalid_number">Un dels membres del teu grup té un número que no pot ser llegit correctament. Si us plau corregeix o treu aquest contacte i intenta-ho de nou.</string>
@@ -113,7 +100,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Frase contrasenya antiga incorrecta!</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La signatura en aquest intercanvi de claus és diferent que el que havies rebut prèviament d\'aquest contacte. Això pot voler dir tant que algú està intentant interceptar la teva comunicació, o que aquest contacte simplement ha re-instal·lat SMSSecure i ara té una clau d\'identitat nova.</string>
@@ -121,34 +107,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La signatura en aquest intercanvi de claus és de confiança, però tens l\'ajustament \'completa els intercanvis de claus automàticament\' desactivat.</string>
   <string name="ReceiveKeyActivity_processing">Processant</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Processant intercanvi de clau...</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">Connecta amb SMSSecure</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Has d\'especificar el teu codi de país</string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Has d\'especificar el teu número de telèfon</string>
-  <string name="RegistrationActivity_invalid_number">Número invàlid</string>
-  <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">El número que has especificat (%s) és invàlid.</string>
-  <string name="RegistrationActivity_unsupported">No suportat</string>
-  <string name="RegistrationActivity_continue">Continua</string>
-  <string name="RegistrationActivity_edit">Edita</string>
-  <!--RegistrationProblemsActivity-->
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Verificant número</string>
-  <string name="RegistrationProgressActivity_edit_s">Edita %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Registre complet!</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">Primer has d\'introduir el codi que has rebut...</string>
-  <string name="RegistrationProgressActivity_connecting">Connectant</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Connectant per verificar...</string>
-  <string name="RegistrationProgressActivity_unable_to_connect">No s\'ha pogut connectar. Si us plau verifica la teva connexió de xarxa i intenta-ho de nou.</string>
-  <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">El codi de verificació que has enviat és incorrecte. Si us plau intenta-ho de nou.</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Massa intents</string>
-  <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">Has enviat un codi de verificació incorrecte massa vegades. Si us plau espera un minut abans d\'intentar-ho de nou.</string>
-  <string name="RegistrationProgressActivity_requesting_incoming_call">Demanant una trucada de verificació...</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">El servidor ha trobat un error. Si us plau intenta-ho de nou.</string>
-  <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Ja has demanat recentment una trucada de veu. Pots tornar-la a demanar d\'aquí 20 minuts.</string>
-  <string name="RegistrationProgressActivity_registration_conflict">Conflicte de registre</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">El registre a SMSSecure s\'ha completat satisfactòriament.</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">El registre a SMSSecure ha trobat un problema.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">S\'ha rebut un missatge d\'intercanvi de claus corromput!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">S\'ha rebut un missatge d\'intercanvi de claus per una versió del protocol invàlida.</string>
@@ -212,8 +170,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <string name="MessageNotifier_mark_as_read">Marca com a llegit</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Ho sento, La resposta ràpida encara no està suportada per SMSSecure!</string>
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Has rebut un missatge d\'algú que suporta sessions de SMSSecure encriptades. Vols iniciar una sessió segura?</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">FRASE CONTRASENYA ANTIGA:</string>
   <string name="change_passphrase_activity__new_passphrase">NOVA FRASE CONTRASENYA:</string>
@@ -222,7 +178,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Sense contactes.</string>
   <!--single_contact_selection_activity-->
-  <string name="SingleContactSelectionActivity_updating_directory">Actualitzant directori</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Selecciona per</string>
   <!--contact_selection_recent_activity-->
@@ -238,9 +193,6 @@ Necessitaràs tornar a registrar el teu número de telèfon per utilitzar els mi
   <string name="conversation_item_received__download">Descàrrega</string>
   <string name="conversation_item_received__downloading">Descarregant</string>
   <!--conversation_fragment_cab-->
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Carregant països...</string>
-  <string name="country_selection_fragment__search">Cerca</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">No s\'han pogut recollir els registres del teu dispositiu. Encara pots utilitzar ADB per aconseguir els registres de depuració.</string>
   <string name="log_submit_activity__thanks">Gràcies per la teva ajuda!</string>
@@ -261,7 +213,6 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
   <string name="MmsPreferencesFragment__manual_mms_settings_are_required">En el teu telèfon són necessaris els ajustaments MMS manuals.</string>
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desbloqueja</string>
   <!--prompt_mms_activity-->
@@ -269,36 +220,6 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Per enviar missatges multimèdia i de grup, clica \'OK\' i completa els ajustaments demanats. Els ajustaments MMS de la teva operadora normalment poden ser trobats buscant \'latevaoperadora APN\'. Només necessitaràs fer això una vegada.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Complet</string>
-  <!--registration_activity-->
-  <string name="registration_activity__your_country">EL TEU PAÍS</string>
-  <string name="registration_activity__your_country_code_and_phone_number">EL TEU CODI DE PAÍS I NÚMERO DE TELÈFON</string>
-  <string name="registration_activity__phone_number">NÚMERO DE TELÈFON</string>
-  <string name="registration_activity__register">Registra</string>
-  <string name="registration_activity__skip">Salta</string>
-  <!--registration_problems-->
-  <string name="registration_problems__some_possible_problems_include">Alguns possibles problemes inclouen:</string>
-  <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">Alguns clients de missatgeria de text de tercers, com ara Handcent o GoSMS, es comporten inadequadament i intercepten tots els missatges SMS entrants. Verifica per veure si has rebut un missatge de text que comença per \'Your SMSSecure verification code:\', en aquest cas necessitaràs configurar la teva app de missatgeria de tercers per deixar passar els missatges de text.</string>
-  <string name="registration_problems__incorrect_number">Número incorrecte.</string>
-  <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">Si us plau verifica per estar segur que has introduït el teu número correctament, i està ajustat correctament per la teva regió.</string>
-  <string name="registration_problems__google_voice">Google Voice.</string>
-  <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">SMSSecure no funcionarà amb números de Google Voice.</string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">SMSSecure també et pot trucar per verificar el teu número de telèfon. Pica \'Truca\'m\' i introdueix a sota el codi de sis dígits que sentis.</string>
-  <string name="registration_progress_activity__verify">Verifica</string>
-  <string name="registration_progress_activity__edit_number">Edita número</string>
-  <string name="registration_progress_activity__connectivity_error">Error de connectivitat.</string>
-  <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">SMSSecure no s\'ha pogut connectar al servei push.</string>
-  <string name="registration_progress_activity__some_possible_problems_include">Alguns possibles problemes inclouen:</string>
-  <string name="registration_progress_activity__no_network_connectivity">No hi ha connexió de xarxa.</string>
-  <string name="registration_progress_activity__restrictive_firewall">Tallafocs restrictiu.</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">SMSSecure verificarà automàticament el teu número amb un missatge de confirmació SMS.</string>
-  <string name="registration_progress_activity__connecting">Connectant...</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">Esperant la verificació SMS...</string>
-  <string name="registration_progress_activity__registering_with_server">Registrant-se al servidor...</string>
-  <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">Això portarà una estona. Si us plau sigues pacient, et notificarem quan la verificació estigui completada.</string>
-  <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">S\'ha acabat el temps d\'espera de SMSSecure mentre s\'esperava el missatge SMS de verificació.</string>
-  <string name="registration_progress_activity__sms_verification_failed">La verificació SMS ha fallat.</string>
-  <string name="registration_progress_activity__generating_keys">Generant claus...</string>
   <!--recipients_panel-->
   <string name="recipients_panel__add_member">Afegeix membre</string>
   <!--verify_identity_activity-->
@@ -363,9 +284,6 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <string name="preferences__language">Idioma</string>
   <string name="preferences__make_default_sms_app">Estableix com a app d\'SMS predeterminada</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Fes SMSSecure l\'aplicació d\'SMS/MMS predeterminada del teu sistema.</string>
-  <string name="preferences__use_data_channel">Missatges Push</string>
-  <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-Augmenta la privacitat i evita els càrrecs d\'SMS utilitzant el canal de dades per comunicar-se amb altres usuaris de SMSSecure</string>
   <string name="preferences__submit_debug_log">Envia un registre de depuració</string>
   <!--****************************************-->
   <!--menus-->

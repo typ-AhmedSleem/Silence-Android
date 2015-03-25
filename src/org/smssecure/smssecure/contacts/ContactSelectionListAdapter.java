@@ -200,9 +200,10 @@ public class ContactSelectionListAdapter extends    CursorAdapter
 
     final int type = c.getInt(c.getColumnIndexOrThrow(ContactsDatabase.TYPE_COLUMN));
     final int headerTextRes;
+    // TODO: Remove push-related code
     switch (type) {
-    case 1:  headerTextRes = R.string.contact_selection_list__header_textsecure_users; break;
-    default: headerTextRes = R.string.contact_selection_list__header_other;            break;
+    case 1:  headerTextRes = R.string.contact_selection_list__header; break;
+    default: headerTextRes = R.string.contact_selection_list__header; break;
     }
     holder.text.setText(headerTextRes);
     return convertView;

@@ -30,7 +30,6 @@
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">དགོངས་དག ཁྱོད་ཀྱི་ཟུར་སྣོན་ལ་སྒྲིག་བཟོ་བྱེད་པར་ནོར་འཁྲུལ་ཞིག་འདུག </string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">གཏོང་ས་དེར་གློག་འཕྲིན་ཁ་བྱང་ངམ་འཕྲིན་ཐུང་(SMS) ཁ་བྱང་ཚད་ལྡན་མི་འདུག </string>
   <string name="ConversationActivity_message_is_empty_exclamation">འཕྲིན་ཐུང་སྟོང་པ་རེད་འདུག </string>
-  <string name="ConversationActivity_transport_textsecure">གཡག་འཕྲིན། </string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">འཕྲིན་ཐུང་གི་ཞིབ་ཆ།</string>
   <string name="ConversationFragment_success_exclamation">ལེགས་འགྲུབ། </string>
@@ -48,7 +47,6 @@
   <string name="ExportFragment_export">ཕྱི་འདྲེན་བྱོས། </string>
   <string name="ExportFragment_cancel">ཕྱིར་འཐེན་བྱེད།</string>
   <string name="ExportFragment_success">ལེགས་འགྲུབ། </string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
@@ -67,14 +65,8 @@
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">གསང་ཚིག་རྙིང་པ་དེ་ནོར་འདུག </string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_continue">མུ་མཐུད། </string>
-  <!--RegistrationProblemsActivity-->
-  <!--RegistrationProgressActivity-->
-  <!--RegistrationService-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -123,8 +115,6 @@
   <string name="MessageNotifier_failed_to_deliver_message">འཕྲིན་ཐུང་གཏོང་ཐུབ་མ་སོང་། </string>
   <string name="MessageNotifier_error_delivering_message">འཕྲིན་ཐུང་གཏོང་བར་སྐྱོན་ཤོར་འདུག </string>
   <!--QuickResponseService-->
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">གཡག་འཕྲིན་གྱི་བདེ་འཇགས་གླེང་མོལ་ལ་རྒྱབ་སྐྱོར་བྱེད་མཁན་ཞིག་ནས་ཁྱེད་ལ་འཕྲིན་ཐུང་ཅིག་འབྱོར་འདུག ཁོང་གི་ལྷན་དུ་འབྲེལ་བ་བརྟན་པོ་ཡོང་ཆེད་ལྡེ་མིག་བརྗེ་ལེན་རྒྱུ་ཡིན་ནམ།</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">གསང་ཚིག་རྙིང་པ།</string>
   <string name="change_passphrase_activity__new_passphrase">གསང་ཚིག་གསར་པ།</string>
@@ -148,8 +138,6 @@
   <string name="conversation_item_received__download">ཕབ་ལེན་བྱོས། </string>
   <string name="conversation_item_received__downloading">ཕབ་ལེན་བྱེད་བཞིན་ཡོད། </string>
   <!--conversation_fragment_cab-->
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__search">འཚོལ།</string>
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">ཁྱེད་ཀྱིས་ད་ཡོད་འཕྲིན་ཐུང་ཡི་གེ་དེ་གཡག་འཕྲིན་གསང་སྡོམ་མཛོད་ཀྱི་ཁོངས་སུ་བཅུག་འདོད་འདུག་གམ། </string>
@@ -162,15 +150,10 @@
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">སྒོ་ཕྱེས། </string>
   <!--prompt_mms_activity-->
   <!--receive_key_activity-->
-  <!--registration_activity-->
-  <string name="registration_activity__skip">བསྐྱུར། </string>
-  <!--registration_problems-->
-  <!--registration_progress_activity-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">གཞན་གྱི་ངོས་འཛིན། (ཁོང་ཚོས་ཀློགས)</string>
@@ -181,14 +164,10 @@
   <!--arrays.xml-->
   <!--plurals.xml-->
   <!--preferences.xml-->
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">ནང་ཡོང་འཕྲིན་ཐུང་ཚང་མར་བལྟ་བ་དང་ཉར་བ་ལ་གཡག་འཕྲིན་བེད་སྤྱོད་ཐོངས།</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">ནང་ཡོང་སྣ་མང་འཕྲིན་ཐུང་རིགས་ལ་ཉར་ཚགས་དང་ཞིབ་ལྟའི་ཆེད་དུ་གཡག་འཕྲིན་བེད་སྤྱོད་ཐོངས།</string>
   <string name="preferences__input_settings">ནང་འཇུག་སྒྲིག་བཟོ། </string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">འབྲེལ་ཐོ་ནས་ཁྱེད་ཀྱིས་འབྲེལ་བ་བྱེད་ས་དེ་གདེམས། </string>
   <string name="preferences__change_passphrase">གསང་ཚིག་བརྗེ་བོ་རྒྱོབས།</string>
   <string name="preferences__change_my_passphrase">ངའི་གསང་ཚིག་བརྗེ་བོ་རྒྱོབས།</string>
-  <string name="preferences__complete_key_exchanges">ལྡེ་མིག་བརྗེ་ལེན་རྣམས་ཚར་བ་བྱོས། </string>
-  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">ལྡེ་མིག་གི་ངོས་འཛིན་གཅིག་པའི་ད་ཡོད་སྡེ་ཚན་ཞིག་གམ་ཡང་ན་སྡེ་ཚན་གསར་བ་ཞིག་གི་སླད་དུ། རང་བཞིན་ནས་ལྡེ་མིག་བརྗེ་ལེན་དེ་འགྲུབ་པ་བྱོས།</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">དུས་བརྒལ་གྱི་དབར་དྲན་ཐོ་ནས་གསང་ཚིག་བརྗེད། </string>
   <string name="preferences__timeout_passphrase">གསང་ཚིག་གི་དུས་ཚོད་ཡོལ་འདུག</string>
   <string name="preferences__pref_timeout_interval_title">བར་སེང་མཚམས་ཞོག </string>

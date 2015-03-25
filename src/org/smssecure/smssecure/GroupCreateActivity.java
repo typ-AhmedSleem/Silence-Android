@@ -141,7 +141,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
     dynamicLanguage.onResume(this);
     getSupportActionBar().setTitle(R.string.GroupCreateActivity_actionbar_title);
     if (!SMSSecurePreferences.isPushRegistered(this)) {
-      disableWhisperGroupUi(R.string.GroupCreateActivity_you_dont_support_push);
+      disableWhisperGroupUi();
     }
   }
 
@@ -149,10 +149,10 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
     return groupName.isEnabled() && avatar.isEnabled();
   }
 
-  private void disableWhisperGroupUi(int reasonResId) {
+  private void disableWhisperGroupUi() {
     View pushDisabled = findViewById(R.id.push_disabled);
     pushDisabled.setVisibility(View.VISIBLE);
-    ((TextView) findViewById(R.id.push_disabled_reason)).setText(reasonResId);
+    ((TextView) findViewById(R.id.push_disabled_reason)).setText("");
     avatar.setEnabled(false);
     groupName.setEnabled(false);
   }
@@ -186,7 +186,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
     final boolean isPushUser = isActiveInDirectory(this, contact);
     if (existingContacts != null && !isPushUser) {
       Toast.makeText(getApplicationContext(),
-                     R.string.GroupCreateActivity_cannot_add_non_push_to_existing_group,
+                     "",
                      Toast.LENGTH_LONG).show();
       return;
     }
@@ -194,7 +194,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
     if (!selectedContacts.contains(contact) && (existingContacts == null || !existingContacts.contains(contact)))
       selectedContacts.add(contact);
     if (!isPushUser) {
-      disableWhisperGroupUi(R.string.GroupCreateActivity_contacts_dont_support_push);
+      disableWhisperGroupUi();
       getSupportActionBar().setTitle(R.string.GroupCreateActivity_actionbar_mms_title);
     }
   }

@@ -30,7 +30,6 @@
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">ပူးတွဲပါဖိုင်တွင် ဆက်တင်အမှားရှိ.</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">လက်ခံသူသည်　မှန်ကန်သော SMS(သို့)အီးမေးလိပ်စာ　မဟုတ်</string>
   <string name="ConversationActivity_message_is_empty_exclamation">စာတိုမရှိ</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">စာတို အသေးစိတ်အချက်အလက်များ</string>
   <string name="ConversationFragment_success_exclamation">အောင်မြင်!</string>
@@ -47,7 +46,6 @@
   <!--ExportFragment-->
   <string name="ExportFragment_export">ထုတ်ယူ</string>
   <string name="ExportFragment_success">အောင်မြင်!</string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
@@ -65,14 +63,8 @@
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">စကားဝှက်အဟောင်းမမှန်ကန်</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_continue">ရှေ့ဆက်</string>
-  <!--RegistrationProblemsActivity-->
-  <!--RegistrationProgressActivity-->
-  <!--RegistrationService-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -121,8 +113,6 @@
   <string name="MessageNotifier_failed_to_deliver_message">အကြောင်းကြားချက်ပို့လွတ်ရန်မအောင်မြင်</string>
   <string name="MessageNotifier_error_delivering_message">အကြောင်းကြားချက်ပို့လွတ်စဉ်အမှား</string>
   <!--QuickResponseService-->
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Textsecure ဝှက်စာပို့စနစ်ကို သုံးသည့်သူတစ်ဦးထံမှ စာလက်ခံရရှိလာပါတယ်။ လုံခြုံမှုရှိသော ဆက်ရှင်တစ်ခု စမည်လား။</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">စကားဝှက်အဟောင်း:</string>
   <string name="change_passphrase_activity__new_passphrase">စကားဝှက်အသစ်:</string>
@@ -146,8 +136,6 @@
   <string name="conversation_item_received__download">ကူးဆွဲ</string>
   <string name="conversation_item_received__downloading">ကူးဆွဲနေသည်</string>
   <!--conversation_fragment_cab-->
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__search">ရှာရန်</string>
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">အသင်၏ ရှိရင်းစွဲ စာသားများကို Textsecure၏ ဝှက်သိမ်းထားသော ဒေတာဘေ့စ်ထဲသို့ တင်သွင်းမည်လား။</string>
@@ -160,15 +148,10 @@
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">ပိတ်ထားသည်ကိုဖွင့်</string>
   <!--prompt_mms_activity-->
   <!--receive_key_activity-->
-  <!--registration_activity-->
-  <string name="registration_activity__skip">ကျော်</string>
-  <!--registration_problems-->
-  <!--registration_progress_activity-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">သူများ အိုင်ဒီ (သူများ အမြင်) - </string>

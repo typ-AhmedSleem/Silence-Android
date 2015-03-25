@@ -17,7 +17,6 @@
 לגשת אליהם.
 </string>
   <string name="ApplicationPreferencesActivity_disable">בטל</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">אירעה שגיאה בחיבור לשרת!</string>
   <!--AppProtectionPreferenceFragment-->
   <!--DraftDatabase-->
   <!--AttchmentManager-->
@@ -45,7 +44,6 @@
   <string name="ConversationActivity_message_is_empty_exclamation">ההודעה ריקה!</string>
   <string name="ConversationActivity_invalid_recipient">נמען שגוי!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">נראה כי מכשיר זה אינו תומך בפעולות חיוג.</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">פרטי הודעה</string>
   <string name="ConversationFragment_success_exclamation">הצליח!</string>
@@ -67,7 +65,6 @@
   <string name="ExportFragment_cancel">בטל</string>
   <string name="ExportFragment_exporting">מייצא</string>
   <string name="ExportFragment_success">הצליח!</string>
-  <!--GcmRefreshJob-->
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
@@ -105,7 +102,6 @@
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">סיסמה ישנה לא נכונה.</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">החתימה
@@ -121,11 +117,6 @@
 על החלפת המפתח הזו אמינה, אבל ביטלת את האפשרות של \"השלם החלפת
  מפתח אוטומטית\" בהגדרות.
 </string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_continue">המשך</string>
-  <!--RegistrationProblemsActivity-->
-  <!--RegistrationProgressActivity-->
-  <!--RegistrationService-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -177,8 +168,6 @@
   <string name="MessageNotifier_mark_all_as_read">סמן הכל כנקרא</string>
   <string name="MessageNotifier_mark_as_read">סמן כנקרא</string>
   <!--QuickResponseService-->
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">קיבלת הודעה ממישהו שתומך בחיבור מאובטח של SMSSecure. האם ברצונך להתחיל חיבור מאובטח? </string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">סיסמה ישנה:</string>
   <string name="change_passphrase_activity__new_passphrase">סיסמה חדשה:</string>
@@ -202,8 +191,6 @@
   <string name="conversation_item_received__download">הורד</string>
   <string name="conversation_item_received__downloading">מוריד</string>
   <!--conversation_fragment_cab-->
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__search">חפש</string>
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">אתה רוצה לייבא את הודעות הטקסט הקיימות שלך לבסיס הנתונים המוצפן של SMSSecure?</string>
@@ -227,7 +214,6 @@
   <!--message_recipients_list_item-->
   <!--MmsPreferencesFragment-->
   <string name="MmsPreferencesFragment__manual_mms_settings_are_required">נדרשות הגדרות MMS ידניות עבור מכשירך.</string>
-  <!--GroupUtil-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">פתח</string>
   <!--prompt_mms_activity-->
@@ -235,10 +221,6 @@
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">כדי לשלוח הודעות מולטימדיה או הודעות קבוצתיות,לחץ \'אישור\' והשלם את ההגדרות המתבקשות.את הגדרות ה-MMS עבור ספק השירות שלך אתה יכול למצוא בד\"כ ע\"י חיפוש \"ספק השרות APN\". אתה תצטרך להשלים מידע זה רק פעם אחת.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">השלם</string>
-  <!--registration_activity-->
-  <string name="registration_activity__skip">דלג</string>
-  <!--registration_problems-->
-  <!--registration_progress_activity-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">הזהות שלהם (הם קוראים):</string>

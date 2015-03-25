@@ -16,13 +16,6 @@
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Внимание, вы собираетесь отключить шифрование базы данных, в которой хранятся все ваши сообщения и ключи. При переписке шифрование продолжит работать, однако любой, кто имеет физический доступ к вашему устройству, сможет прочитать ваши сообщения.</string>
   <string name="ApplicationPreferencesActivity_disable">Отключить</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Отмена регистрации...</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Отменяем регистрацию для обмена сообщениями по каналу данных</string>
-  <string name="ApplicationPreferencesActivity_disable_push_messages">Отключить push-сообщения?</string>
-  <string name="ApplicationPreferencesActivity_this_will_disable_push_messages">
-Это отключит push-сообщения, отменив вашу регистрацию на сервере.
-Чтобы в будущем включить push-сообщения, вам нужно будет зарегистрироваться вновь.</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Ошибка при соединении с сервером!</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Входящие SMS включены</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Нажмите для выбора SMS-приложения по умолчанию</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Входящие SMS отключены</string>
@@ -31,11 +24,8 @@
   <string name="ApplicationPreferencesActivity_On">Включено</string>
   <string name="ApplicationPreferencesActivity_off">выключено</string>
   <string name="ApplicationPreferencesActivity_Off">Выключено</string>
-  <string name="ApplicationPreferencesActivity_partial">частично</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
-  <string name="ApplicationPreferencesActivity_incoming_sms_summary">Входящее %s</string>
-  <string name="ApplicationPreferencesActivity_outgoing_sms_summary">исходящее %s</string>
   <!--AppProtectionPreferenceFragment-->
   <string name="AppProtectionPreferenceFragment_minutes">%d минут</string>
   <!--DraftDatabase-->
@@ -61,12 +51,8 @@
   <string name="ConversationItem_error_received_stale_key_exchange_message">Ошибка: получено устаревшее сообщение обмена ключами.</string>
   <string name="ConversationItem_received_key_exchange_message_click_to_process">Получено сообщение обмена ключами. Нажмите, чтобы его обработать.</string>
   <string name="ConversationItem_group_action_left">%1$s покинул группу.</string>
-  <string name="ConversationItem_click_to_approve_sms">Отправить как SMS</string>
-  <string name="ConversationItem_click_to_approve_mms">Отправить как MMS</string>
   <string name="ConversationItem_click_for_details">Нажмите для подробностей</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Отправить незащищённым</string>
-  <string name="ConversationItem_click_to_approve_sms_dialog_title">Отправить как SMS?</string>
-  <string name="ConversationItem_click_to_approve_mms_dialog_title">Отправить как MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Отправить как незашифрованное SMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Отправить как незашифрованное MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Это сообщение <b>не будет</b> зашифровано, так как не удалось установить защищённый сеанс.\n\nОтправить сообщение незащищённым?</string>
@@ -95,20 +81,12 @@
   <string name="ConversationActivity_invalid_recipient">Неверный получатель!</string>
   <string name="ConversationActivity_calls_not_supported">Звонки не поддерживаются</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Ваше устройство, по-видимому, не поддерживает набор номера.</string>
-  <string name="ConversationActivity_leave_group">Покинуть группу?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Вы уверены, что хотите покинуть эту группу?</string>
   <string name="ConversationActivity_transport_insecure_sms">Незащищённое SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Незащищённое MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Защищённое SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Защищённое MMS</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
-  <string name="ConversationActivity_get_with_it">Получить: %s</string>
-  <string name="ConversationActivity_install_textsecure">Установить SMSSecure: %s</string>
-  <string name="ConversationActivity_error_leaving_group">Ошибка при выходе из группы...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Подробности</string>
-  <string name="ConversationFragment_transport_s_sent_received_s">Транспорт: %1$s\nОтправлено/Получено: %2$s</string>
-  <string name="ConversationFragment_sender_s_transport_s_sent_s_received_s">Отправитель: %1$s\nТранспорт: %2$s\nОтправлено: %3$s\nПолучено: %4$s</string>
   <string name="ConversationFragment_confirm_message_delete">Подтвердите удаление сообщения</string>
   <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Вы уверены что хотите навсегда удалить все выбранные сообщения?</string>
   <string name="ConversationFragment_save_to_sd_card">Сохранить на SD-карту?</string>
@@ -146,16 +124,11 @@
   <string name="ExportFragment_error_unable_to_write_to_sd_card">Ошибка, невозможно произвести запись на SD-карту!</string>
   <string name="ExportFragment_error_while_writing_to_sd_card">Ошибка при записи на SD-карту.</string>
   <string name="ExportFragment_success">Успешно!</string>
-  <!--GcmRefreshJob-->
-  <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">Неустранимая ошибка соединения!</string>
-  <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">TextSecyre не смог зарегистрироваться в службах Google Play. Канал передачи данных отключён. Пожалуйста, попробуйте зарегистрироваться заново из меню настроек.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Новая группа</string>
   <string name="GroupCreateActivity_actionbar_update_title">Обновить группу</string>
   <string name="GroupCreateActivity_group_name_hint">Название группы</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Новая MMS-группа</string>
-  <string name="GroupCreateActivity_contacts_dont_support_push">Выбранный контакт не поддерживает SMSSecure-группы, поэтому эта группа будет преобразована в MMS.</string>
-  <string name="GroupCreateActivity_you_dont_support_push">Вы не зарегистрированы для использования канала передачи данных, поэтому группы отключены.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Непредвиденная ошибка не позволила создать группу.</string>
   <string name="GroupCreateActivity_contacts_no_members">Нужен как минимум один участник в группе!</string>
   <string name="GroupCreateActivity_contacts_invalid_number">Один из участников имеет неправильный номер. Пожалуйста, исправьте или удалите этот контакт и попробуйте снова.</string>
@@ -163,7 +136,6 @@
   <string name="GroupCreateActivity_menu_create_title">Создать группу</string>
   <string name="GroupCreateActivity_creating_group">Создаём %1$s…</string>
   <string name="GroupCreateActivity_updating_group">Обновляем %1$s...</string>
-  <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">Нельзя добавить в SMSSecure-группу собеседников, у которых SMSSecure не установлен</string>
   <string name="GroupCreateActivity_loading_group_details">Загружаем подробности о группе...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Я</string>
@@ -210,21 +182,6 @@
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Парольные фразы не совпадают!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Неверная старая парольная фраза!</string>
-  <!--DeviceProvisioningActivity-->
-  <string name="DeviceProvisioningActivity_link_this_device">Привязать это устройство?</string>
-  <string name="DeviceProvisioningActivity_cancel">Отмена</string>
-  <string name="DeviceProvisioningActivity_continue">Продолжить</string>
-  <string name="DeviceProvisioningActivity_title">Привязать это устройство?</string>
-  <string name="DeviceProvisioningActivity_content_intro">Это будет возможно</string>
-  <string name="DeviceProvisioningActivity_content_bullets">
-- Читать все Ваши сообщения
-\n - Отправить сообщения от вашего имени</string>
-  <string name="DeviceProvisioningActivity_content_progress_title">Добавление устройства...</string>
-  <string name="DeviceProvisioningActivity_content_progress_content">Добавление нового устройства...</string>
-  <string name="DeviceProvisioningActivity_content_progress_success">Устройство добавлено!</string>
-  <string name="DeviceProvisioningActivity_content_progress_no_device">Устройства не найдены.</string>
-  <string name="DeviceProvisioningActivity_content_progress_network_error">Ошибка сети.</string>
-  <string name="DeviceProvisioningActivity_content_progress_key_error">Неверный QR-код</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Введите парольную фразу</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Иконка SMSSecure</string>
@@ -236,48 +193,6 @@
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Подпись в этом обмене ключами является доверенной, но вы отключили в настройках автоматическое выполнение обменов.</string>
   <string name="ReceiveKeyActivity_processing">Обработка</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Обрабатываем обмен ключами...</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">Подключение к SMSSecure</string>
-  <string name="RegistrationActivity_select_your_country">Выберите страну</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Необходимо указать код страны</string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Необходимо указать номер телефона</string>
-  <string name="RegistrationActivity_invalid_number">Неверный номер</string>
-  <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">Указанный вами 
-номер телефона (%s) неверен.</string>
-  <string name="RegistrationActivity_unsupported">Устройство не поддерживается</string>
-  <string name="RegistrationActivity_sorry_this_device_is_not_supported_for_data_messaging">К сожалению, на вашем устройстве невозможен обмен сообщениями по каналу данных. На устройствах с Android версии ниже 4.0 должен быть зарегистрирован аккаунт Google. На устройствах с Android 4.0 или выше аккаунт Google необязателен, но должно иметься приложение «Play Маркет».</string>
-  <string name="RegistrationActivity_we_will_now_verify_that_the_following_number_is_associated_with_your_device_s">
-Дважды убедитесь, что это Ваш номер! На него будет отправлено SMS для проверки.</string>
-  <string name="RegistrationActivity_continue">Продолжить</string>
-  <string name="RegistrationActivity_edit">Изменить</string>
-  <!--RegistrationProblemsActivity-->
-  <string name="RegistrationProblemsActivity_possible_problems">Возможные проблемы</string>
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Проверка номера</string>
-  <string name="RegistrationProgressActivity_edit_s">Изменить %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Регистрация завершена!</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">Сначала введите полученный вами код...</string>
-  <string name="RegistrationProgressActivity_connecting">Соединение</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Соединяемся для проверки...</string>
-  <string name="RegistrationProgressActivity_network_error">Ошибка сети!</string>
-  <string name="RegistrationProgressActivity_unable_to_connect">Невозможно соединиться. Проверьте, есть ли подключение к интернету и попробуйте снова.</string>
-  <string name="RegistrationProgressActivity_verification_failed">Проверка не удалась!</string>
-  <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">Код подтверждения, введённый вами, неверен. Пожалуйста, попробуйте ещё раз.</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Слишком много попыток</string>
-  <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">Вы слишком много раз вводили неверный код подтверждения. Подождите минуту перед следующей попыткой.</string>
-  <string name="RegistrationProgressActivity_requesting_call">Запрашиваем звонок</string>
-  <string name="RegistrationProgressActivity_requesting_incoming_call">Запрашиваем входящий звонок для подтверждения...</string>
-  <string name="RegistrationProgressActivity_server_error">Ошибка сервера</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">На сервере возникла ошибка. Пожалуйста, попробуйте ещё раз.</string>
-  <string name="RegistrationProgressActivity_too_many_requests">Слишком много запросов!</string>
-  <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Вы недавно уже запрашивали голосовой звонок. Запросить ещё один вы сможете через 20 минут.</string>
-  <string name="RegistrationProgressActivity_registration_conflict">Конфликт регистрации</string>
-  <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">Этот номер уже зарегистрирован на другом сервере SMSSecure (CyanogenMod?). Вам нужно удалить регистрацию там, что бы зарегистрироваться здесь.</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_registration_complete">Регистрация завершена</string>
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">Регистрация в SMSSecure успешно завершена.</string>
-  <string name="RegistrationService_registration_error">Ошибка регистрации</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">При регистрации в SMSSecure возникла ошибка.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Получено повреждённое
 сообщение обмена ключами!
@@ -357,9 +272,6 @@
   <string name="MessageNotifier_mark_as_read">Отметить как прочитанное</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Извините, SMSSecure пока не поддерживает быстрые ответы.</string>
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">Вы получили сообщение от собеседника, поддерживающего зашифрованное общение при помощи SMSSecure. Хотите начать защищённый сеанс?</string>
-  <string name="auto_initiate_activity__initiate_exchange">Начать обмен</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">СТАРАЯ ПАРОЛЬНАЯ ФРАЗА:</string>
   <string name="change_passphrase_activity__new_passphrase">НОВАЯ ПАРОЛЬНАЯ ФРАЗА:</string>
@@ -369,16 +281,12 @@
   <string name="contact_selection_group_activity__no_contacts">Нет контактов.</string>
   <string name="contact_selection_group_activity__finding_contacts">Загружаем контакты...</string>
   <!--single_contact_selection_activity-->
-  <string name="SingleContactSelectionActivity_you_are_not_registered_with_the_push_service">Вы не зарегистрированы в push-службе...</string>
-  <string name="SingleContactSelectionActivity_updating_directory">Обновление каталога</string>
-  <string name="SingleContactSelectionActivity_updating_push_directory">Обновляем push-каталог...</string>
   <string name="SingleContactSelectionActivity_contact_photo">Фото контактов</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Выбрать для</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Нет недавних звонков.</string>
   <!--conversation_activity-->
-  <string name="conversation_activity__type_message_push">Отправить сообщение SMSSecure</string>
   <string name="conversation_activity__type_message_sms_secure">Отправить защищённое SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Отправить незащищённое SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Отправить защищённое MMS</string>
@@ -406,9 +314,6 @@
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Выбрать несколько</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s выбрано</string>
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Загружаем страны...</string>
-  <string name="country_selection_fragment__search">Поиск</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Не удается получить лог с вашего устройства. Вы можете воспользоваться для этого ADB.</string>
   <string name="log_submit_activity__thanks">Спасибо за помощь!</string>
@@ -446,10 +351,6 @@
   <string name="MmsPreferencesFragment__not_set">Не настроен</string>
   <string name="MmsPreferencesFragment__invalid_uri">Введён неверный адрес</string>
   <string name="MmsPreferencesFragment__invalid_host">Введён неверный адрес хоста</string>
-  <!--GroupUtil-->
-  <string name="GroupUtil_joined_the_group">%1$s присоединился к группе.</string>
-  <string name="GroupUtil_group_updated">Группа обновлена.</string>
-  <string name="GroupUtil_title_is_now">Заголовок изменён на \'%1$s\'.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Открыть</string>
   <!--prompt_mms_activity-->
@@ -457,70 +358,6 @@
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Чтобы отправлять мультимедийные и групповые сообщения, нажмите «ОК» и настройте MMS. Это нужно сделать только один раз. Настройки для вашего оператора можно узнать в службе техподдержки или в интернете по запросу «ваш оператор APN».</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Выполнить</string>
-  <!--registration_activity-->
-  <string name="registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users">
-Регистрация бесплатна и повышает безопасность при общении с другими пользователями SMSSecure. Пожалуйста, подтвердите ваш номер телефона.</string>
-  <string name="registration_activity__your_country">ВАША СТРАНА</string>
-  <string name="registration_activity__your_country_code_and_phone_number">КОД ВАШЕЙ СТРАНЫ
-И НОМЕР ТЕЛЕФОНА</string>
-  <string name="registration_activity__phone_number">НОМЕР ТЕЛЕФОНА</string>
-  <string name="registration_activity__register">Зарегистрироваться</string>
-  <string name="registration_activity__registration_will_transmit_some_contact_information_to_the_server_temporariliy">При регистрации на сервер передаётся некоторая контактная информация. Она не будет на нём сохранена.</string>
-  <string name="registration_activity__skip">Пропустить</string>
-  <!--registration_problems-->
-  <string name="registration_problems__some_possible_problems_include">Возможные причины:</string>
-  <string name="registration_problems__sms_interceptors">Обработчики SMS</string>
-  <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
-Некоторые SMS-приложения сторонних разработчиков (например, Handcent или GoSMS) ведут себя неправильно и перехватывают все входящие SMS-сообщения. Проверьте, не получали ли вы сообщение, начинающееся со слов «Your SMSSecure verification code». Если да, то вам необходимо настроить ваше SMS-приложение так, чтобы оно пропускало сообщения дальше. </string>
-  <string name="registration_problems__incorrect_number">Неверный номер.</string>
-  <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">
-Пожалуйста, убедитесь, правильно ли вы указали свой номер и соответствует ли его формат
-вашему региону.
-</string>
-  <string name="registration_problems__google_voice">Google Voice.</string>
-  <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">
-SMSSecure не работает с номерами Google Voice.</string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__voice_verification">Голосовая проверка</string>
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">
-Для проверки вашего номера SMSSecure также может вам позвонить. Нажмите «Позвонить мне», дождитесь звонка и введите ниже шесть цифр, которые вы услышите.</string>
-  <string name="registration_progress_activity__verify">Проверить</string>
-  <string name="registration_progress_activity__call_me">Позвонить мне</string>
-  <string name="registration_progress_activity__edit_number">Изменить номер</string>
-  <string name="registration_progress_activity__connectivity_error">Ошибка связи.</string>
-  <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">
-SMSSecure не смог соединиться с push-службой.</string>
-  <string name="registration_progress_activity__some_possible_problems_include">Возможные 
-причины:
-</string>
-  <string name="registration_progress_activity__no_network_connectivity">Нет соединения 
-с интернетом.
-</string>
-  <string name="registration_progress_activity__your_device_needs_network_connectivity">Для использования этой функции SMSSecure необходимо подключение к интернету. Убедитесь, что ваше устройство подключено к 3G или Wi-Fi.</string>
-  <string name="registration_progress_activity__restrictive_firewall">Ограничения брандмауэра.
-</string>
-  <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
-Если вы подключены по Wi-Fi, возможно, в сети имеется брандмауэр, который блокирует доступ к серверу SMSSecure. Попробуйте воспользоваться другой беспроводной сетью либо мобильным интернетом.</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-Сейчас SMSSecure автоматически проверит ваш номер телефона при помощи SMS-сообщения.
-</string>
-  <string name="registration_progress_activity__connecting">Соединяемся...</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">Ожидаем
-SMS-подтверждения...
-</string>
-  <string name="registration_progress_activity__registering_with_server">Регистрируемся на сервере...</string>
-  <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">Это может занять некоторое время. Пожалуйста, подождите. Мы сообщим вам, когда процесс подтверждения будет завершен.
-</string>
-  <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">
-Истекло время ожидания SMS-сообщения для подтверждения вашего номера.
-</string>
-  <string name="registration_progress_activity__sms_verification_failed">Подтверждение
-по SMS не удалось.
-</string>
-  <string name="registration_progress_activity__generating_keys">Генерируем ключи...</string>
-  <string name="registration_progress_activity__alert">Предупреждение</string>
-  <string name="registration_progress_activity__telephone">Телефон</string>
-  <string name="registration_progress_activity__check">Проверка</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Введите имя или номер</small></string>
   <string name="recipients_panel__add_member">Добавить участника</string>
@@ -536,7 +373,6 @@ SMS-подтверждения...
   <string name="AndroidManifest__create_passphrase">Создать парольную фразу</string>
   <string name="AndroidManifest__enter_passphrase">Введите парольную фразу</string>
   <string name="AndroidManifest__select_contacts">Выбрать контакты</string>
-  <string name="AndroidManifest__textsecure_detected">Обнаружен SMSSecure</string>
   <string name="AndroidManifest__public_identity_key">Публичный ключ</string>
   <string name="AndroidManifest__change_passphrase">Изменить парольную фразу</string>
   <string name="AndroidManifest__verify_identity">Подтвердить личность</string>
@@ -563,7 +399,6 @@ SMS-подтверждения...
   <!--preferences.xml-->
   <string name="preferences__general">Общие</string>
   <string name="preferences__sms_mms">SMS и MMS</string>
-  <string name="preferences__push_sms_category">Push и SMS</string>
   <string name="preferences__pref_all_sms_title">Получать все SMS</string>
   <string name="preferences__pref_all_mms_title">Получать все MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Использовать SMSSecure для просмотра и хранения всех входящих текстовых сообщений</string>
@@ -647,19 +482,7 @@ SMS-подтверждения...
   <string name="preferences__language_summary">Язык %s</string>
   <string name="preferences__make_default_sms_app">SMS-приложение по умолчанию</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Сделать SMSSecure приложением по умолчанию для SMS и MMS.</string>
-  <string name="preferences__use_data_channel">Push-сообщения</string>
-  <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-Повысить безопасность и снизить расходы на SMS, используя передачу данных при общении с другими пользователями SMSSecure</string>
-  <string name="preferences__sms_fallback">Исходящие SMS/MMS</string>
   <string name="preferences__submit_debug_log">Отправлять лог отладки</string>
-  <string name="preferences__sms_outgoing_push_users">Пользователи SMSSecure</string>
-  <string name="preferences__sms_fallback_push_users_ask">сначала спросить</string>
-  <string name="preferences__sms_fallback_push_users_no_mms">кроме MMS</string>
-  <string name="preferences__sms_outgoing_push_users_description">Отправлять защищённые SMS, если нет интернета</string>
-  <string name="preferences__sms_fallback_ask_before_sending_sms_mms">Спросить перед отправкой SMS/MMS</string>
-  <string name="preferences__sms_fallback_never_send_mms">Никогда не отправлять MMS</string>
-  <string name="preferences__sms_fallback_non_push_users">Пользователи без SMSSecure</string>
-  <string name="preferences__sms_fallback_nobody">Никто</string>
   <string name="preferences__support_wifi_calling">Режим совместимости с WiFi-звонками</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Включите, если ваше устройство отправляет и принимает SMS/MMS через WiFi (и если WiFi-звонки включены)</string>
   <!--****************************************-->
@@ -668,15 +491,12 @@ SMS-подтверждения...
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Выбрать все</string>
   <string name="contact_selection_list__menu_unselect_all">Снять выделение</string>
-  <string name="contact_selection_list__header_textsecure_users">ПОЛЬЗОВАТЕЛИ TEXTSECURE</string>
-  <string name="contact_selection_list__header_other">ВСЕ КОНТАКТЫ</string>
   <string name="contact_selection_list__unknown_contact">Новое сообщение для...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Закончено</string>
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Обновить контакты</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_textsecure_message">Отправить сообщение SMSSecure</string>
   <string name="conversation_button_context__send_secure_sms">Отправить защищённое SMS</string>
   <string name="conversation_button_context__send_insecure_sms">Отправить незащищенное SMS</string>
   <string name="conversation_button_context__send_secure_mms">Отправить защищённое MMS</string>
@@ -712,8 +532,6 @@ SMS-подтверждения...
   <string name="conversation_secure_verified__menu_abort_secure_session">Завершить защищённый сеанс</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Добавить вложение</string>
-  <string name="conversation__menu_update_group">Обновить группу</string>
-  <string name="conversation__menu_leave_group">Покинуть группу</string>
   <string name="conversation__menu_delete_thread">Удалить разговор</string>
   <string name="conversation__menu_view_media">Все изображения</string>
   <!--conversation_callable-->
@@ -740,8 +558,6 @@ SMS-подтверждения...
   <string name="reminder_header_sms_default_text">Нажмите, чтобы сделать SMSSecure клиентом SMS по умолчанию.</string>
   <string name="reminder_header_sms_import_title">Импортировать SMS из системы?</string>
   <string name="reminder_header_sms_import_text">Нажмите, чтобы скопировать SMS с Вашего устройства в зашифрованную базу данных.</string>
-  <string name="reminder_header_push_title">Включить общение через SMSSecure?</string>
-  <string name="reminder_header_push_text">Нажмите для мгновенной доставки, повышенной приватности, и отсутствия платы за SMS.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Вы</string>
   <string name="MediaPreviewActivity_cant_display">Не удалось просмотреть это изобажение</string>

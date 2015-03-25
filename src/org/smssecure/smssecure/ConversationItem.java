@@ -324,8 +324,8 @@ public class ConversationItem extends LinearLayout {
     indicatorText.setVisibility(View.VISIBLE);
 
     if (messageRecord.isPendingSecureSmsFallback()) {
-      if (messageRecord.isMms()) indicatorText.setText(R.string.ConversationItem_click_to_approve_mms);
-      else                       indicatorText.setText(R.string.ConversationItem_click_to_approve_sms);
+      //TODO: Remove push code
+      indicatorText.setText("");
     } else {
       indicatorText.setText(R.string.ConversationItem_click_to_approve_unencrypted);
     }
@@ -576,8 +576,8 @@ public class ConversationItem extends LinearLayout {
     final int message;
 
     if (messageRecord.isPendingSecureSmsFallback()) {
-      if (messageRecord.isMms()) title = R.string.ConversationItem_click_to_approve_mms_dialog_title;
-      else                       title = R.string.ConversationItem_click_to_approve_sms_dialog_title;
+      //TODO: Remove push code
+      title = -1;
 
       message = -1;
     } else {

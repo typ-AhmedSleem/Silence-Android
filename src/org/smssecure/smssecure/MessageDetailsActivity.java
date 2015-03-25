@@ -127,8 +127,6 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
       transportText = "-";
     } else if (messageRecord.isPending()) {
       transportText = getString(R.string.ConversationFragment_pending);
-    } else if (messageRecord.isPush()) {
-      transportText = getString(R.string.ConversationFragment_push);
     } else if (messageRecord.isMms()) {
       transportText = getString(R.string.ConversationFragment_mms);
     } else {

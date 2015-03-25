@@ -20,14 +20,6 @@
         able to access them.
     </string>
     <string name="ApplicationPreferencesActivity_disable">Disable</string>
-    <string name="ApplicationPreferencesActivity_unregistering">Unregistering...</string>
-    <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Unregistering for data based communication</string>
-    <string name="ApplicationPreferencesActivity_disable_push_messages">Disable push messages?</string>
-    <string name="ApplicationPreferencesActivity_this_will_disable_push_messages">
-        This will disable push messages by unregistering you from the server.
-        You will need to re-register your phone number to use push messages again in the future.
-    </string>
-    <string name="ApplicationPreferencesActivity_error_connecting_to_server">Error connecting to server!</string>
     <string name="ApplicationPreferencesActivity_sms_enabled">Incoming SMS Enabled</string>
     <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Touch to change your default SMS app</string>
     <string name="ApplicationPreferencesActivity_sms_disabled">Incoming SMS Disabled</string>
@@ -36,11 +28,9 @@
     <string name="ApplicationPreferencesActivity_On">On</string>
     <string name="ApplicationPreferencesActivity_off">off</string>
     <string name="ApplicationPreferencesActivity_Off">Off</string>
-    <string name="ApplicationPreferencesActivity_partial">partial</string>
     <string name="ApplicationPreferencesActivity_sms">SMS</string>
     <string name="ApplicationPreferencesActivity_mms">MMS</string>
-    <string name="ApplicationPreferencesActivity_incoming_sms_summary">Incoming %s</string>
-    <string name="ApplicationPreferencesActivity_outgoing_sms_summary">outgoing %s</string>
+    <string name="ApplicationPreferencesActivity_incoming_summary">Incoming %s</string>
 
     <!-- AppProtectionPreferenceFragment -->
     <string name="AppProtectionPreferenceFragment_minutes">%d minutes</string>
@@ -78,12 +68,8 @@
     <string name="ConversationItem_error_received_stale_key_exchange_message">Error, received stale key exchange message.</string>
     <string name="ConversationItem_received_key_exchange_message_click_to_process">Received key exchange message, click to process.</string>
     <string name="ConversationItem_group_action_left">%1$s has left the group.</string>
-    <string name="ConversationItem_click_to_approve_sms">Tap for SMS fallback</string>
-    <string name="ConversationItem_click_to_approve_mms">Tap for MMS fallback</string>
     <string name="ConversationItem_click_for_details">Tap for details</string>
     <string name="ConversationItem_click_to_approve_unencrypted">Tap for unsecured fallback</string>
-    <string name="ConversationItem_click_to_approve_sms_dialog_title">Fallback to SMS?</string>
-    <string name="ConversationItem_click_to_approve_mms_dialog_title">Fallback to MMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Fallback to unencrypted SMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Fallback to unencrypted MMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">This message will <b>not</b> be encrypted because a secure session could not be established.\n\nSend unsecured message?</string>
@@ -113,21 +99,14 @@
     <string name="ConversationActivity_invalid_recipient">Invalid recipient!</string>
     <string name="ConversationActivity_calls_not_supported">Calls not supported</string>
     <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">This device does not appear to support dial actions.</string>
-    <string name="ConversationActivity_leave_group">Leave group?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Are you sure you want to leave this group?</string>
     <string name="ConversationActivity_transport_insecure_sms">Insecure SMS</string>
     <string name="ConversationActivity_transport_insecure_mms">Insecure MMS</string>
     <string name="ConversationActivity_transport_secure_sms">Secure SMS</string>
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
-    <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
-    <string name="ConversationActivity_get_with_it">Get with it: %s</string>
-    <string name="ConversationActivity_install_textsecure">Install SMSSecure: %s</string>
-    <string name="ConversationActivity_error_leaving_group">Error leaving group...</string>
+    <string name="ConversationActivity_install_smssecure">Install SMSSecure: %s</string>
 
     <!-- ConversationFragment -->
     <string name="ConversationFragment_message_details">Message details</string>
-    <string name="ConversationFragment_transport_s_sent_received_s">Transport: %1$s\nSent/Received: %2$s</string>
-    <string name="ConversationFragment_sender_s_transport_s_sent_s_received_s">Sender: %1$s\nTransport: %2$s\nSent: %3$s\nReceived: %4$s</string>
     <string name="ConversationFragment_confirm_message_delete">Confirm message delete</string>
     <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Are you sure that you want to permanently delete all selected messages?</string>
     <string name="ConversationFragment_save_to_sd_card">Save to storage?</string>
@@ -138,7 +117,6 @@
     <string name="ConversationFragment_saving_attachment">Saving attachment</string>
     <string name="ConversationFragment_saving_attachment_to_sd_card">Saving attachment to storage...</string>
     <string name="ConversationFragment_pending">Pending...</string>
-    <string name="ConversationFragment_push">Data (SMSSecure)</string>
     <string name="ConversationFragment_mms">MMS</string>
     <string name="ConversationFragment_sms">SMS</string>
     <string name="ConversationFragment_deleting">Deleting...</string>
@@ -177,17 +155,11 @@
     <string name="ExportFragment_error_while_writing_to_sd_card">Error while writing to SD card.</string>
     <string name="ExportFragment_success">Success!</string>
 
-    <!-- GcmRefreshJob -->
-    <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">Permanent SMSSecure communication failure!</string>
-    <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">SMSSecure was unable to register with Google Play Services. Communication over the data channel has been disabled, please try re-registering from the SMSSecure settings menu.</string>
-
     <!-- GroupCreateActivity -->
     <string name="GroupCreateActivity_actionbar_title">New group</string>
     <string name="GroupCreateActivity_actionbar_update_title">Update group</string>
     <string name="GroupCreateActivity_group_name_hint">Group name</string>
     <string name="GroupCreateActivity_actionbar_mms_title">New MMS group</string>
-    <string name="GroupCreateActivity_contacts_dont_support_push">You have selected a contact that doesn\'t support SMSSecure groups, so this group will be MMS.</string>
-    <string name="GroupCreateActivity_you_dont_support_push">You\'re not registered for using the data channel, so SMSSecure groups are disabled.</string>
     <string name="GroupCreateActivity_contacts_mms_exception">An unexpected error happened that has made group creation fail.</string>
     <string name="GroupCreateActivity_contacts_no_members">You need at least one person in your group!</string>
     <string name="GroupCreateActivity_contacts_invalid_number">One of the members of your group has a number that can\'t be read correctly. Please fix or remove that contact and try again.</string>
@@ -195,7 +167,6 @@
     <string name="GroupCreateActivity_menu_create_title">Create group</string>
     <string name="GroupCreateActivity_creating_group">Creating %1$s&#8230;</string>
     <string name="GroupCreateActivity_updating_group">Updating %1$s...</string>
-    <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">Cannot add non-SMSSecure contacts to an existing SMSSecure group</string>
     <string name="GroupCreateActivity_loading_group_details">Loading group details...</string>
 
     <!-- GroupMembersDialog -->
@@ -262,23 +233,6 @@
     <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Passphrases don\'t match!</string>
     <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Incorrect old passphrase!</string>
 
-    <!-- DeviceProvisioningActivity -->
-    <string name="DeviceProvisioningActivity_link_this_device">Link this device?</string>
-    <string name="DeviceProvisioningActivity_cancel">CANCEL</string>
-    <string name="DeviceProvisioningActivity_continue">CONTINUE</string>
-    <string name="DeviceProvisioningActivity_title">Link this device?</string>
-    <string name="DeviceProvisioningActivity_content_intro">It will be able to</string>
-    <string name="DeviceProvisioningActivity_content_bullets">
-        - Read all your messages
-        \n- Send messages in your name
-    </string>
-    <string name="DeviceProvisioningActivity_content_progress_title">Adding device...</string>
-    <string name="DeviceProvisioningActivity_content_progress_content">Adding new device...</string>
-    <string name="DeviceProvisioningActivity_content_progress_success">Device added!</string>
-    <string name="DeviceProvisioningActivity_content_progress_no_device">No device found.</string>
-    <string name="DeviceProvisioningActivity_content_progress_network_error">Network error.</string>
-    <string name="DeviceProvisioningActivity_content_progress_key_error">Invalid QR code.</string>
-
     <!-- PassphrasePromptActivity -->
     <string name="PassphrasePromptActivity_enter_passphrase">Enter passphrase</string>
     <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure icon</string>
@@ -300,62 +254,6 @@
     </string>
     <string name="ReceiveKeyActivity_processing">Processing</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">Processing key exchange…</string>
-
-    <!-- RegistrationActivity -->
-    <string name="RegistrationActivity_connect_with_textsecure">Connect With SMSSecure</string>
-    <string name="RegistrationActivity_select_your_country">Select your country</string>
-    <string name="RegistrationActivity_you_must_specify_your_country_code">You must specify your
-        country code
-    </string>
-    <string name="RegistrationActivity_you_must_specify_your_phone_number">You must specify your
-        phone number
-    </string>
-    <string name="RegistrationActivity_invalid_number">Invalid number</string>
-    <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">The number you
-        specified (%s) is invalid.
-    </string>
-    <string name="RegistrationActivity_unsupported">Unsupported</string>
-    <string name="RegistrationActivity_sorry_this_device_is_not_supported_for_data_messaging">Sorry,
-        this device is not supported for data messaging. Devices running versions of Android older
-        than 4.0 must have a registered Google Account. Devices running Android 4.0 or newer do not
-        require a Google account, but must have the Play Store app installed.
-    </string>
-    <string name="RegistrationActivity_we_will_now_verify_that_the_following_number_is_associated_with_your_device_s">
-        Double-check that this is your number! We\'re about to verify it with an SMS.
-    </string>
-    <string name="RegistrationActivity_continue">Continue</string>
-    <string name="RegistrationActivity_edit">Edit</string>
-
-    <!-- RegistrationProblemsActivity -->
-    <string name="RegistrationProblemsActivity_possible_problems">Possible problems</string>
-
-    <!-- RegistrationProgressActivity -->
-    <string name="RegistrationProgressActivity_verifying_number">Verifying number</string>
-    <string name="RegistrationProgressActivity_edit_s">Edit %s</string>
-    <string name="RegistrationProgressActivity_registration_complete">Registration complete!</string>
-    <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">You must enter the code you received first...</string>
-    <string name="RegistrationProgressActivity_connecting">Connecting</string>
-    <string name="RegistrationProgressActivity_connecting_for_verification">Connecting for verification...</string>
-    <string name="RegistrationProgressActivity_network_error">Network error!</string>
-    <string name="RegistrationProgressActivity_unable_to_connect">Unable to connect. Please check your network connection and try again.</string>
-    <string name="RegistrationProgressActivity_verification_failed">Verification failed!</string>
-    <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">The verification code you submitted is incorrect. Please try again.</string>
-    <string name="RegistrationProgressActivity_too_many_attempts">Too many attempts</string>
-    <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">You\'ve submitted an incorrect verification code too many times. Please wait a minute before trying again.</string>
-    <string name="RegistrationProgressActivity_requesting_call">Requesting call</string>
-    <string name="RegistrationProgressActivity_requesting_incoming_call">Requesting incoming verification call...</string>
-    <string name="RegistrationProgressActivity_server_error">Server error</string>
-    <string name="RegistrationProgressActivity_the_server_encountered_an_error">The server encountered an error. Please try again.</string>
-    <string name="RegistrationProgressActivity_too_many_requests">Too many requests!</string>
-    <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">You\'ve already recently requested a voice call. You can request another in 20 minutes.</string>
-    <string name="RegistrationProgressActivity_registration_conflict">Registration conflict</string>
-    <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">This number is already registered on a different SMSSecure server (CyanogenMod?). You must unregister there before registering here.</string>
-
-    <!-- RegistrationService -->
-    <string name="RegistrationService_registration_complete">Registration complete</string>
-    <string name="RegistrationService_textsecure_registration_has_successfully_completed">SMSSecure registration has successfully completed.</string>
-    <string name="RegistrationService_registration_error">Registration error</string>
-    <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">SMSSecure registration has encountered a problem.</string>
 
     <!-- SmsMessageRecord -->
     <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Received corrupted key
@@ -453,10 +351,6 @@
     <!-- QuickResponseService -->
     <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Sorry, Quick Response is not yet supported by SMSSecure!</string>
 
-    <!-- auto_initiate_activity -->
-    <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">You have received a message from someone who supports SMSSecure encrypted sessions.  Would you like to initiate a secure session?</string>
-    <string name="auto_initiate_activity__initiate_exchange">Initiate exchange</string>
-
     <!-- change_passphrase_activity -->
     <string name="change_passphrase_activity__old_passphrase">OLD PASSPHRASE:</string>
     <string name="change_passphrase_activity__new_passphrase">NEW PASSPHRASE:</string>
@@ -468,9 +362,6 @@
     <string name="contact_selection_group_activity__finding_contacts">Loading contacts&#8230;</string>
 
     <!-- single_contact_selection_activity -->
-    <string name="SingleContactSelectionActivity_you_are_not_registered_with_the_push_service">You are not registered with the push service&#8230;</string>
-    <string name="SingleContactSelectionActivity_updating_directory">Updating directory</string>
-    <string name="SingleContactSelectionActivity_updating_push_directory">Updating push directory&#8230;</string>
     <string name="SingleContactSelectionActivity_contact_photo">Contact Photo</string>
 
     <!-- ContactSelectionListFragment-->
@@ -480,7 +371,6 @@
     <string name="contact_selection_recent_activity__no_recent_calls">No recent calls.</string>
 
     <!-- conversation_activity -->
-    <string name="conversation_activity__type_message_push">Send SMSSecure message</string>
     <string name="conversation_activity__type_message_sms_secure">Send secure SMS</string>
     <string name="conversation_activity__type_message_sms_insecure">Send unsecured SMS</string>
     <string name="conversation_activity__type_message_mms_secure">Send secure MMS</string>
@@ -513,10 +403,6 @@
     <!-- conversation_fragment_cab -->
     <string name="conversation_fragment_cab__batch_selection_mode">Batch selection mode</string>
     <string name="conversation_fragment_cab__batch_selection_amount">%s selected</string>
-
-    <!-- country_selection_fragment -->
-    <string name="country_selection_fragment__loading_countries">Loading countries...</string>
-    <string name="country_selection_fragment__search">Search</string>
 
     <!-- log_submit_activity -->
     <string name="log_submit_activity__log_fetch_failed">Could not grab logs from your device. You can still use ADB to get debug logs instead.</string>
@@ -565,11 +451,6 @@
     <string name="MmsPreferencesFragment__invalid_uri">The text entered was not a valid URI</string>
     <string name="MmsPreferencesFragment__invalid_host">The text entered was not a valid host</string>
 
-    <!-- GroupUtil -->
-    <string name="GroupUtil_joined_the_group">%1$s joined the group.</string>
-    <string name="GroupUtil_group_updated">Group updated.</string>
-    <string name="GroupUtil_title_is_now">Title is now \'%1$s\'.</string>
-
     <!-- prompt_passphrase_activity -->
     <string name="prompt_passphrase_activity__unlock">Unlock</string>
 
@@ -579,91 +460,6 @@
 
     <!-- receive_key_activity -->
     <string name="receive_key_activity__complete">Complete</string>
-
-    <!-- registration_activity -->
-    <string name="registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users">
-        Registering is free and increases privacy when messaging other SMSSecure users. Please verify your phone number.
-    </string>
-    <string name="registration_activity__your_country">YOUR COUNTRY</string>
-    <string name="registration_activity__your_country_code_and_phone_number">YOUR COUNTRY CODE AND
-        PHONE NUMBER
-    </string>
-    <string name="registration_activity__phone_number">PHONE NUMBER</string>
-    <string name="registration_activity__register">Register</string>
-    <string name="registration_activity__registration_will_transmit_some_contact_information_to_the_server_temporariliy">Registration transmits some contact information to the server. It is not stored.</string>
-    <string name="registration_activity__skip">Skip</string>
-
-    <!-- registration_problems -->
-    <string name="registration_problems__some_possible_problems_include">Some possible problems
-        include:
-    </string>
-    <string name="registration_problems__sms_interceptors">SMS interceptors.</string>
-    <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
-        Some third party text messaging clients, such as Handcent or GoSMS, behave poorly and
-        intercept all incoming SMS messages. Check to see if you received a text message that starts
-        with \'Your SMSSecure verification code:\', in which case you\'ll need to configure your
-        third party text messaging app to let text messages through.
-    </string>
-    <string name="registration_problems__incorrect_number">Incorrect number.</string>
-    <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">
-        Please check to make sure you entered your number correctly, and that it is formatted correctly for
-        your region.
-    </string>
-    <string name="registration_problems__google_voice">Google Voice.</string>
-    <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">
-        SMSSecure will not work with Google Voice numbers.
-    </string>
-
-    <!-- registration_progress_activity -->
-    <string name="registration_progress_activity__voice_verification">Voice verification</string>
-    <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">
-        SMSSecure can also call you to verify your number. Tap \'Call Me\' and enter the six digit
-        code that you hear below.
-    </string>
-    <string name="registration_progress_activity__verify">Verify</string>
-    <string name="registration_progress_activity__call_me">Call me</string>
-    <string name="registration_progress_activity__edit_number">Edit number</string>
-    <string name="registration_progress_activity__connectivity_error">Connectivity error.</string>
-    <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">
-        SMSSecure was unable to connect to the push service.
-    </string>
-    <string name="registration_progress_activity__some_possible_problems_include">Some possible
-        problems include:
-    </string>
-    <string name="registration_progress_activity__no_network_connectivity">No network
-        connectivity.
-    </string>
-    <string name="registration_progress_activity__your_device_needs_network_connectivity">Your
-        device needs network connectivity in order to use this SMSSecure feature. Check to ensure
-        that it is connected to 3G or Wi-Fi.
-    </string>
-    <string name="registration_progress_activity__restrictive_firewall">Restrictive firewall.
-    </string>
-    <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
-        If you are connected via Wi-Fi, it\'s possible that there is a firewall blocking access to
-        the SMSSecure server. Try another network or mobile data.
-    </string>
-    <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-        SMSSecure will now automatically verify your number with a confirmation SMS message.
-    </string>
-    <string name="registration_progress_activity__connecting">Connecting...</string>
-    <string name="registration_progress_activity__waiting_for_sms_verification">Waiting for SMS
-        verification...
-    </string>
-    <string name="registration_progress_activity__registering_with_server">Registering with server...</string>
-    <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">This
-        could take a moment. Please be patient, we\'ll notify you when verification is complete.
-    </string>
-    <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">
-        SMSSecure timed out while waiting for a verification SMS message.
-    </string>
-    <string name="registration_progress_activity__sms_verification_failed">SMS verification
-        failed.
-    </string>
-    <string name="registration_progress_activity__generating_keys">Generating keys...</string>
-    <string name="registration_progress_activity__alert">Alert</string>
-    <string name="registration_progress_activity__telephone">Telephone</string>
-    <string name="registration_progress_activity__check">Check</string>
 
     <!-- recipients_panel -->
     <string name="recipients_panel__to"><small>Enter a name or number</small></string>
@@ -686,7 +482,6 @@
     <string name="AndroidManifest__create_passphrase">Create passphrase</string>
     <string name="AndroidManifest__enter_passphrase">Enter passphrase</string>
     <string name="AndroidManifest__select_contacts">Select contacts</string>
-    <string name="AndroidManifest__textsecure_detected">SMSSecure detected</string>
     <string name="AndroidManifest__public_identity_key">Public identity key</string>
     <string name="AndroidManifest__change_passphrase">Change passphrase</string>
     <string name="AndroidManifest__verify_identity">Verify identity</string>
@@ -716,7 +511,6 @@
     <!-- preferences.xml -->
     <string name="preferences__general">General</string>
     <string name="preferences__sms_mms">SMS and MMS</string>
-    <string name="preferences__push_sms_category">Push and SMS</string>
     <string name="preferences__pref_all_sms_title">Receive all SMS</string>
     <string name="preferences__pref_all_mms_title">Receive all MMS</string>
     <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Use SMSSecure for viewing and storing all incoming text messages</string>
@@ -807,20 +601,7 @@
     <string name="preferences__language_summary">Language %s</string>
     <string name="preferences__make_default_sms_app">Set as default SMS app</string>
     <string name="preferences__make_textsecure_the_default_sms_mms_app">Make SMSSecure the default SMS/MMS application for your system.</string>
-    <string name="preferences__use_data_channel">Push messages</string>
-    <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-        Increase privacy and avoid SMS fees by using the data channel for communication with other SMSSecure users
-    </string>
-    <string name="preferences__sms_fallback">Outgoing SMS/MMS</string>
     <string name="preferences__submit_debug_log">Submit debug log</string>
-    <string name="preferences__sms_outgoing_push_users">SMSSecure users</string>
-    <string name="preferences__sms_fallback_push_users_ask">ask first</string>
-    <string name="preferences__sms_fallback_push_users_no_mms">no MMS</string>
-    <string name="preferences__sms_outgoing_push_users_description">Send secure SMS if data connectivity is lost</string>
-    <string name="preferences__sms_fallback_ask_before_sending_sms_mms">Ask before sending SMS/MMS</string>
-    <string name="preferences__sms_fallback_never_send_mms">Never send MMS</string>
-    <string name="preferences__sms_fallback_non_push_users">Non-SMSSecure users</string>
-    <string name="preferences__sms_fallback_nobody">Nobody</string>
     <string name="preferences__support_wifi_calling">\'WiFi Calling\' compatibility mode</string>
     <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Enable if your device uses SMS/MMS delivery over WiFi (only enable when \'WiFi Calling\' is enabled on your device).</string>
 
@@ -831,8 +612,7 @@
     <!-- contact_selection_list -->
     <string name="contact_selection_list__menu_select_all">Select all</string>
     <string name="contact_selection_list__menu_unselect_all">Unselect all</string>
-    <string name="contact_selection_list__header_textsecure_users">TEXTSECURE USERS</string>
-    <string name="contact_selection_list__header_other">ALL CONTACTS</string>
+    <string name="contact_selection_list__header">ALL CONTACTS</string>
     <string name="contact_selection_list__unknown_contact">New message to...</string>
 
     <!-- contact_selection -->
@@ -842,7 +622,6 @@
     <string name="push_directory__menu_refresh">Refresh contact list</string>
 
     <!-- conversation_button_context -->
-    <string name="conversation_button_context__send_textsecure_message">Send SMSSecure message</string>
     <string name="conversation_button_context__send_secure_sms">Send secure SMS</string>
     <string name="conversation_button_context__send_insecure_sms">Send unsecured SMS</string>
     <string name="conversation_button_context__send_secure_mms">Send secure MMS</string>
@@ -890,8 +669,6 @@
 
     <!-- conversation -->
     <string name="conversation__menu_add_attachment">Add attachment</string>
-    <string name="conversation__menu_update_group">Update group</string>
-    <string name="conversation__menu_leave_group">Leave group</string>
     <string name="conversation__menu_delete_thread">Delete thread</string>
     <string name="conversation__menu_view_media">All images</string>
 
@@ -923,8 +700,6 @@
     <string name="reminder_header_sms_default_text">Tap to make SMSSecure your default SMS app.</string>
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
     <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into its encrypted database.</string>
-    <string name="reminder_header_push_title">Enable SMSSecure messages?</string>
-    <string name="reminder_header_push_text">Tap for instant delivery, stronger privacy, and no SMS fees.</string>
 
     <!-- MediaPreviewActivity -->
     <string name="MediaPreviewActivity_you">You</string>

@@ -18,14 +18,6 @@ Kontuz, honek desgaituko du biltegiaren enkriptaketa mezu eta gako guztietarako.
 Zure enkriptatutako saioek funtzionatzen jarraituko dute, baina zure gailua fisikoki uki dezakeen edonor
 gai izango da saiootan sartzeko.</string>
   <string name="ApplicationPreferencesActivity_disable">Desgaitu</string>
-  <string name="ApplicationPreferencesActivity_unregistering">Deserregistratzen...</string>
-  <string name="ApplicationPreferencesActivity_unregistering_for_data_based_communication">Deserregistratzen datuetan oinarritutako komunikaziorako</string>
-  <string name="ApplicationPreferencesActivity_disable_push_messages">Push mezuak desgaitu?</string>
-  <string name="ApplicationPreferencesActivity_this_will_disable_push_messages">
-Honek push mezuak desgaituko du zu zerbitzaritik deserregistratuz.
-Zure telefono zenbakia bererregistratu beharko duzu push mezuak berriro erabili ahal izateko.
-</string>
-  <string name="ApplicationPreferencesActivity_error_connecting_to_server">Errorea zerbitzariarekin konektatzerakoan!</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Sarrerako SMSak Gaituta</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Ukitu zure SMS aplikazio lehenetsia aldatzeko</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Sarrerako SMSak Desgaituta</string>
@@ -34,7 +26,6 @@ Zure telefono zenbakia bererregistratu beharko duzu push mezuak berriro erabili 
   <string name="ApplicationPreferencesActivity_On">Aktibatuta</string>
   <string name="ApplicationPreferencesActivity_off">desaktibatuta</string>
   <string name="ApplicationPreferencesActivity_Off">Desaktibatuta</string>
-  <string name="ApplicationPreferencesActivity_partial">partziala</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
@@ -60,11 +51,7 @@ Zure telefono zenbakia bererregistratu beharko duzu push mezuak berriro erabili 
   <string name="ConversationItem_error_received_stale_key_exchange_message">Errorea, jaso da iraungita dagoen datu-trukerako gakoaren mezua.</string>
   <string name="ConversationItem_received_key_exchange_message_click_to_process">Jaso da gakoaren datu-trukatzearen mezua, klik egin prozesatzeko</string>
   <string name="ConversationItem_group_action_left">%1$s taldea utzi du</string>
-  <string name="ConversationItem_click_to_approve_sms">Ukitu SMSra jotzeko beste aukerarik ez dagoenean</string>
-  <string name="ConversationItem_click_to_approve_mms">Tap egin MMSra jotzeko beste aukerarik ez dagoenean</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Tap egin segurtasunik gabeko alternatibarako</string>
-  <string name="ConversationItem_click_to_approve_sms_dialog_title">SMSra pasatu aukera gisa?</string>
-  <string name="ConversationItem_click_to_approve_mms_dialog_title">MMSra pasatu aukera gisa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Enkriptatzerik gabeko SMSra pasatu aukera gisa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Enkriptatzerik gabeko MMSra pasatu aukera gisa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Mezu hau <b>ez</b> da enkriptatuko zeren eta saio seguru bat ezin izan baita ezarri.\n\nSegurtasunik gabeko mezua bidali?</string>
@@ -93,20 +80,12 @@ Zure telefono zenbakia bererregistratu beharko duzu push mezuak berriro erabili 
   <string name="ConversationActivity_invalid_recipient">Hartzaile baliogabea!</string>
   <string name="ConversationActivity_calls_not_supported">Deiak ez daude onartuta</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Badirudi gailu honek ez duela onartzen telefono deiekin lotutako ekintzak.</string>
-  <string name="ConversationActivity_leave_group">Taldea utzi?</string>
-  <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Ziur zaude talde hau utzi nahi izateaz?</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS ez segurua</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS ez segurua</string>
   <string name="ConversationActivity_transport_secure_sms">SMS segurua</string>
   <string name="ConversationActivity_transport_secure_mms">SMS segurua</string>
-  <string name="ConversationActivity_transport_textsecure">SMSSecure</string>
-  <string name="ConversationActivity_get_with_it">Ondokoa lortu: %s</string>
-  <string name="ConversationActivity_install_textsecure">SMSSecure instalatu: %s</string>
-  <string name="ConversationActivity_error_leaving_group">Errorea taldea uzterakoan...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mezuaren detaileak</string>
-  <string name="ConversationFragment_transport_s_sent_received_s">Garraioa: %1$s\nBidalita/Jasota: %2$s</string>
-  <string name="ConversationFragment_sender_s_transport_s_sent_s_received_s">Bidaltzailea: %1$s\nGarraioa: %2$sIgorrita: %3$s\nJasota: %4$s</string>
   <string name="ConversationFragment_confirm_message_delete">Berretsi mezuaren ezabaketa</string>
   <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Ziur zaude aukeratutako mezu guztiak behin betiko ezabatu nahi izateaz?</string>
   <string name="ConversationFragment_save_to_sd_card">Biltegian gorde?</string>
@@ -144,17 +123,11 @@ Zure telefono zenbakia bererregistratu beharko duzu push mezuak berriro erabili 
   <string name="ExportFragment_error_unable_to_write_to_sd_card">Errorea, ezgai SD txartelean idazteko!</string>
   <string name="ExportFragment_error_while_writing_to_sd_card">Errorea SD txartelean idazterakoan.</string>
   <string name="ExportFragment_success">Arrakasta!</string>
-  <!--GcmRefreshJob-->
-  <string name="GcmRefreshJob_Permanent_SMSSecure_communication_failure">SMSSecuren behin betiko komunikazio akatsa</string>
-  <string name="GcmRefreshJob_SMSSecure_was_unable_to_register_with_Google_Play_Services">SMSSecure ez da gai izan Google Play Zerbitzuekin erregistratzeko.
-Datu kanalaren bitartezko komunikazioa desgaitu egin da, mesedez saiatu bererregistratzen SMSSecure-eko ezarpenen menutik.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Talde berria</string>
   <string name="GroupCreateActivity_actionbar_update_title">Taldea eguneratu</string>
   <string name="GroupCreateActivity_group_name_hint">Taldearen izena</string>
   <string name="GroupCreateActivity_actionbar_mms_title">MMS talde berria</string>
-  <string name="GroupCreateActivity_contacts_dont_support_push">SMSSecure taldeak onartzen ez duen kontaktu bat aukeratu duzu; beraz, talde hau MMS izango da.</string>
-  <string name="GroupCreateActivity_you_dont_support_push">Ez zaude erregistratuta datuen kanala erabiltzeko, hortaz SMSSecure-eko taldeak ezgaituta daude.</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Ustekabeko errorea gertatu da eta eragin du taldea sortu ezin izatea.</string>
   <string name="GroupCreateActivity_contacts_no_members">Gutxienez pertsona bat behar duzu zure taldean!</string>
   <string name="GroupCreateActivity_contacts_invalid_number">Zure taldeko partaide batek ondo irakurri ezin daitekeen zenbaki bat dauka. Mesedez, konpondu edo ezabatu kontaktua eta saiatu berriro.</string>
@@ -162,7 +135,6 @@ Datu kanalaren bitartezko komunikazioa desgaitu egin da, mesedez saiatu bererreg
   <string name="GroupCreateActivity_menu_create_title">Taldea sortu</string>
   <string name="GroupCreateActivity_creating_group">Sortzen %1$s...</string>
   <string name="GroupCreateActivity_updating_group">Eguneratzen: %1$s...</string>
-  <string name="GroupCreateActivity_cannot_add_non_push_to_existing_group">Ezin duzu SMSSecurekoak ez diren kontaktuak gehitu SMSSecureko talde batera</string>
   <string name="GroupCreateActivity_loading_group_details">Taldearen detaileak kargatzen...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ni</string>
@@ -214,7 +186,6 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Pasahitzak ez datoz bat!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Pasahitz zahar ez zuzena!</string>
-  <!--DeviceProvisioningActivity-->
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Pasahitza sartu</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-ren ikonoa</string>
@@ -233,53 +204,6 @@ datu-trukatze honetako sinadura fidatzekoa da, baina
 osatu\' ezarpena desgaituta daukazu</string>
   <string name="ReceiveKeyActivity_processing">Prozesatzen</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Gakoaren datu-elkartrukea prozesatzen...</string>
-  <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_textsecure">SMSSecure-ekin Konektatu</string>
-  <string name="RegistrationActivity_select_your_country">Zure herrialdea aukeratu</string>
-  <string name="RegistrationActivity_you_must_specify_your_country_code">Zure herrialdearen 
-kodea zehaztu behar duzu
-</string>
-  <string name="RegistrationActivity_you_must_specify_your_phone_number">Zure telefono zenbakia 
-zehaztu behar duzu
-</string>
-  <string name="RegistrationActivity_invalid_number">Zenbaki baliogabea</string>
-  <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">Zehaztu duzun 
-zenbakia (%s) baliogabea da.
-</string>
-  <string name="RegistrationActivity_unsupported">Ez onartua</string>
-  <string name="RegistrationActivity_sorry_this_device_is_not_supported_for_data_messaging">Sentitzen dugu,
-baina gailu honek ez dago onartuta datuen bidezko mezulararitzarako. Android 4.0 bertsioa baino zaharragoa duten gailuek Google Kontu bat izan behar dute. 
-Android 4.0 edo berriagoa badute, ez da beharrezkoa Google Kontu bat izatea, baina Play Store-eko aplikakzioa instalatuta eduki behar da.</string>
-  <string name="RegistrationActivity_continue">Jarraitu</string>
-  <string name="RegistrationActivity_edit">Editatu</string>
-  <!--RegistrationProblemsActivity-->
-  <string name="RegistrationProblemsActivity_possible_problems">Aurreikusi daitezkeen arazoak</string>
-  <!--RegistrationProgressActivity-->
-  <string name="RegistrationProgressActivity_verifying_number">Zenbakia egiaztatzen</string>
-  <string name="RegistrationProgressActivity_edit_s">Editatu %s</string>
-  <string name="RegistrationProgressActivity_registration_complete">Erregistratzea osatuta!</string>
-  <string name="RegistrationProgressActivity_you_must_enter_the_code_you_received_first">Lehenago jaso duzun kodea sartu behar duzu...</string>
-  <string name="RegistrationProgressActivity_connecting">Konektatzen</string>
-  <string name="RegistrationProgressActivity_connecting_for_verification">Egiaztatzeko konektatzen...</string>
-  <string name="RegistrationProgressActivity_network_error">Sareko errorea!</string>
-  <string name="RegistrationProgressActivity_unable_to_connect">Konektatzeko ezgai. Mesedez, egiazta ezazu zure konexioa eta saiatu berriro.</string>
-  <string name="RegistrationProgressActivity_verification_failed">Egiaztapenak huts egin du!</string>
-  <string name="RegistrationProgressActivity_the_verification_code_you_submitted_is_incorrect">Bidali duzun egiaztapen kodea ez da zuzena. Mesedez, saiatu berriro.</string>
-  <string name="RegistrationProgressActivity_too_many_attempts">Saio gehiegi</string>
-  <string name="RegistrationProgressActivity_youve_submitted_an_incorrect_verification_code_too_many_times">Zuzena ez den egiaztapen gako bat aldi gehiegi bidali duzu. Mesedez, minutu bat itxaron berriro saitu baino lehenago.</string>
-  <string name="RegistrationProgressActivity_requesting_call">Deia eskatzen</string>
-  <string name="RegistrationProgressActivity_requesting_incoming_call">Sarrera egiaztapen deia eskatzen...</string>
-  <string name="RegistrationProgressActivity_server_error">Zerbitzariaren errorea</string>
-  <string name="RegistrationProgressActivity_the_server_encountered_an_error">Zerbitzariak errore bat topatu du. Mesedez, saiatu berriro.</string>
-  <string name="RegistrationProgressActivity_too_many_requests">Eskaera gehiegi!</string>
-  <string name="RegistrationProgressActivity_youve_already_requested_a_voice_call">Duela gutxi ahotsezko dei bat eskatu duzu. Beste bat eska dezakezu 20 minutu barru.</string>
-  <string name="RegistrationProgressActivity_registration_conflict">Erregistratze gatazka</string>
-  <string name="RegistrationProgressActivity_this_number_is_already_registered_on_a_different">Zenbaki hau beste SMSSecure zerbitzari batean erregistratuta dago jadanik (CyanogenMod?) Deserregistratu behar duzu hemen erregistratu aurretik.</string>
-  <!--RegistrationService-->
-  <string name="RegistrationService_registration_complete">Erregistratzea osatuta</string>
-  <string name="RegistrationService_textsecure_registration_has_successfully_completed">SMSSecure-ren erregistratea arrakastaz osatu da.</string>
-  <string name="RegistrationService_registration_error">Erregistratze errorea</string>
-  <string name="RegistrationService_textsecure_registration_has_encountered_a_problem">SMSSecure-ren erregistratzeak arazo bat topatu du.</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Mezuaren elkar-trukerako
  gakoa hondatuta dago!
@@ -360,9 +284,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="MessageNotifier_mark_as_read">Irakurritako gisa markatu</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Barkatu, Quick Response momentuz ez dago onartuta SMSSecuren!</string>
-  <!--auto_initiate_activity-->
-  <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">SMSSecure enkriptatutako saioak onartzen dituen norbaiten mezu bat jaso duzu. Saio seguru bat hasi nahi duzu?</string>
-  <string name="auto_initiate_activity__initiate_exchange">Datu-trukatzea abiatu.</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">PASAHITZ ZAHARRA:</string>
   <string name="change_passphrase_activity__new_passphrase">PASAHITZ BERRIA:</string>
@@ -372,16 +293,12 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="contact_selection_group_activity__no_contacts">Kontakturik ez.</string>
   <string name="contact_selection_group_activity__finding_contacts">Kontaktuak kargatzen...</string>
   <!--single_contact_selection_activity-->
-  <string name="SingleContactSelectionActivity_you_are_not_registered_with_the_push_service">Ez zaude push zerbitzuarekin erregistratuta...</string>
-  <string name="SingleContactSelectionActivity_updating_directory">Direktorioa eguneratzen</string>
-  <string name="SingleContactSelectionActivity_updating_push_directory">Push direktorioa eguneratzen...</string>
   <string name="SingleContactSelectionActivity_contact_photo">Kontaktuaren Argazkia</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Hautatu egiteko...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ez dago azken deirik.</string>
   <!--conversation_activity-->
-  <string name="conversation_activity__type_message_push">Bidali SMSSecure-eko mezua</string>
   <string name="conversation_activity__type_message_sms_secure">SMS mezu segurua bidali</string>
   <string name="conversation_activity__type_message_sms_insecure">SMS ez segurua bidali</string>
   <string name="conversation_activity__type_message_mms_secure">MMS mezu segurua bidali</string>
@@ -408,9 +325,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Batch hautatzeko modua</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s hautatua</string>
-  <!--country_selection_fragment-->
-  <string name="country_selection_fragment__loading_countries">Herrialdeak kargatzen...</string>
-  <string name="country_selection_fragment__search">Bilatu</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Ezin izan dira logak eskuratu zure gailutik. ADB erabili dezakezu arazketa logak lortzeko.</string>
   <string name="log_submit_activity__thanks">Eskerrik asko zure laguntzagatik!</string>
@@ -446,10 +360,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="MmsPreferencesFragment__not_set">Ez ezarria</string>
   <string name="MmsPreferencesFragment__invalid_uri">Sartutako testua URI baliogabea da</string>
   <string name="MmsPreferencesFragment__invalid_host">Sartutako testua host baliogabea da</string>
-  <!--GroupUtil-->
-  <string name="GroupUtil_joined_the_group">%1$s taldean sartu da.</string>
-  <string name="GroupUtil_group_updated">Taldea eguneratuta.</string>
-  <string name="GroupUtil_title_is_now">Izenburua \'%1$s\' da orain.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desblokeatu</string>
   <!--prompt_mms_activity-->
@@ -457,67 +367,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Media eta taldeko mezuak bidaltzeko, klik egin \'OK\'-n eta osatu beharrezkoak diren ezarpenak. Zure hornitzailearentzako ezarpenak normalean topa daitezke zure hornitzailearen APNa bilatuz. Bakarrik behin egin beharko duzu hau.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Osatuta</string>
-  <!--registration_activity-->
-  <string name="registration_activity__textsecure_can_use_instant_messages_to_avoid_sms_charges_when_communicating_with_other_textsecure_users">
-Erregistratzea doan da eta pribatutasuna hobetzen du beste SMSSecure-eko erabiltzaile batzuekin aritzeko. Mesedez, egiazta ezazu zure telefono zenbakia.</string>
-  <string name="registration_activity__your_country">ZURE HERRIALDEA</string>
-  <string name="registration_activity__your_country_code_and_phone_number">ZURE HERRIALDEA ETA 
-TELEFONO ZENBAKIA
-</string>
-  <string name="registration_activity__phone_number">TELEFONO ZENBAKIA</string>
-  <string name="registration_activity__register">Erregistratu</string>
-  <string name="registration_activity__registration_will_transmit_some_contact_information_to_the_server_temporariliy">Erregistratzeak kontakturako informazioa igortzen du zerbitzarira. Ez da gordetzen.</string>
-  <string name="registration_activity__skip">Saltatu</string>
-  <!--registration_problems-->
-  <string name="registration_problems__some_possible_problems_include">Aurreikusi daitezkeen arazo 
-batzuk ondokoak dira:
-</string>
-  <string name="registration_problems__sms_interceptors">SMSen pase-harrapatzaileak</string>
-  <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
-Hirugarren testu mezulararitzarako bezero batzuk, hala nola, Handcent edo GoSMS, gaizki jokatzen dute eta
-sartzen diren SMS mezu guztiak bidan atzematen dute. Egiaztatu zure mezuaren hasieran 
-\"Zure SMSSecure egiaztapen kode:\" agertzen den. Hala bada, zure hirugarren testu mezulararitzarako aplikazioa konfiguratu beharko duzu mezuak pasatzen uzteko.</string>
-  <string name="registration_problems__incorrect_number">Zenbaki ez zuzena.</string>
-  <string name="registration_problems__please_checkt_to_make_sure_you_entered_your_number_correctly">Mesedez, egiazta ezazu zenbakia ondo sartu duzun, eta zure zonaldeari dagokion formatoan dagoen.</string>
-  <string name="registration_problems__google_voice">Google Voice.</string>
-  <string name="registration_problems__textsecure_will_not_work_with_google_voice_numbers">SMSSecurek ez du funtzionatuko Google Voice-eko zenbakiekin.</string>
-  <!--registration_progress_activity-->
-  <string name="registration_progress_activity__voice_verification">Ahotsaren bidezko egiaztapena</string>
-  <string name="registration_progress_activity__textsecure_can_also_call_you_to_verify_your_number">SMSSecurek, era berean, deitu diezazuke zure zenbakia egiaztatzeko. Ukitu \"Dei iezadazu\" eta sartu azpian entzungo duzun sei zenbakiko kodea.</string>
-  <string name="registration_progress_activity__verify">Egiaztatu</string>
-  <string name="registration_progress_activity__call_me">Dei iezadazu</string>
-  <string name="registration_progress_activity__edit_number">Zenbakia editatu</string>
-  <string name="registration_progress_activity__connectivity_error">Konexioaren errorea</string>
-  <string name="registration_progress_activity__textsecure_was_unable_to_connect_to_the_push_service">SMSSecure ez da gai izan push zerbitzuarekin konektatzeko.</string>
-  <string name="registration_progress_activity__some_possible_problems_include">Aurreikusi daitezkeen 
-arazo batzuk ondokoak dira:
-</string>
-  <string name="registration_progress_activity__no_network_connectivity">Ez dago s
-areko konexiorik.
-</string>
-  <string name="registration_progress_activity__your_device_needs_network_connectivity">Zure
-gailuak sarerako konexioa behar du SMSSecure-eko ezaugarri hau erabili ahal izateko. Egiaztatu
-konektatuta dagoen 3G edo Wi-Fi sare batekin.</string>
-  <string name="registration_progress_activity__restrictive_firewall">Firewall murrizgarria.</string>
-  <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
-Wi-Fi bidez konektatua bazaude, izan daiteke firewall bat SMSSecure-eko zerbitzarirako sarrera blokeatzea. Saia zaitez beste sare edo mugikorreko datu konexioarekin.</string>
-  <string name="registration_progress_activity__textsecure_will_now_automatically_verify_your_number_with_a_confirmation_sms_message">
-Orain SMSSecure-ek zure zenbakia automatikoki egiaztatuko du SMS egiaztapen mezu bat bidaliz.</string>
-  <string name="registration_progress_activity__connecting">Konektatzen...</string>
-  <string name="registration_progress_activity__waiting_for_sms_verification">SMS bidezko
-egiaztapenaren zain...
-</string>
-  <string name="registration_progress_activity__registering_with_server">Zerbitzariarekin erregistratzen...</string>
-  <string name="registration_progress_activity__this_couild_take_a_moment_please_be_patient">Honek 
-denbora tarte bat har lezake. Mesedez, pazientzia izan, jakinaraziko dizugu egiaztapena osatuta dagoenean.
-</string>
-  <string name="registration_progress_activity__textsecure_timed_out_while_waiting_for_a_verification_sms_message">
-SMSSecure SMS bidez egiaztatzeko mezuaren zain zegoela denbora mugara iritsi da.
-</string>
-  <string name="registration_progress_activity__sms_verification_failed">SMS bidezko egiaztapenak 
-huts egin du.
-</string>
-  <string name="registration_progress_activity__generating_keys">Gakoak sortzen...</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Izen edo zenbaki bat sartu</small></string>
   <string name="recipients_panel__add_member">Partaidea gehitu</string>
@@ -529,7 +378,6 @@ huts egin du.
   <string name="AndroidManifest__create_passphrase">Pasahitza sortu</string>
   <string name="AndroidManifest__enter_passphrase">Pasahitza sartu</string>
   <string name="AndroidManifest__select_contacts">Kontaktuak hautatu</string>
-  <string name="AndroidManifest__textsecure_detected">SMSSecure detektatua</string>
   <string name="AndroidManifest__public_identity_key">Gako publikoaren nortasuna</string>
   <string name="AndroidManifest__change_passphrase">Pasahitza aldatu</string>
   <string name="AndroidManifest__verify_identity">Nortasuna egiaztatu</string>
@@ -543,7 +391,6 @@ huts egin du.
   <!--preferences.xml-->
   <string name="preferences__general">Orokorra</string>
   <string name="preferences__sms_mms">SMS eta MMS</string>
-  <string name="preferences__push_sms_category">Push eta SMS</string>
   <string name="preferences__pref_all_sms_title">Jaso SMS guztiak</string>
   <string name="preferences__pref_all_mms_title">Jaso MMS guztiak</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure erabili etorriko diren testu mezu guztiak ikusi eta gordetzeko</string>
@@ -618,19 +465,7 @@ huts egin du.
   <string name="preferences__language">Hizkuntza</string>
   <string name="preferences__make_default_sms_app">Lehenetsitako SMS aplikazio gisa ezarri</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">SMSSecure zure sistemaren lehenetsitako SMS/MMS aplikazioa bihurtu.</string>
-  <string name="preferences__use_data_channel">Push mezuak</string>
-  <string name="preferences__use_the_data_channel_for_communication_with_other_textsecure_users">
-Hobetu zure pribatutasuna eta ekidin SMS tasak datu kanala erabiliz SMSSecure-eko beste erabiltzaile batzuekin komunikatzeko </string>
-  <string name="preferences__sms_fallback">Irteerako SMS/MMS</string>
   <string name="preferences__submit_debug_log">Arazketaren log-a bidali</string>
-  <string name="preferences__sms_outgoing_push_users">SMSSecure-eko erabiltzaileak</string>
-  <string name="preferences__sms_fallback_push_users_ask">galdetu lehenago</string>
-  <string name="preferences__sms_fallback_push_users_no_mms">MMSrik ez</string>
-  <string name="preferences__sms_outgoing_push_users_description">SMS segurua bidali konexioa galtzen bada</string>
-  <string name="preferences__sms_fallback_ask_before_sending_sms_mms">Galdetu SMS/MMS bidali baino lehenago</string>
-  <string name="preferences__sms_fallback_never_send_mms">Ez bidali MMSrik inoiz.</string>
-  <string name="preferences__sms_fallback_non_push_users">Ez dira SMSSecure-eko erabiltzaileak</string>
-  <string name="preferences__sms_fallback_nobody">Inor ez</string>
   <string name="preferences__support_wifi_calling">\'\"WiFi Calling\' modu bateragarria</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Gaitu zure gailuak WiFi bidezko SMS/MMS banaketa erabiltzen badu (bakarrik gaitu \'WiFi Calling\' gaituta badago zure gailuan).</string>
   <!--****************************************-->
@@ -639,15 +474,12 @@ Hobetu zure pribatutasuna eta ekidin SMS tasak datu kanala erabiliz SMSSecure-ek
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Denak hautatu</string>
   <string name="contact_selection_list__menu_unselect_all">Denak ez-hautatu</string>
-  <string name="contact_selection_list__header_textsecure_users">TEXTSECURE-eko ERABILTZAILEAK</string>
-  <string name="contact_selection_list__header_other">KONTAKTU GUZTIAK</string>
   <string name="contact_selection_list__unknown_contact">Mezu berria honi...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Bukatua</string>
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Freskatu kontaktuen zerrenda</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_textsecure_message">Bidali SMSSecure-eko mezua</string>
   <string name="conversation_button_context__send_secure_sms">SMS mezu segurua bidali</string>
   <string name="conversation_button_context__send_insecure_sms">Segurtasunik gabeko SMSa bidali</string>
   <string name="conversation_button_context__send_secure_mms">MMS mezu segurua bidali</string>
@@ -679,8 +511,6 @@ Hobetu zure pribatutasuna eta ekidin SMS tasak datu kanala erabiliz SMSSecure-ek
   <string name="conversation_secure_verified__menu_abort_secure_session">Saio segurua bukatu</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Eranskina gehitu</string>
-  <string name="conversation__menu_update_group">Taldea eguneratu</string>
-  <string name="conversation__menu_leave_group">Taldea utzi</string>
   <string name="conversation__menu_delete_thread">Haria ezabatu</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Kontaktuetara gehitu</string>
@@ -702,7 +532,6 @@ Hobetu zure pribatutasuna eta ekidin SMS tasak datu kanala erabiliz SMSSecure-ek
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Lehenetsitako SMS aplikazio gisa erabili?</string>
   <string name="reminder_header_sms_import_title">Sistemaren SMSa inportatu?</string>
-  <string name="reminder_header_push_title">Gaitu SMSSecure mezuak?</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Zu</string>
   <string name="MediaPreviewActivity_cant_display">Ezgai irudi honen aurrebista sortzeko</string>
