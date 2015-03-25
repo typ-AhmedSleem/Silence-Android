@@ -18,9 +18,6 @@ repositories {
         url "https://repo1.maven.org/maven2/"
     }
     maven {
-        url "https://raw.github.com/whispersystems/maven/master/preferencefragment/releases/"
-    }
-    maven {
         url "https://raw.github.com/whispersystems/maven/master/smil/releases/"
     }
     jcenter()
@@ -46,9 +43,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.3'
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     compile 'com.google.zxing:android-integration:3.1.0'
-    compile ('com.android.support:support-v4-preferencefragment:1.0.0@aar'){
-        exclude module: 'support-v4'
-    }
+    compile project (':libs:com.android.support.support-v4-preferencefragment')
     compile 'com.squareup.dagger:dagger:1.2.2'
     compile ("com.doomonafireball.betterpickers:library:1.5.3") {
         exclude group: 'com.android.support', module: 'support-v4'
@@ -90,7 +85,6 @@ dependencyVerification {
             'com.android.support:recyclerview-v7:e525ad3f33c84bb12b73d2dc975b55364a53f0f2d0697e043efba59ba73e22d2',
             'com.melnykov:floatingactionbutton:0679ad9f7d61eb7aeab91e8dc56358cdedd5b1c1b9c48464499ffa05c40d3985',
             'com.google.zxing:android-integration:89e56aadf1164bd71e57949163c53abf90af368b51669c0d4a47a163335f95c4',
-            'com.android.support:support-v4-preferencefragment:5470f5872514a6226fa1fc6f4e000991f38805691c534cf0bd2778911fc773ad',
             'com.squareup.dagger:dagger:789aca24537022e49f91fc6444078d9de8f1dd99e1bfb090f18491b186967883',
             'com.doomonafireball.betterpickers:library:132ecd685c95a99e7377c4e27bfadbb2d7ed0bea995944060cd62d4369fdaf3d',
             'com.madgag.spongycastle:prov:b8c3fec3a59aac1aa04ccf4dad7179351e54ef7672f53f508151b614c131398a',
