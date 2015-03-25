@@ -84,7 +84,6 @@ terá acesso ás mensagens e chaves.</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS insegura</string>
   <string name="ConversationActivity_transport_secure_sms">SMS segura</string>
   <string name="ConversationActivity_transport_secure_mms">MMS segura</string>
-  <string name="ConversationActivity_error_leaving_group">Erro a abandonar grupo...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalhes da mensagem</string>
   <string name="ConversationFragment_confirm_message_delete">Confirme apagar a mensagem</string>

@@ -84,7 +84,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS ez segurua</string>
   <string name="ConversationActivity_transport_secure_sms">SMS segurua</string>
   <string name="ConversationActivity_transport_secure_mms">SMS segurua</string>
-  <string name="ConversationActivity_error_leaving_group">Errorea taldea uzterakoan...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mezuaren detaileak</string>
   <string name="ConversationFragment_confirm_message_delete">Berretsi mezuaren ezabaketa</string>

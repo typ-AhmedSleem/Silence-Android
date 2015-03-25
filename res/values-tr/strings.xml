@@ -85,7 +85,6 @@ isteyebilirsiniz.</string>
   <string name="ConversationActivity_transport_insecure_mms">Güvensiz MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Güvenli SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Güvenli MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Gruptan ayrılma hatası...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaj detayları</string>
   <string name="ConversationFragment_confirm_message_delete">Mesaj silinmesini onayla</string>

@@ -28,6 +28,7 @@
   <string name="ApplicationPreferencesActivity_Off">Искључена</string>
   <string name="ApplicationPreferencesActivity_sms">СМС</string>
   <string name="ApplicationPreferencesActivity_mms">ММС</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">Долазни %s</string>
   <!--AppProtectionPreferenceFragment-->
   <string name="AppProtectionPreferenceFragment_minutes">%d минута</string>
   <!--DraftDatabase-->
@@ -91,7 +92,7 @@
   <string name="ConversationActivity_transport_insecure_mms">Необезбеђени ММС</string>
   <string name="ConversationActivity_transport_secure_sms">Обезбеђени СМС</string>
   <string name="ConversationActivity_transport_secure_mms">Обезбеђени ММС</string>
-  <string name="ConversationActivity_error_leaving_group">Грешка напуштања групе...</string>
+  <string name="ConversationActivity_install_smssecure">Инсталирајте Сигурни СМС: %s</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Детаљи поруке</string>
   <string name="ConversationFragment_confirm_message_delete">Потврда брисања порука</string>
@@ -286,12 +287,14 @@
   <string name="MessageNotifier_d_new_messages">%d нових порука</string>
   <string name="MessageNotifier_most_recent_from_s">Најскорија од: %s</string>
   <string name="MessageNotifier_encrypted_message">Шифрована порука...</string>
+  <string name="MessageNotifier_media_message_with_text">Мултимедијална порука: %s</string>
   <string name="MessageNotifier_no_subject">(Без предмета)</string>
   <string name="MessageNotifier_message_delivery_failed">Испорука поруке није успела.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Нисам успео да испоручим поруку.</string>
   <string name="MessageNotifier_error_delivering_message">Грешка при испоруци поруке.</string>
   <string name="MessageNotifier_mark_all_as_read">Означи све прочитаним</string>
   <string name="MessageNotifier_mark_as_read">Означи као прочитано</string>
+  <string name="MessageNotifier_media_message">Мултимедијална порука</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Нажалост, Сигурни СМС још не подржава брзи одговор!</string>
   <!--change_passphrase_activity-->
@@ -318,7 +321,9 @@
   <string name="conversation_activity__window_description">Преписка са %1$s</string>
   <string name="conversation_activity__compose_description">Састављање поруке</string>
   <string name="conversation_activity__emoji_toggle_description">Емоџи тастатура</string>
+  <string name="conversation_activity__attachment_thumbnail">Сличица прилога</string>
   <!--conversation_item-->
+  <string name="conversation_item__mms_downloading_description">Преузимање мултимедијалне поруке</string>
   <string name="conversation_item__mms_image_description">Медија порука</string>
   <string name="conversation_item__play_button_description">Дугме за пуштање</string>
   <string name="conversation_item__secure_message_description">Сигурна порука</string>
@@ -524,6 +529,7 @@
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Изабери све</string>
   <string name="contact_selection_list__menu_unselect_all">Поништи избор</string>
+  <string name="contact_selection_list__header">СВИ КОНТАКТИ</string>
   <string name="contact_selection_list__unknown_contact">Нова порука за...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Завршено</string>
@@ -557,6 +563,7 @@
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Фотографија контакта</string>
   <string name="conversation_list_item_view__attachment_indicator">Индикатор прилога</string>
+  <string name="conversation_list_item_view__error_alert">Грешка</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Нова преписка</string>
   <!--conversation_secure_verified-->

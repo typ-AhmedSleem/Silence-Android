@@ -92,7 +92,6 @@ este contacto.
   <string name="ConversationActivity_transport_insecure_mms">MMS no seguro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS seguro</string>
   <string name="ConversationActivity_transport_secure_mms">MMS seguro</string>
-  <string name="ConversationActivity_error_leaving_group">Error al dejar el grupo...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalles del mensaje</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmar borrado de mensaje</string>

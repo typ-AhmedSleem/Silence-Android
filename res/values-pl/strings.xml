@@ -87,7 +87,6 @@ ten kontakt.
   <string name="ConversationActivity_transport_insecure_mms">Nieszyfrowany MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Bezpieczny SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Bezpieczny MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Błąd opuszczenia grupy...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Szczegóły wiadomości</string>
   <string name="ConversationFragment_confirm_message_delete">Potwierdź usunięcie wiadomości</string>

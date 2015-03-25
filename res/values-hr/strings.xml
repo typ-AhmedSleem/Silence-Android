@@ -89,7 +89,6 @@ ovaj kontakt.</string>
   <string name="ConversationActivity_transport_insecure_mms">Nesigurni MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sigurni SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Sigurni MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Greška prilikom napuštanja grupe...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalji poruke</string>
   <string name="ConversationFragment_confirm_message_delete">Potvrda brisanja poruke</string>

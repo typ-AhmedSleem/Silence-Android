@@ -86,7 +86,6 @@
   <string name="ConversationActivity_transport_insecure_mms">不安全的彩信</string>
   <string name="ConversationActivity_transport_secure_sms">安全短信</string>
   <string name="ConversationActivity_transport_secure_mms">安全彩信</string>
-  <string name="ConversationActivity_error_leaving_group">离开群组时遇到错误…</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">信息详情</string>
   <string name="ConversationFragment_confirm_message_delete">确认删除信息？</string>

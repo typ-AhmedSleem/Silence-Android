@@ -86,7 +86,6 @@ preveriti ta stik.</string>
   <string name="ConversationActivity_transport_insecure_mms">Nezavarovan MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Zavarovan SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Zavarovan MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Napaka pri zapuščanju skupine...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Podrobnosti sporočila</string>
   <string name="ConversationFragment_confirm_message_delete">Potrdite izbris sporočila</string>

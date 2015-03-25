@@ -81,7 +81,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationActivity_transport_insecure_mms">MMS nesecurizat</string>
   <string name="ConversationActivity_transport_secure_sms">SMS securizat</string>
   <string name="ConversationActivity_transport_secure_mms">MMS securizat</string>
-  <string name="ConversationActivity_error_leaving_group">Eroare la parăsirea grupului...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalii mesaj</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmă ştergerea mesajului</string>

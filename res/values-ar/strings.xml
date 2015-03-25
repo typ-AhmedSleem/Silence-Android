@@ -85,7 +85,6 @@
   <string name="ConversationActivity_transport_insecure_mms">رسالة وسائط متعددة غير آمنة</string>
   <string name="ConversationActivity_transport_secure_sms">رسالة نصية آمنة</string>
   <string name="ConversationActivity_transport_secure_mms">رسالة وسائط متعددة آمنة</string>
-  <string name="ConversationActivity_error_leaving_group">خطأ أثناء ترك المجموعة...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">تفاصيل الرسالة</string>
   <string name="ConversationFragment_confirm_message_delete">تاكيد حذف الرسال</string>

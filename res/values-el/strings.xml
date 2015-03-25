@@ -96,7 +96,6 @@
   <string name="ConversationActivity_transport_insecure_mms">Μη ασφαλές MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Ασφαλό SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Ασφαλό MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Σφάλμα κατα την αποχωρηση απο την ομαδα...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_confirm_message_delete">Επιβεβαίωση Διαγραφής Μηνύματος</string>

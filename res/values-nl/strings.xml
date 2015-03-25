@@ -82,7 +82,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_transport_insecure_mms">Onveilige MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Veilige SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Veilige MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Fout bij het verlaten van de groep...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Berichtdetails</string>
   <string name="ConversationFragment_confirm_message_delete">Berichtverwijdering bevestigen</string>

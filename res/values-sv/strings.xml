@@ -91,7 +91,6 @@ verifiera denna kontakt.</string>
   <string name="ConversationActivity_transport_insecure_mms">Okrypterat MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Säkert SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Säkert MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Fel vid lämnande av grupp...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meddelandedetaljer</string>
   <string name="ConversationFragment_confirm_message_delete">Bekräfta borttagning av meddelande</string>
@@ -474,6 +473,10 @@ från systemets standardapp för meddelanden.</string>
   <string name="preferences__advanced_mms_access_point_names">Manuella MMS-inställningar</string>
   <string name="preferences__enable_manual_mms">Använd manuella MMS-inställningar</string>
   <string name="preferences__override_system_mms_settings">Åsidosätt systemets MMS-inställningar med nedanstående.</string>
+  <string name="preferences__mmsc_url">MMSC URL</string>
+  <string name="preferences__mms_proxy_port">MMS Proxy Port</string>
+  <string name="preferences__mmsc_username">MMSC Användarnamn</string>
+  <string name="preferences__mmsc_password">MMSC Lösenord</string>
   <string name="preferences__sms_delivery_reports">SMS leveransrapporter</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Begär en leveransrapport för varje SMS meddelande du skickar</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Radera automatiskt gamla meddelanden när en konversationstråd överstiger en specificerad längd</string>
@@ -485,8 +488,10 @@ från systemets standardapp för meddelanden.</string>
   <string name="preferences__dark_theme">Mörkt</string>
   <string name="preferences__appearance">Utseende</string>
   <string name="preferences__theme">Tema</string>
+  <string name="preferences__theme_summary">Tema %s</string>
   <string name="preferences__default">Standard</string>
   <string name="preferences__language">Språk</string>
+  <string name="preferences__language_summary">Språk %s</string>
   <string name="preferences__make_default_sms_app">Använd som standardapp för SMS</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Gör SMSSecure till standardapp för SMS/MMS på din enhet.</string>
   <string name="preferences__submit_debug_log">Skicka in loggfilen för felsökning</string>
@@ -498,6 +503,7 @@ från systemets standardapp för meddelanden.</string>
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Markera alla</string>
   <string name="contact_selection_list__menu_unselect_all">Avmarkera alla</string>
+  <string name="contact_selection_list__header">ALLA KONTAKTER</string>
   <string name="contact_selection_list__unknown_contact">Nytt meddelande till...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Färdig</string>
@@ -505,7 +511,7 @@ från systemets standardapp för meddelanden.</string>
   <string name="push_directory__menu_refresh">Uppdaterar kontaktlistan</string>
   <!--conversation_button_context-->
   <string name="conversation_button_context__send_secure_sms">Skicka säkert SMS</string>
-  <string name="conversation_button_context__send_insecure_sms">Skicka osäkert SMS</string>
+  <string name="conversation_button_context__send_insecure_sms">Skicka okrypterat SMS</string>
   <string name="conversation_button_context__send_secure_mms">Skicka säkert MMS</string>
   <string name="conversation_button_context__send_insecure_mms">Skicka okrypterat MMS</string>
   <!--conversation_callable-->
@@ -541,7 +547,7 @@ från systemets standardapp för meddelanden.</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Lägg till kontakter</string>
   <!--conversation_group_options-->
-  <string name="convesation_group_options__recipients_list">Mottagare lista</string>
+  <string name="convesation_group_options__recipients_list">Mottagarlista</string>
   <string name="conversation_group_options__delivery">Leverans</string>
   <string name="conversation_group_options__conversation">Konversation</string>
   <string name="conversation_group_options__broadcast">Sändning</string>

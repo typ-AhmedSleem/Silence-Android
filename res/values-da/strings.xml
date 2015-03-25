@@ -78,7 +78,6 @@ denne kontakt.</string>
   <string name="ConversationActivity_transport_insecure_mms">Usikker (ikke krypteret) MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Krypteret SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Krypteret MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Fejl, forlader gruppen...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Besked detaljer</string>
   <string name="ConversationFragment_confirm_message_delete">Bekræft sletning af besked</string>

@@ -85,7 +85,6 @@
   <string name="ConversationActivity_transport_insecure_mms">ಅಸುರಕ್ಷಿತ ಎಂಎಂಎಸ್ </string>
   <string name="ConversationActivity_transport_secure_sms">ಸುರಕ್ಷಿತ ಎಸ್ಎಂಎಸ್ </string>
   <string name="ConversationActivity_transport_secure_mms">ಸುರಕ್ಷಿತ ಎಂಎಂಎಸ್</string>
-  <string name="ConversationActivity_error_leaving_group">ಗುಂಪು ಬಿಡುವಾಗ ದೋಷ ...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">ಸಂದೇಶದ ವಿವರಗಳು</string>
   <string name="ConversationFragment_confirm_message_delete">ಸಂದೇಶವನ್ನು ಅಳಿಸಿ ಹಾಕಲಾಗುತ್ತದೆ, ಖಚಿತಪಡಿಸಿ</string>

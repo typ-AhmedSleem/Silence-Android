@@ -90,7 +90,6 @@
   <string name="ConversationActivity_transport_insecure_mms">暗号化されていないMMS</string>
   <string name="ConversationActivity_transport_secure_sms">暗号化されているSMS</string>
   <string name="ConversationActivity_transport_secure_mms">暗号化されているMMS</string>
-  <string name="ConversationActivity_error_leaving_group">グループ離脱でエラー...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">メッセージの詳細</string>
   <string name="ConversationFragment_confirm_message_delete">メッセージ削除の確認</string>

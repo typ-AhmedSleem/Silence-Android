@@ -92,7 +92,6 @@ ezt a névjegyet.
   <string name="ConversationActivity_transport_insecure_mms">Nem biztonságos MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Biztonságos SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Biztonságos MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Hiba a csoport elhagyásakor...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Üzenet részletei</string>
   <string name="ConversationFragment_confirm_message_delete">Üzenettörlés megerősítése</string>

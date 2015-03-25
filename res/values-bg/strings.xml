@@ -88,7 +88,6 @@
   <string name="ConversationActivity_transport_insecure_mms">Некриптиран MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Криптиран SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Криптиран MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Грешка при напускането на група...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Информация за съобщението</string>
   <string name="ConversationFragment_confirm_message_delete">Потвърди изтриване на съобщението</string>

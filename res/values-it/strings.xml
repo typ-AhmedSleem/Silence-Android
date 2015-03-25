@@ -3,7 +3,7 @@
   <string name="app_name">SMSSecure</string>
   <string name="yes">Sì</string>
   <string name="no">No</string>
-  <string name="delete">Cancella</string>
+  <string name="delete">Elimina</string>
   <string name="please_wait">Attendere...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferencesActivity_currently_s">In questo momento: %s</string>
@@ -26,6 +26,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ApplicationPreferencesActivity_Off">Off</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">%s in entrata</string>
   <!--AppProtectionPreferenceFragment-->
   <string name="AppProtectionPreferenceFragment_minutes">%d minuti</string>
   <!--DraftDatabase-->
@@ -86,7 +87,7 @@ questo contatto.</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS non sicuro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS sicuro</string>
   <string name="ConversationActivity_transport_secure_mms">MMS sicuro</string>
-  <string name="ConversationActivity_error_leaving_group">Errore nell\'abbandonare il gruppo...</string>
+  <string name="ConversationActivity_install_smssecure">Installa SMSSecure: %s</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Dettagli messaggio</string>
   <string name="ConversationFragment_confirm_message_delete">Messaggio di conferma cancellazione</string>
@@ -111,6 +112,8 @@ questo contatto.</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Messaggio di scambio della chiave...</string>
   <!--CustomDefaultPreference-->
+  <string name="CustomDefaultPreference_using_custom">Parametri personalizzati: %s</string>
+  <string name="CustomDefaultPreference_using_default">Parametri predefiniti: %s</string>
   <string name="CustomDefaultPreference_none">Nessuna</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Adesso</string>
@@ -280,12 +283,14 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="MessageNotifier_d_new_messages">(%d) nuovi messaggi</string>
   <string name="MessageNotifier_most_recent_from_s">Più recente da: %s</string>
   <string name="MessageNotifier_encrypted_message">Messaggio cifrato...</string>
+  <string name="MessageNotifier_media_message_with_text">Messaggio multimediale: %s</string>
   <string name="MessageNotifier_no_subject">(Nessun oggetto)</string>
   <string name="MessageNotifier_message_delivery_failed">Non è riuscito l\'invio del messaggio</string>
   <string name="MessageNotifier_failed_to_deliver_message">Non è riuscito l\'invio del messaggio</string>
   <string name="MessageNotifier_error_delivering_message">C\'è stato un errore durante l\'invio del messaggio</string>
   <string name="MessageNotifier_mark_all_as_read">Segna tutto come già letto</string>
   <string name="MessageNotifier_mark_as_read">Segna come già letto</string>
+  <string name="MessageNotifier_media_message">Messaggio multimediale</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">La risposta rapida non è ancora supportata in SMSSecure!</string>
   <!--change_passphrase_activity-->
@@ -314,6 +319,7 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="conversation_activity__emoji_toggle_description">Dis/attiva la tastiera emoji</string>
   <string name="conversation_activity__attachment_thumbnail">Anteprima allegato</string>
   <!--conversation_item-->
+  <string name="conversation_item__mms_downloading_description">Scaricamento messaggio multimediale</string>
   <string name="conversation_item__mms_image_description">Messaggio multimediale</string>
   <string name="conversation_item__play_button_description">Pulsante Play</string>
   <string name="conversation_item__secure_message_description">Messaggio sicuro</string>
@@ -404,6 +410,8 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importa / Esporta</string>
   <string name="arrays__my_identity_key">La chiave della mia identità</string>
+  <string name="arrays__use_default">Usa parametri predefiniti</string>
+  <string name="arrays__use_custom">Usa parametri personalizzati</string>
   <!--plurals.xml-->
   <plurals name="minutes_ago">
     <item quantity="one">%d minuto</item>
@@ -485,6 +493,10 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="preferences__enable_manual_mms">Usa le impostazioni manuali degli MMS</string>
   <string name="preferences__override_system_mms_settings">Sovrascrivi le impostazioni MMS di sistema con le seguenti informazioni</string>
   <string name="preferences__mmsc_url">URL MMSC</string>
+  <string name="preferences__mms_proxy_host">Host proxy MMS</string>
+  <string name="preferences__mms_proxy_port">Porta proxy MMS</string>
+  <string name="preferences__mmsc_username">Nome utente MMSC</string>
+  <string name="preferences__mmsc_password">Password MMSC</string>
   <string name="preferences__sms_delivery_reports">Rapporti di consegna SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Richiedi un rapporto di consegna per ogni SMS inviato</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Elimina automaticamente i messaggi più vecchi quando un thread di conversazione supera una certa lunghezza</string>
@@ -511,6 +523,7 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Seleziona tutto</string>
   <string name="contact_selection_list__menu_unselect_all">Deseleziona tutto</string>
+  <string name="contact_selection_list__header">TUTTI I CONTATTI</string>
   <string name="contact_selection_list__unknown_contact">Nuovo messaggio a...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Finito</string>
@@ -543,6 +556,8 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="conversation_list__menu_search">Cerca</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Foto del contatto</string>
+  <string name="conversation_list_item_view__attachment_indicator">Icona Allegati</string>
+  <string name="conversation_list_item_view__error_alert">Notifica errore</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nuova conversazione</string>
   <!--conversation_secure_verified-->

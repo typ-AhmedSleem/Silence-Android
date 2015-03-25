@@ -459,7 +459,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
           initializeEnabledCheck();
         } catch (IOException e) {
           Log.w(TAG, e);
-          Toast.makeText(self, R.string.ConversationActivity_error_leaving_group, Toast.LENGTH_LONG).show();
+          Toast.makeText(self, "", Toast.LENGTH_LONG).show();
         }
       }
     });

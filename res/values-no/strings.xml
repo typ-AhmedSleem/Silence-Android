@@ -88,7 +88,6 @@ Send usikret melding?</string>
   <string name="ConversationActivity_transport_insecure_mms">Usikret MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sikker SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Sikker MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Feil ved utmelding av gruppen...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meldingsdetaljer</string>
   <string name="ConversationFragment_confirm_message_delete">Bekreft sletting av melding</string>

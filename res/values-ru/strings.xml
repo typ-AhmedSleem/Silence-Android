@@ -85,7 +85,6 @@
   <string name="ConversationActivity_transport_insecure_mms">Незащищённое MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Защищённое SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Защищённое MMS</string>
-  <string name="ConversationActivity_error_leaving_group">Ошибка при выходе из группы...</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Подробности</string>
   <string name="ConversationFragment_confirm_message_delete">Подтвердите удаление сообщения</string>
