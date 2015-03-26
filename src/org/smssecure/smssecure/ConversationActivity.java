@@ -81,7 +81,7 @@ import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.notifications.MessageNotifier;
-import org.smssecure.smssecure.protocol.Tag;
+import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
@@ -106,8 +106,6 @@ import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.util.List;
 
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
@@ -1025,8 +1023,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if (rawText.length() < 1 && !attachmentManager.isAttachmentPresent())
       throw new InvalidMessageException(getString(R.string.ConversationActivity_message_is_empty_exclamation));
 
-    if (!isEncryptedConversation && Tag.isTaggable(rawText))
-      rawText = Tag.getTaggedMessage(rawText);
+    if (!isEncryptedConversation && AutoInitiate.isTaggable(rawText))
+      rawText = AutoInitiate.getTaggedMessage(rawText);
 
     return rawText;
   }

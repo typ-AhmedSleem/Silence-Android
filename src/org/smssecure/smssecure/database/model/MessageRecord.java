@@ -27,6 +27,7 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
+import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
@@ -118,7 +119,7 @@ public abstract class MessageRecord extends DisplayRecord {
       return new SpannableString(getBody().getBody().substring(0, MAX_DISPLAY_LENGTH));
     }
 
-    return new SpannableString(getBody().getBody());
+    return new SpannableString(AutoInitiate.stripTag(getBody().getBody()));
   }
 
   public long getId() {
