@@ -30,6 +30,10 @@ The following steps should help you (re)build SMSSecure from the command line.
 
         ./gradlew build
 
+If you get a `Configuration with name 'default' not found.`, please update submodules:
+
+        git submodule init && git submodule update
+
 Visual assets
 ----------------------
 
