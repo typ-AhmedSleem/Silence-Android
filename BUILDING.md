@@ -14,7 +14,7 @@ The following steps should help you (re)build SMSSecure from the command line.
 
 1. Checkout the source somewhere on your filesystem with
 
-        git clone https://github.com/SMSSecure/SMSSecure.git
+        git clone --recursive https://github.com/SMSSecure/SMSSecure.git
 
 2. Make sure you have the [Android SDK](https://developer.android.com/sdk/index.html) installed somewhere on your system.
 3. Ensure that the following packages are installed from the Android SDK manager:
