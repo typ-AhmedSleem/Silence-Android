@@ -1,0 +1,6 @@
+[submodule "libs/com.android.support.support-v4-preferencefragment"]
+	path = libs/com.android.support.support-v4-preferencefragment
+	url = https://github.com/kolavar/android-support-v4-preferencefragment.git
+[submodule "libs/org.w3c.dom"]
+	path = libs/org.w3c.dom
+	url = https://github.com/SMSSecure/org.w3c.dom.git

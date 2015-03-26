@@ -60,9 +60,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.concurrent.TimeUnit;
 
-import me.leolin.shortcutbadger.ShortcutBadger;
-
-
 /**
  * Handles posting system notifications for new messages.
  *
@@ -140,7 +137,6 @@ public class MessageNotifier {
       {
         ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
           .cancel(NOTIFICATION_ID);
-        updateBadge(context, 0);
         clearReminder(context);
         return;
       }
@@ -155,7 +151,6 @@ public class MessageNotifier {
         sendSingleThreadNotification(context, masterSecret, notificationState, signal);
       }
 
-      updateBadge(context, notificationState.getMessageCount());
       scheduleReminder(context, masterSecret, reminderCount);
     } finally {
       if (telcoCursor != null) telcoCursor.close();
@@ -394,16 +389,6 @@ public class MessageNotifier {
       blinkPattern = blinkPatternCustom;
 
     return blinkPattern.split(",");
-  }
-
-  private static void updateBadge(Context context, int count) {
-    try {
-      ShortcutBadger.setBadge(context, count);
-    } catch (Throwable t) {
-      // NOTE :: I don't totally trust this thing, so I'm catching
-      // everything.
-      Log.w("MessageNotifier", t);
-    }
   }
 
   private static void scheduleReminder(Context context, MasterSecret masterSecret, int count) {
