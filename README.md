@@ -52,8 +52,4 @@ See <http://www.wassenaar.org/> for more information.
 
 ## License
 
-Copyright 2011 Whisper Systems
-
-Copyright 2013-2014 Open Whisper Systems
-
 Licensed under the GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
