@@ -387,8 +387,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
-        KeyExchangeInitiator.initiate(ConversationActivity.this, masterSecret,
-                                      recipient, true);
+        if (!isEncryptedConversation){
+          KeyExchangeInitiator.initiate(ConversationActivity.this, masterSecret, recipient, true);
+        }
       }
     });
 
@@ -405,7 +406,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
-        if (isSingleConversation()) {
+        if (isSingleConversation() && isEncryptedConversation) {
           final Context context = getApplicationContext();
 
           OutgoingEndSessionMessage endSessionMessage =
