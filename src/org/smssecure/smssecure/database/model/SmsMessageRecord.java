@@ -25,7 +25,6 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
-import org.smssecure.smssecure.protocol.Tag;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 
@@ -91,8 +90,6 @@ public class SmsMessageRecord extends MessageRecord {
       return emphasisAdded(context.getString(R.string.MessageNotifier_encrypted_message));
     } else if (SmsDatabase.Types.isEndSessionType(type)) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_secure_session_ended));
-    } else if (isOutgoing() && Tag.isTagged(getBody().getBody())) {
-      return new SpannableString(Tag.stripTag(getBody().getBody()));
     } else {
       return super.getDisplayBody();
     }

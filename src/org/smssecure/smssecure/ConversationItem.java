@@ -44,6 +44,7 @@ import com.afollestad.materialdialogs.AlertDialogWrapper;
 import org.smssecure.smssecure.ConversationFragment.SelectionClickListener;
 import org.smssecure.smssecure.components.ForegroundImageView;
 import org.smssecure.smssecure.contacts.ContactPhotoFactory;
+import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
@@ -58,6 +59,7 @@ import org.smssecure.smssecure.jobs.SmsSendJob;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
+import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.components.BubbleContainer;
 import org.smssecure.smssecure.util.DateUtils;
@@ -399,20 +401,25 @@ public class ConversationItem extends LinearLayout {
 
   /// Helper Methods
 
-  private void checkForAutoInitiate(Recipient recipient, String body, long threadId) {
+  private void checkForAutoInitiate(final Recipient recipient, String body, long threadId) {
     if (!groupThread &&
-        AutoInitiateActivity.isValidAutoInitiateSituation(context, masterSecret, recipient,
-                                                          body, threadId))
+        AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
     {
-      AutoInitiateActivity.exemptThread(context, threadId);
+      AutoInitiate.exemptThread(context, threadId);
 
-      Intent intent = new Intent();
-      intent.setClass(context, AutoInitiateActivity.class);
-      intent.putExtra("threadId", threadId);
-      intent.putExtra("masterSecret", masterSecret);
-      intent.putExtra("recipient", recipient.getRecipientId());
-
-      context.startActivity(intent);
+      AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
+      builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
+      builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
+      builder.setIconAttribute(R.attr.dialog_info_icon);
+      builder.setCancelable(true);
+      builder.setNegativeButton(R.string.no, null);
+      builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+          KeyExchangeInitiator.initiate(context, masterSecret, recipient, true);
+        }
+      });
+      builder.show();
     }
   }
 
