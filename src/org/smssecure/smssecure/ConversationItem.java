@@ -85,7 +85,6 @@ public class ConversationItem extends LinearLayout {
   private MessageRecord messageRecord;
   private MasterSecret  masterSecret;
   private boolean       groupThread;
-  private boolean       pushDestination;
 
   private View            bodyBubble;
   private TextView        bodyText;
@@ -157,14 +156,13 @@ public class ConversationItem extends LinearLayout {
                   @NonNull MessageRecord messageRecord,
                   @NonNull Set<MessageRecord> batchSelected,
                   @NonNull SelectionClickListener selectionClickListener,
-                  boolean groupThread, boolean pushDestination)
+                  boolean groupThread)
   {
     this.masterSecret           = masterSecret;
     this.messageRecord          = messageRecord;
     this.batchSelected          = batchSelected;
     this.selectionClickListener = selectionClickListener;
     this.groupThread            = groupThread;
-    this.pushDestination        = pushDestination;
 
     setSelectionBackgroundDrawables(messageRecord);
     setBodyText(messageRecord);
@@ -199,7 +197,6 @@ public class ConversationItem extends LinearLayout {
   private void setBubbleState(MessageRecord messageRecord) {
     final int transportationState;
     if ((messageRecord.isPending() || messageRecord.isFailed()) &&
-        pushDestination                                         &&
         !messageRecord.isForcedSms())
     {
       transportationState = BubbleContainer.TRANSPORT_STATE_PUSH_PENDING;
@@ -468,7 +465,6 @@ public class ConversationItem extends LinearLayout {
     intent.putExtra("message_id", messageRecord.getId());
     intent.putExtra("is_bundle", messageRecord.isBundleKeyExchange());
     intent.putExtra("is_identity_update", messageRecord.isIdentityUpdate());
-    intent.putExtra("is_push", messageRecord.isPush());
     intent.putExtra("master_secret", masterSecret);
     intent.putExtra("sent", messageRecord.isOutgoing());
     context.startActivity(intent);
@@ -554,7 +550,6 @@ public class ConversationItem extends LinearLayout {
         intent.putExtra(MessageDetailsActivity.MASTER_SECRET_EXTRA, masterSecret);
         intent.putExtra(MessageDetailsActivity.MESSAGE_ID_EXTRA, messageRecord.getId());
         intent.putExtra(MessageDetailsActivity.TYPE_EXTRA, messageRecord.isMms() ? MmsSmsDatabase.MMS_TRANSPORT : MmsSmsDatabase.SMS_TRANSPORT);
-        intent.putExtra(MessageDetailsActivity.IS_PUSH_GROUP_EXTRA, groupThread && pushDestination);
         context.startActivity(intent);
       } else if (messageRecord.isKeyExchange()           &&
                  !messageRecord.isOutgoing()             &&

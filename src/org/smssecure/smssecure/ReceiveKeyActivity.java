@@ -183,10 +183,7 @@ public class ReceiveKeyActivity extends BaseActivity {
       if (message.isIdentityUpdate()) {
         return new IdentityKey(Base64.decodeWithoutPadding(message.getMessageBody()), 0);
       } else if (message.isPreKeyBundle()) {
-        boolean isPush = getIntent().getBooleanExtra("is_push", false);
-
-        if (isPush) return new PreKeyWhisperMessage(Base64.decode(message.getMessageBody())).getIdentityKey();
-        else        return new PreKeyWhisperMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
+        return new PreKeyWhisperMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       } else {
         return new KeyExchangeMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       }

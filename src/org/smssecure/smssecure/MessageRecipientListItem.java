@@ -75,8 +75,7 @@ public class MessageRecipientListItem extends RelativeLayout
 
   public void set(final MasterSecret masterSecret,
                   final MessageRecord record,
-                  final Recipient recipient,
-                  final boolean isPushGroup)
+                  final Recipient recipient)
   {
     this.recipient = recipient;
 
@@ -84,12 +83,11 @@ public class MessageRecipientListItem extends RelativeLayout
     fromView.setText(RecipientViewUtil.formatFrom(getContext(), recipient));
 
     RecipientViewUtil.setContactPhoto(getContext(), contactPhotoImage, recipient, false);
-    setIssueIndicators(masterSecret, record, isPushGroup);
+    setIssueIndicators(masterSecret, record);
   }
 
   private void setIssueIndicators(final MasterSecret masterSecret,
-                                  final MessageRecord record,
-                                  final boolean isPushGroup)
+                                  final MessageRecord record)
   {
     final NetworkFailure      networkFailure = getNetworkFailure(record);
     final IdentityKeyMismatch keyMismatch    = networkFailure == null ? getKeyMismatch(record) : null;
@@ -107,7 +105,7 @@ public class MessageRecipientListItem extends RelativeLayout
           new ConfirmIdentityDialog(getContext(), masterSecret, record, keyMismatch).show();
         }
       });
-    } else if (networkFailure != null || (!isPushGroup && record.isFailed())) {
+    } else if (networkFailure != null || record.isFailed()) {
       resendButton.setVisibility(View.VISIBLE);
       resendButton.setEnabled(true);
       conflictButton.setVisibility(View.GONE);
