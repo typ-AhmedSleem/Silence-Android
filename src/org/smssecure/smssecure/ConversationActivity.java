@@ -28,7 +28,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.telephony.PhoneNumberUtils;
-import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -101,6 +100,7 @@ import org.smssecure.smssecure.util.Emoji;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
@@ -363,15 +363,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       return;
     }
 
-    TelephonyManager phoneDetails = (TelephonyManager)getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-    if (recipients.getPrimaryRecipient().getNumber() != null){
-      String recipienNumber = recipients.getPrimaryRecipient().getNumber();
-      String phoneNumber    = phoneDetails.getLine1Number();
-      if (recipienNumber.equals(phoneNumber)){
-        Toast.makeText(this, getString(R.string.ConversationActivity_recipient_self),
-                       Toast.LENGTH_LONG).show();
-        return;
-      }
+    if (TelephonyUtil.isMyPhoneNumber(this, recipients.getPrimaryRecipient().getNumber())) {
+      Toast.makeText(this, getString(R.string.ConversationActivity_recipient_self),
+              Toast.LENGTH_LONG).show();
+      return;
     }
 
     final Recipient recipient   = getRecipients().getPrimaryRecipient();

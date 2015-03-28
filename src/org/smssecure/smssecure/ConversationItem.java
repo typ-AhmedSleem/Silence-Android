@@ -67,6 +67,7 @@ import org.smssecure.smssecure.util.Emoji;
 import org.smssecure.smssecure.util.FutureTaskListener;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.ResUtil;
+import org.smssecure.smssecure.util.TelephonyUtil;
 
 import java.util.Set;
 
@@ -403,6 +404,7 @@ public class ConversationItem extends LinearLayout {
 
   private void checkForAutoInitiate(final Recipient recipient, String body, long threadId) {
     if (!groupThread &&
+        !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
         AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
     {
       AutoInitiate.exemptThread(context, threadId);
