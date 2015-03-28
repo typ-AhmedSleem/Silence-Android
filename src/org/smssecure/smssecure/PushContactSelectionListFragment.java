@@ -65,7 +65,6 @@ public class PushContactSelectionListFragment extends    Fragment
   private OnContactSelectedListener onContactSelectedListener;
   private boolean                   multi = false;
   private StickyListHeadersListView listView;
-  private EditText                  filterEditText;
   private String                    cursorFilter;
 
 
@@ -141,7 +140,7 @@ public class PushContactSelectionListFragment extends    Fragment
     listView.setFastScrollEnabled(true);
     listView.setDrawingListUnderStickyHeader(false);
     listView.setOnItemClickListener(new ListClickListener());
-    filterEditText = (EditText) getView().findViewById(R.id.filter);
+    EditText filterEditText = (EditText) getView().findViewById(R.id.filter);
     filterEditText.addTextChangedListener(new TextWatcher() {
       @Override
       public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {

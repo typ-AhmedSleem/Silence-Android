@@ -82,10 +82,7 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
-    MenuInflater inflater = this.getMenuInflater();
     menu.clear();
-
-    if (SMSSecurePreferences.isPushRegistered(this)) inflater.inflate(R.menu.push_directory, menu);
     return true;
   }
 
@@ -93,7 +90,6 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
     switch (item.getItemId()) {
-    case R.id.menu_refresh_directory:  handleDirectoryRefresh();  return true;
     case R.id.menu_selection_finished: handleSelectionFinished(); return true;
     case android.R.id.home:            finish();                  return true;
     }
@@ -120,15 +116,6 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
     }
     setResult(RESULT_OK, resultIntent);
     finish();
-  }
-
-  private void handleDirectoryRefresh() {
-    DirectoryHelper.refreshDirectoryWithProgressDialog(this, new DirectoryHelper.DirectoryUpdateFinishedListener() {
-      @Override
-      public void onUpdateFinished() {
-        contactsFragment.update();
-      }
-    });
   }
 
   private Recipients contactDataToRecipients(ContactData contactData) {
