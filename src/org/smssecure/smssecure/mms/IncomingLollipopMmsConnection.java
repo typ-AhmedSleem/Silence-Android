@@ -25,7 +25,6 @@ import android.telephony.SmsManager;
 import android.util.Log;
 
 import org.smssecure.smssecure.providers.MmsBodyProvider;
-import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.ByteArrayOutputStream;
@@ -73,8 +72,6 @@ public class IncomingLollipopMmsConnection extends LollipopMmsConnection impleme
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       Util.copy(pointer.getInputStream(), baos);
       pointer.close();
-
-      Log.w(TAG, baos.size() + "-byte response: " + Hex.dump(baos.toByteArray()));
 
       return (RetrieveConf) new PduParser(baos.toByteArray()).parse();
     } catch (IOException | TimeoutException e) {
