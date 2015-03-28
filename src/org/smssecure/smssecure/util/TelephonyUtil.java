@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.telephony.TelephonyManager;
+import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 
 public class TelephonyUtil {
@@ -36,5 +37,14 @@ public class TelephonyUtil {
   public static String getApn(final Context context) {
     final ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
     return cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE_MMS).getExtraInfo();
+  }
+
+  public static boolean isMyPhoneNumber(final Context context, String number){
+    return number != null && PhoneNumberUtils.compare(context, getPhoneNumber(context), number);
+  }
+
+  public static String getPhoneNumber(final Context context){
+    final TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+    return tm.getLine1Number();
   }
 }
