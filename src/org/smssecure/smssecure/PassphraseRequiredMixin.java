@@ -10,7 +10,6 @@ import android.view.WindowManager;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.service.MessageRetrievalService;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 
@@ -28,13 +27,11 @@ public class PassphraseRequiredMixin {
     initializeNewKeyReceiver(activity);
     initializeFromMasterSecret(activity);
     KeyCachingService.registerPassphraseActivityStarted(activity);
-    MessageRetrievalService.registerActivityStarted(activity);
   }
 
   public <T extends Activity & PassphraseRequiredActivity> void onPause(T activity) {
     removeNewKeyReceiver(activity);
     KeyCachingService.registerPassphraseActivityStopped(activity);
-    MessageRetrievalService.registerActivityStopped(activity);
   }
 
   public <T extends Activity & PassphraseRequiredActivity> void onDestroy(T activity) {

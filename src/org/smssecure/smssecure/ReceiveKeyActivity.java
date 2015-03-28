@@ -36,8 +36,6 @@ import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.IdentityDatabase;
-import org.smssecure.smssecure.database.PushDatabase;
-import org.smssecure.smssecure.jobs.PushDecryptJob;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -216,34 +214,15 @@ public class ReceiveKeyActivity extends BaseActivity {
           Context               context          = ReceiveKeyActivity.this;
           IdentityDatabase      identityDatabase = DatabaseFactory.getIdentityDatabase(context);
           EncryptingSmsDatabase smsDatabase      = DatabaseFactory.getEncryptingSmsDatabase(context);
-          PushDatabase          pushDatabase     = DatabaseFactory.getPushDatabase(context);
 
           identityDatabase.saveIdentity(masterSecret, recipient.getRecipientId(), identityKey);
 
           if (message.isIdentityUpdate()) {
             smsDatabase.markAsProcessedKeyExchange(messageId);
           } else {
-            if (getIntent().getBooleanExtra("is_push", false)) {
-              try {
-                byte[]             body     = Base64.decode(message.getMessageBody());
-                TextSecureEnvelope envelope = new TextSecureEnvelope(3, message.getSender(),
-                                                                     message.getSenderDeviceId(), "",
-                                                                     message.getSentTimestampMillis(),
-                                                                     body);
-
-                long pushId = pushDatabase.insert(envelope);
-
-                ApplicationContext.getInstance(context)
-                                  .getJobManager()
-                                  .add(new PushDecryptJob(context, pushId, messageId, message.getSender()));
-              } catch (IOException e) {
-                throw new AssertionError(e);
-              }
-            } else {
-              ApplicationContext.getInstance(context)
-                                .getJobManager()
-                                .add(new SmsDecryptJob(context, messageId));
-            }
+            ApplicationContext.getInstance(context)
+                              .getJobManager()
+                              .add(new SmsDecryptJob(context, messageId));
           }
 
           return null;

@@ -53,9 +53,6 @@ public class DatabaseFactory {
   private static final int INTRODUCED_MMS_BODY_VERSION        = 7;
   private static final int INTRODUCED_MMS_FROM_VERSION        = 8;
   private static final int INTRODUCED_TOFU_IDENTITY_VERSION   = 9;
-  private static final int INTRODUCED_PUSH_DATABASE_VERSION   = 10;
-  private static final int INTRODUCED_GROUP_DATABASE_VERSION  = 11;
-  private static final int INTRODUCED_PUSH_FIX_VERSION        = 12;
   private static final int INTRODUCED_DELIVERY_RECEIPTS       = 13;
   private static final int INTRODUCED_PART_DATA_SIZE_VERSION  = 14;
   private static final int INTRODUCED_THUMBNAILS_VERSION      = 15;
@@ -79,7 +76,6 @@ public class DatabaseFactory {
   private final MmsSmsDatabase mmsSmsDatabase;
   private final IdentityDatabase identityDatabase;
   private final DraftDatabase draftDatabase;
-  private final PushDatabase pushDatabase;
   private final GroupDatabase groupDatabase;
 
   public static DatabaseFactory getInstance(Context context) {
@@ -131,10 +127,6 @@ public class DatabaseFactory {
     return getInstance(context).draftDatabase;
   }
 
-  public static PushDatabase getPushDatabase(Context context) {
-    return getInstance(context).pushDatabase;
-  }
-
   public static GroupDatabase getGroupDatabase(Context context) {
     return getInstance(context).groupDatabase;
   }
@@ -151,7 +143,6 @@ public class DatabaseFactory {
     this.mmsSmsDatabase   = new MmsSmsDatabase(context, databaseHelper);
     this.identityDatabase = new IdentityDatabase(context, databaseHelper);
     this.draftDatabase    = new DraftDatabase(context, databaseHelper);
-    this.pushDatabase     = new PushDatabase(context, databaseHelper);
     this.groupDatabase    = new GroupDatabase(context, databaseHelper);
   }
 
@@ -168,7 +159,6 @@ public class DatabaseFactory {
     this.mmsSmsDatabase.reset(databaseHelper);
     this.identityDatabase.reset(databaseHelper);
     this.draftDatabase.reset(databaseHelper);
-    this.pushDatabase.reset(databaseHelper);
     this.groupDatabase.reset(databaseHelper);
     old.close();
 
@@ -477,7 +467,6 @@ public class DatabaseFactory {
       db.execSQL(MmsAddressDatabase.CREATE_TABLE);
       db.execSQL(IdentityDatabase.CREATE_TABLE);
       db.execSQL(DraftDatabase.CREATE_TABLE);
-      db.execSQL(PushDatabase.CREATE_TABLE);
       db.execSQL(GroupDatabase.CREATE_TABLE);
 
       executeStatements(db, SmsDatabase.CREATE_INDEXS);
@@ -670,29 +659,6 @@ public class DatabaseFactory {
       if (oldVersion < INTRODUCED_TOFU_IDENTITY_VERSION) {
         db.execSQL("DROP TABLE identities");
         db.execSQL("CREATE TABLE identities (_id INTEGER PRIMARY KEY, recipient INTEGER UNIQUE, key TEXT, mac TEXT);");
-      }
-
-      if (oldVersion < INTRODUCED_PUSH_DATABASE_VERSION) {
-        db.execSQL("CREATE TABLE push (_id INTEGER PRIMARY KEY, type INTEGER, source TEXT, destinations TEXT, body TEXT, TIMESTAMP INTEGER);");
-        db.execSQL("ALTER TABLE part ADD COLUMN pending_push INTEGER;");
-        db.execSQL("CREATE INDEX IF NOT EXISTS pending_push_index ON part (pending_push);");
-      }
-
-      if (oldVersion < INTRODUCED_GROUP_DATABASE_VERSION) {
-        db.execSQL("CREATE TABLE groups (_id INTEGER PRIMARY KEY, group_id TEXT, title TEXT, members TEXT, avatar BLOB, avatar_id INTEGER, avatar_key BLOB, avatar_content_type TEXT, avatar_relay TEXT, timestamp INTEGER, active INTEGER DEFAULT 1);");
-        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS group_id_index ON groups (GROUP_ID);");
-        db.execSQL("ALTER TABLE push ADD COLUMN device_id INTEGER DEFAULT 1;");
-        db.execSQL("ALTER TABLE sms ADD COLUMN address_device_id INTEGER DEFAULT 1;");
-        db.execSQL("ALTER TABLE mms ADD COLUMN address_device_id INTEGER DEFAULT 1;");
-      }
-
-      if (oldVersion < INTRODUCED_PUSH_FIX_VERSION) {
-        db.execSQL("CREATE TEMPORARY table push_backup (_id INTEGER PRIMARY KEY, type INTEGER, source, TEXT, destinations TEXT, body TEXT, timestamp INTEGER, device_id INTEGER DEFAULT 1);");
-        db.execSQL("INSERT INTO push_backup(_id, type, source, body, timestamp, device_id) SELECT _id, type, source, body, timestamp, device_id FROM push;");
-        db.execSQL("DROP TABLE push");
-        db.execSQL("CREATE TABLE push (_id INTEGER PRIMARY KEY, type INTEGER, source TEXT, body TEXT, timestamp INTEGER, device_id INTEGER DEFAULT 1);");
-        db.execSQL("INSERT INTO push (_id, type, source, body, timestamp, device_id) SELECT _id, type, source, body, timestamp, device_id FROM push_backup;");
-        db.execSQL("DROP TABLE push_backup;");
       }
 
       if (oldVersion < INTRODUCED_DELIVERY_RECEIPTS) {
