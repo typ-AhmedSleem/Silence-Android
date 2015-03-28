@@ -1,7 +1,8 @@
 package org.smssecure.smssecure.jobs;
 
 import android.content.Context;
-import android.telephony.TelephonyManager;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -13,9 +14,9 @@ import org.smssecure.smssecure.database.NoSuchMessageException;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
 import org.smssecure.smssecure.mms.ApnUnavailableException;
 import org.smssecure.smssecure.mms.MediaConstraints;
-import org.smssecure.smssecure.mms.MmsRadio;
-import org.smssecure.smssecure.mms.MmsRadioException;
 import org.smssecure.smssecure.mms.MmsSendResult;
+import org.smssecure.smssecure.mms.OutgoingLegacyMmsConnection;
+import org.smssecure.smssecure.mms.OutgoingLollipopMmsConnection;
 import org.smssecure.smssecure.mms.OutgoingMmsConnection;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
@@ -24,8 +25,8 @@ import org.smssecure.smssecure.transport.InsecureFallbackApprovalException;
 import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.NumberUtil;
-import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.SmilUtil;
+import org.smssecure.smssecure.util.TelephonyUtil;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
 import org.whispersystems.libaxolotl.NoSessionException;
@@ -41,7 +42,6 @@ import ws.com.google.android.mms.pdu.SendConf;
 import ws.com.google.android.mms.pdu.SendReq;
 
 public class MmsSendJob extends SendJob {
-
   private static final String TAG = MmsSendJob.class.getSimpleName();
 
   private final long messageId;
@@ -69,14 +69,18 @@ public class MmsSendJob extends SendJob {
     SendReq     message  = database.getOutgoingMessage(masterSecret, messageId);
 
     try {
-      MmsSendResult result = deliver(masterSecret, message);
+      validateDestinations(message);
+
+      final byte[]        pduBytes = getPduBytes(masterSecret, message);
+      final SendConf      sendConf = getMmsConnection(context).send(pduBytes);
+      final MmsSendResult result   = getSendResult(sendConf, message);
 
       if (result.isUpgradedSecure()) {
         database.markAsSecure(messageId);
       }
 
       database.markAsSent(messageId, result.getMessageId(), result.getResponseStatus());
-    } catch (UndeliverableMessageException e) {
+    } catch (UndeliverableMessageException | IOException | ApnUnavailableException e) {
       Log.w(TAG, e);
       database.markAsSentFailed(messageId);
       notifyMediaMessageDeliveryFailed(context, messageId);
@@ -98,90 +102,52 @@ public class MmsSendJob extends SendJob {
     notifyMediaMessageDeliveryFailed(context, messageId);
   }
 
-  public MmsSendResult deliver(MasterSecret masterSecret, SendReq message)
-      throws UndeliverableMessageException, InsecureFallbackApprovalException
+  private OutgoingMmsConnection getMmsConnection(Context context)
+      throws ApnUnavailableException
   {
-
-    validateDestinations(message);
-
-    MmsRadio radio = MmsRadio.getInstance(context);
-
-    try {
-      prepareMessageMedia(masterSecret, message, MediaConstraints.MMS_CONSTRAINTS, true);
-      if (isCdmaDevice()) {
-        Log.w(TAG, "Sending MMS directly without radio change...");
-        try {
-          return sendMms(masterSecret, radio, message, false, false);
-        } catch (IOException e) {
-          Log.w(TAG, e);
-        }
-      }
-
-      Log.w(TAG, "Sending MMS with radio change and proxy...");
-      radio.connect();
-
-      try {
-        try {
-          return sendMms(masterSecret, radio, message, true, true);
-        } catch (IOException e) {
-          Log.w(TAG, e);
-        }
-
-        Log.w(TAG, "Sending MMS with radio change and without proxy...");
-
-        try {
-          return sendMms(masterSecret, radio, message, true, false);
-        } catch (IOException ioe) {
-          Log.w(TAG, ioe);
-          throw new UndeliverableMessageException(ioe);
-        }
-      } finally {
-        radio.disconnect();
-      }
-
-    } catch (MmsRadioException | IOException e) {
-      Log.w(TAG, e);
-      throw new UndeliverableMessageException(e);
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      return new OutgoingLollipopMmsConnection(context);
+    } else {
+      return new OutgoingLegacyMmsConnection(context);
     }
   }
 
-  private MmsSendResult sendMms(MasterSecret masterSecret, MmsRadio radio, SendReq message,
-                                boolean usingMmsRadio, boolean useProxy)
+  private byte[] getPduBytes(MasterSecret masterSecret, SendReq message)
       throws IOException, UndeliverableMessageException, InsecureFallbackApprovalException
   {
-    String  number         = TelephonyUtil.getManager(context).getLine1Number();
-    boolean upgradedSecure = false;
+    String number = TelephonyUtil.getManager(context).getLine1Number();
 
-    if (MmsDatabase.Types.isSecureType(message.getDatabaseMessageBox())) {
-      message        = getEncryptedMessage(masterSecret, message);
-      upgradedSecure = true;
-    }
+    message = getResolvedMessage(masterSecret, message, MediaConstraints.MMS_CONSTRAINTS, true);
+    message.setBody(SmilUtil.getSmilBody(message.getBody()));
 
     if (number != null && number.trim().length() != 0) {
       message.setFrom(new EncodedStringValue(number));
     }
+    byte[] pduBytes = new PduComposer(context, message).make();
+    if (pduBytes == null) {
+      throw new UndeliverableMessageException("PDU composition failed, null payload");
+    }
 
-    try {
-      byte[] pdu = new PduComposer(context, message).make();
+    return pduBytes;
+  }
 
-      if (pdu == null) {
-        throw new UndeliverableMessageException("PDU composition failed, null payload");
-      }
+  private MmsSendResult getSendResult(SendConf conf, SendReq message)
+      throws UndeliverableMessageException
+  {
+    boolean upgradedSecure = false;
 
-      OutgoingMmsConnection connection = new OutgoingMmsConnection(context, radio.getApnInformation(), pdu);
-      SendConf              conf       = connection.send(usingMmsRadio, useProxy);
+    if (MmsDatabase.Types.isSecureType(message.getDatabaseMessageBox())) {
+      upgradedSecure = true;
+    }
 
-      if (conf == null) {
-        throw new UndeliverableMessageException("No M-Send.conf received in response to send.");
-      } else if (conf.getResponseStatus() != PduHeaders.RESPONSE_STATUS_OK) {
-        throw new UndeliverableMessageException("Got bad response: " + conf.getResponseStatus());
-      } else if (isInconsistentResponse(message, conf)) {
-        throw new UndeliverableMessageException("Mismatched response!");
-      } else {
-        return new MmsSendResult(conf.getMessageId(), conf.getResponseStatus(), upgradedSecure, false);
-      }
-    } catch (ApnUnavailableException aue) {
-      throw new IOException("no APN was retrievable");
+    if (conf == null) {
+      throw new UndeliverableMessageException("No M-Send.conf received in response to send.");
+    } else if (conf.getResponseStatus() != PduHeaders.RESPONSE_STATUS_OK) {
+      throw new UndeliverableMessageException("Got bad response: " + conf.getResponseStatus());
+    } else if (isInconsistentResponse(message, conf)) {
+      throw new UndeliverableMessageException("Mismatched response!");
+    } else {
+      return new MmsSendResult(conf.getMessageId(), conf.getResponseStatus(), upgradedSecure, false);
     }
   }
 
@@ -204,37 +170,21 @@ public class MmsSendJob extends SendJob {
     return !Arrays.equals(message.getTransactionId(), response.getTransactionId());
   }
 
-  private boolean isCdmaDevice() {
-    return ((TelephonyManager)context
-        .getSystemService(Context.TELEPHONY_SERVICE))
-        .getPhoneType() == TelephonyManager.PHONE_TYPE_CDMA;
-  }
+  private void validateDestinations(EncodedStringValue[] destinations) throws UndeliverableMessageException {
+    if (destinations == null) return;
 
-  private void validateDestination(EncodedStringValue destination) throws UndeliverableMessageException {
-    if (destination == null || !NumberUtil.isValidSmsOrEmail(destination.getString())) {
-      throw new UndeliverableMessageException("Invalid destination: " +
-                                                  (destination == null ? null : destination.getString()));
+    for (EncodedStringValue destination : destinations) {
+      if (destination == null || !NumberUtil.isValidSmsOrEmail(destination.getString())) {
+        throw new UndeliverableMessageException("Invalid destination: " +
+                                                (destination == null ? null : destination.getString()));
+      }
     }
   }
 
   private void validateDestinations(SendReq message) throws UndeliverableMessageException {
-    if (message.getTo() != null) {
-      for (EncodedStringValue to : message.getTo()) {
-        validateDestination(to);
-      }
-    }
-
-    if (message.getCc() != null) {
-      for (EncodedStringValue cc : message.getCc()) {
-        validateDestination(cc);
-      }
-    }
-
-    if (message.getBcc() != null) {
-      for (EncodedStringValue bcc : message.getBcc()) {
-        validateDestination(bcc);
-      }
-    }
+    validateDestinations(message.getTo());
+    validateDestinations(message.getCc());
+    validateDestinations(message.getBcc());
 
     if (message.getTo() == null && message.getCc() == null && message.getBcc() == null) {
       throw new UndeliverableMessageException("No to, cc, or bcc specified!");
@@ -249,13 +199,4 @@ public class MmsSendJob extends SendJob {
       MessageNotifier.notifyMessageDeliveryFailed(context, recipients, threadId);
     }
   }
-
-  @Override
-  protected void prepareMessageMedia(MasterSecret masterSecret, SendReq message,
-                                     MediaConstraints constraints, boolean toMemory)
-      throws IOException, UndeliverableMessageException {
-    super.prepareMessageMedia(masterSecret, message, constraints, toMemory);
-    message.setBody(SmilUtil.getSmilBody(message.getBody()));
-  }
-
 }

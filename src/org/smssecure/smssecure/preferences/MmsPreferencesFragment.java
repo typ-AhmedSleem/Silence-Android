@@ -26,7 +26,7 @@ import org.smssecure.smssecure.PassphraseRequiredActionBarActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.CustomDefaultPreference;
 import org.smssecure.smssecure.database.ApnDatabase;
-import org.smssecure.smssecure.mms.MmsConnection;
+import org.smssecure.smssecure.mms.LegacyMmsConnection;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
@@ -52,10 +52,10 @@ public class MmsPreferencesFragment extends PreferenceFragment {
     new LoadApnDefaultsTask().execute();
   }
 
-  private class LoadApnDefaultsTask extends AsyncTask<Void, Void, MmsConnection.Apn> {
+  private class LoadApnDefaultsTask extends AsyncTask<Void, Void, LegacyMmsConnection.Apn> {
 
     @Override
-    protected MmsConnection.Apn doInBackground(Void... params) {
+    protected LegacyMmsConnection.Apn doInBackground(Void... params) {
       try {
         Context context = getActivity();
 
@@ -72,7 +72,7 @@ public class MmsPreferencesFragment extends PreferenceFragment {
     }
 
     @Override
-    protected void onPostExecute(MmsConnection.Apn apnDefaults) {
+    protected void onPostExecute(LegacyMmsConnection.Apn apnDefaults) {
       ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_HOST_PREF))
           .setValidator(new CustomDefaultPreference.UriValidator())
           .setDefaultValue(apnDefaults.getMmsc());

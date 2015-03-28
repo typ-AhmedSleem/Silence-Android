@@ -75,7 +75,6 @@ import org.smssecure.smssecure.mms.MediaTooLargeException;
 import org.smssecure.smssecure.mms.MmsMediaConstraints;
 import org.smssecure.smssecure.mms.OutgoingGroupMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
-import org.smssecure.smssecure.mms.OutgoingMmsConnection;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
@@ -448,7 +447,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       public void onClick(DialogInterface dialog, int which) {
         Context self = ConversationActivity.this;
         try {
-          byte[]  groupId = GroupUtil.getDecodedId(getRecipients().getPrimaryRecipient().getNumber());
+          byte[] groupId = GroupUtil.getDecodedId(getRecipients().getPrimaryRecipient().getNumber());
           DatabaseFactory.getGroupDatabase(self).setActive(groupId, false);
 
           GroupContext context = GroupContext.newBuilder()
@@ -713,7 +712,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     new AsyncTask<Void, Void, Boolean>() {
       @Override
       protected Boolean doInBackground(Void... params) {
-        return OutgoingMmsConnection.isConnectionPossible(ConversationActivity.this);
+        return Util.isMmsCapable(ConversationActivity.this);
       }
 
       @Override
