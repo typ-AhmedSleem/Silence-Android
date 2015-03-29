@@ -609,7 +609,7 @@
     <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Enable if your device uses SMS/MMS delivery over WiFi (only enable when \'WiFi Calling\' is enabled on your device).</string>
     <string name="preferences__about">About SMSSecure</string>
     <string name="preferences__about_version">Version %s</string>
-    <string name="preferences__about_build">Build %d</string>
+    <string name="preferences__about_build_git_commit">Git commit: %s</string>
 
     <!-- **************************************** -->
     <!-- menus -->

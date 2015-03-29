@@ -181,11 +181,11 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
       this.findPreference(PREFERENCE_CATEGORY_STORAGE)
           .setSummary(StoragePreferenceFragment.getSummary(getActivity()));
 
-      String version = String.format(this.getString(R.string.preferences__about_version), BuildConfig.VERSION_NAME);
-      String build   = String.format(this.getString(R.string.preferences__about_build),   BuildConfig.VERSION_CODE);
+      String version        = String.format(this.getString(R.string.preferences__about_version),          BuildConfig.VERSION_NAME);
+      String buildGitCommit = String.format(this.getString(R.string.preferences__about_build_git_commit), BuildConfig.BUILD_GIT_COMMIT);
 
       this.findPreference(PREFERENCE_ABOUT)
-          .setSummary(version + "\n" + build);
+          .setSummary(version + "\n" + buildGitCommit);
     }
 
     private class CategoryClickListener implements Preference.OnPreferenceClickListener {
