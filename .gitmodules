@@ -4,3 +4,6 @@
 [submodule "libs/org.w3c.dom"]
 	path = libs/org.w3c.dom
 	url = https://github.com/SMSSecure/org.w3c.dom.git
+[submodule "libs/gradle-witness"]
+	path = libs/gradle-witness
+	url = https://github.com/WhisperSystems/gradle-witness.git
