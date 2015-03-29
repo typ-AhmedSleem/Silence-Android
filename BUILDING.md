@@ -26,7 +26,11 @@ The following steps should help you (re)build SMSSecure from the command line.
 
         sdk.dir=\<path to your sdk installation\>
 
-5. Execute Gradle:
+5. (Optional) Build [Gradle-Witness](https://github.com/WhisperSystems/gradle-witness)
+
+        ./build-witness.sh
+
+6. Execute Gradle:
 
         ./gradlew build
 
