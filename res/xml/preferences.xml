@@ -24,4 +24,7 @@
     <Preference android:key="preference_category_advanced"
                 android:title="@string/preferences__advanced"
                 android:icon="?pref_ic_advanced"/>
+
+    <Preference android:key="preference_about"
+                android:title="@string/preferences__about"/>
 </PreferenceScreen>

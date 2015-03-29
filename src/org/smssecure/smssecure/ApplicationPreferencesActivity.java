@@ -71,6 +71,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   private static final String PREFERENCE_CATEGORY_APPEARANCE     = "preference_category_appearance";
   private static final String PREFERENCE_CATEGORY_STORAGE        = "preference_category_storage";
   private static final String PREFERENCE_CATEGORY_ADVANCED       = "preference_category_advanced";
+  private static final String PREFERENCE_ABOUT                   = "preference_about";
 
   private static final String PUSH_MESSAGING_PREF = "pref_toggle_push_messaging";
 
@@ -179,6 +180,12 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
           .setSummary(AppearancePreferenceFragment.getSummary(getActivity()));
       this.findPreference(PREFERENCE_CATEGORY_STORAGE)
           .setSummary(StoragePreferenceFragment.getSummary(getActivity()));
+
+      String version = String.format(this.getString(R.string.preferences__about_version), BuildConfig.VERSION_NAME);
+      String build   = String.format(this.getString(R.string.preferences__about_build),   BuildConfig.VERSION_CODE);
+
+      this.findPreference(PREFERENCE_ABOUT)
+          .setSummary(version + "\n" + build);
     }
 
     private class CategoryClickListener implements Preference.OnPreferenceClickListener {
