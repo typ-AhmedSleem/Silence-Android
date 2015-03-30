@@ -4,9 +4,6 @@
 
     These strings are used as the SMSSecure description on various distribution channels.
 
-    The sparse numbering of the string variables allows inserting additional lines
-    later without the need to renumber existing strings.
-
     To translate these strings see the "Contributing Translations" portion of the README
 
 -->
@@ -14,6 +11,7 @@
 <resources>
 
     <string name="Distribution_title">SMSSecure</string>
+    <string name="Distribution_tagline">Encrypted SMS/MMS conversations made easy!</string>
     <string name="Distribution_description">SMSSecure is an SMS/MMS application that allows you to protect your privacy while communicating with friends.</string>
     <string name="Distribution_long_description">
         SMSSecure is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
