@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Import a patch from TextSecure and adapt it for SMSSecure
-# ../TextSecure must be an updated git tree
+# ../TextSecure must be an cloned git tree
 # usage: ./import-patch.sh ID
 
 set -eo pipefail
@@ -12,6 +12,7 @@ if [[ $1 == "" ]]; then
 fi
 
 pushd ../TextSecure > /dev/null
+git pull origin master > /dev/null
 git checkout $1 2> /dev/null
 git format-patch -1 --minimal 2> /dev/null
 git checkout master > /dev/null 2>&1
