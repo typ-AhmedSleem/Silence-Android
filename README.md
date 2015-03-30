@@ -42,7 +42,7 @@ Looking for documentation? Check out the wiki of the original project:
 https://github.com/WhisperSystems/TextSecure/wiki
 
 ## Chat
-Have a question? Want to help out? Join our IRC channel: [#SMSSecure on Freenode](http://webchat.freenode.net/?channels=SMSSecure)
+Have a question? Want to help out? Join our IRC channel: [#SMSSecure on Freenode](https://webchat.freenode.net/?channels=SMSSecure)
 
 ## Cryptography Notice
 
