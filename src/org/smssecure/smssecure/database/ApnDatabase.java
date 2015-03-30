@@ -23,8 +23,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.smssecure.smssecure.mms.ApnUnavailableException;
-import org.smssecure.smssecure.mms.MmsConnection.Apn;
+import org.smssecure.smssecure.mms.LegacyMmsConnection.Apn;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;

@@ -114,7 +114,7 @@ public class PushMediaSendJob extends PushSendJob implements InjectableType {
     boolean                 isSmsFallbackSupported = isSmsFallbackSupported(context, destination, true);
 
     try {
-      prepareMessageMedia(masterSecret, message, MediaConstraints.PUSH_CONSTRAINTS, false);
+      //prepareMessageMedia(masterSecret, message, MediaConstraints.PUSH_CONSTRAINTS, false);
       TextSecureAddress          address      = getPushAddress(destination);
       List<TextSecureAttachment> attachments  = getAttachments(masterSecret, message);
       String                     body         = PartParser.getMessageText(message.getBody());

@@ -279,6 +279,10 @@
               android:grantUriPermissions="true"
               android:authorities="org.smssecure.provider.smssecure" />
 
+    <provider android:name=".providers.MmsBodyProvider"
+              android:grantUriPermissions="true"
+              android:authorities="org.smssecure.provider.smssecure.mms" />
+
     <receiver android:name=".service.RegistrationNotifier"
               android:exported="false">
         <intent-filter>
@@ -304,5 +308,6 @@
             <action android:name="org.smssecure.smssecure.MessageNotifier.DELETE_REMINDER_ACTION"/>
         </intent-filter>
     </receiver>
+
 </application>
 </manifest>

@@ -106,6 +106,8 @@
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
     <string name="ConversationActivity_install_smssecure">Install SMSSecure: %s</string>
     <string name="ConversationActivity_recipient_self">You cannot initiate a secure session with yourself!</string>
+    <string name="ConversationActivity_mms_not_supported_title">MMS not supported</string>
+    <string name="ConversationActivity_mms_not_supported_message">This message cannot be sent since your carrier doesn\'t support MMS.</string>
 
     <!-- ConversationFragment -->
     <string name="ConversationFragment_message_details">Message details</string>
@@ -388,7 +390,6 @@
     <!-- conversation_item -->
     <string name="conversation_item__mms_downloading_description">Media message downloading</string>
     <string name="conversation_item__mms_image_description">Media message</string>
-    <string name="conversation_item__play_button_description">Play button</string>
     <string name="conversation_item__secure_message_description">Secure message</string>
 
     <!-- conversation_item_sent -->
@@ -579,6 +580,7 @@
     <string name="preferences__custom">Custom</string>
     <string name="preferences__advanced">Advanced</string>
     <string name="preferences__app_protection">App protection</string>
+    <string name="preferences__mms_user_agent">MMS User Agent</string>
     <string name="preferences__advanced_mms_access_point_names">Manual MMS settings</string>
     <string name="preferences__enable_manual_mms">Use manual MMS settings</string>
     <string name="preferences__override_system_mms_settings">Override system MMS settings with the information below.</string>
@@ -659,7 +661,6 @@
 
     <!-- conversation_list_item_view -->
     <string name="conversation_list_item_view__contact_photo_image">Contact Photo Image</string>
-    <string name="conversation_list_item_view__attachment_indicator">Attachment Indicator</string>
     <string name="conversation_list_item_view__error_alert">Error alert</string>
 
     <!-- conversation_list_fragment -->

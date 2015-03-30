@@ -18,6 +18,7 @@ package org.smssecure.smssecure.mms;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -38,6 +39,7 @@ import org.apache.http.message.BasicHeader;
 import org.smssecure.smssecure.database.ApnDatabase;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Conversions;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -50,19 +52,22 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class MmsConnection {
+@SuppressWarnings("deprecation")
+public abstract class LegacyMmsConnection {
+
+  public static final String USER_AGENT = "Android-Mms/2.0";
+
   private static final String TAG = "MmsCommunication";
 
   protected final Context context;
   protected final Apn     apn;
 
-  protected MmsConnection(Context context, Apn apn) {
+  protected LegacyMmsConnection(Context context) throws ApnUnavailableException {
     this.context = context;
-    this.apn     = apn;
+    this.apn     = getApn(context);
   }
 
-  public static Apn getApn(Context context, String apnName) throws ApnUnavailableException {
-    Log.w(TAG, "Getting MMSC params for apn " + apnName);
+  public static Apn getApn(Context context) throws ApnUnavailableException {
 
     try {
       Optional<Apn> params = ApnDatabase.getInstance(context)
@@ -77,6 +82,10 @@ public abstract class MmsConnection {
     } catch (IOException ioe) {
       throw new ApnUnavailableException("ApnDatabase threw an IOException", ioe);
     }
+  }
+
+  protected boolean isCdmaDevice() {
+    return ((TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE)).getPhoneType() == TelephonyManager.PHONE_TYPE_CDMA;
   }
 
   protected static boolean checkRouteToHost(Context context, String host, boolean usingMmsRadio)
@@ -119,8 +128,7 @@ public abstract class MmsConnection {
     return baos.toByteArray();
   }
 
-  protected CloseableHttpClient constructHttpClient()
-      throws IOException {
+  protected CloseableHttpClient constructHttpClient() throws IOException {
     RequestConfig config = RequestConfig.custom()
                                         .setConnectTimeout(20 * 1000)
                                         .setConnectionRequestTimeout(20 * 1000)
@@ -128,7 +136,7 @@ public abstract class MmsConnection {
                                         .setMaxRedirects(20)
                                         .build();
 
-    URL mmsc = new URL(apn.getMmsc());
+    URL                 mmsc          = new URL(apn.getMmsc());
     CredentialsProvider credsProvider = new BasicCredentialsProvider();
 
     if (apn.hasAuthentication()) {
@@ -139,21 +147,19 @@ public abstract class MmsConnection {
     return HttpClients.custom()
                       .setConnectionReuseStrategy(new NoConnectionReuseStrategyHC4())
                       .setRedirectStrategy(new LaxRedirectStrategy())
-                      .setUserAgent("Android-Mms/2.0")
+                      .setUserAgent(SMSSecurePreferences.getMmsUserAgent(context, USER_AGENT))
                       .setConnectionManager(new BasicHttpClientConnectionManager())
                       .setDefaultRequestConfig(config)
                       .setDefaultCredentialsProvider(credsProvider)
                       .build();
   }
 
-  protected byte[] makeRequest(boolean useProxy) throws IOException {
-    Log.w(TAG, "connecting to " + apn.getMmsc() + (useProxy ? " using proxy" : ""));
+  protected byte[] execute(HttpUriRequest request) throws IOException {
+    Log.w(TAG, "connecting to " + apn.getMmsc());
 
-    HttpUriRequest request;
     CloseableHttpClient   client   = null;
     CloseableHttpResponse response = null;
     try {
-      request  = constructRequest(useProxy);
       client   = constructHttpClient();
       response = client.execute(request);
 
@@ -169,8 +175,6 @@ public abstract class MmsConnection {
 
     throw new IOException("unhandled response code");
   }
-
-  protected abstract HttpUriRequest constructRequest(boolean useProxy) throws IOException;
 
   protected List<Header> getBaseHeaders() {
     final String number = TelephonyUtil.getManager(context).getLine1Number();
