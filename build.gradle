@@ -113,11 +113,15 @@ android {
     }
 
     defaultConfig {
+        versionCode 6
+        versionName "0.3.3"
+
         minSdkVersion 9
         targetSdkVersion 19
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "long", "BUILD_TIMESTAMP", System.currentTimeMillis() + "L"
+        buildConfigField "String", "BUILD_GIT_COMMIT", "\"" + 'git rev-parse --short HEAD'.execute().text.trim() + "\""
     }
 
     compileOptions {
