@@ -12,7 +12,6 @@ SMSSecure focuses on SMS. This fork aims to:
 ## Migrating from TextSecure to SMSSecure
 
 * In TextSecure, export plaintext backup. Warning: the backup will **not** be encrypted.
-* Rename `TextSecurePlaintextBackup.xml` to `SMSSecurePlaintextBackup.xml`.
 * Install SMSSecure.
 * In SMSSecure, import plaintext backup.
 * Enjoy SMSSecure!
