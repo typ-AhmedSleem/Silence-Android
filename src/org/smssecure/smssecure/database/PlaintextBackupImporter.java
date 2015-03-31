@@ -21,26 +21,40 @@ import java.util.Set;
 
 public class PlaintextBackupImporter {
 
+  private static final String TAG = PlaintextBackupImporter.class.getSimpleName();
+  private static String backupPath;
+
   public static void importPlaintextFromSd(Context context, MasterSecret masterSecret)
       throws NoExternalStorageException, IOException
   {
     Log.w("PlaintextBackupImporter", "Importing plaintext...");
+    backupPath = getPlaintextExportDirectoryPath();
     verifyExternalStorageForPlaintextImport();
-    importPlaintext(context, masterSecret);
+    importPlaintext(context, masterSecret, backupPath);
   }
 
   private static void verifyExternalStorageForPlaintextImport() throws NoExternalStorageException {
-    if (!Environment.getExternalStorageDirectory().canRead() ||
-        !(new File(getPlaintextExportDirectoryPath()).exists()))
+    if (!Environment.getExternalStorageDirectory().canRead())
       throw new NoExternalStorageException();
   }
 
-  private static String getPlaintextExportDirectoryPath() {
+  private static String getPlaintextExportDirectoryPath() throws NoExternalStorageException {
     File sdDirectory = Environment.getExternalStorageDirectory();
-    return sdDirectory.getAbsolutePath() + File.separator + "SMSSecurePlaintextBackup.xml";
+    String[] files = {"SMSSecurePlaintextBackup.xml", "TextSecurePlaintextBackup.xml"};
+    String path;
+
+    for (String s : files){
+      path = sdDirectory.getAbsolutePath() + File.separator + s;
+      if (new File(path).exists()) {
+        Log.i(TAG, "Importing backup from file '" + path + "'");
+        return path;
+      }
+    }
+
+    throw new NoExternalStorageException();
   }
 
-  private static void importPlaintext(Context context, MasterSecret masterSecret)
+  private static void importPlaintext(Context context, MasterSecret masterSecret, String path)
       throws IOException
   {
     Log.w("PlaintextBackupImporter", "importPlaintext()");
@@ -49,7 +63,7 @@ public class PlaintextBackupImporter {
 
     try {
       ThreadDatabase threads         = DatabaseFactory.getThreadDatabase(context);
-      XmlBackup      backup          = new XmlBackup(getPlaintextExportDirectoryPath());
+      XmlBackup      backup          = new XmlBackup(path);
       MasterCipher   masterCipher    = new MasterCipher(masterSecret);
       Set<Long>      modifiedThreads = new HashSet<Long>();
       XmlBackup.XmlBackupItem item;
