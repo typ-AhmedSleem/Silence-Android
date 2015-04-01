@@ -28,7 +28,7 @@ The following steps should help you (re)build SMSSecure from the command line.
 
 5. (Optional) Build [Gradle-Witness](https://github.com/WhisperSystems/gradle-witness)
 
-        ./build-witness.sh
+        ./scripts/build-witness.sh
 
 6. Execute Gradle:
 
@@ -40,8 +40,6 @@ If you get a `Configuration with name 'default' not found.`, please update submo
 
 Visual assets
 ----------------------
-
-Source assets tend to be large binary blobs, which are best stored outside of git repositories. We host ours in a [Pixelapse repository](https://www.pixelapse.com/openwhispersystems/projects/signal-android/). Some source files are SVGs that can be auto-colored and sized using a tool like [android-res-utils](https://github.com/sebkur/android-res-utils).
 
 Sample command for generating our audio placeholder image:
 
