@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="app_name">SMSSecure</string>
+  <string name="yes">Jes</string>
+  <string name="no">Ne</string>
+  <string name="delete">Forigi</string>
+  <string name="please_wait">Bonvolu atendi…</string>
+  <!--ApplicationPreferencesActivity-->
+  <string name="ApplicationPreferencesActivity_currently_s">Nun: %s</string>
+  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Forigi ĉiuj la malnovajn mesaĝojn?</string>
+  <string name="ApplicationPreferencesActivity_delete">Forigi</string>
+  <string name="ApplicationPreferencesActivity_sms">SMS</string>
+  <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <!--AppProtectionPreferenceFragment-->
+  <!--DraftDatabase-->
+  <string name="DraftDatabase_Draft_image_snippet">(bildo)</string>
+  <string name="DraftDatabase_Draft_audio_snippet">(aŭdio)</string>
+  <string name="DraftDatabase_Draft_video_snippet">(video)</string>
+  <!--AttchmentManager-->
+  <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_picture">Bildo</string>
+  <string name="AttachmentTypeSelectorAdapter_video">Video</string>
+  <string name="AttachmentTypeSelectorAdapter_audio">Aŭdio</string>
+  <!--ConfirmIdentityDialog-->
+  <!--ConversationItem-->
+  <string name="ConversationItem_view_secure_media_question">Montri la sekuran aŭdvidaĵon?</string>
+  <string name="ConversationItem_click_for_details">Frapeti por detaletojn</string>
+  <!--ConversationActivity-->
+  <string name="ConversationActivity_compose_message">Skribi mesaĝon</string>
+  <string name="ConversationActivity_message_is_empty_exclamation">Mesaĝo estas malplena!</string>
+  <string name="ConversationActivity_d_recipients_in_group_singular">1 membro</string>
+  <string name="ConversationActivity_transport_insecure_sms">Malsekura SMS</string>
+  <string name="ConversationActivity_transport_insecure_mms">Malsekura MMS</string>
+  <string name="ConversationActivity_transport_secure_sms">Sekura SMS</string>
+  <string name="ConversationActivity_transport_secure_mms">Sekura MMS</string>
+  <string name="ConversationActivity_install_smssecure">Instalo de SMSSecure: %s</string>
+  <string name="ConversationActivity_recipient_self">Vi ne povas inici sekuran sesion kun vi mem!</string>
+  <!--ConversationFragment-->
+  <string name="ConversationFragment_message_details">Mesaĝaj detaletoj</string>
+  <string name="ConversationFragment_success_exclamation">Sukceso!</string>
+  <string name="ConversationFragment_mms">MMS</string>
+  <string name="ConversationFragment_sms">SMS</string>
+  <!--ConversationListFragment-->
+  <!--ConversationListItem-->
+  <!--CustomDefaultPreference-->
+  <!--DateUtils-->
+  <string name="DateUtils_now">Nun</string>
+  <!--ShareActivity-->
+  <!--ExportFragment-->
+  <string name="ExportFragment_export">Eksporti</string>
+  <string name="ExportFragment_cancel">Rezigni</string>
+  <string name="ExportFragment_success">Sukceso!</string>
+  <!--GroupCreateActivity-->
+  <!--GroupMembersDialog-->
+  <string name="GroupMembersDialog_me">Mi</string>
+  <!--ImportExportActivity-->
+  <string name="ImportExportActivity_import">Importi</string>
+  <string name="ImportExportActivity_export">Eksporti</string>
+  <!--ImportFragment-->
+  <string name="ImportFragment_import">Importi</string>
+  <string name="ImportFragment_cancel">Rezigni</string>
+  <!--KeyScanningActivity-->
+  <!--MessageDetailsRecipient-->
+  <!--MmsDownloader-->
+  <!--NotificationMmsMessageRecord-->
+  <string name="NotificationMmsMessageRecord_multimedia_message">Aŭdovida mesaĝo</string>
+  <!--MessageRecord-->
+  <!--PassphraseChangeActivity-->
+  <!--PassphrasePromptActivity-->
+  <string name="PassphrasePromptActivity_watermark_content_description">Piktogramo de SMSSecure</string>
+  <!--ReceiveKeyActivity-->
+  <!--SmsMessageRecord-->
+  <!--ThreadRecord-->
+  <!--VerifyIdentityActivity-->
+  <!--ViewIdentityActivity-->
+  <!--KeyExchangeInitiator-->
+  <string name="KeyExchangeInitiator_send">Sendi</string>
+  <!--MessageDisplayHelper-->
+  <!--EncryptingSmsDatabase-->
+  <!--ThreadDatabase-->
+  <!--MmsDatabase-->
+  <!--MmsMessageRecord-->
+  <!--ApplicationMigrationService-->
+  <!--KeyCachingService-->
+  <!--MessageNotifier-->
+  <string name="MessageNotifier_d_new_messages">%d novaj mesaĝoj</string>
+  <string name="MessageNotifier_media_message_with_text">Aŭdovida mesaĝo: %s</string>
+  <string name="MessageNotifier_no_subject">(Senobjekto)</string>
+  <string name="MessageNotifier_media_message">Aŭdovida mesaĝo</string>
+  <!--QuickResponseService-->
+  <!--change_passphrase_activity-->
+  <!--contact_selection_group_activity-->
+  <!--contact_selection_list_activity-->
+  <!--single_contact_selection_activity-->
+  <!--ContactSelectionListFragment-->
+  <!--contact_selection_recent_activity-->
+  <!--conversation_activity-->
+  <string name="conversation_activity__type_message_sms_secure">Sendi sekuran SMS</string>
+  <string name="conversation_activity__type_message_sms_insecure">Sendi malsekuran SMS</string>
+  <string name="conversation_activity__type_message_mms_secure">Sendi sekuran MMS</string>
+  <string name="conversation_activity__type_message_mms_insecure">Sendi malsekuran MMS</string>
+  <string name="conversation_activity__send">Sendi</string>
+  <string name="conversation_activity__remove">Forigi</string>
+  <!--conversation_item-->
+  <string name="conversation_item__mms_image_description">Aŭdovida mesaĝo</string>
+  <string name="conversation_item__secure_message_description">Sekura mesaĝo</string>
+  <!--conversation_item_sent-->
+  <string name="conversation_item_sent__download">Elŝuti</string>
+  <!--conversation_item_received-->
+  <string name="conversation_item_received__download">Elŝuti</string>
+  <!--conversation_fragment_cab-->
+  <!--log_submit_activity-->
+  <!--database_migration_activity-->
+  <string name="database_migration_activity__import">Importi</string>
+  <!--database_upgrade_activity-->
+  <!--media_overview_activity-->
+  <string name="media_overview_activity__no_images">Sen bildoj</string>
+  <!--message_recipients_list_item-->
+  <string name="message_recipients_list_item__verify">VERIGI</string>
+  <string name="message_recipients_list_item__resend">RESENDI</string>
+  <!--MmsPreferencesFragment-->
+  <!--prompt_passphrase_activity-->
+  <string name="prompt_passphrase_activity__unlock">Malŝlosi</string>
+  <!--prompt_mms_activity-->
+  <!--receive_key_activity-->
+  <!--recipients_panel-->
+  <!--verify_identity_activity-->
+  <!--message_details_header-->
+  <string name="message_details_header__sent">Sendita</string>
+  <string name="message_details_header__received">Recevita</string>
+  <string name="message_details_header__to">Al:</string>
+  <string name="message_details_header__from">De:</string>
+  <string name="message_details_header__with">Kun:</string>
+  <!--AndroidManifest.xml-->
+  <string name="AndroidManifest__media_overview">Ĉiuj la bildoj</string>
+  <!--arrays.xml-->
+  <string name="arrays__import_export">Importi / eksporti</string>
+  <string name="arrays__use_default">Uzi defaŭlto</string>
+  <!--plurals.xml-->
+  <plurals name="minutes_ago">
+    <item quantity="one">%d minuto</item>
+    <item quantity="other">%d minutoj</item>
+  </plurals>
+  <plurals name="hours_ago">
+    <item quantity="one">%d horo</item>
+    <item quantity="other">%d horoj</item>
+  </plurals>
+  <!--preferences.xml-->
+  <string name="preferences__sms_mms">SMS kaj MMS</string>
+  <string name="preferences__sound">Sono</string>
+  <string name="preferences__never">Neniam</string>
+  <string name="preferences__one_time">Unufoje</string>
+  <string name="preferences__two_times">Dufoje</string>
+  <string name="preferences__three_times">Trifoje</string>
+  <string name="preferences__five_times">Kvinfoje</string>
+  <string name="preferences__ten_times">dekfoje</string>
+  <string name="preferences__vibrate">Vibri</string>
+  <string name="preferences__minutes">Minutoj</string>
+  <string name="preferences__hours">Horoj</string>
+  <string name="preferences__green">Verda</string>
+  <string name="preferences__red">Ruĝa</string>
+  <string name="preferences__blue">Blua</string>
+  <string name="preferences__orange">Oranĝa</string>
+  <string name="preferences__cyan">Cejana</string>
+  <string name="preferences__magenta">Magenta</string>
+  <string name="preferences__white">Blanka</string>
+  <string name="preferences__none">Nenia</string>
+  <string name="preferences__fast">Rapida</string>
+  <string name="preferences__normal">Normala</string>
+  <string name="preferences__slow">Malrapida</string>
+  <string name="preferences__light_theme">Hela</string>
+  <string name="preferences__dark_theme">Malhela</string>
+  <string name="preferences__language">Lingvo</string>
+  <!--****************************************-->
+  <!--menus-->
+  <!--****************************************-->
+  <!--contact_selection_list-->
+  <!--contact_selection-->
+  <!--refreshing push directory from menu-->
+  <!--conversation_button_context-->
+  <!--conversation_callable-->
+  <!--conversation_context-->
+  <string name="conversation_context__menu_copy_text">Kopii tekston</string>
+  <!--conversation_context_image-->
+  <!--conversation_insecure-->
+  <!--conversation_insecure_no_push-->
+  <string name="conversation_insecure__security">Sekureco</string>
+  <!--conversation_list_batch-->
+  <!--conversation_list-->
+  <string name="conversation_list__menu_search">Serĉi</string>
+  <!--conversation_list_item_view-->
+  <!--conversation_list_fragment-->
+  <!--conversation_secure_verified-->
+  <string name="conversation_secure_verified__menu_security">Sekureco</string>
+  <!--conversation-->
+  <string name="conversation__menu_view_media">Ĉiuj bildoj</string>
+  <!--conversation_callable-->
+  <!--conversation_group_options-->
+  <!--key_scanning-->
+  <!--text_secure_normal-->
+  <string name="text_secure_normal__menu_new_message">Nova mesaĝo</string>
+  <string name="text_secure_normal__menu_new_group">Nova grupo</string>
+  <string name="text_secure_normal__menu_clear_passphrase">Ŝlosi</string>
+  <!--reminder_header-->
+  <!--MediaPreviewActivity-->
+  <string name="MediaPreviewActivity_you">Vi</string>
+  <!--media_preview-->
+  <string name="media_preview__save_title">Konvervi</string>
+  <!--media_preview_activity-->
+  <!--Trimmer-->
+  <!--transport_selection_list_item-->
+  <!--EOF-->
+</resources>

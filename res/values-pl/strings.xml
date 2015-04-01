@@ -74,7 +74,6 @@ ten kontakt.
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Przepraszamy, ten plik audio przekracza dozwolony rozmiar (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Podany numer lub adres e-mail jest niepoprawny!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Wiadomość jest pusta!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Grupuj odbiorców rozmowy</string>
   <string name="ConversationActivity_group_conversation">Grupowa konwersacja</string>
   <string name="ConversationActivity_unnamed_group">Grupa bez nazwy</string>
   <string name="ConversationActivity_d_recipients_in_group">%d uczestników</string>
@@ -303,7 +302,6 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="conversation_activity__attachment_thumbnail">Minaturka załącznika</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Wiadomość multimedialna</string>
-  <string name="conversation_item__play_button_description">Przycisk Play</string>
   <string name="conversation_item__secure_message_description">Bezpieczna wiadomość</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Pobierz</string>
@@ -536,7 +534,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="conversation_list__menu_search">Szukaj</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Zdjęcie kontaktu</string>
-  <string name="conversation_list_item_view__attachment_indicator">Indykator załącznika</string>
   <string name="conversation_list_item_view__error_alert">Powiadomienie błedu</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nowa konwersacja</string>

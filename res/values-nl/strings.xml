@@ -69,7 +69,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Excuses, het audiobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Ontvanger is niet een geldig SMS of e-mailadres!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Bericht is leeg!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Groepsgesprek ontvangers</string>
   <string name="ConversationActivity_group_conversation">Groepsgesprek</string>
   <string name="ConversationActivity_unnamed_group">Naamloze groep</string>
   <string name="ConversationActivity_d_recipients_in_group">%d leden</string>
@@ -291,7 +290,6 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="conversation_activity__emoji_toggle_description">Wissel emoji toetsenbord</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Mediabericht</string>
-  <string name="conversation_item__play_button_description">Afspeelknop</string>
   <string name="conversation_item__secure_message_description">Beveiligd bericht</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Download</string>

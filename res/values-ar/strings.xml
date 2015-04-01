@@ -72,7 +72,6 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">عذرا، حجم ملف الصوت يتجاوز الحد المسموح (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">الطرف الآخر ليس رقم هاتف أو عنوان بريد الكتروني صحيح!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">الرسالة فارغة</string>
-  <string name="ConversationActivity_group_conversation_recipients">المستلمون في مجموعة المحادثة</string>
   <string name="ConversationActivity_group_conversation">دردشة جماعية</string>
   <string name="ConversationActivity_unnamed_group">مجموعة غير مسماه</string>
   <string name="ConversationActivity_d_recipients_in_group">أعضاء %d </string>
@@ -298,7 +297,6 @@
   <string name="conversation_activity__attachment_thumbnail"> المرفق</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">رسالة وسائط متعددة</string>
-  <string name="conversation_item__play_button_description">زر التشغيل</string>
   <string name="conversation_item__secure_message_description">رسالة آمنة</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">تنزيل</string>
@@ -539,7 +537,6 @@
   <string name="conversation_list__menu_search">بحث</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">صورة جهة الاتصال</string>
-  <string name="conversation_list_item_view__attachment_indicator">مؤشر المرفق</string>
   <string name="conversation_list_item_view__error_alert">تنبيه بخطأ</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">محادثة جديدة</string>

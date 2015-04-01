@@ -75,7 +75,6 @@ Send usikret melding?</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Beklager, den valgte lydfilen overstiger restriksjonene på meldingsstørrelse (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Mottakeren er ikke en gyldig SMS- eller e-postadresse!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Meldingen er tom!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Mottakere i gruppen</string>
   <string name="ConversationActivity_group_conversation">Gruppesamtale</string>
   <string name="ConversationActivity_unnamed_group">Navnløs gruppe</string>
   <string name="ConversationActivity_d_recipients_in_group">%d medlemmer</string>
@@ -306,7 +305,6 @@ Mottatt melding med ukjent ID nøkkel. Klikk for å prosessere og vise.</string>
   <string name="conversation_activity__attachment_thumbnail">Vedleggsikon</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Multimediamelding</string>
-  <string name="conversation_item__play_button_description">Avspill knapp</string>
   <string name="conversation_item__secure_message_description">Sikret melding</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Last ned</string>
@@ -538,7 +536,6 @@ Importer en klartekst backup kompatibel med \'SMSBackup And Restore\'.</string>
   <string name="conversation_list__menu_search">Søk</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Kontaktbilde</string>
-  <string name="conversation_list_item_view__attachment_indicator">Vedleggsindikator</string>
   <string name="conversation_list_item_view__error_alert">Varsel om feil</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Ny samtale</string>

@@ -76,7 +76,6 @@ ovaj kontakt.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Odabrani audio prelazi ograničenje veličine poruke (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Primatelj nije valjana SMS ili adresa e-pošte!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Poruka je prazna!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Primatelji grupnog razgovora</string>
   <string name="ConversationActivity_group_conversation">Grupni razgovor</string>
   <string name="ConversationActivity_unnamed_group">Neimenovana grupa</string>
   <string name="ConversationActivity_d_recipients_in_group">%d članova</string>
@@ -313,7 +312,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="conversation_activity__emoji_toggle_description">Uključi/isključi emoji tipkovnicu</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Multimedijalna poruka</string>
-  <string name="conversation_item__play_button_description">Tipka za pokretanje</string>
   <string name="conversation_item__secure_message_description">Sigurna poruka</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Preuzmi</string>

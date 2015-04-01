@@ -44,7 +44,6 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Nastala chyba pri vytváraní prílohy.</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Príjemca nie je platná SMS alebo emailová adresa!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Správa je prázdna!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Príjemcovia skupinovej konverzácie</string>
   <string name="ConversationActivity_group_conversation">Skupinová konverzácia</string>
   <string name="ConversationActivity_unnamed_group">Nepomenovaná skupina</string>
   <string name="ConversationActivity_d_recipients_in_group">%d členovia</string>
@@ -211,7 +210,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="conversation_activity__send">Odoslať</string>
   <string name="conversation_activity__remove">Odstrániť</string>
   <!--conversation_item-->
-  <string name="conversation_item__play_button_description">Prehrávacie tlačidlo</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Stiahnuť</string>
   <string name="conversation_item_sent__downloading">Sťahujem</string>

@@ -65,7 +65,6 @@ denne kontakt.</string>
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Beklager, der opstod en fejl ved vedhæftning af fil.</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Modtageren har ikke en gyldig SMS- eller e-mail adresse!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Beskeden er tom!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Modtagere i gruppen</string>
   <string name="ConversationActivity_group_conversation">Gruppe beskeder</string>
   <string name="ConversationActivity_unnamed_group">Navnløs gruppe</string>
   <string name="ConversationActivity_d_recipients_in_group">%d modtagere</string>
@@ -283,7 +282,6 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="conversation_activity__emoji_toggle_description">Emoji tastatur deaktiver/aktiver</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Multimedie besked</string>
-  <string name="conversation_item__play_button_description">Afspiller knap</string>
   <string name="conversation_item__secure_message_description">Indikator for sikker besked</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Hent</string>

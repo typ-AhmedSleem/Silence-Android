@@ -73,7 +73,6 @@ preveriti ta stik.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Izbran zvočni posnetek presega omejitev velikosti (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Naslov prejemnika ni veljaven SMS oz. email nalsov!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Sporočilo je prazno!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Sodelujoči v skupinskem pogovoru</string>
   <string name="ConversationActivity_group_conversation">Skupinski pogovor</string>
   <string name="ConversationActivity_unnamed_group">Skupina brez imena</string>
   <string name="ConversationActivity_d_recipients_in_group">%d članov</string>
@@ -299,7 +298,6 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="conversation_activity__attachment_thumbnail">Predogledna sličica priponke</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Multiedijsko sporočilo</string>
-  <string name="conversation_item__play_button_description">Gumb za predvajanje</string>
   <string name="conversation_item__secure_message_description">Zavarovano sporočilo</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Prenos</string>
@@ -510,7 +508,6 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="conversation_list__menu_search">Poišči</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Slika stika</string>
-  <string name="conversation_list_item_view__attachment_indicator">Indikator priponke</string>
   <string name="conversation_list_item_view__error_alert">Alarm za napako</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nov pogovor</string>

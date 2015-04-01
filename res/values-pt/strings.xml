@@ -71,7 +71,6 @@ terá acesso ás mensagens e chaves.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Lamento, o áudio seleccionado excede as restrições de tamanho da mensagem (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Destinatário não é um endereço SMS ou email válido!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">A mensagem está vazia!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Agrupar destinatários de conversa</string>
   <string name="ConversationActivity_group_conversation">Conversa em grupo</string>
   <string name="ConversationActivity_unnamed_group">Grupo sem nome</string>
   <string name="ConversationActivity_d_recipients_in_group">%d membros</string>
@@ -307,7 +306,6 @@ Recebida mensagem com chave de identidade desconhecida. Clique para processar e 
   <string name="conversation_activity__emoji_toggle_description">Teclado emoji</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Mensagem media</string>
-  <string name="conversation_item__play_button_description">Botão play</string>
   <string name="conversation_item__secure_message_description">Mensagem segura</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Transferir</string>

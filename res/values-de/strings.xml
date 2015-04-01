@@ -75,7 +75,6 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Die ausgewählte Audiodatei überschreitet leider die maximal mögliche Nachrichtengröße (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Die Empfängeradresse ist keine gültige SMS- oder E-Mail-Adresse!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Die Nachricht ist leer!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Gruppenmitglieder</string>
   <string name="ConversationActivity_group_conversation">Gruppenunterhaltung</string>
   <string name="ConversationActivity_unnamed_group">Unbenannte Gruppe</string>
   <string name="ConversationActivity_d_recipients_in_group">%d Mitglieder</string>
@@ -310,7 +309,6 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Mediennachricht wird heruntergeladen</string>
   <string name="conversation_item__mms_image_description">Mediennachricht</string>
-  <string name="conversation_item__play_button_description">Wiedergabetaste</string>
   <string name="conversation_item__secure_message_description">Sichere Nachricht</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Download</string>
@@ -544,7 +542,6 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="conversation_list__menu_search">Suchen</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Kontaktbild</string>
-  <string name="conversation_list_item_view__attachment_indicator">Anhangssymbol</string>
   <string name="conversation_list_item_view__error_alert">Fehlerbenachrichtigung</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Neue Unterhaltung</string>

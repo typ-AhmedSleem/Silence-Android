@@ -71,7 +71,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Barkatu, aukeratutako audioak mezuaren tamaina mugak gainditzen ditu  (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Hartzailea SMS edo email baliogabea da!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mezua hutsik dago!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Taldeko solasaldiaren hartzaileak</string>
   <string name="ConversationActivity_group_conversation">Taldeko solasaldia</string>
   <string name="ConversationActivity_unnamed_group">Izenik gabeko taldea</string>
   <string name="ConversationActivity_d_recipients_in_group">%d partaide</string>
@@ -310,7 +309,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="conversation_activity__emoji_toggle_description">Emoji teklatua aktibatu/desaktibatu</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Media mezua</string>
-  <string name="conversation_item__play_button_description">Erreproduzitzeko botoia</string>
   <string name="conversation_item__secure_message_description">Mezu segurua</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Behera kargatu</string>
