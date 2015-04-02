@@ -74,7 +74,6 @@ questo contatto.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Errore, l\'audio selezionato supera la dimensione massima (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Il destinatario non è un indirizzo valido per l\'SMS o per l\'email!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Il messaggio è vuoto!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Destinatari conversazione di gruppo</string>
   <string name="ConversationActivity_group_conversation">Conversazione di gruppo</string>
   <string name="ConversationActivity_unnamed_group">Gruppo senza nome</string>
   <string name="ConversationActivity_d_recipients_in_group">%d partecipanti</string>
@@ -321,7 +320,6 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Scaricamento messaggio multimediale</string>
   <string name="conversation_item__mms_image_description">Messaggio multimediale</string>
-  <string name="conversation_item__play_button_description">Pulsante Play</string>
   <string name="conversation_item__secure_message_description">Messaggio sicuro</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Scarica</string>
@@ -556,7 +554,6 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="conversation_list__menu_search">Cerca</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Foto del contatto</string>
-  <string name="conversation_list_item_view__attachment_indicator">Icona Allegati</string>
   <string name="conversation_list_item_view__error_alert">Notifica errore</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nuova conversazione</string>

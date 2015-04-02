@@ -20,7 +20,6 @@ package org.smssecure.smssecure;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,19 +30,15 @@ import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
-import org.smssecure.smssecure.database.PushDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.SmsMessageRecord;
 import org.smssecure.smssecure.jobs.CreateSignedPreKeyJob;
-import org.smssecure.smssecure.jobs.PushDecryptJob;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.ParcelUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.VersionTracker;
 import org.whispersystems.jobqueue.EncryptionKeys;
-import org.whispersystems.textsecure.api.messages.TextSecureEnvelope;
 
 import java.io.File;
 import java.util.SortedSet;
@@ -181,10 +176,8 @@ public class DatabaseUpgradeActivity extends BaseActivity {
 
       if (params[0] < NO_DECRYPT_QUEUE_VERSION) {
         EncryptingSmsDatabase smsDatabase  = DatabaseFactory.getEncryptingSmsDatabase(getApplicationContext());
-        PushDatabase          pushDatabase = DatabaseFactory.getPushDatabase(getApplicationContext());
 
         SmsDatabase.Reader smsReader  = null;
-        Cursor             pushReader = null;
 
         SmsMessageRecord record;
 
@@ -199,21 +192,6 @@ public class DatabaseUpgradeActivity extends BaseActivity {
         } finally {
           if (smsReader != null)
             smsReader.close();
-        }
-
-        try {
-          pushReader = pushDatabase.getPending();
-
-          while ((pushReader != null && pushReader.moveToNext())) {
-            ApplicationContext.getInstance(getApplicationContext())
-                .getJobManager()
-                .add(new PushDecryptJob(getApplicationContext(),
-                                        pushReader.getLong(pushReader.getColumnIndexOrThrow(PushDatabase.ID)),
-                                        pushReader.getString(pushReader.getColumnIndexOrThrow(PushDatabase.SOURCE))));
-          }
-        } finally {
-          if (pushReader != null)
-            pushReader.close();
         }
       }
 

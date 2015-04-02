@@ -77,7 +77,6 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">選択された音声ファイルはサイズ限度を超えています(%1$skB)。</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">受信先のSMS又はEメールアドレスが有効ではありません。</string>
   <string name="ConversationActivity_message_is_empty_exclamation">メッセージが空です。</string>
-  <string name="ConversationActivity_group_conversation_recipients">グループチャットの宛先</string>
   <string name="ConversationActivity_group_conversation">グループチャット</string>
   <string name="ConversationActivity_unnamed_group">無名グループ</string>
   <string name="ConversationActivity_d_recipients_in_group">参加者%d人</string>
@@ -308,7 +307,6 @@
   <string name="conversation_activity__attachment_thumbnail">添付のサムネイル</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">メディアーメッセージ</string>
-  <string name="conversation_item__play_button_description">再生ボタン</string>
   <string name="conversation_item__secure_message_description">暗号化されたメッセージ</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">ダウンロード</string>
@@ -530,7 +528,6 @@
   <string name="conversation_list__menu_search">検索</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">連絡先の画像</string>
-  <string name="conversation_list_item_view__attachment_indicator">添付のインジケータ</string>
   <string name="conversation_list_item_view__error_alert">エラーアラート</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">新しい会話</string>

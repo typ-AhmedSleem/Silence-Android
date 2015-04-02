@@ -72,7 +72,6 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">ಕ್ಷಮಿಸಿ, ಆಯ್ಕೆ ಮಾಡಿದ ಶ್ರಾವ್ಯ ಸಂದೇಶ ಗಾತ್ರ ನಿರ್ಬಂಧಗಳನ್ನು ಮೀರಿದೆ  (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">ಸ್ವೀಕರಿಸುವವರ ಎಸ್.ಎಮ್.ಎಸ್ ಅಥವಾ ಇಮೇಲ್ ವಿಳಾಸ ಮಾನ್ಯವಾದುದಲ್ಲ!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">ಸಂದೇಶ ಖಾಲಿಯಾಗಿದೆ!</string>
-  <string name="ConversationActivity_group_conversation_recipients">ಸಮೂಹ ಸಂವಾದದ ಸ್ವೀಕೃತದಾರರು</string>
   <string name="ConversationActivity_group_conversation">ಸಮೂಹ ಸಂವಾದ</string>
   <string name="ConversationActivity_unnamed_group">ಅನಾಮಧೇಯ ಸಮೂಹ</string>
   <string name="ConversationActivity_d_recipients_in_group">%d ಸದಸ್ಯರು </string>
@@ -298,7 +297,6 @@
   <string name="conversation_activity__emoji_toggle_description">ಎಮೊಜಿಯ ಕೀಲಿಮಣೆಗೆ ಟಾಗಲ್ ಮಾಡಿ</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">ಬಹುಮಾಧ್ಯಮ ಸಂದೇಶ</string>
-  <string name="conversation_item__play_button_description">ಪ್ಲೇ ಬಟನ್</string>
   <string name="conversation_item__secure_message_description">ಸುರಕ್ಷಿತ ಸಂದೇಶ</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">ಡೌನ್ಲೋಡ್</string>

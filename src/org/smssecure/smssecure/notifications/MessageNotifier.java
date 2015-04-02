@@ -44,7 +44,6 @@ import org.smssecure.smssecure.RoutingActivity;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
-import org.smssecure.smssecure.database.PushDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.recipients.Recipient;
@@ -53,7 +52,6 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
-import org.whispersystems.textsecure.api.messages.TextSecureEnvelope;
 
 import java.io.IOException;
 import java.util.List;
@@ -130,7 +128,6 @@ public class MessageNotifier {
 
     try {
       telcoCursor = DatabaseFactory.getMmsSmsDatabase(context).getUnread();
-      pushCursor  = DatabaseFactory.getPushDatabase(context).getPending();
 
       if ((telcoCursor == null || telcoCursor.isAfterLast()) &&
           (pushCursor == null || pushCursor.isAfterLast()))
@@ -142,8 +139,6 @@ public class MessageNotifier {
       }
 
       NotificationState notificationState = constructNotificationState(context, masterSecret, telcoCursor);
-
-      appendPushNotificationState(context, masterSecret, notificationState, pushCursor);
 
       if (notificationState.hasMultipleThreads()) {
         sendMultipleThreadNotification(context, masterSecret, notificationState, signal);
@@ -289,34 +284,6 @@ public class MessageNotifier {
       player.start();
     } catch (IOException ioe) {
       Log.w("MessageNotifier", ioe);
-    }
-  }
-
-  private static void appendPushNotificationState(Context context,
-                                                  MasterSecret masterSecret,
-                                                  NotificationState notificationState,
-                                                  Cursor cursor)
-  {
-    if (masterSecret != null) return;
-
-    PushDatabase.Reader reader = null;
-    TextSecureEnvelope envelope;
-
-    try {
-      reader = DatabaseFactory.getPushDatabase(context).readerFor(cursor);
-
-      while ((envelope = reader.getNext()) != null) {
-        Recipients      recipients = RecipientFactory.getRecipientsFromString(context, envelope.getSource(), false);
-        Recipient       recipient  = recipients.getPrimaryRecipient();
-        long            threadId   = DatabaseFactory.getThreadDatabase(context).getThreadIdFor(recipients);
-        SpannableString body       = new SpannableString(context.getString(R.string.MessageNotifier_encrypted_message));
-        body.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, body.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        notificationState.addNotification(new NotificationItem(recipient, recipients, null, threadId, body, null));
-      }
-    } finally {
-      if (reader != null)
-        reader.close();
     }
   }
 

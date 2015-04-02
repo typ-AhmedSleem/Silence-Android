@@ -42,7 +42,6 @@ import static org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
  */
 public class PushContactSelectionActivity extends PassphraseRequiredActionBarActivity {
   private final static String TAG             = "ContactSelectActivity";
-  public  final static String PUSH_ONLY_EXTRA = "push_only";
 
   private final DynamicTheme    dynamicTheme    = new DynamicTheme   ();
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
@@ -73,9 +72,6 @@ public class PushContactSelectionActivity extends PassphraseRequiredActionBarAct
   public boolean onPrepareOptionsMenu(Menu menu) {
     MenuInflater inflater = this.getMenuInflater();
     menu.clear();
-
-    if (SMSSecurePreferences.isPushRegistered(this)) inflater.inflate(R.menu.push_directory, menu);
-
     inflater.inflate(R.menu.contact_selection, menu);
     return true;
   }
@@ -84,7 +80,6 @@ public class PushContactSelectionActivity extends PassphraseRequiredActionBarAct
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
     switch (item.getItemId()) {
-    case R.id.menu_refresh_directory:  handleDirectoryRefresh();  return true;
     case R.id.menu_selection_finished: handleSelectionFinished(); return true;
     case android.R.id.home:            finish();                  return true;
     }
@@ -111,14 +106,5 @@ public class PushContactSelectionActivity extends PassphraseRequiredActionBarAct
     }
     setResult(RESULT_OK, resultIntent);
     finish();
-  }
-
-  private void handleDirectoryRefresh() {
-    DirectoryHelper.refreshDirectoryWithProgressDialog(this, new DirectoryHelper.DirectoryUpdateFinishedListener() {
-      @Override
-      public void onUpdateFinished() {
-        contactsFragment.update();
-      }
-    });
   }
 }

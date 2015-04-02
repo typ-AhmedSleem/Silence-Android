@@ -36,8 +36,6 @@ import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.IdentityDatabase;
-import org.smssecure.smssecure.database.PushDatabase;
-import org.smssecure.smssecure.jobs.PushDecryptJob;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -185,10 +183,7 @@ public class ReceiveKeyActivity extends BaseActivity {
       if (message.isIdentityUpdate()) {
         return new IdentityKey(Base64.decodeWithoutPadding(message.getMessageBody()), 0);
       } else if (message.isPreKeyBundle()) {
-        boolean isPush = getIntent().getBooleanExtra("is_push", false);
-
-        if (isPush) return new PreKeyWhisperMessage(Base64.decode(message.getMessageBody())).getIdentityKey();
-        else        return new PreKeyWhisperMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
+        return new PreKeyWhisperMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       } else {
         return new KeyExchangeMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       }
@@ -216,34 +211,15 @@ public class ReceiveKeyActivity extends BaseActivity {
           Context               context          = ReceiveKeyActivity.this;
           IdentityDatabase      identityDatabase = DatabaseFactory.getIdentityDatabase(context);
           EncryptingSmsDatabase smsDatabase      = DatabaseFactory.getEncryptingSmsDatabase(context);
-          PushDatabase          pushDatabase     = DatabaseFactory.getPushDatabase(context);
 
           identityDatabase.saveIdentity(masterSecret, recipient.getRecipientId(), identityKey);
 
           if (message.isIdentityUpdate()) {
             smsDatabase.markAsProcessedKeyExchange(messageId);
           } else {
-            if (getIntent().getBooleanExtra("is_push", false)) {
-              try {
-                byte[]             body     = Base64.decode(message.getMessageBody());
-                TextSecureEnvelope envelope = new TextSecureEnvelope(3, message.getSender(),
-                                                                     message.getSenderDeviceId(), "",
-                                                                     message.getSentTimestampMillis(),
-                                                                     body);
-
-                long pushId = pushDatabase.insert(envelope);
-
-                ApplicationContext.getInstance(context)
-                                  .getJobManager()
-                                  .add(new PushDecryptJob(context, pushId, messageId, message.getSender()));
-              } catch (IOException e) {
-                throw new AssertionError(e);
-              }
-            } else {
-              ApplicationContext.getInstance(context)
-                                .getJobManager()
-                                .add(new SmsDecryptJob(context, messageId));
-            }
+            ApplicationContext.getInstance(context)
+                              .getJobManager()
+                              .add(new SmsDecryptJob(context, messageId));
           }
 
           return null;

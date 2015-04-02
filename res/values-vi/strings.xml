@@ -52,7 +52,6 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Xin lỗi, có lỗi thiết đặt tập tin đính kèm của bạn.</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Nơi nhận không phải là SMS hay địa chỉ email có hiệu lực!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Tin nhắn trống không!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Gom nhóm theo người chat</string>
   <string name="ConversationActivity_group_conversation">Gom nhóm chat</string>
   <string name="ConversationActivity_unnamed_group">Nhóm chưa đặt tên</string>
   <string name="ConversationActivity_d_recipients_in_group">%d thành viên</string>

@@ -79,7 +79,6 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Изабрани звук прекорачује ограничења величине поруке (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Прималац није исправан број или е-адреса!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Порука је празна!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Примаоци групне преписке</string>
   <string name="ConversationActivity_group_conversation">Групна преписка</string>
   <string name="ConversationActivity_unnamed_group">Неименована група</string>
   <string name="ConversationActivity_d_recipients_in_group">%d члан(ов)а</string>
@@ -325,7 +324,6 @@
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Преузимање мултимедијалне поруке</string>
   <string name="conversation_item__mms_image_description">Медија порука</string>
-  <string name="conversation_item__play_button_description">Дугме за пуштање</string>
   <string name="conversation_item__secure_message_description">Сигурна порука</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Преузимање</string>
@@ -562,7 +560,6 @@
   <string name="conversation_list__menu_search">Тражи</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Фотографија контакта</string>
-  <string name="conversation_list_item_view__attachment_indicator">Индикатор прилога</string>
   <string name="conversation_list_item_view__error_alert">Грешка</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Нова преписка</string>

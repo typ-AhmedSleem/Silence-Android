@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.WRITE_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_MMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
@@ -61,10 +60,6 @@
             </intent-filter>
 
         </activity>
-
-    <activity android:name=".RegistrationProblemsActivity"
-              android:theme="@style/SMSSecure.Light.Dialog"
-              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".CountrySelectionActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
@@ -147,6 +142,11 @@
               android:windowSoftInputMode="stateVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
+    <activity android:name=".PushContactSelectionActivity"
+              android:label="@string/AndroidManifest__select_contacts"
+              android:windowSoftInputMode="stateHidden"
+              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+
     <activity android:name=".ViewIdentityActivity"
               android:label="@string/AndroidManifest__public_identity_key"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
@@ -168,13 +168,6 @@
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".ApplicationPreferencesActivity"
-              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
-
-    <activity android:name=".RegistrationActivity"
-              android:windowSoftInputMode="stateUnchanged"
-              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
-
-    <activity android:name=".RegistrationProgressActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".LogSubmitActivity"
@@ -207,8 +200,6 @@
 
     <service android:enabled="true" android:name=".service.ApplicationMigrationService"/>
     <service android:enabled="true" android:name=".service.KeyCachingService"/>
-    <service android:enabled="true" android:name=".service.RegistrationService"/>
-    <service android:enabled="true" android:name=".service.MessageRetrievalService"/>
 
     <service android:name=".service.QuickResponseService"
              android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
@@ -222,15 +213,6 @@
             <data android:scheme="mmsto" />
         </intent-filter>
     </service>
-
-
-<!--	<receiver android:name=".service.BootListener" -->
-<!-- 			  android:enabled="true" -->
-<!-- 			  android:exported="false">-->
-<!--    		<intent-filter>-->
-<!--        		<action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--    		</intent-filter>-->
-<!--	</receiver>-->
 
     <receiver android:name=".service.SmsListener"
               android:permission="android.permission.BROADCAST_SMS"
@@ -285,13 +267,6 @@
               android:exported="false">
         <intent-filter>
             <action android:name="org.smssecure.smssecure.REGISTRATION_EVENT" />
-        </intent-filter>
-    </receiver>
-
-    <receiver android:name=".service.DirectoryRefreshListener">
-        <intent-filter>
-            <action android:name="org.whispersystems.whisperpush.DIRECTORY_REFRESH"/>
-            <action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
     </receiver>
 

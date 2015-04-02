@@ -78,7 +78,6 @@ verifiera denna kontakt.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Tyvärr, den valda ljudfilen överskrider gränsen för meddelandestorlek (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Mottagare är inte en giltig SMS eller e-postadress!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Meddelandet är tomt!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Mottagare för gruppkonversation</string>
   <string name="ConversationActivity_group_conversation">Gruppkonversation</string>
   <string name="ConversationActivity_unnamed_group">Namnlös grupp</string>
   <string name="ConversationActivity_d_recipients_in_group">%d medlemmar</string>
@@ -309,7 +308,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="conversation_activity__emoji_toggle_description">Växla till emoji-tangentbord</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Mediameddelande</string>
-  <string name="conversation_item__play_button_description">Playknapp</string>
   <string name="conversation_item__secure_message_description">Säkert meddelande</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Ladda ner</string>

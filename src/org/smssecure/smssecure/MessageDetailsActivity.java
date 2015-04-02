@@ -62,11 +62,9 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
 
   public final static String MASTER_SECRET_EXTRA = "master_secret";
   public final static String MESSAGE_ID_EXTRA    = "message_id";
-  public final static String IS_PUSH_GROUP_EXTRA = "is_push_group";
   public final static String TYPE_EXTRA          = "type";
 
   private MasterSecret     masterSecret;
-  private boolean          isPushGroup;
   private ConversationItem conversationItem;
   private ViewGroup        itemParent;
   private View             metadataContainer;
@@ -107,7 +105,6 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     View header = inflater.inflate(R.layout.message_details_header, recipientsList, false);
 
     masterSecret      = getIntent().getParcelableExtra(MASTER_SECRET_EXTRA);
-    isPushGroup       = getIntent().getBooleanExtra(IS_PUSH_GROUP_EXTRA, false);
     itemParent        = (ViewGroup) findViewById(R.id.item_container );
     recipientsList    = (ListView ) findViewById(R.id.recipients_list);
     metadataContainer =             header.findViewById(R.id.metadata_container);
@@ -164,10 +161,9 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     }
     toFrom.setText(toFromRes);
     conversationItem.set(masterSecret, messageRecord, new HashSet<MessageRecord>(), new NullSelectionListener(),
-                         recipients != messageRecord.getRecipients(),
-                         DirectoryHelper.isPushDestination(this, recipients));
+                         recipients != messageRecord.getRecipients());
     recipientsList.setAdapter(new MessageDetailsRecipientAdapter(this, masterSecret, messageRecord,
-                                                                 recipients, isPushGroup));
+                                                                 recipients));
   }
 
   private void inflateMessageViewIfAbsent(MessageRecord messageRecord) {

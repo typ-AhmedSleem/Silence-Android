@@ -22,7 +22,6 @@ import android.content.Context;
 import org.smssecure.smssecure.crypto.PRNGFixes;
 import org.smssecure.smssecure.dependencies.AxolotlStorageModule;
 import org.smssecure.smssecure.dependencies.InjectableType;
-import org.smssecure.smssecure.dependencies.SMSSecureCommunicationModule;
 import org.smssecure.smssecure.jobs.persistence.EncryptingJobSerializer;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirementProvider;
 import org.smssecure.smssecure.jobs.requirements.ServiceRequirementProvider;
@@ -94,8 +93,7 @@ public class ApplicationContext extends Application implements DependencyInjecto
   }
 
   private void initializeDependencyInjection() {
-    this.objectGraph = ObjectGraph.create(new SMSSecureCommunicationModule(this),
-                                          new AxolotlStorageModule(this));
+    this.objectGraph = ObjectGraph.create(new AxolotlStorageModule(this));
   }
 
 }

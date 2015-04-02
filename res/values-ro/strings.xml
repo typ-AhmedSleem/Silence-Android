@@ -68,7 +68,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Ne pare rău, fișierul audio selectat depășește restricția marimii mesajului (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Destinatarul nu este o adresă validă de SMS sau e-mail.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesajul este gol!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Grupează destinatarii conversaţiei</string>
   <string name="ConversationActivity_group_conversation">Grupează conversaţia</string>
   <string name="ConversationActivity_unnamed_group">Grup nedenumit</string>
   <string name="ConversationActivity_d_recipients_in_group">%d membrii</string>
@@ -288,7 +287,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="conversation_activity__emoji_toggle_description">Comutare tastatură emoji</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Mesaj media</string>
-  <string name="conversation_item__play_button_description">Buton redare</string>
   <string name="conversation_item__secure_message_description">Mesaj securizat</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Descarca</string>

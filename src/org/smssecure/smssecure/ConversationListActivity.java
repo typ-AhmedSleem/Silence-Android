@@ -34,7 +34,6 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.service.DirectoryRefreshListener;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
@@ -66,8 +65,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
     initializeResources();
     initializeContactUpdatesReceiver();
-
-    DirectoryRefreshListener.schedule(this);
   }
 
   @Override

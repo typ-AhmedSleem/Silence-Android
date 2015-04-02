@@ -3,7 +3,6 @@ package org.smssecure.smssecure;
 import org.smssecure.smssecure.util.CharacterCalculator;
 import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.EncryptedSmsCharacterCalculator;
-import org.smssecure.smssecure.util.PushCharacterCalculator;
 import org.smssecure.smssecure.util.SmsCharacterCalculator;
 
 public class TransportOption {
@@ -19,12 +18,10 @@ public class TransportOption {
     this.text        = text;
     this.composeHint = composeHint;
 
-    if (isPlaintext() && isSms()) {
+    if (isPlaintext()) {
       this.characterCalculator = new SmsCharacterCalculator();
-    } else if (isSms()) {
-      this.characterCalculator = new EncryptedSmsCharacterCalculator();
     } else {
-      this.characterCalculator = new PushCharacterCalculator();
+      this.characterCalculator = new EncryptedSmsCharacterCalculator();
     }
   }
 

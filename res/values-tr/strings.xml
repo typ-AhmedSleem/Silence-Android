@@ -72,7 +72,6 @@ isteyebilirsiniz.</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Üzgünüz, seçilen ses mesaj boyutu limitini aşıyor (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Alıcı geçerli bir SMS veya e-posta adresi değil!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesaj boş!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Grup sohbeti alıcıları</string>
   <string name="ConversationActivity_group_conversation">Grup sohbeti</string>
   <string name="ConversationActivity_unnamed_group">Adlandırılmamış grup</string>
   <string name="ConversationActivity_d_recipients_in_group">%d üye</string>
@@ -298,7 +297,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="conversation_activity__emoji_toggle_description">Emoji klavyesini göster/gizle</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Medya mesajı</string>
-  <string name="conversation_item__play_button_description">Oynat butonu</string>
   <string name="conversation_item__secure_message_description">Güvenli mesaj</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">İndir</string>

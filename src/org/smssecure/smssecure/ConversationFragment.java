@@ -109,8 +109,7 @@ public class ConversationFragment extends ListFragment
   private void initializeListAdapter() {
     if (this.recipients != null && this.threadId != -1) {
       this.setListAdapter(new ConversationAdapter(getActivity(), masterSecret, selectionClickListener,
-                                                  (!this.recipients.isSingleRecipient()) || this.recipients.isGroupRecipient(),
-                                                  DirectoryHelper.isPushDestination(getActivity(), this.recipients)));
+                                                  (!this.recipients.isSingleRecipient()) || this.recipients.isGroupRecipient()));
       getListView().setRecyclerListener((ConversationAdapter)getListAdapter());
       getLoaderManager().initLoader(0, null, this);
     }

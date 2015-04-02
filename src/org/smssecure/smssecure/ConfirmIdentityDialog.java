@@ -20,18 +20,13 @@ import org.smssecure.smssecure.database.IdentityDatabase;
 import org.smssecure.smssecure.database.MmsAddressDatabase;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
-import org.smssecure.smssecure.database.PushDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
 import org.smssecure.smssecure.database.model.MessageRecord;
-import org.smssecure.smssecure.jobs.PushDecryptJob;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
-import org.smssecure.smssecure.util.Base64;
-import org.whispersystems.textsecure.api.messages.TextSecureEnvelope;
-import org.whispersystems.textsecure.internal.push.PushMessageProtos;
 
 import java.io.IOException;
 
@@ -142,8 +137,10 @@ public class ConfirmIdentityDialog extends AlertDialog {
 
             Recipients recipients = mmsAddressDatabase.getRecipientsForId(messageRecord.getId());
 
-            if (recipients.isGroupRecipient()) MessageSender.resendGroupMessage(getContext(), masterSecret, messageRecord, mismatch.getRecipientId());
-            else                               MessageSender.resend(getContext(), masterSecret, messageRecord);
+            // TODO: Push servce disabled
+            if (!recipients.isGroupRecipient()){
+              MessageSender.resend(getContext(), masterSecret, messageRecord);
+            }
           } else {
             smsDatabase.removeMismatchedIdentity(messageRecord.getId(),
                                                  mismatch.getRecipientId(),
@@ -154,29 +151,11 @@ public class ConfirmIdentityDialog extends AlertDialog {
         }
 
         private void processIncomingMessageRecord(MessageRecord messageRecord) {
-          try {
-            PushDatabase pushDatabase = DatabaseFactory.getPushDatabase(getContext());
-            SmsDatabase  smsDatabase  = DatabaseFactory.getSmsDatabase(getContext());
+          SmsDatabase  smsDatabase  = DatabaseFactory.getSmsDatabase(getContext());
 
-            smsDatabase.removeMismatchedIdentity(messageRecord.getId(),
-                                                 mismatch.getRecipientId(),
-                                                 mismatch.getIdentityKey());
-
-            TextSecureEnvelope envelope = new TextSecureEnvelope(PushMessageProtos.IncomingPushMessageSignal.Type.PREKEY_BUNDLE_VALUE,
-                                                                 messageRecord.getIndividualRecipient().getNumber(),
-                                                                 messageRecord.getRecipientDeviceId(), "",
-                                                                 messageRecord.getDateSent(),
-                                                                 Base64.decode(messageRecord.getBody().getBody()));
-
-            long pushId = pushDatabase.insert(envelope);
-
-            ApplicationContext.getInstance(getContext())
-                              .getJobManager()
-                              .add(new PushDecryptJob(getContext(), pushId, messageRecord.getId(),
-                                                      messageRecord.getIndividualRecipient().getNumber()));
-          } catch (IOException e) {
-            throw new AssertionError(e);
-          }
+          smsDatabase.removeMismatchedIdentity(messageRecord.getId(),
+                                               mismatch.getRecipientId(),
+                                               mismatch.getIdentityKey());
         }
 
       }.execute();

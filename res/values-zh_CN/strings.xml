@@ -73,7 +73,6 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">抱歉，选择的音频超过了信息大小限制（%1$skB）</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人不是有效的短信或电子邮件地址！</string>
   <string name="ConversationActivity_message_is_empty_exclamation">信息为空！</string>
-  <string name="ConversationActivity_group_conversation_recipients">接受群组会话</string>
   <string name="ConversationActivity_group_conversation">群组会话</string>
   <string name="ConversationActivity_unnamed_group">未命名的群组</string>
   <string name="ConversationActivity_d_recipients_in_group">%d 名成员</string>
@@ -301,7 +300,6 @@
   <string name="conversation_activity__attachment_thumbnail">附件缩略图</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">媒体信息</string>
-  <string name="conversation_item__play_button_description">播放按钮</string>
   <string name="conversation_item__secure_message_description">安全信息</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">下载</string>
@@ -531,7 +529,6 @@
   <string name="conversation_list__menu_search">搜索</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">联系人照片</string>
-  <string name="conversation_list_item_view__attachment_indicator">附件指示器</string>
   <string name="conversation_list_item_view__error_alert">错误警报</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">新会话</string>

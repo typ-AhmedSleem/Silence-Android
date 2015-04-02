@@ -65,18 +65,16 @@ public class ConversationAdapter extends CursorAdapter implements AbsListView.Re
   private final Context                context;
   private final MasterSecret           masterSecret;
   private final boolean                groupThread;
-  private final boolean                pushDestination;
   private final LayoutInflater         inflater;
 
   public ConversationAdapter(Context context, MasterSecret masterSecret, SelectionClickListener selectionClickListener,
-                             boolean groupThread, boolean pushDestination)
+                             boolean groupThread)
   {
     super(context, null, 0);
     this.context                = context;
     this.masterSecret           = masterSecret;
     this.selectionClickListener = selectionClickListener;
     this.groupThread            = groupThread;
-    this.pushDestination        = pushDestination;
     this.inflater               = LayoutInflater.from(context);
   }
 
@@ -87,8 +85,7 @@ public class ConversationAdapter extends CursorAdapter implements AbsListView.Re
     String type                 = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsDatabase.TRANSPORT));
     MessageRecord messageRecord = getMessageRecord(id, cursor, type);
 
-    item.set(masterSecret, messageRecord, batchSelected, selectionClickListener,
-             groupThread, pushDestination);
+    item.set(masterSecret, messageRecord, batchSelected, selectionClickListener, groupThread);
   }
 
   @Override

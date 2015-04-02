@@ -79,7 +79,6 @@ ezt a névjegyet.
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sajnos a kiválasztott hangállomány mérete meghaladja a maximális üzenetméret határt (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">A fogadó címe nem érvényes SMS vagy email cím!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Üres az üzenet!</string>
-  <string name="ConversationActivity_group_conversation_recipients">Csoportos beszélgetés fogadói</string>
   <string name="ConversationActivity_group_conversation">Csoportos beszélgetés</string>
   <string name="ConversationActivity_unnamed_group">Névtelen csoport</string>
   <string name="ConversationActivity_d_recipients_in_group">%d tagok</string>
@@ -327,7 +326,6 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="conversation_activity__attachment_thumbnail">Melléklet előnézet</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_image_description">Média üzenet</string>
-  <string name="conversation_item__play_button_description">Lejátszás gomb</string>
   <string name="conversation_item__secure_message_description">Biztonságos üzenet</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Letölt</string>
@@ -552,7 +550,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="conversation_list__menu_search">Keresés</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Névjegyhez tartozó fénykép</string>
-  <string name="conversation_list_item_view__attachment_indicator">Melléklet jelző</string>
   <string name="conversation_list_item_view__error_alert">Hiba figyelmeztetés</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Új beszélgetés</string>
