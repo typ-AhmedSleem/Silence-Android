@@ -104,7 +104,7 @@
     <string name="ConversationActivity_transport_insecure_mms">Insecure MMS</string>
     <string name="ConversationActivity_transport_secure_sms">Secure SMS</string>
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
-    <string name="ConversationActivity_install_smssecure">Install SMSSecure: %s</string>
+    <string name="ConversationActivity_install_smssecure">Let\'s chat securely: %s</string>
     <string name="ConversationActivity_recipient_self">You cannot initiate a secure session with yourself!</string>
     <string name="ConversationActivity_mms_not_supported_title">MMS not supported</string>
     <string name="ConversationActivity_mms_not_supported_message">This message cannot be sent since your carrier doesn\'t support MMS.</string>

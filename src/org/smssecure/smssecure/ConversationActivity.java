@@ -345,7 +345,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleInviteLink() {
-    composeText.setText(getString(R.string.ConversationActivity_install_smssecure, "https://github.com/SMSSecure/SMSSecure"));
+    composeText.setText(getString(R.string.ConversationActivity_install_smssecure, "http://smssecure.org"));
   }
 
   private void handleVerifyIdentity() {
