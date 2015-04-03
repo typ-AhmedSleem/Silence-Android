@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.provider.Contacts.Intents;
+import android.provider.ContactsContract.Intents;
 import android.provider.ContactsContract.QuickContact;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;

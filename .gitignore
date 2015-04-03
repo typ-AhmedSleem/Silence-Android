@@ -12,6 +12,7 @@ lint.xml
 local.properties
 ant.properties
 .DS_Store
+*.swp
 build.log
 build-log.xml
 .gradle

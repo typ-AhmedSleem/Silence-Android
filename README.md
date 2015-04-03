@@ -1,40 +1,43 @@
 # SMSSecure [![Build Status](https://travis-ci.org/SMSSecure/SMSSecure.svg?branch=master)](https://travis-ci.org/SMSSecure/SMSSecure)
 
-SMSSecure is a messaging app for simple private communication with friends to communicate securely using SMS. This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure), in which SMS encryption is not available anymore.
+[SMSSecure](https://smssecure.org) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
 
-## Goals of this fork
+Using SMSSecure, you can send SMS messages and share media or attachments with complete privacy.
 
-SMSSecure focuses on SMS. This fork aims to:
+Features:
+* Easy. SMSSecure works like any other SMS application. There's nothing to sign up for and no new service your friends need to join.
+* Reliable. SMSSecure communicates using encrypted SMS messages. No servers or internet connection required.
+* Private. SMSSecure uses the TextSecure encryption protocol to provide privacy for every message, every time.
+* Safe. All messages are encrypted locally, so if your phone is lost or stolen, your messages are protected.
+* Open Source. SMSSecure is Free and Open Source, enabling anyone to verify its security by auditing the code.
 
-* Keep SMS encryption
-* Drop Google services dependencies: push messages are not available in SMSSecure; if you want to keep them, SMSSecure is not for you.
+
+## Project goals
+
+This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure) that aims to keep the SMS encryption that TextSecure removed [for a variety of reasons](https://whispersystems.org/blog/goodbye-encrypted-sms/).
+
+SMSSecure focuses on SMS and MMS. This fork aims to:
+
+* Keep SMS/MMS encryption
+* Drop Google services dependencies (push messages are not available in SMSSecure)
+* Integrate upstream bugfixes and patches from TextSecure
 
 ## Migrating from TextSecure to SMSSecure
 
-* In TextSecure, export plaintext backup. Warning: the backup will **not** be encrypted.
+* In TextSecure, export a plaintext backup. Warning: the backup will **not** be encrypted.
 * Install SMSSecure.
-* In SMSSecure, import plaintext backup.
+* In SMSSecure, import he plaintext backup (this will import the TextSecure backup if no SMSSecure backup is found).
 * Enjoy SMSSecure!
 
-Note: You will have to start new secured sessions.
+Note: You will have to start new secured sessions with your contacts.
 
-## Contributing Bug reports
-We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
+# Contributing
 
-https://github.com/SMSSecure/SMSSecure/issues
+See [CONTRIBUTING.md](https://github.com/SMSSecure/SMSSecure/blob/master/CONTRIBUTING.md) for how to contribute code, translations, or bug reports.
 
-## Contributing Translations
-We use Transifex for our translations. If you'd like to contribute, the project is here:
+Instructions on how to setup a development environment and build SMSSecure can be found in [BUILDING.md](https://github.com/SMSSecure/SMSSecure/blob/master/BUILDING.md).
 
-https://www.transifex.com/projects/p/smssecure/
-
-## Contributing Code
-Instructions on how to setup your development environment and build SMSSecure can be found in  [BUILDING.md](https://github.com/SMSSecure/SMSSecure/blob/master/BUILDING.md).
-
-If you're new to the SMSSecure codebase, we recommend going through our issues and picking out a simple bug to fix (check the "easy" label in our issues) in order to get yourself familiar.
-
-Help
-====
+# Help
 ## Documentation
 Looking for documentation? Check out the wiki of the original project:
 
@@ -43,6 +46,7 @@ https://github.com/WhisperSystems/TextSecure/wiki
 ## Chat
 Have a question? Want to help out? Join our IRC channel: [#SMSSecure on Freenode](https://webchat.freenode.net/?channels=SMSSecure)
 
+# Legal
 ## Cryptography Notice
 
 This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software.
