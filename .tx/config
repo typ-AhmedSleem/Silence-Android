@@ -9,3 +9,8 @@ source_file = res/values/strings.xml
 source_lang = en
 type = ANDROID
 
+[smssecure.distribution-strings]
+file_filter = res/values-<lang>/distribution-strings.xml
+source_file = res/values/distribution-strings.xml
+source_lang = en
+type = ANDROID
