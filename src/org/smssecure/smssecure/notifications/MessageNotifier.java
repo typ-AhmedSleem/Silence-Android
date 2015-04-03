@@ -40,6 +40,7 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 
 import org.smssecure.smssecure.ConversationActivity;
+import org.smssecure.smssecure.ConversationListActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -218,7 +219,7 @@ public class MessageNotifier {
                                           notificationState.getMessageCount()));
     builder.setContentText(String.format(context.getString(R.string.MessageNotifier_most_recent_from_s),
                                          notifications.get(0).getIndividualRecipientName()));
-    builder.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, ConversationActivity.class), 0));
+    builder.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, ConversationListActivity.class), 0));
 
     builder.setContentInfo(String.valueOf(notificationState.getMessageCount()));
     builder.setNumber(notificationState.getMessageCount());
