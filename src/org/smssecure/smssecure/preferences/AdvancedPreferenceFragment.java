@@ -14,6 +14,7 @@ import org.smssecure.smssecure.LogSubmitActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.ContactIdentityManager;
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 public class AdvancedPreferenceFragment extends PreferenceFragment {
@@ -23,9 +24,12 @@ public class AdvancedPreferenceFragment extends PreferenceFragment {
 
   private static final int PICK_IDENTITY_CONTACT = 1;
 
+  private MasterSecret masterSecret;
+
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
+    masterSecret = getArguments().getParcelable("master_secret");
     addPreferencesFromResource(R.xml.preferences_advanced);
 
     initializeIdentitySelection();
