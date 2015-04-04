@@ -1,9 +1,6 @@
 language: android
 cache: false
 sudo: false
-env:
-  global:
-    - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
 android:
   components:
