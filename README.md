@@ -26,7 +26,7 @@ SMSSecure focuses on SMS and MMS. This fork aims to:
 
 * In TextSecure, export a plaintext backup. Warning: the backup will **not** be encrypted.
 * Install SMSSecure.
-* In SMSSecure, import he plaintext backup (this will import the TextSecure backup if no SMSSecure backup is found).
+* In SMSSecure, import the plaintext backup (this will import the TextSecure backup if no SMSSecure backup is found).
 * Enjoy SMSSecure!
 
 Note: You will have to start new secured sessions with your contacts.
