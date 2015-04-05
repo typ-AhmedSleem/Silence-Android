@@ -21,3 +21,6 @@ before_script:
 script:
      - ./scripts/build-witness.sh
      - ./gradlew connectedCheck -PdisablePreDex -PtaskThreads=1 -PandroidThread=1
+
+after_success:
+     - ./scripts/travis-upload.sh $KEY
