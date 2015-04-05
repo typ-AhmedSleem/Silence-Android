@@ -53,6 +53,8 @@ public class DatabaseFactory {
   private static final int INTRODUCED_MMS_BODY_VERSION        = 7;
   private static final int INTRODUCED_MMS_FROM_VERSION        = 8;
   private static final int INTRODUCED_TOFU_IDENTITY_VERSION   = 9;
+  private static final int INTRODUCED_PUSH_DATABASE_VERSION   = 10;
+  private static final int INTRODUCED_GROUP_DATABASE_VERSION  = 11;
   private static final int INTRODUCED_DELIVERY_RECEIPTS       = 13;
   private static final int INTRODUCED_PART_DATA_SIZE_VERSION  = 14;
   private static final int INTRODUCED_THUMBNAILS_VERSION      = 15;
@@ -659,6 +661,16 @@ public class DatabaseFactory {
       if (oldVersion < INTRODUCED_TOFU_IDENTITY_VERSION) {
         db.execSQL("DROP TABLE identities");
         db.execSQL("CREATE TABLE identities (_id INTEGER PRIMARY KEY, recipient INTEGER UNIQUE, key TEXT, mac TEXT);");
+      }
+
+      if (oldVersion < INTRODUCED_PUSH_DATABASE_VERSION) {
+        db.execSQL("ALTER TABLE part ADD COLUMN pending_push INTEGER;");
+        db.execSQL("CREATE INDEX IF NOT EXISTS pending_push_index ON part (pending_push);");
+      }
+
+      if (oldVersion < INTRODUCED_GROUP_DATABASE_VERSION) {
+        db.execSQL("ALTER TABLE sms ADD COLUMN address_device_id INTEGER DEFAULT 1;");
+        db.execSQL("ALTER TABLE mms ADD COLUMN address_device_id INTEGER DEFAULT 1;");
       }
 
       if (oldVersion < INTRODUCED_DELIVERY_RECEIPTS) {
