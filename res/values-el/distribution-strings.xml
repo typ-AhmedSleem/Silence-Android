@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="Distribution_title">SMSSecure</string>
+  <string name="Distribution_tagline">Κρυπτογραφημένες SMS / MMS συζητήσεις γίνονται εύκολα!</string>
+  <string name="Distribution_description">SMSSecure είναι μια SMS/MMS εφαρμογή που σας επιτρέπει να προστατέψετε το απόρρητό σας κατά την επικοινωνία με τους φίλους σας.</string>
+</resources>
