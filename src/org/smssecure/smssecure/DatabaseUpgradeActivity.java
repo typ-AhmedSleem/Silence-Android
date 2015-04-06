@@ -32,7 +32,6 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.SmsMessageRecord;
-import org.smssecure.smssecure.jobs.CreateSignedPreKeyJob;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.ParcelUtil;
@@ -166,12 +165,6 @@ public class DatabaseUpgradeActivity extends BaseActivity {
 
           v1sessions.delete();
         }
-      }
-
-      if (params[0] < SIGNED_PREKEY_VERSION) {
-        ApplicationContext.getInstance(getApplicationContext())
-                          .getJobManager()
-                          .add(new CreateSignedPreKeyJob(context, masterSecret));
       }
 
       if (params[0] < NO_DECRYPT_QUEUE_VERSION) {
