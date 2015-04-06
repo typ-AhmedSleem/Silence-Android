@@ -135,16 +135,10 @@ exportálni fogja a SMSSecure üzenetek titkosítatlan tartalmait az SD kártyá
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Új csoport</string>
   <string name="GroupCreateActivity_actionbar_update_title">Csoport frissítése</string>
-  <string name="GroupCreateActivity_group_name_hint">Csoport név</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Új MMS csoport</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Egy váratlan hiba történt, ami a csoport létrehozását meghiúsította.</string>
   <string name="GroupCreateActivity_contacts_no_members">A csoporthoz legalább egy emberre szükség van!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">A csoportod egyik tagjának számát nem lehet megfelelően olvasni. Kérlek javítsd ki, vagy távolítsd el a névjegyzékből és próbáld újra!</string>
-  <string name="GroupCreateActivity_avatar_content_description">Csoport maszk</string>
   <string name="GroupCreateActivity_menu_create_title">Csoport létrehozása</string>
-  <string name="GroupCreateActivity_creating_group">Létrehozás %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Frissítés %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">A csoport részleteinek betöltése...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Én</string>
   <string name="GroupMembersDialog_members">Tagok...</string>
@@ -202,16 +196,12 @@ akkor az újbóli importálás duplikált üzeneteket eredményez.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Jelszó megadása</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikon</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Jelszó küldése</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Érvénytelen jelszó!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Az
 aláírás ezen a csere kulcson különbözik amit korábban kaptál ettől a
 személytől. Ez jelentheti, hogy valaki megpróbál betekinteni a kommunikációba, vagy
 azt, hogy ez a személy egyszerűen újra telepítette a SMSSecure és így most egy új azonosító kulcsa van.
- </string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Talán érdemes ellenőrizni
-ezt a névjegyet.
  </string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Az
 aláírás ezen a csere kulcson megbízható, de az \"automatikus teljes kulcs-csere\"

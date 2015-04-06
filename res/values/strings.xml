@@ -76,7 +76,7 @@
     <!-- ConversationActivity -->
     <string name="ConversationActivity_initiate_secure_session_question">Initiate secure session?</string>
     <string name="ConversationActivity_initiate_secure_session_with_s_question">Initiate secure session with %s?</string>
-    <string name="ConversationActivity_detected_smssecure_initiate_session_question">Message recieved from someone who also has SMSSecure, initiate a secure encrypted session?</string>
+    <string name="ConversationActivity_detected_smssecure_initiate_session_question">Message received from someone who also has SMSSecure, initiate a secure encrypted session?</string>
     <string name="ConversationActivity_abort_secure_session_confirmation">End secure session?</string>
     <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Are you sure you want to end this secure session?</string>
     <string name="ConversationActivity_delete_thread_confirmation">Delete thread confirmation</string>

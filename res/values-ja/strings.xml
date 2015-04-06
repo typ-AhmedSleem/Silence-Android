@@ -131,16 +131,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新規グループ</string>
   <string name="GroupCreateActivity_actionbar_update_title">グループを更新する</string>
-  <string name="GroupCreateActivity_group_name_hint">グループ名</string>
   <string name="GroupCreateActivity_actionbar_mms_title">新規MMSグループ</string>
   <string name="GroupCreateActivity_contacts_mms_exception">予期せぬエラーが発生したため、グループ作成が失敗しました。</string>
   <string name="GroupCreateActivity_contacts_no_members">最低一人でもグループに参加する必要があります！</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">グループ参加者一人の電話番号が解読できません。番号を訂正するか、その宛先をグループから削除してください。</string>
-  <string name="GroupCreateActivity_avatar_content_description">グループアバター</string>
   <string name="GroupCreateActivity_menu_create_title">グループ作成</string>
-  <string name="GroupCreateActivity_creating_group">%1$sを作成中...</string>
-  <string name="GroupCreateActivity_updating_group">%1$sを更新...</string>
-  <string name="GroupCreateActivity_loading_group_details">グループ詳細を読み出し中...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">私</string>
   <string name="GroupMembersDialog_members">参加者...</string>
@@ -190,15 +184,12 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">パスワード入力</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecureアイコン</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">パスワードを設定</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">無効なパスワード</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">この
 鍵交換の電子署名は、以前この連絡先から受信したものと違っています。
 誰かがあなたの通信を傍受しようとしているか、もしくは
 単にこの連絡先がSMSSecureを再インストールしたため、認証キーが新しくなった可能性があります。</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">この連絡先を
-照合することが推奨されています。</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">この
 鍵交換の電子署名は信用されていますが、「自動で鍵交換を完了する」設定は
 無効になっています。</string>

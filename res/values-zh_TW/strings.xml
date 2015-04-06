@@ -99,14 +99,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新增群組</string>
   <string name="GroupCreateActivity_actionbar_update_title">更新群組</string>
-  <string name="GroupCreateActivity_group_name_hint">群組的名稱</string>
   <string name="GroupCreateActivity_actionbar_mms_title">新的 MMS 群組</string>
   <string name="GroupCreateActivity_contacts_mms_exception">擲茭？ 無法成功建立群組。</string>
   <string name="GroupCreateActivity_contacts_no_members">建立群組至少需要加入一個連絡人！</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">群組中某個連絡人的號碼有誤，請更正或移除該名連絡人，並再試一次。</string>
-  <string name="GroupCreateActivity_avatar_content_description">群組的大頭照</string>
   <string name="GroupCreateActivity_menu_create_title">建立群組</string>
-  <string name="GroupCreateActivity_creating_group">%1$s 建立中…</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">我</string>
   <!--ImportExportActivity-->
@@ -158,7 +154,6 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">輸入「自訂密碼」</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure 圖示</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">確認『自訂密碼』</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">無效的『自訂密碼』！</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">此次
@@ -166,8 +161,6 @@
         這有可能是有不明人士試圖攔截您的通訊／對話內容。或
         因為該名連絡人重新安裝過 SMSSecure APP，以至於他的數位簽名值也跟著變更了。
     </string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">您想要對這名連絡人
-進行認證嗎？</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">此次
         金鑰確認所用的數位簽名已被成功驗證。但您目前將「自動金鑰交換」的功能
         給取消了。

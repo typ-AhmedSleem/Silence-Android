@@ -74,8 +74,6 @@ mengeksport konten pesan teks polos SMSSecure anda ke kartu SD</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_contacts_mms_exception">Terjadi kesalahan tidak terduga yang menggagalkan pembuatan grup.</string>
   <string name="GroupCreateActivity_contacts_no_members">Anda butuh minimal satu orang dalam grup anda!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Salah satu anggota grup anda memiliki nomor yang tidak dapat dibaca, silakan perbaiki atau keluarkan kontak tersebut dan coba lagi.</string>
-  <string name="GroupCreateActivity_creating_group">Membuat %1$s…</string>
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Import</string>
@@ -122,9 +120,6 @@ telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikas
 tanda tangan dalam pertukaran kunci ini berbeda dengan apa yang telah anda terima sebelumnya dari
 kontak ini. Hal ini bisa berarti bahwa seseorang mencoba mencegat komunikasi anda, atau
 kontak ini telah menginstall ulang SMSSecure dan sekarang memiliki kunci identitas baru.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Anda mungkin ingin memverifikasi
-kontak ini.
-</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Isi
 tanda tangan pertukaran kunci ini dipercaya, tetapi anda
 menonaktifkan \'selesaikan perturakan kunci

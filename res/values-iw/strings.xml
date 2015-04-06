@@ -110,9 +110,6 @@
 או
 שאיש הקשר פשוט התקין מחדש את SMSSecure ועכשיו יש לו מפתח זהות חדש.
 </string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">ייתכן שתרצה לאמת
-את איש הקשר הזה.
-</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">החתימה
 על החלפת המפתח הזו אמינה, אבל ביטלת את האפשרות של \"השלם החלפת
  מפתח אוטומטית\" בהגדרות.

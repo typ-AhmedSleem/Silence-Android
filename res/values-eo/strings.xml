@@ -7,6 +7,8 @@
   <string name="please_wait">Bonvolu atendi…</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferencesActivity_currently_s">Nun: %s</string>
+  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vi ne ankoraŭ precizigis pasfrazon.</string>
+  <string name="ApplicationPreferencesActivity_messages_per_conversation">po %s mesaĝoj en interparolado</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Forigi ĉiuj la malnovajn mesaĝojn?</string>
   <string name="ApplicationPreferencesActivity_delete">Forigi</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>

@@ -119,16 +119,10 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Grup nou</string>
   <string name="GroupCreateActivity_actionbar_update_title">Actualizează grup</string>
-  <string name="GroupCreateActivity_group_name_hint">Numele grupului</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Grup MMS nou</string>
   <string name="GroupCreateActivity_contacts_mms_exception">A apărut o eroare neprevazută care a dus la imposibilitatea creării grupului.</string>
   <string name="GroupCreateActivity_contacts_no_members">Este nevoie de cel putin o persoana in grupul dvs.</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Unul dintre membrii grupului dvs. are un număr de telefon ce nu poate fi citit corect. Vă rugăm să remediaţi problema sau să eliminaţi acel contact şi să încercaţi din nou.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Avatar de grup</string>
   <string name="GroupCreateActivity_menu_create_title">Creare grup </string>
-  <string name="GroupCreateActivity_creating_group">Se creează %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Se actualizează %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Se încarcă detaliile grupului...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Eu</string>
   <string name="GroupMembersDialog_members">Membrii...</string>
@@ -176,11 +170,9 @@ Restaurarea unui backup criptat va înlocui complet cheile existente, setările 
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Introduceţi parola</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Icoană SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Trimite parola</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Parolă incorectă!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Semnătura digitală din acest schimb de chei este diferită fața de ce ai primit anterior de la această persoană. Asta poate însemna că cineva încearcă să intercepteze comunicația sau că această persoană a reinstalat SMSSecure și acum are o nouă cheie de identitate.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Probabil ca doresti sa verifici aceasta persoana.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Semnătura din acest schimb de chei este de încredere, dar opțiunea \"încheie automat schimburile de chei\" este dezactivată.</string>
   <string name="ReceiveKeyActivity_processing">Procesare</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Se proceseaza schimbul de chei...</string>

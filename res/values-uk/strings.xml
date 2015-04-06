@@ -65,7 +65,6 @@
   <string name="ExportFragment_exporting">Експортування</string>
   <string name="ExportFragment_success">Успішно!</string>
   <!--GroupCreateActivity-->
-  <string name="GroupCreateActivity_creating_group">Створення %1$s…</string>
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Імпортувати</string>
@@ -100,7 +99,6 @@
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Підпис цього обміну ключами відрізняється від отриманого раніше від цього контакту. Це може означати, що хтось намагається перехопити вашу переписку, або цей контакт перевстановив SMSSecure і тепер у нього новий ідентифікаційний ключ.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Можливо, вам потрібно перевірити цей контакт.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Підпис цього обміну ключами довірений, але ви відключили настройку \'автоматично завершувати обмін ключами\'.</string>
   <string name="ReceiveKeyActivity_processing">Обробка</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Виконується обмін ключами...</string>
