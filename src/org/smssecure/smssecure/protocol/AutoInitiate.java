@@ -12,7 +12,6 @@ import org.smssecure.smssecure.recipients.Recipient;
 
 public class AutoInitiate {
 
-  public static final boolean ENABLED = true;
   public static final String WHITESPACE_TAG = "             ";
 
   public static boolean isTaggable(String message) {
