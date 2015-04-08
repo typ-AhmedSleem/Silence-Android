@@ -217,9 +217,10 @@ public class DatabaseFactory {
           listener.setProgress(smsCursor.getPosition() + skip, smsCount + threadCount);
 
           try {
-            String body = masterCipher.decryptBody(smsCursor.getString(smsCursor.getColumnIndexOrThrow("body")));
-            long type   = smsCursor.getLong(smsCursor.getColumnIndexOrThrow("type"));
-            long id     = smsCursor.getLong(smsCursor.getColumnIndexOrThrow("_id"));
+            String eBody = smsCursor.getString(smsCursor.getColumnIndexOrThrow("body"));
+            String body  = eBody != null ? masterCipher.decryptBody(eBody) : "";
+            long type    = smsCursor.getLong(smsCursor.getColumnIndexOrThrow("type"));
+            long id      = smsCursor.getLong(smsCursor.getColumnIndexOrThrow("_id"));
 
             if (body.startsWith(KEY_EXCHANGE)) {
               body  = body.substring(KEY_EXCHANGE.length());
