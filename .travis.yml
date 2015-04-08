@@ -1,5 +1,7 @@
 language: android
-cache: false
+cache:
+  directories:
+  - $HOME/.android
 sudo: false
 
 android:
