@@ -99,6 +99,7 @@ public class RoutingActivity extends PassphraseRequiredActionBarActivity {
   private void handleUpgradeDatabase() {
     Intent intent = new Intent(this, DatabaseUpgradeActivity.class);
     intent.putExtra("master_secret", masterSecret);
+    intent.putExtra("next_intent", getConversationListIntent());
 
     startActivity(intent);
     finish();
