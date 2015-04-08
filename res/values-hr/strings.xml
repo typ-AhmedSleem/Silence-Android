@@ -131,16 +131,10 @@ nekriptirano izvesti sadržaj vaših SMSSecure poruka na SD karticu.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova grupa</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ažuriraj grupu</string>
-  <string name="GroupCreateActivity_group_name_hint">Naziv grupe</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nova MMS grupa</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Dogodila se neočekivana greška zbog koje je stvaranje grupe neuspješno.</string>
   <string name="GroupCreateActivity_contacts_no_members">Potrebna je barem jedna osoba u vašoj grupi!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Jedan od članova vaše grupe ima broj koji ne može biti ispravno pročitan. Ispravite ili uklonite taj kontakt i pokušajte ponovno.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Grupni avatar</string>
   <string name="GroupCreateActivity_menu_create_title">Stvori grupu</string>
-  <string name="GroupCreateActivity_creating_group">Stvaranje %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Ažuriranje %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Učitavanje detalja grupe...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ja</string>
   <string name="GroupMembersDialog_members">Članovi...</string>
@@ -195,15 +189,12 @@ ponovno uvoženje će rezultirati duplim porukama.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Unesite lozinku</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikona</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Pošaljite lozinku</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Neispravna lozinka!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Potpis
 na razmjeni ključeva je drugačiji od onoga što ste prethodno primali od ovog kontakta.
 Ovo može značiti da netko presreće vašu komunikaciju, ili da je ovaj kontakt
 jednostavno ponovno instalirao SMSSecure i sada ima novi identifikacijski ključ.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Možda bi trebali provjeriti
-ovaj kontakt.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Potpis
 na ovoj razmjeni ključeva je ispravan, ali vi ste isključili postavku \'automatski završi
 razmjene ključeva\'.</string>

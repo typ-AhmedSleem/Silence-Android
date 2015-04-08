@@ -128,16 +128,10 @@ ten kontakt.
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nowa grupa</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aktualizuj grupę</string>
-  <string name="GroupCreateActivity_group_name_hint">Nazwa grupy</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nowa grupa MMS</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Wystąpił błąd podczas tworzenia nowej grupy. Grupa nie została utworzona.</string>
   <string name="GroupCreateActivity_contacts_no_members">Potrzebujesz przynajmniej jeden osoby w Twojej grupie.</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Jeden z członków Twojej grupy ma numer który nie może być prawidłowo odczytany. Proszę popraw go lub usuń ten numer i spróbuj ponownie.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Avatar grupy</string>
   <string name="GroupCreateActivity_menu_create_title">Utwórz grupę</string>
-  <string name="GroupCreateActivity_creating_group">Trwa tworzenie %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Aktualizowanie %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Wczytywanie szczegółów grupy...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ja</string>
   <string name="GroupMembersDialog_members">Członkowie...</string>
@@ -187,15 +181,11 @@ Przywracanie szyfrowanej kopii zapasowej SMSSecure spowoduje nadpisanie Twoich i
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Podaj hasło</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ikona SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Wprowadź hasło</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Nieprawidłowe hasło!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Podpis pod tą wymianą kluczy jest inny od tego, który otrzymałeś poprzednio od tego 
 kontaktu. Może to oznaczać, że ktoś próbuje przechwycić Twoją komunikację lub 
 Twój kontakt przeinstalował program SMSSecure i posiada teraz nowy klucz tożsamości.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Możesz chcieć zweryfikować 
-ten kontakt.
-</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis pod tą wymianą kluczy jest zaufany, ale masz wyłączoną opcję \'automatyczna wymiana klucza\'.</string>
   <string name="ReceiveKeyActivity_processing">Przetwarzanie</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Przetwarzanie wymiany kluczy...</string>

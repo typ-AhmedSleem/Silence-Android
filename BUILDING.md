@@ -1,5 +1,5 @@
 Building SMSSecure
-=====================
+==================
 
 Basics
 ------
@@ -8,7 +8,7 @@ SMSSecure uses [Gradle](http://gradle.org) to build the project and to maintain
 dependencies.
 
 Building SMSSecure
--------------------
+------------------
 
 The following steps should help you (re)build SMSSecure from the command line.
 
@@ -39,7 +39,7 @@ If you get a `Configuration with name 'default' not found.`, please update submo
         git submodule init && git submodule update
 
 Visual assets
-----------------------
+-------------
 
 Sample command for generating our audio placeholder image:
 
@@ -47,6 +47,38 @@ Sample command for generating our audio placeholder image:
 pngs_from_svg.py ic_audio.svg /path/to/SMSSecure/res/ 150 "#000" 0.54 _light
 pngs_from_svg.py ic_audio.svg /path/to/SMSSecure/res/ 150 "#fff" 1.0 _dark
 ```
+
+
+Translations
+------------
+
+Install the [Transifex Client](http://docs.transifex.com/developer/client/setup) to update project strings
+
+Pull down all new translation updates:
+ - `tx pull -af --minimum-perc=1`
+
+Pull down specific locales:
+ - `tx pull -l <locales>`
+
+Push updated default strings:
+ - `tx push -s`
+
+Push specific locales:
+ - `tx push -t -l <locales>`
+
+Changing the source strings (this is a pain):
+ 1. Make the string change
+ 2. Pull the latest translations - `tx pull -af --minimum-perc=1`
+ 3. Push your latest source strings - `tx push -s` (this will delete all the translations of the source strings you changed)
+ 4. Push your local translations - `tx push -t` (this will restore the deleted translations)
+
+ NOTES:
+   - If anyone knows of a better way to do this, please contribute it, this way sucks.
+   - This should only be done where the meaning of the source string doesn't change (ie. fixing a typo/rewording).
+   - This will cause the restored translations to look like they're from you, not the original translator.
+
+
+Full documentation at <http://docs.transifex.com/developer/client/>
 
 Setting up a development environment
 ------------------------------------

@@ -79,12 +79,9 @@ exportuje nekryptovaný obsah SMSSecure správy na SD kartu.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nová skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aktualizuj skupinu</string>
-  <string name="GroupCreateActivity_group_name_hint">Názov skupiny</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nová MMS skupina</string>
   <string name="GroupCreateActivity_contacts_no_members">Potrebuješ najmenej jednu osobu v tvojej skupine!</string>
-  <string name="GroupCreateActivity_avatar_content_description">Obrázok skupiny</string>
   <string name="GroupCreateActivity_menu_create_title">Vytvoriť skupinu</string>
-  <string name="GroupCreateActivity_creating_group">Vytváranie %1$s…</string>
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Import</string>

@@ -129,16 +129,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新群组</string>
   <string name="GroupCreateActivity_actionbar_update_title">更新群组</string>
-  <string name="GroupCreateActivity_group_name_hint">群组名称</string>
   <string name="GroupCreateActivity_actionbar_mms_title">新彩信群组</string>
   <string name="GroupCreateActivity_contacts_mms_exception">发生不可预料的错误导致创建群组失败。</string>
   <string name="GroupCreateActivity_contacts_no_members">群组中至少要有一个人！</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">目前无法正确获取您组内一名成员的信息，请尝试修复或移除这名联系人以重试。</string>
-  <string name="GroupCreateActivity_avatar_content_description">群组头像</string>
   <string name="GroupCreateActivity_menu_create_title">创建群组</string>
-  <string name="GroupCreateActivity_creating_group">正在创建群组 %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">更新中… %1$s</string>
-  <string name="GroupCreateActivity_loading_group_details">读取群组详情…</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">我</string>
   <string name="GroupMembersDialog_members">成员…</string>
@@ -189,11 +183,9 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">输入密钥</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure 图标</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">提交密钥</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">不真实的密钥！</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">此人当前签名所使用的密钥与之前所接收到的密钥不一致，这可能是由于某人正试图拦截您的通信，或者此人重新安装SMSSecure而有了新密钥。</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">您可能希望验证这个联系人。</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">在此密钥交换上签名可信，但是“设置”中的“自动完成密钥交换”已经被您禁用。</string>
   <string name="ReceiveKeyActivity_processing">处理中</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">正在处理密钥交换</string>

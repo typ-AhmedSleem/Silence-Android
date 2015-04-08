@@ -116,7 +116,7 @@ public class ReceiveKeyActivity extends BaseActivity {
 
   private void initializeUntrustedText() {
     SpannableString spannableString = new SpannableString(getString(R.string.ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different) + " " +
-                                                          getString(R.string.ReceiveKeyActivity_you_may_wish_to_verify_this_contact));
+                                                          getString(R.string.ConfirmIdentityDialog_you_may_wish_to_verify_this_contact));
     spannableString.setSpan(new ClickableSpan() {
       @Override
       public void onClick(View widget) {

@@ -125,16 +125,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">ಹೋಸ ಸಮೂಹ </string>
   <string name="GroupCreateActivity_actionbar_update_title">ಸಮೂಹವನ್ನು ನವೀಕರಿಸಿ</string>
-  <string name="GroupCreateActivity_group_name_hint">ಸಮೂಹದ ಹೆಸರು</string>
   <string name="GroupCreateActivity_actionbar_mms_title">ಹೊಸ ಎಮ್.ಎಮ್.ಎಸ್ ಸಮೂಹ</string>
   <string name="GroupCreateActivity_contacts_mms_exception">ಅನಿರೀಕ್ಷಿತ ದೋಷ ಸಂಭವಿಸಿದೆ ಹಾಗು ಗುಂಪು ಸೃಷ್ಟಿ ವಿಫಲಗೊಂಡಿದೆ .</string>
   <string name="GroupCreateActivity_contacts_no_members">ನಿಮ್ಮ ಗುಂಪಿನಲ್ಲಿ ಕನಿಷ್ಠ ಒಬ್ಬ ವ್ಯಕ್ತಿಯ ಅಗತ್ಯವಿದೆ!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">ನಿಮ್ಮ ಗುಂಪಿನ ಒಬ್ಬ ಸದಸ್ಯ ಸರಿಯಾಗಿ ಓದಲು ಸಾಧ್ಯವಿಲ್ಲದ ಸಂಖ್ಯೆಯನ್ನು ಹೊಂದಿದ್ದಾರೆ. ಸರಿಪಡಿಸಿ ಅಥವಾ ಸಂಪರ್ಕವನ್ನು ತೆಗೆದು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
-  <string name="GroupCreateActivity_avatar_content_description">ಸಮೂಹದ ಚಿತ್ರ</string>
   <string name="GroupCreateActivity_menu_create_title">ಸಮೂಹವನ್ನು ರಚಿಸಿ</string>
-  <string name="GroupCreateActivity_creating_group">ಸೃಷ್ಟಿಸಲಾಗುತ್ತಿದೆ %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">%1$s ಆಧುನಿಕಗೊಳಿಸಲಾಗುತ್ತಿದೆ ...</string>
-  <string name="GroupCreateActivity_loading_group_details">ಗುಂಪಿನ ವಿವರಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ ...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">ನಾನು</string>
   <string name="GroupMembersDialog_members">ಸದಸ್ಯರು ...</string>
@@ -185,12 +179,9 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">ಗುಪ್ತಪದ ನಮೂದಿಸಿ</string>
   <string name="PassphrasePromptActivity_watermark_content_description">ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯೂರ್ ಲಾಂಛನ</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">ಗುಪ್ತಪದವನ್ನು ಸಲ್ಲಿಸು</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">ಗುಪ್ತಪದ ಮಾನ್ಯವಾದದ್ದಲ್ಲ!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">ಈ ಕೀಲಿ ವಿನಿಮಯದ ಮೇಲಿನ ಸಹಿ ನೀವು ಹಿಂದೆ ಈ ಸಂಪರ್ಕದಿಂದ ಸ್ವೀಕರಿಸಿದ್ದಕಿಂತ ಭಿನ್ನವಾಗಿದೆ. ಇದು ಯಾರಾದರೂ ನಿಮ್ಮ ಸಂವಹನವನ್ನು ಅಡ್ಡಿಪಡಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರಬಹುದು ಅಥವಾ ಈ ಸಂಪರ್ಕ ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯೂರ್ ಮರು ಸ್ಥಾಪಿಸಿ, ಈಗ ಹೊಸ ಗುರುತನ್ನು ಕೀಲಿ ಹೊಂದಿದೆ ಅರ್ಥ.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">ನೀವು ಪರಿಶೀಲಿಸಲು ಇಚ್ಛಿಸಬಹುದಾದ ⏎ 
-ಸಂಪರ್ಕ. ⏎</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">ಈ ಕೀಲಿ ವಿನಿಮಯದ ಮೇಲಿನ ⏎ ಸಹಿ ನಂಬಲರ್ಹ, ಆದರೆ  \'ಸ್ವಯಂಚಾಲಿತ ಸಂಪೂರ್ಣ ಕೀಲಿ⏎ ವಿನಿಮಯ\' ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ. ⏎</string>
   <string name="ReceiveKeyActivity_processing">ಸಂಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">ಕೀಲಿ ವಿನಿಮಯ ಸಂಸ್ಕರಿಸಲಾಗುತ್ತಿದೆ...</string>

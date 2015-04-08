@@ -127,16 +127,10 @@ preveriti ta stik.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Posodobi skupino</string>
-  <string name="GroupCreateActivity_group_name_hint">Ime skupine</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nova skupina MMS</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Prišlo je do nepričakovane napake, zato skupina ni bila ustvarjena.</string>
   <string name="GroupCreateActivity_contacts_no_members">V skupini mora biti vsaj ena oseba!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">En izmed članov skupine ima nepravilno zapisano številko. Popravite napako ali odstranite stik iz skupine in poskusite znova.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Avatar skupine</string>
   <string name="GroupCreateActivity_menu_create_title">Ustvari skupino</string>
-  <string name="GroupCreateActivity_creating_group">Ustvarjam %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Posodabljam %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Nalagam podatke o skupini...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Jaz</string>
   <string name="GroupMembersDialog_members">Člani...</string>
@@ -185,12 +179,9 @@ preveriti ta stik.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Vnesite geslo</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ikona SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Vnesite geslo</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Napačno geslo!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Podpis pri izmenjavi ključev se razlikuje od tistih pri predhodno izmenjanih ključih s to osebo. To lahko pomeni, da nekdo prestreza komunikacijo, ali pa, da je oseba ponovno namestila SMSSecure in ima zdaj nov identifikacijski ključ.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Morda bi želeli
-preveriti ta stik.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis pri tej izmenjavi je vreden zaupanja, vendar imate izklopljeno možnost \'Samodejno dokončaj izmenjavo ključev\'.</string>
   <string name="ReceiveKeyActivity_processing">Obdelujem</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Izmenjava ključev poteka...</string>

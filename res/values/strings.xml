@@ -11,18 +11,18 @@
     <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">You haven\'t set a passphrase yet!</string>
     <string name="ApplicationPreferencesActivity_messages_per_conversation">%s messages per conversation</string>
     <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Delete all old messages now?</string>
-    <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Are you sure you would like to immediately trim all conversation threads to the %s most recent messages?</string>
+    <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Are you sure you would like to trim all conversations to the %s most recent messages?</string>
     <string name="ApplicationPreferencesActivity_delete">Delete</string>
     <string name="ApplicationPreferencesActivity_disable_storage_encryption">Disable storage encryption?</string>
     <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
         Warning, this will disable storage encryption for all messages and keys. Your encrypted
-        sessions will continue to function, but anyone with physical access to your device will be
-        able to access them.
+        sessions will continue to function, but anyone who gains physical access to your device will be
+        able to read them.
     </string>
     <string name="ApplicationPreferencesActivity_disable">Disable</string>
-    <string name="ApplicationPreferencesActivity_sms_enabled">Incoming SMS Enabled</string>
+    <string name="ApplicationPreferencesActivity_sms_enabled">Incoming SMS enabled</string>
     <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Touch to change your default SMS app</string>
-    <string name="ApplicationPreferencesActivity_sms_disabled">Incoming SMS Disabled</string>
+    <string name="ApplicationPreferencesActivity_sms_disabled">Incoming SMS disabled</string>
     <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Touch to make SMSSecure your default SMS app</string>
     <string name="ApplicationPreferencesActivity_on">on</string>
     <string name="ApplicationPreferencesActivity_On">On</string>
@@ -41,7 +41,7 @@
     <string name="DraftDatabase_Draft_video_snippet">(video)</string>
 
     <!-- AttchmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Can\'t find an app to select media.</string>
+    <string name="AttachmentManager_cant_open_media_selection">Couldn\'t find an app to select media with.</string>
 
     <!-- AttachmentTypeSelectorAdapter -->
     <string name="AttachmentTypeSelectorAdapter_picture">Picture</string>
@@ -55,17 +55,15 @@
         intercept your communication, or that %2$s simply re-installed SMSSecure and now has a new
         identity key.
     </string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You may wish to verify
-        this contact.
-    </string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You should verify the identity of this contact.</string>
 
     <!-- ConversationItem -->
     <string name="ConversationItem_message_size_d_kb">Message size: %d KB</string>
     <string name="ConversationItem_expires_s">Expires: %s</string>
     <string name="ConversationItem_error_not_delivered">Not delivered</string>
     <string name="ConversationItem_view_secure_media_question">View secure media?</string>
-    <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">This media has been stored in an encrypted database. Unfortunately, to view it with an external content viewer currently requires the data to be temporarily decrypted and written to disk. Are you sure that you would like to do this?</string>
-    <string name="ConversationItem_error_received_stale_key_exchange_message">Error, received stale key exchange message.</string>
+    <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">This media is currently stored in an encrypted database. To view it with an external content viewer requires the data to be temporarily decrypted and written to disk. Are you sure you want to do this?</string>
+    <string name="ConversationItem_error_received_stale_key_exchange_message">Outdated key exchange message received.</string>
     <string name="ConversationItem_received_key_exchange_message_click_to_process">Received key exchange message, click to process.</string>
     <string name="ConversationItem_group_action_left">%1$s has left the group.</string>
     <string name="ConversationItem_click_for_details">Tap for details</string>
@@ -73,24 +71,24 @@
     <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Fallback to unencrypted SMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Fallback to unencrypted MMS?</string>
     <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">This message will <b>not</b> be encrypted because a secure session could not be established.\n\nSend unsecured message?</string>
-    <string name="ConversationItem_unable_to_open_media">Can\'t find an app able to open this media.</string>
+    <string name="ConversationItem_unable_to_open_media">Couldn\'t find an app able to open this media file.</string>
 
     <!-- ConversationActivity -->
     <string name="ConversationActivity_initiate_secure_session_question">Initiate secure session?</string>
     <string name="ConversationActivity_initiate_secure_session_with_s_question">Initiate secure session with %s?</string>
-    <string name="ConversationActivity_detected_smssecure_initiate_session_question">You have received a message from someone who supports SMSSecure encrypted sessions. Would you like to initiate a secure session?</string>
-    <string name="ConversationActivity_abort_secure_session_confirmation">End secure session confirmation</string>
-    <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Are you sure that you want to end this secure session?</string>
+    <string name="ConversationActivity_detected_smssecure_initiate_session_question">Message received from someone who also has SMSSecure, initiate a secure encrypted session?</string>
+    <string name="ConversationActivity_abort_secure_session_confirmation">End secure session?</string>
+    <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Are you sure you want to end this secure session?</string>
     <string name="ConversationActivity_delete_thread_confirmation">Delete thread confirmation</string>
-    <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Are you sure that you want to permanently delete this conversation?</string>
+    <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Are you sure you want to permanently delete this conversation?</string>
     <string name="ConversationActivity_add_attachment">Add attachment</string>
     <string name="ConversationActivity_select_contact_info">Select contact info</string>
     <string name="ConversationActivity_compose_message">Compose message</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Sorry, there was an error setting your attachment.</string>
+    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Sorry, there was an error adding your attachment.</string>
     <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Sorry, the selected video exceeds message size restrictions (%1$skB).</string>
     <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sorry, the selected audio exceeds message size restrictions (%1$skB).</string>
-    <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Recipient is not a valid SMS or email address!</string>
-    <string name="ConversationActivity_message_is_empty_exclamation">Message is empty!</string>
+    <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Recipient doesn\'t have a valid SMS or email address!</string>
+    <string name="ConversationActivity_message_is_empty_exclamation">The message you are trying to send is empty!</string>
     <string name="ConversationActivity_group_members">Group members</string>
     <string name="ConversationActivity_group_conversation">Group conversation</string>
     <string name="ConversationActivity_unnamed_group">Unnamed group</string>
@@ -105,16 +103,16 @@
     <string name="ConversationActivity_transport_secure_sms">Secure SMS</string>
     <string name="ConversationActivity_transport_secure_mms">Secure MMS</string>
     <string name="ConversationActivity_install_smssecure">Let\'s chat securely: %s</string>
-    <string name="ConversationActivity_recipient_self">You cannot initiate a secure session with yourself!</string>
+    <string name="ConversationActivity_recipient_self">Secure sessions can only be established with other people.</string>
     <string name="ConversationActivity_mms_not_supported_title">MMS not supported</string>
     <string name="ConversationActivity_mms_not_supported_message">This message cannot be sent since your carrier doesn\'t support MMS.</string>
 
     <!-- ConversationFragment -->
     <string name="ConversationFragment_message_details">Message details</string>
     <string name="ConversationFragment_confirm_message_delete">Confirm message delete</string>
-    <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Are you sure that you want to permanently delete all selected messages?</string>
+    <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Are you sure you want to delete all selected messages?</string>
     <string name="ConversationFragment_save_to_sd_card">Save to storage?</string>
-    <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Saving this media to storage will allow any other apps on your phone to access it.\n\nContinue?</string>
+    <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Saving this attachment to storage will allow any other apps on your phone to access it.\n\nContinue?</string>
     <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Error while saving attachment to storage!</string>
     <string name="ConversationFragment_success_exclamation">Success!</string>
     <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Unable to write to storage!</string>
@@ -128,7 +126,7 @@
 
     <!-- ConversationListFragment -->
     <string name="ConversationListFragment_delete_threads_question">Delete threads?</string>
-    <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Are you sure you wish to delete ALL selected conversation threads?</string>
+    <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Are you sure you want to delete all selected conversation threads?</string>
     <string name="ConversationListFragment_deleting">Deleting</string>
     <string name="ConversationListFragment_deleting_selected_threads">Deleting selected threads...</string>
 
@@ -162,16 +160,10 @@
     <!-- GroupCreateActivity -->
     <string name="GroupCreateActivity_actionbar_title">New group</string>
     <string name="GroupCreateActivity_actionbar_update_title">Update group</string>
-    <string name="GroupCreateActivity_group_name_hint">Group name</string>
     <string name="GroupCreateActivity_actionbar_mms_title">New MMS group</string>
-    <string name="GroupCreateActivity_contacts_mms_exception">An unexpected error happened that has made group creation fail.</string>
+    <string name="GroupCreateActivity_contacts_mms_exception">Could not create group due to an unexpected error.</string>
     <string name="GroupCreateActivity_contacts_no_members">You need at least one person in your group!</string>
-    <string name="GroupCreateActivity_contacts_invalid_number">One of the members of your group has a number that can\'t be read correctly. Please fix or remove that contact and try again.</string>
-    <string name="GroupCreateActivity_avatar_content_description">Group avatar</string>
     <string name="GroupCreateActivity_menu_create_title">Create group</string>
-    <string name="GroupCreateActivity_creating_group">Creating %1$s&#8230;</string>
-    <string name="GroupCreateActivity_updating_group">Updating %1$s...</string>
-    <string name="GroupCreateActivity_loading_group_details">Loading group details...</string>
 
     <!-- GroupMembersDialog -->
     <string name="GroupMembersDialog_me">Me</string>
@@ -184,8 +176,8 @@
     <!-- ImportFragment -->
     <string name="ImportFragment_import_system_sms_database">Import system SMS database?</string>
     <string name="ImportFragment_this_will_import_messages_from_the_system">This will import
-        messages from the system\'s default SMS database to SMSSecure. If you\'ve previously
-        imported the system\'s SMS database, importing again will result in duplicated messages.
+        messages from the system\'s default SMS database to SMSSecure. If you\'ve imported
+        the system\'s SMS database before, importing again will result in duplicated messages.
     </string>
     <string name="ImportFragment_import">Import</string>
     <string name="ImportFragment_cancel">Cancel</string>
@@ -202,7 +194,7 @@
         importing again will result in duplicated messages.
     </string>
     <string name="ImportFragment_importing">Importing</string>
-    <string name="ImportFragment_import_plaintext_backup_elipse">Import plaintext backup...</string>
+    <string name="ImportFragment_import_plaintext_backup_elipse">Importing plaintext backup...</string>
     <string name="ImportFragment_no_plaintext_backup_found">No plaintext backup found!</string>
     <string name="ImportFragment_error_importing_backup">Error importing backup!</string>
     <string name="ImportFragment_import_complete">Import complete!</string>
@@ -236,12 +228,11 @@
     <!-- PassphraseChangeActivity -->
     <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Passphrases don\'t match!</string>
     <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Incorrect old passphrase!</string>
-    <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Enter new passphrase!</string>
+    <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">No passphrase entered!</string>
 
     <!-- PassphrasePromptActivity -->
     <string name="PassphrasePromptActivity_enter_passphrase">Enter passphrase</string>
     <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure icon</string>
-    <string name="PassphrasePromptActivity_ok_button_content_description">Submit passphrase</string>
     <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Invalid passphrase!</string>
 
     <!-- ReceiveKeyActivity -->
@@ -249,9 +240,6 @@
         signature on this key exchange is different than what you\'ve previously received from this
         contact. This could either mean that someone is trying to intercept your communication, or
         that this contact simply re-installed SMSSecure and now has a new identity key.
-    </string>
-    <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">You may wish to verify
-        this contact.
     </string>
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">The
         signature on this key exchange is trusted, but you have the \'automatically complete key
@@ -287,7 +275,7 @@
     <string name="VerifyIdentityActivity_get_my_key_scanned">Get my key scanned</string>
     <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">WARNING, the scanned key DOES NOT match! Please check the fingerprint text carefully.</string>
     <string name="VerifyIdentityActivity_not_verified_exclamation">NOT Verified!</string>
-    <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Their key is correct. It is also necessary to verify your key with them as well.</string>
+    <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Their key is correct. It is also necessary to verify your key with them.</string>
     <string name="VerifyIdentityActivity_verified_exclamation">Verified!</string>
     <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">You don\'t have an identity key!</string>
 

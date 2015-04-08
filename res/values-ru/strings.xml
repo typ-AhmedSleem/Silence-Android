@@ -126,16 +126,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Новая группа</string>
   <string name="GroupCreateActivity_actionbar_update_title">Обновить группу</string>
-  <string name="GroupCreateActivity_group_name_hint">Название группы</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Новая MMS-группа</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Непредвиденная ошибка не позволила создать группу.</string>
   <string name="GroupCreateActivity_contacts_no_members">Нужен как минимум один участник в группе!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Один из участников имеет неправильный номер. Пожалуйста, исправьте или удалите этот контакт и попробуйте снова.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Аватар группы</string>
   <string name="GroupCreateActivity_menu_create_title">Создать группу</string>
-  <string name="GroupCreateActivity_creating_group">Создаём %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Обновляем %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Загружаем подробности о группе...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Я</string>
   <string name="GroupMembersDialog_members">Участники...</string>
@@ -184,11 +178,9 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Введите парольную фразу</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Иконка SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Подтвердить парольную фразу</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Неверная парольная фраза!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Подпись, полученная сейчас при обмене ключами, отличается от той, которой собеседник подписывался ранее. Это может означать, что кто-то пытается перехватить вашу переписку или что ваш собеседник переустановил SMSSecure, и теперь у него новый личный ключ.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Возможно, вы захотите перепроверить этого собеседника.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Подпись в этом обмене ключами является доверенной, но вы отключили в настройках автоматическое выполнение обменов.</string>
   <string name="ReceiveKeyActivity_processing">Обработка</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Обрабатываем обмен ключами...</string>

@@ -127,16 +127,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">مجموعة جديدة</string>
   <string name="GroupCreateActivity_actionbar_update_title">تحديث المجموعة</string>
-  <string name="GroupCreateActivity_group_name_hint">أسم المجموعة</string>
   <string name="GroupCreateActivity_actionbar_mms_title">مجموعة وسائط متعددة جديدة</string>
   <string name="GroupCreateActivity_contacts_mms_exception">خطأ غير متوقع تسبب في تعذر إنشاء المجموعة.</string>
   <string name="GroupCreateActivity_contacts_no_members">تحتاج إلى شخص واحد على الأقل في المجموعة!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">لا يمكن قراءة رقم أحد أعضاء المجموعة بشكل صحيح. رجاء تصحيح أو حذف هذا العضو والمحاولة مرة أخرى.</string>
-  <string name="GroupCreateActivity_avatar_content_description">الصورة الرمزية للمجموعة</string>
   <string name="GroupCreateActivity_menu_create_title">إنشاء مجموعة</string>
-  <string name="GroupCreateActivity_creating_group">الإنشاء جارٍ %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">التحديث جارٍ %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">تحميل بيانات المجموعة...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">أنا</string>
   <string name="GroupMembersDialog_members">الأعضاء...</string>
@@ -186,11 +180,9 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">أدخل العبارة السرية</string>
   <string name="PassphrasePromptActivity_watermark_content_description">أيقونة تيكست سيكيور</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">أرسل العبارة السرية </string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">عبارة سرية غير صحيحة!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">المفتاح لجهة الاتصال هذه مختلف عن المرة السابقة. هذا قد يعني ان هناك محاولة لاعتراض اتصالاتك، أو ان جهة الاتصال قام\قامت بإعادة تنصيب تكست سيكيور لديهم.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">ربما تود التحقق من جهة الاتصال هذه.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">التوقيع لجهة الاتصال هذه معتمد لديك، لكنك قمت بتعطيل خاصية اكمال تبادل المفاتيح اوتوماتيكياً</string>
   <string name="ReceiveKeyActivity_processing">جاري العمل</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">جاري تبادل المفاتيح...</string>

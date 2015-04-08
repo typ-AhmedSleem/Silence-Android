@@ -112,15 +112,10 @@ denne kontakt.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Ny gruppe</string>
   <string name="GroupCreateActivity_actionbar_update_title">Opdater gruppe</string>
-  <string name="GroupCreateActivity_group_name_hint">Gruppenavn</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Ny MMS gruppe</string>
   <string name="GroupCreateActivity_contacts_mms_exception">En ukendt fejl har medført, at oprettelse af gruppen mislykkedes.</string>
   <string name="GroupCreateActivity_contacts_no_members">Der skal være mindst én person i gruppen!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">En kontaktperson i gruppen har et nummer der ikke kan læses. Ret nummeret eller slet kontakten, og prøv igen.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Gruppe ikon</string>
   <string name="GroupCreateActivity_menu_create_title">Opret gruppe</string>
-  <string name="GroupCreateActivity_creating_group">Opretter %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Opdaterer %1$s...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Mig</string>
   <!--ImportExportActivity-->
@@ -167,14 +162,11 @@ Genoprettelse af en krypteret backup vil overskrive eksisterende nøgler, indsti
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Indtast kodeord</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikon</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Godkend kodeord</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Ugyldigt kodeord!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Signaturen på denne udvekslingsnøgle er ikke ens med den som du tidligere modtog fra denne
 kontakt. Det kan enten betyde, at der er nogle som prøver på at kompromitterer din kommunikation eller
 at din kontakt har installeret SMSSecure på ny og dermed fået en ny udvekslingsnøgle.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Du bør verificere
-denne kontakt.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Signaturen på denne udvekslingsnøgle er til at stole på, men du har deaktiveret indstillingen
 \'fuldfør udvekslingsnøgler automatisk\'.</string>
   <string name="ReceiveKeyActivity_processing">Arbejder</string>

@@ -95,6 +95,8 @@ vérifier ce contact.</string>
   <string name="ConversationActivity_transport_secure_mms">MMS chiffré</string>
   <string name="ConversationActivity_install_smssecure">Installez SMSSecure : %s</string>
   <string name="ConversationActivity_recipient_self">Vous ne pouvez pas commencer une session chiffrée avec vous-même !</string>
+  <string name="ConversationActivity_mms_not_supported_title">MMS non supportés</string>
+  <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut-être envoyé car votre opérateur ne supporte pas les MMS.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Détails du message</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmer la suppression du message</string>
@@ -140,16 +142,10 @@ exportera le contenu de vos messages SMSSecure en clair sur la carte SD.</string
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nouveau groupe</string>
   <string name="GroupCreateActivity_actionbar_update_title">Mettre à jour le groupe</string>
-  <string name="GroupCreateActivity_group_name_hint">Nom du groupe</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nouveau groupe MMS</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Une erreur inattendue s\'est produite, ce qui a empêché la création du groupe.</string>
   <string name="GroupCreateActivity_contacts_no_members">Il vous faut au moins une personne dans votre groupe !</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Un des membres de votre groupe a un numéro illisible. Veuillez le corriger ou enlever ce contact et essayer à nouveau.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Avatar du groupe</string>
   <string name="GroupCreateActivity_menu_create_title">Créer un groupe</string>
-  <string name="GroupCreateActivity_creating_group">Création de %1$s en cours…</string>
-  <string name="GroupCreateActivity_updating_group">Mise à jour de %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Chargement des détails du groupe...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Moi</string>
   <string name="GroupMembersDialog_members">Membres...</string>
@@ -206,15 +202,12 @@ l\'importer à nouveau se traduira par des messages dupliqués.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Entrez la phrase de passe</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Icône SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Envoyer la phrase de passe</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Phrase de passe incorrecte !</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La
 signature de cet échange de clé est différente de celle que vous avez précédemment reçue de ce
 contact. Cela peut signifier que quelqu’un essaie d’intercepter votre communication ou
 que ce contact a simplement réinstallé SMSSecure et possède maintenant une nouvelle clé d’identité.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Vous devriez
-vérifier ce contact.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Vous pouvez faire confiance à la
 signature de cet échange de clé est, mais vous avez le paramètre
 « finaliser automatiquement les échanges de clés » désactivé.</string>
@@ -493,6 +486,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__custom">Personnalisée</string>
   <string name="preferences__advanced">Avancé</string>
   <string name="preferences__app_protection">Protection de l\'application</string>
+  <string name="preferences__mms_user_agent">Agent utilisateur MMS</string>
   <string name="preferences__advanced_mms_access_point_names">Paramètres MMS manuels</string>
   <string name="preferences__enable_manual_mms">Utiliser les parametres MMS manuels</string>
   <string name="preferences__override_system_mms_settings">Remplacer les paramètres MMS du système avec les informations ci-dessous.</string>
@@ -521,6 +515,9 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__submit_debug_log">Envoyer un rapport de débogage</string>
   <string name="preferences__support_wifi_calling">Mode de compatibilité « WiFi Calling »</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Activer si votre appareil délivre les SMS/MMS à l\'aide du WiFI (à n\'activer que lorsque « WiFi Calling » est activé sur votre appareil).</string>
+  <string name="preferences__about">À propos de SMSSecure</string>
+  <string name="preferences__about_version">Version %s</string>
+  <string name="preferences__about_build_id">ID de compilation : %s</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

@@ -139,16 +139,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Нова група</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ажурирај групу</string>
-  <string name="GroupCreateActivity_group_name_hint">Име групе</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Нова ММС група</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Десила се неочекивана грешка која је узроковала неуспех прављења групе.</string>
   <string name="GroupCreateActivity_contacts_no_members">Требате бар једну особу у вашој групи!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Један од чланова ваше групе има број који не може бити исправно очитан. Поправите или уклоните тај контакт и покушајте поново.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Аватар групе</string>
   <string name="GroupCreateActivity_menu_create_title">Направи групу</string>
-  <string name="GroupCreateActivity_creating_group">Правим %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Ажурирам %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Учитавам детаље групе...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ја</string>
   <string name="GroupMembersDialog_members">Чланови...</string>
@@ -203,15 +197,12 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Унесите лозинку</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Икона Сигурног СМС-а</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Поднеси лозинку</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Нетачна лозинка!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Потпис
 ове размене кључева је другачији од претходно примљеног потписа од овог контакта.
 Ово може да значи или да неко покушава да пресретне вашу комуникацију или
 да је контакт поново инсталирао Сигурни СМС и сад има нови кључ идентитета.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Можда желите да оверите
-овај контакт.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Потпис
 ове размене кључева је поуздан, али поставка „аутоматски доврши размене
 кључева“ је искључена.</string>

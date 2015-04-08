@@ -125,16 +125,10 @@ gai izango da saiootan sartzeko.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Talde berria</string>
   <string name="GroupCreateActivity_actionbar_update_title">Taldea eguneratu</string>
-  <string name="GroupCreateActivity_group_name_hint">Taldearen izena</string>
   <string name="GroupCreateActivity_actionbar_mms_title">MMS talde berria</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Ustekabeko errorea gertatu da eta eragin du taldea sortu ezin izatea.</string>
   <string name="GroupCreateActivity_contacts_no_members">Gutxienez pertsona bat behar duzu zure taldean!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Zure taldeko partaide batek ondo irakurri ezin daitekeen zenbaki bat dauka. Mesedez, konpondu edo ezabatu kontaktua eta saiatu berriro.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Taldearen abatarra</string>
   <string name="GroupCreateActivity_menu_create_title">Taldea sortu</string>
-  <string name="GroupCreateActivity_creating_group">Sortzen %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Eguneratzen: %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Taldearen detaileak kargatzen...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ni</string>
   <string name="GroupMembersDialog_members">Partaideak...</string>
@@ -188,7 +182,6 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Pasahitza sartu</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-ren ikonoa</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Bidali pasahitza</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Pasahitz baliogabea!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Gako
@@ -196,7 +189,6 @@ elkar-trukatzen honen sinadura kontaktu honengandik aurretik jaso duzunaz desber
 Izan daiteke norbait zure komunikazioaren erdian egotea edo, era berean, posible da kontaktu honek SMSSecure berrinstalatu izana eta gako berri bat edukitzea.
 
 </string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Agian kontaktu hau egiaztatu beharko zenuke.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Gakoaren
 datu-trukatze honetako sinadura fidatzekoa da, baina 
 \'gako elkar-trukatzeak automatikoki 

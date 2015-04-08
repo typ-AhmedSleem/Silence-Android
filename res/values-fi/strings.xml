@@ -130,16 +130,10 @@ Tämä toiminto vie SMSSecure-viestiesi salaamattoman sisällön SD-muistikortil
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Uusi ryhmä</string>
   <string name="GroupCreateActivity_actionbar_update_title">Päivitä ryhmää</string>
-  <string name="GroupCreateActivity_group_name_hint">Ryhmän nimi</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Uusi MMS-ryhmä</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Ryhmän luonti epäonnistui odottamattoman virheen takia.</string>
   <string name="GroupCreateActivity_contacts_no_members">Ryhmässä täytyy olla vähintään yksi henkilö!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Yhdellä ryhmän jäsenistä on puhelinnumero, jota ei voida lukea. Ole hyvä ja korjaa tämän henkilön yhteystiedot tai poista hänet ryhmästä ja yritä uudelleen.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Ryhmän kuvake</string>
   <string name="GroupCreateActivity_menu_create_title">Luo ryhmä</string>
-  <string name="GroupCreateActivity_creating_group">Luodaan %1$s…</string>
-  <string name="GroupCreateActivity_updating_group">Päivitetään %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Ladataan ryhmän tiedot...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Minä</string>
   <string name="GroupMembersDialog_members">Jäsenet...</string>
@@ -193,12 +187,9 @@ aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Syötä salalause</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-kuvake</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Syötä salalause</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Salalause ei kelpaa!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Tämän avaintenvaihto-operaation sormenjälki eroaa tältä yhteystiedolta aiemmin saaduista sormenjäljistä. Tämä voi tarkoittaa että joku yrittää kaapata viestiliikennettäsi tai että yhteystietosi on uudelleenasentanut SMSSecuren, ja käyttää nyt uutta tunnisteavainta.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Saatat haluta varmentaa
-tämän yhteystiedon.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Tämän avaintenvaihto-operaation allekirjoitus on luotettu, mutta \"suorita avaimenvaihdot automaattisesti\"-asetus on poissa käytöstä.</string>
   <string name="ReceiveKeyActivity_processing">Käsitellään</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Käsitellään avaimenvaihtoa...</string>

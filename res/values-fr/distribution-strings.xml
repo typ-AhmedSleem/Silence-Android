@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="Distribution_title">SMSSecure</string>
+  <string name="Distribution_tagline">Chiffrer ses SMS n’a jamais été aussi simple !</string>
+  <string name="Distribution_description">SMSSecure est une application SMS/MMS qui vous permet de communiquer avec vos amis tout en protégeant votre vie privée.</string>
+</resources>

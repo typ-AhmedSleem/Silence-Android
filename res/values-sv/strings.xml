@@ -133,16 +133,10 @@ spara den okrypterad texten av din konversation till ditt minneskort.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Ny grupp</string>
   <string name="GroupCreateActivity_actionbar_update_title">Uppdatera grupp</string>
-  <string name="GroupCreateActivity_group_name_hint">Gruppnamn</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Ny MMS-grupp</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Ett oförutsett fel inträffade som gjort att gruppen inte kunde skapas.</string>
   <string name="GroupCreateActivity_contacts_no_members">Du behöver åtminstone en person i din grupp!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">En av deltagarna i din grupp har ett nummer som inte kan läsas ordentligt. Vänligen åtgärda eller ta bort kontakten och försök igen.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Gruppavatar</string>
   <string name="GroupCreateActivity_menu_create_title">Skapa grupp</string>
-  <string name="GroupCreateActivity_creating_group">Skapar %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Uppdaterar %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Laddar gruppdetaljer...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Jag</string>
   <string name="GroupMembersDialog_members">Medlemmar...</string>
@@ -195,13 +189,10 @@ som för närvarande finns i SMSSecure.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Ange lösenord</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-ikon</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Skicka lösenord</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Fel lösenord!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Signaturen för detta nyckelutbytet skiljer sig från det som du tidigare har mottagit från denna kontakt.
 Detta kan innebära antingen att någon försöker avlyssna din kommunikation, eller att denna kontakt helt enkelt installerade om SMSSecure och nu har en ny identitetsnyckel.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Det kan vara en bra idé att
-verifiera denna kontakt.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Signaturen för detta nyckelutbytet är betrodd, men du har inställningen \'fullborda nyckelutbyten automatiskt\' avstängd.</string>
   <string name="ReceiveKeyActivity_processing">Bearbetar</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Bearbetar nyckelutbyte...</string>

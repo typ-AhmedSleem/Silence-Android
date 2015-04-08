@@ -126,16 +126,10 @@ SMSSecure mesajlarınızın şifrelenmemiş açık metin içeriğini SD karta ka
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Yeni grup</string>
   <string name="GroupCreateActivity_actionbar_update_title">Grubu güncelle</string>
-  <string name="GroupCreateActivity_group_name_hint">Grup adı</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Yeni MMS grubu</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Grup yaratılmasına engel olan beklenmedik bir hata oluştu.</string>
   <string name="GroupCreateActivity_contacts_no_members">Grubunuzda en az bir kişi olmalıdır.</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Grubunuzun üyelerinden birinin doğru okunamayan bir numarası var. Lütfen numarayı düzeltiniz veya kişiyi siliniz ve tekrar deneyiniz.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Grup resmi</string>
   <string name="GroupCreateActivity_menu_create_title">Grup yarat</string>
-  <string name="GroupCreateActivity_creating_group">%1$s yaratılıyor…</string>
-  <string name="GroupCreateActivity_updating_group">Güncelleniyor %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Grup detayları yükleniyor...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ben</string>
   <string name="GroupMembersDialog_members">Üyeler...</string>
@@ -185,12 +179,9 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Parola Girin</string>
   <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikonu</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Parola gönder</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Geçersiz Parola!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Bu anahtar değişiminde alınan imza, bu kişi için daha önce alınandan farklı. Bu ya üçüncü bir kişi iletişiminizi dinlemeğe çalıştığında ya da iletişim kurduğunuz kişi SMSSecure\'u yeniden kurarak yeni bir kimlik anahtarı sahibi olmuşsa mümkün olabilir.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Bu kişiyi doğrulamak 
-isteyebilirsiniz.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Bu anahtar değişimdeki imza güvenilir. Ancak, siz \'anahtar değişimlerini otomatik tamamla\' ayarını etkisizleştirmişsiniz.</string>
   <string name="ReceiveKeyActivity_processing">İşleniyor</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Anahtar takası işleniyor...</string>

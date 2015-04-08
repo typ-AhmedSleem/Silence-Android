@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="Distribution_title">SMSSecure</string>
+  <string name="Distribution_tagline">SMS/MMS Verschlüsselung leicht gemacht!</string>
+  <string name="Distribution_description">SMSSecure ist eine SMS/MMS Anwendung die es Ihnen ermöglicht, Ihre Privatsphäre zu schützen während Sie mit Ihren Freunden kommunizieren.</string>
+</resources>

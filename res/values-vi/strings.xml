@@ -87,14 +87,10 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Tạo nhóm mới</string>
   <string name="GroupCreateActivity_actionbar_update_title">Cập nhật nhóm</string>
-  <string name="GroupCreateActivity_group_name_hint">Tên nhóm</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Tạo nhóm MMS mới</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Có lỗi bất ngờ xảy ra do đó không lập nhóm được.</string>
   <string name="GroupCreateActivity_contacts_no_members">Cần có ít nhất một người trong nhóm!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Một người trong nhóm có số điện thoại không đọc được. Xin điều chỉnh hoặc xóa đi và thử lại.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Biểu tượng nhóm</string>
   <string name="GroupCreateActivity_menu_create_title">Tạo nhóm</string>
-  <string name="GroupCreateActivity_creating_group">Tạo %1$s...</string>
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Nhập</string>
@@ -136,13 +132,9 @@ Phục hồi bản sao lưu có mã hóa sẽ thay thế hoàn toàn các chìa 
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Điền vào cụm từ mã hóa</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Biểu tượng SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Gửi phần cụm từ mã hóa</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Cụm từ mã hóa không hợp lệ!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Chữ ký của việc trao đổi chìa khóa này khác với lần trao đổi trước nhận được từ người liên lạc này. Điều này có nghĩa là có ai đó tìm cách chận bắt liên lạc thông tin của bạn, hoặc đơn thuần là người này cài đặt lại SMSSecure và có chìa khóa nhận diện mới.</string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Bạn có thể muốn kiểm chứng
-địa chỉ liên lạc này.
-    </string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Chữ ký của việc trao đổi chìa khóa này thì tin cẩn, nhưng bạn để tắt thiết đặt \'tự động hoàn tất trao đổi chìa khóa\'.</string>
   <string name="ReceiveKeyActivity_processing">Đang xử lý</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Xử lý trao đổi chìa khóa...</string>

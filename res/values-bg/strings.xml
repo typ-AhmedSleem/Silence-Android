@@ -130,16 +130,10 @@
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Нова група</string>
   <string name="GroupCreateActivity_actionbar_update_title">Промени група</string>
-  <string name="GroupCreateActivity_group_name_hint">Име на групата</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Нова MMS група</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Настъпи не очаквана грешка, която доведе до неуспешно създаване на група.</string>
   <string name="GroupCreateActivity_contacts_no_members">Трябва да добавиш поне един човек в групата си!</string>
-  <string name="GroupCreateActivity_contacts_invalid_number">Един от членовете на групата има номер, който не може да бъде разпознат правилно. Моля, оправи номера на контакта или го премахни.</string>
-  <string name="GroupCreateActivity_avatar_content_description">Аватар за групата</string>
   <string name="GroupCreateActivity_menu_create_title">Създай група</string>
-  <string name="GroupCreateActivity_creating_group">Създаване на %1$s...</string>
-  <string name="GroupCreateActivity_updating_group">Обновяване %1$s...</string>
-  <string name="GroupCreateActivity_loading_group_details">Зареждане на информация за групата...</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Аз</string>
   <string name="GroupMembersDialog_members">Участници...</string>
@@ -195,15 +189,12 @@ SMS съобщенията от системната базата данни в 
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Въведи паролата</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Икона на SMSSecure</string>
-  <string name="PassphrasePromptActivity_ok_button_content_description">Задай паролата</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Грешна парола!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">
 Подписът получен при обмяната на ключове е по-различен от този, който си получавал преди от същия
 контакт. Това може да означава, че някой се опитва да прихване комуникацията ти, или
 че този контакт просто е преинсталирал SMSSecure и сега има нов ключ за самоличност. </string>
-  <string name="ReceiveKeyActivity_you_may_wish_to_verify_this_contact">Може би е добре да се провери ⏎
-този контакт. ⏎</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Подписът получен при обмяната на ключове е правилен, но си
 изключил опцията за
 \'автоматична обмяна на ключове\' .</string>
