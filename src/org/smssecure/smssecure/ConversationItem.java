@@ -196,13 +196,9 @@ public class ConversationItem extends LinearLayout {
 
   private void setBubbleState(MessageRecord messageRecord) {
     final int transportationState;
-    if ((messageRecord.isPending() || messageRecord.isFailed()) &&
-        !messageRecord.isForcedSms())
-    {
-      transportationState = BubbleContainer.TRANSPORT_STATE_PUSH_PENDING;
-    } else if (messageRecord.isPending() ||
-               messageRecord.isFailed()  ||
-               messageRecord.isPendingInsecureSmsFallback())
+    if (messageRecord.isPending() ||
+        messageRecord.isFailed()  ||
+        messageRecord.isPendingInsecureSmsFallback())
     {
       transportationState = BubbleContainer.TRANSPORT_STATE_SMS_PENDING;
     } else if (messageRecord.isPush()) {
