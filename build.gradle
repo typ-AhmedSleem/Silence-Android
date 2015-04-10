@@ -110,7 +110,7 @@ android {
         versionName "0.6.0"
 
         minSdkVersion 9
-        targetSdkVersion 19
+        targetSdkVersion 22
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "long", "BUILD_TIMESTAMP", System.currentTimeMillis() + "L"

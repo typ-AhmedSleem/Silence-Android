@@ -52,6 +52,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
@@ -171,14 +172,18 @@ public class MessageNotifier {
     Recipient                  recipient      = notifications.get(0).getIndividualRecipient();
     Bitmap                     recipientPhoto = recipient.getContactPhoto();
 
+    if (recipientPhoto != null) builder.setLargeIcon(BitmapUtil.getCircleBitmap(recipientPhoto));
     builder.setSmallIcon(R.drawable.icon_notification);
-    if (recipientPhoto != null) builder.setLargeIcon(recipientPhoto);
+    builder.setColor(context.getResources().getColor(R.color.textsecure_primary));
     builder.setContentTitle(recipient.toShortString());
     builder.setContentText(notifications.get(0).getText());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
     builder.setContentInfo(String.valueOf(notificationState.getMessageCount()));
+    builder.setPriority(NotificationCompat.PRIORITY_HIGH);
     builder.setNumber(notificationState.getMessageCount());
+    builder.setCategory(NotificationCompat.CATEGORY_MESSAGE);
     builder.setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(DeleteReceiver.DELETE_REMINDER_ACTION), 0));
+    if (recipient.getContactUri() != null) builder.addPerson(recipient.getContactUri().toString());
 
     if (masterSecret != null) {
       builder.addAction(R.drawable.check, context.getString(R.string.MessageNotifier_mark_as_read),
@@ -214,17 +219,19 @@ public class MessageNotifier {
     List<NotificationItem> notifications = notificationState.getNotifications();
     NotificationCompat.Builder builder   = new NotificationCompat.Builder(context);
 
+    builder.setColor(context.getResources().getColor(R.color.textsecure_primary));
     builder.setSmallIcon(R.drawable.icon_notification);
-    builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
-                                                      R.drawable.icon_notification));
-    builder.setContentTitle(String.format(context.getString(R.string.MessageNotifier_d_new_messages),
-                                          notificationState.getMessageCount()));
-    builder.setContentText(String.format(context.getString(R.string.MessageNotifier_most_recent_from_s),
-                                         notifications.get(0).getIndividualRecipientName()));
+    builder.setContentTitle(context.getString(R.string.app_name));
+    builder.setSubText(context.getString(R.string.MessageNotifier_d_messages_in_d_conversations,
+                                         notificationState.getMessageCount(),
+                                         notificationState.getThreadCount()));
+    builder.setContentText(context.getString(R.string.MessageNotifier_most_recent_from_s,
+                                             notifications.get(0).getIndividualRecipientName()));
     builder.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, ConversationListActivity.class), 0));
 
     builder.setContentInfo(String.valueOf(notificationState.getMessageCount()));
     builder.setNumber(notificationState.getMessageCount());
+    builder.setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
     builder.setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(DeleteReceiver.DELETE_REMINDER_ACTION), 0));
 
@@ -239,6 +246,9 @@ public class MessageNotifier {
     while(iterator.hasPrevious()) {
       NotificationItem item = iterator.previous();
       style.addLine(item.getTickerText());
+      if (item.getIndividualRecipient().getContactUri() != null) {
+        builder.addPerson(item.getIndividualRecipient().getContactUri().toString());
+      }
     }
 
     builder.setStyle(style);
