@@ -14,12 +14,10 @@
             android:orientation="vertical"
             android:gravity="bottom">
 
-        <fragment
-                android:id="@+id/fragment_content"
-                android:name="org.smssecure.smssecure.ConversationFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/bottom_container" />
+        <FrameLayout android:id="@+id/fragment_content"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_above="@+id/bottom_container" />
 
         <LinearLayout
                 android:layout_alignParentBottom="true"
@@ -78,7 +76,7 @@
                         android:contentDescription="@string/conversation_activity__emoji_toggle_description"
                         android:padding="10dp"/>
 
-                <EditText
+                <org.smssecure.smssecure.components.ComposeText
                         android:id="@+id/embedded_text_editor"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

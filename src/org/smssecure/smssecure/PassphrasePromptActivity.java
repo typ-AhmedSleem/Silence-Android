@@ -43,7 +43,6 @@ import android.widget.Toast;
 import org.smssecure.smssecure.crypto.InvalidPassphraseException;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.util.DynamicLanguage;
-import org.smssecure.smssecure.util.MemoryCleaner;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.Util;
 
@@ -71,6 +70,12 @@ public class PassphrasePromptActivity extends PassphraseActivity {
   public void onResume() {
     super.onResume();
     dynamicLanguage.onResume(this);
+  }
+
+  @Override
+  protected void onNewIntent(Intent intent) {
+    super.onNewIntent(intent);
+    setIntent(intent);
   }
 
   @Override
@@ -102,9 +107,8 @@ public class PassphrasePromptActivity extends PassphraseActivity {
     try {
       Editable text             = passphraseText.getText();
       String passphrase         = (text == null ? "" : text.toString());
-      MasterSecret masterSecret = MasterSecretUtil.getMasterSecret(PassphrasePromptActivity.this, passphrase);
+      MasterSecret masterSecret = MasterSecretUtil.getMasterSecret(this, passphrase);
 
-      MemoryCleaner.clean(passphrase);
       setMasterSecret(masterSecret);
     } catch (InvalidPassphraseException ipe) {
       passphraseText.setText("");
