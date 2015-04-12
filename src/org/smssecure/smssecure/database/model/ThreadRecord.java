@@ -65,11 +65,15 @@ public class ThreadRecord extends DisplayRecord {
     } else if (SmsDatabase.Types.isFailedDecryptType(type)) {
       return emphasisAdded(context.getString(R.string.MessageDisplayHelper_bad_encrypted_message));
     } else if (SmsDatabase.Types.isNoRemoteSessionType(type)) {
-      return emphasisAdded(context.getString(R.string.MessageDisplayHelper_message_encrypted_for_non_existing_session));
+      if (SmsDatabase.Types.isEndSessionType(type)) {
+        return emphasisAdded(context.getString(R.string.MessageDisplayHelper_end_session_encrypted_for_non_existing_session));
+      } else {
+        return emphasisAdded(context.getString(R.string.MessageDisplayHelper_message_encrypted_for_non_existing_session));
+      }
     } else if (!getBody().isPlaintext()) {
       return emphasisAdded(context.getString(R.string.MessageNotifier_encrypted_message));
     } else if (SmsDatabase.Types.isEndSessionType(type)) {
-      return emphasisAdded(context.getString(R.string.TheadRecord_secure_session_ended));
+      return emphasisAdded(context.getString(R.string.SmsMessageRecord_secure_session_ended));
     } else if (MmsSmsColumns.Types.isLegacyType(type)) {
       return emphasisAdded(context.getString(R.string.MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (MmsSmsColumns.Types.isDraftMessageType(type)) {
