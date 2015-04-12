@@ -56,6 +56,13 @@ public abstract class WirePrefix {
     return verifyPrefix("?TSE", message);
   }
 
+  public static boolean isPrefixedMessage(String message) {
+    return isEncryptedMessage(message) ||
+           isKeyExchange(message)      ||
+           isPreKeyBundle(message)     ||
+           isEndSession(message);
+  }
+
   public static String calculateKeyExchangePrefix(String message) {
     return calculatePrefix(("?TSK" + message).getBytes(), PREFIX_BYTES);
   }

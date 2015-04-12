@@ -98,11 +98,7 @@ public class SmsReceiveJob extends ContextJob {
 
     IncomingTextMessage message =  new IncomingTextMessage(messages);
 
-    if (WirePrefix.isEncryptedMessage(message.getMessageBody()) ||
-        WirePrefix.isKeyExchange(message.getMessageBody())      ||
-        WirePrefix.isPreKeyBundle(message.getMessageBody())     ||
-        WirePrefix.isEndSession(message.getMessageBody()))
-    {
+    if (WirePrefix.isPrefixedMessage(message.getMessageBody())) {
       return Optional.fromNullable(multipartMessageHandler.processPotentialMultipartMessage(message));
     } else {
       return Optional.of(message);
