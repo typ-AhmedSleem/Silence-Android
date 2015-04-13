@@ -91,6 +91,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationActivity_recipient_self">Igangsetting av sikret økt er forbehold tilkobling til andre.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS er ikke støttet</string>
   <string name="ConversationActivity_mms_not_supported_message">Denne meldingen kan ikke sendes siden din tilkoblingstilbyder ikke støtter MMS.</string>
+  <string name="ConversationActivity_specify_recipient">Velg en kontakt</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meldingsdetaljer</string>
   <string name="ConversationFragment_confirm_message_delete">Bekreft sletting av melding</string>
@@ -211,7 +212,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikatmelding.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Forlot gruppen...</string>
-  <string name="TheadRecord_secure_session_ended">Sikret økt avsluttet.</string>
   <string name="ThreadRecord_draft">Kladd:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen ID-nøkkel.</string>
@@ -241,6 +241,7 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="MessageDisplayHelper_bad_encrypted_message">Ugyldig kryptert melding...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dekrypterer, vennligst vent...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Melding kryptert for en ikke-eksisterende sesjon...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Sluttfør øktforespørsel kryptert for en ikke-eksisterende økt...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Feil ved dekryptering av meldingen.</string>
   <!--ThreadDatabase-->
@@ -390,6 +391,7 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="AndroidManifest__media_preview">Forhåndsvisning av media</string>
   <string name="AndroidManifest__media_overview">Alle bilder</string>
   <string name="AndroidManifest__media_overview_named">Alle bilder med %1$s</string>
+  <string name="AndroidManifest__message_details">Meldingsdetaljer</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importere / eksportere</string>
   <string name="arrays__my_identity_key">Min ID-nøkkel</string>
@@ -579,7 +581,7 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="reminder_header_sms_import_title">Importer enhetens SMS-database?</string>
   <string name="reminder_header_sms_import_text">Klikk for å kopiere telefonens SMS-er til kryptert database.</string>
   <!--MediaPreviewActivity-->
-  <string name="MediaPreviewActivity_you">Du</string>
+  <string name="MediaPreviewActivity_you">Deg</string>
   <string name="MediaPreviewActivity_cant_display">Klarte ikke å forhåndsvise dette bildet</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Media-typen er ikke støttet.</string>
   <!--media_preview-->

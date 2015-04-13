@@ -205,7 +205,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="SmsMessageRecord_duplicate_message">Monistettu viesti.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Poistui ryhmästä...</string>
-  <string name="TheadRecord_secure_session_ended">Salattu istunto päättyi</string>
   <string name="ThreadRecord_draft">Luonnos:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>

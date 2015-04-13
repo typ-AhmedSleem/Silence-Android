@@ -72,6 +72,7 @@
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Εκκίνηση ασφαλούς συνεδρίας;</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Έναρξη ασφαλούς συζήτησης με %s;</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Έχετε λάβει ένα μήνυμα από κάποιον που υποστηρίζει SMSSecure κρυπτογραφημένες συνεδρίες. Θέλετε να ξεκινήσετε μια ασφαλή συνεδρία;</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Επιβεβαίωση τερματισμού ασφαλής συνεδρίας</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Είστε σίγουροι πως θέλετε να τελειώσετε αυτήν την συνέδρια ασφαλούς συζήτησης;</string>
   <string name="ConversationActivity_delete_thread_confirmation">Επιβεβαίωση διαγραφής συζήτησης</string>
@@ -97,6 +98,8 @@
   <string name="ConversationActivity_transport_insecure_mms">Μη ασφαλές MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Ασφαλό SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Ασφαλό MMS</string>
+  <string name="ConversationActivity_install_smssecure">Ας συνομιλήσουμε με ασφάλεια: %s</string>
+  <string name="ConversationActivity_recipient_self">Ασφαλής συνεδρίες μπορουν να διαπιστωθουν μόνο με άλλους ανθρώπους.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS δεν υποστηρίζεται</string>
   <string name="ConversationActivity_mms_not_supported_message">Αυτό το μήνυμα δεν μπορεί να αποσταλεί δεδομένου ότι φορέα σας δεν υποστηρίζει MMS</string>
   <!--ConversationFragment-->
@@ -205,6 +208,7 @@
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Οι συνθηματικές φράσεις δε ταιριάζουν!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Λανθασμένη παλιά συνθηματική φράση!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Δεν τέθηκε μια συνθηματική φράση!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Εισάγετε συνθηματική φράση</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Εικονίδιο SMSSecure</string>
@@ -236,7 +240,6 @@
   <string name="SmsMessageRecord_duplicate_message">Διπλότυπο μήνυμα</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Έφυγε απο την ομάδα...</string>
-  <string name="TheadRecord_secure_session_ended">Η ασφαλής συζήτηση τερματίστηκε.</string>
   <string name="ThreadRecord_draft">Πρόχειρο</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>

@@ -11,9 +11,17 @@
   <string name="ApplicationPreferencesActivity_messages_per_conversation">po %s mesaĝoj en interparolado</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Forigi ĉiuj la malnovajn mesaĝojn?</string>
   <string name="ApplicationPreferencesActivity_delete">Forigi</string>
+  <string name="ApplicationPreferencesActivity_disable">Malaktivigi</string>
+  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Frapeti por ŝanĝi la defaŭltan SMS-aplikaĵon</string>
+  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Frapeti por ke SMSSecure iĝus vian defaŭltan SMS-aplikaĵon</string>
+  <string name="ApplicationPreferencesActivity_on">ŝaltita</string>
+  <string name="ApplicationPreferencesActivity_On">Ŝaltita</string>
+  <string name="ApplicationPreferencesActivity_off">malŝaltita</string>
+  <string name="ApplicationPreferencesActivity_Off">Malŝaltita</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
+  <string name="AppProtectionPreferenceFragment_minutes">%d minutoj</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(bildo)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(aŭdio)</string>
@@ -23,6 +31,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">Bildo</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Aŭdio</string>
+  <string name="AttachmentTypeSelectorAdapter_contact">Informoj de kontakto</string>
   <!--ConfirmIdentityDialog-->
   <!--ConversationItem-->
   <string name="ConversationItem_view_secure_media_question">Montri la sekuran aŭdvidaĵon?</string>
@@ -134,6 +143,7 @@
   <string name="message_details_header__from">De:</string>
   <string name="message_details_header__with">Kun:</string>
   <!--AndroidManifest.xml-->
+  <string name="AndroidManifest__select_contacts">Elekti kontaktojn</string>
   <string name="AndroidManifest__media_overview">Ĉiuj la bildoj</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importi / eksporti</string>
@@ -172,6 +182,7 @@
   <string name="preferences__slow">Malrapida</string>
   <string name="preferences__light_theme">Hela</string>
   <string name="preferences__dark_theme">Malhela</string>
+  <string name="preferences__appearance">Aspekto</string>
   <string name="preferences__language">Lingvo</string>
   <!--****************************************-->
   <!--menus-->
@@ -197,6 +208,7 @@
   <!--conversation-->
   <string name="conversation__menu_view_media">Ĉiuj bildoj</string>
   <!--conversation_callable-->
+  <string name="conversation_add_to_contacts__menu_add_to_contacts">Adicii al kontaktojn</string>
   <!--conversation_group_options-->
   <!--key_scanning-->
   <!--text_secure_normal-->

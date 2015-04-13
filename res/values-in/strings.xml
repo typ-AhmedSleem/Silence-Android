@@ -138,7 +138,6 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="SmsMessageRecord_secure_session_ended">Sesi aman berakhir.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Tinggalkan grup...</string>
-  <string name="TheadRecord_secure_session_ended">Sesi aman berakhir</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Anda tidak memiliki kunci identitas.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Penerima tidak memiliki kunci identitas.</string>

@@ -23,7 +23,7 @@ en mesure d’y accéder.</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS entrants désactivés</string>
   <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Appuyez pour faire de SMSSecure votre application SMS par défaut</string>
   <string name="ApplicationPreferencesActivity_on">activée</string>
-  <string name="ApplicationPreferencesActivity_On">activé</string>
+  <string name="ApplicationPreferencesActivity_On">Activé</string>
   <string name="ApplicationPreferencesActivity_off">désactivée</string>
   <string name="ApplicationPreferencesActivity_Off">Désactivé</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
@@ -224,7 +224,6 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="SmsMessageRecord_duplicate_message">Message doublon.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Groupe quitté…</string>
-  <string name="TheadRecord_secure_session_ended">La session chiffrée s’est terminée.</string>
   <string name="ThreadRecord_draft">Brouillon :</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Vous n’avez pas de clé d’identité.</string>

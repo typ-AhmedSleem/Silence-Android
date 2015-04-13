@@ -63,6 +63,7 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Sichere Unterhaltung starten?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Sichere Unterhaltung mit %s starten?</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Sie haben eine Nachricht von jemandem erhalten, der verschlüsselte SMSSecure Sitzungen unterstützt. Möchten Sie eine sichere Sitzung beginnen?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Beenden der sicheren Unterhaltung bestätigen </string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Wollen Sie die sichere Unterhaltung wirklich beenden?</string>
   <string name="ConversationActivity_delete_thread_confirmation">Löschen der Unterhaltung bestätigen</string>
@@ -211,7 +212,6 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <string name="SmsMessageRecord_duplicate_message">Doppelte Nachricht.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Gruppe wurde verlassen...</string>
-  <string name="TheadRecord_secure_session_ended">Sichere Unterhaltung beendet.</string>
   <string name="ThreadRecord_draft">Entwurf:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Sie haben keinen eigenen Schlüssel.</string>

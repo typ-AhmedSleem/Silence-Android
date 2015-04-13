@@ -67,6 +67,7 @@
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започети безбедну сесију?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Започети безбедну сесију са %s?</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Примљена је порука од некога ко такође користи Сигурни СМС, да започнем безбедну, шифровану сесију?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Потврда окончања безбедне сесије</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Желите ли заиста да окончате ову безбедну сесију?</string>
   <string name="ConversationActivity_delete_thread_confirmation">Потврда брисања нити</string>
@@ -79,6 +80,7 @@
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Изабрани звук прекорачује ограничења величине поруке (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Прималац није исправан број или е-адреса!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Порука је празна!</string>
+  <string name="ConversationActivity_group_members">Чланови групе</string>
   <string name="ConversationActivity_group_conversation">Групна преписка</string>
   <string name="ConversationActivity_unnamed_group">Неименована група</string>
   <string name="ConversationActivity_d_recipients_in_group">%d члан(ов)а</string>
@@ -92,6 +94,10 @@
   <string name="ConversationActivity_transport_secure_sms">Обезбеђени СМС</string>
   <string name="ConversationActivity_transport_secure_mms">Обезбеђени ММС</string>
   <string name="ConversationActivity_install_smssecure">Инсталирајте Сигурни СМС: %s</string>
+  <string name="ConversationActivity_recipient_self">Безбедне сесије можете да успоставите само са другим људима.</string>
+  <string name="ConversationActivity_mms_not_supported_title">ММС није подржан</string>
+  <string name="ConversationActivity_mms_not_supported_message">Порука не може бити послата јер ваш оператер не подржава ММС.</string>
+  <string name="ConversationActivity_specify_recipient">Одредите примаоца</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Детаљи поруке</string>
   <string name="ConversationFragment_confirm_message_delete">Потврда брисања порука</string>
@@ -194,6 +200,7 @@
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Лозинке се не поклапају!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Нетачна стара лозинка!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Лозинка није унета!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Унесите лозинку</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Икона Сигурног СМС-а</string>
@@ -220,7 +227,6 @@
   <string name="SmsMessageRecord_duplicate_message">Порука дупликат.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Напусти групу...</string>
-  <string name="TheadRecord_secure_session_ended">Безбедна сесија је окончана.</string>
   <string name="ThreadRecord_draft">Нацрт:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Немате кључ идентитета.</string>
@@ -250,6 +256,7 @@
   <string name="MessageDisplayHelper_bad_encrypted_message">Лоше шифрована порука...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Дешифрујем, сачекајте...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Порука шифрована за непостојећу сесију...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Захтев за окончањем сесије шифрован за непостојећу сесију...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Грешка дешифровања поруке.</string>
   <!--ThreadDatabase-->
@@ -400,6 +407,7 @@
   <string name="AndroidManifest__media_preview">Приказ медијума</string>
   <string name="AndroidManifest__media_overview">Све слике</string>
   <string name="AndroidManifest__media_overview_named">Све слика са %1$s</string>
+  <string name="AndroidManifest__message_details">Детаљи поруке</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Увоз/извоз</string>
   <string name="arrays__my_identity_key">Мој кључ идентитета</string>
@@ -484,6 +492,7 @@
   <string name="preferences__custom">Посебно</string>
   <string name="preferences__advanced">Напредно</string>
   <string name="preferences__app_protection">Заштита</string>
+  <string name="preferences__mms_user_agent">ММС кориснички ид</string>
   <string name="preferences__advanced_mms_access_point_names">Ручне ММС поставке</string>
   <string name="preferences__enable_manual_mms">Ручне ММС поставке</string>
   <string name="preferences__override_system_mms_settings">Премости системске поставке за ММС користећи податке испод.</string>
@@ -512,6 +521,9 @@
   <string name="preferences__submit_debug_log">Пошаљи дневник исправљања грешака</string>
   <string name="preferences__support_wifi_calling">Компатибилност са „бежичним позивањем“</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Омогућите ако ваш уређај доставља СМС/ММС преко бежичне мреже (омогућите само ако је омогућено на вашем уређају).</string>
+  <string name="preferences__about">О Сигурном СМС-у</string>
+  <string name="preferences__about_version">Издање %s</string>
+  <string name="preferences__about_build_id">ИД  изградње: %s</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

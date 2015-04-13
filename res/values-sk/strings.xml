@@ -131,7 +131,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="SmsMessageRecord_duplicate_message">Zduplikuj správu.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Opustil skupinu...</string>
-  <string name="TheadRecord_secure_session_ended">Bezpečné spojenie ukončené.</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte kľúč totožnosti.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Príjemca nemá kľúč totožnosti.</string>

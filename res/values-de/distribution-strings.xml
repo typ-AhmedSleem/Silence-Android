@@ -3,4 +3,22 @@
   <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">SMS/MMS Verschlüsselung leicht gemacht!</string>
   <string name="Distribution_description">SMSSecure ist eine SMS/MMS Anwendung die es Ihnen ermöglicht, Ihre Privatsphäre zu schützen während Sie mit Ihren Freunden kommunizieren.</string>
+  <string name="Distribution_long_description">
+SMSSecure ist eine SMS/MMS Anwendung die es Ihnen ermöglicht, Ihre Privatsphäre zu schützen während Sie mit Ihren Freunden kommunizieren.
+Mit SMSSecure können Sie SMS senden, sowie Medien oder Anhänge unter Einhaltung Ihrer Privatsphäre teilen.
+
+*Einfach. SMSSecure funktioniert wie jede andere SMS Anwendung. Sie müssen sich weder anmelden, noch müssen Ihre Freunde einem neuen Dienst beitreten.
+*Zuverlässlich. SMSSecure kommuniziert anhand verschlüsselter SMS Nachrichten, und benötigt dadurch keine Server oder eine Internetverbindung.
+*Vertraulich. SMSSecure verwendet das TextSecure Verschlüsselungsprotokoll um Datenschutz für jede Nachricht zu jeder Zeit zu gewähleisten.
+*Sicher. Alle Nachrichten werden lokal verschlüsselt. Sollten Sie Ihr Smartphone einmal verlieren oder sollte es gestohlen werden, sind Ihre Nachrichten trotzdem geschützt.
+*Open Source. SMSSecure ist frei und Open Source, sodass jeder den Quellcode einsehen und dessen Sicherheit überprüfen kann.
+
+Bitte melden Sie Fehler, Probleme oder Funktionsanfragen an:
+https://github.com/SMSSecure/SMSSecure/issues
+
+Der Quellcode ist zu finden unter:
+https://github.com/SMSSecure/SMSSecure
+
+Mehr Infos:
+http://smssecure.org</string>
 </resources>
