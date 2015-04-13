@@ -52,7 +52,7 @@ public class ViewIdentityActivity extends KeyScanningActivity {
 
   private void initializeFingerprint() {
     if (identityKey == null) {
-      identityFingerprint.setText(R.string.ViewIdentityActivity_you_do_not_have_an_identity_key);
+      identityFingerprint.setText(R.string.VerifyIdentityActivity_you_do_not_have_an_identity_key);
     } else {
       identityFingerprint.setText(identityKey.getFingerprint());
     }
@@ -81,7 +81,7 @@ public class ViewIdentityActivity extends KeyScanningActivity {
 
   @Override
   protected String getDisplayString() {
-    return getString(R.string.ViewIdentityActivity_get_scanned_to_compare);
+    return getString(R.string.VerifyIdentityActivity_get_my_key_scanned);
   }
 
   @Override
@@ -101,7 +101,7 @@ public class ViewIdentityActivity extends KeyScanningActivity {
 
   @Override
   protected String getNotVerifiedTitle() {
-    return getString(R.string.ViewIdentityActivity_not_verified_exclamation);
+    return getString(R.string.VerifyIdentityActivity_not_verified_exclamation);
   }
 
   @Override
@@ -111,6 +111,6 @@ public class ViewIdentityActivity extends KeyScanningActivity {
 
   @Override
   protected String getVerifiedTitle() {
-    return getString(R.string.ViewIdentityActivity_verified_exclamation);
+    return getString(R.string.VerifyIdentityActivity_verified_exclamation);
   }
 }

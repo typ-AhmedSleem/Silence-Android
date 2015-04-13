@@ -107,7 +107,7 @@ public class VerifyIdentityActivity extends KeyScanningActivity {
   protected void initiateDisplay() {
     if (!IdentityKeyUtil.hasIdentityKey(this)) {
       Toast.makeText(this,
-                     R.string.VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation,
+                     R.string.VerifyIdentityActivity_you_do_not_have_an_identity_key,
                      Toast.LENGTH_LONG).show();
       return;
     }
@@ -120,7 +120,7 @@ public class VerifyIdentityActivity extends KeyScanningActivity {
     IdentityKey identityKey = getRemoteIdentityKey(masterSecret, recipient);
 
     if (identityKey == null) {
-      Toast.makeText(this, R.string.VerifyIdentityActivity_recipient_has_no_identity_key_exclamation,
+      Toast.makeText(this, R.string.VerifyIdentityActivity_recipient_has_no_identity_key,
                      Toast.LENGTH_LONG).show();
     } else {
       super.initiateScan();

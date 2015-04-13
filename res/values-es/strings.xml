@@ -67,6 +67,7 @@ este contacto.
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">¿Iniciar sesión segura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">¿Iniciar sesión segura con %s?</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Mensaje recibido por alguien que tambien tiene SMSSecure, iniciar una sesión segura encriptada?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Confirmación de finalización de sesión segura</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">¿Está seguro de que desea finalizar esta sesión segura?</string>
   <string name="ConversationActivity_delete_thread_confirmation">Confirmación de borrado del hilo</string>
@@ -91,6 +92,11 @@ este contacto.
   <string name="ConversationActivity_transport_insecure_mms">MMS no seguro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS seguro</string>
   <string name="ConversationActivity_transport_secure_mms">MMS seguro</string>
+  <string name="ConversationActivity_install_smssecure">Vamos a hablar seguros: %s</string>
+  <string name="ConversationActivity_recipient_self">Las sesiones seguras sólo se pueden establecer con otras personas.</string>
+  <string name="ConversationActivity_mms_not_supported_title">MMS no soportado</string>
+  <string name="ConversationActivity_mms_not_supported_message">Este mensaje no ha podido ser enviado pues tu proveedor no soporta MMS.</string>
+  <string name="ConversationActivity_specify_recipient">Por favor escoja un contacto</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalles del mensaje</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmar borrado de mensaje</string>
@@ -198,6 +204,7 @@ Por favor pida al remitente que actualice a la versión más reciente y reenvíe
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">¡Las claves de acceso no coinciden!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">¡Clave de acceso antigua incorrecta!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Contraseña no introducida!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Introduzca clave de acceso</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Icono de SMSSecure</string>
@@ -225,27 +232,20 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="SmsMessageRecord_duplicate_message">Duplicar mensaje.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Ha dejado el grupo...</string>
-  <string name="TheadRecord_secure_session_ended">La sesión segura finalizó.</string>
   <string name="ThreadRecord_draft">Borrador:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatario no tiene clave de identidad.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">¡El destinatario no tiene clave de identidad!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Escanear la clave de ellos, para comparar</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Escanear mi clave</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVERTENCIA: la clave escaneada NO coincide. Por favor, verifique el texto de la huella digital cuidadosamente.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">¡NO verificado!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La clave de ellos es correcta. También es necesario verificar su clave con ellos.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">¡Verificado!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">¡No tiene ninguna clave de identidad!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Escanear para comparar</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Escanear su clave para comparar</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVERTENCIA: ¡las claves escaneadas NO coinciden!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">¡NO verificada!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">¡La clave escaneada coincide!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">¡Verificado!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Mi huella digital</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">¿Iniciar a pesar de la solicitud existente?</string>
@@ -257,8 +257,6 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mensaje cifrado para una sesión no existente...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Conectando con el servidor MMS...</string>
   <string name="MmsDatabase_downloading_mms">Descargado MMS...</string>
@@ -282,12 +280,14 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MessageNotifier_d_new_messages">(%d) nuevos mensajes</string>
   <string name="MessageNotifier_most_recent_from_s">Mensaje más reciente de: %s</string>
   <string name="MessageNotifier_encrypted_message">Mensaje cifrado...</string>
+  <string name="MessageNotifier_media_message_with_text">Mensaje multimedia: %s</string>
   <string name="MessageNotifier_no_subject">(Sin asunto)</string>
   <string name="MessageNotifier_message_delivery_failed">Entrega de mensaje fallida.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Fallo al entregar mensaje.</string>
   <string name="MessageNotifier_error_delivering_message">Error entregando mensaje.</string>
   <string name="MessageNotifier_mark_all_as_read">Marcar todos como leídos</string>
   <string name="MessageNotifier_mark_as_read">Marcar como leídos</string>
+  <string name="MessageNotifier_media_message">Mensaje multimedia</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Lo sentimos, ¡la Respuesta Rápida aún no está soportada por SMSSecure!</string>
   <!--change_passphrase_activity-->
@@ -316,6 +316,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="conversation_activity__emoji_toggle_description">Cambiar a teclado emoji</string>
   <string name="conversation_activity__attachment_thumbnail">Miniatura del adjunto</string>
   <!--conversation_item-->
+  <string name="conversation_item__mms_downloading_description">Descargando mensaje multimedia</string>
   <string name="conversation_item__mms_image_description">Mensaje multimedia</string>
   <string name="conversation_item__secure_message_description">Asegurar mensaje</string>
   <!--conversation_item_sent-->
@@ -364,13 +365,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">VERIFICAR</string>
   <string name="message_recipients_list_item__resend">REENVIAR</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Se requiere configuración manual de MMS para su teléfono.</string>
-  <string name="MmsPreferencesFragment__enabled">Habilitado</string>
-  <string name="MmsPreferencesFragment__disabled">Deshabilitado</string>
-  <string name="MmsPreferencesFragment__not_set">No establecido</string>
-  <string name="MmsPreferencesFragment__invalid_uri">El texto introducido no era una URI válida</string>
-  <string name="MmsPreferencesFragment__invalid_host">El texto introducido no era un servidor válido</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desbloquear</string>
   <!--prompt_mms_activity-->
@@ -404,6 +398,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="AndroidManifest__media_preview">Previsualización del contenido</string>
   <string name="AndroidManifest__media_overview">Todas las imágenes</string>
   <string name="AndroidManifest__media_overview_named">Todas la imágenes con %1$s</string>
+  <string name="AndroidManifest__message_details">Detalles del mensaje</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importar/exportar</string>
   <string name="arrays__my_identity_key">Mi clave de identidad</string>
@@ -514,12 +509,15 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__submit_debug_log">Enviar registro de depuración</string>
   <string name="preferences__support_wifi_calling">Modo de compatibilidad \'Llamada por WiFi\'</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Habilítelo si su dispositivo utiliza entrega de SMS/MMS vía WiFi (actívelo sólo cuando \'Llamada por WiFi\' esté activada en su dispositivo).</string>
+  <string name="preferences__about">Sobre SMSSecure</string>
+  <string name="preferences__about_version">Versión %s</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Seleccionar todos</string>
   <string name="contact_selection_list__menu_unselect_all">Deseleccionar todos</string>
+  <string name="contact_selection_list__header">TODOS LOS CONTACTOS</string>
   <string name="contact_selection_list__unknown_contact">Nuevo mensaje para...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Terminado</string>

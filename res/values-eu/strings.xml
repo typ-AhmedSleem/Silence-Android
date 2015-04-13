@@ -210,27 +210,20 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="SmsMessageRecord_duplicate_message">Mezu bikoiztua.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Taldea utzita...</string>
-  <string name="TheadRecord_secure_session_ended">Saio segurua bukatu da</string>
   <string name="ThreadRecord_draft">Zirriborroa:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Hartzaileak ez dauka nortasun gakorik.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Hartzaileak ez dauka nortasun gakorik!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Eskaneatu beraien gakoa konparatzeko</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Eskaneatu nire gakoa</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">KONTUZ, eskaneatutako gakoa EZ DATOR BAT. Mesedez, aztarnaren testua kontu handiz aztertu.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EZ Egiaztatua!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Beraien gakoa zuzena da. Beharrezkoa da zure gakoa beraiekin egiaztatzea ere.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Egiaztatua!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Ez daukazu nortasun gakorik!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Eskaneatu konparatzeko</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Eskaneatu konparatzeko</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">KONTUZ, eskaneatutako gakoa EZ DATOR BAT!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">EZ egiaztatua!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Eskaneatutako gakoa bat dator!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Egiaztatua!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Nire nortasunaren aztarna</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Hasi nahiz eta beste eskaera bat indarrean egon?</string>
@@ -242,8 +235,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Esistitzen ez den saio baterako enkriptatutako mezua...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">MMS zerbitzari batekin konektatzen...</string>
   <string name="MmsDatabase_downloading_mms">MMS behera kargatzen...</string>
@@ -343,13 +334,6 @@ Aurretik enkriptatu eta esportatu den SMSSecure babeskopia leheneratu.
 Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore\'-ekin.</string>
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">MMS eskuzko ezarpenak behar dira zure telefonorako.</string>
-  <string name="MmsPreferencesFragment__enabled">Gaituta</string>
-  <string name="MmsPreferencesFragment__disabled">Ezgaituta</string>
-  <string name="MmsPreferencesFragment__not_set">Ez ezarria</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Sartutako testua URI baliogabea da</string>
-  <string name="MmsPreferencesFragment__invalid_host">Sartutako testua host baliogabea da</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desblokeatu</string>
   <!--prompt_mms_activity-->

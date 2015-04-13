@@ -205,27 +205,20 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="SmsMessageRecord_duplicate_message">Monistettu viesti.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Poistui ryhmästä...</string>
-  <string name="TheadRecord_secure_session_ended">Salattu istunto päättyi</string>
   <string name="ThreadRecord_draft">Luonnos:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Vastaanottajalta puuttuu identiteettiavain.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Vastaanottajalta puuttuu identiteettiavain!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skannaa heidän avain vertaillaaksesi</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Skannaa avaimeni</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VAROITUS, skannattu avain EI TÄSMÄÄ. Tarkastakaa sormenjälki huolella.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EI varmennettu!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Vastaanottajan avain on oikea. Tarkistuta myös sinun avain vastaanottajalla.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Varmennettu!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Sinulta puuttuu identiteettiavain!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Skannaa vertaillaaksesi</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Skannauta vertaillaaksesi</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">VAROITUS: Skannattu avain ei täsmää!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">EI ole varmennettu!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skannattu avain täsmää!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Varmennettu!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Identiteettini sormenjälki</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Aloita olemassa olevasta pyynnöstä huolimatta?</string>
@@ -237,8 +230,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Viesti salattu olemattomalle istunnolle...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Yhdistetään MMS-palvelimeen...</string>
   <string name="MmsDatabase_downloading_mms">Ladataan MMS-viestiä...</string>
@@ -342,13 +333,6 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">VARMENNA</string>
   <string name="message_recipients_list_item__resend">LÄHETÄ UUDELLEEN</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Puhelimesi edellyttää manuaalista MMS-asetusten säätöä.</string>
-  <string name="MmsPreferencesFragment__enabled">Otettu käyttöön</string>
-  <string name="MmsPreferencesFragment__disabled">Poistettu käytöstä</string>
-  <string name="MmsPreferencesFragment__not_set">Ei ole asetettu</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Syötetty teksti ei ollut kelvollinen URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">Syötetty teksti ei ollut kelvollinen palvelin</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Avaa</string>
   <!--prompt_mms_activity-->

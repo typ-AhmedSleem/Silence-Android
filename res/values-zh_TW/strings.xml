@@ -181,26 +181,19 @@
   <string name="SmsMessageRecord_duplicate_message">複製訊息。</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">離開這個群組...</string>
-  <string name="TheadRecord_secure_session_ended">安全連線已結束。</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您不具備身分認證金鑰。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件者不具備身分認證金鑰。</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">收件者不具備身分認證金鑰！</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">比對他們的金鑰</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">驗證我的金鑰</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告！驗證結果不符合！請再目視並仔細比對一次指紋碼。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">無法驗證！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">對方提供的金鑰是正確的。但您也必須將您的金鑰與其比對。</string>
   <string name="VerifyIdentityActivity_verified_exclamation">已驗證！</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">您不具備身分認證金鑰！</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">您不具備身分認證金鑰。</string>
   <string name="ViewIdentityActivity_scan_to_compare">掃描以比對</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">掃描並且進行比對</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告！掃描的值並不相符！</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">無法驗證！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">掃描的金鑰相符！</string>
-  <string name="ViewIdentityActivity_verified_exclamation">已驗證！</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">我的身分識別指紋碼</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">忽略既有請求，依然啟動？</string>
@@ -211,7 +204,6 @@
   <string name="MessageDisplayHelper_decrypting_please_wait">解密中... 請稍後...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">與加密訊息匹配的連線已不存在...</string>
   <!--EncryptingSmsDatabase-->
-  <!--ThreadDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">連線到 MMS多媒體訊息伺服器...</string>
   <string name="MmsDatabase_downloading_mms">正在下載 MMS多媒體訊息...</string>
@@ -308,8 +300,6 @@
 匯入一個未加密的備份資料。 相容於 \"SMSBackup And Restore\"。</string>
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">您的手機需要手動設定 MMS多媒體簡訊。</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">解鎖</string>
   <!--prompt_mms_activity-->

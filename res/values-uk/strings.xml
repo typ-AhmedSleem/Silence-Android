@@ -108,25 +108,19 @@
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">Отримано повідомлення з невідомим особистим ключем. Натисніть для його відображення.</string>
   <string name="SmsMessageRecord_secure_session_ended">Захищений сеанс завершено.</string>
   <!--ThreadRecord-->
-  <string name="TheadRecord_secure_session_ended">Захищений сеанс завершено.</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">У вас немає особистого ключа.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У одержувача немає особистого ключа.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">У одержувача немає особистого ключа!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Cканувати ключ співрозмовника</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Дати сканувати мій ключ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">УВАГА, просканований ключ НЕ СПІВПАДАЄ! Уважно перевірте текст відбитка.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ перевірено!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ключ співрозмовника вірний. Також необхідно, щоб співрозмовник підтвердив ваш ключ.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Перевірено!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">У вас немає особистого ключа!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">У вас немає особистого ключа.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Сканувати і порівняти</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Дати сканувати і порівняти</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">УВАГА, просканований ключ НЕ СПІВПАДАЄ!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Просканований ключ збігається!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Перевірено!</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ви вже відправили цьому співрозмовнику запит на початок сеансу. Ви впевнені, що хочете відправити ще один? Попередній буде анульовано.</string>
   <string name="KeyExchangeInitiator_send">Відправити</string>
@@ -135,7 +129,6 @@
   <string name="MessageDisplayHelper_decrypting_please_wait">Триває розшифрування, зачекайте, будь ласка\u2026</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Повідомлення зашифровано для неіснуючої сесії\u2026</string>
   <!--EncryptingSmsDatabase-->
-  <!--ThreadDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Підключення до MMS сервера\u2026</string>
   <string name="MmsDatabase_downloading_mms">Завантаження MMS\u2026</string>
@@ -200,8 +193,6 @@
   <string name="import_fragment__import_a_plaintext_backup_file">Імпортувати з незашифрованої резервної копії. Сумісно з додатком \'SMSBackup And Restore\'.</string>
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Параметри MMS для вашого телефону потрібно вказати вручну.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Розблокувати</string>
   <!--prompt_mms_activity-->

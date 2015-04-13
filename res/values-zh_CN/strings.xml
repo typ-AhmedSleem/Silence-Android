@@ -200,27 +200,20 @@
   <string name="SmsMessageRecord_duplicate_message">重复的信息。</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">离开此群组...</string>
-  <string name="TheadRecord_secure_session_ended">安全会话已结束。</string>
   <string name="ThreadRecord_draft">草稿：</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您没有身份密钥。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件人没有身份密钥。</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">收件人没有身份密钥！</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">扫描他们的密钥以进行比较</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">扫描我的密钥</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告：扫描的密钥不匹配！ 请仔细检查指纹文本。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">未验证！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">他们的密钥正确。 还需要他们验证您的密钥。</string>
   <string name="VerifyIdentityActivity_verified_exclamation">已验证！</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">您没有身份密钥！</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">您没有身份密钥。</string>
   <string name="ViewIdentityActivity_scan_to_compare">扫描以便进行比较</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">进行扫描以进行比较</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告：扫描的密钥不匹配！</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">没有经过验证！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">扫描的密钥匹配！</string>
-  <string name="ViewIdentityActivity_verified_exclamation">已验证！</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">我的身份指纹</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">发起一个已经存在的请求？</string>
@@ -232,8 +225,6 @@
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">已为不存在的会话加密消息...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">解密信息时遇到错误。</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">解密消息时遇到错误。</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">正在连接到彩信服务器...</string>
   <string name="MmsDatabase_downloading_mms">正在下载彩信...</string>
@@ -335,13 +326,6 @@
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">验证</string>
   <string name="message_recipients_list_item__resend">重新发送</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">您的手机需要手动设置彩信。</string>
-  <string name="MmsPreferencesFragment__enabled">启用</string>
-  <string name="MmsPreferencesFragment__disabled">禁用</string>
-  <string name="MmsPreferencesFragment__not_set">未设置</string>
-  <string name="MmsPreferencesFragment__invalid_uri">输入的文字并非真实的URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">输入的文字并非真实的主机</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">解锁</string>
   <!--prompt_mms_activity-->

@@ -60,7 +60,6 @@
   <!--KeyExchangeInitiator-->
   <!--MessageDisplayHelper-->
   <!--EncryptingSmsDatabase-->
-  <!--ThreadDatabase-->
   <!--MmsDatabase-->
   <!--MmsMessageRecord-->
   <!--ApplicationMigrationService-->
@@ -83,7 +82,6 @@
   <!--database_upgrade_activity-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
   <!--prompt_passphrase_activity-->
   <!--prompt_mms_activity-->
   <!--receive_key_activity-->

@@ -188,27 +188,20 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="SmsMessageRecord_duplicate_message">Mesaj duplicat.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">A ieșit din grup...</string>
-  <string name="TheadRecord_secure_session_ended">Sesiune securizată terminată.</string>
   <string name="ThreadRecord_draft">Ciornă:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nu ai o cheie de identitate.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Destinatarul nu are o cheie de identitate.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Destinatarul nu are o cheie de identitate!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Scanează cheia partenerului pentru comparație</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Preia cheia mea scanată</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATENȚIE, cheia scanată NU SE POTRIVEȘTE! Verifică semnătura digitală cu atenție.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NU E VERIFICAT!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Cheia partenerului este corectă. Este necesar de asemenea ca și partenerul tău să verifice cheia ta.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Verificat!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Nu ai o cheie de identitate!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Nu ai o cheie de identitate!</string>
   <string name="ViewIdentityActivity_scan_to_compare">Scanează pentru a compara</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Vei fi scanat pentru comparație</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ATENȚIE, cheia scanată NU SE POTRIVEȘTE !</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">NU E VERIFICAT!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Cheia scanată se potrivește!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Verificat!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Amprenta mea de identitate</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Iniţializeaz deşi există o cerere?</string>
@@ -220,8 +213,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaj criptat pentru o sesiune inexistentă...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Eroare la decriptarea mesajului.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Eroare la decriptarea mesajului.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Se conecteaza la serverul MMS...</string>
   <string name="MmsDatabase_downloading_mms">Se descarca MMS...</string>
@@ -321,13 +312,6 @@ Restaurează un backup criptat exportat anterior din SMSSecure.</string>
 Importă un fișier de backup text. Compatibil cu \'SMSBackup And Restore.\'</string>
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Pentru telefonul tău sunt necesare setări MMS manuale.</string>
-  <string name="MmsPreferencesFragment__enabled">Activat</string>
-  <string name="MmsPreferencesFragment__disabled">Dezactivat</string>
-  <string name="MmsPreferencesFragment__not_set">Nesetat</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Textul introdus nu este un URI valid</string>
-  <string name="MmsPreferencesFragment__invalid_host">Textul introdus nu este o gazdă validă</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Deblochează</string>
   <!--prompt_mms_activity-->

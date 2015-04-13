@@ -198,27 +198,20 @@
   <string name="SmsMessageRecord_duplicate_message">Дубликат сообщения.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Вы покинули группу...</string>
-  <string name="TheadRecord_secure_session_ended">Защищённый сеанс завершён.</string>
   <string name="ThreadRecord_draft">Черновик:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">У вас нет личного ключа.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У получателя нет личного ключа.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">У получателя нет личного ключа!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Cканировать ключ собеседника</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Дать сканировать мой ключ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ВНИМАНИЕ, просканированный ключ НЕ СОВПАДАЕТ! Внимательно проверьте текст отпечатка.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ подтверждено!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ключ собеседника верен. Также необходимо, чтобы собеседник подтвердил ваш ключ.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Подтверждено!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">У вас нет личного ключа!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">У вас нет личного ключа.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Сканировать и сравнить</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Дать сканировать и сравнить</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ВНИМАНИЕ, просканированный ключ НЕ СОВПАДАЕТ!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">НЕ подтверждено!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Просканированный ключ совпадает.</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Подтверждено!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Мой отпечаток</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Игнорировать предыдущий запрос?</string>
@@ -230,8 +223,6 @@
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Сообщение зашифровано для несуществующей сессии...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Соединяемся с MMS-сервером...</string>
   <string name="MmsDatabase_downloading_mms">Скачиваем MMS-сообщение...</string>
@@ -334,13 +325,6 @@
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">ПРОВЕРИТЬ</string>
   <string name="message_recipients_list_item__resend">ПЕРЕОТПРАВИТЬ</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Для вашего телефона необходимо настроить MMS вручную.</string>
-  <string name="MmsPreferencesFragment__enabled">Включено</string>
-  <string name="MmsPreferencesFragment__disabled">Отключено</string>
-  <string name="MmsPreferencesFragment__not_set">Не настроен</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Введён неверный адрес</string>
-  <string name="MmsPreferencesFragment__invalid_host">Введён неверный адрес хоста</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Открыть</string>
   <!--prompt_mms_activity-->

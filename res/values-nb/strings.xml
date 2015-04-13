@@ -91,6 +91,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationActivity_recipient_self">Igangsetting av sikret økt er forbehold tilkobling til andre.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS er ikke støttet</string>
   <string name="ConversationActivity_mms_not_supported_message">Denne meldingen kan ikke sendes siden din tilkoblingstilbyder ikke støtter MMS.</string>
+  <string name="ConversationActivity_specify_recipient">Velg en kontakt</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meldingsdetaljer</string>
   <string name="ConversationFragment_confirm_message_delete">Bekreft sletting av melding</string>
@@ -211,27 +212,20 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikatmelding.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Forlot gruppen...</string>
-  <string name="TheadRecord_secure_session_ended">Sikret økt avsluttet.</string>
   <string name="ThreadRecord_draft">Kladd:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen ID-nøkkel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Mottakeren har ingen ID-nøkkel.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Mottakeren har ingen ID-nøkkel!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skann deres nøkkel for å sammenligne</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Få min nøkkel skannet</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVARSEL. Den skannede nøkkelen er IKKE DEN SAMME! Sjekk fingeravtrykkets tekst nøye.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">IKKE betrodd!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Nøkkelen deres er korrekt. Det er nødvendig å bekrefte nøkkelen din med dem også.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Bekreftet!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Du har ingen ID-nøkkel!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Du har ingen ID-nøkkel.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Skann for å sammenligne</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Få den skannet for å sammenlikne</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVARSEL. Den skannede nøkkelen er IKKE DEN SAMME!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">IKKE bekreftet!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Den skannede nøkkelen stemmer overens!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Bekreftet!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Mitt ID-fingeravtrykk</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Igangsett til tross for eksisterende forespørsel?</string>
@@ -241,10 +235,9 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="MessageDisplayHelper_bad_encrypted_message">Ugyldig kryptert melding...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dekrypterer, vennligst vent...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Melding kryptert for en ikke-eksisterende sesjon...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Sluttfør øktforespørsel kryptert for en ikke-eksisterende økt...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Feil ved dekryptering av meldingen.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Feil ved dekryptering av meldingen.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Kobler til MMS-tjener...</string>
   <string name="MmsDatabase_downloading_mms">Laster ned MMS...</string>
@@ -350,13 +343,6 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">VERIFISER</string>
   <string name="message_recipients_list_item__resend">SEND OM IGJEN</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Manuelle MMS-innstillinger er nødvendig for din telefon.</string>
-  <string name="MmsPreferencesFragment__enabled">Aktivert</string>
-  <string name="MmsPreferencesFragment__disabled">Deaktivert</string>
-  <string name="MmsPreferencesFragment__not_set">Ikke satt</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Teksten som ble tastet inn var ikke en gyldig oppsettadresse</string>
-  <string name="MmsPreferencesFragment__invalid_host">Innskrevet tekst samsvarer ikke med noen gyldig vertsadresse</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Lås opp</string>
   <!--prompt_mms_activity-->
@@ -390,6 +376,7 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="AndroidManifest__media_preview">Forhåndsvisning av media</string>
   <string name="AndroidManifest__media_overview">Alle bilder</string>
   <string name="AndroidManifest__media_overview_named">Alle bilder med %1$s</string>
+  <string name="AndroidManifest__message_details">Meldingsdetaljer</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importere / eksportere</string>
   <string name="arrays__my_identity_key">Min ID-nøkkel</string>
@@ -579,7 +566,7 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="reminder_header_sms_import_title">Importer enhetens SMS-database?</string>
   <string name="reminder_header_sms_import_text">Klikk for å kopiere telefonens SMS-er til kryptert database.</string>
   <!--MediaPreviewActivity-->
-  <string name="MediaPreviewActivity_you">Du</string>
+  <string name="MediaPreviewActivity_you">Deg</string>
   <string name="MediaPreviewActivity_cant_display">Klarte ikke å forhåndsvise dette bildet</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Media-typen er ikke støttet.</string>
   <!--media_preview-->
