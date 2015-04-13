@@ -216,22 +216,16 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemate ključ identiteta.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Primatelj nema ključ identiteta.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Primatelj nema ključ identiteta!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skenirajte njihov ključ za usporedbu</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Skeniraj moj ključ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UPOZORENJE, skenirani ključ NE ODGOVARA! Provjerite pažljivo tekst otiska prsta.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIJE potvrđeno!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Njihov ključ je ispravan. Također je potrebno potvrditi vaš ključ sa njima.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Potvrđeno!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Nemate ključ identiteta!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Nemate ključ identiteta!</string>
   <string name="ViewIdentityActivity_scan_to_compare">Skenirajte za usporedbu</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Budite skenirani za usporedbu</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UPOZORENJE, skenirani ključ NE ODGOVARA!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">NIJE potvrđeno!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skenirani ključ odgovara!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Potvrđeno!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Otisak prsta mog identiteta</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Pokreni usprkos postojećem zahtjevu?</string>
@@ -243,8 +237,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Poruka kriptirana za nepostojeću sesiju...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Greška prilikom dekriptiranja poruke.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Greška prilikom dekriptiranja poruke.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Povezivanje na MMS poslužitelj...</string>
   <string name="MmsDatabase_downloading_mms">Preuzimanje MMSa...</string>
@@ -347,13 +339,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">POTVRDI</string>
   <string name="message_recipients_list_item__resend">PONOVNO POŠALJI</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Ručne MMS postavke su potrebne za vaš telefon.</string>
-  <string name="MmsPreferencesFragment__enabled">Omogućeno</string>
-  <string name="MmsPreferencesFragment__disabled">Onemogućeno</string>
-  <string name="MmsPreferencesFragment__not_set">Nije postavljeno</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Uneseni tekst nije ispravan URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">Uneseni tekst nije ispravan poslužitelj</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Otključaj</string>
   <!--prompt_mms_activity-->

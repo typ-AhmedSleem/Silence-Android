@@ -88,7 +88,6 @@
   <string name="KeyExchangeInitiator_send">Sendi</string>
   <!--MessageDisplayHelper-->
   <!--EncryptingSmsDatabase-->
-  <!--ThreadDatabase-->
   <!--MmsDatabase-->
   <!--MmsMessageRecord-->
   <!--ApplicationMigrationService-->
@@ -129,7 +128,6 @@
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">VERIGI</string>
   <string name="message_recipients_list_item__resend">RESENDI</string>
-  <!--MmsPreferencesFragment-->
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Malŝlosi</string>
   <!--prompt_mms_activity-->

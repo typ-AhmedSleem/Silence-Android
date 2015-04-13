@@ -485,7 +485,7 @@ public class ThreadDatabase extends Database {
         }
       } catch (InvalidMessageException e) {
         Log.w("ThreadDatabase", e);
-        return new DisplayRecord.Body(context.getString(R.string.ThreadDatabase_error_decrypting_message), true);
+        return new DisplayRecord.Body(context.getString(R.string.EncryptingSmsDatabase_error_decrypting_message), true);
       }
     }
 

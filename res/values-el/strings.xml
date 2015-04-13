@@ -244,22 +244,16 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ο παραλήπτης δεν έχει κλειδί ταυτότητας.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Ο παραλήπτης δεν έχει κλειδί ταυτότητας!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Σαρώστε το κλειδί τους για σύγκριση</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Σάρωση του κλειδιού μου</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει! Ελέγξτε προσεκτικά το αποτύπωμα.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">ΔΕΝ Επιβεβαιώθηκε!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Το κλειδί τους είναι σωστό. Είναι επίσης απαραίτητο να επιβεβαιώσουν το κλειδί σας.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Επιβεβαιώθηκε!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Δεν έχετε κλειδί ταυτότητας!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Σαρώστε για σύγκριση</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Επιτρέψτε να μας σαρώσουν για σύγκριση</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">ΔΕΝ επιβεβαιώθηκε!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Το σαρωμένο κλειδί ταιριάζει!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Επιβεβαιώθηκε!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Το αποτύπωμα της ταυτότητάς μου</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Εκκίνηση παρά την υπάρχουσα αίτηση;</string>
@@ -271,8 +265,6 @@
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Το μήνυμα κρυπτογραφήθηκε για ανύπαρκτη συζήτηση...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Σφάλμα αποκρυπτογράφησης του μηνύματος.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Σφάλμα κρυπτογράφησης του μηνύματος.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Σύνδεση στο διακομιστή MMS...</string>
   <string name="MmsDatabase_downloading_mms">Γίνεται λήψη MMS...</string>
@@ -381,13 +373,6 @@
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">ΕΠΑΛΗΘΕΥΣΗ</string>
   <string name="message_recipients_list_item__resend">ΑΠΟΣΤΟΛΗ ΞΑΝΑ</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Απαιτούνται προσαρμοσμένες ρυθμίσεις MMS για το κινητό σας.</string>
-  <string name="MmsPreferencesFragment__enabled">Ενεργοποιημένο</string>
-  <string name="MmsPreferencesFragment__disabled">Απενεργοποιημένο</string>
-  <string name="MmsPreferencesFragment__not_set">Δεν έχει οριστεί</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Το κείμενο που εισάχθηκε δεν ήταν έγκυρο URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">Το κείμενο που εισάχθηκε δεν ήταν έγκυρο υποδοχής</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Ξεκλείδωμα</string>
   <!--prompt_mms_activity-->

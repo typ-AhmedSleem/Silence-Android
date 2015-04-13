@@ -153,21 +153,16 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Bạn không có chìa khóa nhận diện.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Người nhận không có chìa khóa nhận diện.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Người nhận không có chìa khóa nhận diện!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Quét chìa khóa của họ để so sánh</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Quét chìa khóa của tôi</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">CẢNH BÁO, chìa khóa được quét KHÔNG trùng hợp! Xin xem lại cho kỹ càng văn bản dấu tay.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">CHƯA Kiểm Chứng!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Chìa khóa của họ đúng. Cũng cần phải kiểm chứng chìa khóa của bạn với họ luôn.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Đã kiểm chứng!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Bạn không có chìa khóa nhận diện!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Bạn không có chìa khóa nhận diện!</string>
   <string name="ViewIdentityActivity_scan_to_compare">Quét để so sánh</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Quét để so sánh</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">CẢNH BÁO, chìa khóa được quét KHÔNG trùng hợp!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Chìa khóa được quét trùng hợp!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Đã kiểm chứng!</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Bạn đã gửi yêu cầu khởi tạo phiên trao đổi với người nhận này, bạn có chắc là muốn gửi lần nữa? Điều này sẽ làm yêu cầu đầu tiên mất hiệu lực.</string>
   <string name="KeyExchangeInitiator_send">Gửi</string>
@@ -176,7 +171,6 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="MessageDisplayHelper_decrypting_please_wait">Đang giải mã, xin chờ...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Tin nhắn được mã hóa cho phiên trao đổi không tồn tại...</string>
   <!--EncryptingSmsDatabase-->
-  <!--ThreadDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Đang kết nối vào máy chủ MMS...</string>
   <string name="MmsDatabase_downloading_mms">Đang tải xuống MMS...</string>
@@ -251,8 +245,6 @@ Phục hồi sao lưu SMSSecure có mã hóa từng xuất ra trước đó.</st
 Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao Lưu và Phục Hồi SMS\'.</string>
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Phải làm thiết đặt MMS bằng tay cho điện thoại của bạn.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Mở khóa</string>
   <!--prompt_mms_activity-->

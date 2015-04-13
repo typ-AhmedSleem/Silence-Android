@@ -236,22 +236,16 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatario no tiene clave de identidad.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">¡El destinatario no tiene clave de identidad!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Escanear la clave de ellos, para comparar</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Escanear mi clave</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVERTENCIA: la clave escaneada NO coincide. Por favor, verifique el texto de la huella digital cuidadosamente.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">¡NO verificado!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La clave de ellos es correcta. También es necesario verificar su clave con ellos.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">¡Verificado!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">¡No tiene ninguna clave de identidad!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Escanear para comparar</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Escanear su clave para comparar</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVERTENCIA: ¡las claves escaneadas NO coinciden!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">¡NO verificada!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">¡La clave escaneada coincide!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">¡Verificado!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Mi huella digital</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">¿Iniciar a pesar de la solicitud existente?</string>
@@ -263,8 +257,6 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mensaje cifrado para una sesión no existente...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Conectando con el servidor MMS...</string>
   <string name="MmsDatabase_downloading_mms">Descargado MMS...</string>
@@ -373,13 +365,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">VERIFICAR</string>
   <string name="message_recipients_list_item__resend">REENVIAR</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Se requiere configuración manual de MMS para su teléfono.</string>
-  <string name="MmsPreferencesFragment__enabled">Habilitado</string>
-  <string name="MmsPreferencesFragment__disabled">Deshabilitado</string>
-  <string name="MmsPreferencesFragment__not_set">No establecido</string>
-  <string name="MmsPreferencesFragment__invalid_uri">El texto introducido no era una URI válida</string>
-  <string name="MmsPreferencesFragment__invalid_host">El texto introducido no era un servidor válido</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desbloquear</string>
   <!--prompt_mms_activity-->

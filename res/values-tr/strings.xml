@@ -201,22 +201,16 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Alıcının kimlik anahtarı yok.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Alıcının kimlik anahtarı yok!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Karşılaştırmak için anahtarını tarayın</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Anahtarımı tarat</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UYARI, taranan anahtar EŞLEŞMİYOR! Parmak izi metnini dikkatlice inceleyin.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">Doğrulanmadı!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Onun anahtarı doğru. Anahtarınızı onunla da doğrulamanız gerekiyor.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Doğrulandı!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Kimlik anahtarınız yok!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Karşılaştırmak için tarayın</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Karşılaştırmak için taratın</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UYARI, taranan anahtar EŞLEŞMİYOR!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">Doğrulanamadı!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Taranan anahtar eşleşiyor!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Doğrulandı!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Kimlik parmakizim</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Varolan isteğe rağmen başlat?</string>
@@ -228,8 +222,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaj var olmayan oturum için şifrelendi...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">MMS sunucusuna bağlanılıyor...</string>
   <string name="MmsDatabase_downloading_mms">MMS indiriliyor...</string>
@@ -330,13 +322,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Resim yok</string>
   <!--message_recipients_list_item-->
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Telefonunuz için manuel MMS ayarları gerekmektedir.</string>
-  <string name="MmsPreferencesFragment__enabled">Etkinleştirildi</string>
-  <string name="MmsPreferencesFragment__disabled">Etkisizleştirildi</string>
-  <string name="MmsPreferencesFragment__not_set">Ayarlanmamış</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Girilen metin geçerli bir URI değil</string>
-  <string name="MmsPreferencesFragment__invalid_host">Girilen metin geçerli bir sunucu değil</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Kilidi aç</string>
   <!--prompt_mms_activity-->

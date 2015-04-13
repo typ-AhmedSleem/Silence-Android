@@ -212,22 +212,16 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nimate identifikacijskega ključa.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Prejemnik nima identifikacijskega ključa.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Prejemnik nima identifikacijskega ključa!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skenirajte ključ stika za primerjavo</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Prikaži moj ključ za skeniraje</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, skenirani ključ SE NE UJEMA! Pazljivo preverite tekst prstnega odtisa.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NEOVERJENO!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ključ stika je pravilen. Tudi vaš ključ mora biti potrjen iz njegove strani.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Preverjeno!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Nimate identifikacijskega ključa!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Nimate identifikacijskega ključa.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Skeniraj za primerjavo</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Prikaži za skeniranje</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">POZOR, skeniran ključ se NE UJEMA!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">NI preverjena!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skeniran ključ se ujema!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Preverjen!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Moja identifikacija</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Začnem kljub že poslani zahtevi?</string>
@@ -239,8 +233,6 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Sporočilo je šifrirano za neobstoječo sejo...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Povezovanje s strežnikom za MMS...</string>
   <string name="MmsDatabase_downloading_mms">Prejemam MMS...</string>
@@ -343,13 +335,6 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">OVERI</string>
   <string name="message_recipients_list_item__resend">PONOVNO POŠLJI</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Za vaš telefon je potreben ročen vnos nastavitev MMS.</string>
-  <string name="MmsPreferencesFragment__enabled">Vklopljeno</string>
-  <string name="MmsPreferencesFragment__disabled">Izklopljeno</string>
-  <string name="MmsPreferencesFragment__not_set">Ni določeno</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Vnesli ste neveljaven URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">Vnesli ste neveljaven naslov gostitelja</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odkleni</string>
   <!--prompt_mms_activity-->

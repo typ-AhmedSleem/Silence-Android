@@ -231,22 +231,16 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Немате кључ идентитета.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Прималац нема кључ идентитета.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Прималац нема кључ идентитета!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Очитај њихов кључ за поређење</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Очитај мој кључ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">УПОЗОРЕЊЕ, очитани кључ се НЕ поклапа! Проверите текст отиска пажљиво.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НИЈЕ оверен!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Њихов кључ је тачан. Потребно је такође да оверите ваш кључ са њима.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Оверен!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Немате кључ идентитета!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Немате кључ идентитета.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Очитај за поређење</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Очитај ме за поређење</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">УПОЗОРЕЊЕ, очитани кључ се НЕ поклапа!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">НИЈЕ оверен!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Очитани кључ се поклапа!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Оверен!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Отисак мог идентитета</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Започети унаточ постојећем захтеву?</string>
@@ -259,8 +253,6 @@
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Захтев за окончањем сесије шифрован за непостојећу сесију...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Грешка дешифровања поруке.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Грешка дешифровања поруке.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Повезујем се на ММС сервер...</string>
   <string name="MmsDatabase_downloading_mms">Преузимам ММС...</string>
@@ -367,13 +359,6 @@
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">ОВЕРИ</string>
   <string name="message_recipients_list_item__resend">ПОШАЉИ ПОНОВО</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Потребне су ручне ММС поставке за ваш телефон.</string>
-  <string name="MmsPreferencesFragment__enabled">Омогућене</string>
-  <string name="MmsPreferencesFragment__disabled">Онемогућене</string>
-  <string name="MmsPreferencesFragment__not_set">Није постављено</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Унети текст није исправан УРИ</string>
-  <string name="MmsPreferencesFragment__invalid_host">Унети текст није исправна адреса домаћина</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Откључај</string>
   <!--prompt_mms_activity-->

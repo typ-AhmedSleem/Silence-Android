@@ -204,22 +204,16 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nie posiadasz klucza tożsamości.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Odbiorca nie posiada klucza tożsamości.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Odbiorca nie posiada klucza tożsamości!</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skanuj ich klucz aby porównać</string>
   <string name="VerifyIdentityActivity_get_my_key_scanned">Przeskanuj mój klucz</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UWAGA, zeskanowane klucze NIE ZGADZAJĄ się! Proszę sprawdź klucz ostrożnie!</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIE zweryfikowany!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ich klucz jest poprawny. Niezbędna będzie także weryfikacja Twojego klucza z odbiorcami.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Zweryfikowano!</string>
-  <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Nie posiadasz klucza tożsamości!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Nie posiadasz klucza tożsamości.</string>
   <string name="ViewIdentityActivity_scan_to_compare">Skanuj aby porównać</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Weź zeskanowane do porównania</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UWAGA, zeskanowane klucze NIE ZGADZAJĄ SIĘ!</string>
-  <string name="ViewIdentityActivity_not_verified_exclamation">Niezweryfikowany!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Zeskanowane klucze zgadzają się!</string>
-  <string name="ViewIdentityActivity_verified_exclamation">Zweryfikowano!</string>
   <string name="ViewIdentityActivity_my_identity_fingerprint">Mój odcisk klucza</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Rozpocząć pomimo istniejącego żądania?</string>
@@ -231,8 +225,6 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Wiadomość zaszyfrowana dla nieistniejącej sesji...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Błąd odszyfrowania wiadomości.</string>
-  <!--ThreadDatabase-->
-  <string name="ThreadDatabase_error_decrypting_message">Błąd odszyfrowania wiadomości.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Łączenie z serwerem MMS...</string>
   <string name="MmsDatabase_downloading_mms">Pobieranie MMS...</string>
@@ -336,13 +328,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <!--message_recipients_list_item-->
   <string name="message_recipients_list_item__verify">WERYFIKUJ</string>
   <string name="message_recipients_list_item__resend">WYŚLIJ PONOWNIE</string>
-  <!--MmsPreferencesFragment-->
-  <string name="MmsPreferencesFragment__manual_mms_settings_are_required">Ręczne ustawienia MMS są wymagane dla Twojego telefonu.</string>
-  <string name="MmsPreferencesFragment__enabled">Włączony</string>
-  <string name="MmsPreferencesFragment__disabled">Wyłączony</string>
-  <string name="MmsPreferencesFragment__not_set">Nie ustawiono</string>
-  <string name="MmsPreferencesFragment__invalid_uri">Wpisany tekst nie zawierał poprawnego URI</string>
-  <string name="MmsPreferencesFragment__invalid_host">Wpisany tekst nie zawierał ważnego hosta</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odblokuj</string>
   <!--prompt_mms_activity-->
