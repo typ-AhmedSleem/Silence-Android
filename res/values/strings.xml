@@ -278,7 +278,7 @@
     <string name="VerifyIdentityActivity_verified_exclamation">Verified!</string>
 
     <!-- ViewIdentityActivity -->
-    <string name="ViewIdentityActivity_scan_to_compare">Scan to compare</string>
+    <string name="ViewIdentityActivity_scan_to_compare">Scan a key to compare</string>
     <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">WARNING, the scanned key DOES NOT match!</string>
     <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">The scanned key matches!</string>
     <string name="ViewIdentityActivity_my_identity_fingerprint">My identity fingerprint</string>
@@ -292,7 +292,7 @@
     <string name="MessageDisplayHelper_bad_encrypted_message">Bad encrypted message...</string>
     <string name="MessageDisplayHelper_decrypting_please_wait">Decrypting, please wait...</string>
     <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message encrypted for non-existing session...</string>
-    <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">End session request encrypted for non-existing session...</string>
+    <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Request to end a non-existing session...</string>
 
     <!-- EncryptingSmsDatabase -->
     <string name="EncryptingSmsDatabase_error_decrypting_message">Error decrypting message.</string>
@@ -392,7 +392,7 @@
     <string name="log_submit_activity__log_fetch_failed">Could not grab logs from your device. You can still use ADB to get debug logs instead.</string>
     <string name="log_submit_activity__thanks">Thanks for your help!</string>
     <string name="log_submit_activity__submitting">Submitting</string>
-    <string name="log_submit_activity__posting_logs">Posting logs to gist&#8230;</string>
+    <string name="log_submit_activity__posting_logs">Posting the logs to gist...</string>
 
     <!-- database_migration_activity -->
     <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Would you like to import your existing text messages into SMSSecure\'s encrypted database?</string>
@@ -414,7 +414,7 @@
     </string>
     <string name="import_fragment__import_encrypted_backup">Import encrypted backup</string>
     <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-        Restore a previously exported encrypted SMSSecure backup.
+        Restore a previously exported encrypted backup.
     </string>
     <string name="import_fragment__import_plaintext_backup">Import plaintext backup</string>
     <string name="import_fragment__import_a_plaintext_backup_file">
@@ -510,7 +510,7 @@
     <string name="preferences__screen_security_summary">Screen security %s</string>
     <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automatically complete key exchanges for new sessions or for existing sessions with the same identity key</string>
     <string name="preferences__disable_screen_security_to_allow_screen_shots">Block screenshots in the recents list and inside the app</string>
-    <string name="preferences__forget_passphrase_from_memory_after_some_interval">Forget passphrase from memory after some interval</string>
+    <string name="preferences__forget_passphrase_from_memory_after_some_interval">Require the passphrase to access messages after a given time</string>
     <string name="preferences__timeout_passphrase">Timeout passphrase</string>
     <string name="preferences__pref_timeout_interval_dialogtitle">Select passphrase timeout</string>
     <string name="preferences__pref_timeout_interval_title">Timeout interval</string>
@@ -636,7 +636,7 @@
     <string name="conversation_list__menu_search">Search</string>
 
     <!-- conversation_list_item_view -->
-    <string name="conversation_list_item_view__contact_photo_image">Contact Photo Image</string>
+    <string name="conversation_list_item_view__contact_photo_image">Contact avatar</string>
     <string name="conversation_list_item_view__error_alert">Error alert</string>
 
     <!-- conversation_list_fragment -->
@@ -679,7 +679,7 @@
     <string name="reminder_header_sms_default_title">Use as default SMS app?</string>
     <string name="reminder_header_sms_default_text">Tap to make SMSSecure your default SMS app.</string>
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
-    <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into its encrypted database.</string>
+    <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into an encrypted database.</string>
 
     <!-- MediaPreviewActivity -->
     <string name="MediaPreviewActivity_you">You</string>
