@@ -265,7 +265,6 @@
 
     <!-- ThreadRecord -->
     <string name="ThreadRecord_left_the_group">Left the group...</string>
-    <string name="TheadRecord_secure_session_ended">Secure session ended.</string>
     <string name="ThreadRecord_draft">Draft:</string>
 
     <!-- VerifyIdentityActivity -->
@@ -299,6 +298,7 @@
     <string name="MessageDisplayHelper_bad_encrypted_message">Bad encrypted message...</string>
     <string name="MessageDisplayHelper_decrypting_please_wait">Decrypting, please wait...</string>
     <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message encrypted for non-existing session...</string>
+    <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">End session request encrypted for non-existing session...</string>
 
     <!-- EncryptingSmsDatabase -->
     <string name="EncryptingSmsDatabase_error_decrypting_message">Error decrypting message.</string>

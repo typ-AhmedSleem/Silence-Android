@@ -85,7 +85,11 @@ public class SmsMessageRecord extends MessageRecord {
     } else if (SmsDatabase.Types.isDecryptInProgressType(type)) {
       return emphasisAdded(context.getString(R.string.MessageDisplayHelper_decrypting_please_wait));
     } else if (SmsDatabase.Types.isNoRemoteSessionType(type)) {
-      return emphasisAdded(context.getString(R.string.MessageDisplayHelper_message_encrypted_for_non_existing_session));
+      if (SmsDatabase.Types.isEndSessionType(type)) {
+        return emphasisAdded(context.getString(R.string.MessageDisplayHelper_end_session_encrypted_for_non_existing_session));
+      } else {
+        return emphasisAdded(context.getString(R.string.MessageDisplayHelper_message_encrypted_for_non_existing_session));
+      }
     } else if (!getBody().isPlaintext()) {
       return emphasisAdded(context.getString(R.string.MessageNotifier_encrypted_message));
     } else if (SmsDatabase.Types.isEndSessionType(type)) {
