@@ -13,3 +13,6 @@
 [submodule "libs/com.readystatesoftware.systembartint.SystemBarTintManager"]
 	path = libs/com.readystatesoftware.systembartint.SystemBarTintManager
 	url = https://github.com/jgilfelt/SystemBarTint.git
+[submodule "libs/com.commonsware.cwac.camera"]
+	path = libs/com.commonsware.cwac.camera
+	url = https://github.com/commonsguy/cwac-camera

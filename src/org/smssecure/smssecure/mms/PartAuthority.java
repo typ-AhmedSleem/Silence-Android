@@ -5,11 +5,13 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.net.Uri;
 
+import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.providers.PartProvider;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -46,7 +48,11 @@ public class PartAuthority {
         partUri = new PartUriParser(uri);
         return partDatabase.getThumbnailStream(masterSecret, partUri.getPartId());
       default:
-        return context.getContentResolver().openInputStream(uri);
+        String tempMediaDir = context.getDir("media", Context.MODE_PRIVATE).getPath();
+        if (uri.getPath().startsWith(tempMediaDir))
+          return  new DecryptingPartInputStream(new File(uri.getPath()), masterSecret);
+        else
+          return context.getContentResolver().openInputStream(uri);
       }
     } catch (SecurityException se) {
       throw new IOException(se);
