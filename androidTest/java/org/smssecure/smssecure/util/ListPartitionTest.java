@@ -1,11 +1,13 @@
 package org.smssecure.smssecure.util;
 
+import org.smssecure.smssecure.SMSSecureTestCase;
+
 import java.util.LinkedList;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ListPartitionTest {
+public class ListPartitionTest extends SMSSecureTestCase {
 
   public void testPartitionEven() {
     List<Integer> list = new LinkedList<>();
