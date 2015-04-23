@@ -102,6 +102,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     super.onResume();
     dynamicTheme.onResume(this);
     dynamicLanguage.onResume(this);
+    getSupportActionBar().setTitle(R.string.AndroidManifest__message_details);
   }
 
   private void initializeResources() {
