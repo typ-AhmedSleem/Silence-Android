@@ -11,6 +11,7 @@ for file in "$@"; do
               -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
               -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.SMSSecure/g' \
               -e 's/TextSecurePreferences/SMSSecurePreferences/g' \
+              -e 's/TextSecureTestCase/SMSSecureTestCase/g' \
               -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
               -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
               "$file"
