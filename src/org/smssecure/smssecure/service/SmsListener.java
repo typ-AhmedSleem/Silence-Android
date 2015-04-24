@@ -103,9 +103,6 @@ public class SmsListener extends BroadcastReceiver {
     if (!ApplicationMigrationService.isDatabaseImported(context))
       return false;
 
-    if (isChallenge(context, intent))
-      return false;
-
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT &&
         SMS_RECEIVED_ACTION.equals(intent.getAction()) &&
         Util.isDefaultSmsProvider(context))
@@ -120,29 +117,6 @@ public class SmsListener extends BroadcastReceiver {
     }
 
     return WirePrefix.isPrefixedMessage(messageBody);
-  }
-
-  private boolean isChallenge(Context context, Intent intent) {
-    String messageBody = getSmsMessageBodyFromIntent(intent);
-
-    if (messageBody == null)
-      return false;
-
-    if (messageBody.matches(".*Your SMSSecure verification code: [0-9]{3,4}-[0-9]{3,4}") &&
-        SMSSecurePreferences.isVerifying(context))
-    {
-      return true;
-    }
-
-    return false;
-  }
-
-  private String parseChallenge(Context context, Intent intent) {
-    String messageBody    = getSmsMessageBodyFromIntent(intent);
-    String[] messageParts = messageBody.split(":");
-    String[] codeParts    = messageParts[1].trim().split("-");
-
-    return codeParts[0] + codeParts[1];
   }
 
   @Override
