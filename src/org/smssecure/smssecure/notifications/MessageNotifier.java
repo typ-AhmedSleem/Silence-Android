@@ -24,12 +24,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat.Action;
 import android.support.v4.app.NotificationCompat.BigTextStyle;
 import android.support.v4.app.NotificationCompat.InboxStyle;
 import android.text.Spannable;
@@ -51,6 +53,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
@@ -165,22 +168,33 @@ public class MessageNotifier {
       return;
     }
 
-    List<NotificationItem>notifications = notificationState.getNotifications();
-    NotificationCompat.Builder builder  = new NotificationCompat.Builder(context);
-    Recipient recipient                 = notifications.get(0).getIndividualRecipient();
+    List<NotificationItem>     notifications  = notificationState.getNotifications();
+    NotificationCompat.Builder builder        = new NotificationCompat.Builder(context);
+    Recipient                  recipient      = notifications.get(0).getIndividualRecipient();
+    Bitmap                     recipientPhoto = recipient.getContactPhoto();
 
+    if (recipientPhoto != null) builder.setLargeIcon(BitmapUtil.getCircleBitmap(recipientPhoto));
     builder.setSmallIcon(R.drawable.icon_notification);
-    builder.setLargeIcon(recipient.getContactPhoto());
+    builder.setColor(context.getResources().getColor(R.color.textsecure_primary));
     builder.setContentTitle(recipient.toShortString());
     builder.setContentText(notifications.get(0).getText());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
     builder.setContentInfo(String.valueOf(notificationState.getMessageCount()));
+    builder.setPriority(NotificationCompat.PRIORITY_HIGH);
     builder.setNumber(notificationState.getMessageCount());
+    builder.setCategory(NotificationCompat.CATEGORY_MESSAGE);
     builder.setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(DeleteReceiver.DELETE_REMINDER_ACTION), 0));
+    if (recipient.getContactUri() != null) builder.addPerson(recipient.getContactUri().toString());
+
+    long timestamp = notifications.get(0).getTimestamp();
+    if (timestamp != 0) builder.setWhen(timestamp);
 
     if (masterSecret != null) {
-      builder.addAction(R.drawable.check, context.getString(R.string.MessageNotifier_mark_as_read),
-                        notificationState.getMarkAsReadIntent(context, masterSecret));
+      Action markAsReadAction = new Action(R.drawable.check,
+                                           context.getString(R.string.MessageNotifier_mark_as_read),
+                                           notificationState.getMarkAsReadIntent(context, masterSecret));
+      builder.addAction(markAsReadAction);
+      builder.extend(new NotificationCompat.WearableExtender().addAction(markAsReadAction));
     }
 
     SpannableStringBuilder content = new SpannableStringBuilder();
@@ -212,23 +226,31 @@ public class MessageNotifier {
     List<NotificationItem> notifications = notificationState.getNotifications();
     NotificationCompat.Builder builder   = new NotificationCompat.Builder(context);
 
+    builder.setColor(context.getResources().getColor(R.color.textsecure_primary));
     builder.setSmallIcon(R.drawable.icon_notification);
-    builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
-                                                      R.drawable.icon_notification));
-    builder.setContentTitle(String.format(context.getString(R.string.MessageNotifier_d_new_messages),
-                                          notificationState.getMessageCount()));
-    builder.setContentText(String.format(context.getString(R.string.MessageNotifier_most_recent_from_s),
-                                         notifications.get(0).getIndividualRecipientName()));
+    builder.setContentTitle(context.getString(R.string.app_name));
+    builder.setSubText(context.getString(R.string.MessageNotifier_d_messages_in_d_conversations,
+                                         notificationState.getMessageCount(),
+                                         notificationState.getThreadCount()));
+    builder.setContentText(context.getString(R.string.MessageNotifier_most_recent_from_s,
+                                             notifications.get(0).getIndividualRecipientName()));
     builder.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, ConversationListActivity.class), 0));
 
     builder.setContentInfo(String.valueOf(notificationState.getMessageCount()));
     builder.setNumber(notificationState.getMessageCount());
+    builder.setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+    long timestamp = notifications.get(0).getTimestamp();
+    if (timestamp != 0) builder.setWhen(timestamp);
 
     builder.setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(DeleteReceiver.DELETE_REMINDER_ACTION), 0));
 
     if (masterSecret != null) {
-      builder.addAction(R.drawable.check, context.getString(R.string.MessageNotifier_mark_all_as_read),
-                        notificationState.getMarkAsReadIntent(context, masterSecret));
+       Action markAllAsReadAction = new Action(R.drawable.check,
+                                               context.getString(R.string.MessageNotifier_mark_all_as_read),
+                                               notificationState.getMarkAsReadIntent(context, masterSecret));
+       builder.addAction(markAllAsReadAction);
+       builder.extend(new NotificationCompat.WearableExtender().addAction(markAllAsReadAction));
     }
 
     InboxStyle style = new InboxStyle();
@@ -237,6 +259,9 @@ public class MessageNotifier {
     while(iterator.hasPrevious()) {
       NotificationItem item = iterator.previous();
       style.addLine(item.getTickerText());
+      if (item.getIndividualRecipient().getContactUri() != null) {
+        builder.addPerson(item.getIndividualRecipient().getContactUri().toString());
+      }
     }
 
     builder.setStyle(style);
@@ -306,6 +331,10 @@ public class MessageNotifier {
       CharSequence    body             = record.getDisplayBody();
       Uri             image            = null;
       Recipients      threadRecipients = null;
+      long            timestamp;
+
+      if (record.isPush()) timestamp = record.getDateSent();
+      else                 timestamp = record.getDateReceived();
 
       if (threadId != -1) {
         threadRecipients = DatabaseFactory.getThreadDatabase(context).getRecipientsForThreadId(threadId);
@@ -321,7 +350,7 @@ public class MessageNotifier {
         body = SpanUtil.italic(message, italicLength);
       }
 
-      notificationState.addNotification(new NotificationItem(recipient, recipients, threadRecipients, threadId, body, image));
+      notificationState.addNotification(new NotificationItem(recipient, recipients, threadRecipients, threadId, body, image, timestamp));
     }
 
     reader.close();
@@ -369,7 +398,7 @@ public class MessageNotifier {
     alarmIntent.putExtra("reminder_count", count);
 
     PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-    long          timeout       = TimeUnit.SECONDS.toMillis(10);
+    long          timeout       = TimeUnit.MINUTES.toMillis(2);
 
     alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + timeout, pendingIntent);
   }

@@ -22,6 +22,7 @@ import android.database.Cursor;
 import android.database.MergeCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -371,7 +372,7 @@ public class ThreadDatabase extends Database {
     }
   }
 
-  public Recipients getRecipientsForThreadId(long threadId) {
+  public @Nullable Recipients getRecipientsForThreadId(long threadId) {
     SQLiteDatabase db = databaseHelper.getReadableDatabase();
     Cursor cursor     = null;
 
@@ -390,14 +391,14 @@ public class ThreadDatabase extends Database {
     return null;
   }
 
-  public void update(long threadId) {
+  public boolean update(long threadId) {
     MmsSmsDatabase mmsSmsDatabase = DatabaseFactory.getMmsSmsDatabase(context);
     long count                    = mmsSmsDatabase.getConversationCount(threadId);
 
     if (count == 0) {
       deleteThread(threadId);
       notifyConversationListListeners();
-      return;
+      return true;
     }
 
     MmsSmsDatabase.Reader reader = null;
@@ -413,15 +414,17 @@ public class ThreadDatabase extends Database {
         else                 timestamp = record.getDateReceived();
 
         updateThread(threadId, count, record.getBody().getBody(), timestamp, record.getType());
+        notifyConversationListListeners();
+        return false;
       } else {
         deleteThread(threadId);
+        notifyConversationListListeners();
+        return true;
       }
     } finally {
       if (reader != null)
         reader.close();
     }
-
-    notifyConversationListListeners();
   }
 
   public static interface ProgressListener {
