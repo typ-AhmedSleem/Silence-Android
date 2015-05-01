@@ -13,6 +13,7 @@ import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
 import org.smssecure.smssecure.mms.ApnUnavailableException;
+import org.smssecure.smssecure.mms.CompatMmsConnection;
 import org.smssecure.smssecure.mms.MediaConstraints;
 import org.smssecure.smssecure.mms.MmsSendResult;
 import org.smssecure.smssecure.mms.OutgoingLegacyMmsConnection;
@@ -72,7 +73,7 @@ public class MmsSendJob extends SendJob {
       validateDestinations(message);
 
       final byte[]        pduBytes = getPduBytes(masterSecret, message);
-      final SendConf      sendConf = getMmsConnection(context).send(pduBytes);
+      final SendConf      sendConf = new CompatMmsConnection(context).send(pduBytes);
       final MmsSendResult result   = getSendResult(sendConf, message);
 
       if (result.isUpgradedSecure()) {
@@ -80,7 +81,7 @@ public class MmsSendJob extends SendJob {
       }
 
       database.markAsSent(messageId, result.getMessageId(), result.getResponseStatus());
-    } catch (UndeliverableMessageException | IOException | ApnUnavailableException e) {
+    } catch (UndeliverableMessageException | IOException e) {
       Log.w(TAG, e);
       database.markAsSentFailed(messageId);
       notifyMediaMessageDeliveryFailed(context, messageId);
@@ -100,16 +101,6 @@ public class MmsSendJob extends SendJob {
   public void onCanceled() {
     DatabaseFactory.getMmsDatabase(context).markAsSentFailed(messageId);
     notifyMediaMessageDeliveryFailed(context, messageId);
-  }
-
-  private OutgoingMmsConnection getMmsConnection(Context context)
-      throws ApnUnavailableException
-  {
-    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-      return new OutgoingLollipopMmsConnection(context);
-    } else {
-      return new OutgoingLegacyMmsConnection(context);
-    }
   }
 
   private byte[] getPduBytes(MasterSecret masterSecret, SendReq message)
