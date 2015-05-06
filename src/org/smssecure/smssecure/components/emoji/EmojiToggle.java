@@ -1,4 +1,4 @@
-package org.smssecure.smssecure.components;
+package org.smssecure.smssecure.components.emoji;
 
 
 import android.content.Context;

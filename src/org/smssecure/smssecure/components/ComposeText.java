@@ -9,7 +9,9 @@ import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.AttributeSet;
 
-public class ComposeText extends AppCompatEditText {
+import org.smssecure.smssecure.components.emoji.EmojiEditText;
+
+public class ComposeText extends EmojiEditText {
   public ComposeText(Context context) {
     super(context);
   }

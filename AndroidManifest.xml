@@ -3,7 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="org.smssecure.smssecure">
 
-    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable"/>
+    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip"/>
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
                 android:label="Access to SMSSecure Secrets"

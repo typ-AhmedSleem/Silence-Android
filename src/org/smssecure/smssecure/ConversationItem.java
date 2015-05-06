@@ -55,7 +55,6 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.util.DateUtils;
-import org.smssecure.smssecure.util.Emoji;
 import org.smssecure.smssecure.util.TelephonyUtil;
 
 import java.util.Locale;
@@ -235,9 +234,7 @@ public class ConversationItem extends LinearLayout {
     if (isCaptionlessMms(messageRecord)) {
       bodyText.setVisibility(View.GONE);
     } else {
-      bodyText.setText(Emoji.getInstance(context).emojify(messageRecord.getDisplayBody(),
-                                                          new Emoji.InvalidatingPageLoadedListener(bodyText)),
-                       TextView.BufferType.SPANNABLE);
+      bodyText.setText(messageRecord.getDisplayBody());
       bodyText.setVisibility(View.VISIBLE);
     }
 
