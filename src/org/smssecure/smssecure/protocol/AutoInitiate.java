@@ -5,18 +5,50 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import org.smssecure.smssecure.ApplicationPreferencesActivity;
+import com.google.i18n.phonenumbers.NumberParseException;
+import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberType;
+
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.SessionUtil;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.Recipients;
+
+import java.util.Locale;
 
 public class AutoInitiate {
+  private static final String TAG = AutoInitiate.class.getSimpleName();
 
   public static final String WHITESPACE_TAG = "             ";
 
-  public static boolean isTaggable(String message) {
+  public static boolean isTaggableMessage(String message) {
     return message.matches(".*[^\\s].*") &&
            message.replaceAll("\\s+$", "").length() + WHITESPACE_TAG.length() <= 158;
+  }
+
+  public static boolean isTaggableDestination(Recipients recipients){
+    // Be safe - err on the side of not tagging
+
+    if (recipients.isGroupRecipient())
+      return false;
+
+    PhoneNumberUtil util = PhoneNumberUtil.getInstance();
+    try {
+      PhoneNumber num = util.parse(recipients.getPrimaryRecipient().getNumber(),
+                                   Locale.getDefault().getCountry());
+      PhoneNumberType type = util.getNumberType(num);
+
+      Log.d(TAG, "Number type: " + type.toString());
+
+      return type == PhoneNumberType.FIXED_LINE ||
+             type == PhoneNumberType.MOBILE     ||
+             type == PhoneNumberType.FIXED_LINE_OR_MOBILE;
+    }
+    catch (NumberParseException e){
+      Log.w(TAG, "Couldn't get number type (country: " + Locale.getDefault().getCountry() + ")");
+      return false;
+    }
   }
 
   public static boolean isTagged(String message) {
