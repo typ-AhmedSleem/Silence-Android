@@ -51,7 +51,7 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationItem_error_not_delivered">Nicht zugestellt</string>
   <string name="ConversationItem_view_secure_media_question">Verschlüsselte Datei anzeigen?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Diese Datei ist in einer verschlüsselten Datenbank gespeichert. Zur Anzeige muss sie vorübergehend entschlüsselt abgespeichert werden. Möchten Sie dennoch fortfahren?</string>
-  <string name="ConversationItem_error_received_stale_key_exchange_message">Fehler: Abgelaufene Schlüsselaustausch-Nachricht empfangen.</string>
+  <string name="ConversationItem_error_received_stale_key_exchange_message">Abgelaufene Schlüsselaustausch-Nachricht empfangen.</string>
   <string name="ConversationItem_received_key_exchange_message_click_to_process">Schlüsselaustausch-Nachricht empfangen. Antippen um fortzufahren.</string>
   <string name="ConversationItem_group_action_left">%1$s hat die Gruppe verlassen.</string>
   <string name="ConversationItem_click_for_details">Antippen für Details</string>
@@ -63,9 +63,9 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Sichere Unterhaltung starten?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Sichere Unterhaltung mit %s starten?</string>
-  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Sie haben eine Nachricht von jemandem erhalten, der verschlüsselte SMSSecure Sitzungen unterstützt. Möchten Sie eine sichere Sitzung beginnen?</string>
-  <string name="ConversationActivity_abort_secure_session_confirmation">Beenden der sicheren Unterhaltung bestätigen </string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Wollen Sie die sichere Unterhaltung wirklich beenden?</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Nachricht von einem SMSSecure-Nutzer erhalten. Sichere verschlüsselte Sitzung einleiten?</string>
+  <string name="ConversationActivity_abort_secure_session_confirmation">Sichere Sitzung beenden?</string>
+  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Wollen Sie die sichere Sitzung wirklich beenden?</string>
   <string name="ConversationActivity_delete_thread_confirmation">Löschen der Unterhaltung bestätigen</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Soll diese Unterhaltung unwiderruflich gelöscht werden?</string>
   <string name="ConversationActivity_add_attachment">Anhang hinzufügen</string>
@@ -74,8 +74,8 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Leider ist ein Fehler beim Hinzufügen des Anhangs aufgetreten.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Die ausgewählte Videodatei überschreitet leider die maximal mögliche Nachrichtengröße (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Die ausgewählte Audiodatei überschreitet leider die maximal mögliche Nachrichtengröße (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Die Empfängeradresse ist keine gültige SMS- oder E-Mail-Adresse!</string>
-  <string name="ConversationActivity_message_is_empty_exclamation">Die Nachricht ist leer!</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Empfänger hat keine gültige SMS- oder E-Mail-Adresse!</string>
+  <string name="ConversationActivity_message_is_empty_exclamation">Die zu sendende Nachricht ist leer!</string>
   <string name="ConversationActivity_group_members">Gruppenmitglieder</string>
   <string name="ConversationActivity_group_conversation">Gruppenunterhaltung</string>
   <string name="ConversationActivity_unnamed_group">Unbenannte Gruppe</string>
@@ -89,16 +89,17 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationActivity_transport_insecure_mms">Unsichere MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sichere SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Sichere MMS</string>
-  <string name="ConversationActivity_install_smssecure">Installiere SMSSecure: %s</string>
-  <string name="ConversationActivity_recipient_self">Mit anderen Leuten können sichere Sitzungen aufgebaut werden.</string>
+  <string name="ConversationActivity_install_smssecure">Installieren Sie SMSSecure: %s</string>
+  <string name="ConversationActivity_recipient_self">Sichere Sitzungen können nur mit anderen Leuten aufgebaut werden.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS nicht unterstützt</string>
-  <string name="ConversationActivity_mms_not_supported_message">Diese Nachricht kann nicht gesendet werden, da Ihre Kurzmitteilungszentrale MMS nicht unterstützt.</string>
+  <string name="ConversationActivity_mms_not_supported_message">Diese Nachricht kann nicht gesendet werden, da Ihr Mobilfunkbetreiber MMS nicht unterstützt.</string>
+  <string name="ConversationActivity_specify_recipient">Bitte einen Kontakt auswählen</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Nachrichtendetails</string>
   <string name="ConversationFragment_confirm_message_delete">Löschen der Nachricht bestätigen</string>
   <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Sind Sie sicher, dass Sie alle ausgewählten Nachrichten unwiderruflich löschen möchten?</string>
   <string name="ConversationFragment_save_to_sd_card">Im Gerätespeicher speichern?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Das Speichern der Datei im Gerätespeicher ermöglicht allen anderen installierten Apps darauf Zugriff.\n\nMöchten Sie trotzdem fortfahren?</string>
+  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Das Speichern des Anhangs im Gerätespeicher ermöglicht allen anderen installierten Anwendungen darauf Zugriff.\n\nTrotzdem fortfahren?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Fehler beim Speichern des Anhangs im Gerätespeicher!</string>
   <string name="ConversationFragment_success_exclamation">Erfolgreich!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kein Schreibzugriff auf Gerätespeicher!</string>
@@ -235,6 +236,7 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende Unterhaltung verschlüsselt...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Anfrage an eine nicht vorhandene Sitzung beenden...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsDatabase-->
@@ -375,6 +377,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="AndroidManifest__media_preview">Dateivorschau</string>
   <string name="AndroidManifest__media_overview">Alle Bilder</string>
   <string name="AndroidManifest__media_overview_named">Alle Bilder mit %1$s</string>
+  <string name="AndroidManifest__message_details">Nachrichtendetails</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Datensicherung</string>
   <string name="arrays__my_identity_key">Mein Schlüssel</string>
@@ -457,7 +460,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="preferences__custom">Benutzerdefiniert</string>
   <string name="preferences__advanced">Weitere Einstellungen</string>
   <string name="preferences__app_protection">App-Schutz</string>
-  <string name="preferences__mms_user_agent">MMS Benutzer-Agent</string>
+  <string name="preferences__mms_user_agent">MMS-Benutzer-Agent</string>
   <string name="preferences__advanced_mms_access_point_names">Manuelle MMS-Einstellungen</string>
   <string name="preferences__enable_manual_mms">Manuelle MMS-Einstellungen</string>
   <string name="preferences__override_system_mms_settings">Statt der Systemeinstellungen für MMS die unten genannten Einstellungen benutzen</string>

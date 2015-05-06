@@ -43,7 +43,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <!--ConfirmIdentityDialog-->
   <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">A chave de identificação para %1$s foi alterada. 
 Isto pode significar que alguém está a tentar intercetar as suas comunicações ou
-que %2$s reinstalou o SMSSecure e agora tem uma nova chave de identidade</string>
+que %2$s reinstalou o SMSSecure e agora tem uma nova chave de identidade.</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Você deve verificar a identidade deste contacto.</string>
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Tamanho da mensagem: %d KB</string>

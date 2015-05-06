@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="Distribution_title">SMSSecure</string>
+  <string name="Distribution_tagline">Šifrirana sporočila SMS/MMS na preprost način!</string>
+  <string name="Distribution_description">SMSSecure je aplikacija, s katero lahko varno komunicirate s prijatelji, saj so vaša sporočila SMS/MMS šifrirana.</string>
+  <string name="Distribution_long_description">
+SMSSecure je aplikacija, ki vam omogoča varno komuniciranje s prijatelji preko šifriranih SMS/MMS sporočil.
+Z aplikacijo SMSSecure lahko varno pošiljate sporočila SMS in delite multimedijske datoteke.
+
+Aplikacija SMSSecure je:
+* Preprosta. Deluje kot katera koli aplikacija za pošiljanje sporočil SMS. Ne rabite se nikamor prijaviti, oziroma kjerkoli puščati svojih osebnih podatkov.
+* Zanesljiva. Za komunikacijo uporablja šifrirana sporočila SMS. Tu ni nobenega strežnika, internetna povezava ni potrebna.
+* Zasebna. Za šifriranje uporablja protokol TextSecure, ki vaša sporočila naredi dostopna samo naslovniku in nikomur drugemu.
+* Varna. Vaša sporočila so lahko šifrirana tudi lokalno - na sami napravi. S tem jih zaščitite, če telefon izgubite ali vam ga ukradejo.
+* Odprtokodna. Koda aplikacije je odprta in vsakomur na voljo za varnostni pregled.
+
+Hrošče, težave in želje lahko sporočite na:
+https://github.com/SMSSecure/SMSSecure/issues
+
+Izvorna koda je na voljo na:
+https://github.com/SMSSecure/SMSSecure
+
+Več o aplikaciji:
+http://smssecure.org</string>
+</resources>

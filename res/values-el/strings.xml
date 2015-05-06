@@ -102,6 +102,7 @@
   <string name="ConversationActivity_recipient_self">Ασφαλής συνεδρίες μπορουν να διαπιστωθουν μόνο με άλλους ανθρώπους.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS δεν υποστηρίζεται</string>
   <string name="ConversationActivity_mms_not_supported_message">Αυτό το μήνυμα δεν μπορεί να αποσταλεί δεδομένου ότι φορέα σας δεν υποστηρίζει MMS</string>
+  <string name="ConversationActivity_specify_recipient">Παρακαλώ επιλέξτε μια επαφή</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_confirm_message_delete">Επιβεβαίωση Διαγραφής Μηνύματος</string>
@@ -263,6 +264,7 @@
   <string name="MessageDisplayHelper_bad_encrypted_message">Προβληματικό κρυπτογραφημένο μήνυμα...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Αποκρυπτογράφηση, παρακαλώ περιμένετε...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Το μήνυμα κρυπτογραφήθηκε για ανύπαρκτη συζήτηση...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Αίτημα να τελειώσει μια μη υπάρχουσα περίοδος...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Σφάλμα αποκρυπτογράφησης του μηνύματος.</string>
   <!--MmsDatabase-->
@@ -406,6 +408,7 @@
   <string name="AndroidManifest__media_preview">Προεπισκόπηση  Πολυμέσων</string>
   <string name="AndroidManifest__media_overview">Όλες οι εικόνες</string>
   <string name="AndroidManifest__media_overview_named">Όλες οι εικόνες με  %1$s</string>
+  <string name="AndroidManifest__message_details">Στοιχεία μηνύματος</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Εισαγωγή / εξαγωγή</string>
   <string name="arrays__my_identity_key">Το Κλειδί Ταυτότητάς Μου</string>

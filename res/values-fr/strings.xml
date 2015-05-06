@@ -97,6 +97,7 @@ vérifier ce contact.</string>
   <string name="ConversationActivity_recipient_self">Vous ne pouvez pas commencer une session chiffrée avec vous-même !</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS non supportés</string>
   <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut-être envoyé car votre opérateur ne supporte pas les MMS.</string>
+  <string name="ConversationActivity_specify_recipient">Veuillez sélectionner un contact</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Détails du message</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmer la suppression du message</string>
