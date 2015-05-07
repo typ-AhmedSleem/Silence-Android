@@ -20,4 +20,4 @@ if [ ! -f "./build/outputs/apk/SMSSecure-debug.apk" ]; then
 fi
 
 COMMIT=$(git rev-parse --short HEAD)
-curl --form "fileupload=@./build/outputs/apk/SMSSecure-debug.apk;filename=SMSSecure-debug-$COMMIT.apk" -H "Authorization: KEY $1" https://files.smssecure.org/receive_apk
+curl --form "fileupload=@./build/outputs/apk/SMSSecure-debug.apk;filename=SMSSecure-debug-$COMMIT.apk" -H "Authorization: KEY $1" https://files.smssecure.org/
