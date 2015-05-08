@@ -7,3 +7,6 @@
 [submodule "libs/gradle-witness"]
 	path = libs/gradle-witness
 	url = https://github.com/WhisperSystems/gradle-witness.git
+[submodule "libs/com.amulyakhare.textdrawable"]
+	path = libs/com.amulyakhare.textdrawable
+	url = https://github.com/amulyakhare/TextDrawable.git
