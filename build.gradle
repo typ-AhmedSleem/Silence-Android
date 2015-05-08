@@ -38,7 +38,6 @@ dependencies {
         exclude module: 'support-annotations'
     }
 
-    compile 'com.soundcloud.android:android-crop:0.9.10@aar'
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.android.support:recyclerview-v7:21.0.3'
     compile 'com.melnykov:floatingactionbutton:1.1.0'
@@ -79,7 +78,6 @@ dependencyVerification {
             'com.github.bumptech.glide:glide:16936352b96aa604b030f2d2263fb0cc656933e6cdda0bf6ac681282d1f7f196',
             'com.makeramen:roundedimageview:7dda2e78c406760e5c356ccce59b0df46b5b171cf18abb891998594405021548',
             'com.afollestad:material-dialogs:c17205f0d300baa307599c428a5473a6659684c94a5f68ae3c2b84b5e4741172',
-            'com.soundcloud.android:android-crop:ffd4b973cf6e97f7d64118a0dc088df50e9066fd5634fe6911dd0c0c5d346177',
             'com.android.support:appcompat-v7:9a2355537c2f01cf0b95523605c18606b8d824017e6e94a05c77b0cfc8f21c96',
             'com.android.support:recyclerview-v7:e525ad3f33c84bb12b73d2dc975b55364a53f0f2d0697e043efba59ba73e22d2',
             'com.melnykov:floatingactionbutton:0679ad9f7d61eb7aeab91e8dc56358cdedd5b1c1b9c48464499ffa05c40d3985',

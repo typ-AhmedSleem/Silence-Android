@@ -18,59 +18,36 @@
 package org.smssecure.smssecure;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.protobuf.ByteString;
-import com.soundcloud.android.crop.Crop;
 
 import org.smssecure.smssecure.components.PushRecipientsPanel;
 import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.RecipientsEditor;
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.database.GroupDatabase;
 import org.smssecure.smssecure.database.ThreadDatabase;
-import org.smssecure.smssecure.mms.OutgoingGroupMediaMessage;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.sms.MessageSender;
-import org.smssecure.smssecure.util.BitmapDecodingException;
-import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.GroupUtil;
-import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.SelectedRecipientsAdapter;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.database.SMSSecureDirectory;
-import org.smssecure.smssecure.database.NotInDirectoryException;
 import org.whispersystems.textsecure.api.util.InvalidNumberException;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -78,10 +55,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import ws.com.google.android.mms.MmsException;
-
 import static org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
-import static org.whispersystems.textsecure.internal.push.PushMessageProtos.PushMessageContent.GroupContext;
 
 /**
  * Activity to create and update groups
@@ -227,7 +201,6 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
   @Override
   public void onActivityResult(int reqCode, int resultCode, Intent data) {
     super.onActivityResult(reqCode, resultCode, data);
-    Uri outputFile = Uri.fromFile(new File(getCacheDir(), "cropped"));
 
     if (data == null || resultCode != Activity.RESULT_OK)
       return;
