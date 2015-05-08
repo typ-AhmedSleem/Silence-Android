@@ -14,6 +14,7 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
 import org.smssecure.smssecure.mms.ApnUnavailableException;
+import org.smssecure.smssecure.mms.CompatMmsConnection;
 import org.smssecure.smssecure.mms.IncomingLollipopMmsConnection;
 import org.smssecure.smssecure.mms.IncomingMediaMessage;
 import org.smssecure.smssecure.mms.IncomingLegacyMmsConnection;
@@ -92,7 +93,7 @@ public class MmsDownloadJob extends MasterSecretJob {
 
       Log.w(TAG, "Downloading mms at " + Uri.parse(contentLocation).getHost());
 
-      RetrieveConf retrieveConf = getMmsConnection(context).retrieve(contentLocation, transactionId);
+      RetrieveConf retrieveConf = new CompatMmsConnection(context).retrieve(contentLocation, transactionId);
       if (retrieveConf == null) {
         throw new MmsException("RetrieveConf was null");
       }
@@ -123,16 +124,6 @@ public class MmsDownloadJob extends MasterSecretJob {
     } catch (InvalidMessageException e) {
       Log.w(TAG, e);
       database.markAsDecryptFailed(messageId, threadId);
-    }
-  }
-
-  private IncomingMmsConnection getMmsConnection(Context context)
-      throws ApnUnavailableException
-  {
-    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-      return new IncomingLollipopMmsConnection(context);
-    } else {
-      return new IncomingLegacyMmsConnection(context);
     }
   }
 
