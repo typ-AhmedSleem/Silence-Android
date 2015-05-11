@@ -248,6 +248,7 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="MessageDisplayHelper_bad_encrypted_message">Message mal chiffré…</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Déchiffrement, veuillez patienter…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message chiffré pour une session non-existante…</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Demande de fin de session chiffrée non-existante…</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Erreur lors du déchiffrement du message.</string>
   <!--MmsDatabase-->
@@ -389,6 +390,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="AndroidManifest__media_preview">Prévisualisation du média.</string>
   <string name="AndroidManifest__media_overview">Toutes les images</string>
   <string name="AndroidManifest__media_overview_named">Toutes les images avec %1$s</string>
+  <string name="AndroidManifest__message_details">Détails du message</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importer / exporter</string>
   <string name="arrays__my_identity_key">Ma clé d\'identité</string>
