@@ -42,15 +42,21 @@ public class SmsDecryptJob extends MasterSecretJob {
 
   private static final String TAG = SmsDecryptJob.class.getSimpleName();
 
-  private final long messageId;
+  private final long    messageId;
+  private final boolean manualOverride;
 
-  public SmsDecryptJob(Context context, long messageId) {
+  public SmsDecryptJob(Context context, long messageId, boolean manualOverride) {
     super(context, JobParameters.newBuilder()
                                 .withPersistence()
                                 .withRequirement(new MasterSecretRequirement(context))
                                 .create());
 
     this.messageId = messageId;
+    this.manualOverride = manualOverride;
+  }
+
+  public SmsDecryptJob(Context context, long messageId) {
+    this(context, messageId, false);
   }
 
   @Override
@@ -143,7 +149,7 @@ public class SmsDecryptJob extends MasterSecretJob {
   {
     EncryptingSmsDatabase database = DatabaseFactory.getEncryptingSmsDatabase(context);
 
-    if (SMSSecurePreferences.isAutoRespondKeyExchangeEnabled(context)) {
+    if (SMSSecurePreferences.isAutoRespondKeyExchangeEnabled(context) || manualOverride) {
       try {
         SmsCipher                  cipher   = new SmsCipher(new SMSSecureAxolotlStore(context, masterSecret));
         OutgoingKeyExchangeMessage response = cipher.process(context, message);
