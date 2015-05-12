@@ -211,7 +211,7 @@ public class ReceiveKeyActivity extends PassphraseRequiredActionBarActivity {
           } else {
             ApplicationContext.getInstance(context)
                               .getJobManager()
-                              .add(new SmsDecryptJob(context, messageId));
+                              .add(new SmsDecryptJob(context, messageId, true));
           }
 
           return null;
