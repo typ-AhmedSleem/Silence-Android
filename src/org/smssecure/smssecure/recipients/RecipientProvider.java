@@ -75,7 +75,7 @@ public class RecipientProvider {
     } else {
       final Drawable defaultPhoto        = isGroupRecipient
                                            ? ContactPhotoFactory.getDefaultGroupPhoto(context)
-                                           : ContactPhotoFactory.getDefaultContactPhoto(null);
+                                           : ContactPhotoFactory.getDefaultContactPhoto(context, null);
 
       recipient = new Recipient(null, number, recipientId, null, defaultPhoto);
     }
@@ -133,9 +133,10 @@ public class RecipientProvider {
     try {
       if (cursor != null && cursor.moveToFirst()) {
         Uri      contactUri   = Contacts.getLookupUri(cursor.getLong(2), cursor.getString(1));
+        String   name         = cursor.getString(3).equals(cursor.getString(0)) ? null : cursor.getString(0);
         Drawable contactPhoto = ContactPhotoFactory.getContactPhoto(context,
-                                                                    Uri.withAppendedPath(Contacts.CONTENT_URI, cursor.getLong(2)+""),
-                                                                    cursor.getString(0));
+                                                                    Uri.withAppendedPath(Contacts.CONTENT_URI, cursor.getLong(2) + ""),
+                                                                    name);
         return new RecipientDetails(cursor.getString(0), cursor.getString(3), contactUri, contactPhoto);
       }
     } finally {
@@ -143,7 +144,7 @@ public class RecipientProvider {
         cursor.close();
     }
 
-    return new RecipientDetails(null, number, null, ContactPhotoFactory.getDefaultContactPhoto(null));
+    return new RecipientDetails(null, number, null, ContactPhotoFactory.getDefaultContactPhoto(context, null));
   }
 
   private RecipientDetails getGroupRecipientDetails(Context context, String groupId) {
