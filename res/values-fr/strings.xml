@@ -10,13 +10,13 @@
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vous n’avez pas encore défini de phrase de passe !</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s messages par conversation</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Supprimer tous les anciens messages maintenant ?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Êtes-vous sûr de vouloir réduire toutes les conversations aux %s messages les plus récents ?</string>
+  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Êtes-vous sûr de vouloir limiter toutes les conversations aux %s messages les plus récents ?</string>
   <string name="ApplicationPreferencesActivity_delete">Supprimer</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Désactiver le chiffrement local ?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Attention, ceci désactivera le chiffrement local pour tous les messages et toutes les clés. Vos sessions chiffrées
 continueront de fonctionner mais une personne ayant un accès physique à votre appareil sera
-en mesure d’y accéder.</string>
+en mesure de les lire.</string>
   <string name="ApplicationPreferencesActivity_disable">Désactiver</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">SMS entrants activés</string>
   <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Appuyez pour modifier votre application SMS par défaut</string>
@@ -62,15 +62,15 @@ vérifier ce contact.</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Appuyez pour utiliser la solution de repli non sécurisée</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Utiliser la solution de repli sur les SMS non chiffrés ?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Utiliser la solution de repli sur les MMS non chiffrés ?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ce message <b>ne</b> sera <b>pas</b> chiffré car une session sécurisée n\'a pu être établie.\n\n Envoyer un message non sécurisé ?</string>
+  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ce message <b>ne</b> sera <b>pas</b> chiffré car une session sécurisée n\'a pu être établie.\n\nEnvoyer un message non sécurisé ?</string>
   <string name="ConversationItem_unable_to_open_media">Impossible de trouver une application pour ouvrir le média.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Commencer une session chiffrée ?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Commencer une session chiffrée avec %s ?</string>
-  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Vous avez reçu un message d’une personne gérant les sessions chiffrées SMSSecure. Voulez-vous initier une session sécurisée ?</string>
-  <string name="ConversationActivity_abort_secure_session_confirmation">Confirmation de la fin de la session chiffrée</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Vous avez reçu un message d’une personne gérant les sessions chiffrées SMSSecure. Voulez-vous commencer une session chiffrée ?</string>
+  <string name="ConversationActivity_abort_secure_session_confirmation">Fin de la session chiffrée</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Êtes-vous sûr de vouloir terminer cette session chiffrée ?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Confirmation de la suppression du fil de discussion</string>
+  <string name="ConversationActivity_delete_thread_confirmation">Suppression du fil de discussion</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Êtes-vous sûr de vouloir supprimer définitivement cette conversation ?</string>
   <string name="ConversationActivity_add_attachment">Ajouter une pièce jointe</string>
   <string name="ConversationActivity_select_contact_info">Sélectionner les informations du contact</string>
@@ -93,17 +93,17 @@ vérifier ce contact.</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS non-chiffré</string>
   <string name="ConversationActivity_transport_secure_sms">SMS chiffré</string>
   <string name="ConversationActivity_transport_secure_mms">MMS chiffré</string>
-  <string name="ConversationActivity_install_smssecure">Installez SMSSecure : %s</string>
+  <string name="ConversationActivity_install_smssecure">Et si on discutait de manière sécurisée ? %s</string>
   <string name="ConversationActivity_recipient_self">Vous ne pouvez pas commencer une session chiffrée avec vous-même !</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS non supportés</string>
-  <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut-être envoyé car votre opérateur ne supporte pas les MMS.</string>
+  <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut être envoyé car votre opérateur ne supporte pas les MMS.</string>
   <string name="ConversationActivity_specify_recipient">Veuillez sélectionner un contact</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Détails du message</string>
-  <string name="ConversationFragment_confirm_message_delete">Confirmer la suppression du message</string>
+  <string name="ConversationFragment_confirm_message_delete">Suppression du message</string>
   <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Êtes-vous sûr de vouloir supprimer de façon permanente les messages sélectionnés ?</string>
   <string name="ConversationFragment_save_to_sd_card">Enregistrer dans l\'espace de stockage?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">La sauvegarde du média dans l\'espace de stockage autorisera d\'autres applications à y accéder.\n\n Continuer?</string>
+  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">La sauvegarde du média dans l\'espace de stockage autorisera d\'autres applications à y accéder.\n\nContinuer?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Erreur lors de l\'enregistrement de la pièce jointe dans l\'espace de stockage !</string>
   <string name="ConversationFragment_success_exclamation">Terminé !</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Impossible d’écrire dans l\'espace de stockage !</string>
@@ -206,12 +206,11 @@ l\'importer à nouveau se traduira par des messages dupliqués.</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Phrase de passe incorrecte !</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La
-signature de cet échange de clé est différente de celle que vous avez précédemment reçue de ce
+signature de cet échange de clé est différente de celle que vous avez précédemment reçue de la part de ce
 contact. Cela peut signifier que quelqu’un essaie d’intercepter votre communication ou
 que ce contact a simplement réinstallé SMSSecure et possède maintenant une nouvelle clé d’identité.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Vous pouvez faire confiance à la
-signature de cet échange de clé est, mais vous avez le paramètre
-« finaliser automatiquement les échanges de clés » désactivé.</string>
+signature de cet échange de clé mais avez désactivé la finalisation automatique des échanges de clés.</string>
   <string name="ReceiveKeyActivity_processing">Traitement en cours</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Traitement de l\'échange de clés...</string>
   <!--SmsMessageRecord-->
@@ -242,13 +241,13 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="ViewIdentityActivity_my_identity_fingerprint">Mon empreinte d\'identité</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Initier malgré une demande déjà existante ?</string>
-  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Vous avez déjà envoyé une demande de démarrage de session à ce destinataire, êtes-vous sûr de vouloir en envoyer une autre ? Ceci invalidera la première demande.</string>
+  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Vous avez déjà demandé à ce destinataire de commencer une session chiffrée. Êtes-vous sûr de vouloir lui demander à nouveau ? Ceci invalidera la première demande.</string>
   <string name="KeyExchangeInitiator_send">Envoyer</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Message mal chiffré…</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Déchiffrement, veuillez patienter…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message chiffré pour une session non-existante…</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Demande de fin de session chiffrée non-existante…</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Demande de fin de chiffrement pour une session non-existante…</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Erreur lors du déchiffrement du message.</string>
   <!--MmsDatabase-->
@@ -336,7 +335,7 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La base de données par défaut du système ne sera en aucune façon modifiée ou altérée.</string>
   <string name="database_migration_activity__skip">Passer</string>
   <string name="database_migration_activity__import">Importer</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Cela peut prendre un moment. Merci d’être patient, nous vous préviendrons lorsque l’importation sera achevée.</string>
+  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Cela peut prendre un moment. Merci d’être patient, nous vous préviendrons lorsque l’importation sera terminée.</string>
   <string name="database_migration_activity__importing">IMPORTATION</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Mise à jour de la base de donnée...</string>
@@ -361,7 +360,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="prompt_passphrase_activity__unlock">Déverrouiller</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure nécessite les paramètres MMS pour envoyer des médias et des messages groupés via votre opérateur mobile. Votre appareil ne fournit pas ces informations ; cela se produit parfois sur les appareils verrouillés et autres configurations restrictives.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Pour envoyer des médias et messages groupés, cliquez sur « OK » et renseignez les paramètres demandés. Les paramètres MMS de votre fournisseur peuvent en général être trouvés en recherchant « APN votre opérateur ». Vous n\'aurez besoin de faire cela qu\'une seule fois.</string>
+  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Pour envoyer des messages multimédia et groupés, cliquez sur « OK » et renseignez les paramètres demandés. Les paramètres MMS de votre fournisseur peuvent en général être trouvés en recherchant « APN \"votre opérateur\" ». Vous n\'aurez besoin de faire cela qu\'une seule fois.</string>
   <!--receive_key_activity-->
   <string name="receive_key_activity__complete">Compléter</string>
   <!--recipients_panel-->
@@ -414,7 +413,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utiliser SMSSecure pour consulter et stocker tous les MMS entrants</string>
   <string name="preferences__input_settings">Paramètres de saisie</string>
   <string name="preferences__enable_enter_key_title">Activer la touche Entrée</string>
-  <string name="preferences__replace_smiley_with_enter_key">Remplacer la touche smiley par une touche Entrée</string>
+  <string name="preferences__replace_smiley_with_enter_key">Remplacer la touche des émoticônes par une touche Entrée</string>
   <string name="preferences__pref_enter_sends_title">Envoyer avec la touche Entrée</string>
   <string name="preferences__pressing_the_enter_key_will_send_text_messages">Appuyer sur la touche Entrée enverra les messages</string>
   <string name="preferences__display_settings">Afficher les paramètres</string>
