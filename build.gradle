@@ -132,6 +132,8 @@ android {
         exclude 'LICENSE'
         exclude 'NOTICE'
         exclude 'asm-license.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
     }
 
     signingConfigs {
@@ -166,11 +168,6 @@ android {
             aidl.srcDirs = ['androidTest/java']
             renderscript.srcDirs = ['androidTest/java']
         }
-    }
-
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
     }
 
      lintOptions {
