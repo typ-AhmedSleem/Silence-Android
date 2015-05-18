@@ -686,7 +686,7 @@ public class MmsDatabase extends MessagingDatabase {
   }
 
   public long insertMessageOutbox(MasterSecret masterSecret, OutgoingMediaMessage message,
-                                  long threadId, boolean forceSms)
+                                  long threadId, boolean forceSms, long timestamp)
       throws MmsException
   {
     long type = Types.BASE_OUTBOX_TYPE | Types.ENCRYPTION_SYMMETRIC_BIT;
@@ -700,7 +700,7 @@ public class MmsDatabase extends MessagingDatabase {
     }
 
     SendReq sendRequest = new SendReq();
-    sendRequest.setDate(System.currentTimeMillis() / 1000L);
+    sendRequest.setDate(timestamp / 1000L);
     sendRequest.setBody(message.getPduBody());
     sendRequest.setContentType(ContentType.MULTIPART_MIXED.getBytes());
 
