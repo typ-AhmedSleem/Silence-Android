@@ -19,7 +19,6 @@ package org.smssecure.smssecure;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,11 +29,8 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
 
 /**
  * Activity container for selecting a list of contacts.
@@ -93,21 +89,16 @@ public class PushContactSelectionActivity extends PassphraseRequiredActionBarAct
   private void initializeResources() {
     contactsFragment = (PushContactSelectionListFragment) getSupportFragmentManager().findFragmentById(R.id.contact_selection_list_fragment);
     contactsFragment.setMultiSelect(true);
-    contactsFragment.setOnContactSelectedListener(new PushContactSelectionListFragment.OnContactSelectedListener() {
-      @Override
-      public void onContactSelected(ContactData contactData) {
-        Log.i(TAG, "Choosing contact from list.");
-      }
-    });
   }
 
   private void handleSelectionFinished() {
+    Intent resultIntent = getIntent();
+    List<String> selectedContacts = contactsFragment.getSelectedContacts();
 
-    final Intent resultIntent = getIntent();
-    final List<ContactData> selectedContacts = contactsFragment.getSelectedContacts();
     if (selectedContacts != null) {
-      resultIntent.putParcelableArrayListExtra("contacts", new ArrayList<ContactData>(contactsFragment.getSelectedContacts()));
+      resultIntent.putStringArrayListExtra("contacts", new ArrayList<>(selectedContacts));
     }
+
     setResult(RESULT_OK, resultIntent);
     finish();
   }
