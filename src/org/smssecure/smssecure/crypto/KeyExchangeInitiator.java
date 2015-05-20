@@ -21,8 +21,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import com.afollestad.materialdialogs.AlertDialogWrapper;
-
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
 import org.smssecure.smssecure.crypto.storage.SMSSecurePreKeyStore;
@@ -47,7 +45,7 @@ public class KeyExchangeInitiator {
 
   public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting) {
     if (promptOnExisting && hasInitiatedSession(context, masterSecret, recipients)) {
-      AlertDialogWrapper.Builder dialog = new AlertDialogWrapper.Builder(context);
+      AlertDialog.Builder dialog = new AlertDialog.Builder(context);
       dialog.setTitle(R.string.KeyExchangeInitiator_initiate_despite_existing_request_question);
       dialog.setMessage(R.string.KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure);
       dialog.setIconAttribute(R.attr.dialog_alert_icon);

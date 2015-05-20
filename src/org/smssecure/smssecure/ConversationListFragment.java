@@ -30,6 +30,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -45,7 +46,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 
-import com.afollestad.materialdialogs.AlertDialogWrapper;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
@@ -162,8 +162,8 @@ public class ConversationListFragment extends Fragment
   }
 
   private void handleDeleteAllSelected() {
-    int conversationsCount = getListAdapter().getBatchSelections().size();
-    AlertDialogWrapper.Builder alert = new AlertDialogWrapper.Builder(getActivity());
+    int                 conversationsCount = getListAdapter().getBatchSelections().size();
+    AlertDialog.Builder alert              = new AlertDialog.Builder(getActivity());
     alert.setIconAttribute(R.attr.dialog_alert_icon);
     alert.setTitle(getActivity().getResources().getQuantityString(R.plurals.ConversationListFragment_delete_selected_conversations,
                                                                   conversationsCount, conversationsCount));

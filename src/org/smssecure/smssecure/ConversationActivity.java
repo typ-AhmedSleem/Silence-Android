@@ -34,8 +34,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.view.WindowCompat;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -54,7 +54,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.AlertDialogWrapper;
 import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
@@ -427,7 +426,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleUnblock() {
-    new AlertDialogWrapper.Builder(this)
+    new AlertDialog.Builder(this)
         .setTitle(R.string.RecipientPreferenceActivity_unblock_this_contact_question)
         .setMessage(R.string.RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact)
         .setNegativeButton(android.R.string.cancel, null)
@@ -474,7 +473,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     final Recipients recipients = getRecipients();
     final Recipient recipient   = recipients.getPrimaryRecipient();
     String recipientName        = (recipient.getName() == null ? recipient.getNumber() : recipient.getName());
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
     builder.setIconAttribute(R.attr.dialog_info_icon);
     builder.setCancelable(true);
@@ -494,7 +493,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleAbortSecureSession() {
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(R.string.ConversationActivity_abort_secure_session_confirmation);
     builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setCancelable(true);
@@ -585,7 +584,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleDeleteThread() {
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setTitle(R.string.ConversationActivity_delete_thread_confirmation);
     builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setCancelable(true);
@@ -820,7 +819,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void initializeResources() {
     if (recipients != null) recipients.removeListener(this);
-    
+
     recipients       = RecipientFactory.getRecipientsForIds(this, getIntent().getLongArrayExtra(RECIPIENTS_EXTRA), true);
     threadId         = getIntent().getLongExtra(THREAD_ID_EXTRA, -1);
     distributionType = getIntent().getIntExtra(DISTRIBUTION_TYPE_EXTRA, ThreadDatabase.DistributionTypes.DEFAULT);
@@ -914,7 +913,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       numberItems[i] = contactData.numbers.get(i).type + ": " + contactData.numbers.get(i).number;
     }
 
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setIconAttribute(R.attr.conversation_attach_contact_info);
     builder.setTitle(R.string.ConversationActivity_select_contact_info);
 

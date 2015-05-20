@@ -31,12 +31,6 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.1.0'
     compile 'com.pnikosis:materialish-progress:1.5'
     compile 'de.greenrobot:eventbus:2.4.0'
-    compile ('com.afollestad:material-dialogs:0.7.9.1') {
-        exclude module: 'appcompat-v7'
-        exclude module: 'recyclerview-v7'
-        exclude module: 'support-annotations'
-    }
-
     compile 'pl.tajchert:waitingdots:0.1.0'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
@@ -81,7 +75,6 @@ dependencies {
 
 dependencyVerification {
     verify = [
-            'com.afollestad:material-dialogs:be606c7c64538541daa1a1a4c245f79c346b07e6034ccd53ced5d48756ca66bd',
             'pl.tajchert:waitingdots:2835d49e0787dbcb606c5a60021ced66578503b1e9fddcd7a5ef0cd5f095ba2c',
             'com.android.support:appcompat-v7:4b5ccba8c4557ef04f99aa0a80f8aa7d50f05f926a709010a54afd5c878d3618',
             'com.android.support:recyclerview-v7:b0f530a5b14334d56ce0de85527ffe93ac419bc928e2884287ce1dddfedfb505',
