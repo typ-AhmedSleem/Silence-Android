@@ -325,19 +325,14 @@
     <string name="PassphrasePromptActivity_watermark_content_description">Silence icon</string>
     <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Invalid passphrase!</string>
 
-    <!-- ReceiveKeyActivity -->
-    <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">The
-        signature on this key exchange is different than what you\'ve previously received from this
-        contact. This could either mean that someone is trying to intercept your communication, or
-        that this contact simply re-installed Silence and now has a new identity key.
+    <!-- ConfirmIdentityDialog -->
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">The
+        identifying key material for %1$s has changed. This could either mean that someone is trying to
+        intercept your communication, or that %2$s simply re-installed Silence and now has a new
+        identity key.
     </string>
-    <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">The
-        signature on this key exchange is trusted, but you have the \'automatically complete key
-        exchanges\' setting disabled.
-    </string>
-    <string name="ReceiveKeyActivity_processing">Processing</string>
-    <string name="ReceiveKeyActivity_processing_key_exchange">Processing key exchange…</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You should verify the identity of this contact.</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You may wish to verify this contact.</string>
+    <string name="ConfirmIdentityDialog_accept">Accept</string>
 
     <!-- RecipientPreferencesActivity -->
     <string name="RecipientPreferenceActivity_block_this_contact_question">Block this contact?</string>
@@ -602,9 +597,6 @@
     <string name="recipient_preferences__block">Block</string>
     <string name="recipient_preferences__color">Color</string>
     <string name="recipient_preferences__color_for_this_contact">Color for this contact</string>
-
-    <!-- receive_key_dialog -->
-    <string name="receive_key_activity__complete">Complete</string>
 
     <!-- recipients_panel -->
     <string name="recipients_panel__to"><small>Enter a name or number</small></string>

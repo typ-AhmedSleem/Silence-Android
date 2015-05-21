@@ -53,6 +53,7 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
+import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
 import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.database.model.NotificationMmsMessageRecord;
@@ -533,10 +534,23 @@ public class ConversationItem extends LinearLayout
     contactPhoto.setVisibility(View.VISIBLE);
   }
 
+  private IdentityKeyMismatch getKeyMismatch(final MessageRecord record) {
+    if (record.isIdentityMismatchFailure()) {
+      Log.w(TAG, "isIdentityMismatchFailure(): true");
+      for (final IdentityKeyMismatch mismatch : record.getIdentityKeyMismatches()) {
+        if (mismatch.getRecipientId() == record.getIndividualRecipient().getRecipientId()) {
+          return mismatch;
+        }
+      }
+    }
+    Log.w(TAG, "Returning null IdentityKeyMismatch...");
+    return null;
+  }
+
   /// Event handlers
 
   private void handleKeyExchangeClicked() {
-    new ReceiveKeyDialog(context, masterSecret, messageRecord).show();
+    new ConfirmIdentityDialog(context, masterSecret, messageRecord, getKeyMismatch(messageRecord)).show();
   }
 
   private void handleLegacyKeyExchangeClicked() {

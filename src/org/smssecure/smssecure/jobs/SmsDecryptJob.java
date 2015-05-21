@@ -199,6 +199,11 @@ public class SmsDecryptJob extends MasterSecretJob {
       database.markAsStaleKeyExchange(messageId);
     } catch (UntrustedIdentityException e) {
       Log.w(TAG, e);
+
+      Recipients recipients  = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
+      long       recipientId = recipients.getPrimaryRecipient().getRecipientId();
+
+      database.addMismatchedIdentity(messageId, recipientId, e.getUntrustedIdentity());
     }
   }
 
