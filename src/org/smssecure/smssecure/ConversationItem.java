@@ -489,23 +489,16 @@ public class ConversationItem extends LinearLayout
     contactPhoto.setVisibility(View.VISIBLE);
   }
 
-  private IdentityKeyMismatch getKeyMismatch(final MessageRecord record) {
-    if (record.isIdentityMismatchFailure()) {
-      Log.w(TAG, "isIdentityMismatchFailure(): true");
-      for (final IdentityKeyMismatch mismatch : record.getIdentityKeyMismatches()) {
-        if (mismatch.getRecipientId() == record.getIndividualRecipient().getRecipientId()) {
-          return mismatch;
-        }
-      }
-    }
-    Log.w(TAG, "Returning null IdentityKeyMismatch...");
-    return null;
-  }
-
   /// Event handlers
 
-  private void handleKeyExchangeClicked() {
-    new ConfirmIdentityDialog(context, masterSecret, messageRecord, getKeyMismatch(messageRecord)).show();
+  private void handleApproveIdentity() {
+    List<IdentityKeyMismatch> mismatches = messageRecord.getIdentityKeyMismatches();
+
+    if (mismatches.size() != 1) {
+      throw new AssertionError("Identity mismatch count: " + mismatches.size());
+    }
+
+    new ConfirmIdentityDialog(context, masterSecret, messageRecord, mismatches.get(0)).show();
   }
 
   private void handleLegacyKeyExchangeClicked() {
@@ -627,13 +620,8 @@ public class ConversationItem extends LinearLayout
         intent.putExtra(MessageDetailsActivity.TYPE_EXTRA, messageRecord.isMms() ? MmsSmsDatabase.MMS_TRANSPORT : MmsSmsDatabase.SMS_TRANSPORT);
         intent.putExtra(MessageDetailsActivity.RECIPIENTS_IDS_EXTRA, conversationRecipients.getIds());
         context.startActivity(intent);
-      } else if (messageRecord.isKeyExchange()           &&
-                 !messageRecord.isOutgoing()             &&
-                 !messageRecord.isProcessedKeyExchange() &&
-                 !messageRecord.isStaleKeyExchange()     &&
-                 !messageRecord.isLegacyMessage())
-      {
-        handleKeyExchangeClicked();
+      } else if (!messageRecord.isOutgoing() && messageRecord.isIdentityMismatchFailure()) {
+        handleApproveIdentity();
       } else if (shouldInterceptKeyExchangeMessage(messageRecord)) {
         handleLegacyKeyExchangeClicked();
       }
