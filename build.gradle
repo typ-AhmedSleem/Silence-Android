@@ -145,7 +145,7 @@ android {
         }
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            proguardFiles = buildTypes.debug.proguardFiles
             signingConfig signingConfigs.release
         }
     }
