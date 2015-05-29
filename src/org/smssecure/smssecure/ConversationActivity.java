@@ -107,7 +107,7 @@ import java.util.List;
 
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
 import static org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
-import static org.whispersystems.textsecure.internal.push.PushMessageProtos.PushMessageContent.GroupContext;
+import static org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 /**
  * Activity for displaying a message thread, as well as

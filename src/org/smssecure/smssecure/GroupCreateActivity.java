@@ -33,9 +33,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import org.smssecure.smssecure.components.PushRecipientsPanel;
-import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.RecipientsEditor;
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
+import org.smssecure.smssecure.database.NotInDirectoryException;
+import org.smssecure.smssecure.database.SMSSecureDirectory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -44,8 +46,8 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SelectedRecipientsAdapter;
 import org.smssecure.smssecure.util.Util;
-import org.smssecure.smssecure.crypto.MasterSecret;
 import org.whispersystems.textsecure.api.util.InvalidNumberException;
+import org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -55,7 +57,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import static org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
 
 /**
  * Activity to create and update groups
