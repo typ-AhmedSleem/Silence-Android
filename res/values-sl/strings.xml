@@ -36,6 +36,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Ne najdem aplikacije za izbor datotek.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_take_photo">Zajemi fotografijo</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Slika</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Zvok</string>
@@ -143,7 +144,6 @@ preveriti ta stik.</string>
   <string name="GroupCreateActivity_menu_create_title">Ustvari skupino</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Jaz</string>
-  <string name="GroupMembersDialog_members">Člani...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Uvoz</string>
   <string name="ImportExportActivity_export">Izvoz</string>
@@ -254,8 +254,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="KeyCachingService_passphrase_cached">SMSSecure je odklenjen</string>
   <string name="KeyCachingService_lock">Zakleni z geslom</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d novih sporočil</string>
-  <string name="MessageNotifier_most_recent_from_s">Najnovejše od: %s</string>
+  <string name="MessageNotifier_d_messages_in_d_conversations">Sporočil: %1$d. Pogovorov: %2$d.</string>
+  <string name="MessageNotifier_most_recent_from_s">Zadnje od: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Šifrirano sporočilo...</string>
   <string name="MessageNotifier_media_message_with_text">Multimedijsko sporočilo: %s</string>
   <string name="MessageNotifier_no_subject">(brez naslova)</string>
@@ -341,7 +341,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Za pošiljanje multimedijskih in skupinskih sporočil potrebuje aplikacija SMSSecure nastavitve MMS vašega mobilnega operaterja. Teh podatkov ni moč pridobiti iz vaše naprave, kar je značilno za zaklenjene naprave in druge omejene konfiguracije. </string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Za pošiljanje multimedijskih in skupinskih sporočil kliknite \'OK\' in vnesite potrebne podatke. Nastavitve MMS za vašo napravo najdete pod \'APN operaterja\'. Podatke morate vnesti samo enkrat.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Dokončaj</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Vnesite ime ali številko</small></string>

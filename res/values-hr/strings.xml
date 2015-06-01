@@ -137,7 +137,6 @@ nekriptirano izvesti sadržaj vaših SMSSecure poruka na SD karticu.</string>
   <string name="GroupCreateActivity_menu_create_title">Stvori grupu</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ja</string>
-  <string name="GroupMembersDialog_members">Članovi...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Uvoz</string>
   <string name="ImportExportActivity_export">Izvoz</string>
@@ -257,8 +256,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="KeyCachingService_passphrase_cached">SMSSecure je otključan</string>
   <string name="KeyCachingService_lock">Zaključajte sa lozinkom</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d novih poruka</string>
-  <string name="MessageNotifier_most_recent_from_s">Najnovija od: %s</string>
   <string name="MessageNotifier_encrypted_message">Kriptirana poruka...</string>
   <string name="MessageNotifier_no_subject">(Bez naslova)</string>
   <string name="MessageNotifier_message_delivery_failed">Neuspješna isporuka poruke.</string>
@@ -344,7 +341,7 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure zahtjeva MMS postavke kako bi dostavio multimedijalne ili grupne poruke preko vašeg operatera. Vaš uređaj nije ove informacije učinio dostupnima, što se ponekad događa kod zaključanih uređaja ili kod ograničenih postavki.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Kako biste slali multimedijalne ili grupne poruke, pritisnite \'OK\' i popunite tražene postavke. MMS postavke za vašeg operatera se obično mogu naći tražeći \'APN vašeg operatera\'. Ovo je potrebno napraviti samo jednom.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Završeno</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Unesite ime ili broj</small></string>

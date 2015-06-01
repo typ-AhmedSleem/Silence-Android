@@ -132,7 +132,6 @@ SMSSecure mesajlarınızın şifrelenmemiş açık metin içeriğini SD karta ka
   <string name="GroupCreateActivity_menu_create_title">Grup yarat</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ben</string>
-  <string name="GroupMembersDialog_members">Üyeler...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">İçe Aktar</string>
   <string name="ImportExportActivity_export">Dışarı Aktar</string>
@@ -242,8 +241,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="KeyCachingService_passphrase_cached">SMSSecure kilitsiz</string>
   <string name="KeyCachingService_lock">Parola ile kilitle</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d yeni mesaj</string>
-  <string name="MessageNotifier_most_recent_from_s">En yeni mesaj: %s</string>
   <string name="MessageNotifier_encrypted_message">Şifrelenmiş mesaj...</string>
   <string name="MessageNotifier_no_subject">(Konusuz)</string>
   <string name="MessageNotifier_message_delivery_failed">Mesaj iletimi başarısız.</string>
@@ -327,7 +324,7 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure medya ve grup mesajlarının kablosuz taşıyıcınız aracılığı ile taşınabilmesi için MMS ayarlarınızı gerektirir. Cihazınız bu bilgiyi sağlamamaktadır. Bu durum bazen kilitli veya diğer kısıtlı yapılandırılmış cihazlar için geçerli olabilmektedir.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Medya veya grup mesajları gönderebilmek için \'Tamam\' a tıklayınız ve istenen ayarları tamamlayınız. Taşıyıcınızın MMS ayarları genellikle \'taşıyıcı APN\' araştırılarak bulunabilir. Bunu bir kez yapmanız gerekecektir.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Tamamlandı</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Bir ad veya numara girin</small></string>

@@ -4,7 +4,7 @@
   <string name="yes">Ja</string>
   <string name="no">Nein</string>
   <string name="delete">Löschen</string>
-  <string name="please_wait">Bitte warten...</string>
+  <string name="please_wait">Bitte warten …</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferencesActivity_currently_s">Momentan: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Sie haben noch kein Passwort festgelegt!</string>
@@ -37,6 +37,7 @@ Ihre verschlüsselten Unterhaltungen werden weiterhin funktionieren, aber jemand
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Keine App zur Dateiauswahl auffindbar.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_take_photo">Fotografieren</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Bild</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
@@ -52,9 +53,9 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationItem_view_secure_media_question">Verschlüsselte Datei anzeigen?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Diese Datei ist in einer verschlüsselten Datenbank gespeichert. Zur Anzeige muss sie vorübergehend entschlüsselt abgespeichert werden. Möchten Sie dennoch fortfahren?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Abgelaufene Schlüsselaustausch-Nachricht empfangen.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Schlüsselaustausch-Nachricht empfangen. Antippen um fortzufahren.</string>
+  <string name="ConversationItem_received_key_exchange_message_click_to_process">Schlüsselaustausch-Nachricht empfangen. Zum Fortfahren antippen.</string>
   <string name="ConversationItem_group_action_left">%1$s hat die Gruppe verlassen.</string>
-  <string name="ConversationItem_click_for_details">Antippen für Details</string>
+  <string name="ConversationItem_click_for_details">Für Details antippen</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Für Rückgriff auf unsicheren Versand antippen</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Rückgriff auf unverschlüsselte SMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Rückgriff auf unverschlüsselte MMS?</string>
@@ -104,19 +105,19 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ConversationFragment_success_exclamation">Erfolgreich!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kein Schreibzugriff auf Gerätespeicher!</string>
   <string name="ConversationFragment_saving_attachment">Anhang speichern</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Anhang wird im Gerätespeicher gespeichert...</string>
-  <string name="ConversationFragment_pending">Ausstehend...</string>
+  <string name="ConversationFragment_saving_attachment_to_sd_card">Anhang wird im Gerätespeicher gespeichert …</string>
+  <string name="ConversationFragment_pending">Ausstehend …</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Löschen</string>
-  <string name="ConversationFragment_deleting_messages">Nachrichten werden gelöscht...</string>
+  <string name="ConversationFragment_deleting_messages">Nachrichten werden gelöscht …</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Unterhaltungen löschen?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Möchten Sie wirklich ALLE ausgewählten Unterhaltungen löschen?</string>
   <string name="ConversationListFragment_deleting">Löschen</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Ausgewählte Unterhaltungen werden gelöscht...</string>
+  <string name="ConversationListFragment_deleting_selected_threads">Ausgewählte Unterhaltungen werden gelöscht …</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Schlüsselaustausch-Nachricht...</string>
+  <string name="ConversationListItem_key_exchange_message">Schlüsselaustausch-Nachricht …</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Benutzerdefiniert: %s</string>
   <string name="CustomDefaultPreference_using_default">Standard: %s</string>
@@ -130,8 +131,8 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="ExportFragment_export_plaintext_to_sd_card">Klartext auf SD-Karte exportieren?</string>
   <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Achtung, dies wird Ihre SMSSecure-Nachrichten im Klartext auf die SD-Karte exportieren.</string>
   <string name="ExportFragment_cancel">Abbruch</string>
-  <string name="ExportFragment_exporting">Export</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Klartext wird auf SD-Karte exportiert...</string>
+  <string name="ExportFragment_exporting">Exportieren</string>
+  <string name="ExportFragment_exporting_plaintext_to_sd_card">Klartext wird auf SD-Karte exportiert …</string>
   <string name="ExportFragment_error_unable_to_write_to_sd_card">Fehler: Kein Schreibzugriff auf die SD-Karte!</string>
   <string name="ExportFragment_error_while_writing_to_sd_card">Fehler beim Schreiben auf die SD-Karte.</string>
   <string name="ExportFragment_success">Erfolgreich!</string>
@@ -144,7 +145,6 @@ Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleich
   <string name="GroupCreateActivity_menu_create_title">Gruppe erstellen</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ich</string>
-  <string name="GroupMembersDialog_members">Mitglieder...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Import</string>
   <string name="ImportExportActivity_export">Export</string>
@@ -162,13 +162,13 @@ Sie werden jegliche Informationen Ihrer jetzigen SMSSecure-Installation verliere
   <string name="ImportFragment_import_plaintext_backup">Klartextsicherung importieren?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dies wird Nachrichten aus einer Klartext-Datensicherung importieren.
 Falls Sie bereits zuvor diese Datensicherung importiert haben, wird das zu gedoppelten Nachrichten führen.</string>
-  <string name="ImportFragment_importing">Import</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Klartextsicherung wird importiert...</string>
+  <string name="ImportFragment_importing">Importieren</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Klartextsicherung wird importiert …</string>
   <string name="ImportFragment_no_plaintext_backup_found">Keine Klartextsicherung gefunden!</string>
   <string name="ImportFragment_error_importing_backup">Fehler beim Importieren der Datensicherung!</string>
   <string name="ImportFragment_import_complete">Import abgeschlossen!</string>
-  <string name="ImportFragment_restoring">Wiederherstellung</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Verschlüsselte Datensicherung wird wiederhergestellt...</string>
+  <string name="ImportFragment_restoring">Wiederherstellen</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Verschlüsselte Datensicherung wird wiederhergestellt …</string>
   <string name="ImportFragment_no_encrypted_backup_found">Keine verschlüsselte Datensicherung gefunden!</string>
   <string name="ImportFragment_restore_complete">Wiederherstellung abgeschlossen!</string>
   <!--KeyScanningActivity-->
@@ -180,8 +180,8 @@ Falls Sie bereits zuvor diese Datensicherung importiert haben, wird das zu gedop
   <string name="MessageDetailsRecipient_new_identity">Neue Identität</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Fehler beim Speichern der MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Verbindung zum MMS-Anbieter fehlgeschlagen...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Die Einstellungen des MMS-Anbieters konnten nicht gelesen werden...</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Verbindung zum MMS-Anbieter fehlgeschlagen …</string>
+  <string name="MmsDownloader_error_reading_mms_settings">MMS-Einstellungen des Mobilfunkanbieters konnten nicht gelesen werden …</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Mediennachricht</string>
   <!--MessageRecord-->
@@ -201,18 +201,18 @@ Bitten Sie den Absender, SMSSecure zu aktualisieren und die Nachricht erneut zu 
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Die Signatur dieses Schlüsselaustauschs hat sich geändert. Dies könnte bedeuten, dass jemand versucht, Ihr Gespräch abzuhören. Vielleicht hat dieser Kontakt SMSSecure aber auch nur neu installiert und benutzt nun einen neuen Schlüssel.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Die Signatur dieses Schlüsselaustauschs ist vertrauenswürdig, aber die Einstellung \"Automatischer Schlüsselaustausch\" ist deaktiviert.</string>
   <string name="ReceiveKeyActivity_processing">Schlüsselaustausch</string>
-  <string name="ReceiveKeyActivity_processing_key_exchange">Schlüsselaustausch wird durchgeführt...</string>
+  <string name="ReceiveKeyActivity_processing_key_exchange">Schlüsselaustausch wird durchgeführt …</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Fehlerhafte Schlüsselaustausch-Nachricht empfangen!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</string>
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string>
+Nachricht mit unbekanntem Schlüssel empfangen. Zum Anzeigen antippen.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Veränderte, aber unbekannte Identitätsinformation empfangen. Antippen, um die Identität zu prüfen.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sichere Unterhaltung beendet.</string>
   <string name="SmsMessageRecord_duplicate_message">Doppelte Nachricht.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Gruppe wurde verlassen...</string>
+  <string name="ThreadRecord_left_the_group">Gruppe wurde verlassen …</string>
   <string name="ThreadRecord_draft">Entwurf:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Sie haben keinen eigenen Schlüssel.</string>
@@ -233,23 +233,23 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Sie haben bereits eine Unterhaltungsanfrage an den Empfänger gesendet. Sind Sie sicher, dass Sie eine weitere senden wollen? Dies wird die erste Anfrage ungültig machen.</string>
   <string name="KeyExchangeInitiator_send">Senden</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht...</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende Unterhaltung verschlüsselt...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Anfrage an eine nicht vorhandene Sitzung beenden...</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht …</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten …</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende Unterhaltung verschlüsselt …</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Anfrage an eine nicht vorhandene Sitzung beenden …</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Verbindung zum MMS-Server wird aufgebaut...</string>
-  <string name="MmsDatabase_downloading_mms">MMS wird heruntergeladen...</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Verbindung zum MMS-Server wird aufgebaut …</string>
+  <string name="MmsDatabase_downloading_mms">MMS wird heruntergeladen …</string>
   <string name="MmsDatabase_mms_download_failed">Herunterladen der MMS fehlgeschlagen!</string>
-  <string name="MmsDatabase_downloading">Wird heruntergeladen...</string>
+  <string name="MmsDatabase_downloading">Herunterladen …</string>
   <string name="MmsDatabase_mms_pending_download">Antippen und MMS-Einstellungen konfigurieren, um das Herunterladen fortzusetzen.</string>
   <string name="MmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wird entschlüsselt. Bitte warten...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Fehlerhaft verschlüsselte MMS...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS wurde für eine nicht existierende Unterhaltung verschlüsselt...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wird entschlüsselt. Bitte warten …</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Fehlerhaft verschlüsselte MMS …</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS wurde für eine nicht existierende Unterhaltung verschlüsselt …</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Import wird durchgeführt</string>
   <string name="ApplicationMigrationService_importing_text_messages">Nachrichten werden importiert</string>
@@ -259,9 +259,9 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <string name="KeyCachingService_passphrase_cached">SMSSecure ist entsperrt</string>
   <string name="KeyCachingService_lock">Mit Passwort sperren</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d neue Nachrichten</string>
-  <string name="MessageNotifier_most_recent_from_s">Letzte Nachricht von: %s</string>
-  <string name="MessageNotifier_encrypted_message">Verschlüsselte Nachricht...</string>
+  <string name="MessageNotifier_d_messages_in_d_conversations">%1$d Nachrichten in %2$d Unterhaltungen</string>
+  <string name="MessageNotifier_most_recent_from_s">Neueste von: %1$s</string>
+  <string name="MessageNotifier_encrypted_message">Verschlüsselte Nachricht …</string>
   <string name="MessageNotifier_media_message_with_text">Mediennachricht: %s</string>
   <string name="MessageNotifier_no_subject">(Kein Betreff)</string>
   <string name="MessageNotifier_message_delivery_failed">Nachrichtenübermittlung fehlgeschlagen.</string>
@@ -279,7 +279,7 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <!--contact_selection_group_activity-->
   <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Keine Kontakte.</string>
-  <string name="contact_selection_group_activity__finding_contacts">Kontakte werden geladen...</string>
+  <string name="contact_selection_group_activity__finding_contacts">Kontakte werden geladen …</string>
   <!--single_contact_selection_activity-->
   <string name="SingleContactSelectionActivity_contact_photo">Kontaktbild</string>
   <!--ContactSelectionListFragment-->
@@ -303,31 +303,31 @@ Nachricht mit unbekanntem Schlüssel empfangen. Zum Fortfahren antippen.</string
   <string name="conversation_item__secure_message_description">Sichere Nachricht</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Download</string>
-  <string name="conversation_item_sent__downloading">Lädt herunter</string>
+  <string name="conversation_item_sent__downloading">Herunterladen</string>
   <string name="conversation_item_sent__send_failed_indicator_description">Senden fehlgeschlagen</string>
   <string name="conversation_item_sent__pending_approval_description">Bestätigung ausstehend</string>
   <string name="conversation_item_sent__delivered_description">Übermittelt</string>
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">Herunterladen</string>
   <string name="conversation_item_received__contact_photo_description">Kontaktbild</string>
-  <string name="conversation_item_received__downloading">Wird heruntergeladen</string>
+  <string name="conversation_item_received__downloading">Herunterladen</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mehrfachauswahl</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s ausgewählt</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Entweder konnte kein Diagnoseprotokoll vom Gerät gelesen werden oder es gab Probleme dieses an den Server zu senden. Wenn Sie sicher sind, dass das Gerät mit dem Internet verbunden ist, können Sie versuchen das Protokoll mit ADB auszulesen.</string>
   <string name="log_submit_activity__thanks">Danke für Ihre Hilfe!</string>
-  <string name="log_submit_activity__submitting">Versand</string>
-  <string name="log_submit_activity__posting_logs">Diagnoseprotokoll wird übermittelt...</string>
+  <string name="log_submit_activity__submitting">Versenden</string>
+  <string name="log_submit_activity__posting_logs">Diagnoseprotokoll wird übermittelt …</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Möchten Sie Ihre vorhandenen Nachrichten in SMSSecures verschlüsselte Datenbank importieren?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Die System-Datenbank des Geräts wird in keiner Weise verändert.</string>
   <string name="database_migration_activity__skip">Überspringen</string>
   <string name="database_migration_activity__import">Importieren</string>
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Dies kann eine Weile dauern, bitte haben Sie etwas Geduld. Sie werden benachrichtigt, sobald der Import abgeschlossen ist.</string>
-  <string name="database_migration_activity__importing">WIRD IMPORTIERT</string>
+  <string name="database_migration_activity__importing">IMPORTIEREN</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Datenbank wird aktualisiert...</string>
+  <string name="database_upgrade_activity__updating_database">Datenbank wird aktualisiert …</string>
   <string name="export_fragment__export_plaintext_backup">Klartextsicherung exportieren</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">
 Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung exportieren.</string>
@@ -349,7 +349,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure benötigt MMS-Einstellungen, um Medien- und Gruppennachrichten zu versenden. Ihr Gerät stellt diese Informationen nicht zur Verfügung, was gelegentlich bei gesperrten oder anderweitig restriktiv konfigurierten Geräten der Fall ist.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Zum Versenden von Medien- und Gruppennachrichten bitte \"OK\" antippen und die geforderten Einstellungen vervollständigen. Die MMS-Einstellungen Ihres Anbieters können normalerweise  durch eine Internetsuche nach dem \"APN\" des Anbieters gefunden werden.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Fortfahren</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Name oder Rufnummer eingeben</small></string>
@@ -459,7 +459,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="preferences__slow">Langsam</string>
   <string name="preferences__custom">Benutzerdefiniert</string>
   <string name="preferences__advanced">Weitere Einstellungen</string>
-  <string name="preferences__app_protection">App-Schutz</string>
+  <string name="preferences__app_protection">Anwendungsschutz</string>
   <string name="preferences__mms_user_agent">MMS-Benutzer-Agent</string>
   <string name="preferences__advanced_mms_access_point_names">Manuelle MMS-Einstellungen</string>
   <string name="preferences__enable_manual_mms">Manuelle MMS-Einstellungen</string>
@@ -471,7 +471,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="preferences__mmsc_password">MMSC-Passwort</string>
   <string name="preferences__sms_delivery_reports">SMS-Zustellberichte</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Zustellbericht für jede gesendete SMS anfordern</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Alte Nachrichten automatisch löschen, wenn die Unterhaltung eine bestimmte Länge überschreitet</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Alte Nachrichten automatisch löschen, sobald die Unterhaltung eine bestimmte Länge überschreitet</string>
   <string name="preferences__delete_old_messages">Alte Nachrichten löschen</string>
   <string name="preferences__conversation_length_limit">Höchstzahl an Nachrichten</string>
   <string name="preferences__trim_all_threads_now">Alle Unterhaltungen jetzt kürzen</string>
@@ -499,7 +499,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="contact_selection_list__menu_select_all">Alle auswählen</string>
   <string name="contact_selection_list__menu_unselect_all">Alle abwählen</string>
   <string name="contact_selection_list__header">ALLE KONTAKTE</string>
-  <string name="contact_selection_list__unknown_contact">Neue Nachricht an...</string>
+  <string name="contact_selection_list__unknown_contact">Neue Nachricht an …</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Fertig</string>
   <!--refreshing push directory from menu-->
@@ -543,7 +543,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="conversation__menu_delete_thread">Unterhaltung löschen</string>
   <string name="conversation__menu_view_media">Alle Bilder</string>
   <!--conversation_callable-->
-  <string name="conversation_add_to_contacts__menu_add_to_contacts">Zu den Kontakten hinzufügen</string>
+  <string name="conversation_add_to_contacts__menu_add_to_contacts">Zu Kontakten hinzufügen</string>
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">Teilnehmerliste</string>
   <string name="conversation_group_options__delivery">Zustellung</string>
@@ -576,7 +576,7 @@ Eine mit \"SMS Backup + Restore\" kompatible Klartextsicherung importieren.</str
   <string name="media_preview_activity__image_content_description">Bildvorschau</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Kürzen</string>
-  <string name="trimmer__deleting_old_messages">Alte Nachrichten werden gelöscht...</string>
+  <string name="trimmer__deleting_old_messages">Alte Nachrichten werden gelöscht …</string>
   <string name="trimmer__old_messages_successfully_deleted">Alte Nachrichten wurden erfolgreich gelöscht</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Übertragungssymbol</string>

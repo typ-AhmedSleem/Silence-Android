@@ -125,7 +125,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="GroupCreateActivity_menu_create_title">Creare grup </string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Eu</string>
-  <string name="GroupMembersDialog_members">Membrii...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Importă</string>
   <string name="ImportExportActivity_export">Exportă</string>
@@ -233,8 +232,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="KeyCachingService_passphrase_cached">SMSSecure e deblocat.</string>
   <string name="KeyCachingService_lock">Blocare acces cu parola</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d mesaje noi</string>
-  <string name="MessageNotifier_most_recent_from_s">Cel mai recent de la: %s</string>
   <string name="MessageNotifier_encrypted_message">Mesaj criptat...</string>
   <string name="MessageNotifier_no_subject">(Fără subiect)</string>
   <string name="MessageNotifier_message_delivery_failed">Trimiterea mesajului a esuat.</string>
@@ -317,7 +314,7 @@ Importă un fișier de backup text. Compatibil cu \'SMSBackup And Restore.\'</st
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure are nevoie de setările APN pentru a trimite mesaje multimedia prin operatorul wireless. Acest aparat nu oferă informațiile necesare, lucru care se poate întâmpla uneori pentru dispozitive blocate sau alte configurații restrictive.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Pentru a putea trimite mesaje multimedia cât și mesaje într-un grup, apăsați \'OK\' și completați setările solicitate. Setările MMS pentru operatorul dvs. pot fi găsite cautând după \'APN operatorul tău\'. Această operațiune este necesară o singură dată.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Complet</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Introduceţi un nume sau un număr</small></string>

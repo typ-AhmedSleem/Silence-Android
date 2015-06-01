@@ -134,7 +134,6 @@ ten kontakt.
   <string name="GroupCreateActivity_menu_create_title">Utwórz grupę</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ja</string>
-  <string name="GroupMembersDialog_members">Członkowie...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Import</string>
   <string name="ImportExportActivity_export">Eksport</string>
@@ -245,8 +244,6 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="KeyCachingService_passphrase_cached">SMSSecure jest odblokowany</string>
   <string name="KeyCachingService_lock">Zablokuj hasłem</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d nowych wiadomości</string>
-  <string name="MessageNotifier_most_recent_from_s">Najnowsze zaczynając od: %s</string>
   <string name="MessageNotifier_encrypted_message">Szyfrowana wiadomość...</string>
   <string name="MessageNotifier_no_subject">(Brak tematu)</string>
   <string name="MessageNotifier_message_delivery_failed">Nie udało się dostarczyć wiadomości.</string>
@@ -333,7 +330,7 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure wymaga ustawień MMS w celu dostarczenia wiadomości multimedialnych za pośrednictwem Twojego operatora. Twoje urządzenie nie udostępnia tych informacji. Może to być spowodowane pewnymi restrykcyjnymi konfiguracjami w telefonie.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Aby mieć możliwość wysyłania wiadomości multimedialnych i wiadomości grupowych, kliknij \'OK\' i wypełnij pola, o które jesteś proszony. Dane MMS dla Twojego operatora, można znaleźć szukając w ustawieniach frazy typu \'Punkty Dostępu - APN\'. Wystarczy to zrobić tylko jeden raz.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Zakończono</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to">Wprowadź nazwę lub numer kontaktu</string>

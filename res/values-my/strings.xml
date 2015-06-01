@@ -100,8 +100,6 @@
   <string name="ApplicationMigrationService_import_in_progress">သွင်းယူနေ</string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">စာတိုအသစ် %d</string>
-  <string name="MessageNotifier_most_recent_from_s">မကြာသေးမီက: %s</string>
   <string name="MessageNotifier_encrypted_message">စာဝှက်စနစ်ဖြင့်　အကြောင်းကြားချက်...</string>
   <string name="MessageNotifier_message_delivery_failed">အကြောင်းကြားချက်ပို့လွတ်ခြင်းမအောင်မြင်</string>
   <string name="MessageNotifier_failed_to_deliver_message">အကြောင်းကြားချက်ပို့လွတ်ရန်မအောင်မြင်</string>
@@ -144,7 +142,7 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">ပိတ်ထားသည်ကိုဖွင့်</string>
   <!--prompt_mms_activity-->
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">သူများ အိုင်ဒီ (သူများ အမြင်) - </string>

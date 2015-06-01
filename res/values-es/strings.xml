@@ -151,7 +151,6 @@ exportará a la tarjeta SD el contenido en texto plano de sus mensajes de SMSSec
   <string name="GroupCreateActivity_menu_create_title">Crear grupo</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Yo</string>
-  <string name="GroupMembersDialog_members">Miembros...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Importar</string>
   <string name="ImportExportActivity_export">Exportar</string>
@@ -277,8 +276,6 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="KeyCachingService_passphrase_cached">SMSSecure está desbloqueado</string>
   <string name="KeyCachingService_lock">Bloqueado con clave de acceso</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) nuevos mensajes</string>
-  <string name="MessageNotifier_most_recent_from_s">Mensaje más reciente de: %s</string>
   <string name="MessageNotifier_encrypted_message">Mensaje cifrado...</string>
   <string name="MessageNotifier_media_message_with_text">Mensaje multimedia: %s</string>
   <string name="MessageNotifier_no_subject">(Sin asunto)</string>
@@ -370,7 +367,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necesita los datos de configuración de MMS para poder enviar mensajes de grupo a través de su proveedor de telefonía. Su dispositivo no hace pública esta información, cosa que ocurre ocasionalmente para dispositivos bloqueados y otras configuraciones restrictivas.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Para enviar contenido multimedia y mensajes de grupo haga click en \'OK\' y realice la configuración requerida. Las opciones de MMS de su proveedor de telefonía pueden ser encontradas normalmente buscando el \'APN de su proveedor\'. Solo necesitará hacer esto una vez.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Completo</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Introduzca un nombre o número</small></string>

@@ -169,8 +169,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="KeyCachingService_passphrase_cached">SMSSecure je otvorený</string>
   <string name="KeyCachingService_lock">Zamkni s heslom</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) nových správ</string>
-  <string name="MessageNotifier_most_recent_from_s">Najnovšia od: %s</string>
   <string name="MessageNotifier_encrypted_message">Kryptovaná správa...</string>
   <string name="MessageNotifier_no_subject">(bez predmetu)</string>
   <string name="MessageNotifier_message_delivery_failed">Doručenie správy zlyhalo.</string>
@@ -238,7 +236,7 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odomkni</string>
   <!--prompt_mms_activity-->
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Dokončené</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Vlož meno alebo číslo</small></string>

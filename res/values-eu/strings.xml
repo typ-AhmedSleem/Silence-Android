@@ -131,7 +131,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="GroupCreateActivity_menu_create_title">Taldea sortu</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Ni</string>
-  <string name="GroupMembersDialog_members">Partaideak...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Inportatu</string>
   <string name="ImportExportActivity_export">Esportatu</string>
@@ -255,8 +254,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="KeyCachingService_passphrase_cached">SMSSecure desblokeatuta dago</string>
   <string name="KeyCachingService_lock">Blokeatu pasahitz bat erabiliz</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">Mezu berrien kopurua: %d</string>
-  <string name="MessageNotifier_most_recent_from_s">Mezurik berriena bidali duena: %s</string>
   <string name="MessageNotifier_encrypted_message">Enkriptatuko mezua...</string>
   <string name="MessageNotifier_no_subject">(Ez dago gairik)</string>
   <string name="MessageNotifier_message_delivery_failed">Mezuaren banaketak huts egin du.</string>
@@ -339,7 +336,7 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecurek MMS ezarpenak behar ditu media eta taldeko mezuak banatu ahal izateko zure hari-gabeko hornitzailearen bitartez. Zure gailuak ez dauka informazio hau eskuragarri. Hau batzuetan gertatzen da blokeatuta dauden eta beste konfigurazio murrizgarriak dituzten gailuetan.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Media eta taldeko mezuak bidaltzeko, klik egin \'OK\'-n eta osatu beharrezkoak diren ezarpenak. Zure hornitzailearentzako ezarpenak normalean topa daitezke zure hornitzailearen APNa bilatuz. Bakarrik behin egin beharko duzu hau.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Osatuta</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Izen edo zenbaki bat sartu</small></string>

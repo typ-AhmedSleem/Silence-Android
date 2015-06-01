@@ -150,8 +150,6 @@
   <string name="KeyCachingService_passphrase_cached">SMSSecure està desbloquejat</string>
   <string name="KeyCachingService_lock">Bloqueja amb una frase contrasenya</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d nous missatges</string>
-  <string name="MessageNotifier_most_recent_from_s">Més recent de: %s</string>
   <string name="MessageNotifier_encrypted_message">Missatge encriptat...</string>
   <string name="MessageNotifier_message_delivery_failed">Entrega del missatge fallida.</string>
   <string name="MessageNotifier_failed_to_deliver_message">No s\'ha pogut entregar el missatge.</string>
@@ -206,7 +204,7 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necessita ajustaments MMS per entregar missatges de grup i multimèdia a través de l\'operador inalàmbric. El teu dispositiu no fa que aquesta informació estigui disponible, cosa que és certa ocasionalment en dispositius bloquejats o amb altres configuracions restringides.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Per enviar missatges multimèdia i de grup, clica \'OK\' i completa els ajustaments demanats. Els ajustaments MMS de la teva operadora normalment poden ser trobats buscant \'latevaoperadora APN\'. Només necessitaràs fer això una vegada.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Complet</string>
   <!--recipients_panel-->
   <string name="recipients_panel__add_member">Afegeix membre</string>
