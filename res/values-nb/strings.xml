@@ -142,7 +142,6 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="GroupCreateActivity_menu_create_title">Opprett gruppe</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Meg</string>
-  <string name="GroupMembersDialog_members">Medlemmer...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Importer</string>
   <string name="ImportExportActivity_export">Eksporter</string>
@@ -258,8 +257,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="KeyCachingService_passphrase_cached">SMSSecure er låst opp</string>
   <string name="KeyCachingService_lock">Lås med passord</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) Nye meldinger</string>
-  <string name="MessageNotifier_most_recent_from_s">Sist mottatt fra: %s</string>
   <string name="MessageNotifier_encrypted_message">Kryptert melding...</string>
   <string name="MessageNotifier_media_message_with_text">Media-melding: %s</string>
   <string name="MessageNotifier_no_subject">(Mangler emne)</string>
@@ -348,7 +345,7 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure trenger MMS-innstillinger for å levere media og gruppemeldinger via din telefonoperatør. Enheten din er ikke i stand til å oppgi denne informasjonen automatisk, noe som ofte skjer dersom den er låst til operatør eller er konfigurert med andre restriksjoner.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">For å sende media og gruppemeldinger, klikk \'OK\' og fullfør de forespurte instillingene. MMS-oppsettet for din operatør kan ofte finnes ved å søke etter \'din operatørs APN\'. Du trenger kun å gjøre dette én gang.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Complete</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Tast inn et navn eller nummer</small></string>

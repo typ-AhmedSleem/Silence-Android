@@ -36,6 +36,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Não foi encontrada uma aplicação para selecionar os dados multimédia.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_take_photo">Tirar uma foto</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Imagem</string>
   <string name="AttachmentTypeSelectorAdapter_video">Vídeo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Áudio</string>
@@ -145,7 +146,6 @@ mensagens SMSSecure para o seu cartão SD.</string>
   <string name="GroupCreateActivity_menu_create_title">Criar grupo</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Eu</string>
-  <string name="GroupMembersDialog_members">Membros...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Importar</string>
   <string name="ImportExportActivity_export">Exportar</string>
@@ -260,8 +260,8 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="KeyCachingService_passphrase_cached">O SMSSecure está desbloqueado</string>
   <string name="KeyCachingService_lock">Bloquear com palavra-chave</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d novas mensagens</string>
-  <string name="MessageNotifier_most_recent_from_s">Mais recente de: %s</string>
+  <string name="MessageNotifier_d_messages_in_d_conversations">%1$d mensagens em %2$d conversas</string>
+  <string name="MessageNotifier_most_recent_from_s">Mais recentes de: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Mensagem cifrada...</string>
   <string name="MessageNotifier_media_message_with_text">Mensagem multimédia: %s</string>
   <string name="MessageNotifier_no_subject">(Sem assunto)</string>
@@ -351,7 +351,7 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">O SMSSecure precisa das definições de MMS para enviar multimédia e mensagens de grupo através da sua operadora. O seu dispositivo não disponibiliza estas informações, o que pode ocorrer em dispositivos bloqueados ou com configurações restritivas.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Para enviar multimédia e mensagens de grupo, clique \'OK\' e preencha as definições solicitadas. As definições MMS da sua operadora podem ser encontradas procurando por \'APN da sua operadora\'. Você só precisará de efetuar esta operação uma vez.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Terminado</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Introduza um nome ou número</small></string>

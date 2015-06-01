@@ -131,7 +131,6 @@
   <string name="GroupCreateActivity_menu_create_title">ಸಮೂಹವನ್ನು ರಚಿಸಿ</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">ನಾನು</string>
-  <string name="GroupMembersDialog_members">ಸದಸ್ಯರು ...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">ಆಯಾತ</string>
   <string name="ImportExportActivity_export">ರಫ್ತು ಮಾಡಿ</string>
@@ -242,8 +241,6 @@
   <string name="KeyCachingService_passphrase_cached">ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯೂರ್  ಬೀಗ ತೆಗೆದಿದೆ </string>
   <string name="KeyCachingService_lock">ಗುಪ್ತಪದವನ್ನು ಉಪಯೋಗಿಸಿಕೊಂಡು ಬೀಗ ಹಾಕಿ</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d ಹೊಸ ಸಂದೇಶಗಳು</string>
-  <string name="MessageNotifier_most_recent_from_s">%s ನಿಂದ ಇತ್ತೀಚಿನ</string>
   <string name="MessageNotifier_encrypted_message">ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ಸಂದೇಶ...</string>
   <string name="MessageNotifier_no_subject">(ವಿಷಯವಸ್ತು ಇಲ್ಲ)</string>
   <string name="MessageNotifier_message_delivery_failed">ಸಂದೇಶ ತಲುಪಿಸಲು ವಿಫಲವಾಗಿದೆ.</string>
@@ -327,7 +324,7 @@
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯುರಗೆ  ನಿಮ್ಮ ನಿಸ್ತಂತು ವಾಹಕ ಮೂಲಕ ಮಾಧ್ಯಮ ಮತ್ತು ಗುಂಪು ಸಂದೇಶಗಳನ್ನು ತಲುಪಿಸಲು ಎಂಎಂಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳ ಅಗತ್ಯವಿದೆ.
 ನಿಮ್ಮ ಸಾಧನ, ಈ ಮಾಹಿತಿಯನ್ನು ಲಭ್ಯ ಮಾಡುವುದಿಲ್ಲ. ಇದು ಲಾಕ್ ಮಾಡಲಾದ ಸಾಧನಗಳು ಮತ್ತು ಇತರ ನಿರ್ಬಂಧಿತ ಸಂರಚನೆಗಳನ್ನು ಉಳ್ಳ ಸಾಧನಗಳಲ್ಲಿ ಕೆಲವೊಮ್ಮೆ ಆಗುತ್ತದೆ.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">ಮಾಧ್ಯಮ ಮತ್ತು ಗುಂಪು ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸಲು, \'OK\' ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ವಿನಂತಿಸಿದ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ. ನಿಮ್ಮ ವಾಹಕದ   ಎಂಎಂಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಸಾಮಾನ್ಯ ಹುಡುಕಾಟದ ಮೂಲಕ ಕಂಡುಹಿಡಿಯಬಹುದು. </string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">ಪೂರ್ಣಗೊಳಿಸಿ</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>ಹೆಸರು ಅಥವಾ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</small></string>

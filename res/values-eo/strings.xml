@@ -93,7 +93,6 @@
   <!--ApplicationMigrationService-->
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d novaj mesaĝoj</string>
   <string name="MessageNotifier_media_message_with_text">Aŭdovida mesaĝo: %s</string>
   <string name="MessageNotifier_no_subject">(Senobjekto)</string>
   <string name="MessageNotifier_media_message">Aŭdovida mesaĝo</string>
@@ -131,7 +130,7 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Malŝlosi</string>
   <!--prompt_mms_activity-->
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <!--message_details_header-->

@@ -24,7 +24,10 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Telephony;
+import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -44,6 +47,7 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -56,10 +60,11 @@ import ws.com.google.android.mms.pdu.CharacterSets;
 import ws.com.google.android.mms.pdu.EncodedStringValue;
 
 public class Util {
+  public static Handler handler = new Handler(Looper.getMainLooper());
 
   public static String join(Collection<String> list, String delimiter) {
     StringBuilder result = new StringBuilder();
-    int i=0;
+    int i = 0;
 
     for (String item : list) {
       result.append(item);
@@ -295,5 +300,28 @@ public class Util {
   @TargetApi(VERSION_CODES.LOLLIPOP)
   public static boolean isMmsCapable(Context context) {
     return (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) || OutgoingLegacyMmsConnection.isConnectionPossible(context);
+  }
+
+  public static boolean isMainThread() {
+    return Looper.myLooper() == Looper.getMainLooper();
+  }
+
+  public static void assertMainThread() {
+    if (!isMainThread()) {
+      throw new AssertionError("Main-thread assertion failed.");
+    }
+  }
+
+  public static void runOnMain(Runnable runnable) {
+    if (isMainThread()) runnable.run();
+    else                handler.post(runnable);
+  }
+
+  public static boolean equals(@Nullable Object a, @Nullable Object b) {
+    return a == b || (a != null && a.equals(b));
+  }
+
+  public static int hashCode(@Nullable Object... objects) {
+    return Arrays.hashCode(objects);
   }
 }

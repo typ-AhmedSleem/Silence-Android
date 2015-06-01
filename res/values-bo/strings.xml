@@ -102,8 +102,6 @@
   <string name="ApplicationMigrationService_import_in_progress">ནང་འདྲེན་བྱེད་བཞིན་ཡོད། </string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) ཡི་འཕྲིན་ཐུང་གསར་པ་རྣམས།</string>
-  <string name="MessageNotifier_most_recent_from_s">%s: ནས་ཉེ་ཆར་གྱི་དེ། </string>
   <string name="MessageNotifier_encrypted_message">གསང་སྡོམ་འཕྲིན་ཐུང་། </string>
   <string name="MessageNotifier_message_delivery_failed">འཕྲིན་ཐུང་བཏང་བ་དེ་འགྲོ་མི་འདུག </string>
   <string name="MessageNotifier_failed_to_deliver_message">འཕྲིན་ཐུང་གཏོང་ཐུབ་མ་སོང་། </string>
@@ -146,7 +144,7 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">སྒོ་ཕྱེས། </string>
   <!--prompt_mms_activity-->
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">གཞན་གྱི་ངོས་འཛིན། (ཁོང་ཚོས་ཀློགས)</string>

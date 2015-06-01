@@ -3,7 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="org.smssecure.smssecure">
 
-    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable"/>
+    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip"/>
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
                 android:label="Access to SMSSecure Secrets"
@@ -47,7 +47,6 @@
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".DeviceProvisioningActivity"
-              android:theme="@style/SMSSecure.DialogActivity"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize">
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
@@ -123,14 +122,14 @@
     <activity android:name=".PassphraseCreateActivity"
               android:label="@string/AndroidManifest__create_passphrase"
               android:windowSoftInputMode="stateUnchanged"
-              android:theme="@style/SMSSecure.IntroTheme"
+              android:theme="@style/SMSSecure.LightIntroTheme"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".PassphrasePromptActivity"
               android:label="@string/AndroidManifest__enter_passphrase"
               android:launchMode="singleTask"
-              android:theme="@style/SMSSecure.IntroTheme"
+              android:theme="@style/SMSSecure.LightIntroTheme"
               android:windowSoftInputMode="stateAlwaysVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -157,11 +156,6 @@
 
     <activity android:name=".VerifyIdentityActivity"
               android:label="@string/AndroidManifest__verify_identity"
-              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
-
-    <activity android:name=".ReceiveKeyActivity"
-              android:label="@string/AndroidManifest__complete_key_exchange"
-              android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".ApplicationPreferencesActivity"

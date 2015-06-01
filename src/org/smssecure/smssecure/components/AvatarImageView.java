@@ -3,27 +3,34 @@ package org.smssecure.smssecure.components;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.smssecure.smssecure.contacts.ContactPhotoFactory;
 import org.smssecure.smssecure.recipients.Recipient;
 
 public class AvatarImageView extends ImageView {
 
   public AvatarImageView(Context context) {
     super(context);
-    setScaleType(ScaleType.CENTER_INSIDE);
+    setScaleType(ScaleType.CENTER_CROP);
   }
 
   public AvatarImageView(Context context, AttributeSet attrs) {
     super(context, attrs);
-    setScaleType(ScaleType.CENTER_INSIDE);
+    setScaleType(ScaleType.CENTER_CROP);
   }
 
-  public void setAvatar(Recipient recipient, boolean quickContactEnabled) {
-    setImageDrawable(recipient.getContactPhoto());
-    setAvatarClickHandler(recipient, quickContactEnabled);
+  public void setAvatar(@Nullable Recipient recipient, boolean quickContactEnabled) {
+    if (recipient != null) {
+      setImageDrawable(recipient.getContactPhoto());
+      setAvatarClickHandler(recipient, quickContactEnabled);
+    } else {
+      setImageDrawable(ContactPhotoFactory.getDefaultContactPhoto(getContext(), null));
+      setOnClickListener(null);
+    }
   }
 
   private void setAvatarClickHandler(final Recipient recipient, boolean quickContactEnabled) {

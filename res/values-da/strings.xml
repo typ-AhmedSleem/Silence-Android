@@ -228,8 +228,6 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="KeyCachingService_passphrase_cached">SMSSecure er låst op</string>
   <string name="KeyCachingService_lock">Lås med et kodeord</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) Nye beskeder</string>
-  <string name="MessageNotifier_most_recent_from_s">Sidst modtaget fra: %s</string>
   <string name="MessageNotifier_encrypted_message">Krypteret besked...</string>
   <string name="MessageNotifier_no_subject">(Intet emne)</string>
   <string name="MessageNotifier_message_delivery_failed">Levering af besked mislykkedes.</string>
@@ -309,7 +307,7 @@ Importer en klartekst backup fil. Kompatibel med \'SMSBackup og Restore\'.</stri
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure har brug for at kende MMS-indstillingerne for at sende medieindhold og gruppebeskeder gennem din teleudbyder. Din enhed gør ikke disse oplysninger tilgængelige, hvilket kan forekomme for f.eks. låste enheder.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">For at sende multimedia- og gruppebeskeder klik \'OK\' og udfyld indstillingerne. MMS-indstillingerne for din teleoperatør kan ofte findes ved at søge på \'din operatør APN\'. Du behøver kun gøre dette en gang.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Udført</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Indtast navn eller nummer</small></string>

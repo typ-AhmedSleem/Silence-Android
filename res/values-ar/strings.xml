@@ -133,7 +133,6 @@
   <string name="GroupCreateActivity_menu_create_title">إنشاء مجموعة</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">أنا</string>
-  <string name="GroupMembersDialog_members">الأعضاء...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">استيراد</string>
   <string name="ImportExportActivity_export">تصدير</string>
@@ -242,8 +241,6 @@
   <string name="KeyCachingService_passphrase_cached">تيكست سيكيور غير مقفل</string>
   <string name="KeyCachingService_lock">أقفل بالعبارة السرية</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">(%d) رسائل جديدة</string>
-  <string name="MessageNotifier_most_recent_from_s">آخر رسالة من: %s</string>
   <string name="MessageNotifier_encrypted_message">رسالة مشفرة...</string>
   <string name="MessageNotifier_no_subject">(بلا عنوان)</string>
   <string name="MessageNotifier_message_delivery_failed">فشل توصيل الرسالة.</string>
@@ -329,7 +326,7 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">يتطلب تيكست سيكيور إعدادات خدمة الوسائط المتعددة من أجل تسليم رسائل الوسائط المتعددة والمجموعات عبر المشغل اللاسلكي. في بعض الأحوال لا تتاح هذه المعلومات مع الهواتف المقفولة أو ذات الإعدادات المقيدة.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">من اجل إرسال وسائط متعددة ورسائل إلى مجموعات أضغط على \"تم\" وأكمل الإعدادات المطلوبة. يمكن العثور على إعدادات رسائل الوسائط المتعددة الخاصة بمشغل شبكة الجوال الخاصة بك بالبحث عن \"أسم المشغل APN\". سوف تحتاج إلى القيام  بهذه الخطوة مرة واحدة.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">انتهاء</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>أدخل اسم أو رقم</small></string>

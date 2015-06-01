@@ -156,7 +156,6 @@
   <string name="GroupCreateActivity_menu_create_title">Δημιουργήστε ομάδα</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Me</string>
-  <string name="GroupMembersDialog_members">Μέλη...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Εισαγωγή</string>
   <string name="ImportExportActivity_export">Εξαγωγή</string>
@@ -287,8 +286,6 @@
   <string name="KeyCachingService_passphrase_cached">Το SMSSecure είναι ξεκλειδωμένο</string>
   <string name="KeyCachingService_lock">Κλείδωμα με συνθηματική φράση</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d νέα μηνύματα</string>
-  <string name="MessageNotifier_most_recent_from_s">Τελευταίο μήνυμα από: %s</string>
   <string name="MessageNotifier_encrypted_message">Κρυπτογραφημένο μήνυμα...</string>
   <string name="MessageNotifier_media_message_with_text">Μήνυμα πολυμέσων: %s</string>
   <string name="MessageNotifier_no_subject">(Χωρίς Θέμα)</string>
@@ -380,7 +377,7 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Το SMSSecure χρειάζεται τις ρυθμίσεις MMS για να στείλει μηνύματα πολυμέσων μέσω του πάροχού σας. Η συσκευή σας δεν παρέχει αυτές τις ρυθμίσεις, κάτι που ισχύει σε κλειδωμένες συσκευές και άλλες περιοριστικές διαμορφώσεις.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Για να στείλετε μηνύματα πολυμέσων, πατήστε «ΟΚ» και συμπληρώστε τις ρυθμίσεις APN. Θα βρείτε τις σωστές ρυθμίσεις APN για τον πάροχό σας ψάχνοντας online για «το όνομα του πάροχού σας» + APN. Αυτές οι ρυθμίσεις θα χρειαστούν μόνο μία φορά.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Ολοκληρώθηκε</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to">Εισάγεται όνομα ή αριθμό</string>

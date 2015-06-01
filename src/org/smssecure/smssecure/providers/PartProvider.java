@@ -17,6 +17,7 @@
 package org.smssecure.smssecure.providers;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -26,6 +27,8 @@ import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
+import org.smssecure.smssecure.database.PartDatabase;
+import org.smssecure.smssecure.mms.PartUriParser;
 import org.smssecure.smssecure.service.KeyCachingService;
 
 import java.io.File;
@@ -38,14 +41,14 @@ public class PartProvider extends ContentProvider {
   private static final String TAG = PartProvider.class.getSimpleName();
 
   private static final String CONTENT_URI_STRING = "content://org.smssecure.provider.smssecure/part";
-  public  static final Uri    CONTENT_URI        = Uri.parse(CONTENT_URI_STRING);
+  private static final Uri    CONTENT_URI        = Uri.parse(CONTENT_URI_STRING);
   private static final int    SINGLE_ROW         = 1;
 
   private static final UriMatcher uriMatcher;
 
   static {
     uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-    uriMatcher.addURI("org.smssecure.provider.smssecure", "part/#", SINGLE_ROW);
+    uriMatcher.addURI("org.smssecure.provider.smssecure", "part/*/#", SINGLE_ROW);
   }
 
   @Override
@@ -54,7 +57,12 @@ public class PartProvider extends ContentProvider {
     return true;
   }
 
-  private File copyPartToTemporaryFile(MasterSecret masterSecret, long partId) throws IOException {
+  public static Uri getContentUri(PartDatabase.PartId partId) {
+    Uri uri = Uri.withAppendedPath(CONTENT_URI, String.valueOf(partId.getUniqueId()));
+    return ContentUris.withAppendedId(uri, partId.getRowId());
+  }
+
+  private File copyPartToTemporaryFile(MasterSecret masterSecret, PartDatabase.PartId partId) throws IOException {
     InputStream in        = DatabaseFactory.getPartDatabase(getContext()).getPartStream(masterSecret, partId);
     File tmpDir           = getContext().getDir("tmp", 0);
     File tmpFile          = File.createTempFile("test", ".jpg", tmpDir);
@@ -72,7 +80,7 @@ public class PartProvider extends ContentProvider {
   }
 
   @Override
-    public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
+  public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
     MasterSecret masterSecret = KeyCachingService.getMasterSecret(getContext());
     Log.w(TAG, "openFile() called!");
 
@@ -85,12 +93,14 @@ public class PartProvider extends ContentProvider {
     case SINGLE_ROW:
       Log.w(TAG, "Parting out a single row...");
       try {
-        int partId               = Integer.parseInt(uri.getPathSegments().get(1));
-        File tmpFile             = copyPartToTemporaryFile(masterSecret, partId);
-        ParcelFileDescriptor pdf = ParcelFileDescriptor.open(tmpFile, ParcelFileDescriptor.MODE_READ_ONLY);
+        PartUriParser        partUri = new PartUriParser(uri);
+        File                 tmpFile = copyPartToTemporaryFile(masterSecret, partUri.getPartId());
+        ParcelFileDescriptor pdf     = ParcelFileDescriptor.open(tmpFile, ParcelFileDescriptor.MODE_READ_ONLY);
+
         if (!tmpFile.delete()) {
           Log.w(TAG, "Failed to delete temp file.");
         }
+
         return pdf;
       } catch (IOException ioe) {
         Log.w(TAG, ioe);

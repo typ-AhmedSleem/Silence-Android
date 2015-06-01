@@ -8,13 +8,13 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.StyleSpan;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.components.emoji.EmojiTextView;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 
-public class FromTextView extends TextView {
+public class FromTextView extends EmojiTextView {
 
   public FromTextView(Context context) {
     super(context);

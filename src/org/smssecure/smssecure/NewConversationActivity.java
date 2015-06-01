@@ -24,25 +24,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import org.smssecure.smssecure.contacts.ContactAccessor;
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.ThreadDatabase;
-import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
-import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DirectoryHelper;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
-import org.smssecure.smssecure.crypto.MasterSecret;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import static org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
 
 /**
  * Activity container for selecting a list of contacts.
@@ -67,7 +57,6 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
   @Override
   protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     setContentView(R.layout.new_conversation_activity);
     initializeResources();
   }
@@ -90,7 +79,6 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
     switch (item.getItemId()) {
-    case R.id.menu_selection_finished: handleSelectionFinished(); return true;
     case android.R.id.home:            finish();                  return true;
     }
     return false;
@@ -100,36 +88,12 @@ public class NewConversationActivity extends PassphraseRequiredActionBarActivity
     contactsFragment = (PushContactSelectionListFragment) getSupportFragmentManager().findFragmentById(R.id.contact_selection_list_fragment);
     contactsFragment.setOnContactSelectedListener(new PushContactSelectionListFragment.OnContactSelectedListener() {
       @Override
-      public void onContactSelected(ContactData contactData) {
+      public void onContactSelected(String number) {
         Log.i(TAG, "Choosing contact from list.");
-        Recipients recipients = contactDataToRecipients(contactData);
+        Recipients recipients = RecipientFactory.getRecipientsFromString(NewConversationActivity.this, number, true);
         openNewConversation(recipients);
       }
     });
-  }
-
-  private void handleSelectionFinished() {
-    final Intent resultIntent = getIntent();
-    final List<ContactData> selectedContacts = contactsFragment.getSelectedContacts();
-    if (selectedContacts != null) {
-      resultIntent.putParcelableArrayListExtra("contacts", new ArrayList<>(contactsFragment.getSelectedContacts()));
-    }
-    setResult(RESULT_OK, resultIntent);
-    finish();
-  }
-
-  private Recipients contactDataToRecipients(ContactData contactData) {
-    if (contactData == null || contactData.numbers == null) return null;
-    Recipients recipients = new Recipients(new LinkedList<Recipient>());
-    for (ContactAccessor.NumberData numberData : contactData.numbers) {
-      if (NumberUtil.isValidSmsOrEmailOrGroup(numberData.number)) {
-        Recipients recipientsForNumber = RecipientFactory.getRecipientsFromString(NewConversationActivity.this,
-                                                                                  numberData.number,
-                                                                                  false);
-        recipients.getRecipientsList().addAll(recipientsForNumber.getRecipientsList());
-      }
-    }
-    return recipients;
   }
 
   private void openNewConversation(Recipients recipients) {

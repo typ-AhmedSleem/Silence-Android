@@ -17,8 +17,8 @@ public class PartAuthority {
 
   private static final String PART_URI_STRING   = "content://org.smssecure.smssecure/part";
   private static final String THUMB_URI_STRING  = "content://org.smssecure.smssecure/thumb";
-  public  static final Uri    PART_CONTENT_URI  = Uri.parse(PART_URI_STRING);
-  public  static final Uri    THUMB_CONTENT_URI = Uri.parse(THUMB_URI_STRING);
+  private static final Uri    PART_CONTENT_URI  = Uri.parse(PART_URI_STRING);
+  private static final Uri    THUMB_CONTENT_URI = Uri.parse(THUMB_URI_STRING);
 
   private static final int PART_ROW  = 1;
   private static final int THUMB_ROW = 2;
@@ -27,8 +27,8 @@ public class PartAuthority {
 
   static {
     uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-    uriMatcher.addURI("org.smssecure.smssecure", "part/#", PART_ROW);
-    uriMatcher.addURI("org.smssecure.smssecure", "thumb/#", THUMB_ROW);
+    uriMatcher.addURI("org.smssecure.smssecure", "part/*/#", PART_ROW);
+    uriMatcher.addURI("org.smssecure.smssecure", "thumb/*/#", THUMB_ROW);
   }
 
   public static InputStream getPartStream(Context context, MasterSecret masterSecret, Uri uri)
@@ -39,9 +39,14 @@ public class PartAuthority {
 
     try {
       switch (match) {
-      case PART_ROW:  return partDatabase.getPartStream(masterSecret, ContentUris.parseId(uri));
-      case THUMB_ROW: return partDatabase.getThumbnailStream(masterSecret, ContentUris.parseId(uri));
-      default:        return context.getContentResolver().openInputStream(uri);
+      case PART_ROW:
+        PartUriParser partUri = new PartUriParser(uri);
+        return partDatabase.getPartStream(masterSecret, partUri.getPartId());
+      case THUMB_ROW:
+        partUri = new PartUriParser(uri);
+        return partDatabase.getThumbnailStream(masterSecret, partUri.getPartId());
+      default:
+        return context.getContentResolver().openInputStream(uri);
       }
     } catch (SecurityException se) {
       throw new IOException(se);
@@ -49,10 +54,17 @@ public class PartAuthority {
   }
 
   public static Uri getPublicPartUri(Uri uri) {
-    return ContentUris.withAppendedId(PartProvider.CONTENT_URI, ContentUris.parseId(uri));
+    PartUriParser partUri = new PartUriParser(uri);
+    return PartProvider.getContentUri(partUri.getPartId());
   }
 
-  public static Uri getThumbnailUri(long partId) {
-    return ContentUris.withAppendedId(THUMB_CONTENT_URI, partId);
+  public static Uri getPartUri(PartDatabase.PartId partId) {
+    Uri uri = Uri.withAppendedPath(PART_CONTENT_URI, String.valueOf(partId.getUniqueId()));
+    return ContentUris.withAppendedId(uri, partId.getRowId());
+  }
+
+  public static Uri getThumbnailUri(PartDatabase.PartId partId) {
+    Uri uri = Uri.withAppendedPath(THUMB_CONTENT_URI, String.valueOf(partId.getUniqueId()));
+    return ContentUris.withAppendedId(uri, partId.getRowId());
   }
 }

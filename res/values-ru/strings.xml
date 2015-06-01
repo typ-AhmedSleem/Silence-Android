@@ -132,7 +132,6 @@
   <string name="GroupCreateActivity_menu_create_title">Создать группу</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Я</string>
-  <string name="GroupMembersDialog_members">Участники...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Импорт</string>
   <string name="ImportExportActivity_export">Экспорт</string>
@@ -243,8 +242,6 @@
   <string name="KeyCachingService_passphrase_cached">SMSSecure разблокирован</string>
   <string name="KeyCachingService_lock">Заблокировать парольной фразой</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">Новых сообщений: %d</string>
-  <string name="MessageNotifier_most_recent_from_s">Последнее — от %s</string>
   <string name="MessageNotifier_encrypted_message">Зашифрованное сообщение...</string>
   <string name="MessageNotifier_no_subject">(Нет темы)</string>
   <string name="MessageNotifier_message_delivery_failed">Сбой доставки сообщения.</string>
@@ -330,7 +327,7 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Приложению SMSSecure необходимо знать настройки MMS вашего сотового оператора, чтобы отправлять и получать мультимедийные и групповые сообщения. Ваше устройство не даёт доступа к этой информации — так иногда бывает, если в телефоне запрещена смена SIM-карты и в некоторых иных случаях.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Чтобы отправлять мультимедийные и групповые сообщения, нажмите «ОК» и настройте MMS. Это нужно сделать только один раз. Настройки для вашего оператора можно узнать в службе техподдержки или в интернете по запросу «ваш оператор APN».</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Выполнить</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Введите имя или номер</small></string>

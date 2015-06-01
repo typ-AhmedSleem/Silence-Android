@@ -136,7 +136,6 @@ Tämä toiminto vie SMSSecure-viestiesi salaamattoman sisällön SD-muistikortil
   <string name="GroupCreateActivity_menu_create_title">Luo ryhmä</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Minä</string>
-  <string name="GroupMembersDialog_members">Jäsenet...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Tuo</string>
   <string name="ImportExportActivity_export">Vie</string>
@@ -250,8 +249,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="KeyCachingService_passphrase_cached">SMSSecuren lukitus on auki</string>
   <string name="KeyCachingService_lock">Lukitse salalauseella</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d uutta viestiä</string>
-  <string name="MessageNotifier_most_recent_from_s">Uusin lähettäjältä: %s</string>
   <string name="MessageNotifier_encrypted_message">Salattu viesti...</string>
   <string name="MessageNotifier_no_subject">(Ei otsikkoa)</string>
   <string name="MessageNotifier_message_delivery_failed">Viestin toimitus epäonnistui.</string>
@@ -338,7 +335,7 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure edellyttää MMS-asetuksia lähettääkseen mediaa ja ryhmäviestejä verkko-operaattorisi kautta. Laitettasi ei ole konfiguroitu antamaan näitä tietoja itsestään, mikä voi johtua laitteen lukituksesta operaattoriin tai muusta rajoitetusta kokoonpanosta.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Lähettääksesi mediatiedostoja ja ryhmäviestejä, napsauta \"OK\" ja täydennä pyydetyt asetukset. Verkko-operaattorisi MMS-asetukset voi yleensä paikantaa etsimällä termiä \"APN\". Sinun tarvitsee tehdä tämän vain kerran.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Valmis</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Syötä nimi tai numero</small></string>

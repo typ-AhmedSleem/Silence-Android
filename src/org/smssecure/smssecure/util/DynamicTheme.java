@@ -2,11 +2,7 @@ package org.smssecure.smssecure.util;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.preference.PreferenceManager;
 
-import org.smssecure.smssecure.ApplicationPreferencesActivity;
-import org.smssecure.smssecure.ConversationActivity;
-import org.smssecure.smssecure.ConversationListActivity;
 import org.smssecure.smssecure.R;
 
 public class DynamicTheme {
@@ -28,7 +24,7 @@ public class DynamicTheme {
     }
   }
 
-  private static int getSelectedTheme(Activity activity) {
+  protected int getSelectedTheme(Activity activity) {
     String theme = SMSSecurePreferences.getTheme(activity);
 
     if (theme.equals("dark")) return R.style.SMSSecure_DarkTheme;

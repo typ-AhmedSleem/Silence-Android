@@ -176,8 +176,6 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="KeyCachingService_passphrase_cached">SMSSecure tidak dikunci</string>
   <string name="KeyCachingService_lock">Kunci dengan kata sandi</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d pesan baru</string>
-  <string name="MessageNotifier_most_recent_from_s">Pesan terbaru dari: %s</string>
   <string name="MessageNotifier_encrypted_message">Mengenkripsi pesan...</string>
   <string name="MessageNotifier_message_delivery_failed">Pengiriman pesan gagal.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Gagal mengirimkan pesan.</string>
@@ -238,7 +236,7 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure memerlukan pengaturan MMS untuk mengantar pesan dan media grup melalui operator anda. Perangkan anda tidak menyediakan informasi tersebut, yang biasanya disebabkan oleh perangkat yang dikunci atau pengaturan yang ketat.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Untuk mengirim pesan dan media grup klik \'OK\' dan selesaikan pengaturan yang diminta. Pengaturan MMS untuk operator anda biasanya dapat ditemukan dengan mencari \'APN operator anda\'. Hal ini hanya diperlukan sekali saja.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Selesai</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Masukkan nama atau nomor</small></string>

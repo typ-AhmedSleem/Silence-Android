@@ -67,11 +67,11 @@
                     android:orientation="horizontal"
                     android:background="?conversation_editor_background">
 
-                <org.smssecure.smssecure.components.EmojiToggle
+                <org.smssecure.smssecure.components.emoji.EmojiToggle
                         android:id="@+id/emoji_toggle"
                         android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="44dp"
+                        android:layout_gravity="bottom"
                         android:background="@drawable/touch_highlight_background"
                         android:contentDescription="@string/conversation_activity__emoji_toggle_description"
                         android:padding="10dp"/>
@@ -89,7 +89,7 @@
                         android:paddingRight="0dp"
                         android:paddingLeft="0dp"
                         android:imeOptions="actionSend|flagNoEnterAction|flagNoExtractUi"
-                        android:inputType="textAutoCorrect|textCapSentences"
+                        android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
                         android:maxLength="2000"
                         android:maxLines="4"
                         android:nextFocusForward="@+id/send_button"
@@ -97,19 +97,35 @@
                         android:contentDescription="@string/conversation_activity__compose_description"
                         android:textColor="?conversation_editor_text_color" />
 
-                <org.smssecure.smssecure.components.SendButton
-                    android:id="@+id/send_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/touch_highlight_background"
-                    android:contentDescription="@string/conversation_activity__send"
-                    android:nextFocusLeft="@+id/embedded_text_editor"
-                    android:padding="12dp"
-                    android:src="?conversation_send_button_sms_insecure"
-                    android:focusable="true"
-                    android:clickable="false"
-                    android:enabled="false" />
+                <org.smssecure.smssecure.components.AnimatingToggle
+                        android:id="@+id/button_toggle"
+                        android:layout_width="46dp"
+                        android:layout_height="44dp"
+                        android:layout_gravity="bottom">
+
+                    <ImageButton
+                            android:id="@+id/attach_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@drawable/touch_highlight_background"
+                            android:src="?conversation_attach"
+                            android:contentDescription="@string/ConversationActivity_add_attachment"
+                            android:nextFocusLeft="@+id/embedded_text_editor" />
+
+                    <org.smssecure.smssecure.components.SendButton
+                            android:id="@+id/send_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/touch_highlight_background"
+                            android:contentDescription="@string/conversation_activity__send"
+                            android:nextFocusLeft="@+id/embedded_text_editor"
+                            android:src="?conversation_send_button_sms_insecure"
+                            android:focusable="true"
+                            android:clickable="false"
+                            android:enabled="false" />
+
+                </org.smssecure.smssecure.components.AnimatingToggle>
 
             </LinearLayout>
 

@@ -71,6 +71,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class MessageNotifier {
+  private static final String TAG = MessageNotifier.class.getSimpleName();
 
   public static final int NOTIFICATION_ID = 1338;
 
@@ -290,10 +291,18 @@ public class MessageNotifier {
 
       String ringtone = SMSSecurePreferences.getNotificationRingtone(context);
 
-      if (ringtone == null)
+      if (ringtone == null) {
+        Log.w(TAG, "ringtone preference was null.");
         return;
+      }
 
-      Uri uri            = Uri.parse(ringtone);
+      Uri uri = Uri.parse(ringtone);
+
+      if (uri == null) {
+        Log.w(TAG, "couldn't parse ringtone uri " + ringtone);
+        return;
+      }
+
       MediaPlayer player = new MediaPlayer();
       player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
       player.setDataSource(context, uri);
@@ -350,7 +359,7 @@ public class MessageNotifier {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_encrypted_message));
       } else if (record.isMms() && TextUtils.isEmpty(body)) {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_media_message));
-      } else if (record.isMms()) {
+      } else if (record.isMms() && !record.isMmsNotification()) {
         String message      = context.getString(R.string.MessageNotifier_media_message_with_text, body);
         int    italicLength = message.length() - body.length();
         body = SpanUtil.italic(message, italicLength);

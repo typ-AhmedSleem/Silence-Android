@@ -135,7 +135,6 @@
   <string name="GroupCreateActivity_menu_create_title">创建群组</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">我</string>
-  <string name="GroupMembersDialog_members">成员…</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">导入</string>
   <string name="ImportExportActivity_export">导出</string>
@@ -245,8 +244,6 @@
   <string name="KeyCachingService_passphrase_cached">SMSSecure 已解锁</string>
   <string name="KeyCachingService_lock">使用密码锁定</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d 新信息</string>
-  <string name="MessageNotifier_most_recent_from_s">最新邮件来自：%s</string>
   <string name="MessageNotifier_encrypted_message">加密信息...</string>
   <string name="MessageNotifier_no_subject">（无主题）</string>
   <string name="MessageNotifier_message_delivery_failed">信息发送失败。</string>
@@ -331,7 +328,7 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure需要通过运营商获取您的彩信设置才能接受彩信或组播信息，但是您的设备没有这些信息，可能是由于设备被锁定或者访问受到限制。</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">想发送多媒体和组播信息，需点击“好”来完成所需的设置。您可以通过搜索“您的运营商 APN”（如百度／谷歌：中国移动 APN）来获取这些信息。通常，您只需要设置一次。</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">完成</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>输入一个名字或号码</small></string>

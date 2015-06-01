@@ -136,7 +136,6 @@
   <string name="GroupCreateActivity_menu_create_title">Създай група</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Аз</string>
-  <string name="GroupMembersDialog_members">Участници...</string>
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">Внеси</string>
   <string name="ImportExportActivity_export">Изнеси</string>
@@ -258,8 +257,6 @@ SMS съобщенията от системната базата данни в 
   <string name="KeyCachingService_passphrase_cached">SMSSecure е отключен</string>
   <string name="KeyCachingService_lock">Заключи паролата</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_new_messages">%d нови съобщения</string>
-  <string name="MessageNotifier_most_recent_from_s">Най-скорошното от: %s</string>
   <string name="MessageNotifier_encrypted_message">Шифровано съобщение...</string>
   <string name="MessageNotifier_no_subject">(Няма зададена тема)</string>
   <string name="MessageNotifier_message_delivery_failed">Изпращането на съобщението неуспешно.</string>
@@ -345,7 +342,7 @@ SMS съобщенията от системната базата данни в 
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure се нуждае от MMS настройки, за да може да достави медийни и групови съобщения през мрежата. Устройството ти не прави тази информация достъпна, което се случва понякога за заключени устройва и други ограничени конфигурации.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">За да изптратиш медийни и групови съобщения, избери \'ОК\' и нагласи изискваните настройки. MMS настройките на твоя мобилен оператор могат да бъдат намерени като потърсиш \'APN настройки\'. Нужно е да изпълниш тази стъпка само веднъж.</string>
-  <!--receive_key_activity-->
+  <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Завършен</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Въведи име или номер</small></string>
