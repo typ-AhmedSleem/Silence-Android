@@ -316,7 +316,7 @@ public class ConversationItem extends LinearLayout {
   }
 
   private void setEvents(MessageRecord messageRecord) {
-      setClickable(batchSelected.isEmpty() &&
+    setClickable(batchSelected.isEmpty() &&
                  messageRecord.isPendingSmsFallback()      ||
                  (messageRecord.isKeyExchange()            &&
                   !messageRecord.isCorruptedKeyExchange()  &&
@@ -329,6 +329,9 @@ public class ConversationItem extends LinearLayout {
       checkForAutoInitiate(messageRecord.getIndividualRecipient(),
                            messageRecord.getBody().getBody(),
                            messageRecord.getThreadId());
+    }
+    if (messageRecord.isFailed()) {
+      setOnLongClickListener(new MultiSelectLongClickListener());
     }
   }
 
@@ -480,7 +483,9 @@ public class ConversationItem extends LinearLayout {
 
   private class ClickListener implements View.OnClickListener {
     public void onClick(View v) {
-      if (messageRecord.isFailed()) {
+      if (messageRecord.isFailed() && !batchSelected.isEmpty()) {
+        selectionClickListener.onItemClick(null, ConversationItem.this, -1, -1);
+      } else if(messageRecord.isFailed()) {
         Intent intent = new Intent(context, MessageDetailsActivity.class);
         intent.putExtra(MessageDetailsActivity.MASTER_SECRET_EXTRA, masterSecret);
         intent.putExtra(MessageDetailsActivity.MESSAGE_ID_EXTRA, messageRecord.getId());
