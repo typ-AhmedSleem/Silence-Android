@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    compile 'se.emilsjolander:stickylistheaders:2.2.0'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.jpardogo.materialtabstrip:library:1.0.9'
     compile project (':libs:org.w3c.dom')
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
@@ -95,7 +95,7 @@ dependencyVerification {
             'org.whispersystems:libpastelog:550d33c565380d90f4c671e7b8ed5f3a6da55a9fda468373177106b2eb5220b2',
             'org.whispersystems:textsecure-android:b8001bd3c77fadcf84e0c3b21353f76d6db783bd17b28c5d7296d71198446d4b',
             'org.whispersystems:textsecure-java:b879094961f9ef0c851206223051e8478e6bbba0f039ea9340be20f40384bb20',
-            'se.emilsjolander:stickylistheaders:89146b46c96fea0e40200474a2625cda10fe94891e4128f53cdb42375091b9b6',
+            'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
     ]
 }
 
