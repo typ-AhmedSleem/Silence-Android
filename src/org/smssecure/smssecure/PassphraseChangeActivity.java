@@ -31,6 +31,8 @@ import android.widget.Toast;
 import org.smssecure.smssecure.crypto.InvalidPassphraseException;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
+import org.smssecure.smssecure.util.DynamicLanguage;
+import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 /**
@@ -41,6 +43,9 @@ import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 public class PassphraseChangeActivity extends PassphraseActivity {
 
+  private DynamicTheme    dynamicTheme    = new DynamicTheme();
+  private DynamicLanguage dynamicLanguage = new DynamicLanguage();
+
   private EditText originalPassphrase;
   private EditText newPassphrase;
   private EditText repeatPassphrase;
@@ -50,11 +55,20 @@ public class PassphraseChangeActivity extends PassphraseActivity {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
+    dynamicTheme.onCreate(this);
+    dynamicLanguage.onCreate(this);
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.change_passphrase_activity);
 
     initializeResources();
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    dynamicTheme.onResume(this);
+    dynamicLanguage.onResume(this);
   }
 
   private void initializeResources() {
