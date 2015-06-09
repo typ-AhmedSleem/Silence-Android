@@ -107,7 +107,7 @@ public class SmsCipher {
              InvalidVersionException, LegacyMessageException, InvalidMessageException
   {
     try {
-      Recipient          recipient       = RecipientFactory.getRecipientsFromString(context, message.getSender(), false).getPrimaryRecipient();
+      Recipients         recipients      = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
       AxolotlAddress     axolotlAddress  = new AxolotlAddress(message.getSender(), TextSecureAddress.DEFAULT_DEVICE_ID);
       KeyExchangeMessage exchangeMessage = new KeyExchangeMessage(transportDetails.getDecodedMessage(message.getMessageBody().getBytes()));
       SessionBuilder     sessionBuilder  = new SessionBuilder(axolotlStore, axolotlAddress);
@@ -116,7 +116,7 @@ public class SmsCipher {
 
       if (response != null) {
         byte[] serializedResponse = transportDetails.getEncodedMessage(response.serialize());
-        return new OutgoingKeyExchangeMessage(recipient, new String(serializedResponse));
+        return new OutgoingKeyExchangeMessage(recipients, new String(serializedResponse));
       } else {
         return null;
       }

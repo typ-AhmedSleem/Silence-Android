@@ -190,6 +190,14 @@
         </intent-filter>
     </activity>
 
+    <activity android:name=".RecipientPreferenceActivity"
+              android:theme="@style/SMSSecure.LightNoActionBar"
+              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+
+    <activity android:name=".BlockedContactsActivity"
+              android:theme="@style/SMSSecure.LightTheme"
+              android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+
     <service android:enabled="true" android:name=".service.ApplicationMigrationService"/>
     <service android:enabled="true" android:name=".service.KeyCachingService"/>
 

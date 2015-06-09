@@ -28,6 +28,8 @@ import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
 import org.smssecure.smssecure.crypto.storage.SMSSecurePreKeyStore;
 import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingKeyExchangeMessage;
 import org.smssecure.smssecure.util.Base64;
@@ -44,8 +46,8 @@ import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 public class KeyExchangeInitiator {
 
-  public static void initiate(final Context context, final MasterSecret masterSecret, final Recipient recipient, boolean promptOnExisting) {
-    if (promptOnExisting && hasInitiatedSession(context, masterSecret, recipient)) {
+  public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting) {
+    if (promptOnExisting && hasInitiatedSession(context, masterSecret, recipients)) {
       AlertDialogWrapper.Builder dialog = new AlertDialogWrapper.Builder(context);
       dialog.setTitle(R.string.KeyExchangeInitiator_initiate_despite_existing_request_question);
       dialog.setMessage(R.string.KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure);
@@ -53,17 +55,18 @@ public class KeyExchangeInitiator {
       dialog.setCancelable(true);
       dialog.setPositiveButton(R.string.KeyExchangeInitiator_send, new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
-          initiateKeyExchange(context, masterSecret, recipient);
+          initiateKeyExchange(context, masterSecret, recipients);
         }
       });
       dialog.setNegativeButton(android.R.string.cancel, null);
       dialog.show();
     } else {
-      initiateKeyExchange(context, masterSecret, recipient);
+      initiateKeyExchange(context, masterSecret, recipients);
     }
   }
 
-  private static void initiateKeyExchange(Context context, MasterSecret masterSecret, Recipient recipient) {
+  private static void initiateKeyExchange(Context context, MasterSecret masterSecret, Recipients recipients) {
+    Recipient         recipient         = recipients.getPrimaryRecipient();
     SessionStore      sessionStore      = new SMSSecureSessionStore(context, masterSecret);
     PreKeyStore       preKeyStore       = new SMSSecurePreKeyStore(context, masterSecret);
     SignedPreKeyStore signedPreKeyStore = new SMSSecurePreKeyStore(context, masterSecret);
@@ -75,14 +78,15 @@ public class KeyExchangeInitiator {
 
     KeyExchangeMessage         keyExchangeMessage = sessionBuilder.process();
     String                     serializedMessage  = Base64.encodeBytesWithoutPadding(keyExchangeMessage.serialize());
-    OutgoingKeyExchangeMessage textMessage        = new OutgoingKeyExchangeMessage(recipient, serializedMessage);
+    OutgoingKeyExchangeMessage textMessage        = new OutgoingKeyExchangeMessage(recipients, serializedMessage);
 
     MessageSender.send(context, masterSecret, textMessage, -1, false);
   }
 
   private static boolean hasInitiatedSession(Context context, MasterSecret masterSecret,
-                                             Recipient recipient)
+                                             Recipients recipients)
   {
+    Recipient     recipient     = recipients.getPrimaryRecipient();
     SessionStore  sessionStore  = new SMSSecureSessionStore(context, masterSecret);
     SessionRecord sessionRecord = sessionStore.loadSession(new AxolotlAddress(recipient.getNumber(), TextSecureAddress.DEFAULT_DEVICE_ID));
 

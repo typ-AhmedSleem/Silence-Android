@@ -25,7 +25,6 @@ import android.widget.RelativeLayout;
 import org.smssecure.smssecure.components.AvatarImageView;
 import org.smssecure.smssecure.components.FromTextView;
 import org.smssecure.smssecure.database.model.ThreadRecord;
-import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 
 /**
@@ -34,7 +33,7 @@ import org.smssecure.smssecure.recipients.Recipients;
  * @author Jake McGinty
  */
 public class ShareListItem extends RelativeLayout
-                        implements Recipient.RecipientModifiedListener
+                        implements Recipients.RecipientsModifiedListener
 {
   private final static String TAG = ShareListItem.class.getSimpleName();
 
@@ -102,7 +101,7 @@ public class ShareListItem extends RelativeLayout
   }
 
   @Override
-  public void onModified(Recipient recipient) {
+  public void onModified(final Recipients recipients) {
     handler.post(new Runnable() {
       @Override
       public void run() {
