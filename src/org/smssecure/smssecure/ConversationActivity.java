@@ -94,7 +94,6 @@ import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.smssecure.smssecure.util.BitmapDecodingException;
 import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.Dialogs;
-import org.smssecure.smssecure.util.DirectoryHelper;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
@@ -567,7 +566,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleAddAttachment() {
-    if (this.isMmsEnabled || DirectoryHelper.isPushDestination(this, getRecipients())) {
+    if (this.isMmsEnabled) {
       new AlertDialogWrapper.Builder(this).setAdapter(attachmentAdapter, new AttachmentTypeListener())
                                           .show();
     } else {
@@ -682,26 +681,20 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void initializeSecurity() {
     Recipient    primaryRecipient       = getRecipients() == null ? null : getRecipients().getPrimaryRecipient();
-    boolean      isPushDestination      = DirectoryHelper.isPushDestination(this, getRecipients());
-    boolean      isSecureSmsAllowed     = (!isPushDestination || DirectoryHelper.isSmsFallbackAllowed(this, getRecipients()));
-    boolean      isSecureSmsDestination = isSecureSmsAllowed     &&
-                                          isSingleConversation() &&
+    boolean      isSecureSmsDestination = isSingleConversation() &&
                                           SessionUtil.hasSession(this, masterSecret, primaryRecipient);
 
-    if (isPushDestination || isSecureSmsDestination) {
+    if (isSecureSmsDestination) {
       this.isEncryptedConversation = true;
     } else {
       this.isEncryptedConversation = false;
     }
 
     sendButton.initializeAvailableTransports(!recipients.isSingleRecipient() || attachmentManager.isAttachmentPresent());
-    if (!isPushDestination           ) sendButton.disableTransport("textsecure");
     if (!isSecureSmsDestination      ) sendButton.disableTransport("secure_sms");
     if (recipients.isGroupRecipient()) sendButton.disableTransport("insecure_sms");
 
-    if (isPushDestination) {
-      sendButton.setDefaultTransport("textsecure");
-    } else if (isSecureSmsDestination) {
+    if (isSecureSmsDestination) {
       sendButton.setDefaultTransport("secure_sms");
     } else {
       sendButton.setDefaultTransport("insecure_sms");

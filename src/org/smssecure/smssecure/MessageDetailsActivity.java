@@ -43,7 +43,6 @@ import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
-import org.smssecure.smssecure.util.DirectoryHelper;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;

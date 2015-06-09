@@ -24,12 +24,9 @@ public class AdvancedPreferenceFragment extends PreferenceFragment {
 
   private static final int PICK_IDENTITY_CONTACT = 1;
 
-  private MasterSecret masterSecret;
-
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
-    masterSecret = getArguments().getParcelable("master_secret");
     addPreferencesFromResource(R.xml.preferences_advanced);
 
     initializeIdentitySelection();
