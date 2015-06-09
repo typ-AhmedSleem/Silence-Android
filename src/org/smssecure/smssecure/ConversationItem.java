@@ -408,7 +408,7 @@ public class ConversationItem extends LinearLayout {
   /// Event handlers
 
   private void handleKeyExchangeClicked() {
-    ReceiveKeyDialog.build(context, masterSecret, messageRecord).show();
+    new ReceiveKeyDialog(context, masterSecret, messageRecord).show();
   }
 
   private class ThumbnailClickListener implements ThumbnailView.ThumbnailClickListener {
