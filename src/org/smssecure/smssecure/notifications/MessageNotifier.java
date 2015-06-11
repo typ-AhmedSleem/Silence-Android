@@ -119,9 +119,15 @@ public class MessageNotifier {
   }
 
   public static void updateNotification(Context context, MasterSecret masterSecret, long threadId) {
-    if (!SMSSecurePreferences.isNotificationsEnabled(context)) {
+    Recipients recipients = DatabaseFactory.getThreadDatabase(context)
+                                           .getRecipientsForThreadId(threadId);
+
+    if (!SMSSecurePreferences.isNotificationsEnabled(context) ||
+        (recipients != null && recipients.isMuted()))
+    {
       return;
     }
+
 
     if (visibleThread == threadId) {
       ThreadDatabase threads = DatabaseFactory.getThreadDatabase(context);
