@@ -50,14 +50,6 @@
     <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
     <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
 
-    <!-- ConfirmIdentityDialog -->
-    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">The
-        identifying key material for %1$s has changed. This could either mean that someone is trying to
-        intercept your communication, or that %2$s simply re-installed SMSSecure and now has a new
-        identity key.
-    </string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You should verify the identity of this contact.</string>
-
     <!-- ConversationItem -->
     <string name="ConversationItem_message_size_d_kb">Message size: %d KB</string>
     <string name="ConversationItem_expires_s">Expires: %s</string>
@@ -126,6 +118,9 @@
     <string name="ConversationFragment_deleting">Deleting...</string>
     <string name="ConversationFragment_deleting_messages">Deleting messages...</string>
 
+    <!-- ConversationListActivity -->
+    <string name="ConversationListActivity_search">Search...</string>
+
     <!-- ConversationListFragment -->
     <string name="ConversationListFragment_delete_threads_question">Delete threads?</string>
     <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Are you sure you want to delete all selected conversation threads?</string>
@@ -142,6 +137,7 @@
 
     <!-- DateUtils -->
     <string name="DateUtils_now">Now</string>
+    <string name="DateUtils_minutes_ago">%d min</string>
 
     <!-- ShareActivity -->
     <string name="ShareActivity_share_with">Share with</string>
@@ -248,6 +244,7 @@
     </string>
     <string name="ReceiveKeyActivity_processing">Processing</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">Processing key exchange…</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You should verify the identity of this contact.</string>
 
     <!-- SmsMessageRecord -->
     <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Received corrupted key
@@ -475,11 +472,6 @@
     <string name="arrays__use_custom">Use custom</string>
 
     <!-- plurals.xml -->
-    <plurals name="minutes_ago">
-        <item quantity="one">%d min</item>
-        <item quantity="other">%d mins</item>
-    </plurals>
-
     <plurals name="hours_ago">
         <item quantity="one">%d hour</item>
         <item quantity="other">%d hours</item>

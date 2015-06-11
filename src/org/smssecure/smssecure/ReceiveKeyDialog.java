@@ -17,16 +17,17 @@
 package org.smssecure.smssecure;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
-
-import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -42,7 +43,6 @@ import org.smssecure.smssecure.sms.IncomingKeyExchangeMessage;
 import org.smssecure.smssecure.sms.IncomingPreKeyBundleMessage;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.util.Base64;
-import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
 import org.whispersystems.libaxolotl.IdentityKey;
 import org.whispersystems.libaxolotl.InvalidKeyException;
 import org.whispersystems.libaxolotl.InvalidMessageException;
@@ -62,71 +62,63 @@ import java.io.IOException;
  * @author Moxie Marlinspike
  */
 
-public class ReceiveKeyDialog extends MaterialDialog {
+public class ReceiveKeyDialog extends AlertDialog {
   private static final String TAG = ReceiveKeyDialog.class.getSimpleName();
 
-  private ReceiveKeyDialog(Builder builder, MasterSecret masterSecret, MessageRecord messageRecord, IdentityKey identityKey) {
-    super(builder);
-    initializeText(masterSecret, messageRecord, identityKey);
-  }
+  private OnClickListener callback;
 
-  public static @NonNull ReceiveKeyDialog build(@NonNull Context context,
-                                                @NonNull MasterSecret masterSecret,
-                                                @NonNull MessageRecord messageRecord)
+  public ReceiveKeyDialog(@NonNull Context context,
+                          @NonNull MasterSecret masterSecret,
+                          @NonNull MessageRecord messageRecord)
   {
-    try {
-      final IncomingKeyExchangeMessage message = getMessage(messageRecord);
+    super(context);
 
+    try{
+      final IncomingKeyExchangeMessage message = getMessage(messageRecord);
       final IdentityKey identityKey = getIdentityKey(message);
-      Builder builder = new Builder(context).customView(R.layout.receive_key_dialog, true)
-                                            .positiveText(R.string.receive_key_activity__complete)
-                                            .negativeText(android.R.string.cancel)
-                                            .callback(new ReceiveKeyDialogCallback(context,
-                                                                                   masterSecret,
-                                                                                   messageRecord,
-                                                                                   message,
-                                                                                   identityKey));
-      return new ReceiveKeyDialog(builder, masterSecret, messageRecord, identityKey);
+
+      if (isTrusted(masterSecret, identityKey, messageRecord.getIndividualRecipient())){
+        setMessage(context.getString(R.string.ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but));
+      } else {
+        setUntrustedText(messageRecord, identityKey);
+      }
+
+      setButton(AlertDialog.BUTTON_POSITIVE, context.getString(R.string.receive_key_activity__complete), new AcceptListener(masterSecret, messageRecord, message, identityKey));
+      setButton(AlertDialog.BUTTON_NEGATIVE, context.getString(android.R.string.cancel), new CancelListener());
+
     } catch (InvalidKeyException | InvalidVersionException | InvalidMessageException | LegacyMessageException e) {
       throw new AssertionError(e);
     }
+
   }
 
-  private void initializeText(MasterSecret masterSecret, MessageRecord messageRecord, IdentityKey identityKey) {
-    if (getCustomView() == null) {
-      throw new AssertionError("CustomView should not be null in ReceiveKeyDialog.");
-    }
-
-    if (isTrusted(masterSecret, identityKey, messageRecord.getIndividualRecipient())){
-      initializeTrustedText();
-    } else {
-      initializeUntrustedText(messageRecord, identityKey);
-    }
+  @Override
+  public void show() {
+    super.show();
+    ((TextView)this.findViewById(android.R.id.message))
+            .setMovementMethod(LinkMovementMethod.getInstance());
   }
 
-  private void initializeTrustedText() {
-    TextView descriptionText = (TextView) getCustomView().findViewById(R.id.description_text);
-    descriptionText.setText(getContext().getString(R.string.ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but));
+  public void setCallback(OnClickListener callback) {
+    this.callback = callback;
   }
 
-  private void initializeUntrustedText(final MessageRecord messageRecord, final IdentityKey identityKey){
-    TextView        descriptionText = (TextView) getCustomView().findViewById(R.id.description_text);
+  private void setUntrustedText(final MessageRecord messageRecord, final IdentityKey identityKey){
     String          introText       = getContext().getString(R.string.ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different);
     SpannableString spannableString = new SpannableString(introText + " " +
                                                           getContext().getString(R.string.ConfirmIdentityDialog_you_may_wish_to_verify_this_contact));
     spannableString.setSpan(new ClickableSpan() {
-      @Override
-      public void onClick(View widget) {
-        Intent intent = new Intent(getContext(), VerifyIdentityActivity.class);
-        intent.putExtra("recipient", messageRecord.getIndividualRecipient().getRecipientId());
-        intent.putExtra("remote_identity", new IdentityKeyParcelable(identityKey));
-        getContext().startActivity(intent);
-      }
-    }, introText.length() + 1,
-       spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                              @Override
+                              public void onClick(View widget) {
+                                Intent intent = new Intent(getContext(), VerifyIdentityActivity.class);
+                                intent.putExtra("recipient", messageRecord.getIndividualRecipient().getRecipientId());
+                                intent.putExtra("remote_identity", new IdentityKeyParcelable(identityKey));
+                                getContext().startActivity(intent);
+                              }
+                            }, introText.length() + 1,
+            spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-    descriptionText.setText(spannableString);
-    descriptionText.setMovementMethod(LinkMovementMethod.getInstance());
+    setMessage(spannableString);
   }
 
   private boolean isTrusted(MasterSecret masterSecret, IdentityKey identityKey, Recipient recipient) {
@@ -171,45 +163,25 @@ public class ReceiveKeyDialog extends MaterialDialog {
     }
   }
 
-  private static class ReceiveKeyDialogCallback extends ButtonCallback {
-    private Context                     context;
-    private MasterSecret                masterSecret;
-    private MessageRecord               messageRecord;
-    private IncomingKeyExchangeMessage  message;
-    private IdentityKey                 identityKey;
-
-    public ReceiveKeyDialogCallback(Context context,
-                                    MasterSecret masterSecret,
-                                    MessageRecord messageRecord,
-                                    IncomingKeyExchangeMessage message,
-                                    IdentityKey identityKey)
-    {
-      this.context       = context;
-      this.masterSecret  = masterSecret;
-      this.messageRecord = messageRecord;
-      this.message       = message;
-      this.identityKey   = identityKey;
-    }
-
-    @Override public void onPositive(MaterialDialog dialog) {
-      new VerifyAsyncTask(context, masterSecret, messageRecord, message, identityKey).execute();
+  private class CancelListener implements OnClickListener {
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
+      if (callback != null) callback.onClick(null, 0);
     }
   }
 
-  private static class VerifyAsyncTask extends ProgressDialogAsyncTask<Void,Void,Void> {
+  private class AcceptListener implements OnClickListener {
 
     private MasterSecret                masterSecret;
     private MessageRecord               messageRecord;
     private IncomingKeyExchangeMessage  message;
     private IdentityKey                 identityKey;
 
-    public VerifyAsyncTask(Context context,
-                           MasterSecret masterSecret,
+    private AcceptListener(MasterSecret masterSecret,
                            MessageRecord messageRecord,
                            IncomingKeyExchangeMessage message,
                            IdentityKey identityKey)
     {
-      super(context, R.string.ReceiveKeyActivity_processing, R.string.ReceiveKeyActivity_processing_key_exchange);
       this.masterSecret  = masterSecret;
       this.messageRecord = messageRecord;
       this.message       = message;
@@ -217,25 +189,31 @@ public class ReceiveKeyDialog extends MaterialDialog {
     }
 
     @Override
-    protected Void doInBackground(Void... params) {
-      if (getContext() == null) return null;
+    public void onClick(DialogInterface dialog, int which) {
+      new AsyncTask<Void, Void, Void>(){
+        @Override
+        protected Void doInBackground(Void... params) {
 
-      Context               context          = getContext();
-      IdentityDatabase      identityDatabase = DatabaseFactory.getIdentityDatabase(context);
-      EncryptingSmsDatabase smsDatabase      = DatabaseFactory.getEncryptingSmsDatabase(context);
+          Context               context          = getContext();
+          IdentityDatabase      identityDatabase = DatabaseFactory.getIdentityDatabase(context);
+          EncryptingSmsDatabase smsDatabase      = DatabaseFactory.getEncryptingSmsDatabase(context);
 
-      identityDatabase.saveIdentity(masterSecret,
-              messageRecord.getIndividualRecipient().getRecipientId(),
-              identityKey);
+          identityDatabase.saveIdentity(masterSecret,
+                  messageRecord.getIndividualRecipient().getRecipientId(),
+                  identityKey);
 
-      if (message.isIdentityUpdate()) {
-        smsDatabase.markAsProcessedKeyExchange(messageRecord.getId());
-      } else {
-        ApplicationContext.getInstance(getContext())
-                .getJobManager()
-                .add(new SmsDecryptJob(context, messageRecord.getId(), true));
-      }
-      return null;
+          if (message.isIdentityUpdate()) {
+            smsDatabase.markAsProcessedKeyExchange(messageRecord.getId());
+          } else {
+            ApplicationContext.getInstance(getContext())
+                    .getJobManager()
+                    .add(new SmsDecryptJob(context, messageRecord.getId(), true));
+          }
+          return null;
+        }
+      }.execute();
+
+      if (callback != null) callback.onClick(null, 0);
     }
   }
 }

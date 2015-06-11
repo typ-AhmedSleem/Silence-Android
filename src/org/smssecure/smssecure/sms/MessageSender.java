@@ -32,7 +32,6 @@ import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.jobs.MmsSendJob;
 import org.smssecure.smssecure.jobs.SmsSendJob;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
-import org.smssecure.smssecure.push.SMSSecureCommunicationFactory;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;

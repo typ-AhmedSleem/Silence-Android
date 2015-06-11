@@ -1,40 +1,42 @@
 package org.smssecure.smssecure.components.emoji;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable.Callback;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatEditText;
+import android.text.InputFilter;
 import android.util.AttributeSet;
+
+import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.components.emoji.EmojiProvider.EmojiDrawable;
 
 
 public class EmojiEditText extends AppCompatEditText {
-  private final Callback callback = new PostInvalidateCallback(this);
+  private static final String TAG = EmojiEditText.class.getSimpleName();
 
   public EmojiEditText(Context context) {
-    super(context);
+    this(context, null);
   }
 
   public EmojiEditText(Context context, AttributeSet attrs) {
-    super(context, attrs);
+    this(context, attrs, R.attr.editTextStyle);
   }
 
   public EmojiEditText(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+    setFilters(new InputFilter[]{ new EmojiFilter(this) });
   }
 
-  @Override public void setText(CharSequence text, BufferType type) {
-    super.setText(EmojiProvider.getInstance(getContext()).emojify(text, EmojiProvider.EMOJI_SMALL, new PostInvalidateCallback(this)),
-                  BufferType.SPANNABLE);
-  }
-
-  public void insertEmoji(int codePoint) {
+  public void insertEmoji(String emoji) {
     final int          start = getSelectionStart();
     final int          end   = getSelectionEnd();
-    final char[]       chars = Character.toChars(codePoint);
-    final CharSequence text  = EmojiProvider.getInstance(getContext()).emojify(new String(chars),
-                                                                               EmojiProvider.EMOJI_SMALL,
-                                                                               callback);
 
-    getText().replace(Math.min(start, end), Math.max(start, end), text);
-    setSelection(end + chars.length);
+    getText().replace(Math.min(start, end), Math.max(start, end), emoji);
+    setSelection(end + emoji.length());
+  }
+
+  @Override public void invalidateDrawable(@NonNull Drawable drawable) {
+    if (drawable instanceof EmojiDrawable) invalidate();
+    else                                   super.invalidateDrawable(drawable);
   }
 }

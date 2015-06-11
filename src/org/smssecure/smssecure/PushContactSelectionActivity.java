@@ -24,7 +24,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.util.DirectoryHelper;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SMSSecurePreferences;

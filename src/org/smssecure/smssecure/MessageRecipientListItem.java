@@ -101,7 +101,7 @@ public class MessageRecipientListItem extends RelativeLayout
       conflictButton.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View v) {
-          new ConfirmIdentityDialog(getContext(), masterSecret, record, keyMismatch).show();
+          new ReceiveKeyDialog(getContext(), masterSecret, record).show();
         }
       });
     } else if (networkFailure != null || record.isFailed()) {

@@ -39,7 +39,6 @@ import org.smssecure.smssecure.preferences.AppearancePreferenceFragment;
 import org.smssecure.smssecure.preferences.NotificationsPreferenceFragment;
 import org.smssecure.smssecure.preferences.SmsMmsPreferenceFragment;
 import org.smssecure.smssecure.preferences.StoragePreferenceFragment;
-import org.smssecure.smssecure.push.SMSSecureCommunicationFactory;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
