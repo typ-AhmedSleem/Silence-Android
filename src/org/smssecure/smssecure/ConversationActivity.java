@@ -405,10 +405,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleUnblock() {
     new AlertDialogWrapper.Builder(this)
-        .setTitle(R.string.ConversationActivity_unblock_question)
-        .setMessage(R.string.ConversationActivity_are_you_sure_you_want_to_unblock_this_contact)
+        .setTitle(R.string.RecipientPreferenceActivity_unblock_this_contact_question)
+        .setMessage(R.string.RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact)
         .setNegativeButton(android.R.string.cancel, null)
-        .setPositiveButton(R.string.ConversationActivity_unblock, new DialogInterface.OnClickListener() {
+        .setPositiveButton(R.string.RecipientPreferenceActivity_unblock, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
             recipients.setBlocked(false);
