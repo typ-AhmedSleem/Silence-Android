@@ -179,17 +179,17 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
           ringtonePreference.setSummary(tone.getTitle(getActivity()));
         }
       } else {
-        ringtonePreference.setSummary(R.string.preferences__default);
+        ringtonePreference.setSummary(R.string.arrays__settings_default);
       }
 
       if (recipients.getVibrate() == VibrateState.DEFAULT) {
-        vibratePreference.setSummary(R.string.preferences__default);
+        vibratePreference.setSummary(R.string.arrays__settings_default);
         vibratePreference.setValueIndex(0);
       } else if (recipients.getVibrate() == VibrateState.ENABLED) {
-        vibratePreference.setSummary("Enabled");
+        vibratePreference.setSummary(R.string.arrays__enabled);
         vibratePreference.setValueIndex(1);
       } else {
-        vibratePreference.setSummary("Disabled");
+        vibratePreference.setSummary(R.string.arrays__disabled);
         vibratePreference.setValueIndex(2);
       }
 
@@ -197,8 +197,8 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
         blockPreference.setEnabled(false);
       } else {
         blockPreference.setEnabled(true);
-        if (recipients.isBlocked()) blockPreference.setTitle("Unblock");
-        else                        blockPreference.setTitle("Block");
+        if (recipients.isBlocked()) blockPreference.setTitle(R.string.RecipientPreferenceActivity_unblock);
+        else                        blockPreference.setTitle(R.string.RecipientPreferenceActivity_block);
       }
     }
 
