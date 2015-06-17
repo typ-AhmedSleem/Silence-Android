@@ -30,12 +30,6 @@ public abstract class SendJob extends MasterSecretJob {
 
   @Override
   public final void onRun(MasterSecret masterSecret) throws Exception {
-    if (!Util.isBuildFresh()) {
-      throw new SMSSecureExpiredException(String.format("SMSSecure expired (build %d, now %d)",
-                                                         BuildConfig.BUILD_TIMESTAMP,
-                                                         System.currentTimeMillis()));
-    }
-
     onSend(masterSecret);
   }
 
