@@ -303,7 +303,7 @@ public class MessageNotifier {
         return;
       }
 
-      Uri uri = recipients.getRingtone();
+      Uri uri = recipients != null ? recipients.getRingtone() : null;
 
       if (uri == null) {
         String ringtone = SMSSecurePreferences.getNotificationRingtone(context);
