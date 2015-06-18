@@ -50,6 +50,7 @@ import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.DefaultSmsReminder;
 import org.smssecure.smssecure.components.DividerItemDecoration;
 import org.smssecure.smssecure.components.ReminderView;
+import org.smssecure.smssecure.components.StoreRatingReminder;
 import org.smssecure.smssecure.components.SystemSmsImportReminder;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.loaders.ConversationListLoader;
@@ -133,6 +134,8 @@ public class ConversationListFragment extends Fragment
       reminderView.showReminder(new DefaultSmsReminder(getActivity()));
     } else if (SystemSmsImportReminder.isEligible(getActivity())) {
       reminderView.showReminder(new SystemSmsImportReminder(getActivity(), masterSecret));
+    } else if (StoreRatingReminder.isEligible(getActivity())){
+      reminderView.showReminder(new StoreRatingReminder(getActivity()));
     } else {
       reminderView.hide();
     }
