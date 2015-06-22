@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.text.SpannableStringBuilder;
 
 import org.smssecure.smssecure.ConversationActivity;
+import org.smssecure.smssecure.ConversationPopupActivity;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Util;
@@ -81,8 +82,7 @@ public class NotificationItem {
   }
 
   public PendingIntent getPendingIntent(Context context) {
-    Intent intent = new Intent(context, ConversationActivity.class);
-
+    Intent     intent           = new Intent(context, ConversationActivity.class);
     Recipients notifyRecipients = threadRecipients != null ? threadRecipients : recipients;
     if (notifyRecipients != null) intent.putExtra("recipients", notifyRecipients.getIds());
 
@@ -91,5 +91,17 @@ public class NotificationItem {
 
     return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
   }
+
+  public PendingIntent getReplyIntent(Context context) {
+    Intent     intent           = new Intent(context, ConversationPopupActivity.class);
+    Recipients notifyRecipients = threadRecipients != null ? threadRecipients : recipients;
+    if (notifyRecipients != null) intent.putExtra(ConversationActivity.RECIPIENTS_EXTRA, notifyRecipients.getIds());
+
+    intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, threadId);
+    intent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+
+    return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+  }
+
 
 }
