@@ -46,6 +46,7 @@ import android.util.Log;
 import org.smssecure.smssecure.ConversationActivity;
 import org.smssecure.smssecure.ConversationListActivity;
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.contacts.avatars.ContactColors;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
@@ -182,8 +183,10 @@ public class MessageNotifier {
     List<NotificationItem>     notifications       = notificationState.getNotifications();
     NotificationCompat.Builder builder             = new NotificationCompat.Builder(context);
     Recipient                  recipient           = notifications.get(0).getIndividualRecipient();
-    Drawable                   recipientPhoto      = recipient.getContactPhoto().asDrawable(context);
+    Recipients                 recipients          = notifications.get(0).getRecipients();
     int                        largeIconTargetSize = context.getResources().getDimensionPixelSize(R.dimen.contact_photo_target_size);
+    Drawable                   recipientPhoto      = recipient.getContactPhoto().asDrawable(context, recipients == null ? ContactColors.UNKNOWN_COLOR :
+                                                                                                     recipients.getColor().or(ContactColors.UNKNOWN_COLOR));
 
     if (recipientPhoto != null) {
       Bitmap recipientPhotoBitmap = BitmapUtil.createFromDrawable(recipientPhoto, largeIconTargetSize, largeIconTargetSize);

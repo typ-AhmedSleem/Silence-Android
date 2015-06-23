@@ -22,6 +22,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.Patterns;
 
+import org.smssecure.smssecure.contacts.avatars.ContactColors;
 import org.smssecure.smssecure.contacts.avatars.ContactPhoto;
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
@@ -32,6 +33,7 @@ import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.Util;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -49,10 +51,11 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
   private final Set<RecipientsModifiedListener> listeners = Collections.newSetFromMap(new WeakHashMap<RecipientsModifiedListener, Boolean>());
   private final List<Recipient> recipients;
 
-  private Uri          ringtone          = null;
-  private long         mutedUntil        = 0;
-  private boolean      blocked           = false;
-  private VibrateState vibrate           = VibrateState.DEFAULT;
+  private Uri               ringtone   = null;
+  private long              mutedUntil = 0;
+  private boolean           blocked    = false;
+  private VibrateState      vibrate    = VibrateState.DEFAULT;
+  private Optional<Integer> color      = Optional.absent();
 
   Recipients() {
     this(new LinkedList<Recipient>(), (RecipientsPreferences)null);
@@ -66,6 +69,7 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
       mutedUntil = preferences.getMuteUntil();
       vibrate    = preferences.getVibrateState();
       blocked    = preferences.isBlocked();
+      color      = preferences.getColor();
     }
   }
 
@@ -84,6 +88,7 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
             mutedUntil = result.getMuteUntil();
             vibrate    = result.getVibrateState();
             blocked    = result.isBlocked();
+            color      = result.getColor();
 
             localListeners = new HashSet<>(listeners);
           }
@@ -99,6 +104,21 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
         Log.w(TAG, error);
       }
     });
+  }
+
+  public synchronized Optional<Integer> getColor() {
+    if      (color.isPresent())                   return color;
+    else if (isGroupRecipient())                  return Optional.absent();
+    else if (recipients.get(0).getName() == null) return Optional.absent();
+    else    return Optional.of(ContactColors.generateFor(recipients.get(0).getName()));
+  }
+
+  public void setColor(Optional<Integer> color) {
+    synchronized (this) {
+      this.color = color;
+    }
+
+    notifyListeners();
   }
 
   public synchronized @Nullable Uri getRingtone() {
