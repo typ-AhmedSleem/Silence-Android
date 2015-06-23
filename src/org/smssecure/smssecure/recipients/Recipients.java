@@ -16,14 +16,14 @@
  */
 package org.smssecure.smssecure.recipients;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.Patterns;
 
-import org.smssecure.smssecure.contacts.ContactPhotoFactory;
+import org.smssecure.smssecure.contacts.avatars.ContactPhoto;
+import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.VibrateState;
 import org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
@@ -149,9 +149,10 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
     notifyListeners();
   }
 
-  public Drawable getContactPhoto(Context context) {
+  public @NonNull
+  ContactPhoto getContactPhoto() {
     if (recipients.size() == 1) return recipients.get(0).getContactPhoto();
-    else                        return ContactPhotoFactory.getDefaultGroupPhoto(context);
+    else                        return ContactPhotoFactory.getDefaultGroupPhoto();
   }
 
   public synchronized void addListener(RecipientsModifiedListener listener) {
