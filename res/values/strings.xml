@@ -463,6 +463,8 @@
     <string name="recipient_preferences__ringtone">Ringtone</string>
     <string name="recipient_preferences__vibrate">Vibrate</string>
     <string name="recipient_preferences__block">Block</string>
+    <string name="recipient_preferences__color">Color</string>
+    <string name="recipient_preferences__color_for_this_contact">Color for this contact</string>
 
     <!-- receive_key_dialog -->
     <string name="receive_key_activity__complete">Complete</string>
