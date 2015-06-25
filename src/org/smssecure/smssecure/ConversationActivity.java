@@ -76,7 +76,6 @@ import org.smssecure.smssecure.mms.AttachmentManager;
 import org.smssecure.smssecure.mms.AttachmentTypeSelectorAdapter;
 import org.smssecure.smssecure.mms.MediaTooLargeException;
 import org.smssecure.smssecure.mms.MmsMediaConstraints;
-import org.smssecure.smssecure.mms.OutgoingGroupMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
@@ -271,12 +270,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         addAttachmentImage(Uri.fromFile(attachmentManager.getCaptureFile()));
       }
       break;
-    case GROUP_EDIT:
-      this.recipients = RecipientFactory.getRecipientsForIds(this, data.getLongArrayExtra(GroupCreateActivity.GROUP_RECIPIENT_EXTRA), true);
-      titleView.setTitle(recipients);
-      setBlockedUserState(recipients);
-      supportInvalidateOptionsMenu();
-      break;
     }
   }
 
@@ -307,8 +300,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         } else {
           menu.findItem(R.id.menu_distribution_conversation).setChecked(true);
         }
-      } else if (isActiveGroup()) {
-        inflater.inflate(R.menu.conversation_push_group_options, menu);
       }
     }
 
@@ -340,8 +331,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     case R.id.menu_group_recipients:          handleDisplayGroupRecipients();                    return true;
     case R.id.menu_distribution_broadcast:    handleDistributionBroadcastEnabled(item);          return true;
     case R.id.menu_distribution_conversation: handleDistributionConversationEnabled(item);       return true;
-    case R.id.menu_edit_group:                handleEditPushGroup();                             return true;
-    case R.id.menu_leave:                     handleLeavePushGroup();                            return true;
     case R.id.menu_invite:                    handleInviteLink();                                return true;
     case R.id.menu_mute_notifications:        handleMuteNotifications();                         return true;
     case R.id.menu_unmute_notifications:      handleUnmuteNotifications();                       return true;
@@ -508,53 +497,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     intent.putExtra(MediaOverviewActivity.THREAD_ID_EXTRA, threadId);
     intent.putExtra(MediaOverviewActivity.RECIPIENT_EXTRA, recipients.getPrimaryRecipient().getRecipientId());
     startActivity(intent);
-  }
-
-  private void handleLeavePushGroup() {
-    if (getRecipients() == null) {
-      Toast.makeText(this, getString(R.string.ConversationActivity_invalid_recipient),
-                     Toast.LENGTH_LONG).show();
-      return;
-    }
-
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(this);
-    builder.setTitle("");
-    builder.setIconAttribute(R.attr.dialog_info_icon);
-    builder.setCancelable(true);
-    builder.setMessage("");
-    builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        Context self = ConversationActivity.this;
-        try {
-          byte[] groupId = GroupUtil.getDecodedId(getRecipients().getPrimaryRecipient().getNumber());
-          DatabaseFactory.getGroupDatabase(self).setActive(groupId, false);
-
-          GroupContext context = GroupContext.newBuilder()
-                                             .setId(ByteString.copyFrom(groupId))
-                                             .setType(GroupContext.Type.QUIT)
-                                             .build();
-
-          OutgoingGroupMediaMessage outgoingMessage = new OutgoingGroupMediaMessage(self, getRecipients(),
-                                                                                    context, null);
-          MessageSender.send(self, masterSecret, outgoingMessage, threadId, false);
-          DatabaseFactory.getGroupDatabase(self).remove(groupId, SMSSecurePreferences.getLocalNumber(self));
-          initializeEnabledCheck();
-        } catch (IOException e) {
-          Log.w(TAG, e);
-          Toast.makeText(self, "", Toast.LENGTH_LONG).show();
-        }
-      }
-    });
-
-    builder.setNegativeButton(R.string.no, null);
-    builder.show();
-  }
-
-  private void handleEditPushGroup() {
-    Intent intent = new Intent(ConversationActivity.this, GroupCreateActivity.class);
-    intent.putExtra(GroupCreateActivity.GROUP_RECIPIENT_EXTRA, recipients.getPrimaryRecipient().getRecipientId());
-    startActivityForResult(intent, GROUP_EDIT);
   }
 
   private void handleDistributionBroadcastEnabled(MenuItem item) {
