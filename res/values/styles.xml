@@ -41,7 +41,7 @@
         <item name="titleTextStyle">@style/SMSSecure.TitleTextStyle</item>
         <item name="subtitleTextStyle">@style/SMSSecure.SubtitleTextStyle</item>
         <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">#99ffffff</item>
+        <item name="android:textColorSecondary">#BFffffff</item>
     </style>
 
     <style name="SMSSecure.DarkActionBar.TabBar"
@@ -61,7 +61,7 @@
     </style>
 
     <style name="SMSSecure.SubtitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-        <item name="android:textColor">#99ffffff</item>
+        <item name="android:textColor">#BFffffff</item>
     </style>
 
     <style name="SMSSecure.IntroActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
