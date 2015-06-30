@@ -16,12 +16,15 @@
  */
 package org.smssecure.smssecure.recipients;
 
+import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.Patterns;
 
+import org.smssecure.smssecure.color.MaterialColor;
+import org.smssecure.smssecure.contacts.avatars.ContactColors;
 import org.smssecure.smssecure.contacts.avatars.ContactPhoto;
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
@@ -32,7 +35,6 @@ import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -155,13 +157,13 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
     else                        return ContactPhotoFactory.getDefaultGroupPhoto();
   }
 
-  public synchronized @NonNull Optional<Integer> getColor() {
-    if      (!isSingleRecipient() || isGroupRecipient()) return Optional.absent();
-    else if (isEmpty())                                  return Optional.absent();
+  public synchronized @NonNull MaterialColor getColor(Context context) {
+    if      (!isSingleRecipient() || isGroupRecipient()) return ContactColors.getGroupColor(context);
+    else if (isEmpty())                                  return ContactColors.UNKNOWN_COLOR;
     else                                                 return recipients.get(0).getColor();
   }
 
-  public synchronized void setColor(Optional<Integer> color) {
+  public synchronized void setColor(@NonNull MaterialColor color) {
     if      (!isSingleRecipient() || isGroupRecipient()) throw new AssertionError("Groups don't have colors!");
     else if (!isEmpty())                                 recipients.get(0).setColor(color);
   }

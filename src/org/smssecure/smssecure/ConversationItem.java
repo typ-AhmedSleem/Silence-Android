@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -39,6 +40,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import org.smssecure.smssecure.ConversationFragment.SelectionClickListener;
+import org.smssecure.smssecure.color.ThemeType;
 import org.smssecure.smssecure.components.AvatarImageView;
 import org.smssecure.smssecure.components.ThumbnailView;
 import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
@@ -193,14 +195,14 @@ public class ConversationItem extends LinearLayout {
   private void setBubbleState(MessageRecord messageRecord) {
     int[]      attributes   = new int[]{R.attr.conversation_item_bubble_background};
     TypedArray colors       = context.obtainStyledAttributes(attributes);
-    int        defaultColor = colors.getColor(0, 0xFFFFFF);
+    int        defaultColor = colors.getColor(0, Color.WHITE);
 
     if (messageRecord.isOutgoing()) {
       bodyBubble.getBackground().setColorFilter(defaultColor, PorterDuff.Mode.MULTIPLY);
     } else {
       bodyBubble.getBackground().setColorFilter(messageRecord.getIndividualRecipient()
                                                              .getColor()
-                                                             .or(defaultColor),
+                                                             .toConversationColor(ThemeType.getCurrent(context)),
                                                 PorterDuff.Mode.MULTIPLY);
     }
 
