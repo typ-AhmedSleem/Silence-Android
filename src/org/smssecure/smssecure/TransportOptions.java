@@ -81,34 +81,31 @@ public class TransportOptions {
   }
 
   private List<TransportOption> initializeAvailableTransports(boolean isMediaMessage) {
-    List<TransportOption> results          = new LinkedList<>();
-    /*int[]                 attributes       = new int[]{R.attr.conversation_transport_sms_indicator,
-                                                       R.attr.conversation_transport_push_indicator};*/
-    int[]                 attributes       = new int[]{};
-    TypedArray            iconArray        = context.obtainStyledAttributes(attributes);
-    int                   smsIconResource  = iconArray.getResourceId(0, -1);
+    List<TransportOption> results = new LinkedList<>();
 
     if (isMediaMessage) {
-      results.add(new TransportOption(Type.INSECURE_SMS, smsIconResource,
+      results.add(new TransportOption(Type.INSECURE_SMS, R.drawable.ic_send_insecure_white_24dp,
+                                      context.getResources().getColor(R.color.grey_600),
                                       context.getString(R.string.ConversationActivity_transport_insecure_mms),
                                       context.getString(R.string.conversation_activity__type_message_mms_insecure),
                                       new MmsCharacterCalculator()));
-      results.add(new TransportOption(Type.SECURE_SMS, smsIconResource,
+      results.add(new TransportOption(Type.SECURE_SMS, R.drawable.ic_send_secure_white_24dp,
+                                      context.getResources().getColor(R.color.textsecure_primary),
                                       context.getString(R.string.ConversationActivity_transport_secure_mms),
                                       context.getString(R.string.conversation_activity__type_message_mms_secure),
                                       new MmsCharacterCalculator()));
     } else {
-      results.add(new TransportOption(Type.INSECURE_SMS, smsIconResource,
+      results.add(new TransportOption(Type.INSECURE_SMS, R.drawable.ic_send_insecure_white_24dp,
+                                      context.getResources().getColor(R.color.grey_600),
                                       context.getString(R.string.ConversationActivity_transport_insecure_sms),
                                       context.getString(R.string.conversation_activity__type_message_sms_insecure),
                                       new SmsCharacterCalculator()));
-      results.add(new TransportOption(Type.SECURE_SMS, smsIconResource,
+      results.add(new TransportOption(Type.SECURE_SMS, R.drawable.ic_send_secure_white_24dp,
+                                      context.getResources().getColor(R.color.textsecure_primary),
                                       context.getString(R.string.ConversationActivity_transport_secure_sms),
                                       context.getString(R.string.conversation_activity__type_message_sms_secure),
                                       new SmsCharacterCalculator()));
     }
-
-    iconArray.recycle();
 
     return results;
   }

@@ -1,5 +1,7 @@
 package org.smssecure.smssecure;
 
+import android.support.annotation.DrawableRes;
+
 import org.smssecure.smssecure.util.CharacterCalculator;
 import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.EncryptedSmsCharacterCalculator;
@@ -13,19 +15,22 @@ public class TransportOption {
   }
 
   private int                 drawable;
+  private int                 backgroundColor;
   private String              text;
   private Type                type;
   private String              composeHint;
   private CharacterCalculator characterCalculator;
 
   public TransportOption(Type type,
-                         int drawable,
+                         @DrawableRes int drawable,
+                         int backgroundColor,
                          String text,
                          String composeHint,
                          CharacterCalculator characterCalculator)
   {
     this.type                = type;
     this.drawable            = drawable;
+    this.backgroundColor     = backgroundColor;
     this.text                = text;
     this.composeHint         = composeHint;
     this.characterCalculator = characterCalculator;
@@ -39,10 +44,6 @@ public class TransportOption {
     return this.type == type;
   }
 
-  public boolean isPlaintext() {
-    return type == Type.INSECURE_SMS;
-  }
-
   public boolean isSms() {
     return true;
   }
@@ -51,8 +52,12 @@ public class TransportOption {
     return characterCalculator.calculateCharacters(charactersSpent);
   }
 
-  public int getDrawable() {
+  public @DrawableRes int getDrawable() {
     return drawable;
+  }
+
+  public int getBackgroundColor() {
+    return backgroundColor;
   }
 
   public String getComposeHint() {
