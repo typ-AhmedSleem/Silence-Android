@@ -11,7 +11,6 @@ import android.widget.ImageView;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.color.MaterialColor;
-import org.smssecure.smssecure.color.ThemeType;
 import org.smssecure.smssecure.contacts.avatars.ContactColors;
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.recipients.Recipient;
@@ -39,14 +38,12 @@ public class AvatarImageView extends ImageView {
   }
 
   public void setAvatar(@Nullable Recipients recipients, boolean quickContactEnabled) {
-    ThemeType themeType = ThemeType.getCurrent(getContext());
-
     if (recipients != null) {
       MaterialColor backgroundColor = recipients.getColor(getContext());
-      setImageDrawable(recipients.getContactPhoto().asDrawable(getContext(), backgroundColor.toConversationColor(themeType), inverted));
+      setImageDrawable(recipients.getContactPhoto().asDrawable(getContext(), backgroundColor.toConversationColor(getContext()), inverted));
       setAvatarClickHandler(recipients, quickContactEnabled);
     } else {
-      setImageDrawable(ContactPhotoFactory.getDefaultContactPhoto(null).asDrawable(getContext(), ContactColors.UNKNOWN_COLOR.toConversationColor(themeType), inverted));
+      setImageDrawable(ContactPhotoFactory.getDefaultContactPhoto(null).asDrawable(getContext(), ContactColors.UNKNOWN_COLOR.toConversationColor(getContext()), inverted));
       setOnClickListener(null);
     }
   }

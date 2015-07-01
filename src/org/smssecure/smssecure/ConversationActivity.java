@@ -55,7 +55,6 @@ import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
 import org.smssecure.smssecure.color.MaterialColor;
-import org.smssecure.smssecure.color.ThemeType;
 import org.smssecure.smssecure.components.AnimatingToggle;
 import org.smssecure.smssecure.components.ComposeText;
 import org.smssecure.smssecure.components.SendButton;
@@ -989,12 +988,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void setActionBarColor(MaterialColor color) {
-    ThemeType themeType = ThemeType.getCurrent(this);
-
-    getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color.toActionBarColor(themeType)));
+    getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color.toActionBarColor(this)));
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      getWindow().setStatusBarColor(color.toStatusBarColor(themeType));
+      getWindow().setStatusBarColor(color.toStatusBarColor(this));
     }
   }
 

@@ -40,7 +40,6 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import org.smssecure.smssecure.ConversationFragment.SelectionClickListener;
-import org.smssecure.smssecure.color.ThemeType;
 import org.smssecure.smssecure.components.AvatarImageView;
 import org.smssecure.smssecure.components.ThumbnailView;
 import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
@@ -202,7 +201,7 @@ public class ConversationItem extends LinearLayout {
     } else {
       bodyBubble.getBackground().setColorFilter(messageRecord.getIndividualRecipient()
                                                              .getColor()
-                                                             .toConversationColor(ThemeType.getCurrent(context)),
+                                                             .toConversationColor(context),
                                                 PorterDuff.Mode.MULTIPLY);
     }
 
