@@ -176,7 +176,7 @@
     </style>
 
     <style name="SMSSecure.DarkTheme" parent="@style/Theme.AppCompat">
-        <item name="theme_type">light</item>
+        <item name="theme_type">dark</item>
         <item name="actionBarStyle">@style/SMSSecure.DarkActionBar</item>
         <item name="actionBarTabBarStyle">@style/SMSSecure.DarkActionBar.TabBar</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
