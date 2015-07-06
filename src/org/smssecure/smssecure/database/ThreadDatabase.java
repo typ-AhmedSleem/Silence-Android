@@ -38,7 +38,6 @@ import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.InvalidMessageException;
 
@@ -479,13 +478,8 @@ public class ThreadDatabase extends Database {
       MessageRecord record;
 
       if (reader != null && (record = reader.getNext()) != null) {
-        final long timestamp;
-
-        if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
-        else                                            timestamp = record.getDateReceived();
-
         updateThread(threadId, count, record.getBody().getBody(), getAttachmentUriFor(record),
-                     timestamp, record.getDeliveryStatus(), record.getType(), unarchive);
+                     record.getTimestamp(), record.getDeliveryStatus(), record.getType(), unarchive);
         notifyConversationListListeners();
         return false;
       } else {

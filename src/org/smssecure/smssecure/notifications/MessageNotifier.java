@@ -345,10 +345,7 @@ public class MessageNotifier {
       CharSequence body             = record.getDisplayBody();
       Recipients   threadRecipients = null;
       SlideDeck    slideDeck        = null;
-      long         timestamp;
-
-      if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
-      else                                            timestamp = record.getDateReceived();
+      long         timestamp        = record.getTimestamp();
 
       if (threadId != -1) {
         threadRecipients = DatabaseFactory.getThreadDatabase(context).getRecipientsForThreadId(threadId);
