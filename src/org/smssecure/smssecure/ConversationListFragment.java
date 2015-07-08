@@ -46,7 +46,6 @@ import com.melnykov.fab.FloatingActionButton;
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.DefaultSmsReminder;
 import org.smssecure.smssecure.components.DividerItemDecoration;
-import org.smssecure.smssecure.components.ExpiredBuildReminder;
 import org.smssecure.smssecure.components.ReminderView;
 import org.smssecure.smssecure.components.SystemSmsImportReminder;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -127,9 +126,7 @@ public class ConversationListFragment extends Fragment
   }
 
   private void initializeReminders() {
-    if (ExpiredBuildReminder.isEligible(getActivity())) {
-      reminderView.showReminder(new ExpiredBuildReminder());
-    } else if (DefaultSmsReminder.isEligible(getActivity())) {
+    if (DefaultSmsReminder.isEligible(getActivity())) {
       reminderView.showReminder(new DefaultSmsReminder(getActivity()));
     } else if (SystemSmsImportReminder.isEligible(getActivity())) {
       reminderView.showReminder(new SystemSmsImportReminder(getActivity(), masterSecret));

@@ -293,10 +293,6 @@ public class Util {
     }
   }
 
-  public static boolean isBuildFresh() {
-    return BuildConfig.BUILD_TIMESTAMP + TimeUnit.DAYS.toMillis(180) > System.currentTimeMillis();
-  }
-
   @TargetApi(VERSION_CODES.LOLLIPOP)
   public static boolean isMmsCapable(Context context) {
     return (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) || OutgoingLegacyMmsConnection.isConnectionPossible(context);
