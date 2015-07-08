@@ -206,9 +206,9 @@ public class MessageNotifier {
 
     SpannableStringBuilder content = new SpannableStringBuilder();
 
-    ListIterator<NotificationItem> iterator = notifications.listIterator(notifications.size());
-    while(iterator.hasPrevious()) {
-      NotificationItem item = iterator.previous();
+    ListIterator<NotificationItem> iterator = notifications.listIterator(0);
+    while(iterator.hasNext()) {
+      NotificationItem item = iterator.next();
       content.append(item.getBigStyleSummary());
       content.append('\n');
     }
@@ -262,9 +262,9 @@ public class MessageNotifier {
 
     InboxStyle style = new InboxStyle();
 
-    ListIterator<NotificationItem> iterator = notifications.listIterator(notifications.size());
-    while(iterator.hasPrevious()) {
-      NotificationItem item = iterator.previous();
+    ListIterator<NotificationItem> iterator = notifications.listIterator(0);
+    while(iterator.hasNext()) {
+      NotificationItem item = iterator.next();
       style.addLine(item.getTickerText());
       if (item.getIndividualRecipient().getContactUri() != null) {
         builder.addPerson(item.getIndividualRecipient().getContactUri().toString());
