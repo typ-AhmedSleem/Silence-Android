@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.makeramen.RoundedDrawable;
+import com.makeramen.roundedimageview.RoundedDrawable;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.recipients.Recipient;
@@ -94,11 +94,6 @@ public class ContactPhotoFactory {
 
   public static void clearCache() {
     localUserContactPhotoCache.clear();
-  }
-
-  public static void clearCache(Recipient recipient) {
-    if (localUserContactPhotoCache.containsKey(recipient.getContactUri()))
-    localUserContactPhotoCache.remove(recipient.getContactUri());
   }
 
   public static Drawable getContactPhoto(Context context, Uri uri, String name) {

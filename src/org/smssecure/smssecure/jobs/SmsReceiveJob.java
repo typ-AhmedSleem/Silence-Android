@@ -2,6 +2,7 @@ package org.smssecure.smssecure.jobs;
 
 import android.content.Context;
 import android.telephony.SmsMessage;
+import android.util.Log;
 import android.util.Pair;
 
 import org.smssecure.smssecure.ApplicationContext;
@@ -11,6 +12,8 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.WirePrefix;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.sms.MultipartSmsMessageHandler;
@@ -44,9 +47,11 @@ public class SmsReceiveJob extends ContextJob {
   public void onRun() {
     Optional<IncomingTextMessage> message = assembleMessageFragments(pdus);
 
-    if (message.isPresent()) {
+    if (message.isPresent() && !isBlocked(message.get())) {
       Pair<Long, Long> messageAndThreadId = storeMessage(message.get());
       MessageNotifier.updateNotification(context, KeyCachingService.getMasterSecret(context), messageAndThreadId.second);
+    } else if (message.isPresent()) {
+      Log.w(TAG, "*** Received blocked SMS, ignoring...");
     }
   }
 
@@ -57,6 +62,15 @@ public class SmsReceiveJob extends ContextJob {
 
   @Override
   public boolean onShouldRetry(Exception exception) {
+    return false;
+  }
+
+  private boolean isBlocked(IncomingTextMessage message) {
+    if (message.getSender() != null) {
+      Recipients recipients = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
+      return recipients.isBlocked();
+    }
+
     return false;
   }
 

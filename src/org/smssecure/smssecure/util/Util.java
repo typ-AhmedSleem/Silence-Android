@@ -18,6 +18,7 @@ package org.smssecure.smssecure.util;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -74,6 +75,17 @@ public class Util {
     }
 
     return result.toString();
+  }
+
+  public static String join(long[] list, String delimeter) {
+    StringBuilder sb = new StringBuilder();
+
+    for (int j=0;j<list.length;j++) {
+      if (j != 0) sb.append(delimeter);
+      sb.append(list[j]);
+    }
+
+    return sb.toString();
   }
 
   public static ExecutorService newSingleThreadedLifoExecutor() {
@@ -319,5 +331,13 @@ public class Util {
 
   public static int hashCode(@Nullable Object... objects) {
     return Arrays.hashCode(objects);
+  }
+
+  @TargetApi(VERSION_CODES.KITKAT)
+  public static boolean isLowMemory(Context context) {
+    ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+
+    return (VERSION.SDK_INT >= VERSION_CODES.KITKAT && activityManager.isLowRamDevice()) ||
+           activityManager.getMemoryClass() <= 64;
   }
 }

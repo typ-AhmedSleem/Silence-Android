@@ -12,6 +12,7 @@ import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
@@ -45,7 +46,7 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
                             .getGroupMembers(GroupUtil.getDecodedId(groupId), true);
     } catch (IOException e) {
       Log.w(TAG, e);
-      return new Recipients(new LinkedList<Recipient>());
+      return RecipientFactory.getRecipientsFor(context, new LinkedList<Recipient>(), true);
     }
   }
 

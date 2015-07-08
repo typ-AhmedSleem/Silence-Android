@@ -54,6 +54,8 @@ import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.TelephonyUtil;
 
@@ -325,7 +327,7 @@ public class ConversationItem extends LinearLayout {
         messageRecord.getRecipients().isSingleRecipient() &&
         !messageRecord.isSecure())
     {
-      checkForAutoInitiate(messageRecord.getIndividualRecipient(),
+      checkForAutoInitiate(messageRecord.getRecipients(),
                            messageRecord.getBody().getBody(),
                            messageRecord.getThreadId());
     }
@@ -378,7 +380,9 @@ public class ConversationItem extends LinearLayout {
 
   /// Helper Methods
 
-  private void checkForAutoInitiate(final Recipient recipient, String body, long threadId) {
+  private void checkForAutoInitiate(final Recipients recipients, String body, long threadId) {
+    Recipient recipient = recipients.getPrimaryRecipient();
+
     if (!groupThread &&
         !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
         AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
@@ -394,7 +398,7 @@ public class ConversationItem extends LinearLayout {
       builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-          KeyExchangeInitiator.initiate(context, masterSecret, recipient, true);
+          KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
         }
       });
       builder.show();
@@ -431,7 +435,9 @@ public class ConversationItem extends LinearLayout {
     public void onClick(final View v, final Slide slide) {
       if (!batchSelected.isEmpty()) {
         selectionClickListener.onItemClick(null, ConversationItem.this, -1, -1);
-      } else if (MediaPreviewActivity.isContentTypeSupported(slide.getContentType())) {
+      } else if (MediaPreviewActivity.isContentTypeSupported(slide.getContentType()) &&
+                 slide.getThumbnailUri() != null)
+      {
         Intent intent = new Intent(context, MediaPreviewActivity.class);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.setDataAndType(slide.getUri(), slide.getContentType());
