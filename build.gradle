@@ -96,6 +96,7 @@ dependencyVerification {
             'org.whispersystems:textsecure-android:843d4483e9c3b3414373ddd70df19895b3ee7ef559eeb15e60926e1b07fcecf3',
             'org.whispersystems:textsecure-java:f161c5d5be5a0ba52ede273692ef17982b2af270c6af5c3666bc2adb289a3f61',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
+            'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
     ]
 }
 
