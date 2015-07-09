@@ -10,3 +10,6 @@
 [submodule "libs/com.amulyakhare.textdrawable"]
 	path = libs/com.amulyakhare.textdrawable
 	url = https://github.com/amulyakhare/TextDrawable.git
+[submodule "libs/com.readystatesoftware.systembartint.SystemBarTintManager"]
+	path = libs/com.readystatesoftware.systembartint.SystemBarTintManager
+	url = https://github.com/jgilfelt/SystemBarTint.git
