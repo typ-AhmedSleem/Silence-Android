@@ -8,7 +8,9 @@
               android:layout_height="wrap_content"
               android:gravity="center_vertical"
               android:visibility="gone"
-              android:background="?reminder_header_background">
+              android:focusable="true"
+              android:nextFocusRight="@+id/cancel"
+              android:background="@drawable/reminder_background">
 
     <LinearLayout android:id="@+id/reminder"
                   android:layout_width="0dp"
