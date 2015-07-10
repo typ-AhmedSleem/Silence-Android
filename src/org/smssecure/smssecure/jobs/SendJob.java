@@ -7,6 +7,7 @@ import org.smssecure.smssecure.BuildConfig;
 import org.smssecure.smssecure.SMSSecureExpiredException;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.mms.MediaConstraints;
 import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.MediaUtil;
@@ -75,6 +76,14 @@ public abstract class SendJob extends MasterSecretJob {
       part.setDataSize(resizedData.length);
     }
     return part;
+  }
+
+  protected void markPartsUploaded(long messageId, PduBody body) {
+    if (body == null) return;
+    PartDatabase database = DatabaseFactory.getPartDatabase(context);
+    for (int i = 0; i < body.getPartsNum(); i++) {
+      database.markPartUploaded(messageId, body.getPart(i));
+    }
   }
 
   private byte[] getResizedPartData(MasterSecret masterSecret, MediaConstraints constraints,
