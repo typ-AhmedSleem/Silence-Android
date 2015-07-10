@@ -25,6 +25,7 @@
         <item name="android:textColorHint">#cc000000</item>
         <item name="centered_app_title_color">#55000000</item>
         <item name="ic_arrow_forward">@drawable/ic_arrow_forward_light</item>
+        <item name="lockscreen_watermark">@drawable/lockscreen_watermark_light</item>
     </style>
 
     <style name="SMSSecure.DarkIntroTheme" parent="@style/Theme.AppCompat">
@@ -34,6 +35,7 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="centered_app_title_color">@color/gray27</item>
         <item name="ic_arrow_forward">@drawable/ic_arrow_forward_dark</item>
+        <item name="lockscreen_watermark">@drawable/lockscreen_watermark_dark</item>
         <item name="android:windowBackground">@color/black</item>
     </style>
 
