@@ -111,6 +111,7 @@ import org.whispersystems.libaxolotl.util.guava.Optional;
 import java.io.IOException;
 import java.util.List;
 
+import static org.smssecure.smssecure.TransportOption.Type;
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
 import static org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
 import static org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
@@ -167,7 +168,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private int        distributionType;
   private boolean    isEncryptedConversation;
   private boolean    isMmsEnabled = true;
-  private boolean    isCharactersLeftViewEnabled;
 
   private DynamicTheme    dynamicTheme    = new DynamicTheme();
   private DynamicLanguage dynamicLanguage = new DynamicLanguage();
@@ -283,13 +283,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     MenuInflater inflater = this.getMenuInflater();
     menu.clear();
 
-    boolean pushRegistered = SMSSecurePreferences.isPushRegistered(this);
-
     if (isSingleConversation() && isEncryptedConversation) {
       inflater.inflate(R.menu.conversation_secure_identity, menu);
       inflater.inflate(R.menu.conversation_secure_sms, menu.findItem(R.id.menu_security).getSubMenu());
     } else if (isSingleConversation()) {
-      if (!pushRegistered) inflater.inflate(R.menu.conversation_insecure_no_push, menu);
+      inflater.inflate(R.menu.conversation_insecure_no_push, menu);
       inflater.inflate(R.menu.conversation_insecure, menu);
     }
 
@@ -663,6 +661,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     Recipient    primaryRecipient       = getRecipients() == null ? null : getRecipients().getPrimaryRecipient();
     boolean      isSecureSmsDestination = isSingleConversation() &&
                                           SessionUtil.hasSession(this, masterSecret, primaryRecipient);
+    boolean      isMediaMessage         = !recipients.isSingleRecipient() || attachmentManager.isAttachmentPresent();
 
     if (isSecureSmsDestination) {
       this.isEncryptedConversation = true;
@@ -670,14 +669,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       this.isEncryptedConversation = false;
     }
 
-    sendButton.initializeAvailableTransports(!recipients.isSingleRecipient() || attachmentManager.isAttachmentPresent());
-    if (!isSecureSmsDestination      ) sendButton.disableTransport("secure_sms");
-    if (recipients.isGroupRecipient()) sendButton.disableTransport("insecure_sms");
+    sendButton.resetAvailableTransports(isMediaMessage);
+    if (!isSecureSmsDestination      ) sendButton.disableTransport(Type.SECURE_SMS);
+    if (recipients.isGroupRecipient()) sendButton.disableTransport(Type.INSECURE_SMS);
 
     if (isSecureSmsDestination) {
-      sendButton.setDefaultTransport("secure_sms");
+      sendButton.setDefaultTransport(Type.SECURE_SMS);
     } else {
-      sendButton.setDefaultTransport("insecure_sms");
+      sendButton.setDefaultTransport(Type.INSECURE_SMS);
     }
 
     calculateCharactersRemaining();
@@ -728,11 +727,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     attachButton.setOnClickListener(new AttachButtonListener());
     sendButton.setOnClickListener(sendButtonListener);
     sendButton.setEnabled(true);
-    sendButton.setComposeTextView(composeText);
     sendButton.addOnTransportChangedListener(new OnTransportChangedListener() {
       @Override
       public void onChange(TransportOption newTransport) {
         calculateCharactersRemaining();
+        composeText.setHint(newTransport.getComposeHint());
       }
     });
 
@@ -804,10 +803,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     securityUpdateReceiver = new BroadcastReceiver() {
       @Override
       public void onReceive(Context context, Intent intent) {
-        if (intent.getLongExtra("thread_id", -1) == -1)
-          return;
+        long eventThreadId = intent.getLongExtra("thread_id", -1);
 
-        if (intent.getLongExtra("thread_id", -1) == threadId) {
+        if (eventThreadId == threadId || eventThreadId == -2) {
           initializeSecurity();
           calculateCharactersRemaining();
         }
@@ -1009,21 +1007,15 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     int            charactersSpent = composeText.getText().toString().length();
     TransportOption transportOption = sendButton.getSelectedTransport();
 
-    if (transportOption != null) {
-      CharacterState characterState = transportOption.calculateCharacters(charactersSpent);
+    CharacterState characterState = transportOption.calculateCharacters(charactersSpent);
 
-      if (characterState.charactersRemaining <= 15 || characterState.messagesSpent > 1) {
-        charactersLeft.setText(characterState.charactersRemaining + "/" + characterState.maxMessageSize
-                                   + " (" + characterState.messagesSpent + ")");
-        charactersLeft.setVisibility(View.VISIBLE);
-      } else {
-        charactersLeft.setVisibility(View.GONE);
-      }
+    if (characterState.charactersRemaining <= 15 || characterState.messagesSpent > 1) {
+      charactersLeft.setText(characterState.charactersRemaining + "/" + characterState.maxMessageSize
+                                 + " (" + characterState.messagesSpent + ")");
+      charactersLeft.setVisibility(View.VISIBLE);
+    } else {
+      charactersLeft.setVisibility(View.GONE);
     }
-  }
-
-  private boolean isExistingConversation() {
-    return this.recipients != null && this.threadId != -1;
   }
 
   private boolean isSingleConversation() {
@@ -1107,7 +1099,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void sendMessage() {
     try {
-      final Recipients recipients = getRecipients();
+      Recipients recipients     = getRecipients();
+      boolean    forcePlaintext = sendButton.isManualSelection() && sendButton.getSelectedTransport().isSms();
+
+      Log.w(TAG, "isManual Selection: " + sendButton.isManualSelection());
+      Log.w(TAG, "forcePlaintext: " + forcePlaintext);
 
       if (recipients == null) {
         throw new RecipientFormattingException("Badly formatted");
@@ -1116,9 +1112,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       if ((!recipients.isSingleRecipient() || recipients.isEmailRecipient()) && !isMmsEnabled) {
         handleManualMmsRequired();
       } else if (attachmentManager.isAttachmentPresent() || !recipients.isSingleRecipient() || recipients.isGroupRecipient() || recipients.isEmailRecipient()) {
-        sendMediaMessage(sendButton.getSelectedTransport().isPlaintext(), sendButton.getSelectedTransport().isSms());
+        sendMediaMessage(forcePlaintext);
       } else {
-        sendTextMessage(sendButton.getSelectedTransport().isPlaintext(), sendButton.getSelectedTransport().isSms());
+        sendTextMessage(forcePlaintext);
       }
     } catch (RecipientFormattingException ex) {
       Toast.makeText(ConversationActivity.this,
@@ -1132,7 +1128,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
-  private void sendMediaMessage(boolean forcePlaintext, final boolean forceSms)
+  private void sendMediaMessage(final boolean forcePlaintext)
       throws InvalidMessageException
   {
     final Context context = getApplicationContext();
@@ -1154,7 +1150,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     new AsyncTask<OutgoingMediaMessage, Void, Long>() {
       @Override
       protected Long doInBackground(OutgoingMediaMessage... messages) {
-        return MessageSender.send(context, masterSecret, messages[0], threadId, forceSms);
+        return MessageSender.send(context, masterSecret, messages[0], threadId, true);
       }
 
       @Override
@@ -1164,7 +1160,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }.execute(outgoingMessage);
   }
 
-  private void sendTextMessage(boolean forcePlaintext, final boolean forceSms)
+  private void sendTextMessage(boolean forcePlaintext)
       throws InvalidMessageException
   {
     final Context context = getApplicationContext();
@@ -1181,7 +1177,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     new AsyncTask<OutgoingTextMessage, Void, Long>() {
       @Override
       protected Long doInBackground(OutgoingTextMessage... messages) {
-        return MessageSender.send(context, masterSecret, messages[0], threadId, forceSms);
+        return MessageSender.send(context, masterSecret, messages[0], threadId, true);
       }
 
       @Override
@@ -1238,16 +1234,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         return true;
       }
       return false;
-    }
-  }
-
-  private class AddContactButtonListener implements OnClickListener {
-    @Override
-    public void onClick(View v) {
-      final Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
-      intent.putExtra(ContactsContract.Intents.Insert.PHONE, recipients.getPrimaryRecipient().getNumber());
-      intent.setType(ContactsContract.Contacts.CONTENT_ITEM_TYPE);
-      startActivity(intent);
     }
   }
 
