@@ -44,10 +44,6 @@ public class TransportOption {
     return this.type == type;
   }
 
-  public boolean isSms() {
-    return true;
-  }
-
   public CharacterState calculateCharacters(int charactersSpent) {
     return characterCalculator.calculateCharacters(charactersSpent);
   }
