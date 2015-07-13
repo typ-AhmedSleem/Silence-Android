@@ -44,6 +44,10 @@ public class TransportOption {
     return this.type == type;
   }
 
+  public boolean isPlaintext() {
+    return type == Type.INSECURE_SMS;
+  }
+
   public CharacterState calculateCharacters(int charactersSpent) {
     return characterCalculator.calculateCharacters(charactersSpent);
   }

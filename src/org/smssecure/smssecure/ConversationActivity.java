@@ -1115,7 +1115,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void sendMessage() {
     try {
       Recipients recipients     = getRecipients();
-      boolean    forcePlaintext = sendButton.isManualSelection();
+      boolean    forcePlaintext = sendButton.getSelectedTransport().isPlaintext();
 
       Log.w(TAG, "isManual Selection: " + sendButton.isManualSelection());
       Log.w(TAG, "forcePlaintext: " + forcePlaintext);
