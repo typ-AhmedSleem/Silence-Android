@@ -9,7 +9,7 @@
                 android:label="Access to SMSSecure Secrets"
                 android:protectionLevel="signature" />
 
-    <!--<uses-feature android:name="android.hardware.camera" android:required="false" />-->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.WRITE_PROFILE"/>
@@ -27,7 +27,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application android:name=".ApplicationContext"
                  android:icon="@drawable/icon"
