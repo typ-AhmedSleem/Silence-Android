@@ -19,6 +19,7 @@ for file in "$@"; do
            -e 's/TextSecure.LightTheme/SMSSecure.LightTheme/g' \
            -e 's/TextSecure.DarkTheme/SMSSecure.DarkTheme/g' \
            -e 's/TextSecure.TitleTextStyle/SMSSecure.TitleTextStyle/g' \
+           -e 's/queryTextSecureContacts/querySMSSecureContacts/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
            "$file"

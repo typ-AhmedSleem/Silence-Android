@@ -32,9 +32,10 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.ContactSelectionListAdapter;
 import org.smssecure.smssecure.contacts.ContactSelectionListItem;
+import org.smssecure.smssecure.contacts.ContactsCursorLoader;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -140,7 +141,7 @@ public class PushContactSelectionListFragment extends    Fragment
 
   @Override
   public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-    return ContactAccessor.getInstance().getCursorLoaderForContacts(getActivity(), cursorFilter);
+    return new ContactsCursorLoader(getActivity(), true, cursorFilter);
   }
 
   @Override

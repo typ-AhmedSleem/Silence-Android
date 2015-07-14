@@ -26,6 +26,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import org.smssecure.smssecure.DatabaseUpgradeActivity;
+import org.smssecure.smssecure.contacts.ContactsDatabase;
 import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -83,6 +84,7 @@ public class DatabaseFactory {
   private final DraftDatabase draftDatabase;
   private final GroupDatabase groupDatabase;
   private final RecipientPreferenceDatabase recipientPreferenceDatabase;
+  private final ContactsDatabase contactsDatabase;
 
   public static DatabaseFactory getInstance(Context context) {
     synchronized (lock) {
@@ -141,6 +143,10 @@ public class DatabaseFactory {
     return getInstance(context).recipientPreferenceDatabase;
   }
 
+  public static ContactsDatabase getContactsDatabase(Context context) {
+    return getInstance(context).contactsDatabase;
+  }
+
   private DatabaseFactory(Context context) {
     this.databaseHelper              = new DatabaseHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
     this.sms                         = new SmsDatabase(context, databaseHelper);
@@ -155,6 +161,7 @@ public class DatabaseFactory {
     this.draftDatabase               = new DraftDatabase(context, databaseHelper);
     this.groupDatabase               = new GroupDatabase(context, databaseHelper);
     this.recipientPreferenceDatabase = new RecipientPreferenceDatabase(context, databaseHelper);
+    this.contactsDatabase            = new ContactsDatabase(context);
   }
 
   public void reset(Context context) {
