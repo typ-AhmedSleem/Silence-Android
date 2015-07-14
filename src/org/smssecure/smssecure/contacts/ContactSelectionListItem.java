@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.AvatarImageView;
+import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 
@@ -50,7 +51,10 @@ public class ContactSelectionListItem extends RelativeLayout implements Recipien
     this.id     = id;
     this.number = number;
 
-    if (number != null) {
+    if (type == ContactsDatabase.NEW_TYPE) {
+      this.recipients = null;
+      this.contactPhotoImage.setAvatar(Recipient.getUnknownRecipient(), false);
+    } else if (number != null) {
       this.recipients = RecipientFactory.getRecipientsFromString(getContext(), number, true);
       this.recipients.addListener(this);
     }
