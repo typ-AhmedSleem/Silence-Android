@@ -22,9 +22,11 @@ import android.support.annotation.NonNull;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.DynamicLanguage;
+import org.smssecure.smssecure.util.DynamicNoActionBarTheme;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
@@ -37,68 +39,29 @@ import java.util.List;
  * @author Moxie Marlinspike
  *
  */
-public class PushContactSelectionActivity extends PassphraseRequiredActionBarActivity {
-  private final static String TAG             = "ContactSelectActivity";
+public class PushContactSelectionActivity extends ContactSelectionActivity {
 
-  private final DynamicTheme    dynamicTheme    = new DynamicTheme   ();
-  private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
-
-  private PushContactSelectionListFragment contactsFragment;
-
-  @Override
-  protected void onPreCreate() {
-    dynamicTheme.onCreate(this);
-    dynamicLanguage.onCreate(this);
-  }
+  private final static String TAG = PushContactSelectionActivity.class.getSimpleName();
 
   @Override
   protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-    setContentView(R.layout.push_contact_selection_activity);
-    initializeResources();
-  }
-
-  @Override
-  public void onResume() {
-    super.onResume();
-    dynamicTheme.onResume(this);
-    dynamicLanguage.onResume(this);
-    getSupportActionBar().setTitle(R.string.AndroidManifest__select_contacts);
-  }
-
-  @Override
-  public boolean onPrepareOptionsMenu(Menu menu) {
-    MenuInflater inflater = this.getMenuInflater();
-    menu.clear();
-    inflater.inflate(R.menu.contact_selection, menu);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    super.onOptionsItemSelected(item);
-    switch (item.getItemId()) {
-    case R.id.menu_selection_finished: handleSelectionFinished(); return true;
-    case android.R.id.home:            finish();                  return true;
-    }
-    return false;
-  }
-
-  private void initializeResources() {
-    contactsFragment = (PushContactSelectionListFragment) getSupportFragmentManager().findFragmentById(R.id.contact_selection_list_fragment);
+    super.onCreate(icicle, masterSecret);
     contactsFragment.setMultiSelect(true);
-  }
 
-  private void handleSelectionFinished() {
-    Intent resultIntent = getIntent();
-    List<String> selectedContacts = contactsFragment.getSelectedContacts();
+    action.setImageDrawable(getResources().getDrawable(R.drawable.ic_check_white_24dp));
+    action.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent       resultIntent     = getIntent();
+        List<String> selectedContacts = contactsFragment.getSelectedContacts();
 
-    if (selectedContacts != null) {
-      resultIntent.putStringArrayListExtra("contacts", new ArrayList<>(selectedContacts));
-    }
+        if (selectedContacts != null) {
+          resultIntent.putStringArrayListExtra("contacts", new ArrayList<>(selectedContacts));
+        }
 
-    setResult(RESULT_OK, resultIntent);
-    finish();
+        setResult(RESULT_OK, resultIntent);
+        finish();
+      }
+    });
   }
 }
