@@ -210,6 +210,8 @@ que este contacto reinstalou o SMSSecure e tem agora uma nova chave de identidad
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Desbloquear este contacto?</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Tem a certeza de que deseja desbloquear este contacto?</string>
   <string name="RecipientPreferenceActivity_unblock">Desbloquear</string>
+  <string name="RecipientPreferenceActivity_enabled">Ativo</string>
+  <string name="RecipientPreferenceActivity_disabled">Inativo</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Foi recebida uma chave
 de intercâmbio danificada.</string>
@@ -279,8 +281,12 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="MessageNotifier_failed_to_deliver_message">Falha ao entregar a mensagem.</string>
   <string name="MessageNotifier_error_delivering_message">Erro ao entregar a mensagem.</string>
   <string name="MessageNotifier_mark_all_as_read">Marcar todas como lidas</string>
+  <string name="MessageNotifier_mark_read">Marcar como lida</string>
   <string name="MessageNotifier_media_message">Mensagem multimédia</string>
+  <string name="MessageNotifier_reply">Responder</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Não pode utilizar a resposta rápida se o SMSSecure estiver bloqueado!</string>
+  <string name="QuickResponseService_problem_sending_message">Erro ao enviar a mensagem!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Palavra-chave atual:</string>
   <string name="change_passphrase_activity__new_passphrase">Nova palavra-chave:</string>
@@ -371,6 +377,8 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="recipient_preferences__ringtone">Som de toque</string>
   <string name="recipient_preferences__vibrate">Vibrar</string>
   <string name="recipient_preferences__block">Bloquear</string>
+  <string name="recipient_preferences__color">Cor</string>
+  <string name="recipient_preferences__color_for_this_contact">Cor para este contacto</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Terminado</string>
   <!--recipients_panel-->
@@ -572,7 +580,9 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="conversation__menu_add_attachment">Adicionar anexo</string>
   <string name="conversation__menu_delete_thread">Apagar conversa</string>
   <string name="conversation__menu_view_media">Todas as imagens</string>
+  <string name="conversation__menu_conversation_settings">Definições da conversa</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Expandir alerta</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Adicionar aos contactos</string>
   <!--conversation_group_options-->
@@ -610,5 +620,6 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ícone de transporte</string>
   <!--quick_attachment_drawer-->
+  <string name="quick_camera_unavailable">Câmara não disponível</string>
   <!--EOF-->
 </resources>

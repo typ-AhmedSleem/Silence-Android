@@ -206,6 +206,8 @@ preveriti ta stik.</string>
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Odblokiram ta stik?</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Ste prepričani, da želite odblokirati ta stik?</string>
   <string name="RecipientPreferenceActivity_unblock">Odblokiraj</string>
+  <string name="RecipientPreferenceActivity_enabled">Vklopljeno</string>
+  <string name="RecipientPreferenceActivity_disabled">Izklopljeno</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Prejeto poškodovano
 sporočilo za izmenjavo ključev!</string>
@@ -275,8 +277,12 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="MessageNotifier_failed_to_deliver_message">Neuspešna dostava sporočila.</string>
   <string name="MessageNotifier_error_delivering_message">Napaka pri dostavi sporočila.</string>
   <string name="MessageNotifier_mark_all_as_read">Označi vse kot prebrano</string>
+  <string name="MessageNotifier_mark_read">Označi kot prebrano</string>
   <string name="MessageNotifier_media_message">Multiedijsko sporočilo</string>
+  <string name="MessageNotifier_reply">Odgovori</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Hiter odziv ni mogoč kadar je aplikacija SMSSecure zaklenjena!</string>
+  <string name="QuickResponseService_problem_sending_message">Težave pri pošiljanju sporočila!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staro geslo:</string>
   <string name="change_passphrase_activity__new_passphrase">Novo geslo:</string>
@@ -363,6 +369,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="recipient_preferences__ringtone">Zvonjenje</string>
   <string name="recipient_preferences__vibrate">Vibriranje</string>
   <string name="recipient_preferences__block">Blokiraj</string>
+  <string name="recipient_preferences__color">Barva</string>
+  <string name="recipient_preferences__color_for_this_contact">Barva stika</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Dokončaj</string>
   <!--recipients_panel-->
@@ -566,7 +574,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="conversation__menu_add_attachment">Dodaj priponko</string>
   <string name="conversation__menu_delete_thread">Izbriši pogovor</string>
   <string name="conversation__menu_view_media">Vse slike</string>
+  <string name="conversation__menu_conversation_settings">Nastavitve pogovora</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Povečaj okno</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Dodaj k stikom</string>
   <!--conversation_group_options-->
@@ -604,5 +614,6 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ikona transporta</string>
   <!--quick_attachment_drawer-->
+  <string name="quick_camera_unavailable">Kamera ni na voljo</string>
   <!--EOF-->
 </resources>
