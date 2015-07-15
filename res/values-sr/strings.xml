@@ -222,6 +222,8 @@
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Одлокирати овај контакт?</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Желите ли заиста да одблокирате овај контакт?</string>
   <string name="RecipientPreferenceActivity_unblock">Одблокирај</string>
+  <string name="RecipientPreferenceActivity_enabled">Омогућена</string>
+  <string name="RecipientPreferenceActivity_disabled">Онемогућена</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Примљена је оштећена
 порука размене кључа!</string>
@@ -291,8 +293,12 @@
   <string name="MessageNotifier_failed_to_deliver_message">Нисам успео да испоручим поруку.</string>
   <string name="MessageNotifier_error_delivering_message">Грешка при испоруци поруке.</string>
   <string name="MessageNotifier_mark_all_as_read">Означи све прочитаним</string>
+  <string name="MessageNotifier_mark_read">Означи прочитаним</string>
   <string name="MessageNotifier_media_message">Мултимедијална порука</string>
+  <string name="MessageNotifier_reply">Одговори</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Брзи одговор није доступан ако је Сигурни СМС закључан!</string>
+  <string name="QuickResponseService_problem_sending_message">Проблем са слањем поруке!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">СТАРА ЛОЗИНКА:</string>
   <string name="change_passphrase_activity__new_passphrase">НОВА ЛОЗИНКА:</string>
@@ -322,6 +328,7 @@
   <string name="conversation_activity__compose_description">Састављање поруке</string>
   <string name="conversation_activity__emoji_toggle_description">Емоџи тастатура</string>
   <string name="conversation_activity__attachment_thumbnail">Сличица прилога</string>
+  <string name="conversation_activity__quick_attachment_drawer_toggle_description">Фиока прилога</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Преузимање мултимедијалне поруке</string>
   <string name="conversation_item__mms_image_description">Мултимедијална порука</string>
@@ -383,6 +390,8 @@
   <string name="recipient_preferences__ringtone">Звоно</string>
   <string name="recipient_preferences__vibrate">Вибрирај</string>
   <string name="recipient_preferences__block">Блокирај</string>
+  <string name="recipient_preferences__color">Боја</string>
+  <string name="recipient_preferences__color_for_this_contact">Боја за контакт</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Доврши</string>
   <!--recipients_panel-->
@@ -585,7 +594,9 @@
   <string name="conversation__menu_add_attachment">Додај прилог</string>
   <string name="conversation__menu_delete_thread">Обриши преписку</string>
   <string name="conversation__menu_view_media">Све слике</string>
+  <string name="conversation__menu_conversation_settings">Поставке преписке</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Рашири прозорче</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Додај у контакте</string>
   <!--conversation_group_options-->
@@ -623,5 +634,6 @@
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Икона преноса</string>
   <!--quick_attachment_drawer-->
+  <string name="quick_camera_unavailable">Камера није доступна</string>
   <!--EOF-->
 </resources>
