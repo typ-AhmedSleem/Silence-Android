@@ -49,7 +49,7 @@
     <string name="AttachmentTypeSelectorAdapter_video">Video</string>
     <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
     <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
-    
+
     <!-- BlockedContactsActivity -->
     <string name="BlockedContactsActivity_blocked_contacts">Blocked contacts</string>
 
@@ -345,6 +345,7 @@
     <string name="MessageNotifier_mark_all_as_read">Mark all as read</string>
     <string name="MessageNotifier_mark_read">Mark read</string>
     <string name="MessageNotifier_media_message">Media message</string>
+    <string name="MessageNotifier_message_received">Message received by %s.</string>
     <string name="MessageNotifier_reply">Reply</string>
 
     <!-- QuickResponseService -->
@@ -603,6 +604,8 @@
     <string name="preferences__mmsc_password">MMSC Password</string>
     <string name="preferences__sms_delivery_reports">SMS delivery reports</string>
     <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Request a delivery report for each SMS message you send</string>
+    <string name="preferences__sms_delivery_reports_notification">SMS delivery reports notification</string>
+    <string name="preferences__display_a_toast_when_a_delivery_report_is_received">Display a toast when a delivery report is received</string>
     <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Automatically delete older messages once a conversation thread exceeds a specified length</string>
     <string name="preferences__delete_old_messages">Delete old messages</string>
     <string name="preferences__conversation_length_limit">Conversation length limit</string>

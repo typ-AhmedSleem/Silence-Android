@@ -255,6 +255,10 @@ public class SmsDatabase extends MessagingDatabase {
     updateTypeBitmask(id, Types.BASE_TYPE_MASK, Types.BASE_SENT_TYPE);
   }
 
+  public void markAsReceived(long id) {
+    markStatus(id, 0);
+  }
+
   public void markStatus(long id, int status) {
     Log.w("MessageDatabase", "Updating ID: " + id + " to status: " + status);
     ContentValues contentValues = new ContentValues();
@@ -360,7 +364,7 @@ public class SmsDatabase extends MessagingDatabase {
 
     jobManager.add(new TrimThreadJob(context, record.getThreadId()));
     reader.close();
-    
+
     return new Pair<>(newMessageId, record.getThreadId());
   }
 

@@ -24,6 +24,12 @@
                         android:title="@string/preferences__sms_delivery_reports" />
 
     <org.smssecure.smssecure.components.SwitchPreferenceCompat
+                        android:key="pref_delivery_report_toast_sms"
+                        android:title="@string/preferences__sms_delivery_reports_notification"
+                        android:summary="@string/preferences__display_a_toast_when_a_delivery_report_is_received"
+                        android:dependency="pref_delivery_report_sms"/>
+
+    <org.smssecure.smssecure.components.SwitchPreferenceCompat
                         android:defaultValue="false"
                         android:key="pref_wifi_sms"
                         android:title="@string/preferences__support_wifi_calling"
