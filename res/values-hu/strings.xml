@@ -42,13 +42,7 @@ hozzájuk férhet!
   <string name="AttachmentTypeSelectorAdapter_video">Mozgókép</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Hang</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Névjegy adatok</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Az
-azonosító kulcs %1$s vonatkozásában megváltozott. Ez jelentheti, hogy valaki megpróbál beavatkozni a kommunikációba, vagy azt, hogy %2$s egyszerűen újra telepítette a SMSSecure alkalmazást és így most egy új azonosító kulcsa van.
- </string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Talán érdemes ellenőrizni
-ezt a névjegyet.
- </string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Üzenet mérete: %d kB</string>
   <string name="ConversationItem_expires_s">Lejár: %s</string>
@@ -107,6 +101,7 @@ ezt a névjegyet.
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Törlés...</string>
   <string name="ConversationFragment_deleting_messages">Üzenetek törlése...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Töröljük az üzenetfolyamot?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Biztosan törölni szeretnéd az összes kiválasztott üzenetváltást?</string>
@@ -208,6 +203,10 @@ beállítás nincs engedélyezve.
  </string>
   <string name="ReceiveKeyActivity_processing">Feldolgozás</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Kulcs csere folyamatban...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Talán érdemes ellenőrizni
+ezt a névjegyet.
+ </string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Elrontott csere kulcs
 üzenet érkezett!
@@ -259,6 +258,7 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS dekódolása, kérlek várj...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Hibás titkosított MMS üzenet...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Az MMS üzenet titkosításra került egy nem létező üzenetváltáshoz.</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Az importálás folyamatban van.</string>
   <string name="ApplicationMigrationService_importing_text_messages">SMS üzenetek importálása</string>
@@ -274,9 +274,7 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="MessageNotifier_failed_to_deliver_message">Nem sikerült az üzenet kézbesítése!</string>
   <string name="MessageNotifier_error_delivering_message">Hiba az üzenet kézbesítése közben!</string>
   <string name="MessageNotifier_mark_all_as_read">Az összes olvasottként való megjelölése</string>
-  <string name="MessageNotifier_mark_as_read">Olvasottként való megjelölés</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Sajnáljuk, de a gyors válasz funkciót a SMSSecure még nem támogatja!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">RÉGI JELSZÓ:</string>
   <string name="change_passphrase_activity__new_passphrase">ÚJ JELSZÓ:</string>
@@ -289,8 +287,10 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="SingleContactSelectionActivity_contact_photo">Névjegy fotó</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Kiválasztás...</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">A híváslista üres.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Biztonságos SMS küldése</string>
   <string name="conversation_activity__type_message_sms_insecure">Nem biztonságos SMS küldése</string>
@@ -356,6 +356,8 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">A SMSSecure az MMS beállítások megadását igényli a média és csoportos üzenetek kézbesítéséhez a szolgáltatódon keresztül. Az eszközöd nem tesz elérhetővé ilyen információkat, ami igaz lehet zárolt eszközök és egyéb korlátozó beállítások esetén.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">A média és csoportos üzeneteke küldéséhez kattints az \"OK\" feliratra és add meg a kívánt beállításokat! A szolgáltatód MMS beállításai általában megtalálhatók a \"saját szolgáltató APN\" keresésével. Csupán egyszer van szüksége ezt megtenni.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Befejezés</string>
   <!--recipients_panel-->
@@ -388,10 +390,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="arrays__import_export">Importálás / Exportálás</string>
   <string name="arrays__my_identity_key">Saját azonosító kulcs</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d perc</item>
-    <item quantity="other">%d perc</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d óra</item>
     <item quantity="other">%d óra</item>
@@ -461,7 +459,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences__slow">Lassú</string>
   <string name="preferences__custom">Egyéni</string>
   <string name="preferences__advanced">Haladó</string>
-  <string name="preferences__app_protection">Alkalmazás védelem</string>
   <string name="preferences__advanced_mms_access_point_names">MMS beállítások manuális megadása</string>
   <string name="preferences__enable_manual_mms">Manuális MMS beállítások használata</string>
   <string name="preferences__override_system_mms_settings">A rendszer MMS beállítások felülírása az alábbi információkkal.</string>
@@ -528,10 +525,13 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="conversation_secure_verified__menu_security">Biztonság</string>
   <string name="conversation_secure_verified__menu_verify_identity">Azonosító ellenőrzése</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Biztonságos üzenetváltás befejezése</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Melléklet hozzáadása</string>
   <string name="conversation__menu_delete_thread">Beszélgetésfolyam törlése</string>
   <string name="conversation__menu_view_media">Minden fénykép</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Hozzáadás névjegyzékhez</string>
   <!--conversation_group_options-->
@@ -550,8 +550,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="text_secure_normal__menu_clear_passphrase">Lezárás</string>
   <string name="text_secure_normal__mark_all_as_read">Mindegyik megjelölése olvasottként</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">A SMSSecure fordításod érvényességi ideje lejárt!</string>
-  <string name="reminder_header_expired_build_details">Az üzenetek küldése nem lesz sikeres, kérlek frissíts a legújabb verzióra!</string>
   <string name="reminder_header_sms_default_title">Alapértelmezett SMS alkalmazásként szeretnéd használni?</string>
   <string name="reminder_header_sms_default_text">Érintsd meg a SMSSecure alapértelmezett SMS alkalmazássá tételéhez</string>
   <string name="reminder_header_sms_import_title">Rendszer SMS adatbázis importálása?</string>
@@ -570,5 +568,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="trimmer__old_messages_successfully_deleted">A régi üzenetek sikeresen törlődtek</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Átvitel ikon</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

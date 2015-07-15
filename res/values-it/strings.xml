@@ -40,10 +40,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informazioni contatto</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La chiave che identificava %1$s è cambiata. Questo può significare che qualcuno sta cercando di intercettare la tua comunicazione, o che %2$s ha semplicemente reinstallato SMSSecure e ora ha una nuova chiave identificativa.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dovresti verificare
-questo contatto.</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Dimensione Messaggio: %d KB</string>
   <string name="ConversationItem_expires_s">Scadenza: %s</string>
@@ -103,6 +100,7 @@ questo contatto.</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Cancellazione...</string>
   <string name="ConversationFragment_deleting_messages">Cancellazione messaggi...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Cancellare i threads?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Sei sicuro di voler cancellare TUTTE le conversazioni selezionate?</string>
@@ -201,6 +199,9 @@ che il contatto ha reinstallato SMSSecure e ora ha una nuova chiave.</string>
 firma di questa chiave è fidata, ma al momento hai lo scambio automatico della chiave disabilitato.</string>
   <string name="ReceiveKeyActivity_processing">Elaborazione</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Elaborazione scambio delle chiavi…</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dovresti verificare
+questo contatto.</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Ricevuta una chiave corrotta
 scambia un altro messaggio!
@@ -251,6 +252,7 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Decifratura MMS in corso, attendere...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Cifratura MMS invalida..</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Messaggio MMS cifrato per una sessione non esistente</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importazione in corso</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importando i messaggi</string>
@@ -267,10 +269,8 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="MessageNotifier_failed_to_deliver_message">Non è riuscito l\'invio del messaggio</string>
   <string name="MessageNotifier_error_delivering_message">C\'è stato un errore durante l\'invio del messaggio</string>
   <string name="MessageNotifier_mark_all_as_read">Segna tutto come già letto</string>
-  <string name="MessageNotifier_mark_as_read">Segna come già letto</string>
   <string name="MessageNotifier_media_message">Messaggio multimediale</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">La risposta rapida non è ancora supportata in SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Vecchia password:</string>
   <string name="change_passphrase_activity__new_passphrase">Nuova password:</string>
@@ -283,8 +283,10 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="SingleContactSelectionActivity_contact_photo">Foto del contatto</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleziona per</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nessuna chiamata recente.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Manda SMS sicuro</string>
   <string name="conversation_activity__type_message_sms_insecure">Invia SMS non cifrato</string>
@@ -349,6 +351,8 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure ha bisogno delle impostazioni degli MMS, per poter inviare messaggi multimediali e di gruppo con il tuo operatore. Il tuo dispositivo non fornisce queste impostazioni, probabilmente perché ha un operatore bloccato o altre configurazioni restrittive.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Per inviare contenuti multimediali e messaggi di gruppo, fare clic su \"OK\" e completare le impostazioni richieste. Le impostazioni MMS del proprio operatore possono essere generalemtne trovate cercando \"APN proprio operatore\". Sarà necessario eseguire una sola volta questa procedura.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Completato</string>
   <!--recipients_panel-->
@@ -383,10 +387,6 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="arrays__use_default">Usa parametri predefiniti</string>
   <string name="arrays__use_custom">Usa parametri personalizzati</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minuto</item>
-    <item quantity="other">%d minuti</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d ora</item>
     <item quantity="other">%d ore</item>
@@ -458,7 +458,6 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="preferences__slow">Lento</string>
   <string name="preferences__custom">Personalizzato</string>
   <string name="preferences__advanced">Avanzate</string>
-  <string name="preferences__app_protection">Protezione app</string>
   <string name="preferences__advanced_mms_access_point_names">Impostazioni manuali MMS</string>
   <string name="preferences__enable_manual_mms">Usa le impostazioni manuali degli MMS</string>
   <string name="preferences__override_system_mms_settings">Sovrascrivi le impostazioni MMS di sistema con le seguenti informazioni</string>
@@ -533,10 +532,13 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="conversation_secure_verified__menu_security">Sicurezza</string>
   <string name="conversation_secure_verified__menu_verify_identity">Verifica identità</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Termina sessione sicura</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Aggiungi allegato</string>
   <string name="conversation__menu_delete_thread">Cancella conversazione</string>
   <string name="conversation__menu_view_media">Tutte le immagini</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Aggiungi ai contatti</string>
   <!--conversation_group_options-->
@@ -555,8 +557,6 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="text_secure_normal__menu_clear_passphrase">Blocca</string>
   <string name="text_secure_normal__mark_all_as_read">Segnala tutto come già letto</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">La tua versione di SMSSecure è scaduta!</string>
-  <string name="reminder_header_expired_build_details">Non riesci più a mandare messaggi, per piacere aggiorna all\'ultima versione.</string>
   <string name="reminder_header_sms_default_title">Adotta come applicazione predefinita per SMS.</string>
   <string name="reminder_header_sms_default_text">Tocca per usare SMSSecure come app di default per gli SMS.</string>
   <string name="reminder_header_sms_import_title">Vuoi importare gli SMS precedenti?</string>
@@ -575,5 +575,6 @@ Importo una copia in chiaro. Compatibile con \"SMSBackup And Restore\"</string>
   <string name="trimmer__old_messages_successfully_deleted">Vecchi messaggi cancellati con successo</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icona trasporto</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

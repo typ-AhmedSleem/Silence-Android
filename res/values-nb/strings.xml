@@ -40,9 +40,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontaktinformasjon</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Det identifiserende nøkkelmaterialet for %1$s har endret seg. Dette kan enten bety at noen prøver å avlytte kommunikasjonen din, eller at %2$s har reinstallert SMSSecure og nå har en ny identitetsnøkkel.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Utfør identitetssjekk av denne kontakten.</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Meldingsstørrelse: %d KB</string>
   <string name="ConversationItem_expires_s">Utløper: %s</string>
@@ -108,6 +106,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Sletter...</string>
   <string name="ConversationFragment_deleting_messages">Sletter meldinger...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Slett disse trådene?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Bekreft sletting av alle de valgte samtaletrådene?</string>
@@ -200,6 +199,8 @@ at denne kontakten har installert SMSSecure på nytt og dermed fått en ny ident
 \'fullfør nøkkelutvekslinger automatisk\'.</string>
   <string name="ReceiveKeyActivity_processing">Behandler</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Prosesserer nøkkelutveksling...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Utfør identitetssjekk av denne kontakten.</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Mottok korrupt nøkkelutvekslingsmelding!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -248,6 +249,7 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekrypterer MMS, vennligst vent...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Ugyldig kryptert MMS...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS kryptert for en ikke-eksisterende sesjon...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importering pågår</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importerer tekstmeldinger</string>
@@ -264,10 +266,8 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Klarte ikke å levere meldingen.</string>
   <string name="MessageNotifier_error_delivering_message">Feil ved levering av meldingen.</string>
   <string name="MessageNotifier_mark_all_as_read">Marker alle som lest</string>
-  <string name="MessageNotifier_mark_as_read">Marker som lest</string>
   <string name="MessageNotifier_media_message">Media-melding</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Beklager, \"Rask Respons\" er ennå ikke støttet av SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Gammelt passord:</string>
   <string name="change_passphrase_activity__new_passphrase">Nytt passord:</string>
@@ -280,8 +280,10 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="SingleContactSelectionActivity_contact_photo">Kontaktbilde</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Velg for</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ingen nye samtaler.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Send sikret SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Send usikret SMS</string>
@@ -345,6 +347,8 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure trenger MMS-innstillinger for å levere media og gruppemeldinger via din telefonoperatør. Enheten din er ikke i stand til å oppgi denne informasjonen automatisk, noe som ofte skjer dersom den er låst til operatør eller er konfigurert med andre restriksjoner.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">For å sende media og gruppemeldinger, klikk \'OK\' og fullfør de forespurte instillingene. MMS-oppsettet for din operatør kan ofte finnes ved å søke etter \'din operatørs APN\'. Du trenger kun å gjøre dette én gang.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Complete</string>
   <!--recipients_panel-->
@@ -380,10 +384,6 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="arrays__use_default">Benytt forvalg</string>
   <string name="arrays__use_custom">Bruk egendefinert</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minutt</item>
-    <item quantity="other">%d minutter</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d time</item>
     <item quantity="other">%d timer</item>
@@ -455,7 +455,6 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="preferences__slow">Sakte</string>
   <string name="preferences__custom">Tilpasset</string>
   <string name="preferences__advanced">Avansert</string>
-  <string name="preferences__app_protection">Programbeskyttelse</string>
   <string name="preferences__mms_user_agent">MMS-brukeragent</string>
   <string name="preferences__advanced_mms_access_point_names">Manuelle MMS-innstillinger</string>
   <string name="preferences__enable_manual_mms">Bruk manuelle MMS-innstillinger</string>
@@ -534,10 +533,13 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="conversation_secure_verified__menu_security">Sikkerhet</string>
   <string name="conversation_secure_verified__menu_verify_identity">Bekreft identitet</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Avslutt sikret sesjon</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Legg til vedlegg</string>
   <string name="conversation__menu_delete_thread">Slett tråd</string>
   <string name="conversation__menu_view_media">Alle bilder</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Legg til kontakter</string>
   <!--conversation_group_options-->
@@ -556,8 +558,6 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="text_secure_normal__menu_clear_passphrase">Lås</string>
   <string name="text_secure_normal__mark_all_as_read">Marker alle som lest</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Din versjon av SMSSecure er utgått på dato!</string>
-  <string name="reminder_header_expired_build_details">Det vil ikke lenger være mulig å sende meldinger. Oppdater til siste versjon.</string>
   <string name="reminder_header_sms_default_title">Bruk som forvalgt SMS-program?</string>
   <string name="reminder_header_sms_default_text">Klikk for gjøre SMSSecure til ditt forvalgte SMS-program.</string>
   <string name="reminder_header_sms_import_title">Importer enhetens SMS-database?</string>
@@ -576,5 +576,6 @@ Eksporter en klartekst-sikkerhetskopi kompatibel med \'SMSSikkerhetskopiering og
   <string name="trimmer__old_messages_successfully_deleted">Sletting av gamle meldinger vellykket</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Miniatyrbilde for transport</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

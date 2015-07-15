@@ -39,11 +39,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="AttachmentTypeSelectorAdapter_video">Film</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Dźwięk</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informacje kontaktowe</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Klucz identyfikacyjny dla %1$s zmienił się. Może to oznaczać, że ktoś próbuje przechwycić Twoją komunikację, lub %2$s przeinstalował SMSSecure i posiada teraz nowy klucz identyfikacyjny.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Może chcesz zweryfikować 
-ten kontakt.
-</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Rozmiar wiadomości: %d KB </string>
   <string name="ConversationItem_expires_s">Wygasa: %s</string>
@@ -102,6 +98,7 @@ ten kontakt.
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Usuwanie...</string>
   <string name="ConversationFragment_deleting_messages">Usuwanie wiadomości...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Usunąć wątki?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Usunąć wybrane wątki? </string>
@@ -188,6 +185,10 @@ Twój kontakt przeinstalował program SMSSecure i posiada teraz nowy klucz tożs
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis pod tą wymianą kluczy jest zaufany, ale masz wyłączoną opcję \'automatyczna wymiana klucza\'.</string>
   <string name="ReceiveKeyActivity_processing">Przetwarzanie</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Przetwarzanie wymiany kluczy...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Może chcesz zweryfikować 
+ten kontakt.
+</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Otrzymano uszkodzony klucz!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -235,6 +236,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Trwa odszyfrowywanie MMSa, proszę czekać...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Źle zaszyfrowana wiadomość MMS...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Wiadomość MMS zaszyfrowana dla nieistniejącej sesji...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Trwa importowanie</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importowanie wiadomości tekstowych</string>
@@ -250,9 +252,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="MessageNotifier_failed_to_deliver_message">Dostarczenie wiadomości nie powiodło się.</string>
   <string name="MessageNotifier_error_delivering_message">Błąd przy wysyłaniu wiadomości.</string>
   <string name="MessageNotifier_mark_all_as_read">Oznacz wszystkie jako przeczytane</string>
-  <string name="MessageNotifier_mark_as_read">Oznacz jako przeczytane</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Przepraszamy, Szybka Odpowiedź nie jest jeszcze wspierana przez SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">STARE HASŁO:</string>
   <string name="change_passphrase_activity__new_passphrase">NOWE HASŁO:</string>
@@ -265,8 +265,10 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="SingleContactSelectionActivity_contact_photo">Obrazek kontaktu</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Wybierz dla</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Brak ostatnich połączeń.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Wyślij szyfrowany SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Wyślij nieszyfrowany SMS</string>
@@ -330,6 +332,8 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure wymaga ustawień MMS w celu dostarczenia wiadomości multimedialnych za pośrednictwem Twojego operatora. Twoje urządzenie nie udostępnia tych informacji. Może to być spowodowane pewnymi restrykcyjnymi konfiguracjami w telefonie.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Aby mieć możliwość wysyłania wiadomości multimedialnych i wiadomości grupowych, kliknij \'OK\' i wypełnij pola, o które jesteś proszony. Dane MMS dla Twojego operatora, można znaleźć szukając w ustawieniach frazy typu \'Punkty Dostępu - APN\'. Wystarczy to zrobić tylko jeden raz.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Zakończono</string>
   <!--recipients_panel-->
@@ -362,11 +366,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="arrays__import_export">Import / eksport</string>
   <string name="arrays__my_identity_key">Mój klucz tożsamości</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minuta</item>
-    <item quantity="few">%d minut</item>
-    <item quantity="other">%d minut</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d godzina</item>
     <item quantity="few">%d godzin</item>
@@ -439,7 +438,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="preferences__slow">Wolno</string>
   <string name="preferences__custom">Własne</string>
   <string name="preferences__advanced">Zaawansowane</string>
-  <string name="preferences__app_protection">Ochrona aplikacji</string>
   <string name="preferences__advanced_mms_access_point_names">Manualne ustawienia MMS</string>
   <string name="preferences__enable_manual_mms">Użyj manualnych ustawień MMS</string>
   <string name="preferences__override_system_mms_settings">Zastąp ustawienia systemowe MMS poniższymi informacjami.</string>
@@ -512,10 +510,13 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="conversation_secure_verified__menu_security">Bezpieczeństwo</string>
   <string name="conversation_secure_verified__menu_verify_identity">Zweryfikuj tożsamość</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Zakończ bezpieczną sesję</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj załącznik</string>
   <string name="conversation__menu_delete_thread">Usuń wątek</string>
   <string name="conversation__menu_view_media">Wszystkie obrazy</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Dodaj do kontaktów</string>
   <!--conversation_group_options-->
@@ -534,8 +535,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="text_secure_normal__menu_clear_passphrase">Zablokuj</string>
   <string name="text_secure_normal__mark_all_as_read">Oznacz wszystkie jako przeczytane</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Twoja wersja SMSSecure wygasła!</string>
-  <string name="reminder_header_expired_build_details">Wiadomości nie będą już pomylnie wysyłane, prosimy o aktualizację do najnowszej wersji.</string>
   <string name="reminder_header_sms_default_title">Użyć jako domyślnej aplikacji SMS?</string>
   <string name="reminder_header_sms_default_text">Dotknij, aby SMSSecure był domyślną aplikacją SMS.</string>
   <string name="reminder_header_sms_import_title">Importować SMS?</string>
@@ -554,5 +553,6 @@ Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup And Re
   <string name="trimmer__old_messages_successfully_deleted">Stare wiadomości zostały pomyślnie usunięte</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ikona transportu</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

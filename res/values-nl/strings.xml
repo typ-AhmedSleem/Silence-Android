@@ -40,12 +40,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Het
-identificerende sleutelmateriaal voor %1$s is veranderd. Dit kan betekenen dat iemand probeert
-uw communicatie te onderscheppen, of gewoon dat %2$s SMSSecure geherinstalleerd heeft en
-nu een nieuwe identiteitssleutel heeft.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">U kunt wensen dit contact te verifiëren.</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Berichtgrootte: %d KB</string>
   <string name="ConversationItem_expires_s">Verloopt: %s</string>
@@ -111,6 +106,7 @@ nu een nieuwe identiteitssleutel heeft.</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Verwijderen...</string>
   <string name="ConversationFragment_deleting_messages">Berichten verwijderen...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Gesprekken verwijderen?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Weet je zeker dat je ALLE geselecteerde gesprekken wilt verwijderen?</string>
@@ -198,6 +194,8 @@ Herstellen van een versleutelde back-up zal je bestaande sleutels, voorkeuren en
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">De handtekening op deze sleuteluitwisseling is vertrouwd, maar u heeft de \'automatisch aanvullen sleuteluitwisselingen\' instelling uitgeschakeld.</string>
   <string name="ReceiveKeyActivity_processing">Aan het verwerken</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Sleuteluitwisseling verwerken...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">U kunt wensen dit contact te verifiëren.</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Misvormd sleuteluitwisselingsbericht
 ontvangen!</string>
@@ -247,6 +245,7 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS ontsleutelen, een moment...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Verkeerd versleuteld MMS-bericht...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-bericht versleuteld voor niet bestaande sessie...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Bezig met importeren</string>
   <string name="ApplicationMigrationService_importing_text_messages">Tekstberichten aan het importeren</string>
@@ -263,10 +262,8 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="MessageNotifier_failed_to_deliver_message">Het bericht afleveren is mislukt.</string>
   <string name="MessageNotifier_error_delivering_message">Fout bij afleveren bericht.</string>
   <string name="MessageNotifier_mark_all_as_read">Markeer alles als gelezen</string>
-  <string name="MessageNotifier_mark_as_read">Markeer als gelezen</string>
   <string name="MessageNotifier_media_message">Media bericht</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Sorry, Quick Response wordt nog niet ondersteund door SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Oud wachtwoord:</string>
   <string name="change_passphrase_activity__new_passphrase">Nieuw wachtwoord:</string>
@@ -279,8 +276,10 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="SingleContactSelectionActivity_contact_photo">Contactfoto</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Selecteer voor</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Geen recente gesprekken.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Verstuur beveiligde SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Verstuur onbeveiligde SMS</string>
@@ -344,6 +343,8 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure heeft MMS-instellingen nodig om mediaberichten te kunnen versturen via uw telefoonprovider. Uw toestel heeft deze informatie niet beschikbaar. Dit komt vaker voor bij gelockte toestellen en andere beperkende configuraties.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Om mediaberichten en groepsberichten te versturen, drukt u op \'OK\' en voert u de gevraagde gegevens in. De MMS-instellingen voor uw provider kunnen meestal gevonden worden door te zoeken naar \'&amp;lt;uw provider&amp;gt; APN\'. U hoeft dit maar eenmaal te doen.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Voltooid</string>
   <!--recipients_panel-->
@@ -379,10 +380,6 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="arrays__use_default">Gebruik standaard</string>
   <string name="arrays__use_custom">Gebruik aangepast</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minuut</item>
-    <item quantity="other">%d minuten</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d uur</item>
     <item quantity="other">%d uren</item>
@@ -454,7 +451,6 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="preferences__slow">Langzaam</string>
   <string name="preferences__custom">Aangepast</string>
   <string name="preferences__advanced">Geavanceerd</string>
-  <string name="preferences__app_protection">App beveiliging</string>
   <string name="preferences__mms_user_agent">MMS gebruikersprogramma</string>
   <string name="preferences__advanced_mms_access_point_names">Handmatige MMS instellingen</string>
   <string name="preferences__enable_manual_mms">Gebruik handmatige MMS instellingen</string>
@@ -533,10 +529,13 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="conversation_secure_verified__menu_security">Beveiliging</string>
   <string name="conversation_secure_verified__menu_verify_identity">Identiteit verifiëren</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Beveiligde sessie beëindigen</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Bijlage toevoegen</string>
   <string name="conversation__menu_delete_thread">Verwijder gehele gesprek</string>
   <string name="conversation__menu_view_media">Alle afbeeldingen</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Toevoegen aan contacten</string>
   <!--conversation_group_options-->
@@ -555,8 +554,6 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="text_secure_normal__menu_clear_passphrase">Vergrendel</string>
   <string name="text_secure_normal__mark_all_as_read">Markeer alles als gelezen</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Je build van SMSSecure is verlopen!</string>
-  <string name="reminder_header_expired_build_details">Berichten zullen niet langer verzonden worden, gelieve te updaten naar de recentste versie.</string>
   <string name="reminder_header_sms_default_title">Als standaard SMS-app gebruiken?</string>
   <string name="reminder_header_sms_default_text">Raak aan om van SMSSecure je standaard SMS applicatie te maken.</string>
   <string name="reminder_header_sms_import_title">SMS importeren uit systeem?</string>
@@ -575,5 +572,6 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="trimmer__old_messages_successfully_deleted">Oude berichten succesvol verwijderd</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transport icoon</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

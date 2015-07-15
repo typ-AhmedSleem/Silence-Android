@@ -29,9 +29,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">照片</string>
   <string name="AttachmentTypeSelectorAdapter_video">影片</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音樂</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">您想要對這名連絡人
-進行認證嗎？</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">訊息大小: %d KB</string>
   <string name="ConversationItem_expires_s">於: %s 後過期</string>
@@ -75,6 +73,7 @@
   <string name="ConversationFragment_saving_attachment">正在儲存附件檔案</string>
   <string name="ConversationFragment_saving_attachment_to_sd_card">正在寫入儲存裝置中...</string>
   <string name="ConversationFragment_deleting">刪除中...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">刪除對話群組？</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">您確定要刪除已選擇的對話群組？</string>
@@ -167,6 +166,9 @@
     </string>
   <string name="ReceiveKeyActivity_processing">處理中</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">金鑰交換處理中...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">您想要對這名連絡人
+進行認證嗎？</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">收到一組毀損的
 金鑰交換訊息！</string>
@@ -214,6 +216,7 @@
   <string name="MmsMessageRecord_decrypting_mms_please_wait">解密 MMS多媒體訊息中，請稍後...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">失效的加密 MMS多媒體簡訊...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">與 加密 MMS多媒體簡訊匹配的連線已不存在...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">匯入中</string>
   <string name="ApplicationMigrationService_importing_text_messages">匯入文字簡訊</string>
@@ -229,9 +232,7 @@
   <string name="MessageNotifier_failed_to_deliver_message">無法傳送訊息。</string>
   <string name="MessageNotifier_error_delivering_message">傳送訊息發生失誤。</string>
   <string name="MessageNotifier_mark_all_as_read">全部標示為已讀</string>
-  <string name="MessageNotifier_mark_as_read">標示已讀</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">抱歉，快速回覆（Quick Response）功能目前 SMSSecure 還不支援！</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">舊的『自訂密碼』:</string>
   <string name="change_passphrase_activity__new_passphrase">新的『自訂密碼』:</string>
@@ -244,8 +245,10 @@
   <string name="SingleContactSelectionActivity_contact_photo">連絡人的相片</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">相片</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">沒有最近通話。</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">傳送加密的手機簡訊</string>
   <string name="conversation_activity__type_message_mms_secure">傳送加密的 MMS多媒體簡訊</string>
@@ -303,6 +306,8 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure 需要您通信業者的 MMS多媒體簡訊設定以發送媒體檔案與群組訊息。目前您的裝置並未提供完整的相關資訊，有時是因為裝置出廠時即被鎖定／限制該方面的功能。</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">傳送媒體檔案或群組訊息，請按下 \"OK\" 並完成必要的設定。您所使用電信業者相關的MMS多媒體簡訊設定可能羅列在 \'無線與網路／行動網路\'的設定項目內。且您只需設定一次。</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">完成</string>
   <!--recipients_panel-->
@@ -434,9 +439,12 @@
   <string name="conversation_secure_verified__menu_security">安全設定</string>
   <string name="conversation_secure_verified__menu_verify_identity">驗證身分</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">結束安全連線</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">增加附件檔案</string>
   <string name="conversation__menu_delete_thread">刪除對話群組</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">收件人清單</string>
@@ -467,5 +475,6 @@
   <string name="trimmer__deleting_old_messages">正在刪除舊訊息...</string>
   <string name="trimmer__old_messages_successfully_deleted">已完成刪除舊訊息。</string>
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

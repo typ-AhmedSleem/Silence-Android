@@ -43,15 +43,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Βίντεο</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Ήχος</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Πληροφοριες επαφής</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Το
-        αποτύπωμα αυτής της ανταλλαγής κλειδιών %1$s είναι διαφορετικό από αυτό που λάβαμε πρωτύτερα από αυτή την
-        επαφή. Αυτό σημαίνει είτε ότι κάποιος προσπαθεί να υποκλέψει τη συνομιλία σας, ή
-        ότι αυτή η επαφή απλά %2$s  επανεγκτέστησε το SMSSecure και τώρα έχει νέο κλειδί ταυτότητας.
-    </string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Προτείνεται να επιβεβαιώσετε
-        αυτήν την επαφή.
-    </string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Μέγεθος μηνύματος: %d KB</string>
   <string name="ConversationItem_expires_s">Παύει να ισχύει: %s</string>
@@ -119,6 +111,7 @@
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Γίνεται διαγραφή...</string>
   <string name="ConversationFragment_deleting_messages">Διαγραφή μηνυμάτων...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Διαγραφή συζητήσεων;</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Είστε σίγουροι πως θέλετε να διαγράψετε ΟΛΕΣ τις επιλεγμένες συζητήσεις;</string>
@@ -225,6 +218,10 @@
     </string>
   <string name="ReceiveKeyActivity_processing">Γίνεται επεξεργασία</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Επεξεργάζεται η ανταλλαγή κλειδιών...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Προτείνεται να επιβεβαιώσετε
+        αυτήν την επαφή.
+    </string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Ελήφθη προβληματικό μήνυμα
         ανταλλαγής κλειδιών!
@@ -277,6 +274,7 @@
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Γίνεται αποκρυπτογράφηση MMS, παρακαλώ περιμένετε...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Κακό κρυπτογραφημένο μήνυμα MMS...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Το μήνυμα MMS κρυπτογραφήθηκε για ανύπαρκτη συζήτηση...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Εισαγωγή σε εξέλιξη</string>
   <string name="ApplicationMigrationService_importing_text_messages">Εισάγονται τα Μηνύματα Κειμένου</string>
@@ -293,10 +291,8 @@
   <string name="MessageNotifier_failed_to_deliver_message">Αποτύχαμε να παραδώσουμε το μήνυμα.</string>
   <string name="MessageNotifier_error_delivering_message">Σφάλμα κατά τη παράδοση του μηνύματος.</string>
   <string name="MessageNotifier_mark_all_as_read">Επισήμανση όλων ως αναγνωσμένα</string>
-  <string name="MessageNotifier_mark_as_read">Επισήμανση ως αναγνωσμένο</string>
   <string name="MessageNotifier_media_message">Μήνυμα πολυμέσων</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Λυπούμαστε, η Άμεση Απάντηση δεν υποστηρίζεται ακόμα από το SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">ΠΑΛΙΑ ΣΥΝΘΗΜΑΤΙΚΗ ΦΡΑΣΗ</string>
   <string name="change_passphrase_activity__new_passphrase">ΝΕΑ ΣΥΝΘΗΜΑΤΙΚΗ ΦΡΑΣΗ:</string>
@@ -309,8 +305,10 @@
   <string name="SingleContactSelectionActivity_contact_photo">Φωτογραφία επαφής</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Επιλογή για</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Δεν υπάρχουν πρόσφατες κλήσεις.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Αποστολή ασφαλούς SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Αποστολή μη εξασφαλισμένων SMS</string>
@@ -377,6 +375,8 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Το SMSSecure χρειάζεται τις ρυθμίσεις MMS για να στείλει μηνύματα πολυμέσων μέσω του πάροχού σας. Η συσκευή σας δεν παρέχει αυτές τις ρυθμίσεις, κάτι που ισχύει σε κλειδωμένες συσκευές και άλλες περιοριστικές διαμορφώσεις.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Για να στείλετε μηνύματα πολυμέσων, πατήστε «ΟΚ» και συμπληρώστε τις ρυθμίσεις APN. Θα βρείτε τις σωστές ρυθμίσεις APN για τον πάροχό σας ψάχνοντας online για «το όνομα του πάροχού σας» + APN. Αυτές οι ρυθμίσεις θα χρειαστούν μόνο μία φορά.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Ολοκληρώθηκε</string>
   <!--recipients_panel-->
@@ -412,10 +412,6 @@
   <string name="arrays__use_default">Προκαθορισμένο</string>
   <string name="arrays__use_custom">Προσαρμοσμένο</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d λεπτο</item>
-    <item quantity="other">%d λεπτά</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d ώρα</item>
     <item quantity="other">%d ώρες</item>
@@ -487,7 +483,6 @@
   <string name="preferences__slow">Αργό</string>
   <string name="preferences__custom">Προσαρμοσμένο</string>
   <string name="preferences__advanced">Για προχωρημένους</string>
-  <string name="preferences__app_protection">Προστασία εφαρμογής</string>
   <string name="preferences__mms_user_agent">MMS User Agent</string>
   <string name="preferences__advanced_mms_access_point_names">Ρυθμίσεις MMS</string>
   <string name="preferences__enable_manual_mms">Χρήση μη αυτόματων ρυθμίσεων MMS</string>
@@ -566,10 +561,13 @@
   <string name="conversation_secure_verified__menu_security">Ασφάλεια</string>
   <string name="conversation_secure_verified__menu_verify_identity">Επιβεβαίωση ταυτότητας</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Τερματισμός Ασφαλούς Συζήτησης</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Προσθήκη συνημμένου</string>
   <string name="conversation__menu_delete_thread">Διαγραφή συζήτησης</string>
   <string name="conversation__menu_view_media">Όλες οι εικόνες</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Προσθήκη στις επαφές</string>
   <!--conversation_group_options-->
@@ -588,8 +586,6 @@
   <string name="text_secure_normal__menu_clear_passphrase">Κλείδωμα</string>
   <string name="text_secure_normal__mark_all_as_read">Επισήμανση όλων ως αναγνωσμένα</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Η εκδοση του SMSSecure σας, έχει λήξει!</string>
-  <string name="reminder_header_expired_build_details">Τα μηνύματα δεν θα στείλνονται με επιτυχία, παρακαλούμε αναβαθμίστε στην πιο πρόσφατη έκδοση.</string>
   <string name="reminder_header_sms_default_title">Να είμαστε η προεπιλεγμένη εφαρμογή για SMS;</string>
   <string name="reminder_header_sms_default_text">Πατήστε για να γινει το SMSSecure η προεπιλεγμένη εφαρμογή των SMS.</string>
   <string name="reminder_header_sms_import_title">Να εισαγχθούν όλα τα προϋπάρχοντα SMS;</string>
@@ -608,5 +604,6 @@
   <string name="trimmer__old_messages_successfully_deleted">Τα παλιά μηνύματα διεγράφτηκαν επιτυχώς</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Μεταφορά εικονίδιου</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

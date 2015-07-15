@@ -41,9 +41,7 @@ erişebilir.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Görüntü</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Ses</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kişi bilgisi</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Bu kişiyi doğrulamak 
-isteyebilirsiniz.</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Mesaj boyutu: %d KB</string>
   <string name="ConversationItem_expires_s">Ömrü: %s</string>
@@ -99,6 +97,7 @@ isteyebilirsiniz.</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Siliniyor...</string>
   <string name="ConversationFragment_deleting_messages">Mesajlar siliniyor...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Başlıkları sil?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Seçili bütün konuşmaları silmek istediğinizden emin misiniz?</string>
@@ -184,6 +183,9 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Bu anahtar değişimdeki imza güvenilir. Ancak, siz \'anahtar değişimlerini otomatik tamamla\' ayarını etkisizleştirmişsiniz.</string>
   <string name="ReceiveKeyActivity_processing">İşleniyor</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Anahtar takası işleniyor...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Bu kişiyi doğrulamak 
+isteyebilirsiniz.</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Bozulmuş anahtar değişim 
 mesajı alındı!</string>
@@ -232,6 +234,7 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS şifresi çözülüyor, bekleyin...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Bozuk şifrelenmiş MMS mesajı...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS mesajı var olmayan oturum için şifrelendi...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">İçe aktarma sürüyor</string>
   <string name="ApplicationMigrationService_importing_text_messages">Mesajlar içe aktarılıyor</string>
@@ -247,9 +250,7 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="MessageNotifier_failed_to_deliver_message">Mesaj iletimi başarısız oldu.</string>
   <string name="MessageNotifier_error_delivering_message">Hata mesaj iletimi</string>
   <string name="MessageNotifier_mark_all_as_read">Tümünü okundu işaretle</string>
-  <string name="MessageNotifier_mark_as_read">Okundu işaretle</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Üzgünüz, Quick Response, SMSSecure tarafından henüz desteklenmiyor!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">ESKİ PAROLA:</string>
   <string name="change_passphrase_activity__new_passphrase">YENİ PAROLA:</string>
@@ -262,8 +263,10 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="SingleContactSelectionActivity_contact_photo">Kişi Fotosu</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seç</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Yakın zamanda arama yok.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Güvenli SMS gönder</string>
   <string name="conversation_activity__type_message_sms_insecure">Teminatsız SMS gönder</string>
@@ -324,6 +327,8 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure medya ve grup mesajlarının kablosuz taşıyıcınız aracılığı ile taşınabilmesi için MMS ayarlarınızı gerektirir. Cihazınız bu bilgiyi sağlamamaktadır. Bu durum bazen kilitli veya diğer kısıtlı yapılandırılmış cihazlar için geçerli olabilmektedir.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Medya veya grup mesajları gönderebilmek için \'Tamam\' a tıklayınız ve istenen ayarları tamamlayınız. Taşıyıcınızın MMS ayarları genellikle \'taşıyıcı APN\' araştırılarak bulunabilir. Bunu bir kez yapmanız gerekecektir.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Tamamlandı</string>
   <!--recipients_panel-->
@@ -414,7 +419,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__slow">Yavaş</string>
   <string name="preferences__custom">Özel</string>
   <string name="preferences__advanced">Gelişmiş</string>
-  <string name="preferences__app_protection">App koruma</string>
   <string name="preferences__advanced_mms_access_point_names">Manüel MMS ayarları</string>
   <string name="preferences__enable_manual_mms">Manüel MMS ayarlarını kullan</string>
   <string name="preferences__override_system_mms_settings">Sistem MMS ayarları yerine aşağıda bilgileri olanları kullan.</string>
@@ -477,10 +481,13 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="conversation_secure_verified__menu_security">Güvenlik</string>
   <string name="conversation_secure_verified__menu_verify_identity">Kimliği doğrula</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Güvenli oturumu sonlandır</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Ek ekle</string>
   <string name="conversation__menu_delete_thread">Başlığı sil</string>
   <string name="conversation__menu_view_media">Tüm resimler</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Kişilere ekle</string>
   <!--conversation_group_options-->
@@ -499,8 +506,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="text_secure_normal__menu_clear_passphrase">Kilitle</string>
   <string name="text_secure_normal__mark_all_as_read">Tümünü okundu işaretle</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Kullandığınız SMSSecure derlemesinin kullanım süresi dolmuştur!</string>
-  <string name="reminder_header_expired_build_details">Mesajlar artık başarılı olarak gönderilemeyecektir, lütfen en yeni sürüme güncelleyiniz. </string>
   <string name="reminder_header_sms_default_title">Varsayılan SMS uygulaması olarak kullanılsın mı?</string>
   <string name="reminder_header_sms_default_text">SMSSecure\'u varsayılan SMS uygulamanız yapmak için hafifçe vurun.</string>
   <string name="reminder_header_sms_import_title">Sistem SMS içe aktarılsın mı?</string>
@@ -518,5 +523,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="trimmer__deleting_old_messages">Eski mesajlar siliniyor...</string>
   <string name="trimmer__old_messages_successfully_deleted">Eski mesajlar silindi</string>
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

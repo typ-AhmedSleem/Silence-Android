@@ -41,11 +41,7 @@ im moći pristupiti.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontakt informacije</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Materijal za identifikaciju %1$s je promjenjen. Ovo može značiti da netko presreće vašu komunikaciju,
-ili da je %2$s jednostavno ponovno instalirao SMSSecure i sada ima novi identifikacijski ključ.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Možda bi trebali provjeriti
-ovaj kontakt.</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Veličina poruke: %d KB</string>
   <string name="ConversationItem_expires_s">Ističe: %s</string>
@@ -104,6 +100,7 @@ ovaj kontakt.</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Brisanje...</string>
   <string name="ConversationFragment_deleting_messages">Brisanje poruka...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Obriši teme?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Jeste li sigurni da želite obrisati SVE odabrane teme?</string>
@@ -199,6 +196,9 @@ na ovoj razmjeni ključeva je ispravan, ali vi ste isključili postavku \'automa
 razmjene ključeva\'.</string>
   <string name="ReceiveKeyActivity_processing">Obrađivanje</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Obrađivanje razmjene ključeva...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Možda bi trebali provjeriti
+ovaj kontakt.</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Primljena iskvarena poruka
 razmjene ključeva!</string>
@@ -247,6 +247,7 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekriptiranje MMSa, sačekajte...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Loše kriptirana MMS poruka...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS poruka kriptirana za nepostojeću sesiju...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Uvoz u tijeku</string>
   <string name="ApplicationMigrationService_importing_text_messages">Uvoz tekstualnih poruka</string>
@@ -262,9 +263,7 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="MessageNotifier_failed_to_deliver_message">Isporuka poruke nije uspjela.</string>
   <string name="MessageNotifier_error_delivering_message">Greška prilikom isporuke poruke.</string>
   <string name="MessageNotifier_mark_all_as_read">Označi sve kao pročitano</string>
-  <string name="MessageNotifier_mark_as_read">Označi kao pročitano</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Brzi odgovor još nije podržan u SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">STARA LOZINKA:</string>
   <string name="change_passphrase_activity__new_passphrase">NOVA LOZINKA:</string>
@@ -277,8 +276,10 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="SingleContactSelectionActivity_contact_photo">Slika kontakta</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Odaberi za</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nema nedavnih poziva.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Pošalji sigurni SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Pošalji nesigurni SMS</string>
@@ -341,6 +342,8 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure zahtjeva MMS postavke kako bi dostavio multimedijalne ili grupne poruke preko vašeg operatera. Vaš uređaj nije ove informacije učinio dostupnima, što se ponekad događa kod zaključanih uređaja ili kod ograničenih postavki.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Kako biste slali multimedijalne ili grupne poruke, pritisnite \'OK\' i popunite tražene postavke. MMS postavke za vašeg operatera se obično mogu naći tražeći \'APN vašeg operatera\'. Ovo je potrebno napraviti samo jednom.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Završeno</string>
   <!--recipients_panel-->
@@ -373,11 +376,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="arrays__import_export">Uvoz / izvoz</string>
   <string name="arrays__my_identity_key">Moj ključ identiteta</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minuta</item>
-    <item quantity="few">%d minute</item>
-    <item quantity="other">%d minuta</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d sat</item>
     <item quantity="few">%d sata</item>
@@ -448,7 +446,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="preferences__slow">Sporo</string>
   <string name="preferences__custom">Prilagodi</string>
   <string name="preferences__advanced">Napredno</string>
-  <string name="preferences__app_protection">Zaštita aplikacije</string>
   <string name="preferences__advanced_mms_access_point_names">Ručne MMS postavke</string>
   <string name="preferences__enable_manual_mms">Koristi ručne MMS postavke</string>
   <string name="preferences__override_system_mms_settings">Zaobiđi MMS postavke sustava sa niže navedenim postavkama.</string>
@@ -512,10 +509,13 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="conversation_secure_verified__menu_security">Sigurnost</string>
   <string name="conversation_secure_verified__menu_verify_identity">Potvrdite identitet</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Završi sigurnu sesiju</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj privitak</string>
   <string name="conversation__menu_delete_thread">Obriši temu</string>
   <string name="conversation__menu_view_media">Sve slike</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Dodaj u kontakte</string>
   <!--conversation_group_options-->
@@ -534,8 +534,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="text_secure_normal__menu_clear_passphrase">Zaključaj</string>
   <string name="text_secure_normal__mark_all_as_read">Označi sve pročitano</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">Vaša SMSSecure inačica je istekla!</string>
-  <string name="reminder_header_expired_build_details">Poruke više neće biti moguće uspješno poslati, nadogradite na najnoviju dostupnu inačicu.</string>
   <string name="reminder_header_sms_default_title">Koristi kao zadanu SMS aplikaciju?</string>
   <string name="reminder_header_sms_default_text">Pritisnite kako biste postavili SMSSecure kao zadanu SMS aplikaciju.</string>
   <string name="reminder_header_sms_import_title">Uvezi SMS poruke sustava?</string>
@@ -553,5 +551,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="trimmer__deleting_old_messages">Brisanje starih poruka...</string>
   <string name="trimmer__old_messages_successfully_deleted">Stare poruke su uspješno obrisane</string>
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

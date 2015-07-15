@@ -25,10 +25,7 @@ dapat mengaksesnya</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Gambar</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Anda mungkin ingin memverifikasi
-kontak ini.
-</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Ukuran pesan: %d KB</string>
   <string name="ConversationItem_expires_s">Berakhir: %s</string>
@@ -53,6 +50,7 @@ kontak ini.
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Rincian pesan</string>
   <string name="ConversationFragment_success_exclamation">Sukses!</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Hapus topik?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Apakah anda yakin ingin menghapus semua topik pembicaraan terpilih?</string>
@@ -126,6 +124,10 @@ menonaktifkan \'selesaikan perturakan kunci
 secara otomatis\'</string>
   <string name="ReceiveKeyActivity_processing">Memproses</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Memproses pertukaran kunci...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Anda mungkin ingin memverifikasi
+kontak ini.
+</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Pesan menerima dan 
 memproses pertukaran kunci korupsi.</string>
@@ -168,6 +170,7 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Proses deskripsi MMS, mohon tunggu...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Enkripsi pada pesan MMS tidak dapat dikenali</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS di enkripsi untuk sesi yang tidak ada</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Dalam proses mengimport</string>
   <!--KeyCachingService-->
@@ -181,9 +184,7 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="MessageNotifier_failed_to_deliver_message">Gagal mengirimkan pesan.</string>
   <string name="MessageNotifier_error_delivering_message">Kesalahan dalam mengirimkan pesan.</string>
   <string name="MessageNotifier_mark_all_as_read">Tandai telah dibaca semuanya</string>
-  <string name="MessageNotifier_mark_as_read">Tandai telah dibaca</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Maaf, Jawaban cepat masih belum didukung oleh SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">KATA KUNCI LAMA</string>
   <string name="change_passphrase_activity__new_passphrase">KATA KUNCI BARU</string>
@@ -195,8 +196,10 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Pilih untuk</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Tidak ada panggilan baru</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__send">Kirim</string>
   <string name="conversation_activity__remove">Hapus</string>
@@ -236,6 +239,8 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure memerlukan pengaturan MMS untuk mengantar pesan dan media grup melalui operator anda. Perangkan anda tidak menyediakan informasi tersebut, yang biasanya disebabkan oleh perangkat yang dikunci atau pengaturan yang ketat.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Untuk mengirim pesan dan media grup klik \'OK\' dan selesaikan pengaturan yang diminta. Pengaturan MMS untuk operator anda biasanya dapat ditemukan dengan mencari \'APN operator anda\'. Hal ini hanya diperlukan sekali saja.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Selesai</string>
   <!--recipients_panel-->
@@ -335,9 +340,12 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <!--conversation_list_fragment-->
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">Keamanan</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Tambahkan lampiran</string>
   <string name="conversation__menu_delete_thread">Hapus Percakapan</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">Daftar Penerima</string>
@@ -357,5 +365,6 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <!--media_preview_activity-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

@@ -23,7 +23,7 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="AttachmentTypeSelectorAdapter_picture">Obrázok</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
-  <!--ConfirmIdentityDialog-->
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Veľkosť správy: %d KB</string>
   <string name="ConversationItem_expires_s">Vyprší: %s</string>
@@ -56,6 +56,7 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationFragment_confirm_message_delete">Potvrď zmazanie správy</string>
   <string name="ConversationFragment_success_exclamation">Úspech!</string>
   <string name="ConversationFragment_saving_attachment">Ukladám prílohu</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Zmazať vlákna?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Ste si istí, že chcete zmazať VŠETKY označené vlákna konverzácií?</string>
@@ -126,6 +127,7 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_processing">Spracováva sa</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Spracovávajú sa kľúče vymeny</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_secure_session_ended">Bezpečné spojenie ukončené.</string>
   <string name="SmsMessageRecord_duplicate_message">Zduplikuj správu.</string>
@@ -161,6 +163,7 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Prosím čakaj, dekryptujem MMS...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Nesprávne kryptovaná MMS správa...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS správa zakryptovaná pre neexistujúcu session...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Prebieha import</string>
   <string name="ApplicationMigrationService_importing_text_messages">Nahrávanie textových správ</string>
@@ -175,7 +178,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="MessageNotifier_failed_to_deliver_message">Zlyhanie doručenia správy.</string>
   <string name="MessageNotifier_error_delivering_message">Chyba doručovania správy.</string>
   <string name="MessageNotifier_mark_all_as_read">Označ všetko ako prečítané</string>
-  <string name="MessageNotifier_mark_as_read">Označ ako prečítané</string>
   <!--QuickResponseService-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staré heslo:</string>
@@ -189,8 +191,10 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="SingleContactSelectionActivity_contact_photo">Fotka kontaktu</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Vyber pre</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Žiadne nedávne hovory.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Pošli šifrovanú SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Pošli šifrovanú MMS</string>
@@ -236,6 +240,8 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odomkni</string>
   <!--prompt_mms_activity-->
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Dokončené</string>
   <!--recipients_panel-->
@@ -356,9 +362,12 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <string name="conversation_secure_verified__menu_security">Bezpečnosť</string>
   <string name="conversation_secure_verified__menu_verify_identity">Over totožnosť</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Ukonči bezpečnú session</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Pridaj prílohu</string>
   <string name="conversation__menu_delete_thread">Zmaž vlákno</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">Zoznam príjemcov</string>
@@ -381,5 +390,6 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <!--media_preview_activity-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

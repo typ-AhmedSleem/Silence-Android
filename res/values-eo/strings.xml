@@ -32,7 +32,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Aŭdio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informoj de kontakto</string>
-  <!--ConfirmIdentityDialog-->
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_view_secure_media_question">Montri la sekuran aŭdvidaĵon?</string>
   <string name="ConversationItem_click_for_details">Frapeti por detaletojn</string>
@@ -51,6 +51,7 @@
   <string name="ConversationFragment_success_exclamation">Sukceso!</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <!--ConversationListItem-->
   <!--CustomDefaultPreference-->
@@ -80,6 +81,7 @@
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_watermark_content_description">Piktogramo de SMSSecure</string>
   <!--ReceiveKeyActivity-->
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -90,6 +92,7 @@
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <!--MmsMessageRecord-->
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <!--KeyCachingService-->
   <!--MessageNotifier-->
@@ -102,7 +105,9 @@
   <!--contact_selection_list_activity-->
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Sendi sekuran SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Sendi malsekuran SMS</string>
@@ -130,6 +135,8 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Malŝlosi</string>
   <!--prompt_mms_activity-->
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <!--recipients_panel-->
   <!--verify_identity_activity-->
@@ -146,10 +153,6 @@
   <string name="arrays__import_export">Importi / eksporti</string>
   <string name="arrays__use_default">Uzi defaŭlto</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d minuto</item>
-    <item quantity="other">%d minutoj</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d horo</item>
     <item quantity="other">%d horoj</item>
@@ -202,8 +205,11 @@
   <!--conversation_list_fragment-->
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">Sekureco</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_view_media">Ĉiuj bildoj</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Adicii al kontaktojn</string>
   <!--conversation_group_options-->
@@ -220,5 +226,6 @@
   <!--media_preview_activity-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

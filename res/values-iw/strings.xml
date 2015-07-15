@@ -24,10 +24,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">תמונה</string>
   <string name="AttachmentTypeSelectorAdapter_video">וידאו</string>
   <string name="AttachmentTypeSelectorAdapter_audio">שמע</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">ייתכן שתרצה לאמת
-את איש הקשר הזה.
-</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">גודל ההודעה: %d KB</string>
   <string name="ConversationItem_expires_s">פג: %s</string>
@@ -47,6 +44,7 @@
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">פרטי הודעה</string>
   <string name="ConversationFragment_success_exclamation">הצליח!</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">למחוק שרשורים?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">אתה בטוח שאתה רוצה למחוק את השרשורים של כל השיחות שנבחרו?</string>
@@ -114,6 +112,10 @@
 על החלפת המפתח הזו אמינה, אבל ביטלת את האפשרות של \"השלם החלפת
  מפתח אוטומטית\" בהגדרות.
 </string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">ייתכן שתרצה לאמת
+את איש הקשר הזה.
+</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -146,6 +148,7 @@
   <string name="MmsMessageRecord_decrypting_mms_please_wait">מפענח MMS, אנא המתן...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">הודעת MMS מוצפנת פגומה...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">הודעת ה-MMS הוצפנה לחיבור שלא קיים...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">בתהליך ייבוא</string>
   <!--KeyCachingService-->
@@ -155,7 +158,6 @@
   <string name="MessageNotifier_failed_to_deliver_message">כישלון במסירת ההודעה.</string>
   <string name="MessageNotifier_error_delivering_message">שגיאה במסירת ההודעה.</string>
   <string name="MessageNotifier_mark_all_as_read">סמן הכל כנקרא</string>
-  <string name="MessageNotifier_mark_as_read">סמן כנקרא</string>
   <!--QuickResponseService-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">סיסמה ישנה:</string>
@@ -167,8 +169,10 @@
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">בחר עבור</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">אין שיחות אחרונות.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__send">שלח</string>
   <string name="conversation_activity__remove">הסר</string>
@@ -206,6 +210,8 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure דורש הגדרות MMS כדי לשלוח הודעות מולטימדיה או הודעות קבוצתיות דרך ספק השירות שלך. המכשיר שלך לא מספק את המידע הזה, זה קורה לעיתים במכשירים נעולים או קונפיגורציות מוגבלות אחרות.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">כדי לשלוח הודעות מולטימדיה או הודעות קבוצתיות,לחץ \'אישור\' והשלם את ההגדרות המתבקשות.את הגדרות ה-MMS עבור ספק השירות שלך אתה יכול למצוא בד\"כ ע\"י חיפוש \"ספק השרות APN\". אתה תצטרך להשלים מידע זה רק פעם אחת.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">השלם</string>
   <!--recipients_panel-->
@@ -292,9 +298,12 @@
   <!--conversation_list_fragment-->
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">אבטחה</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">צרף קובץ</string>
   <string name="conversation__menu_delete_thread">מחק שרשור</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">רשימת נמענים</string>
@@ -313,5 +322,6 @@
   <!--media_preview_activity-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

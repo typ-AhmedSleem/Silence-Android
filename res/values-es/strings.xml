@@ -41,14 +41,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Vídeo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Información de contacto</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">El
-contenido de la clave de identificación de %1$s ha cambiado. Esto puede significar que alguien está
-intentando interceptar sus comunicaciones o simplemente que %2$s ha reinstalado SMSSecure y ahora tiene una
-nueva clave de identidad.</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Puede que dese verificar
-este contacto.
-</string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Tamaño del mensaje: %d KB</string>
   <string name="ConversationItem_expires_s">Expira: %s</string>
@@ -113,6 +106,7 @@ este contacto.
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Borrando...</string>
   <string name="ConversationFragment_deleting_messages">Borrando mensajes...</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">¿Borrar conversaciones?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">¿Está seguro de que quiere borrar TODAS las conversaciones seleccionadas?</string>
@@ -216,6 +210,10 @@ de clave completa\' desactivada.
 </string>
   <string name="ReceiveKeyActivity_processing">Procesando</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Procesando intercambio de claves...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Puede que dese verificar
+este contacto.
+</string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">¡Se recibió un mensaje corrupto
 de intercambio de claves!
@@ -267,6 +265,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Descifrando MMS, por favor espere...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Mensaje MMS mal cifrado</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Mensaje MMS cifrado para sesión no existente...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importación en progreso</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importando mensajes de texto</string>
@@ -283,10 +282,8 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="MessageNotifier_failed_to_deliver_message">Fallo al entregar mensaje.</string>
   <string name="MessageNotifier_error_delivering_message">Error entregando mensaje.</string>
   <string name="MessageNotifier_mark_all_as_read">Marcar todos como leídos</string>
-  <string name="MessageNotifier_mark_as_read">Marcar como leídos</string>
   <string name="MessageNotifier_media_message">Mensaje multimedia</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Lo sentimos, ¡la Respuesta Rápida aún no está soportada por SMSSecure!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">CLAVE DE ACCESO ANTERIOR:</string>
   <string name="change_passphrase_activity__new_passphrase">CLAVE DE ACCESO NUEVA:</string>
@@ -299,8 +296,10 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="SingleContactSelectionActivity_contact_photo">Foto del contacto</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleccionar para</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">No hay llamadas recientes.</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Enviar SMS seguro</string>
   <string name="conversation_activity__type_message_sms_insecure">Enviar SMS no seguro</string>
@@ -367,6 +366,8 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necesita los datos de configuración de MMS para poder enviar mensajes de grupo a través de su proveedor de telefonía. Su dispositivo no hace pública esta información, cosa que ocurre ocasionalmente para dispositivos bloqueados y otras configuraciones restrictivas.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Para enviar contenido multimedia y mensajes de grupo haga click en \'OK\' y realice la configuración requerida. Las opciones de MMS de su proveedor de telefonía pueden ser encontradas normalmente buscando el \'APN de su proveedor\'. Solo necesitará hacer esto una vez.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Completo</string>
   <!--recipients_panel-->
@@ -402,10 +403,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="arrays__use_default">Usar el predeterminado</string>
   <string name="arrays__use_custom">Usar el personalizado</string>
   <!--plurals.xml-->
-  <plurals name="minutes_ago">
-    <item quantity="one">%d min</item>
-    <item quantity="other">%d min</item>
-  </plurals>
   <plurals name="hours_ago">
     <item quantity="one">%d hora</item>
     <item quantity="other">%d horas</item>
@@ -477,7 +474,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__slow">Despacio</string>
   <string name="preferences__custom">Personalizado</string>
   <string name="preferences__advanced">Avanzado</string>
-  <string name="preferences__app_protection">Protección de la aplicación</string>
   <string name="preferences__advanced_mms_access_point_names">Configuración manual de MMS</string>
   <string name="preferences__enable_manual_mms">Usar configuración manual de MMS</string>
   <string name="preferences__override_system_mms_settings">Usar la configuración MMS de debajo en lugar de la del sistema.</string>
@@ -554,10 +550,13 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="conversation_secure_verified__menu_security">Seguridad</string>
   <string name="conversation_secure_verified__menu_verify_identity">Verificar identidad</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Finalizar sesión segura</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Añadir archivo adjunto</string>
   <string name="conversation__menu_delete_thread">Borrar conversación</string>
   <string name="conversation__menu_view_media">Todas las imágenes</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Añadir a contactos</string>
   <!--conversation_group_options-->
@@ -576,8 +575,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="text_secure_normal__menu_clear_passphrase">Bloquear</string>
   <string name="text_secure_normal__mark_all_as_read">Marcar todos como leídos</string>
   <!--reminder_header-->
-  <string name="reminder_header_expired_build">¡Su versión de SMSSecure ha expirado!</string>
-  <string name="reminder_header_expired_build_details">Los mensajes ya no se enviarán con éxito, por favor, actualice a la versión más reciente.</string>
   <string name="reminder_header_sms_default_title">¿Usar como aplicación de SMS por defecto?</string>
   <string name="reminder_header_sms_default_text">Pulse para hacer que SMSSecure sea su aplicación de SMS predeterminada.</string>
   <string name="reminder_header_sms_import_title">¿Importar SMS del sistema?</string>
@@ -596,5 +593,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="trimmer__old_messages_successfully_deleted">Mensajes antiguos borrados con éxito</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icono de transporte</string>
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

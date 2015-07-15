@@ -25,10 +25,7 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="AttachmentTypeSelectorAdapter_picture">Hình ảnh</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Âm thanh</string>
-  <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Bạn có thể muốn kiểm chứng
-địa chỉ liên lạc này.
-    </string>
+  <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Kích thước tin nhắn: %d KB</string>
   <string name="ConversationItem_expires_s">Hết hạn: %s</string>
@@ -65,6 +62,7 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationFragment_confirm_message_delete">Xác nhận xóa tin</string>
   <string name="ConversationFragment_success_exclamation">Thành công!</string>
   <string name="ConversationFragment_saving_attachment">Đang lưu lại phần đính kèm</string>
+  <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_delete_threads_question">Xóa các luồng trao đổi?</string>
   <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Bạn có chắc là muốn xóa TẤT CẢ các luồng trao đổi đã chọn?</string>
@@ -138,6 +136,10 @@ Phục hồi bản sao lưu có mã hóa sẽ thay thế hoàn toàn các chìa 
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Chữ ký của việc trao đổi chìa khóa này thì tin cẩn, nhưng bạn để tắt thiết đặt \'tự động hoàn tất trao đổi chìa khóa\'.</string>
   <string name="ReceiveKeyActivity_processing">Đang xử lý</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Xử lý trao đổi chìa khóa...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Bạn có thể muốn kiểm chứng
+địa chỉ liên lạc này.
+    </string>
+  <!--RecipientPreferencesActivity-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Nhận được thông tin
 trao đổi chìa khóa bị hỏng!</string>
@@ -180,6 +182,7 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Giải mã MMS, xin chờ...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Tin nhắn MMS mã hóa bị hỏng...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Tin nhắn MMS được mã hóa cho phiên trao đổi không tồn tại...</string>
+  <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Đang tiến hành việc nhập vào</string>
   <!--KeyCachingService-->
@@ -193,9 +196,7 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="MessageNotifier_failed_to_deliver_message">Thất bại trong việc phân phối tin.</string>
   <string name="MessageNotifier_error_delivering_message">Có lỗi khi phân phối tin.</string>
   <string name="MessageNotifier_mark_all_as_read">Đánh dấu tất cả đã đọc</string>
-  <string name="MessageNotifier_mark_as_read">Đánh dấu đã đọc</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_sorry_quick_response_is_not_yet_supported_by_textsecure">Xin lỗi, Hồi Âm Nhanh chưa được SMSSecure hỗ trợ!</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">MẬT KHẨU CŨ:</string>
   <string name="change_passphrase_activity__new_passphrase">MẬT KHẨU MỚI:</string>
@@ -208,8 +209,10 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="SingleContactSelectionActivity_contact_photo">Hình Liên Hệ</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Chọn cho</string>
+  <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Không cú gọi gần đây</string>
+  <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__send">Gửi</string>
   <string name="conversation_activity__remove">Bỏ</string>
@@ -248,6 +251,8 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure </string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Để gửi tin nhắn đa phương tiện hoặc tin nhắn nhóm, bấm \'OK\' và hoàn tất các thiết đặt cần thiết. Thiết đặt MMS cho nhà mạng di động có thể tìm thấy bằng cách tìm \'your carrier APN\'. Bạn chỉ cần làm bước này một lần.</string>
+  <!--recipient_preferences_activity-->
+  <!--recipient_preferences-->
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Hoàn tất</string>
   <!--recipients_panel-->
@@ -349,9 +354,12 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <!--conversation_list_fragment-->
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">An Ninh</string>
+  <!--conversation_muted-->
+  <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Thêm tập tin đính kèm</string>
   <string name="conversation__menu_delete_thread">Xóa luồng</string>
+  <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
   <string name="convesation_group_options__recipients_list">Danh sách người nhận</string>
@@ -372,5 +380,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <!--media_preview_activity-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
+  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>
