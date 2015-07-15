@@ -1,39 +1,70 @@
 package org.smssecure.smssecure;
 
+import android.support.annotation.DrawableRes;
+
 import org.smssecure.smssecure.util.CharacterCalculator;
 import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.EncryptedSmsCharacterCalculator;
 import org.smssecure.smssecure.util.SmsCharacterCalculator;
 
 public class TransportOption {
-  public int                 drawable;
-  public String              text;
-  public String              key;
-  public String              composeHint;
-  public CharacterCalculator characterCalculator;
 
-  public TransportOption(String key, int drawable, String text, String composeHint) {
-    this.key         = key;
-    this.drawable    = drawable;
-    this.text        = text;
-    this.composeHint = composeHint;
+  public enum Type {
+    INSECURE_SMS,
+    SECURE_SMS
+  }
 
-    if (isPlaintext()) {
-      this.characterCalculator = new SmsCharacterCalculator();
-    } else {
-      this.characterCalculator = new EncryptedSmsCharacterCalculator();
-    }
+  private int                 drawable;
+  private int                 backgroundColor;
+  private String              text;
+  private Type                type;
+  private String              composeHint;
+  private CharacterCalculator characterCalculator;
+
+  public TransportOption(Type type,
+                         @DrawableRes int drawable,
+                         int backgroundColor,
+                         String text,
+                         String composeHint,
+                         CharacterCalculator characterCalculator)
+  {
+    this.type                = type;
+    this.drawable            = drawable;
+    this.backgroundColor     = backgroundColor;
+    this.text                = text;
+    this.composeHint         = composeHint;
+    this.characterCalculator = characterCalculator;
+  }
+
+  public Type getType() {
+    return type;
+  }
+
+  public boolean isType(Type type) {
+    return this.type == type;
   }
 
   public boolean isPlaintext() {
-    return key.equals("insecure_sms");
-  }
-
-  public boolean isSms() {
-    return key.equals("insecure_sms") || key.equals("secure_sms");
+    return type == Type.INSECURE_SMS;
   }
 
   public CharacterState calculateCharacters(int charactersSpent) {
     return characterCalculator.calculateCharacters(charactersSpent);
+  }
+
+  public @DrawableRes int getDrawable() {
+    return drawable;
+  }
+
+  public int getBackgroundColor() {
+    return backgroundColor;
+  }
+
+  public String getComposeHint() {
+    return composeHint;
+  }
+
+  public String getDescription() {
+    return text;
   }
 }

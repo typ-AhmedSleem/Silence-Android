@@ -7,8 +7,8 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.database.RecipientPreferenceDatabase;
+import org.smssecure.smssecure.ConversationActivity;
+import org.smssecure.smssecure.ConversationPopupActivity;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.VibrateState;
 import org.smssecure.smssecure.recipients.Recipients;
 
@@ -70,9 +70,9 @@ public class NotificationState {
     return notifications;
   }
 
-  public PendingIntent getMarkAsReadIntent(Context context, MasterSecret masterSecret) {
+  public PendingIntent getMarkAsReadIntent(Context context) {
     long[] threadArray = new long[threads.size()];
-    int index          = 0;
+    int    index       = 0;
 
     for (long thread : threads) {
       Log.w("NotificationState", "Added thread: " + thread);
@@ -80,8 +80,7 @@ public class NotificationState {
     }
 
     Intent intent = new Intent(MarkReadReceiver.CLEAR_ACTION);
-    intent.putExtra("thread_ids", threadArray);
-    intent.putExtra("master_secret", masterSecret);
+    intent.putExtra(MarkReadReceiver.THREAD_IDS_EXTRA, threadArray);
     intent.setPackage(context.getPackageName());
 
     // XXX : This is an Android bug.  If we don't pull off the extra
@@ -92,4 +91,27 @@ public class NotificationState {
 
     return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
   }
+
+  public PendingIntent getWearableReplyIntent(Context context, Recipients recipients) {
+    if (threads.size() != 1) throw new AssertionError("We only support replies to single thread notifications!");
+
+    Intent intent = new Intent(WearReplyReceiver.REPLY_ACTION);
+    intent.putExtra(WearReplyReceiver.RECIPIENT_IDS_EXTRA, recipients.getIds());
+    intent.setPackage(context.getPackageName());
+
+    return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+  }
+
+  public PendingIntent getQuickReplyIntent(Context context, Recipients recipients) {
+    if (threads.size() != 1) throw new AssertionError("We only support replies to single thread notifications!");
+
+    Intent     intent           = new Intent(context, ConversationPopupActivity.class);
+    intent.putExtra(ConversationActivity.RECIPIENTS_EXTRA, recipients.getIds());
+    intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, (long)threads.toArray()[0]);
+    intent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+
+    return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+  }
+
+
 }

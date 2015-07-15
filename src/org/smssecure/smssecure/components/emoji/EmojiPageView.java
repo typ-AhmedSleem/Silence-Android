@@ -1,9 +1,6 @@
 package org.smssecure.smssecure.components.emoji;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION_CODES;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,41 +22,29 @@ public class EmojiPageView extends FrameLayout {
   private GridView               grid;
 
   public EmojiPageView(Context context) {
-    super(context);
-    init();
+    this(context, null);
   }
 
   public EmojiPageView(Context context, AttributeSet attrs) {
-    super(context, attrs);
-    init();
+    this(context, attrs, 0);
   }
 
   public EmojiPageView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
-    init();
-  }
-
-  @TargetApi(VERSION_CODES.LOLLIPOP)
-  public EmojiPageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
-    init();
+    final View view = LayoutInflater.from(getContext()).inflate(R.layout.emoji_grid_layout, this, true);
+    grid = (GridView) view.findViewById(R.id.emoji);
+    grid.setColumnWidth(getResources().getDimensionPixelSize(R.dimen.emoji_drawer_size) + 2 * getResources().getDimensionPixelSize(R.dimen.emoji_drawer_item_padding));
+    grid.setOnItemClickListener(new OnItemClickListener() {
+      @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (listener != null) listener.onEmojiSelected(((EmojiView)view).getEmoji());
+      }
+    });
   }
 
   public void onSelected() {
     if (model.isDynamic() && grid != null && grid.getAdapter() != null) {
       ((EmojiGridAdapter)grid.getAdapter()).notifyDataSetChanged();
     }
-  }
-
-  private void init() {
-    final View view = LayoutInflater.from(getContext()).inflate(R.layout.emoji_grid_layout, this, true);
-    grid = (GridView) view.findViewById(R.id.emoji);
-    grid.setColumnWidth(getResources().getDimensionPixelSize(R.dimen.emoji_drawer_size) + 2 * getResources().getDimensionPixelSize(R.dimen.emoji_drawer_item_padding));
-    grid.setOnItemClickListener(new OnItemClickListener() {
-      @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (listener != null) listener.onEmojiSelected((String)view.getTag());
-      }
-    });
   }
 
   public void setModel(EmojiPageModel model) {
@@ -73,9 +58,9 @@ public class EmojiPageView extends FrameLayout {
 
   private static class EmojiGridAdapter extends BaseAdapter {
 
-    protected final Context        context;
-    private   final int            emojiSize;
-    private   final EmojiPageModel model;
+    protected final Context                context;
+    private   final int                    emojiSize;
+    private   final EmojiPageModel         model;
 
     public EmojiGridAdapter(Context context, EmojiPageModel model) {
       this.context   = context;
@@ -104,14 +89,13 @@ public class EmojiPageView extends FrameLayout {
       if (convertView != null && convertView instanceof EmojiView) {
         view = (EmojiView)convertView;
       } else {
-        EmojiView emojiView = new EmojiView(context);
+        final EmojiView emojiView = new EmojiView(context);
         emojiView.setPadding(pad, pad, pad, pad);
         emojiView.setLayoutParams(new AbsListView.LayoutParams(emojiSize + 2 * pad, emojiSize + 2 * pad));
         view = emojiView;
       }
 
       view.setEmoji(model.getEmoji()[position]);
-      view.setTag(model.getEmoji()[position]);
       return view;
     }
   }

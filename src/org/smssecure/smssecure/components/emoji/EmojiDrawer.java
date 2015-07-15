@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -28,72 +27,58 @@ import org.smssecure.smssecure.util.ResUtil;
 import java.util.LinkedList;
 import java.util.List;
 
-public class EmojiDrawer extends KeyboardAwareLinearLayout {
+public class EmojiDrawer extends LinearLayout {
   private static final KeyEvent DELETE_KEY_EVENT = new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL);
 
-  private EmojiEditText             composeText;
-  private KeyboardAwareLinearLayout container;
-  private ViewPager                 pager;
-  private List<EmojiPageModel>      models;
-  private PagerSlidingTabStrip      strip;
-  private RecentEmojiPageModel      recentModel;
+  private ViewPager            pager;
+  private List<EmojiPageModel> models;
+  private PagerSlidingTabStrip strip;
+  private RecentEmojiPageModel recentModel;
+  private EmojiEventListener   listener;
 
   public EmojiDrawer(Context context) {
-    super(context);
-    init();
+    this(context, null);
   }
 
   public EmojiDrawer(Context context, AttributeSet attrs) {
     super(context, attrs);
-    init();
-  }
-
-  public EmojiDrawer(Context context, AttributeSet attrs, int defStyle) {
-    super(context, attrs, defStyle);
-    init();
-  }
-
-  public void setComposeEditText(EmojiEditText composeText) {
-    this.composeText = composeText;
-  }
-
-  private void init() {
+    setOrientation(VERTICAL);
     final View v = LayoutInflater.from(getContext()).inflate(R.layout.emoji_drawer, this, true);
     initializeResources(v);
     initializePageModels();
     initializeEmojiGrid();
   }
 
+  public void setEmojiEventListener(EmojiEventListener listener) {
+    this.listener = listener;
+  }
+
   private void initializeResources(View v) {
     Log.w("EmojiDrawer", "initializeResources()");
-    this.container = (KeyboardAwareLinearLayout) v.findViewById(R.id.container);
-    this.pager     = (ViewPager)                 v.findViewById(R.id.emoji_pager);
-    this.strip     = (PagerSlidingTabStrip)      v.findViewById(R.id.tabs);
+    this.pager     = (ViewPager)            v.findViewById(R.id.emoji_pager);
+    this.strip     = (PagerSlidingTabStrip) v.findViewById(R.id.tabs);
 
     RepeatableImageKey backspace = (RepeatableImageKey)v.findViewById(R.id.backspace);
     backspace.setOnKeyEventListener(new KeyEventListener() {
       @Override public void onKeyEvent() {
-        if (composeText != null && composeText.getText().length() > 0) {
-          composeText.dispatchKeyEvent(DELETE_KEY_EVENT);
-        }
+        if (listener != null) listener.onKeyEvent(DELETE_KEY_EVENT);
       }
     });
   }
 
-  public void hide() {
-    container.setVisibility(View.GONE);
+  public boolean isShowing() {
+    return getVisibility() == VISIBLE;
   }
 
-  public void show() {
-    int keyboardHeight = container.getKeyboardHeight();
-    Log.w("EmojiDrawer", "setting emoji drawer to height " + keyboardHeight);
-    container.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, keyboardHeight));
-    container.requestLayout();
-    container.setVisibility(View.VISIBLE);
+  public void show(KeyboardAwareLinearLayout container) {
+    ViewGroup.LayoutParams params = getLayoutParams();
+    params.height = container.getKeyboardHeight();
+    setLayoutParams(params);
+    setVisibility(VISIBLE);
   }
 
-  public boolean isOpen() {
-    return container.getVisibility() == View.VISIBLE;
+  public void dismiss() {
+    setVisibility(GONE);
   }
 
   private void initializeEmojiGrid() {
@@ -101,8 +86,9 @@ public class EmojiDrawer extends KeyboardAwareLinearLayout {
                                            models,
                                            new EmojiSelectionListener() {
                                              @Override public void onEmojiSelected(String emoji) {
+                                               Log.w("EmojiDrawer", "onEmojiSelected()");
                                                recentModel.onCodePointSelected(emoji);
-                                               composeText.insertEmoji(emoji);
+                                               if (listener != null) listener.onEmojiSelected(emoji);
                                              }
                                            }));
 
@@ -169,5 +155,9 @@ public class EmojiDrawer extends KeyboardAwareLinearLayout {
       image.setImageResource(ResUtil.getDrawableRes(context, pages.get(i).getIconAttr()));
       return image;
     }
+  }
+
+  public interface EmojiEventListener extends EmojiSelectionListener {
+    void onKeyEvent(KeyEvent keyEvent);
   }
 }

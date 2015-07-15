@@ -20,10 +20,12 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -36,6 +38,8 @@ import android.widget.Toast;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.ThumbnailView;
+import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.providers.CaptureProvider;
 import org.smssecure.smssecure.util.BitmapDecodingException;
 
 import java.io.File;
@@ -51,7 +55,7 @@ public class AttachmentManager {
   private final SlideDeck          slideDeck;
   private final AttachmentListener attachmentListener;
 
-  private File captureFile;
+  private Uri captureUri;
 
   public AttachmentManager(Activity view, AttachmentListener listener) {
     this.attachmentView     = view.findViewById(R.id.attachment_editor);
@@ -90,12 +94,13 @@ public class AttachmentManager {
   }
 
   public void cleanup() {
-    if (captureFile != null) captureFile.delete();
-    captureFile = null;
+//    if (captureUri != null) CaptureProvider.getInstance(context).delete(captureUri);
+    if (captureUri != null) new File(captureUri.getPath()).delete();
+    captureUri = null;
   }
 
-  public void setImage(Uri image) throws IOException, BitmapDecodingException {
-    setMedia(new ImageSlide(context, image));
+  public void setImage(MasterSecret masterSecret, Uri image) throws IOException, BitmapDecodingException {
+    setMedia(new ImageSlide(context, masterSecret, image), masterSecret);
   }
 
   public void setVideo(Uri video) throws IOException, MediaTooLargeException {
@@ -107,10 +112,14 @@ public class AttachmentManager {
   }
 
   public void setMedia(final Slide slide) {
+    setMedia(slide, null);
+  }
+
+  public void setMedia(final Slide slide, @Nullable MasterSecret masterSecret) {
     slideDeck.clear();
     slideDeck.addSlide(slide);
     attachmentView.setVisibility(View.VISIBLE);
-    thumbnail.setImageResource(slide);
+    thumbnail.setImageResource(slide, masterSecret);
     attachmentListener.onAttachmentChanged();
   }
 
@@ -122,20 +131,11 @@ public class AttachmentManager {
     return slideDeck;
   }
 
-  public File getCaptureFile() {
-    return captureFile;
-  }
-
-  public void capturePhoto(Activity activity, int requestCode) {
+  public void setCaptureImage(MasterSecret masterSecret, Bitmap bitmap) {
     try {
-      Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-      if (captureIntent.resolveActivity(activity.getPackageManager()) != null) {
-        captureFile = File.createTempFile(String.valueOf(System.currentTimeMillis()), ".jpg", activity.getExternalFilesDir(null));
-        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(captureFile));
-        activity.startActivityForResult(captureIntent, requestCode);
-      }
-    } catch (IOException e) {
+      captureUri = CaptureProvider.getInstance(context).create(masterSecret, bitmap);
+      setImage(masterSecret, captureUri);
+    } catch (IOException | BitmapDecodingException e) {
       Log.w(TAG, e);
     }
   }
@@ -155,6 +155,24 @@ public class AttachmentManager {
   public static void selectContactInfo(Activity activity, int requestCode) {
     Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
     activity.startActivityForResult(intent, requestCode);
+  }
+
+  public Uri getCaptureUri() {
+    return captureUri;
+  }
+
+  public void capturePhoto(Activity activity, int requestCode) {
+    try {
+      Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+      if (captureIntent.resolveActivity(activity.getPackageManager()) != null) {
+        File captureFile = File.createTempFile(String.valueOf(System.currentTimeMillis()), ".jpg", activity.getExternalFilesDir(null));
+        captureUri = Uri.fromFile(captureFile);
+        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, captureUri);
+        activity.startActivityForResult(captureIntent, requestCode);
+      }
+    } catch (IOException ioe) {
+      Log.w(TAG, ioe);
+    }
   }
 
   private static void selectMediaType(Activity activity, String type, int requestCode) {
@@ -189,6 +207,6 @@ public class AttachmentManager {
   }
 
   public interface AttachmentListener {
-    public void onAttachmentChanged();
+    void onAttachmentChanged();
   }
 }

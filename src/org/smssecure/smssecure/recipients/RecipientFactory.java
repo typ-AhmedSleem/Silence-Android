@@ -20,7 +20,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import org.smssecure.smssecure.contacts.ContactPhotoFactory;
+import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.database.CanonicalAddressDatabase;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
@@ -120,7 +120,6 @@ public class RecipientFactory {
   }
 
   public static void clearCache() {
-    ContactPhotoFactory.clearCache();
     provider.clearCache();
   }
 

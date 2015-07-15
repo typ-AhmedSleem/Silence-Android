@@ -1,13 +1,10 @@
 package org.smssecure.smssecure.components.emoji;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION_CODES;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
@@ -23,28 +20,26 @@ public class EmojiView extends View implements Drawable.Callback {
   private final Rect  textBounds = new Rect();
 
   public EmojiView(Context context) {
-    super(context);
+    this(context, null);
   }
 
   public EmojiView(Context context, AttributeSet attrs) {
-    super(context, attrs);
+    this(context, attrs, 0);
   }
 
   public EmojiView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
   }
 
-  @TargetApi(VERSION_CODES.LOLLIPOP)
-  public EmojiView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-    super(context, attrs, defStyleAttr, defStyleRes);
-  }
-
   public void setEmoji(String emoji) {
     this.emoji    = emoji;
     this.drawable = EmojiProvider.getInstance(getContext())
-                                 .getEmojiDrawable(Character.codePointAt(emoji, 0),
-                                                   EmojiProvider.EMOJI_FULL);
+                                 .getEmojiDrawable(Character.codePointAt(emoji, 0));
     postInvalidate();
+  }
+
+  public String getEmoji() {
+    return emoji;
   }
 
   @Override protected void onDraw(Canvas canvas) {
