@@ -6,6 +6,7 @@ if [ "$#" -lt 1 ]; then
 fi
 
 for file in "$@"; do
+    commit=$(echo ${file##*/} | sed 's/.patch$//')
     sed -i -e 's/thoughtcrime\/securesms/smssecure\/smssecure/g' \
            -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
@@ -21,5 +22,6 @@ for file in "$@"; do
            -e 's/TextSecure.TitleTextStyle/SMSSecure.TitleTextStyle/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
+           -e "0,/^---/s//\nUpstream commit: https:\/\/github.com\/WhisperSystems\/TextSecure\/commit\/$commit\n---/" \
            "$file"
 done
