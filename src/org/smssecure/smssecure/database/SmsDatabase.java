@@ -593,16 +593,16 @@ public class SmsDatabase extends MessagingDatabase {
     }
 
     public SmsMessageRecord getCurrent() {
-      long messageId           = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.ID));
-      String address           = cursor.getString(cursor.getColumnIndexOrThrow(SmsDatabase.ADDRESS));
-      int addressDeviceId      = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.ADDRESS_DEVICE_ID));
-      long type                = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.TYPE));
-      long dateReceived        = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.NORMALIZED_DATE_RECEIVED));
-      long dateSent            = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.NORMALIZED_DATE_SENT));
-      long threadId            = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.THREAD_ID));
-      int status               = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.STATUS));
-      int dateDeliveryReceived = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.DATE_DELIVERY_RECEIVED));
-      String mismatchDocument  = cursor.getString(cursor.getColumnIndexOrThrow(SmsDatabase.MISMATCHED_IDENTITIES));
+      long messageId            = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.ID));
+      String address            = cursor.getString(cursor.getColumnIndexOrThrow(SmsDatabase.ADDRESS));
+      int addressDeviceId       = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.ADDRESS_DEVICE_ID));
+      long type                 = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.TYPE));
+      long dateReceived         = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.NORMALIZED_DATE_RECEIVED));
+      long dateSent             = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.NORMALIZED_DATE_SENT));
+      long threadId             = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.THREAD_ID));
+      int status                = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.STATUS));
+      long dateDeliveryReceived = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.DATE_DELIVERY_RECEIVED));
+      String mismatchDocument   = cursor.getString(cursor.getColumnIndexOrThrow(SmsDatabase.MISMATCHED_IDENTITIES));
 
       List<IdentityKeyMismatch> mismatches = getMismatches(mismatchDocument);
       Recipients                recipients = getRecipientsFor(address);

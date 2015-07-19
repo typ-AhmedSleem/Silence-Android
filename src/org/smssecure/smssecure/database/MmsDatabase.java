@@ -981,7 +981,7 @@ public class MmsDatabase extends MessagingDatabase {
       long messageSize           = cursor.getLong(cursor.getColumnIndexOrThrow(MmsDatabase.MESSAGE_SIZE));
       long expiry                = cursor.getLong(cursor.getColumnIndexOrThrow(MmsDatabase.EXPIRY));
       int status                 = cursor.getInt(cursor.getColumnIndexOrThrow(MmsDatabase.STATUS));
-      long dateDeliveryReceived  = cursor.getInt(cursor.getColumnIndexOrThrow(MmsDatabase.DATE_DELIVERY_RECEIVED));
+      long dateDeliveryReceived  = cursor.getLong(cursor.getColumnIndexOrThrow(MmsDatabase.DATE_DELIVERY_RECEIVED));
 
       byte[]contentLocationBytes = null;
       byte[]transactionIdBytes   = null;
@@ -1007,7 +1007,7 @@ public class MmsDatabase extends MessagingDatabase {
       long threadId             = cursor.getLong(cursor.getColumnIndexOrThrow(MmsDatabase.THREAD_ID));
       String address            = cursor.getString(cursor.getColumnIndexOrThrow(MmsDatabase.ADDRESS));
       int addressDeviceId       = cursor.getInt(cursor.getColumnIndexOrThrow(MmsDatabase.ADDRESS_DEVICE_ID));
-      long dateDeliveryReceived = cursor.getInt(cursor.getColumnIndexOrThrow(MmsDatabase.DATE_DELIVERY_RECEIVED));
+      long dateDeliveryReceived = cursor.getLong(cursor.getColumnIndexOrThrow(MmsDatabase.DATE_DELIVERY_RECEIVED));
       DisplayRecord.Body body   = getBody(cursor);
       int partCount             = cursor.getInt(cursor.getColumnIndexOrThrow(MmsDatabase.PART_COUNT));
       String mismatchDocument   = cursor.getString(cursor.getColumnIndexOrThrow(MmsDatabase.MISMATCHED_IDENTITIES));
