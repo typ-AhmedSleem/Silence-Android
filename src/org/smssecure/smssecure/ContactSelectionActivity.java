@@ -19,7 +19,6 @@ package org.smssecure.smssecure;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputType;
@@ -44,8 +43,7 @@ import java.io.IOException;
  *
  */
 public abstract class ContactSelectionActivity extends PassphraseRequiredActionBarActivity
-                                               implements SwipeRefreshLayout.OnRefreshListener,
-                                                          ContactSelectionListFragment.OnContactSelectedListener
+                                               implements ContactSelectionListFragment.OnContactSelectedListener
 {
   private static final String TAG             = ContactSelectionActivity.class.getSimpleName();
   public  final static String PUSH_ONLY_EXTRA = "push_only";
@@ -103,7 +101,6 @@ public abstract class ContactSelectionActivity extends PassphraseRequiredActionB
 
     contactsFragment = (ContactSelectionListFragment) getSupportFragmentManager().findFragmentById(R.id.contact_selection_list_fragment);
     contactsFragment.setOnContactSelectedListener(this);
-    contactsFragment.setOnRefreshListener(this);
 
     this.keyboardToggle.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -153,22 +150,6 @@ public abstract class ContactSelectionActivity extends PassphraseRequiredActionB
         contactsFragment.setQueryFilter(searchText.getText().toString());
       }
     });
-  }
-
-  @Override
-  public void onRefresh() {
-    new AsyncTask<Void, Void, Void>() {
-      @Override
-      protected Void doInBackground(Void... params) {
-        return null;
-      }
-
-      @Override
-      protected void onPostExecute(Void result) {
-        searchText.setText("");
-        contactsFragment.resetQueryFilter();
-      }
-    }.execute();
   }
 
   @Override

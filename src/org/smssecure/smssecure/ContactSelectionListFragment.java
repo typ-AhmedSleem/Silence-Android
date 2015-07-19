@@ -23,7 +23,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +56,6 @@ public class ContactSelectionListFragment extends    Fragment
   private Map<Long, String>         selectedContacts;
   private OnContactSelectedListener onContactSelectedListener;
   private StickyListHeadersListView listView;
-  private SwipeRefreshLayout        swipeRefresh;
   private String                    cursorFilter;
 
   private boolean                   multi = false;
@@ -83,7 +81,6 @@ public class ContactSelectionListFragment extends    Fragment
     View view = inflater.inflate(R.layout.contact_selection_list_fragment, container, false);
 
     emptyText      = (TextView)                  view.findViewById(android.R.id.empty);
-    swipeRefresh   = (SwipeRefreshLayout)        view.findViewById(R.id.swipe_refresh);
     listView       = (StickyListHeadersListView) view.findViewById(android.R.id.list);
     listView.setFocusable(true);
     listView.setFastScrollEnabled(true);
@@ -116,11 +113,6 @@ public class ContactSelectionListFragment extends    Fragment
   public void setQueryFilter(String filter) {
     this.cursorFilter = filter;
     this.getLoaderManager().restartLoader(0, null, this);
-  }
-
-  public void resetQueryFilter() {
-    setQueryFilter(null);
-    swipeRefresh.setRefreshing(false);
   }
 
   @Override
@@ -157,10 +149,6 @@ public class ContactSelectionListFragment extends    Fragment
 
   public void setOnContactSelectedListener(OnContactSelectedListener onContactSelectedListener) {
     this.onContactSelectedListener = onContactSelectedListener;
-  }
-
-  public void setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener onRefreshListener) {
-    this.swipeRefresh.setOnRefreshListener(onRefreshListener);
   }
 
   public interface OnContactSelectedListener {
