@@ -52,7 +52,7 @@ public class MediaMmsMessageRecord extends MessageRecord {
 
   public MediaMmsMessageRecord(Context context, long id, Recipients recipients,
                                Recipient individualRecipient, int recipientDeviceId,
-                               long dateSent, long dateReceived, int deliveredCount,
+                               long dateSent, long dateReceived, long dateDeliveryReceived,
                                long threadId, Body body,
                                ListenableFutureTask<SlideDeck> slideDeck,
                                int partCount, long mailbox,
@@ -60,7 +60,7 @@ public class MediaMmsMessageRecord extends MessageRecord {
                                List<NetworkFailure> failures)
   {
     super(context, id, body, recipients, individualRecipient, recipientDeviceId,
-          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, deliveredCount, mailbox,
+          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, dateDeliveryReceived, mailbox,
           mismatches, failures);
 
     this.context             = context.getApplicationContext();

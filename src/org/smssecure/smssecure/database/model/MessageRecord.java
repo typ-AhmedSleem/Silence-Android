@@ -55,23 +55,21 @@ public abstract class MessageRecord extends DisplayRecord {
   private final int                       recipientDeviceId;
   private final long                      id;
   private final int                       deliveryStatus;
-  private final int                       receiptCount;
   private final List<IdentityKeyMismatch> mismatches;
   private final List<NetworkFailure>      networkFailures;
 
   MessageRecord(Context context, long id, Body body, Recipients recipients,
                 Recipient individualRecipient, int recipientDeviceId,
                 long dateSent, long dateReceived, long threadId,
-                int deliveryStatus, int receiptCount, long type,
+                int deliveryStatus, long dateDeliveryReceived, long type,
                 List<IdentityKeyMismatch> mismatches,
                 List<NetworkFailure> networkFailures)
   {
-    super(context, body, recipients, dateSent, dateReceived, threadId, type);
+    super(context, body, recipients, dateSent, dateReceived, dateDeliveryReceived, threadId, type);
     this.id                  = id;
     this.individualRecipient = individualRecipient;
     this.recipientDeviceId   = recipientDeviceId;
     this.deliveryStatus      = deliveryStatus;
-    this.receiptCount        = receiptCount;
     this.mismatches          = mismatches;
     this.networkFailures     = networkFailures;
   }
@@ -131,7 +129,7 @@ public abstract class MessageRecord extends DisplayRecord {
   }
 
   public boolean isDelivered() {
-    return getDeliveryStatus() == DELIVERY_STATUS_RECEIVED || receiptCount > 0;
+    return getDeliveryStatus() == DELIVERY_STATUS_RECEIVED;
   }
 
   public boolean isPush() {

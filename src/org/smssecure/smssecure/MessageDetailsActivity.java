@@ -155,7 +155,17 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
       if (messageRecord.getDateReceived() != messageRecord.getDateSent() && !messageRecord.isOutgoing()) {
         receivedDate.setText(dateFormatter.format(new Date(messageRecord.getDateReceived())));
       } else if (isSmsDeliveryReportsEnabled) {
-        receivedDate.setText((messageRecord.isDelivered()) ? R.string.yes : R.string.no);
+        Log.w(TAG, "getDateSent(): "+messageRecord.getDateSent());
+        Log.w(TAG, "getDateDeliveryReceived(): "+messageRecord.getDateDeliveryReceived());
+        String deliveryString;
+        if (!messageRecord.isDelivered()){
+          deliveryString = getString(R.string.no);
+        } else if (messageRecord.getDateDeliveryReceived() == 0) {
+          deliveryString = getString(R.string.yes);
+        } else {
+          deliveryString = dateFormatter.format(new Date(messageRecord.getDateDeliveryReceived()));
+        }
+        receivedDate.setText(deliveryString);
       } else {
         receivedContainer.setVisibility(View.GONE);
       }

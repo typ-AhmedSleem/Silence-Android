@@ -46,12 +46,12 @@ public class NotificationMmsMessageRecord extends MessageRecord {
 
   public NotificationMmsMessageRecord(Context context, long id, Recipients recipients,
                                       Recipient individualRecipient, int recipientDeviceId,
-                                      long dateSent, long dateReceived, int receiptCount,
+                                      long dateSent, long dateReceived, long dateDeliveryReceived,
                                       long threadId, byte[] contentLocation, long messageSize,
                                       long expiry, int status, byte[] transactionId, long mailbox)
   {
     super(context, id, new Body("", true), recipients, individualRecipient, recipientDeviceId,
-          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, receiptCount, mailbox,
+          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, dateDeliveryReceived, mailbox,
           new LinkedList<IdentityKeyMismatch>(), new LinkedList<NetworkFailure>());
 
     this.contentLocation = contentLocation;
