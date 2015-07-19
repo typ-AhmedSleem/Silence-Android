@@ -50,4 +50,8 @@ public abstract class Reminder {
   public boolean isDismissable() {
     return true;
   }
+
+  public boolean hideAfterTap() {
+    return true;
+  }
 }

@@ -55,7 +55,17 @@ public class ReminderView extends LinearLayout {
     title.setText(reminder.getTitleResId());
     text.setText(reminder.getTextResId());
 
-    this.setOnClickListener(reminder.getOkListener());
+    if (reminder.hideAfterTap()) {
+      this.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          hide();
+          if (reminder.getOkListener() != null) reminder.getOkListener().onClick(v);
+        }
+      });
+    } else {
+      this.setOnClickListener(reminder.getOkListener());
+    }
 
     if (reminder.isDismissable()) {
       cancel.setOnClickListener(new OnClickListener() {
