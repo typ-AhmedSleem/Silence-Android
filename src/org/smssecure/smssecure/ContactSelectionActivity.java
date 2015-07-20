@@ -33,6 +33,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicNoActionBarTheme;
 import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.ServiceUtil;
 
 import java.io.IOException;
 
@@ -106,6 +107,7 @@ public abstract class ContactSelectionActivity extends PassphraseRequiredActionB
       @Override
       public void onClick(View v) {
         searchText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
+        ServiceUtil.getInputMethodManager(ContactSelectionActivity.this).showSoftInput(searchText, 0);
         toggle.display(dialpadToggle);
       }
     });
@@ -114,6 +116,7 @@ public abstract class ContactSelectionActivity extends PassphraseRequiredActionB
       @Override
       public void onClick(View v) {
         searchText.setInputType(InputType.TYPE_CLASS_PHONE);
+        ServiceUtil.getInputMethodManager(ContactSelectionActivity.this).showSoftInput(searchText, 0);
         toggle.display(keyboardToggle);
       }
     });
