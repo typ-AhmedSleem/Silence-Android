@@ -7,10 +7,6 @@
                         android:summary="@string/preferences__pressing_the_enter_key_will_send_text_messages"
                         android:title="@string/preferences__pref_enter_sends_title"/>
 
-    <Preference android:key="pref_choose_identity"
-                android:title="@string/preferences__choose_identity"
-                android:summary="@string/preferences__choose_your_contact_entry_from_the_contacts_list"/>
-
     <org.smssecure.smssecure.components.SwitchPreferenceCompat
                         android:defaultValue="false"
                         android:key="pref_auto_complete_key_exchange"

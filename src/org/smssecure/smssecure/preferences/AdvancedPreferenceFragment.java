@@ -13,7 +13,6 @@ import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.LogSubmitActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.contacts.ContactAccessor;
-import org.smssecure.smssecure.contacts.ContactIdentityManager;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
@@ -29,8 +28,6 @@ public class AdvancedPreferenceFragment extends PreferenceFragment {
     super.onCreate(paramBundle);
     addPreferencesFromResource(R.xml.preferences_advanced);
 
-    initializeIdentitySelection();
-
     this.findPreference(SUBMIT_DEBUG_LOG_PREF)
       .setOnPreferenceClickListener(new SubmitDebugLogListener());
   }
@@ -39,55 +36,6 @@ public class AdvancedPreferenceFragment extends PreferenceFragment {
   public void onResume() {
     super.onResume();
     ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.preferences__advanced);
-  }
-
-  @Override
-  public void onActivityResult(int reqCode, int resultCode, Intent data) {
-    super.onActivityResult(reqCode, resultCode, data);
-
-    Log.w(TAG, "Got result: " + resultCode + " for req: " + reqCode);
-    if (resultCode == Activity.RESULT_OK && reqCode == PICK_IDENTITY_CONTACT) {
-      handleIdentitySelection(data);
-    }
-  }
-
-  private void initializeIdentitySelection() {
-    ContactIdentityManager identity = ContactIdentityManager.getInstance(getActivity());
-
-    Preference preference = this.findPreference(SMSSecurePreferences.IDENTITY_PREF);
-
-    if (identity.isSelfIdentityAutoDetected()) {
-      this.getPreferenceScreen().removePreference(preference);
-    } else {
-      Uri contactUri = identity.getSelfIdentityUri();
-
-      if (contactUri != null) {
-        String contactName = ContactAccessor.getInstance().getNameFromContact(getActivity(), contactUri);
-        preference.setSummary(String.format(getString(R.string.ApplicationPreferencesActivity_currently_s),
-                                            contactName));
-      }
-
-      preference.setOnPreferenceClickListener(new IdentityPreferenceClickListener());
-    }
-  }
-
-  private class IdentityPreferenceClickListener implements Preference.OnPreferenceClickListener {
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-      Intent intent = new Intent(Intent.ACTION_PICK);
-      intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
-      startActivityForResult(intent, PICK_IDENTITY_CONTACT);
-      return true;
-    }
-  }
-
-  private void handleIdentitySelection(Intent data) {
-    Uri contactUri = data.getData();
-
-    if (contactUri != null) {
-      SMSSecurePreferences.setIdentityContactUri(getActivity(), contactUri.toString());
-      initializeIdentitySelection();
-    }
   }
 
   private class SubmitDebugLogListener implements Preference.OnPreferenceClickListener {
