@@ -7,7 +7,6 @@
     <string name="please_wait">Please wait...</string>
 
     <!-- ApplicationPreferencesActivity -->
-    <string name="ApplicationPreferencesActivity_currently_s">Currently: %s</string>
     <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">You haven\'t set a passphrase yet!</string>
     <string name="ApplicationPreferencesActivity_messages_per_conversation">%s messages per conversation</string>
     <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Delete all old messages now?</string>
@@ -49,7 +48,7 @@
     <string name="AttachmentTypeSelectorAdapter_video">Video</string>
     <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
     <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
-    
+
     <!-- BlockedContactsActivity -->
     <string name="BlockedContactsActivity_blocked_contacts">Blocked contacts</string>
 
@@ -537,7 +536,6 @@
     <string name="preferences__pref_enter_sends_title">Enter key sends</string>
     <string name="preferences__pressing_the_enter_key_will_send_text_messages">Pressing the Enter key will send text messages</string>
     <string name="preferences__display_settings">Display settings</string>
-    <string name="preferences__choose_identity">Choose identity</string>
     <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Choose your contact entry from the contacts list.</string>
     <string name="preferences__change_passphrase">Change passphrase</string>
     <string name="preferences__change_my_passphrase">Change my passphrase</string>
