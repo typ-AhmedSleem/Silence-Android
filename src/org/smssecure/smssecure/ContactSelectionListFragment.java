@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 Whisper Systems
+ * Copyright (C) 2015 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,18 +23,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.ContactSelectionListAdapter;
 import org.smssecure.smssecure.contacts.ContactSelectionListItem;
+import org.smssecure.smssecure.contacts.ContactsCursorLoader;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -48,11 +46,10 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
  * @author Moxie Marlinspike
  *
  */
-
-public class PushContactSelectionListFragment extends    Fragment
-                                              implements LoaderManager.LoaderCallbacks<Cursor>
+public class ContactSelectionListFragment extends    Fragment
+                                          implements LoaderManager.LoaderCallbacks<Cursor>
 {
-  private static final String TAG = "ContactSelectFragment";
+  private static final String TAG = ContactSelectionListFragment.class.getSimpleName();
 
   private TextView emptyText;
 
@@ -66,7 +63,6 @@ public class PushContactSelectionListFragment extends    Fragment
   @Override
   public void onActivityCreated(Bundle icicle) {
     super.onCreate(icicle);
-    initializeResources();
     initializeCursor();
   }
 
@@ -82,7 +78,16 @@ public class PushContactSelectionListFragment extends    Fragment
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    return inflater.inflate(R.layout.push_contact_selection_list_activity, container, false);
+    View view = inflater.inflate(R.layout.contact_selection_list_fragment, container, false);
+
+    emptyText      = (TextView)                  view.findViewById(android.R.id.empty);
+    listView       = (StickyListHeadersListView) view.findViewById(android.R.id.list);
+    listView.setFocusable(true);
+    listView.setFastScrollEnabled(true);
+    listView.setDrawingListUnderStickyHeader(false);
+    listView.setOnItemClickListener(new ListClickListener());
+
+    return view;
   }
 
   public List<String> getSelectedContacts() {
@@ -105,42 +110,14 @@ public class PushContactSelectionListFragment extends    Fragment
     this.getLoaderManager().initLoader(0, null, this);
   }
 
-  private void initializeResources() {
-    emptyText = (TextView) getView().findViewById(android.R.id.empty);
-    listView  = (StickyListHeadersListView) getView().findViewById(android.R.id.list);
-    listView.setFocusable(true);
-    listView.setFastScrollEnabled(true);
-    listView.setDrawingListUnderStickyHeader(false);
-    listView.setOnItemClickListener(new ListClickListener());
-
-    EditText filterEditText = (EditText) getView().findViewById(R.id.filter);
-    filterEditText.addTextChangedListener(new TextWatcher() {
-      @Override
-      public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-
-      }
-
-      @Override
-      public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        cursorFilter = charSequence.toString();
-        update();
-      }
-
-      @Override
-      public void afterTextChanged(Editable editable) {
-
-      }
-    });
-    cursorFilter = null;
-  }
-
-  public void update() {
+  public void setQueryFilter(String filter) {
+    this.cursorFilter = filter;
     this.getLoaderManager().restartLoader(0, null, this);
   }
 
   @Override
   public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-    return ContactAccessor.getInstance().getCursorLoaderForContacts(getActivity(), cursorFilter);
+    return new ContactsCursorLoader(getActivity(), true, cursorFilter);
   }
 
   @Override

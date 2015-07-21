@@ -351,14 +351,15 @@
     <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Quick response unavailable when SMSSecure is locked!</string>
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
 
-
     <!-- change_passphrase_activity -->
     <string name="change_passphrase_activity__old_passphrase">OLD PASSPHRASE:</string>
     <string name="change_passphrase_activity__new_passphrase">NEW PASSPHRASE:</string>
     <string name="change_passphrase_activity__repeat_new_passphrase">REPEAT NEW PASSPHRASE:</string>
 
+    <!-- contact_selection_activity -->
+    <string name="contact_selection_activity__enter_name_or_number">Enter name or number</string>
+
     <!-- contact_selection_group_activity -->
-    <!-- contact_selection_list_activity -->
     <string name="contact_selection_group_activity__no_contacts">No contacts.</string>
     <string name="contact_selection_group_activity__finding_contacts">Loading contacts&#8230;</string>
 

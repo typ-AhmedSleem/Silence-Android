@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -102,6 +103,10 @@ public class ConversationItem extends LinearLayout {
   private Button                 mmsDownloadButton;
   private TextView               mmsDownloadingLabel;
 
+  private int      defaultBubbleColor;
+  private Drawable selectedBackground;
+  private Drawable normalBackground;
+
   private final MmsDownloadClickListener    mmsDownloadClickListener    = new MmsDownloadClickListener();
   private final MmsPreferencesClickListener mmsPreferencesClickListener = new MmsPreferencesClickListener();
   private final ClickListener               clickListener               = new ClickListener();
@@ -121,6 +126,7 @@ public class ConversationItem extends LinearLayout {
   protected void onFinishInflate() {
     super.onFinishInflate();
 
+    initializeAttributes();
     ViewGroup pendingIndicatorStub = (ViewGroup) findViewById(R.id.pending_indicator_stub);
 
     if (pendingIndicatorStub != null) {
@@ -182,6 +188,18 @@ public class ConversationItem extends LinearLayout {
     }
   }
 
+  private void initializeAttributes() {
+    final int[]      attributes = new int[] {R.attr.conversation_item_bubble_background,
+                                             R.attr.conversation_list_item_background_selected,
+                                             R.attr.conversation_item_background};
+    final TypedArray attrs      = context.obtainStyledAttributes(attributes);
+
+    defaultBubbleColor = attrs.getColor(0, Color.WHITE);
+    selectedBackground = attrs.getDrawable(1);
+    normalBackground   = attrs.getDrawable(2);
+    attrs.recycle();
+  }
+
   public void unbind() {
   }
 
@@ -192,12 +210,8 @@ public class ConversationItem extends LinearLayout {
   /// MessageRecord Attribute Parsers
 
   private void setBubbleState(MessageRecord messageRecord) {
-    int[]      attributes   = new int[]{R.attr.conversation_item_bubble_background};
-    TypedArray colors       = context.obtainStyledAttributes(attributes);
-    int        defaultColor = colors.getColor(0, Color.WHITE);
-
     if (messageRecord.isOutgoing()) {
-      bodyBubble.getBackground().setColorFilter(defaultColor, PorterDuff.Mode.MULTIPLY);
+      bodyBubble.getBackground().setColorFilter(defaultBubbleColor, PorterDuff.Mode.MULTIPLY);
     } else {
       bodyBubble.getBackground().setColorFilter(messageRecord.getIndividualRecipient()
                                                              .getColor()
@@ -205,22 +219,14 @@ public class ConversationItem extends LinearLayout {
                                                 PorterDuff.Mode.MULTIPLY);
     }
 
-    colors.recycle();
   }
 
   private void setSelectionBackgroundDrawables(MessageRecord messageRecord) {
-    int[]      attributes = new int[]{R.attr.conversation_list_item_background_selected,
-                                      R.attr.conversation_item_background};
-
-    TypedArray drawables  = context.obtainStyledAttributes(attributes);
-
     if (batchSelected.contains(messageRecord)) {
-      setBackgroundDrawable(drawables.getDrawable(0));
+      setBackgroundDrawable(selectedBackground);
     } else {
-      setBackgroundDrawable(drawables.getDrawable(1));
+      setBackgroundDrawable(normalBackground);
     }
-
-    drawables.recycle();
   }
 
   private boolean hasConversationBubble(MessageRecord messageRecord) {
@@ -264,7 +270,7 @@ public class ConversationItem extends LinearLayout {
       mediaThumbnail.setImageResource(masterSecret, messageRecord.getId(),
                                       messageRecord.getDateReceived(),
                                       ((MediaMmsMessageRecord)messageRecord).getSlideDeckFuture());
-      mediaThumbnail.setShowProgress(!messageRecord.isFailed() && messageRecord.isPending());
+      mediaThumbnail.setShowProgress(!messageRecord.isFailed() && (!messageRecord.isOutgoing() || messageRecord.isPending()));
       bodyText.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     } else {
       mediaThumbnail.setVisibility(View.GONE);

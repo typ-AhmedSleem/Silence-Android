@@ -4,13 +4,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <EditText android:id="@+id/filter"
-              android:inputType="textPersonName"
-              android:layout_width="match_parent"
-              android:layout_height="45sp"
-              android:hint="@string/recipients_panel__to"
-              android:textColor="?conversation_editor_text_color" />
-
     <se.emilsjolander.stickylistheaders.StickyListHeadersListView
         android:id="@android:id/list"
         android:layout_width="match_parent"

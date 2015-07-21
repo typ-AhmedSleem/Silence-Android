@@ -59,6 +59,7 @@ import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
+import com.commonsware.cwac.camera.CameraHost.FailureReason;
 import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
@@ -98,6 +99,7 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.AutoInitiate;
+import org.smssecure.smssecure.providers.CaptureProvider;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
@@ -800,7 +802,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     ComposeKeyPressedListener composeKeyPressedListener = new ComposeKeyPressedListener();
 
     attachButton.setOnClickListener(new AttachButtonListener());
-    quickAttachmentToggle.setEnabled(false);
     sendButton.setOnClickListener(sendButtonListener);
     sendButton.setEnabled(true);
     sendButton.addOnTransportChangedListener(new OnTransportChangedListener() {
@@ -963,7 +964,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     case AttachmentTypeSelectorAdapter.ADD_CONTACT_INFO:
       AttachmentManager.selectContactInfo(this, PICK_CONTACT_INFO); break;
     case AttachmentTypeSelectorAdapter.TAKE_PHOTO:
-      attachmentManager.capturePhoto(this, TAKE_PHOTO); break;
+      attachmentManager.capturePhoto(this, recipients, TAKE_PHOTO); break;
     }
   }
 
@@ -1323,9 +1324,17 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   @Override
-  public void onImageCapture(@NonNull final Bitmap bitmap) {
-    attachmentManager.setCaptureImage(masterSecret, bitmap);
+  public void onImageCapture(@NonNull final byte[] imageBytes) {
+    attachmentManager.setCaptureUri(CaptureProvider.getInstance(this).create(masterSecret, recipients, imageBytes));
+    addAttachmentImage(masterSecret, attachmentManager.getCaptureUri());
     quickAttachmentDrawer.close();
+  }
+
+  @Override
+  public void onCameraFail(FailureReason reason) {
+    Toast.makeText(this, R.string.quick_camera_unavailable, Toast.LENGTH_SHORT).show();
+    quickAttachmentDrawer.close();
+    quickAttachmentToggle.disable();
   }
 
   // Listeners

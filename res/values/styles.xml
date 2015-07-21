@@ -58,6 +58,7 @@
 
     <style name="SMSSecure.TitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#BFffffff</item>
     </style>
 
     <style name="SMSSecure.SubtitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
