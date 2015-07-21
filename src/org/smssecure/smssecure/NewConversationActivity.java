@@ -17,7 +17,11 @@
 package org.smssecure.smssecure;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -32,6 +36,14 @@ import org.smssecure.smssecure.recipients.Recipients;
 public class NewConversationActivity extends ContactSelectionActivity {
 
   private static final String TAG = NewConversationActivity.class.getSimpleName();
+
+  @Override
+  public void onCreate(Bundle bundle, MasterSecret masterSecret) {
+    super.onCreate(bundle, masterSecret);
+
+    action.setVisibility(View.GONE);
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  }
 
   @Override
   public void onContactSelected(String number) {
@@ -52,6 +64,17 @@ public class NewConversationActivity extends ContactSelectionActivity {
       startActivity(intent);
       finish();
     }
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    super.onOptionsItemSelected(item);
+
+    switch (item.getItemId()) {
+      case android.R.id.home: super.onBackPressed(); return true;
+    }
+
+    return false;
   }
 
 }
