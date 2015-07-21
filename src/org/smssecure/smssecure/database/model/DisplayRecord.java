@@ -38,17 +38,19 @@ public abstract class DisplayRecord {
   private final Recipients recipients;
   private final long       dateSent;
   private final long       dateReceived;
+  private final long       dateDeliveryReceived;
   private final long       threadId;
   private final Body       body;
 
   public DisplayRecord(Context context, Body body, Recipients recipients, long dateSent,
-                       long dateReceived, long threadId, long type)
+                       long dateReceived, long dateDeliveryReceived, long threadId, long type)
   {
     this.context              = context.getApplicationContext();
     this.threadId             = threadId;
     this.recipients           = recipients;
     this.dateSent             = dateSent;
     this.dateReceived         = dateReceived;
+    this.dateDeliveryReceived = dateDeliveryReceived;
     this.type                 = type;
     this.body                 = body;
   }
@@ -69,6 +71,10 @@ public abstract class DisplayRecord {
 
   public long getDateReceived() {
     return dateReceived;
+  }
+
+  public long getDateDeliveryReceived() {
+    return dateDeliveryReceived;
   }
 
   public long getThreadId() {

@@ -10,7 +10,7 @@ public interface MmsSmsColumns {
   public static final String BODY                     = "body";
   public static final String ADDRESS                  = "address";
   public static final String ADDRESS_DEVICE_ID        = "address_device_id";
-  public static final String RECEIPT_COUNT            = "delivery_receipt_count";
+  public static final String DATE_DELIVERY_RECEIVED   = "date_delivery_received";
   public static final String MISMATCHED_IDENTITIES    = "mismatched_identities";
 
   public static class Types {

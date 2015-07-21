@@ -47,6 +47,7 @@ import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -139,10 +140,13 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     transport.setText(transportText);
   }
 
-  private void updateTime(MessageRecord messageRecord) {
+  private void updateTime(Context context, MessageRecord messageRecord) {
+    boolean isSmsDeliveryReportsEnabled = SMSSecurePreferences.isSmsDeliveryReportsEnabled(context);
+
     if (messageRecord.isPending() || messageRecord.isFailed()) {
       sentDate.setText("-");
-      receivedContainer.setVisibility(View.GONE);
+      if (!isSmsDeliveryReportsEnabled) receivedContainer.setVisibility(View.GONE);
+      receivedDate.setText("-");
     } else {
       Locale           dateLocale    = dynamicLanguage.getCurrentLocale();
       SimpleDateFormat dateFormatter = DateUtils.getDetailedDateFormatter(this, dateLocale);
@@ -150,7 +154,18 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
 
       if (messageRecord.getDateReceived() != messageRecord.getDateSent() && !messageRecord.isOutgoing()) {
         receivedDate.setText(dateFormatter.format(new Date(messageRecord.getDateReceived())));
-        receivedContainer.setVisibility(View.VISIBLE);
+      } else if (isSmsDeliveryReportsEnabled) {
+        Log.w(TAG, "getDateSent(): "+messageRecord.getDateSent());
+        Log.w(TAG, "getDateDeliveryReceived(): "+messageRecord.getDateDeliveryReceived());
+        String deliveryString;
+        if (!messageRecord.isDelivered()){
+          deliveryString = getString(R.string.no);
+        } else if (messageRecord.getDateDeliveryReceived() == 0) {
+          deliveryString = getString(R.string.yes);
+        } else {
+          deliveryString = dateFormatter.format(new Date(messageRecord.getDateDeliveryReceived()));
+        }
+        receivedDate.setText(deliveryString);
       } else {
         receivedContainer.setVisibility(View.GONE);
       }
@@ -279,7 +294,8 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
 
     @Override
     public void onPostExecute(Recipients recipients) {
-      if (getContext() == null) {
+      Context context = getContext();
+      if (context == null) {
         Log.w(TAG, "AsyncTask finished with a destroyed context, leaving early.");
         return;
       }
@@ -292,7 +308,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
         metadataContainer.setVisibility(View.GONE);
       } else {
         updateTransport(messageRecord);
-        updateTime(messageRecord);
+        updateTime(context, messageRecord);
         errorText.setVisibility(View.GONE);
         metadataContainer.setVisibility(View.VISIBLE);
       }

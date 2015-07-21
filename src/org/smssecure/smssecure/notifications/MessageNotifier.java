@@ -31,6 +31,7 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Action;
@@ -43,6 +44,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.smssecure.smssecure.ConversationActivity;
 import org.smssecure.smssecure.ConversationListActivity;
@@ -86,6 +88,20 @@ public class MessageNotifier {
 
   public static void setVisibleThread(long threadId) {
     visibleThread = threadId;
+  }
+
+  public static void sendDeliveryToast(final Context context, final String recipientName){
+    new Thread() {
+      @Override
+      public void run() {
+        Looper.prepare();
+        Log.w(TAG, "Message received by "+recipientName);
+        Toast.makeText(context.getApplicationContext(),
+                       context.getString(R.string.MessageNotifier_message_received, recipientName),
+                       Toast.LENGTH_LONG).show();
+        Looper.loop();
+      }
+    }.start();
   }
 
   public static void notifyMessageDeliveryFailed(Context context, Recipients recipients, long threadId) {

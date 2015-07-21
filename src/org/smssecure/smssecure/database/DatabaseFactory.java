@@ -62,7 +62,8 @@ public class DatabaseFactory {
   private static final int INTRODUCED_UNIQUE_PART_IDS_VERSION  = 17;
   private static final int INTRODUCED_RECIPIENT_PREFS_DB       = 18;
   private static final int INTRODUCED_COLOR_PREFERENCE_VERSION = 20;
-  private static final int DATABASE_VERSION                    = 20;
+  private static final int INTRODUCED_DELIVERY_DATE            = 21;
+  private static final int DATABASE_VERSION                    = 21;
 
   private static final String DATABASE_NAME    = "messages.db";
   private static final Object lock             = new Object();
@@ -719,6 +720,11 @@ public class DatabaseFactory {
 
       if (oldVersion < INTRODUCED_COLOR_PREFERENCE_VERSION) {
         db.execSQL("ALTER TABLE recipient_preferences ADD COLUMN color TEXT DEFAULT NULL");
+      }
+
+      if (oldVersion < INTRODUCED_DELIVERY_DATE) {
+        db.execSQL("ALTER TABLE sms ADD COLUMN date_delivery_received INTEGER DEFAULT 0");
+        db.execSQL("ALTER TABLE mms ADD COLUMN date_delivery_received INTEGER DEFAULT 0");
       }
 
       db.setTransactionSuccessful();

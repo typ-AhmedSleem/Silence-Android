@@ -45,7 +45,7 @@ public class ThreadRecord extends DisplayRecord {
                       long count, boolean read, long threadId, long snippetType,
                       int distributionType)
   {
-    super(context, body, recipients, date, date, threadId, snippetType);
+    super(context, body, recipients, date, date, date, threadId, snippetType);
     this.context          = context.getApplicationContext();
     this.count            = count;
     this.read             = read;

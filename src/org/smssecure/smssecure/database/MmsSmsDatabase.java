@@ -49,7 +49,7 @@ public class MmsSmsDatabase extends Database {
                               SmsDatabase.STATUS, MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY,
-                              MmsDatabase.STATUS, MmsSmsColumns.RECEIPT_COUNT,
+                              MmsDatabase.STATUS, MmsSmsColumns.DATE_DELIVERY_RECEIVED,
                               MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
@@ -73,7 +73,7 @@ public class MmsSmsDatabase extends Database {
                               SmsDatabase.STATUS, MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY,
-                              MmsDatabase.STATUS, MmsSmsColumns.RECEIPT_COUNT,
+                              MmsDatabase.STATUS, MmsSmsColumns.DATE_DELIVERY_RECEIVED,
                               MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
@@ -97,7 +97,7 @@ public class MmsSmsDatabase extends Database {
                               SmsDatabase.STATUS, MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY,
-                              MmsDatabase.STATUS, MmsSmsColumns.RECEIPT_COUNT,
+                              MmsDatabase.STATUS, MmsSmsColumns.DATE_DELIVERY_RECEIVED,
                               MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
@@ -117,7 +117,7 @@ public class MmsSmsDatabase extends Database {
                               MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY,
-                              MmsDatabase.STATUS, MmsSmsColumns.RECEIPT_COUNT,
+                              MmsDatabase.STATUS, MmsSmsColumns.DATE_DELIVERY_RECEIVED,
                               MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
@@ -134,11 +134,6 @@ public class MmsSmsDatabase extends Database {
     return count;
   }
 
-  public void incrementDeliveryReceiptCount(String address, long timestamp) {
-    DatabaseFactory.getSmsDatabase(context).incrementDeliveryReceiptCount(address, timestamp);
-    DatabaseFactory.getMmsDatabase(context).incrementDeliveryReceiptCount(address, timestamp);
-  }
-
   private Cursor queryTables(String[] projection, String smsSelection, String mmsSelection, String order, String groupBy, String limit) {
     String[] mmsProjection = {MmsDatabase.DATE_SENT + " * 1000 AS " + MmsSmsColumns.NORMALIZED_DATE_SENT,
                               MmsDatabase.DATE_RECEIVED + " * 1000 AS " + MmsSmsColumns.NORMALIZED_DATE_RECEIVED,
@@ -147,7 +142,7 @@ public class MmsSmsDatabase extends Database {
                               MmsDatabase.MESSAGE_BOX, SmsDatabase.STATUS, MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY, MmsDatabase.STATUS,
-                              MmsSmsColumns.RECEIPT_COUNT, MmsSmsColumns.MISMATCHED_IDENTITIES,
+                              MmsSmsColumns.DATE_DELIVERY_RECEIVED, MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
     String[] smsProjection = {SmsDatabase.DATE_SENT + " * 1 AS " + MmsSmsColumns.NORMALIZED_DATE_SENT,
@@ -157,7 +152,7 @@ public class MmsSmsDatabase extends Database {
                               MmsDatabase.MESSAGE_BOX, SmsDatabase.STATUS, MmsDatabase.PART_COUNT,
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY, MmsDatabase.STATUS,
-                              MmsSmsColumns.RECEIPT_COUNT, MmsSmsColumns.MISMATCHED_IDENTITIES,
+                              MmsSmsColumns.DATE_DELIVERY_RECEIVED, MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT};
 
 
@@ -177,7 +172,7 @@ public class MmsSmsDatabase extends Database {
     mmsColumnsPresent.add(MmsSmsColumns.BODY);
     mmsColumnsPresent.add(MmsSmsColumns.ADDRESS);
     mmsColumnsPresent.add(MmsSmsColumns.ADDRESS_DEVICE_ID);
-    mmsColumnsPresent.add(MmsSmsColumns.RECEIPT_COUNT);
+    mmsColumnsPresent.add(MmsSmsColumns.DATE_DELIVERY_RECEIVED);
     mmsColumnsPresent.add(MmsSmsColumns.MISMATCHED_IDENTITIES);
     mmsColumnsPresent.add(MmsDatabase.MESSAGE_TYPE);
     mmsColumnsPresent.add(MmsDatabase.MESSAGE_BOX);
@@ -198,7 +193,7 @@ public class MmsSmsDatabase extends Database {
     smsColumnsPresent.add(MmsSmsColumns.ADDRESS_DEVICE_ID);
     smsColumnsPresent.add(MmsSmsColumns.READ);
     smsColumnsPresent.add(MmsSmsColumns.THREAD_ID);
-    smsColumnsPresent.add(MmsSmsColumns.RECEIPT_COUNT);
+    smsColumnsPresent.add(MmsSmsColumns.DATE_DELIVERY_RECEIVED);
     smsColumnsPresent.add(MmsSmsColumns.MISMATCHED_IDENTITIES);
     smsColumnsPresent.add(SmsDatabase.TYPE);
     smsColumnsPresent.add(SmsDatabase.SUBJECT);
