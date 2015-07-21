@@ -58,6 +58,8 @@ public class SMSSecurePreferences {
   private static final String SIGNALING_KEY_PREF               = "pref_signaling_key";
   private static final String DIRECTORY_FRESH_TIME_PREF        = "pref_directory_refresh_time";
   private static final String IN_THREAD_NOTIFICATION_PREF      = "pref_key_inthread_notifications";
+  public  static final String REPEAT_ALERTS_PREF               = "pref_repeat_alerts";
+  private static final String DISABLE_EMOJI_DRAWER             = "pref_disable_emoji_drawer";
 
   private static final String LOCAL_REGISTRATION_ID_PREF       = "pref_local_registration_id";
   private static final String FALLBACK_SMS_ALLOWED_PREF        = "pref_allow_sms_traffic_out";
@@ -74,8 +76,6 @@ public class SMSSecurePreferences {
   private static final String PUSH_REGISTRATION_REMINDER_PREF  = "pref_push_registration_reminder";
   private static final String RATING_LATER_PREF                = "pref_rating_later";
   private static final String RATING_ENABLED_PREF              = "pref_rating_enabled";
-
-  public  static final String REPEAT_ALERTS_PREF               = "pref_repeat_alerts";
 
   public static long getRatingLaterTimestamp(Context context) {
     return getLongPreference(context, RATING_LATER_PREF, 0);
@@ -470,6 +470,10 @@ public class SMSSecurePreferences {
 
   public static void setLastPushReminderTime(Context context, long time) {
     setLongPreference(context, PUSH_REGISTRATION_REMINDER_PREF, time);
+  }
+
+  public static boolean isEmojiDrawerDisabled(Context context) {
+    return getBooleanPreference(context, DISABLE_EMOJI_DRAWER, false);
   }
 
   public static void setBooleanPreference(Context context, String key, boolean value) {

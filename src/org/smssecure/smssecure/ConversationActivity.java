@@ -789,6 +789,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     quickAttachmentDrawer = (QuickAttachmentDrawer) findViewById(R.id.quick_attachment_drawer);
     quickAttachmentToggle = (HidingImageButton)     findViewById(R.id.quick_attachment_toggle);
 
+    if (SMSSecurePreferences.isEmojiDrawerDisabled(this))
+      emojiToggle.setVisibility(View.GONE);
+
     int[]      attributes   = new int[]{R.attr.conversation_item_bubble_background};
     TypedArray colors       = obtainStyledAttributes(attributes);
     int        defaultColor = colors.getColor(0, Color.WHITE);
