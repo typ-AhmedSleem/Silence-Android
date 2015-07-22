@@ -17,6 +17,7 @@
 package org.smssecure.smssecure;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -50,6 +51,7 @@ import com.melnykov.fab.FloatingActionButton;
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.DefaultSmsReminder;
 import org.smssecure.smssecure.components.DividerItemDecoration;
+import org.smssecure.smssecure.components.Reminder;
 import org.smssecure.smssecure.components.ReminderView;
 import org.smssecure.smssecure.components.StoreRatingReminder;
 import org.smssecure.smssecure.components.SystemSmsImportReminder;
@@ -58,6 +60,7 @@ import org.smssecure.smssecure.database.loaders.ConversationListLoader;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.Locale;
 import java.util.Set;
@@ -131,15 +134,27 @@ public class ConversationListFragment extends Fragment
   }
 
   private void initializeReminders() {
-    if (DefaultSmsReminder.isEligible(getActivity())) {
-      reminderView.showReminder(new DefaultSmsReminder(getActivity()));
-    } else if (SystemSmsImportReminder.isEligible(getActivity())) {
-      reminderView.showReminder(new SystemSmsImportReminder(getActivity(), masterSecret));
-    } else if (StoreRatingReminder.isEligible(getActivity())){
-      reminderView.showReminder(new StoreRatingReminder(getActivity()));
-    } else {
-      reminderView.hide();
-    }
+    reminderView.hide();
+    new AsyncTask<Context, Void, Optional<? extends Reminder>>() {
+      @Override protected Optional<? extends Reminder> doInBackground(Context... params) {
+        final Context context = params[0];
+         if (DefaultSmsReminder.isEligible(context)) {
+          return Optional.of(new DefaultSmsReminder(context));
+        } else if (SystemSmsImportReminder.isEligible(context)) {
+          return Optional.of((new SystemSmsImportReminder(context, masterSecret)));
+        } else if (StoreRatingReminder.isEligible(context)) {
+          return Optional.of((new StoreRatingReminder(context)));
+        } else {
+          return Optional.absent();
+        }
+      }
+
+      @Override protected void onPostExecute(Optional<? extends Reminder> reminder) {
+        if (reminder.isPresent() && getActivity() != null && !isRemoving()) {
+          reminderView.showReminder(reminder.get());
+        }
+      }
+    }.execute(getActivity());
   }
 
   private void initializeListAdapter() {
