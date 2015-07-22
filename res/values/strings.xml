@@ -627,6 +627,8 @@
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__about_build_id">Build ID: %s</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
+    <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
+    <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
 
     <!-- **************************************** -->
     <!-- menus -->
