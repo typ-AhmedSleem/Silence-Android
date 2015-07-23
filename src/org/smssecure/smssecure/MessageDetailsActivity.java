@@ -152,7 +152,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
       SimpleDateFormat dateFormatter = DateUtils.getDetailedDateFormatter(this, dateLocale);
       sentDate.setText(dateFormatter.format(new Date(messageRecord.getDateSent())));
 
-      if (messageRecord.getDateReceived() != messageRecord.getDateSent() && !messageRecord.isOutgoing()) {
+      if (!messageRecord.isOutgoing()) {
         receivedDate.setText(dateFormatter.format(new Date(messageRecord.getDateReceived())));
       } else if (isSmsDeliveryReportsEnabled) {
         Log.w(TAG, "getDateSent(): "+messageRecord.getDateSent());

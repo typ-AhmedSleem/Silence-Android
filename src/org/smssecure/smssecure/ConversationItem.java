@@ -62,6 +62,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.TelephonyUtil;
 
 import java.util.Locale;
@@ -293,8 +294,8 @@ public class ConversationItem extends LinearLayout {
     bodyText.setCompoundDrawablesWithIntrinsicBounds(0, 0, messageRecord.isKeyExchange() ? R.drawable.ic_menu_login : 0, 0);
 
     final long timestamp;
-    if (messageRecord.isPush()) timestamp = messageRecord.getDateSent();
-    else                        timestamp = messageRecord.getDateReceived();
+    if (SMSSecurePreferences.showSentTime(context)) timestamp = messageRecord.getDateSent();
+    else                                            timestamp = messageRecord.getDateReceived();
 
     dateText.setText(DateUtils.getExtendedRelativeTimeSpanString(getContext(), locale, timestamp));
 
