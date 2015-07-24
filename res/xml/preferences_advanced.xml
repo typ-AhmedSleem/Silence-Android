@@ -9,7 +9,7 @@
 
     <org.smssecure.smssecure.components.SwitchPreferenceCompat
                         android:defaultValue="false"
-                        android:key="pref_disable_emojis_drawer"
+                        android:key="pref_disable_emoji_drawer"
                         android:title="@string/preferences__disable_emoji_drawer"
                         android:summary="@string/preferences__enable_this_option_if_your_keyboard_supports_emojis" />
 
