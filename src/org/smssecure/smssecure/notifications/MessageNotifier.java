@@ -401,8 +401,8 @@ public class MessageNotifier {
       Recipients      threadRecipients = null;
       long            timestamp;
 
-      if (record.isPush()) timestamp = record.getDateSent();
-      else                 timestamp = record.getDateReceived();
+      if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
+      else                                            timestamp = record.getDateReceived();
 
       if (threadId != -1) {
         threadRecipients = DatabaseFactory.getThreadDatabase(context).getRecipientsForThreadId(threadId);

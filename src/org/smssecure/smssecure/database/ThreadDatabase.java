@@ -34,6 +34,7 @@ import org.smssecure.smssecure.database.model.ThreadRecord;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.InvalidMessageException;
 
@@ -410,8 +411,8 @@ public class ThreadDatabase extends Database {
       if (reader != null && (record = reader.getNext()) != null) {
         final long timestamp;
 
-        if (record.isPush()) timestamp = record.getDateSent();
-        else                 timestamp = record.getDateReceived();
+        if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
+        else                                            timestamp = record.getDateReceived();
 
         updateThread(threadId, count, record.getBody().getBody(), timestamp, record.getType());
         notifyConversationListListeners();
