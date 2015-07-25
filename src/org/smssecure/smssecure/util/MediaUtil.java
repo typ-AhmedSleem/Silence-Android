@@ -7,9 +7,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
+import com.bumptech.glide.Glide;
+
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.AudioSlide;
+import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
 import org.smssecure.smssecure.mms.GifSlide;
 import org.smssecure.smssecure.mms.ImageSlide;
 import org.smssecure.smssecure.mms.PartAuthority;
@@ -19,6 +22,7 @@ import org.smssecure.smssecure.mms.VideoSlide;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
 
 import ws.com.google.android.mms.ContentType;
 import ws.com.google.android.mms.pdu.PduPart;
@@ -27,7 +31,7 @@ public class MediaUtil {
   private static final String TAG = MediaUtil.class.getSimpleName();
 
   public static ThumbnailData generateThumbnail(Context context, MasterSecret masterSecret, Uri uri, String type)
-      throws IOException, BitmapDecodingException, OutOfMemoryError
+      throws ExecutionException
   {
     long   startMillis = System.currentTimeMillis();
     ThumbnailData data;
@@ -54,10 +58,10 @@ public class MediaUtil {
   }
 
   private static Bitmap generateImageThumbnail(Context context, MasterSecret masterSecret, Uri uri)
-      throws IOException, BitmapDecodingException, OutOfMemoryError
+      throws ExecutionException
   {
-    int maxSize = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_max_size);
-    return BitmapUtil.createScaledBitmap(context, masterSecret, uri, maxSize, maxSize);
+    int maxSize = context.getResources().getDimensionPixelSize(R.dimen.media_bubble_height);
+    return BitmapUtil.createScaledBitmap(context, new DecryptableUri(masterSecret, uri), maxSize, maxSize);
   }
 
   public static Slide getSlideForPart(Context context, MasterSecret masterSecret, PduPart part, String contentType) {

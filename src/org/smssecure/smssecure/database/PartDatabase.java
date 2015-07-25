@@ -31,7 +31,6 @@ import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.EncryptingPartOutputStream;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.PartAuthority;
-import org.smssecure.smssecure.util.BitmapDecodingException;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.MediaUtil.ThumbnailData;
 import org.smssecure.smssecure.util.Util;
@@ -607,16 +606,12 @@ public class PartDatabase extends Database {
         return stream;
       }
 
-      try {
-        PduPart part = getPart(partId);
-        ThumbnailData data = MediaUtil.generateThumbnail(context, masterSecret, part.getDataUri(), Util.toIsoString(part.getContentType()));
-        if (data == null) {
-          return null;
-        }
-        updatePartThumbnail(masterSecret, partId, part, data.toDataStream(), data.getAspectRatio());
-      } catch (BitmapDecodingException bde) {
-        throw new IOException(bde);
+      PduPart part = getPart(partId);
+      ThumbnailData data = MediaUtil.generateThumbnail(context, masterSecret, part.getDataUri(), Util.toIsoString(part.getContentType()));
+      if (data == null) {
+        return null;
       }
+      updatePartThumbnail(masterSecret, partId, part, data.toDataStream(), data.getAspectRatio());
 
       return getDataStream(masterSecret, partId, THUMBNAIL);
     }
@@ -660,7 +655,6 @@ public class PartDatabase extends Database {
 
       if (rowId != partId.rowId) return false;
       return uniqueId == partId.uniqueId;
-
     }
 
     @Override public int hashCode() {
