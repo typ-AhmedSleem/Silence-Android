@@ -40,10 +40,10 @@
     <string name="DraftDatabase_Draft_video_snippet">(video)</string>
 
     <!-- AttchmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Couldn\'t find an app to select media with.</string>
+    <string name="AttachmentManager_cant_open_media_selection">Can\'t find an app to select media.</string>
 
     <!-- AttachmentTypeSelectorAdapter -->
-    <string name="AttachmentTypeSelectorAdapter_take_photo">Take Photo</string>
+    <string name="AttachmentTypeSelectorAdapter_camera">Camera</string>
     <string name="AttachmentTypeSelectorAdapter_picture">Picture</string>
     <string name="AttachmentTypeSelectorAdapter_video">Video</string>
     <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
