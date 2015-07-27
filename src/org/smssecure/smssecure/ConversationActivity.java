@@ -1089,6 +1089,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       getWindow().setStatusBarColor(color.toStatusBarColor(this));
+      getWindow().setNavigationBarColor(color.toStatusBarColor(this));
     }
   }
 
