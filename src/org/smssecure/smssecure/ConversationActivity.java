@@ -89,6 +89,7 @@ import org.smssecure.smssecure.database.MmsSmsColumns.Types;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.mms.AttachmentManager;
 import org.smssecure.smssecure.mms.AttachmentTypeSelectorAdapter;
+import org.smssecure.smssecure.mms.MediaConstraints;
 import org.smssecure.smssecure.mms.MediaTooLargeException;
 import org.smssecure.smssecure.mms.MmsMediaConstraints;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
@@ -920,6 +921,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       attachmentManager.clear();
       Toast.makeText(this, R.string.ConversationActivity_sorry_there_was_an_error_setting_your_attachment,
                      Toast.LENGTH_LONG).show();
+    } catch (MediaTooLargeException e) {
+      attachmentManager.clear();
+      Toast.makeText(this, getString(R.string.ConversationActivity_the_gif_you_selected_was_too_big),
+                     Toast.LENGTH_LONG).show();
+      Log.w(TAG, e);
     }
   }
 
