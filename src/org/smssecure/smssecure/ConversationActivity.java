@@ -49,6 +49,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.View.OnKeyListener;
 import android.view.ViewStub;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -1088,8 +1089,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color.toActionBarColor(this)));
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      getWindow().setStatusBarColor(color.toStatusBarColor(this));
-      getWindow().setNavigationBarColor(color.toStatusBarColor(this));
+      Window window = getWindow();
+      window.setStatusBarColor(color.toStatusBarColor(this));
+      window.setNavigationBarColor(getResources().getColor(android.R.color.black));
     }
   }
 

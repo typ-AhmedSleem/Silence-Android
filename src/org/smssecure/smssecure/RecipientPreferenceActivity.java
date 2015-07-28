@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
@@ -124,7 +125,9 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
     this.toolbar.setBackgroundColor(recipients.getColor().toActionBarColor(this));
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      getWindow().setStatusBarColor(recipients.getColor().toStatusBarColor(this));
+      Window window = getWindow();
+      window.setStatusBarColor(recipients.getColor().toStatusBarColor(this));
+      window.setNavigationBarColor(getResources().getColor(android.R.color.black));
     }
 
     if (recipients.isBlocked()) this.blockedIndicator.setVisibility(View.VISIBLE);

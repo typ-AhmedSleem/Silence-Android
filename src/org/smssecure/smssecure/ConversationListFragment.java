@@ -42,6 +42,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
 import com.melnykov.fab.FloatingActionButton;
@@ -268,8 +269,9 @@ public class ConversationListFragment extends Fragment
     mode.setSubtitle(null);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      getActivity().getWindow()
-        .setStatusBarColor(getResources().getColor(R.color.action_mode_status_bar));
+      Window window = getActivity().getWindow();
+      window.setStatusBarColor(getResources().getColor(R.color.action_mode_status_bar));
+      window.setNavigationBarColor(getResources().getColor(android.R.color.black));
     }
 
     return true;
@@ -295,9 +297,11 @@ public class ConversationListFragment extends Fragment
     getListAdapter().initializeBatchMode(false);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      Window window = getActivity().getWindow();
       TypedArray color = getActivity().getTheme()
         .obtainStyledAttributes(new int[] { android.R.attr.statusBarColor });
-      getActivity().getWindow().setStatusBarColor(color.getColor(0, Color.BLACK));
+      window.setStatusBarColor(color.getColor(0, Color.BLACK));
+      window.setNavigationBarColor(getResources().getColor(android.R.color.black));
       color.recycle();
     }
 

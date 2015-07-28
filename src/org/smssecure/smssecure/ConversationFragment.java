@@ -356,6 +356,7 @@ public class ConversationFragment extends ListFragment
         Window window = getActivity().getWindow();
         statusBarColor = window.getStatusBarColor();
         window.setStatusBarColor(getResources().getColor(R.color.action_mode_status_bar));
+        window.setNavigationBarColor(getResources().getColor(android.R.color.black));
       }
 
       setCorrectMenuVisibility(menu);
@@ -373,7 +374,9 @@ public class ConversationFragment extends ListFragment
       ((ConversationAdapter)getListAdapter()).notifyDataSetChanged();
 
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        getActivity().getWindow().setStatusBarColor(statusBarColor);
+        Window window = getActivity().getWindow();
+        window.setStatusBarColor(statusBarColor);
+        window.setNavigationBarColor(getResources().getColor(android.R.color.black));
       }
 
       actionMode = null;
