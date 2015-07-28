@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.components.InputManager.InputView;
+import org.smssecure.smssecure.components.InputAwareLayout.InputView;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout;
 import org.smssecure.smssecure.components.camera.QuickCamera.QuickCameraListener;
 import org.smssecure.smssecure.util.ServiceUtil;
