@@ -50,7 +50,6 @@ import com.melnykov.fab.FloatingActionButton;
 
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.DefaultSmsReminder;
-import org.smssecure.smssecure.components.DividerItemDecoration;
 import org.smssecure.smssecure.components.Reminder;
 import org.smssecure.smssecure.components.ReminderView;
 import org.smssecure.smssecure.components.StoreRatingReminder;
@@ -92,7 +91,6 @@ public class ConversationListFragment extends Fragment
     fab          = (FloatingActionButton) view.findViewById(R.id.fab);
     list.setHasFixedSize(true);
     list.setLayoutManager(new LinearLayoutManager(getActivity()));
-    list.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL, R.attr.conversation_list_item_divider));
     return view;
   }
 
