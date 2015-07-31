@@ -334,7 +334,7 @@
     <string name="KeyCachingService_lock">Lock with passphrase</string>
 
     <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_messages_in_d_conversations">%1$d messages in %2$d conversations</string>
+    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d new messages in %2$d conversations</string>
     <string name="MessageNotifier_most_recent_from_s">Most recent from: %1$s</string>
     <string name="MessageNotifier_encrypted_message">Encrypted message...</string>
     <string name="MessageNotifier_media_message_with_text">Media message: %s</string>
@@ -351,6 +351,10 @@
     <!-- QuickResponseService -->
     <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Quick response unavailable when SMSSecure is locked!</string>
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
+
+    <!-- SingleRecipientNotificationBuilder -->
+    <string name="SingleRecipientNotificationBuilder_new_smssecure_message">New SMSSecure message</string>
+    <string name="SingleRecipientNotificationBuilder_contents_hidden">Contents hidden</string>
 
     <!-- change_passphrase_activity -->
     <string name="change_passphrase_activity__old_passphrase">OLD PASSPHRASE:</string>
@@ -520,6 +524,10 @@
     <string name="arrays__enabled">Enabled</string>
     <string name="arrays__disabled">Disabled</string>
 
+    <string name="arrays__name_and_message">Name and message</string>
+    <string name="arrays__name_only">Name only</string>
+    <string name="arrays__neither">Neither</string>
+
     <!-- plurals.xml -->
     <plurals name="hours_ago">
         <item quantity="one">%d hour</item>
@@ -628,6 +636,7 @@
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__about_build_id">Build ID: %s</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
+    <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
     <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
     <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
     <string name="preferences__show_sent_time">Show sent time</string>
