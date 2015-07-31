@@ -42,13 +42,17 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.ThreadDatabase;
+import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
+import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 
 import java.io.IOException;
 import java.util.List;
@@ -175,12 +179,12 @@ public class MessageNotifier {
       return;
     }
 
-    SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, SMSSecurePreferences.getNotificationPrivacy(context));
+    SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, masterSecret, SMSSecurePreferences.getNotificationPrivacy(context));
     List<NotificationItem>             notifications = notificationState.getNotifications();
 
     builder.setSender(notifications.get(0).getIndividualRecipient());
     builder.setMessageCount(notificationState.getMessageCount());
-    builder.setPrimaryMessageBody(notifications.get(0).getText());
+    builder.setPrimaryMessageBody(notifications.get(0).getText(), notifications.get(0).getSlideDeck());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
 
     long timestamp = notifications.get(0).getTimestamp();
@@ -300,11 +304,12 @@ public class MessageNotifier {
     else                      reader = DatabaseFactory.getMmsSmsDatabase(context).readerFor(cursor, masterSecret);
 
     while ((record = reader.getNext()) != null) {
-      Recipient       recipient        = record.getIndividualRecipient();
-      Recipients      recipients       = record.getRecipients();
-      long            threadId         = record.getThreadId();
-      CharSequence    body             = record.getDisplayBody();
-      Recipients      threadRecipients = null;
+      Recipient                       recipient        = record.getIndividualRecipient();
+      Recipients                      recipients       = record.getRecipients();
+      long                            threadId         = record.getThreadId();
+      CharSequence                    body             = record.getDisplayBody();
+      Recipients                      threadRecipients = null;
+      ListenableFutureTask<SlideDeck> slideDeck        = null;
       long            timestamp;
 
       if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
@@ -318,14 +323,16 @@ public class MessageNotifier {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_encrypted_message));
       } else if (record.isMms() && TextUtils.isEmpty(body)) {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_media_message));
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
       } else if (record.isMms() && !record.isMmsNotification()) {
         String message      = context.getString(R.string.MessageNotifier_media_message_with_text, body);
         int    italicLength = message.length() - body.length();
         body = SpanUtil.italic(message, italicLength);
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
       }
 
       if (threadRecipients == null || !threadRecipients.isMuted()) {
-        notificationState.addNotification(new NotificationItem(recipient, recipients, threadRecipients, threadId, body, timestamp));
+        notificationState.addNotification(new NotificationItem(recipient, recipients, threadRecipients, threadId, body, timestamp, slideDeck));
       }
     }
 

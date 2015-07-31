@@ -11,6 +11,7 @@ import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.database.PartDatabase.PartId;
 import org.smssecure.smssecure.dependencies.InjectableType;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
+import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
@@ -66,6 +67,8 @@ public class AttachmentDownloadJob extends MasterSecretJob implements Injectable
       retrievePart(masterSecret, part, messageId);
       Log.w(TAG, "Got part: " + part.getPartId());
     }
+
+    MessageNotifier.updateNotification(context, masterSecret);
   }
 
   @Override
