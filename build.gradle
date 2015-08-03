@@ -106,8 +106,8 @@ dependencyVerification {
             'org.whispersystems:curve25519-java:9ccef8f5aba05d9942336f023c589d6278b4f9135bdc34a7bade1f4e7ad65fa3',
             'org.whispersystems:jobmanager:ea9cb943c4892fb90c1eea1be30efeb85cefca213d52c788419553b58d0ed70d',
             'org.whispersystems:libpastelog:550d33c565380d90f4c671e7b8ed5f3a6da55a9fda468373177106b2eb5220b2',
-            'org.whispersystems:textsecure-android:46fbc2133cfe25c35d6006f90babcfc7f85ef34ffd365133af3cdaf692c7785c',
-            'org.whispersystems:textsecure-java:7be6c8f6b12a5d1a98c3dc02b8f9d033271fb6fb5daad91ddf19c7b5798cde94',
+            'org.whispersystems:textsecure-android:6fc3a127b4ab63533e571066a8c6686e82d071d804f4563eee66a3773dd094e0',
+            'org.whispersystems:textsecure-java:9167ae6cbc34b62b5d51b2dd687306ca94eab6cf5fa7cf426f40ec32d3d37cf8',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
             'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
     ]
