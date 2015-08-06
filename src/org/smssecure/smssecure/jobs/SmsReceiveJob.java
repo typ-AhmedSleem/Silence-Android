@@ -103,7 +103,10 @@ public class SmsReceiveJob extends ContextJob {
     List<IncomingTextMessage> messages = new LinkedList<>();
 
     for (Object pdu : pdus) {
-      messages.add(new IncomingTextMessage(SmsMessage.createFromPdu((byte[])pdu)));
+      SmsMessage msg = SmsMessage.createFromPdu((byte[]) pdu);
+      if (msg != null){
+        messages.add(new IncomingTextMessage(msg));
+      }
     }
 
     if (messages.isEmpty()) {
