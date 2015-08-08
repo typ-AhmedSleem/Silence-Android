@@ -195,7 +195,7 @@ public class MessageNotifier {
                        notificationState.getQuickReplyIntent(context, notifications.get(0).getRecipients()),
                        notificationState.getWearableReplyIntent(context, notifications.get(0).getRecipients()));
 
-    ListIterator<NotificationItem> iterator = notifications.listIterator(0);
+    ListIterator<NotificationItem> iterator = notifications.listIterator(notifications.size());
 
     while(iterator.hasPrevious()) {
       builder.addMessageBody(iterator.previous().getText());
