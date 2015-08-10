@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.GenericRequestBuilder;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
@@ -32,11 +31,11 @@ import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.jobs.PartProgressEvent;
 import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
+import org.smssecure.smssecure.mms.RoundedCorners;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.util.FutureTaskListener;
 import org.smssecure.smssecure.util.ListenableFutureTask;
-import org.smssecure.smssecure.mms.RoundedCorners;
 import org.smssecure.smssecure.util.Util;
 
 import de.greenrobot.event.EventBus;
@@ -245,7 +244,8 @@ public class ThumbnailView extends FrameLayout {
     public void onSuccess(final SlideDeck slideDeck) {
       if (slideDeck == null) return;
 
-      final Slide slide = slideDeck.getThumbnailSlide(getContext());
+      final Slide slide = slideDeck.getThumbnailSlide();
+
       if (slide != null) {
         Util.runOnMain(new Runnable() {
           @Override
