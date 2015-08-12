@@ -86,7 +86,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
                         .getJobManager()
                         .setEncryptionKeys(new EncryptionKeys(ParcelUtil.serialize(masterSecret)));
 //      DecryptingQueue.schedulePendingDecrypts(DatabaseUpgradeActivity.this, masterSecret);
-      MessageNotifier.updateNotification(DatabaseUpgradeActivity.this, masterSecret);
+      updateNotifications(this, masterSecret);
       startActivity((Intent)getIntent().getParcelableExtra("next_intent"));
       finish();
     }
@@ -119,6 +119,16 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     } catch (PackageManager.NameNotFoundException e) {
       throw new AssertionError(e);
     }
+  }
+
+  private void updateNotifications(final Context context, final MasterSecret masterSecret) {
+    new AsyncTask<Void, Void, Void>() {
+      @Override
+      protected Void doInBackground(Void... params) {
+        MessageNotifier.updateNotification(context, masterSecret);
+        return null;
+      }
+    }.execute();
   }
 
   public interface DatabaseUpgradeListener {
@@ -208,7 +218,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
                         .getJobManager()
                         .setEncryptionKeys(new EncryptionKeys(ParcelUtil.serialize(masterSecret)));
 
-      MessageNotifier.updateNotification(DatabaseUpgradeActivity.this, masterSecret);
+      updateNotifications(DatabaseUpgradeActivity.this, masterSecret);
 
       startActivity((Intent)getIntent().getParcelableExtra("next_intent"));
       finish();
