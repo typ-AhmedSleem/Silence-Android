@@ -55,7 +55,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
-import com.commonsware.cwac.camera.CameraHost.FailureReason;
 import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
@@ -65,16 +64,12 @@ import org.smssecure.smssecure.components.ComposeText;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout.OnKeyboardShownListener;
 import org.smssecure.smssecure.components.SendButton;
-import org.smssecure.smssecure.components.camera.QuickAttachmentDrawer.DrawerState;
 import org.smssecure.smssecure.components.InputAwareLayout;
 import org.smssecure.smssecure.components.emoji.EmojiDrawer.EmojiEventListener;
 import org.smssecure.smssecure.components.emoji.EmojiDrawer;
 import org.smssecure.smssecure.components.emoji.EmojiToggle;
 import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.contacts.ContactAccessor.ContactData;
-import org.smssecure.smssecure.components.camera.HidingImageButton;
-import org.smssecure.smssecure.components.camera.QuickAttachmentDrawer.AttachmentDrawerListener;
-import org.smssecure.smssecure.components.camera.QuickAttachmentDrawer;
 import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -89,7 +84,6 @@ import org.smssecure.smssecure.database.MmsSmsColumns.Types;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.mms.AttachmentManager;
 import org.smssecure.smssecure.mms.AttachmentTypeSelectorAdapter;
-import org.smssecure.smssecure.mms.MediaConstraints;
 import org.smssecure.smssecure.mms.MediaTooLargeException;
 import org.smssecure.smssecure.mms.MmsMediaConstraints;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
@@ -98,7 +92,6 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.AutoInitiate;
-import org.smssecure.smssecure.providers.CaptureProvider;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
@@ -127,8 +120,6 @@ import java.util.List;
 
 import static org.smssecure.smssecure.TransportOption.Type;
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
-import static org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
-import static org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 /**
  * Activity for displaying a message thread, as well as
@@ -141,8 +132,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     implements ConversationFragment.ConversationFragmentListener,
                AttachmentManager.AttachmentListener,
                RecipientsModifiedListener,
-               OnKeyboardShownListener,
-               AttachmentDrawerListener
+               OnKeyboardShownListener
 {
   private static final String TAG = ConversationActivity.class.getSimpleName();
 
@@ -180,8 +170,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   BroadcastReceiver             groupUpdateReceiver;
   private   EmojiDrawer                   emojiDrawer;
   private   EmojiToggle                   emojiToggle;
-  protected HidingImageButton             quickAttachmentToggle;
-  private   QuickAttachmentDrawer         quickAttachmentDrawer;
 
   private Recipients recipients;
   private long       threadId;
@@ -240,7 +228,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     super.onResume();
     dynamicTheme.onResume(this);
     dynamicLanguage.onResume(this);
-    quickAttachmentDrawer.onResume();
 
     initializeSecurity();
     initializeEnabledCheck();
@@ -261,14 +248,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     super.onPause();
     MessageNotifier.setVisibleThread(-1L);
     if (isFinishing()) overridePendingTransition(R.anim.fade_scale_in, R.anim.slide_to_right);
-    quickAttachmentDrawer.onPause();
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {
     Log.w(TAG, "onConfigurationChanged(" + newConfig.orientation + ")");
     super.onConfigurationChanged(newConfig);
     composeText.setTransport(sendButton.getSelectedTransport());
-    quickAttachmentDrawer.onConfigurationChanged();
     if (container.getCurrentInput() == emojiDrawer) container.hideAttachedInput(true);
   }
 
@@ -749,9 +734,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composeBubble  =                         findViewById(R.id.compose_bubble);
     container      = (InputAwareLayout)      findViewById(R.id.layout_container);
 
-    quickAttachmentDrawer = (QuickAttachmentDrawer) findViewById(R.id.quick_attachment_drawer);
-    quickAttachmentToggle = (HidingImageButton)     findViewById(R.id.quick_attachment_toggle);
-
     if (SMSSecurePreferences.isEmojiDrawerDisabled(this))
       emojiToggle.setVisibility(View.GONE);
 
@@ -816,13 +798,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composeText.setOnEditorActionListener(sendButtonListener);
     composeText.setOnClickListener(composeKeyPressedListener);
     composeText.setOnFocusChangeListener(composeKeyPressedListener);
-
-    if (QuickAttachmentDrawer.isDeviceSupported(this)) {
-      quickAttachmentDrawer.setListener(this);
-      quickAttachmentToggle.setOnClickListener(new QuickAttachmentToggleListener());
-    } else {
-      quickAttachmentToggle.disable();
-    }
   }
 
   protected void initializeActionBar() {
@@ -1249,34 +1224,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void updateToggleButtonState() {
     if (composeText.getText().length() == 0 && !attachmentManager.isAttachmentPresent()) {
       buttonToggle.display(attachButton);
-      quickAttachmentToggle.show();
     } else {
       buttonToggle.display(sendButton);
-      quickAttachmentToggle.hide();
     }
-  }
-
-  @Override
-  public void onAttachmentDrawerStateChanged(DrawerState drawerState) {
-    if (drawerState == DrawerState.FULL_EXPANDED) {
-      getSupportActionBar().hide();
-    } else {
-      getSupportActionBar().show();
-    }
-  }
-
-  @Override
-  public void onImageCapture(@NonNull final byte[] imageBytes) {
-    attachmentManager.setCaptureUri(CaptureProvider.getInstance(this).create(masterSecret, recipients, imageBytes));
-    addAttachmentImage(masterSecret, attachmentManager.getCaptureUri());
-    quickAttachmentDrawer.hide(false);
-  }
-
-  @Override
-  public void onCameraFail(FailureReason reason) {
-    Toast.makeText(this, R.string.quick_camera_unavailable, Toast.LENGTH_SHORT).show();
-    quickAttachmentDrawer.hide(false);
-    quickAttachmentToggle.disable();
   }
 
   // Listeners
@@ -1294,14 +1244,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     @Override public void onClick(View v) {
       if (container.getCurrentInput() == emojiDrawer) container.showSoftkey(composeText);
       else                                            container.show(composeText, emojiDrawer);
-    }
-  }
-
-  private class QuickAttachmentToggleListener implements OnClickListener {
-    @Override
-    public void onClick(View v) {
-      composeText.clearFocus();
-      container.show(composeText, quickAttachmentDrawer);
     }
   }
 

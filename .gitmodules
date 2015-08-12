@@ -10,6 +10,3 @@
 [submodule "libs/com.amulyakhare.textdrawable"]
 	path = libs/com.amulyakhare.textdrawable
 	url = https://github.com/amulyakhare/TextDrawable.git
-[submodule "libs/com.commonsware.cwac.camera"]
-	path = libs/com.commonsware.cwac.camera
-	url = https://github.com/commonsguy/cwac-camera
