@@ -8,6 +8,7 @@ import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera.Size;
 import android.os.AsyncTask;
+import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
@@ -81,6 +82,7 @@ import java.util.List;
         final Rect croppingRect = getCroppedRect(previewSize, previewRect, rotation);
 
         Log.w(TAG, "previewSize: " + previewSize.width + "x" + previewSize.height);
+        Log.w(TAG, "previewFormat: " + cameraParameters.getPreviewFormat());
         Log.w(TAG, "croppingRect: " + croppingRect.toString());
         Log.w(TAG, "rotation: " + rotation);
         new AsyncTask<byte[], Void, byte[]>() {
@@ -121,8 +123,14 @@ import java.util.List;
     }
     final float newWidth  = visibleRect.width()  * scale;
     final float newHeight = visibleRect.height() * scale;
-    final float centerX   = previewWidth         / 2;
+    final float centerX;
     final float centerY   = previewHeight        / 2;
+    if (VERSION.SDK_INT < VERSION_CODES.ICE_CREAM_SANDWICH) {
+      centerX = previewWidth - newWidth / 2;
+    } else {
+      centerX = previewWidth / 2;
+    }
+
     visibleRect.set((int) (centerX - newWidth  / 2),
                     (int) (centerY - newHeight / 2),
                     (int) (centerX + newWidth  / 2),

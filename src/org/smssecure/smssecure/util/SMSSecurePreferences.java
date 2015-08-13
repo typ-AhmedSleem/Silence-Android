@@ -5,6 +5,8 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
+import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
+
 import java.io.IOException;
 
 public class SMSSecurePreferences {
@@ -77,6 +79,11 @@ public class SMSSecurePreferences {
   private static final String PUSH_REGISTRATION_REMINDER_PREF  = "pref_push_registration_reminder";
   private static final String RATING_LATER_PREF                = "pref_rating_later";
   private static final String RATING_ENABLED_PREF              = "pref_rating_enabled";
+  public  static final String NOTIFICATION_PRIVACY_PREF        = "pref_notification_privacy";
+
+  public static NotificationPrivacyPreference getNotificationPrivacy(Context context) {
+    return new NotificationPrivacyPreference(getStringPreference(context, NOTIFICATION_PRIVACY_PREF, "all"));
+  }
 
   public static long getRatingLaterTimestamp(Context context) {
     return getLongPreference(context, RATING_LATER_PREF, 0);
