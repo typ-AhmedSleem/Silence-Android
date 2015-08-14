@@ -8,12 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<org.smssecure.smssecure.components.camera.QuickAttachmentDrawer
-        android:id="@+id/quick_attachment_drawer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
@@ -84,16 +78,6 @@
                         android:nextFocusForward="@+id/send_button"
                         android:nextFocusRight="@+id/send_button"
                         tools:hint="Send SMSSecure message" />
-
-                <org.smssecure.smssecure.components.camera.HidingImageButton
-                        android:id="@+id/quick_attachment_toggle"
-                        android:layout_width="37dp"
-                        android:layout_height="37dp"
-                        android:layout_gravity="bottom"
-                        android:src="?quick_camera_icon"
-                        android:background="@drawable/touch_highlight_background"
-                        android:contentDescription="@string/conversation_activity__quick_attachment_drawer_toggle_description"
-                        android:padding="10dp" />
             </LinearLayout>
 
             <org.smssecure.smssecure.components.AnimatingToggle
@@ -148,5 +132,4 @@
                 android:visibility="gone" />
 
     </LinearLayout>
-</org.smssecure.smssecure.components.camera.QuickAttachmentDrawer>
 </org.smssecure.smssecure.components.InputAwareLayout>
