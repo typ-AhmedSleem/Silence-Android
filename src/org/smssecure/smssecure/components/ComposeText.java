@@ -64,7 +64,7 @@ public class ComposeText extends EmojiEditText {
   }
 
   public void setTransport(TransportOption transport) {
-    final boolean enterSends = SMSSecurePreferences.isEnterSendsEnabled(getContext());
+    final String enterKeyType = SMSSecurePreferences.getEnterKeyType(getContext());
 
     int imeOptions = (getImeOptions() & ~EditorInfo.IME_MASK_ACTION) | EditorInfo.IME_ACTION_SEND;
     int inputType  = getInputType();
@@ -72,11 +72,15 @@ public class ComposeText extends EmojiEditText {
     if (isLandscape()) setImeActionLabel(transport.getComposeHint(), EditorInfo.IME_ACTION_SEND);
     else               setImeActionLabel(null, 0);
 
-    inputType  = !isLandscape() && enterSends
+    inputType  = !isLandscape() && enterKeyType.equals("send")
                ? inputType & ~InputType.TYPE_TEXT_FLAG_MULTI_LINE
                : inputType | InputType.TYPE_TEXT_FLAG_MULTI_LINE;
 
-    imeOptions = enterSends
+    inputType  = enterKeyType.equals("emoji")
+               ? inputType | InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE
+               : inputType & ~InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE;
+
+    imeOptions = enterKeyType.equals("send")
                ? imeOptions & ~EditorInfo.IME_FLAG_NO_ENTER_ACTION
                : imeOptions | EditorInfo.IME_FLAG_NO_ENTER_ACTION;
 

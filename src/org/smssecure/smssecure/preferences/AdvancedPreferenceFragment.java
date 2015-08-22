@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.provider.ContactsContract;
 import android.support.v4.preference.PreferenceFragment;
@@ -16,12 +17,10 @@ import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 
-public class AdvancedPreferenceFragment extends PreferenceFragment {
+public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment {
   private static final String TAG = AdvancedPreferenceFragment.class.getSimpleName();
 
   private static final String SUBMIT_DEBUG_LOG_PREF = "pref_submit_debug_logs";
-
-  private static final int PICK_IDENTITY_CONTACT = 1;
 
   @Override
   public void onCreate(Bundle paramBundle) {
@@ -30,6 +29,9 @@ public class AdvancedPreferenceFragment extends PreferenceFragment {
 
     this.findPreference(SUBMIT_DEBUG_LOG_PREF)
       .setOnPreferenceClickListener(new SubmitDebugLogListener());
+
+    this.findPreference(SMSSecurePreferences.ENTER_KEY_TYPE).setOnPreferenceChangeListener(new ListSummaryListener());
+    initializeListSummary((ListPreference) this.findPreference(SMSSecurePreferences.ENTER_KEY_TYPE));
   }
 
   @Override

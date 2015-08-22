@@ -220,4 +220,16 @@
       <item>contact</item>
       <item>none</item>
   </string-array>
+
+  <string-array name="pref_enter_key_entries">
+      <item>@string/arrays__enter_key</item>
+      <item>@string/arrays__emoji_key</item>
+      <item>@string/arrays__send_key</item>
+  </string-array>
+
+  <string-array name="pref_enter_key_values">
+      <item>enter</item>
+      <item>emoji</item>
+      <item>send</item>
+  </string-array>
 </resources>
