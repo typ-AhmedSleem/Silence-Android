@@ -24,6 +24,7 @@ import org.smssecure.smssecure.dependencies.AxolotlStorageModule;
 import org.smssecure.smssecure.dependencies.InjectableType;
 import org.smssecure.smssecure.jobs.persistence.EncryptingJobSerializer;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirementProvider;
+import org.smssecure.smssecure.jobs.requirements.MediaNetworkRequirementProvider;
 import org.smssecure.smssecure.jobs.requirements.ServiceRequirementProvider;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.whispersystems.jobqueue.JobManager;
@@ -46,8 +47,10 @@ import dagger.ObjectGraph;
  */
 public class ApplicationContext extends Application implements DependencyInjector {
 
-  private JobManager jobManager;
+  private JobManager  jobManager;
   private ObjectGraph objectGraph;
+
+  private MediaNetworkRequirementProvider mediaNetworkRequirementProvider = new MediaNetworkRequirementProvider();
 
   public static ApplicationContext getInstance(Context context) {
     return (ApplicationContext)context.getApplicationContext();
@@ -87,9 +90,14 @@ public class ApplicationContext extends Application implements DependencyInjecto
                                 .withJobSerializer(new EncryptingJobSerializer())
                                 .withRequirementProviders(new MasterSecretRequirementProvider(this),
                                                           new ServiceRequirementProvider(this),
-                                                          new NetworkRequirementProvider(this))
+                                                          new NetworkRequirementProvider(this),
+                                                          mediaNetworkRequirementProvider)
                                 .withConsumerThreads(5)
                                 .build();
+  }
+
+  public void notifyMediaControlEvent() {
+    mediaNetworkRequirementProvider.notifyMediaControlEvent();
   }
 
   private void initializeDependencyInjection() {

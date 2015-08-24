@@ -108,6 +108,7 @@
     <attr name="pref_ic_app_protection" format="reference" />
     <attr name="pref_ic_appearance" format="reference" />
     <attr name="pref_ic_storage" format="reference" />
+    <attr name="pref_ic_chats" format="reference" />
     <attr name="pref_ic_advanced" format="reference" />
 
     <attr name="app_protect_timeout_picker_color" format="reference"/>

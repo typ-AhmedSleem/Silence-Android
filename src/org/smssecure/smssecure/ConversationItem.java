@@ -48,6 +48,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
@@ -159,6 +160,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     if (mediaThumbnail != null) {
       mediaThumbnail.setThumbnailClickListener(new ThumbnailClickListener());
       mediaThumbnail.setOnLongClickListener(new MultiSelectLongClickListener());
+      mediaThumbnail.setDownloadClickListener(new ThumbnailDownloadClickListener());
     }
   }
 
@@ -277,7 +279,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
       mediaThumbnail.setImageResource(masterSecret, messageRecord.getId(),
                                       messageRecord.getDateReceived(),
                                       ((MediaMmsMessageRecord)messageRecord).getSlideDeckFuture());
-      mediaThumbnail.setShowProgress(!messageRecord.isFailed() && (!messageRecord.isOutgoing() || messageRecord.isPending()));
+      mediaThumbnail.hideControls(messageRecord.isFailed() || (messageRecord.isOutgoing() && !messageRecord.isPending()));
       bodyText.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     } else {
       mediaThumbnail.setVisibility(View.GONE);
@@ -445,6 +447,11 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     }
   }
 
+  private class ThumbnailDownloadClickListener implements ThumbnailView.ThumbnailClickListener {
+    @Override public void onClick(View v, Slide slide) {
+      DatabaseFactory.getPartDatabase(context).setTransferState(messageRecord.getId(), slide.getPart().getPartId(), PartDatabase.TRANSFER_PROGRESS_STARTED);
+    }
+  }
   private class ThumbnailClickListener implements ThumbnailView.ThumbnailClickListener {
     private void fireIntent(Slide slide) {
       Log.w(TAG, "Clicked: " + slide.getUri() + " , " + slide.getContentType());
