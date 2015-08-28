@@ -527,6 +527,10 @@
     <string name="arrays__name_only">Name only</string>
     <string name="arrays__neither">Neither</string>
 
+    <string name="arrays__enter_key">Show enter key</string>
+    <string name="arrays__emoji_key">Show emoji key</string>
+    <string name="arrays__send_key">Show send button</string>
+
     <!-- plurals.xml -->
     <plurals name="hours_ago">
         <item quantity="one">%d hour</item>
@@ -540,11 +544,9 @@
     <string name="preferences__pref_all_mms_title">Receive all MMS</string>
     <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Use SMSSecure for viewing and storing all incoming text messages</string>
     <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Use SMSSecure for viewing and storing all incoming multimedia messages</string>
-    <string name="preferences__input_settings">Input Settings</string>
-    <string name="preferences__enable_enter_key_title">Enable Enter key</string>
-    <string name="preferences__replace_smiley_with_enter_key">Replace the smiley key with an Enter key</string>
-    <string name="preferences__pref_enter_sends_title">Enter key sends</string>
-    <string name="preferences__pressing_the_enter_key_will_send_text_messages">Pressing the Enter key will send text messages</string>
+    <string name="preferences__keyboard_settings">Keyboard options</string>
+    <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
+    <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
     <string name="preferences__display_settings">Display settings</string>
     <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Choose your contact entry from the contacts list.</string>
     <string name="preferences__change_passphrase">Change passphrase</string>
@@ -636,8 +638,6 @@
     <string name="preferences__about_build_id">Build ID: %s</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
     <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
-    <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
-    <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
     <string name="preferences__show_sent_time">Show sent time</string>
     <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Show sent time instead of received time for incoming messages</string>
 

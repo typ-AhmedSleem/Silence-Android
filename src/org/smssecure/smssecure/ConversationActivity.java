@@ -1278,7 +1278,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     public boolean onKey(View v, int keyCode, KeyEvent event) {
       if (event.getAction() == KeyEvent.ACTION_DOWN) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
-          if (SMSSecurePreferences.isEnterSendsEnabled(ConversationActivity.this)) {
+          if (SMSSecurePreferences.getEnterKeyType(ConversationActivity.this).equals("send")) {
             sendButton.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
             sendButton.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
             return true;

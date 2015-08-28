@@ -44,8 +44,7 @@ public class SMSSecurePreferences {
   private static final String PASSPHRASE_TIMEOUT_PREF          = "pref_timeout_passphrase";
   private static final String AUTO_KEY_EXCHANGE_PREF           = "pref_auto_complete_key_exchange";
   public  static final String SCREEN_SECURITY_PREF             = "pref_screen_security";
-  private static final String ENTER_SENDS_PREF                 = "pref_enter_sends";
-  private static final String ENTER_PRESENT_PREF               = "pref_enter_key";
+  public  static final String ENTER_KEY_TYPE                   = "pref_enter_key";
   private static final String SMS_DELIVERY_REPORT_PREF         = "pref_delivery_report_sms";
   private static final String SMS_DELIVERY_REPORT_TOAST_PREF   = "pref_delivery_report_toast_sms";
   public  static final String MMS_USER_AGENT                   = "pref_mms_user_agent";
@@ -233,12 +232,8 @@ public class SMSSecurePreferences {
     return getStringPreference(context, SIGNALING_KEY_PREF, null);
   }
 
-  public static boolean isEnterImeKeyEnabled(Context context) {
-    return getBooleanPreference(context, ENTER_PRESENT_PREF, false);
-  }
-
-  public static boolean isEnterSendsEnabled(Context context) {
-    return getBooleanPreference(context, ENTER_SENDS_PREF, false);
+  public static String getEnterKeyType(Context context){
+    return getStringPreference(context, ENTER_KEY_TYPE, "enter");
   }
 
   public static boolean isPasswordDisabled(Context context) {
