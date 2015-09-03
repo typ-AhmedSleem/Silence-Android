@@ -66,8 +66,11 @@ dependencies {
     }
     androidTestCompile ('com.squareup.assertj:assertj-android:1.0.0') {
         exclude group: 'org.hamcrest', module: 'hamcrest-core'
+        exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestCompile 'com.android.support.test:runner:0.2'
+    androidTestCompile ('com.android.support.test:runner:0.2') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 }
 
 dependencyVerification {
