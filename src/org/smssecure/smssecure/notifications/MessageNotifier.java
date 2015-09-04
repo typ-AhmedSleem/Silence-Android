@@ -26,6 +26,7 @@ import android.database.Cursor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.text.Spannable;
@@ -367,10 +368,17 @@ public class MessageNotifier {
     public static final String REMINDER_ACTION = "org.smssecure.smssecure.MessageNotifier.REMINDER_ACTION";
 
     @Override
-    public void onReceive(Context context, Intent intent) {
-      MasterSecret masterSecret  = KeyCachingService.getMasterSecret(context);
-      int          reminderCount = intent.getIntExtra("reminder_count", 0);
-      MessageNotifier.updateNotification(context, masterSecret, true, reminderCount + 1);
+    public void onReceive(final Context context, final Intent intent) {
+      new AsyncTask<Void, Void, Void>() {
+        @Override
+        protected Void doInBackground(Void... params) {
+          MasterSecret masterSecret  = KeyCachingService.getMasterSecret(context);
+          int          reminderCount = intent.getIntExtra("reminder_count", 0);
+          MessageNotifier.updateNotification(context, masterSecret, true, reminderCount + 1);
+
+          return null;
+        }
+      }.execute();
     }
   }
 
