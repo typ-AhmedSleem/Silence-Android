@@ -645,6 +645,11 @@
     <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
     <string name="preferences__show_sent_time">Show sent time</string>
     <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Show sent time instead of received time for incoming messages</string>
+    <string name="preferences_chats__when_using_mobile_data">When using mobile data</string>
+    <string name="preferences_chats__when_using_wifi">When using Wi-Fi</string>
+    <string name="preferences_chats__when_roaming">When roaming</string>
+    <string name="preferences_chats__media_auto_download">Media auto-download</string>
+    <string name="preferences_chats__message_trimming">Message trimming</string>
 
     <!-- **************************************** -->
     <!-- menus -->
