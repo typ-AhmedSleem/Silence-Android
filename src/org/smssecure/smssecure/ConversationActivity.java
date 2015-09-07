@@ -847,7 +847,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         if (recipients != null) {
           long[] ids = recipients.getIds();
           Log.w("ConversationActivity", "Looking up new recipients...");
-          recipients = RecipientFactory.getRecipientsForIds(context, ids, false);
+          recipients = RecipientFactory.getRecipientsForIds(context, ids, true);
+          recipients.addListener(ConversationActivity.this);
           titleView.setTitle(recipients);
         }
       }
