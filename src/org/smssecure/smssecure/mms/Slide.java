@@ -25,6 +25,7 @@ import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.MediaUtil;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
@@ -72,6 +73,11 @@ public abstract class Slide {
 
   public boolean isInProgress() {
     return part.isInProgress();
+  }
+
+  public boolean isPendingDownload() {
+    return getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_FAILED ||
+           getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_AUTO_PENDING;
   }
 
   public long getTransferProgress() {
