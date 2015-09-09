@@ -162,7 +162,9 @@ public class MessageNotifier {
         sendSingleThreadNotification(context, masterSecret, notificationState, signal);
       }
 
-      scheduleReminder(context, reminderCount);
+      if (signal) {
+        scheduleReminder(context, reminderCount);
+      }
     } finally {
       if (telcoCursor != null) telcoCursor.close();
       if (pushCursor != null)  pushCursor.close();
