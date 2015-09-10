@@ -31,4 +31,7 @@
 
     <dimen name="color_grid_extra_padding">32dp</dimen>
     <dimen name="color_grid_item_size">48dp</dimen>
+
+    <dimen name="transfer_controls_expanded_width">150dp</dimen>
+    <dimen name="transfer_controls_contracted_width">70dp</dimen>
 </resources>

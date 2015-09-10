@@ -33,6 +33,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Toast;
 
+import junit.framework.Assert;
+
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.ThumbnailView;
 import org.smssecure.smssecure.crypto.MasterSecret;

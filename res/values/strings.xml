@@ -260,6 +260,11 @@
     <string name="RecipientPreferenceActivity_enabled">Enabled</string>
     <string name="RecipientPreferenceActivity_disabled">Disabled</string>
 
+    <!-- Slide -->
+    <string name="Slide_image">Image</string>
+    <string name="Slide_audio">Audio</string>
+    <string name="Slide_video">Video</string>
+
     <!-- SmsMessageRecord -->
     <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Received corrupted key
         exchange message!
