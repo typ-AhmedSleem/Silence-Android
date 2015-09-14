@@ -93,7 +93,12 @@ public class MmsDownloadJob extends MasterSecretJob {
       String contentLocation = new String(notification.get().getContentLocation());
       byte[] transactionId   = notification.get().getTransactionId();
 
-      Log.w(TAG, "Downloading mms at " + Uri.parse(contentLocation).getHost());
+      try {
+        Uri mmsUri = Uri.parse(contentLocation);
+        Log.w(TAG, "Downloading mms at " + mmsUri.getHost());
+      } catch (Exception e) {
+        throw new MmsException("Invalid content location: "+contentLocation);
+      }
 
       RetrieveConf retrieveConf = new CompatMmsConnection(context).retrieve(contentLocation, transactionId);
       if (retrieveConf == null) {
