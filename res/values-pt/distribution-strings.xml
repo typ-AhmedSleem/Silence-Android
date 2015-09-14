@@ -4,22 +4,20 @@
   <string name="Distribution_tagline">SMS/MMS cifradas com facilidade!</string>
   <string name="Distribution_description">O SMSSecure é uma aplicação para SMS/MMS que lhe permite manter a privacidade das conversas com os seus amigos.</string>
   <string name="Distribution_long_description">
-        O SMSSecure é uma aplicação para SMS/MMS que lhe permite manter a privacidade das conversas com os seus amigos.
-        Através do SMSSecure, pode enviar mensagens SMS e partilhar ficheiros multimédia ou anexos com privacidade total.
-        Características:
-        * Fácil. O SMSSecure funciona como qualquer outra aplicação de SMS. Não é necessária qualquer subscrição de serviço, nem para si nem para os seus contactos.
-        * Fiável. O SMSSecure comunica através de mensagens SMS cifradas. Não requer qualquer ligação a servidores nem à Internet.
-        * Privado. O SMSSecure utiliza o protocolo de cifra TextSecure para manter a privacidade das mensagens.
-        * Seguro. Todas as mensagens são cifradas localmente. Assim, se perder o seu telefone, as mensagens estarão protegidas.
-        * Open Source. O SMSSecure é uma aplicação FOSS e permite que qualquer utilizador possa verificar a sua segurança, através da auditoria ao código fonte
+O SMSSecure é uma aplicação para SMS/MMS que lhe permite manter a privacidade das conversas com os seus amigos. 
+Através do SMSSecure, pode enviar mensagens SMS e partilhar ficheiros multimédia ou anexos com privacidade total. 
 
-        Para reportar erros ou pedidos de funcionalidades aceda a:
-        https://github.com/SMSSecure/SMSSecure/issues
+Características:
+* Fácil. O SMSSecure funciona como qualquer outra aplicação de SMS. Não é necessária qualquer subscrição de serviço, nem para si nem para os seus contactos.
+* Fiável. O SMSSecure comunica através de mensagens SMS cifradas. Não requer qualquer ligação a servidores nem à Internet.
+* Privado. O SMSSecure utiliza o protocolo de cifra TextSecure para manter a privacidade das mensagens. * Seguro. Todas as mensagens são cifradas localmente. Assim, se perder o seu telefone, as mensagens estarão protegidas.
+* Open Source. O SMSSecure é uma aplicação livre e Open Source e permite que qualquer utilizador possa verificar a sua segurança, através da auditoria ao código fonte
 
-        O código fonte pode ser encontrado em:
-        https://github.com/SMSSecure/SMSSecure
+Para reportar erros ou pedidos de funcionalidades, aceda a: https://github.com/SMSSecure/SMSSecure/issues
 
-        Mais detalhes:
-        http://smssecure.org
-    </string>
+O código fonte pode ser encontrado em:
+https://github.com/SMSSecure/SMSSecure
+
+Mais informações:
+http://smssecure.org</string>
 </resources>

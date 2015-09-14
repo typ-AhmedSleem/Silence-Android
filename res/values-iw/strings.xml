@@ -5,7 +5,6 @@
   <string name="no">לא</string>
   <string name="delete">מחק</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">עכשיו: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">עדיין לא הגדרת סיסמה!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">למחוק את כל ההודעות הישנות עכשיו?</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">אתה בטוח שברצונך לקצץ מיד את כל שרשורי השיחות עד להודעות ה-%s הכי חדשות?</string>
@@ -36,8 +35,6 @@
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">אתה בטוח שאתה רוצה למחוק את השיחה הזאת לתמיד?</string>
   <string name="ConversationActivity_add_attachment">צרף קובץ</string>
   <string name="ConversationActivity_select_contact_info">בחר מידע של איש קשר</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">סליחה, הייתה שגיאה בהצבת הקובץ המצורף שלך.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">הנמען אינו SMS או אימייל חוקיים!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">ההודעה ריקה!</string>
   <string name="ConversationActivity_invalid_recipient">נמען שגוי!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">נראה כי מכשיר זה אינו תומך בפעולות חיוג.</string>
@@ -159,12 +156,13 @@
   <string name="MessageNotifier_error_delivering_message">שגיאה במסירת ההודעה.</string>
   <string name="MessageNotifier_mark_all_as_read">סמן הכל כנקרא</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">סיסמה ישנה:</string>
   <string name="change_passphrase_activity__new_passphrase">סיסמה חדשה:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">חזור על הסיסמה החדשה:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">אין אנשי קשר.</string>
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
@@ -227,7 +225,6 @@
   <string name="preferences__general">כללי</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">השתמש ב-SMSSecure לצפייה ואחסון של כל הודעות הטקסט</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">השתמש ב-SMSSecure לצפייה ואחסון של כל הודעות המולטימדיה</string>
-  <string name="preferences__input_settings">הכנס הגדרות</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">בחר איש קשר מאנשי הקשר.</string>
   <string name="preferences__change_passphrase">שנה סיסמה</string>
   <string name="preferences__change_my_passphrase">שנה סיסמה</string>
@@ -238,7 +235,6 @@
   <string name="preferences__pref_timeout_interval_title">זמן התוקף</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">פרק הזמן שיש להמתין לפני שכיחת הסיסמה מהזיכרון</string>
   <string name="preferences__notifications">התראות</string>
-  <string name="preferences__display_message_notifications_in_status_bar">הצג התראות של הודעה בשורת המצב</string>
   <string name="preferences__led_color">צבע LED</string>
   <string name="preferences__pref_led_blink_title">תבנית הבהוב ה- LED</string>
   <string name="preferences__sound">קול</string>
@@ -320,8 +316,8 @@
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

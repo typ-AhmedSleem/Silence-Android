@@ -6,7 +6,6 @@
   <string name="delete">Forigi</string>
   <string name="please_wait">Bonvolu atendi…</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Nun: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vi ne ankoraŭ precizigis pasfrazon.</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">po %s mesaĝoj en interparolado</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Forigi ĉiuj la malnovajn mesaĝojn?</string>
@@ -100,9 +99,10 @@
   <string name="MessageNotifier_no_subject">(Senobjekto)</string>
   <string name="MessageNotifier_media_message">Aŭdovida mesaĝo</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
   <!--blocked_contacts_fragment-->
@@ -224,8 +224,8 @@
   <!--media_preview-->
   <string name="media_preview__save_title">Konvervi</string>
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

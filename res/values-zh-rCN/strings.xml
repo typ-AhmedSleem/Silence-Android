@@ -6,7 +6,6 @@
   <string name="delete">删除</string>
   <string name="please_wait">请稍候…</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">当前：%s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未设置密码！</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">每个会话 %s 个信息</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">删除所有旧信息？</string>
@@ -34,9 +33,7 @@
   <string name="DraftDatabase_Draft_audio_snippet">（音频）</string>
   <string name="DraftDatabase_Draft_video_snippet">（视频）</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">无法找到用于选择媒体的应用。</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">拍照</string>
   <string name="AttachmentTypeSelectorAdapter_picture">图片</string>
   <string name="AttachmentTypeSelectorAdapter_video">视频</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音频</string>
@@ -69,10 +66,8 @@
   <string name="ConversationActivity_add_attachment">添加附件</string>
   <string name="ConversationActivity_select_contact_info">选择联系人信息</string>
   <string name="ConversationActivity_compose_message">编写信息</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">抱歉，设置附件时出现错误。</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">抱歉，选择的视频超过了消息大小限制 (%1$skB)</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">抱歉，选择的音频超过了信息大小限制（%1$skB）</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人不是有效的短信或电子邮件地址！</string>
   <string name="ConversationActivity_message_is_empty_exclamation">信息为空！</string>
   <string name="ConversationActivity_group_members">群组成员</string>
   <string name="ConversationActivity_group_conversation">群组会话</string>
@@ -208,6 +203,8 @@
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">解除对此联系人的屏蔽？</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">你确定要解除对此联系人的屏蔽？</string>
   <string name="RecipientPreferenceActivity_unblock">解除屏蔽</string>
+  <string name="RecipientPreferenceActivity_enabled">启用</string>
+  <string name="RecipientPreferenceActivity_disabled">禁用</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">收到损坏的密钥
 交换消息！</string>
@@ -267,7 +264,6 @@
   <string name="KeyCachingService_passphrase_cached">SMSSecure 已解锁</string>
   <string name="KeyCachingService_lock">使用密码锁定</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">来自 %2$d 的%1$d 的信息</string>
   <string name="MessageNotifier_most_recent_from_s">最近来自：%1$s</string>
   <string name="MessageNotifier_encrypted_message">加密信息...</string>
   <string name="MessageNotifier_media_message_with_text">多媒体信息：%s</string>
@@ -276,14 +272,21 @@
   <string name="MessageNotifier_failed_to_deliver_message">信息发送失败</string>
   <string name="MessageNotifier_error_delivering_message">发送信息错误。</string>
   <string name="MessageNotifier_mark_all_as_read">全部标记为已读</string>
+  <string name="MessageNotifier_mark_read">标记已读</string>
   <string name="MessageNotifier_media_message">多媒体信息</string>
+  <string name="MessageNotifier_message_received">消息被 %s 接收</string>
+  <string name="MessageNotifier_reply">回复</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">当SMSSecure锁定时，快捷回复不可用！</string>
+  <string name="QuickResponseService_problem_sending_message">发送消息时出现问题！</string>
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">旧密码：</string>
   <string name="change_passphrase_activity__new_passphrase">新密码：</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">重复新密码：</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">输入名字或号码</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">没有联系人。</string>
   <string name="contact_selection_group_activity__finding_contacts">读取联系人…</string>
   <!--single_contact_selection_activity-->
@@ -366,6 +369,8 @@
   <string name="recipient_preferences__ringtone">铃声</string>
   <string name="recipient_preferences__vibrate">震动</string>
   <string name="recipient_preferences__block">屏蔽</string>
+  <string name="recipient_preferences__color">颜色</string>
+  <string name="recipient_preferences__color_for_this_contact">用颜色标记此联系人</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">完成</string>
   <!--recipients_panel-->
@@ -418,13 +423,9 @@
   <string name="preferences__pref_all_mms_title">获得所有的彩信</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">使用 SMSSecure 查看和存储接收到的所有文本消息</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">使用 SMSSecure 查看和存储接收到的所有多媒体消息</string>
-  <string name="preferences__input_settings">输入设置</string>
-  <string name="preferences__enable_enter_key_title">开启进入密钥</string>
-  <string name="preferences__replace_smiley_with_enter_key">使用输入的密钥替换相似的密钥</string>
-  <string name="preferences__pref_enter_sends_title">按下回车键发送</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">按下回车键将会发送短信息</string>
+  <string name="preferences__disable_emoji_drawer">禁用Emoji表情</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">如果你的输入法支持Emoji表情，请启用这个选项。</string>
   <string name="preferences__display_settings">显示设置</string>
-  <string name="preferences__choose_identity">选择身份</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">从联系人列表选择您的联系人条目。</string>
   <string name="preferences__change_passphrase"> 修改密码</string>
   <string name="preferences__change_my_passphrase">更改我的密码</string>
@@ -442,7 +443,6 @@
   <string name="preferences__pref_timeout_interval_title">超时间隔</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">忘记缓存密码的等待时间</string>
   <string name="preferences__notifications">通知</string>
-  <string name="preferences__display_message_notifications_in_status_bar">在状态栏显示信息通知</string>
   <string name="preferences__led_color">LED颜色</string>
   <string name="preferences__led_color_unknown">未知</string>
   <string name="preferences__pref_led_blink_title">LED闪烁规律</string>
@@ -490,6 +490,8 @@
   <string name="preferences__mmsc_password">MMSC 密码</string>
   <string name="preferences__sms_delivery_reports">短信发送报告</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">请求发送报告</string>
+  <string name="preferences__sms_delivery_reports_notification">短信发送报告通知</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">收到发送报告时显示通知</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">对话超过指定数量时自动删除旧的信息</string>
   <string name="preferences__delete_old_messages">删除旧信息</string>
   <string name="preferences__conversation_length_limit">对话数量限制</string>
@@ -512,6 +514,8 @@
   <string name="preferences__about_version">版本 %s</string>
   <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">屏蔽的联系人</string>
+  <string name="preferences__show_sent_time">显示发送时间</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">为消息显示发送时间而不是接收时间</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -566,7 +570,9 @@
   <string name="conversation__menu_add_attachment">添加附件</string>
   <string name="conversation__menu_delete_thread">删除线程</string>
   <string name="conversation__menu_view_media">所有图片</string>
+  <string name="conversation__menu_conversation_settings">会话设置</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">展开通知</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">添加到联系人</string>
   <!--conversation_group_options-->
@@ -597,12 +603,17 @@
   <string name="media_preview__save_title">保存</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">图片预览</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">为应用评分</string>
+  <string name="StoreRatingReminder_message">如果你喜欢这个应用，请为它评分来帮助我们。</string>
+  <string name="StoreRatingReminder_rate_now">为我们评分！</string>
+  <string name="StoreRatingReminder_no_thanks">不，谢谢</string>
+  <string name="StoreRatingReminder_later">以后再说</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">正在删除…</string>
   <string name="trimmer__deleting_old_messages">正在删除旧信息…</string>
   <string name="trimmer__old_messages_successfully_deleted">旧信息已被成功删除。</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">传输图标</string>
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

@@ -6,7 +6,6 @@
   <string name="delete">삭제</string>
   <string name="please_wait">잠시 기다려주세요...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">현재: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">아직 암호가 설정되지 않았습니다!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">하나의 대화당 %s개의 메세지</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">오래된 메세지를 전부 지울까요?</string>
@@ -36,9 +35,7 @@
   <string name="DraftDatabase_Draft_audio_snippet">(오디오)</string>
   <string name="DraftDatabase_Draft_video_snippet">(비디오)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">미디어를 선택할 앱을 찾을 수 없습니다.</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">사진 찍기</string>
   <string name="AttachmentTypeSelectorAdapter_picture">사진</string>
   <string name="AttachmentTypeSelectorAdapter_video">비디오</string>
   <string name="AttachmentTypeSelectorAdapter_audio">오디오</string>
@@ -70,10 +67,8 @@
   <string name="ConversationActivity_add_attachment">첨부 파일 추가</string>
   <string name="ConversationActivity_select_contact_info">연락처 정보 선택</string>
   <string name="ConversationActivity_compose_message">메세지 작성</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">첨부 파일을 추가하는 도중 오류가 발생했습니다.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">선택된 비디오가 메세지 용량 제한을 초과했습니다 (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">선택된 오디오가 메세지 용량 제한을 초과했습니다 (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">수신자가 올바른 전화번호나 이메일 주소를 가지고 있지 않습니다!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">보내고자 하는 메세지가 비어있습니다!</string>
   <string name="ConversationActivity_group_members">그룹 멤버</string>
   <string name="ConversationActivity_group_conversation">그룹 대화</string>
@@ -254,7 +249,6 @@
   <string name="KeyCachingService_passphrase_cached">SMS시큐어가 잠금 해제되었습니다</string>
   <string name="KeyCachingService_lock">암호로 잠그기</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">%2$d개의 대화에 %1$d개의 메세지</string>
   <string name="MessageNotifier_most_recent_from_s">다음으로부터의 최근 항목: %1$s</string>
   <string name="MessageNotifier_encrypted_message">메세지 암호화...</string>
   <string name="MessageNotifier_media_message_with_text">미디어 메세지: %s</string>
@@ -265,12 +259,13 @@
   <string name="MessageNotifier_mark_all_as_read">모두 읽음으로 표시</string>
   <string name="MessageNotifier_media_message">미디어 메세지</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">기존 암호:</string>
   <string name="change_passphrase_activity__new_passphrase">새 암호:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">새 암호 다시 입력:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">연락처 없음.</string>
   <string name="contact_selection_group_activity__finding_contacts">연락처 불러오는 중...</string>
   <!--single_contact_selection_activity-->
@@ -388,13 +383,7 @@
   <string name="preferences__pref_all_mms_title">모든 MMS 수신</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">도착하는 모든 텍스트 메세지를 SMS시큐어를 사용해 열람 및 저장</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">도착하는 모든 멀티미디어 메세지를 SMS시큐어를 사용해 열람 및 저장</string>
-  <string name="preferences__input_settings">입력 설정</string>
-  <string name="preferences__enable_enter_key_title">엔터 키 사용</string>
-  <string name="preferences__replace_smiley_with_enter_key">이모티콘 키를 엔터 키로 교체</string>
-  <string name="preferences__pref_enter_sends_title">엔터 키를 사용해 전송</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">엔터 키를 누르면 텍스트 메세지를 보냄</string>
   <string name="preferences__display_settings">디스플레이 설정</string>
-  <string name="preferences__choose_identity">신원 선택</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">연락처 목록에서 연락처 항목을 선택하세요.</string>
   <string name="preferences__change_passphrase">암호 변경</string>
   <string name="preferences__change_my_passphrase">내 암호 변경</string>
@@ -412,7 +401,6 @@
   <string name="preferences__pref_timeout_interval_title">시간 제한 초과 간격</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">메모리에서 암호를 지우기 전까지 경과되는 시간</string>
   <string name="preferences__notifications">알림</string>
-  <string name="preferences__display_message_notifications_in_status_bar">상태 표시줄에 메세지 알림 표시</string>
   <string name="preferences__led_color">LED 색상</string>
   <string name="preferences__led_color_unknown">알 수 없음</string>
   <string name="preferences__pref_led_blink_title">LED 깜빡임 패턴</string>
@@ -563,12 +551,12 @@
   <string name="media_preview__save_title">저장</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">이미지 미리보기</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">삭제 중...</string>
   <string name="trimmer__deleting_old_messages">오래된 메세지 삭제 중...</string>
   <string name="trimmer__old_messages_successfully_deleted">오래된 메세지가 성공적으로 삭제되었습니다</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transport 아이콘</string>
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

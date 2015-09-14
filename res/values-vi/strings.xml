@@ -5,7 +5,6 @@
   <string name="no">Không</string>
   <string name="delete">Xóa</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Hiện thời: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Bạn chưa thiết lập mật khẩu!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Xóa tất cả tin nhắn cũ bây giờ?</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Bạn có chắc là muốn thu ngắn tức thì các mạch chuyện trò xuống còn %s tin nhắn mới nhất?</string>
@@ -46,8 +45,6 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationActivity_add_attachment">Thêm tập tin đính kèm</string>
   <string name="ConversationActivity_select_contact_info">Chọn thông tin liên hệ</string>
   <string name="ConversationActivity_compose_message">Soạn nội dung</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Xin lỗi, có lỗi thiết đặt tập tin đính kèm của bạn.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Nơi nhận không phải là SMS hay địa chỉ email có hiệu lực!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Tin nhắn trống không!</string>
   <string name="ConversationActivity_group_conversation">Gom nhóm chat</string>
   <string name="ConversationActivity_unnamed_group">Nhóm chưa đặt tên</string>
@@ -197,12 +194,13 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="MessageNotifier_error_delivering_message">Có lỗi khi phân phối tin.</string>
   <string name="MessageNotifier_mark_all_as_read">Đánh dấu tất cả đã đọc</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">MẬT KHẨU CŨ:</string>
   <string name="change_passphrase_activity__new_passphrase">MẬT KHẨU MỚI:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">LẬP LẠI MẬT KHẨU MỚI:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Không có địa chỉ liên lạc.</string>
   <string name="contact_selection_group_activity__finding_contacts">Nạp danh sách liên hệ...</string>
   <!--single_contact_selection_activity-->
@@ -273,8 +271,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <string name="preferences__pref_all_mms_title">Nhận tất cả MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Dùng TextScure để xem và lưu trữ tất cả tin nhắn gửi vào</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Dùng SMSSecure để xem và lưu trữ tất cả tin nhắn đa phương tiện gửi vào</string>
-  <string name="preferences__input_settings">Thiết Đặt Cách Nhập</string>
-  <string name="preferences__enable_enter_key_title">Mở phím Enter</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Chọn khoản mục liên lạc của bạn trong danh sách liên lạc.</string>
   <string name="preferences__change_passphrase">Đổi mật khẩu</string>
   <string name="preferences__change_my_passphrase">Đổi mật khẩu của tôi</string>
@@ -286,7 +282,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <string name="preferences__pref_timeout_interval_title">Thời gian hết hạn</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Khoảng thời gian chờ trước khi quên đi mật khẩu trong bộ nhớ</string>
   <string name="preferences__notifications">Thông báo</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Hiển thị thông báo tin nhắn trong thanh trạng thái</string>
   <string name="preferences__led_color">Màu LED</string>
   <string name="preferences__pref_led_blink_title">Mô hình chớp nháy LED</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">Mô hình chớp nháy LED tùy biến thiết lập xong!</string>
@@ -378,8 +373,8 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

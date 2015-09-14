@@ -3,23 +3,4 @@
   <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">Krypterade SMS/MMS-konversationer på ett enkelt sätt!</string>
   <string name="Distribution_description">SMSSecure är en SMS/MMS-app som gör det möjligt att skydda din integritet när du kommunicerar med vänner.</string>
-  <string name="Distribution_long_description">
-SMSSecure är en SMS/MMS-app som gör det möjligt att skydda din integritet när du kommunicerar med vänner.
-Genom att använda SMSSecure kan du skicka SMS-meddelanden och dela media eller bifogade filer med fullständig sekretess.
-
-Funktioner:
-* Enkel. SMSSecure funkar som valfri annan SMS-app. Det är inget du behöver registrera dig på och inga nya tjänster dina vänner behöver gå med i.
-* Pålitlig. SMSecure kommunicerar med krypterade SMS-meddelanden. Ingen server eller internetanslutning behövs.
-* Privat. SMSSecure använder TextSecures krypteringsprotokoll för att säkra varje meddelande, varje gång.
-* Säker. Alla meddelanden är krypterade lokalt, så om din mobil försvinner eller blir stulen är dina meddelanden skyddade.
-* Öppen källkod. SMSSecure är gratis och öppen källkod, vilket gör att vem som helst kan bekräfta säkerheten genom att kolla koden.
-
-Vänligen skriv buggar, problem och funktionsförslag på:
-https://github.com/SMSSecure/SMSSecure/issues
-
-Källkoden kan hittas på:
-https://github.com/SMSSecure/SMSSecure
-
-Mer detaljer:
-http://smssecure.org</string>
 </resources>

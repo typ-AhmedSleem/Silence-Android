@@ -6,7 +6,6 @@
   <string name="delete">Ezabatu</string>
   <string name="please_wait">Itxaron, mesedez...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Une honetan: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Oraindik ez duzu pasahitza ezarri!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s mezu solasaldiko</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Mezu zahar guztiak ezabatu orain?</string>
@@ -35,7 +34,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="DraftDatabase_Draft_audio_snippet">(audioa)</string>
   <string name="DraftDatabase_Draft_video_snippet">(bideoa)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Ezin dut topatu euskarria aukeratzeko aplikaziorik</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">Irudia</string>
   <string name="AttachmentTypeSelectorAdapter_video">Bideoa</string>
@@ -65,10 +63,8 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_add_attachment">Eranskina gehitu</string>
   <string name="ConversationActivity_select_contact_info">Kontaktuaren informazioa aukeratu</string>
   <string name="ConversationActivity_compose_message">Mezua idatzi</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Barkatu, zure eranskina ezartzean errore bat izan da</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Barkatu, aukeratutako bideoak amainaren mugak gainditzen ditu t(%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Barkatu, aukeratutako audioak mezuaren tamaina mugak gainditzen ditu  (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Hartzailea SMS edo email baliogabea da!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mezua hutsik dago!</string>
   <string name="ConversationActivity_group_conversation">Taldeko solasaldia</string>
   <string name="ConversationActivity_unnamed_group">Izenik gabeko taldea</string>
@@ -264,12 +260,13 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="MessageNotifier_error_delivering_message">Errorea mezua banatzen.</string>
   <string name="MessageNotifier_mark_all_as_read">Denak irrakurritako gisa markatu</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">PASAHITZ ZAHARRA:</string>
   <string name="change_passphrase_activity__new_passphrase">PASAHITZ BERRIA:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">PASAHITZ BERRIA ERREPIKATU:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Kontakturik ez.</string>
   <string name="contact_selection_group_activity__finding_contacts">Kontaktuak kargatzen...</string>
   <!--single_contact_selection_activity-->
@@ -371,13 +368,7 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="preferences__pref_all_mms_title">Jaso MMS guztiak</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure erabili etorriko diren testu mezu guztiak ikusi eta gordetzeko</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">SMSSecure erabili etorriko diren multimedia mezu guztiak ikusi eta gordetzeko</string>
-  <string name="preferences__input_settings">Sarreraren Ezarpenak</string>
-  <string name="preferences__enable_enter_key_title">Enter tekla gaitu</string>
-  <string name="preferences__replace_smiley_with_enter_key">Smiley tekla Enter teklaren bidez ordezkatu</string>
-  <string name="preferences__pref_enter_sends_title">Enter teklak bidaltzen duena</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Enter tekla sakatzeak testu mezuak bidaliko ditu</string>
   <string name="preferences__display_settings">Bistaratze-ezarpenak</string>
-  <string name="preferences__choose_identity">Nortasuna aukeratu</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Hautatu zure kontaktua kontaktuen zerrendatik.</string>
   <string name="preferences__change_passphrase">Pasahitza aldatu</string>
   <string name="preferences__change_my_passphrase">Nire pasahitza aldatu</string>
@@ -393,7 +384,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="preferences__pref_timeout_interval_title">Iraungitzearen tartea</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Memoriatik pasahitza kentzeko itxaron behar den denbora</string>
   <string name="preferences__notifications">Jakinarazpenak</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Mezuaren jakinarazpenak erakutsi egoera-barran</string>
   <string name="preferences__led_color">LED kolorea</string>
   <string name="preferences__led_color_unknown">Ezezaguna</string>
   <string name="preferences__pref_led_blink_title">LEDaren keinuka eredua</string>
@@ -518,11 +508,11 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="media_preview__save_title">Gorde</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Irudiaren Aurrebista</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Ezabatzen...</string>
   <string name="trimmer__deleting_old_messages">Mezu zaharrak ezabatzen...</string>
   <string name="trimmer__old_messages_successfully_deleted">Mezu zaharrak ondo ezabatu dira</string>
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

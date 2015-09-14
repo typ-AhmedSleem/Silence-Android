@@ -6,7 +6,6 @@
   <string name="delete">Διαγραφή</string>
   <string name="please_wait">Παρακαλώ περιμένετε...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Αυτή τη στιγμή: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Δεν έχετε ορίσει συνθηματική φράση!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s μηνύματα ανά συζήτηση</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Διαγραφή όλων των παλιών μηνυμάτων τώρα;</string>
@@ -37,7 +36,6 @@
   <string name="DraftDatabase_Draft_audio_snippet">(ήχος)</string>
   <string name="DraftDatabase_Draft_video_snippet">(βίντεο)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Δεν μπορεί να βρεθεί μια εφαρμογή για επιλογή μέσων ενημέρωσης.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">Εικόνα</string>
   <string name="AttachmentTypeSelectorAdapter_video">Βίντεο</string>
@@ -72,10 +70,8 @@
   <string name="ConversationActivity_add_attachment">Προσθήκη συνημμένου</string>
   <string name="ConversationActivity_select_contact_info">Επιλέξτε πληροφορίες επαφής</string>
   <string name="ConversationActivity_compose_message">Νέο μήνυμα</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Συγγνώμη, σφάλμα κατά τη σύναψη αρχείου.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Συγγνώμη, το επιλεγμένο βίντεο υπερβαίνει το μέγιστο μέγεθος μηνύματος  (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Συγγνώμη, το επιλεγμένο αρχείο ήχου υπερβαίνει το μέγιστο μέγεθος μηνύματος (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Ο παραλήπτης δεν είναι έγκυρη διεύθυνση SMS ή email!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Το μήνυμα είναι κενό!</string>
   <string name="ConversationActivity_group_members">Μέλη ομάδας</string>
   <string name="ConversationActivity_group_conversation">Ομαδική Συζήτηση</string>
@@ -293,12 +289,13 @@
   <string name="MessageNotifier_mark_all_as_read">Επισήμανση όλων ως αναγνωσμένα</string>
   <string name="MessageNotifier_media_message">Μήνυμα πολυμέσων</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">ΠΑΛΙΑ ΣΥΝΘΗΜΑΤΙΚΗ ΦΡΑΣΗ</string>
   <string name="change_passphrase_activity__new_passphrase">ΝΕΑ ΣΥΝΘΗΜΑΤΙΚΗ ΦΡΑΣΗ:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">ΕΠΑΝΑΛΗΨΗ ΝΕΑΣ ΣΥΝΘΗΜΑΤΙΚΗΣ ΦΡΑΣΗΣ:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Δεν υπάρχουν επαφές.</string>
   <string name="contact_selection_group_activity__finding_contacts">Φόρτωση των επαφών</string>
   <!--single_contact_selection_activity-->
@@ -423,13 +420,7 @@
   <string name="preferences__pref_all_mms_title">Λήψη όλων των μηνυμάτων MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Χρήση SMSSecure για προβολή και αποθήκευση όλων των μηνυμάτων SMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Χρήση SMSSecure για προβολή και αποθήκευση όλων των μηνυμάτων MMS</string>
-  <string name="preferences__input_settings">Ρυθμίσεις εισαγωγής</string>
-  <string name="preferences__enable_enter_key_title">Ενεργοποίηση πλήκτρου Enter</string>
-  <string name="preferences__replace_smiley_with_enter_key">Αντικαθιστά το πλήκτρο smiley με το πλήκτρο Enter</string>
-  <string name="preferences__pref_enter_sends_title">Το Enter αποστέλλει</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Αποστολή μηνυμάτων με το πλήκτρο enter</string>
   <string name="preferences__display_settings">Ρυθμίσεις Προβολής</string>
-  <string name="preferences__choose_identity">Επιλέξτε Ταυτότητα</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Επιλέξτε την επαφή σας από τη λίστα επαφών.</string>
   <string name="preferences__change_passphrase">Αλλαγή συνθηματικής φράσης</string>
   <string name="preferences__change_my_passphrase">Άλλαξε τη συνθηματική φράση μου</string>
@@ -447,7 +438,6 @@
   <string name="preferences__pref_timeout_interval_title">Χρονικό όριο</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Πόση ώρα θα περιμένουμε πριν σβήσουμε τη συνθηματική φράση από τη μνήμη</string>
   <string name="preferences__notifications">Ειδοποιήσεις</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Προβολή ειδοποιήσεων για νέα μηνύματα στη γραμμή κατάστασης</string>
   <string name="preferences__led_color">Χρώμα LED</string>
   <string name="preferences__led_color_unknown">Αγνωστο</string>
   <string name="preferences__pref_led_blink_title">Μοτίβο αναβοσβήματος του LED</string>
@@ -598,12 +588,12 @@
   <string name="media_preview__save_title">Αποθήκευση</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Προεπισκόπηση Εικόνας</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Γίνεται διαγραφή...</string>
   <string name="trimmer__deleting_old_messages">Τα παλία μηνύματα διαγράφονται...</string>
   <string name="trimmer__old_messages_successfully_deleted">Τα παλιά μηνύματα διεγράφτηκαν επιτυχώς</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Μεταφορά εικονίδιου</string>
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

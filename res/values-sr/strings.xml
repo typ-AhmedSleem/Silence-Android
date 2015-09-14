@@ -6,7 +6,6 @@
   <string name="delete">Обриши</string>
   <string name="please_wait">Сачекајте...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Тренутно: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Још нисте поставили лозинку!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s порука по преписци</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Обрисати старе поруке сада?</string>
@@ -38,7 +37,7 @@
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Не могу да нађем апликацију за избор медијума.</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">Фотографиши</string>
+  <string name="AttachmentTypeSelectorAdapter_camera">Камера</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Слика</string>
   <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Звук</string>
@@ -72,6 +71,7 @@
   <string name="ConversationActivity_select_contact_info">Изаберите податке о контакту</string>
   <string name="ConversationActivity_compose_message">Састави поруку</string>
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Дошло је до грешке при постављању вашег прилога.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Анимирана сличица коју сте изабрали је превелика!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Изабрани видео прекорачује ограничења величине поруке (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Изабрани звук прекорачује ограничења величине поруке (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Прималац није исправан број или е-адреса!</string>
@@ -284,7 +284,7 @@
   <string name="KeyCachingService_passphrase_cached">Поруке су откључане</string>
   <string name="KeyCachingService_lock">Закључај лозинком</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">%1$d порука у %2$d преписки</string>
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d нових порука у %2$d преписки</string>
   <string name="MessageNotifier_most_recent_from_s">Најскорија од: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Шифрована порука...</string>
   <string name="MessageNotifier_media_message_with_text">Мултимедијална порука: %s</string>
@@ -295,16 +295,21 @@
   <string name="MessageNotifier_mark_all_as_read">Означи све прочитаним</string>
   <string name="MessageNotifier_mark_read">Означи прочитаним</string>
   <string name="MessageNotifier_media_message">Мултимедијална порука</string>
+  <string name="MessageNotifier_message_received">Порука од %s.</string>
   <string name="MessageNotifier_reply">Одговори</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Брзи одговор није доступан ако је Сигурни СМС закључан!</string>
   <string name="QuickResponseService_problem_sending_message">Проблем са слањем поруке!</string>
+  <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Нова сигурна порука</string>
+  <string name="SingleRecipientNotificationBuilder_contents_hidden">Садржај сакривен</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">СТАРА ЛОЗИНКА:</string>
   <string name="change_passphrase_activity__new_passphrase">НОВА ЛОЗИНКА:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">ПОНОВИТЕ НОВУ ЛОЗИНКУ:</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Унесите име или број</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Нема контаката.</string>
   <string name="contact_selection_group_activity__finding_contacts">Учитавам контакте…</string>
   <!--single_contact_selection_activity-->
@@ -328,7 +333,6 @@
   <string name="conversation_activity__compose_description">Састављање поруке</string>
   <string name="conversation_activity__emoji_toggle_description">Емоџи тастатура</string>
   <string name="conversation_activity__attachment_thumbnail">Сличица прилога</string>
-  <string name="conversation_activity__quick_attachment_drawer_toggle_description">Фиока прилога</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Преузимање мултимедијалне поруке</string>
   <string name="conversation_item__mms_image_description">Мултимедијална порука</string>
@@ -433,6 +437,9 @@
   <string name="arrays__settings_default">Подразумевана поставка</string>
   <string name="arrays__enabled">Омогућена</string>
   <string name="arrays__disabled">Онемогућена</string>
+  <string name="arrays__name_and_message">Име и порука</string>
+  <string name="arrays__name_only">Само име</string>
+  <string name="arrays__neither">Ниједно</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d сат</item>
@@ -446,13 +453,9 @@
   <string name="preferences__pref_all_mms_title">Примај све ММС</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Користи Сигурни СМС за приказ и складиштење свих долазних текстуалних порука</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Користи Сигурни СМС за приказ и складиштење свих долазних мултимедијалних порука</string>
-  <string name="preferences__input_settings">Поставке уноса</string>
-  <string name="preferences__enable_enter_key_title">Омогући Ентер тастер</string>
-  <string name="preferences__replace_smiley_with_enter_key">Замени тастер емотикона Ентер тастером</string>
-  <string name="preferences__pref_enter_sends_title">Ентер тастер шаље</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Притисак на Ентер тастер ће послати текстуалне поруке</string>
+  <string name="preferences__disable_emoji_drawer">Онемогући фиоку емоџија</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Укључите ово ако ваша тастатура подржава емоџије.</string>
   <string name="preferences__display_settings">Поставке приказа</string>
-  <string name="preferences__choose_identity">Изаберите идентитет</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Изаберите унос вашег контакта са списка контаката.</string>
   <string name="preferences__change_passphrase">Измени лозинку</string>
   <string name="preferences__change_my_passphrase">Измени моју лозинку</string>
@@ -470,7 +473,7 @@
   <string name="preferences__pref_timeout_interval_title">Интервал истека</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Време чекања пре уклањања лозинке из меморије</string>
   <string name="preferences__notifications">Обавештења</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Прикажи обавештења о порукама у траци стања</string>
+  <string name="preferences__enable_message_notifications">Обавештења о порукама</string>
   <string name="preferences__led_color">Боја ЛЕД светла</string>
   <string name="preferences__led_color_unknown">Непозната</string>
   <string name="preferences__pref_led_blink_title">Трептање ЛЕД светла</string>
@@ -518,6 +521,8 @@
   <string name="preferences__mmsc_password">ММСЦ лозинка</string>
   <string name="preferences__sms_delivery_reports">Извештаји о испоруци СМС-а</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Захтевај извештај о испоруци за сваку послату СМС поруку</string>
+  <string name="preferences__sms_delivery_reports_notification">Обавештење о испоруци СМС-а</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Приказ обавештења кад стигне извештај о испоруци</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Аутоматски обриши старе поруке када нит преписке пређе наведену дужину</string>
   <string name="preferences__delete_old_messages">Бриши старе поруке</string>
   <string name="preferences__conversation_length_limit">Ограничење дужине преписке</string>
@@ -540,6 +545,9 @@
   <string name="preferences__about_version">Издање %s</string>
   <string name="preferences__about_build_id">ИД  изградње: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Блокирани контакти</string>
+  <string name="preferences_notifications__display_in_notifications">Прикажи у обавештењу</string>
+  <string name="preferences__show_sent_time">Прикажи време слања</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Прикажи време слања уместо време пристизања долазне поруке</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -627,13 +635,17 @@
   <string name="media_preview__save_title">Сачувај</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Приказ слике</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Оцените апликацију</string>
+  <string name="StoreRatingReminder_message">Ако уживате у коришћењу ове апликације, помозите нам тако што ћете да је оцените.</string>
+  <string name="StoreRatingReminder_rate_now">Оцени одмах!</string>
+  <string name="StoreRatingReminder_no_thanks">Не, хвала</string>
+  <string name="StoreRatingReminder_later">Касније</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Брисање...</string>
   <string name="trimmer__deleting_old_messages">Бришем старе поруке...</string>
   <string name="trimmer__old_messages_successfully_deleted">Старе поруке успешно обрисане</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Икона преноса</string>
-  <!--quick_attachment_drawer-->
-  <string name="quick_camera_unavailable">Камера није доступна</string>
   <!--EOF-->
 </resources>

@@ -3,20 +3,4 @@
   <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">带给您简便的安全会话体验。</string>
   <string name="Distribution_description">SMSSecure是一个帮助保护你与朋友聊天消息的隐私安全的应用。</string>
-  <string name="Distribution_long_description">
-SMSSecure是一个帮助保护你与朋友聊天消息的隐私安全的应用。
-通过SMSSecure，你可以发送绝对私密的短信或彩信。
-
-特点：
-*简便：SMSSecure像其它的短信应用一样，无需注册登录，并且你的朋友也不必安装其它服务。
-*可靠：SMSSecure发送加密信息，无需流量和WiFi等网络连接。
-*私密：SMSSecure使用TextSecure的高级加密协议，为每条信息提供隐私安全。
-*开源：SMSSecure是自由并开源的，可以供任何人检查源代码来确认是否具有隐藏后门和漏洞。
-
-欢迎到https://github.com/SMSSecure/SMSSecure/issues
-提供任何bug、问题、功能需求。
-
-源代码地址：https://github.com/SMSSecure/SMSSecure
-
-更多信息请访问：http://smssecure.org</string>
 </resources>

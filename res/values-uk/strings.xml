@@ -5,7 +5,6 @@
   <string name="no">Ні</string>
   <string name="delete">Видалити</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Зараз: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ви ще не вказали фразу-пароль!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Вилучити всі старі повідомлення зараз?</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Ви впевнені що хочете негайно обрізати всі розмови до %s останніх повідомлень?</string>
@@ -37,8 +36,6 @@
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Ви впевнені, що хочете назавжди видалити цю розмову?</string>
   <string name="ConversationActivity_add_attachment">Додати прикріплення</string>
   <string name="ConversationActivity_select_contact_info">Виберіть контакт</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Вибачте, сталася помилка при обробці вкладення.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Адреса одержувача не є ні номером телефону, ні адресою електронної пошти!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Повідомлення порожнє!</string>
   <string name="ConversationActivity_d_recipients_in_group">%d отримувачів в групі</string>
   <string name="ConversationActivity_d_recipients_in_group_singular">1 учасник</string>
@@ -153,12 +150,13 @@
   <string name="MessageNotifier_error_delivering_message">Помилка доставки повідомлення.</string>
   <string name="MessageNotifier_mark_all_as_read">Позначити все як прочитане</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">СТАРА ФРАЗА-КЛЮЧ:</string>
   <string name="change_passphrase_activity__new_passphrase">НОВА ФРАЗА-КЛЮЧ:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">ПОВТОРІТЬ НОВУ ФРАЗУ:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Контактів не знайдено.</string>
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
@@ -228,7 +226,6 @@
   <string name="preferences__pref_timeout_interval_title">Термін зберігання</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Час, після якого фраза-пароль буде стерта з пам’яті</string>
   <string name="preferences__notifications">Сповіщення</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Показувати сповіщення повідомлень в рядку стану</string>
   <string name="preferences__led_color">Колір LED</string>
   <string name="preferences__pref_led_blink_title">Шаблон мерехтіння LED</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">Власний шаблон мерехтіння LED задано!</string>
@@ -316,8 +313,8 @@
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

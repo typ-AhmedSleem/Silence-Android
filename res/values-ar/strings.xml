@@ -6,7 +6,6 @@
   <string name="delete">حذف</string>
   <string name="please_wait">رجاء الانتظار...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">حاليا: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">لم تقم بتحديد عبارة سرية بعد!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s رسائل في المحادثة</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">احذف جميع الرسائل القديمة الآن؟</string>
@@ -33,7 +32,6 @@
   <string name="DraftDatabase_Draft_audio_snippet">(صوت)</string>
   <string name="DraftDatabase_Draft_video_snippet">(فيديو)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">لم يتم العثور على تطبيق لاختيار ملف.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">صورة</string>
   <string name="AttachmentTypeSelectorAdapter_video">فيديو</string>
@@ -65,10 +63,8 @@
   <string name="ConversationActivity_add_attachment">إضافة مرفقات</string>
   <string name="ConversationActivity_select_contact_info">أختر بيانات جهة الاتصال</string>
   <string name="ConversationActivity_compose_message">إنشاء رسالة</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">عذراً، حصل خطأ أثناء رفع المرفق.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">عذرا، حجم الفيديو يتجاوز الحد المسموح (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">عذرا، حجم ملف الصوت يتجاوز الحد المسموح (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">الطرف الآخر ليس رقم هاتف أو عنوان بريد الكتروني صحيح!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">الرسالة فارغة</string>
   <string name="ConversationActivity_group_conversation">دردشة جماعية</string>
   <string name="ConversationActivity_unnamed_group">مجموعة غير مسماه</string>
@@ -250,12 +246,13 @@
   <string name="MessageNotifier_error_delivering_message">خطأ بالارسال</string>
   <string name="MessageNotifier_mark_all_as_read">اعتبر جميع الرسائل مقروءة</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">العبارة السرية القديمة:</string>
   <string name="change_passphrase_activity__new_passphrase">العبارة السرية الجديدة:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">تكرار العبارة السرية الجديدة:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">لا توجد جهات اتصال.</string>
   <string name="contact_selection_group_activity__finding_contacts">تحميل جهات الاتصال...</string>
   <!--single_contact_selection_activity-->
@@ -379,13 +376,7 @@
   <string name="preferences__pref_all_mms_title">استقبال كل رسائل الوسائط المتعددة</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">استخدم تيكست سيكيور لعرض وحفظ كل الرسائل القصيرة الواردة</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">استخدم تيكست سيكيور لعرض وحفظ كل رسائل الوسائط المتعددة الواردة</string>
-  <string name="preferences__input_settings">خيارات الإدخال</string>
-  <string name="preferences__enable_enter_key_title">تفعيل مفتاح الإدخال</string>
-  <string name="preferences__replace_smiley_with_enter_key">استبدال مفتاح الابتسامة بمفتاح الدخول</string>
-  <string name="preferences__pref_enter_sends_title">مفتاح الدخول يقوم بالإرسال</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">الضغط على مفتاح الدخول سيقوم بالإرسال الرسالة</string>
   <string name="preferences__display_settings">إعدادات العرض</string>
-  <string name="preferences__choose_identity">اختيار الهوية</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">اختر جهة الاتصال من القائمة</string>
   <string name="preferences__change_passphrase">غير العبارة السرية</string>
   <string name="preferences__change_my_passphrase">غير عبارتي السرية</string>
@@ -403,7 +394,6 @@
   <string name="preferences__pref_timeout_interval_title">مدة الصلاحية</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">الوقت اللازم ليتم مسح العبارة السرية من الذاكرة</string>
   <string name="preferences__notifications">التنبيهات</string>
-  <string name="preferences__display_message_notifications_in_status_bar">عرض تنبيهات الرسائل بشريط التنبيهات</string>
   <string name="preferences__led_color">لون ضوء التنبيه LED</string>
   <string name="preferences__led_color_unknown">مجهول</string>
   <string name="preferences__pref_led_blink_title">نمط وميض LED</string>
@@ -549,12 +539,12 @@
   <string name="media_preview__save_title">أحفظ</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">معاينة الصورة</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">جار الحذف...</string>
   <string name="trimmer__deleting_old_messages">جار حذف الرسائل القديمة...</string>
   <string name="trimmer__old_messages_successfully_deleted">تم حذف الرسائل القديمة بنجاح</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">أيقونة النقل.</string>
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

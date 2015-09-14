@@ -6,7 +6,6 @@
   <string name="delete">Sil</string>
   <string name="please_wait">Lütfen bekleyin...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Şu anda: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Hala bir parola belirlememişsiniz!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">sohbet başına %s mesaj</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Tüm eski mesajlar silinsin mi?</string>
@@ -35,7 +34,6 @@ erişebilir.</string>
   <string name="DraftDatabase_Draft_audio_snippet">(ses)</string>
   <string name="DraftDatabase_Draft_video_snippet">(görüntü)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Seçtiğiniz medya için bir uygulama bulunamadı.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">Resim</string>
   <string name="AttachmentTypeSelectorAdapter_video">Görüntü</string>
@@ -65,10 +63,8 @@ erişebilir.</string>
   <string name="ConversationActivity_add_attachment">Ek ekle</string>
   <string name="ConversationActivity_select_contact_info">Kişi bilgisi seç</string>
   <string name="ConversationActivity_compose_message">Mesaj Yaz</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Ekiniz gönderilirken bir hata oluştu.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Üzgünüz, seçilen görüntü mesaj boyutu limitini aşıyor (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Üzgünüz, seçilen ses mesaj boyutu limitini aşıyor (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Alıcı geçerli bir SMS veya e-posta adresi değil!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesaj boş!</string>
   <string name="ConversationActivity_group_conversation">Grup sohbeti</string>
   <string name="ConversationActivity_unnamed_group">Adlandırılmamış grup</string>
@@ -251,12 +247,13 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="MessageNotifier_error_delivering_message">Hata mesaj iletimi</string>
   <string name="MessageNotifier_mark_all_as_read">Tümünü okundu işaretle</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">ESKİ PAROLA:</string>
   <string name="change_passphrase_activity__new_passphrase">YENİ PAROLA:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">YENİ PAROLA TEKRAR:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Kişi yok.</string>
   <string name="contact_selection_group_activity__finding_contacts">Kişiler yükleniyor...</string>
   <!--single_contact_selection_activity-->
@@ -361,13 +358,7 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__pref_all_mms_title">Tüm MMS\'leri al</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Gelen tüm mesajların gösterimi ve saklanması için SMSSecure kullan</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Gelen tüm multimedya mesajların gösterimi ve saklanması için SMSSecure kullan</string>
-  <string name="preferences__input_settings">Girdi Ayarları</string>
-  <string name="preferences__enable_enter_key_title">Enter tuşunu etkinleştir</string>
-  <string name="preferences__replace_smiley_with_enter_key">Smiley tuşunu bir Enter tuşu ile değiştir</string>
-  <string name="preferences__pref_enter_sends_title">Enter tuşu gönderir</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Enter tuşuna basarak mesajı gönder</string>
   <string name="preferences__display_settings">Ekran ayarları</string>
-  <string name="preferences__choose_identity">Kimlik seç</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Kişi girdinizi kişi listesinden seçin.</string>
   <string name="preferences__change_passphrase">Parola Değiştir</string>
   <string name="preferences__change_my_passphrase">Parolamı değiştir</string>
@@ -383,7 +374,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__pref_timeout_interval_title">Zaman aşımı aralığı</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Hafızadaki parolanın unutulması için geçmesi gereken zaman miktarı</string>
   <string name="preferences__notifications">Bildirimler</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Durum çubuğunda mesaj bildirimlerini göster</string>
   <string name="preferences__led_color">LED rengi</string>
   <string name="preferences__led_color_unknown">Bilinmeyen</string>
   <string name="preferences__pref_led_blink_title">LED yanıp sönme şekli</string>
@@ -518,11 +508,11 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="media_preview__save_title">Kaydet</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Resim Önizleme</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Siliniyor...</string>
   <string name="trimmer__deleting_old_messages">Eski mesajlar siliniyor...</string>
   <string name="trimmer__old_messages_successfully_deleted">Eski mesajlar silindi</string>
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

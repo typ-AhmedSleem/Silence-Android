@@ -5,7 +5,6 @@
   <string name="delete">Избриши</string>
   <string name="please_wait">Се вчитува...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Моментално: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Немате поставено лозинка!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s пораки по конверзација</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Избриши ги сите стари пораки?</string>
@@ -69,9 +68,10 @@
   <!--KeyCachingService-->
   <!--MessageNotifier-->
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
   <!--blocked_contacts_fragment-->
@@ -128,8 +128,8 @@
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

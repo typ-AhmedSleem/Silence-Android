@@ -6,7 +6,6 @@
   <string name="delete">Izbriši</string>
   <string name="please_wait">Počakajte...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Trenutno: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Niste še nastavili gesla!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">Število poročil na pogovor: %s</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Izbrišem stara sporočila?</string>
@@ -34,9 +33,9 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DraftDatabase_Draft_audio_snippet">(zvok)</string>
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Ne najdem aplikacije za izbor datotek.</string>
+  <string name="AttachmentManager_cant_open_media_selection">Ne najdem ustrezne aplikacije za to opravilo.</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">Zajemi fotografijo</string>
+  <string name="AttachmentTypeSelectorAdapter_camera">Kamera</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Slika</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Zvok</string>
@@ -69,10 +68,11 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_add_attachment">Dodaj priponko</string>
   <string name="ConversationActivity_select_contact_info">Izberi podatke o stiku</string>
   <string name="ConversationActivity_compose_message">Sestavi sporočilo</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Oprostite, pri nastavljanju priponke je prišlo do napake.</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Prišlo je do napake pri nastavljanju priponke.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Izbrani gif je prevelik!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Izbran video posnetek presega omejitev velikosti (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Izbran zvočni posnetek presega omejitev velikosti (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Naslov prejemnika ni veljaven SMS oz. email nalsov!</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Neveljaven SMS/e-poštni naslov</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Sporočilo je prazno!</string>
   <string name="ConversationActivity_group_members">Člani skupine</string>
   <string name="ConversationActivity_group_conversation">Skupinski pogovor</string>
@@ -268,7 +268,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="KeyCachingService_passphrase_cached">SMSSecure je odklenjen</string>
   <string name="KeyCachingService_lock">Zakleni z geslom</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">Sporočil: %1$d. Pogovorov: %2$d.</string>
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">Nova sporočila: %1$d. Pogovori: %2$d.</string>
   <string name="MessageNotifier_most_recent_from_s">Zadnje od: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Šifrirano sporočilo...</string>
   <string name="MessageNotifier_media_message_with_text">Multimedijsko sporočilo: %s</string>
@@ -279,16 +279,21 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="MessageNotifier_mark_all_as_read">Označi vse kot prebrano</string>
   <string name="MessageNotifier_mark_read">Označi kot prebrano</string>
   <string name="MessageNotifier_media_message">Multiedijsko sporočilo</string>
+  <string name="MessageNotifier_message_received">Sporočilo za %s uspešno dostavljeno.</string>
   <string name="MessageNotifier_reply">Odgovori</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Hiter odziv ni mogoč kadar je aplikacija SMSSecure zaklenjena!</string>
   <string name="QuickResponseService_problem_sending_message">Težave pri pošiljanju sporočila!</string>
+  <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Novo sporočilo SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_contents_hidden">Vsebina prikrita</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staro geslo:</string>
   <string name="change_passphrase_activity__new_passphrase">Novo geslo:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">Ponovi novo geslo:</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Vpišite ime ali številko</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Ni stikov.</string>
   <string name="contact_selection_group_activity__finding_contacts">Nalagam stike...</string>
   <!--single_contact_selection_activity-->
@@ -397,7 +402,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="AndroidManifest__complete_key_exchange">Dokončaj izmenjavo ključev</string>
   <string name="AndroidManifest__log_submit">Oddaj sistemsko zabeležbo</string>
   <string name="AndroidManifest__media_preview">Ogled medija</string>
-  <string name="AndroidManifest__media_overview">Vse slike</string>
+  <string name="AndroidManifest__media_overview">Slike iz pogovora</string>
   <string name="AndroidManifest__media_overview_named">Vse slike z %1$s</string>
   <string name="AndroidManifest__message_details">Podrobnosti sporočila</string>
   <!--arrays.xml-->
@@ -412,6 +417,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="arrays__settings_default">Sistemsko privzeto</string>
   <string name="arrays__enabled">Vklopljeno</string>
   <string name="arrays__disabled">Izklopljeno</string>
+  <string name="arrays__name_and_message">Naslovnik in sporočilo</string>
+  <string name="arrays__name_only">Samo naslovnik</string>
+  <string name="arrays__neither">Brez</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d ura</item>
@@ -426,13 +434,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__pref_all_mms_title">Prejemaj sporočila MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil SMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil MMS</string>
-  <string name="preferences__input_settings">Vnos besedila</string>
-  <string name="preferences__enable_enter_key_title">Vklopi tipko \'pošlji\'</string>
-  <string name="preferences__replace_smiley_with_enter_key">Zamenjaj tipko \'smeško\' s tipko \'pošlji\'</string>
-  <string name="preferences__pref_enter_sends_title">Naprej/Enter pošlje</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Pritisk na tipko naprej/enter pošlje sporočilo</string>
+  <string name="preferences__disable_emoji_drawer">Izklopi zaganjalnik za Emoji</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Izberite to opcijo, če vaša tipkovnica podpira Emoji-je.</string>
   <string name="preferences__display_settings">Nastavitve prikaza</string>
-  <string name="preferences__choose_identity">Izberi identiteto</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Na sezmanu stikov izberite svojo lastno vizitko.</string>
   <string name="preferences__change_passphrase">Zamenjaj geslo</string>
   <string name="preferences__change_my_passphrase">Nastavi novo geslo</string>
@@ -450,7 +454,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__pref_timeout_interval_title">Čas pomnjenja gesla</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Koliko časa naj bo geslo v pomnilniku, preden bo pozabljeno</string>
   <string name="preferences__notifications">Obvestila</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Prikaz obvestila o sporočilu v statusni vrstici</string>
+  <string name="preferences__enable_message_notifications">Omogoči obvestila o novih sporočilih</string>
   <string name="preferences__led_color">Barva LED</string>
   <string name="preferences__led_color_unknown">Neznano</string>
   <string name="preferences__pref_led_blink_title">Vzorec utripanja LED</string>
@@ -498,6 +502,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__mmsc_password">Geslo MMSC</string>
   <string name="preferences__sms_delivery_reports">Potrdila o dostavi SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Zahtevaj potrdilo o dostavi za vsako poslano sporočilo SMS</string>
+  <string name="preferences__sms_delivery_reports_notification">Obvestilo o uspešni dostavi</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Prikaz obvestila, kadar je prejeto potrdilo o uspešni dostavi SMS sporočila</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Samodejen izbris starih sporočil, ko pogovor preseže določeno dolžino</string>
   <string name="preferences__delete_old_messages">Izbris starih sporočil</string>
   <string name="preferences__conversation_length_limit">Omejitev dolžine pogovorov</string>
@@ -520,6 +526,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__about_version">Različica %s</string>
   <string name="preferences__about_build_id">Podrazličica: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Blokirani stiki</string>
+  <string name="preferences_notifications__display_in_notifications">Prikaži v obvestilih</string>
+  <string name="preferences__show_sent_time">Prikaz časa pošiljanja</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pri dohodnih sporočilih bo namesto časa prejema prikazan čas pošiljanja.</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -573,7 +582,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj priponko</string>
   <string name="conversation__menu_delete_thread">Izbriši pogovor</string>
-  <string name="conversation__menu_view_media">Vse slike</string>
+  <string name="conversation__menu_view_media">Slike iz pogovora</string>
   <string name="conversation__menu_conversation_settings">Nastavitve pogovora</string>
   <!--conversation_popup-->
   <string name="conversation_popup__menu_expand_popup">Povečaj okno</string>
@@ -607,13 +616,17 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="media_preview__save_title">Shrani</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Ogled slike</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Ocenite to aplikacijo</string>
+  <string name="StoreRatingReminder_message">Če se vam zdi aplikacija SMSSecure koristna, si prosimo vzemite čas in jo ocenite.</string>
+  <string name="StoreRatingReminder_rate_now">Oceni zdaj!</string>
+  <string name="StoreRatingReminder_no_thanks">Ne, hvala!</string>
+  <string name="StoreRatingReminder_later">Kasneje</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Brišem...</string>
   <string name="trimmer__deleting_old_messages">Brišem stara sporočila...</string>
   <string name="trimmer__old_messages_successfully_deleted">Stara sporočila so bila uspešno izbrisana</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ikona transporta</string>
-  <!--quick_attachment_drawer-->
-  <string name="quick_camera_unavailable">Kamera ni na voljo</string>
   <!--EOF-->
 </resources>

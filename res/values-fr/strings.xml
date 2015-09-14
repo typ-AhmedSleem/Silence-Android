@@ -6,7 +6,6 @@
   <string name="delete">Supprimer</string>
   <string name="please_wait">Veuillez patienter...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Actuellement : %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vous n’avez pas encore défini de phrase de passe !</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s messages par conversation</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Supprimer tous les anciens messages maintenant ?</string>
@@ -38,7 +37,7 @@ en mesure de les lire.</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Impossible de trouver une application pour sélectionner le média.</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">Prendre une photo</string>
+  <string name="AttachmentTypeSelectorAdapter_camera">Appareil photo</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Image</string>
   <string name="AttachmentTypeSelectorAdapter_video">Vidéo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
@@ -72,9 +71,10 @@ en mesure de les lire.</string>
   <string name="ConversationActivity_select_contact_info">Sélectionner les informations du contact</string>
   <string name="ConversationActivity_compose_message">Rédiger un message</string>
   <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Désolé, il y a eu une erreur lors de l\'ajout de votre pièce jointe.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Le GIF sélectionné est trop grand !</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Désolé, la vidéo sélectionnée dépasse les restrictions de taille de message (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Désolé, le fichier audio sélectionné dépasse les restrictions de taille de message (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Le destinataire n’est pas une adresse SMS ou e-mail valide !</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Le destinataire n’est pas un numéro ou une adresse e-mail valide !</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Le message est vide !</string>
   <string name="ConversationActivity_group_members">Membres du groupe</string>
   <string name="ConversationActivity_group_conversation">Conversation de groupe</string>
@@ -281,7 +281,7 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="KeyCachingService_passphrase_cached">SMSSecure est déverrouillé</string>
   <string name="KeyCachingService_lock">Verrouiller avec la phrase de passe</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">%1$d messages dans %2$d conversations</string>
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d messages dans %2$d conversations</string>
   <string name="MessageNotifier_most_recent_from_s">Le plus récent de : %1$s</string>
   <string name="MessageNotifier_encrypted_message">Message chiffré…</string>
   <string name="MessageNotifier_media_message_with_text">Message multimédia : %s</string>
@@ -292,16 +292,21 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="MessageNotifier_mark_all_as_read">Tout marquer comme lu</string>
   <string name="MessageNotifier_mark_read">Lu</string>
   <string name="MessageNotifier_media_message">Message multimédia</string>
+  <string name="MessageNotifier_message_received">Message reçu par %s.</string>
   <string name="MessageNotifier_reply">Répondre</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Le mode Réponse Rapide n\'est pas disponible lorsque SMSSecure est vérouillé !</string>
   <string name="QuickResponseService_problem_sending_message">Problème lors de l\'envoi du message !</string>
+  <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Nouveau message SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_contents_hidden">Contenu caché</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Ancienne phrase de passe :</string>
   <string name="change_passphrase_activity__new_passphrase">Nouvelle phrase de passe :</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">Répéter la nouvelle phrase de passe :</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Entrez un nom ou un numéro</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Aucun contact.</string>
   <string name="contact_selection_group_activity__finding_contacts">Chargement des contacts...</string>
   <!--single_contact_selection_activity-->
@@ -429,6 +434,12 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="arrays__settings_default">Paramètres par défaut</string>
   <string name="arrays__enabled">Activé</string>
   <string name="arrays__disabled">Désactivé</string>
+  <string name="arrays__name_and_message">Nom et message</string>
+  <string name="arrays__name_only">Nom uniquement</string>
+  <string name="arrays__neither">Aucun des deux</string>
+  <string name="arrays__enter_key">Afficher la touche Entrer</string>
+  <string name="arrays__emoji_key">Afficher la touche des emojis</string>
+  <string name="arrays__send_key">Afficher le bouton d\'envoi</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d heure</item>
@@ -441,13 +452,10 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__pref_all_mms_title">Recevoir tous les MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Utiliser SMSSecure pour consulter et stocker tous les SMS entrants</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utiliser SMSSecure pour consulter et stocker tous les MMS entrants</string>
-  <string name="preferences__input_settings">Paramètres de saisie</string>
-  <string name="preferences__enable_enter_key_title">Activer la touche Entrée</string>
-  <string name="preferences__replace_smiley_with_enter_key">Remplacer la touche des émoticônes par une touche Entrée</string>
-  <string name="preferences__pref_enter_sends_title">Envoyer avec la touche Entrée</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Appuyer sur la touche Entrée enverra les messages</string>
+  <string name="preferences__keyboard_settings">Paramètres du clavier</string>
+  <string name="preferences__disable_emoji_drawer">Désactiver le panneau des Emojis</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Activez cette option si votre clavier propose déjà le support des Emojis.</string>
   <string name="preferences__display_settings">Afficher les paramètres</string>
-  <string name="preferences__choose_identity">Choisir une identité</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Choisissez votre contact dans le répertoire</string>
   <string name="preferences__change_passphrase">Modifier la phrase de passe</string>
   <string name="preferences__change_my_passphrase">Modifier ma phrase de passe</string>
@@ -465,7 +473,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__pref_timeout_interval_title">Délai d\'expiration</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Délai après lequel la phrase de passe en mémoire est oubliée</string>
   <string name="preferences__notifications">Notifications</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Afficher les notifications dans la barre de statut</string>
+  <string name="preferences__enable_message_notifications">Activer les notifications de messages</string>
   <string name="preferences__led_color">Couleur de la LED</string>
   <string name="preferences__led_color_unknown">Inconnu</string>
   <string name="preferences__pref_led_blink_title">Vitesse de clignotement de la LED</string>
@@ -513,6 +521,8 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__mmsc_password">Mot de passe MMSC</string>
   <string name="preferences__sms_delivery_reports">Accusés de réception SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Demander un accusé de réception pour chaque SMS envoyé</string>
+  <string name="preferences__sms_delivery_reports_notification">Notification d\'accusés de réception SMS</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Affiche une notification lorsqu\'un accusé de réception SMS arrive</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Supprimer automatiquement les anciens messages lorsque la conversation dépasse une certaine taille.</string>
   <string name="preferences__delete_old_messages">Supprimer les anciens messages</string>
   <string name="preferences__conversation_length_limit">Taille limite d\'une conversation</string>
@@ -535,6 +545,9 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences__about_version">Version %s</string>
   <string name="preferences__about_build_id">ID de compilation : %s</string>
   <string name="preferences_app_protection__blocked_contacts">Contacts bloqués</string>
+  <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>
+  <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Afficher la l\'heure d\'envoi au lieu de celle de réception des messages</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -591,6 +604,7 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="conversation__menu_view_media">Toutes les images</string>
   <string name="conversation__menu_conversation_settings">Paramètres de la conversation</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Agrandir</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Ajouter aux contacts</string>
   <!--conversation_group_options-->
@@ -621,13 +635,17 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="media_preview__save_title">Enregistrer</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Prévisualisation de l’image.</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Noter cette application</string>
+  <string name="StoreRatingReminder_message">Si vous appréciez cette application, la noter pourrait nous aider.</string>
+  <string name="StoreRatingReminder_rate_now">Noter!</string>
+  <string name="StoreRatingReminder_no_thanks">Non, merci</string>
+  <string name="StoreRatingReminder_later">Plus tard</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Suppression...</string>
   <string name="trimmer__deleting_old_messages">Suppression des anciens messages...</string>
   <string name="trimmer__old_messages_successfully_deleted">Anciens messages supprimés avec succès</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icône de transport</string>
-  <!--quick_attachment_drawer-->
-  <string name="quick_camera_unavailable">Appareil photo non disponible</string>
   <!--EOF-->
 </resources>

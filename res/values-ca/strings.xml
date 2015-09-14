@@ -5,7 +5,6 @@
   <string name="no">No</string>
   <string name="delete">Esborra</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Actualment: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Encara no has establert cap frase contrasenya!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Esborrar ara els missatges antics?</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Estàs segur que vols retallar immediatament tots els fils de conversa deixant només els %s missatges més recents?</string>
@@ -37,8 +36,6 @@
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Estàs segur que vols esborrar permanentment aquesta conversa?</string>
   <string name="ConversationActivity_add_attachment">Afegeix un adjunt</string>
   <string name="ConversationActivity_select_contact_info">Selecciona info del contacte</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Ho sento, hi ha hagut un error establint el teu adjunt.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">El recipient no és una adreça de correu electrònic o SMS vàlid!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">El missatge és buit!</string>
   <string name="ConversationActivity_d_recipients_in_group">%d membres</string>
   <string name="ConversationActivity_d_recipients_in_group_singular">1 membre</string>
@@ -159,12 +156,13 @@
   <string name="MessageNotifier_error_delivering_message">Error entregant el missatge.</string>
   <string name="MessageNotifier_mark_all_as_read">Marca-ho tot com a llegit</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">FRASE CONTRASENYA ANTIGA:</string>
   <string name="change_passphrase_activity__new_passphrase">NOVA FRASE CONTRASENYA:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">REPETEIX LA NOVA FRASE CONTRASENYA:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Sense contactes.</string>
   <!--single_contact_selection_activity-->
   <!--ContactSelectionListFragment-->
@@ -225,7 +223,6 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <string name="preferences__general">General</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Utilitza SMSSecure per veure i emmagatzemar tots els missatges de text entrants</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utilitza SMSSecure per veure i emmagatzemar tots els missatges multimèdia entrants</string>
-  <string name="preferences__enable_enter_key_title">Habilita la tecla Enter</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Escull el teu contacte de la llista de contactes</string>
   <string name="preferences__change_passphrase">Canvia frase contrasenya</string>
   <string name="preferences__change_my_passphrase">Canvia la meva frase contrasenya</string>
@@ -237,7 +234,6 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <string name="preferences__pref_timeout_interval_title">Interval del temps d\'espera</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">La quantitat de temps que s\'esperarà abans d\'oblidar la frase contrasenya de la memòria</string>
   <string name="preferences__notifications">Notificacions</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Mostra notificacions dels missatges a la barra d\'estat</string>
   <string name="preferences__led_color">Color del LED</string>
   <string name="preferences__pref_led_blink_title">Patró d\'intermitència del LED</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">S\'ha fixat un patró de parpalleig del LED personalitzat!</string>
@@ -326,8 +322,8 @@ des de l\'app de missatgeria predeterminada del sistema.</string>
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

@@ -6,7 +6,6 @@
   <string name="delete">Slet</string>
   <string name="please_wait">Vent venligst...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Nu: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du har endnu ikke indtastet et kodeord</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s beskeder pr. opkald</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Slet alle gamle beskeder?</string>
@@ -32,7 +31,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="DraftDatabase_Draft_audio_snippet">(lyd)</string>
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Kan ikke åbne valgte data</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">Billede</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
@@ -60,8 +58,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationActivity_add_attachment">Vedhæft fil.</string>
   <string name="ConversationActivity_select_contact_info">Vælg kontakt information</string>
   <string name="ConversationActivity_compose_message">Opret besked</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Beklager, der opstod en fejl ved vedhæftning af fil.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Modtageren har ikke en gyldig SMS- eller e-mail adresse!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Beskeden er tom!</string>
   <string name="ConversationActivity_group_conversation">Gruppe beskeder</string>
   <string name="ConversationActivity_unnamed_group">Navnløs gruppe</string>
@@ -238,12 +234,13 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="MessageNotifier_error_delivering_message">Fejl ved levering af besked.</string>
   <string name="MessageNotifier_mark_all_as_read">Marker alle som læst</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">GAMMELT KODEORD:</string>
   <string name="change_passphrase_activity__new_passphrase">NYT KODEORD:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">GENTAG NYT KODEORD:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Ingen kontakter.</string>
   <string name="contact_selection_group_activity__finding_contacts">Indlæser kontaktpersoner...</string>
   <!--single_contact_selection_activity-->
@@ -340,13 +337,7 @@ Importer en klartekst backup fil. Kompatibel med \'SMSBackup og Restore\'.</stri
   <string name="preferences__pref_all_mms_title">Modtag alle MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Brug SMSSecure til at læse og gemme alle indkommende SMS beskeder.</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Brug SMSSecure til at læse og gemme alle indkommende MMS beskeder.</string>
-  <string name="preferences__input_settings">Indstillinger</string>
-  <string name="preferences__enable_enter_key_title">Slå enter-knap til</string>
-  <string name="preferences__replace_smiley_with_enter_key">Erstat \\"Smiley-knap\\" med en \\"Enter-knap\\"</string>
-  <string name="preferences__pref_enter_sends_title">\\"Enter\\" sender</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">\\"Enter\\" vil sende beskeden</string>
   <string name="preferences__display_settings">Indstillinger for visning</string>
-  <string name="preferences__choose_identity">Vælg ID</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Vælg din kontakt fra kontaktlisten.</string>
   <string name="preferences__change_passphrase">Ændre kodeord</string>
   <string name="preferences__change_my_passphrase">Ændre mit kodeord</string>
@@ -360,7 +351,6 @@ Importer en klartekst backup fil. Kompatibel med \'SMSBackup og Restore\'.</stri
   <string name="preferences__pref_timeout_interval_title">Timeout tidsinterval</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Hvor lang tid skal der gå før kodeordet slettes fra hukommelsen</string>
   <string name="preferences__notifications">Notifikation</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Vis notifikation om beskeder i status feltet</string>
   <string name="preferences__led_color">LED farve</string>
   <string name="preferences__pref_led_blink_title">LED blinkemønster</string>
   <string name="preferences__pref_led_blink_custom_pattern_title">Tilpas LED blinkemønster</string>
@@ -470,8 +460,8 @@ Importer en klartekst backup fil. Kompatibel med \'SMSBackup og Restore\'.</stri
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

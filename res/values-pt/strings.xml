@@ -6,7 +6,6 @@
   <string name="delete">Apagar</string>
   <string name="please_wait">Por favor aguarde...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Atualmente: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ainda não definiu uma palavra-chave!</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">%s mensagens por conversa</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Apagar todas as mensagens antigas?</string>
@@ -34,9 +33,9 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="DraftDatabase_Draft_audio_snippet">(áudio)</string>
   <string name="DraftDatabase_Draft_video_snippet">(vídeo)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">Não foi encontrada uma aplicação para selecionar os dados multimédia.</string>
+  <string name="AttachmentManager_cant_open_media_selection">Não foi encontrada uma aplicação para selecionar multimédia.</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">Tirar uma foto</string>
+  <string name="AttachmentTypeSelectorAdapter_camera">Câmara</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Imagem</string>
   <string name="AttachmentTypeSelectorAdapter_video">Vídeo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Áudio</string>
@@ -69,10 +68,11 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationActivity_add_attachment">Adicionar anexo</string>
   <string name="ConversationActivity_select_contact_info">Selecionar informações de contacto</string>
   <string name="ConversationActivity_compose_message">Criar mensagem</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Desculpe mas ocorreu um erro ao enviar o anexo.</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Desculpe mas ocorreu um erro ao definir o anexo.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">O .gif selecionado é muito grande!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Desculpe mas o vídeo selecionado excede as restrições de tamanho da mensagem (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Desculpe mas o áudio selecionado excede as restrições de tamanho da mensagem (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">O destinatário não possui um endereço de e-mail/SMS válido!</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">O destinatário não tem um endereço de e-mail/SMS válido.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Está a tentar enviar uma mensagem vazia!</string>
   <string name="ConversationActivity_group_members">Membros do grupo</string>
   <string name="ConversationActivity_group_conversation">Conversa de grupo</string>
@@ -272,7 +272,7 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="KeyCachingService_passphrase_cached">O SMSSecure está desbloqueado</string>
   <string name="KeyCachingService_lock">Bloquear com palavra-chave</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">%1$d mensagens em %2$d conversas</string>
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d novas mensagens em %2$d conversas</string>
   <string name="MessageNotifier_most_recent_from_s">Mais recentes de: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Mensagem cifrada...</string>
   <string name="MessageNotifier_media_message_with_text">Mensagem multimédia: %s</string>
@@ -283,16 +283,21 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="MessageNotifier_mark_all_as_read">Marcar todas como lidas</string>
   <string name="MessageNotifier_mark_read">Marcar como lida</string>
   <string name="MessageNotifier_media_message">Mensagem multimédia</string>
+  <string name="MessageNotifier_message_received">Mensagem recebida por %s.</string>
   <string name="MessageNotifier_reply">Responder</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Não pode utilizar a resposta rápida se o SMSSecure estiver bloqueado!</string>
   <string name="QuickResponseService_problem_sending_message">Erro ao enviar a mensagem!</string>
+  <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Nova mensagem SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_contents_hidden">Conteúdo oculto</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Palavra-chave atual:</string>
   <string name="change_passphrase_activity__new_passphrase">Nova palavra-chave:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">Repita a nova palavra-chave:</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Introduza um nome ou número</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Sem contactos.</string>
   <string name="contact_selection_group_activity__finding_contacts">A carregar contactos…</string>
   <!--single_contact_selection_activity-->
@@ -420,6 +425,9 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="arrays__settings_default">Predefinições</string>
   <string name="arrays__enabled">Ativo</string>
   <string name="arrays__disabled">Inativo</string>
+  <string name="arrays__name_and_message">Nome e mensagem</string>
+  <string name="arrays__name_only">Apenas nome</string>
+  <string name="arrays__neither">Nenhum</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d hora</item>
@@ -432,13 +440,9 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__pref_all_mms_title">Receber todas as MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Utilizar SMSSecure para ver e armazenar todas as mensagens de texto recebidas</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utilizar SMSSecure para ver e armazenar todas as mensagens multimédia recebidas</string>
-  <string name="preferences__input_settings">Definições de introdução</string>
-  <string name="preferences__enable_enter_key_title">Ativar a tecla Enter</string>
-  <string name="preferences__replace_smiley_with_enter_key">Substituir a tecla \'smiley\' pela tecla \'Enter\'</string>
-  <string name="preferences__pref_enter_sends_title">Tecla Enter para enviar</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">Prima a tecla Enter para enviar as mensagem</string>
+  <string name="preferences__disable_emoji_drawer">Desativar meu de emoji</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Ative esta opção se o seu teclado tiver suporte a emojis</string>
   <string name="preferences__display_settings">Definições de exibição</string>
-  <string name="preferences__choose_identity">Escolher identidade</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Escolha o seu próprio contacto da lista de contactos</string>
   <string name="preferences__change_passphrase">Alterar palavra-chave</string>
   <string name="preferences__change_my_passphrase">Mudar a minha palavra-chave</string>
@@ -456,7 +460,7 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__pref_timeout_interval_title">Intervalo de expiração</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Tempo a esperar antes de remover a palavra-chave da memória</string>
   <string name="preferences__notifications">Notificações</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Mostrar notificações na barra de estado</string>
+  <string name="preferences__enable_message_notifications">Ativar notificações de mensagens</string>
   <string name="preferences__led_color">Cor do LED</string>
   <string name="preferences__led_color_unknown">Desconhecido</string>
   <string name="preferences__pref_led_blink_title">Padrão de intermitência do LED</string>
@@ -504,6 +508,8 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__mmsc_password">Palavra-passe MMSC</string>
   <string name="preferences__sms_delivery_reports">Relatórios de entrega SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Pedir um relatório de entrega para cada SMS enviada</string>
+  <string name="preferences__sms_delivery_reports_notification">Notificação para relatório de entrega de SMS</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Mostrar notificação ao receber um relatório de entrega</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Apagar automaticamente as mensagens mais antigas, se a conversa exceder o tamanho especificado</string>
   <string name="preferences__delete_old_messages">Apagar mensagens antigas</string>
   <string name="preferences__conversation_length_limit">Tamanho máximo de conversa</string>
@@ -526,6 +532,9 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__about_version">Versão %s</string>
   <string name="preferences__about_build_id">ID de compilação: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Contactos bloqueados</string>
+  <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>
+  <string name="preferences__show_sent_time">Mostrar data/hora de envio</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar data/hora de envio em vez da data/hora de receção para mensagens recebidas</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -613,13 +622,17 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="media_preview__save_title">Guardar</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Pré-visualização de imagem</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Avaliar esta aplicação</string>
+  <string name="StoreRatingReminder_message">Se gosta desta aplicação, conceda-nos um pouco do seu tempo para a avaliar.</string>
+  <string name="StoreRatingReminder_rate_now">Avaliar agora!</string>
+  <string name="StoreRatingReminder_no_thanks">Agora não</string>
+  <string name="StoreRatingReminder_later">Mais tarde</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">A apagar...</string>
   <string name="trimmer__deleting_old_messages">A apagar mensagens antigas...</string>
   <string name="trimmer__old_messages_successfully_deleted">Mensagens antigas apagadas com sucesso</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ícone de transporte</string>
-  <!--quick_attachment_drawer-->
-  <string name="quick_camera_unavailable">Câmara não disponível</string>
   <!--EOF-->
 </resources>

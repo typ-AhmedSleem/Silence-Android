@@ -6,7 +6,6 @@
   <string name="delete">削除</string>
   <string name="please_wait">お待ち下さい…</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">現在： %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">パスワードが登録されていません。</string>
   <string name="ApplicationPreferencesActivity_messages_per_conversation">会話あたり %s のメッセージ</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">全ての古いメッセージを今、削除しますか？</string>
@@ -35,9 +34,9 @@
   <string name="DraftDatabase_Draft_audio_snippet">(音声)</string>
   <string name="DraftDatabase_Draft_video_snippet">(動画)</string>
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">メディアの選択用アプリが見つかりません。</string>
+  <string name="AttachmentManager_cant_open_media_selection">このメディアを選択するアプリが見つかりません。</string>
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_take_photo">写真を撮影</string>
+  <string name="AttachmentTypeSelectorAdapter_camera">カメラ</string>
   <string name="AttachmentTypeSelectorAdapter_picture">写真</string>
   <string name="AttachmentTypeSelectorAdapter_video">動画</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音声</string>
@@ -70,10 +69,11 @@
   <string name="ConversationActivity_add_attachment">添付</string>
   <string name="ConversationActivity_select_contact_info">連絡先情報を選択</string>
   <string name="ConversationActivity_compose_message">メッセージ作成</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">添付中にエラーが発生しました。</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">申し訳ありません。添付中にエラーが発生しました。</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">選択した gif は大きすぎます!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">選択された映像ファイルはサイズ限度を超えています(%1$skB)。</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">選択された音声ファイルはサイズ限度を超えています(%1$skB)。</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">受信先のSMS又はEメールアドレスが有効ではありません。</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">受信先のSMSまたはメールアドレスが有効ではありません!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">メッセージが空です。</string>
   <string name="ConversationActivity_group_members">グループの参加者</string>
   <string name="ConversationActivity_group_conversation">グループチャット</string>
@@ -213,6 +213,8 @@
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">この連絡先のブロックを解除しますか?</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">この連絡先のブロックを解除してもよろしいですか?</string>
   <string name="RecipientPreferenceActivity_unblock">ブロックを解除</string>
+  <string name="RecipientPreferenceActivity_enabled">有効</string>
+  <string name="RecipientPreferenceActivity_disabled">無効</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">無効な鍵交換メッセージを受信しました。</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -272,7 +274,7 @@
   <string name="KeyCachingService_passphrase_cached">SMSSecureは、アンロックされています</string>
   <string name="KeyCachingService_lock">パスワードでロックする</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_d_messages_in_d_conversations">%2$d 会話中 %1$d メッセージ</string>
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%2$d 会話中 %1$d の新しいメッセージ</string>
   <string name="MessageNotifier_most_recent_from_s">最新の送信者： %1$s</string>
   <string name="MessageNotifier_encrypted_message">暗号化されたメッセージ…</string>
   <string name="MessageNotifier_media_message_with_text">メディアメッセージ: %s</string>
@@ -281,14 +283,23 @@
   <string name="MessageNotifier_failed_to_deliver_message">メッセージの配信に失敗しました。</string>
   <string name="MessageNotifier_error_delivering_message">メッセージ配信中にエラーがありました。</string>
   <string name="MessageNotifier_mark_all_as_read">すべて既読にする</string>
+  <string name="MessageNotifier_mark_read">既読にする</string>
   <string name="MessageNotifier_media_message">メディアメッセージ</string>
+  <string name="MessageNotifier_message_received">%s がメッセージを受信しました。</string>
+  <string name="MessageNotifier_reply">返信</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">SMSSecure がロックされている時はクイック応答は利用できません!</string>
+  <string name="QuickResponseService_problem_sending_message">メッセージの送信中にエラー!</string>
+  <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">新しい SMSSecure メッセージ</string>
+  <string name="SingleRecipientNotificationBuilder_contents_hidden">コンテンツ非表示</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">既存のパスワード：</string>
   <string name="change_passphrase_activity__new_passphrase">新規のパスワード：</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">新規のパスワードを再入力：</string>
+  <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">名前または番号を入力してください</string>
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">連絡先はありません。</string>
   <string name="contact_selection_group_activity__finding_contacts">連絡先を読み込み中…</string>
   <!--single_contact_selection_activity-->
@@ -373,6 +384,8 @@
   <string name="recipient_preferences__ringtone">着信音</string>
   <string name="recipient_preferences__vibrate">振動</string>
   <string name="recipient_preferences__block">ブロック</string>
+  <string name="recipient_preferences__color">色</string>
+  <string name="recipient_preferences__color_for_this_contact">この連絡先の色</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">完了</string>
   <!--recipients_panel-->
@@ -414,6 +427,9 @@
   <string name="arrays__settings_default">設定のデフォルト</string>
   <string name="arrays__enabled">有効</string>
   <string name="arrays__disabled">無効</string>
+  <string name="arrays__name_and_message">名前とメッセージ</string>
+  <string name="arrays__name_only">名前のみ</string>
+  <string name="arrays__neither">どちらもなし</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="other">%d 時間</item>
@@ -425,13 +441,9 @@
   <string name="preferences__pref_all_mms_title">全てのMMSを受信</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">受信する全てのSMS（テキストメッセージ）の表示、及び保存にSMSSecureを使用します</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">受信する全てのMMS（ファイル付きメッセージ）の表示、及び保存にSMSSecureを使用します</string>
-  <string name="preferences__input_settings">設定入力</string>
-  <string name="preferences__enable_enter_key_title">エンターキーを使えるようにする</string>
-  <string name="preferences__replace_smiley_with_enter_key">顔文字キーをエンターキーに変える</string>
-  <string name="preferences__pref_enter_sends_title">エンターキーで送信</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">エンターキーを押すとテキストメッセージが送信されます</string>
+  <string name="preferences__disable_emoji_drawer">絵文字ドロワーを無効にする</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">キーボードが絵文字をサポートしている場合、このオプションを有効にします。</string>
   <string name="preferences__display_settings">表示設定</string>
-  <string name="preferences__choose_identity">認証を選択</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">連絡先リストからあなたの連絡先を選んでください。</string>
   <string name="preferences__change_passphrase">パスワードの変更</string>
   <string name="preferences__change_my_passphrase">パスワードの変更</string>
@@ -450,7 +462,7 @@
   <string name="preferences__pref_timeout_interval_title">タイムアウトの間隔</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">メモリからパスワードを消去するまでの待ち時間です</string>
   <string name="preferences__notifications">通知</string>
-  <string name="preferences__display_message_notifications_in_status_bar">受信通知をステータスバーに表示</string>
+  <string name="preferences__enable_message_notifications">メッセージ通知を有効にする</string>
   <string name="preferences__led_color">LED色</string>
   <string name="preferences__led_color_unknown">不明</string>
   <string name="preferences__pref_led_blink_title">LED点滅パターン</string>
@@ -498,6 +510,8 @@
   <string name="preferences__mmsc_password">MMSC パスワード</string>
   <string name="preferences__sms_delivery_reports">SMS配信報告</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">送信する全てのSMSに配信報告をつけます</string>
+  <string name="preferences__sms_delivery_reports_notification">SMS配信報告通知</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">配信報告を受信したときに通知を表示します</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">会話スレッドが一定の長さを超えると、古いメッセージが自動的に削除されます</string>
   <string name="preferences__delete_old_messages">古いメッセージの削除</string>
   <string name="preferences__conversation_length_limit">会話の最大の長さ</string>
@@ -520,6 +534,9 @@
   <string name="preferences__about_version">バージョン %s</string>
   <string name="preferences__about_build_id">ビルド ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">ブロックした連絡先</string>
+  <string name="preferences_notifications__display_in_notifications">通知に表示</string>
+  <string name="preferences__show_sent_time">送信した時間を表示</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">受信したメッセージの受信した時間の代わりに送信した時間を表示します</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -574,7 +591,9 @@
   <string name="conversation__menu_add_attachment">添付</string>
   <string name="conversation__menu_delete_thread">スレッドを削除</string>
   <string name="conversation__menu_view_media">すべての画像</string>
+  <string name="conversation__menu_conversation_settings">会話設定</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">ポップアップの展開</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">連絡帳に追加</string>
   <!--conversation_group_options-->
@@ -605,12 +624,17 @@
   <string name="media_preview__save_title">保存</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">画像プレビュー表示</string>
+  <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">このアプリを評価する</string>
+  <string name="StoreRatingReminder_message">このアプリを楽しんでいただけたら、お手数ですがアプリを評価してください。</string>
+  <string name="StoreRatingReminder_rate_now">今すぐ評価する!</string>
+  <string name="StoreRatingReminder_no_thanks">いいえ結構です</string>
+  <string name="StoreRatingReminder_later">後で</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">削除...</string>
   <string name="trimmer__deleting_old_messages">古いメッセージを削除...</string>
   <string name="trimmer__old_messages_successfully_deleted">古いメッセージの削除に成功</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">転送アイコン</string>
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

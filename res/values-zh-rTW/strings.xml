@@ -5,7 +5,6 @@
   <string name="no">否</string>
   <string name="delete">刪除</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">目前: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未建立『自訂密碼』！</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">刪除\"全部\"的舊訊息？</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">您確定要將所有對話群組精簡為只剩最近 %s 則的對話？</string>
@@ -24,7 +23,6 @@
   <!--AppProtectionPreferenceFragment-->
   <!--DraftDatabase-->
   <!--AttchmentManager-->
-  <string name="AttachmentManager_cant_open_media_selection">找不到合適的 APP 來選擇媒體檔案。</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">照片</string>
   <string name="AttachmentTypeSelectorAdapter_video">影片</string>
@@ -51,8 +49,6 @@
   <string name="ConversationActivity_add_attachment">增加附件檔案</string>
   <string name="ConversationActivity_select_contact_info">選擇連絡人資訊</string>
   <string name="ConversationActivity_compose_message">撰寫訊息</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">抱歉，無法成功設定您指定的附件檔案</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人並不是一個有效的 手機門號 或 email 位址！</string>
   <string name="ConversationActivity_message_is_empty_exclamation">訊息內容是空的！</string>
   <string name="ConversationActivity_group_conversation">群組聊天</string>
   <string name="ConversationActivity_unnamed_group">未命名的群組</string>
@@ -233,12 +229,13 @@
   <string name="MessageNotifier_error_delivering_message">傳送訊息發生失誤。</string>
   <string name="MessageNotifier_mark_all_as_read">全部標示為已讀</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">舊的『自訂密碼』:</string>
   <string name="change_passphrase_activity__new_passphrase">新的『自訂密碼』:</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">再輸入一次新的『自訂密碼』:</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">沒有連絡人。</string>
   <string name="contact_selection_group_activity__finding_contacts">載入連絡人中...</string>
   <!--single_contact_selection_activity-->
@@ -337,13 +334,7 @@
   <string name="preferences__pref_all_mms_title">接收所有MMS多媒體簡訊</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">使用 SMSSecure 來檢視與儲存所有接收到的文字簡訊</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">使用 SMSSecure 來檢視與儲存所有接收到的多媒體簡訊</string>
-  <string name="preferences__input_settings">輸入設定</string>
-  <string name="preferences__enable_enter_key_title">啟用 Enter 鍵</string>
-  <string name="preferences__replace_smiley_with_enter_key">把介面上的表情符號按鈕，換成 Enter 按鈕</string>
-  <string name="preferences__pref_enter_sends_title">啟用 按 Enter 鍵 就送出訊息</string>
-  <string name="preferences__pressing_the_enter_key_will_send_text_messages">若按下 Enter 鍵，不會換行，而是直接把訊息送出</string>
   <string name="preferences__display_settings">顯示設定</string>
-  <string name="preferences__choose_identity">選擇身份識別</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">從您的連絡人清單中選擇連絡人。</string>
   <string name="preferences__change_passphrase">變更『自訂密碼』</string>
   <string name="preferences__change_my_passphrase">變更我的『自訂密碼』</string>
@@ -357,7 +348,6 @@
   <string name="preferences__pref_timeout_interval_title">倒數時間</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">等候『自訂密碼』幫 SMSSecure 上鎖的等候時間</string>
   <string name="preferences__notifications">通知</string>
-  <string name="preferences__display_message_notifications_in_status_bar">在 Android 系統狀態列顯示通知</string>
   <string name="preferences__led_color">LED燈號顏色</string>
   <string name="preferences__pref_led_blink_title">LED 閃爍模式</string>
   <string name="preferences__pref_led_blink_custom_pattern_title">自訂 LED 閃爍模式</string>
@@ -470,11 +460,11 @@
   <string name="media_preview__save_title">儲存</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">預覽圖片</string>
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">刪除中...</string>
   <string name="trimmer__deleting_old_messages">正在刪除舊訊息...</string>
   <string name="trimmer__old_messages_successfully_deleted">已完成刪除舊訊息。</string>
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

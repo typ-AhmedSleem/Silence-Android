@@ -3,16 +3,4 @@
   <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">Eenvoudig versleutelde SMS/MMS gesprekken voeren!</string>
   <string name="Distribution_description">SMSSecure is een SMS/MMS programma dat uw privacy beschermd als u met uw vrienden communiceert.</string>
-  <string name="Distribution_long_description">
-SMSSecure is een SMS/MMS programma dat uw privacy beschermd als u met uw vrienden communiceert.
-Met SMSSecure kunt u SMS berichten en media attachments delen terwijl uw privacy helemaal beschermd is.
-Functies:
-Eenvoudig: SMSSexure werkt als iedere andere SMS app. U hoeft zich nergrens aan te melden en uw contacten ook niet.
-Betrouwbaar: SMSSecure comminiceert met versleutelde SMS berichten. Er zijn geen servers en geen internet verbinding nodig.
-Prive: SMSSecure gebruikt het TextSecure versleutelingsprotocol om elk bericht te versleutelen.
-Veilig: Alle berichten zijn ook lokaal versleutelt, dus als u uw telefoon kwijtraakt of hij gestolen wordt zijn uw berichten beveiligd.
-Open Source: SMSSecure is gratis en Open Source. Dit geeft iedereen de mogelijkheid om de beveiliging te controleren door de source code te bestuderen.
-Rapporteer a.u.b. alle gevonden bugs en verzoeken voor functionaliteit door op: https://github.com/SMSSecure/SMSSecure/issues
-De source code kunt u vinden op: https://github.com/SMSSecure/SMSSecure
-Meer informatie vind u op: http://smssecure.org</string>
 </resources>

@@ -5,7 +5,6 @@
   <string name="no">Tidak</string>
   <string name="delete">Hapus</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferencesActivity_currently_s">Sekarang: %s</string>
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Anda belum mengatur kata kunci!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Hapus seluruh pesan lama?</string>
   <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Apakah anda yakin untuk memangkas seluruh rangkaian percakapan hingga ke %s pesan terakhir?</string>
@@ -40,8 +39,6 @@ dapat mengaksesnya</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Apa anda yakin ingin menghapus percakapan ini secara permanen?</string>
   <string name="ConversationActivity_add_attachment">Tambahkan lampiran</string>
   <string name="ConversationActivity_select_contact_info">Pilih info kontak</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Maaf, terjadi kesalahan pada pengaturan lampiran anda.</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Alamat penerima SMS atau email tidak benar!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Pesan kosong!</string>
   <string name="ConversationActivity_d_recipients_in_group">%d anggota</string>
   <string name="ConversationActivity_d_recipients_in_group_singular">1 anggota</string>
@@ -185,12 +182,13 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="MessageNotifier_error_delivering_message">Kesalahan dalam mengirimkan pesan.</string>
   <string name="MessageNotifier_mark_all_as_read">Tandai telah dibaca semuanya</string>
   <!--QuickResponseService-->
+  <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">KATA KUNCI LAMA</string>
   <string name="change_passphrase_activity__new_passphrase">KATA KUNCI BARU</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">ULANG KATA KUNCI BARU</string>
+  <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
-  <!--contact_selection_list_activity-->
   <string name="contact_selection_group_activity__no_contacts">Tidak ada kontak</string>
   <string name="contact_selection_group_activity__finding_contacts">Memuat kontak...</string>
   <!--single_contact_selection_activity-->
@@ -260,8 +258,6 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <string name="preferences__pref_all_mms_title">Terima semua MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Gunakan SMSSecure untuk melihat dan menyimpan semua pesan teks yang masuk</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Gunakan SMSSecure untuk melihat dan menyimpan semua pesan multimedia yang masuk</string>
-  <string name="preferences__input_settings">Seting Masukan</string>
-  <string name="preferences__enable_enter_key_title">Gunakan tombol Enter</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Pilih kontak anda dari daftar kontak yang ada.</string>
   <string name="preferences__change_passphrase">Ganti Kata Kunci</string>
   <string name="preferences__change_my_passphrase">Ganti kata kunci saya</string>
@@ -273,7 +269,6 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <string name="preferences__pref_timeout_interval_title">Interval Kadaluarsa</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Waktu tunggu sebelum melupakan kata kunci dari memori</string>
   <string name="preferences__notifications">Pemberitahuan</string>
-  <string name="preferences__display_message_notifications_in_status_bar">Tampilkan pemberitahuan pesan di status bar</string>
   <string name="preferences__led_color">Warna LED</string>
   <string name="preferences__pref_led_blink_title">Pola kedip LED</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">Set pola kedip LED!</string>
@@ -363,8 +358,8 @@ Import cadangan dalam texks polos. Kompatibel dengan aplikasi \'SMSBackup And Re
   <!--MediaPreviewActivity-->
   <!--media_preview-->
   <!--media_preview_activity-->
+  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
-  <!--quick_attachment_drawer-->
   <!--EOF-->
 </resources>

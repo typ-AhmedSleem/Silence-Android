@@ -4,22 +4,21 @@
   <string name="Distribution_tagline">Šifrirana sporočila SMS/MMS na preprost način!</string>
   <string name="Distribution_description">SMSSecure je aplikacija, s katero lahko varno komunicirate s prijatelji, saj so vaša sporočila SMS/MMS šifrirana.</string>
   <string name="Distribution_long_description">
-SMSSecure je aplikacija, ki vam omogoča varno komuniciranje s prijatelji preko šifriranih SMS/MMS sporočil.
-Z aplikacijo SMSSecure lahko varno pošiljate sporočila SMS in delite multimedijske datoteke.
+SMSSecure je aplikacija za pošiljanje sporočil SMS/MMS, ki varuje zasebnost vaše komunikacije. Z njo lahko pošiljate sporočila in priponke brez skrbi, da bi njihova vsebina pristala v rokah tretje osebe,
 
-Aplikacija SMSSecure je:
-* Preprosta. Deluje kot katera koli aplikacija za pošiljanje sporočil SMS. Ne rabite se nikamor prijaviti, oziroma kjerkoli puščati svojih osebnih podatkov.
-* Zanesljiva. Za komunikacijo uporablja šifrirana sporočila SMS. Tu ni nobenega strežnika, internetna povezava ni potrebna.
-* Zasebna. Za šifriranje uporablja protokol TextSecure, ki vaša sporočila naredi dostopna samo naslovniku in nikomur drugemu.
-* Varna. Vaša sporočila so lahko šifrirana tudi lokalno - na sami napravi. S tem jih zaščitite, če telefon izgubite ali vam ga ukradejo.
-* Odprtokodna. Koda aplikacije je odprta in vsakomur na voljo za varnostni pregled.
+Glavne značilnosti:
+* Preprostost: SMSSecure deluje kot katerakoli druga SMS aplikacija. Ne rabite se nikjer registrirati.
+* Zanesljivost: SMSSecure šifrira SMS sporočila preden jih pošlje dalje. Zato ne potrebuje nobenega posebnega strežnika. Pri naslovniku se sporočila dešifrirajo.
+* Zasebnost: SMSSecure zagotavlja šifriranje od začetka do konca (end-to-end) po sodobnem in preverjenem protokolu \"TextSecure\".
+* Varnost: Shramba s sporočili se lahko šifrira tudi lokalno in tako zaščiti za primer izgube oz. kraje naprave.
+* Odprta koda: SMSSecure je zastonj, njegova koda je odprta in vsakomur na voljo za študij ali varnostni pregled.
 
-Hrošče, težave in želje lahko sporočite na:
+Prosimo, da morebitne hrošče v aplikaciji javite na:
 https://github.com/SMSSecure/SMSSecure/issues
 
-Izvorna koda je na voljo na:
+Koda aplikacije je na voljo na:
 https://github.com/SMSSecure/SMSSecure
 
-Več o aplikaciji:
+Več o aplikaciji SMSSecure na:
 http://smssecure.org</string>
 </resources>
