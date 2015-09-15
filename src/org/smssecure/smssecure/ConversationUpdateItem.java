@@ -2,20 +2,25 @@ package org.smssecure.smssecure;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.Util;
 
+import java.util.Locale;
+import java.util.Set;
+
 public class ConversationUpdateItem extends LinearLayout
-    implements Recipients.RecipientsModifiedListener, Recipient.RecipientModifiedListener, Unbindable, View.OnClickListener
+    implements Recipients.RecipientsModifiedListener, Recipient.RecipientModifiedListener, BindableConversationItem, View.OnClickListener
 {
   private static final String TAG = ConversationUpdateItem.class.getSimpleName();
 
@@ -42,7 +47,17 @@ public class ConversationUpdateItem extends LinearLayout
     setOnClickListener(this);
   }
 
-  public void set(MessageRecord messageRecord) {
+  @Override
+  public void bind(@NonNull MasterSecret masterSecret,
+                   @NonNull MessageRecord messageRecord,
+                   @NonNull Locale locale,
+                   @NonNull Set<MessageRecord> batchSelected,
+                   boolean groupThread)
+  {
+    bind(messageRecord);
+  }
+
+  private void bind(@NonNull MessageRecord messageRecord) {
     this.messageRecord = messageRecord;
     this.sender        = messageRecord.getIndividualRecipient();
 
@@ -73,7 +88,7 @@ public class ConversationUpdateItem extends LinearLayout
     Util.runOnMain(new Runnable() {
       @Override
       public void run() {
-        set(messageRecord);
+        bind(messageRecord);
       }
     });
   }
