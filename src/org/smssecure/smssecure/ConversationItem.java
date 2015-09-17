@@ -65,6 +65,7 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.TelephonyUtil;
+import org.smssecure.smssecure.util.Util;
 
 import java.util.Locale;
 import java.util.Set;
@@ -77,7 +78,7 @@ import java.util.Set;
  *
  */
 
-public class ConversationItem extends LinearLayout implements Recipient.RecipientModifiedListener {
+public class ConversationItem extends LinearLayout implements Recipient.RecipientModifiedListener, Unbindable {
   private final static String TAG = ConversationItem.class.getSimpleName();
 
   private MessageRecord messageRecord;
@@ -183,16 +184,13 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
 
     setSelectionBackgroundDrawables(messageRecord);
     setBodyText(messageRecord);
-
-    if (hasConversationBubble(messageRecord)) {
-      setBubbleState(messageRecord, recipient);
-      setStatusIcons(messageRecord);
-      setContactPhoto(recipient);
-      setGroupMessageStatus(messageRecord, recipient);
-      setEvents(messageRecord);
-      setMinimumWidth();
-      setMediaAttributes(messageRecord);
-    }
+    setBubbleState(messageRecord, recipient);
+    setStatusIcons(messageRecord);
+    setContactPhoto(recipient);
+    setGroupMessageStatus(messageRecord, recipient);
+    setEvents(messageRecord);
+    setMinimumWidth();
+    setMediaAttributes(messageRecord);
   }
 
   private void initializeAttributes() {
@@ -207,6 +205,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     attrs.recycle();
   }
 
+  @Override
   public void unbind() {
     if (recipient != null) {
       recipient.removeListener(this);
@@ -236,10 +235,6 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     } else {
       setBackgroundDrawable(normalBackground);
     }
-  }
-
-  private boolean hasConversationBubble(MessageRecord messageRecord) {
-    return !messageRecord.isGroupAction();
   }
 
   private boolean isCaptionlessMms(MessageRecord messageRecord) {
@@ -439,12 +434,15 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
   }
 
   @Override
-  public void onModified(Recipient recipient) {
-    if (hasConversationBubble(messageRecord)) {
-      setBubbleState(messageRecord, recipient);
-      setContactPhoto(recipient);
-      setGroupMessageStatus(messageRecord, recipient);
-    }
+  public void onModified(final Recipient recipient) {
+    Util.runOnMain(new Runnable() {
+      @Override
+      public void run() {
+        setBubbleState(messageRecord, recipient);
+        setContactPhoto(recipient);
+        setGroupMessageStatus(messageRecord, recipient);
+      }
+    });
   }
 
   private class ThumbnailDownloadClickListener implements ThumbnailView.ThumbnailClickListener {
@@ -452,6 +450,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
       DatabaseFactory.getPartDatabase(context).setTransferState(messageRecord.getId(), slide.getPart().getPartId(), PartDatabase.TRANSFER_PROGRESS_STARTED);
     }
   }
+
   private class ThumbnailClickListener implements ThumbnailView.ThumbnailClickListener {
     private void fireIntent(Slide slide) {
       Log.w(TAG, "Clicked: " + slide.getUri() + " , " + slide.getContentType());

@@ -1,19 +1,22 @@
 package org.smssecure.smssecure.util;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.google.protobuf.InvalidProtocolBufferException;
+import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 
 import java.io.IOException;
-import java.util.List;
 
-import org.smssecure.smssecure.R;
 import static org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 public class GroupUtil {
 
   private static final String ENCODED_GROUP_PREFIX = "__textsecure_group__!";
+  private static final String TAG                  = GroupUtil.class.getSimpleName();
 
   public static String getEncodedId(byte[] groupId) {
     return ENCODED_GROUP_PREFIX + Hex.toStringCondensed(groupId);
@@ -31,18 +34,46 @@ public class GroupUtil {
     return groupId.startsWith(ENCODED_GROUP_PREFIX);
   }
 
-  public static String getDescription(Context context, String encodedGroup) {
+  public static @NonNull GroupDescription getDescription(@NonNull Context context, @NonNull String encodedGroup) {
     if (encodedGroup == null) {
-      return "";
+      new GroupDescription(context, null);
     }
 
     try {
-      StringBuilder description  = new StringBuilder();
       GroupContext  groupContext = GroupContext.parseFrom(Base64.decode(encodedGroup));
-      List<String>  members      = groupContext.getMembersList();
-      String        title        = groupContext.getName();
+      return new GroupDescription(context, groupContext);
+    } catch (IOException e) {
+      Log.w(TAG, e);
+      return new GroupDescription(context, null);
+    }
+  }
 
-      if (!members.isEmpty()) {
+  public static class GroupDescription {
+
+    @NonNull  private final Context         context;
+    @Nullable private final GroupContext    groupContext;
+    @Nullable private final Recipients      members;
+
+    public GroupDescription(@NonNull Context context, @Nullable GroupContext groupContext) {
+      this.context      = context.getApplicationContext();
+      this.groupContext = groupContext;
+
+      if (groupContext == null || groupContext.getMembersList().isEmpty()) {
+        this.members = null;
+      } else {
+        this.members = RecipientFactory.getRecipientsFromString(context, Util.join(groupContext.getMembersList(), ", "), true);
+      }
+    }
+
+    public String toString() {
+      if (groupContext == null) {
+        return "";
+      }
+
+      StringBuilder description = new StringBuilder();
+      String        title       = groupContext.getName();
+
+      if (members != null) {
         description.append("");
       }
 
@@ -56,12 +87,12 @@ public class GroupUtil {
       } else {
         return "";
       }
-    } catch (InvalidProtocolBufferException e) {
-      Log.w("GroupUtil", e);
-      return "";
-    } catch (IOException e) {
-      Log.w("GroupUtil", e);
-      return "";
+    }
+
+    public void addListener(Recipients.RecipientsModifiedListener listener) {
+      if (this.members != null) {
+        this.members.addListener(listener);
+      }
     }
   }
 }
