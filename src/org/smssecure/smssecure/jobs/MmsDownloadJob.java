@@ -1,7 +1,6 @@
 package org.smssecure.smssecure.jobs;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.util.Log;
@@ -32,6 +31,7 @@ import org.whispersystems.libaxolotl.NoSessionException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 import ws.com.google.android.mms.MmsException;
@@ -94,7 +94,7 @@ public class MmsDownloadJob extends MasterSecretJob {
       byte[] transactionId   = notification.get().getTransactionId();
 
       try {
-        Uri mmsUri = Uri.parse(contentLocation);
+        URI mmsUri = URI.create(contentLocation);
         Log.w(TAG, "Downloading mms at " + mmsUri.getHost());
       } catch (Exception e) {
         throw new MmsException("Invalid content location: "+contentLocation);
