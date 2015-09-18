@@ -440,6 +440,9 @@
   <string name="arrays__name_and_message">Име и порука</string>
   <string name="arrays__name_only">Само име</string>
   <string name="arrays__neither">Ниједно</string>
+  <string name="arrays__enter_key">Прикажи Ентер тастер</string>
+  <string name="arrays__emoji_key">Прикажи тастер емоџија</string>
+  <string name="arrays__send_key">Прикажи дугме за слање</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d сат</item>
@@ -453,6 +456,7 @@
   <string name="preferences__pref_all_mms_title">Примај све ММС</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Користи Сигурни СМС за приказ и складиштење свих долазних текстуалних порука</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Користи Сигурни СМС за приказ и складиштење свих долазних мултимедијалних порука</string>
+  <string name="preferences__keyboard_settings">Поставке за тастатуру</string>
   <string name="preferences__disable_emoji_drawer">Онемогући фиоку емоџија</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Укључите ово ако ваша тастатура подржава емоџије.</string>
   <string name="preferences__display_settings">Поставке приказа</string>

@@ -425,6 +425,9 @@ Eine mit „SMS Backup &amp; Restore“ kompatible Klartextsicherung importieren
   <string name="arrays__name_and_message">Name und Nachricht</string>
   <string name="arrays__name_only">Nur Name</string>
   <string name="arrays__neither">Weder Name noch Nachricht</string>
+  <string name="arrays__enter_key">Eingabetaste anzeigen</string>
+  <string name="arrays__emoji_key">Emoji-Taste anzeigen</string>
+  <string name="arrays__send_key">Versandschaltfläche anzeigen</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d Stunde</item>
@@ -437,6 +440,7 @@ Eine mit „SMS Backup &amp; Restore“ kompatible Klartextsicherung importieren
   <string name="preferences__pref_all_mms_title">Für MMS-Empfang verwenden</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure zur Anzeige und Speicherung aller eingehenden SMS verwenden</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">SMSSecure zur Anzeige und Speicherung aller eingehenden MMS verwenden</string>
+  <string name="preferences__keyboard_settings">Tastatureinstellungen</string>
   <string name="preferences__disable_emoji_drawer">Emoji-Schaltfläche deaktivieren</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Aktivieren, falls Ihre Tastatur Emojis unterstützt.</string>
   <string name="preferences__display_settings">Darstellung</string>

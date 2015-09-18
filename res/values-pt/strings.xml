@@ -428,6 +428,9 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="arrays__name_and_message">Nome e mensagem</string>
   <string name="arrays__name_only">Apenas nome</string>
   <string name="arrays__neither">Nenhum</string>
+  <string name="arrays__enter_key">Mostrar tecla Enter</string>
+  <string name="arrays__emoji_key">Mostrar tecla Emoji</string>
+  <string name="arrays__send_key">Mostrar botão Enviar</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d hora</item>
@@ -440,6 +443,7 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__pref_all_mms_title">Receber todas as MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Utilizar SMSSecure para ver e armazenar todas as mensagens de texto recebidas</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utilizar SMSSecure para ver e armazenar todas as mensagens multimédia recebidas</string>
+  <string name="preferences__keyboard_settings">Opções de teclado</string>
   <string name="preferences__disable_emoji_drawer">Desativar meu de emoji</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Ative esta opção se o seu teclado tiver suporte a emojis</string>
   <string name="preferences__display_settings">Definições de exibição</string>

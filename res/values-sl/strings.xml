@@ -420,6 +420,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="arrays__name_and_message">Naslovnik in sporočilo</string>
   <string name="arrays__name_only">Samo naslovnik</string>
   <string name="arrays__neither">Brez</string>
+  <string name="arrays__enter_key">Prikaz tipke za vnos</string>
+  <string name="arrays__emoji_key">Prikaz tipke emoji</string>
+  <string name="arrays__send_key">Prikaz tipke za pošiljanje</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d ura</item>
@@ -434,6 +437,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__pref_all_mms_title">Prejemaj sporočila MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil SMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil MMS</string>
+  <string name="preferences__keyboard_settings">Možnosti tipkovnice</string>
   <string name="preferences__disable_emoji_drawer">Izklopi zaganjalnik za Emoji</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Izberite to opcijo, če vaša tipkovnica podpira Emoji-je.</string>
   <string name="preferences__display_settings">Nastavitve prikaza</string>

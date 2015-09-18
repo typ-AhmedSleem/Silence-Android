@@ -451,6 +451,9 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="arrays__name_and_message">Név és üzenet</string>
   <string name="arrays__name_only">Csak név</string>
   <string name="arrays__neither">Egyik sem</string>
+  <string name="arrays__enter_key">Enter billentyű megjelenítése</string>
+  <string name="arrays__emoji_key">Emoji billentyű megjelenítése</string>
+  <string name="arrays__send_key">Küldés gomb megjelenítése</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d óra</item>
@@ -463,6 +466,7 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences__pref_all_mms_title">Minden MMS fogadása</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure használata minden bejövő SMS üzenet megtekintéséhez és tárolásához</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">SMSSecure használata minden bejövő MMS üzenet megtekintéséhez és tárolásához</string>
+  <string name="preferences__keyboard_settings">Billentyűzet beállítások</string>
   <string name="preferences__disable_emoji_drawer">Emojifelvétel letiltása</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Engedélyezd ezt a lehetőséget, ha a billentyűzeted támogatja az Emoji-kat.</string>
   <string name="preferences__display_settings">Kijelző beállítások</string>
@@ -556,8 +560,8 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Letiltott névjegyek</string>
   <string name="preferences_notifications__display_in_notifications">Megjelenítés értesítésekben</string>
-  <string name="preferences__show_sent_time">Küldési idő mutatása</string>
-  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">A küldés idejének mutatása az érkezés ideje helyette a beérkező üzeneteknél</string>
+  <string name="preferences__show_sent_time">Küldési idő megjelenítése</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">A küldés idejének megjelenítése az érkezés ideje helyett a beérkező üzeneteknél</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

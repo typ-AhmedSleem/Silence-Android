@@ -449,6 +449,9 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="arrays__name_and_message">Nombre y mensaje</string>
   <string name="arrays__name_only">Sólo nombre</string>
   <string name="arrays__neither">Ninguno</string>
+  <string name="arrays__enter_key">Mostrar clave de entrada</string>
+  <string name="arrays__emoji_key">Mostrar clave de emoji</string>
+  <string name="arrays__send_key">Mostrar botón enviar</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d hora</item>
@@ -461,6 +464,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__pref_all_mms_title">Recibir todos los MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Usar SMSSecure para ver y guardar todos los mensajes de texto entrantes</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Usar SMSSecure para ver y guardar todos los mensajes multimedia entrantes</string>
+  <string name="preferences__keyboard_settings">Opciones de teclado</string>
   <string name="preferences__disable_emoji_drawer">Deshabilitar bandeja de Emoji</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Habilitar esta opción si su teclado soporta Emojis.</string>
   <string name="preferences__display_settings">Opciones de visualización</string>

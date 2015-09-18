@@ -423,6 +423,9 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="arrays__name_and_message">Naam en bericht</string>
   <string name="arrays__name_only">Alleen naam</string>
   <string name="arrays__neither">Geen van beide</string>
+  <string name="arrays__enter_key">Toon enter toets</string>
+  <string name="arrays__emoji_key">Toon emoji toets</string>
+  <string name="arrays__send_key">Toon zenden toets</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d uur</item>
@@ -435,6 +438,7 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="preferences__pref_all_mms_title">Ontvang alle MMS</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure gebruiken voor het bekijken en opslaan van alle inkomende tekstberichten</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">SMSSecure gebruiken voor het bekijken en opslaan van alle inkomende multimediaberichten</string>
+  <string name="preferences__keyboard_settings">Toetsenbord opties</string>
   <string name="preferences__disable_emoji_drawer">Zet emoji knop uit</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Gebruik deze optie als uw toetsenbord een emoji toets heeft</string>
   <string name="preferences__display_settings">Beeldscherminstellingen</string>
