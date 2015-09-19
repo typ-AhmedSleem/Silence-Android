@@ -2,7 +2,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference android:key="pref_enter_key"
+    <ListPreference android:key="pref_enter_key_type"
                     android:defaultValue="enter"
                     android:title="@string/preferences__keyboard_settings"
                     android:entries="@array/pref_enter_key_entries"
