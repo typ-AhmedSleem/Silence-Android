@@ -38,6 +38,8 @@
     <application android:name=".ApplicationContext"
                  android:icon="@drawable/icon"
                  android:label="@string/app_name"
+                 tools:replace="android:allowBackup"
+                 android:allowBackup="false"
                  android:theme="@style/SMSSecure.LightTheme">
 
     <meta-data android:name="org.smssecure.smssecure.mms.SMSSecureGlideModule"
