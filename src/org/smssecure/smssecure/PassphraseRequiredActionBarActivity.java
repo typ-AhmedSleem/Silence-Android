@@ -54,7 +54,6 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   protected void onResume() {
     Log.w(TAG, "onResume()");
     super.onResume();
-    initializeScreenshotSecurity();
     KeyCachingService.registerPassphraseActivityStarted(this);
     isVisible = true;
   }
@@ -176,16 +175,6 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   private Intent getIntroScreenIntent() {
     return getRoutedIntent(IntroScreenActivity.class, getIntent(), null);
-  }
-
-  private void initializeScreenshotSecurity() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH &&
-        SMSSecurePreferences.isScreenSecurityEnabled(this))
-    {
-      getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
-    } else {
-      getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
-    }
   }
 
   private void initializeClearKeyReceiver() {
