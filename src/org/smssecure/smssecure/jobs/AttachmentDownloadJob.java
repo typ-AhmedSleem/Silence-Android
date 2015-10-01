@@ -15,6 +15,7 @@ import org.smssecure.smssecure.jobs.requirements.MediaNetworkRequirement;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.Util;
+import org.smssecure.smssecure.util.VisibleForTesting;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
 import org.whispersystems.libaxolotl.InvalidMessageException;
@@ -122,10 +123,16 @@ public class AttachmentDownloadJob extends MasterSecretJob implements Injectable
     }
   }
 
-  private TextSecureAttachmentPointer createAttachmentPointer(MasterSecret masterSecret, PduPart part)
+  @VisibleForTesting
+  TextSecureAttachmentPointer createAttachmentPointer(MasterSecret masterSecret, PduPart part)
       throws InvalidPartException
   {
-    if (part.getContentLocation() == null) throw new InvalidPartException("null content location");
+    if (part.getContentLocation() == null || part.getContentLocation().length == 0) {
+      throw new InvalidPartException("empty content id");
+    }
+    if (part.getContentDisposition() == null || part.getContentDisposition().length == 0) {
+      throw new InvalidPartException("empty encrypted key");
+    }
 
     try {
       MasterCipher masterCipher = new MasterCipher(masterSecret);
@@ -164,7 +171,7 @@ public class AttachmentDownloadJob extends MasterSecretJob implements Injectable
     }
   }
 
-  private static class InvalidPartException extends Exception {
+  @VisibleForTesting static class InvalidPartException extends Exception {
     public InvalidPartException(String s) {super(s);}
     public InvalidPartException(Exception e) {super(e);}
   }
