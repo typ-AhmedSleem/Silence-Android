@@ -279,10 +279,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     switch (reqCode) {
     case PICK_IMAGE:
-      setMedia(data.getData(),
-               MediaUtil.isGif(MediaUtil.getMimeType(this, data.getData())) ? MediaType.GIF
-                   : MediaType.IMAGE,
-               false);
+      boolean isGif = MediaUtil.isGif(MediaUtil.getMimeType(this, data.getData()));
+      setMedia(data.getData(), isGif ? MediaType.GIF : MediaType.IMAGE, false);
       break;
     case PICK_VIDEO:
       setMedia(data.getData(), MediaType.VIDEO, false);
