@@ -186,6 +186,7 @@ public class ConversationItem extends LinearLayout
     setContactPhoto(recipient);
     setGroupMessageStatus(messageRecord, recipient);
     setEvents(messageRecord);
+    checkForAutoInitiate(messageRecord);
     setMinimumWidth();
     setMediaAttributes(messageRecord);
   }
@@ -334,15 +335,6 @@ public class ConversationItem extends LinearLayout
                  (messageRecord.isKeyExchange()            &&
                   !messageRecord.isCorruptedKeyExchange()  &&
                   !messageRecord.isOutgoing()));
-
-    if (!messageRecord.isOutgoing()                       &&
-        messageRecord.getRecipients().isSingleRecipient() &&
-        !messageRecord.isSecure())
-    {
-      checkForAutoInitiate(messageRecord.getRecipients(),
-                           messageRecord.getBody().getBody(),
-                           messageRecord.getThreadId());
-    }
   }
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
@@ -381,28 +373,38 @@ public class ConversationItem extends LinearLayout
 
   /// Helper Methods
 
-  private void checkForAutoInitiate(final Recipients recipients, String body, long threadId) {
-    Recipient recipient = recipients.getPrimaryRecipient();
-
-    if (!groupThread &&
-        !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
-        AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
+  private void checkForAutoInitiate(MessageRecord messageRecord) {
+    if (!messageRecord.isOutgoing()                       &&
+        messageRecord.getRecipients().isSingleRecipient() &&
+        !messageRecord.isSecure())
     {
-      AutoInitiate.exemptThread(context, threadId);
+      final Recipients recipients = messageRecord.getRecipients();
 
-      AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
-      builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
-      builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
-      builder.setIconAttribute(R.attr.dialog_info_icon);
-      builder.setCancelable(true);
-      builder.setNegativeButton(R.string.no, null);
-      builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-          KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
-        }
-      });
-      builder.show();
+      Recipient recipient = recipients.getPrimaryRecipient();
+      String    body      = messageRecord.getBody().getBody();
+      long      threadId  = messageRecord.getThreadId();
+
+
+      if (!groupThread &&
+          !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
+          AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
+      {
+        AutoInitiate.exemptThread(context, threadId);
+
+        AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
+        builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
+        builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
+        builder.setIconAttribute(R.attr.dialog_info_icon);
+        builder.setCancelable(true);
+        builder.setNegativeButton(R.string.no, null);
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int which) {
+            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
+          }
+        });
+        builder.show();
+      }
     }
   }
 
