@@ -34,7 +34,6 @@ import org.smssecure.smssecure.database.MmsDatabase.Reader;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
-import org.smssecure.smssecure.jobs.AttachmentDownloadJob;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.SmsMessageRecord;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
@@ -62,7 +61,6 @@ public class DatabaseUpgradeActivity extends BaseActivity {
   public static final int NO_V1_VERSION                        = 83;
   public static final int SIGNED_PREKEY_VERSION                = 83;
   public static final int NO_DECRYPT_QUEUE_VERSION             = 84;
-  public static final int MEDIA_DOWNLOAD_CONTROLS_VERSION      = 113;
 
   private static final SortedSet<Integer> UPGRADE_VERSIONS = new TreeSet<Integer>() {{
     add(NO_MORE_KEY_EXCHANGE_PREFIX_VERSION);
@@ -72,7 +70,6 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     add(NO_V1_VERSION);
     add(SIGNED_PREKEY_VERSION);
     add(NO_DECRYPT_QUEUE_VERSION);
-    add(MEDIA_DOWNLOAD_CONTROLS_VERSION);
   }};
 
   private MasterSecret masterSecret;
@@ -209,34 +206,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
         }
       }
 
-      if (params[0] < MEDIA_DOWNLOAD_CONTROLS_VERSION) {
-        schedulePendingIncomingParts(context);
-      }
-
       return null;
-    }
-
-    private void schedulePendingIncomingParts(Context context) {
-      final PartDatabase  partDb       = DatabaseFactory.getPartDatabase(context);
-      final MmsDatabase   mmsDb        = DatabaseFactory.getMmsDatabase(context);
-      final List<PduPart> pendingParts = DatabaseFactory.getPartDatabase(context).getPendingParts();
-
-      Log.w(TAG, pendingParts.size() + " pending parts.");
-      for (PduPart part : pendingParts) {
-        final Reader        reader = mmsDb.readerFor(masterSecret, mmsDb.getMessage(part.getMmsId()));
-        final MessageRecord record = reader.getNext();
-
-        if (part.getDataUri() != null) {
-          Log.w(TAG, "corrected a pending media part " + part.getPartId() + "that already had data.");
-          partDb.setTransferState(part.getMmsId(), part.getPartId(), PartDatabase.TRANSFER_PROGRESS_DONE);
-        } else if (record != null && !record.isOutgoing() && record.isPush()) {
-          Log.w(TAG, "queuing new attachment download job for incoming push part " + part.getPartId() + ".");
-          ApplicationContext.getInstance(context)
-                            .getJobManager()
-                            .add(new AttachmentDownloadJob(context, part.getMmsId(), part.getPartId()));
-        }
-        reader.close();
-      }
     }
 
     @Override
