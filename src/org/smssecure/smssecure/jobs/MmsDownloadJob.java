@@ -12,6 +12,7 @@ import org.smssecure.smssecure.crypto.storage.SMSSecureAxolotlStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
+import org.smssecure.smssecure.jobs.requirements.MediaNetworkRequirement;
 import org.smssecure.smssecure.mms.ApnUnavailableException;
 import org.smssecure.smssecure.mms.CompatMmsConnection;
 import org.smssecure.smssecure.mms.IncomingLollipopMmsConnection;
@@ -54,6 +55,7 @@ public class MmsDownloadJob extends MasterSecretJob {
                                 .withPersistence()
                                 .withRequirement(new MasterSecretRequirement(context))
                                 .withRequirement(new NetworkRequirement(context))
+                                .withRequirement(new MediaNetworkRequirement(context, messageId, automatic))
                                 .withGroupId("mms-operation")
                                 .withWakeLock(true, 30, TimeUnit.SECONDS)
                                 .create());
