@@ -173,8 +173,12 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
       }
 
       Slide thumbnailSlide = slideDeck.get().getThumbnailSlide();
+      Uri   uri            = thumbnailSlide.getThumbnailUri();
 
-      return thumbnailSlide != null         &&
+      DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
+
+      return decryptableUri != null         &&
+             thumbnailSlide != null         &&
              thumbnailSlide.hasImage()      &&
              !thumbnailSlide.isInProgress() &&
              thumbnailSlide.getThumbnailUri() != null;
