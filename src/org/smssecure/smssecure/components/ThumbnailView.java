@@ -12,9 +12,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -25,11 +22,10 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.jobs.PartProgressEvent;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
 import org.smssecure.smssecure.mms.RoundedCorners;
 import org.smssecure.smssecure.mms.Slide;
@@ -37,22 +33,26 @@ import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.util.FutureTaskListener;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.Util;
+import org.smssecure.smssecure.util.ViewUtil;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
-import de.greenrobot.event.EventBus;
 import ws.com.google.android.mms.pdu.PduPart;
 
 public class ThumbnailView extends FrameLayout {
   private static final String TAG = ThumbnailView.class.getSimpleName();
 
-  private boolean       showProgress = true;
-  private ImageView     image;
-  private ProgressWheel progress;
-  private int           backgroundColorHint;
-  private int           radius;
+  private boolean         hideControls;
+  private ImageView       image;
+  private ImageView       removeButton;
+  private int             backgroundColorHint;
+  private int             radius;
+  private OnClickListener parentClickListener;
 
+  private Optional<TransferControlView>   transferControls       = Optional.absent();
   private ListenableFutureTask<SlideDeck> slideDeckFuture        = null;
   private SlideDeckListener               slideDeckListener      = null;
   private ThumbnailClickListener          thumbnailClickListener = null;
+  private ThumbnailClickListener          downloadClickListener  = null;
   private String                          slideId                = null;
   private Slide                           slide                  = null;
 
@@ -64,12 +64,12 @@ public class ThumbnailView extends FrameLayout {
     this(context, attrs, 0);
   }
 
-  public ThumbnailView(Context context, AttributeSet attrs, int defStyle) {
+  public ThumbnailView(final Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
     inflate(context, R.layout.thumbnail_view, this);
-    radius   = getResources().getDimensionPixelSize(R.dimen.message_bubble_corner_radius);
-    image    = (ImageView)     findViewById(R.id.thumbnail_image);
-    progress = (ProgressWheel) findViewById(R.id.progress_wheel);
+    radius = getResources().getDimensionPixelSize(R.dimen.message_bubble_corner_radius);
+    image  = (ImageView) findViewById(R.id.thumbnail_image);
+    super.setOnClickListener(new ThumbnailClickDispatcher());
 
     if (attrs != null) {
       TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ThumbnailView, 0, 0);
@@ -78,35 +78,49 @@ public class ThumbnailView extends FrameLayout {
     }
   }
 
-  @Override protected void onAttachedToWindow() {
-    super.onAttachedToWindow();
-    if (!EventBus.getDefault().isRegistered(this)) EventBus.getDefault().registerSticky(this);
+  @Override public void setOnClickListener(OnClickListener l) {
+    parentClickListener = l;
   }
 
-  @Override protected void onDetachedFromWindow() {
-    super.onDetachedFromWindow();
-    EventBus.getDefault().unregister(this);
+  @Override public void setFocusable(boolean focusable) {
+    super.setFocusable(focusable);
+    if (transferControls.isPresent()) transferControls.get().setFocusable(focusable);
   }
 
-  @SuppressWarnings("unused")
-  public void onEventAsync(final PartProgressEvent event) {
-    if (this.slide != null && event.partId.equals(this.slide.getPart().getPartId())) {
-      Util.runOnMain(new Runnable() {
-        @Override public void run() {
-          progress.setInstantProgress(((float)event.progress) / event.total);
-          if (event.progress >= event.total) animateOutProgress();
-        }
-      });
+  @Override public void setClickable(boolean clickable) {
+    super.setClickable(clickable);
+    if (transferControls.isPresent()) transferControls.get().setClickable(clickable);
+  }
+
+  @Override protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+    super.onLayout(changed, left, top, right, bottom);
+    if (removeButton != null) {
+      final int paddingHorizontal = removeButton.getWidth()  / 2;
+      final int paddingVertical   = removeButton.getHeight() / 2;
+      image.setPadding(paddingHorizontal, paddingVertical, paddingHorizontal, 0);
     }
+  }
+
+  private ImageView getRemoveButton() {
+    if (removeButton == null) removeButton = ViewUtil.inflateStub(this, R.id.remove_button_stub);
+    return removeButton;
+  }
+
+  private TransferControlView getTransferControls() {
+    if (!transferControls.isPresent()) {
+      transferControls = Optional.of((TransferControlView)ViewUtil.inflateStub(this, R.id.transfer_controls_stub));
+    }
+    return transferControls.get();
   }
 
   public void setBackgroundColorHint(int color) {
     this.backgroundColorHint = color;
   }
 
-  public void setImageResource(@Nullable MasterSecret masterSecret,
-                               long id, long timestamp,
-                               @NonNull ListenableFutureTask<SlideDeck> slideDeckFuture)
+  public void setImageResource(@Nullable MasterSecret                    masterSecret,
+                                         long                            id,
+                                         long                            timestamp,
+                               @NonNull  ListenableFutureTask<SlideDeck> slideDeckFuture)
   {
     if (this.slideDeckFuture != null && this.slideDeckListener != null) {
       this.slideDeckFuture.removeListener(this.slideDeckListener);
@@ -115,7 +129,7 @@ public class ThumbnailView extends FrameLayout {
     String slideId = id + "::" + timestamp;
 
     if (!slideId.equals(this.slideId)) {
-      progress.setVisibility(GONE);
+      if (transferControls.isPresent()) getTransferControls().clear();
       image.setImageDrawable(null);
       this.slide   = null;
       this.slideId = slideId;
@@ -128,38 +142,58 @@ public class ThumbnailView extends FrameLayout {
 
   public void setImageResource(@NonNull Slide slide, @Nullable MasterSecret masterSecret) {
     if (Util.equals(slide, this.slide)) {
-      Log.w(TAG, "Not loading resource, slide was identical");
-      return;
-    }
-    if (!isContextValid()) {
-      Log.w(TAG, "Not loading resource, context is invalid");
+      Log.w(TAG, "Not re-loading slide " + slide.getPart().getPartId());
       return;
     }
 
-    this.slide = slide;
-    if (slide.isInProgress() && showProgress) {
-      progress.spin();
-      progress.setVisibility(VISIBLE);
-    } else {
-      progress.setVisibility(GONE);
+    if (!isContextValid()) {
+      Log.w(TAG, "Not loading slide, context is invalid");
+      return;
     }
-    buildGlideRequest(slide, masterSecret).into(image);
-    setOnClickListener(new ThumbnailClickDispatcher(thumbnailClickListener, slide));
+
+    Log.w(TAG, "loading part with id " + slide.getPart().getPartId()
+               + ", progress " + slide.getTransferProgress());
+
+    this.slide = slide;
+    loadInto(slide, masterSecret, image);
+
+    if (!hideControls) {
+      getTransferControls().setSlide(slide);
+      getTransferControls().setDownloadClickListener(new DownloadClickDispatcher());
+    }
   }
 
   public void setThumbnailClickListener(ThumbnailClickListener listener) {
     this.thumbnailClickListener = listener;
   }
 
-  public void clear() {
-    if (isContextValid()) Glide.clear(this);
+  public void setRemoveClickListener(OnClickListener listener) {
+    getRemoveButton().setOnClickListener(listener);
+    final int pad = getResources().getDimensionPixelSize(R.dimen.media_bubble_remove_button_size);
+    image.setPadding(pad, pad, pad, 0);
   }
 
-  public void setShowProgress(boolean showProgress) {
-    this.showProgress = showProgress;
-    if (progress.getVisibility() == View.VISIBLE && !showProgress) {
-      animateOutProgress();
-    }
+  public void setDownloadClickListener(ThumbnailClickListener listener) {
+    this.downloadClickListener = listener;
+  }
+
+  public void clear() {
+    if (isContextValid())             Glide.clear(image);
+    if (slideDeckFuture != null)      slideDeckFuture.removeListener(slideDeckListener);
+    if (transferControls.isPresent()) getTransferControls().clear();
+    slide             = null;
+    slideId           = null;
+    slideDeckFuture   = null;
+    slideDeckListener = null;
+  }
+
+  public void hideControls(boolean hideControls) {
+    this.hideControls = hideControls;
+    if (hideControls && transferControls.isPresent()) getTransferControls().setVisibility(View.GONE);
+  }
+
+  public void showProgressSpinner() {
+    getTransferControls().showProgressSpinner();
   }
 
   @TargetApi(VERSION_CODES.JELLY_BEAN_MR1)
@@ -169,30 +203,27 @@ public class ThumbnailView extends FrameLayout {
            !((Activity)getContext()).isDestroyed();
   }
 
-  private GenericRequestBuilder buildGlideRequest(@NonNull Slide slide,
-                                                  @Nullable MasterSecret masterSecret)
+  private void loadInto(@NonNull  Slide        slide,
+                        @Nullable MasterSecret masterSecret,
+                        @NonNull  ImageView    view)
   {
-    Log.w(TAG, "slide type " + slide.getContentType());
-    final GenericRequestBuilder builder;
     if (slide.getThumbnailUri() != null) {
-      builder = buildThumbnailGlideRequest(slide, masterSecret);
+      buildThumbnailGlideRequest(slide, masterSecret).into(view);
+    } else if (!slide.isInProgress()) {
+      buildPlaceholderGlideRequest(slide).into(view);
     } else {
-      builder = buildPlaceholderGlideRequest(slide);
-    }
-
-    if (slide.isInProgress() && showProgress) {
-      return builder;
-    } else {
-      return builder.error(R.drawable.ic_missing_thumbnail_picture);
+      Glide.clear(view);
     }
   }
 
   private GenericRequestBuilder buildThumbnailGlideRequest(Slide slide, MasterSecret masterSecret) {
-
     final GenericRequestBuilder builder;
+
     if   (slide.isDraft()) builder = buildDraftGlideRequest(slide, masterSecret);
     else                   builder = buildPartGlideRequest(slide, masterSecret);
-    return builder;
+
+    if (slide.isInProgress()) return builder;
+    else                      return builder.error(R.drawable.ic_missing_thumbnail_picture);
   }
 
   private GenericRequestBuilder buildDraftGlideRequest(Slide slide, MasterSecret masterSecret) {
@@ -218,19 +249,6 @@ public class ThumbnailView extends FrameLayout {
     return Glide.with(getContext()).load(slide.getPlaceholderRes(getContext().getTheme()))
                                    .asBitmap()
                                    .fitCenter();
-  }
-
-  private void animateOutProgress() {
-    AlphaAnimation animation = new AlphaAnimation(1f, 0f);
-    animation.setDuration(200);
-    animation.setAnimationListener(new AnimationListener() {
-      @Override public void onAnimationStart(Animation animation) { }
-      @Override public void onAnimationRepeat(Animation animation) { }
-      @Override public void onAnimationEnd(Animation animation) {
-        progress.setVisibility(View.GONE);
-      }
-    });
-    progress.startAnimation(animation);
   }
 
   private class SlideDeckListener implements FutureTaskListener<SlideDeck> {
@@ -282,25 +300,30 @@ public class ThumbnailView extends FrameLayout {
   }
 
   private class ThumbnailClickDispatcher implements View.OnClickListener {
-    private ThumbnailClickListener listener;
-    private Slide                  slide;
-
-    public ThumbnailClickDispatcher(ThumbnailClickListener listener, Slide slide) {
-      this.listener = listener;
-      this.slide    = slide;
-    }
-
     @Override
     public void onClick(View view) {
-      if (listener != null) {
-        listener.onClick(view, slide);
-      } else {
-        Log.w(TAG, "onClick, but no thumbnail click listener attached.");
+      if (thumbnailClickListener       != null &&
+          slide                        != null &&
+          slide.getPart().getDataUri() != null &&
+          slide.getTransferProgress()  == PartDatabase.TRANSFER_PROGRESS_DONE)
+      {
+        thumbnailClickListener.onClick(view, slide);
+      } else if (parentClickListener != null) {
+        parentClickListener.onClick(view);
       }
     }
   }
 
-  private static class PduThumbnailSetListener implements RequestListener<Object, GlideDrawable> {
+  private class DownloadClickDispatcher implements View.OnClickListener {
+    @Override
+    public void onClick(View view) {
+      if (downloadClickListener != null && slide != null) {
+        downloadClickListener.onClick(view, slide);
+      }
+    }
+  }
+
+  private class PduThumbnailSetListener implements RequestListener<Object, GlideDrawable> {
     private PduPart part;
 
     public PduThumbnailSetListener(@NonNull PduPart part) {
@@ -318,6 +341,15 @@ public class ThumbnailView extends FrameLayout {
         Log.w(TAG, "onResourceReady() for a Bitmap. Saving.");
         part.setThumbnail(((GlideBitmapDrawable)resource).getBitmap());
       }
+      LayoutParams layoutParams = (LayoutParams) getRemoveButton().getLayoutParams();
+      if (resource.getIntrinsicWidth() < getWidth()) {
+        layoutParams.topMargin   = 0;
+        layoutParams.rightMargin = Math.max(0, (getWidth() - image.getPaddingRight() - resource.getIntrinsicWidth()) / 2);
+      } else {
+        layoutParams.topMargin   = Math.max(0, (getHeight() - image.getPaddingTop() - resource.getIntrinsicHeight()) / 2);
+        layoutParams.rightMargin = 0;
+      }
+      getRemoveButton().setLayoutParams(layoutParams);
       return false;
     }
   }

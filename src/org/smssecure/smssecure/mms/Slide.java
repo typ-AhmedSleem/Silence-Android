@@ -21,8 +21,11 @@ import android.content.res.Resources.Theme;
 import android.net.Uri;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.util.MediaUtil;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
@@ -32,18 +35,12 @@ import ws.com.google.android.mms.pdu.PduPart;
 
 public abstract class Slide {
 
-  protected final PduPart      part;
-  protected final Context      context;
-  protected       MasterSecret masterSecret;
+  protected final PduPart part;
+  protected final Context context;
 
   public Slide(Context context, @NonNull PduPart part) {
     this.part    = part;
     this.context = context;
-  }
-
-  public Slide(Context context, @NonNull MasterSecret masterSecret, @NonNull PduPart part) {
-    this(context, part);
-    this.masterSecret = masterSecret;
   }
 
   public String getContentType() {
@@ -66,6 +63,8 @@ public abstract class Slide {
     return false;
   }
 
+  public @NonNull String getContentDescription() { return ""; }
+
   public PduPart getPart() {
     return part;
   }
@@ -78,6 +77,15 @@ public abstract class Slide {
     return part.isInProgress();
   }
 
+  public boolean isPendingDownload() {
+    return getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_FAILED ||
+           getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_AUTO_PENDING;
+  }
+
+  public long getTransferProgress() {
+    return part.getTransferProgress();
+  }
+
   public @DrawableRes int getPlaceholderRes(Theme theme) {
     throw new AssertionError("getPlaceholderRes() called for non-drawable slide");
   }
@@ -86,18 +94,24 @@ public abstract class Slide {
     return !getPart().getPartId().isValid();
   }
 
-  protected static void assertMediaSize(Context context, Uri uri, long max)
-      throws MediaTooLargeException, IOException
-  {
-    InputStream in = context.getContentResolver().openInputStream(uri);
-    long   size    = 0;
-    byte[] buffer  = new byte[512];
-    int read;
 
-    while ((read = in.read(buffer)) != -1) {
-      size += read;
-      if (size > max) throw new MediaTooLargeException("Media exceeds maximum message size.");
-    }
+  protected static PduPart constructPartFromUri(@NonNull  Context      context,
+                                                @NonNull  Uri          uri,
+                                                @NonNull  String       defaultMime,
+                                                          long         dataSize)
+      throws IOException
+  {
+    final PduPart part            = new PduPart();
+    final String  mimeType        = MediaUtil.getMimeType(context, uri);
+    final String  derivedMimeType = mimeType != null ? mimeType : defaultMime;
+
+    part.setDataSize(dataSize);
+    part.setDataUri(uri);
+    part.setContentType(derivedMimeType.getBytes());
+    part.setContentId((System.currentTimeMillis()+"").getBytes());
+    part.setName((MediaUtil.getDiscreteMimeType(derivedMimeType) + System.currentTimeMillis()).getBytes());
+
+    return part;
   }
 
   @Override
@@ -111,7 +125,7 @@ public abstract class Slide {
            this.hasImage() == that.hasImage()                        &&
            this.hasVideo() == that.hasVideo()                        &&
            this.isDraft() == that.isDraft()                          &&
-           this.isInProgress() == that.isInProgress()                &&
+           this.getTransferProgress() == that.getTransferProgress()  &&
            Util.equals(this.getUri(), that.getUri())                 &&
            Util.equals(this.getThumbnailUri(), that.getThumbnailUri());
   }
@@ -119,9 +133,6 @@ public abstract class Slide {
   @Override
   public int hashCode() {
     return Util.hashCode(getContentType(), hasAudio(), hasImage(),
-                         hasVideo(), isDraft(), getUri(), getThumbnailUri());
+                         hasVideo(), isDraft(), getUri(), getThumbnailUri(), getTransferProgress());
   }
-
-
-
 }

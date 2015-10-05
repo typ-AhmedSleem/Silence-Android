@@ -50,6 +50,9 @@ public class AppearancePreferenceFragment extends ListSummaryPreferenceFragment 
     int langIndex  = Arrays.asList(languageEntryValues).indexOf(SMSSecurePreferences.getLanguage(context));
     int themeIndex = Arrays.asList(themeEntryValues).indexOf(SMSSecurePreferences.getTheme(context));
 
+    if (langIndex == -1)  langIndex = 0;
+    if (themeIndex == -1) themeIndex = 0;
+
     return context.getString(R.string.preferences__theme_summary,    themeEntries[themeIndex]) + ", " +
            context.getString(R.string.preferences__language_summary, languageEntries[langIndex]);
   }

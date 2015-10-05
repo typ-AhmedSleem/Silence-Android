@@ -24,10 +24,14 @@
     <dimen name="message_bubble_shadow_distance">1.5dp</dimen>
     <dimen name="media_bubble_height">210dp</dimen>
     <dimen name="media_bubble_border_width">3dp</dimen>
+    <dimen name="media_bubble_remove_button_size">24dp</dimen>
 
     <integer name="media_overview_cols">3</integer>
     <dimen name="message_details_table_row_pad">10dp</dimen>
 
     <dimen name="color_grid_extra_padding">32dp</dimen>
     <dimen name="color_grid_item_size">48dp</dimen>
+
+    <dimen name="transfer_controls_expanded_width">150dp</dimen>
+    <dimen name="transfer_controls_contracted_width">70dp</dimen>
 </resources>

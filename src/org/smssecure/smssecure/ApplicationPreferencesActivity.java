@@ -38,7 +38,7 @@ import org.smssecure.smssecure.preferences.AppProtectionPreferenceFragment;
 import org.smssecure.smssecure.preferences.AppearancePreferenceFragment;
 import org.smssecure.smssecure.preferences.NotificationsPreferenceFragment;
 import org.smssecure.smssecure.preferences.SmsMmsPreferenceFragment;
-import org.smssecure.smssecure.preferences.StoragePreferenceFragment;
+import org.smssecure.smssecure.preferences.ChatsPreferenceFragment;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
@@ -68,7 +68,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   private static final String PREFERENCE_CATEGORY_NOTIFICATIONS  = "preference_category_notifications";
   private static final String PREFERENCE_CATEGORY_APP_PROTECTION = "preference_category_app_protection";
   private static final String PREFERENCE_CATEGORY_APPEARANCE     = "preference_category_appearance";
-  private static final String PREFERENCE_CATEGORY_STORAGE        = "preference_category_storage";
+  private static final String PREFERENCE_CATEGORY_CHATS          = "preference_category_chats";
   private static final String PREFERENCE_CATEGORY_ADVANCED       = "preference_category_advanced";
   private static final String PREFERENCE_ABOUT                   = "preference_about";
 
@@ -147,8 +147,8 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
         .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_APP_PROTECTION));
       this.findPreference(PREFERENCE_CATEGORY_APPEARANCE)
         .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_APPEARANCE));
-      this.findPreference(PREFERENCE_CATEGORY_STORAGE)
-        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_STORAGE));
+      this.findPreference(PREFERENCE_CATEGORY_CHATS)
+        .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_CHATS));
       this.findPreference(PREFERENCE_CATEGORY_ADVANCED)
         .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_ADVANCED));
     }
@@ -169,8 +169,8 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
           .setSummary(AppProtectionPreferenceFragment.getSummary(getActivity()));
       this.findPreference(PREFERENCE_CATEGORY_APPEARANCE)
           .setSummary(AppearancePreferenceFragment.getSummary(getActivity()));
-      this.findPreference(PREFERENCE_CATEGORY_STORAGE)
-          .setSummary(StoragePreferenceFragment.getSummary(getActivity()));
+      this.findPreference(PREFERENCE_CATEGORY_CHATS)
+          .setSummary(ChatsPreferenceFragment.getSummary(getActivity()));
 
       String version = String.format(this.getString(R.string.preferences__about_version),  BuildConfig.VERSION_NAME);
       String buildID = String.format(this.getString(R.string.preferences__about_build_id), BuildConfig.BUILD_GIT_COMMIT);
@@ -207,8 +207,8 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
         case PREFERENCE_CATEGORY_APPEARANCE:
           fragment = new AppearancePreferenceFragment();
           break;
-        case PREFERENCE_CATEGORY_STORAGE:
-          fragment = new StoragePreferenceFragment();
+        case PREFERENCE_CATEGORY_CHATS:
+          fragment = new ChatsPreferenceFragment();
           break;
         case PREFERENCE_CATEGORY_ADVANCED:
           fragment = new AdvancedPreferenceFragment();

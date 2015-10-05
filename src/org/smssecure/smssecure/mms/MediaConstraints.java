@@ -1,20 +1,22 @@
 package org.smssecure.smssecure.mms;
 
 import android.content.Context;
+import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.util.Log;
 import android.util.Pair;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.gifdecoder.GifDecoder;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
 import org.smssecure.smssecure.util.BitmapDecodingException;
 import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.MediaUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
 
 import ws.com.google.android.mms.pdu.PduPart;
 
@@ -64,15 +66,10 @@ public abstract class MediaConstraints {
     if (!canResize(part) || part.getDataUri() == null) {
       throw new UnsupportedOperationException("Cannot resize this content type");
     }
-
     try {
-      return BitmapUtil.createScaledBytes(context, masterSecret, part.getDataUri(),
-                                          getImageMaxWidth(context),
-                                          getImageMaxHeight(context),
-                                          getImageMaxSize());
-    } catch (BitmapDecodingException bde) {
-      throw new IOException(bde);
+      return BitmapUtil.createScaledBytes(context, new DecryptableUri(masterSecret, part.getDataUri()), this);
+    } catch (ExecutionException ee) {
+      throw new IOException(ee);
     }
   }
-
 }

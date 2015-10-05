@@ -23,10 +23,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,7 +41,6 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.AlertDialogWrapper;
 
-import org.smssecure.smssecure.ConversationFragment.SelectionClickListener;
 import org.smssecure.smssecure.components.AvatarImageView;
 import org.smssecure.smssecure.components.ThumbnailView;
 import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
@@ -48,6 +48,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
@@ -64,6 +65,7 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.TelephonyUtil;
+import org.smssecure.smssecure.util.Util;
 
 import java.util.Locale;
 import java.util.Set;
@@ -76,7 +78,9 @@ import java.util.Set;
  *
  */
 
-public class ConversationItem extends LinearLayout implements Recipient.RecipientModifiedListener {
+public class ConversationItem extends LinearLayout
+    implements Recipient.RecipientModifiedListener, BindableConversationItem
+{
   private final static String TAG = ConversationItem.class.getSimpleName();
 
   private MessageRecord messageRecord;
@@ -98,30 +102,30 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
   private View            pendingIndicator;
   private ImageView       pendingApprovalIndicator;
 
-  private StatusManager          statusManager;
-  private Set<MessageRecord>     batchSelected;
-  private SelectionClickListener selectionClickListener;
-  private ThumbnailView          mediaThumbnail;
-  private Button                 mmsDownloadButton;
-  private TextView               mmsDownloadingLabel;
+  private StatusManager      statusManager;
+  private Set<MessageRecord> batchSelected;
+  private ThumbnailView      mediaThumbnail;
+  private Button             mmsDownloadButton;
+  private TextView           mmsDownloadingLabel;
 
-  private int      defaultBubbleColor;
-  private Drawable selectedBackground;
-  private Drawable normalBackground;
+  private int defaultBubbleColor;
 
   private final MmsDownloadClickListener    mmsDownloadClickListener    = new MmsDownloadClickListener();
   private final MmsPreferencesClickListener mmsPreferencesClickListener = new MmsPreferencesClickListener();
-  private final ClickListener               clickListener               = new ClickListener();
   private final Context                     context;
 
   public ConversationItem(Context context) {
-    super(context);
-    this.context = context;
-   }
+    this(context, null);
+  }
 
   public ConversationItem(Context context, AttributeSet attrs) {
     super(context, attrs);
     this.context = context;
+  }
+
+  @Override
+  public void setOnClickListener(OnClickListener l) {
+    super.setOnClickListener(new ClickListener(l));
   }
 
   @Override
@@ -132,7 +136,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     ViewGroup pendingIndicatorStub = (ViewGroup) findViewById(R.id.pending_indicator_stub);
 
     if (pendingIndicatorStub != null) {
-      LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+      LayoutInflater inflater = LayoutInflater.from(context);
       if (Build.VERSION.SDK_INT >= 11) inflater.inflate(R.layout.conversation_item_pending_v11, pendingIndicatorStub, true);
       else                             inflater.inflate(R.layout.conversation_item_pending, pendingIndicatorStub, true);
     }
@@ -154,43 +158,42 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     this.mediaThumbnail           = (ThumbnailView)   findViewById(R.id.image_view);
     this.statusManager            = new StatusManager(pendingIndicator, sentIndicator, deliveredIndicator, failedIndicator, pendingApprovalIndicator);
 
-    setOnClickListener(clickListener);
+    setOnClickListener(new ClickListener(null));
+    PassthroughClickListener passthroughClickListener = new PassthroughClickListener();
     if (mmsDownloadButton != null) mmsDownloadButton.setOnClickListener(mmsDownloadClickListener);
-    if (mediaThumbnail != null) {
-      mediaThumbnail.setThumbnailClickListener(new ThumbnailClickListener());
-      mediaThumbnail.setOnLongClickListener(new MultiSelectLongClickListener());
-    }
+    mediaThumbnail.setThumbnailClickListener(new ThumbnailClickListener());
+    mediaThumbnail.setDownloadClickListener(new ThumbnailDownloadClickListener());
+    mediaThumbnail.setOnLongClickListener(passthroughClickListener);
+    mediaThumbnail.setOnClickListener(passthroughClickListener);
+    bodyText.setOnLongClickListener(passthroughClickListener);
+    bodyText.setOnClickListener(passthroughClickListener);
   }
 
-  public void set(@NonNull MasterSecret masterSecret,
-                  @NonNull MessageRecord messageRecord,
-                  @NonNull Locale locale,
-                  @NonNull Set<MessageRecord> batchSelected,
-                  @NonNull SelectionClickListener selectionClickListener,
-                  boolean groupThread)
+  @Override
+  public void bind(@NonNull MasterSecret       masterSecret,
+                   @NonNull MessageRecord      messageRecord,
+                   @NonNull Locale             locale,
+                   @NonNull Set<MessageRecord> batchSelected,
+                   boolean groupThread)
   {
     this.masterSecret           = masterSecret;
     this.messageRecord          = messageRecord;
     this.locale                 = locale;
     this.batchSelected          = batchSelected;
-    this.selectionClickListener = selectionClickListener;
     this.groupThread            = groupThread;
     this.recipient              = messageRecord.getIndividualRecipient();
 
     this.recipient.addListener(this);
 
-    setSelectionBackgroundDrawables(messageRecord);
+    setInteractionState(messageRecord);
     setBodyText(messageRecord);
-
-    if (hasConversationBubble(messageRecord)) {
-      setBubbleState(messageRecord, recipient);
-      setStatusIcons(messageRecord);
-      setContactPhoto(recipient);
-      setGroupMessageStatus(messageRecord, recipient);
-      setEvents(messageRecord);
-      setMinimumWidth();
-      setMediaAttributes(messageRecord);
-    }
+    setBubbleState(messageRecord, recipient);
+    setStatusIcons(messageRecord);
+    setContactPhoto(recipient);
+    setGroupMessageStatus(messageRecord, recipient);
+    checkForAutoInitiate(messageRecord);
+    setMinimumWidth();
+    setMediaAttributes(messageRecord);
   }
 
   private void initializeAttributes() {
@@ -200,11 +203,10 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     final TypedArray attrs      = context.obtainStyledAttributes(attributes);
 
     defaultBubbleColor = attrs.getColor(0, Color.WHITE);
-    selectedBackground = attrs.getDrawable(1);
-    normalBackground   = attrs.getDrawable(2);
     attrs.recycle();
   }
 
+  @Override
   public void unbind() {
     if (recipient != null) {
       recipient.removeListener(this);
@@ -228,16 +230,12 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     }
   }
 
-  private void setSelectionBackgroundDrawables(MessageRecord messageRecord) {
-    if (batchSelected.contains(messageRecord)) {
-      setBackgroundDrawable(selectedBackground);
-    } else {
-      setBackgroundDrawable(normalBackground);
-    }
-  }
-
-  private boolean hasConversationBubble(MessageRecord messageRecord) {
-    return !messageRecord.isGroupAction();
+  private void setInteractionState(MessageRecord messageRecord) {
+    setSelected(batchSelected.contains(messageRecord));
+    mediaThumbnail.setFocusable(!shouldInterceptClicks(messageRecord) && batchSelected.isEmpty());
+    mediaThumbnail.setClickable(!shouldInterceptClicks(messageRecord) && batchSelected.isEmpty());
+    mediaThumbnail.setLongClickable(batchSelected.isEmpty());
+    bodyText.setAutoLinkMask(batchSelected.isEmpty() ? Linkify.ALL : 0);
   }
 
   private boolean isCaptionlessMms(MessageRecord messageRecord) {
@@ -260,11 +258,6 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
       bodyText.setText(messageRecord.getDisplayBody());
       bodyText.setVisibility(View.VISIBLE);
     }
-
-    if (bodyText.isClickable() && bodyText.isFocusable()) {
-      bodyText.setOnLongClickListener(new MultiSelectLongClickListener());
-      bodyText.setOnClickListener(new MultiSelectLongClickListener());
-    }
   }
 
   private void setMediaAttributes(MessageRecord messageRecord) {
@@ -277,7 +270,7 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
       mediaThumbnail.setImageResource(masterSecret, messageRecord.getId(),
                                       messageRecord.getDateReceived(),
                                       ((MediaMmsMessageRecord)messageRecord).getSlideDeckFuture());
-      mediaThumbnail.setShowProgress(!messageRecord.isFailed() && (!messageRecord.isOutgoing() || messageRecord.isPending()));
+      mediaThumbnail.hideControls(messageRecord.isFailed() || (messageRecord.isOutgoing() && !messageRecord.isPending()));
       bodyText.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     } else {
       mediaThumbnail.setVisibility(View.GONE);
@@ -342,24 +335,12 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     }
   }
 
-  private void setEvents(MessageRecord messageRecord) {
-    setClickable(batchSelected.isEmpty() &&
-                 messageRecord.isPendingSmsFallback()      ||
-                 (messageRecord.isKeyExchange()            &&
-                  !messageRecord.isCorruptedKeyExchange()  &&
-                  !messageRecord.isOutgoing()));
-
-    if (!messageRecord.isOutgoing()                       &&
-        messageRecord.getRecipients().isSingleRecipient() &&
-        !messageRecord.isSecure())
-    {
-      checkForAutoInitiate(messageRecord.getRecipients(),
-                           messageRecord.getBody().getBody(),
-                           messageRecord.getThreadId());
-    }
-    if (messageRecord.isFailed()) {
-      setOnLongClickListener(new MultiSelectLongClickListener());
-    }
+  private boolean shouldInterceptClicks(MessageRecord messageRecord) {
+    return batchSelected.isEmpty() &&
+           messageRecord.isPendingSmsFallback()      ||
+           (messageRecord.isKeyExchange()            &&
+            !messageRecord.isCorruptedKeyExchange()  &&
+            !messageRecord.isOutgoing());
   }
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
@@ -398,28 +379,38 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
 
   /// Helper Methods
 
-  private void checkForAutoInitiate(final Recipients recipients, String body, long threadId) {
-    Recipient recipient = recipients.getPrimaryRecipient();
-
-    if (!groupThread &&
-        !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
-        AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
+  private void checkForAutoInitiate(MessageRecord messageRecord) {
+    if (!messageRecord.isOutgoing()                       &&
+        messageRecord.getRecipients().isSingleRecipient() &&
+        !messageRecord.isSecure())
     {
-      AutoInitiate.exemptThread(context, threadId);
+      final Recipients recipients = messageRecord.getRecipients();
 
-      AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
-      builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
-      builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
-      builder.setIconAttribute(R.attr.dialog_info_icon);
-      builder.setCancelable(true);
-      builder.setNegativeButton(R.string.no, null);
-      builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-          KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
-        }
-      });
-      builder.show();
+      Recipient recipient = recipients.getPrimaryRecipient();
+      String    body      = messageRecord.getBody().getBody();
+      long      threadId  = messageRecord.getThreadId();
+
+
+      if (!groupThread &&
+          !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
+          AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId))
+      {
+        AutoInitiate.exemptThread(context, threadId);
+
+        AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
+        builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
+        builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
+        builder.setIconAttribute(R.attr.dialog_info_icon);
+        builder.setCancelable(true);
+        builder.setNegativeButton(R.string.no, null);
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int which) {
+            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
+          }
+        });
+        builder.show();
+      }
     }
   }
 
@@ -437,11 +428,20 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
   }
 
   @Override
-  public void onModified(Recipient recipient) {
-    if (hasConversationBubble(messageRecord)) {
-      setBubbleState(messageRecord, recipient);
-      setContactPhoto(recipient);
-      setGroupMessageStatus(messageRecord, recipient);
+  public void onModified(final Recipient recipient) {
+    Util.runOnMain(new Runnable() {
+      @Override
+      public void run() {
+        setBubbleState(messageRecord, recipient);
+        setContactPhoto(recipient);
+        setGroupMessageStatus(messageRecord, recipient);
+      }
+    });
+  }
+
+  private class ThumbnailDownloadClickListener implements ThumbnailView.ThumbnailClickListener {
+    @Override public void onClick(View v, final Slide slide) {
+      DatabaseFactory.getPartDatabase(context).setTransferState(messageRecord.getId(), slide.getPart().getPartId(), PartDatabase.TRANSFER_PROGRESS_STARTED);
     }
   }
 
@@ -460,8 +460,8 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     }
 
     public void onClick(final View v, final Slide slide) {
-      if (!batchSelected.isEmpty()) {
-        selectionClickListener.onItemClick(null, ConversationItem.this, -1, -1);
+      if (shouldInterceptClicks(messageRecord) || !batchSelected.isEmpty()) {
+        performClick();
       } else if (MediaPreviewActivity.isContentTypeSupported(slide.getContentType()) &&
                  slide.getThumbnailUri() != null)
       {
@@ -513,11 +513,30 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
     }
   }
 
-  private class ClickListener implements View.OnClickListener {
+  private class PassthroughClickListener implements View.OnLongClickListener, View.OnClickListener {
+
+    @Override
+    public boolean onLongClick(View v) {
+      performLongClick();
+      return true;
+    }
+
+    @Override
     public void onClick(View v) {
-      if (messageRecord.isFailed() && !batchSelected.isEmpty()) {
-        selectionClickListener.onItemClick(null, ConversationItem.this, -1, -1);
-      } else if(messageRecord.isFailed()) {
+      performClick();
+    }
+  }
+  private class ClickListener implements View.OnClickListener {
+    private OnClickListener parent;
+
+    public ClickListener(@Nullable OnClickListener parent) {
+      this.parent = parent;
+    }
+
+    public void onClick(View v) {
+      if (!shouldInterceptClicks(messageRecord) && parent != null) {
+        parent.onClick(v);
+      } else if (messageRecord.isFailed()) {
         Intent intent = new Intent(context, MessageDetailsActivity.class);
         intent.putExtra(MessageDetailsActivity.MASTER_SECRET_EXTRA, masterSecret);
         intent.putExtra(MessageDetailsActivity.MESSAGE_ID_EXTRA, messageRecord.getId());
@@ -532,19 +551,6 @@ public class ConversationItem extends LinearLayout implements Recipient.Recipien
       } else if (messageRecord.isPendingSmsFallback()) {
         handleMessageApproval();
       }
-    }
-  }
-
-  private class MultiSelectLongClickListener implements OnLongClickListener, OnClickListener {
-    @Override
-    public boolean onLongClick(View view) {
-      selectionClickListener.onItemLongClick(null, ConversationItem.this, -1, -1);
-      return true;
-    }
-
-    @Override
-    public void onClick(View view) {
-      selectionClickListener.onItemClick(null, ConversationItem.this, -1, -1);
     }
   }
 

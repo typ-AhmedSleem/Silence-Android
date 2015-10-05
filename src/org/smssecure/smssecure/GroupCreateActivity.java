@@ -200,7 +200,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity {
   }
 
   @Override
-  public void onActivityResult(int reqCode, int resultCode, Intent data) {
+  public void onActivityResult(int reqCode, int resultCode, final Intent data) {
     super.onActivityResult(reqCode, resultCode, data);
 
     if (data == null || resultCode != Activity.RESULT_OK)

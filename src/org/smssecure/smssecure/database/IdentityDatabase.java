@@ -166,7 +166,7 @@ public class IdentityDatabase extends Database {
     }
   }
 
-  public class Identity {
+  public static class Identity {
     private final Recipients  recipients;
     private final IdentityKey identityKey;
 

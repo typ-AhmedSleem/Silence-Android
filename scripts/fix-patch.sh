@@ -26,6 +26,7 @@ for file in "$@"; do
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
            -e 's/^SingleRecipientNotificationBuilder_new_textsecure_message/SingleRecipientNotificationBuilder_new_smssecure_message/g' \
+           -e 's/src\/org.smssecure.smssecure.util.SMSSecurePreferences.java/src\/org\/smssecure\/smssecure\/util\/SMSSecurePreferences.java/g' \
            -e "0,/^---/s//\nUpstream commit: https:\/\/github.com\/WhisperSystems\/TextSecure\/commit\/$commit\n---/" \
            "$file"
 done

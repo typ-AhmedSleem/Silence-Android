@@ -530,6 +530,10 @@ public class MmsDatabase extends MessagingDatabase {
       contentValues.put(READ, 1);
       contentValues.put(DATE_RECEIVED, contentValues.getAsLong(DATE_SENT));
 
+      for (int i = 0; i < request.getBody().getPartsNum(); i++) {
+        request.getBody().getPart(i).setTransferProgress(PartDatabase.TRANSFER_PROGRESS_DONE);
+      }
+
       return insertMediaMessage(masterSecret, request.getPduHeaders(),
                                 request.getBody(), contentValues);
     } catch (NoSuchMessageException e) {
@@ -690,7 +694,7 @@ public class MmsDatabase extends MessagingDatabase {
 
     if (sendRequest.getBody() != null) {
       for (int i = 0; i < sendRequest.getBody().getPartsNum(); i++) {
-        sendRequest.getBody().getPart(i).setInProgress(true);
+        sendRequest.getBody().getPart(i).setTransferProgress(PartDatabase.TRANSFER_PROGRESS_STARTED);
       }
     }
 
@@ -1017,7 +1021,7 @@ public class MmsDatabase extends MessagingDatabase {
       List<IdentityKeyMismatch> mismatches      = getMismatchedIdentities(mismatchDocument);
       List<NetworkFailure>      networkFailures = getFailures(networkDocument);
 
-      ListenableFutureTask<SlideDeck> slideDeck = getSlideDeck(masterSecret, dateReceived, id);
+      ListenableFutureTask<SlideDeck> slideDeck = getSlideDeck(dateReceived, id);
 
       return new MediaMmsMessageRecord(context, id, recipients, recipients.getPrimaryRecipient(),
                                        addressDeviceId, dateSent, dateReceived, dateDeliveryReceived,
@@ -1080,8 +1084,7 @@ public class MmsDatabase extends MessagingDatabase {
       }
     }
 
-    private ListenableFutureTask<SlideDeck> getSlideDeck(final MasterSecret masterSecret,
-                                                         final long timestamp,
+    private ListenableFutureTask<SlideDeck> getSlideDeck(final long timestamp,
                                                          final long id)
     {
       ListenableFutureTask<SlideDeck> future = getCachedSlideDeck(timestamp, id);
@@ -1093,12 +1096,9 @@ public class MmsDatabase extends MessagingDatabase {
       Callable<SlideDeck> task = new Callable<SlideDeck>() {
         @Override
         public SlideDeck call() throws Exception {
-          if (masterSecret == null)
-            return null;
-
           PartDatabase partDatabase = DatabaseFactory.getPartDatabase(context);
           PduBody      body         = getPartsAsBody(partDatabase.getParts(id));
-          SlideDeck    slideDeck    = new SlideDeck(context, masterSecret, body);
+          SlideDeck    slideDeck    = new SlideDeck(context, body);
 
           if (!body.containsPushInProgress()) {
             slideCache.put(timestamp + "::" + id, new SoftReference<>(slideDeck));

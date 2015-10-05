@@ -1,10 +1,12 @@
 package org.smssecure.smssecure.mms;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.Base64;
+import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
@@ -87,7 +89,7 @@ public class IncomingMediaMessage {
             media.setName(Util.toIsoBytes(relay.get()));
           }
 
-          media.setInProgress(true);
+          media.setTransferProgress(PartDatabase.TRANSFER_PROGRESS_AUTO_PENDING);
 
           this.body.addPart(media);
         }
