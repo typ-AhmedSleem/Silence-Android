@@ -3,9 +3,12 @@ package org.smssecure.smssecure.util;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
+
+import org.smssecure.smssecure.util.ServiceUtil;
 
 public class TelephonyUtil {
   private static final String TAG = TelephonyUtil.class.getSimpleName();
@@ -46,5 +49,14 @@ public class TelephonyUtil {
   public static String getPhoneNumber(final Context context){
     final TelephonyManager tm = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
     return tm.getLine1Number();
+  }
+
+  public static NetworkInfo getNetworkInfo(final Context context) {
+    return ServiceUtil.getConnectivityManager(context).getActiveNetworkInfo();
+  }
+
+  public static boolean isConnectedRoaming(final Context context) {
+    NetworkInfo info = getNetworkInfo(context);
+    return info != null && info.isConnected() && info.isRoaming() && info.getType() == ConnectivityManager.TYPE_MOBILE;
   }
 }

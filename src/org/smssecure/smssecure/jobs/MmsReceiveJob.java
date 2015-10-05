@@ -5,10 +5,13 @@ import android.util.Log;
 import android.util.Pair;
 
 import org.smssecure.smssecure.ApplicationContext;
+import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
+import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 
@@ -53,10 +56,14 @@ public class MmsReceiveJob extends ContextJob {
     }
 
     if (isNotification(pdu) && !isBlocked(pdu)) {
-      MmsDatabase database                = DatabaseFactory.getMmsDatabase(context);
+      MmsDatabase      database           = DatabaseFactory.getMmsDatabase(context);
       Pair<Long, Long> messageAndThreadId = database.insertMessageInbox((NotificationInd)pdu);
+      MasterSecret     masterSecret       = KeyCachingService.getMasterSecret(context);
 
       Log.w(TAG, "Inserted received MMS notification...");
+
+      database.markIncomingNotificationReceived(messageAndThreadId.second);
+      MessageNotifier.updateNotification(context, masterSecret, messageAndThreadId.second);
 
       ApplicationContext.getInstance(context)
                         .getJobManager()

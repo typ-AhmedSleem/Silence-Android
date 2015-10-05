@@ -33,13 +33,6 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
     super.onCreate(paramBundle);
     addPreferencesFromResource(R.xml.preferences_chats);
 
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_MOBILE_PREF)
-        .setOnPreferenceChangeListener(new MediaDownloadChangeListener());
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_WIFI_PREF)
-        .setOnPreferenceChangeListener(new MediaDownloadChangeListener());
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_ROAMING_PREF)
-        .setOnPreferenceChangeListener(new MediaDownloadChangeListener());
-
     findPreference(SMSSecurePreferences.THREAD_TRIM_NOW)
         .setOnPreferenceClickListener(new TrimNowClickListener());
     findPreference(SMSSecurePreferences.THREAD_TRIM_LENGTH)
@@ -51,29 +44,6 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
   public void onResume() {
     super.onResume();
     ((ApplicationPreferencesActivity)getActivity()).getSupportActionBar().setTitle(R.string.preferences__chats);
-    setMediaDownloadSummaries();
-  }
-
-  private void setMediaDownloadSummaries() {
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_MOBILE_PREF)
-        .setSummary(getSummaryForMediaPreference(SMSSecurePreferences.getMobileMediaDownloadAllowed(getActivity())));
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_WIFI_PREF)
-        .setSummary(getSummaryForMediaPreference(SMSSecurePreferences.getWifiMediaDownloadAllowed(getActivity())));
-    findPreference(SMSSecurePreferences.MEDIA_DOWNLOAD_ROAMING_PREF)
-        .setSummary(getSummaryForMediaPreference(SMSSecurePreferences.getRoamingMediaDownloadAllowed(getActivity())));
-  }
-
-  private CharSequence getSummaryForMediaPreference(Set<String> allowedNetworks) {
-    String[]     keys      = getResources().getStringArray(R.array.pref_media_download_entries);
-    String[]     values    = getResources().getStringArray(R.array.pref_media_download_values);
-    List<String> outValues = new ArrayList<>(allowedNetworks.size());
-
-    for (int i=0; i < keys.length; i++) {
-      if (allowedNetworks.contains(keys[i])) outValues.add(values[i]);
-    }
-
-    return outValues.isEmpty() ? getResources().getString(R.string.preferences__none)
-                               : TextUtils.join(", ", outValues);
   }
 
   private class TrimNowClickListener implements Preference.OnPreferenceClickListener {
@@ -95,15 +65,6 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
       builder.setNegativeButton(android.R.string.cancel, null);
       builder.show();
 
-      return true;
-    }
-  }
-
-  private class MediaDownloadChangeListener implements OnPreferenceChangeListener {
-    @SuppressWarnings("unchecked")
-    @Override public boolean onPreferenceChange(Preference preference, Object newValue) {
-      Log.w(TAG, "onPreferenceChange");
-      preference.setSummary(getSummaryForMediaPreference((Set<String>)newValue));
       return true;
     }
   }
