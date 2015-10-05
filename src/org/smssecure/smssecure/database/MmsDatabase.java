@@ -625,14 +625,19 @@ public class MmsDatabase extends MessagingDatabase {
 
     Log.w(TAG, "Message received type: " + headers.getOctet(PduHeaders.MESSAGE_TYPE));
 
+    long dateReceived = generatePduCompatTimestamp();
+
     contentValues.put(MESSAGE_BOX, Types.BASE_INBOX_TYPE);
     contentValues.put(THREAD_ID, threadId);
     contentValues.put(STATUS, Status.DOWNLOAD_INITIALIZED);
-    contentValues.put(DATE_RECEIVED, generatePduCompatTimestamp());
+    contentValues.put(DATE_RECEIVED, dateReceived);
     contentValues.put(READ, Util.isDefaultSmsProvider(context) ? 0 : 1);
 
     if (!contentValues.containsKey(DATE_SENT))
       contentValues.put(DATE_SENT, contentValues.getAsLong(DATE_RECEIVED));
+
+    if (contentValues.getAsLong(DATE_SENT) <= 0)
+      contentValues.put(DATE_SENT, dateReceived);
 
     long messageId = db.insert(TABLE_NAME, null, contentValues);
     addressDatabase.insertAddressesForId(messageId, headers);
