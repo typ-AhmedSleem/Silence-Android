@@ -86,7 +86,6 @@ public class MessageNotifier {
       @Override
       public void run() {
         Looper.prepare();
-        Log.w(TAG, "Message received by "+recipientName);
         Toast.makeText(context.getApplicationContext(),
                        context.getString(R.string.MessageNotifier_message_received, recipientName),
                        Toast.LENGTH_LONG).show();
