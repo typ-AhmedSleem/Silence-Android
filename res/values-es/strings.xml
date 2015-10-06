@@ -94,6 +94,7 @@
   <string name="ConversationActivity_mms_not_supported_title">MMS no soportado</string>
   <string name="ConversationActivity_mms_not_supported_message">Este mensaje no ha podido ser enviado pues tu proveedor no soporta MMS.</string>
   <string name="ConversationActivity_specify_recipient">Por favor escoja un contacto</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">El adjunto excede los límites de tamaño.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalles del mensaje</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmar borrado de mensaje</string>
@@ -228,6 +229,10 @@ este contacto.
   <string name="RecipientPreferenceActivity_unblock">Desbloquear</string>
   <string name="RecipientPreferenceActivity_enabled">Habilitado</string>
   <string name="RecipientPreferenceActivity_disabled">Deshabilitado</string>
+  <!--Slide-->
+  <string name="Slide_image">Imagen</string>
+  <string name="Slide_audio">Audio</string>
+  <string name="Slide_video">Vídeo</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">¡Se recibió un mensaje corrupto
 de intercambio de claves!
@@ -537,6 +542,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Muestra una notificación cuando un informe de entrega es recibido</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Eliminar automáticamente los mensajes más antiguos cuando una conversación exceda el límite de longitud especificado</string>
   <string name="preferences__delete_old_messages">Eliminar mensajes antiguos</string>
+  <string name="preferences__chats">Chats y audiovisuales</string>
   <string name="preferences__conversation_length_limit">Límite de longitud de la conversación</string>
   <string name="preferences__trim_all_threads_now">Recortar todos los hilos ahora</string>
   <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Escanear todas las conversaciones y forzar los límites de tamaño de conversación</string>
@@ -560,6 +566,10 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences_notifications__display_in_notifications">Mostrar en las notificaciones</string>
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar hora de envío en lugar de hora de recepción para mensajes entrantes.</string>
+  <string name="preferences_chats__media_auto_download">Auto-descarga de audiovisuales</string>
+  <string name="preferences__automatically_download_mms">Auto-descargar MMS</string>
+  <string name="preferences__automatically_download_mms_when_roaming">También en roaming</string>
+  <string name="preferences_chats__message_trimming">Recortado de mensaje</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

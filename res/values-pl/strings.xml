@@ -185,6 +185,7 @@ Twój kontakt przeinstalował program SMSSecure i posiada teraz nowy klucz tożs
 ten kontakt.
 </string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Otrzymano uszkodzony klucz!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">

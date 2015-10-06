@@ -193,6 +193,7 @@
   <string name="ReceiveKeyActivity_processing_key_exchange">키 교환 처리중...</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">이 연락처의 신원을 확인하시는게 좋습니다.</string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">손상된 키 교환 메세지를 수신했습니다!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">올바르지 않은 프로토콜 버전의 키 교환 메세지를 수신했습니다.</string>

@@ -125,6 +125,7 @@ secara otomatis\'</string>
 kontak ini.
 </string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Pesan menerima dan 
 memproses pertukaran kunci korupsi.</string>

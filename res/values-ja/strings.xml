@@ -215,6 +215,7 @@
   <string name="RecipientPreferenceActivity_unblock">ブロックを解除</string>
   <string name="RecipientPreferenceActivity_enabled">有効</string>
   <string name="RecipientPreferenceActivity_disabled">無効</string>
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">無効な鍵交換メッセージを受信しました。</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -430,6 +431,9 @@
   <string name="arrays__name_and_message">名前とメッセージ</string>
   <string name="arrays__name_only">名前のみ</string>
   <string name="arrays__neither">どちらもなし</string>
+  <string name="arrays__enter_key">Enter キーを表示</string>
+  <string name="arrays__emoji_key">絵文字キーを表示</string>
+  <string name="arrays__send_key">送信ボタンを表示</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="other">%d 時間</item>
@@ -441,6 +445,7 @@
   <string name="preferences__pref_all_mms_title">全てのMMSを受信</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">受信する全てのSMS（テキストメッセージ）の表示、及び保存にSMSSecureを使用します</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">受信する全てのMMS（ファイル付きメッセージ）の表示、及び保存にSMSSecureを使用します</string>
+  <string name="preferences__keyboard_settings">キーボードオプション</string>
   <string name="preferences__disable_emoji_drawer">絵文字ドロワーを無効にする</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">キーボードが絵文字をサポートしている場合、このオプションを有効にします。</string>
   <string name="preferences__display_settings">表示設定</string>

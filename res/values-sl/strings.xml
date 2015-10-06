@@ -92,6 +92,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_mms_not_supported_title">Sporočila MMS niso podprta</string>
   <string name="ConversationActivity_mms_not_supported_message">To sporočilo ne more biti poslano, ker vaš operater ne podpira sporočil MMS.</string>
   <string name="ConversationActivity_specify_recipient">Prosimo, izberite stik</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Priponka presega omejitev velikosti</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Podrobnosti sporočila</string>
   <string name="ConversationFragment_confirm_message_delete">Potrdite izbris sporočila</string>
@@ -208,6 +209,10 @@ preveriti ta stik.</string>
   <string name="RecipientPreferenceActivity_unblock">Odblokiraj</string>
   <string name="RecipientPreferenceActivity_enabled">Vklopljeno</string>
   <string name="RecipientPreferenceActivity_disabled">Izklopljeno</string>
+  <!--Slide-->
+  <string name="Slide_image">Slika</string>
+  <string name="Slide_audio">Zvok</string>
+  <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Prejeto poškodovano
 sporočilo za izmenjavo ključev!</string>
@@ -510,6 +515,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Prikaz obvestila, kadar je prejeto potrdilo o uspešni dostavi SMS sporočila</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Samodejen izbris starih sporočil, ko pogovor preseže določeno dolžino</string>
   <string name="preferences__delete_old_messages">Izbris starih sporočil</string>
+  <string name="preferences__chats">Pogovori in multimedija</string>
   <string name="preferences__conversation_length_limit">Omejitev dolžine pogovorov</string>
   <string name="preferences__trim_all_threads_now">Obreži vse pogovore zdaj</string>
   <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Preišči vse pogovore in uveljavi omejitve njihove dolžine</string>
@@ -533,6 +539,10 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences_notifications__display_in_notifications">Prikaži v obvestilih</string>
   <string name="preferences__show_sent_time">Prikaz časa pošiljanja</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pri dohodnih sporočilih bo namesto časa prejema prikazan čas pošiljanja.</string>
+  <string name="preferences_chats__media_auto_download">Samodejen prenos priponk</string>
+  <string name="preferences__automatically_download_mms">Samodejni prenos MMS</string>
+  <string name="preferences__automatically_download_mms_when_roaming">Tudi med gostovanjem</string>
+  <string name="preferences_chats__message_trimming">Izbris starih sporočil</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

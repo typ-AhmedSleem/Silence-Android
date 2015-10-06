@@ -169,6 +169,7 @@ at din kontakt har installeret SMSSecure på ny og dermed fået en ny udveksling
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Du bør verificere
 denne kontakt.</string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Modtog en ugyldig
 nøgle-besked!</string>

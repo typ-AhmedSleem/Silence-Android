@@ -95,6 +95,7 @@ hozzájuk férhet!
   <string name="ConversationActivity_mms_not_supported_title">MMS nem támogatott</string>
   <string name="ConversationActivity_mms_not_supported_message">Ezt az üzenetet nem lehet elküldeni, mivel a szolgáltatód nem támogatja az MMS-t.</string>
   <string name="ConversationActivity_specify_recipient">Válassz egy névjegyet!</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">A melléklet meghaladja a mérethatárt.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Üzenet részletei</string>
   <string name="ConversationFragment_confirm_message_delete">Üzenettörlés megerősítése</string>
@@ -230,6 +231,10 @@ ezt a névjegyet.
   <string name="RecipientPreferenceActivity_unblock">Feloldás</string>
   <string name="RecipientPreferenceActivity_enabled">Engedélyezett</string>
   <string name="RecipientPreferenceActivity_disabled">Letiltott</string>
+  <!--Slide-->
+  <string name="Slide_image">Kép</string>
+  <string name="Slide_audio">Hang</string>
+  <string name="Slide_video">Videó</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Elrontott csere kulcs
 üzenet érkezett!
@@ -539,6 +544,7 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Értesítés megjelenítése, amikor egy kézbesítési jelentés érkezett</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Régebbi üzenetek automatikus törlése, amikor egy beszélgetésfolyam túllép egy megadott hosszt</string>
   <string name="preferences__delete_old_messages">Régi üzenetek törlése</string>
+  <string name="preferences__chats">Csevegések és média</string>
   <string name="preferences__conversation_length_limit">Beszélgetés hosszának behatárolása</string>
   <string name="preferences__trim_all_threads_now">Minden beszélgetésfolyam csonkolása</string>
   <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Minden beszélgetésfolyam átnézése és a beszélgetés határoló hossz érvényre juttatása</string>
@@ -562,6 +568,10 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences_notifications__display_in_notifications">Megjelenítés értesítésekben</string>
   <string name="preferences__show_sent_time">Küldési idő megjelenítése</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">A küldés idejének megjelenítése az érkezés ideje helyett a beérkező üzeneteknél</string>
+  <string name="preferences_chats__media_auto_download">Média automatikus letöltése</string>
+  <string name="preferences__automatically_download_mms">MMS automatikus letöltése</string>
+  <string name="preferences__automatically_download_mms_when_roaming">Barangolás közben is</string>
+  <string name="preferences_chats__message_trimming">Üzenet csonkolás</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

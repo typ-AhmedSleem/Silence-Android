@@ -219,6 +219,7 @@ SMS съобщенията от системната базата данни в 
   <string name="RecipientPreferenceActivity_unblock">Разблокирай</string>
   <string name="RecipientPreferenceActivity_enabled">Включено</string>
   <string name="RecipientPreferenceActivity_disabled">Изключено</string>
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Съобщението за обмяна на ключ
 е объркано!</string>

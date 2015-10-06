@@ -205,6 +205,7 @@
   <string name="RecipientPreferenceActivity_unblock">解除屏蔽</string>
   <string name="RecipientPreferenceActivity_enabled">启用</string>
   <string name="RecipientPreferenceActivity_disabled">禁用</string>
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">收到损坏的密钥
 交换消息！</string>

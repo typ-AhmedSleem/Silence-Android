@@ -212,6 +212,7 @@ que este contacto reinstalou o SMSSecure e tem agora uma nova chave de identidad
   <string name="RecipientPreferenceActivity_unblock">Desbloquear</string>
   <string name="RecipientPreferenceActivity_enabled">Ativo</string>
   <string name="RecipientPreferenceActivity_disabled">Inativo</string>
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Foi recebida uma chave
 de intercâmbio danificada.</string>

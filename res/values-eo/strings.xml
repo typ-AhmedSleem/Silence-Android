@@ -81,6 +81,7 @@
   <string name="PassphrasePromptActivity_watermark_content_description">Piktogramo de SMSSecure</string>
   <!--ReceiveKeyActivity-->
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->

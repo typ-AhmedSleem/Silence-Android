@@ -222,6 +222,7 @@ rinozviitira rega ratadziswa.</string>
   <string name="RecipientPreferenceActivity_unblock">Kubvisa dziviro</string>
   <string name="RecipientPreferenceActivity_enabled">Kugonesa</string>
   <string name="RecipientPreferenceActivity_disabled">Kutadzisa</string>
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Tatambira svumbunuro yakaworesa
 yekutsinha tsamba!</string>

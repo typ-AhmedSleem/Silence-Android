@@ -181,6 +181,7 @@
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Вы можете хотеть проверить 
 этот контакт.</string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Получено повреждённое
 сообщение обмена ключами!

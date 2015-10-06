@@ -195,6 +195,7 @@ razmjene ključeva\'.</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Možda bi trebali provjeriti
 ovaj kontakt.</string>
   <!--RecipientPreferencesActivity-->
+  <!--Slide-->
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Primljena iskvarena poruka
 razmjene ključeva!</string>
