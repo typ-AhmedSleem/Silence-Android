@@ -10,7 +10,6 @@ import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureAttachment;
 import org.whispersystems.textsecure.api.messages.TextSecureGroup;
 
 import java.util.List;
@@ -49,8 +48,7 @@ public class IncomingMediaMessage {
                               long sentTimeMillis,
                               Optional<String> relay,
                               Optional<String> body,
-                              Optional<TextSecureGroup> group,
-                              Optional<List<TextSecureAttachment>> attachments)
+                              Optional<TextSecureGroup> group)
   {
     this.headers = new PduHeaders();
     this.body    = new PduBody();
@@ -73,27 +71,6 @@ public class IncomingMediaMessage {
       text.setContentType(Util.toIsoBytes("text/plain"));
       text.setCharset(CharacterSets.UTF_8);
       this.body.addPart(text);
-    }
-
-    if (attachments.isPresent()) {
-      for (TextSecureAttachment attachment : attachments.get()) {
-        if (attachment.isPointer()) {
-          PduPart media        = new PduPart();
-          byte[]  encryptedKey = new MasterCipher(masterSecret).encryptBytes(attachment.asPointer().getKey());
-
-          media.setContentType(Util.toIsoBytes(attachment.getContentType()));
-          media.setContentLocation(Util.toIsoBytes(String.valueOf(attachment.asPointer().getId())));
-          media.setContentDisposition(Util.toIsoBytes(Base64.encodeBytes(encryptedKey)));
-
-          if (relay.isPresent()) {
-            media.setName(Util.toIsoBytes(relay.get()));
-          }
-
-          media.setTransferProgress(PartDatabase.TRANSFER_PROGRESS_AUTO_PENDING);
-
-          this.body.addPart(media);
-        }
-      }
     }
   }
 

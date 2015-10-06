@@ -9,7 +9,6 @@ import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.textsecure.api.messages.TextSecureAttachment;
 
 import java.util.List;
 
@@ -40,14 +39,6 @@ public class OutgoingMediaMessage {
     this(context, recipients, slideDeck.toPduBody(), message, distributionType);
   }
 
-  public OutgoingMediaMessage(Context context, MasterSecret masterSecret,
-                              Recipients recipients, List<TextSecureAttachment> attachments,
-                              String message)
-  {
-    this(context, recipients, pduBodyFor(masterSecret, attachments), message,
-         ThreadDatabase.DistributionTypes.CONVERSATION);
-  }
-
   public OutgoingMediaMessage(OutgoingMediaMessage that) {
     this.recipients       = that.getRecipients();
     this.body             = that.body;
@@ -73,24 +64,4 @@ public class OutgoingMediaMessage {
   public boolean isGroup() {
     return false;
   }
-
-  private static PduBody pduBodyFor(MasterSecret masterSecret, List<TextSecureAttachment> attachments) {
-    PduBody body = new PduBody();
-
-    for (TextSecureAttachment attachment : attachments) {
-      if (attachment.isPointer()) {
-        PduPart media        = new PduPart();
-        byte[]  encryptedKey = new MasterCipher(masterSecret).encryptBytes(attachment.asPointer().getKey());
-
-        media.setContentType(Util.toIsoBytes(attachment.getContentType()));
-        media.setContentLocation(Util.toIsoBytes(String.valueOf(attachment.asPointer().getId())));
-        media.setContentDisposition(Util.toIsoBytes(Base64.encodeBytes(encryptedKey)));
-
-        body.addPart(media);
-      }
-    }
-
-    return body;
-  }
-
 }
