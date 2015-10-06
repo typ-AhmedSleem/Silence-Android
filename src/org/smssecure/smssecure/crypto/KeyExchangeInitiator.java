@@ -42,7 +42,6 @@ import org.whispersystems.libaxolotl.state.PreKeyStore;
 import org.whispersystems.libaxolotl.state.SessionRecord;
 import org.whispersystems.libaxolotl.state.SessionStore;
 import org.whispersystems.libaxolotl.state.SignedPreKeyStore;
-import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 public class KeyExchangeInitiator {
 
@@ -73,8 +72,7 @@ public class KeyExchangeInitiator {
     IdentityKeyStore  identityKeyStore  = new SMSSecureIdentityKeyStore(context, masterSecret);
 
     SessionBuilder    sessionBuilder    = new SessionBuilder(sessionStore, preKeyStore, signedPreKeyStore,
-                                                             identityKeyStore, new AxolotlAddress(recipient.getNumber(),
-                                                                                                  TextSecureAddress.DEFAULT_DEVICE_ID));
+                                                             identityKeyStore, new AxolotlAddress(recipient.getNumber(), 1));
 
     KeyExchangeMessage         keyExchangeMessage = sessionBuilder.process();
     String                     serializedMessage  = Base64.encodeBytesWithoutPadding(keyExchangeMessage.serialize());
@@ -88,7 +86,7 @@ public class KeyExchangeInitiator {
   {
     Recipient     recipient     = recipients.getPrimaryRecipient();
     SessionStore  sessionStore  = new SMSSecureSessionStore(context, masterSecret);
-    SessionRecord sessionRecord = sessionStore.loadSession(new AxolotlAddress(recipient.getNumber(), TextSecureAddress.DEFAULT_DEVICE_ID));
+    SessionRecord sessionRecord = sessionStore.loadSession(new AxolotlAddress(recipient.getNumber(), 1));
 
     return sessionRecord.getSessionState().hasPendingKeyExchange();
   }

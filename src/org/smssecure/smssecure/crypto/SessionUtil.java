@@ -7,7 +7,6 @@ import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.whispersystems.libaxolotl.AxolotlAddress;
 import org.whispersystems.libaxolotl.state.SessionStore;
-import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 public class SessionUtil {
 
@@ -17,7 +16,7 @@ public class SessionUtil {
 
   public static boolean hasSession(Context context, MasterSecret masterSecret, @NonNull String number) {
     SessionStore   sessionStore   = new SMSSecureSessionStore(context, masterSecret);
-    AxolotlAddress axolotlAddress = new AxolotlAddress(number, TextSecureAddress.DEFAULT_DEVICE_ID);
+    AxolotlAddress axolotlAddress = new AxolotlAddress(number, 1);
 
     return sessionStore.containsSession(axolotlAddress);
   }
