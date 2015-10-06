@@ -10,7 +10,6 @@ import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureGroup;
 
 import java.util.List;
 
@@ -47,18 +46,12 @@ public class IncomingMediaMessage {
                               String to,
                               long sentTimeMillis,
                               Optional<String> relay,
-                              Optional<String> body,
-                              Optional<TextSecureGroup> group)
+                              Optional<String> body)
   {
     this.headers = new PduHeaders();
     this.body    = new PduBody();
     this.push    = true;
-
-    if (group.isPresent()) {
-      this.groupId = GroupUtil.getEncodedId(group.get().getGroupId());
-    } else {
-      this.groupId = null;
-    }
+    this.groupId = null;
 
     this.headers.setEncodedStringValue(new EncodedStringValue(from), PduHeaders.FROM);
     this.headers.appendEncodedStringValue(new EncodedStringValue(to), PduHeaders.TO);

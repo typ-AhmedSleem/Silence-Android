@@ -6,7 +6,6 @@ import android.telephony.SmsMessage;
 
 import org.smssecure.smssecure.util.GroupUtil;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureGroup;
 
 import java.util.List;
 
@@ -48,9 +47,7 @@ public class IncomingTextMessage implements Parcelable {
     this.push                 = false;
   }
 
-  public IncomingTextMessage(String sender, int senderDeviceId, long sentTimestampMillis,
-                             String encodedBody, Optional<TextSecureGroup> group)
-  {
+  public IncomingTextMessage(String sender, int senderDeviceId, long sentTimestampMillis, String encodedBody) {
     this.message              = encodedBody;
     this.sender               = sender;
     this.senderDeviceId       = senderDeviceId;
@@ -60,12 +57,7 @@ public class IncomingTextMessage implements Parcelable {
     this.pseudoSubject        = "";
     this.sentTimestampMillis  = sentTimestampMillis;
     this.push                 = true;
-
-    if (group.isPresent()) {
-      this.groupId = GroupUtil.getEncodedId(group.get().getGroupId());
-    } else {
-      this.groupId = null;
-    }
+    this.groupId = null;
   }
 
   public IncomingTextMessage(Parcel in) {
