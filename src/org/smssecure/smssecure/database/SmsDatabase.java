@@ -41,9 +41,9 @@ import org.smssecure.smssecure.sms.IncomingGroupMessage;
 import org.smssecure.smssecure.sms.IncomingKeyExchangeMessage;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
+import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.JsonUtils;
 import org.whispersystems.jobqueue.JobManager;
-import org.whispersystems.textsecure.api.util.InvalidNumberException;
 
 import java.io.IOException;
 import java.util.LinkedList;

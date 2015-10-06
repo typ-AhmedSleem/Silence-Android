@@ -39,8 +39,8 @@ import android.widget.EditText;
 
 import org.smssecure.smssecure.BuildConfig;
 import org.smssecure.smssecure.mms.OutgoingLegacyMmsConnection;
-import org.whispersystems.textsecure.api.util.InvalidNumberException;
-import org.whispersystems.textsecure.api.util.PhoneNumberFormatter;
+import org.smssecure.smssecure.util.InvalidNumberException;
+import org.smssecure.smssecure.util.PhoneNumberFormatter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

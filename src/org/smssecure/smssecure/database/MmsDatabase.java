@@ -54,6 +54,7 @@ import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
+import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.JsonUtils;
 import org.smssecure.smssecure.util.LRUCache;
 import org.smssecure.smssecure.util.ListenableFutureTask;
@@ -62,7 +63,6 @@ import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.util.InvalidNumberException;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
