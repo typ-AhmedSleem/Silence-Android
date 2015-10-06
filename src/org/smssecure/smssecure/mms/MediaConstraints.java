@@ -24,7 +24,6 @@ public abstract class MediaConstraints {
   private static final String TAG = MediaConstraints.class.getSimpleName();
 
   public static MediaConstraints MMS_CONSTRAINTS  = new MmsMediaConstraints();
-  public static MediaConstraints PUSH_CONSTRAINTS = new PushMediaConstraints();
 
   public abstract int getImageMaxWidth(Context context);
   public abstract int getImageMaxHeight(Context context);
