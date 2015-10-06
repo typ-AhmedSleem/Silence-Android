@@ -47,7 +47,6 @@ import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.ResUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.TextSecureAccountManager;
 import org.whispersystems.textsecure.api.push.exceptions.AuthorizationFailedException;
 
 import java.io.IOException;
