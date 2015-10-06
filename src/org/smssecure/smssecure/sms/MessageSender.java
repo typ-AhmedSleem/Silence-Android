@@ -26,7 +26,6 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.NotInDirectoryException;
-import org.smssecure.smssecure.database.SMSSecureDirectory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.jobs.MmsSendJob;

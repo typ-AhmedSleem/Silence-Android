@@ -37,7 +37,6 @@ import org.smssecure.smssecure.contacts.RecipientsEditor;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.NotInDirectoryException;
-import org.smssecure.smssecure.database.SMSSecureDirectory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
