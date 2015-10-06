@@ -648,8 +648,8 @@
     <string name="preferences__show_sent_time">Show sent time</string>
     <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Show sent time instead of received time for incoming messages</string>
     <string name="preferences_chats__media_auto_download">Media auto-download</string>
-    <string name="preferences__automatically_download_mms_messages">Automatically download MMS messages</string>
-    <string name="preferences__automatically_download_mms_messages_when_roaming">Automatically download MMS messages when roaming</string>
+    <string name="preferences__automatically_download_mms">Automatically download MMS</string>
+    <string name="preferences__automatically_download_mms_when_roaming">Also when roaming</string>
     <string name="preferences_chats__message_trimming">Message trimming</string>
 
     <!-- **************************************** -->
