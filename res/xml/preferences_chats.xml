@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:key="media_download" android:title="@string/preferences_chats__media_auto_download">
+    <PreferenceCategory android:key="media_download" android:title="@string/preferences_chats__mms">
         <org.smssecure.smssecure.components.SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="pref_media_download"
-            android:title="@string/preferences__automatically_download_mms" />
+            android:title="@string/preferences__auto_retrieve"
+            android:summary="@string/preferences__automatically_retrieve_mms_messages" />
 
         <org.smssecure.smssecure.components.SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="pref_media_download_roaming"
             android:dependency="pref_media_download"
-            android:title="@string/preferences__automatically_download_mms_when_roaming" />
+            android:title="@string/preferences__roaming_auto_retrieve"
+            android:summary="@string/preferences__automatically_retrieve_mms_when_roaming" />
 
     </PreferenceCategory>
 
