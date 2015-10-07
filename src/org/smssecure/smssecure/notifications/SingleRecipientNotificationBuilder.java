@@ -173,15 +173,18 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
       }
 
       Slide thumbnailSlide = slideDeck.get().getThumbnailSlide();
-      Uri   uri            = thumbnailSlide.getThumbnailUri();
+
+      if (thumbnailSlide == null) return false;
+
+      Uri uri = thumbnailSlide.getThumbnailUri();
+
+      if (uri == null) return false;
 
       DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
 
-      return decryptableUri != null         &&
-             thumbnailSlide != null         &&
-             thumbnailSlide.hasImage()      &&
-             !thumbnailSlide.isInProgress() &&
-             thumbnailSlide.getThumbnailUri() != null;
+      return decryptableUri != null    &&
+             thumbnailSlide.hasImage() &&
+             !thumbnailSlide.isInProgress();
 
     } catch (InterruptedException | ExecutionException e) {
       Log.w(TAG, e);
