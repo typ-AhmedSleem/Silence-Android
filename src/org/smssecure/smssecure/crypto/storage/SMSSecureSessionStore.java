@@ -13,7 +13,6 @@ import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.state.SessionRecord;
 import org.whispersystems.libaxolotl.state.SessionState;
 import org.whispersystems.libaxolotl.state.SessionStore;
-import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -111,7 +110,7 @@ public class SMSSecureSessionStore implements SessionStore {
   public void deleteAllSessions(String name) {
     List<Integer> devices = getSubDeviceSessions(name);
 
-    deleteSession(new AxolotlAddress(name, TextSecureAddress.DEFAULT_DEVICE_ID));
+    deleteSession(new AxolotlAddress(name, 1));
 
     for (int device : devices) {
       deleteSession(new AxolotlAddress(name, device));
@@ -165,7 +164,7 @@ public class SMSSecureSessionStore implements SessionStore {
     long      recipientId = recipient.getRecipientId();
     int       deviceId    = axolotlAddress.getDeviceId();
 
-    return recipientId + (deviceId == TextSecureAddress.DEFAULT_DEVICE_ID ? "" : "." + deviceId);
+    return recipientId + (deviceId == 1 ? "" : "." + deviceId);
   }
 
   private byte[] readBlob(FileInputStream in) throws IOException {

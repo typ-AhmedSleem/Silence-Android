@@ -30,7 +30,6 @@ import android.telephony.PhoneNumberUtils;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.GroupDatabase;
-import org.smssecure.smssecure.database.SMSSecureDirectory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -59,30 +58,6 @@ public class ContactAccessor {
 
   public static synchronized ContactAccessor getInstance() {
     return instance;
-  }
-
-  public Collection<ContactData> getContactsWithPush(Context context) {
-    final ContentResolver resolver = context.getContentResolver();
-    final String[] inProjection    = new String[]{PhoneLookup._ID, PhoneLookup.DISPLAY_NAME};
-
-    List<String> pushNumbers = SMSSecureDirectory.getInstance(context).getActiveNumbers();
-    final Collection<ContactData> lookupData = new ArrayList<ContactData>(pushNumbers.size());
-
-    for (String pushNumber : pushNumbers) {
-      Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(pushNumber));
-      Cursor lookupCursor = resolver.query(uri, inProjection, null, null, null);
-      try {
-        if (lookupCursor != null && lookupCursor.moveToFirst()) {
-          final ContactData contactData = new ContactData(lookupCursor.getLong(0), lookupCursor.getString(1));
-          contactData.numbers.add(new NumberData("SMSSecure", pushNumber));
-          lookupData.add(contactData);
-        }
-      } finally {
-        if (lookupCursor != null)
-          lookupCursor.close();
-      }
-    }
-    return lookupData;
   }
 
   public String getNameFromContact(Context context, Uri uri) {

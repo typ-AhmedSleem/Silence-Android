@@ -52,7 +52,6 @@ import org.whispersystems.libaxolotl.protocol.KeyExchangeMessage;
 import org.whispersystems.libaxolotl.protocol.PreKeyWhisperMessage;
 import org.whispersystems.libaxolotl.state.IdentityKeyStore;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureGroup;
 
 import java.io.IOException;
 
@@ -134,8 +133,7 @@ public class ReceiveKeyDialog extends AlertDialog {
     IncomingTextMessage message = new IncomingTextMessage(messageRecord.getIndividualRecipient().getNumber(),
                                                           messageRecord.getRecipientDeviceId(),
                                                           System.currentTimeMillis(),
-                                                          messageRecord.getBody().getBody(),
-                                                          Optional.<TextSecureGroup>absent());
+                                                          messageRecord.getBody().getBody());
 
     if (messageRecord.isBundleKeyExchange()) {
       return new IncomingPreKeyBundleMessage(message, message.getMessageBody());

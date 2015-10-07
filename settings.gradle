@@ -1,3 +1,5 @@
 include 'libs:com.amulyakhare.textdrawable:library',
 'libs:com.android.support.support-v4-preferencefragment',
-'libs:org.w3c.dom'
+'libs:org.w3c.dom',
+'libs:org.whispersystems.jobmanager',
+'libs:org.whispersystems.libpastelog:library'

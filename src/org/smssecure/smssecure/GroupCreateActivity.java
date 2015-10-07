@@ -37,16 +37,15 @@ import org.smssecure.smssecure.contacts.RecipientsEditor;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.NotInDirectoryException;
-import org.smssecure.smssecure.database.SMSSecureDirectory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.SelectedRecipientsAdapter;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.textsecure.api.util.InvalidNumberException;
 import org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 import java.io.File;

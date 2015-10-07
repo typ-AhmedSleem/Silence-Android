@@ -18,7 +18,6 @@ import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.textsecure.api.messages.TextSecureAttachmentPointer;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -103,19 +102,12 @@ public class GroupDatabase extends Database {
     return RecipientFactory.getRecipientsFor(context, recipients, false);
   }
 
-  public void create(byte[] groupId, String title, List<String> members,
-                     TextSecureAttachmentPointer avatar, String relay)
+  public void create(byte[] groupId, String title, List<String> members, String relay)
   {
     ContentValues contentValues = new ContentValues();
     contentValues.put(GROUP_ID, GroupUtil.getEncodedId(groupId));
     contentValues.put(TITLE, title);
     contentValues.put(MEMBERS, Util.join(members, ","));
-
-    if (avatar != null) {
-      contentValues.put(AVATAR_ID, avatar.getId());
-      contentValues.put(AVATAR_KEY, avatar.getKey());
-      contentValues.put(AVATAR_CONTENT_TYPE, avatar.getContentType());
-    }
 
     contentValues.put(AVATAR_RELAY, relay);
     contentValues.put(TIMESTAMP, System.currentTimeMillis());
@@ -124,15 +116,9 @@ public class GroupDatabase extends Database {
     databaseHelper.getWritableDatabase().insert(TABLE_NAME, null, contentValues);
   }
 
-  public void update(byte[] groupId, String title, TextSecureAttachmentPointer avatar) {
+  public void update(byte[] groupId, String title) {
     ContentValues contentValues = new ContentValues();
     if (title != null) contentValues.put(TITLE, title);
-
-    if (avatar != null) {
-      contentValues.put(AVATAR_ID, avatar.getId());
-      contentValues.put(AVATAR_CONTENT_TYPE, avatar.getContentType());
-      contentValues.put(AVATAR_KEY, avatar.getKey());
-    }
 
     databaseHelper.getWritableDatabase().update(TABLE_NAME, contentValues,
                                                 GROUP_ID + " = ?",

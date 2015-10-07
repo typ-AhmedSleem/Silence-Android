@@ -10,3 +10,9 @@
 [submodule "libs/com.amulyakhare.textdrawable"]
 	path = libs/com.amulyakhare.textdrawable
 	url = https://github.com/amulyakhare/TextDrawable.git
+[submodule "libs/org.whispersystems.jobmanager"]
+	path = libs/org.whispersystems.jobmanager
+	url = https://github.com/SMSSecure/jobmanager.git
+[submodule "libs/org.whispersystems.libpastelog"]
+	path = libs/org.whispersystems.libpastelog
+	url = https://github.com/SMSSecure/libpastelog.git

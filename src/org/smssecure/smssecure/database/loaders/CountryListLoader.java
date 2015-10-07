@@ -11,9 +11,9 @@ import java.util.Set;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import org.whispersystems.textsecure.api.util.PhoneNumberFormatter;
+
+import org.smssecure.smssecure.util.PhoneNumberFormatter;
 
 public class CountryListLoader extends AsyncTaskLoader<ArrayList<Map<String, String>>> {
 

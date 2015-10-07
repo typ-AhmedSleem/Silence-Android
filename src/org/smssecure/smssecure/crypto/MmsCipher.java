@@ -18,7 +18,6 @@ import org.whispersystems.libaxolotl.protocol.CiphertextMessage;
 import org.whispersystems.libaxolotl.protocol.WhisperMessage;
 import org.whispersystems.libaxolotl.state.AxolotlStore;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 import java.io.IOException;
 
@@ -48,7 +47,7 @@ public class MmsCipher {
              NoSessionException
   {
     try {
-      SessionCipher sessionCipher = new SessionCipher(axolotlStore, new AxolotlAddress(pdu.getFrom().getString(), TextSecureAddress.DEFAULT_DEVICE_ID));
+      SessionCipher sessionCipher = new SessionCipher(axolotlStore, new AxolotlAddress(pdu.getFrom().getString(), 1));
       Optional<byte[]> ciphertext = getEncryptedData(pdu);
 
       if (!ciphertext.isPresent()) {
@@ -96,11 +95,11 @@ public class MmsCipher {
       throw new UndeliverableMessageException("PDU composition failed, null payload");
     }
 
-    if (!axolotlStore.containsSession(new AxolotlAddress(recipientString, TextSecureAddress.DEFAULT_DEVICE_ID))) {
+    if (!axolotlStore.containsSession(new AxolotlAddress(recipientString, 1))) {
       throw new NoSessionException("No session for: " + recipientString);
     }
 
-    SessionCipher     cipher            = new SessionCipher(axolotlStore, new AxolotlAddress(recipientString, TextSecureAddress.DEFAULT_DEVICE_ID));
+    SessionCipher     cipher            = new SessionCipher(axolotlStore, new AxolotlAddress(recipientString, 1));
     CiphertextMessage ciphertextMessage = cipher.encrypt(pduBytes);
     byte[]            encryptedPduBytes = textTransport.getEncodedMessage(ciphertextMessage.serialize());
 

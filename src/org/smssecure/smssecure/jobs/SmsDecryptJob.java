@@ -34,7 +34,6 @@ import org.whispersystems.libaxolotl.NoSessionException;
 import org.whispersystems.libaxolotl.StaleKeyExchangeException;
 import org.whispersystems.libaxolotl.UntrustedIdentityException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureGroup;
 
 import java.io.IOException;
 
@@ -204,8 +203,7 @@ public class SmsDecryptJob extends MasterSecretJob {
     IncomingTextMessage message = new IncomingTextMessage(record.getRecipients().getPrimaryRecipient().getNumber(),
                                                           record.getRecipientDeviceId(),
                                                           record.getDateSent(),
-                                                          plaintextBody,
-                                                          Optional.<TextSecureGroup>absent());
+                                                          plaintextBody);
 
     if (record.isEndSession()) {
       return new IncomingEndSessionMessage(message);

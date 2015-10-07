@@ -6,8 +6,6 @@ import android.telephony.SmsMessage;
 
 import org.smssecure.smssecure.util.GroupUtil;
 import org.whispersystems.libaxolotl.util.guava.Optional;
-import org.whispersystems.textsecure.api.messages.TextSecureGroup;
-import org.whispersystems.textsecure.api.push.TextSecureAddress;
 
 import java.util.List;
 
@@ -39,7 +37,7 @@ public class IncomingTextMessage implements Parcelable {
   public IncomingTextMessage(SmsMessage message) {
     this.message              = message.getDisplayMessageBody();
     this.sender               = message.getDisplayOriginatingAddress();
-    this.senderDeviceId       = TextSecureAddress.DEFAULT_DEVICE_ID;
+    this.senderDeviceId       = 1;
     this.protocol             = message.getProtocolIdentifier();
     this.serviceCenterAddress = message.getServiceCenterAddress();
     this.replyPathPresent     = message.isReplyPathPresent();
@@ -49,9 +47,7 @@ public class IncomingTextMessage implements Parcelable {
     this.push                 = false;
   }
 
-  public IncomingTextMessage(String sender, int senderDeviceId, long sentTimestampMillis,
-                             String encodedBody, Optional<TextSecureGroup> group)
-  {
+  public IncomingTextMessage(String sender, int senderDeviceId, long sentTimestampMillis, String encodedBody) {
     this.message              = encodedBody;
     this.sender               = sender;
     this.senderDeviceId       = senderDeviceId;
@@ -61,12 +57,7 @@ public class IncomingTextMessage implements Parcelable {
     this.pseudoSubject        = "";
     this.sentTimestampMillis  = sentTimestampMillis;
     this.push                 = true;
-
-    if (group.isPresent()) {
-      this.groupId = GroupUtil.getEncodedId(group.get().getGroupId());
-    } else {
-      this.groupId = null;
-    }
+    this.groupId = null;
   }
 
   public IncomingTextMessage(Parcel in) {
@@ -118,7 +109,7 @@ public class IncomingTextMessage implements Parcelable {
   {
     this.message              = "";
     this.sender               = sender;
-    this.senderDeviceId       = TextSecureAddress.DEFAULT_DEVICE_ID;
+    this.senderDeviceId       = 1;
     this.protocol             = 31338;
     this.serviceCenterAddress = "Outgoing";
     this.replyPathPresent     = true;

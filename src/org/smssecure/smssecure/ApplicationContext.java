@@ -20,7 +20,6 @@ import android.app.Application;
 import android.content.Context;
 
 import org.smssecure.smssecure.crypto.PRNGFixes;
-import org.smssecure.smssecure.dependencies.AxolotlStorageModule;
 import org.smssecure.smssecure.dependencies.InjectableType;
 import org.smssecure.smssecure.jobs.persistence.EncryptingJobSerializer;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirementProvider;
@@ -60,7 +59,6 @@ public class ApplicationContext extends Application implements DependencyInjecto
   public void onCreate() {
     initializeRandomNumberFix();
     initializeLogging();
-    initializeDependencyInjection();
     initializeJobManager();
   }
 
@@ -98,10 +96,6 @@ public class ApplicationContext extends Application implements DependencyInjecto
 
   public void notifyMediaControlEvent() {
     mediaNetworkRequirementProvider.notifyMediaControlEvent();
-  }
-
-  private void initializeDependencyInjection() {
-    this.objectGraph = ObjectGraph.create(new AxolotlStorageModule(this));
   }
 
 }

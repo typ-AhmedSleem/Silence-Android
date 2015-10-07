@@ -53,8 +53,8 @@ dependencies {
     }
     provided 'com.squareup.dagger:dagger-compiler:1.2.2'
 
-    compile 'org.whispersystems:jobmanager:0.11.0'
-    compile 'org.whispersystems:libpastelog:1.0.6'
+    compile project (':libs:org.whispersystems.jobmanager')
+    compile project (':libs:org.whispersystems.libpastelog:library')
     compile 'org.whispersystems:textsecure-android:1.6.2'
     compile project (':libs:com.amulyakhare.textdrawable:library')
 
@@ -105,8 +105,6 @@ dependencyVerification {
             'org.whispersystems:axolotl-java:6daee739b89d8d7101de6d98f77132fee48495c6ea647d880e77def842f999ea',
             'org.whispersystems:curve25519-android:3c29a4131a69b0d16baaa3d707678deb39602c3a3ffd75805ce7f9db252e5d0d',
             'org.whispersystems:curve25519-java:9ccef8f5aba05d9942336f023c589d6278b4f9135bdc34a7bade1f4e7ad65fa3',
-            'org.whispersystems:jobmanager:ea9cb943c4892fb90c1eea1be30efeb85cefca213d52c788419553b58d0ed70d',
-            'org.whispersystems:libpastelog:550d33c565380d90f4c671e7b8ed5f3a6da55a9fda468373177106b2eb5220b2',
             'org.whispersystems:textsecure-android:6fc3a127b4ab63533e571066a8c6686e82d071d804f4563eee66a3773dd094e0',
             'org.whispersystems:textsecure-java:9167ae6cbc34b62b5d51b2dd687306ca94eab6cf5fa7cf426f40ec32d3d37cf8',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
