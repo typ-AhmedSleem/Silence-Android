@@ -566,9 +566,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences_notifications__display_in_notifications">Mostrar en las notificaciones</string>
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar hora de envío en lugar de hora de recepción para mensajes entrantes.</string>
-  <string name="preferences_chats__media_auto_download">Auto-descarga de audiovisuales</string>
-  <string name="preferences__automatically_download_mms">Auto-descargar MMS</string>
-  <string name="preferences__automatically_download_mms_when_roaming">También en roaming</string>
   <string name="preferences_chats__message_trimming">Recortado de mensaje</string>
   <!--****************************************-->
   <!--menus-->

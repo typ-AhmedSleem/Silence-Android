@@ -554,9 +554,11 @@ Importer un fichier de sauvegarde non-chiffré. Compatible avec « SMSBackup And
   <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>
   <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Afficher la l\'heure d\'envoi au lieu de celle de réception des messages</string>
-  <string name="preferences_chats__media_auto_download">Téléchargement automatique des pièces jointes</string>
-  <string name="preferences__automatically_download_mms">Téléchargement MMS auto</string>
-  <string name="preferences__automatically_download_mms_when_roaming">Également en itinérance</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Récupération auto</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Récupère automatiquement les MMS</string>
+  <string name="preferences__roaming_auto_retrieve">Récupération auto en itinérance</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Récupère automatiquement les MMS en itinérance</string>
   <string name="preferences_chats__message_trimming">Suppression de messages</string>
   <!--****************************************-->
   <!--menus-->

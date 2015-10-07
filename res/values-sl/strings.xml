@@ -539,9 +539,11 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences_notifications__display_in_notifications">Prikaži v obvestilih</string>
   <string name="preferences__show_sent_time">Prikaz časa pošiljanja</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pri dohodnih sporočilih bo namesto časa prejema prikazan čas pošiljanja.</string>
-  <string name="preferences_chats__media_auto_download">Samodejen prenos priponk</string>
-  <string name="preferences__automatically_download_mms">Samodejni prenos MMS</string>
-  <string name="preferences__automatically_download_mms_when_roaming">Tudi med gostovanjem</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Pridobi samodejno</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Samodejno pridobi sporočila MMS</string>
+  <string name="preferences__roaming_auto_retrieve">Samodejna poizvedba med gostovanjem</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Samodejno pridobi sporočila MMS med gostovanjem</string>
   <string name="preferences_chats__message_trimming">Izbris starih sporočil</string>
   <!--****************************************-->
   <!--menus-->

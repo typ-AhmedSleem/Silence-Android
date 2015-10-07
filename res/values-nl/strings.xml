@@ -92,6 +92,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_mms_not_supported_title">MMS niet ondersteund.</string>
   <string name="ConversationActivity_mms_not_supported_message">Dit bericht kan niet worden verstuurd omdat uw provider geen MMS ondersteunt.</string>
   <string name="ConversationActivity_specify_recipient">Kies een contact a.u.b.</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Bijvoegsel groter dan limiet.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Berichtdetails</string>
   <string name="ConversationFragment_confirm_message_delete">Berichtverwijdering bevestigen</string>
@@ -209,6 +210,9 @@ Herstellen van een versleutelde back-up zal je bestaande sleutels, voorkeuren en
   <string name="RecipientPreferenceActivity_enabled">Aan</string>
   <string name="RecipientPreferenceActivity_disabled">Uit</string>
   <!--Slide-->
+  <string name="Slide_image">Afbeelding</string>
+  <string name="Slide_audio">Geluid</string>
+  <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Misvormd sleuteluitwisselingsbericht
 ontvangen!</string>
@@ -512,6 +516,7 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Toon een notificatie wanneer een aflever rapport ontvangen is</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Automatisch oudere berichten verwijderen wanneer een gesprek meer dan een bepaald aantal berichten bevat</string>
   <string name="preferences__delete_old_messages">Verwijder oude berichten</string>
+  <string name="preferences__chats">Gesprekken en media</string>
   <string name="preferences__conversation_length_limit">Gesprekslengte limiet</string>
   <string name="preferences__trim_all_threads_now">Oude berichten nu verwijderen</string>
   <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Alle gesprekken scannen en de maximale gesprekslengte toepassen</string>
@@ -535,6 +540,7 @@ Importeer een niet-versleutelde back-up voor \'SMS Back-up En Herstellen\'.</str
   <string name="preferences_notifications__display_in_notifications">Toon in notificaties</string>
   <string name="preferences__show_sent_time">Toon verzendtijd</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Toon verzendtijd in plaats van ontvangsttijd voor inkomende berichten</string>
+  <string name="preferences_chats__message_trimming">Bericht inkorten</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

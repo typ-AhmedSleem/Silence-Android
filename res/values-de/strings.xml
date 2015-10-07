@@ -542,9 +542,11 @@ Eine mit „SMS Backup &amp; Restore“ kompatible Klartextsicherung importieren
   <string name="preferences_notifications__display_in_notifications">In Benachrichtigungen anzeigen</string>
   <string name="preferences__show_sent_time">Versandzeitpunkt anzeigen</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Versandzeitpunkt anstatt Empfangzeitpunkt für eingehende Nachrichten anzeigen</string>
-  <string name="preferences_chats__media_auto_download">Multimediainhalte automatisch herunterladen</string>
-  <string name="preferences__automatically_download_mms">MMS automat. herunterladen</string>
-  <string name="preferences__automatically_download_mms_when_roaming">Bei Roaming</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Automatisch herunterladen</string>
+  <string name="preferences__automatically_retrieve_mms_messages">MMS automatisch herunterladen</string>
+  <string name="preferences__roaming_auto_retrieve">Bei Roaming automatisch herunterladen</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Bei Roaming MMS automatisch herunterladen</string>
   <string name="preferences_chats__message_trimming">Unterhaltungen kürzen</string>
   <!--****************************************-->
   <!--menus-->

@@ -92,6 +92,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationActivity_mms_not_supported_title">MMS não suportada</string>
   <string name="ConversationActivity_mms_not_supported_message">Esta mensagem não pode ser enviada porque a operadora não tem suporte a MMS.</string>
   <string name="ConversationActivity_specify_recipient">Por favor escolha um contacto</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">O anexo excede o tamanho permitido.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalhes da mensagem</string>
   <string name="ConversationFragment_confirm_message_delete">Confirmação de eliminação da mensagem</string>
@@ -213,6 +214,9 @@ que este contacto reinstalou o SMSSecure e tem agora uma nova chave de identidad
   <string name="RecipientPreferenceActivity_enabled">Ativo</string>
   <string name="RecipientPreferenceActivity_disabled">Inativo</string>
   <!--Slide-->
+  <string name="Slide_image">Imagem</string>
+  <string name="Slide_audio">Áudio</string>
+  <string name="Slide_video">Vídeo</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Foi recebida uma chave
 de intercâmbio danificada.</string>
@@ -517,6 +521,7 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Mostrar notificação ao receber um relatório de entrega</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Apagar automaticamente as mensagens mais antigas, se a conversa exceder o tamanho especificado</string>
   <string name="preferences__delete_old_messages">Apagar mensagens antigas</string>
+  <string name="preferences__chats">Chat e multimédia</string>
   <string name="preferences__conversation_length_limit">Tamanho máximo de conversa</string>
   <string name="preferences__trim_all_threads_now">Apagar todas conversas agora</string>
   <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Verificar todas as conversas e aplicar tamanho máximo por conversa</string>
@@ -540,6 +545,12 @@ Importar um backup de texto simples. Compatível com \'SMSBackup And Restore\'.<
   <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>
   <string name="preferences__show_sent_time">Mostrar data/hora de envio</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar data/hora de envio em vez da data/hora de receção para mensagens recebidas</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Obter automaticamente</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Obter automaticamente as mensagens MMS</string>
+  <string name="preferences__roaming_auto_retrieve">Obter automaticamente em roaming</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Obter automaticamente as MMS se em roaming</string>
+  <string name="preferences_chats__message_trimming">Redução de mensagens</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

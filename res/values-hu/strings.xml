@@ -568,9 +568,6 @@ Egy titkosítatlan biztonsági mentés fájl importálása. \"SMS biztonsági me
   <string name="preferences_notifications__display_in_notifications">Megjelenítés értesítésekben</string>
   <string name="preferences__show_sent_time">Küldési idő megjelenítése</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">A küldés idejének megjelenítése az érkezés ideje helyett a beérkező üzeneteknél</string>
-  <string name="preferences_chats__media_auto_download">Média automatikus letöltése</string>
-  <string name="preferences__automatically_download_mms">MMS automatikus letöltése</string>
-  <string name="preferences__automatically_download_mms_when_roaming">Barangolás közben is</string>
   <string name="preferences_chats__message_trimming">Üzenet csonkolás</string>
   <!--****************************************-->
   <!--menus-->

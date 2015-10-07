@@ -558,9 +558,11 @@
   <string name="preferences_notifications__display_in_notifications">Прикажи у обавештењу</string>
   <string name="preferences__show_sent_time">Прикажи време слања</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Прикажи време слања уместо време пристизања долазне поруке</string>
-  <string name="preferences_chats__media_auto_download">Ауто-преузимање медија</string>
-  <string name="preferences__automatically_download_mms">Аутоматски преузимај ММС</string>
-  <string name="preferences__automatically_download_mms_when_roaming">Такође у ромингу</string>
+  <string name="preferences_chats__mms">ММС</string>
+  <string name="preferences__auto_retrieve">Ауто-добављање</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Аутоматско добављање ММС порука</string>
+  <string name="preferences__roaming_auto_retrieve">Ауто-добављање у ромингу</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Аутоматско добављање ММС порука у ромингу</string>
   <string name="preferences_chats__message_trimming">Скраћивање порука</string>
   <!--****************************************-->
   <!--menus-->
