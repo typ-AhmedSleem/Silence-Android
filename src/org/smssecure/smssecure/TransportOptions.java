@@ -90,7 +90,7 @@ public class TransportOptions {
                                       context.getString(R.string.conversation_activity__type_message_mms_insecure),
                                       new MmsCharacterCalculator()));
       results.add(new TransportOption(Type.SECURE_SMS, R.drawable.ic_send_secure_white_24dp,
-                                      context.getResources().getColor(R.color.textsecure_primary),
+                                      context.getResources().getColor(R.color.smssecure_primary),
                                       context.getString(R.string.ConversationActivity_transport_secure_mms),
                                       context.getString(R.string.conversation_activity__type_message_mms_secure),
                                       new MmsCharacterCalculator()));
@@ -101,7 +101,7 @@ public class TransportOptions {
                                       context.getString(R.string.conversation_activity__type_message_sms_insecure),
                                       new SmsCharacterCalculator()));
       results.add(new TransportOption(Type.SECURE_SMS, R.drawable.ic_send_secure_white_24dp,
-                                      context.getResources().getColor(R.color.textsecure_primary),
+                                      context.getResources().getColor(R.color.smssecure_primary),
                                       context.getString(R.string.ConversationActivity_transport_secure_sms),
                                       context.getString(R.string.conversation_activity__type_message_sms_secure),
                                       new SmsCharacterCalculator()));

@@ -6,15 +6,15 @@
         <item name="theme_type">light</item>
         <item name="actionBarStyle">@style/SMSSecure.LightActionBar</item>
         <item name="actionBarTabBarStyle">@style/SMSSecure.LightActionBar.TabBar</item>
-        <item name="colorPrimary">@color/textsecure_primary</item>
-        <item name="colorPrimaryDark">@color/textsecure_primary_dark</item>
-        <item name="colorAccent">@color/textsecure_primary_dark</item>
+        <item name="colorPrimary">@color/smssecure_primary</item>
+        <item name="colorPrimaryDark">@color/smssecure_primary_dark</item>
+        <item name="colorAccent">@color/smssecure_primary_dark</item>
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
         <item name="contact_selection_push_user">#ff000000</item>
         <item name="contact_selection_lay_user">#a0000000</item>
-        <item name="contact_selection_header_text">@color/textsecure_primary_dark</item>
+        <item name="contact_selection_header_text">@color/smssecure_primary_dark</item>
     </style>
 
     <style name="SMSSecure.DarkNoActionBar" parent="@style/Theme.AppCompat.NoActionBar">
@@ -73,9 +73,9 @@
         <item name="theme_type">light</item>
         <item name="actionBarStyle">@style/SMSSecure.LightActionBar</item>
         <item name="actionBarTabBarStyle">@style/SMSSecure.LightActionBar.TabBar</item>
-        <item name="colorPrimary">@color/textsecure_primary</item>
-        <item name="colorPrimaryDark">@color/textsecure_primary_dark</item>
-        <item name="colorAccent">@color/textsecure_primary_dark</item>
+        <item name="colorPrimary">@color/smssecure_primary</item>
+        <item name="colorPrimaryDark">@color/smssecure_primary_dark</item>
+        <item name="colorAccent">@color/smssecure_primary_dark</item>
         <item name="android:windowBackground">@color/gray5</item>
         <!--<item name="android:windowContentOverlay">@drawable/compat_actionbar_shadow_background</item>-->
         <item name="conversation_list_item_background_selected">@drawable/list_selected_holo_light</item>
@@ -89,7 +89,7 @@
 
         <item name="share_list_item_divider">@drawable/share_list_divider_shape</item>
 
-        <item name="fab_color">@color/textsecure_primary</item>
+        <item name="fab_color">@color/smssecure_primary</item>
         <item name="lower_right_divet">@drawable/divet_lower_right_dark</item>
 
         <item name="conversation_group_member_name">#99000000</item>
@@ -221,7 +221,7 @@
         <item name="encrypted_backup">@drawable/ic_lock_dark</item>
         <item name="plaintext_backup">@drawable/ic_content_copy_dark</item>
 
-        <item name="fab_color">@color/textsecure_primary_dark</item>
+        <item name="fab_color">@color/smssecure_primary_dark</item>
         <item name="lower_right_divet">@drawable/divet_lower_right_light</item>
 
         <item name="conversation_background">#22ffffff</item>
@@ -277,7 +277,7 @@
         <item name="conversation_icon_attach_audio">@drawable/ic_audio_dark</item>
         <item name="conversation_icon_attach_video">@drawable/ic_video_dark</item>
 
-        <item name="reminder_header_background">@color/textsecure_primary_dark</item>
+        <item name="reminder_header_background">@color/smssecure_primary_dark</item>
 
         <item name="pref_ic_push">@drawable/ic_push_gray</item>
         <item name="pref_ic_sms_mms">@drawable/ic_textsms_grey_32dp</item>

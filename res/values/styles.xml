@@ -34,7 +34,7 @@
 
     <style name="SMSSecure.LightActionBar"
            parent="@style/Widget.AppCompat.ActionBar">
-        <item name="background">@color/textsecure_primary</item>
+        <item name="background">@color/smssecure_primary</item>
         <item name="elevation">2dp</item>
         <item name="logo">@drawable/actionbar_icon_holo_dark</item>
         <item name="icon">@drawable/actionbar_icon_holo_dark</item>
@@ -52,8 +52,8 @@
 
     <style name="SMSSecure.LightActionBar.TabBar"
         parent="@style/Widget.AppCompat.ActionBar.TabBar">
-        <item name="android:background">@color/textsecure_primary</item>
-        <item name="background">@color/textsecure_primary</item>
+        <item name="android:background">@color/smssecure_primary</item>
+        <item name="background">@color/smssecure_primary</item>
     </style>
 
     <style name="SMSSecure.TitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
@@ -68,7 +68,7 @@
     <style name="SMSSecure.IntroActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@null</item>
         <item name="icon">@android:color/transparent</item>
-        <item name="colorButtonNormal">@color/textsecure_primary</item>
+        <item name="colorButtonNormal">@color/smssecure_primary</item>
     </style>
 
     <style name="transparent_progress">
