@@ -49,7 +49,7 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     this.masterSecret = masterSecret;
 
     setSmallIcon(R.drawable.icon_notification);
-    setColor(context.getResources().getColor(R.color.textsecure_primary));
+    setColor(context.getResources().getColor(R.color.smssecure_primary));
     setPriority(NotificationCompat.PRIORITY_HIGH);
     setCategory(NotificationCompat.CATEGORY_MESSAGE);
     setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(MessageNotifier.DeleteReceiver.DELETE_REMINDER_ACTION), 0));

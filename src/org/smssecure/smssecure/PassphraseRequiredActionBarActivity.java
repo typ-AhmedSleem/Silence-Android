@@ -25,10 +25,11 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   public static final String LOCALE_EXTRA = "locale_extra";
 
-  private static final int STATE_NORMAL                   = 0;
-  private static final int STATE_CREATE_PASSPHRASE        = 1;
-  private static final int STATE_PROMPT_PASSPHRASE        = 2;
-  private static final int STATE_UPGRADE_DATABASE         = 3;
+  private static final int STATE_NORMAL            = 0;
+  private static final int STATE_CREATE_PASSPHRASE = 1;
+  private static final int STATE_PROMPT_PASSPHRASE = 2;
+  private static final int STATE_UPGRADE_DATABASE  = 3;
+  private static final int STATE_INTRO_SCREEN      = 4;
 
   private BroadcastReceiver clearKeyReceiver;
   private boolean           isVisible;
@@ -124,16 +125,19 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     Log.w(TAG, "routeApplicationState(), state: " + state);
 
     switch (state) {
-      case STATE_CREATE_PASSPHRASE:        return getCreatePassphraseIntent();
-      case STATE_PROMPT_PASSPHRASE:        return getPromptPassphraseIntent();
-      case STATE_UPGRADE_DATABASE:         return getUpgradeDatabaseIntent(masterSecret);
-      default:                             return null;
+    case STATE_CREATE_PASSPHRASE: return getCreatePassphraseIntent();
+    case STATE_PROMPT_PASSPHRASE: return getPromptPassphraseIntent();
+    case STATE_UPGRADE_DATABASE:  return getUpgradeDatabaseIntent(masterSecret);
+    case STATE_INTRO_SCREEN:      return getIntroScreenIntent();
+    default:                      return null;
     }
   }
 
   private int getApplicationState(MasterSecret masterSecret) {
     if (!MasterSecretUtil.isPassphraseInitialized(this)) {
       return STATE_CREATE_PASSPHRASE;
+    } else if (SMSSecurePreferences.isFirstRun(this)) {
+      return STATE_INTRO_SCREEN;
     } else if (masterSecret == null) {
       return STATE_PROMPT_PASSPHRASE;
     } else if (DatabaseUpgradeActivity.isUpdate(this)) {
@@ -164,6 +168,10 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   private Intent getConversationListIntent() {
     return new Intent(this, ConversationListActivity.class);
+  }
+
+  private Intent getIntroScreenIntent() {
+    return getRoutedIntent(IntroScreenActivity.class, getIntent(), null);
   }
 
   private void initializeScreenshotSecurity() {

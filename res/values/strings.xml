@@ -146,6 +146,14 @@
     <!-- ShareActivity -->
     <string name="ShareActivity_share_with">Share with</string>
 
+    <!-- IntroScreenActivity -->
+    <string name="IntroScreenActivity_welcome_to_smssecure">Welcome to SMSSecure!</string>
+    <string name="IntroScreenActivity_smssecure_description">SMSSecure allows you to protect your privacy while communicating with friends.</string>
+    <string name="IntroScreenActivity_encrypt_your_messages">Encrypt your messages</string>
+    <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecure will encrypt messages with other SMSSecure users automatically.</string>
+    <string name="IntroScreenActivity_talk_to_everyone">Talk to everyone</string>
+    <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecure can use unencrypted messages to chat with non-SMSSecure users.</string>
+
     <!-- ExportFragment -->
     <string name="ExportFragment_export">Export</string>
     <string name="ExportFragment_export_plaintext_to_sd_card">Export plaintext to SD card?</string>
