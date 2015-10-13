@@ -79,13 +79,30 @@ public class PassphraseChangeActivity extends PassphraseActivity {
   }
 
   private void verifyAndSavePassphrases() {
-    Editable originalText = this.originalPassphrase.getText();
-    Editable newText      = this.newPassphrase.getText();
-    Editable repeatText   = this.repeatPassphrase.getText();
+    String original;
+    String passphrase;
+    String passphraseRepeat;
 
-    String original         = (originalText == null ? "" : originalText.toString());
-    String passphrase       = (newText == null ? "" : newText.toString());
-    String passphraseRepeat = (repeatText == null ? "" : repeatText.toString());
+    if (this.originalPassphrase == null) {
+      original = "";
+    } else {
+      Editable originalText = this.originalPassphrase.getText();
+      original = (originalText == null ? "" : originalText.toString());
+    }
+
+    if (this.newPassphrase == null) {
+      passphrase = "";
+    } else {
+      Editable newText = this.newPassphrase.getText();
+      passphrase = (newText == null ? "" : newText.toString());
+    }
+
+    if (this.repeatPassphrase == null) {
+      passphraseRepeat = "";
+    } else {
+      Editable repeatText = this.repeatPassphrase.getText();
+      passphraseRepeat = (repeatText == null ? "" : repeatText.toString());
+    }
 
     if (SMSSecurePreferences.isPasswordDisabled(this)) {
       original = MasterSecretUtil.UNENCRYPTED_PASSPHRASE;
