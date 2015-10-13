@@ -1,15 +1,17 @@
 package org.smssecure.smssecure.jobs;
 
-import org.smssecure.smssecure.database.PartDatabase.PartId;
+import android.support.annotation.NonNull;
+
+import org.smssecure.smssecure.attachments.Attachment;
 
 public class PartProgressEvent {
-  public PartId partId;
-  public long   total;
-  public long   progress;
+  public final Attachment attachment;
+  public final long       total;
+  public final long       progress;
 
-  public PartProgressEvent(PartId partId, long total, long progress) {
-    this.partId   = partId;
-    this.total    = total;
-    this.progress = progress;
+  public PartProgressEvent(@NonNull Attachment attachment, long total, long progress) {
+    this.attachment = attachment;
+    this.total      = total;
+    this.progress   = progress;
   }
 }

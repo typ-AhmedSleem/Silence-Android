@@ -91,7 +91,6 @@ import org.smssecure.smssecure.mms.MmsMediaConstraints;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
-import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
@@ -1130,30 +1129,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void sendMediaMessage(final boolean forcePlaintext)
       throws InvalidMessageException
   {
-    final Context context = getApplicationContext();
-    SlideDeck slideDeck;
-
-    if (attachmentManager.isAttachmentPresent()) {
-      Slide            mediaSlide  = attachmentManager.getSlideDeck().getThumbnailSlide();
-      MediaConstraints constraints = getCurrentMediaConstraints();
-
-      if (mediaSlide != null &&
-          !constraints.isSatisfied(this, masterSecret, mediaSlide.getPart()) &&
-          !constraints.canResize(mediaSlide.getPart()))
-      {
-        Toast.makeText(context,
-                       R.string.ConversationActivity_attachment_exceeds_size_limits,
-                       Toast.LENGTH_SHORT).show();
-        return;
-      }
-
-      slideDeck = new SlideDeck(attachmentManager.getSlideDeck());
-    } else {
-      slideDeck = new SlideDeck();
-    }
-
-    OutgoingMediaMessage outgoingMessage = new OutgoingMediaMessage(this, recipients, slideDeck,
-                                                                    getMessage(), distributionType);
+    final Context context                = getApplicationContext();
+    OutgoingMediaMessage outgoingMessage = new OutgoingMediaMessage(recipients,
+                                                                    attachmentManager.getSlideDeck(),
+                                                                    getMessage(),
+                                                                    System.currentTimeMillis(),
+                                                                    distributionType);
 
     if (isEncryptedConversation && !forcePlaintext) {
       outgoingMessage = new OutgoingSecureMediaMessage(outgoingMessage);

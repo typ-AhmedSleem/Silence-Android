@@ -17,21 +17,10 @@
 
 package ws.com.google.android.mms.pdu;
 
-import android.graphics.Bitmap;
 import android.net.Uri;
 
-import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.database.PartDatabase;
-import org.smssecure.smssecure.mms.MediaConstraints;
-import org.smssecure.smssecure.util.BitmapDecodingException;
-import org.smssecure.smssecure.util.BitmapUtil;
-import org.smssecure.smssecure.util.Util;
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import ws.com.google.android.mms.ContentType;
 
 /**
  * The pdu part.
@@ -132,49 +121,11 @@ public class PduPart {
 
      private static final String TAG = "PduPart";
 
-     private long    rowId = -1;
-     private long    uniqueId = -1;
-     private long    mmsId = -1;
-     private boolean isEncrypted;
-     private int     transferProgress;
-     private long    dataSize;
-     private Bitmap  thumbnail;
-
      /**
       * Empty Constructor.
       */
      public PduPart() {
          mPartHeader = new HashMap<Integer, Object>();
-         setUniqueId(System.currentTimeMillis());
-     }
-
-     public void setEncrypted(boolean isEncrypted) {
-    	 this.isEncrypted = isEncrypted;
-     }
-
-     public boolean getEncrypted() {
-    	 return isEncrypted;
-     }
-
-     public void setDataSize(long dataSize) {
-       this.dataSize = dataSize;
-     }
-
-     public long getDataSize() {
-       return this.dataSize;
-     }
-
-     public boolean isInProgress() {
-       return transferProgress != PartDatabase.TRANSFER_PROGRESS_DONE &&
-              transferProgress != PartDatabase.TRANSFER_PROGRESS_FAILED;
-     }
-
-     public void setTransferProgress(int transferProgress) {
-       this.transferProgress = transferProgress;
-     }
-
-     public int getTransferProgress() {
-       return transferProgress;
      }
 
      /**
@@ -447,46 +398,4 @@ public class PduPart {
             return new String(location);
         }
     }
-
-    public PartDatabase.PartId getPartId() {
-      return new PartDatabase.PartId(rowId, uniqueId);
-    }
-
-    public void setPartId(PartDatabase.PartId partId) {
-      this.rowId    = partId.getRowId();
-      this.uniqueId = partId.getUniqueId();
-    }
-
-    public long getRowId() {
-      return rowId;
-    }
-
-    public void setRowId(long rowId) {
-      this.rowId = rowId;
-    }
-
-    public Bitmap getThumbnail() {
-      return thumbnail;
-    }
-
-    public void setThumbnail(Bitmap thumbnail) {
-      this.thumbnail = thumbnail;
-    }
-
-    public long getUniqueId() {
-      return uniqueId;
-    }
-
-    public void setUniqueId(long uniqueId) {
-      this.uniqueId = uniqueId;
-    }
-
-    public long getMmsId() {
-      return mmsId;
-    }
-
-    public void setMmsId(long mmsId) {
-      this.mmsId = mmsId;
-    }
 }
-

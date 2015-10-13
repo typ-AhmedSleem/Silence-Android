@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.RemoteInput;
 
+import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
@@ -31,6 +32,8 @@ import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
+
+import java.util.LinkedList;
 
 import ws.com.google.android.mms.pdu.PduBody;
 
@@ -64,7 +67,7 @@ public class WearReplyReceiver extends MasterSecretBroadcastReceiver {
           long threadId;
 
           if (recipients.isGroupRecipient()) {
-            OutgoingMediaMessage reply = new OutgoingMediaMessage(context, recipients, new PduBody(), responseText.toString(), 0);
+            OutgoingMediaMessage reply = new OutgoingMediaMessage(recipients, responseText.toString(), new LinkedList<Attachment>(), System.currentTimeMillis(), 0);
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
           } else {
             OutgoingTextMessage reply = new OutgoingTextMessage(recipients, responseText.toString());

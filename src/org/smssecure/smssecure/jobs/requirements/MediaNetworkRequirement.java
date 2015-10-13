@@ -23,7 +23,8 @@ public class MediaNetworkRequirement implements Requirement, ContextDependent {
     this.automatic = automatic;
   }
 
-  @Override public void setContext(Context context) {
+  @Override
+  public void setContext(Context context) {
     this.context = context;
   }
 
