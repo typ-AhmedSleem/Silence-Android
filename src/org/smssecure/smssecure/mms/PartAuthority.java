@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 import org.smssecure.smssecure.attachments.AttachmentId;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.providers.CaptureProvider;
+import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.providers.PartProvider;
 import org.smssecure.smssecure.providers.SingleUseBlobProvider;
 
@@ -25,7 +25,7 @@ public class PartAuthority {
 
   private static final int PART_ROW       = 1;
   private static final int THUMB_ROW      = 2;
-  private static final int CAPTURE_ROW    = 3;
+  private static final int PERSISTENT_ROW = 3;
   private static final int SINGLE_USE_ROW = 4;
 
   private static final UriMatcher uriMatcher;
@@ -34,7 +34,7 @@ public class PartAuthority {
     uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     uriMatcher.addURI("org.smssecure.smssecure", "part/*/#", PART_ROW);
     uriMatcher.addURI("org.smssecure.smssecure", "thumb/*/#", THUMB_ROW);
-    uriMatcher.addURI(CaptureProvider.AUTHORITY, CaptureProvider.EXPECTED_PATH, CAPTURE_ROW);
+    uriMatcher.addURI(PersistentBlobProvider.AUTHORITY, PersistentBlobProvider.EXPECTED_PATH, PERSISTENT_ROW);
     uriMatcher.addURI(SingleUseBlobProvider.AUTHORITY, SingleUseBlobProvider.PATH, SINGLE_USE_ROW);
   }
 
@@ -50,8 +50,8 @@ public class PartAuthority {
       case THUMB_ROW:
         partUri = new PartUriParser(uri);
         return DatabaseFactory.getAttachmentDatabase(context).getThumbnailStream(masterSecret, partUri.getPartId());
-      case CAPTURE_ROW:
-        return CaptureProvider.getInstance(context).getStream(masterSecret, ContentUris.parseId(uri));
+      case PERSISTENT_ROW:
+        return PersistentBlobProvider.getInstance(context).getStream(masterSecret, ContentUris.parseId(uri));
       case SINGLE_USE_ROW:
         return SingleUseBlobProvider.getInstance().getStream(ContentUris.parseId(uri));
       default:

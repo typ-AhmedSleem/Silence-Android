@@ -16,7 +16,6 @@
  */
 package org.smssecure.smssecure;
 
-import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -94,6 +93,7 @@ import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.AutoInitiate;
+import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
@@ -183,7 +183,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private DynamicTheme    dynamicTheme    = new DynamicTheme();
   private DynamicLanguage dynamicLanguage = new DynamicLanguage();
 
-  @TargetApi(Build.VERSION_CODES.KITKAT)
   @Override
   protected void onPreCreate() {
     dynamicTheme.onCreate(this);
@@ -281,20 +280,20 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     switch (reqCode) {
     case PICK_IMAGE:
       boolean isGif = MediaUtil.isGif(MediaUtil.getMimeType(this, data.getData()));
-      setMedia(data.getData(), isGif ? MediaType.GIF : MediaType.IMAGE, false);
+      setMedia(data.getData(), isGif ? MediaType.GIF : MediaType.IMAGE);
       break;
     case PICK_VIDEO:
-      setMedia(data.getData(), MediaType.VIDEO, false);
+      setMedia(data.getData(), MediaType.VIDEO);
       break;
     case PICK_AUDIO:
-      setMedia(data.getData(), MediaType.AUDIO, false);
+      setMedia(data.getData(), MediaType.AUDIO);
       break;
     case PICK_CONTACT_INFO:
       addAttachmentContactInfo(data.getData());
       break;
     case TAKE_PHOTO:
       if (attachmentManager.getCaptureUri() != null) {
-        setMedia(attachmentManager.getCaptureUri(), MediaType.IMAGE, true);
+        setMedia(attachmentManager.getCaptureUri(), MediaType.IMAGE);
       }
       break;
     }
@@ -638,9 +637,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     if (draftText != null)  composeText.setText(draftText);
 
-    if      (draftImage != null) setMedia(draftImage, MediaType.IMAGE, false);
-    else if (draftAudio != null) setMedia(draftAudio, MediaType.AUDIO, false);
-    else if (draftVideo != null) setMedia(draftVideo, MediaType.VIDEO, false);
+    if      (draftImage != null) setMedia(draftImage, MediaType.IMAGE);
+    else if (draftAudio != null) setMedia(draftAudio, MediaType.AUDIO);
+    else if (draftVideo != null) setMedia(draftVideo, MediaType.VIDEO);
 
     if (draftText == null && draftImage == null && draftAudio == null && draftVideo == null) {
       initializeDraftFromDatabase();
@@ -674,11 +673,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
           if (draft.getType().equals(Draft.TEXT)) {
             composeText.setText(draft.getValue());
           } else if (draft.getType().equals(Draft.IMAGE)) {
-            setMedia(Uri.parse(draft.getValue()), MediaType.IMAGE, false);
+            setMedia(Uri.parse(draft.getValue()), MediaType.IMAGE);
           } else if (draft.getType().equals(Draft.AUDIO)) {
-            setMedia(Uri.parse(draft.getValue()), MediaType.AUDIO, false);
+            setMedia(Uri.parse(draft.getValue()), MediaType.AUDIO);
           } else if (draft.getType().equals(Draft.VIDEO)) {
-            setMedia(Uri.parse(draft.getValue()), MediaType.VIDEO, false);
+            setMedia(Uri.parse(draft.getValue()), MediaType.VIDEO);
           }
         }
 
@@ -890,8 +889,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
-  private void setMedia(Uri uri, MediaType mediaType, boolean isCapture) {
-    attachmentManager.setMedia(masterSecret, uri, mediaType, getCurrentMediaConstraints(), isCapture);
+  private void setMedia(Uri uri, MediaType mediaType) {
+    attachmentManager.setMedia(masterSecret, uri, mediaType, getCurrentMediaConstraints());
   }
 
   private void addAttachmentContactInfo(Uri contactUri) {
@@ -931,7 +930,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       drafts.add(new Draft(Draft.TEXT, composeText.getText().toString()));
     }
 
-    for (Slide slide : attachmentManager.getSlideDeck().getSlides()) {
+    for (Slide slide : attachmentManager.buildSlideDeck().getSlides()) {
       if      (slide.hasAudio()) drafts.add(new Draft(Draft.AUDIO, slide.getUri().toString()));
       else if (slide.hasVideo()) drafts.add(new Draft(Draft.VIDEO, slide.getUri().toString()));
       else if (slide.hasImage()) drafts.add(new Draft(Draft.IMAGE, slide.getUri().toString()));
@@ -1137,7 +1136,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   {
     final Context context                = getApplicationContext();
     OutgoingMediaMessage outgoingMessage = new OutgoingMediaMessage(recipients,
-                                                                    attachmentManager.getSlideDeck(),
+                                                                    attachmentManager.buildSlideDeck(),
                                                                     getMessage(),
                                                                     System.currentTimeMillis(),
                                                                     distributionType);
