@@ -14,7 +14,6 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Action;
 import android.support.v4.app.RemoteInput;
 import android.text.SpannableStringBuilder;
-import android.util.Log;
 
 import com.bumptech.glide.Glide;
 
@@ -26,7 +25,6 @@ import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.util.BitmapUtil;
-import org.smssecure.smssecure.util.ListenableFutureTask;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,8 +36,8 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
 
   private final List<CharSequence> messageBodies = new LinkedList<>();
 
-  private       ListenableFutureTask<SlideDeck> slideDeck;
-  private final MasterSecret                    masterSecret;
+  private       SlideDeck    slideDeck;
+  private final MasterSecret masterSecret;
 
   public SingleRecipientNotificationBuilder(@NonNull Context context,
                                             @Nullable MasterSecret masterSecret,
@@ -81,7 +79,7 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     setNumber(messageCount);
   }
 
-  public void setPrimaryMessageBody(CharSequence message, @Nullable ListenableFutureTask<SlideDeck> slideDeck) {
+  public void setPrimaryMessageBody(CharSequence message, @Nullable SlideDeck slideDeck) {
     if (privacy.isDisplayMessage()) {
       setContentText(message);
       this.slideDeck = slideDeck;
@@ -166,37 +164,32 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     }
   }
 
-  private boolean hasBigPictureSlide(@Nullable ListenableFutureTask<SlideDeck> slideDeck) {
-    try {
-      if (masterSecret == null || slideDeck == null || Build.VERSION.SDK_INT < 16) {
-        return false;
-      }
-
-      Slide thumbnailSlide = slideDeck.get().getThumbnailSlide();
-
-      if (thumbnailSlide == null) return false;
-
-      Uri uri = thumbnailSlide.getThumbnailUri();
-
-      if (uri == null) return false;
-
-      DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
-
-      return decryptableUri != null    &&
-             thumbnailSlide.hasImage() &&
-             !thumbnailSlide.isInProgress();
-
-    } catch (InterruptedException | ExecutionException e) {
-      Log.w(TAG, e);
+  private boolean hasBigPictureSlide(@Nullable SlideDeck slideDeck) {
+    if (masterSecret == null || slideDeck == null || Build.VERSION.SDK_INT < 16) {
       return false;
     }
+
+    Slide thumbnailSlide = slideDeck.getThumbnailSlide();
+
+    if (thumbnailSlide == null) return false;
+
+    Uri uri = thumbnailSlide.getThumbnailUri();
+
+    if (uri == null) return false;
+
+    DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
+
+    return decryptableUri != null    &&
+           thumbnailSlide.hasImage() &&
+           !thumbnailSlide.isInProgress();
   }
 
   private Bitmap getBigPicture(@NonNull MasterSecret masterSecret,
-                               @NonNull ListenableFutureTask<SlideDeck> slideDeck)
+                               @NonNull SlideDeck slideDeck)
   {
     try {
-      Uri uri = slideDeck.get().getThumbnailSlide().getThumbnailUri();
+      @SuppressWarnings("ConstantConditions")
+      Uri uri = slideDeck.getThumbnailSlide().getThumbnailUri();
 
       return Glide.with(context)
                   .load(new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri))

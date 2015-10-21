@@ -344,13 +344,13 @@ public class MessageNotifier {
     else                      reader = DatabaseFactory.getMmsSmsDatabase(context).readerFor(cursor, masterSecret);
 
     while ((record = reader.getNext()) != null) {
-      Recipient                       recipient        = record.getIndividualRecipient();
-      Recipients                      recipients       = record.getRecipients();
-      long                            threadId         = record.getThreadId();
-      CharSequence                    body             = record.getDisplayBody();
-      Recipients                      threadRecipients = null;
-      ListenableFutureTask<SlideDeck> slideDeck        = null;
-      long            timestamp;
+      Recipient    recipient        = record.getIndividualRecipient();
+      Recipients   recipients       = record.getRecipients();
+      long         threadId         = record.getThreadId();
+      CharSequence body             = record.getDisplayBody();
+      Recipients   threadRecipients = null;
+      SlideDeck    slideDeck        = null;
+      long         timestamp;
 
       if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
       else                                            timestamp = record.getDateReceived();
@@ -363,12 +363,12 @@ public class MessageNotifier {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_encrypted_message));
       } else if (record.isMms() && TextUtils.isEmpty(body)) {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_media_message));
-        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeck();
       } else if (record.isMms() && !record.isMmsNotification()) {
         String message      = context.getString(R.string.MessageNotifier_media_message_with_text, body);
         int    italicLength = message.length() - body.length();
         body = SpanUtil.italic(message, italicLength);
-        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeck();
       }
 
       if (threadRecipients == null || !threadRecipients.isMuted()) {

@@ -17,28 +17,13 @@
 package org.smssecure.smssecure.mms;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
-import android.util.Pair;
 
-import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.Attachment;
-import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.dom.smil.parser.SmilXmlSerializer;
-import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.MediaUtil;
-import org.smssecure.smssecure.util.SmilUtil;
-import org.smssecure.smssecure.util.Util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
-
-import ws.com.google.android.mms.ContentType;
-import ws.com.google.android.mms.pdu.CharacterSets;
-import ws.com.google.android.mms.pdu.PduBody;
-import ws.com.google.android.mms.pdu.PduPart;
 
 public class SlideDeck {
 
@@ -49,6 +34,11 @@ public class SlideDeck {
       Slide slide = MediaUtil.getSlideForAttachment(context, attachment);
       if (slide != null) slides.add(slide);
     }
+  }
+
+  public SlideDeck(Context context, Attachment attachment) {
+    Slide slide = MediaUtil.getSlideForAttachment(context, attachment);
+    if (slide != null) slides.add(slide);
   }
 
   public SlideDeck() {
