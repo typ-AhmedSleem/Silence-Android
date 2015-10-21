@@ -35,6 +35,7 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.LRUCache;
 
 import java.lang.ref.SoftReference;
@@ -68,12 +69,12 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
 
   private final Set<MessageRecord> batchSelected = Collections.synchronizedSet(new HashSet<MessageRecord>());
 
-  private final ItemClickListener      clickListener;
-  private final MasterSecret           masterSecret;
-  private final Locale                 locale;
-  private final boolean                groupThread;
-  private final MmsSmsDatabase         db;
-  private final LayoutInflater         inflater;
+  private final ItemClickListener clickListener;
+  private final MasterSecret      masterSecret;
+  private final Locale            locale;
+  private final Recipients        recipients;
+  private final MmsSmsDatabase    db;
+  private final LayoutInflater    inflater;
 
   protected static class ViewHolder extends RecyclerView.ViewHolder {
     public <V extends View & BindableConversationItem> ViewHolder(final @NonNull V itemView) {
@@ -96,15 +97,15 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
                              @NonNull Locale locale,
                              @Nullable ItemClickListener clickListener,
                              @Nullable Cursor cursor,
-                             boolean groupThread)
+                             @NonNull Recipients recipients)
   {
     super(context, cursor);
-    this.masterSecret    = masterSecret;
-    this.locale          = locale;
-    this.clickListener   = clickListener;
-    this.groupThread     = groupThread;
-    this.inflater        = LayoutInflater.from(context);
-    this.db              = DatabaseFactory.getMmsSmsDatabase(context);
+    this.masterSecret  = masterSecret;
+    this.locale        = locale;
+    this.clickListener = clickListener;
+    this.recipients    = recipients;
+    this.inflater      = LayoutInflater.from(context);
+    this.db            = DatabaseFactory.getMmsSmsDatabase(context);
   }
 
   @Override
@@ -118,7 +119,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     String        type          = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsDatabase.TRANSPORT));
     MessageRecord messageRecord = getMessageRecord(id, cursor, type);
 
-    viewHolder.getView().bind(masterSecret, messageRecord, locale, batchSelected, groupThread);
+    viewHolder.getView().bind(masterSecret, messageRecord, locale, batchSelected, recipients);
   }
 
   @Override public ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {

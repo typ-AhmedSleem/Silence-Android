@@ -52,7 +52,7 @@ public class ConversationUpdateItem extends LinearLayout
                    @NonNull MessageRecord messageRecord,
                    @NonNull Locale locale,
                    @NonNull Set<MessageRecord> batchSelected,
-                   boolean groupThread)
+                   @NonNull Recipients conversationRecipients)
   {
     bind(messageRecord);
   }

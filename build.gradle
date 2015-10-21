@@ -51,6 +51,7 @@ dependencies {
     compile ("com.doomonafireball.betterpickers:library:1.5.3") {
         exclude group: 'com.android.support', module: 'support-v4'
     }
+    compile 'com.madgag.spongycastle:prov:1.51.0.0'
     provided 'com.squareup.dagger:dagger-compiler:1.2.2'
 
     compile project (':libs:org.whispersystems.jobmanager')
@@ -88,6 +89,7 @@ dependencyVerification {
             'com.android.support:support-v4:d9a6307bf5c1d67f9aea96977f4f77273d8731c69d1b24c400a8a5e1b0f39af3',
             'com.android.support:gridlayout-v7:a9b770cffca2c7c5cd83cba4dd12503365de5e8d9c79c479165adf18ab3bc25b',
             'com.doomonafireball.betterpickers:library:132ecd685c95a99e7377c4e27bfadbb2d7ed0bea995944060cd62d4369fdaf3d',
+            'com.madgag.spongycastle:prov:b8c3fec3a59aac1aa04ccf4dad7179351e54ef7672f53f508151b614c131398a',
             'com.fasterxml.jackson.core:jackson-annotations:0ca408c24202a7626ec8b861e99d85eca5e38b73311dd6dd12e3e9deecc3fe94',
             'com.fasterxml.jackson.core:jackson-core:cbf4604784b4de226262845447a1ad3bb38a6728cebe86562e2c5afada8be2c0',
             'com.fasterxml.jackson.core:jackson-databind:835097bcdd11f5bc8a08378c70d4c8054dfa4b911691cc2752063c75534d198d',
