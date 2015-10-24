@@ -59,6 +59,7 @@ import com.afollestad.materialdialogs.AlertDialogWrapper;
 import com.google.protobuf.ByteString;
 
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
+import org.smssecure.smssecure.audio.AudioSlidePlayer;
 import org.smssecure.smssecure.color.MaterialColor;
 import org.smssecure.smssecure.components.AnimatingToggle;
 import org.smssecure.smssecure.components.ComposeText;
@@ -251,6 +252,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     super.onPause();
     MessageNotifier.setVisibleThread(-1L);
     if (isFinishing()) overridePendingTransition(R.anim.fade_scale_in, R.anim.slide_to_right);
+    AudioSlidePlayer.stopAll();
   }
 
   @Override public void onConfigurationChanged(Configuration newConfig) {
