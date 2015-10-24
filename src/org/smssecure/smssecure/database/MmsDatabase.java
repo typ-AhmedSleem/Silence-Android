@@ -58,8 +58,6 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.JsonUtils;
-import org.smssecure.smssecure.util.LRUCache;
-import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobManager;
@@ -67,15 +65,10 @@ import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
-import java.lang.ref.SoftReference;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
 
 import ws.com.google.android.mms.MmsException;
 import ws.com.google.android.mms.pdu.NotificationInd;
@@ -126,18 +119,27 @@ public class MmsDatabase extends MessagingDatabase {
   };
 
   private static final String[] MMS_PROJECTION = new String[] {
-      ID, THREAD_ID, DATE_SENT + " AS " + NORMALIZED_DATE_SENT,
+      MmsDatabase.TABLE_NAME + "." + ID + " AS " + ID,
+      THREAD_ID, DATE_SENT + " AS " + NORMALIZED_DATE_SENT,
       DATE_RECEIVED + " AS " + NORMALIZED_DATE_RECEIVED,
       MESSAGE_BOX, READ,
       CONTENT_LOCATION, EXPIRY, MESSAGE_TYPE,
       MESSAGE_SIZE, STATUS, TRANSACTION_ID,
       BODY, PART_COUNT, ADDRESS, ADDRESS_DEVICE_ID,
-      DATE_DELIVERY_RECEIVED, MISMATCHED_IDENTITIES, NETWORK_FAILURE
+      DATE_DELIVERY_RECEIVED, MISMATCHED_IDENTITIES, NETWORK_FAILURE,
+      AttachmentDatabase.TABLE_NAME + "." + AttachmentDatabase.ROW_ID + " AS " + AttachmentDatabase.ATTACHMENT_ID_ALIAS,
+      AttachmentDatabase.UNIQUE_ID,
+      AttachmentDatabase.MMS_ID,
+      AttachmentDatabase.SIZE,
+      AttachmentDatabase.DATA,
+      AttachmentDatabase.CONTENT_TYPE,
+      AttachmentDatabase.CONTENT_LOCATION,
+      AttachmentDatabase.CONTENT_DISPOSITION,
+      AttachmentDatabase.NAME,
+      AttachmentDatabase.TRANSFER_STATE
   };
 
-  public static final ExecutorService slideResolver = org.smssecure.smssecure.util.Util.newSingleThreadedLifoExecutor();
-  private static final Map<String, SoftReference<SlideDeck>> slideCache =
-      Collections.synchronizedMap(new LRUCache<String, SoftReference<SlideDeck>>(20));
+  private static final String RAW_ID_WHERE = TABLE_NAME + "._id = ?";
 
   private final JobManager jobManager;
 
@@ -264,10 +266,16 @@ public class MmsDatabase extends MessagingDatabase {
     return DatabaseFactory.getThreadDatabase(context).getThreadIdFor(recipients);
   }
 
+  private Cursor rawQuery(@NonNull String where, @Nullable String[] arguments) {
+    SQLiteDatabase database = databaseHelper.getReadableDatabase();
+    return database.rawQuery("SELECT " + Util.join(MMS_PROJECTION, ",") +
+                             " FROM " + MmsDatabase.TABLE_NAME +  " LEFT OUTER JOIN " + AttachmentDatabase.TABLE_NAME +
+                             " ON (" + MmsDatabase.TABLE_NAME + "." + MmsDatabase.ID + " = " + AttachmentDatabase.TABLE_NAME + "." + AttachmentDatabase.MMS_ID + ")" +
+                             " WHERE " + where, arguments);
+  }
+
   public Cursor getMessage(long messageId) {
-    SQLiteDatabase db = databaseHelper.getReadableDatabase();
-    Cursor cursor = db.query(TABLE_NAME, MMS_PROJECTION, ID_WHERE, new String[] {messageId + ""},
-                             null, null, null);
+    Cursor cursor = rawQuery(RAW_ID_WHERE, new String[] {messageId + ""});
     setNotifyConverationListeners(cursor, getThreadIdForMessage(messageId));
     return cursor;
   }
@@ -381,11 +389,10 @@ public class MmsDatabase extends MessagingDatabase {
   }
 
   public Optional<NotificationInd> getNotification(long messageId) {
-    SQLiteDatabase db     = databaseHelper.getReadableDatabase();
-    Cursor         cursor = null;
+    Cursor cursor = null;
 
     try {
-      cursor = db.query(TABLE_NAME, MMS_PROJECTION, ID_WHERE, new String[] {String.valueOf(messageId)}, null, null, null);
+      cursor = rawQuery(RAW_ID_WHERE, new String[] {String.valueOf(messageId)});
 
       if (cursor != null && cursor.moveToNext()) {
         PduHeaders        headers = new PduHeaders();
@@ -524,6 +531,7 @@ public class MmsDatabase extends MessagingDatabase {
     contentValues.put(CONTENT_LOCATION, contentLocation);
     contentValues.put(STATUS, Status.DOWNLOAD_INITIALIZED);
     contentValues.put(DATE_RECEIVED, generatePduCompatTimestamp());
+    contentValues.put(PART_COUNT, retrieved.getAttachments().size());
     contentValues.put(READ, 0);
 
     if (!contentValues.containsKey(DATE_SENT)) {

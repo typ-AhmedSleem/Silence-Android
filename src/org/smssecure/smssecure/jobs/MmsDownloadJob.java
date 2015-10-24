@@ -49,6 +49,7 @@ import ws.com.google.android.mms.MmsException;
 import ws.com.google.android.mms.pdu.EncodedStringValue;
 import ws.com.google.android.mms.pdu.MultimediaMessagePdu;
 import ws.com.google.android.mms.pdu.NotificationInd;
+import ws.com.google.android.mms.pdu.PduBody;
 import ws.com.google.android.mms.pdu.PduPart;
 import ws.com.google.android.mms.pdu.PduHeaders;
 import ws.com.google.android.mms.pdu.RetrieveConf;
@@ -199,12 +200,13 @@ public class MmsDownloadJob extends MasterSecretJob {
     }
 
     if (retrieved.getBody() != null) {
-      for (int i=0;i<retrieved.getBody().getPartsNum();i++) {
-        PduPart part = retrieved.getBody().getPart(i);
+      body = PartParser.getMessageText(retrieved.getBody());
+      PduBody media = PartParser.getSupportedMediaParts(retrieved.getBody());
 
-        if (Util.toIsoString(part.getContentType()).equals(ContentType.TEXT_PLAIN)) {
-          body = Util.toIsoString(part.getData());
-        } else if (part.getData() != null) {
+      for (int i=0;i<media.getPartsNum();i++) {
+        PduPart part = media.getPart(i);
+
+        if (part.getData() != null) {
           Uri uri = provider.createUri(part.getData());
           attachments.add(new UriAttachment(uri, Util.toIsoString(part.getContentType()),
                                             AttachmentDatabase.TRANSFER_PROGRESS_DONE,
