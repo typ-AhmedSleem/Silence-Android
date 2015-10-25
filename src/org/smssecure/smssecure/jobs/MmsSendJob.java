@@ -28,10 +28,13 @@ import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.SmilUtil;
 import org.smssecure.smssecure.util.TelephonyUtil;
+import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
 import org.whispersystems.libaxolotl.NoSessionException;
+import org.smssecure.smssecure.util.InvalidNumberException;
+import org.smssecure.smssecure.util.PhoneNumberFormatter;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -200,14 +203,15 @@ public class MmsSendJob extends SendJob {
   private SendReq constructSendPdu(MasterSecret masterSecret, OutgoingMediaMessage message)
       throws UndeliverableMessageException
   {
-    SendReq sendReq = new SendReq();
-    PduBody body    = new PduBody();
+    SendReq      sendReq = new SendReq();
+    PduBody      body    = new PduBody();
+    List<String> numbers = message.getRecipients().toNumberStringList(true);
 
-    for (Recipient recipient : message.getRecipients()) {
+    for (String number : numbers) {
       if (message.getDistributionType() == DistributionTypes.CONVERSATION) {
-        sendReq.addTo(new EncodedStringValue(Util.toIsoBytes(recipient.getNumber())));
+        sendReq.addTo(new EncodedStringValue(Util.toIsoBytes(number)));
       } else {
-        sendReq.addBcc(new EncodedStringValue(Util.toIsoBytes(recipient.getNumber())));
+        sendReq.addBcc(new EncodedStringValue(Util.toIsoBytes(number)));
       }
     }
 
