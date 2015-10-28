@@ -59,6 +59,7 @@ import org.smssecure.smssecure.database.loaders.ConversationListLoader;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.Locale;
@@ -138,7 +139,7 @@ public class ConversationListFragment extends Fragment
         final Context context = params[0];
          if (DefaultSmsReminder.isEligible(context)) {
           return Optional.of(new DefaultSmsReminder(context));
-        } else if (SystemSmsImportReminder.isEligible(context)) {
+        } else if (Util.isDefaultSmsProvider(context) && SystemSmsImportReminder.isEligible(context)) {
           return Optional.of((new SystemSmsImportReminder(context, masterSecret)));
         } else if (StoreRatingReminder.isEligible(context)) {
           return Optional.of((new StoreRatingReminder(context)));
