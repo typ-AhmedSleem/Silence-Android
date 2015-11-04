@@ -50,10 +50,8 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
-import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 
 import java.io.IOException;
 import java.util.List;
@@ -144,8 +142,15 @@ public class MessageNotifier {
   }
 
   public static void updateNotification(Context context, MasterSecret masterSecret, long threadId) {
-    Recipients recipients = DatabaseFactory.getThreadDatabase(context)
-                                           .getRecipientsForThreadId(threadId);
+    boolean    isVisible  = visibleThread == threadId;
+
+    ThreadDatabase threads    = DatabaseFactory.getThreadDatabase(context);
+    Recipients     recipients = DatabaseFactory.getThreadDatabase(context)
+                                               .getRecipientsForThreadId(threadId);
+
+    if (isVisible) {
+      threads.setRead(threadId);
+    }
 
     if (!SMSSecurePreferences.isNotificationsEnabled(context) ||
         (recipients != null && recipients.isMuted()))
@@ -153,10 +158,7 @@ public class MessageNotifier {
       return;
     }
 
-
-    if (visibleThread == threadId) {
-      ThreadDatabase threads = DatabaseFactory.getThreadDatabase(context);
-      threads.setRead(threadId);
+    if (isVisible) {
       sendInThreadNotification(context, threads.getRecipientsForThreadId(threadId));
     } else {
       updateNotification(context, masterSecret, MNF_DEFAULTS, 0);
