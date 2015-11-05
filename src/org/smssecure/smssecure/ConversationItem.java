@@ -580,6 +580,7 @@ public class ConversationItem extends LinearLayout
         intent.putExtra(MessageDetailsActivity.MASTER_SECRET_EXTRA, masterSecret);
         intent.putExtra(MessageDetailsActivity.MESSAGE_ID_EXTRA, messageRecord.getId());
         intent.putExtra(MessageDetailsActivity.TYPE_EXTRA, messageRecord.isMms() ? MmsSmsDatabase.MMS_TRANSPORT : MmsSmsDatabase.SMS_TRANSPORT);
+        intent.putExtra(MessageDetailsActivity.RECIPIENTS_IDS_EXTRA, conversationRecipients.getIds());
         context.startActivity(intent);
       } else if (messageRecord.isKeyExchange()           &&
                  !messageRecord.isOutgoing()             &&
