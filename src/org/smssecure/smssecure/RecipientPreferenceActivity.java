@@ -218,14 +218,13 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
         vibratePreference.setValueIndex(2);
       }
 
-      colorPreference.setEnabled(recipients.isSingleRecipient() && !recipients.isGroupRecipient());
-      colorPreference.setChoices(MaterialColors.CONVERSATION_PALETTE.asConversationColorArray(getActivity()));
-      colorPreference.setValue(recipients.getColor().toActionBarColor(getActivity()));
-
       if (!recipients.isSingleRecipient() || recipients.isGroupRecipient()) {
-        blockPreference.setEnabled(false);
+        this.getPreferenceScreen().removePreference(colorPreference);
+        this.getPreferenceScreen().removePreference(blockPreference);
       } else {
-        blockPreference.setEnabled(true);
+        colorPreference.setChoices(MaterialColors.CONVERSATION_PALETTE.asConversationColorArray(getActivity()));
+        colorPreference.setValue(recipients.getColor().toActionBarColor(getActivity()));
+
         if (recipients.isBlocked()) blockPreference.setTitle(R.string.RecipientPreferenceActivity_unblock);
         else                        blockPreference.setTitle(R.string.RecipientPreferenceActivity_block);
       }
