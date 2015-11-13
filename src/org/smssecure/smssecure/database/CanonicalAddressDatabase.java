@@ -27,6 +27,11 @@ import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.google.i18n.phonenumbers.NumberParseException;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.google.i18n.phonenumbers.Phonenumber;
+import com.google.i18n.phonenumbers.ShortNumberInfo;
+
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.VisibleForTesting;
@@ -144,7 +149,11 @@ public class CanonicalAddressDatabase {
       long canonicalAddressId;
 
       if (isNumberAddress(address) && SMSSecurePreferences.isPushRegistered(context)) {
-        address = PhoneNumberFormatter.formatNumber(address, SMSSecurePreferences.getLocalNumber(context));
+        String localNumber = SMSSecurePreferences.getLocalNumber(context);
+
+        if (!isShortCode(localNumber, address)) {
+          address = PhoneNumberFormatter.formatNumber(address, localNumber);
+        }
       }
 
       if ((canonicalAddressId = getCanonicalAddressFromCache(address)) != -1) {
@@ -226,6 +235,19 @@ public class CanonicalAddressDatabase {
     if (networkNumber.length() < 3)       return false;
 
     return PhoneNumberUtils.isWellFormedSmsAddress(number);
+  }
+
+  private boolean isShortCode(@NonNull String localNumber, @NonNull String number) {
+    try {
+      PhoneNumberUtil         util              = PhoneNumberUtil.getInstance();
+      Phonenumber.PhoneNumber localNumberObject = util.parse(localNumber, null);
+      String                  localCountryCode  = util.getRegionCodeForNumber(localNumberObject);
+
+      return ShortNumberInfo.getInstance().isValidShortNumberForRegion(number, localCountryCode);
+    } catch (NumberParseException e) {
+      Log.w(TAG, e);
+      return false;
+    }
   }
 
   private static class DatabaseHelper extends SQLiteOpenHelper {
