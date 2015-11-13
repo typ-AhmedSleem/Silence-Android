@@ -11,6 +11,7 @@ for file in "$@"; do
            -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
            -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.SMSSecure/g' \
+           -e 's/org.thoughtcrime.redphone.util/org.smssecure.smssecure.util/g' \
            -e 's/TextSecurePreferences/SMSSecurePreferences/g' \
            -e 's/TextSecureTestCase/SMSSecureTestCase/g' \
            -e 's/TextSecure.LightNoActionBar/SMSSecure.LightNoActionBar/g' \
