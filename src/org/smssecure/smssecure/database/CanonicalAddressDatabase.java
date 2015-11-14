@@ -33,6 +33,7 @@ import com.google.i18n.phonenumbers.Phonenumber;
 import com.google.i18n.phonenumbers.ShortNumberInfo;
 
 import org.smssecure.smssecure.util.GroupUtil;
+import org.smssecure.smssecure.util.ShortCodeUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.VisibleForTesting;
 import org.whispersystems.textsecure.api.util.InvalidNumberException;
@@ -151,7 +152,7 @@ public class CanonicalAddressDatabase {
       if (isNumberAddress(address) && SMSSecurePreferences.isPushRegistered(context)) {
         String localNumber = SMSSecurePreferences.getLocalNumber(context);
 
-        if (!isShortCode(localNumber, address)) {
+        if (!ShortCodeUtil.isShortCode(localNumber, address)) {
           address = PhoneNumberFormatter.formatNumber(address, localNumber);
         }
       }
@@ -235,20 +236,6 @@ public class CanonicalAddressDatabase {
     if (networkNumber.length() < 3)       return false;
 
     return PhoneNumberUtils.isWellFormedSmsAddress(number);
-  }
-
-  private boolean isShortCode(@NonNull String localNumber, @NonNull String number) {
-    try {
-      PhoneNumberUtil         util              = PhoneNumberUtil.getInstance();
-      Phonenumber.PhoneNumber localNumberObject = util.parse(localNumber, null);
-      String                  localCountryCode  = util.getRegionCodeForNumber(localNumberObject);
-      Phonenumber.PhoneNumber shortCode         = util.parse(number, localCountryCode);
-
-      return ShortNumberInfo.getInstance().isPossibleShortNumberForRegion(shortCode.toString(), localCountryCode);
-    } catch (NumberParseException e) {
-      Log.w(TAG, e);
-      return false;
-    }
   }
 
   private static class DatabaseHelper extends SQLiteOpenHelper {
