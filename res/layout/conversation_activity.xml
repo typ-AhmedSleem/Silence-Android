@@ -89,7 +89,9 @@
                         android:layout_weight="1"
                         android:nextFocusForward="@+id/send_button"
                         android:nextFocusRight="@+id/send_button"
-                        tools:hint="Send SMSSecure message" />
+                        tools:hint="Send SMSSecure message">
+                    <requestFocus />
+                </org.smssecure.smssecure.components.ComposeText>
             </LinearLayout>
 
             <org.smssecure.smssecure.components.AnimatingToggle
