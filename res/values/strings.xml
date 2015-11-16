@@ -378,8 +378,8 @@
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
 
     <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_smssecure_message">New SMSSecure message</string>
-    <string name="SingleRecipientNotificationBuilder_contents_hidden">Contents hidden</string>
+    <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+    <string name="SingleRecipientNotificationBuilder_new_message">New message</string>
 
     <!-- attachment_type_selector -->
     <string name="attachment_type_selector__image">Image</string>
