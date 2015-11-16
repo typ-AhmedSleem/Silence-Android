@@ -36,6 +36,7 @@ import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.ViewUtil;
 
 import java.io.IOException;
@@ -188,7 +189,9 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
     final String type        = streamExtra != null ? getMimeType(streamExtra) : getIntent().getType();
 
     if (resolvedExtra != null) {
-      if (ContentType.isImageType(type)) {
+      if (MediaUtil.isGif(type)) {
+        intent.putExtra(ConversationActivity.DRAFT_GIF_EXTRA, resolvedExtra);
+      } else if (ContentType.isImageType(type)) {
         intent.putExtra(ConversationActivity.DRAFT_IMAGE_EXTRA, resolvedExtra);
       } else if (ContentType.isAudioType(type)) {
         intent.putExtra(ConversationActivity.DRAFT_AUDIO_EXTRA, resolvedExtra);
