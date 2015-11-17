@@ -174,8 +174,6 @@
         <item name="conversation_icon_attach_audio">@drawable/ic_audio_light</item>
         <item name="conversation_icon_attach_video">@drawable/ic_video_light</item>
 
-        <item name="registration_text_shadow_color">@color/gray95</item>
-
         <item name="reminder_header_background">#ff1d85d7</item>
 
         <item name="pref_ic_push">@drawable/ic_push_black</item>
@@ -287,8 +285,6 @@
 
         <item name="conversation_icon_attach_audio">@drawable/ic_audio_dark</item>
         <item name="conversation_icon_attach_video">@drawable/ic_video_dark</item>
-
-        <item name="registration_text_shadow_color">@color/gray13</item>
 
         <item name="reminder_header_background">@color/smssecure_primary_dark</item>
 
