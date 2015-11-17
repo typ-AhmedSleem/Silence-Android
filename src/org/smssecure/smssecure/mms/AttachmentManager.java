@@ -29,8 +29,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.Toast;
 
 import junit.framework.Assert;
@@ -44,9 +42,11 @@ import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.ViewUtil;
+import org.smssecure.smssecure.util.concurrent.ListenableFuture.Listener;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 public class AttachmentManager {
 
@@ -74,24 +74,18 @@ public class AttachmentManager {
   }
 
   public void clear() {
-    AlphaAnimation animation = new AlphaAnimation(1.0f, 0.0f);
-    animation.setDuration(200);
-    animation.setAnimationListener(new Animation.AnimationListener() {
+    ViewUtil.fadeOut(attachmentView, 200).addListener(new Listener<Boolean>() {
       @Override
-      public void onAnimationStart(Animation animation) {}
-
-      @Override
-      public void onAnimationRepeat(Animation animation) {}
-
-      @Override public void onAnimationEnd(Animation animation) {
-        slide = Optional.absent();
+      public void onSuccess(Boolean result) {
         thumbnail.clear();
         attachmentView.setVisibility(View.GONE);
         attachmentListener.onAttachmentChanged();
       }
-    });
 
-    attachmentView.startAnimation(animation);
+      @Override
+      public void onFailure(ExecutionException e) {}
+    });
+    slide = Optional.absent();
     audioView.cleanup();
   }
 
