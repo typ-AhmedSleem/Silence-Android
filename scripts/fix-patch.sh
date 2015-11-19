@@ -23,6 +23,8 @@ for file in "$@"; do
            -e 's/TextSecure.LightIntroTheme/SMSSecure.LightIntroTheme/g' \
            -e 's/TextSecure.TitleTextStyle/SMSSecure.TitleTextStyle/g' \
            -e 's/queryTextSecureContacts/querySMSSecureContacts/g' \
+           -e 's/@color\/signal/@color\/smssecure/g' \
+           -e 's/@color\/textsecure/@color\/smssecure/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
            -e 's/^SingleRecipientNotificationBuilder_new_textsecure_message/SingleRecipientNotificationBuilder_new_smssecure_message/g' \

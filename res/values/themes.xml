@@ -80,6 +80,8 @@
         <item name="colorPrimary">@color/smssecure_primary</item>
         <item name="colorPrimaryDark">@color/smssecure_primary_dark</item>
         <item name="colorAccent">@color/smssecure_primary_dark</item>
+        <item name="colorControlActivated">@color/smssecure_primary</item>
+        <item name="colorControlHighlight">@color/smssecure_primary</item>
         <item name="android:windowBackground">@color/gray5</item>
         <item name="alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
         <!--<item name="android:windowContentOverlay">@drawable/compat_actionbar_shadow_background</item>-->
