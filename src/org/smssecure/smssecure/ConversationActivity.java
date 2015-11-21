@@ -97,7 +97,6 @@ import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.AutoInitiate;
-import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
