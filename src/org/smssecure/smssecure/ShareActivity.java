@@ -29,7 +29,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.MimeTypeMap;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.PartAuthority;
@@ -37,6 +36,7 @@ import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.ViewUtil;
 
 import java.io.IOException;
@@ -167,7 +167,8 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
     final Intent intent      = new Intent(this, target);
     final String textExtra   = getIntent().getStringExtra(Intent.EXTRA_TEXT);
     final Uri    streamExtra = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
-    final String type        = streamExtra != null ? getMimeType(streamExtra) : getIntent().getType();
+    final String type        = streamExtra != null ? getMimeType(streamExtra)
+                                                   : MediaUtil.getCorrectedMimeType(getIntent().getType());
     intent.putExtra(ConversationActivity.TEXT_EXTRA, textExtra);
     if (resolvedExtra != null) intent.setDataAndType(resolvedExtra, type);
 
@@ -175,14 +176,9 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
   }
 
   private String getMimeType(Uri uri) {
-    String type = getContentResolver().getType(uri);
-
-    if (type == null) {
-      String extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
-      type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
-    }
-
-    return type == null ? getIntent().getType() : type;
+    final String type = MediaUtil.getMimeType(getApplicationContext(), uri);
+    return type == null ? MediaUtil.getCorrectedMimeType(getIntent().getType())
+                        : type;
   }
 
   private class ResolveMediaTask extends AsyncTask<Uri, Void, Uri> {
