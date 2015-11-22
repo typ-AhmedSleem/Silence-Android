@@ -219,8 +219,8 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
       }
 
       if (!recipients.isSingleRecipient() || recipients.isGroupRecipient()) {
-        this.getPreferenceScreen().removePreference(colorPreference);
-        this.getPreferenceScreen().removePreference(blockPreference);
+        if (colorPreference    != null) getPreferenceScreen().removePreference(colorPreference);
+        if (blockPreference    != null) getPreferenceScreen().removePreference(blockPreference);
       } else {
         colorPreference.setChoices(MaterialColors.CONVERSATION_PALETTE.asConversationColorArray(getActivity()));
         colorPreference.setValue(recipients.getColor().toActionBarColor(getActivity()));
