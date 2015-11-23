@@ -35,6 +35,7 @@ import org.smssecure.smssecure.attachments.DatabaseAttachment;
 import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.EncryptingPartOutputStream;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.mms.MediaStream;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.MediaUtil.ThumbnailData;
@@ -288,7 +289,7 @@ public class AttachmentDatabase extends Database {
 
   public @NonNull Attachment updateAttachmentData(@NonNull MasterSecret masterSecret,
                                                   @NonNull Attachment attachment,
-                                                  @NonNull InputStream inputStream)
+                                                  @NonNull MediaStream mediaStream)
       throws MmsException
   {
     SQLiteDatabase     database           = databaseHelper.getWritableDatabase();
@@ -299,19 +300,21 @@ public class AttachmentDatabase extends Database {
       throw new MmsException("No attachment data found!");
     }
 
-    long dataSize = setAttachmentData(masterSecret, dataFile, inputStream);
+    long dataSize = setAttachmentData(masterSecret, dataFile, mediaStream.getStream());
 
     ContentValues contentValues = new ContentValues();
     contentValues.put(SIZE, dataSize);
+    contentValues.put(CONTENT_TYPE, mediaStream.getMimeType());
 
     database.update(TABLE_NAME, contentValues, PART_ID_WHERE, databaseAttachment.getAttachmentId().toStrings());
 
     return new DatabaseAttachment(databaseAttachment.getAttachmentId(),
                                   databaseAttachment.getMmsId(),
                                   databaseAttachment.hasData(),
-                                  databaseAttachment.getContentType(),
+                                  mediaStream.getMimeType(),
                                   databaseAttachment.getTransferState(),
-                                  dataSize, databaseAttachment.getLocation(),
+                                  dataSize,
+                                  databaseAttachment.getLocation(),
                                   databaseAttachment.getKey(),
                                   databaseAttachment.getRelay());
   }
