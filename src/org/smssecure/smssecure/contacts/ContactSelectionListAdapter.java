@@ -166,15 +166,6 @@ public class ContactSelectionListAdapter extends CursorRecyclerViewAdapter<ViewH
     return "#";
   }
 
-  private Cursor getCursorAtPositionOrThrow(int position) {
-    Cursor cursor = getCursor();
-    if (cursor == null) {
-      throw new IllegalStateException("Cursor should not be null here.");
-    }
-    if (!cursor.moveToPosition(position));
-    return cursor;
-  }
-
   public interface ItemClickListener {
     void onItemClick(ContactSelectionListItem item);
   }
