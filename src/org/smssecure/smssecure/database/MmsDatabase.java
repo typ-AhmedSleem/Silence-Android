@@ -547,7 +547,7 @@ public class MmsDatabase extends MessagingDatabase {
                                         contentValues);
 
     DatabaseFactory.getThreadDatabase(context).setUnread(threadId);
-    DatabaseFactory.getThreadDatabase(context).update(threadId);
+    DatabaseFactory.getThreadDatabase(context).update(threadId, true);
     notifyConversationListeners(threadId);
     jobManager.add(new TrimThreadJob(context, threadId));
 
@@ -630,7 +630,7 @@ public class MmsDatabase extends MessagingDatabase {
 
   public void markIncomingNotificationReceived(long threadId) {
     notifyConversationListeners(threadId);
-    DatabaseFactory.getThreadDatabase(context).update(threadId);
+    DatabaseFactory.getThreadDatabase(context).update(threadId, true);
 
     if (org.smssecure.smssecure.util.Util.isDefaultSmsProvider(context)) {
       DatabaseFactory.getThreadDatabase(context).setUnread(threadId);
@@ -732,7 +732,7 @@ public class MmsDatabase extends MessagingDatabase {
       db.endTransaction();
 
       notifyConversationListeners(contentValues.getAsLong(THREAD_ID));
-      DatabaseFactory.getThreadDatabase(context).update(contentValues.getAsLong(THREAD_ID));
+      DatabaseFactory.getThreadDatabase(context).update(contentValues.getAsLong(THREAD_ID), true);
     }
   }
 
@@ -745,7 +745,7 @@ public class MmsDatabase extends MessagingDatabase {
 
     SQLiteDatabase database = databaseHelper.getWritableDatabase();
     database.delete(TABLE_NAME, ID_WHERE, new String[] {messageId+""});
-    boolean threadDeleted = DatabaseFactory.getThreadDatabase(context).update(threadId);
+    boolean threadDeleted = DatabaseFactory.getThreadDatabase(context).update(threadId, false);
     notifyConversationListeners(threadId);
     return threadDeleted;
   }

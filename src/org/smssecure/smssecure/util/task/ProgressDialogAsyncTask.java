@@ -1,4 +1,4 @@
-package org.smssecure.smssecure.util;
+package org.smssecure.smssecure.util.task;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import java.lang.ref.WeakReference;
 
 public abstract class ProgressDialogAsyncTask<Params, Progress, Result> extends AsyncTask<Params, Progress, Result> {
+
   private final WeakReference<Context> contextReference;
   private       ProgressDialog         progress;
   private final String                 title;
@@ -14,7 +15,7 @@ public abstract class ProgressDialogAsyncTask<Params, Progress, Result> extends 
 
   public ProgressDialogAsyncTask(Context context, String title, String message) {
     super();
-    this.contextReference = new WeakReference<Context>(context);
+    this.contextReference = new WeakReference<>(context);
     this.title            = title;
     this.message          = message;
   }

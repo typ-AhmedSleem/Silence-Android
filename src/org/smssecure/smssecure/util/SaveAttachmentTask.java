@@ -13,6 +13,7 @@ import android.widget.Toast;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.PartAuthority;
+import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 
 import java.io.File;
 import java.io.FileOutputStream;

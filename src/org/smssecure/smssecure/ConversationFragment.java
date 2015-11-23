@@ -57,7 +57,7 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
-import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
+import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.SaveAttachmentTask;
 import org.smssecure.smssecure.util.SaveAttachmentTask.Attachment;
 import org.smssecure.smssecure.util.ViewUtil;
