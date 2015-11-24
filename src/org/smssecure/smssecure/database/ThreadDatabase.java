@@ -65,12 +65,15 @@ public class ThreadDatabase extends Database {
   public  static final String SNIPPET_TYPE    = "snippet_type";
   public  static final String SNIPPET_URI     = "snippet_uri";
   public  static final String ARCHIVED        = "archived";
+  public  static final String STATUS          = "status";
 
-  public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + ID + " INTEGER PRIMARY KEY, "                             +
-    DATE + " INTEGER DEFAULT 0, " + MESSAGE_COUNT + " INTEGER DEFAULT 0, "                         +
-    RECIPIENT_IDS + " TEXT, " + SNIPPET + " TEXT, " + SNIPPET_CHARSET + " INTEGER DEFAULT 0, "     +
-    READ + " INTEGER DEFAULT 1, " + TYPE + " INTEGER DEFAULT 0, " + ERROR + " INTEGER DEFAULT 0, " +
-    SNIPPET_TYPE + " INTEGER DEFAULT 0, " + SNIPPET_URI + " TEXT DEFAULT NULL, " + ARCHIVED + " INTEGER DEFAULT 0);";
+  public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("                    +
+    ID + " INTEGER PRIMARY KEY, " + DATE + " INTEGER DEFAULT 0, "                                  +
+    MESSAGE_COUNT + " INTEGER DEFAULT 0, " + RECIPIENT_IDS + " TEXT, " + SNIPPET + " TEXT, "       +
+    SNIPPET_CHARSET + " INTEGER DEFAULT 0, " + READ + " INTEGER DEFAULT 1, "                       +
+    TYPE + " INTEGER DEFAULT 0, " + ERROR + " INTEGER DEFAULT 0, "                                 +
+    SNIPPET_TYPE + " INTEGER DEFAULT 0, " + SNIPPET_URI + " TEXT DEFAULT NULL, "                   +
+    ARCHIVED + " INTEGER DEFAULT 0, " + STATUS + " INTEGER DEFAULT 0);";
 
   public static final String[] CREATE_INDEXS = {
     "CREATE INDEX IF NOT EXISTS thread_recipient_ids_index ON " + TABLE_NAME + " (" + RECIPIENT_IDS + ");",
@@ -127,14 +130,15 @@ public class ThreadDatabase extends Database {
     return db.insert(TABLE_NAME, null, contentValues);
   }
 
-  private void updateThread(long threadId, long count, String body, @Nullable Uri attachment, long date, long type, boolean unarchive)
-  {
-    ContentValues contentValues = new ContentValues(5);
+  private void updateThread(long threadId, long count, String body, @Nullable Uri attachment,
+                            long date, int status, long type, boolean unarchive)  {
+    ContentValues contentValues = new ContentValues(6);
     contentValues.put(DATE, date - date % 1000);
     contentValues.put(MESSAGE_COUNT, count);
     contentValues.put(SNIPPET, body);
     contentValues.put(SNIPPET_URI, attachment == null ? null : attachment.toString());
     contentValues.put(SNIPPET_TYPE, type);
+    contentValues.put(STATUS, status);
 
     if (unarchive) {
       contentValues.put(ARCHIVED, 0);
@@ -146,7 +150,7 @@ public class ThreadDatabase extends Database {
   }
 
   public void updateSnippet(long threadId, String snippet, @Nullable Uri attachment, long date, long type, boolean unarchive) {
-    ContentValues contentValues = new ContentValues(3);
+    ContentValues contentValues = new ContentValues(4);
 
     contentValues.put(DATE, date - date % 1000);
     contentValues.put(SNIPPET, snippet);
@@ -480,10 +484,8 @@ public class ThreadDatabase extends Database {
         if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
         else                                            timestamp = record.getDateReceived();
 
-        updateThread(threadId, count, record.getBody().getBody(),
-                     getAttachmentUriFor(record), timestamp,
-                     record.getType(), unarchive);
-
+        updateThread(threadId, count, record.getBody().getBody(), getAttachmentUriFor(record),
+                     timestamp, record.getDeliveryStatus(), record.getType(), unarchive);
         notifyConversationListListeners();
         return false;
       } else {
@@ -550,10 +552,11 @@ public class ThreadDatabase extends Database {
       long type               = cursor.getLong(cursor.getColumnIndexOrThrow(ThreadDatabase.SNIPPET_TYPE));
       int distributionType    = cursor.getInt(cursor.getColumnIndexOrThrow(ThreadDatabase.TYPE));
       boolean archived        = cursor.getInt(cursor.getColumnIndex(ThreadDatabase.ARCHIVED)) != 0;
+      int status              = cursor.getInt(cursor.getColumnIndexOrThrow(ThreadDatabase.STATUS));
       Uri snippetUri          = getSnippetUri(cursor);
 
-      return new ThreadRecord(context, body, snippetUri, recipients, date, count,
-                              read == 1, threadId, type, distributionType, archived);
+      return new ThreadRecord(context, body, snippetUri, recipients, date, count, read == 1,
+                              threadId, status, type, distributionType, archived);
     }
 
     private DisplayRecord.Body getPlaintextBody(Cursor cursor) {

@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.text.SpannableString;
 
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.database.SmsDatabase.Status;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
 import org.smssecure.smssecure.database.documents.NetworkFailure;
@@ -54,9 +55,8 @@ public class MediaMmsMessageRecord extends MessageRecord {
                                List<IdentityKeyMismatch> mismatches,
                                List<NetworkFailure> failures)
   {
-    super(context, id, body, recipients, individualRecipient, recipientDeviceId,
-          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, dateDeliveryReceived, mailbox,
-          mismatches, failures);
+    super(context, id, body, recipients, individualRecipient, recipientDeviceId, dateSent,
+          dateReceived, threadId, Status.STATUS_NONE, dateDeliveryReceived, mailbox, mismatches, failures);
 
     this.context   = context.getApplicationContext();
     this.partCount = partCount;

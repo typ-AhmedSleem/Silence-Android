@@ -290,6 +290,8 @@ public class MmsDatabase extends MessagingDatabase {
     db.execSQL("UPDATE " + TABLE_NAME +
                    " SET " + MESSAGE_BOX + " = (" + MESSAGE_BOX + " & " + (Types.TOTAL_MASK - maskOff) + " | " + maskOn + " )" +
                    " WHERE " + ID + " = ?", new String[] {id + ""});
+
+    DatabaseFactory.getThreadDatabase(context).update(getThreadIdForMessage(id), false);
   }
 
   public void markAsOutbox(long messageId) {

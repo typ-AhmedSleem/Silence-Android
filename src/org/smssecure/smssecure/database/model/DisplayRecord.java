@@ -19,6 +19,7 @@ package org.smssecure.smssecure.database.model;
 import android.content.Context;
 import android.text.SpannableString;
 
+import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.recipients.Recipients;
 
@@ -41,9 +42,11 @@ public abstract class DisplayRecord {
   private final long       dateDeliveryReceived;
   private final long       threadId;
   private final Body       body;
+  private final int        deliveryStatus;
 
   public DisplayRecord(Context context, Body body, Recipients recipients, long dateSent,
-                       long dateReceived, long dateDeliveryReceived, long threadId, long type)
+                       long dateReceived, long dateDeliveryReceived, long threadId,
+                       int deliveryStatus, long type)
   {
     this.context              = context.getApplicationContext();
     this.threadId             = threadId;
@@ -53,10 +56,26 @@ public abstract class DisplayRecord {
     this.dateDeliveryReceived = dateDeliveryReceived;
     this.type                 = type;
     this.body                 = body;
+    this.deliveryStatus       = deliveryStatus;
   }
 
   public Body getBody() {
     return body;
+  }
+
+  public boolean isFailed() {
+    return
+        MmsSmsColumns.Types.isFailedMessageType(type)            ||
+        MmsSmsColumns.Types.isPendingSecureSmsFallbackType(type) ||
+        deliveryStatus >= SmsDatabase.Status.STATUS_FAILED;
+  }
+
+  public boolean isPending() {
+    return MmsSmsColumns.Types.isPendingMessageType(type);
+  }
+
+  public boolean isOutgoing() {
+    return MmsSmsColumns.Types.isOutgoingMessageType(type);
   }
 
   public abstract SpannableString getDisplayBody();
@@ -99,6 +118,19 @@ public abstract class DisplayRecord {
 
   public boolean isGroupAction() {
     return isGroupUpdate() || isGroupQuit();
+  }
+
+  public int getDeliveryStatus() {
+    return deliveryStatus;
+  }
+
+  public boolean isDelivered() {
+    return (deliveryStatus >= SmsDatabase.Status.STATUS_COMPLETE &&
+            deliveryStatus < SmsDatabase.Status.STATUS_PENDING);
+  }
+
+  public boolean isPendingInsecureSmsFallback() {
+    return SmsDatabase.Types.isPendingInsecureSmsFallbackType(type);
   }
 
   public static class Body {

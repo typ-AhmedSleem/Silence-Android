@@ -119,9 +119,8 @@ public class SmsDatabase extends MessagingDatabase {
 
     long threadId = getThreadIdForMessage(id);
 
-    DatabaseFactory.getThreadDatabase(context).update(threadId, true);
+    DatabaseFactory.getThreadDatabase(context).update(threadId, false);
     notifyConversationListeners(threadId);
-    notifyConversationListListeners();
   }
 
   public long getThreadIdForMessage(long id) {
