@@ -115,7 +115,15 @@ public class MmsDownloadJob extends MasterSecretJob {
       if (retrieveConf == null) {
         throw new MmsException("RetrieveConf was null");
       }
-      storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, retrieveConf);
+
+      if (retrieveConf.getSubject() != null && WirePrefix.isEncryptedMmsSubject(retrieveConf.getSubject().getString())) {
+        MmsCipher    mmsCipher    = new MmsCipher(new SMSSecureAxolotlStore(context, masterSecret));
+        RetrieveConf plaintextPdu = (RetrieveConf) mmsCipher.decrypt(context, retrieveConf);
+
+        storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, plaintextPdu, true);
+      } else {
+        storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, retrieveConf, false);
+      }
     } catch (ApnUnavailableException e) {
       Log.w(TAG, e);
       handleDownloadError(masterSecret, messageId, threadId, MmsDatabase.Status.DOWNLOAD_APN_UNAVAILABLE,
@@ -162,7 +170,7 @@ public class MmsDownloadJob extends MasterSecretJob {
   }
 
   private void storeRetrievedMms(MasterSecret masterSecret, String contentLocation,
-                                 long messageId, long threadId, RetrieveConf retrieved)
+                                 long messageId, long threadId, RetrieveConf retrieved, boolean isSecure)
       throws MmsException, NoSessionException, DuplicateMessageException, InvalidMessageException,
              LegacyMessageException
   {
@@ -205,18 +213,14 @@ public class MmsDownloadJob extends MasterSecretJob {
       }
     }
 
+    IncomingMediaMessage message = new IncomingMediaMessage(from, to, cc, body, retrieved.getDate() * 1000L, attachments);
 
     Pair<Long, Long> messageAndThreadId;
 
-    if (retrieved.getSubject() != null && WirePrefix.isEncryptedMmsSubject(retrieved.getSubject().getString())) {
-      MmsCipher            mmsCipher          = new MmsCipher(new SMSSecureAxolotlStore(context, masterSecret));
-      MultimediaMessagePdu plaintextPdu       = mmsCipher.decrypt(context, retrieved);
-      IncomingMediaMessage message            = new IncomingMediaMessage(from, to, cc, PartParser.getMessageText(plaintextPdu.getBody()), retrieved.getDate() * 1000L, attachments);
-
+    if (isSecure) {
       messageAndThreadId = database.insertSecureDecryptedMessageInbox(masterSecret, message,
                                                                       threadId);
     } else {
-      IncomingMediaMessage message = new IncomingMediaMessage(from, to, cc, body, retrieved.getDate() * 1000L, attachments);
       messageAndThreadId = database.insertMessageInbox(masterSecret, message,
                                                        contentLocation, threadId);
     }
