@@ -29,14 +29,14 @@ public class CompatMmsConnection implements OutgoingMmsConnection, IncomingMmsCo
   public SendConf send(@NonNull byte[] pduBytes)
       throws UndeliverableMessageException
   {
-    try {
-      Log.w(TAG, "Sending via legacy connection");
-      return new OutgoingLegacyMmsConnection(context).send(pduBytes);
-    } catch (UndeliverableMessageException | ApnUnavailableException e) {
-      if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-        Log.w(TAG, "Falling back to try sending via Lollipop API");
-        return new OutgoingLollipopMmsConnection(context).send(pduBytes);
-      } else {
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      Log.w(TAG, "Sending via Lollipop API");
+      return new OutgoingLollipopMmsConnection(context).send(pduBytes);
+    } else {
+      try {
+        Log.w(TAG, "Sending via legacy connection");
+        return new OutgoingLegacyMmsConnection(context).send(pduBytes);
+      } catch (UndeliverableMessageException | ApnUnavailableException e) {
         throw new UndeliverableMessageException(e);
       }
     }
@@ -48,14 +48,14 @@ public class CompatMmsConnection implements OutgoingMmsConnection, IncomingMmsCo
                                byte[] transactionId)
       throws MmsException, MmsRadioException, ApnUnavailableException, IOException
   {
-    try {
-      Log.w(TAG, "Receiving via legacy connection");
-      return new IncomingLegacyMmsConnection(context).retrieve(contentLocation, transactionId);
-    } catch (MmsRadioException | IOException | ApnUnavailableException e) {
-      if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-        Log.w(TAG, "Falling back to try receiving via Lollipop API");
-        return new IncomingLollipopMmsConnection(context).retrieve(contentLocation, transactionId);
-      } else {
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      Log.w(TAG, "Receiving via Lollipop API");
+      return new IncomingLollipopMmsConnection(context).retrieve(contentLocation, transactionId);
+    } else {
+      try {
+        Log.w(TAG, "Receiving via legacy connection");
+        return new IncomingLegacyMmsConnection(context).retrieve(contentLocation, transactionId);
+      } catch (MmsRadioException | IOException | ApnUnavailableException e) {
         throw e;
       }
     }
