@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.util.ViewUtil;
 
 public class ConversationTitleView extends LinearLayout {
 
@@ -33,8 +34,10 @@ public class ConversationTitleView extends LinearLayout {
 
     this.title    = (TextView) findViewById(R.id.title);
     this.subtitle = (TextView) findViewById(R.id.subtitle);
-  }
 
+    ViewUtil.setTextViewGravityStart(this.title, getContext());
+    ViewUtil.setTextViewGravityStart(this.subtitle, getContext());
+  }
 
   public void setTitle(@Nullable Recipients recipients) {
     if      (recipients == null)             setComposeTitle();

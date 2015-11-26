@@ -9,6 +9,7 @@ import org.smssecure.smssecure.TransportOption;
 import org.smssecure.smssecure.TransportOptions;
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
 import org.smssecure.smssecure.TransportOptionsPopup;
+import org.smssecure.smssecure.util.ViewUtil;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 public class SendButton extends ImageButton
@@ -25,18 +26,21 @@ public class SendButton extends ImageButton
   public SendButton(Context context) {
     super(context);
     this.transportOptions = initializeTransportOptions(false);
+    ViewUtil.mirrorIfRtl(this, getContext());
   }
 
   @SuppressWarnings("unused")
   public SendButton(Context context, AttributeSet attrs) {
     super(context, attrs);
     this.transportOptions = initializeTransportOptions(false);
+    ViewUtil.mirrorIfRtl(this, getContext());
   }
 
   @SuppressWarnings("unused")
   public SendButton(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
     this.transportOptions = initializeTransportOptions(false);
+    ViewUtil.mirrorIfRtl(this, getContext());
   }
 
   private TransportOptions initializeTransportOptions(boolean media) {
