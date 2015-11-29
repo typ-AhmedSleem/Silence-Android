@@ -75,4 +75,3 @@ public class CursorRecyclerViewAdapterTest {
     assertNotEquals(adapter.getItemViewType(100), CursorRecyclerViewAdapter.FOOTER_TYPE);
   }
 }
-

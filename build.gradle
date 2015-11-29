@@ -59,17 +59,21 @@ dependencies {
     compile project (':libs:com.amulyakhare.textdrawable:library')
     compile 'me.relex:circleindicator:1.0.0@aar'
 
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:1.7.1'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.1'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.1'
+    testCompile 'org.powermock:powermock-module-junit4-rule:1.6.1'
+    testCompile 'org.powermock:powermock-classloading-xstream:1.6.1'
+
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-
     androidTestCompile ('org.assertj:assertj-core:1.7.1') {
         exclude group: 'org.hamcrest', module: 'hamcrest-core'
     }
     androidTestCompile ('com.squareup.assertj:assertj-android:1.0.0') {
-        exclude group: 'org.hamcrest', module: 'hamcrest-core'
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile ('com.android.support.test:runner:0.2') {
+        exclude group: 'org.hamcrest',        module: 'hamcrest-core'
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 }
@@ -124,7 +128,6 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "long", "BUILD_TIMESTAMP", System.currentTimeMillis() + "L"
         try{
             buildConfigField "String", "BUILD_GIT_COMMIT", "\"" + 'git rev-parse --short HEAD'.execute().text.trim() + "\""
@@ -177,10 +180,10 @@ android {
             assets.srcDirs = ['assets']
         }
         androidTest {
-            java.srcDirs = ['androidTest/java']
-            resources.srcDirs = ['androidTest/java']
-            aidl.srcDirs = ['androidTest/java']
-            renderscript.srcDirs = ['androidTest/java']
+            java.srcDirs = ['test/androidTest/java']
+        }
+        test {
+            java.srcDirs = ['test/unitTest/java']
         }
     }
 

@@ -1,15 +1,16 @@
 package org.smssecure.smssecure.util;
 
-import org.smssecure.smssecure.SMSSecureTestCase;
+import org.junit.Test;
+import org.smssecure.smssecure.BaseUnitTest;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-public class ListPartitionTest extends SMSSecureTestCase {
+public class ListPartitionTest extends BaseUnitTest {
 
-  public void testPartitionEven() {
+  @Test public void testPartitionEven() {
     List<Integer> list = new LinkedList<>();
 
     for (int i=0;i<100;i++) {
@@ -32,7 +33,7 @@ public class ListPartitionTest extends SMSSecureTestCase {
     }
   }
 
-  public void testPartitionOdd() {
+  @Test public void testPartitionOdd() {
     List<Integer> list = new LinkedList<>();
 
     for (int i=0;i<100;i++) {
@@ -60,7 +61,7 @@ public class ListPartitionTest extends SMSSecureTestCase {
     assertEquals((int)partitions.get(10).get(0), 100);
   }
 
-  public void testPathological() {
+  @Test public void testPathological() {
     List<Integer> list = new LinkedList<>();
 
     for (int i=0;i<100;i++) {
