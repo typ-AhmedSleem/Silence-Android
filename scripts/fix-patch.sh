@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: ./fix-patch.sh <files>"
+    echo "usage: ./scripts/fix-patch.sh <files>"
     exit 1
 fi
 
