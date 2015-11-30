@@ -423,11 +423,10 @@ public class MmsDatabase extends MessagingDatabase {
   {
     MmsAddressDatabase addr               = DatabaseFactory.getMmsAddressDatabase(context);
     AttachmentDatabase attachmentDatabase = DatabaseFactory.getAttachmentDatabase(context);
-    SQLiteDatabase     database           = databaseHelper.getReadableDatabase();
     Cursor             cursor             = null;
 
     try {
-      cursor = database.query(TABLE_NAME, MMS_PROJECTION, ID_WHERE, new String[]{String.valueOf(messageId)}, null, null, null);
+      cursor = rawQuery(RAW_ID_WHERE, new String[] {String.valueOf(messageId)});
 
       if (cursor != null && cursor.moveToNext()) {
         long             outboxType   = cursor.getLong(cursor.getColumnIndexOrThrow(MESSAGE_BOX));
