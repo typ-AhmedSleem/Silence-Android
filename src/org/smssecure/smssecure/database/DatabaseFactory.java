@@ -68,7 +68,8 @@ public class DatabaseFactory {
   private static final int INTRODUCED_CONVERSATION_LIST_THUMBNAILS_VERSION = 23;
   private static final int INTRODUCED_ARCHIVE_VERSION                      = 24;
   private static final int INTRODUCED_CONVERSATION_LIST_STATUS_VERSION     = 25;
-  private static final int DATABASE_VERSION                                = 25;
+  private static final int MIGRATED_CONVERSATION_LIST_STATUS_VERSION       = 26;
+  private static final int DATABASE_VERSION                                = 26;
 
   private static final String DATABASE_NAME    = "messages.db";
   private static final Object lock             = new Object();
@@ -762,6 +763,27 @@ public class DatabaseFactory {
 
       if (oldVersion < INTRODUCED_CONVERSATION_LIST_STATUS_VERSION) {
         db.execSQL("ALTER TABLE thread ADD COLUMN status INTEGER DEFAULT -1");
+      }
+
+      if (oldVersion < MIGRATED_CONVERSATION_LIST_STATUS_VERSION) {
+        Cursor threadCursor = db.query("thread", new String[] {"_id"}, null, null, null, null, null);
+
+        while (threadCursor != null && threadCursor.moveToNext()) {
+          long threadId = threadCursor.getLong(threadCursor.getColumnIndexOrThrow("_id"));
+
+          Cursor cursor = db.rawQuery("SELECT DISTINCT date AS date_received, status " +
+                                      "FROM sms WHERE (thread_id = ?1) " +
+                                      "UNION ALL SELECT DISTINCT date_received, -1 AS status " +
+                                      "FROM mms WHERE (thread_id = ?1) " +
+                                      "ORDER BY date_received DESC LIMIT 1", new String[]{threadId + ""});
+
+          if (cursor != null && cursor.moveToNext()) {
+            int status       = cursor.getInt(cursor.getColumnIndexOrThrow("status"));
+
+            db.execSQL("UPDATE thread SET status = ? WHERE _id = ?",
+                       new String[]{status + "", threadId + ""});
+          }
+        }
       }
 
       db.setTransactionSuccessful();
