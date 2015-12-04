@@ -187,7 +187,7 @@ public class ConversationListFragment extends Fragment
     String snackBarTitle;
 
     if (archive) snackBarTitle = getString(R.string.ConversationListFragment_moved_conversations_to_inbox);
-    else         snackBarTitle = getString(R.string.ConversationListFragment_archived_conversations);
+    else         snackBarTitle = getString(R.string.ConversationListFragment_conversations_archived);
 
     new SnackbarAsyncTask<Void>(getView(), snackBarTitle,
                                 getString(R.string.ConversationListFragment_undo),
@@ -443,7 +443,7 @@ public class ConversationListFragment extends Fragment
         }.execute(threadId);
       } else {
         new SnackbarAsyncTask<Long>(getView(),
-                                    getString(R.string.ConversationListFragment_archived_conversation),
+                                    getString(R.string.ConversationListFragment_conversation_archived),
                                     getString(R.string.ConversationListFragment_undo),
                                     getResources().getColor(R.color.amber_500),
                                     Snackbar.LENGTH_LONG, false)
