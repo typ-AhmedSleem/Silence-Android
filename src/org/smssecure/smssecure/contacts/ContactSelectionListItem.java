@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.smssecure.smssecure.R;
@@ -14,7 +14,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 
-public class ContactSelectionListItem extends RelativeLayout implements Recipients.RecipientsModifiedListener {
+public class ContactSelectionListItem extends LinearLayout implements Recipients.RecipientsModifiedListener {
 
   private AvatarImageView contactPhotoImage;
   private TextView        numberView;
@@ -32,10 +32,6 @@ public class ContactSelectionListItem extends RelativeLayout implements Recipien
 
   public ContactSelectionListItem(Context context, AttributeSet attrs) {
     super(context, attrs);
-  }
-
-  public ContactSelectionListItem(Context context, AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
   }
 
   @Override

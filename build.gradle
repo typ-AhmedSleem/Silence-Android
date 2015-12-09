@@ -38,8 +38,8 @@ dependencies {
     }
 
     compile 'pl.tajchert:waitingdots:0.1.0'
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile 'com.android.support:recyclerview-v7:21.0.3'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
     compile 'com.google.zxing:android-integration:3.1.0'
     compile project (':libs:com.android.support.support-v4-preferencefragment')
@@ -83,8 +83,8 @@ dependencyVerification {
     verify = [
             'com.afollestad:material-dialogs:be606c7c64538541daa1a1a4c245f79c346b07e6034ccd53ced5d48756ca66bd',
             'pl.tajchert:waitingdots:2835d49e0787dbcb606c5a60021ced66578503b1e9fddcd7a5ef0cd5f095ba2c',
-            'com.android.support:appcompat-v7:9a2355537c2f01cf0b95523605c18606b8d824017e6e94a05c77b0cfc8f21c96',
-            'com.android.support:recyclerview-v7:e525ad3f33c84bb12b73d2dc975b55364a53f0f2d0697e043efba59ba73e22d2',
+            'com.android.support:appcompat-v7:4b5ccba8c4557ef04f99aa0a80f8aa7d50f05f926a709010a54afd5c878d3618',
+            'com.android.support:recyclerview-v7:b0f530a5b14334d56ce0de85527ffe93ac419bc928e2884287ce1dddfedfb505',
             'com.android.support:support-v4:5c7dceb6c824089fe80f502e5206264048ef8bffa4e8ddeab180b81723e79b7f',
             'com.android.support:support-annotations:f347a35b9748a4103b39a6714a77e2100f488d623fd6268e259c177b200e9d82',
             'com.android.support:gridlayout-v7:a9b770cffca2c7c5cd83cba4dd12503365de5e8d9c79c479165adf18ab3bc25b',
