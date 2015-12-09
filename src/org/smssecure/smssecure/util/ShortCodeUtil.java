@@ -40,7 +40,7 @@ public class ShortCodeUtil {
       }
 
       Phonenumber.PhoneNumber shortCode = util.parse(number, localCountryCode);
-      return ShortNumberInfo.getInstance().isPossibleShortNumberForRegion(shortCode.toString(), localCountryCode);
+      return ShortNumberInfo.getInstance().isPossibleShortNumberForRegion(shortCode, localCountryCode);
     } catch (NumberParseException e) {
       Log.w(TAG, e);
       return false;

@@ -56,7 +56,7 @@ dependencies {
 
     compile project (':libs:org.whispersystems.jobmanager')
     compile project (':libs:org.whispersystems.libpastelog:library')
-    compile 'org.whispersystems:textsecure-android:1.6.2'
+    compile 'org.whispersystems:textsecure-android:1.8.3'
     compile project (':libs:com.amulyakhare.textdrawable:library')
     compile 'me.relex:circleindicator:1.0.0@aar'
 
@@ -97,7 +97,7 @@ dependencyVerification {
             'com.github.chrisbanes.photoview:library:8b5344e206f125e7ba9d684008f36c4992d03853c57e5814125f88496126e3cc',
             'com.google.protobuf:protobuf-java:e0c1c64575c005601725e7c6a02cebf9e1285e888f756b2a1d73ffa8d725cc74',
             'com.google.zxing:android-integration:89e56aadf1164bd71e57949163c53abf90af368b51669c0d4a47a163335f95c4',
-            'com.googlecode.libphonenumber:libphonenumber:eba17eae81dd622ea89a00a3a8c025b2f25d342e0d9644c5b62e16f15687c3ab',
+            'com.googlecode.libphonenumber:libphonenumber:9625de9d2270e9a280ff4e6d9ef3106573fb4828773fd32c9b7614f4e17d2811',
             'com.jpardogo.materialtabstrip:library:c6ef812fba4f74be7dc4a905faa4c2908cba261a94c13d4f96d5e67e4aad4aaa',
             'com.makeramen:roundedimageview:1f5a1865796b308c6cdd114acc6e78408b110f0a62fc63553278fbeacd489cd1',
             'com.pnikosis:materialish-progress:d71d80e00717a096784482aee21001a9d299fec3833e4ebd87739ed36cf77c54',
@@ -112,8 +112,8 @@ dependencyVerification {
             'org.whispersystems:axolotl-java:6daee739b89d8d7101de6d98f77132fee48495c6ea647d880e77def842f999ea',
             'org.whispersystems:curve25519-android:3c29a4131a69b0d16baaa3d707678deb39602c3a3ffd75805ce7f9db252e5d0d',
             'org.whispersystems:curve25519-java:9ccef8f5aba05d9942336f023c589d6278b4f9135bdc34a7bade1f4e7ad65fa3',
-            'org.whispersystems:textsecure-android:6fc3a127b4ab63533e571066a8c6686e82d071d804f4563eee66a3773dd094e0',
-            'org.whispersystems:textsecure-java:9167ae6cbc34b62b5d51b2dd687306ca94eab6cf5fa7cf426f40ec32d3d37cf8',
+            'org.whispersystems:textsecure-android:aec5fc59952d9f5482491091091687816f46be1144342a0244f48fd55d6ab393',
+            'org.whispersystems:textsecure-java:b407ca6d1430204dfabf38e27db22d5177409072a9668238bd1877de7676ad3f',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
             'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
     ]
