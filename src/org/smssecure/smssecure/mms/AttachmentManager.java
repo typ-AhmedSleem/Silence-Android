@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import junit.framework.Assert;
 
+import org.smssecure.smssecure.MediaPreviewActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.AudioView;
 import org.smssecure.smssecure.components.RemovableMediaView;
@@ -78,6 +79,7 @@ public class AttachmentManager {
     this.attachmentListener = listener;
 
     removableMediaView.setRemoveClickListener(new RemoveButtonListener());
+    thumbnail.setOnClickListener(new ThumbnailClickListener());
   }
 
   public void clear() {
@@ -271,6 +273,23 @@ public class AttachmentManager {
    return slide == null                                                        ||
           constraints.isSatisfied(context, masterSecret, slide.asAttachment()) ||
           constraints.canResize(slide.asAttachment());
+  }
+
+  private void previewImageDraft(final @NonNull Slide slide) {
+    if (MediaPreviewActivity.isContentTypeSupported(slide.getContentType()) && slide.getThumbnailUri() != null) {
+      Intent intent = new Intent(context, MediaPreviewActivity.class);
+      intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+      intent.setDataAndType(slide.getUri(), slide.getContentType());
+
+      context.startActivity(intent);
+    }
+  }
+
+  private class ThumbnailClickListener implements View.OnClickListener {
+    @Override
+    public void onClick(View v) {
+      if (slide.isPresent()) previewImageDraft(slide.get());
+    }
   }
 
   private class RemoveButtonListener implements View.OnClickListener {
