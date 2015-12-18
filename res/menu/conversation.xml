@@ -7,6 +7,9 @@
     <item android:title="@string/conversation__menu_view_media"
           android:id="@+id/menu_view_media" />
 
+    <item android:title="@string/conversation__menu_archive_conversation"
+          android:id="@+id/menu_archive_conversation" />
+
     <item android:title="@string/conversation__menu_delete_conversation"
           android:id="@+id/menu_delete_conversation" />
 

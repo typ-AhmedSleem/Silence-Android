@@ -344,6 +344,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       inflater.inflate(R.menu.conversation_add_to_contacts, menu);
     }
 
+    if (archived) menu.findItem(R.id.menu_archive_conversation)
+                      .setTitle(R.string.conversation__menu_unarchive_conversation);
+
     super.onPrepareOptionsMenu(menu);
     return true;
   }
@@ -354,6 +357,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     switch (item.getItemId()) {
     case R.id.menu_call:                      handleDial(getRecipients().getPrimaryRecipient()); return true;
     case R.id.menu_delete_conversation:       handleDeleteConversation();                        return true;
+    case R.id.menu_archive_conversation:      handleArchiveConversation();                       return true;
     case R.id.menu_add_attachment:            handleAddAttachment();                             return true;
     case R.id.menu_view_media:                handleViewMedia();                                 return true;
     case R.id.menu_add_to_contacts:           handleAddToContacts();                             return true;
@@ -609,6 +613,16 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     builder.setNegativeButton(android.R.string.cancel, null);
     builder.show();
+  }
+
+  private void handleArchiveConversation() {
+    if (threadId > 0) {
+      if (!archived) DatabaseFactory.getThreadDatabase(ConversationActivity.this).archiveConversation(threadId);
+      else           DatabaseFactory.getThreadDatabase(ConversationActivity.this).unarchiveConversation(threadId);
+    }
+    composeText.getText().clear();
+    threadId = -1;
+    finish();
   }
 
   private void handleAddToContacts() {
