@@ -106,7 +106,7 @@ public class RecyclerViewFastScroller extends LinearLayout {
       handle.setSelected(true);
     case MotionEvent.ACTION_MOVE:
       final float y = event.getY();
-      setBubbleAndHandlePosition(y);
+      setBubbleAndHandlePosition(y / height);
       setRecyclerViewPosition(y);
       return true;
     case MotionEvent.ACTION_UP:
@@ -149,12 +149,14 @@ public class RecyclerViewFastScroller extends LinearLayout {
     if (recyclerView != null) {
       final int itemCount = recyclerView.getAdapter().getItemCount();
       float proportion;
-      if (ViewUtil.getY(handle) == 0)
+      if (ViewUtil.getY(handle) == 0) {
         proportion = 0f;
-      else if (ViewUtil.getY(handle) + handle.getHeight() >= height - TRACK_SNAP_RANGE)
+      } else if (ViewUtil.getY(handle) + handle.getHeight() >= height - TRACK_SNAP_RANGE) {
         proportion = 1f;
-      else
-        proportion = y / (float) height;
+      } else {
+        proportion = y / (float)height;
+      }
+
       final int targetPos = Util.clamp((int)(proportion * (float)itemCount), 0, itemCount - 1);
       ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(targetPos, 0);
       final CharSequence bubbleText = ((FastScrollAdapter) recyclerView.getAdapter()).getBubbleText(targetPos);
@@ -165,8 +167,11 @@ public class RecyclerViewFastScroller extends LinearLayout {
   private void setBubbleAndHandlePosition(float y) {
     final int handleHeight = handle.getHeight();
     final int bubbleHeight = bubble.getHeight();
-    ViewUtil.setY(handle, Util.clamp((int)(y - handleHeight / 2), 0, height - handleHeight));
-    ViewUtil.setY(bubble, Util.clamp((int)(y - bubbleHeight), 0, height - bubbleHeight - handleHeight / 2));
+    final int handleY = Util.clamp((int)((height - handleHeight) * y), 0, height - handleHeight);
+    ViewUtil.setY(handle, handleY);
+    ViewUtil.setY(bubble, Util.clamp(handleY - bubbleHeight - bubble.getPaddingBottom() + handleHeight,
+                                     0,
+                                     height - bubbleHeight));
   }
 
   @TargetApi(11)
