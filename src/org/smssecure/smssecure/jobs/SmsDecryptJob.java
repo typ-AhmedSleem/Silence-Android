@@ -59,7 +59,11 @@ public class SmsDecryptJob extends MasterSecretJob {
   }
 
   @Override
-  public void onAdded() {}
+  public void onAdded() {
+    if (KeyCachingService.getMasterSecret(context) == null) {
+      MessageNotifier.updateNotification(context, null, -2);
+    }
+  }
 
   @Override
   public void onRun(MasterSecret masterSecret) throws NoSuchMessageException {

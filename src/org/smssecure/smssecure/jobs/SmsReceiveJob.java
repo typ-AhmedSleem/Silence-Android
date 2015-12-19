@@ -92,6 +92,8 @@ public class SmsReceiveJob extends ContextJob {
       ApplicationContext.getInstance(context)
                         .getJobManager()
                         .add(new SmsDecryptJob(context, messageAndThreadId.first));
+    } else {
+      MessageNotifier.updateNotification(context, masterSecret, messageAndThreadId.second);
     }
 
     return messageAndThreadId;
