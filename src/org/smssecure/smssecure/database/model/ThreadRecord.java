@@ -17,6 +17,9 @@
 package org.smssecure.smssecure.database.model;
 
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -25,6 +28,7 @@ import android.text.style.StyleSpan;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
+import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
 
@@ -36,20 +40,28 @@ import org.smssecure.smssecure.util.GroupUtil;
  */
 public class ThreadRecord extends DisplayRecord {
 
-  private final Context context;
-  private final long count;
-  private final boolean read;
-  private final int distributionType;
+  private @NonNull  final Context context;
+  private @Nullable final Uri     snippetUri;
+  private           final long    count;
+  private           final boolean read;
+  private           final int     distributionType;
+  private           final boolean archived;
 
-  public ThreadRecord(Context context, Body body, Recipients recipients, long date,
-                      long count, boolean read, long threadId, long snippetType,
-                      int distributionType)
+  public ThreadRecord(@NonNull Context context, @NonNull Body body, @Nullable Uri snippetUri,
+                      @NonNull Recipients recipients, long date, long count, boolean read,
+                      long threadId, int status, long snippetType, int distributionType, boolean archived)
   {
-    super(context, body, recipients, date, date, date, threadId, snippetType);
+    super(context, body, recipients, date, date, date, threadId, status, snippetType);
     this.context          = context.getApplicationContext();
+    this.snippetUri       = snippetUri;
     this.count            = count;
     this.read             = read;
     this.distributionType = distributionType;
+    this.archived         = archived;
+  }
+
+  public @Nullable Uri getSnippetUri() {
+    return snippetUri;
   }
 
   @Override
@@ -81,7 +93,7 @@ public class ThreadRecord extends DisplayRecord {
       return emphasisAdded(draftText + " " + getBody().getBody(), 0, draftText.length());
     } else {
       if (TextUtils.isEmpty(getBody().getBody())) {
-        return new SpannableString(context.getString(R.string.MessageNotifier_no_subject));
+        return new SpannableString(emphasisAdded(context.getString(R.string.ThreadRecord_media_message)));
       } else {
         return new SpannableString(getBody().getBody());
       }
@@ -109,6 +121,10 @@ public class ThreadRecord extends DisplayRecord {
 
   public long getDate() {
     return getDateReceived();
+  }
+
+  public boolean isArchived() {
+    return archived;
   }
 
   public int getDistributionType() {

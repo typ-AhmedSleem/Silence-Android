@@ -6,9 +6,8 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
-
-import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.Recipient;
@@ -53,7 +52,7 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
   @Override
   public void onPostExecute(Recipients members) {
     GroupMembers groupMembers = new GroupMembers(members);
-    AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(context);
+    AlertDialog.Builder builder = new AlertDialog.Builder(context);
     builder.setTitle(R.string.ConversationActivity_group_members);
     builder.setIconAttribute(R.attr.group_members_dialog_icon);
     builder.setCancelable(true);

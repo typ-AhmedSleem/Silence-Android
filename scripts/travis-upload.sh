@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Upload a build to files.smssecure.org
-# usage: ./travis-upload <key>
+# usage: ./scripts/travis-upload.sh <key>
 
 set -eo pipefail
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: ./travis-upload <key>"
+    echo "usage: ./scripts/travis-upload <key>"
     exit 1
 fi
 

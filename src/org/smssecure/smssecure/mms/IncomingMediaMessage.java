@@ -1,78 +1,53 @@
 package org.smssecure.smssecure.mms;
 
-import android.text.TextUtils;
-import android.util.Log;
-
+import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.Base64;
-import org.smssecure.smssecure.database.PartDatabase;
+import org.smssecure.smssecure.database.MmsAddresses;
 import org.smssecure.smssecure.util.GroupUtil;
-import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
+import java.util.LinkedList;
 import java.util.List;
-
-import ws.com.google.android.mms.pdu.CharacterSets;
-import ws.com.google.android.mms.pdu.EncodedStringValue;
-import ws.com.google.android.mms.pdu.PduBody;
-import ws.com.google.android.mms.pdu.PduHeaders;
-import ws.com.google.android.mms.pdu.PduPart;
-import ws.com.google.android.mms.pdu.RetrieveConf;
 
 public class IncomingMediaMessage {
 
-  private final PduHeaders headers;
-  private final PduBody    body;
-  private final String     groupId;
-  private final boolean    push;
+  private final String  from;
+  private final String  body;
+  private final String  groupId;
+  private final boolean push;
+  private final long    sentTimeMillis;
 
-  public IncomingMediaMessage(RetrieveConf retrieved) {
-    this.headers = retrieved.getPduHeaders();
-    this.body    = retrieved.getBody();
-    this.groupId = null;
-    this.push    = false;
-  }
+  private final List<String>     to          = new LinkedList<>();
+  private final List<String>     cc          = new LinkedList<>();
+  private final List<Attachment> attachments = new LinkedList<>();
 
-  public IncomingMediaMessage(RetrieveConf retrieved, PduHeaders originalHeaders) {
-    this.headers = originalHeaders;
-    this.body    = retrieved.getBody();
-    this.groupId = null;
-    this.push    = false;
-  }
-
-  public IncomingMediaMessage(MasterSecret masterSecret,
-                              String from,
-                              String to,
-                              long sentTimeMillis,
-                              Optional<String> relay,
-                              Optional<String> body)
+  public IncomingMediaMessage(String from, List<String> to, List<String> cc,
+                              String body, long sentTimeMillis,
+                              List<Attachment> attachments)
   {
-    this.headers = new PduHeaders();
-    this.body    = new PduBody();
-    this.push    = true;
-    this.groupId = null;
+    this.from           = from;
+    this.sentTimeMillis = sentTimeMillis;
+    this.body           = body;
+    this.groupId        = null;
+    this.push           = false;
 
-    this.headers.setEncodedStringValue(new EncodedStringValue(from), PduHeaders.FROM);
-    this.headers.appendEncodedStringValue(new EncodedStringValue(to), PduHeaders.TO);
-    this.headers.setLongInteger(sentTimeMillis / 1000, PduHeaders.DATE);
-
-
-    if (body.isPresent() && !TextUtils.isEmpty(body.get())) {
-      PduPart text = new PduPart();
-      text.setData(Util.toUtf8Bytes(body.get()));
-      text.setContentType(Util.toIsoBytes("text/plain"));
-      text.setCharset(CharacterSets.UTF_8);
-      this.body.addPart(text);
-    }
+    this.to.addAll(to);
+    this.cc.addAll(cc);
+    this.attachments.addAll(attachments);
   }
 
-  public PduHeaders getPduHeaders() {
-    return headers;
-  }
-
-  public PduBody getBody() {
+  public String getBody() {
     return body;
+  }
+
+  public MmsAddresses getAddresses() {
+    return new MmsAddresses(from, to, cc, new LinkedList<String>());
+  }
+
+  public List<Attachment> getAttachments() {
+    return attachments;
   }
 
   public String getGroupId() {
@@ -83,10 +58,11 @@ public class IncomingMediaMessage {
     return push;
   }
 
+  public long getSentTimeMillis() {
+    return sentTimeMillis;
+  }
+
   public boolean isGroupMessage() {
-    return groupId != null                                           ||
-        !Util.isEmpty(headers.getEncodedStringValues(PduHeaders.CC)) ||
-        (headers.getEncodedStringValues(PduHeaders.TO) != null &&
-         headers.getEncodedStringValues(PduHeaders.TO).length > 1);
+    return groupId != null || to.size() > 1 || cc.size() > 0;
   }
 }

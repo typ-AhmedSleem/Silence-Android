@@ -14,7 +14,6 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Action;
 import android.support.v4.app.RemoteInput;
 import android.text.SpannableStringBuilder;
-import android.util.Log;
 
 import com.bumptech.glide.Glide;
 
@@ -25,8 +24,9 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.BitmapUtil;
-import org.smssecure.smssecure.util.ListenableFutureTask;
+import org.smssecure.smssecure.util.Util;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,8 +38,8 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
 
   private final List<CharSequence> messageBodies = new LinkedList<>();
 
-  private       ListenableFutureTask<SlideDeck> slideDeck;
-  private final MasterSecret                    masterSecret;
+  private       SlideDeck    slideDeck;
+  private final MasterSecret masterSecret;
 
   public SingleRecipientNotificationBuilder(@NonNull Context context,
                                             @Nullable MasterSecret masterSecret,
@@ -55,19 +55,19 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(MessageNotifier.DeleteReceiver.DELETE_REMINDER_ACTION), 0));
   }
 
-  public void setSender(@NonNull Recipient recipient) {
+  public void setThread(@NonNull Recipients recipients) {
     if (privacy.isDisplayContact()) {
-      setContentTitle(recipient.toShortString());
+      setContentTitle(recipients.toShortString());
 
-      if (recipient.getContactUri() != null) {
-        addPerson(recipient.getContactUri().toString());
+      if (recipients.isSingleRecipient() && recipients.getPrimaryRecipient().getContactUri() != null) {
+        addPerson(recipients.getPrimaryRecipient().getContactUri().toString());
       }
 
-      setLargeIcon(recipient.getContactPhoto()
-                            .asDrawable(context, recipient.getColor()
+      setLargeIcon(recipients.getContactPhoto()
+                            .asDrawable(context, recipients.getColor()
                                                           .toConversationColor(context)));
     } else {
-      setContentTitle(context.getString(R.string.SingleRecipientNotificationBuilder_new_smssecure_message));
+      setContentTitle(context.getString(R.string.SingleRecipientNotificationBuilder_smssecure));
       setLargeIcon(Recipient.getUnknownRecipient()
                             .getContactPhoto()
                             .asDrawable(context, Recipient.getUnknownRecipient()
@@ -81,12 +81,22 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     setNumber(messageCount);
   }
 
-  public void setPrimaryMessageBody(CharSequence message, @Nullable ListenableFutureTask<SlideDeck> slideDeck) {
+  public void setPrimaryMessageBody(@NonNull  Recipients threadRecipients,
+                                    @NonNull  Recipient individualRecipient,
+                                    @NonNull  CharSequence message,
+                                    @Nullable SlideDeck slideDeck)
+  {
+    SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
+
+    if (privacy.isDisplayContact() && (threadRecipients.isGroupRecipient() || !threadRecipients.isSingleRecipient())) {
+      stringBuilder.append(Util.getBoldedString(individualRecipient.toShortString() + ": "));
+    }
+
     if (privacy.isDisplayMessage()) {
-      setContentText(message);
+      setContentText(stringBuilder.append(message));
       this.slideDeck = slideDeck;
     } else {
-      setContentText(context.getString(R.string.SingleRecipientNotificationBuilder_contents_hidden));
+      setContentText(stringBuilder.append(context.getString(R.string.SingleRecipientNotificationBuilder_new_message)));
     }
   }
 
@@ -123,9 +133,20 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     }
   }
 
-  public void addMessageBody(@Nullable CharSequence messageBody) {
+  public void addMessageBody(@NonNull Recipients threadRecipients,
+                             @NonNull Recipient individualRecipient,
+                             @Nullable CharSequence messageBody)
+  {
+    SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
+
+    if (privacy.isDisplayContact() && (threadRecipients.isGroupRecipient() || !threadRecipients.isSingleRecipient())) {
+      stringBuilder.append(Util.getBoldedString(individualRecipient.toShortString() + ": "));
+    }
+
     if (privacy.isDisplayMessage()) {
-      messageBodies.add(messageBody == null ? "" : messageBody);
+      messageBodies.add(stringBuilder.append(messageBody == null ? "" : messageBody));
+    } else {
+      messageBodies.add(stringBuilder.append(context.getString(R.string.SingleRecipientNotificationBuilder_new_message)));
     }
   }
 
@@ -133,9 +154,9 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     if (privacy.isDisplayMessage()) {
       setTicker(getStyledMessage(recipient, message));
     } else if (privacy.isDisplayContact()) {
-      setTicker(getStyledMessage(recipient, context.getString(R.string.SingleRecipientNotificationBuilder_new_smssecure_message)));
+      setTicker(getStyledMessage(recipient, context.getString(R.string.SingleRecipientNotificationBuilder_new_message)));
     } else {
-      setTicker(context.getString(R.string.SingleRecipientNotificationBuilder_new_smssecure_message));
+      setTicker(context.getString(R.string.SingleRecipientNotificationBuilder_new_message));
     }
   }
 
@@ -166,37 +187,32 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     }
   }
 
-  private boolean hasBigPictureSlide(@Nullable ListenableFutureTask<SlideDeck> slideDeck) {
-    try {
-      if (masterSecret == null || slideDeck == null || Build.VERSION.SDK_INT < 16) {
-        return false;
-      }
-
-      Slide thumbnailSlide = slideDeck.get().getThumbnailSlide();
-
-      if (thumbnailSlide == null) return false;
-
-      Uri uri = thumbnailSlide.getThumbnailUri();
-
-      if (uri == null) return false;
-
-      DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
-
-      return decryptableUri != null    &&
-             thumbnailSlide.hasImage() &&
-             !thumbnailSlide.isInProgress();
-
-    } catch (InterruptedException | ExecutionException e) {
-      Log.w(TAG, e);
+  private boolean hasBigPictureSlide(@Nullable SlideDeck slideDeck) {
+    if (masterSecret == null || slideDeck == null || Build.VERSION.SDK_INT < 16) {
       return false;
     }
+
+    Slide thumbnailSlide = slideDeck.getThumbnailSlide();
+
+    if (thumbnailSlide == null) return false;
+
+    Uri uri = thumbnailSlide.getThumbnailUri();
+
+    if (uri == null) return false;
+
+    DecryptableStreamUriLoader.DecryptableUri decryptableUri = new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri);
+
+    return decryptableUri != null    &&
+           thumbnailSlide.hasImage() &&
+           !thumbnailSlide.isInProgress();
   }
 
   private Bitmap getBigPicture(@NonNull MasterSecret masterSecret,
-                               @NonNull ListenableFutureTask<SlideDeck> slideDeck)
+                               @NonNull SlideDeck slideDeck)
   {
     try {
-      Uri uri = slideDeck.get().getThumbnailSlide().getThumbnailUri();
+      @SuppressWarnings("ConstantConditions")
+      Uri uri = slideDeck.getThumbnailSlide().getThumbnailUri();
 
       return Glide.with(context)
                   .load(new DecryptableStreamUriLoader.DecryptableUri(masterSecret, uri))

@@ -23,10 +23,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.text.Spannable;
@@ -50,10 +54,8 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
-import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 
 import java.io.IOException;
 import java.util.List;
@@ -144,8 +146,15 @@ public class MessageNotifier {
   }
 
   public static void updateNotification(Context context, MasterSecret masterSecret, long threadId) {
-    Recipients recipients = DatabaseFactory.getThreadDatabase(context)
-                                           .getRecipientsForThreadId(threadId);
+    boolean    isVisible  = visibleThread == threadId;
+
+    ThreadDatabase threads    = DatabaseFactory.getThreadDatabase(context);
+    Recipients     recipients = DatabaseFactory.getThreadDatabase(context)
+                                               .getRecipientsForThreadId(threadId);
+
+    if (isVisible) {
+      threads.setRead(threadId);
+    }
 
     if (!SMSSecurePreferences.isNotificationsEnabled(context) ||
         (recipients != null && recipients.isMuted()))
@@ -153,10 +162,7 @@ public class MessageNotifier {
       return;
     }
 
-
-    if (visibleThread == threadId) {
-      ThreadDatabase threads = DatabaseFactory.getThreadDatabase(context);
-      threads.setRead(threadId);
+    if (isVisible) {
       sendInThreadNotification(context, threads.getRecipientsForThreadId(threadId));
     } else {
       updateNotification(context, masterSecret, MNF_DEFAULTS, 0);
@@ -219,10 +225,12 @@ public class MessageNotifier {
 
     SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, masterSecret, SMSSecurePreferences.getNotificationPrivacy(context));
     List<NotificationItem>             notifications = notificationState.getNotifications();
+    Recipients                         recipients    = notifications.get(0).getRecipients();
 
-    builder.setSender(notifications.get(0).getIndividualRecipient());
+    builder.setThread(notifications.get(0).getRecipients());
     builder.setMessageCount(notificationState.getMessageCount());
-    builder.setPrimaryMessageBody(notifications.get(0).getText(), notifications.get(0).getSlideDeck());
+    builder.setPrimaryMessageBody(recipients, notifications.get(0).getIndividualRecipient(),
+                                  notifications.get(0).getText(), notifications.get(0).getSlideDeck());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
 
     long timestamp = notifications.get(0).getTimestamp();
@@ -236,8 +244,8 @@ public class MessageNotifier {
     ListIterator<NotificationItem> iterator = notifications.listIterator(notifications.size());
 
     while(iterator.hasPrevious()) {
-      builder.addMessageBody(iterator.previous().getText());
-
+      NotificationItem item = iterator.previous();
+      builder.addMessageBody(item.getRecipients(), item.getIndividualRecipient(), item.getText());
     }
 
     if (notificationsRequested(flags)) {
@@ -284,52 +292,39 @@ public class MessageNotifier {
   }
 
   private static void sendInThreadNotification(Context context, Recipients recipients) {
-    try {
-      if (!SMSSecurePreferences.isInThreadNotifications(context)) {
-        return;
-      }
-
-      Uri uri = recipients != null ? recipients.getRingtone() : null;
-
-      if (uri == null) {
-        String ringtone = SMSSecurePreferences.getNotificationRingtone(context);
-
-        if (ringtone == null) {
-          Log.w(TAG, "ringtone preference was null.");
-          return;
-        } else {
-          uri = Uri.parse(ringtone);
-        }
-      }
-
-      if (uri == null) {
-        Log.w(TAG, "couldn't parse ringtone uri " + SMSSecurePreferences.getNotificationRingtone(context));
-        return;
-      }
-
-      MediaPlayer player = new MediaPlayer();
-      player.setAudioStreamType(AudioManager.STREAM_NOTIFICATION);
-      player.setDataSource(context, uri);
-      player.setLooping(false);
-      player.setVolume(0.25f, 0.25f);
-      player.prepare();
-
-      final AudioManager audioManager = ((AudioManager)context.getSystemService(Context.AUDIO_SERVICE));
-
-      audioManager.requestAudioFocus(null, AudioManager.STREAM_NOTIFICATION,
-                                     AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
-
-      player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-          audioManager.abandonAudioFocus(null);
-        }
-      });
-
-      player.start();
-    } catch (IOException ioe) {
-      Log.w("MessageNotifier", ioe);
+    if (!SMSSecurePreferences.isInThreadNotifications(context)) {
+      return;
     }
+
+    Uri uri = recipients != null ? recipients.getRingtone() : null;
+
+    if (uri == null) {
+      String ringtone = SMSSecurePreferences.getNotificationRingtone(context);
+
+      if (ringtone == null) {
+        Log.w(TAG, "ringtone preference was null.");
+        return;
+      } else {
+        uri = Uri.parse(ringtone);
+      }
+    }
+
+    if (uri == null) {
+      Log.w(TAG, "couldn't parse ringtone uri " + SMSSecurePreferences.getNotificationRingtone(context));
+      return;
+    }
+
+    Ringtone ringtone = RingtoneManager.getRingtone(context, uri);
+
+    if (Build.VERSION.SDK_INT >= 21) {
+      ringtone.setAudioAttributes(new AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_UNKNOWN)
+                                                               .setUsage(AudioAttributes.USAGE_NOTIFICATION_COMMUNICATION_INSTANT)
+                                                               .build());
+    } else {
+      ringtone.setStreamType(AudioManager.STREAM_NOTIFICATION);
+    }
+
+    ringtone.play();
   }
 
   private static NotificationState constructNotificationState(Context context,
@@ -344,16 +339,13 @@ public class MessageNotifier {
     else                      reader = DatabaseFactory.getMmsSmsDatabase(context).readerFor(cursor, masterSecret);
 
     while ((record = reader.getNext()) != null) {
-      Recipient                       recipient        = record.getIndividualRecipient();
-      Recipients                      recipients       = record.getRecipients();
-      long                            threadId         = record.getThreadId();
-      CharSequence                    body             = record.getDisplayBody();
-      Recipients                      threadRecipients = null;
-      ListenableFutureTask<SlideDeck> slideDeck        = null;
-      long            timestamp;
-
-      if (SMSSecurePreferences.showSentTime(context)) timestamp = record.getDateSent();
-      else                                            timestamp = record.getDateReceived();
+      Recipient    recipient        = record.getIndividualRecipient();
+      Recipients   recipients       = record.getRecipients();
+      long         threadId         = record.getThreadId();
+      CharSequence body             = record.getDisplayBody();
+      Recipients   threadRecipients = null;
+      SlideDeck    slideDeck        = null;
+      long         timestamp        = record.getTimestamp();
 
       if (threadId != -1) {
         threadRecipients = DatabaseFactory.getThreadDatabase(context).getRecipientsForThreadId(threadId);
@@ -363,12 +355,12 @@ public class MessageNotifier {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_encrypted_message));
       } else if (record.isMms() && TextUtils.isEmpty(body)) {
         body = SpanUtil.italic(context.getString(R.string.MessageNotifier_media_message));
-        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeck();
       } else if (record.isMms() && !record.isMmsNotification()) {
         String message      = context.getString(R.string.MessageNotifier_media_message_with_text, body);
         int    italicLength = message.length() - body.length();
         body = SpanUtil.italic(message, italicLength);
-        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeckFuture();
+        slideDeck = ((MediaMmsMessageRecord)record).getSlideDeck();
       }
 
       if (threadRecipients == null || !threadRecipients.isMuted()) {

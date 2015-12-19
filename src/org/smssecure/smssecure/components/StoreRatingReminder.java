@@ -1,14 +1,14 @@
 package org.smssecure.smssecure.components;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
@@ -29,41 +29,35 @@ public class StoreRatingReminder extends Reminder{
 
   public StoreRatingReminder(final Context context) {
     super(R.drawable.ic_push_registration_reminder,
-            R.string.StoreRatingReminder_title,
-            R.string.StoreRatingReminder_message);
+          R.string.StoreRatingReminder_title,
+          R.string.StoreRatingReminder_message);
 
     final OnClickListener okListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
         delayRating(context);
 
-        new MaterialDialog.Builder(context)
-                .title(context.getString(R.string.StoreRatingReminder_title))
-                .content(context.getString(R.string.StoreRatingReminder_message))
-                .positiveText(context.getString(R.string.StoreRatingReminder_rate_now))
-                .neutralText(context.getString(R.string.StoreRatingReminder_later))
-                .negativeText(context.getString(R.string.StoreRatingReminder_no_thanks))
-                .callback(new MaterialDialog.ButtonCallback() {
-                  @Override
-                  public void onPositive(MaterialDialog dialog) {
-                    SMSSecurePreferences.setRatingEnabled(context, false);
-                    Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
-                    super.onPositive(dialog);
-                  }
-
-                  @Override
-                  public void onNegative(MaterialDialog dialog) {
-                    SMSSecurePreferences.setRatingEnabled(context, false);
-                    super.onNegative(dialog);
-                  }
-
-                  @Override
-                  public void onNeutral(MaterialDialog dialog) {
-                    super.onNeutral(dialog);
-                  }
-                })
-                .show();
+        new AlertDialog.Builder(context)
+            .setTitle(context.getString(R.string.StoreRatingReminder_title))
+            .setMessage(context.getString(R.string.StoreRatingReminder_message))
+            .setNegativeButton(context.getString(R.string.StoreRatingReminder_no_thanks), new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                SMSSecurePreferences.setRatingEnabled(context, false);
+              }
+            })
+            .setNeutralButton(context.getString(R.string.StoreRatingReminder_later), new DialogInterface.OnClickListener() {
+              @Override public void onClick(DialogInterface dialog, int which) {}
+            })
+            .setPositiveButton(context.getString(R.string.StoreRatingReminder_rate_now), new DialogInterface.OnClickListener() {
+              @Override
+              public void onClick(DialogInterface dialog, int which) {
+                SMSSecurePreferences.setRatingEnabled(context, false);
+                Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+                context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
+              }
+            })
+            .show();
       }
     };
     final OnClickListener cancelListener = new OnClickListener() {

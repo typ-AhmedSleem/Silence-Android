@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -43,7 +44,7 @@ import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.ProgressDialogAsyncTask;
+import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.ResUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.whispersystems.libaxolotl.util.guava.Optional;
@@ -84,7 +85,10 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   @Override
   protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
     this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    initFragment(android.R.id.content, new ApplicationPreferenceFragment(), masterSecret);
+
+    if (icicle == null) {
+      initFragment(android.R.id.content, new ApplicationPreferenceFragment(), masterSecret);
+    }
   }
 
   @Override
@@ -119,9 +123,11 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     if (key.equals(SMSSecurePreferences.THEME_PREF)) {
-      dynamicTheme.onResume(this);
+      if (VERSION.SDK_INT >= 11) recreate();
+      else                       dynamicTheme.onResume(this);
     } else if (key.equals(SMSSecurePreferences.LANGUAGE_PREF)) {
-      dynamicLanguage.onResume(this);
+      if (VERSION.SDK_INT >= 11) recreate();
+      else                       dynamicLanguage.onResume(this);
 
       Intent intent = new Intent(this, KeyCachingService.class);
       intent.setAction(KeyCachingService.LOCALE_CHANGE_EVENT);

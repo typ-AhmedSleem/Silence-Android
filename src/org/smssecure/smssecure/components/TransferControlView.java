@@ -21,7 +21,7 @@ import com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.database.PartDatabase;
+import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.jobs.PartProgressEvent;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.util.Util;
@@ -53,7 +53,7 @@ public class TransferControlView extends FrameLayout {
     inflate(context, R.layout.transfer_controls_view, this);
 
     final Drawable background = ContextCompat.getDrawable(context, R.drawable.transfer_controls_background);
-    if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
+    if (VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN_MR1) {
       background.setColorFilter(0x66ffffff, Mode.MULTIPLY);
     }
     setLongClickable(false);
@@ -92,7 +92,7 @@ public class TransferControlView extends FrameLayout {
 
   public void setSlide(final @NonNull Slide slide) {
     this.slide = slide;
-    if (slide.getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_STARTED) {
+    if (slide.getTransferState() == AttachmentDatabase.TRANSFER_PROGRESS_STARTED) {
       showProgressSpinner();
     } else if (slide.isPendingDownload()) {
       downloadDetails.setText(slide.getContentDescription());
@@ -164,7 +164,7 @@ public class TransferControlView extends FrameLayout {
 
   @SuppressWarnings("unused")
   public void onEventAsync(final PartProgressEvent event) {
-    if (this.slide != null && event.partId.equals(this.slide.getPart().getPartId())) {
+    if (this.slide != null && event.attachment.equals(this.slide.asAttachment())) {
       Util.runOnMain(new Runnable() {
         @Override
         public void run() {

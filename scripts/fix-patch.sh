@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: ./fix-patch.sh <files>"
+    echo "usage: ./scripts/fix-patch.sh <files>"
     exit 1
 fi
 
@@ -11,6 +11,7 @@ for file in "$@"; do
            -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
            -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.SMSSecure/g' \
+           -e 's/org.thoughtcrime.redphone.util/org.smssecure.smssecure.util/g' \
            -e 's/TextSecurePreferences/SMSSecurePreferences/g' \
            -e 's/TextSecureTestCase/SMSSecureTestCase/g' \
            -e 's/TextSecure.LightNoActionBar/SMSSecure.LightNoActionBar/g' \
@@ -23,6 +24,8 @@ for file in "$@"; do
            -e 's/TextSecure.LightIntroTheme/SMSSecure.LightIntroTheme/g' \
            -e 's/TextSecure.TitleTextStyle/SMSSecure.TitleTextStyle/g' \
            -e 's/queryTextSecureContacts/querySMSSecureContacts/g' \
+           -e 's/@color\/signal/@color\/smssecure/g' \
+           -e 's/@color\/textsecure/@color\/smssecure/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
            -e 's/^SingleRecipientNotificationBuilder_new_textsecure_message/SingleRecipientNotificationBuilder_new_smssecure_message/g' \

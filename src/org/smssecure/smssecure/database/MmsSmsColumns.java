@@ -1,5 +1,6 @@
 package org.smssecure.smssecure.database;
 
+@SuppressWarnings("UnnecessaryInterfaceModifier")
 public interface MmsSmsColumns {
 
   public static final String ID                       = "_id";
@@ -12,6 +13,7 @@ public interface MmsSmsColumns {
   public static final String ADDRESS_DEVICE_ID        = "address_device_id";
   public static final String DATE_DELIVERY_RECEIVED   = "date_delivery_received";
   public static final String MISMATCHED_IDENTITIES    = "mismatched_identities";
+  public static final String UNIQUE_ROW_ID            = "unique_row_id";
 
   public static class Types {
     protected static final long TOTAL_MASK = 0xFFFFFFFF;

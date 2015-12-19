@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <org.smssecure.smssecure.ConversationItem
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/conversation_item"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/conversation_item_background">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/conversation_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/conversation_item_background">
 
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -15,35 +16,15 @@
                     android:layout_marginBottom="6dp"
                     android:layout_marginRight="0dp">
 
-        <LinearLayout android:id="@+id/indicators_parent"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:orientation="vertical"
-                      android:gravity="left|center_vertical"
-                      android:layout_marginLeft="6dp"
-                      android:layout_alignParentLeft="true"
-                      android:layout_centerVertical="true">
-
-            <ImageView
-                android:id="@+id/sms_failed_indicator"
+        <org.smssecure.smssecure.components.AlertView
+                android:id="@+id/indicators_parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_error_red_24dp"
-                tools:visibility="visible"
-                android:visibility="gone"
-                android:contentDescription="@string/conversation_item_sent__send_failed_indicator_description" />
-
-            <ImageView
-                android:id="@+id/pending_approval_indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_outline_grey600_24dp"
-                android:visibility="gone"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/conversation_item_sent__pending_approval_description"
-                tools:visibility="visible" />
-
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
 
         <LinearLayout android:id="@+id/body_bubble"
                       android:layout_width="wrap_content"
@@ -66,6 +47,13 @@
                     android:visibility="gone"
                     tools:src="@drawable/ic_video_light"
                     tools:visibility="visible" />
+
+            <org.smssecure.smssecure.components.AudioView
+                    android:id="@+id/audio_view"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    app:tintColor="@color/grey_500"
+                    android:visibility="gone"/>
 
             <org.smssecure.smssecure.components.emoji.EmojiTextView
                     android:id="@+id/conversation_item_body"
@@ -137,33 +125,11 @@
                           android:paddingBottom="2dp"
                           tools:text="30 mins" />
 
-                <FrameLayout android:id="@+id/pending_indicator_stub"
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"/>
-
-                <ImageView android:id="@+id/sent_indicator"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_vertical|end"
-                           android:src="@drawable/ic_done_white_18dp"
-                           android:paddingLeft="2dp"
-                           android:paddingBottom="2dp"
-                           android:visibility="gone"
-                           android:tint="?conversation_item_sent_text_secondary_color"
-                           android:tintMode="multiply"
-                           android:contentDescription="@string/conversation_item_sent__delivered_description" />
-
-                <ImageView android:id="@+id/delivered_indicator"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="center_vertical|end"
-                           android:src="@drawable/ic_done_all_white_18dp"
-                           android:paddingLeft="2dp"
-                           android:paddingBottom="2dp"
-                           android:visibility="gone"
-                           android:tint="?conversation_item_sent_text_secondary_color"
-                           android:tintMode="multiply"
-                           android:contentDescription="@string/conversation_item_sent__delivered_description" />
+                <org.smssecure.smssecure.components.DeliveryStatusView
+                        android:id="@+id/delivery_status"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        app:iconColor="?conversation_item_sent_text_secondary_color"/>
 
                 <ImageView android:id="@+id/secure_indicator"
                            android:layout_width="wrap_content"

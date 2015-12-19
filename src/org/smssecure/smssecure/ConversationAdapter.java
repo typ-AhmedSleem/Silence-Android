@@ -22,12 +22,14 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 
+import org.smssecure.smssecure.util.Conversions;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.CursorRecyclerViewAdapter;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -35,9 +37,12 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.LRUCache;
 
 import java.lang.ref.SoftReference;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Locale;
@@ -45,6 +50,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.smssecure.smssecure.util.ViewUtil;
+import org.smssecure.smssecure.util.VisibleForTesting;
 
 /**
  * A cursor adapter for a conversation thread.  Ultimately
@@ -68,12 +74,13 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
 
   private final Set<MessageRecord> batchSelected = Collections.synchronizedSet(new HashSet<MessageRecord>());
 
-  private final ItemClickListener      clickListener;
-  private final MasterSecret           masterSecret;
-  private final Locale                 locale;
-  private final boolean                groupThread;
-  private final MmsSmsDatabase         db;
-  private final LayoutInflater         inflater;
+  private final @Nullable ItemClickListener clickListener;
+  private final @NonNull  MasterSecret      masterSecret;
+  private final @NonNull  Locale            locale;
+  private final @NonNull  Recipients        recipients;
+  private final @NonNull  MmsSmsDatabase    db;
+  private final @NonNull  LayoutInflater    inflater;
+  private final @NonNull  MessageDigest     digest;
 
   protected static class ViewHolder extends RecyclerView.ViewHolder {
     public <V extends View & BindableConversationItem> ViewHolder(final @NonNull V itemView) {
@@ -91,20 +98,44 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     void onItemLongClick(ConversationItem item);
   }
 
+  @SuppressWarnings("ConstantConditions")
+  @VisibleForTesting
+  ConversationAdapter(Context context, Cursor cursor) {
+    super(context, cursor);
+    try {
+      this.masterSecret  = null;
+      this.locale        = null;
+      this.clickListener = null;
+      this.recipients    = null;
+      this.inflater      = null;
+      this.db            = null;
+      this.digest        = MessageDigest.getInstance("SHA1");
+    } catch (NoSuchAlgorithmException nsae) {
+      throw new AssertionError("SHA1 isn't supported!");
+    }
+  }
+
   public ConversationAdapter(@NonNull Context context,
                              @NonNull MasterSecret masterSecret,
                              @NonNull Locale locale,
                              @Nullable ItemClickListener clickListener,
                              @Nullable Cursor cursor,
-                             boolean groupThread)
+                             @NonNull Recipients recipients)
   {
     super(context, cursor);
-    this.masterSecret    = masterSecret;
-    this.locale          = locale;
-    this.clickListener   = clickListener;
-    this.groupThread     = groupThread;
-    this.inflater        = LayoutInflater.from(context);
-    this.db              = DatabaseFactory.getMmsSmsDatabase(context);
+    try {
+      this.masterSecret  = masterSecret;
+      this.locale        = locale;
+      this.clickListener = clickListener;
+      this.recipients    = recipients;
+      this.inflater      = LayoutInflater.from(context);
+      this.db            = DatabaseFactory.getMmsSmsDatabase(context);
+      this.digest        = MessageDigest.getInstance("SHA1");
+
+      setHasStableIds(true);
+    } catch (NoSuchAlgorithmException nsae) {
+      throw new AssertionError("SHA1 isn't supported!");
+    }
   }
 
   @Override
@@ -113,15 +144,17 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     super.changeCursor(cursor);
   }
 
-  @Override public void onBindViewHolder(ViewHolder viewHolder, @NonNull Cursor cursor) {
+  @Override
+  public void onBindItemViewHolder(ViewHolder viewHolder, @NonNull Cursor cursor) {
     long          id            = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.ID));
     String        type          = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsDatabase.TRANSPORT));
     MessageRecord messageRecord = getMessageRecord(id, cursor, type);
 
-    viewHolder.getView().bind(masterSecret, messageRecord, locale, batchSelected, groupThread);
+    viewHolder.getView().bind(masterSecret, messageRecord, locale, batchSelected, recipients);
   }
 
-  @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  @Override
+  public ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
     final V itemView = ViewUtil.inflate(inflater, parent, getLayoutForViewType(viewType));
     if (viewType == MESSAGE_TYPE_INCOMING || viewType == MESSAGE_TYPE_OUTGOING) {
       itemView.setOnClickListener(new OnClickListener() {
@@ -142,7 +175,8 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     return new ViewHolder(itemView);
   }
 
-  @Override public void onViewRecycled(ViewHolder holder) {
+  @Override
+  public void onItemViewRecycled(ViewHolder holder) {
     holder.getView().unbind();
   }
 
@@ -164,6 +198,13 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     if      (messageRecord.isGroupAction()) return MESSAGE_TYPE_UPDATE;
     else if (messageRecord.isOutgoing())    return MESSAGE_TYPE_OUTGOING;
     else                                    return MESSAGE_TYPE_INCOMING;
+  }
+
+  @Override
+  public long getItemId(@NonNull Cursor cursor) {
+    final String unique = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsColumns.UNIQUE_ROW_ID));
+    final byte[] bytes  = digest.digest(unique.getBytes());
+    return Conversions.byteArrayToLong(bytes);
   }
 
   private MessageRecord getMessageRecord(long messageId, Cursor cursor, String type) {

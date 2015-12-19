@@ -92,7 +92,7 @@ public class MessageSender {
       }
 
       Recipients recipients = message.getRecipients();
-      long       messageId  = database.insertMessageOutbox(masterSecret, message, allocatedThreadId, forceSms, System.currentTimeMillis());
+      long       messageId  = database.insertMessageOutbox(masterSecret, message, allocatedThreadId, forceSms);
 
       sendMediaMessage(context, messageId);
 

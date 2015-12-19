@@ -4,14 +4,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
-import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.support.v4.preference.PreferenceFragment;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
-
-import com.afollestad.materialdialogs.AlertDialogWrapper;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
@@ -19,10 +17,7 @@ import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Trimmer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class ChatsPreferenceFragment extends PreferenceFragment {
@@ -50,10 +45,10 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
     @Override
     public boolean onPreferenceClick(Preference preference) {
       final int threadLengthLimit = SMSSecurePreferences.getThreadTrimLength(getActivity());
-      AlertDialogWrapper.Builder builder = new AlertDialogWrapper.Builder(getActivity());
+      AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
       builder.setTitle(R.string.ApplicationPreferencesActivity_delete_all_old_messages_now);
-      builder.setMessage(getString(R.string.ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages,
-                                   threadLengthLimit));
+      builder.setMessage(getResources().getQuantityString(R.plurals.ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages,
+                                                          threadLengthLimit, threadLengthLimit));
       builder.setPositiveButton(R.string.ApplicationPreferencesActivity_delete,
         new DialogInterface.OnClickListener() {
           @Override
@@ -73,7 +68,7 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
 
     public TrimLengthValidationListener() {
       EditTextPreference preference = (EditTextPreference)findPreference(SMSSecurePreferences.THREAD_TRIM_LENGTH);
-      preference.setSummary(getString(R.string.ApplicationPreferencesActivity_messages_per_conversation, preference.getText()));
+      onPreferenceChange(preference, preference.getText());
     }
 
     @Override
@@ -82,18 +77,19 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
         return false;
       }
 
+      int value;
       try {
-        Integer.parseInt((String)newValue);
+        value = Integer.parseInt((String)newValue);
       } catch (NumberFormatException nfe) {
         Log.w(TAG, nfe);
         return false;
       }
 
-      if (Integer.parseInt((String)newValue) < 1) {
+      if (value < 1) {
         return false;
       }
 
-      preference.setSummary(getString(R.string.ApplicationPreferencesActivity_messages_per_conversation, newValue));
+      preference.setSummary(getResources().getQuantityString(R.plurals.ApplicationPreferencesActivity_messages_per_conversation, value, value));
       return true;
     }
   }

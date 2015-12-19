@@ -18,7 +18,9 @@ package org.smssecure.smssecure;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
@@ -31,6 +33,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.smssecure.smssecure.color.MaterialColor;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
@@ -39,6 +42,7 @@ import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.loaders.MessageDetailsLoader;
 import org.smssecure.smssecure.database.model.MessageRecord;
+import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -47,6 +51,7 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -59,14 +64,17 @@ import java.util.Locale;
 /**
  * @author Jake McGinty
  */
-public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity implements LoaderCallbacks<Cursor> {
+public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity implements LoaderCallbacks<Cursor>, Recipients.RecipientsModifiedListener {
   private final static String TAG = MessageDetailsActivity.class.getSimpleName();
 
-  public final static String MASTER_SECRET_EXTRA = "master_secret";
-  public final static String MESSAGE_ID_EXTRA    = "message_id";
-  public final static String TYPE_EXTRA          = "type";
+  public final static String MASTER_SECRET_EXTRA  = "master_secret";
+  public final static String MESSAGE_ID_EXTRA     = "message_id";
+  public final static String THREAD_ID_EXTRA      = "thread_id";
+  public final static String TYPE_EXTRA           = "type";
+  public final static String RECIPIENTS_IDS_EXTRA = "recipients_ids";
 
   private MasterSecret     masterSecret;
+  private long             threadId;
   private ConversationItem conversationItem;
   private ViewGroup        itemParent;
   private View             metadataContainer;
@@ -93,8 +101,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     setContentView(R.layout.message_details_activity);
 
     initializeResources();
-
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    initializeActionBar();
     getSupportLoaderManager().initLoader(0, null, this);
   }
 
@@ -104,6 +111,41 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     dynamicTheme.onResume(this);
     dynamicLanguage.onResume(this);
     getSupportActionBar().setTitle(R.string.AndroidManifest__message_details);
+
+    MessageNotifier.setVisibleThread(threadId);
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    MessageNotifier.setVisibleThread(-1L);
+  }
+
+  private void initializeActionBar() {
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    Recipients recipients = RecipientFactory.getRecipientsForIds(this, getIntent().getLongArrayExtra(RECIPIENTS_IDS_EXTRA), true);
+    recipients.addListener(this);
+
+    setActionBarColor(recipients.getColor());
+  }
+
+  private void setActionBarColor(MaterialColor color) {
+    getSupportActionBar().setBackgroundDrawable(new ColorDrawable(color.toActionBarColor(this)));
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      getWindow().setStatusBarColor(color.toStatusBarColor(this));
+    }
+  }
+
+  @Override
+  public void onModified(final Recipients recipients) {
+    Util.runOnMain(new Runnable() {
+      @Override
+      public void run() {
+        setActionBarColor(recipients.getColor());
+      }
+    });
   }
 
   private void initializeResources() {
@@ -111,6 +153,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     View header = inflater.inflate(R.layout.message_details_header, recipientsList, false);
 
     masterSecret      = getIntent().getParcelableExtra(MASTER_SECRET_EXTRA);
+    threadId          = getIntent().getLongExtra(THREAD_ID_EXTRA, -1);
     itemParent        = (ViewGroup) header.findViewById(R.id.item_container);
     recipientsList    = (ListView ) findViewById(R.id.recipients_list);
     metadataContainer =             header.findViewById(R.id.metadata_container);
@@ -182,8 +225,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
     }
     toFrom.setText(toFromRes);
     conversationItem.bind(masterSecret, messageRecord, dynamicLanguage.getCurrentLocale(),
-                         new HashSet<MessageRecord>(),
-                         recipients != messageRecord.getRecipients());
+                         new HashSet<MessageRecord>(), recipients);
     recipientsList.setAdapter(new MessageDetailsRecipientAdapter(this, masterSecret, messageRecord,
                                                                  recipients));
   }
@@ -285,7 +327,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
                                       .getGroupMembers(GroupUtil.getDecodedId(groupId), false);
         } catch (IOException e) {
           Log.w(TAG, e);
-         recipients = RecipientFactory.getRecipientsFor(MessageDetailsActivity.this, new LinkedList<Recipient>(), false);
+          recipients = RecipientFactory.getRecipientsFor(MessageDetailsActivity.this, new LinkedList<Recipient>(), false);
         }
       }
 

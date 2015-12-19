@@ -1,6 +1,6 @@
-/** 
+/**
  * Copyright (C) 2011 Whisper Systems
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -10,7 +10,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -23,32 +23,38 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.attachments.Attachment;
+import org.smssecure.smssecure.attachments.UriAttachment;
+import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.util.MediaUtil;
-import org.smssecure.smssecure.database.PartDatabase;
 import org.smssecure.smssecure.util.Util;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
-import java.io.InputStream;
-
-import ws.com.google.android.mms.pdu.PduPart;
 
 public abstract class Slide {
 
-  protected final PduPart part;
-  protected final Context context;
+  protected final Attachment attachment;
+  protected final Context    context;
 
-  public Slide(Context context, @NonNull PduPart part) {
-    this.part    = part;
-    this.context = context;
+  public Slide(@NonNull Context context, @NonNull Attachment attachment) {
+    this.context    = context;
+    this.attachment = attachment;
+
   }
 
   public String getContentType() {
-    return new String(part.getContentType());
+    return attachment.getContentType();
   }
 
+  @Nullable
   public Uri getUri() {
-    return part.getDataUri();
+    return attachment.getDataUri();
+  }
+
+  @Nullable
+  public Uri getThumbnailUri() {
+    return attachment.getThumbnailUri();
   }
 
   public boolean hasImage() {
@@ -65,53 +71,39 @@ public abstract class Slide {
 
   public @NonNull String getContentDescription() { return ""; }
 
-  public PduPart getPart() {
-    return part;
-  }
-
-  public Uri getThumbnailUri() {
-    return null;
+  public Attachment asAttachment() {
+    return attachment;
   }
 
   public boolean isInProgress() {
-    return part.isInProgress();
+    return attachment.isInProgress();
   }
 
   public boolean isPendingDownload() {
-    return getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_FAILED ||
-           getTransferProgress() == PartDatabase.TRANSFER_PROGRESS_AUTO_PENDING;
+    return getTransferState() == AttachmentDatabase.TRANSFER_PROGRESS_FAILED ||
+           getTransferState() == AttachmentDatabase.TRANSFER_PROGRESS_AUTO_PENDING;
   }
 
-  public long getTransferProgress() {
-    return part.getTransferProgress();
+  public long getTransferState() {
+    return attachment.getTransferState();
   }
 
   public @DrawableRes int getPlaceholderRes(Theme theme) {
     throw new AssertionError("getPlaceholderRes() called for non-drawable slide");
   }
 
-  public boolean isDraft() {
-    return !getPart().getPartId().isValid();
+  public boolean hasPlaceholder() {
+    return false;
   }
 
-
-  protected static PduPart constructPartFromUri(@NonNull  Context      context,
-                                                @NonNull  Uri          uri,
-                                                @NonNull  String       defaultMime,
-                                                          long         dataSize)
-      throws IOException
+  protected static Attachment constructAttachmentFromUri(@NonNull Context context,
+                                                         @NonNull Uri     uri,
+                                                         @NonNull String  defaultMime,
+                                                                  long     size)
+    throws IOException
   {
-    final PduPart part            = new PduPart();
-    final String  mimeType        = MediaUtil.getMimeType(context, uri);
-    final String  derivedMimeType = mimeType != null ? mimeType : defaultMime;
-
-    part.setDataSize(dataSize);
-    part.setDataUri(uri);
-    part.setContentType(derivedMimeType.getBytes());
-    part.setContentId((System.currentTimeMillis()+"").getBytes());
-    part.setName((MediaUtil.getDiscreteMimeType(derivedMimeType) + System.currentTimeMillis()).getBytes());
-
-    return part;
+    Optional<String> resolvedType = Optional.fromNullable(MediaUtil.getMimeType(context, uri));
+    return new UriAttachment(uri, resolvedType.or(defaultMime), AttachmentDatabase.TRANSFER_PROGRESS_STARTED, size);
   }
 
   @Override
@@ -124,8 +116,7 @@ public abstract class Slide {
            this.hasAudio() == that.hasAudio()                        &&
            this.hasImage() == that.hasImage()                        &&
            this.hasVideo() == that.hasVideo()                        &&
-           this.isDraft() == that.isDraft()                          &&
-           this.getTransferProgress() == that.getTransferProgress()  &&
+           this.getTransferState() == that.getTransferState()        &&
            Util.equals(this.getUri(), that.getUri())                 &&
            Util.equals(this.getThumbnailUri(), that.getThumbnailUri());
   }
@@ -133,6 +124,6 @@ public abstract class Slide {
   @Override
   public int hashCode() {
     return Util.hashCode(getContentType(), hasAudio(), hasImage(),
-                         hasVideo(), isDraft(), getUri(), getThumbnailUri(), getTransferProgress());
+                         hasVideo(), getUri(), getThumbnailUri(), getTransferState());
   }
 }

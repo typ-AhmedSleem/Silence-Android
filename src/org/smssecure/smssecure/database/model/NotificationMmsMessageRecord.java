@@ -20,6 +20,7 @@ import android.content.Context;
 import android.text.SpannableString;
 
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.database.SmsDatabase.Status;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
@@ -51,7 +52,7 @@ public class NotificationMmsMessageRecord extends MessageRecord {
                                       long expiry, int status, byte[] transactionId, long mailbox)
   {
     super(context, id, new Body("", true), recipients, individualRecipient, recipientDeviceId,
-          dateSent, dateReceived, threadId, DELIVERY_STATUS_NONE, dateDeliveryReceived, mailbox,
+          dateSent, dateReceived, threadId, Status.STATUS_NONE, dateDeliveryReceived, mailbox,
           new LinkedList<IdentityKeyMismatch>(), new LinkedList<NetworkFailure>());
 
     this.contentLocation = contentLocation;

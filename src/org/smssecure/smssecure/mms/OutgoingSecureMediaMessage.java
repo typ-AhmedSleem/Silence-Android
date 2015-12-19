@@ -2,16 +2,19 @@ package org.smssecure.smssecure.mms;
 
 import android.content.Context;
 
+import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.recipients.Recipients;
 
-import ws.com.google.android.mms.pdu.PduBody;
+import java.util.List;
 
 public class OutgoingSecureMediaMessage extends OutgoingMediaMessage {
 
-  public OutgoingSecureMediaMessage(Context context, Recipients recipients, PduBody body,
-                                    String message, int distributionType)
+  public OutgoingSecureMediaMessage(Recipients recipients, String body,
+                                    List<Attachment> attachments,
+                                    long sentTimeMillis,
+                                    int distributionType)
   {
-    super(context, recipients, body, message, distributionType);
+    super(recipients, body, attachments, sentTimeMillis, distributionType);
   }
 
   public OutgoingSecureMediaMessage(OutgoingMediaMessage base) {

@@ -17,23 +17,30 @@
 
 package org.smssecure.smssecure;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.webkit.MimeTypeMap;
+import android.view.View;
+import android.view.ViewGroup;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.mms.PartAuthority;
+import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.MediaUtil;
+import org.smssecure.smssecure.util.ViewUtil;
 
-import java.net.URLDecoder;
-
-import ws.com.google.android.mms.ContentType;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * An activity to quickly share content with contacts
@@ -43,8 +50,16 @@ import ws.com.google.android.mms.ContentType;
 public class ShareActivity extends PassphraseRequiredActionBarActivity
     implements ShareFragment.ConversationSelectedListener
 {
+  private static final String TAG = ShareActivity.class.getSimpleName();
+
   private final DynamicTheme    dynamicTheme    = new DynamicTheme   ();
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
+
+  private MasterSecret masterSecret;
+  private ViewGroup    fragmentContainer;
+  private View         progressWheel;
+  private Uri          resolvedExtra;
+  private boolean      isPassingAlongMedia;
 
   @Override
   protected void onPreCreate() {
@@ -54,14 +69,21 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
+    this.masterSecret = masterSecret;
     setContentView(R.layout.share_activity);
+
+    fragmentContainer = ViewUtil.findById(this, R.id.drawer_layout);
+    progressWheel     = ViewUtil.findById(this, R.id.progress_wheel);
+
     initFragment(R.id.drawer_layout, new ShareFragment(), masterSecret);
+    initializeMedia();
   }
 
   @Override
   protected void onNewIntent(Intent intent) {
-      super.onNewIntent(intent);
-      setIntent(intent);
+    super.onNewIntent(intent);
+    setIntent(intent);
+    initializeMedia();
   }
 
   @Override
@@ -75,7 +97,29 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
   @Override
   public void onPause() {
     super.onPause();
-    if (!isFinishing()) finish();
+    if (!isPassingAlongMedia && resolvedExtra != null) {
+      PersistentBlobProvider.getInstance(this).delete(resolvedExtra);
+    }
+    if (!isFinishing()) {
+      finish();
+    }
+  }
+
+  private void initializeMedia() {
+    final Context context = this;
+    isPassingAlongMedia = false;
+
+    Uri streamExtra = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
+    if (streamExtra != null && PartAuthority.isLocalUri(streamExtra)) {
+      isPassingAlongMedia = true;
+      resolvedExtra       = streamExtra;
+      fragmentContainer.setVisibility(View.VISIBLE);
+      progressWheel.setVisibility(View.GONE);
+    } else {
+      fragmentContainer.setVisibility(View.GONE);
+      progressWheel.setVisibility(View.VISIBLE);
+      new ResolveMediaTask(context).execute(streamExtra);
+    }
   }
 
   @Override
@@ -100,6 +144,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
 
   private void handleNewConversation() {
     Intent intent = getBaseShareIntent(NewConversationActivity.class);
+    isPassingAlongMedia = true;
     startActivity(intent);
   }
 
@@ -114,52 +159,59 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
     intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, threadId);
     intent.putExtra(ConversationActivity.DISTRIBUTION_TYPE_EXTRA, distributionType);
 
+    isPassingAlongMedia = true;
     startActivity(intent);
   }
 
-  private Uri getStreamExtra() {
-    Uri streamUri = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
-    if (streamUri == null) {
-      return null;
-    }
-
-    if (streamUri.getAuthority().equals("com.google.android.apps.photos.contentprovider") &&
-        streamUri.toString().endsWith("/ACTUAL"))
-    {
-      String[] parts = streamUri.toString().split("/");
-      if (parts.length > 3) {
-        return Uri.parse(URLDecoder.decode(parts[parts.length - 2]));
-      }
-    }
-    return streamUri;
-  }
-
-  private Intent getBaseShareIntent(final Class<?> target) {
+  private Intent getBaseShareIntent(final @NonNull Class<?> target) {
     final Intent intent      = new Intent(this, target);
     final String textExtra   = getIntent().getStringExtra(Intent.EXTRA_TEXT);
-    final Uri    streamExtra = getStreamExtra();
-    final String type        = streamExtra != null ? getMimeType(streamExtra) : getIntent().getType();
-
-    if (ContentType.isImageType(type)) {
-      intent.putExtra(ConversationActivity.DRAFT_IMAGE_EXTRA, streamExtra);
-    } else if (ContentType.isAudioType(type)) {
-      intent.putExtra(ConversationActivity.DRAFT_AUDIO_EXTRA, streamExtra);
-    } else if (ContentType.isVideoType(type)) {
-      intent.putExtra(ConversationActivity.DRAFT_VIDEO_EXTRA, streamExtra);
-    }
-    intent.putExtra(ConversationActivity.DRAFT_TEXT_EXTRA, textExtra);
+    final Uri    streamExtra = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
+    final String type        = streamExtra != null ? getMimeType(streamExtra)
+                                                   : MediaUtil.getCorrectedMimeType(getIntent().getType());
+    intent.putExtra(ConversationActivity.TEXT_EXTRA, textExtra);
+    if (resolvedExtra != null) intent.setDataAndType(resolvedExtra, type);
 
     return intent;
   }
 
   private String getMimeType(Uri uri) {
-    String type = getContentResolver().getType(uri);
+    final String type = MediaUtil.getMimeType(getApplicationContext(), uri);
+    return type == null ? MediaUtil.getCorrectedMimeType(getIntent().getType())
+                        : type;
+  }
 
-    if (type == null) {
-      String extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
-      type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+  private class ResolveMediaTask extends AsyncTask<Uri, Void, Uri> {
+    private final Context context;
+
+    public ResolveMediaTask(Context context) {
+      this.context = context;
     }
 
-    return type;
+    @Override
+    protected Uri doInBackground(Uri... uris) {
+      try {
+        if (uris.length != 1 || uris[0] == null) {
+          return null;
+        }
+
+        InputStream input = context.getContentResolver().openInputStream(uris[0]);
+        if (input == null) {
+          return null;
+        }
+
+        return PersistentBlobProvider.getInstance(context).create(masterSecret, input);
+      } catch (IOException ioe) {
+        Log.w(TAG, ioe);
+        return null;
+      }
+    }
+
+    @Override
+    protected void onPostExecute(Uri uri) {
+      resolvedExtra = uri;
+      ViewUtil.fadeIn(fragmentContainer, 300);
+      ViewUtil.fadeOut(progressWheel, 300);
+    }
   }
 }

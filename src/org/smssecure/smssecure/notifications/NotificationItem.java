@@ -4,29 +4,29 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.ConversationActivity;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.ListenableFutureTask;
-import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 
 public class NotificationItem {
 
-  private final Recipients                  recipients;
-  private final Recipient                   individualRecipient;
-  private final Recipients                  threadRecipients;
+  private final @NonNull  Recipients        recipients;
+  private final @NonNull  Recipient         individualRecipient;
+  private final @Nullable Recipients        threadRecipients;
   private final long                        threadId;
-  private final CharSequence                text;
+  private final @Nullable CharSequence      text;
   private final long                        timestamp;
-  private final ListenableFutureTask<SlideDeck> slideDeck;
+  private final @Nullable SlideDeck         slideDeck;
 
-  public NotificationItem(Recipient individualRecipient, Recipients recipients,
-                          Recipients threadRecipients, long threadId,
-                          CharSequence text, long timestamp,
-                          @Nullable ListenableFutureTask<SlideDeck> slideDeck)
+  public NotificationItem(@NonNull   Recipient individualRecipient,
+                          @NonNull   Recipients recipients,
+                          @Nullable  Recipients threadRecipients,
+                          long threadId, @Nullable CharSequence text, long timestamp,
+                          @Nullable SlideDeck slideDeck)
   {
     this.individualRecipient = individualRecipient;
     this.recipients          = recipients;
@@ -37,11 +37,11 @@ public class NotificationItem {
     this.slideDeck           = slideDeck;
   }
 
-  public Recipients getRecipients() {
+  public @NonNull  Recipients getRecipients() {
     return threadRecipients == null ? recipients : threadRecipients;
   }
 
-  public Recipient getIndividualRecipient() {
+  public @NonNull  Recipient getIndividualRecipient() {
     return individualRecipient;
   }
 
@@ -57,7 +57,7 @@ public class NotificationItem {
     return threadId;
   }
 
-  public @Nullable ListenableFutureTask<SlideDeck> getSlideDeck() {
+  public @Nullable SlideDeck getSlideDeck() {
     return slideDeck;
   }
 

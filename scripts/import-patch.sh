@@ -2,12 +2,12 @@
 
 # Import a patch from TextSecure and adapt it for SMSSecure
 # ../TextSecure must be an cloned git tree
-# usage: ./import-patch.sh <commit SHAs>
+# usage: ./scripts/import-patch.sh <commit SHAs>
 
 set -eo pipefail
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: ./import-patch.sh <commit SHAs>"
+    echo "usage: ./scripts/import-patch.sh <commit SHAs>"
     exit 1
 fi
 
