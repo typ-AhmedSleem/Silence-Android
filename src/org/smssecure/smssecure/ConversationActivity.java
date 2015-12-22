@@ -61,7 +61,6 @@ import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
 import org.smssecure.smssecure.audio.AudioSlidePlayer;
 import org.smssecure.smssecure.color.MaterialColor;
 import org.smssecure.smssecure.components.AnimatingToggle;
-import org.smssecure.smssecure.components.AttachmentTypeSelector;
 import org.smssecure.smssecure.components.ComposeText;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout.OnKeyboardShownListener;
@@ -168,12 +167,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   View                  composePanel;
   private   View                  composeBubble;
 
-  private   AttachmentTypeSelector attachmentTypeSelector;
-  private   AttachmentManager      attachmentManager;
-  private   BroadcastReceiver      securityUpdateReceiver;
-  private   BroadcastReceiver      groupUpdateReceiver;
-  private   EmojiDrawer            emojiDrawer;
-  private   EmojiToggle            emojiToggle;
+  private   AttachmentTypeSelectorAdapter attachmentAdapter;
+  private   AttachmentManager             attachmentManager;
+  private   BroadcastReceiver             securityUpdateReceiver;
+  private   BroadcastReceiver             groupUpdateReceiver;
+  private   EmojiDrawer                   emojiDrawer;
+  private   EmojiToggle                   emojiToggle;
 
   private Recipients recipients;
   private long       threadId;
@@ -638,7 +637,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleAddAttachment() {
     if (this.isMmsEnabled) {
-      attachmentTypeSelector.show(this, attachButton);
+      new AlertDialogWrapper.Builder(this).setAdapter(attachmentAdapter, new AttachmentTypeListener())
+                                          .show();
     } else {
       handleManualMmsRequired();
     }
@@ -772,8 +772,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composeBubble.getBackground().setColorFilter(defaultColor, PorterDuff.Mode.MULTIPLY);
     colors.recycle();
 
-    attachmentTypeSelector = new AttachmentTypeSelector(this, new AttachmentTypeListener());
-    attachmentManager      = new AttachmentManager(this, this);
+    attachmentAdapter = new AttachmentTypeSelectorAdapter(this);
+    attachmentManager = new AttachmentManager(this, this);
 
     SendButtonListener        sendButtonListener        = new SendButtonListener();
     ComposeKeyPressedListener composeKeyPressedListener = new ComposeKeyPressedListener();
@@ -1227,10 +1227,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   // Listeners
 
-  private class AttachmentTypeListener implements AttachmentTypeSelector.AttachmentClickedListener {
+  private class AttachmentTypeListener implements DialogInterface.OnClickListener {
     @Override
-    public void onClick(int type) {
-      addAttachment(type);
+    public void onClick(DialogInterface dialog, int which) {
+      addAttachment(attachmentAdapter.buttonToCommand(which));
+      dialog.dismiss();
     }
   }
 

@@ -197,8 +197,4 @@
         <item name="android:contentDescription">@string/conversation_activity__compose_description</item>
     </style>
 
-    <style name="AttachmentTypeLabel">
-        <item name="android:textColor">#ff999999</item>
-    </style>
-
 </resources>
