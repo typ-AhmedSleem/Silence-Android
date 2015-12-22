@@ -637,7 +637,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleAddAttachment() {
     if (this.isMmsEnabled) {
-      new AlertDialogWrapper.Builder(this).setAdapter(attachmentAdapter, new AttachmentTypeListener())
+      new AlertDialog.Builder(this).setAdapter(attachmentAdapter, new AttachmentTypeListener())
                                           .show();
     } else {
       handleManualMmsRequired();
