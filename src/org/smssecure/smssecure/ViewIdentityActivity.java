@@ -81,7 +81,7 @@ public class ViewIdentityActivity extends KeyScanningActivity {
 
   @Override
   protected String getDisplayString() {
-    return getString(R.string.VerifyIdentityActivity_get_my_key_scanned);
+    return getString(R.string.VerifyIdentityActivity_get_your_key_scanned);
   }
 
   @Override
