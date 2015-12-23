@@ -7,9 +7,19 @@
   <string name="please_wait">Počakajte...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Niste še nastavili gesla!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">Število poročil na pogovor: %s</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="one">eno sporočilo v pogovoru</item>
+    <item quantity="two">%d sporočili v pogovoru</item>
+    <item quantity="few">%d sporočila v pogovoru</item>
+    <item quantity="other">%d sporočil v pogovoru</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Izbrišem stara sporočila?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Ste prepričani, da želite izbrisati vse stare pogovore, razen najnovejših?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="one">To bo nemudoma obrezalo vse pogovore na zadnjega.</item>
+    <item quantity="two">To bo nemudoma obrezalo vse pogovore na %d nedavna.</item>
+    <item quantity="few">To bo nemudoma obrezalo vse pogovore na %d nedavne.</item>
+    <item quantity="other">To bo nemudoma obrezalo vse pogovore na %d nedavnih.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Izbriši</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Onemogočim šifriranje pomnilnika?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -27,7 +37,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Dohodna: %s</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minut</string>
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">ena minuta</item>
+    <item quantity="two">%d minuti</item>
+    <item quantity="few">%d minute</item>
+    <item quantity="other">%d minut</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(slika)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(zvok)</string>
@@ -63,8 +78,8 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Prispelo je sporočilo osebe, ki prav tako uporablja aplikacijo SMSSecure. Začnem z varno sejo?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Potrditev prekinitve varne seje</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ste prepričani, da želite zaključiti varno sejo?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Potrditev brisanja pogovora</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Ste prepričani, da želite trajno izbrisati pogovor?</string>
+  <string name="ConversationActivity_delete_thread_question">Izbrišem pogovor?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">To bo nepovratno izbrisalo vsa sporočila tega pogovora.</string>
   <string name="ConversationActivity_add_attachment">Dodaj priponko</string>
   <string name="ConversationActivity_select_contact_info">Izberi podatke o stiku</string>
   <string name="ConversationActivity_compose_message">Sestavi sporočilo</string>
@@ -77,8 +92,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_group_members">Člani skupine</string>
   <string name="ConversationActivity_group_conversation">Skupinski pogovor</string>
   <string name="ConversationActivity_unnamed_group">Skupina brez imena</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d članov</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 član</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">en član</item>
+    <item quantity="two">%d člana</item>
+    <item quantity="few">%d člani</item>
+    <item quantity="other">%d članov</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Shranjen osnutek</string>
   <string name="ConversationActivity_invalid_recipient">Neveljaven prejemnik!</string>
   <string name="ConversationActivity_calls_not_supported">Klici niso podprti</string>
@@ -95,10 +114,20 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_attachment_exceeds_size_limits">Priponka presega omejitev velikosti</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Podrobnosti sporočila</string>
-  <string name="ConversationFragment_confirm_message_delete">Potrdite izbris sporočila</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Ste prepričan, da želite trajno izbrisati vsa označena sporočila?</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="one">Izbrišem izbrano sporočilo?</item>
+    <item quantity="two">Izbrišem izbrani sporočili?</item>
+    <item quantity="few">Izbrišem izbrana sporočila?</item>
+    <item quantity="other">Izbrišem izbrana sporočila?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="one">To bo nepovratno izbrisalo izbrano sporočilo.</item>
+    <item quantity="two">To bo nepovratno izbrisalo %1$d izbrani sporočili.</item>
+    <item quantity="few">To bo nepovratno izbrisalo vsa %1$d izbrana sporočila.</item>
+    <item quantity="other">To bo nepovratno izbrisalo vseh %1$d izbranih sporočil.</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">Spravim v sistemsko shrambo?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">S shranitvijo datoteke v sistemsko shrambo bo ta dostopna tudi drugim aplikacijam.\n\nNadaljujem?</string>
+  <string name="ConversationFragment_saving_this_media_to_storage_warning">S shranitvijo datoteke v sistemsko shrambo bo ta dostopna tudi drugim aplikacijam.\n\nNadaljujem?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Napaka pri shranjevanju priponke v sistemsko shrambo!</string>
   <string name="ConversationFragment_success_exclamation">Uspešno opravljeno!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ne morem shranjevati v sistemsko shrambo!</string>
@@ -112,12 +141,29 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Išči...</string>
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Izbris pogovorov?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Ste prepričani, da želite izbrisati VSE izbrane pogovore?</string>
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">Izbrišem izbran pogovor?</item>
+    <item quantity="two">Izbrišem izbrana pogovora?</item>
+    <item quantity="few">Izbrišem izbrane pogovore?</item>
+    <item quantity="other">Izbrišem izbrane pogovore?</item>
+  </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="one">To bo nepovratno izbrisalo izbrani pogovor.</item>
+    <item quantity="two">To bo nepovratno izbrisalo %1$d izbrana pogovora.</item>
+    <item quantity="few">To bo nepovratno izbrisalo vse %1$d izbrane pogovore.</item>
+    <item quantity="other">To bo nepovratno izbrisalo vseh %1$d izbranih pogovorov.</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Brisanje</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Brišem izbrane pogovore...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Brišem izbrane pogovore...</string>
+  <string name="ConversationListFragment_conversations_archived">Pogovori so bili arhivirani</string>
+  <string name="ConversationListFragment_undo">RAZVELJAVI</string>
+  <string name="ConversationListFragment_moved_conversation_to_inbox">Premaknjeno v nabiralnik</string>
+  <string name="ConversationListFragment_conversation_archived">Pogovor je bil arhiviran</string>
+  <string name="ConversationListFragment_moved_conversations_to_inbox">Premaknjeno v nabiralnik</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Sporočilo za izmenjavo ključev...</string>
+  <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Arhivirani pogovori (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Ročno nastavljeno: %s</string>
   <string name="CustomDefaultPreference_using_default">Privzeto: %s</string>
@@ -127,15 +173,22 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DateUtils_minutes_ago">%d min</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
+  <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_smssecure">Dobrodošli v aplikaciji SMSSecure!</string>
+  <string name="IntroScreenActivity_smssecure_description">Z aplikacijo SMSSecure boste zaščitili svojo zasebnost pri komunikaciji z drugimi.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Zaščitite svoja sporočila s šifriranjem</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Aplikacija SMSSecure bo avtomatično šifrirala vse pogovore z drugimi uporabniki aplikacije SMSSecure.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Govorite z vsemi</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Sporočila namenjena ljudem, ki nimajo nameščene aplikacije SMSSecure ne bodo šifrirana.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Izvozi</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Izvozim na kartico SD v nešifrirani obliki?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Pozor, s tem boste izvozili vsebino svojih sporočil na kartico SD v nešifrirani obliki.</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Izvozim v nešifrirani obliki?</string>
+  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Pozor, s tem boste izvozili vsa svoja sporočila v sistemsko shrambo v nešifrirani obliki.</string>
   <string name="ExportFragment_cancel">Prekliči</string>
   <string name="ExportFragment_exporting">Izvažam</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Izvažam nešifriran tekst na kartico SD...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Napaka - ne morem pisati na kartico SD!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Napaka pri zapisovanju na kartico SD.</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Izvažam nešifrirano vsebino...</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Napaka - ne morem shranjevati v sistemsko shrambo!</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Napaka pri zapisovanju.</string>
   <string name="ExportFragment_success">Uspešno opravljeno!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova skupina</string>
@@ -226,11 +279,12 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Zapustili ste skupino...</string>
   <string name="ThreadRecord_draft">Osnutek:</string>
+  <string name="ThreadRecord_media_message">Večpredstavno sporočilo</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nimate identifikacijskega ključa.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Prejemnik nima identifikacijskega ključa.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skenirajte ključ stika za primerjavo</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Prikaži moj ključ za skeniraje</string>
+  <string name="VerifyIdentityActivity_get_your_key_scanned">Prikaži moj ključ za skeniraje</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, skenirani ključ SE NE UJEMA! Pazljivo preverite tekst prstnega odtisa.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NEOVERJENO!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ključ stika je pravilen. Tudi vaš ključ mora biti potrjen iz njegove strani.</string>
@@ -239,7 +293,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="ViewIdentityActivity_scan_to_compare">Skeniraj za primerjavo</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">POZOR, skeniran ključ se NE UJEMA!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skeniran ključ se ujema!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Moja identifikacija</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">Moja identifikacija</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Začnem kljub že poslani zahtevi?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Prejemniku ste že poslali zahtevo za inicijacijo, ste prepričani, da želite poslati še eno?    To bo razveljavilo prvo zahtevo.</string>
@@ -290,12 +344,12 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Hiter odziv ni mogoč kadar je aplikacija SMSSecure zaklenjena!</string>
   <string name="QuickResponseService_problem_sending_message">Težave pri pošiljanju sporočila!</string>
   <!--SingleRecipientNotificationBuilder-->
-  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Novo sporočilo SMSSecure</string>
-  <string name="SingleRecipientNotificationBuilder_contents_hidden">Vsebina prikrita</string>
+  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Novo sporočilo</string>
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">Staro geslo:</string>
-  <string name="change_passphrase_activity__new_passphrase">Novo geslo:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">Ponovi novo geslo:</string>
+  <string name="change_passphrase_activity__old_passphrase">Staro geslo</string>
+  <string name="change_passphrase_activity__new_passphrase">Novo geslo</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Ponovno vnesite novo geslo</string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Vpišite ime ali številko</string>
   <!--contact_selection_group_activity-->
@@ -354,13 +408,15 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Posodabljam zbirko...</string>
   <string name="export_fragment__export_plaintext_backup">Izvoz nešifrirane varnostne kopije</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Izvozi nešifrirano varnostno kopijo združljivo s sistemskimi varnostnimi kopijami SMS na kartico SD.</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Izvozi nešifrirano varnostno kopijo združljivo s sistemskimi varnostnimi kopijami SMS v sistemsko shrambo.</string>
   <string name="import_fragment__import_system_sms_database">Uvoz iz sistemske zbirke sporočil SMS</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Uvozi zbirko sporočil iz sistemsko privzete aplikacije SMS.</string>
-  <string name="import_fragment__import_encrypted_backup">Uvoz iz šifrirane varnostne kopije</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">Obnovi podatke iz predhodno ustvarjene šifrirane varnostne kopije SMSSecure.</string>
+  <string name="import_fragment__restore_encrypted_backup">Uvoz iz šifrirane varnostne kopije</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Obnovi podatke iz predhodno ustvarjene šifrirane varnostne kopije SMSSecure.</string>
   <string name="import_fragment__import_plaintext_backup">Uvoz iz nešifrirane varnostne kopije...</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Uvozi iz datoteke z nešifrirano varnostno kopijo. Združljivo s sistemskimi varnostnimi kopijami SMS sporočil.</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Uvozi iz datoteke z nešifrirano varnostno kopijo. Združljivo s sistemskimi varnostnimi kopijami sporočil SMS.</string>
+  <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">Celoten pogovor</string>
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Brez slik</string>
   <!--message_recipients_list_item-->
@@ -376,7 +432,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">Utišaj pogovor</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Izklopi obvestila za ta pogovor</string>
-  <string name="recipient_preferences__ringtone">Zvonjenje</string>
+  <string name="recipient_preferences__notification_sound">Zvok obvestila</string>
   <string name="recipient_preferences__vibrate">Vibriranje</string>
   <string name="recipient_preferences__block">Blokiraj</string>
   <string name="recipient_preferences__color">Barva</string>
@@ -410,21 +466,23 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="AndroidManifest__media_overview">Slike iz pogovora</string>
   <string name="AndroidManifest__media_overview_named">Vse slike z %1$s</string>
   <string name="AndroidManifest__message_details">Podrobnosti sporočila</string>
+  <string name="AndroidManifest_archived_conversations">Arhivirani pogovori</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Uvoz/izvoz</string>
-  <string name="arrays__my_identity_key">Moja identifikacija</string>
+  <string name="arrays__your_identity_key">Moj identifikacijski ključ</string>
   <string name="arrays__use_default">Uporabljaj privzeto</string>
   <string name="arrays__use_custom">Uporabljaj ročno nastavljeno</string>
   <string name="arrays__mute_for_one_hour">Utišaj za 1 uro</string>
   <string name="arrays__mute_for_two_hours">Utišaj za 2 uri</string>
   <string name="arrays__mute_for_one_day">Utišaj za 1 dan</string>
   <string name="arrays__mute_for_seven_days">Utišaj za 7 dni</string>
+  <string name="arrays__mute_for_one_year">Utišaj za 1 leto</string>
   <string name="arrays__settings_default">Sistemsko privzeto</string>
   <string name="arrays__enabled">Vklopljeno</string>
   <string name="arrays__disabled">Izklopljeno</string>
   <string name="arrays__name_and_message">Naslovnik in sporočilo</string>
   <string name="arrays__name_only">Samo naslovnik</string>
-  <string name="arrays__neither">Brez</string>
+  <string name="arrays__no_name_or_message">Ne pošiljatelj, ne sporočilo</string>
   <string name="arrays__enter_key">Prikaz tipke za vnos</string>
   <string name="arrays__emoji_key">Prikaz tipke emoji</string>
   <string name="arrays__send_key">Prikaz tipke za pošiljanje</string>
@@ -448,7 +506,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__display_settings">Nastavitve prikaza</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Na sezmanu stikov izberite svojo lastno vizitko.</string>
   <string name="preferences__change_passphrase">Zamenjaj geslo</string>
-  <string name="preferences__change_my_passphrase">Nastavi novo geslo</string>
+  <string name="preferences__change_your_passphrase">Zamenjava gesla</string>
   <string name="preferences__complete_key_exchanges">Zaključi izmenjavo ključev</string>
   <string name="preferences__enable_passphrase">Vklop gesla</string>
   <string name="preferences__passphrase_summary">Geslo: %s</string>
@@ -473,7 +531,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__pref_led_blink_custom_pattern_set">Utripenje LED je nastavljeno!</string>
   <string name="preferences__sound">Zvok</string>
   <string name="preferences__change_notification_sound">Spremeni zvok za obvestila</string>
-  <string name="preferences__inthread_notifications">Notranja obvestila</string>
+  <string name="preferences__silent">Tiho</string>
+  <string name="preferences__in_conversation_notifications">Obvestila znotraj pogovora</string>
   <string name="preferences__play_inthread_notifications">Predvanje zvočnih obvestil med pregledovanjem sporočil</string>
   <string name="preferences__repeat_alerts">Ponavljanje alarma</string>
   <string name="preferences__never">Nikoli</string>
@@ -513,12 +572,12 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Zahtevaj potrdilo o dostavi za vsako poslano sporočilo SMS</string>
   <string name="preferences__sms_delivery_reports_notification">Obvestilo o uspešni dostavi</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Prikaz obvestila, kadar je prejeto potrdilo o uspešni dostavi SMS sporočila</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Samodejen izbris starih sporočil, ko pogovor preseže določeno dolžino</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Samodejen izbris starih sporočil, ko pogovor preseže določeno dolžino</string>
   <string name="preferences__delete_old_messages">Izbris starih sporočil</string>
   <string name="preferences__chats">Pogovori in multimedija</string>
   <string name="preferences__conversation_length_limit">Omejitev dolžine pogovorov</string>
-  <string name="preferences__trim_all_threads_now">Obreži vse pogovore zdaj</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Preišči vse pogovore in uveljavi omejitve njihove dolžine</string>
+  <string name="preferences__trim_all_conversations_now">Obreži vse pogovore zdaj</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Preišči vse pogovore in uveljavi omejitve njihove dolžine</string>
   <string name="preferences__light_theme">Svetla</string>
   <string name="preferences__dark_theme">Temna</string>
   <string name="preferences__appearance">Izgled</string>
@@ -580,11 +639,14 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Izbriši označeno</string>
   <string name="conversation_list_batch__menu_select_all">Označi vse</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">Premakni izbrano v arhiv</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Premakni izbrano v nabiralnik</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Poišči</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Slika stika</string>
   <string name="conversation_list_item_view__error_alert">Alarm za napako</string>
+  <string name="conversation_list_item_view__archived">Premaknjeno v arhiv</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nov pogovor</string>
   <!--conversation_secure_verified-->
@@ -597,7 +659,9 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="conversation_unmuted__mute_notifications">Utišaj obvestila</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj priponko</string>
-  <string name="conversation__menu_delete_thread">Izbriši pogovor</string>
+  <string name="conversation__menu_delete_conversation">Izbriši pogovor</string>
+  <string name="conversation__menu_archive_conversation">Premakni v arhiv</string>
+  <string name="conversation__menu_unarchive_conversation">Premakni v nabiralnik</string>
   <string name="conversation__menu_view_media">Slike iz pogovora</string>
   <string name="conversation__menu_conversation_settings">Nastavitve pogovora</string>
   <!--conversation_popup-->

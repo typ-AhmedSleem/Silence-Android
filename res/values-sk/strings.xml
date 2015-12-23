@@ -7,7 +7,6 @@
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ešte ste si nenastavili heslo!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Zmazať všetky staré správy?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Ste si istí, že chcete skrátiť všetky vlákna konverzácií na %s najnovších správ?</string>
   <string name="ApplicationPreferencesActivity_delete">Zmaž</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Vypnúť kryptovanie úložiska?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -35,42 +34,33 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Vytvoriť bezpečnú session s %s?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Potvrdenie ukončenia bezpečnej relácie</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ste si istí že chcete zrušiť bezpečnú reláciu?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Potvrdenie zmazania vlákna</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Ste si istí, že chcete natrvalo zmazať túto konveráciu?</string>
   <string name="ConversationActivity_add_attachment">Pridať prílohu</string>
   <string name="ConversationActivity_select_contact_info">Vyber kontaktné informácie </string>
   <string name="ConversationActivity_compose_message">Vytvoriť správu</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Správa je prázdna!</string>
   <string name="ConversationActivity_group_conversation">Skupinová konverzácia</string>
   <string name="ConversationActivity_unnamed_group">Nepomenovaná skupina</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d členovia</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 člen</string>
   <string name="ConversationActivity_saved_draft">Uložený koncept</string>
   <string name="ConversationActivity_invalid_recipient">Nesprávny príjemca</string>
   <string name="ConversationActivity_calls_not_supported">Hovory nie sú podporované</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily správy</string>
-  <string name="ConversationFragment_confirm_message_delete">Potvrď zmazanie správy</string>
   <string name="ConversationFragment_success_exclamation">Úspech!</string>
   <string name="ConversationFragment_saving_attachment">Ukladám prílohu</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Zmazať vlákna?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Ste si istí, že chcete zmazať VŠETKY označené vlákna konverzácií?</string>
   <string name="ConversationListFragment_deleting">Mažem</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Mažem vybrané konverzácie...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Správa vzájomnej výmeny kľúčov...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Žiadna</string>
   <!--DateUtils-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Zdieľaj s</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Export</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Exportuj čistý text na SD kartu?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Upozornenie, toto
-exportuje nekryptovaný obsah SMSSecure správy na SD kartu.</string>
   <string name="ExportFragment_cancel">Zrušiť</string>
   <string name="ExportFragment_exporting">Exportujem</string>
   <string name="ExportFragment_success">Úspech!</string>
@@ -135,7 +125,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte kľúč totožnosti.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Príjemca nemá kľúč totožnosti.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Pre porovnanie scannuj ich kľúč</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Daj scannovať môj kľúč</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, scannovaný kľúč sa NEZHODUJE! Dôsledne skontrolujte text odtlačku.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIE JE verifikované!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ich kľúč je v poriadku. Je tiež potrebné dať druhej strane verifikovať váš kľúč.</string>
@@ -179,9 +168,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">Staré heslo:</string>
-  <string name="change_passphrase_activity__new_passphrase">Nové heslo:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">Zopakujte nové heslo:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Žiadne kontakty.</string>
@@ -223,17 +209,9 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Aktualizujem databázu...</string>
   <string name="export_fragment__export_plaintext_backup">Exportovať nezakryptovanú zálohu</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Exportovať nezakryptovanú zálohu kompatibilnú so \'SMSBackup a Restore\' na SD kartu.</string>
   <string name="import_fragment__import_system_sms_database">Importovať systémovú databázu SMS</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Importovať databázu
-štandardnej systémovej aplikácie na správy.</string>
-  <string name="import_fragment__import_encrypted_backup">Importovať zakryptovanú zálohu</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Obnoviť predtým exportovanú zakryptovanú SMSSecure zálohu.</string>
   <string name="import_fragment__import_plaintext_backup">Importovať nezakryptovanú zálohu</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->
@@ -260,7 +238,6 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <string name="AndroidManifest__complete_key_exchange">Dokončiť vzájomnú výmenu kľúčov</string>
   <string name="AndroidManifest__log_submit">Odošli ladiaci log</string>
   <!--arrays.xml-->
-  <string name="arrays__my_identity_key">Môj kľúč totožnosti</string>
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">Všeobecné</string>
@@ -271,7 +248,6 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <string name="preferences__display_settings">Nastavenia zobrazenia</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Vyberte Váš kontakt zo zoznamu kontaktov.</string>
   <string name="preferences__change_passphrase">Zmeň heslo</string>
-  <string name="preferences__change_my_passphrase">Zmeniť moje heslo</string>
   <string name="preferences__complete_key_exchanges">Dokončiť vzájomnú výmenu kľúčov</string>
   <string name="preferences__screen_security">Bezpečnosť obrazovky</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automaticky dokonči vzájomné výmeny kľúčov pre nové session alebo pre existujúce session s rovnakým kľúčom totožnosti.</string>
@@ -307,11 +283,8 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <string name="preferences__advanced">Rozšírené</string>
   <string name="preferences__sms_delivery_reports">Správy o doručení SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Pre každú odoslanú SMS vyžiadaj správu o doručení</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Ak dĺžka vlákna presiahne nastavenú hranicu, automaticky zmaž najstaršie správy.</string>
   <string name="preferences__delete_old_messages">Zmaž staré správy</string>
   <string name="preferences__conversation_length_limit">Obmedzenie dĺžky konverzácie</string>
-  <string name="preferences__trim_all_threads_now">Skráť všetky vlákna</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Skontroluj dĺžku vlákna všetkých konverzácií.</string>
   <string name="preferences__appearance">Vzhľad</string>
   <string name="preferences__theme">Téma</string>
   <string name="preferences__default">Pôvodné</string>
@@ -361,7 +334,6 @@ Importovať nezakryptovanú zálohu. Kompatibilné so \'SMSBackup And Restore\'.
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Pridaj prílohu</string>
-  <string name="conversation__menu_delete_thread">Zmaž vlákno</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->

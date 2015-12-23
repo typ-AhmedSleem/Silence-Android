@@ -7,7 +7,6 @@
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未建立『自訂密碼』！</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">刪除\"全部\"的舊訊息？</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">您確定要將所有對話群組精簡為只剩最近 %s 則的對話？</string>
   <string name="ApplicationPreferencesActivity_delete">刪除</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">不要對儲存內容加密</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -44,25 +43,19 @@
   <string name="ConversationActivity_initiate_secure_session_with_s_question">與 %s 開啟安全連線？</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">結束安全連線再確認</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">您真的確定要結束此安全連線？</string>
-  <string name="ConversationActivity_delete_thread_confirmation">刪除對話再確認</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">您真的確定要永久刪除此則對話紀錄？</string>
   <string name="ConversationActivity_add_attachment">增加附件檔案</string>
   <string name="ConversationActivity_select_contact_info">選擇連絡人資訊</string>
   <string name="ConversationActivity_compose_message">撰寫訊息</string>
   <string name="ConversationActivity_message_is_empty_exclamation">訊息內容是空的！</string>
   <string name="ConversationActivity_group_conversation">群組聊天</string>
   <string name="ConversationActivity_unnamed_group">未命名的群組</string>
-  <string name="ConversationActivity_d_recipients_in_group">有 %d 名成員</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">有 1 名成員</string>
   <string name="ConversationActivity_saved_draft">草稿已存</string>
   <string name="ConversationActivity_invalid_recipient">無效的連絡人！</string>
   <string name="ConversationActivity_calls_not_supported">不支援的通話</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">您使用的裝置看來不支援撥號通話功能。</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">訊息細節</string>
-  <string name="ConversationFragment_confirm_message_delete">刪除訊息確認</string>
   <string name="ConversationFragment_save_to_sd_card">儲存到儲存裝置？</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">將檔案儲存到儲存裝置，將會使得手機上的其他 APP 也能存取它。\n\n您要繼續嗎？</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">儲存檔案到儲存裝置時發生錯誤！</string>
   <string name="ConversationFragment_success_exclamation">成功！</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">無法寫入儲存裝置！</string>
@@ -71,23 +64,18 @@
   <string name="ConversationFragment_deleting">刪除中...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">刪除對話群組？</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">您確定要刪除已選擇的對話群組？</string>
   <string name="ConversationListFragment_deleting">正在刪除</string>
-  <string name="ConversationListFragment_deleting_selected_threads">正在刪除已選的對話群組...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">金鑰交換訊息...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">無</string>
   <!--DateUtils-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">分享給</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">匯出</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">以純文字（未加密）格式輸出至 SD 卡？</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">警告！這將會
-        以未加密的格式將您的 SMSSecure 訊息紀錄匯出到 SD 卡中！
-    </string>
   <string name="ExportFragment_cancel">取消</string>
   <string name="ExportFragment_exporting">正在匯出...</string>
   <string name="ExportFragment_success">成功！</string>
@@ -184,7 +172,6 @@
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您不具備身分認證金鑰。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件者不具備身分認證金鑰。</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">比對他們的金鑰</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">驗證我的金鑰</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告！驗證結果不符合！請再目視並仔細比對一次指紋碼。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">無法驗證！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">對方提供的金鑰是正確的。但您也必須將您的金鑰與其比對。</string>
@@ -193,7 +180,6 @@
   <string name="ViewIdentityActivity_scan_to_compare">掃描以比對</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告！掃描的值並不相符！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">掃描的金鑰相符！</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">我的身分識別指紋碼</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">忽略既有請求，依然啟動？</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">您已對連絡人送出請求，而現在您還要再送出另一個新的請求？這樣將使前一個請求自動失效。</string>
@@ -232,9 +218,6 @@
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">舊的『自訂密碼』:</string>
-  <string name="change_passphrase_activity__new_passphrase">新的『自訂密碼』:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">再輸入一次新的『自訂密碼』:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">沒有連絡人。</string>
@@ -286,17 +269,9 @@
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">更新資料庫...</string>
   <string name="export_fragment__export_plaintext_backup">匯出未加密的備份資料</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-匯出一個未加密、但相容於 \"SMSBackup And Restore\" 格式的備份資料到 SD 卡。</string>
   <string name="import_fragment__import_system_sms_database">匯入裝置上的手機簡訊</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">從裝置上預設的手機簡訊管理程式
-匯入簡訊資料。</string>
-  <string name="import_fragment__import_encrypted_backup">匯入加密的備份資料</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-還原前一個匯出的 TestSecure 加密備份資料庫。</string>
   <string name="import_fragment__import_plaintext_backup">匯入未加密的資料備份</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-匯入一個未加密的備份資料。 相容於 \"SMSBackup And Restore\"。</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->
@@ -324,10 +299,8 @@
   <string name="AndroidManifest__verify_identity">驗證身分</string>
   <string name="AndroidManifest__complete_key_exchange">金鑰交換完成</string>
   <string name="AndroidManifest__log_submit">送出偵錯紀錄</string>
-  <string name="AndroidManifest__media_preview">預覽檔案</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">匯入／匯出</string>
-  <string name="arrays__my_identity_key">我的身分識別金鑰</string>
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">一般</string>
@@ -338,7 +311,6 @@
   <string name="preferences__display_settings">顯示設定</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">從您的連絡人清單中選擇連絡人。</string>
   <string name="preferences__change_passphrase">變更『自訂密碼』</string>
-  <string name="preferences__change_my_passphrase">變更我的『自訂密碼』</string>
   <string name="preferences__complete_key_exchanges">金鑰交換完成</string>
   <string name="preferences__screen_security">螢幕安全設定</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">自動完成新連線金鑰交換，或套用目前已存在連線同樣的身分識別金鑰</string>
@@ -357,7 +329,6 @@
   <string name="preferences__pref_led_blink_custom_pattern_set">自訂 LED 閃爍模式設定完成！</string>
   <string name="preferences__sound">提示音效</string>
   <string name="preferences__change_notification_sound">變更通知音效</string>
-  <string name="preferences__inthread_notifications">聊天中的提示音效</string>
   <string name="preferences__play_inthread_notifications">當進行聊天時，收到新通知所要播放的音效。</string>
   <string name="preferences__vibrate">震動</string>
   <string name="preferences__also_vibrate_when_notified">通知時一併啟用震動</string>
@@ -379,11 +350,8 @@
   <string name="preferences__override_system_mms_settings">您可自訂 MMS多媒體簡訊設定，並覆蓋過系統的預設值。</string>
   <string name="preferences__sms_delivery_reports">手機簡訊傳送狀態報告</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">針對每則手機簡訊都要求回覆傳送報告</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">自動刪除舊的簡訊，當對話群組超過一定長度時</string>
   <string name="preferences__delete_old_messages">刪除舊的簡訊</string>
   <string name="preferences__conversation_length_limit">對話群組長度上限</string>
-  <string name="preferences__trim_all_threads_now">現在開始精簡所有的對話群組</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">這會掃描目前所有的對話群組，並且強制刪除超過長度上限的部分。</string>
   <string name="preferences__appearance">介面設定</string>
   <string name="preferences__theme">主題</string>
   <string name="preferences__default">預設</string>
@@ -434,7 +402,6 @@
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">增加附件檔案</string>
-  <string name="conversation__menu_delete_thread">刪除對話群組</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->
@@ -460,7 +427,6 @@
   <!--media_preview-->
   <string name="media_preview__save_title">儲存</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">預覽圖片</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">刪除中...</string>

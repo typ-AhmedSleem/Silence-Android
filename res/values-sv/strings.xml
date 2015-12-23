@@ -7,9 +7,7 @@
   <string name="please_wait">Var vänlig vänta...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du har inte angivit ett lösenord än!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s meddelanden per konversation</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Radera alla gamla meddelanden nu?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Är du säker på att du omeddelbart vill trimma alla konversationstrådar till de %s senaste meddelandena?</string>
   <string name="ApplicationPreferencesActivity_delete">Radera</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Inaktivera lagringskryptering?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -29,7 +27,6 @@ kommer kunna komma åt dem.</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Inkommande %s</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minuter</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(bild)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(ljud)</string>
@@ -63,8 +60,6 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Meddelande mottaget från någon som också har SMSSecure, påbörja en säker krypterad session?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Bekräfta avslutning av säker session</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Är du säker på att du vill avsluta denna säkra session?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Bekräfta radering av tråd</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Är du säker att du vill permanent radera denna konversation?</string>
   <string name="ConversationActivity_add_attachment">Bifoga fil</string>
   <string name="ConversationActivity_select_contact_info">Välj kontaktinformation</string>
   <string name="ConversationActivity_compose_message">Skriv meddelande</string>
@@ -74,8 +69,6 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationActivity_group_members">Gruppmedlemmar</string>
   <string name="ConversationActivity_group_conversation">Gruppkonversation</string>
   <string name="ConversationActivity_unnamed_group">Namnlös grupp</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d medlemmar</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 medlem</string>
   <string name="ConversationActivity_saved_draft">Sparade utkast</string>
   <string name="ConversationActivity_invalid_recipient">Ogiltig mottagare!</string>
   <string name="ConversationActivity_calls_not_supported">Samtal stöds ej</string>
@@ -91,10 +84,7 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationActivity_specify_recipient">Vänligen välj en kontakt</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meddelandedetaljer</string>
-  <string name="ConversationFragment_confirm_message_delete">Bekräfta borttagning av meddelande</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Är du säker på att du vill radera alla markerade meddelanden permanent?</string>
   <string name="ConversationFragment_save_to_sd_card">Spara till lagring?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Att spara denna media till lagring kommer tillåta andra appar på din telefon att få tillgång.\n\nFortsätt?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Det blev ett fel när bifogad fil skulle sparas till lagring!</string>
   <string name="ConversationFragment_success_exclamation">Klart!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kan inte skriva till lagring!</string>
@@ -108,12 +98,10 @@ kommer kunna komma åt dem.</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Sök...</string>
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Radera trådar?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Är du säker på att du vill radera ALLA markerade konversationstrådar?</string>
   <string name="ConversationListFragment_deleting">Raderar</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Raderar markerade trådar...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Meddelande för nyckelutbyte ...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Använder skräddarsydd: %s</string>
   <string name="CustomDefaultPreference_using_default">Använder standard: %s</string>
@@ -123,16 +111,11 @@ kommer kunna komma åt dem.</string>
   <string name="DateUtils_minutes_ago">%d min</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Dela med</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportera</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Exportera okrypterat till minneskort?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Varning, detta kommer
-spara den okrypterad texten av din konversation till ditt minneskort.</string>
   <string name="ExportFragment_cancel">Avbryt</string>
   <string name="ExportFragment_exporting">Sparar</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Exporterar okrypterat till minneskort...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Ett fel uppstod, kunde inte skriva data till minneskort!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Kunde inte skriva till minneskort.</string>
   <string name="ExportFragment_success">Lyckades!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Ny grupp</string>
@@ -227,7 +210,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen identitetsnyckel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Mottagaren har ingen identitetsnyckel.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skanna deras nyckel för att jämföra</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Få min nyckel skannad</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VARNING, den skannade nyckeln överensstämmer INTE! Var vänlig kontrollera texten för fingeravtrycket noggrant.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">INTE verifierad!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Deras nyckel är korrekt. Det är också nödvändigt att verifiera din nyckel med dem.</string>
@@ -236,7 +218,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="ViewIdentityActivity_scan_to_compare">Skanna för att jämföra</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">VARNING, den skannade nyckeln överensstämmer INTE!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Den skannade nyckeln överensstämmer!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Mitt identitets-fingeravtryck</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Påbörja ny nyckelutbytesförfrågan trots redan existerande?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Du har redan skickat en sessionsinitieringsbegäran till denna mottagare, är du säker på att du vill skicka en till? Detta kommer göra din första begäran ogiltig.</string>
@@ -282,9 +263,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">GAMMALT LÖSENORD:</string>
-  <string name="change_passphrase_activity__new_passphrase">NYTT LÖSENORD:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">UPPREPA NYTT LÖSENORD:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Inga kontakter.</string>
@@ -342,14 +320,9 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Uppgraderar databasen...</string>
   <string name="export_fragment__export_plaintext_backup">Exportera okrypterad backup</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportera en okrypterad säkerhetskopia kompatibel med \'SMSBackup And Restore\' till minneskortet.</string>
   <string name="import_fragment__import_system_sms_database">Importera systemets SMS-databas</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Importera databasen
-från systemets standardapp för meddelanden.</string>
-  <string name="import_fragment__import_encrypted_backup">Importera krypterad backup</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">Återställ en tidigare krypterad säkerhetskopia av SMSSecure.</string>
   <string name="import_fragment__import_plaintext_backup">Importera okrypterad backup</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Importera en okrypterad säkerhetskopia kompatibel med \'SMSBackup And Restore\'.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Inga bilder</string>
   <!--message_recipients_list_item-->
@@ -365,7 +338,6 @@ från systemets standardapp för meddelanden.</string>
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">Tysta konversation</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Stäng av notifikationer för denna konversation</string>
-  <string name="recipient_preferences__ringtone">Ringsignal</string>
   <string name="recipient_preferences__vibrate">Vibrera</string>
   <string name="recipient_preferences__block">Blockera</string>
   <!--receive_key_dialog-->
@@ -393,13 +365,10 @@ från systemets standardapp för meddelanden.</string>
   <string name="AndroidManifest__verify_identity">Verifiera identiteten</string>
   <string name="AndroidManifest__complete_key_exchange">Slutför nyckelutbyte</string>
   <string name="AndroidManifest__log_submit">Skicka in loggarna</string>
-  <string name="AndroidManifest__media_preview">Förhandsvisning av media</string>
   <string name="AndroidManifest__media_overview">Alla bilder</string>
   <string name="AndroidManifest__media_overview_named">Alla bilder med %1$s</string>
-  <string name="AndroidManifest__message_details">Meddelandedetaljer</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importera / exportera</string>
-  <string name="arrays__my_identity_key">Min identitetsnyckel</string>
   <string name="arrays__use_default">Använd standard</string>
   <string name="arrays__use_custom">Använd skräddarsydd</string>
   <string name="arrays__mute_for_one_hour">Tysta i 1 timme</string>
@@ -423,7 +392,6 @@ från systemets standardapp för meddelanden.</string>
   <string name="preferences__display_settings">Skärminställningar</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Välj din kontakt från kontakt listan.</string>
   <string name="preferences__change_passphrase">Ändra lösenord</string>
-  <string name="preferences__change_my_passphrase">Ändra mitt lösenord</string>
   <string name="preferences__complete_key_exchanges">Fullborda nyckelutbyten</string>
   <string name="preferences__enable_passphrase">Aktivera lösenordsfras</string>
   <string name="preferences__passphrase_summary">Lösenordsfras %s</string>
@@ -447,7 +415,6 @@ från systemets standardapp för meddelanden.</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">Specialanpassat LED-blinkningsmönster valt!</string>
   <string name="preferences__sound">Ljud</string>
   <string name="preferences__change_notification_sound">Ändra notifieringsljud</string>
-  <string name="preferences__inthread_notifications">Inom-tråd notifikationer</string>
   <string name="preferences__play_inthread_notifications">Spela notifikationsljud när en aktiv konversation visas</string>
   <string name="preferences__repeat_alerts">Upprepa notifieringar</string>
   <string name="preferences__never">Aldrig</string>
@@ -484,11 +451,8 @@ från systemets standardapp för meddelanden.</string>
   <string name="preferences__mmsc_password">MMSC Lösenord</string>
   <string name="preferences__sms_delivery_reports">SMS leveransrapporter</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Begär en leveransrapport för varje SMS meddelande du skickar</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Radera automatiskt gamla meddelanden när en konversationstråd överstiger en specificerad längd</string>
   <string name="preferences__delete_old_messages">Radera gamla meddelanden</string>
   <string name="preferences__conversation_length_limit">Konversationstrådslängd</string>
-  <string name="preferences__trim_all_threads_now">Trimma alla trådar nu</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Skanna igenom alla konversationstrådar och framtvinga konversationstrådslängder.</string>
   <string name="preferences__light_theme">Ljust</string>
   <string name="preferences__dark_theme">Mörkt</string>
   <string name="preferences__appearance">Utseende</string>
@@ -558,7 +522,6 @@ från systemets standardapp för meddelanden.</string>
   <string name="conversation_unmuted__mute_notifications">Tysta notifikationer</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Bifoga fil</string>
-  <string name="conversation__menu_delete_thread">Radera tråd</string>
   <string name="conversation__menu_view_media">Alla bilder</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
@@ -590,7 +553,6 @@ från systemets standardapp för meddelanden.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Spara</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Förhandsvisning av bild</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Raderar...</string>

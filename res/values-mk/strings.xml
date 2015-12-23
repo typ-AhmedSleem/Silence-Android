@@ -6,7 +6,6 @@
   <string name="please_wait">Се вчитува...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Немате поставено лозинка!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s пораки по конверзација</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Избриши ги сите стари пораки?</string>
   <string name="ApplicationPreferencesActivity_delete">Избриши</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Исклучи локална енкрипција?</string>
@@ -18,7 +17,6 @@
   <string name="ApplicationPreferencesActivity_sms">СМС</string>
   <string name="ApplicationPreferencesActivity_mms">ММС</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d минути</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(слика)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(аудио)</string>
@@ -37,9 +35,11 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <!--ConversationListItem-->
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
   <!--ShareActivity-->
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
@@ -86,6 +86,7 @@
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <!--database_upgrade_activity-->
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->

@@ -7,9 +7,7 @@
   <string name="please_wait">Sačekajte...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Još niste postavili lozinku!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s poruka po razgovoru</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Obriši sve stare poruke?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Jeste li sigurni da želite skratiti sve razgovore na %s najnovijih poruka?</string>
   <string name="ApplicationPreferencesActivity_delete">Obriši</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Onemogući kriptiranje memorije?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -28,7 +26,6 @@ im moći pristupiti.</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minuta</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(slika)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(zvuk)</string>
@@ -60,8 +57,6 @@ im moći pristupiti.</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Započmi sigurnu sesiju sa %s?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Prekini potvrdu sigurne sesije</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Jeste li sigurni da želite prekinuti ovu sigurnu sesiju?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Potvrda brisanja teme</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Jeste li sigurni da želite trajno obrisati ovaj razgovor?</string>
   <string name="ConversationActivity_add_attachment">Dodaj privitak</string>
   <string name="ConversationActivity_select_contact_info">Odaberite informacije kontakta</string>
   <string name="ConversationActivity_compose_message">Sastavi poruku</string>
@@ -70,8 +65,6 @@ im moći pristupiti.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Poruka je prazna!</string>
   <string name="ConversationActivity_group_conversation">Grupni razgovor</string>
   <string name="ConversationActivity_unnamed_group">Neimenovana grupa</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d članova</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 član</string>
   <string name="ConversationActivity_saved_draft">Spremljena skica</string>
   <string name="ConversationActivity_invalid_recipient">Naispravan primatelj!</string>
   <string name="ConversationActivity_calls_not_supported">Pozivi nisu podržani</string>
@@ -82,10 +75,7 @@ im moći pristupiti.</string>
   <string name="ConversationActivity_transport_secure_mms">Sigurni MMS</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalji poruke</string>
-  <string name="ConversationFragment_confirm_message_delete">Potvrda brisanja poruke</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Jeste li sigurni da želite trajno obrisati sve odabrane poruke?</string>
   <string name="ConversationFragment_save_to_sd_card">Spremi na disk?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Spremanje ovog medija na disk će omogućiti pristup mediju iz drugih aplikacija na vašem telefonu.\n\nNastavi?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Greška prilikom spremanja privitka na disk!</string>
   <string name="ConversationFragment_success_exclamation">Uspješno!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nije moguće pisati na disk!</string>
@@ -98,28 +88,21 @@ im moći pristupiti.</string>
   <string name="ConversationFragment_deleting_messages">Brisanje poruka...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Obriši teme?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Jeste li sigurni da želite obrisati SVE odabrane teme?</string>
   <string name="ConversationListFragment_deleting">Brisanje</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Brisanje odabranih tema...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Poruka za razmjenu ključa...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Niti jedna</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Sada</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Podijeli s</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Izvoz</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Izvezi nekriptirano na SD karticu?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Upozorenje, ovime ćete
-nekriptirano izvesti sadržaj vaših SMSSecure poruka na SD karticu.</string>
   <string name="ExportFragment_cancel">Odustani</string>
   <string name="ExportFragment_exporting">Izvoz</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Izvoz običnog teksta na SD karticu...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Greška, nije moguće pisati na SD karticu!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Greška prilikom pisanja na SD karticu.</string>
   <string name="ExportFragment_success">Uspješno!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova grupa</string>
@@ -213,7 +196,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemate ključ identiteta.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Primatelj nema ključ identiteta.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skenirajte njihov ključ za usporedbu</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Skeniraj moj ključ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UPOZORENJE, skenirani ključ NE ODGOVARA! Provjerite pažljivo tekst otiska prsta.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIJE potvrđeno!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Njihov ključ je ispravan. Također je potrebno potvrditi vaš ključ sa njima.</string>
@@ -222,7 +204,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="ViewIdentityActivity_scan_to_compare">Skenirajte za usporedbu</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UPOZORENJE, skenirani ključ NE ODGOVARA!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skenirani ključ odgovara!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Otisak prsta mog identiteta</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Pokreni usprkos postojećem zahtjevu?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Već ste poslali zahtjev za pokretanje sesije ovom primatelju, jeste li sigurni da želite poslati još jedan? To će poništiti prvi zahtjev.</string>
@@ -263,9 +244,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">STARA LOZINKA:</string>
-  <string name="change_passphrase_activity__new_passphrase">NOVA LOZINKA:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">PONOVITE NOVU LOZINKU:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Nema kontakata.</string>
@@ -319,17 +297,9 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Ažuriranje baze podataka...</string>
   <string name="export_fragment__export_plaintext_backup">Izvezi nekriptiranu kopiju</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Izvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\' na SD karticu.</string>
   <string name="import_fragment__import_system_sms_database">Uvezi SMS bazu podataka sustava</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Uvezi bazu podataka
-iz zadane aplikacije za poruke sustava.</string>
-  <string name="import_fragment__import_encrypted_backup">Uvezi kriptiranu kopiju</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Vrati prethodno izvezenu kriptiranu SMSSecure kopiju.</string>
   <string name="import_fragment__import_plaintext_backup">Uvezi nekriptiranu kopiju</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Nema slika</string>
   <!--message_recipients_list_item-->
@@ -367,12 +337,10 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="AndroidManifest__verify_identity">Potvrdite identitet</string>
   <string name="AndroidManifest__complete_key_exchange">Završite razmjenu ključeva</string>
   <string name="AndroidManifest__log_submit">Pošaljite debug zapise</string>
-  <string name="AndroidManifest__media_preview">Prikaz medija</string>
   <string name="AndroidManifest__media_overview">Sve slike</string>
   <string name="AndroidManifest__media_overview_named">Sve slike sa %1$s</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Uvoz / izvoz</string>
-  <string name="arrays__my_identity_key">Moj ključ identiteta</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d sat</item>
@@ -389,7 +357,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="preferences__display_settings">Postavke prikaza</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Odaberite unos kontakta sa popisa kontakata.</string>
   <string name="preferences__change_passphrase">Izmjeni lozinku</string>
-  <string name="preferences__change_my_passphrase">Izmjeni moju lozinku</string>
   <string name="preferences__complete_key_exchanges">Završi razmjene ključeva</string>
   <string name="preferences__enable_passphrase">Omogući lozinku</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Omogući lokalno kriptiranje poruka i ključeva</string>
@@ -411,7 +378,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="preferences__pref_led_blink_custom_pattern_set">Prilagođeni LED uzorak treptanja postavljen!</string>
   <string name="preferences__sound">Zvuk</string>
   <string name="preferences__change_notification_sound">Izmjenite zvuk obavijesti</string>
-  <string name="preferences__inthread_notifications">Obavijesti unutar razgovora</string>
   <string name="preferences__play_inthread_notifications">Pusti zvuk obavijesti prilikom prikaza aktivnog razgovora.</string>
   <string name="preferences__repeat_alerts">Ponovi upozorenja</string>
   <string name="preferences__never">Nikada</string>
@@ -442,11 +408,8 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <string name="preferences__override_system_mms_settings">Zaobiđi MMS postavke sustava sa niže navedenim postavkama.</string>
   <string name="preferences__sms_delivery_reports">SMS potvrde isporuke</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Traži potvrdu isporuke za svaki poslani SMS</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Automatski obriši starije poruke nakon što razgovor pređe određenu duljinu</string>
   <string name="preferences__delete_old_messages">Obriši stare poruke</string>
   <string name="preferences__conversation_length_limit">Maksimalna duljina razgovora</string>
-  <string name="preferences__trim_all_threads_now">Skrati sve teme sada</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Skeniraj sve teme i primijeni maksimalnu duljinu razgovora</string>
   <string name="preferences__light_theme">Svijetla</string>
   <string name="preferences__dark_theme">Tamna</string>
   <string name="preferences__appearance">Izgled</string>
@@ -504,7 +467,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj privitak</string>
-  <string name="conversation__menu_delete_thread">Obriši temu</string>
   <string name="conversation__menu_view_media">Sve slike</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
@@ -536,7 +498,6 @@ Uvezi nekriptiranu kopiju kompatibilnu s \'SMSBackup And Restore\'.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Spremi</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Prikaz slike</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Brisanje...</string>

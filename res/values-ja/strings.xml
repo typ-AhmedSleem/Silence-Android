@@ -7,9 +7,13 @@
   <string name="please_wait">お待ち下さい…</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">パスワードが登録されていません。</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">会話あたり %s のメッセージ</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="other">会話あたり %d のメッセージ</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">全ての古いメッセージを今、削除しますか？</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">今すぐ全ての会話スレッドを最新メッセージ%s通にまで縮小（トリム）しますか？</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="other">全ての会話スレッドを最新メッセージ%d通にまで縮小（トリム）します。</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">削除</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">端末内保存データの暗号化を無効にしますか？</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -28,7 +32,9 @@
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">受信 %s</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d 分</string>
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="other">%d 分</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(画像)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(音声)</string>
@@ -64,8 +70,8 @@
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">SMSSecureを使っている人からメッセージを受信しました。安全な暗号化されたセッションを開始しますか？</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">セキュア・セッション終了の確認</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">このセキュア・セッションを本当に終了しますか？</string>
-  <string name="ConversationActivity_delete_thread_confirmation">スレッド削除確認</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">この会話を完全に削除してもよろしいですか？</string>
+  <string name="ConversationActivity_delete_thread_question">会話を削除しますか?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">この会話のメッセージを完全に削除します。</string>
   <string name="ConversationActivity_add_attachment">添付</string>
   <string name="ConversationActivity_select_contact_info">連絡先情報を選択</string>
   <string name="ConversationActivity_compose_message">メッセージ作成</string>
@@ -78,8 +84,9 @@
   <string name="ConversationActivity_group_members">グループの参加者</string>
   <string name="ConversationActivity_group_conversation">グループチャット</string>
   <string name="ConversationActivity_unnamed_group">無名グループ</string>
-  <string name="ConversationActivity_d_recipients_in_group">参加者%d人</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">参加者1人</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="other">参加者%d人</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">下書きとして保存しました</string>
   <string name="ConversationActivity_invalid_recipient">受信先が無効です。</string>
   <string name="ConversationActivity_calls_not_supported">通話には対応していません</string>
@@ -93,12 +100,17 @@
   <string name="ConversationActivity_mms_not_supported_title">MMSには対応していません</string>
   <string name="ConversationActivity_mms_not_supported_message">お使いの無線通信事業者がMMSに対応していないため、このメッセージを送信できません。</string>
   <string name="ConversationActivity_specify_recipient">連絡先を選択してください</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">添付ファイルのサイズが制限を越えています。</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">メッセージの詳細</string>
-  <string name="ConversationFragment_confirm_message_delete">メッセージ削除の確認</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">あなたは、選択したメッセージの永久的な削除を希望してますが、よいのですね?</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="other">選択したメッセージを削除しますか?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="other">選択した%1$dのメッセージを完全に削除します。</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">メモリに保存しますか？</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">このファイルを保存すれば、別のアプリもこのファイルをアクセスできます。\n\nよろしいですか？</string>
+  <string name="ConversationFragment_saving_this_media_to_storage_warning">このファイルを保存すると、別のアプリもこのファイルにアクセスできます。\n\nよろしいですか？</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">保存中にエラーが発生しました。</string>
   <string name="ConversationFragment_success_exclamation">成功しました。</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">メモリに書き込めませんでした。</string>
@@ -112,12 +124,23 @@
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">検索...</string>
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">スレッドを削除しますか？</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">選択したすべての会話スレッドを、本当に削除してもよろしいですか？</string>
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="other">選択した会話を削除しますか?</item>
+  </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="other">選択した%1$dの会話を完全に削除します。</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">削除</string>
-  <string name="ConversationListFragment_deleting_selected_threads">選択したスレッドを削除中…</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">選択した会話を削除中…</string>
+  <string name="ConversationListFragment_conversations_archived">会話をアーカイブしました</string>
+  <string name="ConversationListFragment_undo">元に戻す</string>
+  <string name="ConversationListFragment_moved_conversation_to_inbox">会話を受信トレイに移動しました</string>
+  <string name="ConversationListFragment_conversation_archived">会話をアーカイブしました</string>
+  <string name="ConversationListFragment_moved_conversations_to_inbox">会話を受信トレイに移動しました</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">鍵交換のメッセージ…</string>
+  <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">会話をアーカイブしました (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">カスタムを使用しています: %s</string>
   <string name="CustomDefaultPreference_using_default">デフォルトを使用しています: %s</string>
@@ -127,15 +150,22 @@
   <string name="DateUtils_minutes_ago">%d 分</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共有</string>
+  <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_smssecure">SMSSecureへようこそ!</string>
+  <string name="IntroScreenActivity_smssecure_description">SMSSecureは、友だちと通信するときに、プライバシーを保護することができます。</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">メッセージを暗号化</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecureは、自動的に他のSMSSecureユーザーとのメッセージを暗号化します。</string>
+  <string name="IntroScreenActivity_talk_to_everyone">みんなと話す</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecureは、暗号化されていないメッセージを使用して、非SMSSecureユーザーとチャットすることができます。</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">エクスポート</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">SDカードへエクスポートしますか？</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">警告：この作業によって、あなたのSMSSecureメッセージは、暗号化されていない状態でSDカードへとエクスポートされます！</string>
+  <string name="ExportFragment_export_plaintext_to_storage">暗号化されていないテキストをストレージにエクスポートしますか?</string>
+  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">警告。ストレージにSMSSecureメッセージの暗号化されていない内容をエクスポートします。</string>
   <string name="ExportFragment_cancel">中止</string>
   <string name="ExportFragment_exporting">エクスポート中…</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">暗号化されてないテキストをSDカードにエクスポート中…</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">SDカードに書き込めまないエラーです!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">SDカードに書き込む途中でエラーが発生しました。</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">暗号化されていないテキストをストレージにエクスポート中…</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">エラー。ストレージに書き込めませんでした。</string>
+  <string name="ExportFragment_error_while_writing_to_storage">ストレージに書き込む途中でエラーが発生しました。</string>
   <string name="ExportFragment_success">成功しました。</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新規グループ</string>
@@ -158,7 +188,7 @@
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
 暗号化されたバックアップ・ファイルを復元すると、現在のキー、設定、及びメッセージは完全に上書きされます。現在のSMSSecureインストール環境は上書きされますが、バックアップ・ファイルは残ります。</string>
   <string name="ImportFragment_restore">復元</string>
-  <string name="ImportFragment_import_plaintext_backup">平文のバックアップをインポートしますか？</string>
+  <string name="ImportFragment_import_plaintext_backup">暗号化されていないテキストのバックアップをインポートしますか？</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">暗号化されていないテキストのバックアップ・ファイルからメッセージをインポートします。以前に同じバックアップ・ファイルをインポートしたことがある場合、メッセージが重複することになります。</string>
   <string name="ImportFragment_importing">インポート中…</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">非暗号テキストのバックアップ・ファイルをインポート中…</string>
@@ -216,6 +246,9 @@
   <string name="RecipientPreferenceActivity_enabled">有効</string>
   <string name="RecipientPreferenceActivity_disabled">無効</string>
   <!--Slide-->
+  <string name="Slide_image">画像</string>
+  <string name="Slide_audio">音声</string>
+  <string name="Slide_video">動画</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">無効な鍵交換メッセージを受信しました。</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -228,11 +261,12 @@
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">グループを出ました…</string>
   <string name="ThreadRecord_draft">草稿:</string>
+  <string name="ThreadRecord_media_message">メディアメッセージ</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">認証キーがありません。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">受信者は認証キーがありません。</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">鍵をスキャンして比較</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">自分の鍵をスキャンしてもらう</string>
+  <string name="VerifyIdentityActivity_get_your_key_scanned">あなたの鍵をスキャンしてください</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告、スキャンした鍵が正しくありません！フィンガープリントのテキストを慎重にチェックしてください。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">照合できませんでした！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">鍵が一致しました。これらの鍵と一緒に、自分の鍵も確認する必要があります。</string>
@@ -241,7 +275,7 @@
   <string name="ViewIdentityActivity_scan_to_compare">スキャンして比較</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告、スキャンした鍵が正しくありません！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">スキャンした鍵が一致しました！</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">自分の認証フィンガープリント</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">あなたの認証フィンガープリント</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">既存のリクエストがありますが、鍵交換を開始しますか？</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">セッション開始のリクエストはすでにこの受信者に送られています。別のリクエストをまた送ってもよろしいですか？送信すると、最初に送ったリクエストは無効になります。</string>
@@ -292,12 +326,12 @@
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">SMSSecure がロックされている時はクイック応答は利用できません!</string>
   <string name="QuickResponseService_problem_sending_message">メッセージの送信中にエラー!</string>
   <!--SingleRecipientNotificationBuilder-->
-  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">新しい SMSSecure メッセージ</string>
-  <string name="SingleRecipientNotificationBuilder_contents_hidden">コンテンツ非表示</string>
+  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">新規メッセージ</string>
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">既存のパスワード：</string>
-  <string name="change_passphrase_activity__new_passphrase">新規のパスワード：</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">新規のパスワードを再入力：</string>
+  <string name="change_passphrase_activity__old_passphrase">古いパスワード</string>
+  <string name="change_passphrase_activity__new_passphrase">新しいパスワード</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">新しいパスワードの繰り返し</string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">名前または番号を入力してください</string>
   <!--contact_selection_group_activity-->
@@ -356,17 +390,15 @@
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">データベースを更新中…</string>
   <string name="export_fragment__export_plaintext_backup">非暗号テキストのバックアップ・ファイルをエクスポート</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-「SMSバックアップと復元」と互換性のある暗号化されていないテキストのバックアップ・ファイルをSDカードにエクスポートします</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">「SMSバックアップと復元」と互換性のある暗号化されていないテキストのバックアップ・ファイルをエクスポートします</string>
   <string name="import_fragment__import_system_sms_database">システムのSMSデータベースをインポート</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">端末既定のメッセンジャー・アプリから
-データベースをインポート</string>
-  <string name="import_fragment__import_encrypted_backup">暗号化されたバックアップ・ファイルをインポート</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-前回エクスポートした暗号化されたSMSSecureバックアップ・ファイルを復元</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">端末既定のメッセンジャー・アプリから データベースをインポート</string>
+  <string name="import_fragment__restore_encrypted_backup">暗号化されたバックアップを復元</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">前回エクスポートした暗号化されたSMSSecureバックアップ・ファイルを復元</string>
   <string name="import_fragment__import_plaintext_backup">非暗号テキストのバックアップ・ファイルをインポート</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-暗号化されていないテキストのバックアップ・ファイルをインポートします。「SMSバックアップと復元」と互換可能です。</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">暗号化されていないテキストのバックアップ・ファイルをインポートします。「SMSバックアップと復元」と互換性があります。</string>
+  <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">完全な会話を参照</string>
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">画像なし</string>
   <!--message_recipients_list_item-->
@@ -382,7 +414,7 @@
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">会話をミュート</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">この会話の通知を無効にします</string>
-  <string name="recipient_preferences__ringtone">着信音</string>
+  <string name="recipient_preferences__notification_sound">通知音</string>
   <string name="recipient_preferences__vibrate">振動</string>
   <string name="recipient_preferences__block">ブロック</string>
   <string name="recipient_preferences__color">色</string>
@@ -412,25 +444,27 @@
   <string name="AndroidManifest__verify_identity">認証検証</string>
   <string name="AndroidManifest__complete_key_exchange">鍵交換を自動的に実行</string>
   <string name="AndroidManifest__log_submit">デバッグログを提出</string>
-  <string name="AndroidManifest__media_preview">メディアのプレビュー表示</string>
+  <string name="AndroidManifest__media_preview">メディアプレビュー</string>
   <string name="AndroidManifest__media_overview">すべての画像</string>
   <string name="AndroidManifest__media_overview_named">%1$s とすべての画像</string>
   <string name="AndroidManifest__message_details">メッセージの詳細</string>
+  <string name="AndroidManifest_archived_conversations">会話をアーカイブしました</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">インポート／エクスポート</string>
-  <string name="arrays__my_identity_key">自分の認証キー</string>
+  <string name="arrays__your_identity_key">あなたの認証キー</string>
   <string name="arrays__use_default">デフォルトを使用します</string>
   <string name="arrays__use_custom">カスタムを使用します</string>
   <string name="arrays__mute_for_one_hour">1 時間ミュート</string>
   <string name="arrays__mute_for_two_hours">2 時間ミュート</string>
   <string name="arrays__mute_for_one_day">1 日間ミュート</string>
   <string name="arrays__mute_for_seven_days">7 日間ミュート</string>
+  <string name="arrays__mute_for_one_year">1 年間ミュート</string>
   <string name="arrays__settings_default">設定のデフォルト</string>
   <string name="arrays__enabled">有効</string>
   <string name="arrays__disabled">無効</string>
   <string name="arrays__name_and_message">名前とメッセージ</string>
   <string name="arrays__name_only">名前のみ</string>
-  <string name="arrays__neither">どちらもなし</string>
+  <string name="arrays__no_name_or_message">名前またはメッセージがありません</string>
   <string name="arrays__enter_key">Enter キーを表示</string>
   <string name="arrays__emoji_key">絵文字キーを表示</string>
   <string name="arrays__send_key">送信ボタンを表示</string>
@@ -451,7 +485,7 @@
   <string name="preferences__display_settings">表示設定</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">連絡先リストからあなたの連絡先を選んでください。</string>
   <string name="preferences__change_passphrase">パスワードの変更</string>
-  <string name="preferences__change_my_passphrase">パスワードの変更</string>
+  <string name="preferences__change_your_passphrase">あなたのパスワードを変更</string>
   <string name="preferences__complete_key_exchanges">鍵交換の自動完了</string>
   <string name="preferences__enable_passphrase">パスフレーズが有効</string>
   <string name="preferences__passphrase_summary">パスワード %s</string>
@@ -477,7 +511,8 @@
   <string name="preferences__pref_led_blink_custom_pattern_set">オリジナルのLED点滅パターンが設定されました！</string>
   <string name="preferences__sound">着信音</string>
   <string name="preferences__change_notification_sound">通知音を変更</string>
-  <string name="preferences__inthread_notifications">スレッド内通知</string>
+  <string name="preferences__silent">サイレント</string>
+  <string name="preferences__in_conversation_notifications">会話内通知</string>
   <string name="preferences__play_inthread_notifications">会話を表示している間、通知音を再生する。</string>
   <string name="preferences__repeat_alerts">アラートの繰り返し</string>
   <string name="preferences__never">なし</string>
@@ -517,11 +552,12 @@
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">送信する全てのSMSに配信報告をつけます</string>
   <string name="preferences__sms_delivery_reports_notification">SMS配信報告通知</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">配信報告を受信したときに通知を表示します</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">会話スレッドが一定の長さを超えると、古いメッセージが自動的に削除されます</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">会話が一定の長さを超えると、古いメッセージが自動的に削除されます</string>
   <string name="preferences__delete_old_messages">古いメッセージの削除</string>
+  <string name="preferences__chats">チャットとメディア</string>
   <string name="preferences__conversation_length_limit">会話の最大の長さ</string>
-  <string name="preferences__trim_all_threads_now">全スレッドを今、トリムする</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">すべての会話スレッドをスキャンして、会話の長さの制限を強制します</string>
+  <string name="preferences__trim_all_conversations_now">すべての会話を今、トリムする</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">すべての会話をスキャンして、強制的に会話の長さを制限します</string>
   <string name="preferences__light_theme">ライト</string>
   <string name="preferences__dark_theme">ダーク</string>
   <string name="preferences__appearance">デザイン設定</string>
@@ -542,6 +578,12 @@
   <string name="preferences_notifications__display_in_notifications">通知に表示</string>
   <string name="preferences__show_sent_time">送信した時間を表示</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">受信したメッセージの受信した時間の代わりに送信した時間を表示します</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">自動取得</string>
+  <string name="preferences__automatically_retrieve_mms_messages">MMS メッセージを自動的に取得します</string>
+  <string name="preferences__roaming_auto_retrieve">ローミング自動取得</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">ローミング時に MMS を自動的に取得します</string>
+  <string name="preferences_chats__message_trimming">メッセージのトリミング</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -577,11 +619,14 @@
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">選択したものを削除</string>
   <string name="conversation_list_batch__menu_select_all">すべて選択</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">選択したものをアーカイブ</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">選択したものをアーカイブ解除</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">検索</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">連絡先の画像</string>
   <string name="conversation_list_item_view__error_alert">エラーアラート</string>
+  <string name="conversation_list_item_view__archived">アーカイブしました</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">新しい会話</string>
   <!--conversation_secure_verified-->
@@ -594,7 +639,9 @@
   <string name="conversation_unmuted__mute_notifications">通知をミュート</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">添付</string>
-  <string name="conversation__menu_delete_thread">スレッドを削除</string>
+  <string name="conversation__menu_delete_conversation">会話を削除</string>
+  <string name="conversation__menu_archive_conversation">会話をアーカイブ</string>
+  <string name="conversation__menu_unarchive_conversation">会話をアーカイブ解除</string>
   <string name="conversation__menu_view_media">すべての画像</string>
   <string name="conversation__menu_conversation_settings">会話設定</string>
   <!--conversation_popup-->
@@ -628,7 +675,7 @@
   <!--media_preview-->
   <string name="media_preview__save_title">保存</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">画像プレビュー表示</string>
+  <string name="media_preview_activity__image_content_description">画像プレビュー</string>
   <!--StoreRatingReminder-->
   <string name="StoreRatingReminder_title">このアプリを評価する</string>
   <string name="StoreRatingReminder_message">このアプリを楽しんでいただけたら、お手数ですがアプリを評価してください。</string>

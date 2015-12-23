@@ -7,7 +7,6 @@
   <string name="please_wait">Bonvolu atendi…</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vi ne ankoraŭ precizigis pasfrazon.</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">po %s mesaĝoj en interparolado</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Forigi ĉiuj la malnovajn mesaĝojn?</string>
   <string name="ApplicationPreferencesActivity_delete">Forigi</string>
   <string name="ApplicationPreferencesActivity_disable">Malaktivigi</string>
@@ -20,7 +19,6 @@
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minutoj</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(bildo)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(aŭdio)</string>
@@ -38,7 +36,6 @@
   <!--ConversationActivity-->
   <string name="ConversationActivity_compose_message">Skribi mesaĝon</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesaĝo estas malplena!</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 membro</string>
   <string name="ConversationActivity_transport_insecure_sms">Malsekura SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Malsekura MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sekura SMS</string>
@@ -53,10 +50,12 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <!--ConversationListItem-->
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
   <string name="DateUtils_now">Nun</string>
   <!--ShareActivity-->
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Eksporti</string>
   <string name="ExportFragment_cancel">Rezigni</string>
@@ -128,6 +127,7 @@
   <!--database_migration_activity-->
   <string name="database_migration_activity__import">Importi</string>
   <!--database_upgrade_activity-->
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Sen bildoj</string>
   <!--message_recipients_list_item-->

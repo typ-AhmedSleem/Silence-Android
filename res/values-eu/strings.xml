@@ -7,9 +7,7 @@
   <string name="please_wait">Itxaron, mesedez...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Oraindik ez duzu pasahitza ezarri!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s mezu solasaldiko</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Mezu zahar guztiak ezabatu orain?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Ziur zaude solasaldi hari guztiak berehala azkenengo %s mezuetara murriztu nahi izateaz?</string>
   <string name="ApplicationPreferencesActivity_delete">Ezabatu</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desgaitu biltegiaren enkriptaketa?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -28,7 +26,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minutu</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(irudia)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(audioa)</string>
@@ -58,8 +55,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s-(r)ekin saio segurua abiatu?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Saio segurua bukatzeko berrespena</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ziur zaude saio seguru hau bukatu nahi izateaz?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Haria ezabatzeko berrespena</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Ziur zaude solasaldi hau behin betiko ezabatu nahi izateaz?</string>
   <string name="ConversationActivity_add_attachment">Eranskina gehitu</string>
   <string name="ConversationActivity_select_contact_info">Kontaktuaren informazioa aukeratu</string>
   <string name="ConversationActivity_compose_message">Mezua idatzi</string>
@@ -68,8 +63,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mezua hutsik dago!</string>
   <string name="ConversationActivity_group_conversation">Taldeko solasaldia</string>
   <string name="ConversationActivity_unnamed_group">Izenik gabeko taldea</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d partaide</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">partaide 1</string>
   <string name="ConversationActivity_saved_draft">Gordetako zirriborroa</string>
   <string name="ConversationActivity_invalid_recipient">Hartzaile baliogabea!</string>
   <string name="ConversationActivity_calls_not_supported">Deiak ez daude onartuta</string>
@@ -80,10 +73,7 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_transport_secure_mms">SMS segurua</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mezuaren detaileak</string>
-  <string name="ConversationFragment_confirm_message_delete">Berretsi mezuaren ezabaketa</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Ziur zaude aukeratutako mezu guztiak behin betiko ezabatu nahi izateaz?</string>
   <string name="ConversationFragment_save_to_sd_card">Biltegian gorde?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Media hau biltegian gordetzeak zure telefonoan dagoen beste edozein aplikazio ahalbidetuko du euskarrirako sarbidea.\n\nJarraitu?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Errorea eranskina biltegian gordetzerakoan!</string>
   <string name="ConversationFragment_success_exclamation">Arrakasta!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ezgai biltegian idazteko!</string>
@@ -95,28 +85,20 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationFragment_deleting_messages">Mezuak ezabatzen...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Hariak ezabatu?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Ziur zaude aukeratutako solasaldi hari GUZTIAK ezabatu nahi izateaz?</string>
   <string name="ConversationListFragment_deleting">Ezabatzen</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Aukeratutako hariak ezabatzen...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Gakoaren datu-trukerako mezua...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Bat ere ez</string>
   <!--DateUtils-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Norekin konpartitu</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Esportatu</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Enkriptatu gabeko testua SD txartel batera esportatu?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Kontuz, ekintza honek
- zure SMSSecure mezuen enkriptatu gabeko testua SD txartelera esportatuko du.
-</string>
   <string name="ExportFragment_cancel">Utzi</string>
   <string name="ExportFragment_exporting">Esportatzen</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Enkriptatu gabeko testua SD txartelera esportatzen...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Errorea, ezgai SD txartelean idazteko!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Errorea SD txartelean idazterakoan.</string>
   <string name="ExportFragment_success">Arrakasta!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Talde berria</string>
@@ -213,7 +195,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Hartzaileak ez dauka nortasun gakorik.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Eskaneatu beraien gakoa konparatzeko</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Eskaneatu nire gakoa</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">KONTUZ, eskaneatutako gakoa EZ DATOR BAT. Mesedez, aztarnaren testua kontu handiz aztertu.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EZ Egiaztatua!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Beraien gakoa zuzena da. Beharrezkoa da zure gakoa beraiekin egiaztatzea ere.</string>
@@ -222,7 +203,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="ViewIdentityActivity_scan_to_compare">Eskaneatu konparatzeko</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">KONTUZ, eskaneatutako gakoa EZ DATOR BAT!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Eskaneatutako gakoa bat dator!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Nire nortasunaren aztarna</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Hasi nahiz eta beste eskaera bat indarrean egon?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Dagoeneko saioa hasteko eskaera bat bidali diozu hartzaile honi, ziur zaude beste bat bidali nahi izateaz? Honek lehenengo eskaera baliogabetuko luke.</string>
@@ -263,9 +243,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">PASAHITZ ZAHARRA:</string>
-  <string name="change_passphrase_activity__new_passphrase">PASAHITZ BERRIA:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">PASAHITZ BERRIA ERREPIKATU:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Kontakturik ez.</string>
@@ -319,17 +296,9 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Datubasea eguneratzen...</string>
   <string name="export_fragment__export_plaintext_backup">Esportatu enkriptatu gabeko babeskopia</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-\'SMSBackup and Restorekin\' bateragarria den enkriptatu gabeko babeskopia bat esportatu SD txartelera.</string>
   <string name="import_fragment__import_system_sms_database">Inportatu sistemaren SMS datubasea</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Inportatu datubasea sisteman lehenetsitako mezularitza aplikaziotik.</string>
-  <string name="import_fragment__import_encrypted_backup">Enkriptatutako babeskopia inportatu</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Aurretik enkriptatu eta esportatu den SMSSecure babeskopia leheneratu.
-</string>
   <string name="import_fragment__import_plaintext_backup">Enkriptatu gabeko babeskopia inportatu</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore\'-ekin.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->
@@ -357,10 +326,8 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="AndroidManifest__verify_identity">Nortasuna egiaztatu</string>
   <string name="AndroidManifest__complete_key_exchange">Gakoaren datu-trukatzea osatuta</string>
   <string name="AndroidManifest__log_submit">Arazketa logak bidali</string>
-  <string name="AndroidManifest__media_preview">Mediaren Aurrebista</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Inportatu / esportatu</string>
-  <string name="arrays__my_identity_key">Nire nortasunerako gakoa</string>
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">Orokorra</string>
@@ -372,7 +339,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="preferences__display_settings">Bistaratze-ezarpenak</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Hautatu zure kontaktua kontaktuen zerrendatik.</string>
   <string name="preferences__change_passphrase">Pasahitza aldatu</string>
-  <string name="preferences__change_my_passphrase">Nire pasahitza aldatu</string>
   <string name="preferences__complete_key_exchanges">Gakoen datu-trukatzea osatu</string>
   <string name="preferences__enable_passphrase">Pasahitza gaitu</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Mezuen eta gakoen enkriptatze lokala gaitu</string>
@@ -394,7 +360,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="preferences__pref_led_blink_custom_pattern_set">Personalizatutako LED keinu eredua ezarrita!</string>
   <string name="preferences__sound">Soinua</string>
   <string name="preferences__change_notification_sound">Aldatu jakinarazpenaren soinua</string>
-  <string name="preferences__inthread_notifications">Hari barruko jakinarazpenak</string>
   <string name="preferences__play_inthread_notifications">Jakinarazpen soinua erreproduzitu indarrean dagoen solasaldi bat ikustean</string>
   <string name="preferences__vibrate">Bibratu</string>
   <string name="preferences__also_vibrate_when_notified">Jakinarazpena denean ere bibratu</string>
@@ -418,11 +383,8 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <string name="preferences__override_system_mms_settings">Jaramonik ez sistemaren MMS ezarpenei azpian dagoen informazioa erabiliz.</string>
   <string name="preferences__sms_delivery_reports">SMS banaketaren txostenak</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Bidaltzen duzun SMS mezu bakoitzeko banaketa txosten bat eskatu</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Automatikoki ezabatu mezu zaharragoak behin solasaldi hari batek ezarritako luzera gainditutakoan</string>
   <string name="preferences__delete_old_messages">Mezu zaharrak ezabatu</string>
   <string name="preferences__conversation_length_limit">Solasaldiaren luzera muga</string>
-  <string name="preferences__trim_all_threads_now">Hari guztiak garbitu orain</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Eskaneatu solasaldien hari guztiak eta derrigortu solasaldien luzera mugak.</string>
   <string name="preferences__light_theme">Argia</string>
   <string name="preferences__dark_theme">Iluna</string>
   <string name="preferences__appearance">Itxura</string>
@@ -479,7 +441,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Eranskina gehitu</string>
-  <string name="conversation__menu_delete_thread">Haria ezabatu</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Kontaktuetara gehitu</string>
@@ -508,7 +469,6 @@ Enkriptatu gabeko babeskopia bat inportatu. Bateragarria \'SMSBackup Eta Restore
   <!--media_preview-->
   <string name="media_preview__save_title">Gorde</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Irudiaren Aurrebista</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Ezabatzen...</string>

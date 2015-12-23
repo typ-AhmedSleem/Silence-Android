@@ -7,7 +7,6 @@
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ви ще не вказали фразу-пароль!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Вилучити всі старі повідомлення зараз?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Ви впевнені що хочете негайно обрізати всі розмови до %s останніх повідомлень?</string>
   <string name="ApplicationPreferencesActivity_delete">Видалити</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Вимкнути шифрування сховища?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Увага, це відключить шифрування для всіх повідомлень і ключів. Ваші шифровані сесії продовжать працювати, але будь-яка особа з фізичним доступом до вашого пристрою може переглянути їх.</string>
@@ -33,12 +32,9 @@
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Почати захищений сеанс зв’язку з %s?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ви впевнені, що хочете завершити цей захищений сеанс зв’язку?</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Ви впевнені, що хочете назавжди видалити цю розмову?</string>
   <string name="ConversationActivity_add_attachment">Додати прикріплення</string>
   <string name="ConversationActivity_select_contact_info">Виберіть контакт</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Повідомлення порожнє!</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d отримувачів в групі</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 учасник</string>
   <string name="ConversationActivity_invalid_recipient">Неприпустимий отримувач!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Ваше пристрій мабуть не підтримує голосові дзвінки.</string>
   <!--ConversationFragment-->
@@ -46,18 +42,16 @@
   <string name="ConversationFragment_success_exclamation">Успішно!</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Видалити розмови?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Ви впевнені, що хочете видалити ВСІ вибрані розмови?</string>
   <string name="ConversationListFragment_deleting">Вилучення</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Видалення обраних бесід\u2026</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Повідомлення обміну ключами\u2026</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
   <!--ShareActivity-->
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Експортувати</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Увага, цим Ви експортуєте на SD-карту свої повідомлення в незашифрованому вигляді.</string>
   <string name="ExportFragment_cancel">Скасувати</string>
   <string name="ExportFragment_exporting">Експортування</string>
   <string name="ExportFragment_success">Успішно!</string>
@@ -112,7 +106,6 @@
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">У вас немає особистого ключа.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У одержувача немає особистого ключа.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Cканувати ключ співрозмовника</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Дати сканувати мій ключ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">УВАГА, просканований ключ НЕ СПІВПАДАЄ! Уважно перевірте текст відбитка.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ перевірено!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ключ співрозмовника вірний. Також необхідно, щоб співрозмовник підтвердив ваш ключ.</string>
@@ -153,9 +146,6 @@
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">СТАРА ФРАЗА-КЛЮЧ:</string>
-  <string name="change_passphrase_activity__new_passphrase">НОВА ФРАЗА-КЛЮЧ:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">ПОВТОРІТЬ НОВУ ФРАЗУ:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Контактів не знайдено.</string>
@@ -188,10 +178,7 @@
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Це може зайняти якийсь час. Будь ласка, наберіться терпіння, ми Вам повідомимо, коли імпортування завершиться.</string>
   <string name="database_migration_activity__importing">ІМПОРТУВАННЯ</string>
   <!--database_upgrade_activity-->
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Експортувати на SD-карту незашифровану резервну копію, сумісну з додатком \'SMSBackup And Restore\'.</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Імпортувати базу даних з SMS-додатку, який використовується зараз за замовчуванням.</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">Відновити з раніше експортованої зашифрованої резервної копії SMSSecure</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Імпортувати з незашифрованої резервної копії. Сумісно з додатком \'SMSBackup And Restore\'.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->
@@ -219,7 +206,6 @@
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Використовувати SMSSecure для перегляду та зберігання всіх вхідних мультимедійних повідомлень</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Виберіть себе із списку контактів.</string>
   <string name="preferences__change_passphrase">Змінити фразу-ключ</string>
-  <string name="preferences__change_my_passphrase">Змінити мою фразу-ключ</string>
   <string name="preferences__complete_key_exchanges">Виконувати обміни ключами</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Автоматично завершувати обмін ключами для нових або ж існуючих сесій з тими ж ключами ідентифікації</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Стирати з пам’яті фразу-ключ через деякий час</string>
@@ -232,7 +218,6 @@
   <string name="preferences__pref_led_blink_custom_pattern_set">Власний шаблон мерехтіння LED задано!</string>
   <string name="preferences__sound">Звук</string>
   <string name="preferences__change_notification_sound">Змінити звук сповіщення</string>
-  <string name="preferences__inthread_notifications">Повідомлення при розмові</string>
   <string name="preferences__play_inthread_notifications">Програвати мелодію сповіщень навіть під час активного листування.</string>
   <string name="preferences__vibrate">Вібрувати</string>
   <string name="preferences__also_vibrate_when_notified">Також вібрувати під час сповіщення</string>
@@ -252,11 +237,8 @@
   <string name="preferences__override_system_mms_settings">Перезаписати системні налаштування MMS вказаними нижче.</string>
   <string name="preferences__sms_delivery_reports">Звіти про доставку SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Запитувати звіт про доставку для кожного відісланого вами SMS</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Автоматично видаляти старі повідомлення, коли довжина розмови перевищує задану</string>
   <string name="preferences__delete_old_messages">Вилучати старі повідомлення</string>
   <string name="preferences__conversation_length_limit">Обмеження довжини розмови</string>
-  <string name="preferences__trim_all_threads_now">Обрізати всі розмови</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Переглянути всі розмови і привести їх довжину у відповідність із заданою</string>
   <string name="preferences__appearance">Вигляд</string>
   <string name="preferences__theme">Тема</string>
   <string name="preferences__default">Типово</string>
@@ -295,7 +277,6 @@
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Додати вкладення</string>
-  <string name="conversation__menu_delete_thread">Видалити розмову</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->

@@ -7,9 +7,15 @@
   <string name="please_wait">Por favor, espere...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">¡No ha elegido aún una clave de acceso!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s mensajes por conversación</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="one">1 mensaje por conversación</item>
+    <item quantity="other">%d mensajes por conversación</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">¿Eliminar ahora todos los mensajes antiguos?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">¿Está seguro de que quiere recortar inmediatamente todos los hilos de conversación a los %s últimos mensajes?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="one">Esto recortará inmediatamente todas las conversaciones al mensaje más reciente.</item>
+    <item quantity="other">Esto recortará inmediatamente todas las conversaciones a los %d mensajes más recientes.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Eliminar</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">¿Deshabilitar cifrado del almacenamiento?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -29,7 +35,10 @@
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Entrantes %s</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minutos</string>
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">1 minuto</item>
+    <item quantity="other">%d minutos</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(imagen)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
@@ -65,8 +74,6 @@
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Mensaje recibido por alguien que tambien tiene SMSSecure, iniciar una sesión segura encriptada?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Confirmación de finalización de sesión segura</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">¿Está seguro de que desea finalizar esta sesión segura?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Confirmación de borrado del hilo</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">¿Está seguro de que desea borrar esta conversación permanentemente?</string>
   <string name="ConversationActivity_add_attachment">Añadir archivo adjunto</string>
   <string name="ConversationActivity_select_contact_info">Seleccionar información de contacto</string>
   <string name="ConversationActivity_compose_message">Componer mensaje</string>
@@ -79,8 +86,10 @@
   <string name="ConversationActivity_group_members">Miembros del grupo</string>
   <string name="ConversationActivity_group_conversation">Conversación de grupo</string>
   <string name="ConversationActivity_unnamed_group">Grupo sin nombre</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d miembros</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 miembro</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">1 miembro</item>
+    <item quantity="other">%d miembros</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Guardar borrador</string>
   <string name="ConversationActivity_invalid_recipient">¡Destinatario inválido!</string>
   <string name="ConversationActivity_calls_not_supported">Llamadas incompatibles</string>
@@ -97,10 +106,16 @@
   <string name="ConversationActivity_attachment_exceeds_size_limits">El adjunto excede los límites de tamaño.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalles del mensaje</string>
-  <string name="ConversationFragment_confirm_message_delete">Confirmar borrado de mensaje</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">¿Está seguro/a de que quiere borrar permanentemente todos los mensajes seleccionados?</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="one">¿Borrar mensaje seleccionado?</item>
+    <item quantity="other">¿Borrar mensajes seleccionados?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="one">Esto borrará permanentemente el mensaje seleccionado.</item>
+    <item quantity="other">Esto borrará permanentemente todos los %1$d mensajes seleccionados.</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">¿Guardar en el almacenamiento?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Guardar este contenido en el almacenamiento permitirá  a cualquier otra aplicación de su teléfono acceder a él.\n\n¿Continuar?</string>
+  <string name="ConversationFragment_saving_this_media_to_storage_warning">Guardar este audiovisual en el almacenamiento permitirá que cualquier otra aplicación de su dispositivo acceda a él.\n\n¿Continuar?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">¡Error al guardar adjunto en el almacenamiento!</string>
   <string name="ConversationFragment_success_exclamation">¡Completado!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">¡No se pudo escribir en el almacenamiento!</string>
@@ -114,12 +129,25 @@
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Buscar...</string>
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">¿Borrar conversaciones?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">¿Está seguro de que quiere borrar TODAS las conversaciones seleccionadas?</string>
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">¿Borrar conversación seleccionada?</item>
+    <item quantity="other">¿Borrar conversaciones seleccionadas?</item>
+  </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="one">Esto borrará permanentemente la conversación seleccionada.</item>
+    <item quantity="other">Esto borrará permanentemente todas las %1$d conversaciones seleccionadas.</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Eliminando</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Eliminando conversaciones seleccionadas...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Borrando conversaciones seleccionadas...</string>
+  <string name="ConversationListFragment_conversations_archived">Conversaciones archivadas</string>
+  <string name="ConversationListFragment_undo">DESHACER</string>
+  <string name="ConversationListFragment_moved_conversation_to_inbox">Conversación movida a la bandeja de entrada</string>
+  <string name="ConversationListFragment_conversation_archived">Conversación archivada</string>
+  <string name="ConversationListFragment_moved_conversations_to_inbox">Conversaciones movidas a la bandeja de entrada</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de claves...</string>
+  <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Conversaciones archivadas (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Usando personalizado: %s</string>
   <string name="CustomDefaultPreference_using_default">Usando predeterminado: %s</string>
@@ -129,19 +157,22 @@
   <string name="DateUtils_minutes_ago">%d min</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartir con</string>
+  <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_smssecure">¡Bienvenido a SMSSecure!</string>
+  <string name="IntroScreenActivity_smssecure_description">SMSSecure le permite proteger su privacidad mientras se comunica con amigos.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Cifre sus mensajes</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecure cifrará automáticamente mensajes con otros usuarios de SMSSecure.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Hable con cualquiera</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecure puede usar mensajes no cifrados para chatear con usuarios sin-SMSSecure.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportar</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">¿Exportar texto plano a la tarjeta SD?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Peligro, esto
-exportará a la tarjeta SD el contenido en texto plano de sus mensajes de SMSSecure.</string>
+  <string name="ExportFragment_export_plaintext_to_storage">¿Exportar texto sin cifrar al almacenamiento?</string>
+  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Advertencia, esto exportará los contenidos de texto sin cifrar de sus mensajes de SMSSecure al almacenamiento.</string>
   <string name="ExportFragment_cancel">Cancelar</string>
   <string name="ExportFragment_exporting">Exportando</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Exportando el texto plano a la tarjeta SD...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Error, ¡no se pudo escribir en la tarjeta SD!
-     
-    </string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Se produjo un error al escribir en la tarjeta SD.
-    </string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Exportando texto sin cifrar al almacenamiento...</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Error, no se pudo escribir en el almacenamiento.</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Error al escribir en el almacenamiento.</string>
   <string name="ExportFragment_success">¡Éxito!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nuevo grupo</string>
@@ -249,11 +280,12 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Ha dejado el grupo...</string>
   <string name="ThreadRecord_draft">Borrador:</string>
+  <string name="ThreadRecord_media_message">Mensaje audiovisual</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatario no tiene clave de identidad.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Escanear la clave de ellos, para comparar</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Escanear mi clave</string>
+  <string name="VerifyIdentityActivity_get_your_key_scanned">Haga que se verifique su clave</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVERTENCIA: la clave escaneada NO coincide. Por favor, verifique el texto de la huella digital cuidadosamente.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">¡NO verificado!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La clave de ellos es correcta. También es necesario verificar su clave con ellos.</string>
@@ -262,7 +294,7 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="ViewIdentityActivity_scan_to_compare">Escanear para comparar</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVERTENCIA: ¡las claves escaneadas NO coinciden!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">¡La clave escaneada coincide!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Mi huella digital</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">La huella de validación de su identidad</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">¿Iniciar a pesar de la solicitud existente?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ya ha enviado una petición de inicio de sesión a este destinatario, ¿está seguro de que quiere enviar otra? Esto invalidará la primera petición. </string>
@@ -313,12 +345,12 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">¡Respuesta rápida no disponible cuando SMSSecure está bloqueado!</string>
   <string name="QuickResponseService_problem_sending_message">¡Problema al enviar mensaje!</string>
   <!--SingleRecipientNotificationBuilder-->
-  <string name="SingleRecipientNotificationBuilder_new_smssecure_message">Nuevo mensaje SMSSecure</string>
-  <string name="SingleRecipientNotificationBuilder_contents_hidden">Contenidos ocultos</string>
+  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Nuevo mensaje</string>
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">CLAVE DE ACCESO ANTERIOR:</string>
-  <string name="change_passphrase_activity__new_passphrase">CLAVE DE ACCESO NUEVA:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">REPITA LA CLAVE DE ACCESO NUEVA:</string>
+  <string name="change_passphrase_activity__old_passphrase">Frase-contraseña antigua</string>
+  <string name="change_passphrase_activity__new_passphrase">Nueva frase-contraseña</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Repetir nueva frase-contraseña</string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Introduzca nombre o número</string>
   <!--contact_selection_group_activity-->
@@ -377,19 +409,15 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Actualizando base de datos...</string>
   <string name="export_fragment__export_plaintext_backup">Exportar copia de seguridad en texto plano</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Exportar a la tarjeta SD una copia de seguridad en texto plano compatible con \'SMSBackup And Restore\'</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar como texto sin cifrar una copia de seguridad compatible con \'SMS Backup &amp; Restore\' hacia el almacenamiento</string>
   <string name="import_fragment__import_system_sms_database">Importar base de datos de SMS del sistema</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Importar la base de datos
-        desde la aplicación de mensajería por defecto del sistema.
-    </string>
-  <string name="import_fragment__import_encrypted_backup">Importar copia de seguridad cifrada</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-       Restaurar una copia de seguridad cifrada previamente exportada desde SMSSecure.
-    </string>
+  <string name="import_fragment__import_the_database_from_the_default_system">Importar la base de datos desde la aplicación del sistema de mensajería predeterminado</string>
+  <string name="import_fragment__restore_encrypted_backup">Restaurar copia de seguridad cifrada</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaurar una copia de seguridad cifrada previamente exportada</string>
   <string name="import_fragment__import_plaintext_backup">Importar copia de seguridad en texto plano</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And Restore\'.</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Importar un fichero de copia de seguridad en texto sin cifrar. Compatible con \'SMS Backup &amp; Restore.\'</string>
+  <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">Ver conversación completa</string>
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">No hay imágenes</string>
   <!--message_recipients_list_item-->
@@ -405,7 +433,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">Silenciar conversación</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Deshabilitar notificaciones para esta conversación</string>
-  <string name="recipient_preferences__ringtone">Tono de llamada</string>
+  <string name="recipient_preferences__notification_sound">Sonido de notificación</string>
   <string name="recipient_preferences__vibrate">Vibración</string>
   <string name="recipient_preferences__block">Bloquear</string>
   <string name="recipient_preferences__color">Color</string>
@@ -435,25 +463,27 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="AndroidManifest__verify_identity">Verificar identidad</string>
   <string name="AndroidManifest__complete_key_exchange">Completar intercambio de claves</string>
   <string name="AndroidManifest__log_submit">Enviar registros de depuración</string>
-  <string name="AndroidManifest__media_preview">Previsualización del contenido</string>
+  <string name="AndroidManifest__media_preview">Previsualización del audiovisual</string>
   <string name="AndroidManifest__media_overview">Todas las imágenes</string>
   <string name="AndroidManifest__media_overview_named">Todas la imágenes con %1$s</string>
   <string name="AndroidManifest__message_details">Detalles del mensaje</string>
+  <string name="AndroidManifest_archived_conversations">Conversaciones archivadas</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importar/exportar</string>
-  <string name="arrays__my_identity_key">Mi clave de identidad</string>
+  <string name="arrays__your_identity_key">La clave de su identidad</string>
   <string name="arrays__use_default">Usar el predeterminado</string>
   <string name="arrays__use_custom">Usar el personalizado</string>
   <string name="arrays__mute_for_one_hour">Silenciar durante 1 hora</string>
   <string name="arrays__mute_for_two_hours">Silenciar durante 2 horas</string>
   <string name="arrays__mute_for_one_day">Silenciar durante 1 día</string>
   <string name="arrays__mute_for_seven_days">Silenciar durante 7 días</string>
+  <string name="arrays__mute_for_one_year">Silenciar por 1 año</string>
   <string name="arrays__settings_default">Configuración predeterminada</string>
   <string name="arrays__enabled">Habilitado</string>
   <string name="arrays__disabled">Deshabilitado</string>
   <string name="arrays__name_and_message">Nombre y mensaje</string>
   <string name="arrays__name_only">Sólo nombre</string>
-  <string name="arrays__neither">Ninguno</string>
+  <string name="arrays__no_name_or_message">No hay nombre o mensaje</string>
   <string name="arrays__enter_key">Mostrar clave de entrada</string>
   <string name="arrays__emoji_key">Mostrar clave de emoji</string>
   <string name="arrays__send_key">Mostrar botón enviar</string>
@@ -475,7 +505,7 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__display_settings">Opciones de visualización</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Elija su propio contacto de la lista de contactos.</string>
   <string name="preferences__change_passphrase">Cambiar clave de acceso</string>
-  <string name="preferences__change_my_passphrase">Cambiar mi clave de acceso</string>
+  <string name="preferences__change_your_passphrase">Cambiar su frase-contraseña</string>
   <string name="preferences__complete_key_exchanges">Completar intercambio de claves</string>
   <string name="preferences__enable_passphrase">Habilitar clave de acceso</string>
   <string name="preferences__passphrase_summary">Frase-contraseña %s</string>
@@ -500,7 +530,8 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__pref_led_blink_custom_pattern_set">¡Se ha establecido el patrón personalizado de parpadeo del LED!</string>
   <string name="preferences__sound">Sonido</string>
   <string name="preferences__change_notification_sound">Cambiar sonido de notificación</string>
-  <string name="preferences__inthread_notifications">Notificaciones dentro de conversación</string>
+  <string name="preferences__silent">Silencio</string>
+  <string name="preferences__in_conversation_notifications">Notificaciones insertas en la conversación</string>
   <string name="preferences__play_inthread_notifications">Reproducir sonido de notificación cuando esté viendo una conversación activa.</string>
   <string name="preferences__repeat_alerts">Repetir alertas</string>
   <string name="preferences__never">Nunca</string>
@@ -540,12 +571,12 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Solicita la confirmación de entrega de SMS para todos los SMS que envíe.</string>
   <string name="preferences__sms_delivery_reports_notification">Notificaciópn de informes de entrega de SMS</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Muestra una notificación cuando un informe de entrega es recibido</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Eliminar automáticamente los mensajes más antiguos cuando una conversación exceda el límite de longitud especificado</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Borrar automáticamente los mensajes más antiguos una vez que una conversación excede un tamaño especificado</string>
   <string name="preferences__delete_old_messages">Eliminar mensajes antiguos</string>
   <string name="preferences__chats">Chats y audiovisuales</string>
   <string name="preferences__conversation_length_limit">Límite de longitud de la conversación</string>
-  <string name="preferences__trim_all_threads_now">Recortar todos los hilos ahora</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Escanear todas las conversaciones y forzar los límites de tamaño de conversación</string>
+  <string name="preferences__trim_all_conversations_now">Recortar ahora todas las conversaciones</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Recorrer todas las conversaciones y establecer límites de tamaño a la conversación</string>
   <string name="preferences__light_theme">Claro</string>
   <string name="preferences__dark_theme">Oscuro</string>
   <string name="preferences__appearance">Apariencia</string>
@@ -566,6 +597,11 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="preferences_notifications__display_in_notifications">Mostrar en las notificaciones</string>
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar hora de envío en lugar de hora de recepción para mensajes entrantes.</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Auto-descarga</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Descargar automáticamente mensajes MMS</string>
+  <string name="preferences__roaming_auto_retrieve">Auto-descarga en roaming</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Descargar automáticamente MMS estando en roaming</string>
   <string name="preferences_chats__message_trimming">Recortado de mensaje</string>
   <!--****************************************-->
   <!--menus-->
@@ -602,11 +638,14 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Borrar seleccionado</string>
   <string name="conversation_list_batch__menu_select_all">Seleccionar todo</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">Archivar seleccionado</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Desarchivar seleccionado</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Buscar</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Foto del contacto</string>
   <string name="conversation_list_item_view__error_alert">Alerta de error</string>
+  <string name="conversation_list_item_view__archived">Archivado</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nueva conversación</string>
   <!--conversation_secure_verified-->
@@ -619,7 +658,6 @@ Importar una copia de seguridad en texto plano. Compatible con \'SMSBackup And R
   <string name="conversation_unmuted__mute_notifications">Silenciar notificaciones</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Añadir archivo adjunto</string>
-  <string name="conversation__menu_delete_thread">Borrar conversación</string>
   <string name="conversation__menu_view_media">Todas las imágenes</string>
   <string name="conversation__menu_conversation_settings">Configuración de conversación</string>
   <!--conversation_popup-->

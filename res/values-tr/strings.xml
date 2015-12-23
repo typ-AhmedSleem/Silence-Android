@@ -7,9 +7,7 @@
   <string name="please_wait">Lütfen bekleyin...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Hala bir parola belirlememişsiniz!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">sohbet başına %s mesaj</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Tüm eski mesajlar silinsin mi?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Tüm konuşma başlıklarını hemen  %s en son konuşmaya kırpmak istediğinizden emin misiniz?</string>
   <string name="ApplicationPreferencesActivity_delete">Sil</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Saklama alanı şifrelemesi etkisizleştirilsin mi?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -28,7 +26,6 @@ erişebilir.</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d dakika</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(resim)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(ses)</string>
@@ -58,8 +55,6 @@ erişebilir.</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s ile güvenli oturum başlat?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Güvenli oturumu bitirme onayı</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Bu güvenli oturumu sonlandırmak istediğinizden emin misiniz?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Başlık silmeyi onayla</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Bu konuşmayı kalıcı olarak silmek istediğinizden emin misiniz?</string>
   <string name="ConversationActivity_add_attachment">Ek ekle</string>
   <string name="ConversationActivity_select_contact_info">Kişi bilgisi seç</string>
   <string name="ConversationActivity_compose_message">Mesaj Yaz</string>
@@ -68,8 +63,6 @@ erişebilir.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesaj boş!</string>
   <string name="ConversationActivity_group_conversation">Grup sohbeti</string>
   <string name="ConversationActivity_unnamed_group">Adlandırılmamış grup</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d üye</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 üye</string>
   <string name="ConversationActivity_saved_draft">Kaydedilmiş taslak</string>
   <string name="ConversationActivity_invalid_recipient">Geçersiz alıcı!</string>
   <string name="ConversationActivity_calls_not_supported">Aramalar desteklenmiyor</string>
@@ -80,10 +73,7 @@ erişebilir.</string>
   <string name="ConversationActivity_transport_secure_mms">Güvenli MMS</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaj detayları</string>
-  <string name="ConversationFragment_confirm_message_delete">Mesaj silinmesini onayla</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Tüm mesajların geri dönülemez şekilde silinmesini istediğinizden emin misiniz?</string>
   <string name="ConversationFragment_save_to_sd_card">Depolama alanına kaydedilsin mi?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Bu medyayı depolama alanına kaydetmekle, telefondaki diğer uygulamaların erişmesine izin vereceksiniz.\n\nDevam etmek istiyor musunuz?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Depolama alanına ek kaydedilirken hata!</string>
   <string name="ConversationFragment_success_exclamation">Başarılı!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Depolama alanına yazılamıyor!</string>
@@ -95,28 +85,21 @@ erişebilir.</string>
   <string name="ConversationFragment_deleting_messages">Mesajlar siliniyor...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Başlıkları sil?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Seçili bütün konuşmaları silmek istediğinizden emin misiniz?</string>
   <string name="ConversationListFragment_deleting">Siliniyor</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Seçilmiş başlıklar siliniyor...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Anahtar takas mesajı...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Hiçbiri</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Şimdi</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Paylaşılan kişi</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Dışarı Aktar</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Açık metni SD karta dışa aktar?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Uyarı, bu
-SMSSecure mesajlarınızın şifrelenmemiş açık metin içeriğini SD karta kaydecek.</string>
   <string name="ExportFragment_cancel">İptal</string>
   <string name="ExportFragment_exporting">Dışarı aktarılıyor</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Açık metin SD karta dışa aktarılıyor...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Hata, açık metin SD karta dışa aktarılamıyor!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">SD karta kaydelilirken hata.</string>
   <string name="ExportFragment_success">Başarılı!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Yeni grup</string>
@@ -200,7 +183,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Alıcının kimlik anahtarı yok.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Karşılaştırmak için anahtarını tarayın</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Anahtarımı tarat</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UYARI, taranan anahtar EŞLEŞMİYOR! Parmak izi metnini dikkatlice inceleyin.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">Doğrulanmadı!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Onun anahtarı doğru. Anahtarınızı onunla da doğrulamanız gerekiyor.</string>
@@ -209,7 +191,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <string name="ViewIdentityActivity_scan_to_compare">Karşılaştırmak için tarayın</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UYARI, taranan anahtar EŞLEŞMİYOR!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Taranan anahtar eşleşiyor!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Kimlik parmakizim</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Varolan isteğe rağmen başlat?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Bu alıcıya zaten bir oturum açma isteği gönderdiniz, bir tane daha göndermek istediğinize emin misiniz? Bu ilk isteği geçersiz kılacaktır.</string>
@@ -250,9 +231,6 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">ESKİ PAROLA:</string>
-  <string name="change_passphrase_activity__new_passphrase">YENİ PAROLA:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">YENİ PAROLA TEKRAR:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Kişi yok.</string>
@@ -306,17 +284,9 @@ Bilinmeyen kimlik anahtarı içeren bir mesaj alındı. İşlemek ve görüntül
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Veritabanı güncelleniyor...</string>
   <string name="export_fragment__export_plaintext_backup">Şifrelenmemiş açık metin yedeği dışa aktar</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-\'SMSBackup And Restore\' ile uyumlu şifrelenmemiş metin yedeğini SD karta kaydet.  </string>
   <string name="import_fragment__import_system_sms_database">Sistem SMS veritabanını içe aktar</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Öntanımlı sistem mesaj uygulamasından
-veritabanı içe aktarımı</string>
-  <string name="import_fragment__import_encrypted_backup">Şifrelenmiş yedeği içe aktar</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden yükle. </string>
   <string name="import_fragment__import_plaintext_backup">Şifrelenmemiş açık metin yedeği içe aktar</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-\'SMSBackup And Restore\' ile uyumlu bir şifrelenmemiş metin yedeğini içe aktar.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Resim yok</string>
   <!--message_recipients_list_item-->
@@ -345,12 +315,10 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="AndroidManifest__verify_identity">Kimliği doğrula</string>
   <string name="AndroidManifest__complete_key_exchange">Anahtar değişimini tamamla</string>
   <string name="AndroidManifest__log_submit">Hata ayıklama kayıtlarını gönder</string>
-  <string name="AndroidManifest__media_preview">Medya Önizleme</string>
   <string name="AndroidManifest__media_overview">Tüm resimler</string>
   <string name="AndroidManifest__media_overview_named">%1$s ile tüm resimler</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">İçeri / Dışarı Aktar</string>
-  <string name="arrays__my_identity_key">Kimlik anahtarım</string>
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">Genel</string>
@@ -362,7 +330,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__display_settings">Ekran ayarları</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Kişi girdinizi kişi listesinden seçin.</string>
   <string name="preferences__change_passphrase">Parola Değiştir</string>
-  <string name="preferences__change_my_passphrase">Parolamı değiştir</string>
   <string name="preferences__complete_key_exchanges">Anahtar takası tamamla</string>
   <string name="preferences__enable_passphrase">Parola etkinleştir</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Mesaj ve anahtarların lokal şifrelenmesini etkinleştirr</string>
@@ -384,7 +351,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__pref_led_blink_custom_pattern_set">Özel LED yanıp sönme şekli belirlendi!</string>
   <string name="preferences__sound">Zil Sesi</string>
   <string name="preferences__change_notification_sound">Bildirim sesini değiştir</string>
-  <string name="preferences__inthread_notifications">Başlık içi bildirimler</string>
   <string name="preferences__play_inthread_notifications">Bir aktif sohbet görüntülenirken bildirim sesini çal</string>
   <string name="preferences__repeat_alerts">Uyarıları tekrarla</string>
   <string name="preferences__never">Asla</string>
@@ -415,11 +381,8 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <string name="preferences__override_system_mms_settings">Sistem MMS ayarları yerine aşağıda bilgileri olanları kullan.</string>
   <string name="preferences__sms_delivery_reports">SMS iletim raporları</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Gönderdiğiniz her SMS için iletim raporu iste</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Bir konuşma konu başlığı belirlenmiş bir uzunluğu aşınca eski mesajları otomatik olarak sil</string>
   <string name="preferences__delete_old_messages">Eski mesajları sil</string>
   <string name="preferences__conversation_length_limit">Sohbet uzunluk sınırı</string>
-  <string name="preferences__trim_all_threads_now">Tüm başlıkları kırp</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Tüm sohbet başlıklarını gözden geçir ve sohbet uzunluk sınırını uygula</string>
   <string name="preferences__light_theme">Açık</string>
   <string name="preferences__dark_theme">Koyu</string>
   <string name="preferences__appearance">Görünüm</string>
@@ -476,7 +439,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Ek ekle</string>
-  <string name="conversation__menu_delete_thread">Başlığı sil</string>
   <string name="conversation__menu_view_media">Tüm resimler</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
@@ -508,7 +470,6 @@ Daha önce dışa aktarılmış bir şifrelenmiş SMSSecure yedeğini yeniden y�
   <!--media_preview-->
   <string name="media_preview__save_title">Kaydet</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Resim Önizleme</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Siliniyor...</string>

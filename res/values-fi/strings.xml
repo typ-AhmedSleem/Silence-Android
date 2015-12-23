@@ -7,9 +7,7 @@
   <string name="please_wait">Hetki vain...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Et ole vielä määritellyt salalausetta!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s viestiä per keskustelu</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Haluatko poistaa kaikki vanhat viestit?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Oletko varma, että haluat rajata kaikki viestiketjut %s viimeisimpään viestiin?</string>
   <string name="ApplicationPreferencesActivity_delete">Poista</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Poistetaanko tallennustilan salaus käytöstä?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -26,7 +24,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d minuuttia</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(kuva)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(äänitallenne)</string>
@@ -58,8 +55,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Aloita salattu istunto %s:n kanssa?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Suojatun istunnon lopetuksen vahvistus</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Haluatko varmasti lopettaa salatun istunnon?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Viestiketjun poiston vahvistus</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Haluatko varmasti poistaa tämän keskustelun pysyvästi?</string>
   <string name="ConversationActivity_add_attachment">Lisää liite</string>
   <string name="ConversationActivity_select_contact_info">Valitse yhteystieto</string>
   <string name="ConversationActivity_compose_message">Kirjoita viesti</string>
@@ -68,8 +63,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationActivity_message_is_empty_exclamation">Viesti on tyhjä!</string>
   <string name="ConversationActivity_group_conversation">Ryhmäkeskustelu</string>
   <string name="ConversationActivity_unnamed_group">Nimeämätön ryhmä</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d jäsentä</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 jäsen</string>
   <string name="ConversationActivity_saved_draft">Tallennettu luonnos</string>
   <string name="ConversationActivity_invalid_recipient">Virheellinen vastaanottaja!</string>
   <string name="ConversationActivity_calls_not_supported">Puhelut eivät ole tuettu</string>
@@ -80,10 +73,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationActivity_transport_secure_mms">Salattu MMS-viesti</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Viestin tiedot</string>
-  <string name="ConversationFragment_confirm_message_delete">Varmista viestin poisto</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Oletko varma, että haluat pysyvästi poistaa kaikki valitut viestit?</string>
   <string name="ConversationFragment_save_to_sd_card">Tallenna muistiin?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Jos tallennat tämän tiedoston muistiin, kaikki muutkin sovellukset voivat käyttää sitä.\n\nHaluatko jatkaa?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Tiedoston tallennuksessa tapahtui virhe!</string>
   <string name="ConversationFragment_success_exclamation">Onnistuimme!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Muistiin tallentaminen epäonnistui!</string>
@@ -96,12 +86,10 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationFragment_deleting_messages">Viestejä poistetaan...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Poista viestiketjut?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Haluatko varmasti poistaa KAIKKI valitut viestiketjut?</string>
   <string name="ConversationListFragment_deleting">Poistetaan</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Valittuja viestiketjuja poistetaan...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Avainvaihtoviesti...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Käyttäen mukautettua: %s</string>
   <string name="CustomDefaultPreference_using_default">Käyttäen oletusta: %s</string>
@@ -110,16 +98,11 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="DateUtils_now">Nyt</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Jaa</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Vie</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Viedäänkö salaamattomana SD-muistikortille?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Varoitus,
-Tämä toiminto vie SMSSecure-viestiesi salaamattoman sisällön SD-muistikortillesi.</string>
   <string name="ExportFragment_cancel">Peruuta</string>
   <string name="ExportFragment_exporting">Viedään</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Viedään salaamaton viesti SD-kortille...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Virhe, SD-kortille kirjoittaminen epäonnistui!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">SD-kortille kirjoittaessa sattui virhe.</string>
   <string name="ExportFragment_success">Onnistuimme!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Uusi ryhmä</string>
@@ -207,7 +190,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Vastaanottajalta puuttuu identiteettiavain.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skannaa heidän avain vertaillaaksesi</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Skannaa avaimeni</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VAROITUS, skannattu avain EI TÄSMÄÄ. Tarkastakaa sormenjälki huolella.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EI varmennettu!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Vastaanottajan avain on oikea. Tarkistuta myös sinun avain vastaanottajalla.</string>
@@ -216,7 +198,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="ViewIdentityActivity_scan_to_compare">Skannaa vertaillaaksesi</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">VAROITUS: Skannattu avain ei täsmää!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skannattu avain täsmää!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Identiteettini sormenjälki</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Aloita olemassa olevasta pyynnöstä huolimatta?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Olet jo lähettänyt istunnon aloituspyynnön tälle vastaanottajalle. Oletko varma, että haluat lähettää toisen pyynnön? Tämä mitätöi ensimmäisen pyynnön.</string>
@@ -257,9 +238,6 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">VANHA SALALAUSE:</string>
-  <string name="change_passphrase_activity__new_passphrase">UUSI SALALAUSE:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">TOISTA UUSI SALALAUSE:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Ei yhteystietoja.</string>
@@ -314,17 +292,9 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Tietokantaa päivitetään...</string>
   <string name="export_fragment__export_plaintext_backup">Vie salaamaton varmuuskopio</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Vie salaamaton SMS Backup And Restore -yhteensopiva varmuuskopio SD-muistikortille.</string>
   <string name="import_fragment__import_system_sms_database">Tuo järjestelmän tekstiviestit</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Tuo tietokanta
-järjestelmän oletus viestisovelluksesta.</string>
-  <string name="import_fragment__import_encrypted_backup">Tuo salattu varmuuskopio</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Tuo aiemmin viety salattu SMSSecure-varmuuskopio.</string>
   <string name="import_fragment__import_plaintext_backup">Tuo salaamaton varmuuskopio</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Ei kuvia</string>
   <!--message_recipients_list_item-->
@@ -362,12 +332,10 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <string name="AndroidManifest__verify_identity">Varmenna identiteetti</string>
   <string name="AndroidManifest__complete_key_exchange">Suorita avaimenvaihto</string>
   <string name="AndroidManifest__log_submit">Lähetä virheenkorjausloki</string>
-  <string name="AndroidManifest__media_preview">Median esikatselu</string>
   <string name="AndroidManifest__media_overview">Kaikki kuvat</string>
   <string name="AndroidManifest__media_overview_named">Kaikki yhteystiedon %1$s kuvat</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Tuo / vie</string>
-  <string name="arrays__my_identity_key">Oma identiteettiavaimeni</string>
   <string name="arrays__use_default">Käytä oletusta</string>
   <string name="arrays__use_custom">Käytä mukautettua</string>
   <!--plurals.xml-->
@@ -385,7 +353,6 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <string name="preferences__display_settings">Näytön asetukset</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Valitse yhteystieto osoitekirjasta.</string>
   <string name="preferences__change_passphrase">Vaihda salalause</string>
-  <string name="preferences__change_my_passphrase">Vaihda salalauseeni</string>
   <string name="preferences__complete_key_exchanges">Suorita avaimenvaihdot</string>
   <string name="preferences__enable_passphrase">Aseta salalause</string>
   <string name="preferences__passphrase_summary">Salalause %s</string>
@@ -409,7 +376,6 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <string name="preferences__pref_led_blink_custom_pattern_set">Mukautettu LED:in vilkkumiskuvio asetettu!</string>
   <string name="preferences__sound">Ääni</string>
   <string name="preferences__change_notification_sound">Vaihda ilmoitusääni</string>
-  <string name="preferences__inthread_notifications">Istunnonsisäiset ilmoitukset</string>
   <string name="preferences__play_inthread_notifications">Toista ilmoitusäänet aktiivista keskustelua tarkasteltaessa.</string>
   <string name="preferences__repeat_alerts">Hälytysten toisto</string>
   <string name="preferences__never">Älä toista</string>
@@ -445,11 +411,8 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <string name="preferences__mmsc_password">MMSC salasana</string>
   <string name="preferences__sms_delivery_reports">SMS toimitusvarmistukset</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Pyydä varmistus jokaisen lähetetyn tekstiviestin toimituksesta</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Poista vanhemmat viestit automaattisesti, kun ketju ylittää määritetyn pituuden</string>
   <string name="preferences__delete_old_messages">Poista vanhat viestit</string>
   <string name="preferences__conversation_length_limit">Keskustelun pituuden raja</string>
-  <string name="preferences__trim_all_threads_now">Rajaa kaikki viestiketjut nyt</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Skannaa kaikki viestiketjut ja pakota ketjuihin pituusrajat</string>
   <string name="preferences__light_theme">Kirkas</string>
   <string name="preferences__dark_theme">Tumma</string>
   <string name="preferences__appearance">Ulkonäkö</string>
@@ -512,7 +475,6 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Lisää liite</string>
-  <string name="conversation__menu_delete_thread">Poista viestiketju</string>
   <string name="conversation__menu_view_media">Kaikki kuvat</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
@@ -544,7 +506,6 @@ Tuo salaamaton varmuuskopiotiedosto. Yhteensopiva SMS Backup And Restore:lla.</s
   <!--media_preview-->
   <string name="media_preview__save_title">Tallenna</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Kuvan esikatselu</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Poistetaan...</string>

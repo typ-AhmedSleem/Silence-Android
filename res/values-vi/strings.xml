@@ -7,7 +7,6 @@
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Bạn chưa thiết lập mật khẩu!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Xóa tất cả tin nhắn cũ bây giờ?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Bạn có chắc là muốn thu ngắn tức thì các mạch chuyện trò xuống còn %s tin nhắn mới nhất?</string>
   <string name="ApplicationPreferencesActivity_delete">Xóa</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Tắt mã hóa lưu trữ?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -40,42 +39,34 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Khởi tạo phiên trao đổi an toàn với %s?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Xác nhận kết thúc tiến trình mã hóa</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Bạn có chắc là muốn chấm dứt phiên trao đổi an toàn này?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Xóa tiến trình xác nhận</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Bạn có chắc là muốn xóa vĩnh viễn cuộc chuyện trò này?</string>
   <string name="ConversationActivity_add_attachment">Thêm tập tin đính kèm</string>
   <string name="ConversationActivity_select_contact_info">Chọn thông tin liên hệ</string>
   <string name="ConversationActivity_compose_message">Soạn nội dung</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Tin nhắn trống không!</string>
   <string name="ConversationActivity_group_conversation">Gom nhóm chat</string>
   <string name="ConversationActivity_unnamed_group">Nhóm chưa đặt tên</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d thành viên</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 thành viên</string>
   <string name="ConversationActivity_saved_draft">Lưu bản nháp</string>
   <string name="ConversationActivity_invalid_recipient">Người nhận không đúng!</string>
   <string name="ConversationActivity_calls_not_supported">Không hỗ trợ tính năng gọi điệ</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Thiết bị này không hỗ trợ thao tác gọi.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Chi tiết tin nhắn</string>
-  <string name="ConversationFragment_confirm_message_delete">Xác nhận xóa tin</string>
   <string name="ConversationFragment_success_exclamation">Thành công!</string>
   <string name="ConversationFragment_saving_attachment">Đang lưu lại phần đính kèm</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Xóa các luồng trao đổi?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Bạn có chắc là muốn xóa TẤT CẢ các luồng trao đổi đã chọn?</string>
   <string name="ConversationListFragment_deleting">Đang xóa</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Xóa các mạch đã chọn...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Thông tin trao đổi chìa khóa...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Không</string>
   <!--DateUtils-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Chia sẻ với</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Xuất</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Xuất dữ liệu dạng thuần văn bản ra thẻ nhớ?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Cảnh báo, thao tác này sẽ xuất nội dung văn bản thường (không mã hóa) của các tin nhắn SMSSecure ra thẻ nhớ SD.</string>
   <string name="ExportFragment_cancel">Hủy bỏ</string>
   <string name="ExportFragment_exporting">Đang xuất</string>
   <string name="ExportFragment_success">Thành công!</string>
@@ -154,7 +145,6 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Bạn không có chìa khóa nhận diện.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Người nhận không có chìa khóa nhận diện.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Quét chìa khóa của họ để so sánh</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Quét chìa khóa của tôi</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">CẢNH BÁO, chìa khóa được quét KHÔNG trùng hợp! Xin xem lại cho kỹ càng văn bản dấu tay.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">CHƯA Kiểm Chứng!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Chìa khóa của họ đúng. Cũng cần phải kiểm chứng chìa khóa của bạn với họ luôn.</string>
@@ -197,9 +187,6 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">MẬT KHẨU CŨ:</string>
-  <string name="change_passphrase_activity__new_passphrase">MẬT KHẨU MỚI:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">LẬP LẠI MẬT KHẨU MỚI:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Không có địa chỉ liên lạc.</string>
@@ -236,13 +223,7 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Việc này có thể mất chút ít thời gian. Xin kiên nhẫn chờ, chúng tôi sẽ thông báo khi việc nhập hoàn tất.</string>
   <string name="database_migration_activity__importing">ĐANG NHẬP VÀO</string>
   <!--database_upgrade_activity-->
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Xuất sao lưu thường tương thích với \'Sao Lưu và Phục Hồi SMS\' ra thẻ nhớ SD.</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Nhập cơ sở dữ liệu của ứng dụng tin nhắn mặc định của hệ thống.</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Phục hồi sao lưu SMSSecure có mã hóa từng xuất ra trước đó.</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao Lưu và Phục Hồi SMS\'.</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <!--message_recipients_list_item-->
   <!--prompt_passphrase_activity-->
@@ -274,7 +255,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Dùng SMSSecure để xem và lưu trữ tất cả tin nhắn đa phương tiện gửi vào</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Chọn khoản mục liên lạc của bạn trong danh sách liên lạc.</string>
   <string name="preferences__change_passphrase">Đổi mật khẩu</string>
-  <string name="preferences__change_my_passphrase">Đổi mật khẩu của tôi</string>
   <string name="preferences__complete_key_exchanges">Hoàn tất trao đổi chìa khóa</string>
   <string name="preferences__screen_security">An ninh màn hình</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Tự động hoàn tất trao đổi chìa khóa cho các phiên mới hoặc cho các phiên hiện hành có cùng chìa khóa nhận diện</string>
@@ -288,7 +268,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <string name="preferences__pref_led_blink_custom_pattern_set">Mô hình chớp nháy LED tùy biến thiết lập xong!</string>
   <string name="preferences__sound">Âm thanh</string>
   <string name="preferences__change_notification_sound">Đổi âm thanh thông báo</string>
-  <string name="preferences__inthread_notifications">Thông báo trong-luồng</string>
   <string name="preferences__play_inthread_notifications">Phát âm thanh thông báo khi xem một cuộc chuyện trò đang diễn ra.</string>
   <string name="preferences__vibrate">Rung</string>
   <string name="preferences__also_vibrate_when_notified">Cũng rung khi thông báo</string>
@@ -310,11 +289,8 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <string name="preferences__override_system_mms_settings">Thay các thiết đặt MMS của hệ thống bằng dữ liệu dưới đây.</string>
   <string name="preferences__sms_delivery_reports">Báo cáo phân phối SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Yêu cầu có báo cáo phân phối cho từng tin nhắn SMS gửi đi</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Tự động xóa các tin nhắn cũ một khi mạch chuyện trò vượt quá độ dài đã ấn định</string>
   <string name="preferences__delete_old_messages">Xóa tin nhắn cũ</string>
   <string name="preferences__conversation_length_limit">Giới hạn độ dài cuộc chuyện trò</string>
-  <string name="preferences__trim_all_threads_now">Rút ngắn tất cả các mạch chuyện trò ngay bây giờ</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Xem xét các mạch chuyện trò và buộc tuân theo giới hạn độ dài</string>
   <string name="preferences__appearance">Diện mạo</string>
   <string name="preferences__theme">Hình nền</string>
   <string name="preferences__default">Mặc định</string>
@@ -354,7 +330,6 @@ Nhập tập tin sao lưu thường-không mã hóa. Tương thích với \'Sao 
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Thêm tập tin đính kèm</string>
-  <string name="conversation__menu_delete_thread">Xóa luồng</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <!--conversation_group_options-->

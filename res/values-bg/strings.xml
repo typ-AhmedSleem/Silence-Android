@@ -7,9 +7,7 @@
   <string name="please_wait">Моля изчакайте...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Все още не си сложил парола!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s съобщения на разговор</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Изтрий всички стари съобщения веднага?</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">Сигурен ли си, че искаш скъсиш всички разговори до %s съобщения във всеки?</string>
   <string name="ApplicationPreferencesActivity_delete">Изтрий</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Дезакивирай криптиране на памета?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -29,13 +27,14 @@
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Входящи %s</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d минути</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(изображение)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(аудио)</string>
   <string name="DraftDatabase_Draft_video_snippet">(видео)</string>
   <!--AttchmentManager-->
+  <string name="AttachmentManager_cant_open_media_selection">Неуспешно откриване на приложение за избиране на медията.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_camera">Камера</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Изображение</string>
   <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Аудио</string>
@@ -63,19 +62,18 @@
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Получено е съобщение от някой, който също използва SMSSecure. Започни сигурна сесия?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Потвърждение за прекратяване на сигурна сесия</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Сигурен ли си, че искаш да прекратиш сигурната сесия?</string>
-  <string name="ConversationActivity_delete_thread_confirmation">Потвърждение за изтриване на разговора</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">Сигурен ли си, че искаш да изтриеш необратимо този разговор?</string>
   <string name="ConversationActivity_add_attachment">Прикачи файл</string>
   <string name="ConversationActivity_select_contact_info">Посочи информация за контакта</string>
   <string name="ConversationActivity_compose_message">Ново съобщение</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Съжаляваме, има грешка при прикачване на файла.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Gif-ът, който избрахте е твърде голям!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">За съжеление, избраното видео надвишава допустимия максимален размер (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">За съжеление, избраното audio надвишава допустимия максимален размер (%1$skB).</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Получателят не е валиден SMS или имейл адрес!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Съобщението е празно!</string>
   <string name="ConversationActivity_group_members">Членове на групата</string>
   <string name="ConversationActivity_group_conversation">Групов разговор</string>
   <string name="ConversationActivity_unnamed_group">Безименна група</string>
-  <string name="ConversationActivity_d_recipients_in_group">%d участника</string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">1 член</string>
   <string name="ConversationActivity_saved_draft">Запазена чернова</string>
   <string name="ConversationActivity_invalid_recipient">Невалиден получател!</string>
   <string name="ConversationActivity_calls_not_supported">Функцията за разговори не се подържа</string>
@@ -89,12 +87,10 @@
   <string name="ConversationActivity_mms_not_supported_title">MMS не се поддържа</string>
   <string name="ConversationActivity_mms_not_supported_message">Това съобщение не може да бъде изпратено, защото мобилния ви оператор не поддържа MMS.</string>
   <string name="ConversationActivity_specify_recipient">Избери контакт</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Прикаченият файл надхвърля ограниченията за размер.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Информация за съобщението</string>
-  <string name="ConversationFragment_confirm_message_delete">Потвърди изтриване на съобщението</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">Сигурни ли сте, че искате да изтриете перманентно всички избрани съобщения?</string>
   <string name="ConversationFragment_save_to_sd_card">Запази на SD картата?</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">Запазване на този файл на SD картата ще разреши на всички други приложения да го виждат и променят.\n\nПродължи?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Грешка при запазване на прикачения файл на SD карта!</string>
   <string name="ConversationFragment_success_exclamation">Успех!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Неуспеше запис на SD карта!</string>
@@ -108,12 +104,10 @@
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Търсене...</string>
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">Изтрий разговорите?</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">Сигурен ли си, че искаш да изтриеш ВСИЧКИ избрани разговори?</string>
   <string name="ConversationListFragment_deleting">Изтриване</string>
-  <string name="ConversationListFragment_deleting_selected_threads">Изтриване на избраните разговори...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Съобщение за обмяна на ключовете...</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Изплзване на: %s</string>
   <string name="CustomDefaultPreference_using_default">Използване на подразбиращия се: %s</string>
@@ -124,16 +118,11 @@
   <string name="DateUtils_minutes_ago">%d мин</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Сподели с</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Изнасяне</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">Некриптиран запис на SD карта?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Предупреждение, това ще
-запише в некриптиран вид съдържанието на вашите SMSSecure съобщения на SD карта. </string>
   <string name="ExportFragment_cancel">Отказ</string>
   <string name="ExportFragment_exporting">Изнасяне</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">Експортиране в некриптиран формат на SD карта..</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">Грешка, неуспешен опит за запис на SD карта!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">Грешка при записване на SD карта</string>
   <string name="ExportFragment_success">Успех!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Нова група</string>
@@ -220,6 +209,9 @@ SMS съобщенията от системната базата данни в 
   <string name="RecipientPreferenceActivity_enabled">Включено</string>
   <string name="RecipientPreferenceActivity_disabled">Изключено</string>
   <!--Slide-->
+  <string name="Slide_image">Изображение</string>
+  <string name="Slide_audio">Аудио</string>
+  <string name="Slide_video">Видео</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Съобщението за обмяна на ключ
 е объркано!</string>
@@ -238,7 +230,6 @@ SMS съобщенията от системната базата данни в 
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Нямаш ключ за самоличност.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Получателят няма ключ за самоличност.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Сканирай ключа им за сравнение</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">Позволи да сканират ключа ми</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ВНИМАНИЕ, сканираният ключ НЕ Е същият! Моля, провери текстовия отпечатък внимателно.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ Е Проверен!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Техният ключ е правилен. Необходимо е да се провери и твоят ключ от тях.</string>
@@ -247,7 +238,6 @@ SMS съобщенията от системната базата данни в 
   <string name="ViewIdentityActivity_scan_to_compare">Сканирай за сравнение</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ВНИМАНИЕ, сканираният ключ НЕ Е съвпада!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Сканираният ключ е същия!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">Моят ключ за самоличност</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Покани въпреки съществуващата покана?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вече изпрати искане за започване на сесия до този получател, сигурен ли си, че искаш да го изпратиш повторно? Това ще анулира първото искане.</string>
@@ -281,6 +271,7 @@ SMS съобщенията от системната базата данни в 
   <string name="KeyCachingService_passphrase_cached">SMSSecure е отключен</string>
   <string name="KeyCachingService_lock">Заключи паролата</string>
   <!--MessageNotifier-->
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d нови съобщения в %2$d разговора</string>
   <string name="MessageNotifier_most_recent_from_s">Най-скорошен от: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Криптирано съобщение...</string>
   <string name="MessageNotifier_media_message_with_text">Медийно съобщение: %s</string>
@@ -298,9 +289,6 @@ SMS съобщенията от системната базата данни в 
   <string name="QuickResponseService_problem_sending_message">Проблем при изпращане на съобщението!</string>
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">СТАРА ПАРОЛА: </string>
-  <string name="change_passphrase_activity__new_passphrase">НОВА ПАРОЛА: </string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">ПОВТОРИ НОВАТА ПАРОЛА: </string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Въведи име или номер</string>
   <!--contact_selection_group_activity-->
@@ -359,17 +347,9 @@ SMS съобщенията от системната базата данни в 
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Обновяване на базата данни...</string>
   <string name="export_fragment__export_plaintext_backup">Изнеси некриптиран архив</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-Изнеси некриптиран архив съвместим с \"SMSBackup и Restore\" на  SD карта.</string>
   <string name="import_fragment__import_system_sms_database">Внеси всички съществуващи SMS-и</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Внасяне на базата
-от програмата за съобщения по подразбиране.</string>
-  <string name="import_fragment__import_encrypted_backup">Внеси криптиран архив </string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-Възстанови вече изнесен криптиран SMSSecure архив.</string>
   <string name="import_fragment__import_plaintext_backup">Внеси некриптиран архив </string>
-  <string name="import_fragment__import_a_plaintext_backup_file">
-Внаси некриптиран архив. Съвместимо с \'SMSBackup And Restore.\'</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Няма изображения</string>
   <!--message_recipients_list_item-->
@@ -385,7 +365,6 @@ SMS съобщенията от системната базата данни в 
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">Премини в тих режим за този разговор</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Изключи известията за този разговор</string>
-  <string name="recipient_preferences__ringtone">Мелодия</string>
   <string name="recipient_preferences__vibrate">Вибриране</string>
   <string name="recipient_preferences__block">Блокирай</string>
   <string name="recipient_preferences__color">Цвят</string>
@@ -415,13 +394,10 @@ SMS съобщенията от системната базата данни в 
   <string name="AndroidManifest__verify_identity">Провери самоличността</string>
   <string name="AndroidManifest__complete_key_exchange">Обмени ключове</string>
   <string name="AndroidManifest__log_submit">Изпрати доклад</string>
-  <string name="AndroidManifest__media_preview">Преглед на файла</string>
   <string name="AndroidManifest__media_overview">Всички изображения</string>
   <string name="AndroidManifest__media_overview_named">Всички изображения с %1$s</string>
-  <string name="AndroidManifest__message_details">Информация за съобщението</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Внасяне / изнасяне</string>
-  <string name="arrays__my_identity_key">Моят ключ за самоличност</string>
   <string name="arrays__use_default">Използвай подразбиращия се</string>
   <string name="arrays__use_custom">Използвай ръчна настройка</string>
   <string name="arrays__mute_for_one_hour">Тих режим за 1 час</string>
@@ -431,6 +407,11 @@ SMS съобщенията от системната базата данни в 
   <string name="arrays__settings_default">Настройки по подразбиране</string>
   <string name="arrays__enabled">Включено</string>
   <string name="arrays__disabled">Изключено</string>
+  <string name="arrays__name_and_message">Име и съобщение</string>
+  <string name="arrays__name_only">Само име</string>
+  <string name="arrays__enter_key">Покажи бутонът Enter</string>
+  <string name="arrays__emoji_key">Покажи бутон за emoji</string>
+  <string name="arrays__send_key">Покажи бутонът Изпрати</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d час</item>
@@ -443,12 +424,12 @@ SMS съобщенията от системната базата данни в 
   <string name="preferences__pref_all_mms_title">Използвай за всички MMS-и</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Използвай SMSSecure за разглеждане и съхраняване на всички входящи текстови съобщения</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Използвай SMSSecure за разглеждане и съхраняване на всички входящи мултимедийни съобщения</string>
+  <string name="preferences__keyboard_settings">Опции на клавиатурата</string>
   <string name="preferences__disable_emoji_drawer">Дезактивирай Emoji чекмеджето</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Активирай тази опция ако клавиатурата ти поддържа Emoji-та.</string>
   <string name="preferences__display_settings">Настройки на дисплея</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Избери вашия контакт от списъка с контакти.</string>
   <string name="preferences__change_passphrase">Промяна на паролата</string>
-  <string name="preferences__change_my_passphrase">Промени паролата ми</string>
   <string name="preferences__complete_key_exchanges">Обмени ключове</string>
   <string name="preferences__enable_passphrase">Използвай парола</string>
   <string name="preferences__passphrase_summary">Парола %s</string>
@@ -463,6 +444,7 @@ SMS съобщенията от системната базата данни в 
   <string name="preferences__pref_timeout_interval_title">Продължителност на помненето</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Продължителнос от време, преди да забравя паролата от памета</string>
   <string name="preferences__notifications">Известия</string>
+  <string name="preferences__enable_message_notifications">Разреши известия за съобщения</string>
   <string name="preferences__led_color">LED цвят</string>
   <string name="preferences__led_color_unknown">Непознат</string>
   <string name="preferences__pref_led_blink_title">LED известяване</string>
@@ -472,7 +454,6 @@ SMS съобщенията от системната базата данни в 
   <string name="preferences__pref_led_blink_custom_pattern_set">Новият начин за LED известяване зададен!</string>
   <string name="preferences__sound">Мелодия</string>
   <string name="preferences__change_notification_sound">Промени звуков сигнал за известие</string>
-  <string name="preferences__inthread_notifications">Известия по време на разговор</string>
   <string name="preferences__play_inthread_notifications">Използвай звуков сигнал по време на активен разговор</string>
   <string name="preferences__repeat_alerts">Повтаряй известия</string>
   <string name="preferences__never">Никога</string>
@@ -512,11 +493,9 @@ SMS съобщенията от системната базата данни в 
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Поискай потвърждение при получаване за всяко изпратено SMS съобщение</string>
   <string name="preferences__sms_delivery_reports_notification">Известия за доклад за получен SMS</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Покажи известие, когато доклад за получен SMS пристигне</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">Автоматично изтрий най-старите съобщения, когато разговорът превиши определения максимален брой съобщения</string>
   <string name="preferences__delete_old_messages">Изтриване на стари съобщения</string>
+  <string name="preferences__chats">Чатове и медия</string>
   <string name="preferences__conversation_length_limit">Макс. брой съобщения на разговор</string>
-  <string name="preferences__trim_all_threads_now">Скъси всички разговори сега</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">Сканирай всички разговори и приложи ограничението за брой съобщения</string>
   <string name="preferences__light_theme">Светла</string>
   <string name="preferences__dark_theme">Тъмна</string>
   <string name="preferences__appearance">Облик</string>
@@ -534,8 +513,15 @@ SMS съобщенията от системната базата данни в 
   <string name="preferences__about_version">Версия %s</string>
   <string name="preferences__about_build_id">Билд: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Блокирани контакти</string>
+  <string name="preferences_notifications__display_in_notifications">Покажи в полето за известия</string>
   <string name="preferences__show_sent_time">Покажи часът на изпращане</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Покажи часът на изпращане вместо часът на получаване за входящи съобщения</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Автоматично изтегляне</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Автоматично изтелгяй MMS съобщения</string>
+  <string name="preferences__roaming_auto_retrieve">Автоматично изтегляне при включен роуминг</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Автоматично изтелгяй MMS съобщения при роуминг</string>
+  <string name="preferences_chats__message_trimming">Намаляване на броя съобщения</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -588,7 +574,6 @@ SMS съобщенията от системната базата данни в 
   <string name="conversation_unmuted__mute_notifications">Забрани известия</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Прикачи файл</string>
-  <string name="conversation__menu_delete_thread">Изтрий разговора</string>
   <string name="conversation__menu_view_media">Всички изображения</string>
   <string name="conversation__menu_conversation_settings">Настройки на разговора</string>
   <!--conversation_popup-->
@@ -622,7 +607,6 @@ SMS съобщенията от системната базата данни в 
   <!--media_preview-->
   <string name="media_preview__save_title">Запази</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">Преглед на изображение</string>
   <!--StoreRatingReminder-->
   <string name="StoreRatingReminder_title">Оцени това приложение</string>
   <string name="StoreRatingReminder_message">Ако ти харесва това приложение отдели момент да ни помогнеш като го оцениш.</string>

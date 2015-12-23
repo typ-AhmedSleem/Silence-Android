@@ -7,9 +7,7 @@
   <string name="please_wait">رجاء الانتظار...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">لم تقم بتحديد عبارة سرية بعد!</string>
-  <string name="ApplicationPreferencesActivity_messages_per_conversation">%s رسائل في المحادثة</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">احذف جميع الرسائل القديمة الآن؟</string>
-  <string name="ApplicationPreferencesActivity_are_you_sure_you_would_like_to_immediately_trim_all_conversation_threads_to_the_s_most_recent_messages">هل انت متأكد من حذف جميع الرسائل بالمحادثات وابقاء أحدث %s رسالة فقط؟</string>
   <string name="ApplicationPreferencesActivity_delete">حذف</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">إلغاء تشفير مساحة التخزين؟</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -26,7 +24,6 @@
   <string name="ApplicationPreferencesActivity_sms">رسالة نصية قصيرة</string>
   <string name="ApplicationPreferencesActivity_mms">رسالة وسائط متعددة</string>
   <!--AppProtectionPreferenceFragment-->
-  <string name="AppProtectionPreferenceFragment_minutes">%d دقائق</string>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(صورة)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(صوت)</string>
@@ -58,8 +55,6 @@
   <string name="ConversationActivity_initiate_secure_session_with_s_question">بدء التشفير مع %s؟</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">تأكيد إنهاء المحادثة الآمنة</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">هل أنت متأكد من أنك تريد إنهاء التشفير؟</string>
-  <string name="ConversationActivity_delete_thread_confirmation">تأكيد حذف المحادثة</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_permanently_delete_this_conversation_question">هل تريد حقاَ حذف هذه المحادثة نهائياً؟</string>
   <string name="ConversationActivity_add_attachment">إضافة مرفقات</string>
   <string name="ConversationActivity_select_contact_info">أختر بيانات جهة الاتصال</string>
   <string name="ConversationActivity_compose_message">إنشاء رسالة</string>
@@ -68,8 +63,6 @@
   <string name="ConversationActivity_message_is_empty_exclamation">الرسالة فارغة</string>
   <string name="ConversationActivity_group_conversation">دردشة جماعية</string>
   <string name="ConversationActivity_unnamed_group">مجموعة غير مسماه</string>
-  <string name="ConversationActivity_d_recipients_in_group">أعضاء %d </string>
-  <string name="ConversationActivity_d_recipients_in_group_singular">عضو 1</string>
   <string name="ConversationActivity_saved_draft">مسودة محفوظة</string>
   <string name="ConversationActivity_invalid_recipient">جهة اتصال غير صحيحة!</string>
   <string name="ConversationActivity_calls_not_supported">المكالمات غير مدعمة</string>
@@ -80,10 +73,7 @@
   <string name="ConversationActivity_transport_secure_mms">رسالة وسائط متعددة آمنة</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">تفاصيل الرسالة</string>
-  <string name="ConversationFragment_confirm_message_delete">تاكيد حذف الرسال</string>
-  <string name="ConversationFragment_are_you_sure_you_want_to_permanently_delete_all_selected_messages">هل أنت متأكد من حذف جميع الرسائل المختارة بشكل دائم؟</string>
   <string name="ConversationFragment_save_to_sd_card">أحفظ في الذاكرة؟</string>
-  <string name="ConversationFragment_this_media_has_been_stored_in_an_encrypted_database_warning">حفظ الملف في الذاكرة سوف يسمح للتطبيقات الأخرى على الهاتف من النفاذ إليه. \n\nاستمر؟</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">خطأ أثناء حفظ المرفق إلى الذاكرة!</string>
   <string name="ConversationFragment_success_exclamation">تم بنجاح!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">تعذر الإضافة إلى الذاكرة!</string>
@@ -95,12 +85,10 @@
   <string name="ConversationFragment_deleting_messages">حذف الرسائل جارٍ...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <string name="ConversationListFragment_delete_threads_question">حذف رسائل المحادثة؟</string>
-  <string name="ConversationListFragment_are_you_sure_you_wish_to_delete_all_selected_conversation_threads">هل تريد حذف كل المحادثات المختارة نهائياَ؟</string>
   <string name="ConversationListFragment_deleting">حذف</string>
-  <string name="ConversationListFragment_deleting_selected_threads">حذف المحادثات المختارة</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">رسالة تبادل المفاتيح</string>
+  <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">استخدام التخصيص: %s</string>
   <string name="CustomDefaultPreference_using_default">مستخدم كافتراضي: %s</string>
@@ -109,15 +97,11 @@
   <string name="DateUtils_now">الآن</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">شارك مع</string>
+  <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">تصدير</string>
-  <string name="ExportFragment_export_plaintext_to_sd_card">تصدير نص غير مشفر إلي بطاقة الذاكرة الخارجية؟</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">تحذير: سوف يتم تصدير محتوى رسائل تيكست سيكيور في هيئة نص مجرد إلى بطاقة الذاكرة.</string>
   <string name="ExportFragment_cancel">إلغاء</string>
   <string name="ExportFragment_exporting">التصدير جارٍ...</string>
-  <string name="ExportFragment_exporting_plaintext_to_sd_card">تصدير غير مشفر إلى بطاقة الذاكرة...</string>
-  <string name="ExportFragment_error_unable_to_write_to_sd_card">خطأ. تعذر الكتابة على بطاقة الذاكرة!</string>
-  <string name="ExportFragment_error_while_writing_to_sd_card">خطأ أثناء الكتابة على بطاقة الذاكرة.</string>
   <string name="ExportFragment_success">تم بنجاح!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">مجموعة جديدة</string>
@@ -199,7 +183,6 @@
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">لا يوجد لديك مفتاح تعريفي.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">لا يوجد لدى الطرف الاخر مفتاح تعريفي.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">قم بالمسح الضوئي لمفتاحهم للمقارنة</string>
-  <string name="VerifyIdentityActivity_get_my_key_scanned">قم بالمسح الضوئي لمفتاحي</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">تحذير: المفتاح الذي تم مسحه ضوئياً لا يتطابق! تأكد من بصمة المفتاح بحذر.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">لم يتم التحقق!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">مفتاحهم صحيح. يجب أيضاً أن تقوم بالتحقق من مفتاحك لديهم أيضاً.</string>
@@ -208,7 +191,6 @@
   <string name="ViewIdentityActivity_scan_to_compare">قم بالمسح الضوئي للمقارنة</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">تحذير: المفتاح الذي تم مسحه ضوئياً لا يتطابق!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">المفتاح الذي تم مسحه ضوئياً متطابق!</string>
-  <string name="ViewIdentityActivity_my_identity_fingerprint">بصمة هويتي</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">ابدأ على الرغم من الطلب الحالي؟</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">لقد قمت بارسال طلب انشاء قناة اتصال مسبقاً لهذه الجهة، هل تريد ارسال طلب آخر؟، هذه العملية ستلغي الطلب السابق.</string>
@@ -249,9 +231,6 @@
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">العبارة السرية القديمة:</string>
-  <string name="change_passphrase_activity__new_passphrase">العبارة السرية الجديدة:</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">تكرار العبارة السرية الجديدة:</string>
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">لا توجد جهات اتصال.</string>
@@ -306,16 +285,9 @@
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">تحديث قاعدة البيانات...</string>
   <string name="export_fragment__export_plaintext_backup">تصدير نسخة احتياطية غير مشفرة</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">
-تصدير نسخة غير مشفرة لبطاقة الذاكرة الخارجية بصيغة متوافقة مع SMSBackup And Restore</string>
   <string name="import_fragment__import_system_sms_database">استيراد قاعدة بيانات الرسائل بالنظام</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">استيراد قاعدة البيانات
-من تطبيق الرسائل الافتراضي لنظام التشغيل</string>
-  <string name="import_fragment__import_encrypted_backup">استيراد نسخة احتياطية مشفرة</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_textsecure_backup">
-استعادة نسخة احتياطية مشفرة من تيكست سيكيور.</string>
   <string name="import_fragment__import_plaintext_backup">استيراد نسخة احتياطية غير مشفرة</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">استيراد نسخة احتياطية غير مشفرة إلى ملف متوافق مع \"نسخ احتياطي واستعادة الرسائل\"</string>
+  <!--load_more_header-->
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">لا توجد صور</string>
   <!--message_recipients_list_item-->
@@ -353,12 +325,10 @@
   <string name="AndroidManifest__verify_identity">تحقق من الهوية</string>
   <string name="AndroidManifest__complete_key_exchange">أكمل تبادل المفاتيح</string>
   <string name="AndroidManifest__log_submit">أرسل سجلات التصحيح</string>
-  <string name="AndroidManifest__media_preview">معاينة الوسائط</string>
   <string name="AndroidManifest__media_overview">جميع الصور</string>
   <string name="AndroidManifest__media_overview_named">جميع الصور مع %1$s</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">استيراد \ تصدير</string>
-  <string name="arrays__my_identity_key">مفتاح هويتي</string>
   <string name="arrays__use_default">استخدم الافتراضي</string>
   <string name="arrays__use_custom">تخصيص</string>
   <!--plurals.xml-->
@@ -380,7 +350,6 @@
   <string name="preferences__display_settings">إعدادات العرض</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">اختر جهة الاتصال من القائمة</string>
   <string name="preferences__change_passphrase">غير العبارة السرية</string>
-  <string name="preferences__change_my_passphrase">غير عبارتي السرية</string>
   <string name="preferences__complete_key_exchanges">أكمل تبادل المفاتيح</string>
   <string name="preferences__enable_passphrase">تفعيل العبارة السرية</string>
   <string name="preferences__passphrase_summary">عبارة سرية %s</string>
@@ -404,7 +373,6 @@
   <string name="preferences__pref_led_blink_custom_pattern_set">تم إعداد أسولب وميض LED!</string>
   <string name="preferences__sound">صوت</string>
   <string name="preferences__change_notification_sound">تغيير صوت التنبيه</string>
-  <string name="preferences__inthread_notifications">تنبيهات داخل المحادثة</string>
   <string name="preferences__play_inthread_notifications">تشغيل صوت التنبيهات أثناء متابعة محادثة نشطة.</string>
   <string name="preferences__repeat_alerts">تكرار التنبيهات</string>
   <string name="preferences__never">أبدا</string>
@@ -440,11 +408,8 @@
   <string name="preferences__mmsc_password">كلمة السر MMSC</string>
   <string name="preferences__sms_delivery_reports">تقارير التسليم</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">طلب تقرير تسليم لكل رسالة قصيرة ترسلها</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_thread_exceeds_a_specified_length">حذف الرسائل القديمة آليا عند تجاوز المحادثة الطول المحدد</string>
   <string name="preferences__delete_old_messages">احذف الرسائل القديمة</string>
   <string name="preferences__conversation_length_limit">حد طول المحادثة</string>
-  <string name="preferences__trim_all_threads_now">نظف كل المحادثات الآن</string>
-  <string name="preferences__scan_through_all_conversation_threads_and_enforce_conversation_length_limits">افحص كل المحادثات وافرض حد الطول لكل محادثة</string>
   <string name="preferences__light_theme">فاتح</string>
   <string name="preferences__dark_theme">داكن</string>
   <string name="preferences__appearance">المظهر</string>
@@ -507,7 +472,6 @@
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">إضافات</string>
-  <string name="conversation__menu_delete_thread">حذف المحادثة</string>
   <string name="conversation__menu_view_media">جميع الصور</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
@@ -539,7 +503,6 @@
   <!--media_preview-->
   <string name="media_preview__save_title">أحفظ</string>
   <!--media_preview_activity-->
-  <string name="media_preview_activity__image_content_description">معاينة الصورة</string>
   <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">جار الحذف...</string>
