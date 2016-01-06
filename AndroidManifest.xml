@@ -231,8 +231,8 @@
               android:theme="@style/SMSSecure.LightTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
+    <!-- this can never have launchMode singleTask or singleInstance! -->
     <activity android:name=".PanicResponderActivity"
-              android:launchMode="singleInstance"
               android:noHistory="true"
               android:theme="@android:style/Theme.NoDisplay">
         <intent-filter>
