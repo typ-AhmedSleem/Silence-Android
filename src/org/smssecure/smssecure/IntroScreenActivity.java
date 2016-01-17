@@ -94,8 +94,17 @@ public class IntroScreenActivity extends BaseActionBarActivity {
 
     final int numberOfPages = introScreen.get().getPages().size();
     if (numberOfPages > 1) {
-      indicator.setViewPager(pager);
-      indicator.setOnPageChangeListener(new OnPageChangeListener(introScreen.get()));
+      try {
+        // For some reason this seems to throw an NPE on Android 2.3 - work around it for now
+        // See https://github.com/SMSSecure/SMSSecure/issues/311
+        indicator.setViewPager(pager);
+        indicator.setOnPageChangeListener(new OnPageChangeListener(introScreen.get()));
+      }
+      catch (NullPointerException e){
+        Log.i(TAG, "NPE when trying to setViewPager: " + e.toString());
+        onContinue();
+        return;
+      }
     } else {
       indicator.setVisibility(View.GONE);
     }
