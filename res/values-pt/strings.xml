@@ -401,13 +401,13 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">A atualizar a base de dados...</string>
   <string name="export_fragment__export_plaintext_backup">Exportar backup em texto simples</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar um ficheiro em texto simples. Compatível com 'SMS Backup &amp;amp Restore'.</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar um ficheiro em texto simples. Compatível com \'SMS Backup &amp;amp Restore\'.</string>
   <string name="import_fragment__import_system_sms_database">Importar base de dados SMS do sistema</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Importar base de dados de mensagens do sistema.</string>
   <string name="import_fragment__restore_encrypted_backup">Restaurar backup cifrado</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaurar um backup cifrado do SMSSecure, anteriormente exportado.</string>
   <string name="import_fragment__import_plaintext_backup">Importar backup em texto simples</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Importar um ficheiro em texto simples. Compatível com 'SMS Backup &amp;amp Restore'.</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Importar um ficheiro em texto simples. Compatível com \'SMS Backup &amp;amp Restore\'.</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Ver toda a conversa</string>
   <!--media_overview_activity-->
