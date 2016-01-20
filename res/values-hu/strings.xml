@@ -35,6 +35,8 @@ hozzájuk férhet!
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Beérkező %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Jelmondat %1$s, Képernyő biztonság %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Téma %1$s, Nyelv %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 perc</item>
@@ -142,11 +144,15 @@ hozzájuk férhet!
   </plurals>
   <string name="ConversationListFragment_deleting">Törlés</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Kiválasztott beszélgetések törlése...</string>
-  <string name="ConversationListFragment_conversations_archived">Beszélgetések archiválva</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Beszélgetés archiválva</item>
+    <item quantity="other">%d beszélgetés archiválva</item>
+  </plurals>
   <string name="ConversationListFragment_undo">VISSZAVONÁS</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">Beérkezőbe áthelyezett beszélgetés</string>
-  <string name="ConversationListFragment_conversation_archived">Beszélgetés archiválva</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Beérkezőbe áthelyezett beszélgetések</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Beszélgetés áthelyezve a beérkezőbe</item>
+    <item quantity="other">%d beszélgetés áthelyezve a beérkezőbe</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Kulcs-csere üzenet...</string>
   <!--ConversationListItemAction-->
@@ -514,10 +520,8 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="preferences__change_your_passphrase">Változtasd meg a jelmondatod</string>
   <string name="preferences__complete_key_exchanges">Teljes kulcs-csere</string>
   <string name="preferences__enable_passphrase">Kódszó engedélyezése</string>
-  <string name="preferences__passphrase_summary">Jelmondat %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Helyi üzenetkódolás és kulcsok engedélyezése</string>
   <string name="preferences__screen_security">Képernyő biztonság</string>
-  <string name="preferences__screen_security_summary">Képernyő biztonság %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automatikus teljes kulcs-csere új üzenetváltások esetén vagy létező üzenetváltások esetén ugyanazzal az azonosító kulccsal.</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">A képernyőkép mentés tiltása a korábbi listákban és az alkalmazáson belül</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Jelszó memóriából való törlése egy bizonyos idő elteltével</string>
@@ -587,10 +591,8 @@ Ismeretlen azonosító kulcsú üzenet érkezett. Kattints rá a feldolgozáshoz
   <string name="preferences__dark_theme">Sötét</string>
   <string name="preferences__appearance">Megjelenés</string>
   <string name="preferences__theme">Téma</string>
-  <string name="preferences__theme_summary">Téma %s</string>
   <string name="preferences__default">Alapértelmezett</string>
   <string name="preferences__language">Nyelv</string>
-  <string name="preferences__language_summary">Nyelv %s</string>
   <string name="preferences__make_default_sms_app">Beállítás alapértelmezett SMS alkalmazásként</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Legyen a SMSSecure az alapértelmezett SMS/MMS alkalmazás a rendszerben.</string>
   <string name="preferences__submit_debug_log">Hibakeresési napló küldése</string>

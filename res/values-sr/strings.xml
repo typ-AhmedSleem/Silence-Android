@@ -36,6 +36,8 @@
   <string name="ApplicationPreferencesActivity_sms">СМС</string>
   <string name="ApplicationPreferencesActivity_mms">ММС</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Долазни %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Закључавање лозинком %1$s, обезбеђење екрана %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Тема %1$s, језик %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 минута</item>
@@ -149,11 +151,17 @@
   </plurals>
   <string name="ConversationListFragment_deleting">Брисање</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Бришем изабране преписке...</string>
-  <string name="ConversationListFragment_conversations_archived">Преписке архивиране</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Преписка архивирана</item>
+    <item quantity="few">%d преписке архивиране</item>
+    <item quantity="other">%d преписки архивирано</item>
+  </plurals>
   <string name="ConversationListFragment_undo">ВРАТИ</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">Преписка премештена у пријем</string>
-  <string name="ConversationListFragment_conversation_archived">Преписка архивирана</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Преписке премештене у пријем</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Преписка премештена у пријем</item>
+    <item quantity="few">%d преписке премештене у пријем</item>
+    <item quantity="other">%d преписки премештено у пријем</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Порука размене кључева...</string>
   <!--ConversationListItemAction-->
@@ -169,6 +177,11 @@
   <string name="ShareActivity_share_with">Подели са</string>
   <!--IntroScreenActivity-->
   <string name="IntroScreenActivity_welcome_to_smssecure">Добро дошли у Сигурни СМС!</string>
+  <string name="IntroScreenActivity_smssecure_description">Сигурни СМС омогућава вам да заштитите приватност ваше комуникације са пријатељима.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Шифрујте ваше поруке</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Сигурни СМС аутоматски шифрује поруке које шаљете контактима који користе Сигурни СМС.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Дописујте се са свима</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Сигурни СМС може да шаље нешифроване поруке осталим контактима.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Извези</string>
   <string name="ExportFragment_export_plaintext_to_storage">Извести обични текст у складиште?</string>
@@ -509,10 +522,8 @@
   <string name="preferences__change_your_passphrase">Измените вашу лозинку</string>
   <string name="preferences__complete_key_exchanges">Довршавај размене кључева</string>
   <string name="preferences__enable_passphrase">Омогући лозинку</string>
-  <string name="preferences__passphrase_summary">Закључавање лозинком %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Омогући локално шифровање порука и кључева</string>
   <string name="preferences__screen_security">Безбедност екрана</string>
-  <string name="preferences__screen_security_summary">обезбеђење екрана %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Аутоматски доврши размене кључева за нове сесије или за постојеће сесије са истим кључем идентитета</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Блокирање снимка екрана у списку недавних апликација и унутар апликације</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Уклони лозинку из меморије након неког интервала</string>
@@ -582,10 +593,8 @@
   <string name="preferences__dark_theme">Тамна</string>
   <string name="preferences__appearance">Изглед</string>
   <string name="preferences__theme">Тема</string>
-  <string name="preferences__theme_summary">Тема %s</string>
   <string name="preferences__default">Подразумеван</string>
   <string name="preferences__language">Језик</string>
-  <string name="preferences__language_summary">Језик %s</string>
   <string name="preferences__make_default_sms_app">Постави подразумевано за СМС</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Поставите Сигурни СМС за подразумевану СМС/ММС апликацију на вашем систему.</string>
   <string name="preferences__submit_debug_log">Пошаљи дневник исправљања грешака</string>

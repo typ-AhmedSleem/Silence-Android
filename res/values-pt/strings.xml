@@ -6,7 +6,7 @@
   <string name="delete">Apagar</string>
   <string name="please_wait">Por favor aguarde...</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ainda não definiu uma palavra-chave!</string>
+  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ainda não definiu uma palavra-passe!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
     <item quantity="one">1 mensagem por conversa</item>
     <item quantity="other">%d mensagens por conversa</item>
@@ -32,6 +32,8 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Receção %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Palavra-passe %1$s, segurança do ecrã %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, idioma %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minuto</item>
@@ -139,11 +141,15 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   </plurals>
   <string name="ConversationListFragment_deleting">A apagar</string>
   <string name="ConversationListFragment_deleting_selected_conversations">A apagar conversas selecionadas...</string>
-  <string name="ConversationListFragment_conversations_archived">Conversas arquivadas</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">1 conversa arquivada</item>
+    <item quantity="other">%d conversas arquivadas</item>
+  </plurals>
   <string name="ConversationListFragment_undo">Anular</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">Conversa movida para a caixa de entrada</string>
-  <string name="ConversationListFragment_conversation_archived">Conversa arquivada</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Conversas movidas para a caixa de entrada</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">1 conversa movida para a caixa de entrada</item>
+    <item quantity="other">%d conversas movidas para a caixa de entrada</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mensagem de intercâmbio de chaves...</string>
   <!--ConversationListItemAction-->
@@ -225,13 +231,13 @@ Se você já importou este backup anteriormente, uma nova importação poderá o
   <string name="MessageRecord_left_group">Você saiu do grupo.</string>
   <string name="MessageRecord_updated_group">Atualizou o grupo.</string>
   <!--PassphraseChangeActivity-->
-  <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">As palavras-chave não são iguais.</string>
-  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Palavra-chave atual incorreta!</string>
-  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Não introduziu a palavra-chave!</string>
+  <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">As palavras-passe não são iguais.</string>
+  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Palavra-passe atual incorreta!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Não introduziu a palavra-passe!</string>
   <!--PassphrasePromptActivity-->
-  <string name="PassphrasePromptActivity_enter_passphrase">Introduza a palavra-chave</string>
+  <string name="PassphrasePromptActivity_enter_passphrase">Introduza a palavra-passe</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ícone do SMSSecure</string>
-  <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Palavra-chave inválida!</string>
+  <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Palavra-passe inválida!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">A assinatura desta chave de intercâmbio é diferente da previamente recebida deste contacto.
 Isto pode significar que alguém está a tentar intercetar esta comunicação ou simplesmente
@@ -312,7 +318,7 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="KeyCachingService_textsecure_passphrase_cached">Toque para abrir</string>
   <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Toque para abrir ou toque no cadeado para fechar.</string>
   <string name="KeyCachingService_passphrase_cached">O SMSSecure está desbloqueado</string>
-  <string name="KeyCachingService_lock">Bloquear com palavra-chave</string>
+  <string name="KeyCachingService_lock">Bloquear com palavra-passe</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d novas mensagens em %2$d conversas</string>
   <string name="MessageNotifier_most_recent_from_s">Mais recentes de: %1$s</string>
@@ -334,9 +340,9 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nova mensagem</string>
   <!--change_passphrase_activity-->
-  <string name="change_passphrase_activity__old_passphrase">Palavra-chave atual</string>
-  <string name="change_passphrase_activity__new_passphrase">Nova palavra-chave</string>
-  <string name="change_passphrase_activity__repeat_new_passphrase">Repita a palavra-chave</string>
+  <string name="change_passphrase_activity__old_passphrase">Palavra-passe atual</string>
+  <string name="change_passphrase_activity__new_passphrase">Nova palavra-passe</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Repita a palavra-passe</string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Introduza um nome ou número</string>
   <!--contact_selection_group_activity-->
@@ -395,13 +401,13 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">A atualizar a base de dados...</string>
   <string name="export_fragment__export_plaintext_backup">Exportar backup em texto simples</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar um ficheiro em texto simples. Compatível com \'SMS Backup &amp;amp Restore\'.</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar um ficheiro em texto simples. Compatível com 'SMS Backup &amp;amp Restore'.</string>
   <string name="import_fragment__import_system_sms_database">Importar base de dados SMS do sistema</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Importar base de dados de mensagens do sistema.</string>
   <string name="import_fragment__restore_encrypted_backup">Restaurar backup cifrado</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaurar um backup cifrado do SMSSecure, anteriormente exportado.</string>
   <string name="import_fragment__import_plaintext_backup">Importar backup em texto simples</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Importar um ficheiro em texto simples. Compatível com \'SMS Backup &amp;amp Restore\'.</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Importar um ficheiro em texto simples. Compatível com 'SMS Backup &amp;amp Restore'.</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Ver toda a conversa</string>
   <!--media_overview_activity-->
@@ -441,11 +447,11 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="message_details_header__from">De:</string>
   <string name="message_details_header__with">Com:</string>
   <!--AndroidManifest.xml-->
-  <string name="AndroidManifest__create_passphrase">Criar palavra-chave</string>
-  <string name="AndroidManifest__enter_passphrase">Introduza a palavra-chave</string>
+  <string name="AndroidManifest__create_passphrase">Criar palavra-passe</string>
+  <string name="AndroidManifest__enter_passphrase">Introduza a palavra-passe</string>
   <string name="AndroidManifest__select_contacts">Selecionar contactos</string>
   <string name="AndroidManifest__public_identity_key">Chave pública de identidade</string>
-  <string name="AndroidManifest__change_passphrase">Alterar palavra-chave</string>
+  <string name="AndroidManifest__change_passphrase">Mudar palavra-passe</string>
   <string name="AndroidManifest__verify_identity">Verificar identidade</string>
   <string name="AndroidManifest__complete_key_exchange">Completar troca de chaves</string>
   <string name="AndroidManifest__log_submit">Enviar registo de depuração</string>
@@ -490,21 +496,19 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Ative esta opção se o seu teclado tiver suporte a emojis</string>
   <string name="preferences__display_settings">Definições de exibição</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Escolha o seu próprio contacto da lista de contactos</string>
-  <string name="preferences__change_passphrase">Alterar palavra-chave</string>
-  <string name="preferences__change_your_passphrase">Mudar palavra-chave</string>
+  <string name="preferences__change_passphrase">Mudar palavra-passe</string>
+  <string name="preferences__change_your_passphrase">Mudar palavra-passe</string>
   <string name="preferences__complete_key_exchanges">Completar troca de chaves</string>
-  <string name="preferences__enable_passphrase">Ativar palavra-chave</string>
-  <string name="preferences__passphrase_summary">Palavra-chave %s</string>
+  <string name="preferences__enable_passphrase">Ativar palavra-passe</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Ativar cifra local para mensagens e chaves</string>
   <string name="preferences__screen_security">Segurança do ecrã</string>
-  <string name="preferences__screen_security_summary">Segurança do ecrã %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Completar automaticamente intercâmbio de chaves para novas sessões ou para sessões existentes com a mesma chave de identidade</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Bloquear captura de ecrã na lista de recentes e na aplicação</string>
-  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Esquecer palavra-chave após um intervalo de tempo</string>
-  <string name="preferences__timeout_passphrase">Tempo limite da palavra-chave</string>
-  <string name="preferences__pref_timeout_interval_dialogtitle">Selecionar tempo limite da palavra-chave</string>
+  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Esquecer palavra-passe após um intervalo de tempo</string>
+  <string name="preferences__timeout_passphrase">Tempo limite da palavra-passe</string>
+  <string name="preferences__pref_timeout_interval_dialogtitle">Selecionar tempo limite da palavra-passe</string>
   <string name="preferences__pref_timeout_interval_title">Intervalo de expiração</string>
-  <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Tempo a esperar antes de remover a palavra-chave da memória</string>
+  <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Tempo a esperar antes de remover a palavra-passe da memória</string>
   <string name="preferences__notifications">Notificações</string>
   <string name="preferences__enable_message_notifications">Ativar notificações de mensagens</string>
   <string name="preferences__led_color">Cor do LED</string>
@@ -567,10 +571,8 @@ Recebida uma mensagem com chave de identidade desconhecida. Clique para processa
   <string name="preferences__dark_theme">Escuro</string>
   <string name="preferences__appearance">Aspeto</string>
   <string name="preferences__theme">Tema</string>
-  <string name="preferences__theme_summary">Tema %s</string>
   <string name="preferences__default">Padrão</string>
   <string name="preferences__language">Idioma</string>
-  <string name="preferences__language_summary">Idioma %s</string>
   <string name="preferences__make_default_sms_app">Utilizar como aplicação padrão para SMS</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Tornar o SMSSecure a aplicação padrão para SMS e MMS.</string>
   <string name="preferences__submit_debug_log">Enviar registo de depuração</string>

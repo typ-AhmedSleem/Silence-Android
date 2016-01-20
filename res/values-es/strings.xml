@@ -34,6 +34,8 @@
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Entrantes %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Frase-contraseña %1$s, Seguridad en pantalla %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, Idioma %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minuto</item>
@@ -74,6 +76,8 @@
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Mensaje recibido por alguien que tambien tiene SMSSecure, iniciar una sesión segura encriptada?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Confirmación de finalización de sesión segura</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">¿Está seguro de que desea finalizar esta sesión segura?</string>
+  <string name="ConversationActivity_delete_thread_question">¿Borrar conversación?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Esto evitará borrar permanentemente todos los mensajes en esta conversación.</string>
   <string name="ConversationActivity_add_attachment">Añadir archivo adjunto</string>
   <string name="ConversationActivity_select_contact_info">Seleccionar información de contacto</string>
   <string name="ConversationActivity_compose_message">Componer mensaje</string>
@@ -139,11 +143,15 @@
   </plurals>
   <string name="ConversationListFragment_deleting">Eliminando</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Borrando conversaciones seleccionadas...</string>
-  <string name="ConversationListFragment_conversations_archived">Conversaciones archivadas</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Conversación archivada</item>
+    <item quantity="other">%d conversaciones archivadas</item>
+  </plurals>
   <string name="ConversationListFragment_undo">DESHACER</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">Conversación movida a la bandeja de entrada</string>
-  <string name="ConversationListFragment_conversation_archived">Conversación archivada</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Conversaciones movidas a la bandeja de entrada</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Se movió la conversación a la bandeja de entrada</item>
+    <item quantity="other">Se movieron %d conversaciones a la bandeja de entrada</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de claves...</string>
   <!--ConversationListItemAction-->
@@ -508,10 +516,8 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="preferences__change_your_passphrase">Cambiar su frase-contraseña</string>
   <string name="preferences__complete_key_exchanges">Completar intercambio de claves</string>
   <string name="preferences__enable_passphrase">Habilitar clave de acceso</string>
-  <string name="preferences__passphrase_summary">Frase-contraseña %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Habilitar cifrado local de mensajes y claves</string>
   <string name="preferences__screen_security">Seguridad de la pantalla</string>
-  <string name="preferences__screen_security_summary">Seguridad de la pantalla %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Completar automáticamente los intercambios de clave para nuevas sesiones o para sesiones existentes con la misma clave de identidad</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Bloquear capturas de pantalla en la lista de aplicaciones recientes y dentro de la aplicación</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Eliminar la clave de acceso de la memoria tras cierto intervalo</string>
@@ -581,10 +587,8 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="preferences__dark_theme">Oscuro</string>
   <string name="preferences__appearance">Apariencia</string>
   <string name="preferences__theme">Tema</string>
-  <string name="preferences__theme_summary">Tema %s</string>
   <string name="preferences__default">Por defecto</string>
   <string name="preferences__language">Idioma</string>
-  <string name="preferences__language_summary">Idioma %s</string>
   <string name="preferences__make_default_sms_app">Establecer como la aplicación SMS predeterminada</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Establece a SMSSecure como la aplicación SMS/MMS predeterminada de su sistema.</string>
   <string name="preferences__submit_debug_log">Enviar registro de depuración</string>
@@ -658,6 +662,9 @@ Se recibió un mensaje con una clave de identidad desconocida. Haga clic para pr
   <string name="conversation_unmuted__mute_notifications">Silenciar notificaciones</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Añadir archivo adjunto</string>
+  <string name="conversation__menu_delete_conversation">Borrar conversación</string>
+  <string name="conversation__menu_archive_conversation">Archivar conversación</string>
+  <string name="conversation__menu_unarchive_conversation">Desarchivar conversación</string>
   <string name="conversation__menu_view_media">Todas las imágenes</string>
   <string name="conversation__menu_conversation_settings">Configuración de conversación</string>
   <!--conversation_popup-->

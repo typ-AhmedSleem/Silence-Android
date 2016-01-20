@@ -352,10 +352,8 @@
   <string name="preferences__change_passphrase">غير العبارة السرية</string>
   <string name="preferences__complete_key_exchanges">أكمل تبادل المفاتيح</string>
   <string name="preferences__enable_passphrase">تفعيل العبارة السرية</string>
-  <string name="preferences__passphrase_summary">عبارة سرية %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">تفعيل تشفير تخزين الرسائل والمفاتيح</string>
   <string name="preferences__screen_security">تأمين الشاشة</string>
-  <string name="preferences__screen_security_summary">تأمين الشاشة %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">أكمل تبادل المفاتيح آليا لمحادثات جديدة او قديمة بنفس مفتاح الهوية</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">امنع لقطات الشاشة داخل التطبيق وفي قائمة Recents</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">انسى العبارة السرية من ذاكرة الجهاز بعد فترة</string>
@@ -414,10 +412,8 @@
   <string name="preferences__dark_theme">داكن</string>
   <string name="preferences__appearance">المظهر</string>
   <string name="preferences__theme">المظهر</string>
-  <string name="preferences__theme_summary">المظهر %s</string>
   <string name="preferences__default">افتراضي</string>
   <string name="preferences__language">اللغة</string>
-  <string name="preferences__language_summary">اللغة %s</string>
   <string name="preferences__make_default_sms_app">ضبط تيكست سيكيور كتطبيق الرسائل الافتراضي</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">اجعل تيكست سيكيور التطبيق الافتراضي للرسائل القصيرة ورسائل الوسائط المتعددة.</string>
   <string name="preferences__submit_debug_log">إرسال سجل التصحيح</string>

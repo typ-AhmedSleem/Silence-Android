@@ -421,10 +421,8 @@ Tagamuchira tsamba ine svumbunuro inechitupa chisingazivikanwe. Baya kuti zvipin
   <string name="preferences__change_passphrase">Sandura izwi rekudarika</string>
   <string name="preferences__complete_key_exchanges">Zadzisa kutsinhana kwesvumbunuro idzi</string>
   <string name="preferences__enable_passphrase">Gonesa izwi rekudarika</string>
-  <string name="preferences__passphrase_summary">Izwi rekudarika %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Gonesa kukwedekerwa kwetsamba nesvumbunuro dzematongo.</string>
   <string name="preferences__screen_security">Kuchengetedzwa kwechivhiti-vhiti</string>
-  <string name="preferences__screen_security_summary">Kuchengetedzwa kwechivhitivhiti %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Pedzisa kutsinhana kwesvumbunuro kuti zvikamu zvitsva kana kuti zvikamu zvagara zviripo zvinechitupa chakafanana zviitike otomatikali.</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Dzivisa mipikicha epa chivhitivhiti mumutsara wemanje ne mukati me apu</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Sungira kuti izwi rekudarika ribvunzwe kuti pawane hupindwa mutsamba mushure menguva yakapihwa.</string>
@@ -488,10 +486,8 @@ Tagamuchira tsamba ine svumbunuro inechitupa chisingazivikanwe. Baya kuti zvipin
   <string name="preferences__dark_theme">Rima</string>
   <string name="preferences__appearance">Mamiriro</string>
   <string name="preferences__theme">Dingindira</string>
-  <string name="preferences__theme_summary">Dingindira %s</string>
   <string name="preferences__default">Hurongwa</string>
   <string name="preferences__language">Mutauro</string>
-  <string name="preferences__language_summary">Mutauro %s</string>
   <string name="preferences__make_default_sms_app">Gadzira apu yetsamba pfupi sehurongwa hwako</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Ita SMSSecure kuti ive apu yehurongwa hwetsamba pfupi/ tsamba dzine midhiya yegumbapamwe rako. </string>
   <string name="preferences__submit_debug_log">Kuendesa dhayari yekubviswa kwaitwa zvipfukuto</string>

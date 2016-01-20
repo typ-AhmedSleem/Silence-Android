@@ -7,7 +7,17 @@
   <string name="please_wait">Proszę czekać...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Nie masz jeszcze ustawionego hasła!</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="one">1 wiadomość na konwersację</item>
+    <item quantity="few">%d wiadomości na konwersację</item>
+    <item quantity="other">%d wiadomości na konwersację</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Usunąć wszystkie stare wiadomości?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="one">Przycina wszystkie konwersacje do ostatniej wiadomości.</item>
+    <item quantity="few">Przycina wszystkie konwersacje do %d ostatnich wiadomości.</item>
+    <item quantity="other">Przycina wszystkie konwersacje do %d ostatnich wiadomości.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Usuń</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Wyłączyć lokalne szyfrowanie?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -23,18 +33,29 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ApplicationPreferencesActivity_Off">Wyłączone</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">%s przychodzących</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Hasło %1$s, Ochrona ekranu %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Motyw %1$s, Język %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">1 minuta</item>
+    <item quantity="few">%d minut</item>
+    <item quantity="other">%d minut</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(zdjęcie)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(dźwięk)</string>
   <string name="DraftDatabase_Draft_video_snippet">(film)</string>
   <!--AttchmentManager-->
+  <string name="AttachmentManager_cant_open_media_selection">Nie można znaleźć aplikacji do obsługi mediów.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_camera">Aparat</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Zdjęcie</string>
   <string name="AttachmentTypeSelectorAdapter_video">Film</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Dźwięk</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informacje kontaktowe</string>
   <!--BlockedContactsActivity-->
+  <string name="BlockedContactsActivity_blocked_contacts">Zablokowane kontakty</string>
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Rozmiar wiadomości: %d KB </string>
   <string name="ConversationItem_expires_s">Wygasa: %s</string>
@@ -53,16 +74,28 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Rozpocząć bezpieczną sesję z %s?</string>
+  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Otrzymano wiadomość od osoby, która także posiada SMSSecure, zainicjować bezpieczną sesję?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Potwierdzenie zakończenia bezpiecznej sesji</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Czy na pewno chcesz zakończyć bezpieczną sesję?</string>
+  <string name="ConversationActivity_delete_thread_question">Usunąć konwersację?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">To permanentnie skasuje wszystkie wiadomości w tej konwersacji.</string>
   <string name="ConversationActivity_add_attachment">Dodaj załącznik</string>
   <string name="ConversationActivity_select_contact_info">Wybierz dane kontaktowe</string>
   <string name="ConversationActivity_compose_message">Nowa wiadomość</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Przepraszamy, wystąpił błąd podczas dodawania załącznika.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Wybrany plik .gif jest zbyt duży!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Przepraszamy, ten plik wideo przekracza dozwolony rozmiar (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Przepraszamy, ten plik audio przekracza dozwolony rozmiar (%1$skB).</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Podany numer, lub adres e-mail jest niepoprawny!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Wiadomość jest pusta!</string>
+  <string name="ConversationActivity_group_members">Członkowie grupy</string>
   <string name="ConversationActivity_group_conversation">Grupowa konwersacja</string>
   <string name="ConversationActivity_unnamed_group">Grupa bez nazwy</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">1 uczestnik</item>
+    <item quantity="few">%d uczestników</item>
+    <item quantity="other">%d uczestników</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Zapisane wersje robocze</string>
   <string name="ConversationActivity_invalid_recipient">Nieprawidłowy adresat!</string>
   <string name="ConversationActivity_calls_not_supported">Połączenia nie są obsługiwane</string>
@@ -71,9 +104,26 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationActivity_transport_insecure_mms">Nieszyfrowany MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Bezpieczny SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Bezpieczny MMS</string>
+  <string name="ConversationActivity_install_smssecure">Porozmawiajmy bezpiecznie: %s</string>
+  <string name="ConversationActivity_recipient_self">Bezpieczne sesje mogą być ustanowione tylko z innymi ludźmi.</string>
+  <string name="ConversationActivity_mms_not_supported_title">MMS-y nie są obsługiwane</string>
+  <string name="ConversationActivity_mms_not_supported_message">Nie można przesłać tej wiadomości, ponieważ Twój operator nie obsługuje MMS-ów.</string>
+  <string name="ConversationActivity_specify_recipient">Proszę wybrać kontakt</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Zbyt duży rozmiar załącznika.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Szczegóły wiadomości</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="one">Usunąć wybraną wiadomość?</item>
+    <item quantity="few">Usunąć wybrane wiadomości?</item>
+    <item quantity="other">Usunąć wybrane wiadomości?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="one">To permanentnie skasuje wybraną wiadomość.</item>
+    <item quantity="few">To permanentnie skasuje wszystkie %1$d wybranych wiadomości.</item>
+    <item quantity="other">To permanentnie skasuje wszystkie %1$d wybranych wiadomości.</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">Zapisać na dysk?</string>
+  <string name="ConversationFragment_saving_this_media_to_storage_warning">Zapisanie tych plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do tych plików.\n\nKontynuować?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Błąd podczas zapisywania załącznika na dysk!</string>
   <string name="ConversationFragment_success_exclamation">Sukces!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nie udało zapisać się pliku!</string>
@@ -85,22 +135,60 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationFragment_deleting">Usuwanie...</string>
   <string name="ConversationFragment_deleting_messages">Usuwanie wiadomości...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Szukaj</string>
   <!--ConversationListFragment-->
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">Usunąć wybraną konwersację?</item>
+    <item quantity="few">Usunąć wybrane konwersacje?</item>
+    <item quantity="other">Usunąć wybrane konwersacje?</item>
+  </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="one">To permanentnie skasuje wybraną konwersację.</item>
+    <item quantity="few">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
+    <item quantity="other">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Usuwanie...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Usuwanie wybranych konwersacji...</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Konwersacja zarchiwizowana.</item>
+    <item quantity="few">%d konwersacji zarchiwizowanych.</item>
+    <item quantity="other">%d konwersacji zarchiwizowanych.</item>
+  </plurals>
+  <string name="ConversationListFragment_undo">COFNIJ</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Przeniesiono konwersację do Odebranych.</item>
+    <item quantity="few">Przeniesiono %d konwersacji do Odebranych.</item>
+    <item quantity="other">Przeniesiono %d konwersacji do Odebranych.</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Wiadomość wymiany kluczy...</string>
   <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Archiwum konwersacji (%d)</string>
   <!--CustomDefaultPreference-->
+  <string name="CustomDefaultPreference_using_custom">Własne: %s</string>
+  <string name="CustomDefaultPreference_using_default">Domyślne: %s</string>
   <string name="CustomDefaultPreference_none">Brak</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Teraz</string>
+  <string name="DateUtils_minutes_ago">%d min</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Podziel się z</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_smssecure">Witamy w SMSSecure!</string>
+  <string name="IntroScreenActivity_smssecure_description">SMSSecure pozwala Ci chronić Twoją prywatność podczas rozmów z przyjaciółmi.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Zaszyfruj swoje wiadomości</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecure zaszyfruje wiadomości z innymi użytkownikami SMSSecure automatycznie.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Rozmawiaj z każdym</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecure pozwala używać nieszyfrowanych wiadomości z ludźmi nie posiadającymi programu.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Eksport</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Wyeksportować nieszyfrowaną kopię na dysk?</string>
+  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Uwaga, czynność ta wyeksportuje Twoje wiadomości SMSSecure w formie nieszyfrowanej na kartę SD.</string>
   <string name="ExportFragment_cancel">Anuluj</string>
   <string name="ExportFragment_exporting">Eksportowanie</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Eksportowanie nieszyfrowanej kopii na dysk...</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Błąd, nie udało się zapisać na dysk.</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Błąd podczas zapisu na dysk.</string>
   <string name="ExportFragment_success">Sukces!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nowa grupa</string>
@@ -154,6 +242,7 @@ Przywracanie szyfrowanej kopii zapasowej SMSSecure spowoduje nadpisanie Twoich i
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Hasło niezgodne!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Nieprawidłowe stare hasło!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nie wpisano hasła!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Podaj hasło</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ikona SMSSecure</string>
@@ -169,7 +258,18 @@ Twój kontakt przeinstalował program SMSSecure i posiada teraz nowy klucz tożs
 ten kontakt.
 </string>
   <!--RecipientPreferencesActivity-->
+  <string name="RecipientPreferenceActivity_block_this_contact_question">Zablokować ten kontakt?</string>
+  <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Już więcej nie zobaczysz wiadomości przesłanych od tego użytkownika.</string>
+  <string name="RecipientPreferenceActivity_block">Zablokuj</string>
+  <string name="RecipientPreferenceActivity_unblock_this_contact_question">Odblokować ten kontakt?</string>
+  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Czy na pewno chcesz odblokować ten kontakt?</string>
+  <string name="RecipientPreferenceActivity_unblock">Odblokuj</string>
+  <string name="RecipientPreferenceActivity_enabled">Włączony</string>
+  <string name="RecipientPreferenceActivity_disabled">Wyłączony</string>
   <!--Slide-->
+  <string name="Slide_image">Zdjęcie</string>
+  <string name="Slide_audio">Dźwięk</string>
+  <string name="Slide_video">Film</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Otrzymano uszkodzony klucz!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
@@ -182,10 +282,12 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Opuścił grupę...</string>
   <string name="ThreadRecord_draft">Szkic:</string>
+  <string name="ThreadRecord_media_message">Wiadomość multimedialna</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nie posiadasz klucza tożsamości.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Odbiorca nie posiada klucza tożsamości.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skanuj ich klucz aby porównać</string>
+  <string name="VerifyIdentityActivity_get_your_key_scanned">Przeskanuj swój klucz</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UWAGA, zeskanowane klucze NIE ZGADZAJĄ się! Proszę sprawdź klucz ostrożnie!</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIE zweryfikowany!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ich klucz jest poprawny. Niezbędna będzie także weryfikacja Twojego klucza z odbiorcami.</string>
@@ -194,6 +296,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="ViewIdentityActivity_scan_to_compare">Skanuj aby porównać</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UWAGA, zeskanowane klucze NIE ZGADZAJĄ SIĘ!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Zeskanowane klucze zgadzają się!</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">Twój odcisk klucza</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Rozpocząć pomimo istniejącego żądania?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Już wysłałeś żądanie o rozpoczęcie sesji do tego odbiorcy, czy na pewno chcesz wysłać jeszcze jedno żądanie? Spowoduje to utratę pierwszego żądania.</string>
@@ -202,6 +305,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="MessageDisplayHelper_bad_encrypted_message">Źle zaszyfrowana wiadomość...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Trwa odszyfrowywanie, proszę czekać...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Wiadomość zaszyfrowana dla nieistniejącej sesji...</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Zakańczanie nieistniejącej sesji...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Błąd odszyfrowania wiadomości.</string>
   <!--MmsDatabase-->
@@ -216,6 +320,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Źle zaszyfrowana wiadomość MMS...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Wiadomość MMS zaszyfrowana dla nieistniejącej sesji...</string>
   <!--MuteDialog-->
+  <string name="MuteDialog_mute_notifications">Wycisz powiadomienia</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Trwa importowanie</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importowanie wiadomości tekstowych</string>
@@ -225,16 +330,31 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="KeyCachingService_passphrase_cached">SMSSecure jest odblokowany</string>
   <string name="KeyCachingService_lock">Zablokuj hasłem</string>
   <!--MessageNotifier-->
+  <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nowych wiadomości w %2$d konwersacjach</string>
+  <string name="MessageNotifier_most_recent_from_s">Ostatnie zaczynając od %1$s</string>
   <string name="MessageNotifier_encrypted_message">Szyfrowana wiadomość...</string>
+  <string name="MessageNotifier_media_message_with_text">Wiadomość multimedialna: %s</string>
   <string name="MessageNotifier_no_subject">(Brak tematu)</string>
   <string name="MessageNotifier_message_delivery_failed">Nie udało się dostarczyć wiadomości.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Dostarczenie wiadomości nie powiodło się.</string>
   <string name="MessageNotifier_error_delivering_message">Błąd przy wysyłaniu wiadomości.</string>
   <string name="MessageNotifier_mark_all_as_read">Oznacz wszystkie jako przeczytane</string>
+  <string name="MessageNotifier_mark_read">Oznacz jako przeczytane</string>
+  <string name="MessageNotifier_media_message">Wiadomość multimedialna</string>
+  <string name="MessageNotifier_message_received">Wiadomość odebrana przez %s.</string>
+  <string name="MessageNotifier_reply">Odpisz</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Szybka odpowiedź niemożliwa, gdy SMSSecure jest zablokowany!</string>
+  <string name="QuickResponseService_problem_sending_message">Problem z wysłaniem wiadomości!</string>
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Nowa wiadomość</string>
   <!--change_passphrase_activity-->
+  <string name="change_passphrase_activity__old_passphrase">Stare hasło</string>
+  <string name="change_passphrase_activity__new_passphrase">Nowe hasło</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Powtórz nowe hasło</string>
   <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Wprowadź nazwę lub numer kontaktu</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Brak kontaktów.</string>
   <string name="contact_selection_group_activity__finding_contacts">Ładowanie listy kontaktów...</string>
@@ -243,9 +363,11 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Wybierz dla</string>
   <!--blocked_contacts_fragment-->
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Brak zablokowanych kontaktów...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Brak ostatnich połączeń.</string>
   <!--conversation_title_view-->
+  <string name="conversation_title_view__conversation_muted">Rozmowa wyciszona</string>
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Wyślij szyfrowany SMS</string>
   <string name="conversation_activity__type_message_sms_insecure">Wyślij nieszyfrowany SMS</string>
@@ -258,6 +380,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="conversation_activity__emoji_toggle_description">Przełącz do emoji klawiatury</string>
   <string name="conversation_activity__attachment_thumbnail">Minaturka załącznika</string>
   <!--conversation_item-->
+  <string name="conversation_item__mms_downloading_description">Pobieranie wiadomości multimedialnej...</string>
   <string name="conversation_item__mms_image_description">Wiadomość multimedialna</string>
   <string name="conversation_item__secure_message_description">Bezpieczna wiadomość</string>
   <!--conversation_item_sent-->
@@ -288,9 +411,15 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Aktualizowanie bazy danych...</string>
   <string name="export_fragment__export_plaintext_backup">Eksport nieszyfrowanej kopi zapasowej</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Eksportuj niezaszyfrowaną kopię zapasową kompatybilną z \'SMSBackup &amp; Restore\' na dysk.</string>
   <string name="import_fragment__import_system_sms_database">Importuj systemową bazę danych SMS</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">Importuj bazę danych z domyślnej systemowej aplikacji SMS.</string>
+  <string name="import_fragment__restore_encrypted_backup">Przywróć z zaszyfrowanej kopii zapasowej.</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Przywróć poprzednio wyeksportowaną szyfrowaną kopię zapasową.</string>
   <string name="import_fragment__import_plaintext_backup">Importuj nieszyfrowaną kopię zapasową</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup &amp; Restore\'.</string>
   <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">Zobacz konwersację w całości.</string>
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Brak obrazów</string>
   <!--message_recipients_list_item-->
@@ -302,7 +431,15 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure wymaga ustawień MMS w celu dostarczenia wiadomości multimedialnych za pośrednictwem Twojego operatora. Twoje urządzenie nie udostępnia tych informacji. Może to być spowodowane pewnymi restrykcyjnymi konfiguracjami w telefonie.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Aby mieć możliwość wysyłania wiadomości multimedialnych i wiadomości grupowych, kliknij \'OK\' i wypełnij pola, o które jesteś proszony. Dane MMS dla Twojego operatora, można znaleźć szukając w ustawieniach frazy typu \'Punkty Dostępu - APN\'. Wystarczy to zrobić tylko jeden raz.</string>
   <!--recipient_preferences_activity-->
+  <string name="recipient_preference_activity__blocked">ZABLOKOWANY</string>
   <!--recipient_preferences-->
+  <string name="recipient_preferences__mute_conversation">Wycisz konwersację</string>
+  <string name="recipient_preferences__disable_notifications_for_this_conversation">Wyłącz powiadomienia dla tej konwersacji</string>
+  <string name="recipient_preferences__notification_sound">Dźwięk powiadomienia</string>
+  <string name="recipient_preferences__vibrate">Wibracja</string>
+  <string name="recipient_preferences__block">Zablokuj</string>
+  <string name="recipient_preferences__color">Kolor</string>
+  <string name="recipient_preferences__color_for_this_contact">Kolor dla tego kontaktu</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Zakończono</string>
   <!--recipients_panel-->
@@ -328,10 +465,30 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="AndroidManifest__verify_identity">Zweryfikuj tożsamość</string>
   <string name="AndroidManifest__complete_key_exchange">Ukończ wymianę kluczy</string>
   <string name="AndroidManifest__log_submit">Wyślij logi debugowania</string>
+  <string name="AndroidManifest__media_preview">Podgląd pliku</string>
   <string name="AndroidManifest__media_overview">Wszystkie obrazy</string>
   <string name="AndroidManifest__media_overview_named">Wszystkie obrazy z %1$s</string>
+  <string name="AndroidManifest__message_details">Szczegóły wiadomości</string>
+  <string name="AndroidManifest_archived_conversations">Archiwum konwersacji</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Import / eksport</string>
+  <string name="arrays__your_identity_key">Twój klucz tożsamości</string>
+  <string name="arrays__use_default">Użyj domyślnych</string>
+  <string name="arrays__use_custom">Użyj własnych</string>
+  <string name="arrays__mute_for_one_hour">Wycisz na 1 godzinę</string>
+  <string name="arrays__mute_for_two_hours">Wycisz na 2 godziny</string>
+  <string name="arrays__mute_for_one_day">Wycisz na 1 dzień</string>
+  <string name="arrays__mute_for_seven_days">Wycisz na 7 dni</string>
+  <string name="arrays__mute_for_one_year">Wycisz na 1 rok</string>
+  <string name="arrays__settings_default">Domyślne ustawienia</string>
+  <string name="arrays__enabled">Włączony</string>
+  <string name="arrays__disabled">Wyłączony</string>
+  <string name="arrays__name_and_message">Nazwa kontaktu i wiadomość</string>
+  <string name="arrays__name_only">Tylko nazwa kontaktu</string>
+  <string name="arrays__no_name_or_message">Ani nazwa ani wiadomość</string>
+  <string name="arrays__enter_key">Pokaż przycisk enter</string>
+  <string name="arrays__emoji_key">Pokaż przycisk emoji</string>
+  <string name="arrays__send_key">Pokaż przycisk wysyłania</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d godzina</item>
@@ -345,15 +502,17 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="preferences__pref_all_mms_title">Otrzymuj wszystkie MMSy</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Użyj SMSSecure do przeglądania i przechowywania wszystkich wiadomości tekstowych.</string>
   <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Użyj SMSSecure do przeglądania i przechowywania wszystkich wiadomości multimedialnych</string>
+  <string name="preferences__keyboard_settings">Opcje klawiatury</string>
+  <string name="preferences__disable_emoji_drawer">Wyłącz emoji</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Włącz tę opcję, jeżeli twoja klawiatura obsługuje Emoji</string>
   <string name="preferences__display_settings">Ustawienia wyświetlania</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Wybierz swój kontakt z listy kontaktów.</string>
   <string name="preferences__change_passphrase">Zmień hasło</string>
+  <string name="preferences__change_your_passphrase">Zmień hasło</string>
   <string name="preferences__complete_key_exchanges">Ukończenie wymiany kluczy</string>
   <string name="preferences__enable_passphrase">Włącz hasło</string>
-  <string name="preferences__passphrase_summary">Hasło %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Włącz lokalne szyfrowanie wiadomości i kluczy</string>
   <string name="preferences__screen_security">Ochrona ekranu</string>
-  <string name="preferences__screen_security_summary">Ochrona ekranu %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automatycznie zakończ wymianę kluczy dla nowej lub obecnej sesji używając tego samego klucza tożsamości</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokuj rzuty ekranu w obecnej liście oraz w aplikacji</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Wymaż hasło z pamięci systemu po pewnym czasie</string>
@@ -362,6 +521,7 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="preferences__pref_timeout_interval_title">Wybierz czas wygaśnięcia hasła</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Ilość czasu zanim hasło zostanie wymazane z pamięci urządzenia</string>
   <string name="preferences__notifications">Powiadomienia</string>
+  <string name="preferences__enable_message_notifications">Włącz powiadomienia wiadomości</string>
   <string name="preferences__led_color">Kolor LED</string>
   <string name="preferences__led_color_unknown">Nieznane</string>
   <string name="preferences__pref_led_blink_title">Wzór powiadomień LED</string>
@@ -371,6 +531,8 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="preferences__pref_led_blink_custom_pattern_set">Ustawiono niestandardowy wzór migających świateł LED!</string>
   <string name="preferences__sound">Dźwięk</string>
   <string name="preferences__change_notification_sound">Zmień dźwięk powiadomienia</string>
+  <string name="preferences__silent">Cichy</string>
+  <string name="preferences__in_conversation_notifications">Powiadomienia w konwersacji</string>
   <string name="preferences__play_inthread_notifications">Odtwórz dźwięk powiadomienia podczas przeglądania aktywnej rozmowy.</string>
   <string name="preferences__repeat_alerts">Powtarzaj alarmy</string>
   <string name="preferences__never">Nigdy</string>
@@ -396,36 +558,57 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="preferences__slow">Wolno</string>
   <string name="preferences__custom">Własne</string>
   <string name="preferences__advanced">Zaawansowane</string>
+  <string name="preferences__privacy">Prywatność</string>
+  <string name="preferences__mms_user_agent">MMS User Agent</string>
   <string name="preferences__advanced_mms_access_point_names">Manualne ustawienia MMS</string>
   <string name="preferences__enable_manual_mms">Użyj manualnych ustawień MMS</string>
   <string name="preferences__override_system_mms_settings">Zastąp ustawienia systemowe MMS poniższymi informacjami.</string>
+  <string name="preferences__mmsc_url">MMSC URL</string>
   <string name="preferences__mms_proxy_host">Host Proxy dla MMS\'a </string>
   <string name="preferences__mms_proxy_port">Port Proxy dla MMS\'a </string>
   <string name="preferences__mmsc_username">Użytkownik MMSC</string>
   <string name="preferences__mmsc_password">Hasło MMSC</string>
   <string name="preferences__sms_delivery_reports">Raporty dostarczenia SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Żądaj raportu dostarczenia każdej wysłanej wiadomości SMS</string>
+  <string name="preferences__sms_delivery_reports_notification">Powiadomienia dostarczania SMS</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Wyświetl powiadomienie przy otrzymaniu raportu dostarczenia</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Automatycznie usuń starsze wiadomości po przekroczeniu określonej długości konwersacji</string>
   <string name="preferences__delete_old_messages">Usuń stare wiadomości</string>
+  <string name="preferences__chats">Czaty i multimedia</string>
   <string name="preferences__conversation_length_limit">Limit długości konwersacji</string>
+  <string name="preferences__trim_all_conversations_now">Przytnij wszystkie konwersacje</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Skanuj wszystkie rozmowy i przytnij do zdefiniowanej długości</string>
   <string name="preferences__light_theme">Jasny</string>
   <string name="preferences__dark_theme">Ciemny</string>
   <string name="preferences__appearance">Wygląd</string>
   <string name="preferences__theme">Motyw</string>
-  <string name="preferences__theme_summary">Skórka %s</string>
   <string name="preferences__default">Domyślne</string>
   <string name="preferences__language">Język</string>
-  <string name="preferences__language_summary">Język %s</string>
   <string name="preferences__make_default_sms_app">Ustaw jako domyślną aplikację SMS</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Ustaw SMSSecure jako domyślną aplikację SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Wyślij logi debugowania</string>
   <string name="preferences__support_wifi_calling">Tryb zgodności \'WiFi Calling\'</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Włącz jeśli Twoje urządzenie używa dostarczanie SMS/MMS przez WiFi (włącz tylko wtedy gdy \'WiFi Calling\' jest włączone na Twoim urządzeniu).</string>
+  <string name="preferences__about">O SMSSecure</string>
+  <string name="preferences__about_version">Wersja %s</string>
+  <string name="preferences__about_build_id">ID kompilacji: %s</string>
+  <string name="preferences_app_protection__blocked_contacts">Zablokowane kontakty</string>
+  <string name="preferences_notifications__display_in_notifications">Pokazuj w powiadomieniach</string>
+  <string name="preferences__show_sent_time">Pokaż datę wysłania</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pokaż czas wysłania zamiast czasu otrzymania dla Odebranych wiadomości</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Auto-pobieranie</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Automatycznie pobieraj wiadomości MMS</string>
+  <string name="preferences__roaming_auto_retrieve">Auto-pobieranie w roamingu</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Automatycznie pobieraj wiadomości MMS w roamingu</string>
+  <string name="preferences_chats__message_trimming">Obcinanie wiadomości</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Zaznacz wszystko</string>
   <string name="contact_selection_list__menu_unselect_all">Odznacz wszystko</string>
+  <string name="contact_selection_list__header">WSZYSTKIE KONTAKTY</string>
   <string name="contact_selection_list__unknown_contact">Nowa wiadomość do...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Zakończono</string>
@@ -454,11 +637,14 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Usuń zaznaczone</string>
   <string name="conversation_list_batch__menu_select_all">Zaznacz wszystko</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">Archiwizuj zaznaczone</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Przenieś zaznaczone do Odebranych</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Szukaj</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Zdjęcie kontaktu</string>
   <string name="conversation_list_item_view__error_alert">Powiadomienie błedu</string>
+  <string name="conversation_list_item_view__archived">Archiwum</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nowa konwersacja</string>
   <!--conversation_secure_verified-->
@@ -466,11 +652,18 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <string name="conversation_secure_verified__menu_verify_identity">Zweryfikuj tożsamość</string>
   <string name="conversation_secure_verified__menu_abort_secure_session">Zakończ bezpieczną sesję</string>
   <!--conversation_muted-->
+  <string name="conversation_muted__unmute">Cofnij wyciszenie</string>
   <!--conversation_unmuted-->
+  <string name="conversation_unmuted__mute_notifications">Wycisz powiadomienia</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Dodaj załącznik</string>
+  <string name="conversation__menu_delete_conversation">Usuń konwersację</string>
+  <string name="conversation__menu_archive_conversation">Archiwizuj konwersację</string>
+  <string name="conversation__menu_unarchive_conversation">Odarchiwizuj konwersację</string>
   <string name="conversation__menu_view_media">Wszystkie obrazy</string>
+  <string name="conversation__menu_conversation_settings">Ustawienia konwersacji</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Rozciągnij powiadomienie</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Dodaj do kontaktów</string>
   <!--conversation_group_options-->
@@ -500,7 +693,13 @@ Otrzymano wiadomość z nieznanym kluczem tożsamości. Kliknij aby przetworzyć
   <!--media_preview-->
   <string name="media_preview__save_title">Zapisz</string>
   <!--media_preview_activity-->
+  <string name="media_preview_activity__image_content_description">Podgląd obrazka</string>
   <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Oceń program</string>
+  <string name="StoreRatingReminder_message">Jeżeli podoba Ci się ten program, prosimy abyś poświęcił chwilę i ocenił go.</string>
+  <string name="StoreRatingReminder_rate_now">Oceń teraz!</string>
+  <string name="StoreRatingReminder_no_thanks">Nie, dziękuję.</string>
+  <string name="StoreRatingReminder_later">Później</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Usuwanie...</string>
   <string name="trimmer__deleting_old_messages">Usuwanie starych wiadomości...</string>

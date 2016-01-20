@@ -31,6 +31,8 @@
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">受信 %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">パスフレーズ %1$s, スクリーンセキュリティ %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">テーマ %1$s, 言語 %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="other">%d 分</item>
@@ -132,11 +134,13 @@
   </plurals>
   <string name="ConversationListFragment_deleting">削除</string>
   <string name="ConversationListFragment_deleting_selected_conversations">選択した会話を削除中…</string>
-  <string name="ConversationListFragment_conversations_archived">会話をアーカイブしました</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="other">%d の会話をアーカイブしました</item>
+  </plurals>
   <string name="ConversationListFragment_undo">元に戻す</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">会話を受信トレイに移動しました</string>
-  <string name="ConversationListFragment_conversation_archived">会話をアーカイブしました</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">会話を受信トレイに移動しました</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="other">%d の会話を受信トレイに移動しました</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">鍵交換のメッセージ…</string>
   <!--ConversationListItemAction-->
@@ -488,10 +492,8 @@
   <string name="preferences__change_your_passphrase">あなたのパスワードを変更</string>
   <string name="preferences__complete_key_exchanges">鍵交換の自動完了</string>
   <string name="preferences__enable_passphrase">パスフレーズが有効</string>
-  <string name="preferences__passphrase_summary">パスワード %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">メッセージと鍵のローカル暗号化を有効にする</string>
   <string name="preferences__screen_security">スクリーンセキュリティ</string>
-  <string name="preferences__screen_security_summary">スクリーンセキュリティ %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">同じIDネームとの新しいセッション、又は現在のセッションをするのに鍵交換を自動で完了させる</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">スクリーンショットをアプリ表示の場合防ぐ</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">一定時間経過するとメモリからパスワードを消去する</string>
@@ -562,10 +564,8 @@
   <string name="preferences__dark_theme">ダーク</string>
   <string name="preferences__appearance">デザイン設定</string>
   <string name="preferences__theme">テーマ</string>
-  <string name="preferences__theme_summary">テーマ %s</string>
   <string name="preferences__default">初期設定の言語</string>
   <string name="preferences__language">言語</string>
-  <string name="preferences__language_summary">言語 %s</string>
   <string name="preferences__make_default_sms_app">標準のSMSアプリに設定する</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">お使いの端末で、SMSSecureをSMS／MMSの標準アプリにする</string>
   <string name="preferences__submit_debug_log">デバッグログを提出</string>

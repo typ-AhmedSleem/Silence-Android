@@ -36,6 +36,8 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Dohodna: %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Geslo: %1$s, Zaščita zaslona: %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema: %1$s, Jezik: %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">ena minuta</item>
@@ -155,11 +157,19 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   </plurals>
   <string name="ConversationListFragment_deleting">Brisanje</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Brišem izbrane pogovore...</string>
-  <string name="ConversationListFragment_conversations_archived">Pogovori so bili arhivirani</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Pogovor arhiviran</item>
+    <item quantity="two">%d pogovora arhivirana</item>
+    <item quantity="few">%d pogovori arhivirani</item>
+    <item quantity="other">%d pogovorov arhiviranih</item>
+  </plurals>
   <string name="ConversationListFragment_undo">RAZVELJAVI</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">Premaknjeno v nabiralnik</string>
-  <string name="ConversationListFragment_conversation_archived">Pogovor je bil arhiviran</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Premaknjeno v nabiralnik</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Pogovor je premaknjen v nabiralnik</item>
+    <item quantity="two">%d pogovora premaknjena v nabiralnik</item>
+    <item quantity="few">%d pogovori premaknjeni v nabiralnik</item>
+    <item quantity="other">%d pogovorov premaknjeno v nabiralnik</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Sporočilo za izmenjavo ključev...</string>
   <!--ConversationListItemAction-->
@@ -509,10 +519,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__change_your_passphrase">Zamenjava gesla</string>
   <string name="preferences__complete_key_exchanges">Zaključi izmenjavo ključev</string>
   <string name="preferences__enable_passphrase">Vklop gesla</string>
-  <string name="preferences__passphrase_summary">Geslo: %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Omogoči lokalno šifriranje sporočil na napravi</string>
   <string name="preferences__screen_security">Zaščita zaslona</string>
-  <string name="preferences__screen_security_summary">Zaščita zaslona: %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Samodejno dokončaj izmenjavo ključev za vse nove seje ali seje z istim identifikacijskim ključem </string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Prepreči zajem slike zaslona</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Po določenem času bo geslo v pomnilniku pozabljeno</string>
@@ -582,10 +590,8 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <string name="preferences__dark_theme">Temna</string>
   <string name="preferences__appearance">Izgled</string>
   <string name="preferences__theme">Tema</string>
-  <string name="preferences__theme_summary">Tema: %s</string>
   <string name="preferences__default">Privzeto</string>
   <string name="preferences__language">Jezik</string>
-  <string name="preferences__language_summary">Jezik: %s</string>
   <string name="preferences__make_default_sms_app">Nastavi za privzeto aplikacijo SMS</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Nastavi SMSSecure za privzeto aplikacijo SMS/MMS na napravi.</string>
   <string name="preferences__submit_debug_log">Oddaj sistemsko zabeležbo</string>
@@ -646,7 +652,7 @@ Prejeto sporočilo z neznanim identifikacijskim ključem. Kliknite za obdelavo i
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Slika stika</string>
   <string name="conversation_list_item_view__error_alert">Alarm za napako</string>
-  <string name="conversation_list_item_view__archived">Premaknjeno v arhiv</string>
+  <string name="conversation_list_item_view__archived">Arhivirano</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nov pogovor</string>
   <!--conversation_secure_verified-->

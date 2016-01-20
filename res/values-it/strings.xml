@@ -425,10 +425,8 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="preferences__change_passphrase">Cambia passphrase</string>
   <string name="preferences__complete_key_exchanges">Scambio di chiavi completato</string>
   <string name="preferences__enable_passphrase">Usa password</string>
-  <string name="preferences__passphrase_summary">Password %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Abilità la cifratura in locale di messaggi e chiavi</string>
   <string name="preferences__screen_security">Sicurezza schermo</string>
-  <string name="preferences__screen_security_summary">Sicurezza schermo %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Completa lo scambio della chiave automaticamente per le nuove sessione con la stessa chiave di identità</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Blocca il fotografare dello schermo nella lista recenti e all\'interno dell\'app</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Dimentica la password dalla cache dopo un intervallo di tempo</string>
@@ -492,10 +490,8 @@ Ricevuto un messaggio con una chiave identificativa sconosciuta. Clicca per elab
   <string name="preferences__dark_theme">Scuro</string>
   <string name="preferences__appearance">Aspetto</string>
   <string name="preferences__theme">Tema</string>
-  <string name="preferences__theme_summary">Tema %s</string>
   <string name="preferences__default">Predefinito</string>
   <string name="preferences__language">Lingua</string>
-  <string name="preferences__language_summary">Lingua %s</string>
   <string name="preferences__make_default_sms_app">Imposta come applicazione SMS predefinita.</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Rendi SMSSecure l\'applicazione predefinita per SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Invia log di debug</string>

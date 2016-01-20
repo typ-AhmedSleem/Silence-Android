@@ -421,10 +421,8 @@
   <string name="preferences__change_passphrase">Изменить парольную фразу</string>
   <string name="preferences__complete_key_exchanges">Выполнять обмены ключами</string>
   <string name="preferences__enable_passphrase">Включить парольную фразу</string>
-  <string name="preferences__passphrase_summary">Ключ %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Включить шифрование при хранении сообщений и ключей</string>
   <string name="preferences__screen_security">Защита экрана</string>
-  <string name="preferences__screen_security_summary">Защита экрана %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Автоматически выполнять обмен ключами в новых сеансах, а также в существующих сеансах с не изменившимся личным ключом</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Блокировать снимки экрана внутри приложения</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Стирать из памяти парольную фразу через некоторое время</string>
@@ -483,10 +481,8 @@
   <string name="preferences__dark_theme">Тёмная</string>
   <string name="preferences__appearance">Внешний вид</string>
   <string name="preferences__theme">Тема</string>
-  <string name="preferences__theme_summary">Тема %s</string>
   <string name="preferences__default">По умолчанию</string>
   <string name="preferences__language">Язык (Language)</string>
-  <string name="preferences__language_summary">Язык %s</string>
   <string name="preferences__make_default_sms_app">SMS-приложение по умолчанию</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Сделать SMSSecure приложением по умолчанию для SMS и MMS.</string>
   <string name="preferences__submit_debug_log">Отправлять лог отладки</string>

@@ -7,7 +7,15 @@
   <string name="please_wait">Een moment alsjeblieft...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Je hebt nog geen wachtwoord ingesteld!</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="one">1 bericht per gesprek</item>
+    <item quantity="other">%d berichten per gesprek</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Nu alle oude berichten verwijderen?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="one">Dit trimt alle gesprekken tot het meest recente bericht.</item>
+    <item quantity="other">Dit trimt alle gesprekken tot de %d meest recente berichten.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Verwijderen</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Opslagversleuteling uitschakelen?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -24,7 +32,13 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Binnenkomend %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Wachtwoord %1$s, schermbeveiliging %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Thema %1$s, taal %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">1 minuut</item>
+    <item quantity="other">%d minuten</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(afbeelding)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
@@ -60,6 +74,8 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_detected_smssecure_initiate_session_question">Bericht ontvangen van iemand die ook SMSSecure heeft, wilt u een versleutelde berichtenuitwisseling starten?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Beëindigen beveiligde sessie bevestigen</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Weet u zeker dat u deze beveiligde sessie wilt beëindigen?</string>
+  <string name="ConversationActivity_delete_thread_question">Gesprek verwijderen?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Dit verwijderd alle berichten in dit gesprek permanent.</string>
   <string name="ConversationActivity_add_attachment">Voeg bijlage toe</string>
   <string name="ConversationActivity_select_contact_info">Selecteer contactinformatie</string>
   <string name="ConversationActivity_compose_message">Bericht opstellen</string>
@@ -72,6 +88,10 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_group_members">Groepsleden</string>
   <string name="ConversationActivity_group_conversation">Groepsgesprek</string>
   <string name="ConversationActivity_unnamed_group">Naamloze groep</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">1 lid</item>
+    <item quantity="other">%d leden</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Concept opgeslagen</string>
   <string name="ConversationActivity_invalid_recipient">Ongeldige ontvanger!</string>
   <string name="ConversationActivity_calls_not_supported">Bellen niet ondersteund</string>
@@ -88,7 +108,16 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_attachment_exceeds_size_limits">Bijvoegsel groter dan limiet.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Berichtdetails</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="one">Geselecteerd bericht verwijderen?</item>
+    <item quantity="other">Geselecteerde berichten verwijderen?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="one">Dit zal het geselecteerde bericht permanent verwijderen.</item>
+    <item quantity="other">Dit zal alle %1$d geselecteerde berichten permanent verwijderen.</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">Opslaan?</string>
+  <string name="ConversationFragment_saving_this_media_to_storage_warning">Het opslaan van dit mediabestand maakt het toegankelijke voor alle apps op je telefoon.t.\n\nDoorgaan?</string>
   <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Fout tijdens het opslaan van de bijlage!</string>
   <string name="ConversationFragment_success_exclamation">Succesvol!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Opslag niet beschrijfbaar!</string>
@@ -102,10 +131,29 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Zoeken...</string>
   <!--ConversationListFragment-->
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">Geselecteerd gesprek verwijderen?</item>
+    <item quantity="other">Geselecteerde gesprekken verwijderen?</item>
+  </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="one">Dit verwijderd het geselecteerde gesprek permanent.</item>
+    <item quantity="other">Dit verwijderd alle %1$d geselecteerde gesprekken permanent.</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Aan het verwijderen</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Geselecteerde gesprekken aan het verwijderen...</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Gesprek gearchiveerd</item>
+    <item quantity="other">%d gesprekken gearchiveerd</item>
+  </plurals>
+  <string name="ConversationListFragment_undo">ONGEDAAN MAKEN</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Gesprekken verplaatst naar inbox</item>
+    <item quantity="other">%d gesprekken verplaatst naar inbox</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Sleuteluitwisselingsbericht...</string>
   <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Gearchiveerde gesprekken (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Aangepaste gebruikt: %s</string>
   <string name="CustomDefaultPreference_using_default">Standaard gebruikt: %s</string>
@@ -116,10 +164,21 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Delen met</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_smssecure">Welkom bij SMSSecure!</string>
+  <string name="IntroScreenActivity_smssecure_description">SMSSecure is een SMS/MMS programma dat uw privacy beschermd als u met uw vrienden communiceert.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Versleutel uw berichten</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecure zal berichten naar andere SMSSecure gebruikers automatisch versleutelen.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Spreek met iedereen</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecure kan gebruikt worden om onversleutelde berichten te versturen naar niet-SMSSecure gebruikers.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exporteer</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Onversleutelde tekst exporteren naar opslag?</string>
+  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Waarschuwing, dit exporteert de onversleutelde berichten naar het opslaggeheugen.</string>
   <string name="ExportFragment_cancel">Annuleren</string>
   <string name="ExportFragment_exporting">Aan het exporteren</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Onversleutelde tekst aan het exporteren naar het opslaggeheugen...</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Fout, kan niet schrijven naar het opslaggeheugen.</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Fout tijdens het schrijven naar het opslaggeheugen.</string>
   <string name="ExportFragment_success">Succesvol!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nieuwe groep</string>
@@ -210,10 +269,12 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Je hebt deze groep verlaten...</string>
   <string name="ThreadRecord_draft">Concept:</string>
+  <string name="ThreadRecord_media_message">Media bericht</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">U heeft geen identiteitssleutel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">De ontvanger heeft geen identiteitssleutel.</string>
   <string name="VerifyIdentityActivity_scan_their_key_to_compare">Scan zijn/haar sleutel om te vergelijken</string>
+  <string name="VerifyIdentityActivity_get_your_key_scanned">Laat mijn sleutel scannen</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">WAARSCHUWING, de gescande sleutel komt NIET overeen! Controleer alstublieft de vingerafdruk zorgvuldig.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIET Geverifieerd!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Sleutel partner is correct. Het is ook nodig om uw sleutel door de partner te laten verifiëren.</string>
@@ -222,6 +283,7 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="ViewIdentityActivity_scan_to_compare">Scan om te vergelijken</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">WAARSCHUWING, de gescande sleutel komt NIET overeen!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">De gescande sleutel komt overeen!</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">Mijn identiteitsvingerafdruk</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Ondanks bestaand verzoek initiëren?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">U heeft reeds een sessieinititatieverzoek verstuurd naar deze ontvanger, weet u zeker dat u er nog een wilt sturen? Dit maakt het eerdere verzoek ongeldig.</string>
@@ -272,7 +334,12 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Snel antwoorden iet beschikbaar als SMSSecure wachtwoordbeveiliging actief is!</string>
   <string name="QuickResponseService_problem_sending_message">Probleem bij zenden van bericht!</string>
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Nieuw bericht</string>
   <!--change_passphrase_activity-->
+  <string name="change_passphrase_activity__old_passphrase">Oude wachtwoord</string>
+  <string name="change_passphrase_activity__new_passphrase">Nieuwe wachtwoord</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Herhaal nieuwe wachtwoord</string>
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Type een naam of nummer</string>
   <!--contact_selection_group_activity-->
@@ -331,9 +398,15 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Database aan het updaten...</string>
   <string name="export_fragment__export_plaintext_backup">Onversleutelde back-up exporteren</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exporteer een niet-versleutelde back-up compatibel met \'SMS Back-up En Herstellen\' naar het opslaggeheugen.</string>
   <string name="import_fragment__import_system_sms_database">SMS-berichten uit de systeemdatabase importeren?</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">Importeer de database van de standaard berichten app</string>
+  <string name="import_fragment__restore_encrypted_backup">Versleutelde back-up herstellen</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Herstel een eerder geëxporteerde versleutelde back-up</string>
   <string name="import_fragment__import_plaintext_backup">Onversleutelde back-up importeren...</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Importeer een niet-versleutelde back-up compatibel met \'SMS Back-up En Herstellen\'.</string>
   <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">Bekijk volledig gesprek</string>
   <!--media_overview_activity-->
   <string name="media_overview_activity__no_images">Geen afbeeldingen</string>
   <!--message_recipients_list_item-->
@@ -349,6 +422,7 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <!--recipient_preferences-->
   <string name="recipient_preferences__mute_conversation">Geluid uit bij gesprek</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Geen meldingen voor dit gesprek</string>
+  <string name="recipient_preferences__notification_sound">Notificatiegeluid</string>
   <string name="recipient_preferences__vibrate">Trillen</string>
   <string name="recipient_preferences__block">Blokkeer</string>
   <string name="recipient_preferences__color">Kleur</string>
@@ -378,21 +452,27 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="AndroidManifest__verify_identity">Identiteit verifiëren</string>
   <string name="AndroidManifest__complete_key_exchange">Sleuteluitwisseling voltooien</string>
   <string name="AndroidManifest__log_submit">Debug logs indienen</string>
+  <string name="AndroidManifest__media_preview">Media Voorvertoning</string>
   <string name="AndroidManifest__media_overview">Alle afbeeldingen</string>
   <string name="AndroidManifest__media_overview_named">Alle afbeeldingen met %1$s</string>
+  <string name="AndroidManifest__message_details">Berichtdetails</string>
+  <string name="AndroidManifest_archived_conversations">Gearchiveerde gesprekken</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importeer / exporteer </string>
+  <string name="arrays__your_identity_key">Mijn identiteitssleutel</string>
   <string name="arrays__use_default">Gebruik standaard</string>
   <string name="arrays__use_custom">Gebruik aangepast</string>
   <string name="arrays__mute_for_one_hour">Stil voor 1 uur</string>
   <string name="arrays__mute_for_two_hours">Stil voor 2 uur</string>
   <string name="arrays__mute_for_one_day">Stil voor 1 dag</string>
   <string name="arrays__mute_for_seven_days">Stil voor 7 dagen</string>
+  <string name="arrays__mute_for_one_year">Stil voor 1 jaar</string>
   <string name="arrays__settings_default">Standaard instellingen</string>
   <string name="arrays__enabled">Aan</string>
   <string name="arrays__disabled">Uit</string>
   <string name="arrays__name_and_message">Naam en bericht</string>
   <string name="arrays__name_only">Alleen naam</string>
+  <string name="arrays__no_name_or_message">Geen naam of bericht</string>
   <string name="arrays__enter_key">Toon enter toets</string>
   <string name="arrays__emoji_key">Toon emoji toets</string>
   <string name="arrays__send_key">Toon zenden toets</string>
@@ -414,12 +494,11 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="preferences__display_settings">Beeldscherminstellingen</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Kies uw contactinformatie uit de contactpersonenlijst.</string>
   <string name="preferences__change_passphrase">Wachtwoord veranderen</string>
+  <string name="preferences__change_your_passphrase">Wachtwoord veranderen</string>
   <string name="preferences__complete_key_exchanges">Sleuteluitwisselingen voltooien</string>
   <string name="preferences__enable_passphrase">Wachtwoord inschakelen</string>
-  <string name="preferences__passphrase_summary">Wachtwoord %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Lokale versleuteling van berichten en sleutels inschakelen</string>
   <string name="preferences__screen_security">Schermbeveiliging</string>
-  <string name="preferences__screen_security_summary">Schermbeveiliging %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automatisch sleuteluitwisselingen voltooien voor nieuwe sessies of voor bestaande sessies met dezelfde identiteitssleutel</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Screenshots onmogelijk maken in deze app en de recente lijst</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Wachtwoord na een bepaalde tijd uit het geheugen vergeten</string>
@@ -438,6 +517,8 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="preferences__pref_led_blink_custom_pattern_set">Aangepast LED knipper patroon ingesteld.</string>
   <string name="preferences__sound">Geluid</string>
   <string name="preferences__change_notification_sound">Verander notificatiegeluid</string>
+  <string name="preferences__silent">Stil</string>
+  <string name="preferences__in_conversation_notifications">Notificaties in een gesprek</string>
   <string name="preferences__play_inthread_notifications">Notificatiegeluid afspelen tijdens het bekijken van een actief gesprek.</string>
   <string name="preferences__repeat_alerts">Herhaal meldingen</string>
   <string name="preferences__never">Nooit</string>
@@ -477,17 +558,18 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Verzoeken om een ontvangstbevestiging voor ieder verzonden SMS bericht</string>
   <string name="preferences__sms_delivery_reports_notification">SMS aflever rapport notificatie</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Toon een notificatie wanneer een aflever rapport ontvangen is</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Automatisch oudere berichten verwijderen wanneer een gesprek meer dan een bepaald aantal berichten bevat</string>
   <string name="preferences__delete_old_messages">Verwijder oude berichten</string>
   <string name="preferences__chats">Gesprekken en media</string>
   <string name="preferences__conversation_length_limit">Gesprekslengte limiet</string>
+  <string name="preferences__trim_all_conversations_now">Oude berichten nu verwijderen</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Alle gesprekken scannen en de maximale gesprekslengte toepassen</string>
   <string name="preferences__light_theme">Licht</string>
   <string name="preferences__dark_theme">Donker</string>
   <string name="preferences__appearance">Uiterlijk</string>
   <string name="preferences__theme">Thema</string>
-  <string name="preferences__theme_summary">Thema %s</string>
   <string name="preferences__default">Standaard</string>
   <string name="preferences__language">Taal</string>
-  <string name="preferences__language_summary">Taal %s</string>
   <string name="preferences__make_default_sms_app">Stel in als standaard SMS-app</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Stel SMSSecure in als standaard SMS/MMS-applicatie voor uw systeem.</string>
   <string name="preferences__submit_debug_log">Dien debug log in</string>
@@ -541,11 +623,14 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Geselecteerde verwijderen</string>
   <string name="conversation_list_batch__menu_select_all">Alles selecteren</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">Archiveer geselecteerde</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Haal geselecteerde terug uit het archief</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Zoeken</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Contact avatar</string>
   <string name="conversation_list_item_view__error_alert">Foutalarm</string>
+  <string name="conversation_list_item_view__archived">Gearchiveerd</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Nieuw gesprek</string>
   <!--conversation_secure_verified-->
@@ -558,6 +643,9 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <string name="conversation_unmuted__mute_notifications">Berichten stil</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Bijlage toevoegen</string>
+  <string name="conversation__menu_delete_conversation">Verwijder gesprek</string>
+  <string name="conversation__menu_archive_conversation">Gesprek archiveren</string>
+  <string name="conversation__menu_unarchive_conversation">Gesprek uit archief terughalen</string>
   <string name="conversation__menu_view_media">Alle afbeeldingen</string>
   <string name="conversation__menu_conversation_settings">Gespreksinstellingen</string>
   <!--conversation_popup-->
@@ -591,6 +679,7 @@ Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en 
   <!--media_preview-->
   <string name="media_preview__save_title">Opslaan</string>
   <!--media_preview_activity-->
+  <string name="media_preview_activity__image_content_description">Media Voorvertoning</string>
   <!--StoreRatingReminder-->
   <string name="StoreRatingReminder_title">Beoordeel deze app</string>
   <string name="StoreRatingReminder_message">Neem a.u.b. even de tijd en help ons door deze app te beoordelen als je deze app graag gebruikt</string>

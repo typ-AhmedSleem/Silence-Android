@@ -34,6 +34,8 @@ en mesure de les lire.</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Réception des messages %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Phrase de passe %1$s, Protection de l\'écran %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Thème %1$s, Langue %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minute</item>
@@ -141,11 +143,15 @@ en mesure de les lire.</string>
   </plurals>
   <string name="ConversationListFragment_deleting">Suppression</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Suppression des conversations sélectionnées...</string>
-  <string name="ConversationListFragment_conversations_archived">Conversations archivées</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Conversation archivivée</item>
+    <item quantity="other">%d conversations archivées</item>
+  </plurals>
   <string name="ConversationListFragment_undo">ANNULER</string>
-  <string name="ConversationListFragment_moved_conversation_to_inbox">La conversation n\'est plus archivée</string>
-  <string name="ConversationListFragment_conversation_archived">Conversation archivée</string>
-  <string name="ConversationListFragment_moved_conversations_to_inbox">Les conversations ne sont plus archivées</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">La conversation n\'est plus archivée</item>
+    <item quantity="other">%d conversations ne sont plus archivées</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Message d’échange des clés…</string>
   <!--ConversationListItemAction-->
@@ -503,10 +509,8 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="preferences__change_your_passphrase">Modifier votre phrase de passe</string>
   <string name="preferences__complete_key_exchanges">Finaliser l’échange de clés</string>
   <string name="preferences__enable_passphrase">Activer la phrase de passe</string>
-  <string name="preferences__passphrase_summary">Phrase de passe %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Activer le chiffrement local des messages et des clés</string>
   <string name="preferences__screen_security">Protection de l’écran</string>
-  <string name="preferences__screen_security_summary">Protection de l\'écran %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Finaliser automatiquement les échanges de clés pour les sessions, nouvelles ou existantes si elles utilisent la même clé d\'identité.</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Désactiver les captures d\'écran dans la liste des applications récentes et à l\'intérieur de l\'application</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Oublier la phrase de passe en mémoire après un certain délai</string>
@@ -576,10 +580,8 @@ Un message avec une clé de chiffrement inconnue a été reçu. Cliquer pour l\'
   <string name="preferences__dark_theme">Sombre</string>
   <string name="preferences__appearance">Apparence</string>
   <string name="preferences__theme">Thème</string>
-  <string name="preferences__theme_summary">Thème %s</string>
   <string name="preferences__default">Par défaut</string>
   <string name="preferences__language">Langue</string>
-  <string name="preferences__language_summary">Langue %s</string>
   <string name="preferences__make_default_sms_app">Définir comme application SMS par défaut</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Faire de SMSSecure l’application SMS/MMS par défaut de votre système.</string>
   <string name="preferences__submit_debug_log">Envoyer un rapport de débogage</string>

@@ -355,10 +355,8 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="preferences__change_passphrase">Vaihda salalause</string>
   <string name="preferences__complete_key_exchanges">Suorita avaimenvaihdot</string>
   <string name="preferences__enable_passphrase">Aseta salalause</string>
-  <string name="preferences__passphrase_summary">Salalause %s</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Ota käyttöön paikallisten viestien ja avainten salaus</string>
   <string name="preferences__screen_security">Näytön suojaus</string>
-  <string name="preferences__screen_security_summary">Näytön suojaus %s</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Käytä samaa identiteettiavainta suorittamaan avaimenvaihdot automaattisesti uusille istunnoille tai jo olemassa oleville istunnoille</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Estä kuvakaappaukset \'viimeksi käytetyt sovellukset\' näkymästä sekä sovelluksen sisältä</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Unohda salalause muistista tietyn ajan kuluttua</string>
@@ -417,10 +415,8 @@ Vastaanotettiin viesti tuntemattomalla identiteettiavaimella. Napsauta nähdäks
   <string name="preferences__dark_theme">Tumma</string>
   <string name="preferences__appearance">Ulkonäkö</string>
   <string name="preferences__theme">Teema</string>
-  <string name="preferences__theme_summary">Teema %s</string>
   <string name="preferences__default">Oletus</string>
   <string name="preferences__language">Kieli</string>
-  <string name="preferences__language_summary">Kieli %s</string>
   <string name="preferences__make_default_sms_app">Aseta oletus tekstiviestisovellukseksi</string>
   <string name="preferences__make_textsecure_the_default_sms_mms_app">Tee SMSSecuresta järjestelmäsi oletus SMS/MMS-sovellus.</string>
   <string name="preferences__submit_debug_log">Lähetä virheenkorjausloki</string>
