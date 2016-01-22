@@ -1,89 +1,113 @@
 # SMSSecure Changelog
 
-## [0.13.1] - 2015-01-20
- - Fixed crash on Gingerbread
- - Fixed some issues with RTL languages
-## [0.13.0] - 2015-12-23
- - Added support for archive actions
- - Improved UI
- - Improved MMS support for Android 5+
- - Fixed lots of bugs
-## [0.12.3] - 2015-10-08
- - Improved settings
- - Fixed bugs
- - Updated translations
-## [0.12.1] - 2015-10-07
- - Added MMS download controls
- - Improved MMS requests
- - Fixed bugs
- - Updated translations
-## [0.11.3] - 2015-09-23
- - Fixed bugs
- - Updated translations
-## [0.11.0] - 2015-09-15
- - Added GIF support
- - Added new options
- - Fixed bugs
- - Updated translations
-## [0.10.1] - 2015-07-16
- - Added a new, more "material" UI
- - Added support for per-contact options
- - Fixed bugs
- - Updated translations
-## [0.9.0] - 2015-06-02
- - Added support for direct photo capture
- - Fixed ANR on certain devices
- - Updated emoji set
- - Fixed bugs
- - Updated translations
-## [0.8.1] - 2015-05-13
- - Fixed manual key exchange completion
- - Fixed occasional generated avatar mis-sizing in conversation
- - Updated translations
-## [0.8.0] - 2015-05-12
- - Added a generated avatar for contacts without pictures
- - Fixed emoji drawer bugs
- - Fixed crash in AppCompat
-## [0.7.0] - 2015-05-07
- - Added support for Android Wear
- - Added support for Lollipop-style notifications
- - Improved encrypted message detection (for using as non-default SMS app)
- - Fixed bugs
-## [0.6.0] - 2015-04-14
- - Fixed key exchanges being blue while pending
- - Fixed crash when username was null in MMS auth
- - Improved handling of requests to end non-existing sessions
- - Updated translations
-## [0.5.4] - 2015-04-09
- - Removed `READ_CALL_LOG` permission
- - Fixed Norwegian localization issues
- - Fixed problem with upgrading the database
-## [0.5.3] - 2015-04-07
- - Fixed crash on upgrading
-## [0.5.2] - 2015-04-05
- - Fixed bugs
-## [0.5.1] - 2015-04-02
- - Removed more push-related code
- - Fixed MMS crash
-## [0.4.2] - 2015-03-31
- - Added ability to import TextSecure backups
-## [0.4.1] - 2015-03-31
- - Added new icon
-## [0.4.0] - 2015-03-30
- - Fixed bugs
- - Removed TextSecure push-related code and strings
-## [0.3.3] - 2015-03-22
- - Renamed project to SMSSecure at the request of Moxie (TextSecure dev)
-## [0.3.2] - 2015-03-21
- - Fixed crash
-## [0.3.1] - 2015-03-20
- - Added the ability to install SecuredText alongside TextSecure
-## [0.3.0] - 2015-03-19
- - Fixed bugs
-## [0.2.0] - 2015-03-19
- - Initial fork
- - Changed app name
- - Removed non-free libraries
+### [0.13.1] - 2016-01-20
+- Fixed crash on Gingerbread
+- Fixed some issues with RTL languages
+- Updated translations
+
+### [0.13.0] - 2015-12-23
+- Added support for archive actions
+- Improved UI
+- Improved MMS support for Android 5+
+- Fixed lots of bugs
+
+### [0.12.3] - 2015-10-08
+- Improved settings
+- Fixed bugs
+- Updated translations
+
+### [0.12.1] - 2015-10-07
+- Added MMS download controls
+- Improved MMS requests
+- Fixed bugs
+- Updated translations
+
+### [0.11.3] - 2015-09-23
+- Fixed bugs
+- Updated translations
+
+### [0.11.0] - 2015-09-15
+- Added GIF support
+- Added new options
+- Fixed bugs
+- Updated translations
+
+### [0.10.1] - 2015-07-16
+- Added a new, more "material" UI
+- Added support for per-contact options
+- Fixed bugs
+- Updated translations
+
+### [0.9.0] - 2015-06-02
+- Added support for direct photo capture
+- Fixed ANR on certain devices
+- Updated emoji set
+- Fixed bugs
+- Updated translations
+
+### [0.8.1] - 2015-05-13
+- Fixed manual key exchange completion
+- Fixed occasional generated avatar mis-sizing in conversation
+- Updated translations
+
+### [0.8.0] - 2015-05-12
+- Added a generated avatar for contacts without pictures
+- Fixed emoji drawer bugs
+- Fixed crash in AppCompat
+
+### [0.7.0] - 2015-05-07
+- Added support for Android Wear
+- Added support for Lollipop-style notifications
+- Improved encrypted message detection (for using as non-default SMS app)
+- Fixed bugs
+
+### [0.6.0] - 2015-04-14
+- Fixed key exchanges being blue while pending
+- Fixed crash when username was null in MMS auth
+- Improved handling of requests to end non-existing sessions
+- Updated translations
+
+### [0.5.4] - 2015-04-09
+- Removed `READ_CALL_LOG` permission
+- Fixed Norwegian localization issues
+- Fixed problem with upgrading the database
+
+### [0.5.3] - 2015-04-07
+- Fixed crash on upgrading
+
+### [0.5.2] - 2015-04-05
+- Fixed bugs
+
+### [0.5.1] - 2015-04-02
+- Removed more push-related code
+- Fixed MMS crash
+
+### [0.4.2] - 2015-03-31
+- Added ability to import TextSecure backups
+
+### [0.4.1] - 2015-03-31
+- Added new icon
+
+### [0.4.0] - 2015-03-30
+- Fixed bugs
+- Removed TextSecure push-related code and strings
+
+### [0.3.3] - 2015-03-22
+- Renamed project to SMSSecure at the request of Moxie (TextSecure dev)
+
+### [0.3.2] - 2015-03-21
+- Fixed crash
+
+### [0.3.1] - 2015-03-20
+- Added the ability to install SecuredText alongside TextSecure
+
+### [0.3.0] - 2015-03-19
+- Fixed bugs
+
+### [0.2.0] - 2015-03-19
+- Initial fork
+- Changed app name
+- Removed non-free libraries
 
  [0.13.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.13.0...v0.13.1
  [0.13.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.12.3...v0.13.0
