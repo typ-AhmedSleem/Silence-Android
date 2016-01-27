@@ -358,11 +358,9 @@ public class ConversationItem extends LinearLayout
 
   private boolean shouldInterceptClicks(MessageRecord messageRecord) {
     return batchSelected.isEmpty() &&
-           messageRecord.isPendingSmsFallback()      ||
-           (messageRecord.isKeyExchange()            &&
-            !messageRecord.isCorruptedKeyExchange()  &&
-            !messageRecord.isOutgoing());
-  }
+           ((messageRecord.isFailed() && !messageRecord.isMmsNotification()) ||
+           messageRecord.isKeyExchange());
+}
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
     if (groupThread && !messageRecord.isOutgoing()) {
