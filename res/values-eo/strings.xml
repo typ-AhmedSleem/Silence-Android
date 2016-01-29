@@ -197,19 +197,15 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ImportExportActivity_export">Elporti</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Ĉu enporti sisteman datumbazon de SMS-oj?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Tio ĉi elportos
-mesaĝojn el la sistema defaŭlta SMS-a datumbazo al SMSSecure. Se vi enportis la sisteman SMS-an datumbazon antaŭe, re-enportado kaŭzos mesaĝojn duplikati.</string>
+  <string name="ImportFragment_this_will_import_messages_from_the_system">Tio ĉi elportos mesaĝojn el la sistema defaŭlta SMS-a datumbazo al SMSSecure. Se vi enportis la sisteman SMS-an datumbazon antaŭe, re-enportado kaŭzos mesaĝojn duplikati.</string>
   <string name="ImportFragment_import">Enporti</string>
   <string name="ImportFragment_cancel">Rezigni</string>
   <string name="ImportFragment_restore_encrypted_backup">Ĉu restaŭri ĉifritan sekurkopion?</string>
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Restaŭrado de ĉifrita sekurkopio anstataŭos tute viajn nunajn ŝlosilojn, agordojn, kaj mesaĝojn.
-Vi perdos ĉiujn informojn de via nuna SMSSecura instalo, sed ne de sekurkopio.</string>
+Restaŭrado de ĉifrita sekurkopio anstataŭos tute viajn nunajn ŝlosilojn, agordojn, kaj mesaĝojn. Vi perdos ĉiujn informojn de via nuna SMSSecura instalo, sed ne de sekurkopio.</string>
   <string name="ImportFragment_restore">Restaŭri</string>
   <string name="ImportFragment_import_plaintext_backup">Ĉu enporti plattekstan sekurkopion?</string>
-  <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tio ĉi enportos
-mesaĝojn el platteksta sekurkopio. Se vi antaŭe enportis tiun ĉi sekurkopion,
-re-enportado kaŭzos mesaĝojn duplikati.</string>
+  <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tio ĉi enportos mesaĝojn el platteksta sekurkopio. Se vi antaŭe enportis tiun ĉi sekurkopion, re-enportado kaŭzos mesaĝojn duplikati.</string>
   <string name="ImportFragment_importing">Enportado</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">Enportado de platteksta sekurkopio...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Platteksta sekurkopio ne trovita!</string>
@@ -245,13 +241,8 @@ re-enportado kaŭzos mesaĝojn duplikati.</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Piktogramo de SMSSecure</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Malkorekta pasfrazo!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La
-subskribo de tiu ĉi ŝlosilo-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi
-kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian interparoladon, aŭ
-ke tiu ĉi kontakto simple reinstalis na SMSSecure kaj ĝi nun posedas novan idento-ŝlosilon.</string>
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La
-subskribo de tiu ĉi ŝlosilo-interŝanĝo konfidindas, sed vi havas la agordon \'\'aŭtomate finigi ŝlosilo-interŝanĝon\"
-malaktivan.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosilo-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian interparoladon, aŭ ke tiu ĉi kontakto simple reinstalis na SMSSecure kaj ĝi nun posedas novan idento-ŝlosilon.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosilo-interŝanĝo konfidindas, sed vi havas la agordon \'\'aŭtomate finigi ŝlosilo-interŝanĝon\" malaktivan.</string>
   <string name="ReceiveKeyActivity_processing">Prilaborado</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosilo-interŝanĝo...</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Vi devas kontroli identecon de tiu ĉi kontakto.</string>
@@ -269,8 +260,7 @@ malaktivan.</string>
   <string name="Slide_audio">Aŭdio</string>
   <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
-  <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Ricevis difektitan
-ŝlosilo-interŝanĝon mesaĝon!</string>
+  <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Ricevis difektitan ŝlosilo-interŝanĝon mesaĝon!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</string>
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
@@ -513,7 +503,26 @@ Ricevis mesaĝon kun nekonata idento-ŝlosilo. Alklaku por prilabori kaj montri.
   <string name="preferences__screen_security">Ekrana sekureco</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Aŭtomate finigi ŝlosilo-interŝanĝojn por novaj sesioj aŭ por estantaj sesion kun sama idento-ŝlosilo</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Bloki ekrankopiojn en listo de lastaj kaj en aplikaĵo</string>
+  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Bezonas pasfrazon por legi mesaĝojn post difina tempo</string>
+  <string name="preferences__timeout_passphrase">Templimo de pasfrazo</string>
+  <string name="preferences__pref_timeout_interval_dialogtitle">Elekti templimon de pasfrazon</string>
+  <string name="preferences__pref_timeout_interval_title">Templima intervalo</string>
+  <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Kiom longe atendi antaŭ forgesi pasfrazon de memoro</string>
+  <string name="preferences__notifications">Sciigoj</string>
+  <string name="preferences__enable_message_notifications">Aktivigi mesaĝajn sciigojn</string>
+  <string name="preferences__led_color">Koloro de LED</string>
+  <string name="preferences__led_color_unknown">Nekonata</string>
+  <string name="preferences__pref_led_blink_title">Lumpulsa sekvenco de LED</string>
+  <string name="preferences__pref_led_blink_custom_pattern_title">Agordi propran lumpulsan sekvencon de LED</string>
+  <string name="preferences__pref_led_blink_custom_pattern_on_for">Ŝaltita dum:</string>
+  <string name="preferences__pref_led_blink_custom_pattern_off_for">Malŝaltita dum:</string>
+  <string name="preferences__pref_led_blink_custom_pattern_set">Propra lumpulsa sekvenco agordita!</string>
   <string name="preferences__sound">Sono</string>
+  <string name="preferences__change_notification_sound">Ŝanĝi sciigan sonon</string>
+  <string name="preferences__silent">Silenta</string>
+  <string name="preferences__in_conversation_notifications">En-interparoladaj sciigoj</string>
+  <string name="preferences__play_inthread_notifications">Ludas sciigan sonon dum montri aktivan interparoladon.</string>
+  <string name="preferences__repeat_alerts">Repepi</string>
   <string name="preferences__never">Neniam</string>
   <string name="preferences__one_time">Unufoje</string>
   <string name="preferences__two_times">Dufoje</string>
@@ -521,8 +530,9 @@ Ricevis mesaĝon kun nekonata idento-ŝlosilo. Alklaku por prilabori kaj montri.
   <string name="preferences__five_times">Kvinfoje</string>
   <string name="preferences__ten_times">Dekfoje</string>
   <string name="preferences__vibrate">Vibri</string>
-  <string name="preferences__minutes">Minutoj</string>
-  <string name="preferences__hours">Horoj</string>
+  <string name="preferences__also_vibrate_when_notified">Vibri ankaŭ dum sciigoj</string>
+  <string name="preferences__minutes">minutoj</string>
+  <string name="preferences__hours">horoj</string>
   <string name="preferences__green">Verda</string>
   <string name="preferences__red">Ruĝa</string>
   <string name="preferences__blue">Blua</string>
@@ -534,14 +544,52 @@ Ricevis mesaĝon kun nekonata idento-ŝlosilo. Alklaku por prilabori kaj montri.
   <string name="preferences__fast">Rapida</string>
   <string name="preferences__normal">Normala</string>
   <string name="preferences__slow">Malrapida</string>
+  <string name="preferences__custom">Propra</string>
+  <string name="preferences__advanced">Spertaj</string>
   <string name="preferences__privacy">Privateco</string>
+  <string name="preferences__mms_user_agent">MMS-a klienta aplikaĵo</string>
+  <string name="preferences__advanced_mms_access_point_names">Permanaj agordoj de MMS</string>
+  <string name="preferences__enable_manual_mms">Uzi permanaj agordoj de MMS</string>
+  <string name="preferences__override_system_mms_settings">Superskribas sistemajn MMS-ajn agordojn per jenaj parametroj.</string>
+  <string name="preferences__mmsc_url">MMSC URL</string>
+  <string name="preferences__mms_proxy_host">MMS-a Prokura Adreso</string>
+  <string name="preferences__mms_proxy_port">MMS-a Prokura Pordo</string>
+  <string name="preferences__mmsc_username">MMSC-a Uzantnomo</string>
+  <string name="preferences__mmsc_password">MMSC-a Pasvorto</string>
+  <string name="preferences__sms_delivery_reports">Liveraj raportoj de SMS-oj</string>
+  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Petas pri livera raporto por ĉiu SMS-a mesaĝo kiu vi sendas</string>
+  <string name="preferences__sms_delivery_reports_notification">Sciigoj pri liveraj raportoj de SMS-oj</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Montri sciigon kiam livera raporto estas ricevita</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Aŭtomate forigi pli malnovajn mesaĝojn kiam interparolado trograndas difinitan longecon</string>
   <string name="preferences__delete_old_messages">Forigi malnovajn mesaĝojn</string>
+  <string name="preferences__chats">Babiloj kaj aŭdvidaĵoj</string>
+  <string name="preferences__conversation_length_limit">Longeclimo de interparolado</string>
+  <string name="preferences__trim_all_conversations_now">Tranĉi ĉiujn interparoladojn nun</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Skani tra ĉiuj interparoladoj kaj devigi engeclimojn de interparoladoj</string>
   <string name="preferences__light_theme">Hela</string>
   <string name="preferences__dark_theme">Malhela</string>
   <string name="preferences__appearance">Aspekto</string>
+  <string name="preferences__theme">Etoso</string>
+  <string name="preferences__default">Defaŭlta</string>
   <string name="preferences__language">Lingvo</string>
+  <string name="preferences__make_default_sms_app">Agordi kiel defaŭlta SMS-a aplikaĵo</string>
+  <string name="preferences__make_textsecure_the_default_sms_mms_app">Igi na SMSSecure defaŭlta aplikaĵo por via sistemo.</string>
+  <string name="preferences__submit_debug_log">Alŝuti sencimigo-protokolon</string>
+  <string name="preferences__support_wifi_calling">\'WIFI Calling\' kongrueca reĝimo</string>
+  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivigu se via aparato uzas SMS/MMS-an liveradon tra vifio (aktivigu nur kiam \'WIFI Calling\' estas aktiva en via aparato). </string>
+  <string name="preferences__about">Pri SMSSecure</string>
+  <string name="preferences__about_version">Versio %s</string>
+  <string name="preferences__about_build_id">Kompilaĵo: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Blokitaj kontaktoj</string>
+  <string name="preferences_notifications__display_in_notifications">Montri en sciigoj</string>
+  <string name="preferences__show_sent_time">Montri tempon de sendo</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Montri tempon de sendo anstataŭ tempon de ricevo por Ricevitaj mesaĝoj</string>
   <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences__auto_retrieve">Aŭtomate elŝuti</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Aŭtomate elŝuti MMS-ajn mesaĝojn</string>
+  <string name="preferences__roaming_auto_retrieve">Retmigrade aŭtomate elŝuti</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Aŭtomate elŝuti MMS-ojn dum retmigrado</string>
+  <string name="preferences_chats__message_trimming">Mesaĝa tranĉado</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -549,54 +597,102 @@ Ricevis mesaĝon kun nekonata idento-ŝlosilo. Alklaku por prilabori kaj montri.
   <string name="contact_selection_list__menu_select_all">Elekti ĉiujn</string>
   <string name="contact_selection_list__menu_unselect_all">Malelekti ĉiujn</string>
   <string name="contact_selection_list__header">ĈIUJ KONTAKTOJ</string>
+  <string name="contact_selection_list__unknown_contact">Nova mesaĝo al...</string>
   <!--contact_selection-->
+  <string name="contact_selection__menu_finished">Finita</string>
   <!--refreshing push directory from menu-->
+  <string name="push_directory__menu_refresh">Aktualigi liston de kontaktoj</string>
   <!--conversation_button_context-->
   <string name="conversation_button_context__send_secure_sms">Sendi sekuran SMS-on</string>
   <string name="conversation_button_context__send_insecure_sms">Sendi malsekuran SMS-on</string>
   <string name="conversation_button_context__send_secure_mms">Sendi sekuran MMS-on</string>
   <string name="conversation_button_context__send_insecure_mms">Sendi malsekuran MMS-on</string>
   <!--conversation_callable-->
+  <string name="conversation_callable__menu_call">Voki</string>
   <!--conversation_context-->
   <string name="conversation_context__menu_message_details">Mesaĝaj detaletoj</string>
   <string name="conversation_context__menu_copy_text">Kopii tekston</string>
+  <string name="conversation_context__menu_delete_message">Forigi mesaĝon</string>
+  <string name="conversation_context__menu_forward_message">Plusendi mesaĝon</string>
+  <string name="conversation_context__menu_resend_message">Resendi mesaĝon</string>
   <!--conversation_context_image-->
+  <string name="conversation_context_image__save_attachment">Konservi kunsendaĵon</string>
   <!--conversation_insecure-->
+  <string name="conversation_insecure__invite">Inviti</string>
   <!--conversation_insecure_no_push-->
+  <string name="conversation_insecure__menu_start_secure_session">Komenci sekuran sesion</string>
   <string name="conversation_insecure__security">Sekureco</string>
   <!--conversation_list_batch-->
+  <string name="conversation_list_batch__menu_delete_selected">Forigi elektitajn</string>
   <string name="conversation_list_batch__menu_select_all">Elekti ĉiujn</string>
+  <string name="conversation_list_batch_archive__menu_archive_selected">Arĥivigi elektitajn</string>
+  <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Malarĥivigi elektitajn</string>
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Serĉi</string>
   <!--conversation_list_item_view-->
+  <string name="conversation_list_item_view__contact_photo_image">Kontakta profilbildo</string>
+  <string name="conversation_list_item_view__error_alert">Averto pri eraroj</string>
+  <string name="conversation_list_item_view__archived">Arĥivita</string>
   <!--conversation_list_fragment-->
+  <string name="conversation_list_fragment__fab_content_description">Nova interparolado</string>
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">Sekureco</string>
   <string name="conversation_secure_verified__menu_verify_identity">Verigi identecon</string>
+  <string name="conversation_secure_verified__menu_abort_secure_session">Finigi sekuran sesion</string>
   <!--conversation_muted-->
+  <string name="conversation_muted__unmute">Malsilentigi</string>
   <!--conversation_unmuted-->
   <string name="conversation_unmuted__mute_notifications">Silentigi sciigojn</string>
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Aldoni kunsendaĵon</string>
+  <string name="conversation__menu_delete_conversation">Forigi interparoladon</string>
+  <string name="conversation__menu_archive_conversation">Arĥivigi interparoladon</string>
+  <string name="conversation__menu_unarchive_conversation">Malarĥivigi interparoladon</string>
   <string name="conversation__menu_view_media">Ĉiuj bildoj</string>
+  <string name="conversation__menu_conversation_settings">Interparoladaj agordoj</string>
   <!--conversation_popup-->
+  <string name="conversation_popup__menu_expand_popup">Etendi ŝprucfenestrojn</string>
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Adicii al kontaktoj</string>
   <!--conversation_group_options-->
+  <string name="convesation_group_options__recipients_list">Listo de ricevantoj</string>
+  <string name="conversation_group_options__delivery">Liverado</string>
+  <string name="conversation_group_options__conversation">Interparolado</string>
+  <string name="conversation_group_options__broadcast">Elsendo</string>
   <!--key_scanning-->
+  <string name="key_scanning__menu_compare">Kompari</string>
+  <string name="key_scanning__menu_get_scanned_to_compare">Igu skanita por kompari</string>
+  <string name="key_scanning__menu_scan_to_compare">Skanu por kompari</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nova mesaĝo</string>
   <string name="text_secure_normal__menu_new_group">Nova grupo</string>
+  <string name="text_secure_normal__menu_settings">Agordoj</string>
   <string name="text_secure_normal__menu_clear_passphrase">Ŝlosi</string>
+  <string name="text_secure_normal__mark_all_as_read">Marki ĉiujn kiel legitaj</string>
   <!--reminder_header-->
+  <string name="reminder_header_sms_default_title">Ĉu uzi kiel defaŭlta SMS-a aplikaĵo?</string>
+  <string name="reminder_header_sms_default_text">Frapetu por ke SMSSecure iĝu vian defaŭltan SMS-aplikaĵon.</string>
+  <string name="reminder_header_sms_import_title">Ĉu enporti sistemajn SMS-ojn?</string>
+  <string name="reminder_header_sms_import_text">Frapetu por kopii viajn telefonajn SMS-ajn mesaĝojn al ĉifrita datumbazo.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vi</string>
+  <string name="MediaPreviewActivity_cant_display">Antaŭrigardo de tiu ĉi bildo malsukcesis</string>
+  <string name="MediaPreviewActivity_unssuported_media_type">Malsubtenata spico de aŭdvidaĵo</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Konvervi</string>
   <!--media_preview_activity-->
+  <string name="media_preview_activity__image_content_description">Antaŭrigardo de bildo</string>
   <!--StoreRatingReminder-->
+  <string name="StoreRatingReminder_title">Taksi tiun ĉi aplikaĵon</string>
+  <string name="StoreRatingReminder_message">Se tiu ĉi aplikaĵo plaĉas al vi, bonvolu dediĉi momenton al helpo al ni per taksi ĝin.</string>
+  <string name="StoreRatingReminder_rate_now">Taksu nun!</string>
+  <string name="StoreRatingReminder_no_thanks">Ne, dankon</string>
+  <string name="StoreRatingReminder_later">Poste</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Forigado...</string>
+  <string name="trimmer__deleting_old_messages">Forigado de malnovaj mesaĝoj...</string>
+  <string name="trimmer__old_messages_successfully_deleted">Malnovaj mesaĝoj forigitaj sukcese</string>
   <!--transport_selection_list_item-->
+  <string name="transport_selection_list_item__transport_icon">Piktograme de transporto</string>
   <!--EOF-->
 </resources>
