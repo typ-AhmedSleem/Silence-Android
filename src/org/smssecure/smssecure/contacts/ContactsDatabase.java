@@ -80,7 +80,7 @@ public class ContactsDatabase {
                                        ContactsContract.CommonDataKinds.Phone.TYPE,
                                        ContactsContract.CommonDataKinds.Phone.LABEL};
 
-    String sort = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE NOCASE ASC";
+    String sort = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE LOCALIZED NOCASE ASC";
 
     Map<String, String> projectionMap = new HashMap<String, String>() {{
       put(ID_COLUMN, ContactsContract.CommonDataKinds.Phone._ID);
@@ -105,7 +105,7 @@ public class ContactsDatabase {
                                         ContactsContract.Contacts.DISPLAY_NAME,
                                         ContactsContract.Data.DATA1};
 
-    String  sort = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE NOCASE ASC";
+    String  sort = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE LOCALIZED NOCASE ASC";
 
     Map<String, String> projectionMap = new HashMap<String, String>(){{
       put(ID_COLUMN, ContactsContract.Data._ID);
