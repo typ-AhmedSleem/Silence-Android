@@ -494,6 +494,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         if (!isEncryptedConversation){
           KeyExchangeInitiator.initiate(ConversationActivity.this, masterSecret, recipients, true);
         }
+        long allocatedThreadId;
+        if (threadId == -1) {
+          allocatedThreadId = DatabaseFactory.getThreadDatabase(getApplicationContext()).getThreadIdFor(recipients);
+        } else {
+          allocatedThreadId = threadId;
+        }
+        Log.w(TAG, "Refreshing thread "+allocatedThreadId+"...");
+        sendComplete(allocatedThreadId);
       }
     });
 
