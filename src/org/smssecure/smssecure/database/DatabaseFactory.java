@@ -41,10 +41,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import ws.com.google.android.mms.ContentType;
 
 public class DatabaseFactory {
+  private static final String TAG = DatabaseFactory.class.getSimpleName();
 
   private static final int INTRODUCED_IDENTITIES_VERSION                   = 2;
   private static final int INTRODUCED_INDEXES_VERSION                      = 3;
@@ -231,10 +234,10 @@ public class DatabaseFactory {
 
       Cursor smsCursor = null;
 
-      Log.w("DatabaseFactory", "Upgrade count: " + (smsCount + threadCount));
+      Log.w(TAG, "Upgrade count: " + (smsCount + threadCount));
 
       do {
-        Log.w("DatabaseFactory", "Looping SMS cursor...");
+        Log.w(TAG, "Looping SMS cursor...");
         if (smsCursor != null)
           smsCursor.close();
 
@@ -274,7 +277,7 @@ public class DatabaseFactory {
                          new String[] {body, type+"", id+""});
             }
           } catch (InvalidMessageException e) {
-            Log.w("DatabaseFactory", e);
+            Log.w(TAG, e);
           }
         }
 
@@ -287,7 +290,7 @@ public class DatabaseFactory {
       skip                = 0;
 
       do {
-        Log.w("DatabaseFactory", "Looping thread cursor...");
+        Log.w(TAG, "Looping thread cursor...");
 
         if (threadCursor != null)
           threadCursor.close();
@@ -331,7 +334,7 @@ public class DatabaseFactory {
                          new String[] {snippet, snippetType+"", id+""});
             }
           } catch (InvalidMessageException e) {
-            Log.w("DatabaseFactory", e);
+            Log.w(TAG, e);
           }
         }
 
@@ -346,13 +349,13 @@ public class DatabaseFactory {
     }
 
     if (fromVersion < DatabaseUpgradeActivity.MMS_BODY_VERSION) {
-      Log.w("DatabaseFactory", "Update MMS bodies...");
+      Log.w(TAG, "Update MMS bodies...");
       MasterCipher masterCipher = new MasterCipher(masterSecret);
       Cursor mmsCursor          = db.query("mms", new String[] {"_id"},
                                            "msg_box & " + 0x80000000L + " != 0",
                                            null, null, null, null);
 
-      Log.w("DatabaseFactory", "Got MMS rows: " + (mmsCursor == null ? "null" : mmsCursor.getCount()));
+      Log.w(TAG, "Got MMS rows: " + (mmsCursor == null ? "null" : mmsCursor.getCount()));
 
       while (mmsCursor != null && mmsCursor.moveToNext()) {
         listener.setProgress(mmsCursor.getPosition(), mmsCursor.getCount());
@@ -384,7 +387,7 @@ public class DatabaseFactory {
               dataFile.delete();
               db.delete("part", "_id = ?", new String[] {partId+""});
             } catch (IOException e) {
-              Log.w("DatabaseFactory", e);
+              Log.w(TAG, e);
             }
           } else if (ContentType.isAudioType(contentType) ||
                      ContentType.isImageType(contentType) ||
@@ -403,7 +406,7 @@ public class DatabaseFactory {
                      new String[] {partCount+"", mmsId+""});
         }
 
-        Log.w("DatabaseFactory", "Updated body: " + body + " and part_count: " + partCount);
+        Log.w(TAG, "Updated body: " + body + " and part_count: " + partCount);
       }
     }
 
@@ -766,22 +769,43 @@ public class DatabaseFactory {
       }
 
       if (oldVersion < MIGRATED_CONVERSATION_LIST_STATUS_VERSION) {
-        Cursor threadCursor = db.query("thread", new String[] {"_id"}, null, null, null, null, null);
+        List<Long> threads = new ArrayList<Long>();
+        Cursor threadCursor = null;
 
-        while (threadCursor != null && threadCursor.moveToNext()) {
-          long threadId = threadCursor.getLong(threadCursor.getColumnIndexOrThrow("_id"));
+        try {
+          threadCursor = db.query("thread", new String[] {"_id"}, null, null, null, null, null);
 
-          Cursor cursor = db.rawQuery("SELECT DISTINCT date AS date_received, status " +
-                                      "FROM sms WHERE (thread_id = ?1) " +
-                                      "UNION ALL SELECT DISTINCT date_received, -1 AS status " +
-                                      "FROM mms WHERE (thread_id = ?1) " +
-                                      "ORDER BY date_received DESC LIMIT 1", new String[]{threadId + ""});
+          while (threadCursor != null && threadCursor.moveToNext()) {
+            long threadId = threadCursor.getLong(threadCursor.getColumnIndexOrThrow("_id"));
+            threads.add(threadId);
+          }
+        } catch (Exception e) {
+          Log.w(TAG, e);
+        } finally {
+          if (threadCursor != null) threadCursor.close();
+        }
 
-          if (cursor != null && cursor.moveToNext()) {
-            int status       = cursor.getInt(cursor.getColumnIndexOrThrow("status"));
+        for (long thread : threads) {
+          Cursor cursor = null;
 
-            db.execSQL("UPDATE thread SET status = ? WHERE _id = ?",
-                       new String[]{status + "", threadId + ""});
+          try {
+            cursor = db.rawQuery("SELECT DISTINCT date AS date_received, status " +
+            "FROM sms WHERE (thread_id = ?1) " +
+            "UNION ALL SELECT DISTINCT date_received, -1 AS status " +
+            "FROM mms WHERE (thread_id = ?1) " +
+            "ORDER BY date_received DESC LIMIT 1", new String[]{thread + ""});
+
+            if (cursor != null && cursor.moveToNext()) {
+              int status = cursor.getInt(cursor.getColumnIndexOrThrow("status"));
+
+              db.execSQL("UPDATE thread SET status = ? WHERE _id = ?",
+              new String[]{status + "", thread + ""});
+              Log.w(TAG, "Thread " + thread + " updated!");
+            }
+          } catch (Exception e) {
+            Log.w(TAG, e);
+          } finally {
+            if (cursor != null) cursor.close();
           }
         }
       }
