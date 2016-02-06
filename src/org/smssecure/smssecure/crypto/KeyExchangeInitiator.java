@@ -43,7 +43,7 @@ import org.whispersystems.libaxolotl.state.SignedPreKeyStore;
 
 public class KeyExchangeInitiator {
 
-  public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting) {
+  public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting, final int subscriptionId) {
     if (promptOnExisting && hasInitiatedSession(context, masterSecret, recipients)) {
       AlertDialog.Builder dialog = new AlertDialog.Builder(context);
       dialog.setTitle(R.string.KeyExchangeInitiator_initiate_despite_existing_request_question);
@@ -52,17 +52,17 @@ public class KeyExchangeInitiator {
       dialog.setCancelable(true);
       dialog.setPositiveButton(R.string.KeyExchangeInitiator_send, new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
-          initiateKeyExchange(context, masterSecret, recipients);
+          initiateKeyExchange(context, masterSecret, recipients, subscriptionId);
         }
       });
       dialog.setNegativeButton(android.R.string.cancel, null);
       dialog.show();
     } else {
-      initiateKeyExchange(context, masterSecret, recipients);
+      initiateKeyExchange(context, masterSecret, recipients, subscriptionId);
     }
   }
 
-  private static void initiateKeyExchange(Context context, MasterSecret masterSecret, Recipients recipients) {
+  private static void initiateKeyExchange(Context context, MasterSecret masterSecret, Recipients recipients, int subscriptionId) {
     Recipient         recipient         = recipients.getPrimaryRecipient();
     SessionStore      sessionStore      = new SMSSecureSessionStore(context, masterSecret);
     PreKeyStore       preKeyStore       = new SMSSecurePreKeyStore(context, masterSecret);
@@ -74,7 +74,7 @@ public class KeyExchangeInitiator {
 
     KeyExchangeMessage         keyExchangeMessage = sessionBuilder.process();
     String                     serializedMessage  = Base64.encodeBytesWithoutPadding(keyExchangeMessage.serialize());
-    OutgoingKeyExchangeMessage textMessage        = new OutgoingKeyExchangeMessage(recipients, serializedMessage);
+    OutgoingKeyExchangeMessage textMessage        = new OutgoingKeyExchangeMessage(recipients, serializedMessage, subscriptionId);
 
     MessageSender.send(context, masterSecret, textMessage, -1, false);
   }

@@ -115,7 +115,7 @@ public class SmsCipher {
 
       if (response != null) {
         byte[] serializedResponse = transportDetails.getEncodedMessage(response.serialize());
-        return new OutgoingKeyExchangeMessage(recipients, new String(serializedResponse));
+        return new OutgoingKeyExchangeMessage(recipients, new String(serializedResponse), message.getSubscriptionId());
       } else {
         return null;
       }

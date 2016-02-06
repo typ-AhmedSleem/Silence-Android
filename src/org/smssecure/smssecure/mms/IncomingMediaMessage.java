@@ -18,6 +18,7 @@ public class IncomingMediaMessage {
   private final String  groupId;
   private final boolean push;
   private final long    sentTimeMillis;
+  private final int     subscriptionId;
 
   private final List<String>     to          = new LinkedList<>();
   private final List<String>     cc          = new LinkedList<>();
@@ -25,17 +26,22 @@ public class IncomingMediaMessage {
 
   public IncomingMediaMessage(String from, List<String> to, List<String> cc,
                               String body, long sentTimeMillis,
-                              List<Attachment> attachments)
+                              List<Attachment> attachments, int subscriptionId)
   {
     this.from           = from;
     this.sentTimeMillis = sentTimeMillis;
     this.body           = body;
     this.groupId        = null;
     this.push           = false;
+    this.subscriptionId = subscriptionId;
 
     this.to.addAll(to);
     this.cc.addAll(cc);
     this.attachments.addAll(attachments);
+  }
+
+  public int getSubscriptionId() {
+    return subscriptionId;
   }
 
   public String getBody() {

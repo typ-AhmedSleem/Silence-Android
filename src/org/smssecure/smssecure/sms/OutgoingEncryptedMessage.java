@@ -5,8 +5,8 @@ import org.smssecure.smssecure.recipients.Recipients;
 
 public class OutgoingEncryptedMessage extends OutgoingTextMessage {
 
-  public OutgoingEncryptedMessage(Recipients recipients, String body) {
-    super(recipients, body);
+  public OutgoingEncryptedMessage(Recipients recipients, String body, int subscriptionId) {
+    super(recipients, body, subscriptionId);
   }
 
   private OutgoingEncryptedMessage(OutgoingEncryptedMessage base, String body) {

@@ -7,15 +7,22 @@ public class OutgoingTextMessage {
 
   private final Recipients recipients;
   private final String     message;
+  private final int        subscriptionId;
 
-  public OutgoingTextMessage(Recipients recipients, String message) {
-    this.recipients = recipients;
-    this.message    = message;
+  public OutgoingTextMessage(Recipients recipients, String message, int subscriptionId) {
+    this.recipients     = recipients;
+    this.message        = message;
+    this.subscriptionId = subscriptionId;
   }
 
   protected OutgoingTextMessage(OutgoingTextMessage base, String body) {
-    this.recipients = base.getRecipients();
-    this.message    = body;
+    this.recipients     = base.getRecipients();
+    this.subscriptionId = base.getSubscriptionId();
+    this.message        = body;
+  }
+
+  public int getSubscriptionId() {
+    return subscriptionId;
   }
 
   public String getMessageBody() {
@@ -44,13 +51,13 @@ public class OutgoingTextMessage {
 
   public static OutgoingTextMessage from(SmsMessageRecord record) {
     if (record.isSecure()) {
-      return new OutgoingEncryptedMessage(record.getRecipients(), record.getBody().getBody());
+      return new OutgoingEncryptedMessage(record.getRecipients(), record.getBody().getBody(), record.getSubscriptionId());
     } else if (record.isKeyExchange()) {
-      return new OutgoingKeyExchangeMessage(record.getRecipients(), record.getBody().getBody());
+      return new OutgoingKeyExchangeMessage(record.getRecipients(), record.getBody().getBody(), record.getSubscriptionId());
     } else if (record.isEndSession()) {
-      return new OutgoingEndSessionMessage(new OutgoingTextMessage(record.getRecipients(), record.getBody().getBody()));
+      return new OutgoingEndSessionMessage(new OutgoingTextMessage(record.getRecipients(), record.getBody().getBody(), record.getSubscriptionId()));
     } else {
-      return new OutgoingTextMessage(record.getRecipients(), record.getBody().getBody());
+      return new OutgoingTextMessage(record.getRecipients(), record.getBody().getBody(), record.getSubscriptionId());
     }
   }
 

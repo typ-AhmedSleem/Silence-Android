@@ -25,19 +25,23 @@ import java.util.List;
 
 public class SmsReceiveJob extends ContextJob {
 
+  private static final long serialVersionUID = 1L;
+
   private static final String TAG = SmsReceiveJob.class.getSimpleName();
 
   private static MultipartSmsMessageHandler multipartMessageHandler = new MultipartSmsMessageHandler();
 
   private final Object[] pdus;
+  private final int      subscriptionId;
 
-  public SmsReceiveJob(Context context, Object[] pdus) {
+  public SmsReceiveJob(Context context, Object[] pdus, int subscriptionId) {
     super(context, JobParameters.newBuilder()
                                 .withPersistence()
                                 .withWakeLock(true)
                                 .create());
 
-    this.pdus = pdus;
+    this.pdus           = pdus;
+    this.subscriptionId = subscriptionId;
   }
 
   @Override
@@ -45,7 +49,7 @@ public class SmsReceiveJob extends ContextJob {
 
   @Override
   public void onRun() {
-    Optional<IncomingTextMessage> message = assembleMessageFragments(pdus);
+    Optional<IncomingTextMessage> message = assembleMessageFragments(pdus, subscriptionId);
 
     if (message.isPresent() && !isBlocked(message.get())) {
       Pair<Long, Long> messageAndThreadId = storeMessage(message.get());
@@ -97,13 +101,13 @@ public class SmsReceiveJob extends ContextJob {
     return messageAndThreadId;
   }
 
-  private Optional<IncomingTextMessage> assembleMessageFragments(Object[] pdus) {
+  private Optional<IncomingTextMessage> assembleMessageFragments(Object[] pdus, int subscriptionId) {
     List<IncomingTextMessage> messages = new LinkedList<>();
 
     for (Object pdu : pdus) {
       SmsMessage msg = SmsMessage.createFromPdu((byte[]) pdu);
       if (msg != null){
-        messages.add(new IncomingTextMessage(msg));
+        messages.add(new IncomingTextMessage(msg, subscriptionId));
       }
     }
 
