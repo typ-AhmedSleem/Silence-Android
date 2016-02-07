@@ -43,9 +43,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationItem_expires_s">Utløper: %s</string>
   <string name="ConversationItem_error_not_delivered">Ikke levert</string>
   <string name="ConversationItem_view_secure_media_question">Vis kryptert vedlegg?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Dette vedlegget har blitt lagret i en kryptert database. For å vise det med et eksternt program må vedlegget dessverre midlertidig dekrypteres og skrives til et usikret område. Er du sikker på at du ønsker å gjøre dette?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Utdatert nøkkelutvekslingsmelding mottatt.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Nøkkelutveksling melding mottatt, klikk for å behandle.</string>
   <string name="ConversationItem_group_action_left">%1$s har forlatt gruppen.</string>
   <string name="ConversationItem_click_for_details">Klikk for detaljer</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Klikk for usikret tilbakeslag</string>
@@ -200,8 +198,6 @@ at denne kontakten har installert SMSSecure på nytt og dermed fått en ny ident
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Mottok korrupt nøkkelutvekslingsmelding!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Mottok oppdatert men ukjent identitetsinformasjon. Trykk for å bekrefte identiteten.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sikker økt avsluttet.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikatmelding.</string>
@@ -314,7 +310,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="conversation_fragment_cab__batch_selection_mode">Satsvist valgmodus</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s valgte</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Kunne ikke hente loggene fra din enhet. Du kan fremdeles benytte ADB for å hente feilmeldingsrapporter i steden for.</string>
   <string name="log_submit_activity__thanks">Takk for hjelpen!</string>
   <string name="log_submit_activity__submitting">Sender</string>
   <string name="log_submit_activity__posting_logs">Poster loggføring til gist...</string>
@@ -340,7 +335,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="prompt_passphrase_activity__unlock">Lås opp</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure trenger MMS-innstillinger for å levere media og gruppemeldinger via din telefonoperatør. Enheten din er ikke i stand til å oppgi denne informasjonen automatisk, noe som ofte skjer dersom den er låst til operatør eller er konfigurert med andre restriksjoner.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">For å sende media og gruppemeldinger, klikk \'OK\' og fullfør de forespurte instillingene. MMS-oppsettet for din operatør kan ofte finnes ved å søke etter \'din operatørs APN\'. Du trenger kun å gjøre dette én gang.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOKKERT</string>
   <!--recipient_preferences-->
@@ -374,7 +368,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="AndroidManifest__change_passphrase">Passordbytte</string>
   <string name="AndroidManifest__verify_identity">Bekreft identitet</string>
   <string name="AndroidManifest__complete_key_exchange">Fullfør nøkkelutveksling</string>
-  <string name="AndroidManifest__log_submit">Send feilrettingslogger</string>
   <string name="AndroidManifest__media_overview">Alle bilder</string>
   <string name="AndroidManifest__media_overview_named">Alle bilder med %1$s</string>
   <!--arrays.xml-->
@@ -561,7 +554,6 @@ Mottatt melding med ukjent ID-nøkkel. Klikk for å behandle og vise.</string>
   <string name="reminder_header_sms_default_title">Bruk som forvalgt SMS-program?</string>
   <string name="reminder_header_sms_default_text">Klikk for gjøre SMSSecure til ditt forvalgte SMS-program.</string>
   <string name="reminder_header_sms_import_title">Importer enhetens SMS-database?</string>
-  <string name="reminder_header_sms_import_text">Klikk for å kopiere telefonens SMS-er til en kryptert database.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Deg</string>
   <string name="MediaPreviewActivity_cant_display">Klarte ikke å forhåndsvise dette bildet</string>

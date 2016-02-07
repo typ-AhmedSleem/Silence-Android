@@ -44,9 +44,7 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationItem_expires_s">Går ut: %s</string>
   <string name="ConversationItem_error_not_delivered">Inte levererad</string>
   <string name="ConversationItem_view_secure_media_question">Visa skyddad fil?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Denna fil har lagrats i en krypterad databas. För att öppna den med en extern visare behöver informationen tyvärr tillfälligt dekrypteras och skrivas till disken. Är du säker på att du vill göra detta?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Ett fel uppstod. Mottog ett gammalt meddelande för nyckelutbyte.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Tog emot meddelande för nyckelutbyte, tryck för att behandla.</string>
   <string name="ConversationItem_group_action_left">%1$s har lämnat gruppen.</string>
   <string name="ConversationItem_click_for_details">Tryck för detaljer</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Tryck för oskyddad fallback</string>
@@ -198,8 +196,6 @@ verifiera denna kontakt.</string>
 för nyckelutbyte!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och visa.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Mottagit uppdaterad men okänd identitetsinformation. Klicka för att bekräfta identitet.</string>
   <string name="SmsMessageRecord_secure_session_ended">Säker session avslutad.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplicerat meddelande.</string>
@@ -306,7 +302,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="conversation_fragment_cab__batch_selection_mode">Flervalsläge</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vald</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Kunde inte plocka loggarna från din enhet, men du kan använda ADB för att hämta debugloggarna istället.</string>
   <string name="log_submit_activity__thanks">Tack för din hjälp!</string>
   <string name="log_submit_activity__submitting">Skickar</string>
   <string name="log_submit_activity__posting_logs">Skickar loggar till gist...</string>
@@ -332,7 +327,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="prompt_passphrase_activity__unlock">Lås upp</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure kräver MMS inställningar för att leverera medie- och gruppmeddelanden via din mobilöperatör. Din enhet gör inte den här informationen tillgänglig, vilket ibland stämmer för låsta enheter och andra restriktiva konfigurationer.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">För att skicka medie- och gruppmeddelande, klicka \'OK\' och fyll i de begärda inställningarna. MMS inställningarna för din operatör kan generellt hittas genom att söka efter \'din operatör APN\'. Du behöver bara göra det här en gång.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOCKERAD</string>
   <!--recipient_preferences-->
@@ -364,7 +358,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="AndroidManifest__change_passphrase">Ändra lösenord</string>
   <string name="AndroidManifest__verify_identity">Verifiera identiteten</string>
   <string name="AndroidManifest__complete_key_exchange">Slutför nyckelutbyte</string>
-  <string name="AndroidManifest__log_submit">Skicka in loggarna</string>
   <string name="AndroidManifest__media_overview">Alla bilder</string>
   <string name="AndroidManifest__media_overview_named">Alla bilder med %1$s</string>
   <!--arrays.xml-->
@@ -541,7 +534,6 @@ Tog emot meddelande med okänd identitetsnyckel. Tryck för att bearbeta och vis
   <string name="reminder_header_sms_default_title">Använd som standardapp för SMS</string>
   <string name="reminder_header_sms_default_text">Tryck för att göra SMSSecure till din standardapp för SMS.</string>
   <string name="reminder_header_sms_import_title">Importera systemets SMS?</string>
-  <string name="reminder_header_sms_import_text">Tryck för att kopiera din telefons SMS-meddelanden till dess krypterade databas.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Du</string>
   <string name="MediaPreviewActivity_cant_display">Misslyckades med att förhandsgranska bilden</string>

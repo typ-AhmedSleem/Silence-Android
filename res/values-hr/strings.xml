@@ -42,9 +42,7 @@ im moći pristupiti.</string>
   <string name="ConversationItem_expires_s">Ističe: %s</string>
   <string name="ConversationItem_error_not_delivered">Nije isporučeno</string>
   <string name="ConversationItem_view_secure_media_question">Prikaži sigurni medij?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Ovaj medij je pohranjen u kriptiranoj bazi podataka. Nažalost, da biste ga vidjeli sa vanjskim preglednikom potrebno je privremeno dekriptirati podatke i zapisati ih na disk. Jeste li sigurni da to želite?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Greška, primljena stara poruka za razmjenu ključeva.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Poruka za razmjenu ključeva je primljena, pritisnite da biste nastavili.</string>
   <string name="ConversationItem_group_action_left">%1$s je napustio grupu.</string>
   <string name="ConversationItem_click_for_details">Pritisnite za više detalja</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Pritisnite za nesigurnu rezervu</string>
@@ -184,8 +182,6 @@ ovaj kontakt.</string>
 razmjene ključeva!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prikaz.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Primljene ažurirane ali nepoznate infomacije o identitetu. Pritisnite za provjeru identiteta.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sigurna sesija je završila.</string>
   <string name="SmsMessageRecord_duplicate_message">Dupla poruka.</string>
@@ -283,7 +279,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="conversation_fragment_cab__batch_selection_mode">Način za višestruki odabir</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s odabrano</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Nije moguće dohvatiti zapise sa vašeg uređaja. Još uvijek možete koristiti ADB kako biste dohvatili debug zapise.</string>
   <string name="log_submit_activity__thanks">Hvala na pomoći!</string>
   <string name="log_submit_activity__submitting">Slanje</string>
   <string name="log_submit_activity__posting_logs">Slanje zapisa u gist…</string>
@@ -309,7 +304,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="prompt_passphrase_activity__unlock">Otključaj</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure zahtjeva MMS postavke kako bi dostavio multimedijalne ili grupne poruke preko vašeg operatera. Vaš uređaj nije ove informacije učinio dostupnima, što se ponekad događa kod zaključanih uređaja ili kod ograničenih postavki.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Kako biste slali multimedijalne ili grupne poruke, pritisnite \'OK\' i popunite tražene postavke. MMS postavke za vašeg operatera se obično mogu naći tražeći \'APN vašeg operatera\'. Ovo je potrebno napraviti samo jednom.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -336,7 +330,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="AndroidManifest__change_passphrase">Izmjeni lozinku</string>
   <string name="AndroidManifest__verify_identity">Potvrdite identitet</string>
   <string name="AndroidManifest__complete_key_exchange">Završite razmjenu ključeva</string>
-  <string name="AndroidManifest__log_submit">Pošaljite debug zapise</string>
   <string name="AndroidManifest__media_overview">Sve slike</string>
   <string name="AndroidManifest__media_overview_named">Sve slike sa %1$s</string>
   <!--arrays.xml-->
@@ -490,7 +483,6 @@ Primljena poruka sa nepoznatim ključem identiteta. Pritisnite za obradu i prika
   <string name="reminder_header_sms_default_title">Koristi kao zadanu SMS aplikaciju?</string>
   <string name="reminder_header_sms_default_text">Pritisnite kako biste postavili SMSSecure kao zadanu SMS aplikaciju.</string>
   <string name="reminder_header_sms_import_title">Uvezi SMS poruke sustava?</string>
-  <string name="reminder_header_sms_import_text">Pritisnite kako biste kopirali SMS poruke telefona u kriptiranu bazu podataka.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vi</string>
   <string name="MediaPreviewActivity_cant_display">Pregled prikaza slike nije uspio.</string>

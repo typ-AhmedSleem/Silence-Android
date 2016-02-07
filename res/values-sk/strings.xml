@@ -27,7 +27,6 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationItem_expires_s">Vyprší: %s</string>
   <string name="ConversationItem_view_secure_media_question">Zobraziť kryptované údaje?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Chyba, prijal som zaseknutú správu vzájomnej výmeny kľúčov.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Prijal som správu vzájomnej výmeny kľúčov, kliknite pre spracovanie.</string>
   <string name="ConversationItem_group_action_left">%1$s opustil/a skupinu.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Vytvoriť bezpečnú reláciu?</string>
@@ -236,7 +235,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="AndroidManifest__change_passphrase">Zmeň heslo</string>
   <string name="AndroidManifest__verify_identity">Over totožnosť</string>
   <string name="AndroidManifest__complete_key_exchange">Dokončiť vzájomnú výmenu kľúčov</string>
-  <string name="AndroidManifest__log_submit">Odošli ladiaci log</string>
   <!--arrays.xml-->
   <!--plurals.xml-->
   <!--preferences.xml-->

@@ -41,9 +41,7 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationItem_message_size_d_kb">Mezuaren tamaina: %d KB</string>
   <string name="ConversationItem_expires_s">Iraingutuko da: %s</string>
   <string name="ConversationItem_view_secure_media_question">Euskarri segurua ikusi?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Media hau enkriptatutako datubase batean gorde da. Tamalez, aplikazioaz kanpoko edukien ikusle bat erabili ahal izateko, datuak tenporalki desenkriptatu behar dira eta diskoan gorde. Ziur zaude hau egin nahi izateaz?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Errorea, jaso da iraungita dagoen datu-trukerako gakoaren mezua.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Jaso da gakoaren datu-trukatzearen mezua, klik egin prozesatzeko</string>
   <string name="ConversationItem_group_action_left">%1$s taldea utzi du</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Tap egin segurtasunik gabeko alternatibarako</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Enkriptatzerik gabeko SMSra pasatu aukera gisa?</string>
@@ -182,9 +180,6 @@ osatu\' ezarpena desgaituta daukazu</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
 </string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakusteko.
-</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Eguneratutako baina ezezaguna den nortasun informazioa jaso da. Ukitu nortasuna balidatzeko.</string>
   <string name="SmsMessageRecord_secure_session_ended">Saio segurua bukatu da.</string>
   <string name="SmsMessageRecord_duplicate_message">Mezu bikoiztua.</string>
@@ -282,7 +277,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="conversation_fragment_cab__batch_selection_mode">Batch hautatzeko modua</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s hautatua</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Ezin izan dira logak eskuratu zure gailutik. ADB erabili dezakezu arazketa logak lortzeko.</string>
   <string name="log_submit_activity__thanks">Eskerrik asko zure laguntzagatik!</string>
   <string name="log_submit_activity__submitting">Bidaltzen</string>
   <string name="log_submit_activity__posting_logs">Logak gist-era bidaltzen...</string>
@@ -305,7 +299,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="prompt_passphrase_activity__unlock">Desblokeatu</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecurek MMS ezarpenak behar ditu media eta taldeko mezuak banatu ahal izateko zure hari-gabeko hornitzailearen bitartez. Zure gailuak ez dauka informazio hau eskuragarri. Hau batzuetan gertatzen da blokeatuta dauden eta beste konfigurazio murrizgarriak dituzten gailuetan.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Media eta taldeko mezuak bidaltzeko, klik egin \'OK\'-n eta osatu beharrezkoak diren ezarpenak. Zure hornitzailearentzako ezarpenak normalean topa daitezke zure hornitzailearen APNa bilatuz. Bakarrik behin egin beharko duzu hau.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -325,7 +318,6 @@ Nortasun gako ezezagun batekin jaso da mezua. Klik egin prozesatzeko eta erakust
   <string name="AndroidManifest__change_passphrase">Pasahitza aldatu</string>
   <string name="AndroidManifest__verify_identity">Nortasuna egiaztatu</string>
   <string name="AndroidManifest__complete_key_exchange">Gakoaren datu-trukatzea osatuta</string>
-  <string name="AndroidManifest__log_submit">Arazketa logak bidali</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Inportatu / esportatu</string>
   <!--plurals.xml-->

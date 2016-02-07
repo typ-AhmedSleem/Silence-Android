@@ -40,9 +40,7 @@
   <string name="ConversationItem_expires_s">تاريخ الانتهاء: %s</string>
   <string name="ConversationItem_error_not_delivered">لم تُسلم.</string>
   <string name="ConversationItem_view_secure_media_question">عرض الوسائط المشفرة؟</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">تم حفظ هذا المحتوى بقاعدة بيانات مشفرة، يتطلب عرضها فى تطبيق خارجى فك تشفيرها و تخزينها مؤقتاً بالذاكرة، هل ترغب فى الاستمرار؟</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">خطأ. تم استقبال رسالة تبادل مفاتيح غير صالحة.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">تم استلام رسالة تبادل المفاتيح، أنقر للمتابعة.</string>
   <string name="ConversationItem_group_action_left">%1$s تَرك المجموعة.</string>
   <string name="ConversationItem_click_for_details">إضغط للتفاصيل</string>
   <string name="ConversationItem_click_to_approve_unencrypted">أنقر من أجل استعاضة غير آمنة</string>
@@ -171,8 +169,6 @@
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">تم استلام رسالة تبادل مفاتيح تالفة.</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 تم استلام رسالة تبادل مفاتيح لإصدارة بروتوكول غير صحيحة.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-تم استلام رسالة مع مفتاح هوية مجهول. أنقر للمتابعة والإظهار</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">تم استلام تحديث ولكن معلومات الهوية مجهولة. أنقر للتحقق من الهوية.</string>
   <string name="SmsMessageRecord_secure_session_ended">انتهى التشفير.</string>
   <string name="SmsMessageRecord_duplicate_message">رسالة مكررة.</string>
@@ -271,7 +267,6 @@
   <string name="conversation_fragment_cab__batch_selection_mode">وضع اختيار الدفعات</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s اختيار</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">تعذر التقاط سجلات التصحيح من هاتفك. يمكنك استخدام ADB للحصول على سجلات التصحيح بدلا من ذلك.</string>
   <string name="log_submit_activity__thanks">شكرا للمساعدة!</string>
   <string name="log_submit_activity__submitting">إرسال</string>
   <string name="log_submit_activity__posting_logs">جاري نشر السجلات إلى Gist...</string>
@@ -297,7 +292,6 @@
   <string name="prompt_passphrase_activity__unlock">فتح القفل</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">يتطلب تيكست سيكيور إعدادات خدمة الوسائط المتعددة من أجل تسليم رسائل الوسائط المتعددة والمجموعات عبر المشغل اللاسلكي. في بعض الأحوال لا تتاح هذه المعلومات مع الهواتف المقفولة أو ذات الإعدادات المقيدة.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">من اجل إرسال وسائط متعددة ورسائل إلى مجموعات أضغط على \"تم\" وأكمل الإعدادات المطلوبة. يمكن العثور على إعدادات رسائل الوسائط المتعددة الخاصة بمشغل شبكة الجوال الخاصة بك بالبحث عن \"أسم المشغل APN\". سوف تحتاج إلى القيام  بهذه الخطوة مرة واحدة.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -324,7 +318,6 @@
   <string name="AndroidManifest__change_passphrase">غير العبارة السرية</string>
   <string name="AndroidManifest__verify_identity">تحقق من الهوية</string>
   <string name="AndroidManifest__complete_key_exchange">أكمل تبادل المفاتيح</string>
-  <string name="AndroidManifest__log_submit">أرسل سجلات التصحيح</string>
   <string name="AndroidManifest__media_overview">جميع الصور</string>
   <string name="AndroidManifest__media_overview_named">جميع الصور مع %1$s</string>
   <!--arrays.xml-->
@@ -491,7 +484,6 @@
   <string name="reminder_header_sms_default_title">اجعله التطبيق الافتراضي المستخدم للرسائل؟</string>
   <string name="reminder_header_sms_default_text">أضغط لجعل تيكست سيكيورالتطبيق الافتراضي للرسائل.</string>
   <string name="reminder_header_sms_import_title">استيراد رسائل النظام؟</string>
-  <string name="reminder_header_sms_import_text">أضغط لنسخ الرسائل النصية القصيرة على الهاتف إلى قاعدة البيانات المشفرة.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">أنت</string>
   <string name="MediaPreviewActivity_cant_display">خطأ في معاينة هذه الصورة</string>

@@ -41,9 +41,7 @@
   <string name="ConversationItem_message_size_d_kb">ಸಂದೇಶದ ಗಾತ್ರ: %d ಕೆ.ಬಿ</string>
   <string name="ConversationItem_expires_s">ಮುಕ್ತಾಯದ ಅವಧಿ: %s</string>
   <string name="ConversationItem_view_secure_media_question">ಸುರಕ್ಷಿತ ಮಾಧ್ಯಮವನ್ನು ವೀಕ್ಷಿಸಬೇಕೆ?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">ಈ ಕಡತವನ್ನು ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ದತ್ತಾಂಶದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ. ದುರದೃಷ್ಟವಶಾತ್, ಬಾಹ್ಯ ವೀಕ್ಷಕದಲ್ಲಿ ಇದನ್ನು ವೀಕ್ಷಿಸಲು ತಾತ್ಕಾಲಿಕವಾಗಿ ಇದನ್ನು ಅಸಂಕೇತಿಕರಿಸಿ ಡಿಸ್ಕಿಗೆ ಬರೆಯಲಾಗುತ್ತದೆ. ನೀವು ಇದನ್ನು ಮಾಡಲು ಬಯಸುತ್ತೀರ?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">ದೋಷ, ಹಳತಾದ ಕೀಲಿ ವಿನಿಮಯ ಸಂದೇಶವನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">ಕೀಲಿ ವಿನಿಮಯ ಸಂದೇಶ ಸ್ವೀಕರಿಸಲಾಗಿದೆ, ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ.</string>
   <string name="ConversationItem_group_action_left">%1$s ಸಮೂಹವನ್ನು ಬಿಟ್ಟಿದ್ದಾರೆ</string>
   <string name="ConversationItem_click_to_approve_unencrypted">ಅಸುರಕ್ಷಿತ ಸಂವಾದದ ಹಿಮ್ಮರಳಿಕೆ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">ಅಸುರಕ್ಶಿತ ಎಸ್.ಎಮ್.ಎಸ್ ಹಿಮ್ಮರಳಿ ?</string>
@@ -172,8 +170,6 @@
 ವಿನಿಮಯ ಸಂದೇಶ!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 ಅಮಾನ್ಯವಾದ ಪ್ರೊಟೋಕಾಲ್ ಆವೃತ್ತಿಯ ಕೀಲಿ ವಿನಿಮಯ ಸಂದೇಶವನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-ಸ್ವೀಕರಿಸಿದ ಸಂದೇಶ ಅಪರಿಚಿತ ಗುರುತಿನ ಕೀಯನ್ನು ಹೊಂದಿದೆ. ಸಂಸ್ಕರಿಸಲು ಮತ್ತು ಪ್ರದರ್ಶಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">ಇತ್ತೀಚೆಗೆ ಅಪ್ಡೇಟ್ಗೊಳಿಸಲಾದ ಆದರೆ ಅಪರಿಚಿತ ಗುರುತು ಮಾಹಿತಿಯನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ.  ಈ ಗುರುತನ್ನು ಮಾನ್ಯಗೊಳಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
   <string name="SmsMessageRecord_secure_session_ended">ಸುರಕ್ಷಿತ ಸೆಷನ್ ಕೊನೆಗೋಂಡಿದೆ</string>
   <string name="SmsMessageRecord_duplicate_message">ನಕಲಿ ಸಂದೇಶ.</string>
@@ -271,7 +267,6 @@
   <string name="conversation_fragment_cab__batch_selection_mode">ಗುಂಪು ಆಯ್ಕೆಯ ಕ್ರಮ</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">ನಿಮ್ಮ ಸಾಧನದಿಂದ ಲಾಗ್ ಗಳನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. ನೀವು ಬದಲಿಗೆ ಡಿಬಗ್ ಲಾಗ್ ಗಳನ್ನು ಪಡೆಯಲು ಎಡಿಬಿ ಬಳಸಬಹುದು.</string>
   <string name="log_submit_activity__thanks">ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</string>
   <string name="log_submit_activity__submitting">ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ</string>
   <string name="log_submit_activity__posting_logs">ಲಾಗ್ಗಳನ್ನು ಜಿಸ್ಟ್ಗೆ ಪೋಸ್ಟ್ ಮಾಡಲಾಗುತ್ತಿದೆ... </string>
@@ -296,7 +291,6 @@
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯುರಗೆ  ನಿಮ್ಮ ನಿಸ್ತಂತು ವಾಹಕ ಮೂಲಕ ಮಾಧ್ಯಮ ಮತ್ತು ಗುಂಪು ಸಂದೇಶಗಳನ್ನು ತಲುಪಿಸಲು ಎಂಎಂಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳ ಅಗತ್ಯವಿದೆ.
 ನಿಮ್ಮ ಸಾಧನ, ಈ ಮಾಹಿತಿಯನ್ನು ಲಭ್ಯ ಮಾಡುವುದಿಲ್ಲ. ಇದು ಲಾಕ್ ಮಾಡಲಾದ ಸಾಧನಗಳು ಮತ್ತು ಇತರ ನಿರ್ಬಂಧಿತ ಸಂರಚನೆಗಳನ್ನು ಉಳ್ಳ ಸಾಧನಗಳಲ್ಲಿ ಕೆಲವೊಮ್ಮೆ ಆಗುತ್ತದೆ.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">ಮಾಧ್ಯಮ ಮತ್ತು ಗುಂಪು ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸಲು, \'OK\' ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ವಿನಂತಿಸಿದ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ. ನಿಮ್ಮ ವಾಹಕದ   ಎಂಎಂಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಸಾಮಾನ್ಯ ಹುಡುಕಾಟದ ಮೂಲಕ ಕಂಡುಹಿಡಿಯಬಹುದು. </string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -316,7 +310,6 @@
   <string name="AndroidManifest__change_passphrase">ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಿ</string>
   <string name="AndroidManifest__verify_identity">ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಿ</string>
   <string name="AndroidManifest__complete_key_exchange">ಕೀಲಿ ವಿನಿಮಯ ಪೂರ್ಣಗೊಳಿಸಿ</string>
-  <string name="AndroidManifest__log_submit">ಡಿಬಗ್ ಲಾಗ್ಗಳನ್ನು ಸಲ್ಲಿಸಿ</string>
   <string name="AndroidManifest__media_overview">ಎಲ್ಲಾ ಚಿತ್ರಗಳು</string>
   <string name="AndroidManifest__media_overview_named">ಎಲ್ಲಾ ಚಿತ್ರಗಳು %1$s ಜೊತೆ</string>
   <!--arrays.xml-->
@@ -460,7 +453,6 @@
   <string name="reminder_header_sms_default_title">ಪೂರ್ವನಿಯೋಜಿತ ಎಸ್ಎಂಎಸ್ ಅಪ್ಲಿಕೇಶನ್ ಆಗಿ ಉಪಯೋಗಿಸಿ.</string>
   <string name="reminder_header_sms_default_text">ಟೆಕ್ಸ್ಟ್ ಸೆಕ್ಯೂರನ್ನು ನಿಮ್ಮ ಪೂರ್ವನಿಯೋಜಿತ ಎಸ್.ಎಮ್.ಎಸ್ ಅಪ್ಲಿಕೇಶನ್ನಾಗಿ ಬದಲಾಯಿಸಲು ಸ್ಪರ್ಶಿಸಿ</string>
   <string name="reminder_header_sms_import_title">ವ್ಯವಸ್ಥೆಯ ಎಸ್.ಎಮ್.ಎಸ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ?</string>
-  <string name="reminder_header_sms_import_text">ನಿಮ್ಮ ಫೋನಿನ ಪಠ್ಯ ಸಂದೇಶಗಳನ್ನು  ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ದತ್ತಾಂಶಕ್ಕೆ  ನಕಲು ಮಾಡಿಕೊಳ್ಳಲು ಸ್ಪರ್ಶಿಸಿ.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">ನೀವು</string>
   <string name="MediaPreviewActivity_cant_display">ಈ ಚಿತ್ರದ ಮುನ್ನೋಟ ವಿಫಲಗೊಂಡಿದೆ</string>

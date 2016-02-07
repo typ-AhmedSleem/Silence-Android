@@ -25,9 +25,7 @@
   <string name="ConversationItem_message_size_d_kb">Розмір повідомленя: %d KБ</string>
   <string name="ConversationItem_expires_s">Минає: %s</string>
   <string name="ConversationItem_view_secure_media_question">Переглянути захищений медіа-файл?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Цей медіа-файл зберігається в зашифрованій базі даних. Через технічні обмеження для того, щоб переглянути його через сторонній додаток, необхідно його тимчасово розшифрувати і записати на диск. Ви впевнені, що хочете це зробити?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Помилка, отримано застаріле повідомлення обміну ключами.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Отримано повідомлення обміну ключами, натисніть щоб його обробити</string>
   <string name="ConversationItem_group_action_left">%1$s більше не в групі.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Почати захищений сеанс зв’язку з %s?</string>
@@ -99,7 +97,6 @@
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Отримано пошкоджене повідомлення обміну ключами!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Отримано повідомлення обміну ключами для неправильної версії протоколу.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">Отримано повідомлення з невідомим особистим ключем. Натисніть для його відображення.</string>
   <string name="SmsMessageRecord_secure_session_ended">Захищений сеанс завершено.</string>
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
@@ -168,7 +165,6 @@
   <string name="conversation_item_received__downloading">Завантаження</string>
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Не вдалось захопити журнал відлагодження. Натомість ви можете скористатись ADB, щоб це зробити.</string>
   <string name="log_submit_activity__thanks">Дякуємо за вашу допомогу!</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Ви хочете імпортувати існуючі текстові повідомлень в зашифровану базу даних SMSSecure?</string>
@@ -185,7 +181,6 @@
   <string name="prompt_passphrase_activity__unlock">Розблокувати</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Для надсилання MMS-повідомлень SMSSecure необхідно знати настройки APN вашого оператора. Однак ваш пристрій не надає цієї інформації - так іноді буває, якщо воно заблоковане або відповідним чином налаштоване.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Щоб мати можливість відправляти MMS-повідомлення, введіть інформацію про APN нижче. Потрібні значення для вашого оператора можна знайти в інтернеті за запитом \'оператор APN\' або в його службі підтримки. Це потрібно зробити тільки один раз.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->

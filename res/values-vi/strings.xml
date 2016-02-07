@@ -28,9 +28,7 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationItem_message_size_d_kb">Kích thước tin nhắn: %d KB</string>
   <string name="ConversationItem_expires_s">Hết hạn: %s</string>
   <string name="ConversationItem_view_secure_media_question">Xem nội dung an toàn</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Phương tiện dữ liệu này được lưu trữ trong cơ sở dữ liệu có mã hóa. Tuy nhiên để xem nó bằng một ứng dụng khác đòi hỏi dữ liệu được giải mã tạm thời và chép vào ổ đĩa. Bạn có chắc là muốn làm điều này?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Có lỗi, nhận thông tin cũ về trao đổi chìa khóa</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Nhận thông tin trao đổi chìa khóa, bấm để tiếp tục.</string>
   <string name="ConversationItem_group_action_left">%1$s đã rời nhóm.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Trở lại SMS không mã hóa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Hủy bỏ MMS chưa được mã hóa?</string>
@@ -134,8 +132,6 @@ Phục hồi bản sao lưu có mã hóa sẽ thay thế hoàn toàn các chìa 
 trao đổi chìa khóa bị hỏng!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Nhận thông tin trao đổi chìa khóa về phiên bản giao thức không hợp lệ.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử lý và hiển thị.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Nhận được cập nhật nhưng không rõ thông tin nhận diện. Nhấn vào để kiểm nhận tên nhận diện.</string>
   <string name="SmsMessageRecord_secure_session_ended">Phiên an toàn chấm dứt.</string>
   <string name="SmsMessageRecord_duplicate_message">Tin nhắn trùng lập.</string>
@@ -212,7 +208,6 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="conversation_item_received__downloading">Đang tải xuống</string>
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Không lấy được ký sự từ thiết bị của bạn. Thay vào đó, bạn có thể dùng ADB để lấy ký sự gỡ lỗi (debug).</string>
   <string name="log_submit_activity__thanks">Cám ơn sự trợ giúp của bạn!</string>
   <string name="log_submit_activity__submitting">Đang nộp</string>
   <!--database_migration_activity-->
@@ -230,7 +225,6 @@ Nhận thông tin về chìa khóa nhận diện không rõ. Bấm để xử l�
   <string name="prompt_passphrase_activity__unlock">Mở khóa</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure </string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Để gửi tin nhắn đa phương tiện hoặc tin nhắn nhóm, bấm \'OK\' và hoàn tất các thiết đặt cần thiết. Thiết đặt MMS cho nhà mạng di động có thể tìm thấy bằng cách tìm \'your carrier APN\'. Bạn chỉ cần làm bước này một lần.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->

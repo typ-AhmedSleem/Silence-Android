@@ -39,9 +39,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationItem_message_size_d_kb">Marimea mesajului: %d KB</string>
   <string name="ConversationItem_expires_s">Expira in: %s</string>
   <string name="ConversationItem_view_secure_media_question">Afișez datele securizate?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Aceste date au fost salvate într-o bază de date criptată. Din păcate, pentru a putea vizualiza datele cu ajutorul unui viewer de date extern, este necesar ca datele să fie temporar decriptate și salvate pe disc. Ești sigur că dorești acest lucru?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Eroare, mesajul pentru schimbul de chei este vechi.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Am recepționat un mesaj \"schimb de cheie\", tastați pentru a-l procesa.</string>
   <string name="ConversationItem_group_action_left">%1$s a ieșit din grup.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Reveniţi la SMS necriptat ca soluţie de rezervă?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Reveniţi la MMS necriptat ca soluţie de rezervă?</string>
@@ -164,8 +162,6 @@ Restaurarea unui backup criptat va înlocui complet cheile existente, setările 
 schimbul de chei este corupt </string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune de protocol invalidă.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru a-l procesa și afișa.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">S-au primit informații de identitate actualizate dar necunoscute. Apăsați pentru a valida identitatea.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sesiune securizată terminată.</string>
   <string name="SmsMessageRecord_duplicate_message">Mesaj duplicat.</string>
@@ -263,7 +259,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="conversation_fragment_cab__batch_selection_mode">Mod selecţie multiplă</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s selectate</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Nu au putut fi obţinute log-urile pentru dispozitiv. Puteţi folosi în schimb ADB pentru a obţine log-urile.</string>
   <string name="log_submit_activity__thanks">Vă mulțumim pentru ajutor!</string>
   <string name="log_submit_activity__submitting">Se trimite</string>
   <string name="log_submit_activity__posting_logs">Se trimit log-urile către gist...</string>
@@ -286,7 +281,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="prompt_passphrase_activity__unlock">Deblochează</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure are nevoie de setările APN pentru a trimite mesaje multimedia prin operatorul wireless. Acest aparat nu oferă informațiile necesare, lucru care se poate întâmpla uneori pentru dispozitive blocate sau alte configurații restrictive.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Pentru a putea trimite mesaje multimedia cât și mesaje într-un grup, apăsați \'OK\' și completați setările solicitate. Setările MMS pentru operatorul dvs. pot fi găsite cautând după \'APN operatorul tău\'. Această operațiune este necesară o singură dată.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -306,7 +300,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="AndroidManifest__change_passphrase">Schimbă parola</string>
   <string name="AndroidManifest__verify_identity">Verifică identitatea</string>
   <string name="AndroidManifest__complete_key_exchange">Încheie schimburile de chei</string>
-  <string name="AndroidManifest__log_submit">Trimite log-urile de depanare</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importă / Exportă</string>
   <!--plurals.xml-->
@@ -448,7 +441,6 @@ Primit mesaj trimis cu o cheie de identitate necunoscută. Faceți click pentru 
   <string name="reminder_header_sms_default_title">Seteaz ca aplicație implicită SMS?</string>
   <string name="reminder_header_sms_default_text">Atingeţi pentru a seta SMSSecure ca şi aplicaţie SMS implicită.</string>
   <string name="reminder_header_sms_import_title">Import baza de date cu SMS-uri?</string>
-  <string name="reminder_header_sms_import_text">Atingeți  pentru a copia mesajele SMS din telefon în baza de date criptată.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Tu</string>
   <string name="MediaPreviewActivity_cant_display">Previzualizarea imaginii a eșuat</string>

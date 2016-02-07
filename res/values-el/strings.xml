@@ -44,9 +44,7 @@
   <string name="ConversationItem_expires_s">Παύει να ισχύει: %s</string>
   <string name="ConversationItem_error_not_delivered">Δεν παραδόθηκε</string>
   <string name="ConversationItem_view_secure_media_question">Προβολή ασφαλών πολυμέσων;</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Αυτό το αρχείο έχει αποθηκευτεί σε μια κρυπτογραφημένη βάση δεδομένων. Δυστυχώς, για να το ανοίξετε με κάποιο εξωτερικό πρόγραμμα, είναι απαραίτητο να αποκρυπτογραφηθεί και να εγγραφεί στον δίσκο. Είστε σίγουροι πως το θέλετε αυτό;</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Σφάλμα, λάβαμε παλιό μήνυμα ανταλλαγής κλειδιών.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Ελήφθη μήνυμα ανταλλαγής κλειδιών, κάνετε κλικ για να επεξεργαστεί.</string>
   <string name="ConversationItem_group_action_left">%1$s έφυγαν απο την ομάδα.</string>
   <string name="ConversationItem_click_for_details">Πατήστε για λεπτομέρειες</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Πατήστε για ακάλυπτη εναλλακτική</string>
@@ -207,9 +205,6 @@
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
         Ελήφθη μήνυμα ανταλλαγής κλειδιών για άκυρη έκδοση του πρωτόκολου.
     </string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-        Ελήφθη μήνυμα με άγνωστο κλειδί ταυτότητας. Κλικ για επεξεργασία και προβολή.
-    </string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Λήφθηκε ενημερωμένη αλλά αγνωστη πληρογφορία ταυτότητας. Πατήστε για επιβεβαωση ταυτότητας.</string>
   <string name="SmsMessageRecord_secure_session_ended">Η Ασφαλής συζήτηση τερματίστηκε.</string>
   <string name="SmsMessageRecord_duplicate_message">Διπλότυπο μήνυμα</string>
@@ -312,7 +307,6 @@
   <string name="conversation_fragment_cab__batch_selection_mode">Λειτουργία Μαζικής Επιλογής</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s επιλέχτηκαν</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Δεν μπορέσαμε να δημιουργήσουμε αρχείο συμβάντων για τη συσκευή σας. Μπορείτε να χρησιμοποιήσετε το ADB για να ανακτήσετε τα debug logs.</string>
   <string name="log_submit_activity__thanks">Ευχαριστούμε για τη βοήθειά σας!</string>
   <string name="log_submit_activity__submitting">Αποστολή</string>
   <string name="log_submit_activity__posting_logs">Αποστολή των αρχείων καταγραφής στο gist…</string>
@@ -338,7 +332,6 @@
   <string name="prompt_passphrase_activity__unlock">Ξεκλείδωμα</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Το SMSSecure χρειάζεται τις ρυθμίσεις MMS για να στείλει μηνύματα πολυμέσων μέσω του πάροχού σας. Η συσκευή σας δεν παρέχει αυτές τις ρυθμίσεις, κάτι που ισχύει σε κλειδωμένες συσκευές και άλλες περιοριστικές διαμορφώσεις.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Για να στείλετε μηνύματα πολυμέσων, πατήστε «ΟΚ» και συμπληρώστε τις ρυθμίσεις APN. Θα βρείτε τις σωστές ρυθμίσεις APN για τον πάροχό σας ψάχνοντας online για «το όνομα του πάροχού σας» + APN. Αυτές οι ρυθμίσεις θα χρειαστούν μόνο μία φορά.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -365,7 +358,6 @@
   <string name="AndroidManifest__change_passphrase">Αλλαγή συνθηματικής φράσης</string>
   <string name="AndroidManifest__verify_identity">Επιβεβαίωση Ταυτότητας</string>
   <string name="AndroidManifest__complete_key_exchange">Ολοκλήρωση Ανταλλαγής Κλειδιών</string>
-  <string name="AndroidManifest__log_submit">Υποβολή διαγνωστικού αρχείου.</string>
   <string name="AndroidManifest__media_overview">Όλες οι εικόνες</string>
   <string name="AndroidManifest__media_overview_named">Όλες οι εικόνες με  %1$s</string>
   <!--arrays.xml-->
@@ -533,7 +525,6 @@
   <string name="reminder_header_sms_default_title">Να είμαστε η προεπιλεγμένη εφαρμογή για SMS;</string>
   <string name="reminder_header_sms_default_text">Πατήστε για να γινει το SMSSecure η προεπιλεγμένη εφαρμογή των SMS.</string>
   <string name="reminder_header_sms_import_title">Να εισαγχθούν όλα τα προϋπάρχοντα SMS;</string>
-  <string name="reminder_header_sms_import_text">Πατήστε για να αντιγράψετε τα μηνύματα SMS του κινητού σας τηλεφώνου σε κρυπτογραφημένη βάση δεδομένων.</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Εσείς</string>
   <string name="MediaPreviewActivity_cant_display">Αποτυχία προβολής αυτής της εικόνας</string>

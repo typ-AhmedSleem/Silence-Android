@@ -28,9 +28,7 @@ dapat mengaksesnya</string>
   <string name="ConversationItem_message_size_d_kb">Ukuran pesan: %d KB</string>
   <string name="ConversationItem_expires_s">Berakhir: %s</string>
   <string name="ConversationItem_view_secure_media_question">Tampilkan media aman?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Media ini disimpan dalam basis data terenkripsi. Namun, untuk melihatnya dengan aplikasi eksternal akan memerlukan berkas di deskripsi dan disimpan. Apa anda yakin ingin melakukan ini?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Gagal, menerima pesan pertukaran kunci terhenti.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Menerima pesan pertukaran kunci, klik untuk memproses.</string>
   <string name="ConversationItem_group_action_left">si %1$s telah meninggalkan grup.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Inisiasi sesi aman dengan %s?</string>
@@ -125,8 +123,6 @@ memproses pertukaran kunci korupsi.</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
 </string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan menampilkan.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Menerima pembaharuan atas identitas yang tidak diketahui. Sentuh untuk memvalidasi identitas</string>
   <string name="SmsMessageRecord_secure_session_ended">Sesi aman berakhir.</string>
   <!--ThreadRecord-->
@@ -200,7 +196,6 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="conversation_item_received__downloading">Mengunduh</string>
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Tidak dapat mengambil catatan log dari perangkat anda. Anda masih dapat menggunakan ADB untuk mendapat catatan debug.</string>
   <string name="log_submit_activity__thanks">Terimakasih atas bantuan anda</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Apakah anda ingin mengimport pesan anda ke dalam basis data terenkripsi SMSSecure?</string>
@@ -217,7 +212,6 @@ Menerima pesan dengan identitas kunci tidak diketahui. Klik untuk memproses dan 
   <string name="prompt_passphrase_activity__unlock">Buka Kunci</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure memerlukan pengaturan MMS untuk mengantar pesan dan media grup melalui operator anda. Perangkan anda tidak menyediakan informasi tersebut, yang biasanya disebabkan oleh perangkat yang dikunci atau pengaturan yang ketat.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Untuk mengirim pesan dan media grup klik \'OK\' dan selesaikan pengaturan yang diminta. Pengaturan MMS untuk operator anda biasanya dapat ditemukan dengan mencari \'APN operator anda\'. Hal ini hanya diperlukan sekali saja.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->

@@ -25,9 +25,7 @@
   <string name="ConversationItem_message_size_d_kb">Mida del missatge: %d KB</string>
   <string name="ConversationItem_expires_s">Expira: %s</string>
   <string name="ConversationItem_view_secure_media_question">Vols veure continguts segurs?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Aquest contingut ha estat emmagatzemant en una base de dades encriptada. Desafortunadament, actualment per veure\'l amb un visor de continguts externs les dades han de ser temporalment desencriptades i escrites al disc. Estàs segur que vols fer això?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Error, s\'ha rebut un missatge d\'intercanvi de clau viciat.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">S\'ha rebut un missatge d\'intercanvi de clau, clica per processar-lo.</string>
   <string name="ConversationItem_group_action_left">%1$s ha deixat el grup.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Iniciar una sessió segura amb %s?</string>
@@ -101,7 +99,6 @@
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">S\'ha rebut un missatge d\'intercanvi de claus corromput!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">S\'ha rebut un missatge d\'intercanvi de claus per una versió del protocol invàlida.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">S\'ha rebut un missatge d\'una clau d\'identitat desconeguda. Clica per processar-la i mostrar-la.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">S\'ha rebut informació actualitzada però desconeguda. Pica per validar l\'identitat.</string>
   <string name="SmsMessageRecord_secure_session_ended">La sessió segura s\'ha acabat.</string>
   <!--ThreadRecord-->
@@ -174,7 +171,6 @@
   <string name="conversation_item_received__downloading">Descarregant</string>
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">No s\'han pogut recollir els registres del teu dispositiu. Encara pots utilitzar ADB per aconseguir els registres de depuració.</string>
   <string name="log_submit_activity__thanks">Gràcies per la teva ajuda!</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Vols importar tots el teus missatges de text existents a la base de dades encriptada de SMSSecure?</string>
@@ -191,7 +187,6 @@
   <string name="prompt_passphrase_activity__unlock">Desbloqueja</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necessita ajustaments MMS per entregar missatges de grup i multimèdia a través de l\'operador inalàmbric. El teu dispositiu no fa que aquesta informació estigui disponible, cosa que és certa ocasionalment en dispositius bloquejats o amb altres configuracions restringides.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">Per enviar missatges multimèdia i de grup, clica \'OK\' i completa els ajustaments demanats. Els ajustaments MMS de la teva operadora normalment poden ser trobats buscant \'latevaoperadora APN\'. Només necessitaràs fer això una vegada.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->

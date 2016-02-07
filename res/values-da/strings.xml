@@ -38,9 +38,7 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationItem_message_size_d_kb">Besked størrelse: %d KB</string>
   <string name="ConversationItem_expires_s">Udløber: %s</string>
   <string name="ConversationItem_view_secure_media_question">Gennemse sikret data?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Denne fil er gemt i en krypteret database. For at se den i et eksternt program kræves det, desværre, at filen midlertidigt dekrypteres og gemmes. Er du sikker på at du vil gøre det?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Fejl! Modtog en gammel udvekslingsnøgle.</string>
-  <string name="ConversationItem_received_key_exchange_message_click_to_process">Udvekslingsnøgle er modtaget. Klik for at fortsætte</string>
   <string name="ConversationItem_group_action_left">%1$s har forladt gruppen.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Godkend ukrypteret SMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Godkend ukrypteret MMS?</string>
@@ -160,8 +158,6 @@ denne kontakt.</string>
 nøgle-besked!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Modtog en nøgle-besked for en ugyldig protokol-version.</string>
-  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_click_to_process">
-Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Modtog en opdateret, men ukendte identitetsoplysninger. Klik for at validere identitet.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sikker session afsluttet.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikeret besked.</string>
@@ -259,7 +255,6 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="conversation_fragment_cab__batch_selection_mode">Valgte mængde</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s valgt</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Kunne ikke hente loggene fra din enhed. Du kan stadig bruge ADB til loggen.</string>
   <string name="log_submit_activity__thanks">Tak for hjælpen!</string>
   <string name="log_submit_activity__submitting">Sender</string>
   <!--database_migration_activity-->
@@ -281,7 +276,6 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="prompt_passphrase_activity__unlock">Lås op</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure har brug for at kende MMS-indstillingerne for at sende medieindhold og gruppebeskeder gennem din teleudbyder. Din enhed gør ikke disse oplysninger tilgængelige, hvilket kan forekomme for f.eks. låste enheder.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_click_ok">For at sende multimedia- og gruppebeskeder klik \'OK\' og udfyld indstillingerne. MMS-indstillingerne for din teleoperatør kan ofte findes ved at søge på \'din operatør APN\'. Du behøver kun gøre dette en gang.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -301,7 +295,6 @@ Modtog en besked med en ukendt identitetsnøgle. Klik for at se og behandle den.
   <string name="AndroidManifest__change_passphrase">Ændre kodeord</string>
   <string name="AndroidManifest__verify_identity">Verificer identitet</string>
   <string name="AndroidManifest__complete_key_exchange">Fuldfør nøgleudveksling</string>
-  <string name="AndroidManifest__log_submit">Indsend fejlfindingslog</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importer / eksporter</string>
   <!--plurals.xml-->
