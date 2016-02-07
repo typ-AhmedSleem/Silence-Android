@@ -27,6 +27,7 @@ before_script:
      - adb shell input keyevent 82 &
 
 script:
+     - ./scripts/find-missing-strings.sh
      - ./scripts/build-witness.sh
      - ./gradlew connectedCheck -PdisablePreDex -PtaskThreads=1 -PandroidThread=1
      - rm -rf ~/.android/avd
