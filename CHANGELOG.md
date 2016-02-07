@@ -1,5 +1,19 @@
 # SMSSecure Changelog
 
+### [0.13.2] - 2016-02-07
+- Fixed keyboard/focus regressions
+- Fixed debug logs
+- Fixed key exchange message if it is the first message in thread
+- Fixed click interception on failed messages
+- Fixed silent in-thread notification
+- Fixed contact sorting
+- Fixed crash on invalid image
+- Update APN database
+- Fixed migration from 0.12 to 0.13
+- Fixed LED blinking
+- Added Esperanto
+- Updated translations
+
 ### [0.13.1] - 2016-01-20
 - Fixed crash on Gingerbread
 - Fixed some issues with RTL languages
