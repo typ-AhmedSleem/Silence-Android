@@ -12,7 +12,7 @@
                   android:layout_height="match_parent"
                   android:orientation="vertical">
 
-        <org.smssecure.smssecure.components.ReminderView
+        <org.smssecure.smssecure.components.reminder.ReminderView
                 android:id="@+id/reminder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

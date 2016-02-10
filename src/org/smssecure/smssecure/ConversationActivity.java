@@ -40,6 +40,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -64,6 +65,8 @@ import org.smssecure.smssecure.components.AnimatingToggle;
 import org.smssecure.smssecure.components.ComposeText;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout;
 import org.smssecure.smssecure.components.KeyboardAwareLinearLayout.OnKeyboardShownListener;
+import org.smssecure.smssecure.components.reminder.InviteReminder;
+import org.smssecure.smssecure.components.reminder.ReminderView;
 import org.smssecure.smssecure.components.SendButton;
 import org.smssecure.smssecure.components.InputAwareLayout;
 import org.smssecure.smssecure.components.emoji.EmojiDrawer.EmojiEventListener;
@@ -82,6 +85,7 @@ import org.smssecure.smssecure.database.DraftDatabase.Draft;
 import org.smssecure.smssecure.database.DraftDatabase.Drafts;
 import org.smssecure.smssecure.database.GroupDatabase;
 import org.smssecure.smssecure.database.MmsSmsColumns.Types;
+import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.mms.AttachmentManager;
 import org.smssecure.smssecure.mms.AttachmentManager.MediaType;
@@ -104,7 +108,7 @@ import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
 import org.smssecure.smssecure.sms.OutgoingEndSessionMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
-import org.smssecure.smssecure.util.BitmapDecodingException;
+import org.smssecure.smssecure.util.concurrent.AssertedSuccessListener;
 import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
@@ -118,6 +122,7 @@ import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 import org.smssecure.smssecure.util.concurrent.SettableFuture;
 import org.whispersystems.libaxolotl.InvalidMessageException;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.List;
@@ -166,6 +171,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   InputAwareLayout      container;
   private   View                  composePanel;
   private   View                  composeBubble;
+  protected ReminderView          reminderView;
 
   private   AttachmentTypeSelectorAdapter attachmentAdapter;
   private   AttachmentManager             attachmentManager;
@@ -178,6 +184,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private long       threadId;
   private int        distributionType;
   private boolean    isEncryptedConversation;
+  private boolean    isSecureSmsDestination;
   private boolean    archived;
   private boolean    isMmsEnabled = true;
 
@@ -206,13 +213,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     initializeViews();
     initializeResources();
     initializeSecurity();
+    updateInviteReminder();
     initializeDraft();
   }
 
   @Override
   protected void onNewIntent(Intent intent) {
     Log.w(TAG, "onNewIntent()");
-    
+
     if (isFinishing()) {
       Log.w(TAG, "Activity is finishing...");
       return;
@@ -227,6 +235,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     setIntent(intent);
     initializeResources();
     initializeSecurity();
+    updateInviteReminder();
     initializeDraft();
 
     if (fragment != null) {
@@ -721,10 +730,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeSecurity() {
-    Recipient    primaryRecipient       = getRecipients() == null ? null : getRecipients().getPrimaryRecipient();
-    boolean      isSecureSmsDestination = isSingleConversation() &&
-                                          SessionUtil.hasSession(this, masterSecret, primaryRecipient);
-    boolean      isMediaMessage         = !recipients.isSingleRecipient() || attachmentManager.isAttachmentPresent();
+    Recipient    primaryRecipient = getRecipients() == null ? null : getRecipients().getPrimaryRecipient();
+    boolean      isMediaMessage   = !recipients.isSingleRecipient() || attachmentManager.isAttachmentPresent();
+
+    isSecureSmsDestination = isSingleConversation() && SessionUtil.hasSession(this, masterSecret, primaryRecipient);
 
     if (isSecureSmsDestination) {
       this.isEncryptedConversation = true;
@@ -746,6 +755,18 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     supportInvalidateOptionsMenu();
   }
 
+  protected void updateInviteReminder() {
+    if (!isSecureSmsDestination                  &&
+        recipients.isSingleRecipient()           &&
+        recipients.getPrimaryRecipient() != null &&
+        recipients.getPrimaryRecipient().getContactUri() != null)
+    {
+      new ShowInviteReminderTask().execute(recipients);
+    } else {
+      reminderView.hide();
+    }
+  }
+
   private void initializeMmsEnabledCheck() {
     new AsyncTask<Void, Void, Boolean>() {
       @Override
@@ -762,17 +783,18 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void initializeViews() {
     titleView      = (ConversationTitleView) getSupportActionBar().getCustomView();
-    buttonToggle   = (AnimatingToggle)       findViewById(R.id.button_toggle);
-    sendButton     = (SendButton)            findViewById(R.id.send_button);
-    attachButton   = (ImageButton)           findViewById(R.id.attach_button);
-    composeText    = (ComposeText)           findViewById(R.id.embedded_text_editor);
-    charactersLeft = (TextView)              findViewById(R.id.space_left);
-    emojiToggle    = (EmojiToggle)           findViewById(R.id.emoji_toggle);
-    emojiDrawer    = (EmojiDrawer)           findViewById(R.id.emoji_drawer);
-    unblockButton  = (Button)                findViewById(R.id.unblock_button);
-    composePanel   =                         findViewById(R.id.bottom_panel);
-    composeBubble  =                         findViewById(R.id.compose_bubble);
-    container      = (InputAwareLayout)      findViewById(R.id.layout_container);
+    buttonToggle   = ViewUtil.findById(this, R.id.button_toggle);
+    sendButton     = ViewUtil.findById(this, R.id.send_button);
+    attachButton   = ViewUtil.findById(this, R.id.attach_button);
+    composeText    = ViewUtil.findById(this, R.id.embedded_text_editor);
+    charactersLeft = ViewUtil.findById(this, R.id.space_left);
+    emojiToggle    = ViewUtil.findById(this, R.id.emoji_toggle);
+    emojiDrawer    = ViewUtil.findById(this, R.id.emoji_drawer);
+    unblockButton  = ViewUtil.findById(this, R.id.unblock_button);
+    composePanel   = ViewUtil.findById(this, R.id.bottom_panel);
+    composeBubble  = ViewUtil.findById(this, R.id.compose_bubble);
+    container      = ViewUtil.findById(this, R.id.layout_container);
+    reminderView   = ViewUtil.findById(this, R.id.reminder);
 
     if (SMSSecurePreferences.isEmojiDrawerDisabled(this))
       emojiToggle.setVisibility(View.GONE);
@@ -874,6 +896,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         titleView.setTitle(recipients);
         setBlockedUserState(recipients);
         setActionBarColor(recipients.getColor());
+        updateInviteReminder();
       }
     });
   }
@@ -886,6 +909,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
         if (eventThreadId == threadId || eventThreadId == -2) {
           initializeSecurity();
+          updateInviteReminder();
           calculateCharactersRemaining();
         }
       }
@@ -1136,6 +1160,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       fragment.reload(recipients, threadId);
 
       initializeSecurity();
+      updateInviteReminder();
     }
 
     fragment.scrollToBottom();
@@ -1343,7 +1368,35 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   @Override
   public void onAttachmentChanged() {
     initializeSecurity();
+    updateInviteReminder();
     updateToggleButtonState();
   }
 
+  private class ShowInviteReminderTask extends AsyncTask<Recipients, Void, Pair<Recipients,Boolean>> {
+    @Override
+    protected Pair<Recipients, Boolean> doInBackground(Recipients... recipients) {
+      if (recipients.length != 1 || recipients[0] == null) throw new AssertionError("task needs exactly one Recipients object");
+
+      Optional<RecipientsPreferences> prefs = DatabaseFactory.getRecipientPreferenceDatabase(ConversationActivity.this)
+                                                             .getRecipientsPreferences(recipients[0].getIds());
+      return new Pair<>(recipients[0], prefs.isPresent() && prefs.get().hasSeenInviteReminder());
+    }
+
+    @Override
+    protected void onPostExecute(Pair<Recipients, Boolean> result) {
+      if (!result.second && result.first == recipients) {
+        InviteReminder reminder = new InviteReminder(ConversationActivity.this, result.first);
+        reminder.setOkListener(new OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            handleInviteLink();
+            reminderView.requestDismiss();
+          }
+        });
+        reminderView.showReminder(reminder);
+      } else {
+        reminderView.hide();
+      }
+    }
+  }
 }
