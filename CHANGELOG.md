@@ -3,15 +3,14 @@
 ### [0.13.2] - 2016-02-07
 - Fixed keyboard/focus regressions
 - Fixed debug logs
-- Fixed key exchange message if it is the first message in thread
 - Fixed click interception on failed messages
 - Fixed silent in-thread notification
+- Fixed notification LED and sound
 - Fixed contact sorting
 - Fixed crash on invalid image
-- Update APN database
-- Fixed migration from 0.12 to 0.13
-- Fixed LED blinking
-- Added Esperanto
+- Fixed database migration from 0.12.3 to 0.13.1
+- Updated APN database
+- Added Esperanto translation
 - Updated translations
 
 ### [0.13.1] - 2016-01-20
@@ -123,6 +122,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.13.2]: https://github.com/SMSSecure/SMSSecure/compare/v0.13.1...v0.13.2
  [0.13.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.13.0...v0.13.1
  [0.13.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.12.3...v0.13.0
  [0.12.3]: https://github.com/SMSSecure/SMSSecure/compare/v0.12.1...v0.12.3
