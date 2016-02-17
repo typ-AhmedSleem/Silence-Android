@@ -183,7 +183,7 @@ public class ExportFragment extends Fragment {
     @Override
     protected Integer doInBackground(Void... params) {
       try {
-        EncryptedBackupExporter.exportToSd(getActivity());
+        EncryptedBackupExporter.exportToStorage(getActivity());
         return SUCCESS;
       } catch (NoExternalStorageException e) {
         Log.w("ExportFragment", e);

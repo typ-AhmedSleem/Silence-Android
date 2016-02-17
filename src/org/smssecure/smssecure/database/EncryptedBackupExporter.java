@@ -30,12 +30,12 @@ public class EncryptedBackupExporter {
 
   private static final String TAG = EncryptedBackupExporter.class.getSimpleName();
 
-  public static void exportToSd(Context context) throws NoExternalStorageException, IOException {
+  public static void exportToStorage(Context context) throws NoExternalStorageException, IOException {
     verifyExternalStorageForExport();
     exportDirectory(context, "");
   }
 
-  public static void importFromSd(Context context) throws NoExternalStorageException, IOException {
+  public static void importFromStorage(Context context) throws NoExternalStorageException, IOException {
     verifyExternalStorageForImport();
     importDirectory(context, "");
   }
