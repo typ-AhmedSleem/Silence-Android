@@ -28,12 +28,14 @@ import java.nio.channels.FileChannel;
 
 public class EncryptedBackupExporter {
 
-  public static void exportToSd(Context context) throws NoExternalStorageException, IOException {
+  private static final String TAG = EncryptedBackupExporter.class.getSimpleName();
+
+  public static void exportToStorage(Context context) throws NoExternalStorageException, IOException {
     verifyExternalStorageForExport();
     exportDirectory(context, "");
   }
 
-  public static void importFromSd(Context context) throws NoExternalStorageException, IOException {
+  public static void importFromStorage(Context context) throws NoExternalStorageException, IOException {
     verifyExternalStorageForImport();
     importDirectory(context, "");
   }
@@ -55,9 +57,14 @@ public class EncryptedBackupExporter {
   }
 
   private static void verifyExternalStorageForImport() throws NoExternalStorageException {
-    if (!Environment.getExternalStorageDirectory().canRead() ||
-        !(new File(getExportDirectoryPath()).exists()))
-        throw new NoExternalStorageException();
+    if (!Environment.getExternalStorageDirectory().canRead()) {
+      Log.w(TAG, "Cannot get external storage directory!");
+      throw new NoExternalStorageException();
+    }
+    if (!new File(getExportDirectoryPath()).exists()) {
+      Log.w(TAG, "Cannot get export directory path \"" + getExportDirectoryPath() + "\"!");
+      throw new NoExternalStorageException();
+    }
   }
 
   private static void migrateFile(File from, File to) {
@@ -71,7 +78,7 @@ public class EncryptedBackupExporter {
         destination.close();
       }
     } catch (IOException ioe) {
-      Log.w("EncryptedBackupExporter", ioe);
+      Log.w(TAG, ioe);
     }
   }
 
@@ -95,7 +102,7 @@ public class EncryptedBackupExporter {
         }
       }
     } else {
-      Log.w("EncryptedBackupExporter", "Could not find directory: " + directory.getAbsolutePath());
+      Log.w(TAG, "Could not find directory: " + directory.getAbsolutePath());
     }
   }
 

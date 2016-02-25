@@ -106,9 +106,9 @@ public class ImportFragment extends Fragment {
   private void handleImportEncryptedBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_alert_icon);
-    builder.setTitle(getActivity().getString(R.string.ImportFragment_restore_encrypted_backup));
-    builder.setMessage(getActivity().getString(R.string.ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys));
-    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_restore), new AlertDialog.OnClickListener() {
+    builder.setTitle(getActivity().getString(R.string.ImportFragment_import_encrypted_backup));
+    builder.setMessage(getActivity().getString(R.string.ImportFragment_importing_an_encrypted_backup_will_completely_replace_your_existing_keys));
+    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), new AlertDialog.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
         new ImportEncryptedBackupTask().execute();
@@ -191,8 +191,8 @@ public class ImportFragment extends Fragment {
     @Override
     protected void onPreExecute() {
       progressDialog = ProgressDialog.show(getActivity(),
-                                           getActivity().getString(R.string.ImportFragment_restoring),
-                                           getActivity().getString(R.string.ImportFragment_restoring_encrypted_backup),
+                                           getActivity().getString(R.string.ImportFragment_importing),
+                                           getActivity().getString(R.string.ImportFragment_importing_encrypted_backup),
                                            true, false);
     }
 
@@ -217,21 +217,14 @@ public class ImportFragment extends Fragment {
                          Toast.LENGTH_LONG).show();
           break;
         case SUCCESS:
-          DatabaseFactory.getInstance(context).reset(context);
-          Intent intent = new Intent(context, KeyCachingService.class);
-          intent.setAction(KeyCachingService.CLEAR_KEY_ACTION);
-          context.startService(intent);
-
-          Toast.makeText(context,
-                         context.getString(R.string.ImportFragment_restore_complete),
-                         Toast.LENGTH_LONG).show();
+          ExitActivity.exitAndRemoveFromRecentApps(getActivity());
       }
     }
 
     @Override
     protected Integer doInBackground(Void... params) {
       try {
-        EncryptedBackupExporter.importFromSd(getActivity());
+        EncryptedBackupExporter.importFromStorage(getActivity());
         return SUCCESS;
       } catch (NoExternalStorageException e) {
         Log.w("ImportFragment", e);
