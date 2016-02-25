@@ -28,13 +28,10 @@ import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.SmilUtil;
 import org.smssecure.smssecure.util.TelephonyUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
 import org.whispersystems.libaxolotl.NoSessionException;
-import org.smssecure.smssecure.util.InvalidNumberException;
-import org.smssecure.smssecure.util.PhoneNumberFormatter;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -95,7 +92,7 @@ public class MmsSendJob extends SendJob {
       validateDestinations(message, pdu);
 
       final byte[]        pduBytes = getPduBytes(masterSecret, pdu);
-      final SendConf      sendConf = new CompatMmsConnection(context).send(pduBytes);
+      final SendConf      sendConf = new CompatMmsConnection(context).send(pduBytes, message.getSubscriptionId());
       final MmsSendResult result   = getSendResult(sendConf, pdu, upgradedSecure);
 
       if (result.isUpgradedSecure()) {

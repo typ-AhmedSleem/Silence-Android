@@ -78,7 +78,7 @@ public class SmsDatabase extends MessagingDatabase {
     DATE_RECEIVED  + " INTEGER, " + DATE_SENT + " INTEGER, " + PROTOCOL + " INTEGER, " + READ + " INTEGER DEFAULT 0, " +
     STATUS + " INTEGER DEFAULT -1," + TYPE + " INTEGER, " + REPLY_PATH_PRESENT + " INTEGER, " +
     DATE_DELIVERY_RECEIVED + " INTEGER DEFAULT 0," + SUBJECT + " TEXT, " + BODY + " TEXT, " +
-    MISMATCHED_IDENTITIES + " TEXT DEFAULT NULL, " + SERVICE_CENTER + " TEXT);";
+    MISMATCHED_IDENTITIES + " TEXT DEFAULT NULL, " + SERVICE_CENTER + " TEXT, " + SUBSCRIPTION_ID + " INTEGER DEFAULT -1);";
 
   public static final String[] CREATE_INDEXS = {
     "CREATE INDEX IF NOT EXISTS sms_thread_id_index ON " + TABLE_NAME + " (" + THREAD_ID + ");",
@@ -95,7 +95,7 @@ public class SmsDatabase extends MessagingDatabase {
       DATE_SENT + " AS " + NORMALIZED_DATE_SENT,
       PROTOCOL, READ, STATUS, TYPE,
       REPLY_PATH_PRESENT, SUBJECT, BODY, SERVICE_CENTER, DATE_DELIVERY_RECEIVED,
-      MISMATCHED_IDENTITIES
+      MISMATCHED_IDENTITIES, SUBSCRIPTION_ID
   };
 
   private final JobManager jobManager;
@@ -401,6 +401,7 @@ public class SmsDatabase extends MessagingDatabase {
     values.put(DATE_SENT, message.getSentTimestampMillis());
     values.put(PROTOCOL, message.getProtocol());
     values.put(READ, unread ? 0 : 1);
+    values.put(SUBSCRIPTION_ID, message.getSubscriptionId());
 
     if (!TextUtils.isEmpty(message.getPseudoSubject()))
       values.put(SUBJECT, message.getPseudoSubject());
@@ -446,6 +447,7 @@ public class SmsDatabase extends MessagingDatabase {
     contentValues.put(DATE_DELIVERY_RECEIVED, "0");
     contentValues.put(READ, 1);
     contentValues.put(TYPE, type);
+    contentValues.put(SUBSCRIPTION_ID, message.getSubscriptionId());
 
     SQLiteDatabase db        = databaseHelper.getWritableDatabase();
     long           messageId = db.insert(TABLE_NAME, ADDRESS, contentValues);
@@ -606,6 +608,7 @@ public class SmsDatabase extends MessagingDatabase {
       int status                = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.STATUS));
       long dateDeliveryReceived = cursor.getLong(cursor.getColumnIndexOrThrow(SmsDatabase.DATE_DELIVERY_RECEIVED));
       String mismatchDocument   = cursor.getString(cursor.getColumnIndexOrThrow(SmsDatabase.MISMATCHED_IDENTITIES));
+      int subscriptionId        = cursor.getInt(cursor.getColumnIndexOrThrow(SmsDatabase.SUBSCRIPTION_ID));
 
       List<IdentityKeyMismatch> mismatches = getMismatches(mismatchDocument);
       Recipients                recipients = getRecipientsFor(address);
@@ -615,7 +618,7 @@ public class SmsDatabase extends MessagingDatabase {
                                   recipients.getPrimaryRecipient(),
                                   addressDeviceId,
                                   dateSent, dateReceived, dateDeliveryReceived, type,
-                                  threadId, status, mismatches);
+                                  threadId, status, mismatches, subscriptionId);
     }
 
     private Recipients getRecipientsFor(String address) {

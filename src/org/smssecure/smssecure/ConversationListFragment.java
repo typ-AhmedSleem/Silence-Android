@@ -53,11 +53,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
-import org.smssecure.smssecure.components.DefaultSmsReminder;
-import org.smssecure.smssecure.components.Reminder;
-import org.smssecure.smssecure.components.ReminderView;
-import org.smssecure.smssecure.components.StoreRatingReminder;
-import org.smssecure.smssecure.components.SystemSmsImportReminder;
+import org.smssecure.smssecure.components.reminder.DefaultSmsReminder;
+import org.smssecure.smssecure.components.reminder.Reminder;
+import org.smssecure.smssecure.components.reminder.ReminderView;
+import org.smssecure.smssecure.components.reminder.StoreRatingReminder;
+import org.smssecure.smssecure.components.reminder.SystemSmsImportReminder;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.loaders.ConversationListLoader;
 import org.smssecure.smssecure.notifications.MessageNotifier;

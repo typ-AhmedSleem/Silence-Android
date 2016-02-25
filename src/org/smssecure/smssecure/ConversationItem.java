@@ -65,6 +65,9 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
+import org.smssecure.smssecure.util.dualsim.SubscriptionInfoCompat;
+import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
+import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.HashSet;
 import java.util.Locale;
@@ -92,6 +95,7 @@ public class ConversationItem extends LinearLayout
   private View               bodyBubble;
   private TextView           bodyText;
   private TextView           dateText;
+  private TextView           simInfoText;
   private TextView           indicatorText;
   private TextView           groupStatusText;
   private ImageView          secureImage;
@@ -134,6 +138,7 @@ public class ConversationItem extends LinearLayout
 
     this.bodyText                = (TextView)           findViewById(R.id.conversation_item_body);
     this.dateText                = (TextView)           findViewById(R.id.conversation_item_date);
+    this.simInfoText             = (TextView)           findViewById(R.id.sim_info);
     this.indicatorText           = (TextView)           findViewById(R.id.indicator_text);
     this.groupStatusText         = (TextView)           findViewById(R.id.group_message_status);
     this.secureImage             = (ImageView)          findViewById(R.id.secure_indicator);
@@ -188,6 +193,7 @@ public class ConversationItem extends LinearLayout
     checkForAutoInitiate(messageRecord);
     setMinimumWidth();
     setMediaAttributes(messageRecord);
+    setSimInfo(messageRecord);
   }
 
   private void initializeAttributes() {
@@ -323,6 +329,26 @@ public class ConversationItem extends LinearLayout
     }
   }
 
+  private void setSimInfo(MessageRecord messageRecord) {
+    SubscriptionManagerCompat subscriptionManager = new SubscriptionManagerCompat(context);
+
+    if (messageRecord.getSubscriptionId() == -1 || subscriptionManager.getActiveSubscriptionInfoList().size() < 2) {
+      simInfoText.setVisibility(View.GONE);
+    } else {
+      Optional<SubscriptionInfoCompat> subscriptionInfo = subscriptionManager.getActiveSubscriptionInfo(messageRecord.getSubscriptionId());
+
+      if (subscriptionInfo.isPresent() && messageRecord.isOutgoing()) {
+        simInfoText.setText(getContext().getString(R.string.ConversationItem_from_s, subscriptionInfo.get().getDisplayName()));
+        simInfoText.setVisibility(View.VISIBLE);
+      } else if (subscriptionInfo.isPresent()) {
+        simInfoText.setText(getContext().getString(R.string.ConversationItem_to_s,  subscriptionInfo.get().getDisplayName()));
+        simInfoText.setVisibility(View.VISIBLE);
+      } else {
+        simInfoText.setVisibility(View.GONE);
+      }
+    }
+  }
+
   private void setFailedStatusIcons() {
     alertView.setFailed();
     deliveryStatusIndicator.setNone();
@@ -404,6 +430,7 @@ public class ConversationItem extends LinearLayout
         !messageRecord.isSecure())
     {
       final Recipients recipients = messageRecord.getRecipients();
+      final int subscriptionId    = messageRecord.getSubscriptionId();
 
       Recipient recipient = recipients.getPrimaryRecipient();
       String    body      = messageRecord.getBody().getBody();
@@ -425,7 +452,7 @@ public class ConversationItem extends LinearLayout
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
-            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
+            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true, subscriptionId);
           }
         });
         builder.show();

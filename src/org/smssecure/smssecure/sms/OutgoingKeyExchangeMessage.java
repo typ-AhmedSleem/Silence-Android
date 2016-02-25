@@ -4,8 +4,8 @@ import org.smssecure.smssecure.recipients.Recipients;
 
 public class OutgoingKeyExchangeMessage extends OutgoingTextMessage {
 
-  public OutgoingKeyExchangeMessage(Recipients recipients, String message) {
-    super(recipients, message);
+  public OutgoingKeyExchangeMessage(Recipients recipients, String message, int subscriptionId) {
+    super(recipients, message, subscriptionId);
   }
 
   private OutgoingKeyExchangeMessage(OutgoingKeyExchangeMessage base, String body) {

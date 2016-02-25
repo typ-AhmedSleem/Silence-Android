@@ -1,5 +1,7 @@
 package org.smssecure.smssecure.mms;
 
+import android.text.TextUtils;
+
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Base64;
@@ -13,9 +15,11 @@ public class OutgoingMediaMessage {
   protected final List<Attachment> attachments;
   private   final long             sentTimeMillis;
   private   final int              distributionType;
+  private   final int              subscriptionId;
 
   public OutgoingMediaMessage(Recipients recipients, String message,
                               List<Attachment> attachments, long sentTimeMillis,
+                              int subscriptionId,
                               int distributionType)
   {
     this.recipients       = recipients;
@@ -23,11 +27,16 @@ public class OutgoingMediaMessage {
     this.sentTimeMillis   = sentTimeMillis;
     this.distributionType = distributionType;
     this.attachments      = attachments;
+    this.subscriptionId   = subscriptionId;
   }
 
-  public OutgoingMediaMessage(Recipients recipients, SlideDeck slideDeck, String message, long sentTimeMillis, int distributionType)
+  public OutgoingMediaMessage(Recipients recipients, SlideDeck slideDeck, String message, long sentTimeMillis, int subscriptionId, int distributionType)
   {
-    this(recipients, message, slideDeck.asAttachments(), sentTimeMillis, distributionType);
+    this(recipients,
+         buildMessage(slideDeck, message),
+         slideDeck.asAttachments(),
+         sentTimeMillis, subscriptionId,
+         distributionType);
   }
 
   public OutgoingMediaMessage(OutgoingMediaMessage that) {
@@ -36,6 +45,7 @@ public class OutgoingMediaMessage {
     this.distributionType = that.distributionType;
     this.attachments      = that.attachments;
     this.sentTimeMillis   = that.sentTimeMillis;
+    this.subscriptionId   = that.subscriptionId;
   }
 
   public Recipients getRecipients() {
@@ -64,6 +74,20 @@ public class OutgoingMediaMessage {
 
   public long getSentTimeMillis() {
     return sentTimeMillis;
+  }
+
+  public int getSubscriptionId() {
+    return subscriptionId;
+  }
+
+  private static String buildMessage(SlideDeck slideDeck, String message) {
+    if (!TextUtils.isEmpty(message) && !TextUtils.isEmpty(slideDeck.getBody())) {
+      return slideDeck.getBody() + "\n\n" + message;
+    } else if (!TextUtils.isEmpty(message)) {
+      return message;
+    } else {
+      return slideDeck.getBody();
+    }
   }
 
 }
