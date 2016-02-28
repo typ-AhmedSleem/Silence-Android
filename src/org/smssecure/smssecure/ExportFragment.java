@@ -59,10 +59,10 @@ public class ExportFragment extends Fragment {
 
   private void handleExportEncryptedBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-    builder.setIcon(R.attr.dialog_info_icon);
+    builder.setIconAttribute(R.attr.dialog_info_icon);
     builder.setTitle(getActivity().getString(R.string.ExportFragment_export_encrypted_backup));
     builder.setMessage(getActivity().getString(R.string.ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages));
-    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), new Dialog.OnClickListener() {
+    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), new AlertDialog.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
         new ExportEncryptedTask().execute();
