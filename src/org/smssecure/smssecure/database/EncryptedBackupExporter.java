@@ -86,7 +86,7 @@ public class EncryptedBackupExporter {
     File directory       = new File(context.getFilesDir().getParent() + File.separatorChar + directoryName);
     File exportDirectory = new File(getExportDirectoryPath() + File.separatorChar + directoryName);
 
-    if (directory.exists()) {
+    if (directory.exists() && directory.isDirectory()) {
       exportDirectory.mkdirs();
 
       File[] contents = directory.listFiles();
@@ -94,7 +94,7 @@ public class EncryptedBackupExporter {
       for (int i=0;i<contents.length;i++) {
         File localFile = contents[i];
 
-        if (localFile.isFile()) {
+        if (localFile.isFile() && !localFile.getAbsolutePath().contains("libcurve25519.so")) {
           File exportedFile = new File(exportDirectory.getAbsolutePath() + File.separator + localFile.getName());
           migrateFile(localFile, exportedFile);
         } else {
@@ -102,7 +102,7 @@ public class EncryptedBackupExporter {
         }
       }
     } else {
-      Log.w(TAG, "Could not find directory: " + directory.getAbsolutePath());
+      Log.w(TAG, "Could not find directory: " + directory.getAbsolutePath() + " (or it is not a directory)");
     }
   }
 
