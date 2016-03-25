@@ -29,6 +29,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.util.Hex;
 import org.whispersystems.libaxolotl.AxolotlAddress;
 import org.whispersystems.libaxolotl.IdentityKey;
 import org.whispersystems.libaxolotl.state.SessionRecord;
@@ -74,14 +75,14 @@ public class VerifyIdentityActivity extends KeyScanningActivity {
       return;
     }
 
-    localIdentityFingerprint.setText(IdentityKeyUtil.getIdentityKey(this).getFingerprint());
+    localIdentityFingerprint.setText(Hex.toString(IdentityKeyUtil.getIdentityKey(this).serialize()));
 
     IdentityKey identityKey = getRemoteIdentityKey(masterSecret, recipient);
 
     if (identityKey == null) {
       remoteIdentityFingerprint.setText(R.string.VerifyIdentityActivity_recipient_has_no_identity_key);
     } else {
-      remoteIdentityFingerprint.setText(identityKey.getFingerprint());
+      remoteIdentityFingerprint.setText(Hex.toString(identityKey.serialize()));
     }
   }
 
