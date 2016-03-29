@@ -120,6 +120,7 @@ import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 import org.smssecure.smssecure.util.concurrent.SettableFuture;
+import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
 import org.whispersystems.libaxolotl.InvalidMessageException;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -1424,7 +1425,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     protected void onPostExecute(@NonNull  Pair<Recipients, RecipientsPreferences> result) {
       if (result.first == recipients) {
         updateInviteReminder(result.second != null && result.second.hasSeenInviteReminder());
-        updateDefaultSubscriptionId(result.second != null ? result.second.getDefaultSubscriptionId() : Optional.<Integer>absent());
+        updateDefaultSubscriptionId(result.second != null ? result.second.getDefaultSubscriptionId() : SubscriptionManagerCompat.getDefaultMessagingSubscriptionId());
       }
     }
   }
