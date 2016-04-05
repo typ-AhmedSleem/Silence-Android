@@ -135,7 +135,7 @@ public class ExportFragment extends Fragment {
           break;
         case SUCCESS:
           Toast.makeText(context,
-                         context.getString(R.string.ExportFragment_success),
+                         context.getString(R.string.ExportFragment_export_successful),
                          Toast.LENGTH_LONG).show();
           break;
       }
@@ -174,7 +174,7 @@ public class ExportFragment extends Fragment {
           break;
         case SUCCESS:
           Toast.makeText(context,
-                         context.getString(R.string.ExportFragment_success),
+                         context.getString(R.string.ExportFragment_export_successful),
                          Toast.LENGTH_LONG).show();
           break;
       }

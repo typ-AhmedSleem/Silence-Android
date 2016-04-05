@@ -127,12 +127,11 @@ android {
         minSdkVersion 9
         targetSdkVersion 22
 
-        buildConfigField "long", "BUILD_TIMESTAMP", System.currentTimeMillis() + "L"
         try{
             buildConfigField "String", "BUILD_GIT_COMMIT", "\"" + 'git rev-parse --short HEAD'.execute().text.trim() + "\""
         }
         catch(IOException e){
-           buildConfigField "String", "BUILD_GIT_COMMIT", '""'
+            buildConfigField "String", "BUILD_GIT_COMMIT", '""'
         }
     }
 

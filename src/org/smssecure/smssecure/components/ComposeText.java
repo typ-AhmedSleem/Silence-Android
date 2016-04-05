@@ -14,6 +14,7 @@ import android.text.style.RelativeSizeSpan;
 import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
 
+import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.TransportOption;
 import org.smssecure.smssecure.components.emoji.EmojiEditText;
 import org.smssecure.smssecure.util.SMSSecurePreferences;
@@ -113,6 +114,9 @@ public class ComposeText extends EmojiEditText {
 
     setInputType(inputType);
     setImeOptions(imeOptions);
-    setHint(transport.getComposeHint(), transport.getSimName().isPresent() ? "From " + transport.getSimName().get() : null);
+    setHint(transport.getComposeHint(),
+            transport.getSimName().isPresent()
+                ? getContext().getString(R.string.conversation_activity__from_sim_name, transport.getSimName().get())
+                : null);
   }
 }

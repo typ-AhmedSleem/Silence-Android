@@ -19,6 +19,7 @@ import org.smssecure.smssecure.mms.ImageSlide;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.VideoSlide;
+import org.smssecure.smssecure.providers.PersistentBlobProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,10 +72,14 @@ public class MediaUtil {
   }
 
   public static @Nullable String getMimeType(Context context, Uri uri) {
+    if (PersistentBlobProvider.isAuthority(context, uri)) {
+      return PersistentBlobProvider.getMimeType(context, uri);
+    }
+
     String type = context.getContentResolver().getType(uri);
     if (type == null) {
       final String extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
-      type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+      type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension.toLowerCase());
     }
     return getCorrectedMimeType(type);
   }

@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.widget.TextView;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.util.Hex;
 import org.whispersystems.libaxolotl.IdentityKey;
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 
@@ -54,7 +55,7 @@ public class ViewIdentityActivity extends KeyScanningActivity {
     if (identityKey == null) {
       identityFingerprint.setText(R.string.VerifyIdentityActivity_you_do_not_have_an_identity_key);
     } else {
-      identityFingerprint.setText(identityKey.getFingerprint());
+      identityFingerprint.setText(Hex.toString(identityKey.serialize()));
     }
   }
 
