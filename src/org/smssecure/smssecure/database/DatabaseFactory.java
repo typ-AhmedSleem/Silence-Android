@@ -72,7 +72,6 @@ public class DatabaseFactory {
   private static final int INTRODUCED_ARCHIVE_VERSION                      = 24;
   private static final int INTRODUCED_CONVERSATION_LIST_STATUS_VERSION     = 25;
   private static final int MIGRATED_CONVERSATION_LIST_STATUS_VERSION       = 26;
-  private static final int INTRODUCED_INVITE_REMINDERS_VERSION             = 27;
   private static final int INTRODUCED_SUBSCRIPTION_ID_VERSION              = 28;
   private static final int DATABASE_VERSION                                = 28;
 
@@ -755,10 +754,6 @@ public class DatabaseFactory {
         db.execSQL("UPDATE mms SET date_received = (date_received * 1000), date = (date * 1000);");
         db.execSQL("CREATE INDEX IF NOT EXISTS sms_thread_date_index ON sms (thread_id, date);");
         db.execSQL("CREATE INDEX IF NOT EXISTS mms_thread_date_index ON mms (thread_id, date_received);");
-      }
-
-      if (oldVersion < INTRODUCED_INVITE_REMINDERS_VERSION) {
-        db.execSQL("ALTER TABLE recipient_preferences ADD COLUMN seen_invite_reminder INTEGER DEFAULT 0");
       }
 
       if (oldVersion < INTRODUCED_CONVERSATION_LIST_THUMBNAILS_VERSION) {

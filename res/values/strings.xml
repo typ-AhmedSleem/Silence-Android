@@ -818,9 +818,6 @@
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
     <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into its encrypted database.</string>
     <string name="reminder_header_sms_import_button">IMPORT</string>
-    <string name="reminder_header_invite_title">Invite to SMSSecure?</string>
-    <string name="reminder_header_invite_text">Take your conversation with %1$s to the next level.</string>
-    <string name="reminder_header_invite_button">INVITE</string>
     <string name="reminder_header_rate_title">Rate this app</string>
     <string name="reminder_header_rate_text">If you enjoy using this app, please take a moment to help us by rating it.</string>
     <string name="reminder_header_rate_button">RATE NOW!</string>
