@@ -34,11 +34,13 @@
         <!--<item name="colorPrimary">@android:color/transparent</item>-->
         <item name="actionBarStyle">@style/Silence.IntroActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/silence_primary</item>
 
         <item name="android:textColorHint">#cc000000</item>
         <item name="centered_app_title_color">#55000000</item>
         <item name="ic_arrow_forward">@drawable/ic_arrow_forward_light</item>
         <item name="lockscreen_watermark">@drawable/lockscreen_watermark_light</item>
+        <item name="android:windowBackground">@color/gray5</item>
         <item name="ic_visibility">@drawable/ic_visibility_grey600_24dp</item>
         <item name="ic_visibility_off">@drawable/ic_visibility_off_grey600_24dp</item>
     </style>
@@ -46,6 +48,7 @@
     <style name="Silence.DarkIntroTheme" parent="@style/Theme.AppCompat">
         <item name="actionBarStyle">@style/Silence.IntroActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/silence_primary_dark</item>
 
         <item name="android:textColorHint">@color/white</item>
         <item name="centered_app_title_color">@color/gray27</item>
