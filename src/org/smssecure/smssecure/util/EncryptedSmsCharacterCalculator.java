@@ -40,11 +40,11 @@ public class EncryptedSmsCharacterCalculator extends CharacterCalculator {
   }
 
   @Override
-  public CharacterState calculateCharacters(int charactersSpent) {
-    if (charactersSpent <= SmsTransportDetails.ENCRYPTED_SINGLE_MESSAGE_BODY_MAX_SIZE) {
-      return calculateSingleRecordCharacters(charactersSpent);
+  public CharacterState calculateCharacters(String messageBody) {
+    if (messageBody.length() <= SmsTransportDetails.ENCRYPTED_SINGLE_MESSAGE_BODY_MAX_SIZE) {
+      return calculateSingleRecordCharacters(messageBody.length());
     } else {
-      return calculateMultiRecordCharacters(charactersSpent);
+      return calculateMultiRecordCharacters(messageBody.length());
     }
   }
 }

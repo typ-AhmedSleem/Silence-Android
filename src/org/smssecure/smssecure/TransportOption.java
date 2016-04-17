@@ -67,8 +67,8 @@ public class TransportOption {
     return type == Type.INSECURE_SMS;
   }
 
-  public CharacterState calculateCharacters(int charactersSpent) {
-    return characterCalculator.calculateCharacters(charactersSpent);
+  public CharacterState calculateCharacters(String messageBody) {
+    return characterCalculator.calculateCharacters(messageBody);
   }
 
   public @DrawableRes int getDrawable() {
