@@ -26,7 +26,7 @@ import android.util.Log;
 import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.jobs.MmsReceiveJob;
 import org.smssecure.smssecure.protocol.WirePrefix;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import ws.com.google.android.mms.pdu.GenericPdu;
@@ -55,7 +55,7 @@ public class MmsListener extends BroadcastReceiver {
     }
 
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT &&
-        SMSSecurePreferences.isInterceptAllMmsEnabled(context))
+        SilencePreferences.isInterceptAllMmsEnabled(context))
     {
       return true;
     }

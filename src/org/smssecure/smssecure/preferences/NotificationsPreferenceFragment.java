@@ -17,7 +17,7 @@ import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.notifications.MessageNotifier;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragment {
 
@@ -29,22 +29,22 @@ public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragme
     masterSecret = getArguments().getParcelable("master_secret");
     addPreferencesFromResource(R.xml.preferences_notifications);
 
-    this.findPreference(SMSSecurePreferences.LED_COLOR_PREF)
+    this.findPreference(SilencePreferences.LED_COLOR_PREF)
         .setOnPreferenceChangeListener(new ListSummaryListener());
-    this.findPreference(SMSSecurePreferences.LED_BLINK_PREF)
+    this.findPreference(SilencePreferences.LED_BLINK_PREF)
         .setOnPreferenceChangeListener(new ListSummaryListener());
-    this.findPreference(SMSSecurePreferences.RINGTONE_PREF)
+    this.findPreference(SilencePreferences.RINGTONE_PREF)
         .setOnPreferenceChangeListener(new RingtoneSummaryListener());
-    this.findPreference(SMSSecurePreferences.REPEAT_ALERTS_PREF)
+    this.findPreference(SilencePreferences.REPEAT_ALERTS_PREF)
         .setOnPreferenceChangeListener(new ListSummaryListener());
-    this.findPreference(SMSSecurePreferences.NOTIFICATION_PRIVACY_PREF)
+    this.findPreference(SilencePreferences.NOTIFICATION_PRIVACY_PREF)
         .setOnPreferenceChangeListener(new NotificationPrivacyListener());
 
-    initializeListSummary((ListPreference) findPreference(SMSSecurePreferences.LED_COLOR_PREF));
-    initializeListSummary((ListPreference) findPreference(SMSSecurePreferences.LED_BLINK_PREF));
-    initializeListSummary((ListPreference) findPreference(SMSSecurePreferences.REPEAT_ALERTS_PREF));
-    initializeListSummary((ListPreference) findPreference(SMSSecurePreferences.NOTIFICATION_PRIVACY_PREF));
-    initializeRingtoneSummary((RingtonePreference) findPreference(SMSSecurePreferences.RINGTONE_PREF));
+    initializeListSummary((ListPreference) findPreference(SilencePreferences.LED_COLOR_PREF));
+    initializeListSummary((ListPreference) findPreference(SilencePreferences.LED_BLINK_PREF));
+    initializeListSummary((ListPreference) findPreference(SilencePreferences.REPEAT_ALERTS_PREF));
+    initializeListSummary((ListPreference) findPreference(SilencePreferences.NOTIFICATION_PRIVACY_PREF));
+    initializeRingtoneSummary((RingtonePreference) findPreference(SilencePreferences.RINGTONE_PREF));
   }
 
   @Override
@@ -83,7 +83,7 @@ public class NotificationsPreferenceFragment extends ListSummaryPreferenceFragme
     final int onCapsResId   = R.string.ApplicationPreferencesActivity_On;
     final int offCapsResId  = R.string.ApplicationPreferencesActivity_Off;
 
-    return context.getString(SMSSecurePreferences.isNotificationsEnabled(context) ? onCapsResId : offCapsResId);
+    return context.getString(SilencePreferences.isNotificationsEnabled(context) ? onCapsResId : offCapsResId);
   }
 
   private class NotificationPrivacyListener extends ListSummaryListener {

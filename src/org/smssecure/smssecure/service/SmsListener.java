@@ -29,7 +29,7 @@ import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.jobs.SmsReceiveJob;
 import org.smssecure.smssecure.protocol.WirePrefix;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public class SmsListener extends BroadcastReceiver {
     }
 
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT &&
-        SMSSecurePreferences.isInterceptAllSmsEnabled(context))
+        SilencePreferences.isInterceptAllSmsEnabled(context))
     {
       return true;
     }

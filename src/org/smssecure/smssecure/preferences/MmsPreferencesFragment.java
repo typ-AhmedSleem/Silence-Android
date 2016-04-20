@@ -28,7 +28,7 @@ import org.smssecure.smssecure.components.CustomDefaultPreference;
 import org.smssecure.smssecure.database.ApnDatabase;
 import org.smssecure.smssecure.mms.LegacyMmsConnection;
 import org.smssecure.smssecure.util.TelephonyUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.io.IOException;
 
@@ -73,25 +73,25 @@ public class MmsPreferencesFragment extends PreferenceFragment {
 
     @Override
     protected void onPostExecute(LegacyMmsConnection.Apn apnDefaults) {
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_HOST_PREF))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMSC_HOST_PREF))
           .setValidator(new CustomDefaultPreference.UriValidator())
           .setDefaultValue(apnDefaults.getMmsc());
 
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_PROXY_HOST_PREF))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMSC_PROXY_HOST_PREF))
           .setValidator(new CustomDefaultPreference.HostnameValidator())
           .setDefaultValue(apnDefaults.getProxy());
 
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_PROXY_PORT_PREF))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMSC_PROXY_PORT_PREF))
           .setValidator(new CustomDefaultPreference.PortValidator())
           .setDefaultValue(apnDefaults.getPort());
 
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_USERNAME_PREF))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMSC_USERNAME_PREF))
           .setDefaultValue(apnDefaults.getPort());
 
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMSC_PASSWORD_PREF))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMSC_PASSWORD_PREF))
           .setDefaultValue(apnDefaults.getPassword());
 
-      ((CustomDefaultPreference)findPreference(SMSSecurePreferences.MMS_USER_AGENT))
+      ((CustomDefaultPreference)findPreference(SilencePreferences.MMS_USER_AGENT))
           .setDefaultValue(LegacyMmsConnection.USER_AGENT);
     }
   }

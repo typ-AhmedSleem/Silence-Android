@@ -160,7 +160,7 @@ public class Util {
   public static String canonicalizeNumber(Context context, String number)
       throws InvalidNumberException
   {
-    String localNumber = SMSSecurePreferences.getLocalNumber(context);
+    String localNumber = SilencePreferences.getLocalNumber(context);
     return PhoneNumberFormatter.formatNumber(number, localNumber);
   }
 

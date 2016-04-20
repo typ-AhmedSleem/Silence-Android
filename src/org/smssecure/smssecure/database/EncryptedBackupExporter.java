@@ -42,7 +42,7 @@ public class EncryptedBackupExporter {
 
   private static String getExportDirectoryPath() {
     File sdDirectory  = Environment.getExternalStorageDirectory();
-    return sdDirectory.getAbsolutePath() + File.separator + "SMSSecureExport";
+    return sdDirectory.getAbsolutePath() + File.separator + "SilenceExport";
   }
 
   private static void verifyExternalStorageForExport() throws NoExternalStorageException {

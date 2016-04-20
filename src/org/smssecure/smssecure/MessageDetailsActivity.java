@@ -50,7 +50,7 @@ import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
@@ -183,7 +183,7 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
   }
 
   private void updateTime(Context context, MessageRecord messageRecord) {
-    boolean isSmsDeliveryReportsEnabled = SMSSecurePreferences.isSmsDeliveryReportsEnabled(context);
+    boolean isSmsDeliveryReportsEnabled = SilencePreferences.isSmsDeliveryReportsEnabled(context);
 
     if (messageRecord.isPending() || messageRecord.isFailed()) {
       sentDate.setText("-");

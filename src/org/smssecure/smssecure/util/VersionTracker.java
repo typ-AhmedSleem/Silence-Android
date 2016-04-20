@@ -9,13 +9,13 @@ public class VersionTracker {
 
 
   public static int getLastSeenVersion(Context context) {
-    return SMSSecurePreferences.getLastVersionCode(context);
+    return SilencePreferences.getLastVersionCode(context);
   }
 
   public static void updateLastSeenVersion(Context context) {
     try {
       int currentVersionCode = Util.getCurrentApkReleaseVersion(context);
-      SMSSecurePreferences.setLastVersionCode(context, currentVersionCode);
+      SilencePreferences.setLastVersionCode(context, currentVersionCode);
     } catch (IOException ioe) {
       throw new AssertionError(ioe);
     }

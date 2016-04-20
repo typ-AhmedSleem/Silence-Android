@@ -52,7 +52,7 @@ public class ContactsCursorLoader extends CursorLoader {
     ContactsDatabase  contactsDatabase = DatabaseFactory.getContactsDatabase(getContext());
     ArrayList<Cursor> cursorList       = new ArrayList<>(3);
 
-    cursorList.add(contactsDatabase.querySMSSecureContacts(filter));
+    cursorList.add(contactsDatabase.querySilenceContacts(filter));
 
     if (includeSmsContacts) {
       cursorList.add(contactsDatabase.querySystemContacts(filter));

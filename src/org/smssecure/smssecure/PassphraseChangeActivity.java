@@ -31,7 +31,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 /**
  * Activity for changing a user's local encryption passphrase.
@@ -79,7 +79,7 @@ public class PassphraseChangeActivity extends PassphraseActivity {
     this.okButton.setOnClickListener(new OkButtonClickListener());
     this.cancelButton.setOnClickListener(new CancelButtonClickListener());
 
-    if (SMSSecurePreferences.isPasswordDisabled(this)) {
+    if (SilencePreferences.isPasswordDisabled(this)) {
       this.originalPassphrase.setVisibility(View.GONE);
     } else {
       this.originalPassphrase.setVisibility(View.VISIBLE);
@@ -112,7 +112,7 @@ public class PassphraseChangeActivity extends PassphraseActivity {
       passphraseRepeat = (repeatText == null ? "" : repeatText.toString());
     }
 
-    if (SMSSecurePreferences.isPasswordDisabled(this)) {
+    if (SilencePreferences.isPasswordDisabled(this)) {
       original = MasterSecretUtil.UNENCRYPTED_PASSPHRASE;
     }
 
@@ -157,7 +157,7 @@ public class PassphraseChangeActivity extends PassphraseActivity {
     protected MasterSecret doInBackground(String... params) {
       try {
         MasterSecret masterSecret = MasterSecretUtil.changeMasterSecretPassphrase(context, params[0], params[1]);
-        SMSSecurePreferences.setPasswordDisabled(context, false);
+        SilencePreferences.setPasswordDisabled(context, false);
 
         return masterSecret;
 

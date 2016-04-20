@@ -19,7 +19,7 @@ import android.text.TextUtils;
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.OutgoingSmsPreference;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import java.util.LinkedList;
@@ -49,8 +49,8 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
   private void initializePlatformSpecificOptions() {
     PreferenceScreen preferenceScreen    = getPreferenceScreen();
     Preference       defaultPreference   = findPreference(KITKAT_DEFAULT_PREF);
-    Preference       allSmsPreference    = findPreference(SMSSecurePreferences.ALL_SMS_PREF);
-    Preference       allMmsPreference    = findPreference(SMSSecurePreferences.ALL_MMS_PREF);
+    Preference       allSmsPreference    = findPreference(SilencePreferences.ALL_SMS_PREF);
+    Preference       allMmsPreference    = findPreference(SilencePreferences.ALL_MMS_PREF);
     Preference       manualMmsPreference = findPreference(MMS_PREF);
 
     if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
@@ -66,7 +66,7 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
         intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, getActivity().getPackageName());
         defaultPreference.setIntent(intent);
         defaultPreference.setTitle(getString(R.string.ApplicationPreferencesActivity_sms_disabled));
-        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app));
+        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_touch_to_make_silence_your_default_sms_app));
       }
     } else if (defaultPreference != null) {
       preferenceScreen.removePreference(defaultPreference);
@@ -105,8 +105,8 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
 
     final int incomingSmsSummary;
     boolean postKitkatSMS = Util.isDefaultSmsProvider(context);
-    boolean preKitkatSMS  = SMSSecurePreferences.isInterceptAllSmsEnabled(context);
-    boolean preKitkatMMS  = SMSSecurePreferences.isInterceptAllMmsEnabled(context);
+    boolean preKitkatSMS  = SilencePreferences.isInterceptAllSmsEnabled(context);
+    boolean preKitkatMMS  = SilencePreferences.isInterceptAllMmsEnabled(context);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       if (postKitkatSMS)                      incomingSmsSummary = onResId;
       else                                    incomingSmsSummary = offResId;

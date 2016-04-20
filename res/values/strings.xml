@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SMSSecure</string>
+    <string name="app_name">Silence</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="delete">Delete</string>
@@ -28,7 +28,7 @@
     <string name="ApplicationPreferencesActivity_sms_enabled">Incoming SMS enabled</string>
     <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Touch to change your default SMS app</string>
     <string name="ApplicationPreferencesActivity_sms_disabled">Incoming SMS disabled</string>
-    <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Touch to make SMSSecure your default SMS app</string>
+    <string name="ApplicationPreferencesActivity_touch_to_make_silence_your_default_sms_app">Touch to make Silence your default SMS app</string>
     <string name="ApplicationPreferencesActivity_on">on</string>
     <string name="ApplicationPreferencesActivity_On">On</string>
     <string name="ApplicationPreferencesActivity_off">off</string>
@@ -84,7 +84,7 @@
     <!-- ConversationActivity -->
     <string name="ConversationActivity_initiate_secure_session_question">Initiate secure session?</string>
     <string name="ConversationActivity_initiate_secure_session_with_s_question">Initiate secure session with %s?</string>
-    <string name="ConversationActivity_detected_smssecure_initiate_session_question">Message received from someone who also has SMSSecure, initiate a secure encrypted session?</string>
+    <string name="ConversationActivity_detected_silence_initiate_session_question">Message received from someone who also has Silence, initiate a secure encrypted session?</string>
     <string name="ConversationActivity_abort_secure_session_confirmation">End secure session?</string>
     <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Are you sure you want to end this secure session?</string>
     <string name="ConversationActivity_delete_thread_question">Delete conversation?</string>
@@ -199,17 +199,19 @@
     <string name="ShareActivity_share_with">Share with</string>
 
     <!-- IntroScreenActivity -->
-    <string name="IntroScreenActivity_welcome_to_smssecure">Welcome to SMSSecure!</string>
-    <string name="IntroScreenActivity_smssecure_description">SMSSecure allows you to protect your privacy while communicating with friends.</string>
+    <string name="IntroScreenActivity_welcome_to_silence">Welcome to Silence!</string>
+    <string name="IntroScreenActivity_silence_description">Silence allows you to protect your privacy while communicating with friends.</string>
     <string name="IntroScreenActivity_encrypt_your_messages">Encrypt your messages</string>
-    <string name="IntroScreenActivity_encrypt_your_messages_description">SMSSecure will encrypt messages with other SMSSecure users automatically.</string>
+    <string name="IntroScreenActivity_encrypt_your_messages_description">Silence will encrypt messages with other Silence users automatically.</string>
     <string name="IntroScreenActivity_talk_to_everyone">Talk to everyone</string>
-    <string name="IntroScreenActivity_talk_to_everyone_description">SMSSecure can use unencrypted messages to chat with non-SMSSecure users.</string>
+    <string name="IntroScreenActivity_talk_to_everyone_description">Silence can use unencrypted messages to chat with non-Silence users.</string>
+    <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure is now Silence.</string>
+    <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure is now Silence. Your messages are still here and new features are coming.</string>
 
     <!-- ExportFragment -->
     <string name="ExportFragment_export">Export</string>
     <string name="ExportFragment_export_plaintext_to_storage">Export plaintext to storage?</string>
-    <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Warning, this will export the plaintext contents of your SMSSecure messages to storage.</string>
+    <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Warning, this will export the plaintext contents of your Silence messages to storage.</string>
     <string name="ExportFragment_cancel">Cancel</string>
     <string name="ExportFragment_exporting">Exporting</string>
     <string name="ExportFragment_exporting_plaintext_to_storage">Exporting plaintext to storage...</string>
@@ -238,13 +240,13 @@
     <!-- ImportFragment -->
     <string name="ImportFragment_import_system_sms_database">Import system SMS database?</string>
     <string name="ImportFragment_this_will_import_messages_from_the_system">This will import
-        messages from the system\'s default SMS database to SMSSecure. If you\'ve imported
+        messages from the system\'s default SMS database to Silence. If you\'ve imported
         the system\'s SMS database before, importing again will result in duplicated messages.
     </string>
     <string name="ImportFragment_import">Import</string>
     <string name="ImportFragment_cancel">Cancel</string>
     <string name="ImportFragment_import_encrypted_backup">Import encrypted backup?</string>
-    <string name="ImportFragment_importing_an_encrypted_backup_will_completely_replace_your_existing_keys">Importing an encrypted backup will completely replace your existing keys, preferences, and messages. You will lose any information that\'s in your current SMSSecure installation but not in the backup. SMSSecure will stop after the import.</string>
+    <string name="ImportFragment_importing_an_encrypted_backup_will_completely_replace_your_existing_keys">Importing an encrypted backup will completely replace your existing keys, preferences, and messages. You will lose any information that\'s in your current Silence installation but not in the backup. Silence will stop after the import.</string>
     <string name="ImportFragment_import_plaintext_backup">Import plaintext backup?</string>
     <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">This will import
         messages from a plaintext backup. If you\'ve previously imported this backup,
@@ -261,7 +263,7 @@
     <!-- KeyScanningActivity -->
     <string name="KeyScanningActivity_no_scanned_key_found_exclamation">No scanned key found!</string>
     <string name="KeyScanningActivity_install_barcode_Scanner">Install Barcode Scanner?</string>
-    <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure needs Barcode Scanner for QR codes.</string>
+    <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence needs Barcode Scanner for QR codes.</string>
 
     <!-- MessageDetailsRecipient -->
     <string name="MessageDetailsRecipient_failed_to_send">Failed to send</string>
@@ -276,7 +278,7 @@
     <string name="NotificationMmsMessageRecord_multimedia_message">Multimedia message</string>
 
     <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Received a message encrypted using an old version of SMSSecure that is no longer supported. Please ask the sender to upgrade to the most recent version and resend the message.</string>
+    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Received a message encrypted using an old version of Silence that is no longer supported. Please ask the sender to upgrade to the most recent version and resend the message.</string>
     <string name="MessageRecord_left_group">You have left the group.</string>
     <string name="MessageRecord_updated_group">Updated the group.</string>
 
@@ -287,14 +289,14 @@
 
     <!-- PassphrasePromptActivity -->
     <string name="PassphrasePromptActivity_enter_passphrase">Enter passphrase</string>
-    <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure icon</string>
+    <string name="PassphrasePromptActivity_watermark_content_description">Silence icon</string>
     <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Invalid passphrase!</string>
 
     <!-- ReceiveKeyActivity -->
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">The
         signature on this key exchange is different than what you\'ve previously received from this
         contact. This could either mean that someone is trying to intercept your communication, or
-        that this contact simply re-installed SMSSecure and now has a new identity key.
+        that this contact simply re-installed Silence and now has a new identity key.
     </string>
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">The
         signature on this key exchange is trusted, but you have the \'automatically complete key
@@ -392,7 +394,7 @@
     <!-- KeyCachingService -->
     <string name="KeyCachingService_textsecure_passphrase_cached">Touch to open.</string>
     <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Touch to open, or touch the lock to close.</string>
-    <string name="KeyCachingService_passphrase_cached">SMSSecure is unlocked</string>
+    <string name="KeyCachingService_passphrase_cached">Silence is unlocked</string>
     <string name="KeyCachingService_lock">Lock with passphrase</string>
 
     <!-- MessageNotifier -->
@@ -411,11 +413,11 @@
     <string name="MessageNotifier_reply">Reply</string>
 
     <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Quick response unavailable when SMSSecure is locked!</string>
+    <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">Quick response unavailable when Silence is locked!</string>
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
 
     <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+    <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
     <string name="SingleRecipientNotificationBuilder_new_message">New message</string>
 
     <!-- change_passphrase_activity -->
@@ -486,7 +488,7 @@
     <string name="log_submit_activity__posting_logs">Posting the logs to gist...</string>
 
     <!-- database_migration_activity -->
-    <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Would you like to import your existing text messages into SMSSecure\'s encrypted database?</string>
+    <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Would you like to import your existing text messages into Silence\'s encrypted database?</string>
     <string name="database_migration_activity__the_default_system_database_will_not_be_modified">The default system database will not be modified or altered in any way.</string>
     <string name="database_migration_activity__skip">Skip</string>
     <string name="database_migration_activity__import">Import</string>
@@ -521,7 +523,7 @@
     <string name="prompt_passphrase_activity__unlock">Unlock</string>
 
     <!-- prompt_mms_activity -->
-    <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure requires MMS settings to deliver media and group messages through your wireless carrier. Your device does not make this information available, which is occasionally true for locked devices and other restrictive configurations.</string>
+    <string name="prompt_mms_activity__silence_requires_mms_settings_to_deliver_media_and_group_messages">Silence requires MMS settings to deliver media and group messages through your wireless carrier. Your device does not make this information available, which is occasionally true for locked devices and other restrictive configurations.</string>
     <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">To send media and group messages, tap \'OK\' and complete the requested settings. The MMS settings for your carrier can generally be located by searching for \'your carrier APN\'. You will only need to do this once.</string>
 
     <!-- recipient_preferences_activity -->
@@ -606,8 +608,8 @@
     <string name="preferences__sms_mms">SMS and MMS</string>
     <string name="preferences__pref_all_sms_title">Receive all SMS</string>
     <string name="preferences__pref_all_mms_title">Receive all MMS</string>
-    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Use SMSSecure for viewing and storing all incoming text messages</string>
-    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Use SMSSecure for viewing and storing all incoming multimedia messages</string>
+    <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Use Silence for viewing and storing all incoming text messages</string>
+    <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Use Silence for viewing and storing all incoming multimedia messages</string>
     <string name="preferences__keyboard_settings">Keyboard options</string>
     <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
     <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
@@ -691,11 +693,11 @@
     <string name="preferences__default">Default</string>
     <string name="preferences__language">Language</string>
     <string name="preferences__make_default_sms_app">Set as default SMS app</string>
-    <string name="preferences__make_textsecure_the_default_sms_mms_app">Make SMSSecure the default SMS/MMS application for your system.</string>
+    <string name="preferences__make_silence_the_default_sms_mms_app">Make Silence the default SMS/MMS application for your system.</string>
     <string name="preferences__submit_debug_log">Submit debug log</string>
     <string name="preferences__support_wifi_calling">\'WiFi Calling\' compatibility mode</string>
     <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Enable if your device uses SMS/MMS delivery over WiFi (only enable when \'WiFi Calling\' is enabled on your device).</string>
-    <string name="preferences__about">About SMSSecure</string>
+    <string name="preferences__about">About Silence</string>
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__about_build_id">Build ID: %s</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
@@ -813,7 +815,7 @@
 
     <!-- reminder_header -->
     <string name="reminder_header_sms_default_title">Use as default SMS app?</string>
-    <string name="reminder_header_sms_default_text">Tap to make SMSSecure your default SMS app.</string>
+    <string name="reminder_header_sms_default_text">Tap to make Silence your default SMS app.</string>
     <string name="reminder_header_sms_default_button">SET</string>
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
     <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into its encrypted database.</string>

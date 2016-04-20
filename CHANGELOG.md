@@ -1,4 +1,4 @@
-# SMSSecure Changelog
+# Silence Changelog
 
 ### [0.13.2] - 2016-02-07
 - Fixed keyboard/focus regressions
@@ -122,28 +122,28 @@
 - Changed app name
 - Removed non-free libraries
 
- [0.13.2]: https://github.com/SMSSecure/SMSSecure/compare/v0.13.1...v0.13.2
- [0.13.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.13.0...v0.13.1
- [0.13.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.12.3...v0.13.0
- [0.12.3]: https://github.com/SMSSecure/SMSSecure/compare/v0.12.1...v0.12.3
- [0.12.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.11.3...v0.12.1
- [0.11.3]: https://github.com/SMSSecure/SMSSecure/compare/v0.11.1...v0.11.3
- [0.11.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.10.1...v0.11.1
- [0.10.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.9.0...v0.10.1
- [0.9.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.8.1...v0.9.0
- [0.8.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.8.0...v0.8.1
- [0.8.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.7.0...v0.8.0
- [0.7.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.6.0...v0.7.0
- [0.6.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.5.4...v0.6.0
- [0.5.4]: https://github.com/SMSSecure/SMSSecure/compare/v0.5.3...v0.5.4
- [0.5.3]: https://github.com/SMSSecure/SMSSecure/compare/v0.5.2...v0.5.3
- [0.5.2]: https://github.com/SMSSecure/SMSSecure/compare/v0.5.1...v0.5.2
- [0.5.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.4.2...v0.5.1
- [0.4.2]: https://github.com/SMSSecure/SMSSecure/compare/v0.4.1...v0.4.2
- [0.4.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.4.0...v0.4.1
- [0.4.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.3.3...v0.4.0
- [0.3.3]: https://github.com/SMSSecure/SMSSecure/compare/v0.3.2...v0.3.3
- [0.3.2]: https://github.com/SMSSecure/SMSSecure/compare/v0.3.1...v0.3.2
- [0.3.1]: https://github.com/SMSSecure/SMSSecure/compare/v0.3.0...v0.3.1
- [0.3.0]: https://github.com/SMSSecure/SMSSecure/compare/v0.2.0...v0.3.0
- [0.2.0]: https://github.com/SMSSecure/SMSSecure/compare/ac92fa6f5e1f86da833b38aa5955b685e1959846...v0.2.0
+ [0.13.2]: https://github.com/SilenceIM/Silence/compare/v0.13.1...v0.13.2
+ [0.13.1]: https://github.com/SilenceIM/Silence/compare/v0.13.0...v0.13.1
+ [0.13.0]: https://github.com/SilenceIM/Silence/compare/v0.12.3...v0.13.0
+ [0.12.3]: https://github.com/SilenceIM/Silence/compare/v0.12.1...v0.12.3
+ [0.12.1]: https://github.com/SilenceIM/Silence/compare/v0.11.3...v0.12.1
+ [0.11.3]: https://github.com/SilenceIM/Silence/compare/v0.11.1...v0.11.3
+ [0.11.0]: https://github.com/SilenceIM/Silence/compare/v0.10.1...v0.11.1
+ [0.10.1]: https://github.com/SilenceIM/Silence/compare/v0.9.0...v0.10.1
+ [0.9.0]: https://github.com/SilenceIM/Silence/compare/v0.8.1...v0.9.0
+ [0.8.1]: https://github.com/SilenceIM/Silence/compare/v0.8.0...v0.8.1
+ [0.8.0]: https://github.com/SilenceIM/Silence/compare/v0.7.0...v0.8.0
+ [0.7.0]: https://github.com/SilenceIM/Silence/compare/v0.6.0...v0.7.0
+ [0.6.0]: https://github.com/SilenceIM/Silence/compare/v0.5.4...v0.6.0
+ [0.5.4]: https://github.com/SilenceIM/Silence/compare/v0.5.3...v0.5.4
+ [0.5.3]: https://github.com/SilenceIM/Silence/compare/v0.5.2...v0.5.3
+ [0.5.2]: https://github.com/SilenceIM/Silence/compare/v0.5.1...v0.5.2
+ [0.5.1]: https://github.com/SilenceIM/Silence/compare/v0.4.2...v0.5.1
+ [0.4.2]: https://github.com/SilenceIM/Silence/compare/v0.4.1...v0.4.2
+ [0.4.1]: https://github.com/SilenceIM/Silence/compare/v0.4.0...v0.4.1
+ [0.4.0]: https://github.com/SilenceIM/Silence/compare/v0.3.3...v0.4.0
+ [0.3.3]: https://github.com/SilenceIM/Silence/compare/v0.3.2...v0.3.3
+ [0.3.2]: https://github.com/SilenceIM/Silence/compare/v0.3.1...v0.3.2
+ [0.3.1]: https://github.com/SilenceIM/Silence/compare/v0.3.0...v0.3.1
+ [0.3.0]: https://github.com/SilenceIM/Silence/compare/v0.2.0...v0.3.0
+ [0.2.0]: https://github.com/SilenceIM/Silence/compare/ac92fa6f5e1f86da833b38aa5955b685e1959846...v0.2.0

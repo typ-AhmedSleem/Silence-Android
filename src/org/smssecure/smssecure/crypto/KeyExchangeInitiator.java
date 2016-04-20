@@ -22,9 +22,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
-import org.smssecure.smssecure.crypto.storage.SMSSecurePreKeyStore;
-import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
+import org.smssecure.smssecure.crypto.storage.SilenceIdentityKeyStore;
+import org.smssecure.smssecure.crypto.storage.SilencePreKeyStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -64,10 +64,10 @@ public class KeyExchangeInitiator {
 
   private static void initiateKeyExchange(Context context, MasterSecret masterSecret, Recipients recipients, int subscriptionId) {
     Recipient         recipient         = recipients.getPrimaryRecipient();
-    SessionStore      sessionStore      = new SMSSecureSessionStore(context, masterSecret);
-    PreKeyStore       preKeyStore       = new SMSSecurePreKeyStore(context, masterSecret);
-    SignedPreKeyStore signedPreKeyStore = new SMSSecurePreKeyStore(context, masterSecret);
-    IdentityKeyStore  identityKeyStore  = new SMSSecureIdentityKeyStore(context, masterSecret);
+    SessionStore      sessionStore      = new SilenceSessionStore(context, masterSecret);
+    PreKeyStore       preKeyStore       = new SilencePreKeyStore(context, masterSecret);
+    SignedPreKeyStore signedPreKeyStore = new SilencePreKeyStore(context, masterSecret);
+    IdentityKeyStore  identityKeyStore  = new SilenceIdentityKeyStore(context, masterSecret);
 
     SessionBuilder    sessionBuilder    = new SessionBuilder(sessionStore, preKeyStore, signedPreKeyStore,
                                                              identityKeyStore, new AxolotlAddress(recipient.getNumber(), 1));
@@ -83,7 +83,7 @@ public class KeyExchangeInitiator {
                                              Recipients recipients)
   {
     Recipient     recipient     = recipients.getPrimaryRecipient();
-    SessionStore  sessionStore  = new SMSSecureSessionStore(context, masterSecret);
+    SessionStore  sessionStore  = new SilenceSessionStore(context, masterSecret);
     SessionRecord sessionRecord = sessionStore.loadSession(new AxolotlAddress(recipient.getNumber(), 1));
 
     return sessionRecord.getSessionState().hasPendingKeyExchange();

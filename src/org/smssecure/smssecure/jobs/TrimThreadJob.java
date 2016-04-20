@@ -20,7 +20,7 @@ import android.content.Context;
 import android.util.Log;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.Job;
 import org.whispersystems.jobqueue.JobParameters;
 
@@ -44,8 +44,8 @@ public class TrimThreadJob extends Job {
 
   @Override
   public void onRun() {
-    boolean trimmingEnabled   = SMSSecurePreferences.isThreadLengthTrimmingEnabled(context);
-    int     threadLengthLimit = SMSSecurePreferences.getThreadTrimLength(context);
+    boolean trimmingEnabled   = SilencePreferences.isThreadLengthTrimmingEnabled(context);
+    int     threadLengthLimit = SilencePreferences.getThreadTrimLength(context);
 
     if (!trimmingEnabled)
       return;

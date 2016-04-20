@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.util.Log;
 
 import org.smssecure.smssecure.util.TelephonyUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.dependencies.ContextDependent;
 import org.whispersystems.jobqueue.requirements.Requirement;
 
@@ -33,10 +33,10 @@ public class MediaNetworkRequirement implements Requirement, ContextDependent {
     if (!automatic){
       return true;
     } else if (TelephonyUtil.isConnectedRoaming(context)) {
-      return SMSSecurePreferences.isMediaDownloadAllowed(context) &&
-             SMSSecurePreferences.isRoamingMediaDownloadAllowed(context);
+      return SilencePreferences.isMediaDownloadAllowed(context) &&
+             SilencePreferences.isRoamingMediaDownloadAllowed(context);
     } else {
-      return SMSSecurePreferences.isMediaDownloadAllowed(context);
+      return SilencePreferences.isMediaDownloadAllowed(context);
     }
   }
 }

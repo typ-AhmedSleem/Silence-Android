@@ -7,7 +7,7 @@ import android.util.Log;
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MmsCipher;
-import org.smssecure.smssecure.crypto.storage.SMSSecureAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -161,7 +161,7 @@ public class MmsSendJob extends SendJob {
       throws InsecureFallbackApprovalException, UndeliverableMessageException
   {
     try {
-      MmsCipher cipher = new MmsCipher(new SMSSecureAxolotlStore(context, masterSecret));
+      MmsCipher cipher = new MmsCipher(new SilenceAxolotlStore(context, masterSecret));
       return cipher.encrypt(context, pdu);
     } catch (NoSessionException e) {
       throw new InsecureFallbackApprovalException(e);

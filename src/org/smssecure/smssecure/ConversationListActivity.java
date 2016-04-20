@@ -38,7 +38,7 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 public class ConversationListActivity extends PassphraseRequiredActionBarActivity
     implements ConversationListFragment.ConversationSelectedListener
@@ -89,7 +89,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
     inflater.inflate(R.menu.text_secure_normal, menu);
 
-    menu.findItem(R.id.menu_clear_passphrase).setVisible(!SMSSecurePreferences.isPasswordDisabled(this));
+    menu.findItem(R.id.menu_clear_passphrase).setVisible(!SilencePreferences.isPasswordDisabled(this));
 
     inflater.inflate(R.menu.conversation_list, menu);
     MenuItem menuItem = menu.findItem(R.id.menu_search);

@@ -54,7 +54,7 @@ import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.SpanUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -125,14 +125,14 @@ public class MessageNotifier {
       intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, threadId);
       intent.setData((Uri.parse("custom://" + System.currentTimeMillis())));
 
-      FailedNotificationBuilder builder = new FailedNotificationBuilder(context, SMSSecurePreferences.getNotificationPrivacy(context), intent);
+      FailedNotificationBuilder builder = new FailedNotificationBuilder(context, SilencePreferences.getNotificationPrivacy(context), intent);
       ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
         .notify((int)threadId, builder.build());
     }
   }
 
   public static void updateNotificationWithFlags(Context context, MasterSecret masterSecret, int flags) {
-    if (!SMSSecurePreferences.isNotificationsEnabled(context)) {
+    if (!SilencePreferences.isNotificationsEnabled(context)) {
       return;
     }
 
@@ -154,7 +154,7 @@ public class MessageNotifier {
       threads.setRead(threadId);
     }
 
-    if (!SMSSecurePreferences.isNotificationsEnabled(context) ||
+    if (!SilencePreferences.isNotificationsEnabled(context) ||
         (recipients != null && recipients.isMuted()))
     {
       return;
@@ -221,7 +221,7 @@ public class MessageNotifier {
       return;
     }
 
-    SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, masterSecret, SMSSecurePreferences.getNotificationPrivacy(context));
+    SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, masterSecret, SilencePreferences.getNotificationPrivacy(context));
     List<NotificationItem>             notifications = notificationState.getNotifications();
     Recipients                         recipients    = notifications.get(0).getRecipients();
 
@@ -261,7 +261,7 @@ public class MessageNotifier {
                                                      NotificationState notificationState,
                                                      int flags)
   {
-    MultipleRecipientNotificationBuilder builder       = new MultipleRecipientNotificationBuilder(context, SMSSecurePreferences.getNotificationPrivacy(context));
+    MultipleRecipientNotificationBuilder builder       = new MultipleRecipientNotificationBuilder(context, SilencePreferences.getNotificationPrivacy(context));
     List<NotificationItem>               notifications = notificationState.getNotifications();
 
     builder.setMessageCount(notificationState.getMessageCount(), notificationState.getThreadCount());
@@ -290,14 +290,14 @@ public class MessageNotifier {
   }
 
   private static void sendInThreadNotification(Context context, Recipients recipients) {
-    if (!SMSSecurePreferences.isInThreadNotifications(context)) {
+    if (!SilencePreferences.isInThreadNotifications(context)) {
       return;
     }
 
     Uri uri = recipients != null ? recipients.getRingtone() : null;
 
     if (uri == null) {
-      String ringtone = SMSSecurePreferences.getNotificationRingtone(context);
+      String ringtone = SilencePreferences.getNotificationRingtone(context);
 
       if (ringtone == null) {
         Log.w(TAG, "ringtone preference was null.");
@@ -381,7 +381,7 @@ public class MessageNotifier {
   }
 
   private static void scheduleReminder(Context context, int count) {
-    if (count >= SMSSecurePreferences.getRepeatAlertsCount(context)) {
+    if (count >= SilencePreferences.getRepeatAlertsCount(context)) {
       return;
     }
 

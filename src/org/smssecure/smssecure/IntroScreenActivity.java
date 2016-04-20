@@ -23,7 +23,7 @@ import com.nineoldandroids.animation.ArgbEvaluator;
 
 import org.smssecure.smssecure.IntroPagerAdapter.IntroPage;
 import org.smssecure.smssecure.util.ServiceUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
 import org.whispersystems.libaxolotl.util.guava.Optional;
@@ -37,13 +37,15 @@ import me.relex.circleindicator.CircleIndicator;
 public class IntroScreenActivity extends BaseActionBarActivity {
   private static final String TAG = IntroScreenActivity.class.getSimpleName();
 
+  private static final int NOTIFICATION_ID = 1339;
+
   private enum IntroScreen {
     INTRO(new ArrayList<IntroPage>() {
       {
         add(new IntroPage(0xFF7568AE,
                           BasicIntroFragment.newInstance(R.drawable.splash_logo,
-                                                         R.string.IntroScreenActivity_welcome_to_smssecure,
-                                                         R.string.IntroScreenActivity_smssecure_description)));
+                                                         R.string.IntroScreenActivity_welcome_to_silence,
+                                                         R.string.IntroScreenActivity_silence_description)));
         add(new IntroPage(0xFF7568AE,
                           BasicIntroFragment.newInstance(R.drawable.splash_padlock,
                                                          R.string.IntroScreenActivity_encrypt_your_messages,
@@ -96,7 +98,7 @@ public class IntroScreenActivity extends BaseActionBarActivity {
     if (numberOfPages > 1) {
       try {
         // For some reason this seems to throw an NPE on Android 2.3 - work around it for now
-        // See https://github.com/SMSSecure/SMSSecure/issues/311
+        // See https://github.com/Silence/Silence/issues/311
         indicator.setViewPager(pager);
         indicator.setOnPageChangeListener(new OnPageChangeListener(introScreen.get()));
       }
@@ -133,13 +135,14 @@ public class IntroScreenActivity extends BaseActionBarActivity {
   }
 
   private void onContinue() {
-    SMSSecurePreferences.setFirstRun(this);
+    SilencePreferences.setFirstRun(this);
     startActivity((Intent)getIntent().getParcelableExtra("next_intent"));
     finish();
   }
 
   public static Optional<IntroScreen> getIntroScreen(Context context) {
-    if (!SMSSecurePreferences.isFirstRun(context)) return Optional.absent();
+    SilencePreferences.setBrandNameUpdateAsSeen(context);
+    if (!SilencePreferences.isFirstRun(context)) return Optional.absent();
 
     Optional<IntroScreen> introScreen = Optional.absent();
     for (IntroScreen screen : IntroScreen.values()) {
@@ -174,4 +177,33 @@ public class IntroScreenActivity extends BaseActionBarActivity {
       setStatusBarColor(color);
     }
   }
+
+  public static class AppUpgradeReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+      if(Intent.ACTION_PACKAGE_REPLACED.equals(intent.getAction()) &&
+         intent.getData().getSchemeSpecificPart().equals(context.getPackageName()))
+      {
+        Log.w(TAG, "Displaying upgrade notification...");
+        if (SilencePreferences.isFirstRun(context) || SilencePreferences.seenBrandNameUpdate(context)) return;
+
+        Intent       targetIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+        Notification notification = new NotificationCompat.Builder(context)
+                                        .setSmallIcon(R.drawable.icon_notification)
+                                        .setColor(context.getResources().getColor(R.color.silence_primary))
+                                        .setContentTitle(context.getString(R.string.IntroScreenActivity_welcome_to_silence))
+                                        .setContentText(context.getString(R.string.IntroScreenActivity_smssecure_is_now_silence))
+                                        .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.IntroScreenActivity_your_messages_are_still_here)))
+                                        .setAutoCancel(true)
+                                        .setVisibility(Notification.VISIBILITY_PUBLIC)
+                                        .setContentIntent(PendingIntent.getActivity(context, 0,
+                                                                                    targetIntent,
+                                                                                    PendingIntent.FLAG_UPDATE_CURRENT))
+                                        .build();
+        ServiceUtil.getNotificationManager(context).notify(NOTIFICATION_ID, notification);
+        SilencePreferences.setBrandNameUpdateAsSeen(context);
+      }
+    }
+  }
+
 }

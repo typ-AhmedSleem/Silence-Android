@@ -46,7 +46,7 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.ResUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
@@ -122,10 +122,10 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-    if (key.equals(SMSSecurePreferences.THEME_PREF)) {
+    if (key.equals(SilencePreferences.THEME_PREF)) {
       if (VERSION.SDK_INT >= 11) recreate();
       else                       dynamicTheme.onResume(this);
-    } else if (key.equals(SMSSecurePreferences.LANGUAGE_PREF)) {
+    } else if (key.equals(SilencePreferences.LANGUAGE_PREF)) {
       if (VERSION.SDK_INT >= 11) recreate();
       else                       dynamicLanguage.onResume(this);
 

@@ -23,7 +23,7 @@ import android.support.v7.app.ActionBar;
 import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.VersionTracker;
 
 /**
@@ -68,7 +68,7 @@ public class PassphraseCreateActivity extends PassphraseActivity {
       MasterSecretUtil.generateAsymmetricMasterSecret(PassphraseCreateActivity.this, masterSecret);
       IdentityKeyUtil.generateIdentityKeys(PassphraseCreateActivity.this, masterSecret);
       VersionTracker.updateLastSeenVersion(PassphraseCreateActivity.this);
-      SMSSecurePreferences.setPasswordDisabled(PassphraseCreateActivity.this, true);
+      SilencePreferences.setPasswordDisabled(PassphraseCreateActivity.this, true);
 
       return null;
     }

@@ -6,7 +6,7 @@
     <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots"/>
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
-                android:label="Access to SMSSecure Secrets"
+                android:label="Access to Silence Secrets"
                 android:protectionLevel="signature" />
 
     <uses-feature android:name="android.hardware.camera" android:required="false" />
@@ -41,9 +41,9 @@
                  android:supportsRtl="true"
                  tools:replace="android:allowBackup"
                  android:allowBackup="false"
-                 android:theme="@style/SMSSecure.LightTheme">
+                 android:theme="@style/Silence.LightTheme">
 
-    <meta-data android:name="org.smssecure.smssecure.mms.SMSSecureGlideModule"
+    <meta-data android:name="org.smssecure.smssecure.mms.SilenceGlideModule"
                android:value="GlideModule" />
 
     <activity android:name=".CountrySelectionActivity"
@@ -120,7 +120,7 @@
               android:launchMode="singleTask"
               android:taskAffinity=""
               android:excludeFromRecents="true"
-              android:theme="@style/SMSSecure.LightTheme.Popup"
+              android:theme="@style/Silence.LightTheme.Popup"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize" />
 
     <activity android:name=".MessageDetailsActivity"
@@ -151,19 +151,19 @@
     <activity android:name=".PassphraseCreateActivity"
               android:label="@string/AndroidManifest__create_passphrase"
               android:windowSoftInputMode="stateUnchanged"
-              android:theme="@style/SMSSecure.LightIntroTheme"
+              android:theme="@style/Silence.LightIntroTheme"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".PassphrasePromptActivity"
               android:label="@string/AndroidManifest__enter_passphrase"
               android:launchMode="singleTask"
-              android:theme="@style/SMSSecure.LightIntroTheme"
+              android:theme="@style/Silence.LightIntroTheme"
               android:windowSoftInputMode="stateAlwaysVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".NewConversationActivity"
-              android:theme="@style/SMSSecure.LightNoActionBar"
+              android:theme="@style/Silence.LightNoActionBar"
               android:windowSoftInputMode="stateAlwaysVisible"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -230,11 +230,11 @@
     </activity>
 
     <activity android:name=".RecipientPreferenceActivity"
-              android:theme="@style/SMSSecure.LightNoActionBar"
+              android:theme="@style/Silence.LightNoActionBar"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".BlockedContactsActivity"
-              android:theme="@style/SMSSecure.LightTheme"
+              android:theme="@style/Silence.LightTheme"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <!-- this can never have launchMode singleTask or singleInstance! -->
@@ -341,6 +341,13 @@
     <receiver android:name=".notifications.MessageNotifier$DeleteReceiver">
         <intent-filter>
             <action android:name="org.smssecure.smssecure.MessageNotifier.DELETE_REMINDER_ACTION"/>
+        </intent-filter>
+    </receiver>
+
+    <receiver android:name=".IntroScreenActivity$AppUpgradeReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            <data android:scheme="package" />
         </intent-filter>
     </receiver>
 

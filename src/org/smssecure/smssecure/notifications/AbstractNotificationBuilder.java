@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase;
 import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
 import org.smssecure.smssecure.recipients.Recipient;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 public abstract class AbstractNotificationBuilder extends NotificationCompat.Builder {
@@ -38,8 +38,8 @@ public abstract class AbstractNotificationBuilder extends NotificationCompat.Bui
   }
 
   public void setAudibleAlarms(@Nullable Uri ringtone, RecipientPreferenceDatabase.VibrateState vibrate) {
-    String defaultRingtoneName   = SMSSecurePreferences.getNotificationRingtone(context);
-    boolean defaultVibrate       = SMSSecurePreferences.isNotificationVibrateEnabled(context);
+    String defaultRingtoneName   = SilencePreferences.getNotificationRingtone(context);
+    boolean defaultVibrate       = SilencePreferences.isNotificationVibrateEnabled(context);
 
     if      (ringtone != null)                        setSound(ringtone);
     else if (!TextUtils.isEmpty(defaultRingtoneName)) setSound(Uri.parse(defaultRingtoneName));
@@ -53,9 +53,9 @@ public abstract class AbstractNotificationBuilder extends NotificationCompat.Bui
   }
 
   public void setVisualAlarms() {
-    String ledColor              = SMSSecurePreferences.getNotificationLedColor(context);
-    String ledBlinkPattern       = SMSSecurePreferences.getNotificationLedPattern(context);
-    String ledBlinkPatternCustom = SMSSecurePreferences.getNotificationLedPatternCustom(context);
+    String ledColor              = SilencePreferences.getNotificationLedColor(context);
+    String ledBlinkPattern       = SilencePreferences.getNotificationLedPattern(context);
+    String ledBlinkPatternCustom = SilencePreferences.getNotificationLedPatternCustom(context);
     String[] blinkPatternArray   = parseBlinkPattern(ledBlinkPattern, ledBlinkPatternCustom);
 
     if (!ledColor.equals("none")) {

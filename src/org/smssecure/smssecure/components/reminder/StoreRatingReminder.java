@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +27,7 @@ public class StoreRatingReminder extends Reminder {
     final OnClickListener okListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
-        SMSSecurePreferences.setRatingEnabled(context, false);
+        SilencePreferences.setRatingEnabled(context, false);
         Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
         context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
       }
@@ -35,7 +35,7 @@ public class StoreRatingReminder extends Reminder {
     final OnClickListener dismissListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
-        SMSSecurePreferences.setRatingEnabled(context, false);
+        SilencePreferences.setRatingEnabled(context, false);
       }
     };
     setOkListener(okListener);
@@ -44,18 +44,18 @@ public class StoreRatingReminder extends Reminder {
 
   public static boolean isEligible(Context context) {
 
-    if (!SMSSecurePreferences.isRatingEnabled(context))
+    if (!SilencePreferences.isRatingEnabled(context))
       return false;
 
     // App needs to be installed via Play/Amazon store to show the rating dialog
     String installer = context.getPackageManager().getInstallerPackageName(context.getPackageName());
     if (installer == null || !(installer.equals("com.android.vending") || installer.equals("com.amazon.venezia"))){
-      SMSSecurePreferences.setRatingEnabled(context, false);
+      SilencePreferences.setRatingEnabled(context, false);
       return false;
     }
 
     long daysSinceInstall = getDaysSinceInstalled(context);
-    long laterTimestamp   = SMSSecurePreferences.getRatingLaterTimestamp(context);
+    long laterTimestamp   = SilencePreferences.getRatingLaterTimestamp(context);
 
     return daysSinceInstall >= DAYS_SINCE_INSTALL_THRESHOLD &&
             System.currentTimeMillis() >= laterTimestamp;

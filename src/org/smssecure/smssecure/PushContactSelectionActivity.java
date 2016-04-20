@@ -28,7 +28,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicNoActionBarTheme;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.ArrayList;
 import java.util.List;

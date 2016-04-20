@@ -207,9 +207,9 @@ public class DatabaseFactory {
     db.beginTransaction();
 
     if (fromVersion < DatabaseUpgradeActivity.NO_MORE_KEY_EXCHANGE_PREFIX_VERSION) {
-      String KEY_EXCHANGE             = "?SMSSecureKeyExchange";
-      String PROCESSED_KEY_EXCHANGE   = "?SMSSecureKeyExchangd";
-      String STALE_KEY_EXCHANGE       = "?SMSSecureKeyExchangs";
+      String KEY_EXCHANGE             = "?SilenceKeyExchange";
+      String PROCESSED_KEY_EXCHANGE   = "?SilenceKeyExchangd";
+      String STALE_KEY_EXCHANGE       = "?SilenceKeyExchangs";
       int ROW_LIMIT                   = 500;
 
       MasterCipher masterCipher = new MasterCipher(masterSecret);
@@ -564,12 +564,12 @@ public class DatabaseFactory {
       }
 
       if (oldVersion < INTRODUCED_NEW_TYPES_VERSION) {
-        String KEY_EXCHANGE             = "?SMSSecureKeyExchange";
-        String SYMMETRIC_ENCRYPT        = "?SMSSecureLocalEncrypt";
-        String ASYMMETRIC_ENCRYPT       = "?SMSSecureAsymmetricEncrypt";
-        String ASYMMETRIC_LOCAL_ENCRYPT = "?SMSSecureAsymmetricLocalEncrypt";
-        String PROCESSED_KEY_EXCHANGE   = "?SMSSecureKeyExchangd";
-        String STALE_KEY_EXCHANGE       = "?SMSSecureKeyExchangs";
+        String KEY_EXCHANGE             = "?SilenceKeyExchange";
+        String SYMMETRIC_ENCRYPT        = "?SilenceLocalEncrypt";
+        String ASYMMETRIC_ENCRYPT       = "?SilenceAsymmetricEncrypt";
+        String ASYMMETRIC_LOCAL_ENCRYPT = "?SilenceAsymmetricLocalEncrypt";
+        String PROCESSED_KEY_EXCHANGE   = "?SilenceKeyExchangd";
+        String STALE_KEY_EXCHANGE       = "?SilenceKeyExchangs";
 
         // SMS Updates
         db.execSQL("UPDATE sms SET type = ? WHERE type = ?", new String[] {20L+"", 1L+""});

@@ -11,7 +11,7 @@ import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.attachments.UriAttachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MmsCipher;
-import org.smssecure.smssecure.crypto.storage.SMSSecureAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
 import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
@@ -118,7 +118,7 @@ public class MmsDownloadJob extends MasterSecretJob {
       }
 
       if (retrieveConf.getSubject() != null && WirePrefix.isEncryptedMmsSubject(retrieveConf.getSubject().getString())) {
-        MmsCipher    mmsCipher    = new MmsCipher(new SMSSecureAxolotlStore(context, masterSecret));
+        MmsCipher    mmsCipher    = new MmsCipher(new SilenceAxolotlStore(context, masterSecret));
         RetrieveConf plaintextPdu = (RetrieveConf) mmsCipher.decrypt(context, retrieveConf);
 
         storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, plaintextPdu, true, notification.get().second);

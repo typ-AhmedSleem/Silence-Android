@@ -14,7 +14,7 @@ import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
 
 import java.io.InputStream;
 
-public class SMSSecureGlideModule implements GlideModule {
+public class SilenceGlideModule implements GlideModule {
   @Override
   public void applyOptions(Context context, GlideBuilder builder) {
     builder.setDiskCache(new NoopDiskCacheFactory());

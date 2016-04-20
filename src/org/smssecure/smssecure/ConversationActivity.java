@@ -112,7 +112,7 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.MediaUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
@@ -468,7 +468,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void handleInviteLink() {
-    composeText.appendInvite(getString(R.string.ConversationActivity_install_smssecure, "http://smssecure.org"));
+    composeText.appendInvite(getString(R.string.ConversationActivity_install_smssecure, "http://silence.im"));
   }
 
   private void handleVerifyIdentity() {
@@ -795,7 +795,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composeBubble  = ViewUtil.findById(this, R.id.compose_bubble);
     container      = ViewUtil.findById(this, R.id.layout_container);
 
-    if (SMSSecurePreferences.isEmojiDrawerDisabled(this))
+    if (SilencePreferences.isEmojiDrawerDisabled(this))
       emojiToggle.setVisibility(View.GONE);
 
     container.addOnKeyboardShownListener(this);
@@ -1332,7 +1332,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     public boolean onKey(View v, int keyCode, KeyEvent event) {
       if (event.getAction() == KeyEvent.ACTION_DOWN) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
-          if (SMSSecurePreferences.getEnterKeyType(ConversationActivity.this).equals("send")) {
+          if (SilencePreferences.getEnterKeyType(ConversationActivity.this).equals("send")) {
             sendButton.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
             sendButton.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
             return true;

@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import org.iilab.IilabEngineeringRSA2048Pin;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import info.guardianproject.GuardianProjectRSA4096;
 import info.guardianproject.trustedintents.TrustedIntents;
@@ -30,7 +30,7 @@ public class PanicResponderActivity extends Activity {
 
     Intent intent = trustedIntents.getIntentFromTrustedSender(this);
     if (intent != null
-            && !SMSSecurePreferences.isPasswordDisabled(this)
+            && !SilencePreferences.isPasswordDisabled(this)
             && PANIC_TRIGGER_ACTION.equals(intent.getAction())) {
       handleClearPassphrase();
       ExitActivity.exitAndRemoveFromRecentApps(this);

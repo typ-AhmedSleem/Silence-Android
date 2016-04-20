@@ -43,7 +43,7 @@ import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.ParcelUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.EncryptionKeys;
 
 import java.util.concurrent.TimeUnit;
@@ -79,7 +79,7 @@ public class KeyCachingService extends Service {
   public KeyCachingService() {}
 
   public static synchronized MasterSecret getMasterSecret(Context context) {
-    if (masterSecret == null && SMSSecurePreferences.isPasswordDisabled(context)) {
+    if (masterSecret == null && SilencePreferences.isPasswordDisabled(context)) {
       try {
         MasterSecret masterSecret = MasterSecretUtil.getMasterSecret(context, MasterSecretUtil.UNENCRYPTED_PASSPHRASE);
         Intent       intent       = new Intent(context, KeyCachingService.class);
@@ -144,7 +144,7 @@ public class KeyCachingService extends Service {
     this.pending = PendingIntent.getService(this, 0, new Intent(PASSPHRASE_EXPIRED_EVENT, null,
                                                                 this, KeyCachingService.class), 0);
 
-    if (SMSSecurePreferences.isPasswordDisabled(this)) {
+    if (SilencePreferences.isPasswordDisabled(this)) {
       try {
         MasterSecret masterSecret = MasterSecretUtil.getMasterSecret(this, MasterSecretUtil.UNENCRYPTED_PASSPHRASE);
         setMasterSecret(masterSecret);
@@ -207,7 +207,7 @@ public class KeyCachingService extends Service {
   }
 
   private void handleDisableService() {
-    if (SMSSecurePreferences.isPasswordDisabled(this))
+    if (SilencePreferences.isPasswordDisabled(this))
       stopForeground(true);
   }
 
@@ -217,10 +217,10 @@ public class KeyCachingService extends Service {
   }
 
   private void startTimeoutIfAppropriate() {
-    boolean timeoutEnabled = SMSSecurePreferences.isPassphraseTimeoutEnabled(this);
+    boolean timeoutEnabled = SilencePreferences.isPassphraseTimeoutEnabled(this);
 
-    if ((activitiesRunning == 0) && (KeyCachingService.masterSecret != null) && timeoutEnabled && !SMSSecurePreferences.isPasswordDisabled(this)) {
-      long timeoutMinutes = SMSSecurePreferences.getPassphraseTimeoutInterval(this);
+    if ((activitiesRunning == 0) && (KeyCachingService.masterSecret != null) && timeoutEnabled && !SilencePreferences.isPasswordDisabled(this)) {
+      long timeoutMinutes = SilencePreferences.getPassphraseTimeoutInterval(this);
       long timeoutMillis  = TimeUnit.MINUTES.toMillis(timeoutMinutes);
 
       Log.w("KeyCachingService", "Starting timeout: " + timeoutMillis);
@@ -278,7 +278,7 @@ public class KeyCachingService extends Service {
   }
 
   private void foregroundService() {
-    if (SMSSecurePreferences.isPasswordDisabled(this)) {
+    if (SilencePreferences.isPasswordDisabled(this)) {
       stopForeground(true);
       return;
     }

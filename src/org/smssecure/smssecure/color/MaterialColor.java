@@ -27,7 +27,7 @@ public enum MaterialColor {
   GREY       (R.color.grey_500,        R.color.grey_700,        R.color.grey_700,        R.color.grey_900,        "grey"),
   BLUE_GREY  (R.color.blue_grey_500,   R.color.blue_grey_700,   R.color.blue_grey_700,   R.color.blue_grey_900,   "blue_grey"),
 
-  GROUP      (GREY.conversationColorLight, R.color.smssecure_primary, R.color.smssecure_primary_dark,
+  GROUP      (GREY.conversationColorLight, R.color.silence_primary, R.color.silence_primary_dark,
               GREY.conversationColorDark, R.color.gray95, R.color.black,
               "group_color");
 

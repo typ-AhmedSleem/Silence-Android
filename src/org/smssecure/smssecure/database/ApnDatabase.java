@@ -25,7 +25,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import org.smssecure.smssecure.mms.LegacyMmsConnection.Apn;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -100,15 +100,15 @@ public class ApnDatabase {
   }
 
   private Apn getCustomApnParameters() {
-      String mmsc = SMSSecurePreferences.getMmscUrl(context).trim();
+      String mmsc = SilencePreferences.getMmscUrl(context).trim();
 
       if (!TextUtils.isEmpty(mmsc) && !mmsc.startsWith("http"))
         mmsc = "http://" + mmsc;
 
-      String proxy = SMSSecurePreferences.getMmscProxy(context);
-      String port  = SMSSecurePreferences.getMmscProxyPort(context);
-      String user  = SMSSecurePreferences.getMmscUsername(context);
-      String pass  = SMSSecurePreferences.getMmscPassword(context);
+      String proxy = SilencePreferences.getMmscProxy(context);
+      String port  = SilencePreferences.getMmscProxyPort(context);
+      String user  = SilencePreferences.getMmscUsername(context);
+      String pass  = SilencePreferences.getMmscPassword(context);
 
       return new Apn(mmsc, proxy, port, user, pass);
   }
@@ -162,11 +162,11 @@ public class ApnDatabase {
     Apn customApn  = getCustomApnParameters();
     Apn defaultApn = getDefaultApnParameters(mccmnc, apn);
     Apn result     = new Apn(customApn, defaultApn,
-                             SMSSecurePreferences.getUseCustomMmsc(context),
-                             SMSSecurePreferences.getUseCustomMmscProxy(context),
-                             SMSSecurePreferences.getUseCustomMmscProxyPort(context),
-                             SMSSecurePreferences.getUseCustomMmscUsername(context),
-                             SMSSecurePreferences.getUseCustomMmscPassword(context));
+                             SilencePreferences.getUseCustomMmsc(context),
+                             SilencePreferences.getUseCustomMmscProxy(context),
+                             SilencePreferences.getUseCustomMmscProxyPort(context),
+                             SilencePreferences.getUseCustomMmscUsername(context),
+                             SilencePreferences.getUseCustomMmscPassword(context));
 
     if (TextUtils.isEmpty(result.getMmsc())) return Optional.absent();
     else                                     return Optional.of(result);

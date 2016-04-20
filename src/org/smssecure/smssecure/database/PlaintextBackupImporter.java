@@ -40,7 +40,7 @@ public class PlaintextBackupImporter {
 
   private static String getPlaintextExportDirectoryPath() throws NoExternalStorageException {
     File sdDirectory = Environment.getExternalStorageDirectory();
-    String[] files = {"SMSSecurePlaintextBackup.xml", "TextSecurePlaintextBackup.xml"};
+    String[] files = {"SilencePlaintextBackup.xml", "TextSecurePlaintextBackup.xml", "SMSSecurePlaintextBackup.xml", "SignalPlaintextBackup.xml"};
     String path;
 
     for (String s : files){

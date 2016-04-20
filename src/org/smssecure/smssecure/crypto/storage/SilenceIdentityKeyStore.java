@@ -6,17 +6,17 @@ import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.RecipientFactory;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.libaxolotl.IdentityKey;
 import org.whispersystems.libaxolotl.IdentityKeyPair;
 import org.whispersystems.libaxolotl.state.IdentityKeyStore;
 
-public class SMSSecureIdentityKeyStore implements IdentityKeyStore {
+public class SilenceIdentityKeyStore implements IdentityKeyStore {
 
   private final Context      context;
   private final MasterSecret masterSecret;
 
-  public SMSSecureIdentityKeyStore(Context context, MasterSecret masterSecret) {
+  public SilenceIdentityKeyStore(Context context, MasterSecret masterSecret) {
     this.context      = context;
     this.masterSecret = masterSecret;
   }
@@ -28,7 +28,7 @@ public class SMSSecureIdentityKeyStore implements IdentityKeyStore {
 
   @Override
   public int getLocalRegistrationId() {
-    return SMSSecurePreferences.getLocalRegistrationId(context);
+    return SilencePreferences.getLocalRegistrationId(context);
   }
 
   @Override

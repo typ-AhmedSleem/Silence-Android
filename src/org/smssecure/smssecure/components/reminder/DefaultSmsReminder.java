@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 public class DefaultSmsReminder extends Reminder {
@@ -23,7 +23,7 @@ public class DefaultSmsReminder extends Reminder {
     final OnClickListener okListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
-        SMSSecurePreferences.setPromptedDefaultSmsProvider(context, true);
+        SilencePreferences.setPromptedDefaultSmsProvider(context, true);
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
         intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, context.getPackageName());
         context.startActivity(intent);
@@ -32,7 +32,7 @@ public class DefaultSmsReminder extends Reminder {
     final OnClickListener dismissListener = new OnClickListener() {
       @Override
       public void onClick(View v) {
-        SMSSecurePreferences.setPromptedDefaultSmsProvider(context, true);
+        SilencePreferences.setPromptedDefaultSmsProvider(context, true);
       }
     };
     setOkListener(okListener);
@@ -42,9 +42,9 @@ public class DefaultSmsReminder extends Reminder {
   public static boolean isEligible(Context context) {
     final boolean isDefault = Util.isDefaultSmsProvider(context);
     if (isDefault) {
-      SMSSecurePreferences.setPromptedDefaultSmsProvider(context, false);
+      SilencePreferences.setPromptedDefaultSmsProvider(context, false);
     }
 
-    return !isDefault && !SMSSecurePreferences.hasPromptedDefaultSmsProvider(context);
+    return !isDefault && !SilencePreferences.hasPromptedDefaultSmsProvider(context);
   }
 }

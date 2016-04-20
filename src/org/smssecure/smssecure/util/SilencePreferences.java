@@ -17,9 +17,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SMSSecurePreferences {
+public class SilencePreferences {
 
-  private static final String TAG = SMSSecurePreferences.class.getSimpleName();
+  private static final String TAG = SilencePreferences.class.getSimpleName();
 
   public  static final String CHANGE_PASSPHRASE_PREF           = "pref_change_passphrase";
   public  static final String DISABLE_PASSPHRASE_PREF          = "pref_disable_passphrase";
@@ -41,6 +41,7 @@ public class SMSSecurePreferences {
 
   private static final String LAST_VERSION_CODE_PREF           = "last_version_code";
   private static final String IS_FIRST_RUN                     = "is_first_run";
+  private static final String SEEN_BRAND_NAME_UPDATE           = "seen_brand_name_update";
   public  static final String RINGTONE_PREF                    = "pref_key_ringtone";
   private static final String VIBRATE_PREF                     = "pref_key_vibrate";
   private static final String NOTIFICATION_PREF                = "pref_key_enable_notifications";
@@ -257,7 +258,7 @@ public class SMSSecurePreferences {
   }
 
   public static boolean getUseCustomMmsc(Context context) {
-    boolean legacy = SMSSecurePreferences.isLegacyUseLocalApnsEnabled(context);
+    boolean legacy = SilencePreferences.isLegacyUseLocalApnsEnabled(context);
     return getBooleanPreference(context, MMSC_CUSTOM_HOST_PREF, legacy);
   }
 
@@ -274,7 +275,7 @@ public class SMSSecurePreferences {
   }
 
   public static boolean getUseCustomMmscProxy(Context context) {
-    boolean legacy = SMSSecurePreferences.isLegacyUseLocalApnsEnabled(context);
+    boolean legacy = SilencePreferences.isLegacyUseLocalApnsEnabled(context);
     return getBooleanPreference(context, MMSC_CUSTOM_PROXY_PREF, legacy);
   }
 
@@ -291,7 +292,7 @@ public class SMSSecurePreferences {
   }
 
   public static boolean getUseCustomMmscProxyPort(Context context) {
-    boolean legacy = SMSSecurePreferences.isLegacyUseLocalApnsEnabled(context);
+    boolean legacy = SilencePreferences.isLegacyUseLocalApnsEnabled(context);
     return getBooleanPreference(context, MMSC_CUSTOM_PROXY_PORT_PREF, legacy);
   }
 
@@ -308,7 +309,7 @@ public class SMSSecurePreferences {
   }
 
   public static boolean getUseCustomMmscUsername(Context context) {
-    boolean legacy = SMSSecurePreferences.isLegacyUseLocalApnsEnabled(context);
+    boolean legacy = SilencePreferences.isLegacyUseLocalApnsEnabled(context);
     return getBooleanPreference(context, MMSC_CUSTOM_USERNAME_PREF, legacy);
   }
 
@@ -325,7 +326,7 @@ public class SMSSecurePreferences {
   }
 
   public static boolean getUseCustomMmscPassword(Context context) {
-    boolean legacy = SMSSecurePreferences.isLegacyUseLocalApnsEnabled(context);
+    boolean legacy = SilencePreferences.isLegacyUseLocalApnsEnabled(context);
     return getBooleanPreference(context, MMSC_CUSTOM_PASSWORD_PREF, legacy);
   }
 
@@ -378,6 +379,14 @@ public class SMSSecurePreferences {
     setBooleanPreference(context, IS_FIRST_RUN, false);
   }
 
+  public static boolean seenBrandNameUpdate(Context context) {
+    return getBooleanPreference(context, SEEN_BRAND_NAME_UPDATE, false);
+  }
+
+  public static void setBrandNameUpdateAsSeen(Context context) {
+    setBooleanPreference(context, SEEN_BRAND_NAME_UPDATE, true);
+  }
+
   public static String getTheme(Context context) {
     return getStringPreference(context, THEME_PREF, "light");
   }
@@ -395,7 +404,7 @@ public class SMSSecurePreferences {
   }
 
   public static void setPushRegistered(Context context, boolean registered) {
-    Log.w("SMSSecurePreferences", "Setting push registered: " + registered);
+    Log.w("SilencePreferences", "Setting push registered: " + registered);
     setBooleanPreference(context, REGISTERED_GCM_PREF, registered);
   }
 

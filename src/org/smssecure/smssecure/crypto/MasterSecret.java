@@ -23,7 +23,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Arrays;
 
 /**
- * When a user first initializes SMSSecure, a few secrets
+ * When a user first initializes Silence, a few secrets
  * are generated.  These are:
  *
  * 1) A 128bit symmetric encryption key.

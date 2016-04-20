@@ -1,42 +1,42 @@
-# SMSSecure [![Build Status](https://travis-ci.org/SMSSecure/SMSSecure.svg?branch=master)](https://travis-ci.org/SMSSecure/SMSSecure)
+# Silence [![Build Status](https://travis-ci.org/SilenceIM/Silence.svg?branch=master)](https://travis-ci.org/SilenceIM/Silence)
 
-[SMSSecure](https://smssecure.org) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
+[Silence](https://silence.im) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
 
-Using SMSSecure, you can send SMS messages and share media or attachments with complete privacy.
+Using Silence, you can send SMS messages and share media or attachments with complete privacy.
 
 Features:
-* Easy. SMSSecure works like any other SMS application. There's nothing to sign up for and no new service your friends need to join.
-* Reliable. SMSSecure communicates using encrypted SMS messages. No servers or internet connection required.
-* Private. SMSSecure uses the TextSecure encryption protocol to provide privacy for every message, every time.
+* Easy. Silence works like any other SMS application. There's nothing to sign up for and no new service your friends need to join.
+* Reliable. Silence communicates using encrypted SMS messages. No servers or internet connection required.
+* Private. Silence uses the Axolotl encryption protocol to provide privacy for every message, every time.
 * Safe. All messages are encrypted locally, so if your phone is lost or stolen, your messages are protected.
-* Open Source. SMSSecure is Free and Open Source, enabling anyone to verify its security by auditing the code.
+* Open Source. Silence is Free and Open Source, enabling anyone to verify its security by auditing the code.
 
 
 ## Project goals
 
-This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure) that aims to keep the SMS encryption that TextSecure removed [for a variety of reasons](https://whispersystems.org/blog/goodbye-encrypted-sms/).
+This is a fork of [TextSecure](https://github.com/WhisperSystems/TextSecure) (now Signal) that aims to keep the SMS encryption that TextSecure removed [for a variety of reasons](https://whispersystems.org/blog/goodbye-encrypted-sms/).
 
-SMSSecure focuses on SMS and MMS. This fork aims to:
+Silence focuses on SMS and MMS. This fork aims to:
 
 * Keep SMS/MMS encryption
-* Drop Google services dependencies (push messages are not available in SMSSecure)
+* Drop Google services dependencies (push messages are not available in Silence)
 * Integrate upstream bugfixes and patches from TextSecure
 
-## Migrating from TextSecure to SMSSecure
+## Migrating from TextSecure to Silence
 
 * In TextSecure, export a plaintext backup. Warning: the backup will **not** be encrypted.
-* Install SMSSecure.
-* In SMSSecure, import the plaintext backup (this will import the TextSecure backup if no SMSSecure backup is found).
+* Install Silence.
+* In Silence, import the plaintext backup (this will import the TextSecure backup if no Silence backup is found).
 * If TextSecure v2.6.4 or earlier is installed, update or uninstall it so it doesn't conflict (can cause errors with key exchanges).
-* Enjoy SMSSecure!
+* Enjoy Silence!
 
 Note: You will have to start new secured sessions with your contacts.
 
 # Contributing
 
-See [CONTRIBUTING.md](https://github.com/SMSSecure/SMSSecure/blob/master/CONTRIBUTING.md) for how to contribute code, translations, or bug reports.
+See [CONTRIBUTING.md](https://github.com/SilenceIM/Silence/blob/master/CONTRIBUTING.md) for how to contribute code, translations, or bug reports.
 
-Instructions on how to setup a development environment and build SMSSecure can be found in [BUILDING.md](https://github.com/SMSSecure/SMSSecure/blob/master/BUILDING.md).
+Instructions on how to setup a development environment and build Silence can be found in [BUILDING.md](https://github.com/SilenceIM/Silence/blob/master/BUILDING.md).
 
 # Help
 ## Documentation
@@ -45,7 +45,7 @@ Looking for documentation? Check out the wiki of the original project:
 https://github.com/WhisperSystems/TextSecure/wiki
 
 ## Chat
-Have a question? Want to help out? Join our IRC channel: [#SMSSecure on Freenode](https://webchat.freenode.net/?channels=SMSSecure) or follow [@SMSSecure_](https://twitter.com/SMSSecure_) on Twitter.
+Have a question? Want to help out? Join our IRC channel: [#Silence on Freenode](https://webchat.freenode.net/?channels=Silence) or follow [@SilenceIM](https://twitter.com/SilenceIM) on Twitter.
 
 # Legal
 ## Cryptography Notice

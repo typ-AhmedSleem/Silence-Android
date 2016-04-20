@@ -11,7 +11,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.SmsCipher;
-import org.smssecure.smssecure.crypto.storage.SMSSecureAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -28,7 +28,7 @@ import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.smssecure.smssecure.transport.InsecureFallbackApprovalException;
 import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.NumberUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.libaxolotl.NoSessionException;
 
@@ -186,7 +186,7 @@ public class SmsSendJob extends SendJob {
       throws InsecureFallbackApprovalException
   {
     try {
-      return new SmsCipher(new SMSSecureAxolotlStore(context, masterSecret)).encrypt(message);
+      return new SmsCipher(new SilenceAxolotlStore(context, masterSecret)).encrypt(message);
     } catch (NoSessionException e) {
       throw new InsecureFallbackApprovalException(e);
     }
@@ -207,7 +207,7 @@ public class SmsSendJob extends SendJob {
   }
 
   private ArrayList<PendingIntent> constructDeliveredIntents(long messageId, long type, ArrayList<String> messages) {
-    if (!SMSSecurePreferences.isSmsDeliveryReportsEnabled(context)) {
+    if (!SilencePreferences.isSmsDeliveryReportsEnabled(context)) {
       return null;
     }
 
@@ -262,7 +262,7 @@ public class SmsSendJob extends SendJob {
                                                  .withRetryCount(15)
                                                  .withGroupId(name);
 
-    if (SMSSecurePreferences.isWifiSmsEnabled(context)) {
+    if (SilencePreferences.isWifiSmsEnabled(context)) {
       builder.withRequirement(new NetworkOrServiceRequirement(context));
     } else {
       builder.withRequirement(new ServiceRequirement(context));

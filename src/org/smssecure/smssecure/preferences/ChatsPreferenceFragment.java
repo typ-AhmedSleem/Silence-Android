@@ -13,7 +13,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Trimmer;
 
 import java.util.ArrayList;
@@ -28,9 +28,9 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
     super.onCreate(paramBundle);
     addPreferencesFromResource(R.xml.preferences_chats);
 
-    findPreference(SMSSecurePreferences.THREAD_TRIM_NOW)
+    findPreference(SilencePreferences.THREAD_TRIM_NOW)
         .setOnPreferenceClickListener(new TrimNowClickListener());
-    findPreference(SMSSecurePreferences.THREAD_TRIM_LENGTH)
+    findPreference(SilencePreferences.THREAD_TRIM_LENGTH)
         .setOnPreferenceChangeListener(new TrimLengthValidationListener());
 
   }
@@ -44,7 +44,7 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
   private class TrimNowClickListener implements Preference.OnPreferenceClickListener {
     @Override
     public boolean onPreferenceClick(Preference preference) {
-      final int threadLengthLimit = SMSSecurePreferences.getThreadTrimLength(getActivity());
+      final int threadLengthLimit = SilencePreferences.getThreadTrimLength(getActivity());
       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
       builder.setTitle(R.string.ApplicationPreferencesActivity_delete_all_old_messages_now);
       builder.setMessage(getResources().getQuantityString(R.plurals.ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages,
@@ -67,7 +67,7 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
   private class TrimLengthValidationListener implements Preference.OnPreferenceChangeListener {
 
     public TrimLengthValidationListener() {
-      EditTextPreference preference = (EditTextPreference)findPreference(SMSSecurePreferences.THREAD_TRIM_LENGTH);
+      EditTextPreference preference = (EditTextPreference)findPreference(SilencePreferences.THREAD_TRIM_LENGTH);
       onPreferenceChange(preference, preference.getText());
     }
 

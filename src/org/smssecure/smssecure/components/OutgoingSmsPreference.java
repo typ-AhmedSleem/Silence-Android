@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 public class OutgoingSmsPreference extends DialogPreference {
   private CheckBox dataUsers;
@@ -30,10 +30,10 @@ public class OutgoingSmsPreference extends DialogPreference {
     neverFallbackMms = (CheckBox) view.findViewById(R.id.never_send_mms);
     nonDataUsers     = (CheckBox) view.findViewById(R.id.non_data_users);
 
-    dataUsers.setChecked(SMSSecurePreferences.isFallbackSmsAllowed(getContext()));
-    askForFallback.setChecked(SMSSecurePreferences.isFallbackSmsAskRequired(getContext()));
-    neverFallbackMms.setChecked(!SMSSecurePreferences.isFallbackMmsEnabled(getContext()));
-    nonDataUsers.setChecked(SMSSecurePreferences.isDirectSmsAllowed(getContext()));
+    dataUsers.setChecked(SilencePreferences.isFallbackSmsAllowed(getContext()));
+    askForFallback.setChecked(SilencePreferences.isFallbackSmsAskRequired(getContext()));
+    neverFallbackMms.setChecked(!SilencePreferences.isFallbackMmsEnabled(getContext()));
+    nonDataUsers.setChecked(SilencePreferences.isDirectSmsAllowed(getContext()));
 
     dataUsers.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -55,10 +55,10 @@ public class OutgoingSmsPreference extends DialogPreference {
     super.onDialogClosed(positiveResult);
 
     if (positiveResult) {
-      SMSSecurePreferences.setFallbackSmsAllowed(getContext(), dataUsers.isChecked());
-      SMSSecurePreferences.setFallbackSmsAskRequired(getContext(), askForFallback.isChecked());
-      SMSSecurePreferences.setDirectSmsAllowed(getContext(), nonDataUsers.isChecked());
-      SMSSecurePreferences.setFallbackMmsEnabled(getContext(), !neverFallbackMms.isChecked());
+      SilencePreferences.setFallbackSmsAllowed(getContext(), dataUsers.isChecked());
+      SilencePreferences.setFallbackSmsAskRequired(getContext(), askForFallback.isChecked());
+      SilencePreferences.setDirectSmsAllowed(getContext(), nonDataUsers.isChecked());
+      SilencePreferences.setFallbackMmsEnabled(getContext(), !neverFallbackMms.isChecked());
       if (getOnPreferenceChangeListener() != null) getOnPreferenceChangeListener().onPreferenceChange(this, null);
     }
   }

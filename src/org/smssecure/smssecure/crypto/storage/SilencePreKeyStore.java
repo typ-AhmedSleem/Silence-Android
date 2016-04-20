@@ -22,7 +22,7 @@ import java.nio.channels.FileChannel;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SMSSecurePreKeyStore implements PreKeyStore, SignedPreKeyStore {
+public class SilencePreKeyStore implements PreKeyStore, SignedPreKeyStore {
 
   public  static final String PREKEY_DIRECTORY        = "prekeys";
   public  static final String SIGNED_PREKEY_DIRECTORY = "signed_prekeys";
@@ -30,12 +30,12 @@ public class SMSSecurePreKeyStore implements PreKeyStore, SignedPreKeyStore {
 
   private static final int    CURRENT_VERSION_MARKER = 1;
   private static final Object FILE_LOCK              = new Object();
-  private static final String TAG                    = SMSSecurePreKeyStore.class.getSimpleName();
+  private static final String TAG                    = SilencePreKeyStore.class.getSimpleName();
 
   private final Context      context;
   private final MasterSecret masterSecret;
 
-  public SMSSecurePreKeyStore(Context context, MasterSecret masterSecret) {
+  public SilencePreKeyStore(Context context, MasterSecret masterSecret) {
     this.context      = context;
     this.masterSecret = masterSecret;
   }
