@@ -45,6 +45,9 @@ try:
                 carrier_enabled INTEGER, mmsproxy TEXT, mmsport INTEGER, proxy TEXT,  mvno_match_data TEXT,
                 mvno_type TEXT, authtype INTEGER, user TEXT, password TEXT, server TEXT)""")
 
+    filter_keys = ['_id', 'mccmnc', 'mcc', 'mnc', 'carrier', 'apn', 'mmsc', 'port', 'type', 'protocol', 'bearer',
+    'roaming_protocol', 'carrier_enabled', 'mmsproxy', 'mmsport', 'proxy', 'mvno_match_data', 'mvno_type',
+    'authtype', 'user', 'password', 'server']
     apns = etree.parse(args.input)
     root = apns.getroot()
     pbar = None
@@ -55,7 +58,9 @@ try:
     for apn in root.iter("apn"):
         if apn.get("mmsc") is None:
             continue
-        sqlvars = ["?" for x in apn.attrib.keys()] + ["?"]
+
+        xml_keys = [i for i in apn.attrib.keys() if i in filter_keys]
+        sqlvars = ["?" for x in xml_keys] + ["?"]
         mccmnc = "%s%s" % (apn.get("mcc"), apn.get("mnc"))
         normalized_mmsc = normalized(apn.get("mmsc"))
         if normalized_mmsc != apn.get("mmsc"):
@@ -68,8 +73,8 @@ try:
                 print("normalize proxy: %s => %s" % (apn.get("mmsproxy"), normalized_mmsproxy))
                 apn.set("mmsproxy", normalized_mmsproxy)
 
-        values = [apn.get(attrib) for attrib in apn.attrib.keys()] + [mccmnc]
-        keys = apn.attrib.keys() + ["mccmnc"]
+        values = [apn.get(attrib) for attrib in xml_keys] + [mccmnc]
+        keys = xml_keys + ["mccmnc"]
 
         cursor.execute("SELECT 1 FROM apns WHERE mccmnc = ? AND apn = ?", [mccmnc, apn.get("apn")])
         if cursor.fetchone() is None:
@@ -96,7 +101,7 @@ try:
         print("\nTo include this in the distribution, copy it to the project's assets/databases/ directory.")
         print("If you support API 10 or lower, you must use the gzipped version to avoid corruption.")
 
-except sqlite3.Error, e:
+except sqlite3.Error as e:
     if connection:
         connection.rollback()
     print("Error: %s" % e.args[0])
