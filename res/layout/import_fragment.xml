@@ -85,13 +85,13 @@
                           android:layout_height="wrap_content"
                           android:gravity="start"
                           style="@style/Registration.Description"
-                          android:text="@string/import_fragment__import_encrypted_backup"/>
+                          android:text="@string/import_fragment__restore_encrypted_backup"/>
 
                 <TextView android:layout_width="match_parent"
                           android:layout_height="wrap_content"
                           android:gravity="start"
                           android:textAppearance="?android:attr/textAppearanceSmall"
-                          android:text="@string/import_fragment__import_a_previously_exported_encrypted_backup"/>
+                          android:text="@string/import_fragment__restore_a_previously_exported_encrypted_backup"/>
 
             </LinearLayout>
         </LinearLayout>

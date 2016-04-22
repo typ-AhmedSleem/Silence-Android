@@ -92,8 +92,8 @@
     <string name="ConversationActivity_add_attachment">Add attachment</string>
     <string name="ConversationActivity_select_contact_info">Select contact info</string>
     <string name="ConversationActivity_compose_message">Compose message</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Sorry, there was an error setting your attachment.</string>
-    <string name="ConversationActivity_the_gif_you_selected_was_too_big">The gif you selected was too big!</string>
+    <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sorry, there was an error adding your attachment.</string>
+    <string name="ConversationActivity_the_gif_you_selected_was_too_big">The GIF you selected was too big!</string>
     <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Sorry, the selected video exceeds message size restrictions (%1$skB).</string>
     <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sorry, the selected audio exceeds message size restrictions (%1$skB).</string>
     <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Recipient is not a valid SMS or email address!</string>
@@ -211,7 +211,7 @@
     <!-- ExportFragment -->
     <string name="ExportFragment_export">Export</string>
     <string name="ExportFragment_export_plaintext_to_storage">Export plaintext to storage?</string>
-    <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Warning, this will export the plaintext contents of your Silence messages to storage.</string>
+    <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Warning, this will export the contents of your Silence messages to storage in plaintext.</string>
     <string name="ExportFragment_cancel">Cancel</string>
     <string name="ExportFragment_exporting">Exporting</string>
     <string name="ExportFragment_exporting_plaintext_to_storage">Exporting plaintext to storage...</string>
@@ -245,8 +245,8 @@
     </string>
     <string name="ImportFragment_import">Import</string>
     <string name="ImportFragment_cancel">Cancel</string>
-    <string name="ImportFragment_import_encrypted_backup">Import encrypted backup?</string>
-    <string name="ImportFragment_importing_an_encrypted_backup_will_completely_replace_your_existing_keys">Importing an encrypted backup will completely replace your existing keys, preferences, and messages. You will lose any information that\'s in your current Silence installation but not in the backup. Silence will stop after the import.</string>
+    <string name="ImportFragment_restore_encrypted_backup">Restore encrypted backup?</string>
+    <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Restoring an encrypted backup will completely replace your existing keys, preferences, and messages. You will lose any information that is in your current Silence installation but not in the backup. Silence will stop after the import.</string>
     <string name="ImportFragment_import_plaintext_backup">Import plaintext backup?</string>
     <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">This will import
         messages from a plaintext backup. If you\'ve previously imported this backup,
@@ -257,7 +257,7 @@
     <string name="ImportFragment_no_plaintext_backup_found">No plaintext backup found!</string>
     <string name="ImportFragment_error_importing_backup">Error importing backup!</string>
     <string name="ImportFragment_import_complete">Import complete!</string>
-    <string name="ImportFragment_importing_encrypted_backup">Importing encrypted backup...</string>
+    <string name="ImportFragment_restoring_encrypted_backup">Restoring encrypted backup...</string>
     <string name="ImportFragment_no_encrypted_backup_found">No encrypted backup found!</string>
 
     <!-- KeyScanningActivity -->
@@ -492,7 +492,7 @@
     <string name="database_migration_activity__the_default_system_database_will_not_be_modified">The default system database will not be modified or altered in any way.</string>
     <string name="database_migration_activity__skip">Skip</string>
     <string name="database_migration_activity__import">Import</string>
-    <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">This could take a moment. Please be patient, we\'ll notify you when the import is complete.</string>
+    <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">This could take a moment. Please be patient, you will be notified when the import is complete.</string>
     <string name="database_migration_activity__importing">IMPORTING</string>
 
     <!-- database_upgrade_activity -->
@@ -502,12 +502,12 @@
     <string name="export_fragment__export_a_plaintext_backup_compatible_with">Export a plaintext backup compatible with \'SMS Backup &amp; Restore\' to storage</string>
     <string name="import_fragment__import_system_sms_database">Import system SMS database</string>
     <string name="import_fragment__import_the_database_from_the_default_system">Import the database from the default system messenger app</string>
-    <string name="import_fragment__import_encrypted_backup">Import encrypted backup</string>
-    <string name="import_fragment__import_a_previously_exported_encrypted_backup">Import a previously exported encrypted backup</string>
+    <string name="import_fragment__restore_encrypted_backup">Restore encrypted backup</string>
+    <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restore a previously exported encrypted backup</string>
     <string name="import_fragment__import_plaintext_backup">Import plaintext backup</string>
     <string name="import_fragment__import_a_plaintext_backup_file">Import a plaintext backup file. Compatible with \'SMS Backup &amp; Restore.\'</string>
     <string name="export_fragment__export_encrypted_backup">Export encrypted backup</string>
-    <string name="export_fragment__export_an_encrypted_backup_to_storage">Export an encrypted backup to storage.</string>
+    <string name="export_fragment__export_an_encrypted_backup_to_storage">Export an encrypted backup to storage</string>
 
     <!-- load_more_header -->
     <string name="load_more_header__see_full_conversation">See full conversation</string>
@@ -611,8 +611,8 @@
     <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Use Silence for viewing and storing all incoming text messages</string>
     <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Use Silence for viewing and storing all incoming multimedia messages</string>
     <string name="preferences__keyboard_settings">Keyboard options</string>
-    <string name="preferences__disable_emoji_drawer">Disable Emoji drawer</string>
-    <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports Emojis.</string>
+    <string name="preferences__disable_emoji_drawer">Disable emoji drawer</string>
+    <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Enable this option if your keyboard supports emojis.</string>
     <string name="preferences__display_settings">Display settings</string>
     <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Choose your contact entry from the contacts list.</string>
     <string name="preferences__change_passphrase">Change passphrase</string>
@@ -695,8 +695,8 @@
     <string name="preferences__make_default_sms_app">Set as default SMS app</string>
     <string name="preferences__make_silence_the_default_sms_mms_app">Make Silence the default SMS/MMS application for your system.</string>
     <string name="preferences__submit_debug_log">Submit debug log</string>
-    <string name="preferences__support_wifi_calling">\'WiFi Calling\' compatibility mode</string>
-    <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Enable if your device uses SMS/MMS delivery over WiFi (only enable when \'WiFi Calling\' is enabled on your device).</string>
+    <string name="preferences__support_wifi_calling">\'Wi-Fi Calling\' compatibility mode</string>
+    <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Enable if your device uses SMS/MMS delivery over Wi-Fi (only enable when \'Wi-Fi Calling\' is enabled on your device).</string>
     <string name="preferences__about">About Silence</string>
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__about_build_id">Build ID: %s</string>
@@ -818,7 +818,7 @@
     <string name="reminder_header_sms_default_text">Tap to make Silence your default SMS app.</string>
     <string name="reminder_header_sms_default_button">SET</string>
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
-    <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into its encrypted database.</string>
+    <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into Silence\'s encrypted database.</string>
     <string name="reminder_header_sms_import_button">IMPORT</string>
     <string name="reminder_header_rate_title">Rate this app</string>
     <string name="reminder_header_rate_text">If you enjoy using this app, please take a moment to help us by rating it.</string>

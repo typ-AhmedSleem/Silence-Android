@@ -166,7 +166,7 @@ public class AttachmentManager {
         if (slide == null) {
           attachmentView.setVisibility(View.GONE);
           Toast.makeText(context,
-                         R.string.ConversationActivity_sorry_there_was_an_error_setting_your_attachment,
+                         R.string.ConversationActivity_sorry_there_was_an_error_adding_your_attachment,
                          Toast.LENGTH_SHORT).show();
         } else if (!areConstraintsSatisfied(context, masterSecret, slide, constraints)) {
           attachmentView.setVisibility(View.GONE);

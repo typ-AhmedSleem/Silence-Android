@@ -106,8 +106,8 @@ public class ImportFragment extends Fragment {
   private void handleImportEncryptedBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_alert_icon);
-    builder.setTitle(getActivity().getString(R.string.ImportFragment_import_encrypted_backup));
-    builder.setMessage(getActivity().getString(R.string.ImportFragment_importing_an_encrypted_backup_will_completely_replace_your_existing_keys));
+    builder.setTitle(getActivity().getString(R.string.ImportFragment_restore_encrypted_backup));
+    builder.setMessage(getActivity().getString(R.string.ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys));
     builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), new AlertDialog.OnClickListener() {
       @Override
       public void onClick(DialogInterface dialog, int which) {
@@ -192,7 +192,7 @@ public class ImportFragment extends Fragment {
     protected void onPreExecute() {
       progressDialog = ProgressDialog.show(getActivity(),
                                            getActivity().getString(R.string.ImportFragment_importing),
-                                           getActivity().getString(R.string.ImportFragment_importing_encrypted_backup),
+                                           getActivity().getString(R.string.ImportFragment_restoring_encrypted_backup),
                                            true, false);
     }
 
