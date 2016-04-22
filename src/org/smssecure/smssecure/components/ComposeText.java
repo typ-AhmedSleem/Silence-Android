@@ -17,7 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.TransportOption;
 import org.smssecure.smssecure.components.emoji.EmojiEditText;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 public class ComposeText extends EmojiEditText {
 
@@ -92,7 +92,7 @@ public class ComposeText extends EmojiEditText {
   }
 
   public void setTransport(TransportOption transport) {
-    final String enterKeyType = SMSSecurePreferences.getEnterKeyType(getContext());
+    final String enterKeyType = SilencePreferences.getEnterKeyType(getContext());
 
     int imeOptions = (getImeOptions() & ~EditorInfo.IME_MASK_ACTION) | EditorInfo.IME_ACTION_SEND;
     int inputType  = getInputType();

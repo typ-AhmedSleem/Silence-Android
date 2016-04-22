@@ -22,7 +22,7 @@ import android.util.Log;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.smssecure.smssecure.crypto.storage.SMSSecurePreKeyStore;
+import org.smssecure.smssecure.crypto.storage.SilencePreKeyStore;
 import org.smssecure.smssecure.util.JsonUtils;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.IdentityKeyPair;
@@ -49,7 +49,7 @@ public class PreKeyUtil {
   public static final int BATCH_SIZE = 100;
 
   public static List<PreKeyRecord> generatePreKeys(Context context, MasterSecret masterSecret) {
-    PreKeyStore        preKeyStore    = new SMSSecurePreKeyStore(context, masterSecret);
+    PreKeyStore        preKeyStore    = new SilencePreKeyStore(context, masterSecret);
     List<PreKeyRecord> records        = new LinkedList<>();
     int                preKeyIdOffset = getNextPreKeyId(context);
 
@@ -70,7 +70,7 @@ public class PreKeyUtil {
                                                         IdentityKeyPair identityKeyPair)
   {
     try {
-      SignedPreKeyStore  signedPreKeyStore = new SMSSecurePreKeyStore(context, masterSecret);
+      SignedPreKeyStore  signedPreKeyStore = new SilencePreKeyStore(context, masterSecret);
       int                signedPreKeyId    = getNextSignedPreKeyId(context);
       ECKeyPair          keyPair           = Curve.generateKeyPair();
       byte[]             signature         = Curve.calculateSignature(identityKeyPair.getPrivateKey(), keyPair.getPublicKey().serialize());
@@ -86,7 +86,7 @@ public class PreKeyUtil {
   }
 
   public static PreKeyRecord generateLastResortKey(Context context, MasterSecret masterSecret) {
-    PreKeyStore preKeyStore = new SMSSecurePreKeyStore(context, masterSecret);
+    PreKeyStore preKeyStore = new SilencePreKeyStore(context, masterSecret);
 
     if (preKeyStore.containsPreKey(Medium.MAX_VALUE)) {
       try {
@@ -164,11 +164,11 @@ public class PreKeyUtil {
   }
 
   private static File getPreKeysDirectory(Context context) {
-    return getKeysDirectory(context, SMSSecurePreKeyStore.PREKEY_DIRECTORY);
+    return getKeysDirectory(context, SilencePreKeyStore.PREKEY_DIRECTORY);
   }
 
   private static File getSignedPreKeysDirectory(Context context) {
-    return getKeysDirectory(context, SMSSecurePreKeyStore.SIGNED_PREKEY_DIRECTORY);
+    return getKeysDirectory(context, SilencePreKeyStore.SIGNED_PREKEY_DIRECTORY);
   }
 
   private static File getKeysDirectory(Context context, String name) {

@@ -15,7 +15,7 @@ import android.view.ViewConfiguration;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.lang.reflect.Field;
 
@@ -53,7 +53,7 @@ public abstract class BaseActionBarActivity extends AppCompatActivity {
 
   private void initializeScreenshotSecurity() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH &&
-            SMSSecurePreferences.isScreenSecurityEnabled(this))
+            SilencePreferences.isScreenSecurityEnabled(this))
     {
       getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
     } else {

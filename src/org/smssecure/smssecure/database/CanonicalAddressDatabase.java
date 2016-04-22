@@ -34,7 +34,7 @@ import com.google.i18n.phonenumbers.ShortNumberInfo;
 
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.ShortCodeUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.VisibleForTesting;
 import org.whispersystems.textsecure.api.util.InvalidNumberException;
 import org.whispersystems.textsecure.api.util.PhoneNumberFormatter;
@@ -149,8 +149,8 @@ public class CanonicalAddressDatabase {
     try {
       long canonicalAddressId;
 
-      if (isNumberAddress(address) && SMSSecurePreferences.isPushRegistered(context)) {
-        String localNumber = SMSSecurePreferences.getLocalNumber(context);
+      if (isNumberAddress(address) && SilencePreferences.isPushRegistered(context)) {
+        String localNumber = SilencePreferences.getLocalNumber(context);
 
         if (!ShortCodeUtil.isShortCode(localNumber, address)) {
           address = PhoneNumberFormatter.formatNumber(address, localNumber);

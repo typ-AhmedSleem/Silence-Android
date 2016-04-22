@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Database to supply all types of contacts that SMSSecure needs to know about
+ * Database to supply all types of contacts that Silence needs to know about
  *
  * @author Jake McGinty
  */
@@ -100,7 +100,7 @@ public class ContactsDatabase {
                                        new Pair<String, Object>(CONTACT_TYPE_COLUMN, NORMAL_TYPE));
   }
 
-  public @NonNull Cursor querySMSSecureContacts(String filter) {
+  public @NonNull Cursor querySilenceContacts(String filter) {
     String[] projection = new String[] {ContactsContract.Data._ID,
                                         ContactsContract.Contacts.DISPLAY_NAME,
                                         ContactsContract.Data.DATA1};
@@ -131,7 +131,7 @@ public class ContactsDatabase {
     }
 
     return new ProjectionMappingCursor(cursor, projectionMap,
-                                       new Pair<String, Object>(LABEL_COLUMN, "SMSSecure"),
+                                       new Pair<String, Object>(LABEL_COLUMN, "Silence"),
                                        new Pair<String, Object>(NUMBER_TYPE_COLUMN, 0),
                                        new Pair<String, Object>(CONTACT_TYPE_COLUMN, PUSH_TYPE));
 

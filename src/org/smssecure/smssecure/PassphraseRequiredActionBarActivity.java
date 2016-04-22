@@ -16,7 +16,7 @@ import android.view.WindowManager;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.Locale;
 
@@ -139,7 +139,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   private int getApplicationState(MasterSecret masterSecret) {
     if (!MasterSecretUtil.isPassphraseInitialized(this)) {
       return STATE_CREATE_PASSPHRASE;
-    } else if (SMSSecurePreferences.isFirstRun(this)) {
+    } else if (SilencePreferences.isFirstRun(this)) {
       return STATE_INTRO_SCREEN;
     } else if (masterSecret == null) {
       return STATE_PROMPT_PASSPHRASE;

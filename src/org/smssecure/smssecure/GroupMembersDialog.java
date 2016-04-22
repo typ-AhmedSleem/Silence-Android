@@ -15,7 +15,7 @@ import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.InvalidNumberException;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
@@ -135,7 +135,7 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
 
     private boolean isLocalNumber(Recipient recipient) {
       try {
-        String localNumber = SMSSecurePreferences.getLocalNumber(context);
+        String localNumber = SilencePreferences.getLocalNumber(context);
         String e164Number  = Util.canonicalizeNumber(context, recipient.getNumber());
 
         return e164Number != null && e164Number.equals(localNumber);

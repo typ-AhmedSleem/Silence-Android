@@ -35,7 +35,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * This class is used to asymmetricly encrypt local data.  This is used in the case
- * where SMSSecure receives an SMS, but the user's local encryption passphrase is
+ * where Silence receives an SMS, but the user's local encryption passphrase is
  * not cached (either because of a timeout, or because it hasn't yet been entered).
  *
  * In this case, we have access to the public key of a local keypair.  We encrypt

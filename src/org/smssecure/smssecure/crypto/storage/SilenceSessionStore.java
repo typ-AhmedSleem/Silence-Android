@@ -25,9 +25,9 @@ import java.util.List;
 
 import static org.whispersystems.libaxolotl.state.StorageProtos.SessionStructure;
 
-public class SMSSecureSessionStore implements SessionStore {
+public class SilenceSessionStore implements SessionStore {
 
-  private static final String TAG                   = SMSSecureSessionStore.class.getSimpleName();
+  private static final String TAG                   = SilenceSessionStore.class.getSimpleName();
   private static final String SESSIONS_DIRECTORY_V2 = "sessions-v2";
   private static final Object FILE_LOCK             = new Object();
 
@@ -38,7 +38,7 @@ public class SMSSecureSessionStore implements SessionStore {
   private final Context      context;
   private final MasterSecret masterSecret;
 
-  public SMSSecureSessionStore(Context context, MasterSecret masterSecret) {
+  public SilenceSessionStore(Context context, MasterSecret masterSecret) {
     this.context      = context.getApplicationContext();
     this.masterSecret = masterSecret;
   }

@@ -31,7 +31,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.crypto.storage.SMSSecureIdentityKeyStore;
+import org.smssecure.smssecure.crypto.storage.SilenceIdentityKeyStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.IdentityDatabase;
@@ -121,7 +121,7 @@ public class ReceiveKeyDialog extends AlertDialog {
   }
 
   private boolean isTrusted(MasterSecret masterSecret, IdentityKey identityKey, Recipient recipient) {
-    IdentityKeyStore identityKeyStore = new SMSSecureIdentityKeyStore(getContext(), masterSecret);
+    IdentityKeyStore identityKeyStore = new SilenceIdentityKeyStore(getContext(), masterSecret);
 
     return identityKeyStore.isTrustedIdentity(recipient.getNumber(), identityKey);
   }

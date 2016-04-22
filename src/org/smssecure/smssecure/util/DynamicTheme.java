@@ -25,11 +25,11 @@ public class DynamicTheme {
   }
 
   protected int getSelectedTheme(Activity activity) {
-    String theme = SMSSecurePreferences.getTheme(activity);
+    String theme = SilencePreferences.getTheme(activity);
 
-    if (theme.equals("dark")) return R.style.SMSSecure_DarkTheme;
+    if (theme.equals("dark")) return R.style.Silence_DarkTheme;
 
-    return R.style.SMSSecure_LightTheme;
+    return R.style.Silence_LightTheme;
   }
 
   private static final class OverridePendingTransition {

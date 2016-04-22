@@ -6,7 +6,7 @@ import android.preference.ListPreference;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.Arrays;
 
@@ -17,10 +17,10 @@ public class AppearancePreferenceFragment extends ListSummaryPreferenceFragment 
     super.onCreate(paramBundle);
     addPreferencesFromResource(R.xml.preferences_appearance);
 
-    this.findPreference(SMSSecurePreferences.THEME_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
-    this.findPreference(SMSSecurePreferences.LANGUAGE_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
-    initializeListSummary((ListPreference)findPreference(SMSSecurePreferences.THEME_PREF));
-    initializeListSummary((ListPreference)findPreference(SMSSecurePreferences.LANGUAGE_PREF));
+    this.findPreference(SilencePreferences.THEME_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
+    this.findPreference(SilencePreferences.LANGUAGE_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
+    initializeListSummary((ListPreference)findPreference(SilencePreferences.THEME_PREF));
+    initializeListSummary((ListPreference)findPreference(SilencePreferences.LANGUAGE_PREF));
   }
 
   @Override
@@ -47,8 +47,8 @@ public class AppearancePreferenceFragment extends ListSummaryPreferenceFragment 
     String[] themeEntries        = context.getResources().getStringArray(R.array.pref_theme_entries);
     String[] themeEntryValues    = context.getResources().getStringArray(R.array.pref_theme_values);
 
-    int langIndex  = Arrays.asList(languageEntryValues).indexOf(SMSSecurePreferences.getLanguage(context));
-    int themeIndex = Arrays.asList(themeEntryValues).indexOf(SMSSecurePreferences.getTheme(context));
+    int langIndex  = Arrays.asList(languageEntryValues).indexOf(SilencePreferences.getLanguage(context));
+    int themeIndex = Arrays.asList(themeEntryValues).indexOf(SilencePreferences.getTheme(context));
 
     if (langIndex == -1)  langIndex = 0;
     if (themeIndex == -1) themeIndex = 0;

@@ -30,7 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 /**
  * List preference for LED blink pattern notification.
@@ -64,13 +64,13 @@ public class LedBlinkPatternListPreference extends ListPreference implements OnS
     super.onDialogClosed(positiveResult);
 
     if (positiveResult) {
-      String blinkPattern = SMSSecurePreferences.getNotificationLedPattern(context);
+      String blinkPattern = SilencePreferences.getNotificationLedPattern(context);
       if (blinkPattern.equals("custom")) showDialog();
     }
   }
 
   private void initializeSeekBarValues() {
-    String patternString  = SMSSecurePreferences.getNotificationLedPatternCustom(context);
+    String patternString  = SilencePreferences.getNotificationLedPatternCustom(context);
     String[] patternArray = patternString.split(",");
     seekBarOn.setProgress(Integer.parseInt(patternArray[0]));
     seekBarOff.setProgress(Integer.parseInt(patternArray[1]));
@@ -149,7 +149,7 @@ public class LedBlinkPatternListPreference extends ListPreference implements OnS
       String pattern   = seekBarOnLabel.getText() + "," + seekBarOffLabel.getText();
       dialogInProgress = false;
 
-      SMSSecurePreferences.setNotificationLedPatternCustom(context, pattern);
+      SilencePreferences.setNotificationLedPatternCustom(context, pattern);
       Toast.makeText(context, R.string.preferences__pref_led_blink_custom_pattern_set, Toast.LENGTH_LONG).show();
     }
 

@@ -59,7 +59,7 @@ import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.JsonUtils;
 import org.smssecure.smssecure.util.ServiceUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.libaxolotl.InvalidMessageException;
@@ -222,8 +222,8 @@ public class MmsDatabase extends MessagingDatabase {
 
     group.add(retrieved.getAddresses().getFrom());
 
-    if (SMSSecurePreferences.isPushRegistered(context)) {
-      localNumber = SMSSecurePreferences.getLocalNumber(context);
+    if (SilencePreferences.isPushRegistered(context)) {
+      localNumber = SilencePreferences.getLocalNumber(context);
     } else {
       localNumber = ServiceUtil.getTelephonyManager(context).getLine1Number();
     }

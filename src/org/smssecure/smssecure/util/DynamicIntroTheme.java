@@ -7,10 +7,10 @@ import org.smssecure.smssecure.R;
 public class DynamicIntroTheme extends DynamicTheme {
   @Override
   protected int getSelectedTheme(Activity activity) {
-    String theme = SMSSecurePreferences.getTheme(activity);
+    String theme = SilencePreferences.getTheme(activity);
 
-    if (theme.equals("dark")) return R.style.SMSSecure_DarkIntroTheme;
+    if (theme.equals("dark")) return R.style.Silence_DarkIntroTheme;
 
-    return R.style.SMSSecure_LightIntroTheme;
+    return R.style.Silence_LightIntroTheme;
   }
 }

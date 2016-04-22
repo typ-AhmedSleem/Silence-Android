@@ -445,7 +445,7 @@ public class ConversationItem extends LinearLayout
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.ConversationActivity_initiate_secure_session_question);
-        builder.setMessage(R.string.ConversationActivity_detected_smssecure_initiate_session_question);
+        builder.setMessage(R.string.ConversationActivity_detected_silence_initiate_session_question);
         builder.setIconAttribute(R.attr.dialog_info_icon);
         builder.setCancelable(true);
         builder.setNegativeButton(R.string.no, null);

@@ -23,7 +23,7 @@ import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.service.KeyCachingService;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.concurrent.TimeUnit;
 
@@ -42,9 +42,9 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
     masterSecret      = getArguments().getParcelable("master_secret");
     disablePassphrase = (CheckBoxPreference) this.findPreference("pref_enable_passphrase_temporary");
 
-    this.findPreference(SMSSecurePreferences.CHANGE_PASSPHRASE_PREF)
+    this.findPreference(SilencePreferences.CHANGE_PASSPHRASE_PREF)
         .setOnPreferenceClickListener(new ChangePassphraseClickListener());
-    this.findPreference(SMSSecurePreferences.PASSPHRASE_TIMEOUT_INTERVAL_PREF)
+    this.findPreference(SilencePreferences.PASSPHRASE_TIMEOUT_INTERVAL_PREF)
         .setOnPreferenceClickListener(new PassphraseIntervalClickListener());
     this.findPreference(PREFERENCE_CATEGORY_BLOCKED)
         .setOnPreferenceClickListener(new BlockedContactsClickListener());
@@ -60,12 +60,12 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
     initializePlatformSpecificOptions();
     initializeTimeoutSummary();
 
-    disablePassphrase.setChecked(!SMSSecurePreferences.isPasswordDisabled(getActivity()));
+    disablePassphrase.setChecked(!SilencePreferences.isPasswordDisabled(getActivity()));
   }
 
   private void initializePlatformSpecificOptions() {
     PreferenceScreen preferenceScreen         = getPreferenceScreen();
-    Preference       screenSecurityPreference = findPreference(SMSSecurePreferences.SCREEN_SECURITY_PREF);
+    Preference       screenSecurityPreference = findPreference(SilencePreferences.SCREEN_SECURITY_PREF);
 
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH &&
         screenSecurityPreference != null) {
@@ -74,8 +74,8 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
   }
 
   private void initializeTimeoutSummary() {
-    int timeoutMinutes = SMSSecurePreferences.getPassphraseTimeoutInterval(getActivity());
-    this.findPreference(SMSSecurePreferences.PASSPHRASE_TIMEOUT_INTERVAL_PREF)
+    int timeoutMinutes = SilencePreferences.getPassphraseTimeoutInterval(getActivity());
+    this.findPreference(SilencePreferences.PASSPHRASE_TIMEOUT_INTERVAL_PREF)
         .setSummary(getResources().getQuantityString(R.plurals.AppProtectionPreferenceFragment_minutes, timeoutMinutes, timeoutMinutes));
   }
 
@@ -126,7 +126,7 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
                                     minutes                         +
                                     (int)TimeUnit.SECONDS.toMinutes(seconds), 1);
 
-      SMSSecurePreferences.setPassphraseTimeoutInterval(getActivity(), timeoutMinutes);
+      SilencePreferences.setPassphraseTimeoutInterval(getActivity(), timeoutMinutes);
       initializeTimeoutSummary();
     }
   }
@@ -147,7 +147,7 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
                                                           masterSecret,
                                                           MasterSecretUtil.UNENCRYPTED_PASSPHRASE);
 
-            SMSSecurePreferences.setPasswordDisabled(getActivity(), true);
+            SilencePreferences.setPasswordDisabled(getActivity(), true);
             ((CheckBoxPreference)preference).setChecked(false);
 
             Intent intent = new Intent(getActivity(), KeyCachingService.class);
@@ -171,14 +171,14 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
     final String onRes               = context.getString(R.string.ApplicationPreferencesActivity_on);
     final String offRes              = context.getString(R.string.ApplicationPreferencesActivity_off);
 
-    if (SMSSecurePreferences.isPasswordDisabled(context)) {
-      if (SMSSecurePreferences.isScreenSecurityEnabled(context)) {
+    if (SilencePreferences.isPasswordDisabled(context)) {
+      if (SilencePreferences.isScreenSecurityEnabled(context)) {
         return context.getString(privacySummaryResId, offRes, onRes);
       } else {
         return context.getString(privacySummaryResId, offRes, offRes);
       }
     } else {
-      if (SMSSecurePreferences.isScreenSecurityEnabled(context)) {
+      if (SilencePreferences.isScreenSecurityEnabled(context)) {
         return context.getString(privacySummaryResId, onRes, onRes);
       } else {
         return context.getString(privacySummaryResId, onRes, offRes);

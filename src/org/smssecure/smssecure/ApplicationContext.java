@@ -25,7 +25,7 @@ import org.smssecure.smssecure.jobs.persistence.EncryptingJobSerializer;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirementProvider;
 import org.smssecure.smssecure.jobs.requirements.MediaNetworkRequirementProvider;
 import org.smssecure.smssecure.jobs.requirements.ServiceRequirementProvider;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.jobqueue.dependencies.DependencyInjector;
 import org.whispersystems.jobqueue.requirements.NetworkRequirementProvider;
@@ -37,7 +37,7 @@ import java.security.Security;
 import dagger.ObjectGraph;
 
 /**
- * Will be called once when the SMSSecure process is created.
+ * Will be called once when the Silence process is created.
  *
  * We're using this as an insertion point to patch up the Android PRNG disaster
  * and to initialize the job manager.
@@ -83,7 +83,7 @@ public class ApplicationContext extends Application implements DependencyInjecto
 
   private void initializeJobManager() {
     this.jobManager = JobManager.newBuilder(this)
-                                .withName("SMSSecureJobs")
+                                .withName("SilenceJobs")
                                 .withDependencyInjector(this)
                                 .withJobSerializer(new EncryptingJobSerializer())
                                 .withRequirementProviders(new MasterSecretRequirementProvider(this),

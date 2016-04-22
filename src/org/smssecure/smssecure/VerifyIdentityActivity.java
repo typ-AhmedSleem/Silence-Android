@@ -26,7 +26,7 @@ import android.widget.Toast;
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
-import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.util.Hex;
@@ -157,7 +157,7 @@ public class VerifyIdentityActivity extends KeyScanningActivity {
       return identityKeyParcelable.get();
     }
 
-    SessionStore   sessionStore   = new SMSSecureSessionStore(this, masterSecret);
+    SessionStore   sessionStore   = new SilenceSessionStore(this, masterSecret);
     AxolotlAddress axolotlAddress = new AxolotlAddress(recipient.getNumber(), 1);
     SessionRecord  record         = sessionStore.loadSession(axolotlAddress);
 

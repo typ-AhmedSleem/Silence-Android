@@ -64,7 +64,7 @@ public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity im
   @Override
   protected void onCreate(Bundle bundle, @NonNull MasterSecret masterSecret) {
     this.masterSecret = masterSecret;
-    this.setTheme(R.style.SMSSecure_DarkTheme);
+    this.setTheme(R.style.Silence_DarkTheme);
     dynamicLanguage.onCreate(this);
 
     setFullscreenIfPossible();

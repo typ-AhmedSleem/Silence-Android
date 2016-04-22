@@ -73,7 +73,7 @@ public class MediaOverviewActivity extends PassphraseRequiredActionBarActivity i
 
   @Override
   protected void onPreCreate() {
-    this.setTheme(R.style.SMSSecure_DarkTheme);
+    this.setTheme(R.style.Silence_DarkTheme);
     dynamicLanguage.onCreate(this);
   }
 

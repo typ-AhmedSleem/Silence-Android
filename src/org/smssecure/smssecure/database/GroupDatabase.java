@@ -16,7 +16,7 @@ import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.BitmapUtil;
 import org.smssecure.smssecure.util.GroupUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
@@ -87,7 +87,7 @@ public class GroupDatabase extends Database {
   }
 
   public Recipients getGroupMembers(byte[] groupId, boolean includeSelf) {
-    String          localNumber = SMSSecurePreferences.getLocalNumber(context);
+    String          localNumber = SilencePreferences.getLocalNumber(context);
     List<String>    members     = getCurrentMembers(groupId);
     List<Recipient> recipients  = new LinkedList<>();
 

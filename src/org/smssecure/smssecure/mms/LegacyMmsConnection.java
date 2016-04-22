@@ -40,7 +40,7 @@ import org.smssecure.smssecure.database.ApnDatabase;
 import org.smssecure.smssecure.util.Conversions;
 import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.TelephonyUtil;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -178,7 +178,7 @@ public abstract class LegacyMmsConnection {
     return HttpClients.custom()
                       .setConnectionReuseStrategy(new NoConnectionReuseStrategyHC4())
                       .setRedirectStrategy(new LaxRedirectStrategy())
-                      .setUserAgent(SMSSecurePreferences.getMmsUserAgent(context, USER_AGENT))
+                      .setUserAgent(SilencePreferences.getMmsUserAgent(context, USER_AGENT))
                       .setConnectionManager(new BasicHttpClientConnectionManager())
                       .setDefaultRequestConfig(config)
                       .setDefaultCredentialsProvider(credsProvider)

@@ -43,7 +43,7 @@
               android:paddingLeft="20dp"
               android:paddingRight="20dp"
               android:fontFamily="sans-serif-light"
-              tools:text="@string/IntroScreenActivity_smssecure_description"
+              tools:text="@string/IntroScreenActivity_silence_description"
               android:textColor="@android:color/white" />
 
 </LinearLayout>

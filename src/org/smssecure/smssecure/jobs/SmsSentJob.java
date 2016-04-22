@@ -8,7 +8,7 @@ import android.util.Log;
 import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.SecurityEvent;
-import org.smssecure.smssecure.crypto.storage.SMSSecureSessionStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -16,7 +16,7 @@ import org.smssecure.smssecure.database.model.SmsMessageRecord;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.service.SmsDeliveryListener;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.libaxolotl.state.SessionStore;
 
@@ -74,7 +74,7 @@ public class SmsSentJob extends MasterSecretJob {
       SmsMessageRecord      record        = database.getMessage(masterSecret, messageId);
       String                recipientName = (record.getIndividualRecipient().getName() == null ? record.getIndividualRecipient().getNumber() : record.getIndividualRecipient().getName());
 
-      if (!record.isDelivered() && SMSSecurePreferences.isSmsDeliveryReportsToastEnabled(context)){
+      if (!record.isDelivered() && SilencePreferences.isSmsDeliveryReportsToastEnabled(context)){
         MessageNotifier.sendDeliveryToast(context, recipientName);
       }
       DatabaseFactory.getEncryptingSmsDatabase(context).markAsReceived(messageId);
@@ -94,7 +94,7 @@ public class SmsSentJob extends MasterSecretJob {
 
           if (record != null && record.isEndSession()) {
             Log.w(TAG, "Ending session...");
-            SessionStore sessionStore = new SMSSecureSessionStore(context, masterSecret);
+            SessionStore sessionStore = new SilenceSessionStore(context, masterSecret);
             sessionStore.deleteAllSessions(record.getIndividualRecipient().getNumber());
             SecurityEvent.broadcastSecurityUpdateEvent(context, record.getThreadId());
           }

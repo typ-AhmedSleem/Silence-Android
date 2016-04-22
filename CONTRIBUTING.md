@@ -7,12 +7,12 @@ Please submit your corrections there.
 ## Submitting bug reports
 
 1. Search our issues first to make sure this is not a duplicate.
-2. (Optional) Search [TextSecure's issues](https://github.com/WhisperSystems/TextSecure/issues).
+2. (Optional) Search [Signal's issues](https://github.com/WhisperSystems/Signal-Android/issues).
 3. Open an issue with:
   * Device and app information
     * What's your device?
     * What Android version is it running?
-    * What version and build ID of SMSSecure do you have?
+    * What version and build ID of Silence do you have?
   * Upstream bug (if any)
   * App state
     * What are the relevant preferences that you have set that may be related to the issue?

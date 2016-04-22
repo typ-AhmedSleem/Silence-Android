@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:minHeight="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:theme="@style/SMSSecure.LightActionBar">
+            android:theme="@style/Silence.LightActionBar">
 
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="match_parent"
@@ -38,7 +38,7 @@
                           android:layout_height="wrap_content"
                           android:ellipsize="end"
                           android:transitionName="recipient_name"
-                          style="@style/SMSSecure.TitleTextStyle"
+                          style="@style/Silence.TitleTextStyle"
                           tools:ignore="UnusedAttribute" />
 
                 <TextView android:id="@+id/blocked_indicator"

@@ -30,7 +30,7 @@ import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.GroupUtil;
 
 import java.util.List;
@@ -112,7 +112,7 @@ public abstract class MessageRecord extends DisplayRecord {
   }
 
   public long getTimestamp() {
-    if (SMSSecurePreferences.showSentTime(context)) return getDateSent();
+    if (SilencePreferences.showSentTime(context)) return getDateSent();
     else                                            return getDateReceived();
   }
 

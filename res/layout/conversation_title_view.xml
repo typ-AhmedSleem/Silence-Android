@@ -18,7 +18,7 @@
               android:drawablePadding="5dp"
               android:gravity="center_vertical"
               android:layout_gravity="center_vertical"
-              style="@style/SMSSecure.TitleTextStyle"
+              style="@style/Silence.TitleTextStyle"
               tools:ignore="UnusedAttribute"/>
 
     <TextView android:id="@+id/subtitle"
@@ -29,6 +29,6 @@
               android:layout_gravity="center_vertical|start"
               android:gravity="center_vertical"
               android:textDirection="ltr"
-              style="@style/SMSSecure.SubtitleTextStyle"/>
+              style="@style/Silence.SubtitleTextStyle"/>
 
 </org.smssecure.smssecure.ConversationTitleView>

@@ -19,7 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.util.SMSSecurePreferences;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -120,19 +120,19 @@ public class CustomDefaultPreference extends DialogPreference {
   }
 
   private boolean isCustom() {
-    return SMSSecurePreferences.getBooleanPreference(getContext(), customToggle, false);
+    return SilencePreferences.getBooleanPreference(getContext(), customToggle, false);
   }
 
   private void setCustom(boolean custom) {
-    SMSSecurePreferences.setBooleanPreference(getContext(), customToggle, custom);
+    SilencePreferences.setBooleanPreference(getContext(), customToggle, custom);
   }
 
   private String getCustomValue() {
-    return SMSSecurePreferences.getStringPreference(getContext(), customPreference, "");
+    return SilencePreferences.getStringPreference(getContext(), customPreference, "");
   }
 
   private void setCustomValue(String value) {
-    SMSSecurePreferences.setStringPreference(getContext(), customPreference, value);
+    SilencePreferences.setStringPreference(getContext(), customPreference, value);
   }
 
   private String getDefaultValue() {

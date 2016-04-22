@@ -49,7 +49,7 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     this.masterSecret = masterSecret;
 
     setSmallIcon(R.drawable.icon_notification);
-    setColor(context.getResources().getColor(R.color.smssecure_primary));
+    setColor(context.getResources().getColor(R.color.silence_primary));
     setPriority(NotificationCompat.PRIORITY_HIGH);
     setCategory(NotificationCompat.CATEGORY_MESSAGE);
     setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(MessageNotifier.DeleteReceiver.DELETE_REMINDER_ACTION), 0));
@@ -67,7 +67,7 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
                             .asDrawable(context, recipients.getColor()
                                                           .toConversationColor(context)));
     } else {
-      setContentTitle(context.getString(R.string.SingleRecipientNotificationBuilder_smssecure));
+      setContentTitle(context.getString(R.string.SingleRecipientNotificationBuilder_silence));
       setLargeIcon(Recipient.getUnknownRecipient()
                             .getContactPhoto()
                             .asDrawable(context, Recipient.getUnknownRecipient()

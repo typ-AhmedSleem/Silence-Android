@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/smssecure_primary_alpha33" android:state_selected="true" />
+    <item android:drawable="@color/silence_primary_alpha33" android:state_selected="true" />
 </selector>

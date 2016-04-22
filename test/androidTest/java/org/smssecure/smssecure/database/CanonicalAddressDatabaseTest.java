@@ -1,10 +1,10 @@
 package org.smssecure.smssecure.database;
 
-import org.smssecure.smssecure.SMSSecureTestCase;
+import org.smssecure.smssecure.SilenceTestCase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CanonicalAddressDatabaseTest extends SMSSecureTestCase {
+public class CanonicalAddressDatabaseTest extends SilenceTestCase {
   private static final String AMBIGUOUS_NUMBER = "222-3333";
   private static final String SPECIFIC_NUMBER  = "+49 444 222 3333";
   private static final String EMAIL            = "a@b.fom";
