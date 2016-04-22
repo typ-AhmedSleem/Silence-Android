@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
   <string name="delete">Slet</string>
@@ -17,9 +16,7 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
 </string>
   <string name="ApplicationPreferencesActivity_disable">Deaktivere</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">SMS aktiveret</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Brug som standard SMS program</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS deaktiveret</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Brug SMSSecure som dit standard SMS program</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
@@ -42,7 +39,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationItem_group_action_left">%1$s har forladt gruppen.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Godkend ukrypteret SMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Godkend ukrypteret MMS?</string>
-  <string name="ConversationItem_unable_to_open_media">Kan ikke åbne data</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Opret en sikker forbindelse?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Opret en sikker forbindelse med %s?</string>
@@ -64,8 +60,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationActivity_transport_secure_mms">Krypteret MMS</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Besked detaljer</string>
-  <string name="ConversationFragment_success_exclamation">Fuldført!</string>
-  <string name="ConversationFragment_saving_attachment">Gem vedhæftning</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Sletter...</string>
@@ -86,7 +80,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ExportFragment_export">Eksportér</string>
   <string name="ExportFragment_cancel">Afbryd</string>
   <string name="ExportFragment_exporting">Eksporterer</string>
-  <string name="ExportFragment_success">Fuldført!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Ny gruppe</string>
   <string name="GroupCreateActivity_actionbar_update_title">Opdater gruppe</string>
@@ -101,13 +94,8 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ImportExportActivity_export">Eksportér</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Importer enhedens SMS database?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Dette vil importere beskeder fra enhedens standard SMS database til SMSSecure.</string>
   <string name="ImportFragment_import">Importer</string>
   <string name="ImportFragment_cancel">Afbryd</string>
-  <string name="ImportFragment_restore_encrypted_backup">Genopret en krypteret backup?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Genoprettelse af en krypteret backup vil overskrive eksisterende nøgler, indstillinger og beskeder. Du vil miste de informationer i SMSSecure som ikke findes i din backup.</string>
-  <string name="ImportFragment_restore">Genopret</string>
   <string name="ImportFragment_import_plaintext_backup">Importer klartekst backup?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dette vil importere beskeder fra en klartekst backup. Hvis du tidligere har importeret den samme backup, vil det resultere i dupletter.</string>
   <string name="ImportFragment_importing">Importerer</string>
@@ -115,14 +103,10 @@ Genoprettelse af en krypteret backup vil overskrive eksisterende nøgler, indsti
   <string name="ImportFragment_no_plaintext_backup_found">Der blev ikke fundet en klartekst backup!</string>
   <string name="ImportFragment_error_importing_backup">Fejl opstod ved import af backup!</string>
   <string name="ImportFragment_import_complete">Import fuldført!</string>
-  <string name="ImportFragment_restoring">Genopretter</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Genopretter krypteret backup...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Der blev ikke fundet en krypteret backup!</string>
-  <string name="ImportFragment_restore_complete">Genoprettelse fuldført!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Ingen skannet nøgle fundet!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installer Barcode Skanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure skal bruge en Barcode Skanner til QR koder.</string>
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Fejl ved lagring af MMS!</string>
@@ -131,7 +115,6 @@ Genoprettelse af en krypteret backup vil overskrive eksisterende nøgler, indsti
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">MMS-besked</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Modtog en besked, krypteret med en ældre version af SMSSecure, der ikke længere understøttes. Bed venligst afsenderen om at opgradere til den nyeste version, og at sende beskeden igen.</string>
   <string name="MessageRecord_left_group">Du har forladt gruppen.</string>
   <string name="MessageRecord_updated_group">Har opdateret gruppen.</string>
   <!--PassphraseChangeActivity-->
@@ -139,12 +122,8 @@ Genoprettelse af en krypteret backup vil overskrive eksisterende nøgler, indsti
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Fejl! Gammelt kodeord</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Indtast kodeord</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikon</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Ugyldigt kodeord!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Signaturen på denne udvekslingsnøgle er ikke ens med den som du tidligere modtog fra denne
-kontakt. Det kan enten betyde, at der er nogle som prøver på at kompromitterer din kommunikation eller
-at din kontakt har installeret SMSSecure på ny og dermed fået en ny udvekslingsnøgle.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Signaturen på denne udvekslingsnøgle er til at stole på, men du har deaktiveret indstillingen
 \'fuldfør udvekslingsnøgler automatisk\'.</string>
   <string name="ReceiveKeyActivity_processing">Arbejder</string>
@@ -167,13 +146,11 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen ID-nøgle.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Modtageren har ingen ID-nøgle.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skan nøgler for at sammenligne</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVARSEL. De skannede fingeraftryk matcher IKKE! Vær omhyggelig ved indskanning af fingeraftryk.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">IKKE bekræftet!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Modpartens nøgle er korrekt. Det er også nødvendigt at bekræfte din nøgle med modparten.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Bekræftet!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Skanner for at sammenligne</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVARSEL. Den skannede nøgle matcher IKKE!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Den skannede nøgle stemmer overens!</string>
   <!--KeyExchangeInitiator-->
@@ -202,9 +179,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="ApplicationMigrationService_import_in_progress">Henter...</string>
   <string name="ApplicationMigrationService_importing_text_messages">Henter tekstbeskeder</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Klik for at åbne.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Klik for at åbne eller klik på låsen for at lukke.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure er låst op</string>
   <string name="KeyCachingService_lock">Lås med et kodeord</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Krypteret besked...</string>
@@ -258,11 +232,9 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="log_submit_activity__thanks">Tak for hjælpen!</string>
   <string name="log_submit_activity__submitting">Sender</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Ønsker du at importere dine eksisterende beskeder til SMSSecures krypterede database?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Den eksisterende systemdatabase vil ikke blive ændret.</string>
   <string name="database_migration_activity__skip">Spring over</string>
   <string name="database_migration_activity__import">Importer</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Det kan tage et øjeblik. Vent venligst.</string>
   <string name="database_migration_activity__importing">IMPORTERER</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Opdaterer databasen...</string>
@@ -275,7 +247,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Lås op</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure har brug for at kende MMS-indstillingerne for at sende medieindhold og gruppebeskeder gennem din teleudbyder. Din enhed gør ikke disse oplysninger tilgængelige, hvilket kan forekomme for f.eks. låste enheder.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -302,8 +273,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="preferences__general">Generelt</string>
   <string name="preferences__pref_all_sms_title">Modtag alle SMS</string>
   <string name="preferences__pref_all_mms_title">Modtag alle MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Brug SMSSecure til at læse og gemme alle indkommende SMS beskeder.</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Brug SMSSecure til at læse og gemme alle indkommende MMS beskeder.</string>
   <string name="preferences__display_settings">Indstillinger for visning</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Vælg din kontakt fra kontaktlisten.</string>
   <string name="preferences__change_passphrase">Ændre kodeord</string>
@@ -353,7 +322,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="preferences__default">Standard</string>
   <string name="preferences__language">Sprog</string>
   <string name="preferences__make_default_sms_app">Brug som standard SMS-app</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Gør SMSSecure til standard SMS/MMS-applikationen for dit system.</string>
   <string name="preferences__submit_debug_log">Indsend fejlfindings log</string>
   <!--****************************************-->
   <!--menus-->
@@ -407,8 +375,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="conversation_group_options__broadcast">Transmitterer</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Sammenlign</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Skan for at sammenligne</string>
-  <string name="key_scanning__menu_scan_to_compare">Skanner for at sammenligne</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Ny besked</string>
   <string name="text_secure_normal__menu_new_group">Ny gruppe</string>
@@ -420,8 +386,8 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="reminder_header_sms_import_title">Importer enhedens SMS?</string>
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

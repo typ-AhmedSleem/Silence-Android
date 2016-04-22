@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">ဟုတ်ကဲ့</string>
   <string name="no">မလုပ်ပါ</string>
   <string name="delete">ဖျက်ရန်</string>
@@ -27,7 +26,6 @@
   <string name="ConversationActivity_message_is_empty_exclamation">စာတိုမရှိ</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">စာတို အသေးစိတ်အချက်အလက်များ</string>
-  <string name="ConversationFragment_success_exclamation">အောင်မြင်!</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">ဖျက်နေသည်</string>
@@ -40,7 +38,6 @@
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">ထုတ်ယူ</string>
-  <string name="ExportFragment_success">အောင်မြင်!</string>
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
@@ -67,13 +64,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">သင့်တွင်အသိအမှတ်ပြုကီးမရှိပါ</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">လက်ခံသူတွင်အသိအမှတ်ပြုကီးမရှိပါ</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">၎င်းတို့၏　ကီးများကို　နှိုင်းယှဉ်ရန်　စစ်ဆေးပါ</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">သတိပေးချက်၊　စစ်ဆေးလိုက်သောကီးသည်　တူညီမှုမရှိ၊　ကျေးဇူးပြု၍　လက်ဗွေစာသားကို　ဂရုတစိုက်စစ်ပါ</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">မစိစစ်ရသေး</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">၎င်းတို့ကီးမှန်ကန်၊ ၎င်းတို့ကဲ့သို့　သင့်ကီးအား　အတည်ပြုစိစစ်ရန်　လိုအပ်</string>
   <string name="VerifyIdentityActivity_verified_exclamation">အတည်ပြုပြီး</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">နှိုင်ယှဉ်ရန် ဖတ်ပါ</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">သတိပေးချက်၊ ဖတ်ထားသည့် ကီးများ မကိုက်ညီပါ။</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">ဖတ်ထားသည့်ကီးများ ကိုက်ပါသည်။</string>
   <!--KeyExchangeInitiator-->
@@ -127,11 +122,9 @@
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">အသင်၏ ရှိရင်းစွဲ စာသားများကို Textsecure၏ ဝှက်သိမ်းထားသော ဒေတာဘေ့စ်ထဲသို့ တင်သွင်းမည်လား။</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">စနစ်ပိုင်းဆိုင်ရာ နဂိုဒေတာဘေ့စ်ကို ပြောင်းလဲမည် မဟုတ်ပါ</string>
   <string name="database_migration_activity__skip">ကျော်</string>
   <string name="database_migration_activity__import">သွင်းယူ</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">ခေတ္တကြာပါလိမ့်မယ်။ တင်သွင်းမှု ပြီးဆုံးသွားရင် အကြောင်းကြားပေးပါမယ်။</string>
   <string name="database_migration_activity__importing">သွင်းယူနေ</string>
   <!--database_upgrade_activity-->
   <!--load_more_header-->
@@ -152,8 +145,6 @@
   <!--arrays.xml-->
   <!--plurals.xml-->
   <!--preferences.xml-->
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">textsecure ကိုဝင်လာသောစာတိုများကိုကြည့်ရန်/သိမ်းရန်အတွက်သုံးပါ</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">textsecure ကိုဝင်လာသောမာတီမီဒီယာစာတိုများကိုကြည့်ရန်/သိမ်းရန်အတွက်သုံးပါ</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">အဆက်အသွယ်ကို အဆက်အသွယ်စာရင်းမှ ရွေးယူပါ</string>
   <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">ဆက်ရှင်အသစ်အတွက်(သို့)ကိုယ်စားပြုကီးတူညီသောလက်ရှိဆက်ရှင်အတွက် ကီးပြောင်းလဲမှုကိုအလိုလျှောက်လုပ်ဆောင်ပါ</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">အချိန်တစ်ခုကြာပြီးနောက်မန်မိုရီပေါ်မှဝှက်စာကိုမေ့ပစ်ပါ</string>
@@ -215,15 +206,13 @@
   <string name="convesation_group_options__recipients_list">လက်ခံမည့်သူစာရင်း</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">နှိုင်းယှဉ်</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">နှိုင်းယှဉ်ရန် အဖတ်ခံပါ</string>
-  <string name="key_scanning__menu_scan_to_compare">နှိုင်ယှဉ်ရန် ဖတ်ပါ</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_settings">ဆက်တင်</string>
   <!--reminder_header-->
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

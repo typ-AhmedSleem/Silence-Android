@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Da</string>
   <string name="no">Nu</string>
   <string name="delete">Șterge</string>
@@ -14,9 +13,7 @@
 Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor și cheilor. Sesiunile actuale criptate vor continua să funcționeze, dar oricine care are acces la dispozitiv va putea să le acceseze.</string>
   <string name="ApplicationPreferencesActivity_disable">Dezactivează</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Primire SMS activă</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Atingeţi pentru a schimba aplicaţia SMS implicită</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS-uri primite dezactivate</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Atingeţi pentru a seta SMSSecure ca şi aplicaţie SMS implicită</string>
   <string name="ApplicationPreferencesActivity_on">activat</string>
   <string name="ApplicationPreferencesActivity_On">Activat</string>
   <string name="ApplicationPreferencesActivity_off">dezactivat</string>
@@ -44,7 +41,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Reveniţi la SMS necriptat ca soluţie de rezervă?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Reveniţi la MMS necriptat ca soluţie de rezervă?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Acest mesaj <b>nu</b> va fi criptat deoarece nu s-a putut realiza o sesiune securizată.\n\nTrimit mesaj nesecurizat?</string>
-  <string name="ConversationItem_unable_to_open_media">Nu a fost găsită o aplicație pentru a deschide acest tip media.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Initializez Sesiune Securizata?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Initializez Sesiune Securizata cu %s?</string>
@@ -69,11 +65,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalii mesaj</string>
   <string name="ConversationFragment_save_to_sd_card">Salvez pe spațiul de stocare?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">A apărut o eroare în timpul salvării pe spațiul de stocare!</string>
-  <string name="ConversationFragment_success_exclamation">Succes!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nu se poate scrie pe spațiul de stocare!</string>
-  <string name="ConversationFragment_saving_attachment">Ataşamentul se salvează</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Atașamentul se salvează pe spațiul de stocare...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Se șterge...</string>
@@ -94,7 +86,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ExportFragment_export">Exportă</string>
   <string name="ExportFragment_cancel">Anulează</string>
   <string name="ExportFragment_exporting">Se exportă</string>
-  <string name="ExportFragment_success">Succes!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Grup nou</string>
   <string name="GroupCreateActivity_actionbar_update_title">Actualizează grup</string>
@@ -109,13 +100,8 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ImportExportActivity_export">Exportă</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Import baza de date cu SMS-uri?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Această acțiune va importa mesajele din baza de date cu SMS-uri a dispozitivului în SMSSecure. Dacă ai importat anterior aceste mesaje, importarea lor din nou va rezulta în mesaje duplicate.</string>
   <string name="ImportFragment_import">Importă</string>
   <string name="ImportFragment_cancel">Anulează</string>
-  <string name="ImportFragment_restore_encrypted_backup">Restaurează backup criptat?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Restaurarea unui backup criptat va înlocui complet cheile existente, setările și mesajele. Vei pierde toate informațiile curente din SMSSecure, dar nu și cele din backup.</string>
-  <string name="ImportFragment_restore">Restaurează</string>
   <string name="ImportFragment_import_plaintext_backup">Importă backup necriptat?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Această acțiune va importa mesajele din backup-ul necriptat. Dacă ați mai importat acest backup atunci importarea curentă va crea mesaje duplicate. </string>
   <string name="ImportFragment_importing">Se importă</string>
@@ -123,14 +109,10 @@ Restaurarea unui backup criptat va înlocui complet cheile existente, setările 
   <string name="ImportFragment_no_plaintext_backup_found">Nu a fost găsit nici un backup text!</string>
   <string name="ImportFragment_error_importing_backup">Eroare la importul backup-ului!</string>
   <string name="ImportFragment_import_complete">Import complet!</string>
-  <string name="ImportFragment_restoring">Se restaurează</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Se restaurează backup-ul criptat...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nu a fost găsit nici un backup criptat!</string>
-  <string name="ImportFragment_restore_complete">Restaurare completa!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nu a fost găsită nici o cheie scanată!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Instalez scannerul de coduri de bare?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure are nevoie de Barcode Scanner pentru codurile QR.</string>
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Eroare la stocarea MMS-ului!</string>
@@ -139,7 +121,6 @@ Restaurarea unui backup criptat va înlocui complet cheile existente, setările 
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Mesaj multimedia</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Mesaj criptat cu o versiune veche de protocol care nu mai este suportată. Rugaţi expeditorul să actualizeze SMSSecure la cea mai recentă versiune.</string>
   <string name="MessageRecord_left_group">Ai parăsit grupul.</string>
   <string name="MessageRecord_updated_group">Grupul a fost actualizat.</string>
   <!--PassphraseChangeActivity-->
@@ -147,10 +128,8 @@ Restaurarea unui backup criptat va înlocui complet cheile existente, setările 
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Parola veche este incorectă!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Introduceţi parola</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Icoană SMSSecure</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Parolă incorectă!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Semnătura digitală din acest schimb de chei este diferită fața de ce ai primit anterior de la această persoană. Asta poate însemna că cineva încearcă să intercepteze comunicația sau că această persoană a reinstalat SMSSecure și acum are o nouă cheie de identitate.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Semnătura din acest schimb de chei este de încredere, dar opțiunea \"încheie automat schimburile de chei\" este dezactivată.</string>
   <string name="ReceiveKeyActivity_processing">Procesare</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Se proceseaza schimbul de chei...</string>
@@ -171,13 +150,11 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nu ai o cheie de identitate.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Destinatarul nu are o cheie de identitate.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Scanează cheia partenerului pentru comparație</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATENȚIE, cheia scanată NU SE POTRIVEȘTE! Verifică semnătura digitală cu atenție.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NU E VERIFICAT!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Cheia partenerului este corectă. Este necesar de asemenea ca și partenerul tău să verifice cheia ta.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Verificat!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Scanează pentru a compara</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ATENȚIE, cheia scanată NU SE POTRIVEȘTE !</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Cheia scanată se potrivește!</string>
   <!--KeyExchangeInitiator-->
@@ -206,9 +183,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="ApplicationMigrationService_import_in_progress">Import în curs</string>
   <string name="ApplicationMigrationService_importing_text_messages">Mesajele text sunt importate</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Atingeți pentru a deschide.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Atingeți pentru a deschide, sau atingeți lacătul pentru a închide.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure e deblocat.</string>
   <string name="KeyCachingService_lock">Blocare acces cu parola</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Mesaj criptat...</string>
@@ -263,11 +237,9 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="log_submit_activity__submitting">Se trimite</string>
   <string name="log_submit_activity__posting_logs">Se trimit log-urile către gist...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Dorești să imporți mesajele tale text existente, în baza de date criptată a lui SMSSecure?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Baza de date a sistemului nu va fi modificată în nici un fel.</string>
   <string name="database_migration_activity__skip">Treci peste</string>
   <string name="database_migration_activity__import">Importă</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">S-ar putea să dureze câteva momente. Vă rugăm să aveți răbdare, vă vom notifica când importul este complet.</string>
   <string name="database_migration_activity__importing">SE IMPORTĂ</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Se actualizează baza de date...</string>
@@ -280,7 +252,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Deblochează</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure are nevoie de setările APN pentru a trimite mesaje multimedia prin operatorul wireless. Acest aparat nu oferă informațiile necesare, lucru care se poate întâmpla uneori pentru dispozitive blocate sau alte configurații restrictive.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -313,8 +284,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__sms_mms">SMS și MMS</string>
   <string name="preferences__pref_all_sms_title">Recepționează toate SMS-urile</string>
   <string name="preferences__pref_all_mms_title">Recepționează toate MMS-urile</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Folosește SMSSecure pentru vizualizarea și salvarea tuturor mesajelor text primite</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Folosește SMSSecure pentru vizualizarea și salvarea tuturor mesajelor multimedia primite</string>
   <string name="preferences__display_settings">Afișează setările</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Selectează persoana din lista de contacte.</string>
   <string name="preferences__change_passphrase">Schimbă parola</string>
@@ -371,9 +340,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__default">Implicit</string>
   <string name="preferences__language">Limba</string>
   <string name="preferences__make_default_sms_app">Setează ca aplicație implicită SMS</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Alege SMSSecure ca aplicație SMS/MMS implicită pentru sistemul tău.</string>
   <string name="preferences__submit_debug_log">Trimite log-urile de depanare</string>
-  <string name="preferences__support_wifi_calling">Mod compatibilitate \"Apelare WiFi\"</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -429,8 +396,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="conversation_group_options__broadcast">Difuzare</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Compara</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Permite scanarea pentru comparație</string>
-  <string name="key_scanning__menu_scan_to_compare">Scanează pentru comparație</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Mesaj nou</string>
   <string name="text_secure_normal__menu_new_group">Grup nou</string>
@@ -439,7 +404,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="text_secure_normal__mark_all_as_read">Marchează tot ca citit</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Seteaz ca aplicație implicită SMS?</string>
-  <string name="reminder_header_sms_default_text">Atingeţi pentru a seta SMSSecure ca şi aplicaţie SMS implicită.</string>
   <string name="reminder_header_sms_import_title">Import baza de date cu SMS-uri?</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Tu</string>
@@ -447,8 +411,8 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="MediaPreviewActivity_unssuported_media_type">Tip media nesuportat</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Salvează</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Se șterge...</string>
   <string name="trimmer__deleting_old_messages">Se șterg mesajele vechi...</string>

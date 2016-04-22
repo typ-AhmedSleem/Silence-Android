@@ -1,6 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">带给您简便的安全会话体验。</string>
-  <string name="Distribution_description">SMSSecure是一个帮助保护你与朋友聊天消息的隐私安全的应用。</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMS시큐어</string>
   <string name="yes">예</string>
   <string name="no">아니오</string>
   <string name="delete">삭제</string>
@@ -22,9 +21,7 @@
 기기에 물리적으로 접근 가능한 사람들은 이를 읽을 수 있게 됩니다.</string>
   <string name="ApplicationPreferencesActivity_disable">해제</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">SMS 수신 사용</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">터치해서 기본 SMS 앱 변경</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS 수신 해제</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">터치해서 SMS시큐어를 기본 SMS 앱으로 지정</string>
   <string name="ApplicationPreferencesActivity_on">켜짐</string>
   <string name="ApplicationPreferencesActivity_On">켜짐</string>
   <string name="ApplicationPreferencesActivity_off">꺼짐</string>
@@ -64,11 +61,9 @@
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">암호화되지 않은 SMS로 후퇴하시겠습니까?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">암호화되지 않은 MMS로 후퇴하시겠습니까?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">이 메세지는 보안 세션이 시작되지 않았으므로 암호화 <b>없이</b> 진행됩니다.\n\n보호되지 않은 메세지를 보내시겠습니까?</string>
-  <string name="ConversationItem_unable_to_open_media">이 미디어 파일을 열 수 있는 앱을 찾을 수 없습니다.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">보안 세션을 시작할까요?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s에 보안 세션을 시작할까요?</string>
-  <string name="ConversationActivity_detected_smssecure_initiate_session_question">SMS시큐어를 사용중인 누군가로부터 메세지를 받았습니다. 암호화된 보안 세션을 시작할까요?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">보안 세션을 끝낼까요?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">정말로 이 보안 세션을 끝내시겠습니까?</string>
   <string name="ConversationActivity_delete_thread_question">대화를 삭제할까요?</string>
@@ -76,8 +71,6 @@
   <string name="ConversationActivity_add_attachment">첨부 파일 추가</string>
   <string name="ConversationActivity_select_contact_info">연락처 정보 선택</string>
   <string name="ConversationActivity_compose_message">메세지 작성</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">첨부 파일을 설정하는 도중 오류가 발생했습니다.</string>
-  <string name="ConversationActivity_the_gif_you_selected_was_too_big">선택한 gif의 용량이 너무 큽니다.</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">선택된 비디오가 메세지 용량 제한을 초과했습니다 (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">선택된 오디오가 메세지 용량 제한을 초과했습니다 (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">수신자의 SMS 또는 이메일 주소가 올바르지 않습니다.</string>
@@ -111,12 +104,7 @@
     <item quantity="other">이것은 선택한 모든 %1$d 메세지를 영구적으로 삭제합니다.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">저장소에 저장할까요?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">이 미디어를 저장소에 저장하면 기기의 다른 모든 앱이 여기에 접근할 수 있게 됩니다.\n\n계속할까요?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">첨부 파일을 저장소에 저장하는 도중 오류가 발생했습니다!</string>
-  <string name="ConversationFragment_success_exclamation">성공!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">저장소에 기록할 수 없습니다!</string>
-  <string name="ConversationFragment_saving_attachment">첨부 파일 저장 중</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">첨부 파일을 저장소에 저장 중...</string>
   <string name="ConversationFragment_pending">대기중...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -154,22 +142,16 @@
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">공유하기</string>
   <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_smssecure">SMS시큐어에 오신 것을 환영합니다!</string>
-  <string name="IntroScreenActivity_smssecure_description">SMS시큐어는 프라이버시를 지키면서 친구들과 대화할 수 있게 해줍니다.</string>
   <string name="IntroScreenActivity_encrypt_your_messages">메세지 암호화</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">SMS시큐어는 다른 SMS시큐어 사용자와의 메세지를 자동적으로 암호화합니다.</string>
   <string name="IntroScreenActivity_talk_to_everyone">모두에게 말하기</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">SMS시큐어는 암호화되지 않은 메세지를 SMS시큐어를 사용하지 않는 사용자와 주고받을 수 있습니다.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">내보내기</string>
   <string name="ExportFragment_export_plaintext_to_storage">평문 텍스트를 저장소로 내보낼까요?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">주의하세요, 이것은 SMS시큐어 메세지의 평문 텍스트 내용을 저장소로 내보냅니다.</string>
   <string name="ExportFragment_cancel">취소</string>
   <string name="ExportFragment_exporting">내보내는 중</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">평문 텍스트를 저장소로 내보내는 중...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">오류 발생, 저장소에 기록할 수 없습니다.</string>
   <string name="ExportFragment_error_while_writing_to_storage">저장소에 기록 중 오류가 발생했습니다.</string>
-  <string name="ExportFragment_success">성공!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">새 그룹</string>
   <string name="GroupCreateActivity_actionbar_update_title">그룹 업데이트</string>
@@ -184,12 +166,8 @@
   <string name="ImportExportActivity_export">내보내기</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">시스템 SMS 데이터베이스를 가져올까요?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">시스템의 기본 SMS 데이터베이스에서 SMS시큐어로 메세지들을 가져옵니다. 만약 이전에 시스템의 SMS 데이터베이스를 가져온 적이 있다면, 지금 다시 가져오게 되면 메세지가 중복될 수 있습니다.</string>
   <string name="ImportFragment_import">가져오기</string>
   <string name="ImportFragment_cancel">취소</string>
-  <string name="ImportFragment_restore_encrypted_backup">암호화된 백업 파일을 복원할까요?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">암호화된 백업 파일을 복원하게 되면 현재의 키, 설정, 메세지를 완전히 대체하게 됩니다. 백업 파일에 없는, 현재의 모든 SMS시큐어 정보는 잃게 됩니다.</string>
-  <string name="ImportFragment_restore">복원</string>
   <string name="ImportFragment_import_plaintext_backup">평문 텍스트 백업 파일을 가져올까요?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">평문 텍스트 백업 파일로부터 메세지를 가져옵니다. 만약 이전에 이 백업 파일로부터 가져온 적이 있다면, 지금 다시 가져오면 메세지가 중복될 수 있습니다.</string>
   <string name="ImportFragment_importing">가져오는 중</string>
@@ -197,14 +175,10 @@
   <string name="ImportFragment_no_plaintext_backup_found">평문 텍스트 백업 파일을 찾을 수 없습니다!</string>
   <string name="ImportFragment_error_importing_backup">백업 파일을 가져오는 도중 오류가 발생했습니다!</string>
   <string name="ImportFragment_import_complete">가져오기 완료!</string>
-  <string name="ImportFragment_restoring">복원하는 중</string>
-  <string name="ImportFragment_restoring_encrypted_backup">암호화된 백업 파일 복원하는 중...</string>
   <string name="ImportFragment_no_encrypted_backup_found">암호화된 백업 파일을 찾을 수 없습니다!</string>
-  <string name="ImportFragment_restore_complete">복원 완료!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">검색된 키를 찾을 수 없습니다!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">바코드 스캐너를 설치할까요?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMS시큐어는 QR코드를 사용하기 위해 바코드 스캐너가 필요합니다.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">전송 실패</string>
   <string name="MessageDetailsRecipient_new_identity">새로운 신원</string>
@@ -215,7 +189,6 @@
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">멀티미디어 메세지</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">이전 버전의 SMS시큐어로부터 암호화된 메세지를 수신하는 기능은 더이상 지원되지 않습니다. 최근 버전으로 업그레이드해서 다시 메세지를 전송하라고 발신자에게 요청하세요.</string>
   <string name="MessageRecord_left_group">당신은 그룹을 떠났습니다.</string>
   <string name="MessageRecord_updated_group">그룹을 업데이트했습니다.</string>
   <!--PassphraseChangeActivity-->
@@ -224,10 +197,8 @@
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">암호를 입력하지 않았습니다!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">암호 입력</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMS시큐어 아이콘</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">올바르지 않은 암호입니다!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">이 연락처로부터 이전에 받은 키 교환 서명과 현재의 키 교환 서명이 일치하지 않습니다. 이는 누군가 통신을 가로채려고 시도하고 있거나, 아니면 단순히 이 연락처가 SMS시큐어를 다시 설치해서 새로운 신원 키를 가지게 된 것입니다.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">이 키 교환의 서명은 신뢰할 수 있으나, 현재 \'자동으로 키 교환 완료\' 설정이 해제되어 있습니다.</string>
   <string name="ReceiveKeyActivity_processing">처리 중...</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">키 교환 처리중...</string>
@@ -258,14 +229,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">신원 키를 가지고 있지 않습니다.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">수신자가 신원 키를 가지고 있지 않습니다.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">비교하기 위해 타인의 키 스캔하기</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">당신의 키 스캔하기</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">경고, 스캔을 한 키가 일치하지 않습니다! 핑거프린트 텍스트를 주의해서 확인하세요.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">검증되지 않음!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">키가 일치합니다. 이 키를 당신의 키와 비교할 필요가 있습니다.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">검증됨!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">비교하기 위해 키 스캔하기</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">경고, 스캔을 한 키가 일치하지 않습니다!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">스캔을 한 키가 일치합니다!</string>
   <string name="ViewIdentityActivity_your_identity_fingerprint">당신의 신원 핑거프린트</string>
@@ -297,9 +265,6 @@
   <string name="ApplicationMigrationService_import_in_progress">가져오는 중</string>
   <string name="ApplicationMigrationService_importing_text_messages">텍스트 메세지 가져오는 중</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">터치해서 열기</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">터치해서 열거나, 자물쇠를 터치해서 닫기.</string>
-  <string name="KeyCachingService_passphrase_cached">SMS시큐어가 잠금 해제되었습니다</string>
   <string name="KeyCachingService_lock">암호로 잠그기</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%2$d 대화의 %1$d 새 메세지</string>
@@ -316,10 +281,8 @@
   <string name="MessageNotifier_message_received">메세지가 %s에 의해 수신됨.</string>
   <string name="MessageNotifier_reply">답장</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">SMS시큐어가 잠겨있을때는 빠른 답장을 사용할 수 없습니다!</string>
   <string name="QuickResponseService_problem_sending_message">메세지 전송 오류</string>
   <!--SingleRecipientNotificationBuilder-->
-  <string name="SingleRecipientNotificationBuilder_smssecure">SMS시큐어</string>
   <string name="SingleRecipientNotificationBuilder_new_message">새 메세지</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">기존 암호</string>
@@ -373,11 +336,9 @@
   <string name="log_submit_activity__submitting">제출하는 중</string>
   <string name="log_submit_activity__posting_logs">디버그 기록 올리는 중</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">기존의 텍스트 메세지를 SMS시큐어의 암호화된 데이터베이스로 가져오시겠습니까?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">기본 시스템 데이터베이스는 교체되거나 변경되지 않습니다.</string>
   <string name="database_migration_activity__skip">건너뛰기</string>
   <string name="database_migration_activity__import">가져오기</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">시간이 걸릴 수 있습니다. 기다려 주세요. 가져오기가 끝나면 알려드립니다.</string>
   <string name="database_migration_activity__importing">가져오는 중</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">데이터베이스 업데이트 중...</string>
@@ -385,8 +346,6 @@
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">\'SMS Backup &amp; Restore\'와 호환되는 평문 텍스트 백업을 저장소로 내보내기</string>
   <string name="import_fragment__import_system_sms_database">시스템 SMS 데이터베이스 가져오기</string>
   <string name="import_fragment__import_the_database_from_the_default_system">기본 시스템 메신저 앱으로부터 데이터베이스 가져오기</string>
-  <string name="import_fragment__restore_encrypted_backup">암호화된 백업 파일 복원</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">이전에 내보낸 암호화된 백업 파일을 복원합니다.</string>
   <string name="import_fragment__import_plaintext_backup">평문 텍스트 백업 파일 가져오기</string>
   <string name="import_fragment__import_a_plaintext_backup_file">평문 텍스트 백업 파일을 가져옵니다. \'SMS Backup &amp; Restore\'와 호환됩니다.</string>
   <!--load_more_header-->
@@ -399,7 +358,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">잠금 해제</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMS시큐어는 통신사를 통해 미디어 및 그룹 메세지를 보내기 위해서 MMS 설정을 필요로 합니다. 기기로부터 이 정보를 사용할 수 없습니다. 기기가 잠겨 있거나 제한되어 있을 가능성이 있습니다.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">차단됨</string>
   <!--recipient_preferences-->
@@ -467,11 +425,7 @@
   <string name="preferences__sms_mms">SMS와 MMS</string>
   <string name="preferences__pref_all_sms_title">모든 SMS 수신</string>
   <string name="preferences__pref_all_mms_title">모든 MMS 수신</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">도착하는 모든 텍스트 메세지를 SMS시큐어를 사용해 열람 및 저장</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">도착하는 모든 멀티미디어 메세지를 SMS시큐어를 사용해 열람 및 저장</string>
   <string name="preferences__keyboard_settings">키보드 옵션</string>
-  <string name="preferences__disable_emoji_drawer">이모지 서랍 사용하지 않음</string>
-  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">키보드가 이모지를 지원할 경우 이 옵션을 사용하세요.</string>
   <string name="preferences__display_settings">디스플레이 설정</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">연락처 목록에서 연락처 항목을 선택하세요.</string>
   <string name="preferences__change_passphrase">암호 변경</string>
@@ -552,11 +506,7 @@
   <string name="preferences__default">기본값</string>
   <string name="preferences__language">언어</string>
   <string name="preferences__make_default_sms_app">기본 SMS 앱으로 지정</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">SMS시큐어를 기본 SMS/MMS 앱으로 지정합니다.</string>
   <string name="preferences__submit_debug_log">디버그 기록 제출</string>
-  <string name="preferences__support_wifi_calling">\'WiFi 통화\' 호환 모드</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">만약 기기가 WiFi를 통한 SMS/MMS 전송을 사용할 경우 (\'WiFi 통화\' 기능을 기기에서 사용중일 경우에만)</string>
-  <string name="preferences__about">SMS시큐어에 대해서</string>
   <string name="preferences__about_version">버전 %s</string>
   <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">차단된 연락처</string>
@@ -640,8 +590,6 @@
   <string name="conversation_group_options__broadcast">방송</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">비교</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">비교하기 위해 스캔됨</string>
-  <string name="key_scanning__menu_scan_to_compare">비교하기 위해 스캔</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">새 메세지</string>
   <string name="text_secure_normal__menu_new_group">새 그룹</string>
@@ -650,7 +598,6 @@
   <string name="text_secure_normal__mark_all_as_read">모두 읽음으로 표시</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">기본 SMS 앱으로 지정할까요?</string>
-  <string name="reminder_header_sms_default_text">눌러서 SMS시큐어를 기본 SMS 앱으로 지정</string>
   <string name="reminder_header_sms_import_title">시스템 SMS를 가져올까요?</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">당신</string>
@@ -658,14 +605,9 @@
   <string name="MediaPreviewActivity_unssuported_media_type">지원하지 않는 미디어 형식</string>
   <!--media_preview-->
   <string name="media_preview__save_title">저장</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">이미지 미리보기</string>
-  <!--StoreRatingReminder-->
-  <string name="StoreRatingReminder_title">앱 평가하기</string>
-  <string name="StoreRatingReminder_message">이 앱이 마음에 드신다면 잠시 시간을 내어 앱을 평가해주세요.</string>
-  <string name="StoreRatingReminder_rate_now">지금 평가하기</string>
-  <string name="StoreRatingReminder_no_thanks">아니오, 괜찮습니다</string>
-  <string name="StoreRatingReminder_later">나중에 하겠습니다</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">삭제 중...</string>
   <string name="trimmer__deleting_old_messages">오래된 메세지 삭제 중...</string>

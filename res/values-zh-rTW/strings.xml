@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">是</string>
   <string name="no">否</string>
   <string name="delete">刪除</string>
@@ -16,9 +15,7 @@
     </string>
   <string name="ApplicationPreferencesActivity_disable">解除</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">已開啟手機簡訊接收功能</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">按這裡來變更您預設的手機簡訊APP</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">已關閉手機簡按這裡來變更您預設的手機簡訊APP訊接收功能</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">按這裡將 SMSSecure 設為預設的手機簡訊APP</string>
   <!--AppProtectionPreferenceFragment-->
   <!--DraftDatabase-->
   <!--AttchmentManager-->
@@ -35,7 +32,6 @@
   <string name="ConversationItem_group_action_left">%1$s 已經離開群組。</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">撤回未加密的手機簡訊？</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">撤回未加密的多媒體簡訊？</string>
-  <string name="ConversationItem_unable_to_open_media">找不到合適的 APP 來開啟媒體檔案。</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">開啟一條安全連線？</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">與 %s 開啟安全連線？</string>
@@ -54,11 +50,7 @@
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">訊息細節</string>
   <string name="ConversationFragment_save_to_sd_card">儲存到儲存裝置？</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">儲存檔案到儲存裝置時發生錯誤！</string>
-  <string name="ConversationFragment_success_exclamation">成功！</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">無法寫入儲存裝置！</string>
-  <string name="ConversationFragment_saving_attachment">正在儲存附件檔案</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">正在寫入儲存裝置中...</string>
   <string name="ConversationFragment_deleting">刪除中...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
@@ -76,7 +68,6 @@
   <string name="ExportFragment_export">匯出</string>
   <string name="ExportFragment_cancel">取消</string>
   <string name="ExportFragment_exporting">正在匯出...</string>
-  <string name="ExportFragment_success">成功！</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新增群組</string>
   <string name="GroupCreateActivity_actionbar_update_title">更新群組</string>
@@ -91,19 +82,8 @@
   <string name="ImportExportActivity_export">匯出</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">匯入目前裝置上的手機簡訊？</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">這將會匯入
-        目前裝置上已收發的手機簡訊到 SMSSecure APP 中。如果您之前已經做過，
-       再匯入一次手機簡訊將會使 SMSSecure 中出現重複的簡訊。
-    </string>
   <string name="ImportFragment_import">匯入</string>
   <string name="ImportFragment_cancel">取消</string>
-  <string name="ImportFragment_restore_encrypted_backup">自加密的備份資料庫中還原？</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-        從加密的備份資料庫還原，將會覆蓋您目前所使用的金鑰、設定
-        ，以及訊息。若從您上一次備份後，有任何新增的紀錄、設定等資料
-        將一併被抹除。
-    </string>
-  <string name="ImportFragment_restore">還原</string>
   <string name="ImportFragment_import_plaintext_backup">匯入未加密的備份資料庫？</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">這將會匯入
        未經加密的訊息紀錄備份檔案。 如果您之前已經做過，
@@ -114,10 +94,7 @@
   <string name="ImportFragment_no_plaintext_backup_found">找不到任何未加密的備份檔案！</string>
   <string name="ImportFragment_error_importing_backup">匯入備份時發生錯誤！</string>
   <string name="ImportFragment_import_complete">匯入完成！</string>
-  <string name="ImportFragment_restoring">正在還原</string>
-  <string name="ImportFragment_restoring_encrypted_backup">正在還原已加密的備份...</string>
   <string name="ImportFragment_no_encrypted_backup_found">找不到已加密的備份檔案！</string>
-  <string name="ImportFragment_restore_complete">還原完成！</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">找不到任何金鑰！</string>
   <!--MessageDetailsRecipient-->
@@ -128,20 +105,13 @@
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">多媒體訊息</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">您收到一則已加密的訊息，但採用的是舊版／不支援的 SMSSecure。您須提醒該名連絡人更新 SMSSecure 版本後再重送。</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">輸入的「自訂密碼」不相符！</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">輸入的是舊的「自訂密碼」！</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">輸入「自訂密碼」</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure 圖示</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">無效的『自訂密碼』！</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">此次
-        金鑰確認所使用的數位簽名與同一名連絡人上次金鑰確認時所用的值並不一致。
-        這有可能是有不明人士試圖攔截您的通訊／對話內容。或
-        因為該名連絡人重新安裝過 SMSSecure APP，以至於他的數位簽名值也跟著變更了。
-    </string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">此次
         金鑰確認所用的數位簽名已被成功驗證。但您目前將「自動金鑰交換」的功能
         給取消了。
@@ -166,13 +136,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您不具備身分認證金鑰。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件者不具備身分認證金鑰。</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">比對他們的金鑰</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告！驗證結果不符合！請再目視並仔細比對一次指紋碼。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">無法驗證！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">對方提供的金鑰是正確的。但您也必須將您的金鑰與其比對。</string>
   <string name="VerifyIdentityActivity_verified_exclamation">已驗證！</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">掃描以比對</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告！掃描的值並不相符！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">掃描的金鑰相符！</string>
   <!--KeyExchangeInitiator-->
@@ -199,9 +167,6 @@
   <string name="ApplicationMigrationService_import_in_progress">匯入中</string>
   <string name="ApplicationMigrationService_importing_text_messages">匯入文字簡訊</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">按一下開啟</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">按一下開啟，或按一下鎖住並關閉。</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure 已解除鎖定</string>
   <string name="KeyCachingService_lock">以『自訂密碼』進行鎖定</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">加密的訊息...</string>
@@ -254,11 +219,9 @@
   <string name="log_submit_activity__submitting">上傳中</string>
   <string name="log_submit_activity__posting_logs">正在把登錄資料轉貼到gist上...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">您想把裝置上既有的簡訊紀錄都匯入 SMSSecure 的加密資料庫裡面嗎？</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">裝置上預設的資料庫將不會被做任何修改或變更。</string>
   <string name="database_migration_activity__skip">略過</string>
   <string name="database_migration_activity__import">匯入</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">這可能花上一點時間處理。請耐心等候，當匯入完成我們將告知您。</string>
   <string name="database_migration_activity__importing">匯入中</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">更新資料庫...</string>
@@ -271,7 +234,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">解鎖</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure 需要您通信業者的 MMS多媒體簡訊設定以發送媒體檔案與群組訊息。目前您的裝置並未提供完整的相關資訊，有時是因為裝置出廠時即被鎖定／限制該方面的功能。</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -298,8 +260,6 @@
   <string name="preferences__general">一般</string>
   <string name="preferences__pref_all_sms_title">接收所有手機簡訊</string>
   <string name="preferences__pref_all_mms_title">接收所有MMS多媒體簡訊</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">使用 SMSSecure 來檢視與儲存所有接收到的文字簡訊</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">使用 SMSSecure 來檢視與儲存所有接收到的多媒體簡訊</string>
   <string name="preferences__display_settings">顯示設定</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">從您的連絡人清單中選擇連絡人。</string>
   <string name="preferences__change_passphrase">變更『自訂密碼』</string>
@@ -349,7 +309,6 @@
   <string name="preferences__default">預設</string>
   <string name="preferences__language">語言選項</string>
   <string name="preferences__make_default_sms_app">設定為預設的手機簡訊 APP</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">將 SMSSecure 設定為您系統預設的 SMS/MMS 應用程式。</string>
   <string name="preferences__submit_debug_log">送出偵錯紀錄</string>
   <!--****************************************-->
   <!--menus-->
@@ -403,8 +362,6 @@
   <string name="conversation_group_options__broadcast">訊息廣播</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">比對</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">掃描並且進行比對</string>
-  <string name="key_scanning__menu_scan_to_compare">掃描以比對</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">新訊息</string>
   <string name="text_secure_normal__menu_new_group">新增群組</string>
@@ -418,8 +375,8 @@
   <string name="MediaPreviewActivity_you">您</string>
   <!--media_preview-->
   <string name="media_preview__save_title">儲存</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">刪除中...</string>
   <string name="trimmer__deleting_old_messages">正在刪除舊訊息...</string>

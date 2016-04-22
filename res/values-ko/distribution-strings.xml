@@ -1,6 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">SMS시큐어</string>
   <string name="Distribution_tagline">SMS/MMS 대화를 손쉽게 암호화할 수 있습니다!</string>
-  <string name="Distribution_description">SMS시큐어는 사생활이 보호된 통신을 할 수 있는 SMS/MMS 앱 입니다.</string>
 </resources>

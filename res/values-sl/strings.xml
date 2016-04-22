@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
+  <string name="app_name">Silence</string>
   <string name="yes">Da</string>
   <string name="no">Ne</string>
   <string name="delete">Izbriši</string>
@@ -26,9 +26,9 @@
 Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku naprave. Vaše šifrirane komunikacije bodo še vedno varne, toda vsakdo s fizičnim dostopom do vaše naprave bo lahko dostopal do njih.</string>
   <string name="ApplicationPreferencesActivity_disable">Onemogoči</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Dohodna sporočila vklopljena</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Z dotikom nastavi TexstSecure za privzeto aplikacijo SMS</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tapnite za zamenjavo privzete SMS aplikacije</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Dohodna sporočila izklopljena</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Z dotikom nastavi TexteScure za privzeto aplikacijo SMS</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tapnite za nastavitev aplikacije Silence za privzeto aplikacijo SMS</string>
   <string name="ApplicationPreferencesActivity_on">Vključeno</string>
   <string name="ApplicationPreferencesActivity_On">Vključeno</string>
   <string name="ApplicationPreferencesActivity_off">Izključeno</string>
@@ -74,10 +74,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Preklopim na nešifriran MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">To sporočilo <b>ne</b> bo šifrirano, ker ni možna vzpostavitev varne seje.\n\nPošljem kot nezavarovano sporočilo?</string>
   <string name="ConversationItem_unable_to_open_media">Ne najdem aplikacije za odpiranje te vrste datotek.</string>
+  <string name="ConversationItem_from_s">od %s</string>
+  <string name="ConversationItem_to_s">za %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Začnem varno sejo?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Začnem varno sejo z %s?</string>
-  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Prispelo je sporočilo osebe, ki prav tako uporablja aplikacijo SMSSecure. Začnem z varno sejo?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Prejeto je bilo sporočilo od nekoga, ki uporablja aplikacijo Silence. Začnem z varno šifrirano sejo?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Potrditev prekinitve varne seje</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ste prepričani, da želite zaključiti varno sejo?</string>
   <string name="ConversationActivity_delete_thread_question">Izbrišem pogovor?</string>
@@ -85,8 +87,8 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_add_attachment">Dodaj priponko</string>
   <string name="ConversationActivity_select_contact_info">Izberi podatke o stiku</string>
   <string name="ConversationActivity_compose_message">Sestavi sporočilo</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Prišlo je do napake pri nastavljanju priponke.</string>
-  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Izbrani gif je prevelik!</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Pri dodajanju priponke je prišlo do napake.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Izbrana datoteka GIF je prevelika!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Izbran video posnetek presega omejitev velikosti (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Izbran zvočni posnetek presega omejitev velikosti (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Neveljaven SMS/e-poštni naslov</string>
@@ -129,12 +131,33 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
     <item quantity="other">To bo nepovratno izbrisalo vseh %1$d izbranih sporočil.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Spravim v sistemsko shrambo?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">S shranitvijo datoteke v sistemsko shrambo bo ta dostopna tudi drugim aplikacijam.\n\nNadaljujem?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Napaka pri shranjevanju priponke v sistemsko shrambo!</string>
-  <string name="ConversationFragment_success_exclamation">Uspešno opravljeno!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Shranitev datoteke v sistemsko shrambo bo omogočila dostop do nje vsaki aplikaciji na vaši napravi.\n\nNadaljujem?</item>
+    <item quantity="two">Shranitev datotek (%1$d) v sistemsko shrambo bo omogočila dostop do njiju vsaki aplikaciji na vaši napravi.\n\nNadaljujem?</item>
+    <item quantity="few">Shranitev vseh %1$d datotek v sistemsko shrambo bo omogočila dostop do njih vsaki aplikaciji na vaši napravi.\n\nNadaljujem?</item>
+    <item quantity="other">Shranitev vseh %1$d datotek v sistemsko shrambo bo omogočila dostop do njih vsaki aplikaciji na vaši napravi.\n\nNadaljujem?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Napaka pri shranjevanju priponke v shrambo!</item>
+    <item quantity="two">Napaka pri shranjevanju priponk v shrambo!</item>
+    <item quantity="few">Napaka pri shranjevanju priponk v shrambo!</item>
+    <item quantity="other">Napaka pri shranjevanju priponk v shrambo!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Datoteka je bila uspešno shranjena.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ne morem shranjevati v sistemsko shrambo!</string>
-  <string name="ConversationFragment_saving_attachment">Shranjujem priponko</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Shranjujem v sistemsko shrambo...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Shranjujem priponko</item>
+    <item quantity="two">Shranjujem %1$d priponki</item>
+    <item quantity="few">Shranjujem %1$d priponke</item>
+    <item quantity="other">Shranjujem %1$d priponk</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Shranjujem priponko v shrambo...</item>
+    <item quantity="two">Shranjujem %1$d priponki v shrambo...</item>
+    <item quantity="few">Shranjujem %1$d priponke v shrambo...</item>
+    <item quantity="other">Shranjujem %1$d priponk v shrambo...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Zbiram priponke...</string>
   <string name="ConversationFragment_pending">V teku...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -184,22 +207,27 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
   <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_smssecure">Dobrodošli v aplikaciji SMSSecure!</string>
-  <string name="IntroScreenActivity_smssecure_description">Z aplikacijo SMSSecure boste zaščitili svojo zasebnost pri komunikaciji z drugimi.</string>
+  <string name="IntroScreenActivity_welcome_to_silence">Dobrodošli v aplikacijo Silence!</string>
+  <string name="IntroScreenActivity_silence_description">Aplikacija Silence vam pomaga ohranjati zasebnost pri komunikaciji s prijatelji.</string>
   <string name="IntroScreenActivity_encrypt_your_messages">Zaščitite svoja sporočila s šifriranjem</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Aplikacija SMSSecure bo avtomatično šifrirala vse pogovore z drugimi uporabniki aplikacije SMSSecure.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Aplikacija Silence bo avtomatično šifrirala vse pogovore z drugimi uporabniki aplikacije Silence.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Govorite z vsemi</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Sporočila namenjena ljudem, ki nimajo nameščene aplikacije SMSSecure ne bodo šifrirana.</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Sporočila namenjena ljudem, ki nimajo nameščene aplikacije Silence ne bodo šifrirana.</string>
+  <string name="IntroScreenActivity_smssecure_is_now_silence">Aplikacija SMSSecure se od zdaj imenuje Silence.</string>
+  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure je od zdaj Slience. Vaša sporočila so še vedno tu, obetajo se tudi nove funkcije.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Izvozi</string>
   <string name="ExportFragment_export_plaintext_to_storage">Izvozim v nešifrirani obliki?</string>
-  <string name="ExportFragment_warning_this_will_export_the_plaintext_contents">Pozor, s tem boste izvozili vsa svoja sporočila v sistemsko shrambo v nešifrirani obliki.</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Pozor, s tem boste izvozili vsa sporočila iz aplikacije Silence v sistemsko shrambo v nešifrirani obliki.</string>
   <string name="ExportFragment_cancel">Prekliči</string>
   <string name="ExportFragment_exporting">Izvažam</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Izvažam nešifrirano vsebino...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Napaka - ne morem shranjevati v sistemsko shrambo!</string>
   <string name="ExportFragment_error_while_writing_to_storage">Napaka pri zapisovanju.</string>
-  <string name="ExportFragment_success">Uspešno opravljeno!</string>
+  <string name="ExportFragment_export_successful">Izvoz je bil uspešno opravljen.</string>
+  <string name="ExportFragment_export_encrypted_backup">Izvozim šifrirano varnostno kopijo?</string>
+  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">S tem boste izvozil svoje šifrirne ključe, nastavitve in sporočila v shrambo.</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Izvažam šifrirne ključe, nastavitve in sporočila...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Posodobi skupino</string>
@@ -214,12 +242,11 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ImportExportActivity_export">Izvoz</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Uvozim iz sistemske zbirke SMS sporočil?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">S tem boste uvozili sporočila iz sistemske zbirke SMS v aplikacijo SMSSecure. Če ste predhodno že uvozili sporočila iz sistemske zbirke SMS, bodo ta sporočila v aplikaciji SMSSecure podvojena.</string>
+  <string name="ImportFragment_this_will_import_messages_from_the_system">S tem boste uvozili sporočila iz sistemske zbirke SMS v aplikacijo Silence. Če ste predhodno že uvozili sporočila iz sistemske zbirke SMS, bodo ta sporočila v aplikaciji Silence podvojena.</string>
   <string name="ImportFragment_import">Uvozi</string>
   <string name="ImportFragment_cancel">Prekliči</string>
-  <string name="ImportFragment_restore_encrypted_backup">Obnovim iz šifirane varnostne kopije?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Obnova iz šifrirane varnostne kopije bo nadomestila vaše obstoječe ključe, nastavitve in sporočila. Izgubili boste vse kar se nahaja v trenutni podatkovni zbirki aplikacije SMSSecure, ne pa tudi vsebine varnostne kopije.</string>
-  <string name="ImportFragment_restore">Obnovi</string>
+  <string name="ImportFragment_restore_encrypted_backup">Obnovim iz šifrirane datoteke?</string>
+  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Z obnovo iz šifrirane datoteke boste v celoti nadomestili obstoječa sporočila, nastavitve in ključe. S tem boste izgubili vso trenutno vsebino iz aplikacije Silence, ne pa tudi vsebino iz šifrirane datoteke. Po uvozu se bo aplikacija zaustavila.</string>
   <string name="ImportFragment_import_plaintext_backup">Uvozim iz nešifrirane varnostne kopije?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">S tem boste uvozili sporočila iz nešifrirane varnostne kopije. Če ste predhodno že uvozili sporočila iz iste varnostne kopije, bodo ta sporočila podvojena.</string>
   <string name="ImportFragment_importing">Uvažam</string>
@@ -227,14 +254,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ImportFragment_no_plaintext_backup_found">Ne najdem nobene nešifrirane varnostne kopije!</string>
   <string name="ImportFragment_error_importing_backup">Napaka pri uvozu iz varnostne kopije!</string>
   <string name="ImportFragment_import_complete">Uvoz dokončan!</string>
-  <string name="ImportFragment_restoring">Obnavljam</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Obnavljam iz šifrirane varnostne kopije...</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Uvažam vsebino iz šifrirane datoteke...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ne najdem nobene šifrirane varnostne kopije!</string>
-  <string name="ImportFragment_restore_complete">Obnova dokončana!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Noben skeniran ključ ni bil najden!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Želite namestiti Barcode Scanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure za skeniranje QR kod potrebuje aplikacijo Barcode Scanner.</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence za skeniranje QR kod potrebuje aplikacijo Barcode Scanner.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Pošiljanje ni uspelo</string>
   <string name="MessageDetailsRecipient_new_identity">Nova identiteta</string>
@@ -245,7 +270,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Večpredstavno sporočilo</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Prejeto je bilo sporočilo, šifrirano z zastarelo verziijo aplikacije SMSSecure, ki ni več podprta. Obrnite se na pošiljatelja, naj posodobi aplikacijo SMSSecure na zadnjo različico in ponovno pošlje sporočilo.</string>
+  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Prejeto je bilo sporočilo, šifrirano z zastarelo verziijo aplikacije Silence, ki ni več podprta. Obrnite se na pošiljatelja, naj posodobi aplikacijo Silence na zadnjo različico in ponovno pošlje sporočilo.</string>
   <string name="MessageRecord_left_group">Zapustili ste skupino.</string>
   <string name="MessageRecord_updated_group">Skupina je bila posodobljena.</string>
   <!--PassphraseChangeActivity-->
@@ -254,10 +279,10 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Vnešeno ni bilo nobeno geslo!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Vnesite geslo</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Ikona SMSSecure</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Ikona Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Napačno geslo!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Podpis pri izmenjavi ključev se razlikuje od tistih pri predhodno izmenjanih ključih s to osebo. To lahko pomeni, da nekdo prestreza komunikacijo, ali pa, da je oseba ponovno namestila SMSSecure in ima zdaj nov identifikacijski ključ.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Podpis pri izmenjavi ključev se razlikuje od tistih pri predhodno izmenjanih ključih s to osebo. To lahko pomeni, da nekdo prestreza komunikacijo, ali pa, da je oseba ponovno namestila aplikacijo Silence in ima zdaj nov identifikacijski ključ.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis pri tej izmenjavi je vreden zaupanja, vendar imate izklopljeno možnost \'Samodejno dokončaj izmenjavo ključev\'.</string>
   <string name="ReceiveKeyActivity_processing">Obdelujem</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Izmenjava ključev poteka...</string>
@@ -292,14 +317,15 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nimate identifikacijskega ključa.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Prejemnik nima identifikacijskega ključa.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skenirajte ključ stika za primerjavo</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Prikaži moj ključ za skeniraje</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skeniraj kodo QR stika</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Prikaži mojo kodo QR</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, skenirani ključ SE NE UJEMA! Pazljivo preverite tekst prstnega odtisa.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NEOVERJENO!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ključ stika je pravilen. Tudi vaš ključ mora biti potrjen iz njegove strani.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Preverjeno!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Skeniraj za primerjavo</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Skeniraj kodo QR stika</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Prikaži mojo kodo QR</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">POZOR, skeniran ključ se NE UJEMA!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skeniran ključ se ujema!</string>
   <string name="ViewIdentityActivity_your_identity_fingerprint">Moja identifikacija</string>
@@ -330,10 +356,12 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Uvoz v teku</string>
   <string name="ApplicationMigrationService_importing_text_messages">Uvažam kratka sporočila</string>
+  <string name="ApplicationMigrationService_import_complete">Uvažanje dokončano</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Uvoz iz sistemske shrambe je zaključen.</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Odpri z dotikom.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Odpri z dotikom ali zapri z dotikom ključavnice.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure je odklenjen</string>
+  <string name="KeyCachingService_silence_passphrase_cached">Za odprtje tapnite.</string>
+  <string name="KeyCachingService_silence_passphrase_cached_with_lock">Za odprtje tapnite. Za zaprtje tapnite ključavnico.</string>
+  <string name="KeyCachingService_passphrase_cached">Aplikacija Silence je odklenjena</string>
   <string name="KeyCachingService_lock">Zakleni z geslom</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">Nova sporočila: %1$d. Pogovori: %2$d.</string>
@@ -350,10 +378,10 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="MessageNotifier_message_received">Sporočilo za %s uspešno dostavljeno.</string>
   <string name="MessageNotifier_reply">Odgovori</string>
   <!--QuickResponseService-->
-  <string name="QuickResponseService_quick_response_unavailable_when_SMSSecure_is_locked">Hiter odziv ni mogoč kadar je aplikacija SMSSecure zaklenjena!</string>
+  <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">Ob zaklenjeni aplikaciji ni mogoč hiter odziv!</string>
   <string name="QuickResponseService_problem_sending_message">Težave pri pošiljanju sporočila!</string>
   <!--SingleRecipientNotificationBuilder-->
-  <string name="SingleRecipientNotificationBuilder_smssecure">SMSSecure</string>
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Novo sporočilo</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staro geslo</string>
@@ -379,6 +407,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="conversation_activity__type_message_sms_insecure">Pošlji nezavarovan SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Pošlji zavarovan MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Pošlji nezavarovan MMS</string>
+  <string name="conversation_activity__from_sim_name">Od %1$s</string>
   <string name="conversation_activity__send">Pošlji</string>
   <string name="conversation_activity__remove">Odstrani</string>
   <string name="conversation_activity__window_description">Pogovor: %1$s</string>
@@ -408,7 +437,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="log_submit_activity__submitting">Oddajam</string>
   <string name="log_submit_activity__posting_logs">Pošiljam sistemske zabeležbe na Gist...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Želite uvoziti vaša obstoječa SMS sporočila v šifrirano podatkovno zbirko SMSSecure?</string>
+  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Želite uvoziti vaša obstoječa SMS sporočila v šifrirano podatkovno zbirko Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Osnovna SMS podatkovna zbirka bo ostala nespremenjena.</string>
   <string name="database_migration_activity__skip">Preskoči</string>
   <string name="database_migration_activity__import">Uvoz</string>
@@ -417,13 +446,15 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Posodabljam zbirko...</string>
   <string name="export_fragment__export_plaintext_backup">Izvoz nešifrirane varnostne kopije</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Izvozi nešifrirano varnostno kopijo združljivo s sistemskimi varnostnimi kopijami SMS v sistemsko shrambo.</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Izvoz nešifrirane varnostne kopije, združljive s sistemskimi varnostnimi kopijami SMS, v sistemsko shrambo.</string>
   <string name="import_fragment__import_system_sms_database">Uvoz iz sistemske zbirke sporočil SMS</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Uvozi zbirko sporočil iz sistemsko privzete aplikacije SMS.</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">Uvoz zbirke sporočil iz sistemsko privzete aplikacije SMS.</string>
   <string name="import_fragment__restore_encrypted_backup">Uvoz iz šifrirane varnostne kopije</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Obnovi podatke iz predhodno ustvarjene šifrirane varnostne kopije SMSSecure.</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Obnovi podatke iz predhodno ustvarjene šifrirane varnostne kopije.</string>
   <string name="import_fragment__import_plaintext_backup">Uvoz iz nešifrirane varnostne kopije...</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Uvozi iz datoteke z nešifrirano varnostno kopijo. Združljivo s sistemskimi varnostnimi kopijami sporočil SMS.</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Uvoz iz datoteke z nešifrirano varnostno kopijo. Združljivo s sistemskimi varnostnimi kopijami sporočil SMS.</string>
+  <string name="export_fragment__export_encrypted_backup">Izvoz šifrirane varnostne kopije</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Izvoz šifrirane varnostne kopije v sistemsko shrambo.</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Celoten pogovor</string>
   <!--media_overview_activity-->
@@ -434,7 +465,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Odkleni</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Za pošiljanje multimedijskih in skupinskih sporočil potrebuje aplikacija SMSSecure nastavitve MMS vašega mobilnega operaterja. Teh podatkov ni moč pridobiti iz vaše naprave, kar je značilno za zaklenjene naprave in druge omejene konfiguracije. </string>
+  <string name="prompt_mms_activity__silence_requires_mms_settings_to_deliver_media_and_group_messages">Aplikacija Silence za pošiljanje in prejemanje multimedijskih ter skupinskih sporočil preko vašega operaterja potrebuje nekatere nastavitve MMS. Te nastavitve v vaši napravi niso na voljo, kar ponavadi velja za naprave zaklenjene s strani operaterja.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Za pošiljanje večpredstavnostnih in skupinskih sporočil kliknite \'OK\' in vnesite potrebne podatke. Nastavitve MMS za vašega operaterja lahko najverjetneje najdete z iskanjem po spletu. Podatke morate vnesti samo enkrat.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOKIRAN</string>
@@ -507,8 +538,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__sms_mms">SMS in MMS</string>
   <string name="preferences__pref_all_sms_title">Prejemaj sporočila SMS</string>
   <string name="preferences__pref_all_mms_title">Prejemaj sporočila MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil SMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Uporabljaj SMSSecure za ogled in shranjevanje vseh dohodnih sporočil MMS</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Uporabi aplikacijo Silence za ogled in shranjevanje dohodnih sporočil SMS</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Uporabi aplikacijo Silence za ogled in dohodnih shranjevanje sporočil MMS</string>
   <string name="preferences__keyboard_settings">Možnosti tipkovnice</string>
   <string name="preferences__disable_emoji_drawer">Izklopi zaganjalnik za Emoji</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Izberite to opcijo, če vaša tipkovnica podpira Emoji-je.</string>
@@ -592,12 +623,12 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__default">Privzeto</string>
   <string name="preferences__language">Jezik</string>
   <string name="preferences__make_default_sms_app">Nastavi za privzeto aplikacijo SMS</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Nastavi SMSSecure za privzeto aplikacijo SMS/MMS na napravi.</string>
+  <string name="preferences__make_silence_the_default_sms_mms_app">Natavi Silence za sistemsko privzeto aplikacijo za SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Oddaj sistemsko zabeležbo</string>
   <string name="preferences__support_wifi_calling">\'WiFi klicanje/WiFi Calling\' združljivostni način</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivirajte, če vaša naprava uporablja dostavo SMS/MMS sporočil preko WiFi (samo, če imate vklopljeno WiFi klicanje/WiFi Calling)</string>
-  <string name="preferences__about">SMSSecure</string>
-  <string name="preferences__about_version">Različica %s</string>
+  <string name="preferences__about">Silence</string>
+  <string name="preferences__about_version">Različica: %s</string>
   <string name="preferences__about_build_id">Podrazličica: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Blokirani stiki</string>
   <string name="preferences_notifications__display_in_notifications">Prikaži v obvestilih</string>
@@ -680,8 +711,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="conversation_group_options__broadcast">Oddaja</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Primerjaj</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Prikaži za skeniranje</string>
-  <string name="key_scanning__menu_scan_to_compare">Skeniraj za primerjavo</string>
+  <string name="key_scanning__menu_display_your_qr_code">Prikaži mojo kodo QR</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Skeniraj kodo QR stika</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Novo sporočilo</string>
   <string name="text_secure_normal__menu_new_group">Nova skupina</string>
@@ -690,23 +721,25 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="text_secure_normal__mark_all_as_read">Označi vse kot prebrano</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Uporabljam kot privzeto aplikacijo SMS?</string>
-  <string name="reminder_header_sms_default_text">Z dotikom nastavite TexteScure za privzeto aplikacijo SMS</string>
+  <string name="reminder_header_sms_default_text">Z dotikom nastavite Silence za privzeto aplikacijo SMS.</string>
+  <string name="reminder_header_sms_default_button">NASTAVI</string>
   <string name="reminder_header_sms_import_title">Uvozim iz sistemske zbirke sporočil SMS?</string>
-  <string name="reminder_header_sms_import_text">Tapnite zakoiranje sporočil SMS iz telefona v kriptirano zbirko aplikacije SMSSecure.</string>
+  <string name="reminder_header_sms_import_text">Tapnite za prenos sporočil SMS iz vašega telefona v šifrirano zbirko.</string>
+  <string name="reminder_header_sms_import_button">UVOZI</string>
+  <string name="reminder_header_rate_title">Oceni to aplikacijo</string>
+  <string name="reminder_header_rate_text">Če se vam zdi aplikacija SMSSecure koristna in uporabna, vas prosimo, da si vzamete nekaj trenutkov, in jo ocenite.</string>
+  <string name="reminder_header_rate_button">OCENI ZDAJ!</string>
+  <string name="reminder_header_close_button">ZAPRI</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vi</string>
   <string name="MediaPreviewActivity_cant_display">Predogled te slike ni mogoč</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nepodprt medij</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Shrani</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Shrani vse</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Ogled slike</string>
-  <!--StoreRatingReminder-->
-  <string name="StoreRatingReminder_title">Ocenite to aplikacijo</string>
-  <string name="StoreRatingReminder_message">Če se vam zdi aplikacija SMSSecure koristna, si prosimo vzemite čas in jo ocenite.</string>
-  <string name="StoreRatingReminder_rate_now">Oceni zdaj!</string>
-  <string name="StoreRatingReminder_no_thanks">Ne, hvala!</string>
-  <string name="StoreRatingReminder_later">Kasneje</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Brišem...</string>
   <string name="trimmer__deleting_old_messages">Brišem stara sporočila...</string>

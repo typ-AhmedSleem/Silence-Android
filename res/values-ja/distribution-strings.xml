@@ -1,25 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">簡単に、暗号化された SMS/MMS の会話ができます!</string>
-  <string name="Distribution_description">SMSSecureは、友だちと通信するときに、プライバシーを保護することができるSMS/MMSアプリケーションです。</string>
-  <string name="Distribution_long_description">
-SMSSecureは、友だちと通信するときに、プライバシーを保護することができるSMS/MMSアプリケーションです。
-SMSSecureを使用すると、完全にプライバシーを守って、SMSメッセージを送信したり、メディアや添付ファイルを共有することができます。
-
-特徴:
-* 簡単。 SMSSecureは、他のSMSアプリケーションと同じように動作します。どこかにサインアップしたり、友だちが新しいサービスに参加する必要はありません。
-* 信頼性。 SMSSecureは暗号化されたSMSメッセージを使用して通信します。サーバーやインターネット接続は必要ありません。
-* プライベート。 SMSSecureは丹念に設計されたTextSecure暗号化プロトコルを使用して、あなたのメッセージでエンドツーエンドの暗号化を提供します。
-* 安全。すべてのメッセージは内部で暗号化されるので、お使いの携帯電話を紛失したり盗まれた場合でも、メッセージは保護されます。
-* オープンソース。 SMSSecureはフリーの、オープンソースです。誰でも、コードを監査して、セキュリティを検証することができます。
-
-バグ、問題、または機能のリクエストはこちらまで:
-https://github.com/SMSSecure/SMSSecure/issues
-
-ソースコードはこちらにあります:
-https://github.com/SMSSecure/SMSSecure
-
-詳細はこちらまで:
-http://smssecure.org</string>
 </resources>

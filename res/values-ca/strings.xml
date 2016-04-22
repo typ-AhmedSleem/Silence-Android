@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Si</string>
   <string name="no">No</string>
   <string name="delete">Esborra</string>
@@ -11,8 +10,6 @@
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desactivar l\'encriptació del magatzem de dades?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Alerta, això desactivarà l\'emmagatzematge encriptat per a tots els missatges i claus. Les teves sessions continuaran funcionant, però qualsevol persona amb accés físic al teu dispositiu podrà accedir-hi.</string>
   <string name="ApplicationPreferencesActivity_disable">Desactiva</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Toca per canviar la teva app d\'SMS predeterminada</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Toca per fer SMSSecure la teva app d\'SMS predeterminada</string>
   <!--AppProtectionPreferenceFragment-->
   <!--DraftDatabase-->
   <!--AttchmentManager-->
@@ -37,7 +34,6 @@
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Aquest dispositiu no sembla suportar accions de trucada.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalls del missatge</string>
-  <string name="ConversationFragment_success_exclamation">Èxit!</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Esborrant</string>
@@ -52,7 +48,6 @@
   <string name="ExportFragment_export">Exporta</string>
   <string name="ExportFragment_cancel">Cancel·la</string>
   <string name="ExportFragment_exporting">Exportant</string>
-  <string name="ExportFragment_success">Èxit!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_contacts_mms_exception">Ha passat un error inesperat que ha fet que la creació del grup hagi fallat.</string>
   <string name="GroupCreateActivity_contacts_no_members">Necessites almenys una persona dins el teu grup!</string>
@@ -61,21 +56,15 @@
   <string name="ImportExportActivity_import">Importa</string>
   <string name="ImportExportActivity_export">Exporta</string>
   <!--ImportFragment-->
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Això importarà els missatges des de la base de dades SMS del sistema a SMSSecure. Si has importat prèviament els missatges de la base de dades SMS del sistema, importar-los de nou provocarà tenir missatges duplicats.</string>
   <string name="ImportFragment_import">Importa</string>
   <string name="ImportFragment_cancel">Cancel·la</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Restaurar una còpia de seguretat encriptada provocarà que es substitueixi completament les teves claus existents, preferències, i missatges. Perdràs qualsevol informació que sigui a la teva instal·lació de SMSSecure i no hi sigui a la còpia de seguretat.</string>
-  <string name="ImportFragment_restore">Restaura</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Això importarà els missatges des d\'una còpia de seguretat en text pla. Si has importat prèviament la base de dades SMS del sistema, importar-la de nou provocarà la generació de missatges duplicats.</string>
   <string name="ImportFragment_importing">Important</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">Importa còpia de seguretat en text pla...</string>
   <string name="ImportFragment_no_plaintext_backup_found">No s\'ha trobat la còpia de seguretat en text pla!</string>
   <string name="ImportFragment_error_importing_backup">Error important la còpia de seguretat!</string>
   <string name="ImportFragment_import_complete">Importació completada!</string>
-  <string name="ImportFragment_restoring">Restaurant</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Restaurant còpia de seguretat encriptada...</string>
   <string name="ImportFragment_no_encrypted_backup_found">No s\'ha trobat cap còpia de seguretat encriptada!</string>
-  <string name="ImportFragment_restore_complete">Restauració completa!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">No s\'ha trobat cap clau escanejada!</string>
   <!--MessageDetailsRecipient-->
@@ -89,7 +78,6 @@
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Frase contrasenya antiga incorrecta!</string>
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La signatura en aquest intercanvi de claus és diferent que el que havies rebut prèviament d\'aquest contacte. Això pot voler dir tant que algú està intentant interceptar la teva comunicació, o que aquest contacte simplement ha re-instal·lat SMSSecure i ara té una clau d\'identitat nova.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La signatura en aquest intercanvi de claus és de confiança, però tens l\'ajustament \'completa els intercanvis de claus automàticament\' desactivat.</string>
   <string name="ReceiveKeyActivity_processing">Processant</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Processant intercanvi de clau...</string>
@@ -106,13 +94,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Tu no tens una clau d\'identitat.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatari no té clau d\'identitat.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Escaneja la seva clau per comparar</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ALERTA, la clau escanejada NO coincideix! Si us plau verifica el text de l\'empremta digital cuidadosament.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NO Verificat!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La seva clau és correcta, però també és necessari verificar la teva clau.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Verificat!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Escaneja per comparar</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ALERTA, la clau escanejada NO coincideix!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">La clau escanejada coincideix!</string>
   <!--KeyExchangeInitiator-->
@@ -136,9 +122,6 @@
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importació en curs</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Toca per obrir.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Toca per obrir, o toca el bloqueig per tancar.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure està desbloquejat</string>
   <string name="KeyCachingService_lock">Bloqueja amb una frase contrasenya</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Missatge encriptat...</string>
@@ -173,11 +156,9 @@
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Gràcies per la teva ajuda!</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Vols importar tots el teus missatges de text existents a la base de dades encriptada de SMSSecure?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La base de dades predeterminada del sistema no serà modificada o alterada de cap manera.</string>
   <string name="database_migration_activity__skip">Salta</string>
   <string name="database_migration_activity__import">Importa</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Això pot tardar una mica. Si us plau sigues pacient, et notificarem quan la importació estigui completa.</string>
   <string name="database_migration_activity__importing">IMPORTANT</string>
   <!--database_upgrade_activity-->
   <!--load_more_header-->
@@ -186,7 +167,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desbloqueja</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure necessita ajustaments MMS per entregar missatges de grup i multimèdia a través de l\'operador inalàmbric. El teu dispositiu no fa que aquesta informació estigui disponible, cosa que és certa ocasionalment en dispositius bloquejats o amb altres configuracions restringides.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -203,8 +183,6 @@
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">General</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Utilitza SMSSecure per veure i emmagatzemar tots els missatges de text entrants</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Utilitza SMSSecure per veure i emmagatzemar tots els missatges multimèdia entrants</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Escull el teu contacte de la llista de contactes</string>
   <string name="preferences__change_passphrase">Canvia frase contrasenya</string>
   <string name="preferences__complete_key_exchanges">Completa intercanvis de claus</string>
@@ -247,7 +225,6 @@
   <string name="preferences__default">Predeterminat</string>
   <string name="preferences__language">Idioma</string>
   <string name="preferences__make_default_sms_app">Estableix com a app d\'SMS predeterminada</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Fes SMSSecure l\'aplicació d\'SMS/MMS predeterminada del teu sistema.</string>
   <string name="preferences__submit_debug_log">Envia un registre de depuració</string>
   <!--****************************************-->
   <!--menus-->
@@ -289,16 +266,14 @@
   <string name="conversation_group_options__broadcast">Difusió</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Compara</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Sigues escanejat per comparar</string>
-  <string name="key_scanning__menu_scan_to_compare">Escaneja per comparar</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_settings">Configuració</string>
   <string name="text_secure_normal__menu_clear_passphrase">Bloqueja</string>
   <!--reminder_header-->
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

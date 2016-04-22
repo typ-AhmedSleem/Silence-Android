@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Áno</string>
   <string name="no">Nie</string>
   <string name="delete">Zmaž</string>
@@ -44,8 +43,6 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_calls_not_supported">Hovory nie sú podporované</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily správy</string>
-  <string name="ConversationFragment_success_exclamation">Úspech!</string>
-  <string name="ConversationFragment_saving_attachment">Ukladám prílohu</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Mažem</string>
@@ -62,7 +59,6 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ExportFragment_export">Export</string>
   <string name="ExportFragment_cancel">Zrušiť</string>
   <string name="ExportFragment_exporting">Exportujem</string>
-  <string name="ExportFragment_success">Úspech!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nová skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aktualizuj skupinu</string>
@@ -75,25 +71,15 @@ Upozornenie, toto vypne kryptovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ImportExportActivity_export">Export</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Importovať systémovú databázu SMS?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Toto naimportuje
-správy zo štandardnej systémovj databázy SMS správ do SMSSecure. Ak ste predým
-importovali systémovú databázu SMS, opakovaný import zduplikuje správy.</string>
   <string name="ImportFragment_import">Import</string>
   <string name="ImportFragment_cancel">Zrušiť</string>
-  <string name="ImportFragment_restore_encrypted_backup">Obnoviť zašifrovanú zálohu?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľúče, nastavenia a správy. Všetky informácie v aktuálnej inštalácii SMSSecure budú prepísané. Záloha zostane zachovaná.</string>
-  <string name="ImportFragment_restore">Obnovenie</string>
   <string name="ImportFragment_import_plaintext_backup">Importovať nezašifrovanú zálohu?</string>
   <string name="ImportFragment_importing">Importujem</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">Importujem nekryptovanú zálohu...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nenašiel som nekryptovanú zálohu!</string>
   <string name="ImportFragment_error_importing_backup">Chyba pri importovaní zálohy!</string>
   <string name="ImportFragment_import_complete">Import dokončený!</string>
-  <string name="ImportFragment_restoring">Obnovujem</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Obnovujem kryptovanú zálohu...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nenašiel som kryptovanú zálohu!</string>
-  <string name="ImportFragment_restore_complete">Obnova dokončená!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nenašiel som scannovaný kľúč!</string>
   <!--MessageDetailsRecipient-->
@@ -108,7 +94,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Nesprávne staré heslo!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Zadaj heslo</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikonka</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Nesprávne heslo!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_processing">Spracováva sa</string>
@@ -123,13 +108,11 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte kľúč totožnosti.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Príjemca nemá kľúč totožnosti.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Pre porovnanie scannuj ich kľúč</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, scannovaný kľúč sa NEZHODUJE! Dôsledne skontrolujte text odtlačku.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIE JE verifikované!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ich kľúč je v poriadku. Je tiež potrebné dať druhej strane verifikovať váš kľúč.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Verifikované!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Zoscannuj pre porovnanie</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">POZOR, scannovaný kľúč sa NEZHODUJE!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Scannovaný kľúč sa zhoduje!</string>
   <!--KeyExchangeInitiator-->
@@ -154,8 +137,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="ApplicationMigrationService_import_in_progress">Prebieha import</string>
   <string name="ApplicationMigrationService_importing_text_messages">Nahrávanie textových správ</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Kliknutím otvor</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure je otvorený</string>
   <string name="KeyCachingService_lock">Zamkni s heslom</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Kryptovaná správa...</string>
@@ -199,11 +180,9 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="log_submit_activity__thanks">Ďakujem za tvoju pomoc!</string>
   <string name="log_submit_activity__submitting">Posielanie</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Chcete importovať Vaše existujúce textové správy do kryptovanej databázy SMSSecure? </string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Predvolená systémová databáza nebude modifikovaná alebo nahradenáv žiadnom prípade.</string>
   <string name="database_migration_activity__skip">Preskoč</string>
   <string name="database_migration_activity__import">Import</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Toto môže chvíľu trvať. Buďte trpezlivý prosím, dokončenie importu Vám oznámime.</string>
   <string name="database_migration_activity__importing">IMPORTUJEM</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Aktualizujem databázu...</string>
@@ -241,8 +220,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="preferences__general">Všeobecné</string>
   <string name="preferences__pref_all_sms_title">Príjmy všetky SMS</string>
   <string name="preferences__pref_all_mms_title">Príjmy všetky MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Použi SMSSecure na zobrazenie a uloženie všetkých prichádzajúcich správ</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Použi SMSSecure na zobrazenie a uloženie všetkých prichádzajúcich miltimediálnych správ</string>
   <string name="preferences__display_settings">Nastavenia zobrazenia</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Vyberte Váš kontakt zo zoznamu kontaktov.</string>
   <string name="preferences__change_passphrase">Zmeň heslo</string>
@@ -341,8 +318,6 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <string name="conversation_group_options__broadcast">Vysielanie</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Porovnaj</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Nascannuj pre porovnanie</string>
-  <string name="key_scanning__menu_scan_to_compare">Zoscannuj pre porovnanie</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nová správa</string>
   <string name="text_secure_normal__menu_new_group">Nová skupina</string>
@@ -352,8 +327,8 @@ Obnovenie zakryptovanej zálohy prepíše všetky existujúce kryptovacie kľú�
   <!--reminder_header-->
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Kyllä</string>
   <string name="no">Ei</string>
   <string name="delete">Poista</string>
@@ -14,9 +13,7 @@
 Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. Salatut istuntosi jatkavat toimintaansa, mutta kuka tahansa, jolla on fyysinen pääsy laitteeseesi voi lukea ne.</string>
   <string name="ApplicationPreferencesActivity_disable">Poista käytöstä</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Saapuvat tekstiviestit sallittu</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Kosketa muuttaaksesi oletus tekstiviestisovellustasi</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Saapuvat tekstiviestit kielletty</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Kosketa asettaaksesi SMSSecuren oletus tekstiviestisovellukseksi</string>
   <string name="ApplicationPreferencesActivity_on">päällä</string>
   <string name="ApplicationPreferencesActivity_On">Päällä</string>
   <string name="ApplicationPreferencesActivity_off">pois</string>
@@ -47,7 +44,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Käytä salaamattomia tekstiviestejä?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Käytä salaamattomia MMS-viestejä?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tätä viestiä <b>ei</b> voida salata, koska suojattua istuntoa ei voitu muodostaa. Lähetä salaamaton viesti?</string>
-  <string name="ConversationItem_unable_to_open_media">Median avaamiseen ei löytynyt sovellusta.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Aloita suojattu istunto?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Aloita salattu istunto %s:n kanssa?</string>
@@ -72,11 +68,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Viestin tiedot</string>
   <string name="ConversationFragment_save_to_sd_card">Tallenna muistiin?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Tiedoston tallennuksessa tapahtui virhe!</string>
-  <string name="ConversationFragment_success_exclamation">Onnistuimme!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Muistiin tallentaminen epäonnistui!</string>
-  <string name="ConversationFragment_saving_attachment">Liitettä tallennetaan</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Liitettä tallennetaan muistiin...</string>
   <string name="ConversationFragment_pending">Käsiteltävänä...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -101,7 +93,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ExportFragment_export">Vie</string>
   <string name="ExportFragment_cancel">Peruuta</string>
   <string name="ExportFragment_exporting">Viedään</string>
-  <string name="ExportFragment_success">Onnistuimme!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Uusi ryhmä</string>
   <string name="GroupCreateActivity_actionbar_update_title">Päivitä ryhmää</string>
@@ -116,16 +107,8 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ImportExportActivity_export">Vie</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Tuodaanko järjestelmän tekstiviestitietokanta SMSSecureen?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Tämä toiminto kopioi 
-tekstiviestit laitteesi tietokannasta SMSSecureen. Jos viestit on tuotu jo aiemmin,
-seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <string name="ImportFragment_import">Tuo</string>
   <string name="ImportFragment_cancel">Peruuta</string>
-  <string name="ImportFragment_restore_encrypted_backup">Palautetaanko salattu varmuuskopio?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Salatun varmuuskopion palauttaminen korvaa kaikki olemassa olevat avaimet, asetukset ja
-viestit.  Menetät kaikki SMSSecuressa olevat tiedot, jotka eivät ole osa varmuuskopiota.</string>
-  <string name="ImportFragment_restore">Palauta</string>
   <string name="ImportFragment_import_plaintext_backup">Tuodaanko salaamaton varmuuskopio?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tämä toiminto tuo viestit salaamattomasta varmuuskopiosta. Jos viestit on tuotu jo
 aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
@@ -134,14 +117,10 @@ aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <string name="ImportFragment_no_plaintext_backup_found">Salaamatonta varmuuskopiota ei löytynyt!</string>
   <string name="ImportFragment_error_importing_backup">Virhe tuotaessa varmuuskopiota!</string>
   <string name="ImportFragment_import_complete">Tuonti suoritettu!</string>
-  <string name="ImportFragment_restoring">Palautetaan</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Palautetaan salattua varmuuskopiota...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Salattua varmuuskopiota ei löytynyt!</string>
-  <string name="ImportFragment_restore_complete">Palautus suoritettu!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Skannattuja avaimia ei löytynyt!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Asenna viivakoodinlukija?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure tarvitsee viivakoodinlukijan QR-koodeja varten.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Lähetys epäonnistui</string>
   <string name="MessageDetailsRecipient_new_identity">Uusi tunniste</string>
@@ -152,7 +131,6 @@ aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediaviesti</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Saapunut viesti on salattu käyttäen vanhaa versiota SMSSecuresta, jota ei enää tueta. Pyydä lähettäjää päivittämään SMSSecure uusimpaan versioon ja lähettämään viesti uudelleen.</string>
   <string name="MessageRecord_left_group">Olet lähtenyt ryhmästä.</string>
   <string name="MessageRecord_updated_group">Ryhmä päivitetty.</string>
   <!--PassphraseChangeActivity-->
@@ -160,10 +138,8 @@ aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Vanha salalause on väärin!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Syötä salalause</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-kuvake</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Salalause ei kelpaa!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Tämän avaintenvaihto-operaation sormenjälki eroaa tältä yhteystiedolta aiemmin saaduista sormenjäljistä. Tämä voi tarkoittaa että joku yrittää kaapata viestiliikennettäsi tai että yhteystietosi on uudelleenasentanut SMSSecuren, ja käyttää nyt uutta tunnisteavainta.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Tämän avaintenvaihto-operaation allekirjoitus on luotettu, mutta \"suorita avaimenvaihdot automaattisesti\"-asetus on poissa käytöstä.</string>
   <string name="ReceiveKeyActivity_processing">Käsitellään</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Käsitellään avaimenvaihtoa...</string>
@@ -185,13 +161,11 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Vastaanottajalta puuttuu identiteettiavain.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skannaa heidän avain vertaillaaksesi</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VAROITUS, skannattu avain EI TÄSMÄÄ. Tarkastakaa sormenjälki huolella.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EI varmennettu!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Vastaanottajan avain on oikea. Tarkistuta myös sinun avain vastaanottajalla.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Varmennettu!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Skannaa vertaillaaksesi</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">VAROITUS: Skannattu avain ei täsmää!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skannattu avain täsmää!</string>
   <!--KeyExchangeInitiator-->
@@ -220,9 +194,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="ApplicationMigrationService_import_in_progress">Tuonti käynnissä</string>
   <string name="ApplicationMigrationService_importing_text_messages">Tuo tekstiviestejä</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Kosketa avataksesi.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Kosketa avataksesi tai kosketa lukkoa sulkeaksesi.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecuren lukitus on auki</string>
   <string name="KeyCachingService_lock">Lukitse salalauseella</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Salattu viesti...</string>
@@ -278,11 +249,9 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="log_submit_activity__submitting">Lähetetään</string>
   <string name="log_submit_activity__posting_logs">Lokit lähetetään gistiin...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Haluatko tuoda olemassa olevat tekstiviestisi SMSSecuren suojattuun tietokantaan?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Järjestelmän oletustietokantaa ei tulla muuttamaan millään tavalla.</string>
   <string name="database_migration_activity__skip">Ohita</string>
   <string name="database_migration_activity__import">Tuo</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Tämä voi viedä hetken. Ole kärsivällinen — ilmoitamme, kun tuonti on valmis.</string>
   <string name="database_migration_activity__importing">TUONTI KÄYNNISSÄ</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Tietokantaa päivitetään...</string>
@@ -298,7 +267,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Avaa</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure edellyttää MMS-asetuksia lähettääkseen mediaa ja ryhmäviestejä verkko-operaattorisi kautta. Laitettasi ei ole konfiguroitu antamaan näitä tietoja itsestään, mikä voi johtua laitteen lukituksesta operaattoriin tai muusta rajoitetusta kokoonpanosta.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -341,8 +309,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="preferences__sms_mms">SMS ja MMS</string>
   <string name="preferences__pref_all_sms_title">Vastaanota kaikki tekstiviestit</string>
   <string name="preferences__pref_all_mms_title">Vastaanota kaikki multimediaviestit</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Käytä SMSSecurea kaikkien saapuvien tekstiviestien katselemiseen ja tallentamiseen</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Käytä SMSSecurea kaikkien saapuvien multimediaviestien katselemiseen ja tallentamiseen</string>
   <string name="preferences__display_settings">Näytön asetukset</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Valitse yhteystieto osoitekirjasta.</string>
   <string name="preferences__change_passphrase">Vaihda salalause</string>
@@ -411,10 +377,7 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="preferences__default">Oletus</string>
   <string name="preferences__language">Kieli</string>
   <string name="preferences__make_default_sms_app">Aseta oletus tekstiviestisovellukseksi</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Tee SMSSecuresta järjestelmäsi oletus SMS/MMS-sovellus.</string>
   <string name="preferences__submit_debug_log">Lähetä virheenkorjausloki</string>
-  <string name="preferences__support_wifi_calling">\'WiFi Calling\' -yhteensopiva tila</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Ota käyttöön jos laitteesi lähettää SMS/MMS-viestit WiFi-yhteyden kautta (ota käyttöön vain kun \'WiFi Calling\' on käytössä laitteessasi).</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -475,8 +438,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="conversation_group_options__broadcast">Lähetä</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Vertaile</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Skannauta vertaillaaksesi</string>
-  <string name="key_scanning__menu_scan_to_compare">Skannaa vertaillaaksesi</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Uusi viesti</string>
   <string name="text_secure_normal__menu_new_group">Uusi ryhmä</string>
@@ -485,7 +446,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="text_secure_normal__mark_all_as_read">Merkitse kaikki luetuiksi</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Käytä oletus tekstiviestisovelluksena?</string>
-  <string name="reminder_header_sms_default_text">Kosketa tehdäksesi SMSSecuresta oletus tekstiviestisovelluksesi.</string>
   <string name="reminder_header_sms_import_title">Tuo järjestelmän tekstiviestit SMSSecureen?</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Sinä</string>
@@ -493,8 +453,8 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="MediaPreviewActivity_unssuported_media_type">Median tyyppiä ei tueta</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Tallenna</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Poistetaan...</string>
   <string name="trimmer__deleting_old_messages">Vanhat viestit poistetaan...</string>

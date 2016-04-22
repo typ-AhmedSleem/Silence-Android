@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Bai</string>
   <string name="no">Ez</string>
   <string name="delete">Ezabatu</string>
@@ -16,9 +15,7 @@ Zure enkriptatutako saioek funtzionatzen jarraituko dute, baina zure gailua fisi
 gai izango da saiootan sartzeko.</string>
   <string name="ApplicationPreferencesActivity_disable">Desgaitu</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Sarrerako SMSak Gaituta</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Ukitu zure SMS aplikazio lehenetsia aldatzeko</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Sarrerako SMSak Desgaituta</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Ukitu SMSSecure zure SMS aplikazio lehenetsia bihurtzeko</string>
   <string name="ApplicationPreferencesActivity_on">piztuta</string>
   <string name="ApplicationPreferencesActivity_On">Aktibatuta</string>
   <string name="ApplicationPreferencesActivity_off">desaktibatuta</string>
@@ -47,7 +44,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Enkriptatzerik gabeko SMSra pasatu aukera gisa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Enkriptatzerik gabeko MMSra pasatu aukera gisa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Mezu hau <b>ez</b> da enkriptatuko zeren eta saio seguru bat ezin izan baita ezarri.\n\nSegurtasunik gabeko mezua bidali?</string>
-  <string name="ConversationItem_unable_to_open_media">Ezin dut aurkitu euskarri hau irekitzeko gai den aplikaziorik</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Hasi saio segurua?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s-(r)ekin saio segurua abiatu?</string>
@@ -72,11 +68,7 @@ gai izango da saiootan sartzeko.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mezuaren detaileak</string>
   <string name="ConversationFragment_save_to_sd_card">Biltegian gorde?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Errorea eranskina biltegian gordetzerakoan!</string>
-  <string name="ConversationFragment_success_exclamation">Arrakasta!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ezgai biltegian idazteko!</string>
-  <string name="ConversationFragment_saving_attachment">Eranskina gordetzen</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Eranskina biltegian gordetzen...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Ezabatzen...</string>
@@ -97,7 +89,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ExportFragment_export">Esportatu</string>
   <string name="ExportFragment_cancel">Utzi</string>
   <string name="ExportFragment_exporting">Esportatzen</string>
-  <string name="ExportFragment_success">Arrakasta!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Talde berria</string>
   <string name="GroupCreateActivity_actionbar_update_title">Taldea eguneratu</string>
@@ -112,16 +103,8 @@ gai izango da saiootan sartzeko.</string>
   <string name="ImportExportActivity_export">Esportatu</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Inportatu sistemaren SMS datubasea?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Zure sisteman lehenetsitako SMS datubasearen mezuak inportatuko dira SMSSecure-era. Lehenago inportatu baduzu sistemaren SMS datubasea, berriro egiteak mezu bikoiztuak sor ditzake.</string>
   <string name="ImportFragment_import">Inportatu</string>
   <string name="ImportFragment_cancel">Utzi</string>
-  <string name="ImportFragment_restore_encrypted_backup">Enkriptatutako babeskopia leheneratu?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Enkriptatutako babeskopia bat leheneratzeak zure gakoak, ezapenak eta mezuak erabat 
-ordezkatuko ditu. Galduko duzu zure egungo SMSSecure instalazioan dagoen edozein informazio, 
-baina ez babeskopian
-</string>
-  <string name="ImportFragment_restore">Leheneratu</string>
   <string name="ImportFragment_import_plaintext_backup">Inportatu enkriptatu gabeko babeskopia?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Enkriptatu gabeko babeskopia
 batetik mezuak inportatuko dira. 
@@ -132,14 +115,10 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <string name="ImportFragment_no_plaintext_backup_found">Ez da enkriptatu gabeko babeskopiarik topatu!</string>
   <string name="ImportFragment_error_importing_backup">Errorea babeskopia inportatzerakoan!</string>
   <string name="ImportFragment_import_complete">Inportaketa bukatuta!</string>
-  <string name="ImportFragment_restoring">Leheneratzen</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Enkriptatutako babeskopia leheneratzen...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ez da topatu enkriptatuko babeskopiarik!</string>
-  <string name="ImportFragment_restore_complete">Leheneratzea osatuta!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Ez da topatu eskaneatutako gakorik!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Barcode Scanner instalatu?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">SMSSecure-ek Barcode Scanner behar du QR kodeak irakurri ahal izateko.</string>
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Errorea MMS gordetzen!</string>
@@ -148,7 +127,6 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimedia mezua</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Jaso duzun mezua SMSSecuren bertsio zahar eta jadanik ez onartu bat erabiliz enkriptatu zen. Mesedez, eskatu bidaltzaileari bertsiorik berrienera eguneratu dadin eta mezua berbidali dezan. </string>
   <string name="MessageRecord_left_group">Taldea utzi duzu.</string>
   <string name="MessageRecord_updated_group">Taldea eguneratuta.</string>
   <!--PassphraseChangeActivity-->
@@ -156,14 +134,8 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Pasahitz zahar ez zuzena!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Pasahitza sartu</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure-ren ikonoa</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Pasahitz baliogabea!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Gako
-elkar-trukatzen honen sinadura kontaktu honengandik aurretik jaso duzunaz desberdina da.
-Izan daiteke norbait zure komunikazioaren erdian egotea edo, era berean, posible da kontaktu honek SMSSecure berrinstalatu izana eta gako berri bat edukitzea.
-
-</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Gakoaren
 datu-trukatze honetako sinadura fidatzekoa da, baina 
 \'gako elkar-trukatzeak automatikoki 
@@ -189,13 +161,11 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Hartzaileak ez dauka nortasun gakorik.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Eskaneatu beraien gakoa konparatzeko</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">KONTUZ, eskaneatutako gakoa EZ DATOR BAT. Mesedez, aztarnaren testua kontu handiz aztertu.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EZ Egiaztatua!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Beraien gakoa zuzena da. Beharrezkoa da zure gakoa beraiekin egiaztatzea ere.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Egiaztatua!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Eskaneatu konparatzeko</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">KONTUZ, eskaneatutako gakoa EZ DATOR BAT!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Eskaneatutako gakoa bat dator!</string>
   <!--KeyExchangeInitiator-->
@@ -224,9 +194,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="ApplicationMigrationService_import_in_progress">Inportaketa indarrean</string>
   <string name="ApplicationMigrationService_importing_text_messages">Testu mezuak inportatzen</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Ukitu irekitzeko</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Ukitu irekitzeko, edo sarraila ukitu ixteko.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure desblokeatuta dago</string>
   <string name="KeyCachingService_lock">Blokeatu pasahitz bat erabiliz</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Enkriptatuko mezua...</string>
@@ -281,11 +248,9 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="log_submit_activity__submitting">Bidaltzen</string>
   <string name="log_submit_activity__posting_logs">Logak gist-era bidaltzen...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Nahiko zenuke zure testu mezuak SMSSecure-ren enkriptatutako datubasera inportatu?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Sistemaren lehenetsitako datubasea ez da inolako moduan aldatuko.</string>
   <string name="database_migration_activity__skip">Saltatu</string>
   <string name="database_migration_activity__import">Inportatu</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Honek denbora tarte bat har lezake. Mesedez, pazientzia izan, jakinaraziko dizugu inportatzea osatuta dagoenean.</string>
   <string name="database_migration_activity__importing">INPORTATZEN</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Datubasea eguneratzen...</string>
@@ -298,7 +263,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Desblokeatu</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecurek MMS ezarpenak behar ditu media eta taldeko mezuak banatu ahal izateko zure hari-gabeko hornitzailearen bitartez. Zure gailuak ez dauka informazio hau eskuragarri. Hau batzuetan gertatzen da blokeatuta dauden eta beste konfigurazio murrizgarriak dituzten gailuetan.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -326,8 +290,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="preferences__sms_mms">SMS eta MMS</string>
   <string name="preferences__pref_all_sms_title">Jaso SMS guztiak</string>
   <string name="preferences__pref_all_mms_title">Jaso MMS guztiak</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">SMSSecure erabili etorriko diren testu mezu guztiak ikusi eta gordetzeko</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">SMSSecure erabili etorriko diren multimedia mezu guztiak ikusi eta gordetzeko</string>
   <string name="preferences__display_settings">Bistaratze-ezarpenak</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Hautatu zure kontaktua kontaktuen zerrendatik.</string>
   <string name="preferences__change_passphrase">Pasahitza aldatu</string>
@@ -384,10 +346,7 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="preferences__default">Lehenetsia</string>
   <string name="preferences__language">Hizkuntza</string>
   <string name="preferences__make_default_sms_app">Lehenetsitako SMS aplikazio gisa ezarri</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">SMSSecure zure sistemaren lehenetsitako SMS/MMS aplikazioa bihurtu.</string>
   <string name="preferences__submit_debug_log">Arazketaren log-a bidali</string>
-  <string name="preferences__support_wifi_calling">\'\"WiFi Calling\' modu bateragarria</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Gaitu zure gailuak WiFi bidezko SMS/MMS banaketa erabiltzen badu (bakarrik gaitu \'WiFi Calling\' gaituta badago zure gailuan).</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -443,8 +402,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="conversation_group_options__broadcast">Difusioa</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Konparatu</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Eskaneatu konparatzeko</string>
-  <string name="key_scanning__menu_scan_to_compare">Eskaneatu konparatzeko</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Mezu berria</string>
   <string name="text_secure_normal__menu_new_group">Talde berria</string>
@@ -460,8 +417,8 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="MediaPreviewActivity_unssuported_media_type">Euskarri mota ez-onartua</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Gorde</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Ezabatzen...</string>
   <string name="trimmer__deleting_old_messages">Mezu zaharrak ezabatzen...</string>

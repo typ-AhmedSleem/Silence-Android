@@ -1,6 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">Krypterade SMS/MMS-konversationer på ett enkelt sätt!</string>
-  <string name="Distribution_description">SMSSecure är en SMS/MMS-app som gör det möjligt att skydda din integritet när du kommunicerar med vänner.</string>
 </resources>

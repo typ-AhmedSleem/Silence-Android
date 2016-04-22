@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">تيكست سيكيور</string>
   <string name="yes">نعم</string>
   <string name="no">لا</string>
   <string name="delete">حذف</string>
@@ -14,9 +13,7 @@
 تحذير: سيتم إلغاء تشفير مساحة تخزين الرسائل والمفاتيح. سوف تستمر محادثاتك المشفرة في العمل، ولكن سيكون أي شخص قادر على النفاذ إليهم إذا تمكن من الوصول إلى الهاتف.</string>
   <string name="ApplicationPreferencesActivity_disable">تعطيل</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">تفعيل ورود الرسائل</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">أضغط لتغيير التطبيق الافتراضي للرسائل</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">تعطيل ورود الرسائل</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">أضغط لجعل تيكست سيكيورالتطبيق الافتراضي للرسائل</string>
   <string name="ApplicationPreferencesActivity_on">يعمل</string>
   <string name="ApplicationPreferencesActivity_On">يعمل</string>
   <string name="ApplicationPreferencesActivity_off">مغلق</string>
@@ -47,7 +44,6 @@
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">الاستعاضة برسالة غير مشفرة؟</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">الاستعاضة برسالة وسائط متعددة غير مشفرة؟</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">هذه الرسالة <b>لن تكون</b> مشفرة بسبب تعذر بدء اتصال مشفر.\n\n أرسل رسالة غير مشفرة؟</string>
-  <string name="ConversationItem_unable_to_open_media">لم يتم العثور على تطبيق قادر على فتح الملف.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">بدء محادثة آمنة؟</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">بدء التشفير مع %s؟</string>
@@ -72,11 +68,7 @@
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">تفاصيل الرسالة</string>
   <string name="ConversationFragment_save_to_sd_card">أحفظ في الذاكرة؟</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">خطأ أثناء حفظ المرفق إلى الذاكرة!</string>
-  <string name="ConversationFragment_success_exclamation">تم بنجاح!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">تعذر الإضافة إلى الذاكرة!</string>
-  <string name="ConversationFragment_saving_attachment">حفظ المرفق</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">جارٍ حفظ المرفق في الذاكرة...</string>
   <string name="ConversationFragment_mms">رسالة وسائط متعددة</string>
   <string name="ConversationFragment_sms">رسالة نصية قصيرة</string>
   <string name="ConversationFragment_deleting">الحذف جارٍ...</string>
@@ -100,7 +92,6 @@
   <string name="ExportFragment_export">تصدير</string>
   <string name="ExportFragment_cancel">إلغاء</string>
   <string name="ExportFragment_exporting">التصدير جارٍ...</string>
-  <string name="ExportFragment_success">تم بنجاح!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">مجموعة جديدة</string>
   <string name="GroupCreateActivity_actionbar_update_title">تحديث المجموعة</string>
@@ -115,13 +106,8 @@
   <string name="ImportExportActivity_export">تصدير</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">استيراد قاعدة بيانات الرسائل من النظام؟</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">هذه الخاصية ستستورد الرسائل النصية من النظام إلى تيكست سيكيور. إذا قمت بهذا من قبل، فأن الاستيراد مرة أخرى سيتسبب في تكرار الرسائل.</string>
   <string name="ImportFragment_import">استيراد</string>
   <string name="ImportFragment_cancel">إلغاء</string>
-  <string name="ImportFragment_restore_encrypted_backup">استعادة نسخة احيتاطية مشفرة؟</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-استرجاع نسخة احتياطية مشفرة سيستبدل بالكامل المفاتيح حالية والإعدادات والرسائل. ستفقد المعلومات الموجودة الآن في تيكست سيكيور وغير موجودة في النسخة الاحتياطية.</string>
-  <string name="ImportFragment_restore">استعادة</string>
   <string name="ImportFragment_import_plaintext_backup">استيارد نسخة احتياطية غير مشفرة؟</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">سيتم استيراد رسائل ظاهرة من نسخة احتياطية. إذا قمت سابقا باستيراد هذه النسخة الاحتياطية فسوف يؤدي اسيترادها مرة أخرى إلى تكرار الرسائل.</string>
   <string name="ImportFragment_importing">الاستيراد جارٍ...</string>
@@ -129,14 +115,10 @@
   <string name="ImportFragment_no_plaintext_backup_found">لم يتم العثور على نسخ احتياطية غير مشفرة!</string>
   <string name="ImportFragment_error_importing_backup">خطأ باستيراد النسخة الاحتياطية!</string>
   <string name="ImportFragment_import_complete">تم الاستيراد!</string>
-  <string name="ImportFragment_restoring">الاستعادة جارٍ...</string>
-  <string name="ImportFragment_restoring_encrypted_backup">استعادة النسخ الاحتياطية المشفرة جارٍ..</string>
   <string name="ImportFragment_no_encrypted_backup_found">لم يتم العثور على نسخة احتياطية مشفرة!</string>
-  <string name="ImportFragment_restore_complete">تمت الاستعادة!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">لم يتم العثور على مفتاح!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">تثبيت ماسح Barcode؟</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">تيكست سيكيور يحتاج إلى ماسح Barcode لرموز الاستجابة السريعة</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">الإرسال فشل.</string>
   <string name="MessageDetailsRecipient_new_identity">هوية جديدة</string>
@@ -147,7 +129,6 @@
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">رسالة وسائط متعددة</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">لقد استلمت رسالة مشفرة من إصدارة تيكست سيكيور قديمة وتوقف دعمها. من فضلك اطلب من الراسل الترقية إلي أحدث إصدار وإعادة إرسال الرسالة.</string>
   <string name="MessageRecord_left_group">لقد تركت المجموعة.</string>
   <string name="MessageRecord_updated_group">خطأ..تعذر الكتابة على بطاقة الذاكرة.</string>
   <!--PassphraseChangeActivity-->
@@ -155,10 +136,8 @@
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">العبارة السرية القديمة غير صحيحة!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">أدخل العبارة السرية</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">أيقونة تيكست سيكيور</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">عبارة سرية غير صحيحة!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">المفتاح لجهة الاتصال هذه مختلف عن المرة السابقة. هذا قد يعني ان هناك محاولة لاعتراض اتصالاتك، أو ان جهة الاتصال قام\قامت بإعادة تنصيب تكست سيكيور لديهم.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">التوقيع لجهة الاتصال هذه معتمد لديك، لكنك قمت بتعطيل خاصية اكمال تبادل المفاتيح اوتوماتيكياً</string>
   <string name="ReceiveKeyActivity_processing">جاري العمل</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">جاري تبادل المفاتيح...</string>
@@ -178,13 +157,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">لا يوجد لديك مفتاح تعريفي.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">لا يوجد لدى الطرف الاخر مفتاح تعريفي.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">قم بالمسح الضوئي لمفتاحهم للمقارنة</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">تحذير: المفتاح الذي تم مسحه ضوئياً لا يتطابق! تأكد من بصمة المفتاح بحذر.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">لم يتم التحقق!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">مفتاحهم صحيح. يجب أيضاً أن تقوم بالتحقق من مفتاحك لديهم أيضاً.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">تم التحقق!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">قم بالمسح الضوئي للمقارنة</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">تحذير: المفتاح الذي تم مسحه ضوئياً لا يتطابق!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">المفتاح الذي تم مسحه ضوئياً متطابق!</string>
   <!--KeyExchangeInitiator-->
@@ -213,9 +190,6 @@
   <string name="ApplicationMigrationService_import_in_progress">جاري الاستيراد...</string>
   <string name="ApplicationMigrationService_importing_text_messages">استيراد رسائل نصية</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">افتح</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">أنقر للفتح أو أنقر رمز القفل للإغلاق</string>
-  <string name="KeyCachingService_passphrase_cached">تيكست سيكيور غير مقفل</string>
   <string name="KeyCachingService_lock">أقفل بالعبارة السرية</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">رسالة مشفرة...</string>
@@ -271,11 +245,9 @@
   <string name="log_submit_activity__submitting">إرسال</string>
   <string name="log_submit_activity__posting_logs">جاري نشر السجلات إلى Gist...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">هل تود استيراد الرسائل النصية إلى قواعد بيانات تيكست سيكيور المشفرة؟</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">لن يتم تغيير قاعدة البيانات الأساسية بأي طريقة.</string>
   <string name="database_migration_activity__skip">تخطى</string>
   <string name="database_migration_activity__import">استيراد</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">قد تستغرق العملية عدة دقائق. يرجى الانتظار. سيتم تنبيهك عند انتهاء العملية.</string>
   <string name="database_migration_activity__importing">مهم!</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">تحديث قاعدة البيانات...</string>
@@ -291,7 +263,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">فتح القفل</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">يتطلب تيكست سيكيور إعدادات خدمة الوسائط المتعددة من أجل تسليم رسائل الوسائط المتعددة والمجموعات عبر المشغل اللاسلكي. في بعض الأحوال لا تتاح هذه المعلومات مع الهواتف المقفولة أو ذات الإعدادات المقيدة.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -338,8 +309,6 @@
   <string name="preferences__sms_mms">رسالة نصية قصيرة ورسالة وسائط متعددة</string>
   <string name="preferences__pref_all_sms_title">اإستقبال كل الرسائل النصية القصيرة</string>
   <string name="preferences__pref_all_mms_title">استقبال كل رسائل الوسائط المتعددة</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">استخدم تيكست سيكيور لعرض وحفظ كل الرسائل القصيرة الواردة</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">استخدم تيكست سيكيور لعرض وحفظ كل رسائل الوسائط المتعددة الواردة</string>
   <string name="preferences__display_settings">إعدادات العرض</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">اختر جهة الاتصال من القائمة</string>
   <string name="preferences__change_passphrase">غير العبارة السرية</string>
@@ -408,10 +377,7 @@
   <string name="preferences__default">افتراضي</string>
   <string name="preferences__language">اللغة</string>
   <string name="preferences__make_default_sms_app">ضبط تيكست سيكيور كتطبيق الرسائل الافتراضي</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">اجعل تيكست سيكيور التطبيق الافتراضي للرسائل القصيرة ورسائل الوسائط المتعددة.</string>
   <string name="preferences__submit_debug_log">إرسال سجل التصحيح</string>
-  <string name="preferences__support_wifi_calling">وضع التوافق مع \'مكالمات الواي فاي\'</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">مكن في حال كان جهازك يستخدم خاصية الرسالة القصيرة أو الرسائل الوسائط المتعددة بإستخدام الواي-فاي (مكن فقط في حال تفعيل خاصية \'مكالمات الواي-فاي\' في جهزك)</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -472,8 +438,6 @@
   <string name="conversation_group_options__broadcast">بث</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">قارن</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">قم بالمسح الضوئي للمقارنة</string>
-  <string name="key_scanning__menu_scan_to_compare">قم بالمسح الضوئي للمقارنة</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">رسالة جديدة</string>
   <string name="text_secure_normal__menu_new_group">مجموعة جديدة</string>
@@ -482,7 +446,6 @@
   <string name="text_secure_normal__mark_all_as_read">اعتبارها رسائل مقروءة</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">اجعله التطبيق الافتراضي المستخدم للرسائل؟</string>
-  <string name="reminder_header_sms_default_text">أضغط لجعل تيكست سيكيورالتطبيق الافتراضي للرسائل.</string>
   <string name="reminder_header_sms_import_title">استيراد رسائل النظام؟</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">أنت</string>
@@ -490,8 +453,8 @@
   <string name="MediaPreviewActivity_unssuported_media_type">غير مدعوم.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">أحفظ</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">جار الحذف...</string>
   <string name="trimmer__deleting_old_messages">جار حذف الرسائل القديمة...</string>

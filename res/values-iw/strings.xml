@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">כן</string>
   <string name="no">לא</string>
   <string name="delete">מחק</string>
@@ -37,7 +36,6 @@
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">נראה כי מכשיר זה אינו תומך בפעולות חיוג.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">פרטי הודעה</string>
-  <string name="ConversationFragment_success_exclamation">הצליח!</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">מוחק</string>
@@ -52,33 +50,20 @@
   <string name="ExportFragment_export">יצא</string>
   <string name="ExportFragment_cancel">בטל</string>
   <string name="ExportFragment_exporting">מייצא</string>
-  <string name="ExportFragment_success">הצליח!</string>
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
   <!--ImportExportActivity-->
   <string name="ImportExportActivity_import">יבא</string>
   <string name="ImportExportActivity_export">יצא</string>
   <!--ImportFragment-->
-  <string name="ImportFragment_this_will_import_messages_from_the_system">פעולה זו תייבא
-הודעות מבסיס הנתונים של ה-SMS ברירת המחדל של המערכת ל-SMSSecure.
- אם כבר ייבאת מבסיס נתונים זה, ייבוא מחדש יגרום להודעות כפולות.</string>
   <string name="ImportFragment_import">יבא</string>
   <string name="ImportFragment_cancel">בטל</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-שחזור גיבוי מוצפן יחליף לגמרי את המפתחות, ההגדרות וההודעות הקיימות.
-אתה 
-תאבד את כל המידע שבהתקנת ה-SMSSecure הנוכחית שלך אבל לא שבגיבוי.
-</string>
-  <string name="ImportFragment_restore">שחזר</string>
   <string name="ImportFragment_importing">מייבא</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">יבא גיבוי לא מוצפן...</string>
   <string name="ImportFragment_no_plaintext_backup_found">לא נמצא גיבוי לא מוצפן!</string>
   <string name="ImportFragment_error_importing_backup">שגיאה בייבוא הגיבוי!</string>
   <string name="ImportFragment_import_complete">הייבוא הסתיים!</string>
-  <string name="ImportFragment_restoring">משחזר</string>
-  <string name="ImportFragment_restoring_encrypted_backup">משחזר גיבוי מוצפן...</string>
   <string name="ImportFragment_no_encrypted_backup_found">לא נמצא גיבוי מוצפן!</string>
-  <string name="ImportFragment_restore_complete">השחזור הסתיים!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">לא נמצא מפתח סרוק!</string>
   <!--MessageDetailsRecipient-->
@@ -92,12 +77,6 @@
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">סיסמה ישנה לא נכונה.</string>
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">החתימה
-על החלפת המפתח הזאת שונה ממה שקיבלת בעבר מאיש הקשר הזה.
-זה יכול להעיד שמישהו מנסה ליירט את התקשורת שלך
-או
-שאיש הקשר פשוט התקין מחדש את SMSSecure ועכשיו יש לו מפתח זהות חדש.
-</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">החתימה
 על החלפת המפתח הזו אמינה, אבל ביטלת את האפשרות של \"השלם החלפת
  מפתח אוטומטית\" בהגדרות.
@@ -112,13 +91,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">אין לך מפתח זהות.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">לנמען אין מפתח זהות.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">סרוק את המפתח שלהם כדי להשוות</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">אזהרה, המפתח שנסרק אינו זהה! בבקשה בדוק בזהירות את הטקסט של טביעת האצבע.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">לא מאומת!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">המפתח שלהם נכון. זה הכרחי גם לאמת את המפתח שלך איתם.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">אומת!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">סרוק להשוואה</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">אזהרה המפתח שנסרק אינו תואם!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">המפתח שנסרק מתאים!</string>
   <!--KeyExchangeInitiator-->
@@ -174,11 +151,9 @@
   <!--conversation_fragment_cab-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">אתה רוצה לייבא את הודעות הטקסט הקיימות שלך לבסיס הנתונים המוצפן של SMSSecure?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">בסיס הנתונים ברירת המחדל של המערכת לא ישתנה בשום אופן.</string>
   <string name="database_migration_activity__skip">דלג</string>
   <string name="database_migration_activity__import">יבא</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">זה יכול לקחת כמה רגעים. סבלנות בבקשה, אנחנו נודיע לך כשהייבוא הושלם.</string>
   <string name="database_migration_activity__importing">מייבא</string>
   <!--database_upgrade_activity-->
   <!--load_more_header-->
@@ -187,7 +162,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">פתח</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure דורש הגדרות MMS כדי לשלוח הודעות מולטימדיה או הודעות קבוצתיות דרך ספק השירות שלך. המכשיר שלך לא מספק את המידע הזה, זה קורה לעיתים במכשירים נעולים או קונפיגורציות מוגבלות אחרות.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -203,8 +177,6 @@
   <!--plurals.xml-->
   <!--preferences.xml-->
   <string name="preferences__general">כללי</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">השתמש ב-SMSSecure לצפייה ואחסון של כל הודעות הטקסט</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">השתמש ב-SMSSecure לצפייה ואחסון של כל הודעות המולטימדיה</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">בחר איש קשר מאנשי הקשר.</string>
   <string name="preferences__change_passphrase">שנה סיסמה</string>
   <string name="preferences__complete_key_exchanges">השלם החלפות מפתח</string>
@@ -282,15 +254,13 @@
   <string name="conversation_group_options__broadcast">שידור</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">השווה</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">עבור סריקה להשוואה</string>
-  <string name="key_scanning__menu_scan_to_compare">סרוק להשוואה</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_settings">הגדרות</string>
   <!--reminder_header-->
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

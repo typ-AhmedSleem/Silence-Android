@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Ναι</string>
   <string name="no">Όχι</string>
   <string name="delete">Διαγραφή</string>
@@ -17,9 +16,7 @@
     </string>
   <string name="ApplicationPreferencesActivity_disable">Απενεργοποίηση</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Ενεργοποίηση των εισερχομένων μηνύματων</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Προεπιλεγμένη εφαρμογή για SMS</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Απενεργοποίηση εισερχομένων </string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Προεπιλεγμένη εφαρμογή για SMS</string>
   <string name="ApplicationPreferencesActivity_on">Ενεργοποιηση</string>
   <string name="ApplicationPreferencesActivity_On">Ενεργοποιηση</string>
   <string name="ApplicationPreferencesActivity_off">Απενεργοποιηση</string>
@@ -53,11 +50,9 @@
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Αυτό το μήνυμα <b>δεν</b> θα προστατευτεί επειδή δε μπορέσαμε να ξεκινήσουμε ασφαλή συζήτηση με τον παραλήπτη.
 
 Να σταλεί το μήνυμα απροστάτευτο;</string>
-  <string name="ConversationItem_unable_to_open_media">Δεν μπορεί να βρεθεί μια εφαρμογή που είναι σε θέση να ανοίξει αυτό το μέσο.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Εκκίνηση ασφαλούς συνεδρίας;</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Έναρξη ασφαλούς συζήτησης με %s;</string>
-  <string name="ConversationActivity_detected_smssecure_initiate_session_question">Έχετε λάβει ένα μήνυμα από κάποιον που υποστηρίζει SMSSecure κρυπτογραφημένες συνεδρίες. Θέλετε να ξεκινήσετε μια ασφαλή συνεδρία;</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Επιβεβαίωση τερματισμού ασφαλής συνεδρίας</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Είστε σίγουροι πως θέλετε να τελειώσετε αυτήν την συνέδρια ασφαλούς συζήτησης;</string>
   <string name="ConversationActivity_add_attachment">Προσθήκη συνημμένου</string>
@@ -85,11 +80,7 @@
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_save_to_sd_card">Να αποθηκευτεί στην κάρτα μνήμης;</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Σφάλμα κατά την αποθήκευση συνημμένου στην αποθήκευση!</string>
-  <string name="ConversationFragment_success_exclamation">Επιτυχία!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Αδύνατη η εγγραφή στην αποθήκευση</string>
-  <string name="ConversationFragment_saving_attachment">Αποθήκευση συνημμένου</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Αποθήκευση συνημμένου...</string>
   <string name="ConversationFragment_pending">Εν αναμονή...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -114,7 +105,6 @@
   <string name="ExportFragment_export">Εξαγωγή</string>
   <string name="ExportFragment_cancel">Ακύρωση</string>
   <string name="ExportFragment_exporting">Εξαγωγή</string>
-  <string name="ExportFragment_success">Επιτυχία!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Νέα ομάδα</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ενημέρωση ομάδας</string>
@@ -129,19 +119,8 @@
   <string name="ImportExportActivity_export">Εξαγωγή</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Να εισαγχθούν όλα τα προϋπάρχοντα SMS;</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Θα γίνει εισαγωγή όλων των
-        μηνυμάτων από το προκαθορισμένο αρχείο μηνυμάτων SMS της συσκευής σας στο SMSSecure. Αν έχετε ήδη εισάγει
-        το αρχείο μηνυμάτων της συσκευής σας, η επανα-εισαγωγή θα έχει ως αποτέλεσμα διπλά μηνύματα.
-    </string>
   <string name="ImportFragment_import">Εισαγωγή</string>
   <string name="ImportFragment_cancel">Ακύρωση</string>
-  <string name="ImportFragment_restore_encrypted_backup">Επαναφορά Του Κρυπτογραφημένου Αντιγράφου Ασφαλείας;</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-        Η επαναφορά του κρυπτογραφημένου αντιγράφου ασφαλείας θα αντικαταστήσει πλήρως τα υπάρχοντα κλειδιά, τις ρυθμίσεις και τα
-        μηνύματά σας. Θα χάσετε όλα τα δεδομένα της υπάρχουσας εγκατάστασης του SMSSecure, αλλά όχι
-        του αντίγραφου ασφαλείας.
-    </string>
-  <string name="ImportFragment_restore">Επαναφορά</string>
   <string name="ImportFragment_import_plaintext_backup">Εισαγωγή Μη Κρυπτογραφημένου Αντιγράφου Ασφαλείας;</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Αυτό θα εισάγει
         μηνύματα από ένα μη κρυπτογραφημένο αντίγραφο ασφαλείας. Αν έχετε ήδη πρωτύτερα εισάγει το αρχείο μηνυμάτων SMS του συστήματος,
@@ -152,14 +131,10 @@
   <string name="ImportFragment_no_plaintext_backup_found">Δε βρέθηκε μη κρυπτογραφημένο αντίγραφο ασφαλείας!</string>
   <string name="ImportFragment_error_importing_backup">Σφάλμα κατά την εισαγωγή αντιγράφων ασφαλείας!</string>
   <string name="ImportFragment_import_complete">Η εισαγωγή ολοκληρώθηκε!</string>
-  <string name="ImportFragment_restoring">Επαναφορά</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Επαναφορά κρυπτογραφημένου αντιγράφου ασφαλείας...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Δε βρέθηκε κρυπτογραφημένο αντίγραφο ασφαλείας!</string>
-  <string name="ImportFragment_restore_complete">Επαναφορά ολοκληρώθηκε!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Δε βρέθηκε κλειδί!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Θέλετε να εγκαταστήσετε το Barcode Scanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Το SMSSecure χρειάζεται σαρωτή γραμμωτών κωδίκων για τους QR κωδικούς.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Απέτυχε η αποστολή</string>
   <string name="MessageDetailsRecipient_new_identity">Νέα ταυτότητα</string>
@@ -170,7 +145,6 @@
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Μήνυμα Πολυμέσων</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Λάβαμε ένα μήνυμα κρυπτογραφημένο με μια παλιά έκδοση του SMSSecure που δεν υποστηρίζεται πλέον. Παρακαλώ ζητήστε από τον αποστολέα να αναβαθμίσει στη τελευταία έκδοση και να ξαναστείλει το μήνυμα.</string>
   <string name="MessageRecord_left_group">Έχετε αφήσει την ομάδα.</string>
   <string name="MessageRecord_updated_group">Ενημερώθηκε η ομάδα.</string>
   <!--PassphraseChangeActivity-->
@@ -179,14 +153,8 @@
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Δεν τέθηκε μια συνθηματική φράση!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Εισάγετε συνθηματική φράση</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Εικονίδιο SMSSecure</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Άκυρη συνθηματική φράση!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Το
-        αποτύπωμα αυτής της ανταλλαγής κλειδιών είναι διαφορετικό από αυτό που λάβαμε πρωτύτερα από αυτή την
-        επαφή. Αυτό σημαίνει είτε ότι κάποιος προσπαθεί να υποκλέψει τη συνομιλία σας, ή
-        ότι αυτή η επαφή απλά επανεγκτέστησε το SMSSecure και τώρα έχει νέο κλειδί ταυτότητας.
-    </string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Η
         υπογραφή αυτής της ανταλλαγής κλειδιών είναι έμπιστη, αλλά η ρύθμιση «Να ολοκληρώνονται
         οι ανταλλαγές κλειδιών» είναι απενεργοποιημένη.
@@ -214,13 +182,11 @@
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ο παραλήπτης δεν έχει κλειδί ταυτότητας.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Σαρώστε το κλειδί τους για σύγκριση</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει! Ελέγξτε προσεκτικά το αποτύπωμα.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">ΔΕΝ Επιβεβαιώθηκε!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Το κλειδί τους είναι σωστό. Είναι επίσης απαραίτητο να επιβεβαιώσουν το κλειδί σας.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Επιβεβαιώθηκε!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Σαρώστε για σύγκριση</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ΠΡΟΣΟΧΗ, το σαρωμένο κλειδί ΔΕΝ ταιριάζει!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Το σαρωμένο κλειδί ταιριάζει!</string>
   <!--KeyExchangeInitiator-->
@@ -250,9 +216,6 @@
   <string name="ApplicationMigrationService_import_in_progress">Εισαγωγή σε εξέλιξη</string>
   <string name="ApplicationMigrationService_importing_text_messages">Εισάγονται τα Μηνύματα Κειμένου</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Πατήστε για άνοιγμα.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Πατήστε για άνοιγμα, ή πατήστε τη κλειδαριά για κλείσιμο.</string>
-  <string name="KeyCachingService_passphrase_cached">Το SMSSecure είναι ξεκλειδωμένο</string>
   <string name="KeyCachingService_lock">Κλείδωμα με συνθηματική φράση</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Κρυπτογραφημένο μήνυμα...</string>
@@ -311,11 +274,9 @@
   <string name="log_submit_activity__submitting">Αποστολή</string>
   <string name="log_submit_activity__posting_logs">Αποστολή των αρχείων καταγραφής στο gist…</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Να εισαχθούν τα παλιά μηνύματα στη κρυπτογραφημένη βάση δεδομένων του SMSSecure;</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Το υπάρχον αρχείο μηνυμάτων δε θα αλλαχθεί.</string>
   <string name="database_migration_activity__skip">Παράληψη</string>
   <string name="database_migration_activity__import">Εισαγωγή</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Παρακαλώ περιμένετε, αυτό μπορεί να πάρει λίγη ώρα. Θα σας ειδοποιήσουμε μόλις τελειώσει η εισαγωγή.</string>
   <string name="database_migration_activity__importing">ΕΙΣΑΓΩΓΗ</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Ενημέρωση Βάσης Δεδομένων...</string>
@@ -331,7 +292,6 @@
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Ξεκλείδωμα</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">Το SMSSecure χρειάζεται τις ρυθμίσεις MMS για να στείλει μηνύματα πολυμέσων μέσω του πάροχού σας. Η συσκευή σας δεν παρέχει αυτές τις ρυθμίσεις, κάτι που ισχύει σε κλειδωμένες συσκευές και άλλες περιοριστικές διαμορφώσεις.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -374,8 +334,6 @@
   <string name="preferences__sms_mms">SMS και MMS</string>
   <string name="preferences__pref_all_sms_title">Λήψη όλων των μηνυμάτων</string>
   <string name="preferences__pref_all_mms_title">Λήψη όλων των μηνυμάτων MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Χρήση SMSSecure για προβολή και αποθήκευση όλων των μηνυμάτων SMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Χρήση SMSSecure για προβολή και αποθήκευση όλων των μηνυμάτων MMS</string>
   <string name="preferences__display_settings">Ρυθμίσεις Προβολής</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Επιλέξτε την επαφή σας από τη λίστα επαφών.</string>
   <string name="preferences__change_passphrase">Αλλαγή συνθηματικής φράσης</string>
@@ -445,11 +403,7 @@
   <string name="preferences__default">Προκαθορισμένη</string>
   <string name="preferences__language">Γλώσσα</string>
   <string name="preferences__make_default_sms_app">Ανάθεση ως προεπιλεγμένη εφαρμογή για SMS</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Το SMSSecure να είναι η προεπιλεγμένη εφαρμογή για SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Αποστολή αρχείων καταγραφής αποσφαλμάτωσης</string>
-  <string name="preferences__support_wifi_calling">Λειτουργία συμβατότητας \"WiFi Calling\' </string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Ενεργοποίηση αν η συσκευή σας χρησιμοποιεί SMS/MMS παροχής μέσω WiFi (μόνο επιτρέπτο αν το «Calling WiFi» είναι ενεργοποιημένο στην συσκευή σας).</string>
-  <string name="preferences__about">Σχετικά με το SMSSecure</string>
   <string name="preferences__about_version">Έκδοση %s</string>
   <string name="preferences__about_build_id">Build ID: %s</string>
   <!--****************************************-->
@@ -513,8 +467,6 @@
   <string name="conversation_group_options__broadcast">Αποστολή Σε Όλους</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Σύγκριση</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Επιτρέψτε να μας σαρώσουν για σύγκριση</string>
-  <string name="key_scanning__menu_scan_to_compare">Σαρώστε για σύγκριση</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Νέο Μήνυμα</string>
   <string name="text_secure_normal__menu_new_group">Νέα ομάδα</string>
@@ -523,7 +475,6 @@
   <string name="text_secure_normal__mark_all_as_read">Επισήμανση όλων ως αναγνωσμένα</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Να είμαστε η προεπιλεγμένη εφαρμογή για SMS;</string>
-  <string name="reminder_header_sms_default_text">Πατήστε για να γινει το SMSSecure η προεπιλεγμένη εφαρμογή των SMS.</string>
   <string name="reminder_header_sms_import_title">Να εισαγχθούν όλα τα προϋπάρχοντα SMS;</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Εσείς</string>
@@ -531,8 +482,8 @@
   <string name="MediaPreviewActivity_unssuported_media_type">Μη υποστηριζόμενος τύπος μέσων ενημέρωσης</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Αποθήκευση</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Γίνεται διαγραφή...</string>
   <string name="trimmer__deleting_old_messages">Τα παλία μηνύματα διαγράφονται...</string>

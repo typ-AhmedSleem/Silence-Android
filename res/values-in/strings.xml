@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Ya</string>
   <string name="no">Tidak</string>
   <string name="delete">Hapus</string>
+  <string name="please_wait">Mohon tunggu...</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Anda belum mengatur kata kunci!</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="other">%d pesan tiap percakapan</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Hapus seluruh pesan lama?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="other">Ini akan segera memangkas semua percakapan menjadi %d pesan baru.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Hapus</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Matikan enkripsi media simpan?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
@@ -14,19 +20,39 @@ Peringatan, ini akan menonaktifkan penyimpanan terenkripsi untuk semua pesan dan
 anda selanjutnya akan berfungsi, tapi siapa saja yang mempunyai akses pisik ke perangkat anda
 dapat mengaksesnya</string>
   <string name="ApplicationPreferencesActivity_disable">Dinon aktifkan</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Sentuh untuk mengubah aplikasi SMS default</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">Sentuh untuk membuat SMSSecure sebagai aplikasi SMS default</string>
+  <string name="ApplicationPreferencesActivity_sms_enabled">Mengizinkan pesan masuk</string>
+  <string name="ApplicationPreferencesActivity_sms_disabled">Menolak pesan masuk</string>
+  <string name="ApplicationPreferencesActivity_on">on</string>
+  <string name="ApplicationPreferencesActivity_On">On</string>
+  <string name="ApplicationPreferencesActivity_off">off</string>
+  <string name="ApplicationPreferencesActivity_Off">Off</string>
+  <string name="ApplicationPreferencesActivity_sms">SMS</string>
+  <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">Masuk %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Kata kunci %1$s, Keamanan layar %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, Bahasa %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="other">%d menit</item>
+  </plurals>
   <!--DraftDatabase-->
+  <string name="DraftDatabase_Draft_image_snippet">(gambar)</string>
+  <string name="DraftDatabase_Draft_audio_snippet">(suara)</string>
+  <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
+  <string name="AttachmentManager_cant_open_media_selection">Tidak dapat menemukan aplikasi untuk memilih media.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_camera">Kamera</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Gambar</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
+  <string name="AttachmentTypeSelectorAdapter_contact">Info Kontak</string>
   <!--BlockedContactsActivity-->
+  <string name="BlockedContactsActivity_blocked_contacts">Kontak diblokir</string>
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Ukuran pesan: %d KB</string>
   <string name="ConversationItem_expires_s">Berakhir: %s</string>
+  <string name="ConversationItem_error_not_delivered">Tidak tersampaikan</string>
   <string name="ConversationItem_view_secure_media_question">Tampilkan media aman?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Gagal, menerima pesan pertukaran kunci terhenti.</string>
   <string name="ConversationItem_group_action_left">si %1$s telah meninggalkan grup.</string>
@@ -40,7 +66,6 @@ dapat mengaksesnya</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Perangkat ini sepertinya tidak mendukung untuk panggilan.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Rincian pesan</string>
-  <string name="ConversationFragment_success_exclamation">Sukses!</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Menghapus</string>
@@ -56,7 +81,6 @@ dapat mengaksesnya</string>
   <string name="ExportFragment_export">Eksport</string>
   <string name="ExportFragment_cancel">Batal</string>
   <string name="ExportFragment_exporting">Mengeksport</string>
-  <string name="ExportFragment_success">Sukses!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_contacts_mms_exception">Terjadi kesalahan tidak terduga yang menggagalkan pembuatan grup.</string>
   <string name="GroupCreateActivity_contacts_no_members">Anda butuh minimal satu orang dalam grup anda!</string>
@@ -65,18 +89,8 @@ dapat mengaksesnya</string>
   <string name="ImportExportActivity_import">Import</string>
   <string name="ImportExportActivity_export">Eksport</string>
   <!--ImportFragment-->
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Ini akan mengimport
-pesan dari basis data SMS default ke SMSSecure. Jika anda sebelumnya
-telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikasi pesan.
-</string>
   <string name="ImportFragment_import">Import</string>
   <string name="ImportFragment_cancel">Batal</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Memulihkan dari cadangan yang enkripsi akan sepenuhnya mengganti kunci, preferensi dan
-pesan anda. Anda akan kehilangan informasi yang ada di instalasi SMSSecure saat ini tetapi
-cadangan anda tetap aman.
-</string>
-  <string name="ImportFragment_restore">Pulihkan</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ini akan mengimport
 pesan dari basis data SMS standar ke SMSSecure. Jika anda sebelumnya
 telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikasi pesan.</string>
@@ -85,10 +99,7 @@ telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikas
   <string name="ImportFragment_no_plaintext_backup_found">Cadangan teks polos tidak ditemukan!</string>
   <string name="ImportFragment_error_importing_backup">Gagal mengimport cadangan!</string>
   <string name="ImportFragment_import_complete">Selesai mengimport!</string>
-  <string name="ImportFragment_restoring">Memulihkan</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Memulihkan daru cadangan yang dienkripsi...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Tidak menemukan adanya cadangan yang dienkripsi!</string>
-  <string name="ImportFragment_restore_complete">Pemulihan selesai!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Pemindai kunci tidak ditemukan!</string>
   <!--MessageDetailsRecipient-->
@@ -102,10 +113,6 @@ telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikas
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Kata kunci lama salah!</string>
   <!--PassphrasePromptActivity-->
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Isi
-tanda tangan dalam pertukaran kunci ini berbeda dengan apa yang telah anda terima sebelumnya dari
-kontak ini. Hal ini bisa berarti bahwa seseorang mencoba mencegat komunikasi anda, atau
-kontak ini telah menginstall ulang SMSSecure dan sekarang memiliki kunci identitas baru.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Isi
 tanda tangan pertukaran kunci ini dipercaya, tetapi anda
 menonaktifkan \'selesaikan perturakan kunci
@@ -130,13 +137,11 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Anda tidak memiliki kunci identitas.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Penerima tidak memiliki kunci identitas.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Pindai kunci untuk dicocokkan</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">PERINGATAN, kunci terpindai TIDAK cocok! Mohon periksa teks sidik jari dengan baik.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">TIDAK diverifikasi!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Kunci benar. Diperlukan juga untuk memverifikasi kunci anda.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Terverifikasi!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Pindai untuk dicocokkan</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">PERINGATAN, kunci terpindai tidak cocok!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Kunci terpindai cocok!</string>
   <!--KeyExchangeInitiator-->
@@ -160,9 +165,6 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Dalam proses mengimport</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Sentuh untuk membuka.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Sentuh untuk membuka, atau sentuh untuk menutup.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure tidak dikunci</string>
   <string name="KeyCachingService_lock">Kunci dengan kata sandi</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Mengenkripsi pesan...</string>
@@ -198,11 +200,9 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Terimakasih atas bantuan anda</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Apakah anda ingin mengimport pesan anda ke dalam basis data terenkripsi SMSSecure?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Basis data sistem standar tidak akan diubah atau dimodifikasi</string>
   <string name="database_migration_activity__skip">Lewati</string>
   <string name="database_migration_activity__import">Import</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Ini bisa sedikit memakan waktu. Harap bersabar, kami akan memberi tahu anda ketika proses import selesai</string>
   <string name="database_migration_activity__importing">MENGIMPORT</string>
   <!--database_upgrade_activity-->
   <!--load_more_header-->
@@ -211,7 +211,6 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Buka Kunci</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure memerlukan pengaturan MMS untuk mengantar pesan dan media grup melalui operator anda. Perangkan anda tidak menyediakan informasi tersebut, yang biasanya disebabkan oleh perangkat yang dikunci atau pengaturan yang ketat.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -231,8 +230,6 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="preferences__general">Umum</string>
   <string name="preferences__pref_all_sms_title">Terima semua SMS</string>
   <string name="preferences__pref_all_mms_title">Terima semua MMS</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Gunakan SMSSecure untuk melihat dan menyimpan semua pesan teks yang masuk</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Gunakan SMSSecure untuk melihat dan menyimpan semua pesan multimedia yang masuk</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Pilih kontak anda dari daftar kontak yang ada.</string>
   <string name="preferences__change_passphrase">Ganti Kata Kunci</string>
   <string name="preferences__complete_key_exchanges">Pertukaran kunci berhasil</string>
@@ -276,7 +273,6 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="preferences__default">Default</string>
   <string name="preferences__language">Bahasa</string>
   <string name="preferences__make_default_sms_app">Jadikan sebagai aplikasi SMS default</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">Jadikan SMSSecure sebagai palikasi default untuk SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Kirim debug log</string>
   <!--****************************************-->
   <!--menus-->
@@ -318,16 +314,14 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="conversation_group_options__broadcast">Siaran</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Bandingkan</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Pindai kunci untuk dicocokkan</string>
-  <string name="key_scanning__menu_scan_to_compare">Pindai untuk dicocokkan</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_settings">Konfigurasi</string>
   <string name="text_secure_normal__menu_clear_passphrase">Kunci</string>
   <!--reminder_header-->
   <!--MediaPreviewActivity-->
   <!--media_preview-->
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <!--transport_selection_list_item-->
   <!--EOF-->

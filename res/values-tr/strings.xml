@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SMSSecure</string>
   <string name="yes">Evet</string>
   <string name="no">Hayır</string>
   <string name="delete">Sil</string>
@@ -16,9 +15,7 @@ oturumlarınız işlevlerini sürdürür, fakat cihazınıza fiziksel erişimi o
 erişebilir.</string>
   <string name="ApplicationPreferencesActivity_disable">Etkisizleştir</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Gelen SMS Etkinleştirildi</string>
-  <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Varsayılan SMS uygulamanızı değiştirmek için dokunun</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Gelen SMS Etkisizleştirildi</string>
-  <string name="ApplicationPreferencesActivity_touch_to_make_textsecure_your_default_sms_app">SMSSecure\'u varsayılan SMS uygulamanız yapmak için dokunun</string>
   <string name="ApplicationPreferencesActivity_on">açık</string>
   <string name="ApplicationPreferencesActivity_On">Açık</string>
   <string name="ApplicationPreferencesActivity_off">kapalı</string>
@@ -47,7 +44,6 @@ erişebilir.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Şifrelenmemiş SMS geri düşülmesi?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Şifrelenmemiş MMS geri düşülmesi?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Bu mesaj güvenli bir oturum olmaması nedeni ile şifrelenmiş <b>gönderilemiyor</b>.\n\nGüvensiz mesaj gönderilsin mi?</string>
-  <string name="ConversationItem_unable_to_open_media">Bu medyayı açabilen bir uygulama bulunamadı.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Güvenli oturum başlatılsın mı?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s ile güvenli oturum başlat?</string>
@@ -72,11 +68,7 @@ erişebilir.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaj detayları</string>
   <string name="ConversationFragment_save_to_sd_card">Depolama alanına kaydedilsin mi?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Depolama alanına ek kaydedilirken hata!</string>
-  <string name="ConversationFragment_success_exclamation">Başarılı!</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Depolama alanına yazılamıyor!</string>
-  <string name="ConversationFragment_saving_attachment">Ek kaydediliyor</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Depolama alanına ek kaydediliyor...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Siliniyor...</string>
@@ -98,7 +90,6 @@ erişebilir.</string>
   <string name="ExportFragment_export">Dışarı Aktar</string>
   <string name="ExportFragment_cancel">İptal</string>
   <string name="ExportFragment_exporting">Dışarı aktarılıyor</string>
-  <string name="ExportFragment_success">Başarılı!</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Yeni grup</string>
   <string name="GroupCreateActivity_actionbar_update_title">Grubu güncelle</string>
@@ -113,15 +104,8 @@ erişebilir.</string>
   <string name="ImportExportActivity_export">Dışarı Aktar</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Sistem SMS veritabanı içe aktarılsın mı?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Bu mesajları sistemin varsayılan SMS veritanından SMSSecure\'a aktarır. Eğer sistemin SMS veritabanını daha önce aktardı iseniz, yeniden aktarım çifte mesajlarla sonuçlanabilir.</string>
   <string name="ImportFragment_import">İçe Aktar</string>
   <string name="ImportFragment_cancel">İptal</string>
-  <string name="ImportFragment_restore_encrypted_backup">Şifrelenmiş yedek yeniden yüklensin mi?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">
-Bir şifrelenmiş yedeğin yeniden yüklenmesi, mevcut tüm anahtarlarınızın, tercihlerinizin ve
-mesajlarınızın tamamen yedekteki ile değiştirilmesi ile sonuçlanır. Mevcut SMSSecure
-kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolur. </string>
-  <string name="ImportFragment_restore">Yeniden yükle</string>
   <string name="ImportFragment_import_plaintext_backup">Şifresiz metin yedeği içe aktarılsın mı?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Bu mesajları açık metin bir yedekten SMSSecure\'a aktarır. Eğer bu yedeği daha önce aktardı iseniz, yeniden aktarım çifte mesajlarla sonuçlanabilir.</string>
   <string name="ImportFragment_importing">İçe aktarılıyor</string>
@@ -129,14 +113,10 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <string name="ImportFragment_no_plaintext_backup_found">Şifresiz metin yedeği bulunamadı!</string>
   <string name="ImportFragment_error_importing_backup">Yedek içe aktarımında hata!</string>
   <string name="ImportFragment_import_complete">İçe aktarma tamamlandı!</string>
-  <string name="ImportFragment_restoring">Yeniden yükleniyor</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Şifrelenmiş yedek yeniden yükleniyor...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Şifrelenmiş yedek bulunamadı!</string>
-  <string name="ImportFragment_restore_complete">Yeniden yükleme tamamlandı!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Taralı anahtar bulunamadı!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Barcode Scanner kurulsun mu?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">TexSecure QR kodlarını taramak için Barcode Scanner gerektirir.</string>
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS depolama hatası!</string>
@@ -145,7 +125,6 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimedya mesajı</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Artık desteklenmeyen eski bir Textsecure sürümü ile şifrelenmiş bir mesaj alındı. Lütfen göndericiden SMSSecure uygulamasını en yeni sürümüne yükseltmesini ve mesajı tekrar göndermesini isteyiniz.</string>
   <string name="MessageRecord_left_group">Gruptan ayrıldınız.</string>
   <string name="MessageRecord_updated_group">Grubu güncelle.</string>
   <!--PassphraseChangeActivity-->
@@ -153,10 +132,8 @@ kurulumunuzda bulunan ancak yüklenecek yedekte bulunmayan tüm bilgiler kaybolu
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Yanlış eski şifre!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Parola Girin</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">SMSSecure ikonu</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Geçersiz Parola!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Bu anahtar değişiminde alınan imza, bu kişi için daha önce alınandan farklı. Bu ya üçüncü bir kişi iletişiminizi dinlemeğe çalıştığında ya da iletişim kurduğunuz kişi SMSSecure\'u yeniden kurarak yeni bir kimlik anahtarı sahibi olmuşsa mümkün olabilir.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Bu anahtar değişimdeki imza güvenilir. Ancak, siz \'anahtar değişimlerini otomatik tamamla\' ayarını etkisizleştirmişsiniz.</string>
   <string name="ReceiveKeyActivity_processing">İşleniyor</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Anahtar takası işleniyor...</string>
@@ -178,13 +155,11 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Alıcının kimlik anahtarı yok.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Karşılaştırmak için anahtarını tarayın</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UYARI, taranan anahtar EŞLEŞMİYOR! Parmak izi metnini dikkatlice inceleyin.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">Doğrulanmadı!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Onun anahtarı doğru. Anahtarınızı onunla da doğrulamanız gerekiyor.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Doğrulandı!</string>
   <!--ViewIdentityActivity-->
-  <string name="ViewIdentityActivity_scan_to_compare">Karşılaştırmak için tarayın</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UYARI, taranan anahtar EŞLEŞMİYOR!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Taranan anahtar eşleşiyor!</string>
   <!--KeyExchangeInitiator-->
@@ -213,9 +188,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="ApplicationMigrationService_import_in_progress">İçe aktarma sürüyor</string>
   <string name="ApplicationMigrationService_importing_text_messages">Mesajlar içe aktarılıyor</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_textsecure_passphrase_cached">Açmak için dokunun.</string>
-  <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Açmak için dokun, veya kapatmak için kilide dokun.</string>
-  <string name="KeyCachingService_passphrase_cached">SMSSecure kilitsiz</string>
   <string name="KeyCachingService_lock">Parola ile kilitle</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Şifrelenmiş mesaj...</string>
@@ -270,11 +242,9 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="log_submit_activity__submitting">Gönderilme</string>
   <string name="log_submit_activity__posting_logs">loglar gist\'e gönderiliyor...</string>
   <!--database_migration_activity-->
-  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Var olan mesajlarınızı, SMSSecure şifreli veritabanına aktarmak ister misiniz?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Varsayılan sistem veritabanı hiçbir şekilde değiştirilemez veya dönüştürülemez.</string>
   <string name="database_migration_activity__skip">Atla</string>
   <string name="database_migration_activity__import">İçeri Aktar</string>
-  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Bu biraz zaman alabilir. Lütfen bekleyiniz. İçe aktarım tamamlandığında bilgilendirileceksiniz.</string>
   <string name="database_migration_activity__importing">İÇE AKTARILIYOR</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Veritabanı güncelleniyor...</string>
@@ -288,7 +258,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Kilidi aç</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__textsecure_requires_mms_settings_to_deliver_media_and_group_messages">SMSSecure medya ve grup mesajlarının kablosuz taşıyıcınız aracılığı ile taşınabilmesi için MMS ayarlarınızı gerektirir. Cihazınız bu bilgiyi sağlamamaktadır. Bu durum bazen kilitli veya diğer kısıtlı yapılandırılmış cihazlar için geçerli olabilmektedir.</string>
   <!--recipient_preferences_activity-->
   <!--recipient_preferences-->
   <!--receive_key_dialog-->
@@ -318,8 +287,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="preferences__sms_mms">SMS ve MMS</string>
   <string name="preferences__pref_all_sms_title">Tüm SMS\'leri al</string>
   <string name="preferences__pref_all_mms_title">Tüm MMS\'leri al</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Gelen tüm mesajların gösterimi ve saklanması için SMSSecure kullan</string>
-  <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Gelen tüm multimedya mesajların gösterimi ve saklanması için SMSSecure kullan</string>
   <string name="preferences__display_settings">Ekran ayarları</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Kişi girdinizi kişi listesinden seçin.</string>
   <string name="preferences__change_passphrase">Parola Değiştir</string>
@@ -383,10 +350,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="preferences__default">Varsayılan</string>
   <string name="preferences__language">Dil</string>
   <string name="preferences__make_default_sms_app">Varsayılan SMS uygulaması olarak ayarla</string>
-  <string name="preferences__make_textsecure_the_default_sms_mms_app">SMSSecure\'u varsayılan sisteem SMS/MMS uygulaması yap.</string>
   <string name="preferences__submit_debug_log">Hata ayıklama kaydı gönder</string>
-  <string name="preferences__support_wifi_calling">\'WiFi Calling\' uyumluluk modu</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Eğer cihazınız WiFi üzerinden SMS/MMS iletimi kullanıyorsa etkinleştir (sadece cihazınızda \'WiFi Calling\' etkinleştirildiğinde etkinleştirin)</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -443,8 +407,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="conversation_group_options__broadcast">Yayın</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Karşılaştır</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Karşılaştırmak için taratın</string>
-  <string name="key_scanning__menu_scan_to_compare">Karşılaştırmak için tarayın</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Yeni mesaj</string>
   <string name="text_secure_normal__menu_new_group">Yeni grup</string>
@@ -453,7 +415,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="text_secure_normal__mark_all_as_read">Tümünü okundu işaretle</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Varsayılan SMS uygulaması olarak kullanılsın mı?</string>
-  <string name="reminder_header_sms_default_text">SMSSecure\'u varsayılan SMS uygulamanız yapmak için hafifçe vurun.</string>
   <string name="reminder_header_sms_import_title">Sistem SMS içe aktarılsın mı?</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Siz</string>
@@ -461,8 +422,8 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Desteklenmeyen medya türü</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Kaydet</string>
+  <!--media_overview-->
   <!--media_preview_activity-->
-  <!--StoreRatingReminder-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Siliniyor...</string>
   <string name="trimmer__deleting_old_messages">Eski mesajlar siliniyor...</string>

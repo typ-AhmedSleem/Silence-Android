@@ -1,20 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">SMSSecure</string>
   <string name="Distribution_tagline">Hutaurwa hwetsamba pfupi kana dzine nepfenyuro dzakakwedekera kwaita nyore!</string>
-  <string name="Distribution_description">SMSSecure iapu yetsamba pfupi/tsamba dzinemidhiya inokubvumira kuti udzivirire zvinhu zvako zvinepuraivheti kana uchibatana neshamwari.</string>
-  <string name="Distribution_long_description">
-SMSSecure iapu yetsamba pfupi/ tsamba dzinemidhiya inokubvumira kuti udzivirire zvinhu zvako zvinepuraivheti kana uchibatana neshamwari.
-Kana uchishandisa SMSSecure unokwanisa kutumidzira tsamba pfupi nekugovedzana batanidzo dzemidhiya zvine puraivheti yakakwana.
-Zvicherechedzo 
-*Inyore. SMSSecure inoshanda semamwe ma apu etsamba pfupi. Hapana zvekuti unosainira kuti uishandise uye hapana chirango chitsva chekuti shamwari dzako dzibatanidzwe.
-*Yakavimbika. SMSSecure inozivisa ichishandisa tsamba pfupi dzakakwedekerwa. Hapana sevha kana chihako chedandemutande chinodikanwa. 
-*Iri puraivheti. SMSSecure inoshandisa TextSecure inepurotokori yakakwedekerwa patsamba imwe neimwe nguva yese. 
-*Yakachengetedzeka. Tsamba dzese dzakadekerwa mumatongo, saka kana foni yako ichinge yarasika kana kubiwa, tsamba dzako dzinenge dzakabvumbamirwa. 
-*Inenyuko yakavhurika. SMSSecure ndeyemahara uye inenyuko yakavhurika, inogonesa chero munhu kunzevera kuchengetedzeka kwayo nekushandura murau wayo. 
-
-Rukumbiro butirai chero chipfukuto, nhaurwa kana kumbiro dzecherechedzo pa: https://github.com/SMSSecure/SMSSecure/issues 
-Nyuko zdemurau dzinowanikwa pa: https://github.com/SMSSecure/SMSSecure 
-
-Zvimwe zvizere: http://smssecure.org</string>
 </resources>
