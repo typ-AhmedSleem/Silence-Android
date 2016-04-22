@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Import a patch from TextSecure and adapt it for SMSSecure
-# ../TextSecure must be an cloned git tree
+# Import a patch from TextSecure and adapt it for Silence
+# ../Signal-Android must be an cloned git tree
 # usage: ./scripts/import-patch.sh <commit SHAs>
 
 set -eo pipefail
@@ -17,8 +17,8 @@ fi
 
 cwd=`pwd`
 
-if [ ! -d "../TextSecure" ]; then
-    echo "TextSecure repo not found (clone it to $cwd/../TextSecure)"
+if [ ! -d "../Signal-Android" ]; then
+    echo "Signal-Android repo not found (clone it to $cwd/../Signal-Android)"
     exit 1
 fi
 

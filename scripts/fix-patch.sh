@@ -10,26 +10,26 @@ for file in "$@"; do
     sed -i -e 's/thoughtcrime\/securesms/smssecure\/smssecure/g' \
            -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
-           -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.SMSSecure/g' \
+           -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.Silence/g' \
            -e 's/org.thoughtcrime.redphone.util/org.smssecure.smssecure.util/g' \
-           -e 's/TextSecurePreferences/SMSSecurePreferences/g' \
-           -e 's/TextSecureTestCase/SMSSecureTestCase/g' \
-           -e 's/TextSecure.LightNoActionBar/SMSSecure.LightNoActionBar/g' \
-           -e 's/TextSecure.LightActionBar/SMSSecure.LightActionBar/g' \
-           -e 's/TextSecure.DarkNoActionBar/SMSSecure.DarkNoActionBar/g' \
-           -e 's/TextSecure.DarkActionBar/SMSSecure.DarkActionBar/g' \
-           -e 's/TextSecure.LightTheme/SMSSecure.LightTheme/g' \
-           -e 's/TextSecure.DarkTheme/SMSSecure.DarkTheme/g' \
-           -e 's/TextSecure.SubtitleTextStyle/SMSSecure.SubtitleTextStyle/g' \
-           -e 's/TextSecure.LightIntroTheme/SMSSecure.LightIntroTheme/g' \
-           -e 's/TextSecure.TitleTextStyle/SMSSecure.TitleTextStyle/g' \
-           -e 's/queryTextSecureContacts/querySMSSecureContacts/g' \
+           -e 's/TextSecurePreferences/SilencePreferences/g' \
+           -e 's/TextSecureTestCase/SilenceTestCase/g' \
+           -e 's/TextSecure.LightNoActionBar/Silence.LightNoActionBar/g' \
+           -e 's/TextSecure.LightActionBar/Silence.LightActionBar/g' \
+           -e 's/TextSecure.DarkNoActionBar/Silence.DarkNoActionBar/g' \
+           -e 's/TextSecure.DarkActionBar/Silence.DarkActionBar/g' \
+           -e 's/TextSecure.LightTheme/Silence.LightTheme/g' \
+           -e 's/TextSecure.DarkTheme/Silence.DarkTheme/g' \
+           -e 's/TextSecure.SubtitleTextStyle/Silence.SubtitleTextStyle/g' \
+           -e 's/TextSecure.LightIntroTheme/Silence.LightIntroTheme/g' \
+           -e 's/TextSecure.TitleTextStyle/Silence.TitleTextStyle/g' \
+           -e 's/queryTextSecureContacts/querySilenceContacts/g' \
            -e 's/@color\/signal/@color\/smssecure/g' \
            -e 's/@color\/textsecure/@color\/smssecure/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/TextSecure\/issues\//g' \
            -e 's/^[Cc]loses #/Closes https:\/\/github.com\/WhisperSystems\/TextSecure\/pull\//g' \
            -e 's/^SingleRecipientNotificationBuilder_new_textsecure_message/SingleRecipientNotificationBuilder_new_smssecure_message/g' \
-           -e 's/src\/org.smssecure.smssecure.util.SMSSecurePreferences.java/src\/org\/smssecure\/smssecure\/util\/SMSSecurePreferences.java/g' \
-           -e "0,/^---/s//\nUpstream commit: https:\/\/github.com\/WhisperSystems\/TextSecure\/commit\/$commit\n---/" \
+           -e 's/src\/org.smssecure.smssecure.util.SilencePreferences.java/src\/org\/smssecure\/smssecure\/util\/SilencePreferences.java/g' \
+           -e "0,/^---/s//\nUpstream commit: https:\/\/github.com\/WhisperSystems\/Signal-Android\/commit\/$commit\n---/" \
            "$file"
 done
