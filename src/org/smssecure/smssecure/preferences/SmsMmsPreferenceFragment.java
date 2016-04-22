@@ -60,13 +60,13 @@ public class SmsMmsPreferenceFragment extends PreferenceFragment {
       if (Util.isDefaultSmsProvider(getActivity())) {
         defaultPreference.setIntent(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
         defaultPreference.setTitle(getString(R.string.ApplicationPreferencesActivity_sms_enabled));
-        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_touch_to_change_your_default_sms_app));
+        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_tap_to_change_your_default_sms_app));
       } else {
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
         intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, getActivity().getPackageName());
         defaultPreference.setIntent(intent);
         defaultPreference.setTitle(getString(R.string.ApplicationPreferencesActivity_sms_disabled));
-        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_touch_to_make_silence_your_default_sms_app));
+        defaultPreference.setSummary(getString(R.string.ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app));
       }
     } else if (defaultPreference != null) {
       preferenceScreen.removePreference(defaultPreference);

@@ -26,9 +26,9 @@
     </string>
     <string name="ApplicationPreferencesActivity_disable">Disable</string>
     <string name="ApplicationPreferencesActivity_sms_enabled">Incoming SMS enabled</string>
-    <string name="ApplicationPreferencesActivity_touch_to_change_your_default_sms_app">Touch to change your default SMS app</string>
+    <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tap to change your default SMS app</string>
     <string name="ApplicationPreferencesActivity_sms_disabled">Incoming SMS disabled</string>
-    <string name="ApplicationPreferencesActivity_touch_to_make_silence_your_default_sms_app">Touch to make Silence your default SMS app</string>
+    <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tap to make Silence your default SMS app</string>
     <string name="ApplicationPreferencesActivity_on">on</string>
     <string name="ApplicationPreferencesActivity_On">On</string>
     <string name="ApplicationPreferencesActivity_off">off</string>
@@ -392,8 +392,8 @@
     <string name="ApplicationMigrationService_system_database_import_is_complete">System database import is complete.</string>
 
     <!-- KeyCachingService -->
-    <string name="KeyCachingService_textsecure_passphrase_cached">Touch to open.</string>
-    <string name="KeyCachingService_textsecure_passphrase_cached_with_lock">Touch to open, or touch the lock to close.</string>
+    <string name="KeyCachingService_silence_passphrase_cached">Tap to open.</string>
+    <string name="KeyCachingService_silence_passphrase_cached_with_lock">Tap to open, or tap the lock to close.</string>
     <string name="KeyCachingService_passphrase_cached">Silence is unlocked</string>
     <string name="KeyCachingService_lock">Lock with passphrase</string>
 
