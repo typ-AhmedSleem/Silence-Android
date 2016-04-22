@@ -31,7 +31,6 @@ public class RecipientPreferenceDatabase extends Database {
   private static final String VIBRATE                 = "vibrate";
   private static final String MUTE_UNTIL              = "mute_until";
   private static final String COLOR                   = "color";
-  private static final String SEEN_INVITE_REMINDER    = "seen_invite_reminder";
   private static final String DEFAULT_SUBSCRIPTION_ID = "default_subscription_id";
 
   public enum VibrateState {
@@ -61,7 +60,6 @@ public class RecipientPreferenceDatabase extends Database {
           VIBRATE + " INTEGER DEFAULT " + VibrateState.DEFAULT.getId() + ", " +
           MUTE_UNTIL + " INTEGER DEFAULT 0, " +
           COLOR + " TEXT DEFAULT NULL, " +
-          SEEN_INVITE_REMINDER + " INTEGER DEFAULT 0, " +
           DEFAULT_SUBSCRIPTION_ID + " INTEGER DEFAULT -1);";
 
   public RecipientPreferenceDatabase(Context context, SQLiteOpenHelper databaseHelper) {
@@ -96,7 +94,6 @@ public class RecipientPreferenceDatabase extends Database {
         long    muteUntil             = cursor.getLong(cursor.getColumnIndexOrThrow(MUTE_UNTIL));
         String  serializedColor       = cursor.getString(cursor.getColumnIndexOrThrow(COLOR));
         Uri     notificationUri       = notification == null ? null : Uri.parse(notification);
-        boolean seenInviteReminder    = cursor.getInt(cursor.getColumnIndexOrThrow(SEEN_INVITE_REMINDER)) == 1;
         int     defaultSubscriptionId = cursor.getInt(cursor.getColumnIndexOrThrow(DEFAULT_SUBSCRIPTION_ID));
 
         MaterialColor color;
@@ -112,8 +109,7 @@ public class RecipientPreferenceDatabase extends Database {
 
         return Optional.of(new RecipientsPreferences(blocked, muteUntil,
                                                      VibrateState.fromId(vibrateState),
-                                                     notificationUri, color, seenInviteReminder,
-                                                     defaultSubscriptionId));
+                                                     notificationUri, color, defaultSubscriptionId));
       }
 
       return Optional.absent();
@@ -160,12 +156,6 @@ public class RecipientPreferenceDatabase extends Database {
     updateOrInsert(recipients, values);
   }
 
-  public void setSeenInviteReminder(Recipients recipients, boolean seen) {
-    ContentValues values = new ContentValues(1);
-    values.put(SEEN_INVITE_REMINDER, seen ? 1 : 0);
-    updateOrInsert(recipients, values);
-  }
-
   private void updateOrInsert(Recipients recipients, ContentValues contentValues) {
     SQLiteDatabase database = databaseHelper.getWritableDatabase();
 
@@ -191,14 +181,12 @@ public class RecipientPreferenceDatabase extends Database {
     private final VibrateState  vibrateState;
     private final Uri           notification;
     private final MaterialColor color;
-    private final boolean       seenInviteReminder;
     private final int           defaultSubscriptionId;
 
     public RecipientsPreferences(boolean blocked, long muteUntil,
                                  @NonNull VibrateState vibrateState,
                                  @Nullable Uri notification,
                                  @Nullable MaterialColor color,
-                                 boolean seenInviteReminder,
                                  int defaultSubscriptionId)
     {
       this.blocked               = blocked;
@@ -206,7 +194,6 @@ public class RecipientPreferenceDatabase extends Database {
       this.vibrateState          = vibrateState;
       this.notification          = notification;
       this.color                 = color;
-      this.seenInviteReminder    = seenInviteReminder;
       this.defaultSubscriptionId = defaultSubscriptionId;
     }
 
@@ -228,10 +215,6 @@ public class RecipientPreferenceDatabase extends Database {
 
     public @Nullable Uri getRingtone() {
       return notification;
-    }
-
-    public boolean hasSeenInviteReminder() {
-      return seenInviteReminder;
     }
 
     public Optional<Integer> getDefaultSubscriptionId() {
