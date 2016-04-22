@@ -1,5 +1,14 @@
 # Silence Changelog
 
+### [0.14.0] - 2016-04-23
+- SMSSecure is now Silence
+- Added new emojis
+- Added support for multi-SIM phones
+- Added encrypted backups
+- Fixed strings
+- Updated APN database
+- Updated translations
+
 ### [0.13.2] - 2016-02-07
 - Fixed keyboard/focus regressions
 - Fixed debug logs
