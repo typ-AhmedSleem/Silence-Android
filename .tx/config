@@ -3,13 +3,13 @@ host = https://www.transifex.com
 lang_map = he:iw,id:in,zh_TW:zh-rTW,zh_CN:zh-rCN
 
 
-[smssecure.strings]
+[silence.strings]
 file_filter = res/values-<lang>/strings.xml
 source_file = res/values/strings.xml
 source_lang = en
 type = ANDROID
 
-[smssecure.distribution-strings]
+[silence.distribution-strings]
 file_filter = res/values-<lang>/distribution-strings.xml
 source_file = res/values/distribution-strings.xml
 source_lang = en
