@@ -1,6 +1,6 @@
 # Silence [![Build Status](https://travis-ci.org/SilenceIM/Silence.svg?branch=master)](https://travis-ci.org/SilenceIM/Silence)
 
-[Silence](https://silence.im) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
+[Silence](https://silence.im) (formerly SMSSecure) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
 
 Using Silence, you can send SMS messages and share media or attachments with complete privacy.
 
