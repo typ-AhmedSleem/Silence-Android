@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Igen</string>
   <string name="no">Nem</string>
   <string name="delete">Törlés</string>
@@ -24,7 +25,9 @@ hozzájuk férhet!
  </string>
   <string name="ApplicationPreferencesActivity_disable">Tiltás</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Bejövő SMS engedélyezve</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Érints az alapértelmezett SMS alkalmazásod megváltoztatásához</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Bejövő SMS tiltva</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Érints a Silence alapértelmezett SMS alkalmazásoddá tételéhez</string>
   <string name="ApplicationPreferencesActivity_on">be</string>
   <string name="ApplicationPreferencesActivity_On">Be</string>
   <string name="ApplicationPreferencesActivity_off">ki</string>
@@ -73,6 +76,7 @@ hozzájuk férhet!
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Biztonságos üzenetváltás indítása?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Indítasz biztonságos üzenetváltást vele: %s?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Üzenet érkezett valakitől, aki szintén rendelkezik Silence-cel, kezdeményezel biztonságos titkosított folyamatot?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Biztonságos üzenetváltás befejezésének megerősítése</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Biztosan be akarod fejezni ezt a biztonságos üzenetváltást?</string>
   <string name="ConversationActivity_delete_thread_question">Beszélgetés törlése?</string>
@@ -80,6 +84,7 @@ hozzájuk férhet!
   <string name="ConversationActivity_add_attachment">Melléklet hozzáadása</string>
   <string name="ConversationActivity_select_contact_info">Válassz névjegy adatot!</string>
   <string name="ConversationActivity_compose_message">Üzenetírás</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Az általad választott gif túl nagy volt!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Sajnos a kiválasztott mozgókép mérete meghaladja a maximális üzenetméret határt (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sajnos a kiválasztott hangállomány mérete meghaladja a maximális üzenetméret határt (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">A fogadó nem egy érvényes SMS vagy email cím!</string>
@@ -124,6 +129,7 @@ hozzájuk férhet!
     <item quantity="one">Hiba történt a melléklet tárolóra mentése közben!</item>
     <item quantity="other">Hiba történt a mellékletek tárolóra mentése közben!</item>
   </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Fájl sikeresen mentve.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nem lehet a tárolóra írni!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Melléklet mentése</item>
@@ -175,11 +181,13 @@ hozzájuk férhet!
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Megosztás...</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_silence">Üdvözöl a Silence!</string>
   <string name="IntroScreenActivity_encrypt_your_messages">Üzeneteid titkosítása</string>
   <string name="IntroScreenActivity_talk_to_everyone">Beszélni mindenkinek</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportálás</string>
   <string name="ExportFragment_export_plaintext_to_storage">Nyílt szöveg exportálása tárolóra?</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Figyelem, ez exportálni fogja a Silence üzeneteid tartalmait a tárolóra nyílt szövegben.</string>
   <string name="ExportFragment_cancel">Mégsem</string>
   <string name="ExportFragment_exporting">Exportálás</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Nyílt szöveg exportálása tárolóra...</string>
@@ -204,6 +212,7 @@ hozzájuk férhet!
   <string name="ImportFragment_import_system_sms_database">Rendszer SMS adatbázis importálása?</string>
   <string name="ImportFragment_import">Importálás</string>
   <string name="ImportFragment_cancel">Mégsem</string>
+  <string name="ImportFragment_restore_encrypted_backup">Titkosított biztonsági mentés visszaállítása?</string>
   <string name="ImportFragment_import_plaintext_backup">Titkosítatlan biztonsági mentés importálása?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ez importálni fogja
 az üzeneteket egy titkosítatlan biztonsági mentésből. Ha már korábban importáltad ezt a biztonsági mentést,
@@ -213,6 +222,7 @@ akkor az újbóli importálás duplikált üzeneteket eredményez.</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nem található kódolatlan biztonsági mentés!</string>
   <string name="ImportFragment_error_importing_backup">Hiba a biztonsági mentés importálásakor!</string>
   <string name="ImportFragment_import_complete">Importálás befejezve!</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Titkosított biztonsági mentés visszaállítása...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nem található titkosított biztonsági mentés!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nem talált szkennelt kulcsot!</string>
@@ -235,6 +245,7 @@ akkor az újbóli importálás duplikált üzeneteket eredményez.</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nincs jelmondat megadva!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Jelszó megadása</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Silence ikon</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Érvénytelen jelszó!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Az
@@ -336,6 +347,7 @@ ezt a névjegyet.
   <!--QuickResponseService-->
   <string name="QuickResponseService_problem_sending_message">Probléma az üzenetküldésben!</string>
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Új üzenet</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Régi jelmondat</string>
@@ -361,6 +373,7 @@ ezt a névjegyet.
   <string name="conversation_activity__type_message_sms_insecure">Nem biztonságos SMS küldése</string>
   <string name="conversation_activity__type_message_mms_secure">Biztonságos MMS küldése</string>
   <string name="conversation_activity__type_message_mms_insecure">Nem biztonságos MMS küldése</string>
+  <string name="conversation_activity__from_sim_name">Tőle: %1$s</string>
   <string name="conversation_activity__send">Küldés</string>
   <string name="conversation_activity__remove">Törlés</string>
   <string name="conversation_activity__window_description">Beszélgetés vele: %1$s</string>
@@ -400,9 +413,11 @@ ezt a névjegyet.
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Az \'SMS Backup &amp; Restore\'-ral kompatibilis nyílt szöveg biztonsági mentés exportálása tárolóra</string>
   <string name="import_fragment__import_system_sms_database">Rendszer SMS adatbázis importálása</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Adatbázis importálása az alapértelmezett rendszer üzenetküldő alkalmazásból</string>
+  <string name="import_fragment__restore_encrypted_backup">Titkosított biztonsági mentés visszaállítása</string>
   <string name="import_fragment__import_plaintext_backup">Titkosítatlan biztonsági mentés importálása</string>
   <string name="import_fragment__import_a_plaintext_backup_file">Nyílt szöveg biztonsági mentés fájl importálása. Kompatibilis az \'SMS Backup &amp; Restore\'-ral.</string>
   <string name="export_fragment__export_encrypted_backup">Titkosított biztonsági mentés exportálása</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Titkosított biztonsági mentés exportálása tárolóra</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Teljes beszélgetés megnézése</string>
   <!--media_overview_activity-->
@@ -483,6 +498,8 @@ ezt a névjegyet.
   <string name="preferences__sms_mms">SMS és MMS</string>
   <string name="preferences__pref_all_sms_title">Minden SMS fogadása</string>
   <string name="preferences__pref_all_mms_title">Minden MMS fogadása</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Silence használata minden bejövő szöveges üzenet megtekintéséhez és tárolásához</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Silence használata minden bejövő multimédia üzenet megtekintéséhez és tárolásához</string>
   <string name="preferences__keyboard_settings">Billentyűzet beállítások</string>
   <string name="preferences__display_settings">Kijelző beállítások</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Bejegyzés választása a névjegyzékből.</string>
@@ -658,6 +675,7 @@ ezt a névjegyet.
   <string name="text_secure_normal__mark_all_as_read">Mindegyik megjelölése olvasottként</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Alapértelmezett SMS alkalmazásként szeretnéd használni?</string>
+  <string name="reminder_header_sms_default_text">Érints a Silence alapértelmezett SMS alkalmazásoddá tételéhez.</string>
   <string name="reminder_header_sms_default_button">BEÁLLÍTÁS</string>
   <string name="reminder_header_sms_import_title">Rendszer SMS adatbázis importálása?</string>
   <string name="reminder_header_sms_import_button">IMPORTÁLÁS</string>

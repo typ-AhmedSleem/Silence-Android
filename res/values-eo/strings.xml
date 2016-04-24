@@ -387,7 +387,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="conversation_activity__remove">Forigi</string>
   <string name="conversation_activity__window_description">Interparolado kun %1$s</string>
   <string name="conversation_activity__compose_description">Kreado de mesaĝo</string>
-  <string name="conversation_activity__emoji_toggle_description">Buskuligu na emoji klavaro</string>
+  <string name="conversation_activity__emoji_toggle_description">Buskuligu emoĝi-klavaron</string>
   <string name="conversation_activity__attachment_thumbnail">Miniaturo de kunsendaĵo</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Elŝutado de aŭdovida mesaĝo</string>
@@ -499,7 +499,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="arrays__name_only">Nur nomo</string>
   <string name="arrays__no_name_or_message">Nek nomo nek mesaĝo</string>
   <string name="arrays__enter_key">Montri enen-klavon</string>
-  <string name="arrays__emoji_key">Montri emoji-klavon</string>
+  <string name="arrays__emoji_key">Montri emoĝi-klavon</string>
   <string name="arrays__send_key">Montri sendi-butonon</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
@@ -514,8 +514,8 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Uzas na Silence por rigardi kaj konservi ĉiujn ricevotajn tekstajn mesaĝojn</string>
   <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Uzas na Silence por rigardi kaj konservi ĉiujn ricevotajn aŭdovidajn mesaĝojn</string>
   <string name="preferences__keyboard_settings">Klavagordoj</string>
-  <string name="preferences__disable_emoji_drawer">Malaktivigi emoji-desegnilon</string>
-  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Aktivigu tiun ĉi agordon se via klavaro subtenas na emoji.</string>
+  <string name="preferences__disable_emoji_drawer">Malaktivigi emoĝi-desegnilon</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Aktivigu tiun ĉi agordon se via klavaro subtenas emoĝiojn.</string>
   <string name="preferences__display_settings">Vidigagordoj</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Selektu vian kontakton de kontaktlisto.</string>
   <string name="preferences__change_passphrase">Ŝanĝi pasfrazon</string>

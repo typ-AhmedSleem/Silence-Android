@@ -82,7 +82,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_select_contact_info">Selecteer contactinformatie</string>
   <string name="ConversationActivity_compose_message">Bericht opstellen</string>
   <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sorry, er is een fout opgetreden bij het instellen van het attachment.</string>
-  <string name="ConversationActivity_the_gif_you_selected_was_too_big">De geselecteerde GIF afbeelding was te groot!</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">De geselecteerde GIF afbeelding is te groot!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Excuses, het videobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Excuses, het audiobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Ontvanger heeft geen geldig SMS of email adres!</string>
@@ -120,7 +120,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Opslaan?</string>
   <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-    <item quantity="one">Het opslaan van dit mediabestand maakt het toegankelijke voor alle apps op je telefoon.t.\n\nDoorgaan?</item>
+    <item quantity="one">Het opslaan van dit mediabestand maakt het toegankelijk voor alle apps op je telefoon.t.\n\nDoorgaan?</item>
     <item quantity="other">Het opslaan van deze %1$d mediabestanden maakt ze toegankelijk voor alle apps op je telefoon.t.\n\nDoorgaan?</item>
   </plurals>
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
@@ -184,7 +184,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="IntroScreenActivity_encrypt_your_messages">Versleutel uw berichten</string>
   <string name="IntroScreenActivity_encrypt_your_messages_description">Silence versleuteld automatisch berichten naar andere Silence gebruikers.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Spreek met iedereen</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kan niet versleutelde berichten sturen naar niet-Silence gebruikers.</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kan onversleutelde berichten sturen naar niet-Silence gebruikers.</string>
   <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure is nu Silence.</string>
   <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure is nu Silence. Uw berichten zijn er nog steeds en nieuwe features zijn in ontwikkelng.</string>
   <!--ExportFragment-->
@@ -193,7 +193,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Waarschuwing, hiermee exportreert u de berichten van Silence in een onversleuteld formaat.</string>
   <string name="ExportFragment_cancel">Annuleren</string>
   <string name="ExportFragment_exporting">Aan het exporteren</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Onversleutelde tekst aan het exporteren naar het opslaggeheugen...</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Onversleutelde berichten aan het exporteren naar het opslaggeheugen...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Fout, kan niet schrijven naar het opslaggeheugen.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fout tijdens het schrijven naar het opslaggeheugen.</string>
   <string name="ExportFragment_export_successful">Export succesvol.</string>
@@ -205,7 +205,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="GroupCreateActivity_actionbar_update_title">Groep bijwerken</string>
   <string name="GroupCreateActivity_actionbar_mms_title">Nieuwe MMS-Groep</string>
   <string name="GroupCreateActivity_contacts_mms_exception">Er is een onverwachte fout opgetreden waardoor het aanmaken van een groep is mislukt.</string>
-  <string name="GroupCreateActivity_contacts_no_members">Je groep moet ten minste één persoon bevatten.</string>
+  <string name="GroupCreateActivity_contacts_no_members">De groep moet ten minste één persoon bevatten.</string>
   <string name="GroupCreateActivity_menu_create_title">Groep aanmaken</string>
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">IK</string>
@@ -215,11 +215,11 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">SMS-berichten uit de systeemdatabase importeren?</string>
   <string name="ImportFragment_this_will_import_messages_from_the_system">Dit
-importeert de SMS-berichten uit de systeemdatabase in Silence. Als de SMS database al eerder geïmporteerd is zal opnieuw importeren leiden tot dubbele berichten.</string>
+importeert de SMS-berichten uit de systeemdatabase in Silence. Als de SMS database al eerder geïmporteerd is kan opnieuw importeren leiden tot dubbele berichten.</string>
   <string name="ImportFragment_import">Importeer</string>
   <string name="ImportFragment_cancel">Annuleren</string>
   <string name="ImportFragment_restore_encrypted_backup">Versleutelde backup terugzetten?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Herstellen van een versleutelde back-up zal je bestaande sleutels, voorkeuren en berichten volledig vervangen. U zult alle informatie verliezen die wel in je huidige SMSSecure-installatie zit, maar niet de backup. Silence zal afsluiten na de import.</string>
+  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Herstellen van een versleutelde back-up zal de bestaande sleutels, voorkeuren en berichten volledig vervangen. U zult alle informatie verliezen die wel in je huidige SMSSecure-installatie zit, maar niet de backup. Silence zal afsluiten na de import.</string>
   <string name="ImportFragment_import_plaintext_backup">Onversleutelde back-up importeren?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dit zal berichten importeren uit een platte tekstbackup. Als je deze backup eerder al eens hebt geimporteerd, zal het opnieuw importeren resulteren in dubbele berichten.</string>
   <string name="ImportFragment_importing">Importeren</string>
@@ -243,7 +243,7 @@ importeert de SMS-berichten uit de systeemdatabase in Silence. Als de SMS databa
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediabericht</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Er is een bericht ontvangen dat versleuteld is met een oude, niet meer ondersteunde versie van Silence versleuteld is. Vraag de afzender a.u.b. Silence naar de meest recente versie te upgraden en het bericht opnieuw te versturen.</string>
+  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Dit bericht gebruikt verouderde versleuteling die niet meer ondersteund wordt. Vraag de afzender om Silence te updaten naar de meest recente versie en het bericht opnieuw te verzenden.</string>
   <string name="MessageRecord_left_group">Je hebt de groep verlaten.</string>
   <string name="MessageRecord_updated_group">Groep bijgewerkt.</string>
   <!--PassphraseChangeActivity-->

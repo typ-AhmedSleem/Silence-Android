@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Sì</string>
   <string name="no">No</string>
   <string name="delete">Elimina</string>
@@ -21,7 +22,9 @@
 Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le chiavi che hai salvato. Le tue sessioni cifrate continueranno a funzionare, ma chiunque avrà accesso fisico al tuo dispositivo sarà in grado di accedere ad esse.</string>
   <string name="ApplicationPreferencesActivity_disable">Disabilita</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">SMS in entrata abilitati</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tocca per cambiare l\'applicazione predefinita per gli SMS</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS in entrata disabilitati</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tocca per rendere Silence l\'applicazione predefinita per gli SMS.</string>
   <string name="ApplicationPreferencesActivity_on">on</string>
   <string name="ApplicationPreferencesActivity_On">On</string>
   <string name="ApplicationPreferencesActivity_off">off</string>
@@ -70,6 +73,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniziare sessione sicura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Iniziare una sessione sicura con %s?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Messaggio ricevuto da un\'altra persona che utilizza Silence, vuoi iniziare una sessione sicura?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Conferma di conclusione sessione sicura</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Vuoi davvero concludere questa sessione sicura?</string>
   <string name="ConversationActivity_delete_thread_question">Eliminare la conversazione?</string>
@@ -77,6 +81,8 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationActivity_add_attachment">Aggiungi allegato</string>
   <string name="ConversationActivity_select_contact_info">Seleziona informazioni dei contatti</string>
   <string name="ConversationActivity_compose_message">Componi messaggio</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Attenzione, c\'è stato un errore nell\'inserimento del tuo allegato.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">La GIF selezioanta è troppo grande!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Errore, il video selezionato supera la dimensione massima (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Errore, l\'audio selezionato supera la dimensione massima (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Il destinatario non è un numero o un\'indirizzo email valido!</string>
@@ -121,6 +127,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="one">Errore nel salvare l\'allegato in memoria!</item>
     <item quantity="other">Errore nel salvare gli allegati in memoria!</item>
   </plurals>
+  <string name="ConversationFragment_file_saved_successfully">File salvato con successo.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Impossibile scrivere sulla memoria!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Salvataggio allegato</item>
@@ -172,16 +179,24 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Condividi con</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_silence">Benvenuto in Silence!</string>
+  <string name="IntroScreenActivity_silence_description">SIlence ti permette di proteggere la tua privacy quando comunichi con i tuoi amici.</string>
   <string name="IntroScreenActivity_encrypt_your_messages">Critta i tuoi messaggi</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence cifrerà i messaggi scambiati con gli altri utenti Silence automaticamente.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Parla a tutti</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Silence può inviare messaggi non cifrati per parlare con utenti non Silence.</string>
+  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure è diventato Silence.</string>
+  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure è diventato Silence. I tuoi messaggi sono ancora presenti e altre nuove funzionalità sono in arrrivo.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Esporta</string>
   <string name="ExportFragment_export_plaintext_to_storage">Esportare il testo in chiaro nella memoria?</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Attenzione, stai per esportare in chiaro il contenuto dei messaggi Silence nella memoria.</string>
   <string name="ExportFragment_cancel">Annulla</string>
   <string name="ExportFragment_exporting">In esportazione</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Esportazione </string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Errore, impossibile scrivere sulla memoria</string>
   <string name="ExportFragment_error_while_writing_to_storage">Errore durante la scrittura in memoria</string>
+  <string name="ExportFragment_export_successful">Esportazione effettuata con successo.</string>
   <string name="ExportFragment_export_encrypted_backup">Esportare il backup crittato?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Questo esporterà le tue chiavi, le impostazioni ed i messaggi nella memoria</string>
   <string name="ExportFragment_exporting_keys_settings_and_messages">Esportazione chiavi, impostazioni e messaggi...</string>
@@ -199,8 +214,11 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ImportExportActivity_export">Esporta</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Importare gli SMS dal database di sistema?</string>
+  <string name="ImportFragment_this_will_import_messages_from_the_system">Questo importerà messaggi dal database degli SMS predefinito di sistema in Silence. Se hai già importato questo database in precedenza, una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="ImportFragment_import">Importa</string>
   <string name="ImportFragment_cancel">Annulla</string>
+  <string name="ImportFragment_restore_encrypted_backup">Ripristinare la copia cifrata?</string>
+  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Ripristinando una copia cifrata sostituirai completamente le chiavi esistenti, le preferenze e i messaggi. Perderai ogni informazioni che è presente nell\'installazione attuale di Silence ma non quelle nella copia. Silence si arresterà al termine dell\'importazione.</string>
   <string name="ImportFragment_import_plaintext_backup">Importare una copia in chiaro?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Questo importerà
 messaggi da una copia. Se hai già importato questa copia,
@@ -210,10 +228,12 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nessuna copia in chiaro trovato!</string>
   <string name="ImportFragment_error_importing_backup">Errore durante l\'importazione della copia!</string>
   <string name="ImportFragment_import_complete">Importazione terminata!</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Ripristino copia cifrata in corso...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nessuna copia cifrata trovata!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nessuna chiave scansionata trovata!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installare Barcode Scanner?</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence necessita di Barcode Scanner per leggere i codici QR. </string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Invio fallito</string>
   <string name="MessageDetailsRecipient_new_identity">Nuova identità</string>
@@ -224,6 +244,7 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Messaggio multimediale</string>
   <!--MessageRecord-->
+  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Hai ricevuto un messaggio cifrato usando una vecchia versione di Silence che non è più supportata. Ti preghiamo di chiedere al mittente di aggiornare l\'app alla versione più recente e rimandare il messaggio.</string>
   <string name="MessageRecord_left_group">Hai lasciato il gruppo.</string>
   <string name="MessageRecord_updated_group">Gruppo aggiornato.</string>
   <!--PassphraseChangeActivity-->
@@ -232,8 +253,10 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nessun password inserito</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Inserire la password</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Icona di Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Password non valida!</string>
   <!--ReceiveKeyActivity-->
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La firma su questo scambio di chiavi è diversa da quella ricevuta precedentemente. Questo potrebbe significare che qualcuno sta cercando di intercettare la tua comunicazione o che il contatto ha semplicemente reinstallato Silence e ora ha una nuova chiave.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La
 firma di questa chiave è fidata, ma al momento hai lo scambio automatico della chiave disabilitato.</string>
   <string name="ReceiveKeyActivity_processing">Elaborazione</string>
@@ -310,7 +333,11 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="ApplicationMigrationService_import_in_progress">Importazione in corso</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importando i messaggi</string>
   <string name="ApplicationMigrationService_import_complete">Importazione completata</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">L\'importazione del database di sistema è stata completata.</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_silence_passphrase_cached">Tocca per aprire.</string>
+  <string name="KeyCachingService_silence_passphrase_cached_with_lock">Tocca per aprire o tocca il lucchetto per chiudere.</string>
+  <string name="KeyCachingService_passphrase_cached">Silence è bloccato</string>
   <string name="KeyCachingService_lock">Chiudi con password</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nuovi messaggi in %2$d conversazioni</string>
@@ -327,8 +354,10 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MessageNotifier_message_received">Messaggio ricevuto da %s.</string>
   <string name="MessageNotifier_reply">Rispondere</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">La risposta veloce non è disponibile quando SIlence è bloccato!</string>
   <string name="QuickResponseService_problem_sending_message">Problema nell\'inviare il messaggio</string>
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nuovo messaggio</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Vecchia passphrase</string>
@@ -354,6 +383,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_activity__type_message_sms_insecure">Invia SMS non cifrato</string>
   <string name="conversation_activity__type_message_mms_secure">Manda MMS sicuro</string>
   <string name="conversation_activity__type_message_mms_insecure">Invia MMS non cifrato</string>
+  <string name="conversation_activity__from_sim_name">Da %1$s</string>
   <string name="conversation_activity__send">Invia</string>
   <string name="conversation_activity__remove">Elimina</string>
   <string name="conversation_activity__window_description">Conversazione con %1$s</string>
@@ -383,9 +413,11 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="log_submit_activity__submitting">Invio in corso</string>
   <string name="log_submit_activity__posting_logs">Salvando i logs su gist...</string>
   <!--database_migration_activity-->
+  <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Vuoi importare i tuoi SMS esistenti nel database cifrato di Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Il database di default non verrà modificat o alterato in nessun modo.</string>
   <string name="database_migration_activity__skip">Salta</string>
   <string name="database_migration_activity__import">Importa</string>
+  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Potrebbe volerci un po\'. Attendi per favore, sarai avvisato quando l\'importazione sarà completata.</string>
   <string name="database_migration_activity__importing">COPIA</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Aggiornando il database...</string>
@@ -393,9 +425,12 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Esporta un file di backup in chiaro in memoria. Compatibile con \'SMS Backup &amp; Restore\'</string>
   <string name="import_fragment__import_system_sms_database">Importa gli SMS dal database criptato</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Importa il database dall\'applicazione di default per la messaggistica</string>
+  <string name="import_fragment__restore_encrypted_backup">Ripristina una copia cifrata</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Ripristina una copia cifrata di Silence precedentemente esportata.</string>
   <string name="import_fragment__import_plaintext_backup">Importare copia in chiaro</string>
   <string name="import_fragment__import_a_plaintext_backup_file">Importa un file di backup in chiaro. Compatibile con \'SMS Backup &amp; Restore.\'</string>
   <string name="export_fragment__export_encrypted_backup">Esporta un backup crittato</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Esporta una copia cifrata nella memoria</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Mostra l\'intera conversazione</string>
   <!--media_overview_activity-->
@@ -406,6 +441,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Sblocca</string>
   <!--prompt_mms_activity-->
+  <string name="prompt_mms_activity__silence_requires_mms_settings_to_deliver_media_and_group_messages">Silence ha bisogno delle impostazioni degli MMS per poter inviare messaggi multimediali e di gruppo con il tuo operatore. Il tuo dispositivo non fornisce queste impostazioni, probabilmente perché ha un operatore bloccato o altre configurazioni restrittive.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Per inviare contenuti multimediali e messaggi di gruppo fare tap su \'OK\' e completare le impostazioni richieste. Le impostazioni MMS del proprio operatore di solito possono essere trovate cercando \'APN proprio operatore\'. Sarà necessareio eseguire questa procedura una sola volta.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOCCATO</string>
@@ -476,7 +512,11 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__sms_mms">SMS e MMS</string>
   <string name="preferences__pref_all_sms_title">Utilizza per tutti gli SMS</string>
   <string name="preferences__pref_all_mms_title">Utilizza per tutti gli MMS</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Usa Silence per vedere e salvare tutti i messaggi in arrivo</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Usa Silence per vedere e salvare tutti gli MMS in arrivo</string>
   <string name="preferences__keyboard_settings">Impostazioni della tastiera</string>
+  <string name="preferences__disable_emoji_drawer">Disattivare la tastiera emoji</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Attiva quest\'opzione se la tua tastiera supporta gli emoji.</string>
   <string name="preferences__display_settings">Impostazioni display</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Scegli il tuo contatto dalla rubrica.</string>
   <string name="preferences__change_passphrase">Cambia passphrase</string>
@@ -557,7 +597,11 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__default">Predefinito</string>
   <string name="preferences__language">Lingua</string>
   <string name="preferences__make_default_sms_app">Imposta come applicazione SMS predefinita.</string>
+  <string name="preferences__make_silence_the_default_sms_mms_app">Rendi Silence l\'applicazione predefinita per SMS/MMS.</string>
   <string name="preferences__submit_debug_log">Invia log di debug</string>
+  <string name="preferences__support_wifi_calling">Modalità di compatibilità \'WiFi Calling\'</string>
+  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Attiva questa opzione se il tuo dispositivo invia SMS/MMS tramite WiFi (attiva solo quando \'WiFi Calling\' è attivo sul tuo dispositivo).</string>
+  <string name="preferences__about">A proposito di Silence</string>
   <string name="preferences__about_version">Versione %s</string>
   <string name="preferences__about_build_id">ID compilazione: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Contatti bloccati</string>
@@ -651,8 +695,10 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="text_secure_normal__mark_all_as_read">Segnala tutto come già letto</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Adotta come applicazione predefinita per SMS.</string>
+  <string name="reminder_header_sms_default_text">Tocca per rendere Silence l\'applicazione predefinita per gli SMS.</string>
   <string name="reminder_header_sms_default_button">SET</string>
   <string name="reminder_header_sms_import_title">Vuoi importare gli SMS precedenti?</string>
+  <string name="reminder_header_sms_import_text">Tocca per copiare gli SMS del tuo telefono nel database cifrato di Silence.</string>
   <string name="reminder_header_sms_import_button">IMPORT</string>
   <string name="reminder_header_rate_title">Valuta quest\'applicazione</string>
   <string name="reminder_header_rate_text">Se ti piace quest\'applicazione, perfavore aiutaci valutandola</string>
