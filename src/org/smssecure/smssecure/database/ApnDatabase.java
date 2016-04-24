@@ -139,14 +139,16 @@ public class ApnDatabase {
                           null, null, null);
       }
 
-      if (cursor != null && cursor.moveToFirst()) {
-        Apn params = new Apn(cursor.getString(cursor.getColumnIndexOrThrow(MMSC_COLUMN)),
-                             cursor.getString(cursor.getColumnIndexOrThrow(MMS_PROXY_COLUMN)),
-                             cursor.getString(cursor.getColumnIndexOrThrow(MMS_PORT_COLUMN)),
-                             cursor.getString(cursor.getColumnIndexOrThrow(USER_COLUMN)),
-                             cursor.getString(cursor.getColumnIndexOrThrow(PASSWORD_COLUMN)));
-        Log.w(TAG, "Returning preferred APN " + params);
-        return params;
+      while (cursor != null && cursor.moveToNext()) {
+        if (isMmsType(cursor.getString(cursor.getColumnIndexOrThrow(TYPE_COLUMN)))) {
+          Apn params = new Apn(cursor.getString(cursor.getColumnIndexOrThrow(MMSC_COLUMN)),
+                               cursor.getString(cursor.getColumnIndexOrThrow(MMS_PROXY_COLUMN)),
+                               cursor.getString(cursor.getColumnIndexOrThrow(MMS_PORT_COLUMN)),
+                               cursor.getString(cursor.getColumnIndexOrThrow(USER_COLUMN)),
+                               cursor.getString(cursor.getColumnIndexOrThrow(PASSWORD_COLUMN)));
+          Log.w(TAG, "Returning preferred APN " + params);
+          return params;
+        }
       }
 
       Log.w(TAG, "No matching APNs found, returning null");
@@ -156,6 +158,18 @@ public class ApnDatabase {
       if (cursor != null) cursor.close();
     }
 
+  }
+
+  private boolean isMmsType(String type) {
+    if (!type.contains(",")) {
+      return type.equals("mms");
+    } else {
+      String[] types = type.split(",");
+      for (String typeToTest : types) {
+        if (typeToTest.equals("mms")) return true;
+      }
+      return false;
+    }
   }
 
   public Optional<Apn> getMmsConnectionParameters(String mccmnc, String apn) {
