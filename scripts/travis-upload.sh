@@ -20,5 +20,5 @@ if [ ! -f "./build/outputs/apk/Silence-debug.apk" ]; then
 fi
 
 COMMIT=$(git rev-parse --short HEAD)
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=$(git branch | head -2 | tail -1 | xargs) # HEAD is detached in Travis CI builds
 curl --form "fileupload=@./build/outputs/apk/Silence-debug.apk;filename=Silence-debug-$BRANCH-$COMMIT.apk" -H "Authorization: KEY $1" https://files.silence.im/
