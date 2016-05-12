@@ -25,15 +25,15 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Frapetu por ŝanĝi la ĉefan SMS-aplikaĵon</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Alvenaj SMS-oj malaktivaj</string>
   <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Frapetu por ke Silence iĝu vian ĉefan SMS-aplikaĵon.</string>
-  <string name="ApplicationPreferencesActivity_on">ŝaltitaj</string>
+  <string name="ApplicationPreferencesActivity_on">ŝaltita(j)</string>
   <string name="ApplicationPreferencesActivity_On">Ŝaltita</string>
-  <string name="ApplicationPreferencesActivity_off">malŝaltitaj</string>
+  <string name="ApplicationPreferencesActivity_off">malŝaltita(j)</string>
   <string name="ApplicationPreferencesActivity_Off">Malŝaltita</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Ricevitaj %s</string>
   <string name="ApplicationPreferencesActivity_privacy_summary">Pasfrazo %1$s, ekrano-ŝirmilo %2$s</string>
-  <string name="ApplicationPreferencesActivity_appearance_summary">Etoso %1$s, Lingvo %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Etoso %1$s, lingvo %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minuto</item>
@@ -55,7 +55,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="BlockedContactsActivity_blocked_contacts">Blokitaj kontaktoj</string>
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Grandeco de mesaĝo: %d KB</string>
-  <string name="ConversationItem_expires_s">Finiĝas: %s</string>
+  <string name="ConversationItem_expires_s">Senvalidiĝas: %s</string>
   <string name="ConversationItem_error_not_delivered">Neliverebla</string>
   <string name="ConversationItem_view_secure_media_question">Ĉu montri la sekuran aŭdvidaĵon?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Tiu ĉi aŭdvidaĵo estis konservita en ĉifrita datumbazo. Bedaŭrinde por montri ĝin per ekstera vidigilo oni devas provizore malĉifri ĝin kaj konservi ĝin en memorejo. Ĉu vi certe volas fari tion?</string>
@@ -103,7 +103,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationActivity_transport_insecure_mms">Malsekura MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sekura SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Sekura MMS</string>
-  <string name="ConversationActivity_install_smssecure">Ni interparolu sekure per SMSSecure: %s</string>
+  <string name="ConversationActivity_install_smssecure">Ni interparolu sekure per Silence: %s</string>
   <string name="ConversationActivity_recipient_self">Vi ne povas inici sekuran seancon kun vi mem!</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS-oj ne estas subtenataj</string>
   <string name="ConversationActivity_mms_not_supported_message">Ne povas sendi tiun ĉi mesaĝon ĉar via telefon-provizanto ne subtenas MMS-ojn.</string>
@@ -256,7 +256,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nenia pasfrazo entajpita!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Entajpu pasfrazon</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Piktogramo de Silence</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Emblemo de Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Malkorekta pasfrazo!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosilo-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian komunikadon, aŭ ke tiu ĉi kontakto simple reinstalis na Silence kaj li nun posedas novan idento-ŝlosilon.</string>
@@ -407,7 +407,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="conversation_fragment_cab__batch_selection_mode">Stapla elekta reĝimo</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s elektitaj</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi na ADB por atingi senerariga-protokolon.</string>
+  <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi na ADB por atingi senerarig-protokolon.</string>
   <string name="log_submit_activity__thanks">Dankon por via helpo!</string>
   <string name="log_submit_activity__submitting">Alŝutanta</string>
   <string name="log_submit_activity__posting_logs">Sendado de viaj protokoloj al gist...</string>
@@ -421,15 +421,15 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Ĝisdatiganta datumbazon...</string>
   <string name="export_fragment__export_plaintext_backup">Elporti plattekstan sekurkopion</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Elporti plattekstan sekurkopion kongruan kun \'SMS Backup &amp; Restore\' al memorejo</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Elportas plattekstan sekurkopion kongruan kun \'SMS Backup &amp; Restore\' al memorejo</string>
   <string name="import_fragment__import_system_sms_database">Enporti sisteman SMS-an datumbazon</string>
-  <string name="import_fragment__import_the_database_from_the_default_system">Enporti datumbazon de ĉefa sistema mesaĝilo</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">Enportas datumbazon de ĉefa sistema mesaĝilo</string>
   <string name="import_fragment__restore_encrypted_backup">Restaŭri ĉifritan sekurkopion</string>
-  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaŭri antaŭan elportitan ĉifritan sekurkopion</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaŭras antaŭan elportitan ĉifritan sekurkopion</string>
   <string name="import_fragment__import_plaintext_backup">Enporti plattekstan sekurkopion</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">Enporti plattekstan sekurkopian dosieron kongruan kun  \'SMS Backup &amp; Restore\'</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">Enportas plattekstan dosieron de sekurkopio kongruan kun  \'SMS Backup &amp; Restore\'</string>
   <string name="export_fragment__export_encrypted_backup">Elporti ĉifritan sekurkopion</string>
-  <string name="export_fragment__export_an_encrypted_backup_to_storage">Elporti ĉifritan sekurkopion al memorejo</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Elportas ĉifritan sekurkopion al memorejo</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Montri plenan interparoladon</string>
   <!--media_overview_activity-->
@@ -476,7 +476,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="AndroidManifest__change_passphrase">Ŝanĝi pasfrazon</string>
   <string name="AndroidManifest__verify_identity">Verigi identecon</string>
   <string name="AndroidManifest__complete_key_exchange">Finigi ŝlosilo-interŝanĝon</string>
-  <string name="AndroidManifest__log_submit">Alŝuti senerariga-protokolon</string>
+  <string name="AndroidManifest__log_submit">Alŝuti senerarig-protokolon</string>
   <string name="AndroidManifest__media_preview">Antaŭrigardo de aŭdvidaĵo</string>
   <string name="AndroidManifest__media_overview">Ĉiuj bildoj</string>
   <string name="AndroidManifest__media_overview_named">Ĉiuj bildoj kun %1$s</string>
@@ -597,7 +597,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="preferences__language">Lingvo</string>
   <string name="preferences__make_default_sms_app">Agordi kiel ĉefa SMS-a aplikaĵo</string>
   <string name="preferences__make_silence_the_default_sms_mms_app">Igi na Silence ĉefan aplikaĵon por via sistemo.</string>
-  <string name="preferences__submit_debug_log">Alŝuti senerariga-protokolon</string>
+  <string name="preferences__submit_debug_log">Alŝuti senerarig-protokolon</string>
   <string name="preferences__support_wifi_calling">\'Wi-Fi Calling\' kongrueca reĝimo</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivigu se via aparato uzas SMS/MMS-an liveradon tra vifio (aktivigu nur kiam \'Wi-Fi Calling\' estas aktiva en via aparato). </string>
   <string name="preferences__about">Pri Silence</string>
@@ -718,6 +718,6 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="trimmer__deleting_old_messages">Forigado de malnovaj mesaĝoj...</string>
   <string name="trimmer__old_messages_successfully_deleted">Malnovaj mesaĝoj forigitaj sukcese</string>
   <!--transport_selection_list_item-->
-  <string name="transport_selection_list_item__transport_icon">Piktogramo de transporto</string>
+  <string name="transport_selection_list_item__transport_icon">Emblemo de transporto</string>
   <!--EOF-->
 </resources>

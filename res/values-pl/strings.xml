@@ -33,9 +33,9 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ApplicationPreferencesActivity_Off">Wyłączone</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
-  <string name="ApplicationPreferencesActivity_incoming_summary">%s przychodzących</string>
-  <string name="ApplicationPreferencesActivity_privacy_summary">Hasło %1$s, Ochrona ekranu %2$s</string>
-  <string name="ApplicationPreferencesActivity_appearance_summary">Motyw %1$s, Język %2$s</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">Otrzymywanie %s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Hasło %1$s, ochrona ekranu %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Motyw %1$s, język %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minuta</item>
