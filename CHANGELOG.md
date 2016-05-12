@@ -1,5 +1,9 @@
 # Silence Changelog
 
+### [0.14.2] - 2016-05-13
+- Fixed MMS issues with Android 4.x
+- Updated translations
+
 ### [0.14.1] - 2016-04-25
 - Fixed APN issues
 - Updated translations
@@ -135,6 +139,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.14.2]: https://github.com/SilenceIM/Silence/compare/v0.14.1...v0.14.2
  [0.14.1]: https://github.com/SilenceIM/Silence/compare/v0.14.0...v0.14.1
  [0.14.0]: https://github.com/SilenceIM/Silence/compare/v0.13.2...v0.14.0
  [0.13.2]: https://github.com/SilenceIM/Silence/compare/v0.13.1...v0.13.2
