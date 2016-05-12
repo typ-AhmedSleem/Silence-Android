@@ -128,10 +128,7 @@ public class ApnDatabase {
                           BASE_SELECTION + " AND " + APN_COLUMN + " = ?",
                           new String[] {mccmnc, apn},
                           null, null, null);
-      }
-
-      if (cursor == null || !cursor.moveToFirst()) {
-        if (cursor != null) cursor.close();
+      } else {
         Log.w(TAG, "Querying table for MCC+MNC " + mccmnc + " without APN name");
         cursor = db.query(TABLE_NAME, null,
                           BASE_SELECTION,
@@ -140,7 +137,10 @@ public class ApnDatabase {
       }
 
       while (cursor != null && cursor.moveToNext()) {
-        if (isMmsType(cursor.getString(cursor.getColumnIndexOrThrow(TYPE_COLUMN)))) {
+        boolean isApnValid = cursor.getCount() < 2 ||
+                             isMmsType(cursor.getString(cursor.getColumnIndexOrThrow(TYPE_COLUMN)));
+
+        if (isApnValid) {
           Apn params = new Apn(cursor.getString(cursor.getColumnIndexOrThrow(MMSC_COLUMN)),
                                cursor.getString(cursor.getColumnIndexOrThrow(MMS_PROXY_COLUMN)),
                                cursor.getString(cursor.getColumnIndexOrThrow(MMS_PORT_COLUMN)),
