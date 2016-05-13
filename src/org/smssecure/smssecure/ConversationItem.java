@@ -407,7 +407,7 @@ public class ConversationItem extends LinearLayout
 
     dateText.setText(messageSize + "\n" + expires);
 
-    if (MmsDatabase.Status.isDisplayDownloadButton(messageRecord.getStatus())) {
+    if (MmsDatabase.Status.isDisplayDownloadButton(context, messageRecord.getStatus())) {
       mmsDownloadButton.setVisibility(View.VISIBLE);
       mmsDownloadingLabel.setVisibility(View.GONE);
     } else {
