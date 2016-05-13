@@ -1,5 +1,8 @@
 # Silence Changelog
 
+### [0.14.3] - 2016-05-14
+- Fixed blocked MMS download
+
 ### [0.14.2] - 2016-05-13
 - Fixed MMS issues with Android 4.x
 - Updated translations
@@ -139,6 +142,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.14.3]: https://github.com/SilenceIM/Silence/compare/v0.14.2...v0.14.3
  [0.14.2]: https://github.com/SilenceIM/Silence/compare/v0.14.1...v0.14.2
  [0.14.1]: https://github.com/SilenceIM/Silence/compare/v0.14.0...v0.14.1
  [0.14.0]: https://github.com/SilenceIM/Silence/compare/v0.13.2...v0.14.0
