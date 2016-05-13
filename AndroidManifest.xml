@@ -53,7 +53,7 @@
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".PromptMmsActivity"
-              android:label="Configure MMS Settings"
+              android:label="@string/AndroidManifest_configure_mms_settings"
               android:windowSoftInputMode="stateUnchanged"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
