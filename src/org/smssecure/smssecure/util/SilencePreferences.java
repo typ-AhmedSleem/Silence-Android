@@ -38,6 +38,7 @@ public class SilencePreferences {
   public  static final String THREAD_TRIM_LENGTH               = "pref_trim_length";
   public  static final String THREAD_TRIM_NOW                  = "pref_trim_now";
   public  static final String ENABLE_MANUAL_MMS_PREF           = "pref_enable_manual_mms";
+  private static final String SEEN_MANUAL_MMS_SETTINGS_PREF    = "seen_manual_mms_settings";
 
   private static final String LAST_VERSION_CODE_PREF           = "last_version_code";
   private static final String IS_FIRST_RUN                     = "is_first_run";
@@ -359,6 +360,14 @@ public class SilencePreferences {
 
   public static boolean isLegacyUseLocalApnsEnabled(Context context) {
     return getBooleanPreference(context, ENABLE_MANUAL_MMS_PREF, false);
+  }
+
+  public static boolean seenManualMmsSettings(Context context) {
+    return getBooleanPreference(context, SEEN_MANUAL_MMS_SETTINGS_PREF, false);
+  }
+
+  public static void setManualMmsSettingsAsSeen(Context context) {
+    setBooleanPreference(context, SEEN_MANUAL_MMS_SETTINGS_PREF, true);
   }
 
   public static int getLastVersionCode(Context context) {

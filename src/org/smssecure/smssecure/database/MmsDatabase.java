@@ -851,11 +851,12 @@ public class MmsDatabase extends MessagingDatabase {
     public static final int DOWNLOAD_HARD_FAILURE    = 5;
     public static final int DOWNLOAD_APN_UNAVAILABLE = 6;
 
-    public static boolean isDisplayDownloadButton(int status) {
+    public static boolean isDisplayDownloadButton(Context context, int status) {
       return
           status == DOWNLOAD_INITIALIZED     ||
           status == DOWNLOAD_NO_CONNECTIVITY ||
-          status == DOWNLOAD_SOFT_FAILURE;
+          status == DOWNLOAD_SOFT_FAILURE    ||
+         (status == DOWNLOAD_APN_UNAVAILABLE && SilencePreferences.seenManualMmsSettings(context));
     }
 
     public static String getLabelForStatus(Context context, int status) {

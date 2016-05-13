@@ -44,6 +44,8 @@ public class MmsPreferencesFragment extends PreferenceFragment {
 
     ((PassphraseRequiredActionBarActivity) getActivity()).getSupportActionBar()
         .setTitle(R.string.preferences__advanced_mms_access_point_names);
+
+    SilencePreferences.setManualMmsSettingsAsSeen(getActivity());
   }
 
   @Override
