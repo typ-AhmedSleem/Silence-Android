@@ -17,5 +17,5 @@ Please submit your corrections there.
   * App state
     * What are the relevant preferences that you have set that may be related to the issue?
   * Raw debug info
-    * A debug log (Settings → Advanced → Submit debug log, or `adb logcat | grep $(adb shell ps | grep org.smssecure.smssecure | cut -c10-15)`). If your debug log contains sensitive data, you can send it at support@smssecure.org.
+    * A debug log (Settings → Advanced → Submit debug log, or `adb logcat | grep $(adb shell ps | grep org.smssecure.smssecure | cut -c10-15)`). If your debug log contains sensitive data, you can send it at support@silence.im.
     * (Optional) Screenshots (`adb shell /system/bin/screencap -p /sdcard/screencap.png && adb pull /sdcard/screencap.png`) or video.
