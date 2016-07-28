@@ -170,6 +170,10 @@ public class IncomingTextMessage implements Parcelable {
     return false;
   }
 
+  public boolean isXmppExchange() {
+    return false;
+  }
+
   public boolean isSecureMessage() {
     return false;
   }

@@ -56,11 +56,16 @@ public abstract class WirePrefix {
     return verifyPrefix("?TSE", message);
   }
 
+  public static boolean isXmppExchange(String message) {
+    return verifyPrefix("?TSX", message);
+  }
+
   public static boolean isPrefixedMessage(String message) {
     return isEncryptedMessage(message) ||
            isKeyExchange(message)      ||
            isPreKeyBundle(message)     ||
-           isEndSession(message);
+           isEndSession(message)       ||
+           isXmppExchange(message);
   }
 
   public static String calculateKeyExchangePrefix(String message) {
@@ -77,6 +82,10 @@ public abstract class WirePrefix {
 
   public static String calculateEndSessionPrefix(String message) {
     return calculatePrefix(("?TSE" + message).getBytes(), PREFIX_BYTES);
+  }
+
+  public static String calculateXmppExchangePrefix(String message) {
+    return calculatePrefix(("?TSX" + message).getBytes(), PREFIX_BYTES);
   }
 
   private static boolean verifyPrefix(String prefixType, String message) {

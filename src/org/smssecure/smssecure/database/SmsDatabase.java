@@ -215,6 +215,10 @@ public class SmsDatabase extends MessagingDatabase {
     updateTypeBitmask(id, Types.PUSH_MESSAGE_BIT, Types.MESSAGE_FORCE_SMS_BIT);
   }
 
+  public void markAsXmppExchange(long id) {
+    updateTypeBitmask(id, 0, Types.XMPP_EXCHANGE_BIT);
+  }
+
   public void markAsDecryptFailed(long id) {
     updateTypeBitmask(id, Types.ENCRYPTION_MASK, Types.ENCRYPTION_REMOTE_FAILED_BIT);
   }
@@ -354,6 +358,8 @@ public class SmsDatabase extends MessagingDatabase {
       else if (((IncomingKeyExchangeMessage)message).isLegacyVersion())  type |= Types.ENCRYPTION_REMOTE_LEGACY_BIT;
       else if (((IncomingKeyExchangeMessage)message).isDuplicate())      type |= Types.ENCRYPTION_REMOTE_DUPLICATE_BIT;
       else if (((IncomingKeyExchangeMessage)message).isPreKeyBundle())   type |= Types.KEY_EXCHANGE_BUNDLE_BIT;
+    } else if (message.isXmppExchange()) {
+      type |= Types.XMPP_EXCHANGE_BIT;
     } else if (message.isSecureMessage()) {
       type |= Types.SECURE_MESSAGE_BIT;
 //      type |= Types.ENCRYPTION_REMOTE_BIT;

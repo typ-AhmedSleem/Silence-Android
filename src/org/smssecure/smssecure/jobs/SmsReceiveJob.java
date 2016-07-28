@@ -92,7 +92,7 @@ public class SmsReceiveJob extends ContextJob {
       messageAndThreadId = database.insertMessageInbox(masterSecret, message);
     }
 
-    if (masterSecret == null || message.isSecureMessage() || message.isKeyExchange() || message.isEndSession()) {
+    if (masterSecret == null || message.isSecureMessage() || message.isKeyExchange() || message.isEndSession() || message.isXmppExchange()) {
       ApplicationContext.getInstance(context)
                         .getJobManager()
                         .add(new SmsDecryptJob(context, messageAndThreadId.first));
