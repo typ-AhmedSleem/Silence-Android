@@ -156,6 +156,10 @@ public abstract class MessageRecord extends DisplayRecord {
     return SmsDatabase.Types.isInvalidVersionKeyExchange(type);
   }
 
+  public boolean isXmppExchange() {
+    return SmsDatabase.Types.isXmppExchangeType(type);
+  }
+
   public Recipient getIndividualRecipient() {
     return individualRecipient;
   }

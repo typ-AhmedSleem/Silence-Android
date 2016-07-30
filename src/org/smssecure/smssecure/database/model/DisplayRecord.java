@@ -104,6 +104,10 @@ public abstract class DisplayRecord {
     return SmsDatabase.Types.isKeyExchangeType(type);
   }
 
+  public boolean isXmppExchange() {
+    return SmsDatabase.Types.isXmppExchangeType(type);
+  }
+
   public boolean isEndSession() {
     return SmsDatabase.Types.isEndSessionType(type);
   }

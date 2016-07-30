@@ -59,6 +59,9 @@ public interface MmsSmsColumns {
     protected static final long GROUP_UPDATE_BIT = 0x10000;
     protected static final long GROUP_QUIT_BIT   = 0x20000;
 
+    // XMPP Message Information
+    protected static final long XMPP_EXCHANGE_BIT = 0x3000000;
+
     // Encrypted Storage Information
     protected static final long ENCRYPTION_MASK                  = 0xFF000000;
     protected static final long ENCRYPTION_SYMMETRIC_BIT         = 0x80000000;
@@ -189,6 +192,10 @@ public interface MmsSmsColumns {
 
     public static boolean isLegacyType(long type) {
       return (type & ENCRYPTION_REMOTE_LEGACY_BIT) != 0;
+    }
+
+    public static boolean isXmppExchangeType(long type) {
+      return (type & XMPP_EXCHANGE_BIT) != 0;
     }
 
     public static long translateFromSystemBaseType(long theirType) {

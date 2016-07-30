@@ -71,6 +71,8 @@ public class SmsMessageRecord extends MessageRecord {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_received_corrupted_key_exchange_message));
     } else if (isInvalidVersionKeyExchange()) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version));
+    } else if (isXmppExchange()) {
+      return emphasisAdded(context.getString(R.string.ConversationItem_xmpp_address));
     } else if (MmsSmsColumns.Types.isLegacyType(type)) {
       return emphasisAdded(context.getString(R.string.MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (isBundleKeyExchange()) {
