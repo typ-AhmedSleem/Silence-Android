@@ -53,6 +53,7 @@ public class SmsDecryptJob extends MasterSecretJob {
 
     this.messageId = messageId;
     this.manualOverride = manualOverride;
+    Log.w(TAG, "manualOverride: " + manualOverride);
   }
 
   public SmsDecryptJob(Context context, long messageId) {
