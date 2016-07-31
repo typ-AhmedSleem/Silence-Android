@@ -282,7 +282,8 @@ public class MessageNotifier {
     if (notificationsRequested(flags)) {
       triggerNotificationAlarms(builder, notificationState, flags);
 
-      builder.setTicker(notifications.get(0).getText());
+      builder.setTicker(notifications.get(0).getIndividualRecipient(),
+                        notifications.get(0).getText());
     }
 
     ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
