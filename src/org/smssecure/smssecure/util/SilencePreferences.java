@@ -438,7 +438,7 @@ public class SilencePreferences {
   }
 
   public static boolean isSmsDeliveryReportsEnabled(Context context) {
-    return getBooleanPreference(context, SMS_DELIVERY_REPORT_PREF, true);
+    return getBooleanPreference(context, SMS_DELIVERY_REPORT_PREF, false);
   }
 
   public static boolean isSmsDeliveryReportsToastEnabled(Context context) {
