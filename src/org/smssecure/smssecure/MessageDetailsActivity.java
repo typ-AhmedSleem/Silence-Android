@@ -308,6 +308,11 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
         return null;
       }
 
+      if (messageRecord == null){
+        Log.w(TAG, "messageRecord is null");
+        return null;
+      }
+
       Recipients recipients;
 
       final Recipients intermediaryRecipients;
