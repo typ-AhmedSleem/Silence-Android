@@ -13,6 +13,7 @@ import android.text.TextUtils.TruncateAt;
 import android.text.style.RelativeSizeSpan;
 import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.TransportOption;
@@ -100,17 +101,9 @@ public class ComposeText extends EmojiEditText {
     if (isLandscape()) setImeActionLabel(transport.getComposeHint(), EditorInfo.IME_ACTION_SEND);
     else               setImeActionLabel(null, 0);
 
-    inputType  = !isLandscape() && enterKeyType.equals("send")
-               ? inputType & ~InputType.TYPE_TEXT_FLAG_MULTI_LINE
-               : inputType | InputType.TYPE_TEXT_FLAG_MULTI_LINE;
-
     inputType  = enterKeyType.equals("emoji")
                ? inputType | InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE
                : inputType & ~InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE;
-
-    imeOptions = enterKeyType.equals("send")
-               ? imeOptions & ~EditorInfo.IME_FLAG_NO_ENTER_ACTION
-               : imeOptions | EditorInfo.IME_FLAG_NO_ENTER_ACTION;
 
     setInputType(inputType);
     setImeOptions(imeOptions);
@@ -118,5 +111,14 @@ public class ComposeText extends EmojiEditText {
             transport.getSimName().isPresent()
                 ? getContext().getString(R.string.conversation_activity__from_sim_name, transport.getSimName().get())
                 : null);
+  }
+
+  @Override
+  public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
+    InputConnection conn = super.onCreateInputConnection(outAttrs);
+    if(SilencePreferences.getEnterKeyType(getContext()).equals("send")) {
+      outAttrs.imeOptions &= ~EditorInfo.IME_FLAG_NO_ENTER_ACTION;
+    }
+    return conn;
   }
 }
