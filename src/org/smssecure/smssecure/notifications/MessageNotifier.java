@@ -53,6 +53,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.SpanUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 
@@ -282,7 +283,8 @@ public class MessageNotifier {
     if (notificationsRequested(flags)) {
       triggerNotificationAlarms(builder, notificationState, flags);
 
-      builder.setTicker(notifications.get(0).getText());
+      builder.setTicker(notifications.get(0).getIndividualRecipient(),
+                        notifications.get(0).getText());
     }
 
     ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
@@ -290,7 +292,9 @@ public class MessageNotifier {
   }
 
   private static void sendInThreadNotification(Context context, Recipients recipients) {
-    if (!SilencePreferences.isInThreadNotifications(context)) {
+    if (!SilencePreferences.isInThreadNotifications(context) ||
+        ServiceUtil.getAudioManager(context).getRingerMode() != AudioManager.RINGER_MODE_NORMAL)
+    {
       return;
     }
 

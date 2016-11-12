@@ -16,28 +16,19 @@
  */
 package org.smssecure.smssecure.util;
 
-import org.smssecure.smssecure.sms.SmsTransportDetails;
+import android.telephony.SmsMessage;
 
 public class SmsCharacterCalculator extends CharacterCalculator {
 
   @Override
-  public CharacterState calculateCharacters(int charactersSpent) {
-    int maxMessageSize;
+  public CharacterState calculateCharacters(String messageBody) {
 
-    if (charactersSpent <= SmsTransportDetails.SMS_SIZE) {
-      maxMessageSize = SmsTransportDetails.SMS_SIZE;
-    } else {
-      maxMessageSize = SmsTransportDetails.MULTIPART_SMS_SIZE;
-    }
-
-    int messagesSpent = charactersSpent / maxMessageSize;
-
-    if (((charactersSpent % maxMessageSize) > 0) || (messagesSpent == 0))
-      messagesSpent++;
-
-    int charactersRemaining = (maxMessageSize * messagesSpent) - charactersSpent;
+    int[] length            = SmsMessage.calculateLength(messageBody, false);
+    int messagesSpent       = length[0];
+    int charactersSpent     = length[1];
+    int charactersRemaining = length[2];
+    int maxMessageSize      = (charactersSpent + charactersRemaining) / messagesSpent;
 
     return new CharacterState(messagesSpent, charactersRemaining, maxMessageSize);
   }
 }
-

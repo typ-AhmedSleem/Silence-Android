@@ -32,6 +32,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Browser;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.view.WindowCompat;
@@ -315,6 +316,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       fragment.reloadList();
       break;
     }
+  }
+
+  @Override
+  public void startActivity(Intent intent) {
+    if (intent.getStringExtra(Browser.EXTRA_APPLICATION_ID) != null) {
+      intent.removeExtra(Browser.EXTRA_APPLICATION_ID);
+    }
+    super.startActivity(intent);
   }
 
   @Override
@@ -956,6 +965,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void setMedia(Uri uri, MediaType mediaType) {
+    if (uri == null) return;
     attachmentManager.setMedia(masterSecret, uri, mediaType, getCurrentMediaConstraints());
   }
 
@@ -1070,9 +1080,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void calculateCharactersRemaining() {
-    int             charactersSpent = composeText.getText().toString().length();
+    String          messageBody     = composeText.getText().toString();
     TransportOption transportOption = sendButton.getSelectedTransport();
-    CharacterState  characterState  = transportOption.calculateCharacters(charactersSpent);
+    CharacterState  characterState  = transportOption.calculateCharacters(messageBody);
 
     if (characterState.charactersRemaining <= 15 || characterState.messagesSpent > 1) {
       charactersLeft.setText(characterState.charactersRemaining + "/" + characterState.maxMessageSize

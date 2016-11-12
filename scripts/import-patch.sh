@@ -22,7 +22,7 @@ if [ ! -d "../Signal-Android" ]; then
     exit 1
 fi
 
-cd ../TextSecure
+cd ../Signal-Android
 git pull origin master > /dev/null 2>&1
 
 for sha in "$@"; do

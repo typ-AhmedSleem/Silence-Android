@@ -134,7 +134,9 @@ public class ContactSelectionListFragment extends    Fragment
     ((CursorRecyclerViewAdapter) recyclerView.getAdapter()).changeCursor(data);
     emptyText.setText(R.string.contact_selection_group_activity__no_contacts);
     if (recyclerView.getAdapter().getItemCount() > 1) emptyText.setVisibility(View.GONE);
-    if (recyclerView.getAdapter().getItemCount() > 20) {
+    boolean useFastScroller = (recyclerView.getAdapter().getItemCount() > 20);
+    recyclerView.setVerticalScrollBarEnabled(!useFastScroller);
+    if (useFastScroller) {
       fastScroller.setVisibility(View.VISIBLE);
       fastScroller.setRecyclerView(recyclerView);
     }
