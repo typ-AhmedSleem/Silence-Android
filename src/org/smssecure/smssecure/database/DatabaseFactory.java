@@ -73,6 +73,7 @@ public class DatabaseFactory {
   private static final int INTRODUCED_CONVERSATION_LIST_STATUS_VERSION     = 25;
   private static final int MIGRATED_CONVERSATION_LIST_STATUS_VERSION       = 26;
   private static final int INTRODUCED_SUBSCRIPTION_ID_VERSION              = 28;
+  private static final int INTRODUCED_XMPP_TRANSPORT                       = 29;
   private static final int DATABASE_VERSION                                = 28;
 
   private static final String DATABASE_NAME    = "messages.db";
@@ -514,6 +515,16 @@ public class DatabaseFactory {
       executeStatements(db, MmsAddressDatabase.CREATE_INDEXS);
       executeStatements(db, DraftDatabase.CREATE_INDEXS);
       executeStatements(db, GroupDatabase.CREATE_INDEXS);
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+      db.beginTransaction();
+
+      if (newVersion < INTRODUCED_XMPP_TRANSPORT) {}
+
+      db.setTransactionSuccessful();
+      db.endTransaction();
     }
 
     @Override
