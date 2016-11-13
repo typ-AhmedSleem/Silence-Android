@@ -56,6 +56,7 @@ public class SilencePreferences {
   private static final String AUTO_KEY_EXCHANGE_PREF           = "pref_auto_complete_key_exchange";
   public  static final String SCREEN_SECURITY_PREF             = "pref_screen_security";
   public  static final String ENTER_KEY_TYPE                   = "pref_enter_key_type";
+  private static final String PROMPTED_DELIVERY_REPORTS_PREF   = "pref_prompted_delivery_reports";
   private static final String SMS_DELIVERY_REPORT_PREF         = "pref_delivery_report_sms";
   private static final String SMS_DELIVERY_REPORT_TOAST_PREF   = "pref_delivery_report_toast_sms";
   public  static final String MMS_USER_AGENT                   = "pref_mms_user_agent";
@@ -435,6 +436,18 @@ public class SilencePreferences {
 
   public static void setLanguage(Context context, String language) {
     setStringPreference(context, LANGUAGE_PREF, language);
+  }
+
+  public static boolean hasPromptedDeliveryReportsReminder(Context context) {
+    return getBooleanPreference(context, PROMPTED_DELIVERY_REPORTS_PREF, false);
+  }
+
+  public static void setPromptedDeliveryReportsReminder(Context context) {
+    setBooleanPreference(context, PROMPTED_DELIVERY_REPORTS_PREF, true);
+  }
+
+  public static void setSmsDeliveryReportsEnabled(Context context) {
+    setBooleanPreference(context, SMS_DELIVERY_REPORT_PREF, true);
   }
 
   public static boolean isSmsDeliveryReportsEnabled(Context context) {

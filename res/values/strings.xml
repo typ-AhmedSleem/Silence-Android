@@ -828,6 +828,9 @@
     <string name="reminder_header_rate_title">Rate this app</string>
     <string name="reminder_header_rate_text">If you enjoy using this app, please take a moment to help us by rating it.</string>
     <string name="reminder_header_rate_button">RATE NOW!</string>
+    <string name="reminder_header_delivery_reports_title">Enable delivery reports?</string>
+    <string name="reminder_header_delivery_reports_text">Delivery reports allow you to know if and when your recipient had received your messages. Some mobile networks charge additional fee.</string>
+    <string name="reminder_header_delivery_reports_button">ENABLE</string>
     <string name="reminder_header_close_button">CLOSE</string>
 
     <!-- MediaPreviewActivity -->
