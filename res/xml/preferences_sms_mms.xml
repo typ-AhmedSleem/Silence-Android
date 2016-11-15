@@ -24,7 +24,7 @@
                         android:defaultValue="false" />
 
     <org.smssecure.smssecure.components.SwitchPreferenceCompat
-                        android:defaultValue="true"
+                        android:defaultValue="false"
                         android:key="pref_delivery_report_sms"
                         android:summary="@string/preferences__request_a_delivery_report_for_each_sms_message_you_send"
                         android:title="@string/preferences__sms_delivery_reports" />

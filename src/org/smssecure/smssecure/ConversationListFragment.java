@@ -54,6 +54,7 @@ import android.view.Window;
 
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.reminder.DefaultSmsReminder;
+import org.smssecure.smssecure.components.reminder.DeliveryReportsReminder;
 import org.smssecure.smssecure.components.reminder.Reminder;
 import org.smssecure.smssecure.components.reminder.ReminderView;
 import org.smssecure.smssecure.components.reminder.StoreRatingReminder;
@@ -160,6 +161,8 @@ public class ConversationListFragment extends Fragment
           return Optional.of(new DefaultSmsReminder(context));
         } else if (Util.isDefaultSmsProvider(context) && SystemSmsImportReminder.isEligible(context)) {
           return Optional.of((new SystemSmsImportReminder(context, masterSecret)));
+        } else if (DeliveryReportsReminder.isEligible(context)) {
+          return Optional.of((new DeliveryReportsReminder(context)));
         } else if (StoreRatingReminder.isEligible(context)) {
           return Optional.of((new StoreRatingReminder(context)));
         } else {

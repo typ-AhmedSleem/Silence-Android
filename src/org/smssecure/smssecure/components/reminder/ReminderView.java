@@ -53,7 +53,13 @@ public class ReminderView extends LinearLayout {
     text.setText(reminder.getText());
     acceptButton.setText(reminder.getButtonText());
 
-    acceptButton.setOnClickListener(reminder.getOkListener());
+    acceptButton.setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        hide();
+        if (reminder.getOkListener() != null) reminder.getOkListener().onClick(v);
+      }
+    });
 
     if (reminder.isDismissable()) {
       closeButton.setOnClickListener(new OnClickListener() {
