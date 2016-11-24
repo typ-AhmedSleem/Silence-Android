@@ -164,7 +164,7 @@
     <string name="ConversationFragment_deleting_messages">Deleting messages...</string>
 
     <!-- ConversationListActivity -->
-    <string name="ConversationListActivity_search">Search...</string>
+    <string name="ConversationListActivity_search">Search</string>
 
     <!-- ConversationListFragment -->
     <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -193,7 +193,7 @@
     <string name="ConversationListFragment_sending_selected_drafts">Sending selected drafts...</string>
 
     <!-- ConversationListItem -->
-    <string name="ConversationListItem_key_exchange_message">Key exchange message...</string>
+    <string name="ConversationListItem_key_exchange_message">Key exchange message</string>
 
     <!-- ConversationListItemAction -->
     <string name="ConversationListItemAction_archived_conversations_d">Archived conversations (%d)</string>
@@ -283,8 +283,8 @@
 
     <!-- MmsDownloader -->
     <string name="MmsDownloader_error_storing_mms">Error storing MMS!</string>
-    <string name="MmsDownloader_error_connecting_to_mms_provider">Error connecting to MMS provider...</string>
-    <string name="MmsDownloader_error_reading_mms_settings">Error reading wireless provider MMS settings...</string>
+    <string name="MmsDownloader_error_connecting_to_mms_provider">Error connecting to MMS provider</string>
+    <string name="MmsDownloader_error_reading_mms_settings">Error reading wireless provider MMS settings</string>
 
     <!-- NotificationMmsMessageRecord -->
     <string name="NotificationMmsMessageRecord_multimedia_message">Multimedia message</string>
@@ -346,7 +346,7 @@
     <string name="SmsMessageRecord_duplicate_message">Duplicate message.</string>
 
     <!-- ThreadRecord -->
-    <string name="ThreadRecord_left_the_group">Left the group...</string>
+    <string name="ThreadRecord_left_the_group">Left the group</string>
     <string name="ThreadRecord_draft">Draft:</string>
     <string name="ThreadRecord_media_message">Media message</string>
 
@@ -373,10 +373,10 @@
     <string name="KeyExchangeInitiator_send">Send</string>
 
     <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">Bad encrypted message...</string>
+    <string name="MessageDisplayHelper_bad_encrypted_message">Bad encrypted message</string>
     <string name="MessageDisplayHelper_decrypting_please_wait">Decrypting, please wait...</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message encrypted for non-existing session...</string>
-    <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Request to end a non-existing session...</string>
+    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message encrypted for non-existing session</string>
+    <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Request to end a non-existing session</string>
 
     <!-- EncryptingSmsDatabase -->
     <string name="EncryptingSmsDatabase_error_decrypting_message">Error decrypting message.</string>
@@ -391,8 +391,8 @@
 
     <!-- MmsMessageRecord -->
     <string name="MmsMessageRecord_decrypting_mms_please_wait">Decrypting MMS, please wait...</string>
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">Bad encrypted MMS message...</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS message encrypted for non-existing session...</string>
+    <string name="MmsMessageRecord_bad_encrypted_mms_message">Bad encrypted MMS message</string>
+    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS message encrypted for non-existing session</string>
 
     <!-- MuteDialog -->
     <string name="MuteDialog_mute_notifications">Mute notifications</string>
@@ -412,7 +412,7 @@
     <!-- MessageNotifier -->
     <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d new messages in %2$d conversations</string>
     <string name="MessageNotifier_most_recent_from_s">Most recent from: %1$s</string>
-    <string name="MessageNotifier_encrypted_message">Encrypted message...</string>
+    <string name="MessageNotifier_encrypted_message">Encrypted message</string>
     <string name="MessageNotifier_media_message_with_text">Media message: %s</string>
     <string name="MessageNotifier_no_subject">(No subject)</string>
     <string name="MessageNotifier_message_delivery_failed">Message delivery failed.</string>
@@ -451,7 +451,7 @@
     <string name="ContactSelectionlistFragment_select_for">Select for</string>
 
     <!-- blocked_contacts_fragment -->
-    <string name="blocked_contacts_fragment__no_blocked_contacts">No blocked contacts...</string>
+    <string name="blocked_contacts_fragment__no_blocked_contacts">No blocked contacts</string>
 
     <!-- contact_selection_recent_activity -->
     <string name="contact_selection_recent_activity__no_recent_calls">No recent calls.</string>
