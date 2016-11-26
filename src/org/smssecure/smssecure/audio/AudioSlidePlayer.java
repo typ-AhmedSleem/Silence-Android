@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.Pair;
 
+import org.smssecure.smssecure.attachments.AttachmentServer;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.AudioSlide;
 import org.smssecure.smssecure.util.Util;
@@ -31,7 +32,7 @@ public class AudioSlidePlayer {
 
   private @NonNull  WeakReference<Listener> listener;
   private @Nullable MediaPlayer             mediaPlayer;
-  private @Nullable AudioAttachmentServer   audioAttachmentServer;
+  private @Nullable AttachmentServer        audioAttachmentServer;
 
   public synchronized static AudioSlidePlayer createFor(@NonNull Context context,
                                                         @NonNull MasterSecret masterSecret,
@@ -62,7 +63,7 @@ public class AudioSlidePlayer {
     if (this.mediaPlayer != null) return;
 
     this.mediaPlayer           = new MediaPlayer();
-    this.audioAttachmentServer = new AudioAttachmentServer(context, masterSecret, slide.asAttachment());
+    this.audioAttachmentServer = new AttachmentServer(context, masterSecret, slide.asAttachment());
 
     audioAttachmentServer.start();
 
