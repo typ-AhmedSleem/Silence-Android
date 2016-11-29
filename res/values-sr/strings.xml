@@ -5,6 +5,8 @@
   <string name="no">Не</string>
   <string name="delete">Обриши</string>
   <string name="please_wait">Сачекајте...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Нова порука</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Још нисте поставили лозинку!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -75,6 +77,7 @@
   <string name="ConversationItem_unable_to_open_media">Нема апликације која може да отвори овај медијум.</string>
   <string name="ConversationItem_from_s">од %s</string>
   <string name="ConversationItem_to_s">за %s</string>
+  <string name="ConversationItem_xmpp_address">ИксМПП адреса. Надоградите Сајленс да бисте користили ову функционалност.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започети безбедну сесију?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Започети безбедну сесију са %s?</string>
@@ -506,6 +509,7 @@
   <string name="AndroidManifest__media_overview_named">Све слика са %1$s</string>
   <string name="AndroidManifest__message_details">Детаљи поруке</string>
   <string name="AndroidManifest_archived_conversations">Архивиране преписке</string>
+  <string name="AndroidManifest_configure_mms_settings">ММС поставке</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Увоз/извоз</string>
   <string name="arrays__your_identity_key">Ваш кључ идентитета</string>
@@ -727,6 +731,9 @@
   <string name="reminder_header_rate_title">Оцените апликацију</string>
   <string name="reminder_header_rate_text">Ако уживате у коришћењу ове апликације, помозите нам тако што ћете да је оцените.</string>
   <string name="reminder_header_rate_button">Оцени одмах!</string>
+  <string name="reminder_header_delivery_reports_title">Да укључим извештаје о достави?</string>
+  <string name="reminder_header_delivery_reports_text">Извештаји о достави омогућују да сазнате када прималац добије вашу поруку. Неке мобилне мреже ово додатно наплаћују.</string>
+  <string name="reminder_header_delivery_reports_button">УКЉУЧИ</string>
   <string name="reminder_header_close_button">ЗАТВОРИ</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Ви</string>
@@ -734,6 +741,7 @@
   <string name="MediaPreviewActivity_unssuported_media_type">Неподржан тип медијума</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Сачувај</string>
+  <string name="media_preview__forward_title">Проследи</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Сачувај све</string>
   <!--media_preview_activity-->

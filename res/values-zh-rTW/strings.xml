@@ -3,6 +3,7 @@
   <string name="yes">是</string>
   <string name="no">否</string>
   <string name="delete">刪除</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未建立『自訂密碼』！</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">刪除\"全部\"的舊訊息？</string>

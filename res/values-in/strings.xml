@@ -4,6 +4,7 @@
   <string name="no">Tidak</string>
   <string name="delete">Hapus</string>
   <string name="please_wait">Mohon tunggu...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Anda belum mengatur kata kunci!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

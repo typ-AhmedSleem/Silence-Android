@@ -5,6 +5,8 @@
   <string name="no">Non</string>
   <string name="delete">Supprimer</string>
   <string name="please_wait">Veuillez patienter...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nouveau message</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vous n’avez pas encore défini de phrase de passe !</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -72,6 +74,7 @@ en mesure de les lire.</string>
   <string name="ConversationItem_unable_to_open_media">Impossible de trouver une application pour ouvrir le média.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">vers %s</string>
+  <string name="ConversationItem_xmpp_address">Adresse XMPP. Mettez à jour Silence pour activer cette fonctionnalité.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Commencer une session chiffrée ?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Commencer une session chiffrée avec %s ?</string>
@@ -483,6 +486,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="AndroidManifest__media_overview_named">Toutes les images avec %1$s</string>
   <string name="AndroidManifest__message_details">Détails du message</string>
   <string name="AndroidManifest_archived_conversations">Conversations archivées</string>
+  <string name="AndroidManifest_configure_mms_settings">Configurer les paramètres des MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importer / exporter</string>
   <string name="arrays__your_identity_key">Votre clé d\'identité</string>
@@ -703,6 +707,9 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="reminder_header_rate_title">Noter cette application</string>
   <string name="reminder_header_rate_text">Si vous appréciez cette application, la noter pourrait nous aider.</string>
   <string name="reminder_header_rate_button">NOTER MAINTENANT !</string>
+  <string name="reminder_header_delivery_reports_title">Activer les accusés de réception ?</string>
+  <string name="reminder_header_delivery_reports_text">Un accusé de réception vous permet de savoir si le destinataire a reçu votre message et à quelle heure. Certains opérateur peuvent facturer ce service.</string>
+  <string name="reminder_header_delivery_reports_button">ACTIVER</string>
   <string name="reminder_header_close_button">FERMER</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vous</string>
@@ -710,6 +717,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="MediaPreviewActivity_unssuported_media_type">Type de média non supporté</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Sauvegarder</string>
+  <string name="media_preview__forward_title">Faire suivre</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Tout sauvegarder</string>
   <!--media_preview_activity-->

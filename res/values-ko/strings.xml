@@ -5,6 +5,7 @@
   <string name="no">아니오</string>
   <string name="delete">삭제</string>
   <string name="please_wait">잠시 기다려주세요...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">아직 암호가 설정되지 않았습니다!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

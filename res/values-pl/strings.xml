@@ -5,6 +5,8 @@
   <string name="no">Nie</string>
   <string name="delete">Usuń</string>
   <string name="please_wait">Proszę czekać...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nowa wiadomość</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Nie masz jeszcze ustawionego hasła!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -73,6 +75,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationItem_unable_to_open_media">Nie można odnaleźć aplikacji do otwarcia tego pliku multimedialnego.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">do %s</string>
+  <string name="ConversationItem_xmpp_address">Adres XMPP. Zaktualizuj Silence aby uaktywnić tę funkcję.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Rozpocząć bezpieczną sesję z %s?</string>
@@ -499,6 +502,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="AndroidManifest__media_overview_named">Wszystkie obrazy z %1$s</string>
   <string name="AndroidManifest__message_details">Szczegóły wiadomości</string>
   <string name="AndroidManifest_archived_conversations">Archiwum konwersacji</string>
+  <string name="AndroidManifest_configure_mms_settings">Konfiguracja ustawień MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Import / eksport</string>
   <string name="arrays__your_identity_key">Twój klucz tożsamości</string>
@@ -720,6 +724,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="reminder_header_rate_title">Oceń program</string>
   <string name="reminder_header_rate_text">Jeżeli podoba Ci się ten program, prosimy abyś poświęcił chwilę i ocenił go.</string>
   <string name="reminder_header_rate_button">OCEŃ TERAZ!</string>
+  <string name="reminder_header_delivery_reports_title">Aktywować raporty dostarczenia?</string>
+  <string name="reminder_header_delivery_reports_text">Raporty dostarczenia umożliwiają Ci wiedzieć czy i kiedy odbiorca otrzymał Twoje wiadomości. Niektóre sieci komórkowe pobierają dodatkowe opłaty.</string>
+  <string name="reminder_header_delivery_reports_button">WŁĄCZ</string>
   <string name="reminder_header_close_button">ZAMKNIJ</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Ty</string>
@@ -727,6 +734,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nieobsługiwany typ media</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Zapisz</string>
+  <string name="media_preview__forward_title">Przekaż</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Zapisz wszystkie</string>
   <!--media_preview_activity-->

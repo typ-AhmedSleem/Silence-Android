@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Da</string>
   <string name="no">Nu</string>
   <string name="delete">Șterge</string>
   <string name="please_wait">Te rog așteaptă...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Mesaj nou</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Nu ai setat inca o parola!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Şterge toate mesajele vechi acum?</string>
@@ -20,40 +23,60 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ApplicationPreferencesActivity_Off">Dezactivat</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, Limba %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">1 minut</item>
+    <item quantity="few">%d minute</item>
+    <item quantity="other">%d minute</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(imagine)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_camera">Cameră</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Imagine</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informații contact</string>
   <!--BlockedContactsActivity-->
+  <string name="BlockedContactsActivity_blocked_contacts">Contacte blocate</string>
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Marimea mesajului: %d KB</string>
   <string name="ConversationItem_expires_s">Expira in: %s</string>
+  <string name="ConversationItem_error_not_delivered">Nelivrat</string>
   <string name="ConversationItem_view_secure_media_question">Afișez datele securizate?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Eroare, mesajul pentru schimbul de chei este vechi.</string>
   <string name="ConversationItem_group_action_left">%1$s a ieșit din grup.</string>
+  <string name="ConversationItem_click_for_details">Apasă pentru detalii</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Reveniţi la SMS necriptat ca soluţie de rezervă?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Reveniţi la MMS necriptat ca soluţie de rezervă?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Acest mesaj <b>nu</b> va fi criptat deoarece nu s-a putut realiza o sesiune securizată.\n\nTrimit mesaj nesecurizat?</string>
+  <string name="ConversationItem_from_s">de la %s</string>
+  <string name="ConversationItem_to_s">către %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Initializez Sesiune Securizata?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Initializez Sesiune Securizata cu %s?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Se confirmă terminarea sesiunii securizate</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Sunteți sigur că doriți terminarea sesiunii securizate?</string>
+  <string name="ConversationActivity_delete_thread_question">Șterg conversația?</string>
   <string name="ConversationActivity_add_attachment">Adauga atasament</string>
   <string name="ConversationActivity_select_contact_info">Selectează informații de contact</string>
   <string name="ConversationActivity_compose_message">Compune mesaj</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">GIF-ul selectat este prea mare!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Ne pare rău, video-ul selectat depășește restricția de mărime a mesajelor (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Ne pare rău, fișierul audio selectat depășește restricția marimii mesajului (%1$skB).</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesajul este gol!</string>
+  <string name="ConversationActivity_group_members">Membrii grup</string>
   <string name="ConversationActivity_group_conversation">Grupează conversaţia</string>
   <string name="ConversationActivity_unnamed_group">Grup nedenumit</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">1 membru</item>
+    <item quantity="few">%d membrii</item>
+    <item quantity="other">%d membrii</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Ciornă salvată</string>
   <string name="ConversationActivity_invalid_recipient">Destinatar invalid!</string>
   <string name="ConversationActivity_calls_not_supported">Nu există suport pentru apeluri</string>
@@ -62,30 +85,49 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationActivity_transport_insecure_mms">MMS nesecurizat</string>
   <string name="ConversationActivity_transport_secure_sms">SMS securizat</string>
   <string name="ConversationActivity_transport_secure_mms">MMS securizat</string>
+  <string name="ConversationActivity_install_smssecure">Hai să discutăm în siguranță: %s</string>
+  <string name="ConversationActivity_mms_not_supported_title">MMS-ul nu este suportat</string>
+  <string name="ConversationActivity_specify_recipient">Te rog alege un contact</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalii mesaj</string>
   <string name="ConversationFragment_save_to_sd_card">Salvez pe spațiul de stocare?</string>
+  <string name="ConversationFragment_file_saved_successfully">Fișierul a fost salvat cu succes.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nu se poate scrie pe spațiul de stocare!</string>
+  <string name="ConversationFragment_pending">În curs...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Se șterge...</string>
   <string name="ConversationFragment_deleting_messages">Se șterg mesajele...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Caută...</string>
   <!--ConversationListFragment-->
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">Șterg conversația selectată?</item>
+    <item quantity="few">Șterg conversațiile selectate?</item>
+    <item quantity="other">Șterg conversațiile selectate?</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Se șterge</string>
+  <string name="ConversationListFragment_undo">UNDO</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mesaj pentru schimb de chei...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Niciuna</string>
   <!--DateUtils-->
+  <string name="DateUtils_now">Acum</string>
+  <string name="DateUtils_minutes_ago">%d min</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partajează cu</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_silence">Bun venit la Silence!</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Criptează mesajele tale</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Vorbește cu toată lumea</string>
+  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure este acum Silence.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportă</string>
   <string name="ExportFragment_cancel">Anulează</string>
   <string name="ExportFragment_exporting">Se exportă</string>
+  <string name="ExportFragment_export_successful">Exportarea s-a făcut cu succes.</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Grup nou</string>
   <string name="GroupCreateActivity_actionbar_update_title">Actualizează grup</string>
@@ -114,6 +156,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nu a fost găsită nici o cheie scanată!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Instalez scannerul de coduri de bare?</string>
   <!--MessageDetailsRecipient-->
+  <string name="MessageDetailsRecipient_new_identity">Identitate nouă</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Eroare la stocarea MMS-ului!</string>
   <string name="MmsDownloader_error_connecting_to_mms_provider">Eroare de conectare la furnizorul MMS...</string>
@@ -135,7 +178,16 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ReceiveKeyActivity_processing_key_exchange">Se proceseaza schimbul de chei...</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Probabil ca doresti sa verifici aceasta persoana.</string>
   <!--RecipientPreferencesActivity-->
+  <string name="RecipientPreferenceActivity_block_this_contact_question">Blochez acest contact?</string>
+  <string name="RecipientPreferenceActivity_block">Blochează</string>
+  <string name="RecipientPreferenceActivity_unblock_this_contact_question">Deblochez acest contact?</string>
+  <string name="RecipientPreferenceActivity_unblock">Deblochează</string>
+  <string name="RecipientPreferenceActivity_enabled">Activat</string>
+  <string name="RecipientPreferenceActivity_disabled">Dezactivat</string>
   <!--Slide-->
+  <string name="Slide_image">Imagine</string>
+  <string name="Slide_audio">Audio</string>
+  <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Primit mesajul conform caruia
 schimbul de chei este corupt </string>
@@ -147,16 +199,22 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">A ieșit din grup...</string>
   <string name="ThreadRecord_draft">Ciornă:</string>
+  <string name="ThreadRecord_media_message">Mesaj media</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nu ai o cheie de identitate.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Destinatarul nu are o cheie de identitate.</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Scanează codul QR al contactului</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Afișează codul tău QR</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATENȚIE, cheia scanată NU SE POTRIVEȘTE! Verifică semnătura digitală cu atenție.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NU E VERIFICAT!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Cheia partenerului este corectă. Este necesar de asemenea ca și partenerul tău să verifice cheia ta.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Verificat!</string>
   <!--ViewIdentityActivity-->
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Scanează codul QR al contactului</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Afișează codul tău QR</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ATENȚIE, cheia scanată NU SE POTRIVEȘTE !</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Cheia scanată se potrivește!</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">Amprenta ta de identitate</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Iniţializeaz deşi există o cerere?</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ai trimis deja o cerere pentru inițializarea sesiunii către acest destinatar, ești sigur că dorești să trimiți încă una? Această acțiune va invalida cererea deja trimisă.</string>
@@ -182,19 +240,31 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Import în curs</string>
   <string name="ApplicationMigrationService_importing_text_messages">Mesajele text sunt importate</string>
+  <string name="ApplicationMigrationService_import_complete">Import complet</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_silence_passphrase_cached">Apasă pentru a deschide.</string>
+  <string name="KeyCachingService_passphrase_cached">Silence este deblocat</string>
   <string name="KeyCachingService_lock">Blocare acces cu parola</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_encrypted_message">Mesaj criptat...</string>
+  <string name="MessageNotifier_media_message_with_text">Mesaj media: %s</string>
   <string name="MessageNotifier_no_subject">(Fără subiect)</string>
   <string name="MessageNotifier_message_delivery_failed">Trimiterea mesajului a esuat.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Mesajul nu a putut fi trimis.</string>
   <string name="MessageNotifier_error_delivering_message">A aparut o eroare la trimiterea mesajului.</string>
   <string name="MessageNotifier_mark_all_as_read">Marchează tot ca citit</string>
+  <string name="MessageNotifier_media_message">Mesaj media</string>
+  <string name="MessageNotifier_reply">Răspunde</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Mesaj nou</string>
   <!--change_passphrase_activity-->
+  <string name="change_passphrase_activity__old_passphrase">Parola veche</string>
+  <string name="change_passphrase_activity__new_passphrase">Parola nouă</string>
+  <string name="change_passphrase_activity__repeat_new_passphrase">Repetă parola nouă</string>
   <!--contact_selection_activity-->
+  <string name="contact_selection_activity__enter_name_or_number">Introdu un nume sau un număr</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Nu exista contacte.</string>
   <string name="contact_selection_group_activity__finding_contacts">Se încarcă contactele...</string>
@@ -203,6 +273,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Selectează pentru</string>
   <!--blocked_contacts_fragment-->
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Nici un contact blocat...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nu exista apeluri recente.</string>
   <!--conversation_title_view-->
@@ -211,6 +282,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="conversation_activity__type_message_sms_insecure">Trimite SMS nesecurizat</string>
   <string name="conversation_activity__type_message_mms_secure">Trimite MMS securizat</string>
   <string name="conversation_activity__type_message_mms_insecure">Trimite SMS nesecurizat</string>
+  <string name="conversation_activity__from_sim_name">De la %1$s</string>
   <string name="conversation_activity__send">Trimite</string>
   <string name="conversation_activity__remove">Șterge</string>
   <string name="conversation_activity__window_description">Conversaţie cu %1$s</string>
@@ -247,13 +319,23 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="import_fragment__import_system_sms_database">Import baza de date cu SMS-uri?</string>
   <string name="import_fragment__import_plaintext_backup">Importă backup text</string>
   <!--load_more_header-->
+  <string name="load_more_header__see_full_conversation">Arată conversația întreagă</string>
   <!--media_overview_activity-->
+  <string name="media_overview_activity__no_images">Nici o imagine</string>
   <!--message_recipients_list_item-->
+  <string name="message_recipients_list_item__verify">VERIFICĂ</string>
+  <string name="message_recipients_list_item__resend">RE-TRIMITE</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Deblochează</string>
   <!--prompt_mms_activity-->
   <!--recipient_preferences_activity-->
+  <string name="recipient_preference_activity__blocked">BLOCAT</string>
   <!--recipient_preferences-->
+  <string name="recipient_preferences__notification_sound">Sunet notificare</string>
+  <string name="recipient_preferences__vibrate">Vibrează</string>
+  <string name="recipient_preferences__block">Blochează</string>
+  <string name="recipient_preferences__color">Culoare</string>
+  <string name="recipient_preferences__color_for_this_contact">Culoarea pentru acest contact</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Complet</string>
   <!--recipients_panel-->
@@ -263,6 +345,11 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="verify_identity_activity__their_identity_they_read">Identitatea partenerului (cum apare el):</string>
   <string name="verify_identity_activity__your_identity_you_read">Identitatea ta (cum apari tu):</string>
   <!--message_details_header-->
+  <string name="message_details_header__sent">Trimis</string>
+  <string name="message_details_header__received">Primit</string>
+  <string name="message_details_header__via">Via</string>
+  <string name="message_details_header__to">Către:</string>
+  <string name="message_details_header__from">De la:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Creează parolă</string>
   <string name="AndroidManifest__enter_passphrase">Introduceţi parola</string>
@@ -271,8 +358,18 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="AndroidManifest__change_passphrase">Schimbă parola</string>
   <string name="AndroidManifest__verify_identity">Verifică identitatea</string>
   <string name="AndroidManifest__complete_key_exchange">Încheie schimburile de chei</string>
+  <string name="AndroidManifest__log_submit">Trimite log-ul de depanare</string>
+  <string name="AndroidManifest__media_overview">Toate imaginile</string>
+  <string name="AndroidManifest__message_details">Detalii mesaj</string>
+  <string name="AndroidManifest_archived_conversations">Conversații arhivate</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importă / Exportă</string>
+  <string name="arrays__your_identity_key">Cheia ta de identitate</string>
+  <string name="arrays__enabled">Activat</string>
+  <string name="arrays__disabled">Dezactivat</string>
+  <string name="arrays__name_and_message">Nume și mesaj</string>
+  <string name="arrays__name_only">Numai numele</string>
+  <string name="arrays__no_name_or_message">Nici numele, nici mesajul</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d oră</item>
@@ -284,9 +381,11 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__sms_mms">SMS și MMS</string>
   <string name="preferences__pref_all_sms_title">Recepționează toate SMS-urile</string>
   <string name="preferences__pref_all_mms_title">Recepționează toate MMS-urile</string>
+  <string name="preferences__keyboard_settings">Opțiuni tastatură</string>
   <string name="preferences__display_settings">Afișează setările</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Selectează persoana din lista de contacte.</string>
   <string name="preferences__change_passphrase">Schimbă parola</string>
+  <string name="preferences__change_your_passphrase">Schimbă-ți parola</string>
   <string name="preferences__complete_key_exchanges">Încheie schimburile de chei</string>
   <string name="preferences__enable_passphrase">Activează parola</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Activează criptarea locală a mesajelor și a cheilor</string>
@@ -308,7 +407,9 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__pref_led_blink_custom_pattern_set">Şablonul personalizat de clipire a LED-ului a fost setat!</string>
   <string name="preferences__sound">Sunet</string>
   <string name="preferences__change_notification_sound">Schimbă sunetul de notificare</string>
+  <string name="preferences__silent">Silent</string>
   <string name="preferences__play_inthread_notifications">Redare sunet de notificare în timp ce vizualizați o conversație activă.</string>
+  <string name="preferences__never">Niciodată</string>
   <string name="preferences__vibrate">Vibrează</string>
   <string name="preferences__also_vibrate_when_notified">Vibrează și când ești notificat</string>
   <string name="preferences__minutes">minute</string>
@@ -326,13 +427,17 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__slow">Încet</string>
   <string name="preferences__custom">Specific</string>
   <string name="preferences__advanced">Avansat</string>
+  <string name="preferences__privacy">Confidențialitate</string>
   <string name="preferences__advanced_mms_access_point_names">Setări MMS manuale</string>
   <string name="preferences__enable_manual_mms">Utilizează setări MMS manuale</string>
   <string name="preferences__override_system_mms_settings">Suprascrie setările MMS de sistem cu informațiile de mai jos.</string>
+  <string name="preferences__mmsc_url">URL MMSC</string>
   <string name="preferences__sms_delivery_reports">Confirmari de livrare SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Cere o confirmare de livrare pentru fiecare SMS trimis</string>
   <string name="preferences__delete_old_messages">Șterge mesajele vechi</string>
+  <string name="preferences__chats">Conversații și media</string>
   <string name="preferences__conversation_length_limit">Limita mărime conversație</string>
+  <string name="preferences__trim_all_conversations_now">Scurtează acum toate conversațiile</string>
   <string name="preferences__light_theme">Deschisă</string>
   <string name="preferences__dark_theme">Închisă</string>
   <string name="preferences__appearance">Aspect</string>
@@ -341,12 +446,19 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__language">Limba</string>
   <string name="preferences__make_default_sms_app">Setează ca aplicație implicită SMS</string>
   <string name="preferences__submit_debug_log">Trimite log-urile de depanare</string>
+  <string name="preferences__about">Despre Silence</string>
+  <string name="preferences__about_version">Versiunea %s</string>
+  <string name="preferences__about_build_id">Build ID: %s</string>
+  <string name="preferences_app_protection__blocked_contacts">Contacte blocate</string>
+  <string name="preferences_chats__mms">MMS</string>
+  <string name="preferences_chats__message_trimming">Scurtarea mesajelor</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Selectează tot</string>
   <string name="contact_selection_list__menu_unselect_all">Deselectează tot</string>
+  <string name="contact_selection_list__header">TOATE CONTACTELE</string>
   <string name="contact_selection_list__unknown_contact">Mesajul nou către...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Terminat</string>
@@ -368,6 +480,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--conversation_context_image-->
   <string name="conversation_context_image__save_attachment">Salvează ataşamentul</string>
   <!--conversation_insecure-->
+  <string name="conversation_insecure__invite">Invită</string>
   <!--conversation_insecure_no_push-->
   <string name="conversation_insecure__menu_start_secure_session">Iniţializează Sesiune Securizată</string>
   <string name="conversation_insecure__security">Securitate</string>
@@ -377,7 +490,10 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--conversation_list-->
   <string name="conversation_list__menu_search">Caută</string>
   <!--conversation_list_item_view-->
+  <string name="conversation_list_item_view__contact_photo_image">Avatar contact</string>
+  <string name="conversation_list_item_view__archived">Arhivat</string>
   <!--conversation_list_fragment-->
+  <string name="conversation_list_fragment__fab_content_description">Conversație nouă</string>
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">Securitate</string>
   <string name="conversation_secure_verified__menu_verify_identity">Verifică identitatea</string>
@@ -386,6 +502,10 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--conversation_unmuted-->
   <!--conversation-->
   <string name="conversation__menu_add_attachment">Adaugă atașament</string>
+  <string name="conversation__menu_delete_conversation">Șterge conversația</string>
+  <string name="conversation__menu_archive_conversation">Arhivează conversația</string>
+  <string name="conversation__menu_view_media">Toate imaginile</string>
+  <string name="conversation__menu_conversation_settings">Setări conversație</string>
   <!--conversation_popup-->
   <!--conversation_callable-->
   <string name="conversation_add_to_contacts__menu_add_to_contacts">Adaugă la contacte</string>
@@ -396,6 +516,8 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="conversation_group_options__broadcast">Difuzare</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Compara</string>
+  <string name="key_scanning__menu_display_your_qr_code">Afișează codul tău QR</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Scanează codul QR al contactului</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Mesaj nou</string>
   <string name="text_secure_normal__menu_new_group">Grup nou</string>
@@ -404,7 +526,10 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="text_secure_normal__mark_all_as_read">Marchează tot ca citit</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Seteaz ca aplicație implicită SMS?</string>
+  <string name="reminder_header_sms_default_button">SETEAZĂ</string>
   <string name="reminder_header_sms_import_title">Import baza de date cu SMS-uri?</string>
+  <string name="reminder_header_sms_import_button">IMPORTĂ</string>
+  <string name="reminder_header_close_button">ÎNCHIDE</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Tu</string>
   <string name="MediaPreviewActivity_cant_display">Previzualizarea imaginii a eșuat</string>
@@ -412,6 +537,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--media_preview-->
   <string name="media_preview__save_title">Salvează</string>
   <!--media_overview-->
+  <string name="media_overview__save_all">Salvează toate</string>
   <!--media_preview_activity-->
   <!--Trimmer-->
   <string name="trimmer__deleting">Se șterge...</string>

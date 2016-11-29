@@ -1,21 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Hongu</string>
   <string name="no">Kwete</string>
   <string name="delete">Dzima</string>
   <string name="please_wait">Mirai kwekanguva...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Tsamba itsva</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Hausati wagadzira izwi rekudarika!</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="one">Tsamba 1 pahutaurwa</item>
+    <item quantity="other">%d tsamba pahutaurwa</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Todzima tsamba dzese dzekare iyezvino?</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="one">Izvi zvichaita kuti hurukuro dzese dzinyerenyeswe kusvika pane tsamba ya iyezvino.</item>
+    <item quantity="other">Izvi zvichaita kuti hurukuro dzese dzinyerenyeswe kusvika pane tsamba %d dza iyezvino.</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">Dzima</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Totadzisa kukwedekera kwepfimbi here?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Yambiro, izvi zvinoremadza kukwedekerwa kwepfimbi patsamba dzese ne svombonoro. Kukwedekerwa
 kwezvikamu zvako kucharamba kuchiita, asi chero ani anowana hupindwa mumuchina wako achakwanisa
 kuzviverenga. </string>
-  <string name="ApplicationPreferencesActivity_disable">Kutadzisa</string>
-  <string name="ApplicationPreferencesActivity_sms_enabled">Kugoneswa kwetsamba pfupi dzirikupinda</string>
-  <string name="ApplicationPreferencesActivity_sms_disabled">Kutadziswa kwetsamba pfupi dzirikupinda</string>
+  <string name="ApplicationPreferencesActivity_disable">Kurambidza</string>
+  <string name="ApplicationPreferencesActivity_sms_enabled">Kubvumidzwa kwetsamba pfupi dzirikupinda</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Baya kuti ushandure hurongwa hwakarepo hweapp yetsamba pfupi</string>
+  <string name="ApplicationPreferencesActivity_sms_disabled">Kurambidzwa kwetsamba pfupi dzirikupinda</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Baya kuti Silence ite app yetsamba pfupi yako yamazuva ose</string>
   <string name="ApplicationPreferencesActivity_on">batidza</string>
   <string name="ApplicationPreferencesActivity_On">Batidza</string>
   <string name="ApplicationPreferencesActivity_off">dzima</string>
@@ -23,7 +36,13 @@ kuzviverenga. </string>
   <string name="ApplicationPreferencesActivity_sms">Tsamba pfupi</string>
   <string name="ApplicationPreferencesActivity_mms">Tsamba ine midhiya</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">%s irikupinda</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Izwi rekudarika %1$s, Kuchengetedzwa kwechivhitivhiti %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Dingindira %1$s, Mutauro %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">Miniti 1</item>
+    <item quantity="other">maminiti %d</item>
+  </plurals>
   <!--DraftDatabase-->
   <string name="DraftDatabase_Draft_image_snippet">(mufananidzo)</string>
   <string name="DraftDatabase_Draft_audio_snippet">(butiro remazwi)</string>
@@ -44,20 +63,29 @@ kuzviverenga. </string>
   <string name="ConversationItem_error_not_delivered">Haina kusvitswa</string>
   <string name="ConversationItem_view_secure_media_question">Unoda kuwona nyepfenyuro iyi inetsivatsaona here?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Tsamba yakare yekutsinha svumbunuro yagamuchirwa.</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Tagamuchira svumbunuro yekutsinha tsamba, baya kuti zvishishwe.</string>
   <string name="ConversationItem_group_action_left">%1$s abuda muboka.</string>
   <string name="ConversationItem_click_for_details">Bayai pano kuti muwone zvizere</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Bata kuti zvisina kukwedekerwa zvidzoke</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Dzokera kutsamba isina kukwedekerwa?</string>
+  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Dzokera kutsamba pfupi dzisina kukwedekerwa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Dzokera kutsamba dzemidhiya isina kukwedekerwa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tsamba iyi &lt;b&gt;haikwanisi&lt;b&gt; kukwedekerwa nekuda kwekuti sesheni ine tsivatsaona haina kukwanisa kutangwa.\n\nTotumira tsamba isina tsivatsaona here?</string>
+  <string name="ConversationItem_unable_to_open_media">Kushaikwa kwe apu inokwanisa kuvhura midhiya iyi.</string>
+  <string name="ConversationItem_from_s">kubva %s</string>
+  <string name="ConversationItem_to_s">kuna %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Totanga chikamu chakakwedekera here?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Totanga chikamu chakakwedekera na %s here?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Tagamuchira tsamba kubva kune munhu ane Silence, totanga chikamu chakakwedekera here?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Tovhara sesheni yakakwedekera here?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Unechokwadi kuti unoda kuvhara sesheni yakakwedekera here?</string>
+  <string name="ConversationActivity_delete_thread_question">Dzima hutaurwa here?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Izvi zvichadzima tsamba dzese dziri muhutaurwa huno uyu.</string>
   <string name="ConversationActivity_add_attachment">Batanidzira</string>
   <string name="ConversationActivity_select_contact_info">Sarudza mashoko ezita iri</string>
   <string name="ConversationActivity_compose_message">Nyora tsamba yako</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Tine urombo, pane kanganiso yatadzisa batanidzwa kuti riwedzerwe.</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">Midhiya yawasarudza yakakurisa!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Tine urombo, vhidhiyo yasarudzwa inodarika hukuru hwetsamba inobvumirwa (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Tine urombo, butiro remazwi rawasarudza rinodarika hukuru hwetsamba inobvumirwa (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Mugamuchiri haana kero yetsamba pfupi kana tsambambozha inoshanda!</string>
@@ -65,6 +93,10 @@ kuzviverenga. </string>
   <string name="ConversationActivity_group_members">Nhengo dziri muboka</string>
   <string name="ConversationActivity_group_conversation">Hutaurwa hwemuboka</string>
   <string name="ConversationActivity_unnamed_group">Boka risina zita</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="one">Nhengo 1</item>
+    <item quantity="other">Nhengo %d</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Tsamba isina kupera yakachengetedzwa</string>
   <string name="ConversationActivity_invalid_recipient">Mugamuchiri asinei!</string>
   <string name="ConversationActivity_calls_not_supported">Kutaura parunhare mbozha hakuna kutsigirwa</string>
@@ -80,7 +112,16 @@ kuzviverenga. </string>
   <string name="ConversationActivity_specify_recipient">Tinokumbira kuti usarudze zita</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Zvizere zvetsamba iyi</string>
+  <plurals name="ConversationFragment_delete_selected_messages">
+    <item quantity="one">Dzima tsamba yakasarudzwa here?</item>
+    <item quantity="other">Dzima tsamba dzakasarudzwa here?</item>
+  </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="one">Izvi zvichadzima tsamba yasarudzwa. </item>
+    <item quantity="other">Izvi zvichadzima tsamba dzese dzasarudzwa dziri %1$d. </item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">Chengetedza mupfimbi?</string>
+  <string name="ConversationFragment_file_saved_successfully">Faira rakwanisa kuchengetwa.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Yatadza kunyora mupfimbi!</string>
   <string name="ConversationFragment_pending">Wakamirira....</string>
   <string name="ConversationFragment_mms">Tsamba ine midhiya</string>
@@ -90,6 +131,10 @@ kuzviverenga. </string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Tsvaga...</string>
   <!--ConversationListFragment-->
+  <plurals name="ConversationListFragment_delete_selected_conversations">
+    <item quantity="one">Dzima hutaurwa hwakasarudzwa here?</item>
+    <item quantity="other">Dzima hutaurwa hwakasarudzwa here?</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Kudzima</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Tsamba yekutsinha svumbunuro....</string>

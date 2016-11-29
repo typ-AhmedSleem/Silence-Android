@@ -4,6 +4,7 @@
   <string name="no">Ei</string>
   <string name="delete">Poista</string>
   <string name="please_wait">Hetki vain...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Et ole vielä määritellyt salalausetta!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Haluatko poistaa kaikki vanhat viestit?</string>

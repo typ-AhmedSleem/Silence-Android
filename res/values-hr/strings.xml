@@ -4,6 +4,7 @@
   <string name="no">Ne</string>
   <string name="delete">Obriši</string>
   <string name="please_wait">Sačekajte...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Još niste postavili lozinku!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Obriši sve stare poruke?</string>

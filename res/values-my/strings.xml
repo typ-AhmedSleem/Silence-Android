@@ -3,6 +3,7 @@
   <string name="yes">ဟုတ်ကဲ့</string>
   <string name="no">မလုပ်ပါ</string>
   <string name="delete">ဖျက်ရန်</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">စကားဝှက်မသတ်မှတ်ရသေးပါ</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">စာတိုအဟောင်းများအားလံုးဖျက်မည်လား</string>

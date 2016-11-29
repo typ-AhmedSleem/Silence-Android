@@ -10,7 +10,7 @@ Mit Silence können Sie SMS senden sowie Medien oder Anhänge teilen unter volls
 Funktionen:
 * Einfach. Silence funktioniert wie jede andere SMS-Anwendung. Weder müssen Sie sich irgendwo anmelden, noch müssen Ihre Freunde einem neuen Dienst beitreten.
 * Zuverlässig. Silence kommuniziert durch Verwendung verschlüsselter SMS-Nachrichten. Dadurch benötigt es weder Server noch eine Internetverbindung.
-* Vertraulich. Silence bietet Ende-zu-Ende-Verschlüsselung für Ihre Nachrichten und verwendet hierfür das mit großer Sorgfalt entwickelte Signal-Verschlüsselungsprotokoll.
+* Vertraulich. Silence bietet Ende-zu-Ende-Verschlüsselung für Ihre Nachrichten und verwendet hierfür das mit großer Sorgfalt entwickelte Axolotl-Verschlüsselungsprotokoll.
 * Sicher. Alle Nachrichten sind lokal verschlüsselt. Sollte Ihr Telefon einmal verloren oder gestohlen werden, sind Ihre Nachrichten geschützt.
 * Open Source. Silence ist kostenlos und Open Source, sodass jeder den Quellcode einsehen und dessen Sicherheit überprüfen kann.
 

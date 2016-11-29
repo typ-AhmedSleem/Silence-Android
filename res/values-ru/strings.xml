@@ -4,6 +4,7 @@
   <string name="no">Нет</string>
   <string name="delete">Удалить</string>
   <string name="please_wait">Пожалуйста, подождите...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Вы ещё не задали парольную фразу!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

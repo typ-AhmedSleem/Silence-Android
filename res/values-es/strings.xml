@@ -5,6 +5,8 @@
   <string name="no">No</string>
   <string name="delete">Borrar</string>
   <string name="please_wait">Por favor, espere...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nuevo mensaje</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">¡No ha elegido aún una clave de acceso!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -72,6 +74,7 @@
   <string name="ConversationItem_unable_to_open_media">No se pudo encontrar una aplicación capaz de abrir este audiovisual.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">a %s</string>
+  <string name="ConversationItem_xmpp_address">Dirección XMPP. Actualice Silence para habilitar esta característica.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">¿Iniciar sesión segura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">¿Iniciar sesión segura con %s?</string>
@@ -493,6 +496,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="AndroidManifest__media_overview_named">Todas la imágenes con %1$s</string>
   <string name="AndroidManifest__message_details">Detalles del mensaje</string>
   <string name="AndroidManifest_archived_conversations">Conversaciones archivadas</string>
+  <string name="AndroidManifest_configure_mms_settings">Configurar ajustes de MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importar/exportar</string>
   <string name="arrays__your_identity_key">La clave de su identidad</string>
@@ -713,6 +717,9 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="reminder_header_rate_title">Valorar esta aplicación</string>
   <string name="reminder_header_rate_text">Si disfrutó usando esta aplicación, por favor, tómese un momento para ayudarnos puntuándola.</string>
   <string name="reminder_header_rate_button">¡PUNTUAR AHORA!</string>
+  <string name="reminder_header_delivery_reports_title">¿Habilitar informes de entrega?</string>
+  <string name="reminder_header_delivery_reports_text">Los informes de entrega le permiten conocer si su destinatario había recibido sus mensajes y cuándo. Algunas redes móviles permiten cargar una tarifa adicional.</string>
+  <string name="reminder_header_delivery_reports_button">HABILITAR</string>
   <string name="reminder_header_close_button">CERRAR</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Usted</string>
@@ -720,6 +727,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="MediaPreviewActivity_unssuported_media_type">Formato de contenido no compatible</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Guardar</string>
+  <string name="media_preview__forward_title">Avanzar</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Guardar todo</string>
   <!--media_preview_activity-->

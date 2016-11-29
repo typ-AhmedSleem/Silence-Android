@@ -5,8 +5,10 @@
   <string name="no">Não</string>
   <string name="delete">Apagar</string>
   <string name="please_wait">Por favor aguarde...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nova mensagem</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Ainda não definiu uma palavra-passe!</string>
+  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Você ainda não definiu uma senha!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
     <item quantity="one">1 mensagem por conversa</item>
     <item quantity="other">%d mensagens por conversa</item>
@@ -17,13 +19,13 @@
     <item quantity="other">Isto irá apagar todas as mensagens exceto as %d mais recentes.</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete">Apagar</string>
-  <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desativar cifra de armazenamento?</string>
+  <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desativar armazenamento encriptado?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chaves. As suas sessões continuam cifradas, mas qualquer pessoa com acesso ao dispositivo poderá ver as suas mensagens e chaves.</string>
   <string name="ApplicationPreferencesActivity_disable">Desativar</string>
-  <string name="ApplicationPreferencesActivity_sms_enabled">Receção de SMS ativa</string>
+  <string name="ApplicationPreferencesActivity_sms_enabled">Recepção de SMS ativa</string>
   <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Toque para alterar a aplicação padrão para SMS</string>
-  <string name="ApplicationPreferencesActivity_sms_disabled">Receção de SMS inativa</string>
+  <string name="ApplicationPreferencesActivity_sms_disabled">Recepção de SMS inativa</string>
   <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Toque para tornar o Silence a sua aplicação padrão para SMS</string>
   <string name="ApplicationPreferencesActivity_on">ligada</string>
   <string name="ApplicationPreferencesActivity_On">Ligada</string>
@@ -70,6 +72,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationItem_unable_to_open_media">Não foi encontrada uma aplicação para abrir este ficheiro.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">para %s</string>
+  <string name="ConversationItem_xmpp_address">Endereço XMMP. Atualize o Silence para ativar esta funcionalidade.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniciar sessão segura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Iniciar sessão segura com %s?</string>
@@ -180,7 +183,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ShareActivity_share_with">Partilhar com</string>
   <!--IntroScreenActivity-->
   <string name="IntroScreenActivity_welcome_to_silence">Bem-vindo ao Silence!</string>
-  <string name="IntroScreenActivity_silence_description">O Silence protege a sua privacidade das suas comunicações com os seus amigos.</string>
+  <string name="IntroScreenActivity_silence_description">O Silence protege a privacidade das suas comunicações com os seus amigos.</string>
   <string name="IntroScreenActivity_encrypt_your_messages">Cifrar as suas mensagens</string>
   <string name="IntroScreenActivity_encrypt_your_messages_description">O Silence cifra automaticamente as mensagens entre os utilizadores da aplicação.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Falar com toda a gente</string>
@@ -480,6 +483,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="AndroidManifest__media_overview_named">Todas as imagens com %1$s</string>
   <string name="AndroidManifest__message_details">Detalhes da mensagem</string>
   <string name="AndroidManifest_archived_conversations">Conversas arquivadas</string>
+  <string name="AndroidManifest_configure_mms_settings">Configurar definições de MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importar/Exportar</string>
   <string name="arrays__your_identity_key">Minha chave de identidade</string>
@@ -700,6 +704,9 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="reminder_header_rate_title">Avaliar esta aplicação</string>
   <string name="reminder_header_rate_text">Se você gosta desta aplicação, conceda-nos um pouco do seu tempo para a avaliar.</string>
   <string name="reminder_header_rate_button">Avaliar agora!</string>
+  <string name="reminder_header_delivery_reports_title">Ativar relatórios de entrega?</string>
+  <string name="reminder_header_delivery_reports_text">Os relatórios de entrega permitem-lhe saber se o destinatário recebeu a sua mensagem. Algumas operadoras podem cobrar encargos.</string>
+  <string name="reminder_header_delivery_reports_button">Ativar</string>
   <string name="reminder_header_close_button">Fechar</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Você</string>
@@ -707,6 +714,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="MediaPreviewActivity_unssuported_media_type">Tipo multimédia não suportado</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Guardar</string>
+  <string name="media_preview__forward_title">Reencaminhar</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Guardar tudo</string>
   <!--media_preview_activity-->

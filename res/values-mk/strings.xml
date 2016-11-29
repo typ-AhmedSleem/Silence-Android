@@ -4,6 +4,7 @@
   <string name="no">Не</string>
   <string name="delete">Избриши</string>
   <string name="please_wait">Се вчитува...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Немате поставено лозинка!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Избриши ги сите стари пораки?</string>

@@ -5,6 +5,7 @@
   <string name="no">Nee</string>
   <string name="delete">Verwijder</string>
   <string name="please_wait">Een moment alsjeblieft...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Je hebt nog geen wachtwoord ingesteld!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -70,6 +71,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationItem_unable_to_open_media">Geen app gevonden om dit bestand te openen.</string>
   <string name="ConversationItem_from_s">van %s</string>
   <string name="ConversationItem_to_s">naar %s</string>
+  <string name="ConversationItem_xmpp_address">XMPP adres. Update Silence om deze functionaliteit te gebruiken.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Veilige sessie initiëren?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Initieer beveiligde sessie met %s?</string>
@@ -479,6 +481,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="AndroidManifest__media_overview_named">Alle afbeeldingen met %1$s</string>
   <string name="AndroidManifest__message_details">Berichtdetails</string>
   <string name="AndroidManifest_archived_conversations">Gearchiveerde gesprekken</string>
+  <string name="AndroidManifest_configure_mms_settings">MMS instellingen</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importeer / exporteer </string>
   <string name="arrays__your_identity_key">Mijn identiteitssleutel</string>

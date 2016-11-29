@@ -4,6 +4,7 @@
   <string name="no">Ez</string>
   <string name="delete">Ezabatu</string>
   <string name="please_wait">Itxaron, mesedez...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Oraindik ez duzu pasahitza ezarri!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Mezu zahar guztiak ezabatu orain?</string>

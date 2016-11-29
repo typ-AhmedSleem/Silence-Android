@@ -5,6 +5,7 @@
   <string name="no">Nem</string>
   <string name="delete">Törlés</string>
   <string name="please_wait">Kérlek várj...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Még nem állítottál be a jelszót!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

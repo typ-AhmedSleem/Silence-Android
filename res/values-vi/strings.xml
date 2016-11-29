@@ -3,6 +3,7 @@
   <string name="yes">Có</string>
   <string name="no">Không</string>
   <string name="delete">Xóa</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Bạn chưa thiết lập mật khẩu!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Xóa tất cả tin nhắn cũ bây giờ?</string>
@@ -26,6 +27,7 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationItem_expires_s">Hết hạn: %s</string>
   <string name="ConversationItem_view_secure_media_question">Xem nội dung an toàn</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Có lỗi, nhận thông tin cũ về trao đổi chìa khóa</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Nhận thông tin trao đổi chìa khóa, bấm để tiếp tục.</string>
   <string name="ConversationItem_group_action_left">%1$s đã rời nhóm.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Trở lại SMS không mã hóa?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Hủy bỏ MMS chưa được mã hóa?</string>
@@ -37,9 +39,13 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ConversationActivity_add_attachment">Thêm tập tin đính kèm</string>
   <string name="ConversationActivity_select_contact_info">Chọn thông tin liên hệ</string>
   <string name="ConversationActivity_compose_message">Soạn nội dung</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Xin lỗi, có lỗi thiết đặt tập tin đính kèm của bạn.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Tin nhắn trống không!</string>
   <string name="ConversationActivity_group_conversation">Gom nhóm chat</string>
   <string name="ConversationActivity_unnamed_group">Nhóm chưa đặt tên</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="other">%d thành viên</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">Lưu bản nháp</string>
   <string name="ConversationActivity_invalid_recipient">Người nhận không đúng!</string>
   <string name="ConversationActivity_calls_not_supported">Không hỗ trợ tính năng gọi điệ</string>

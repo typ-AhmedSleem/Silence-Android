@@ -5,6 +5,7 @@
   <string name="no">No</string>
   <string name="delete">Elimina</string>
   <string name="please_wait">Attendere...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Non hai ancora impostato una password!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

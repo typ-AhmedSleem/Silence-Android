@@ -4,6 +4,7 @@
   <string name="no">ಇಲ್ಲ</string>
   <string name="delete">ಅಳಿಸಿಹಾಕು</string>
   <string name="please_wait">ದಯವಿಟ್ಟು  ಕಾಯಿರಿ...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">ನೀವು ಇನ್ನೂ ಗುಪ್ತಪದವನ್ನು ಹೊಂದಿಸಿಲ್ಲ!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">ಈಗ ಎಲ್ಲಾ ಹಳೆಯ ಸಂದೇಶಗಳನ್ನು ಅಳಿಸಿ?</string>

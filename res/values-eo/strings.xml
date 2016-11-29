@@ -5,6 +5,8 @@
   <string name="no">Ne</string>
   <string name="delete">Forigi</string>
   <string name="please_wait">Bonvolu atendi…</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nova mesaĝo</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Vi ne ankoraŭ precizigis pasfrazon!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -54,8 +56,8 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokitaj kontaktoj</string>
   <!--ConversationItem-->
-  <string name="ConversationItem_message_size_d_kb">Grandeco de mesaĝo: %d KB</string>
-  <string name="ConversationItem_expires_s">Senvalidiĝas: %s</string>
+  <string name="ConversationItem_message_size_d_kb">Grando de mesaĝo: %d KB</string>
+  <string name="ConversationItem_expires_s">Senvalidiĝos: %s</string>
   <string name="ConversationItem_error_not_delivered">Neliverebla</string>
   <string name="ConversationItem_view_secure_media_question">Ĉu montri la sekuran aŭdvidaĵon?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Tiu ĉi aŭdvidaĵo estis konservita en ĉifrita datumbazo. Bedaŭrinde por montri ĝin per ekstera vidigilo oni devas provizore malĉifri ĝin kaj konservi ĝin en memorejo. Ĉu vi certe volas fari tion?</string>
@@ -71,10 +73,11 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationItem_unable_to_open_media">Ne povas trovi aplikaĵon por malfermi tiun ĉi aŭdvidaĵon.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">al %s</string>
+  <string name="ConversationItem_xmpp_address">XMPP-adreso. Ĝisdatigi Silence por aktivigi tiu ĉi eblon.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Ĉu inici sekuran seancon?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Ĉu inici sekuran seancon kun %s?</string>
-  <string name="ConversationActivity_detected_silence_initiate_session_question">Mesaĝo ricevita de iu, kiu ankaŭ havas na Silence, ĉu inici sekuran ĉifritan seancon?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Mesaĝo ricevita de iu, kiu ankaŭ havas Silence, ĉu inici sekuran ĉifritan seancon?</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">Ĉu finigi sekuran seancon?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Ĉu vi certe volas finigi la sekuran seancon?</string>
   <string name="ConversationActivity_delete_thread_question">Ĉu forigi interparoladon?</string>
@@ -96,7 +99,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
     <item quantity="other">%d anoj</item>
   </plurals>
   <string name="ConversationActivity_saved_draft">Konservita malneto</string>
-  <string name="ConversationActivity_invalid_recipient">Malkorekta ricevanto</string>
+  <string name="ConversationActivity_invalid_recipient">Malkorekta ricevonto</string>
   <string name="ConversationActivity_calls_not_supported">Vokoj ne estas subtenataj</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Tiu ĉi aparato ne poveblas voki.</string>
   <string name="ConversationActivity_transport_insecure_sms">Malsekura SMS</string>
@@ -191,7 +194,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="IntroScreenActivity_talk_to_everyone">Diri al ĉiuj</string>
   <string name="IntroScreenActivity_talk_to_everyone_description">Silence povas uzi malĉifritajn mesaĝojn por babili kun maluzantoj de Silence. </string>
   <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure iĝis na Silence nun.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure iĝis na Silence nun. Viaj mesaĝoj plue estas tie ĉi kaj novaj ecoj baldaŭas.</string>
+  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure iĝis na Silence nun. Viaj mesaĝoj plue estas tie ĉi kaj novaj aĵoj baldaŭas.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Elporti</string>
   <string name="ExportFragment_export_plaintext_to_storage">Ĉu elporti plattekston al memorejo?</string>
@@ -306,7 +309,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="ViewIdentityActivity_your_identity_fingerprint">Via fingrospuro de identeco</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Ĉu inici malgraŭ la estanta peto?</string>
-  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Vi jam sendis peton pri seanco-inico al tiu ĉi ricevanto, ĉu vi certe volas sendi alian? Tio ĉi malvalidigos antaŭan peton.</string>
+  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Vi jam sendis peton pri seanco-inico al tiu ĉi ricevonto, ĉu vi certe volas sendi alian? Tio ĉi malvalidigos antaŭan peton.</string>
   <string name="KeyExchangeInitiator_send">Sendi</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Malbona ĉifrita mesaĝo...</string>
@@ -407,13 +410,13 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="conversation_fragment_cab__batch_selection_mode">Stapla elekta reĝimo</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s elektitaj</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi na ADB por atingi senerarig-protokolon.</string>
+  <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi ADB por atingi senerarig-protokolon.</string>
   <string name="log_submit_activity__thanks">Dankon por via helpo!</string>
   <string name="log_submit_activity__submitting">Alŝutanta</string>
   <string name="log_submit_activity__posting_logs">Sendado de viaj protokoloj al gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Ĉu vi volas enporti viajn estantajn tekstajn mesaĝojn al ĉifrita datumbazo de Silence?</string>
-  <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La defaŭlta ĉefa datumbazo ne estos ŝanĝita aŭ modifita iumaniere.</string>
+  <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La ĉefa sistema datumbazo ne estos ŝanĝita aŭ modifita iumaniere.</string>
   <string name="database_migration_activity__skip">Transsalti</string>
   <string name="database_migration_activity__import">Enporti</string>
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Tio ĉi daŭros momente. Bonvolu pacienci, ni sciigos vin kiam la enportado estos finita.</string>
@@ -441,7 +444,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="prompt_passphrase_activity__unlock">Malŝlosi</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__silence_requires_mms_settings_to_deliver_media_and_group_messages">Silence bezonas MMS-an agordaron por liveri aŭdvidaĵojn kaj grupajn mesaĝojn tra via sendrata provizanto. Via aparato ne manifestis tiujn informojn, tio ĉi verŝajnas por blokitaj aparatoj kaj por aliaj limitaj agordaroj.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Por sendi aŭdvidaĵojn kaj grupajn mesaĝojn, frapetu \'OK\' kaj kompletigi bezonatajn agordojn. La MMS-a agordaro por via provizanto oni povas trovi per serĉi na \'via telefon-provizanto APN\'. Vi devas fari tio ĉi nur unufoje.</string>
+  <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Por sendi aŭdvidaĵojn kaj grupajn mesaĝojn, frapetu \'Bone\' kaj kompletigi bezonatajn agordojn. La MMS-a agordaro por via provizanto oni povas trovi per serĉi \'via telefon-provizanto APN\'. Vi devas fari tio ĉi nur unufoje.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOKITA</string>
   <!--recipient_preferences-->
@@ -453,7 +456,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="recipient_preferences__color">Koloro</string>
   <string name="recipient_preferences__color_for_this_contact">Koloro por tiu ĉi kontakto</string>
   <!--receive_key_dialog-->
-  <string name="receive_key_activity__complete">Farita</string>
+  <string name="receive_key_activity__complete">Farite</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Entajpu nomon aŭ numeron</small></string>
   <string name="recipients_panel__add_member">Aldoni anon</string>
@@ -461,7 +464,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="verify_identity_activity__their_identity_they_read">Lia identeco (li legas):</string>
   <string name="verify_identity_activity__your_identity_you_read">Via identeco (vi legas):</string>
   <!--message_details_header-->
-  <string name="message_details_header__issues_need_your_attention">Iuj aferoj bezonas vian atenton.</string>
+  <string name="message_details_header__issues_need_your_attention">Kelkaj aferoj bezonas vian atenton.</string>
   <string name="message_details_header__sent">Sendita</string>
   <string name="message_details_header__received">Recevita</string>
   <string name="message_details_header__via">Tra</string>
@@ -482,6 +485,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="AndroidManifest__media_overview_named">Ĉiuj bildoj kun %1$s</string>
   <string name="AndroidManifest__message_details">Mesaĝaj detaletoj</string>
   <string name="AndroidManifest_archived_conversations">Arĥivitaj interparoladoj</string>
+  <string name="AndroidManifest_configure_mms_settings">MMS-aj agordoj</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Enporti / Elporti</string>
   <string name="arrays__your_identity_key">Via idento-ŝlosilo</string>
@@ -595,8 +599,8 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="preferences__theme">Etoso</string>
   <string name="preferences__default">Implicita</string>
   <string name="preferences__language">Lingvo</string>
-  <string name="preferences__make_default_sms_app">Agordi kiel ĉefa SMS-a aplikaĵo</string>
-  <string name="preferences__make_silence_the_default_sms_mms_app">Igi na Silence ĉefan aplikaĵon por via sistemo.</string>
+  <string name="preferences__make_default_sms_app">Agordi kiel ĉefan SMS-an aplikaĵon</string>
+  <string name="preferences__make_silence_the_default_sms_mms_app">Igi na Silence ĉefa aplikaĵo por via sistemo.</string>
   <string name="preferences__submit_debug_log">Alŝuti senerarig-protokolon</string>
   <string name="preferences__support_wifi_calling">\'Wi-Fi Calling\' kongrueca reĝimo</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivigu se via aparato uzas SMS/MMS-an liveradon tra vifio (aktivigu nur kiam \'Wi-Fi Calling\' estas aktiva en via aparato). </string>
@@ -693,7 +697,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="text_secure_normal__menu_clear_passphrase">Ŝlosi</string>
   <string name="text_secure_normal__mark_all_as_read">Marki ĉiujn kiel legitaj</string>
   <!--reminder_header-->
-  <string name="reminder_header_sms_default_title">Ĉu uzi kiel ĉefa SMS-a aplikaĵo?</string>
+  <string name="reminder_header_sms_default_title">Ĉu uzi kiel ĉefan SMS-an aplikaĵon?</string>
   <string name="reminder_header_sms_default_text">Frapetu por ke Silence iĝu vian ĉefan SMS-aplikaĵon.</string>
   <string name="reminder_header_sms_default_button">AGORDI</string>
   <string name="reminder_header_sms_import_title">Ĉu enporti sistemajn SMS-ojn?</string>
@@ -702,6 +706,9 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="reminder_header_rate_title">Taksi tiun ĉi aplikaĵon</string>
   <string name="reminder_header_rate_text">Se tiu ĉi aplikaĵo plaĉas al vi, bonvolu dediĉi momenton al helpo al ni per taksi ĝin.</string>
   <string name="reminder_header_rate_button">TAKSI NUN!</string>
+  <string name="reminder_header_delivery_reports_title">Ĉu aktivigi raportojn pri liverado?</string>
+  <string name="reminder_header_delivery_reports_text">Raportoj pri liverado ebligas al vi scii ĉu kaj kiam la ricevinto ricevis vian mesaĝojn. Kelkaj telefonaj retoj prenas kroman imposton.</string>
+  <string name="reminder_header_delivery_reports_button">AKTIVIGI</string>
   <string name="reminder_header_close_button">FERMI</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vi</string>
@@ -709,6 +716,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="MediaPreviewActivity_unssuported_media_type">Malsubtenata spico de aŭdvidaĵo</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Konvervi</string>
+  <string name="media_preview__forward_title">Plusendi</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Konservi ĉiujn</string>
   <!--media_preview_activity-->

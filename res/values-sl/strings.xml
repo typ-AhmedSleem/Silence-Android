@@ -5,6 +5,8 @@
   <string name="no">Ne</string>
   <string name="delete">Izbriši</string>
   <string name="please_wait">Počakajte...</string>
+  <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Novo sporočilo</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Niste še nastavili gesla!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -76,6 +78,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationItem_unable_to_open_media">Ne najdem aplikacije za odpiranje te vrste datotek.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">za %s</string>
+  <string name="ConversationItem_xmpp_address">Naslov XMPP. Za aktivacijo te funkcije posodobite aplikacijo Silence.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Začnem varno sejo?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Začnem varno sejo z %s?</string>
@@ -507,6 +510,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="AndroidManifest__media_overview_named">Vse slike z %1$s</string>
   <string name="AndroidManifest__message_details">Podrobnosti sporočila</string>
   <string name="AndroidManifest_archived_conversations">Arhivirani pogovori</string>
+  <string name="AndroidManifest_configure_mms_settings">Nastavi MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Uvoz/izvoz</string>
   <string name="arrays__your_identity_key">Moj identifikacijski ključ</string>
@@ -606,10 +610,10 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__mms_proxy_port">Vrata posredniškega strežnika MMS</string>
   <string name="preferences__mmsc_username">Uporabniško ime MMSC</string>
   <string name="preferences__mmsc_password">Geslo MMSC</string>
-  <string name="preferences__sms_delivery_reports">Potrdila o dostavi SMS</string>
-  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Zahtevaj potrdilo o dostavi za vsako poslano sporočilo SMS</string>
-  <string name="preferences__sms_delivery_reports_notification">Obvestilo o uspešni dostavi</string>
-  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Prikaz obvestila, kadar je prejeto potrdilo o uspešni dostavi SMS sporočila</string>
+  <string name="preferences__sms_delivery_reports">Potrdila o prejemu SMS</string>
+  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Zahtevaj potrdilo o prejemu za vsako poslano sporočilo SMS</string>
+  <string name="preferences__sms_delivery_reports_notification">Obvestilo o uspešnem prejemu</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Prikaz obvestila, kadar je prejeto potrdilo o prejemu SMS sporočila</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Samodejen izbris starih sporočil, ko pogovor preseže določeno dolžino</string>
   <string name="preferences__delete_old_messages">Izbris starih sporočil</string>
   <string name="preferences__chats">Pogovori in multimedija</string>
@@ -729,6 +733,9 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="reminder_header_rate_title">Oceni to aplikacijo</string>
   <string name="reminder_header_rate_text">Če se vam zdi aplikacija SMSSecure koristna in uporabna, vas prosimo, da si vzamete nekaj trenutkov, in jo ocenite.</string>
   <string name="reminder_header_rate_button">OCENI ZDAJ!</string>
+  <string name="reminder_header_delivery_reports_title">Vključim potrdila o prejemu?</string>
+  <string name="reminder_header_delivery_reports_text">Z vključenimi potrdili o prejemu boste izvedeli, če in kdaj je naslovnik prejel vaše sporočilo. Nekateri mobilni operaterji to storitev zaračunavajo.</string>
+  <string name="reminder_header_delivery_reports_button">VKLOPI</string>
   <string name="reminder_header_close_button">ZAPRI</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Vi</string>
@@ -736,6 +743,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="MediaPreviewActivity_unssuported_media_type">Nepodprt medij</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Shrani</string>
+  <string name="media_preview__forward_title">Posreduj</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Shrani vse</string>
   <!--media_preview_activity-->

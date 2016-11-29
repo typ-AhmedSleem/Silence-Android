@@ -4,6 +4,7 @@
   <string name="no">否</string>
   <string name="delete">删除</string>
   <string name="please_wait">请稍候…</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未设置密码！</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">

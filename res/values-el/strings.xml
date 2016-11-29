@@ -4,6 +4,7 @@
   <string name="no">Όχι</string>
   <string name="delete">Διαγραφή</string>
   <string name="please_wait">Παρακαλώ περιμένετε...</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Δεν έχετε ορίσει συνθηματική φράση!</string>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Διαγραφή όλων των παλιών μηνυμάτων τώρα;</string>

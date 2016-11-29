@@ -4,6 +4,7 @@
   <string name="no">Nei</string>
   <string name="delete">Slett</string>
   <string name="please_wait">Vent…</string>
+  <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du har ikke valgt en passordsekvens enda!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
