@@ -1,9 +1,10 @@
 # Silence Changelog
 
 ### [0.14.4] - 2016-11-29
+- Fixed notifications with Android N
 - Prepared for upcoming XMPP transport
 - Added reminder to enable delivery reports
-- Fixed privacy settings in Android < 5
+- Fixed privacy settings with Android < 5
 - Fixed SMS characters calculation
 - Updated APN database
 - Updated translations
