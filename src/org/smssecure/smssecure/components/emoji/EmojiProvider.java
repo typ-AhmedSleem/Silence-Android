@@ -45,9 +45,9 @@ public class EmojiProvider {
   //                                                           |== !!, ?! ==||==== misc ====||======== emoticons ========||========= flags ==========|
   private static final Pattern EMOJI_RANGE = Pattern.compile("[\\u203c\\u2049\\u20a0-\\u32ff\\ud83c\\udc00-\\ud83d\\udeff\\udbb9\\udce5-\\udbb9\\udcee]");
 
-  public static final int    EMOJI_RAW_HEIGHT = 96;
+  public static final int    EMOJI_RAW_HEIGHT = 102;
   public static final int    EMOJI_RAW_WIDTH  = 102;
-  public static final int    EMOJI_VERT_PAD   = 6;
+  public static final int    EMOJI_VERT_PAD   = 0;
   public static final int    EMOJI_PER_ROW    = 15;
 
   private final Context context;

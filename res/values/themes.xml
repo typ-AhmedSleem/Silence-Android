@@ -130,6 +130,7 @@
         <item name="emoji_category_nature">@drawable/emoji_category_nature_light</item>
         <item name="emoji_category_places">@drawable/emoji_category_places_light</item>
         <item name="emoji_category_symbol">@drawable/emoji_category_symbol_light</item>
+        <item name="emoji_category_flags">@drawable/emoji_category_flags_light</item>
         <item name="emoji_category_emoticons">@drawable/emoji_category_emoticons_light</item>
 
 
@@ -263,6 +264,7 @@
         <item name="emoji_category_nature">@drawable/emoji_category_nature_dark</item>
         <item name="emoji_category_places">@drawable/emoji_category_places_dark</item>
         <item name="emoji_category_symbol">@drawable/emoji_category_symbol_dark</item>
+        <item name="emoji_category_flags">@drawable/emoji_category_flags_dark</item>
         <item name="emoji_category_emoticons">@drawable/emoji_category_emoticons_dark</item>
 
         <item name="menu_new_conversation_icon">@drawable/ic_add_white_24dp</item>
