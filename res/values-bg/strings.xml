@@ -6,6 +6,7 @@
   <string name="delete">Изтрий</string>
   <string name="please_wait">Моля изчакайте...</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Ново съобщение</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Все още не си сложил парола!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -713,6 +714,9 @@
   <string name="reminder_header_rate_title">Оценете това приложение</string>
   <string name="reminder_header_rate_text">Ако харесвате това приложение моля отделете една минутка, за да ни помогнете като го оцените.</string>
   <string name="reminder_header_rate_button">ОЦЕНЯВАНЕ СЕГА!</string>
+  <string name="reminder_header_delivery_reports_title">Активиране на доклаза за получване?</string>
+  <string name="reminder_header_delivery_reports_text">Докладите за получаване Ви разрешават да разберете дали получателят е получил съобщението Ви.</string>
+  <string name="reminder_header_delivery_reports_button">АКТИВИРАНЕ</string>
   <string name="reminder_header_close_button">ЗАТВАРЯНЕ</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Ти</string>
@@ -720,6 +724,7 @@
   <string name="MediaPreviewActivity_unssuported_media_type">Неподдържан медиен формат.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Запази</string>
+  <string name="media_preview__forward_title">Препращане</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Запазване на всички</string>
   <!--media_preview_activity-->

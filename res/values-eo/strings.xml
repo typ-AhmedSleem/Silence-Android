@@ -707,7 +707,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <string name="reminder_header_rate_text">Se tiu ĉi aplikaĵo plaĉas al vi, bonvolu dediĉi momenton al helpo al ni per taksi ĝin.</string>
   <string name="reminder_header_rate_button">TAKSI NUN!</string>
   <string name="reminder_header_delivery_reports_title">Ĉu aktivigi raportojn pri liverado?</string>
-  <string name="reminder_header_delivery_reports_text">Raportoj pri liverado ebligas al vi scii ĉu kaj kiam la ricevinto ricevis vian mesaĝojn. Kelkaj telefonaj retoj prenas kroman imposton.</string>
+  <string name="reminder_header_delivery_reports_text">Raportoj pri liverado ebligas al vi scii ĉu kaj kiam la ricevinto ricevis viajn mesaĝojn. Kelkaj telefonaj retoj prenas kroman imposton.</string>
   <string name="reminder_header_delivery_reports_button">AKTIVIGI</string>
   <string name="reminder_header_close_button">FERMI</string>
   <!--MediaPreviewActivity-->

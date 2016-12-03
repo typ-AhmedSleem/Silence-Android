@@ -17,12 +17,14 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ApplicationPreferencesActivity_disable">Dezactivează</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Primire SMS activă</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">SMS-uri primite dezactivate</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Apasă pentru a seta Silence ca şi aplicaţie SMS implicită.</string>
   <string name="ApplicationPreferencesActivity_on">activat</string>
   <string name="ApplicationPreferencesActivity_On">Activat</string>
   <string name="ApplicationPreferencesActivity_off">dezactivat</string>
   <string name="ApplicationPreferencesActivity_Off">Dezactivat</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Parolă %1$s, Securitate ecran %2$s</string>
   <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, Limba %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
@@ -68,6 +70,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationActivity_the_gif_you_selected_was_too_big">GIF-ul selectat este prea mare!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Ne pare rău, video-ul selectat depășește restricția de mărime a mesajelor (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Ne pare rău, fișierul audio selectat depășește restricția marimii mesajului (%1$skB).</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Destinatarul nu este un SMS valid sau adresă de email!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Mesajul este gol!</string>
   <string name="ConversationActivity_group_members">Membrii grup</string>
   <string name="ConversationActivity_group_conversation">Grupează conversaţia</string>
@@ -107,10 +110,16 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
     <item quantity="other">Șterg conversațiile selectate?</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Se șterge</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Conversație arhivată</item>
+    <item quantity="few">%d conversații arhivate</item>
+    <item quantity="other">%d conversații arhivate</item>
+  </plurals>
   <string name="ConversationListFragment_undo">UNDO</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mesaj pentru schimb de chei...</string>
   <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Conversații arhivate (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Niciuna</string>
   <!--DateUtils-->
@@ -121,6 +130,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <!--IntroScreenActivity-->
   <string name="IntroScreenActivity_welcome_to_silence">Bun venit la Silence!</string>
   <string name="IntroScreenActivity_encrypt_your_messages">Criptează mesajele tale</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence va cripta automat mesajele cu alți utilizatori Silence.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Vorbește cu toată lumea</string>
   <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure este acum Silence.</string>
   <!--ExportFragment-->
@@ -128,6 +138,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ExportFragment_cancel">Anulează</string>
   <string name="ExportFragment_exporting">Se exportă</string>
   <string name="ExportFragment_export_successful">Exportarea s-a făcut cu succes.</string>
+  <string name="ExportFragment_export_encrypted_backup">Export backup criptat?</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Grup nou</string>
   <string name="GroupCreateActivity_actionbar_update_title">Actualizează grup</string>
@@ -156,6 +167,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nu a fost găsită nici o cheie scanată!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Instalez scannerul de coduri de bare?</string>
   <!--MessageDetailsRecipient-->
+  <string name="MessageDetailsRecipient_failed_to_send">Trimitere eșuată</string>
   <string name="MessageDetailsRecipient_new_identity">Identitate nouă</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Eroare la stocarea MMS-ului!</string>
@@ -169,8 +181,10 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Parolele nu se potrivesc!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Parola veche este incorectă!</string>
+  <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nici o parolă introdusă!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Introduceţi parola</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Icoană Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Parolă incorectă!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Semnătura din acest schimb de chei este de încredere, dar opțiunea \"încheie automat schimburile de chei\" este dezactivată.</string>
@@ -256,6 +270,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="MessageNotifier_media_message">Mesaj media</string>
   <string name="MessageNotifier_reply">Răspunde</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_problem_sending_message">Problemă la trimiterea mesajului!</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Mesaj nou</string>
@@ -359,6 +374,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="AndroidManifest__verify_identity">Verifică identitatea</string>
   <string name="AndroidManifest__complete_key_exchange">Încheie schimburile de chei</string>
   <string name="AndroidManifest__log_submit">Trimite log-ul de depanare</string>
+  <string name="AndroidManifest__media_preview">Previzualizare Media</string>
   <string name="AndroidManifest__media_overview">Toate imaginile</string>
   <string name="AndroidManifest__message_details">Detalii mesaj</string>
   <string name="AndroidManifest_archived_conversations">Conversații arhivate</string>
@@ -428,10 +444,15 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__custom">Specific</string>
   <string name="preferences__advanced">Avansat</string>
   <string name="preferences__privacy">Confidențialitate</string>
+  <string name="preferences__mms_user_agent">Agent Utilizator MMS</string>
   <string name="preferences__advanced_mms_access_point_names">Setări MMS manuale</string>
   <string name="preferences__enable_manual_mms">Utilizează setări MMS manuale</string>
   <string name="preferences__override_system_mms_settings">Suprascrie setările MMS de sistem cu informațiile de mai jos.</string>
   <string name="preferences__mmsc_url">URL MMSC</string>
+  <string name="preferences__mms_proxy_host">Gazdă Proxy MMSC</string>
+  <string name="preferences__mms_proxy_port">Port Proxy MMSC</string>
+  <string name="preferences__mmsc_username">Utilizator MMSC</string>
+  <string name="preferences__mmsc_password">Parolă MMSC</string>
   <string name="preferences__sms_delivery_reports">Confirmari de livrare SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Cere o confirmare de livrare pentru fiecare SMS trimis</string>
   <string name="preferences__delete_old_messages">Șterge mesajele vechi</string>

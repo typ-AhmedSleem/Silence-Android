@@ -6,6 +6,7 @@
   <string name="delete">Verwijder</string>
   <string name="please_wait">Een moment alsjeblieft...</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nieuw bericht</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Je hebt nog geen wachtwoord ingesteld!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -702,6 +703,9 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="reminder_header_rate_title">Deze app beoordelen</string>
   <string name="reminder_header_rate_text">Neem a.u.b. even de tijd en help ons door deze app te beoordelen als u deze app graag gebruikt</string>
   <string name="reminder_header_rate_button">BEOORDEEL NU!</string>
+  <string name="reminder_header_delivery_reports_title">Aflever rapporten aanzetten?</string>
+  <string name="reminder_header_delivery_reports_text">Afleverrapporten geven aan dat de ontvanger het bericht ontvangen heeft. Sommige netwerken berekenen hiervoor extra kosten.</string>
+  <string name="reminder_header_delivery_reports_button">AANZETTEN</string>
   <string name="reminder_header_close_button">SLUITEN</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Jij</string>
@@ -709,6 +713,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="MediaPreviewActivity_unssuported_media_type">Niet ondersteund mediatype</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Opslaan</string>
+  <string name="media_preview__forward_title">Doorsturen</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Alles opslaan</string>
   <!--media_preview_activity-->

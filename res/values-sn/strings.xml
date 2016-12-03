@@ -62,6 +62,7 @@ kuzviverenga. </string>
   <string name="ConversationItem_expires_s">Inopfurikidza: %s</string>
   <string name="ConversationItem_error_not_delivered">Haina kusvitswa</string>
   <string name="ConversationItem_view_secure_media_question">Unoda kuwona nyepfenyuro iyi inetsivatsaona here?</string>
+  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Parizvino midhiya iyi yakachengetedzwa mupfimbi redhata rakakwedekerwa. Kuti ukwanise kuiona nechioneso chechiremu chekunze zvinofanira kuti dhata rimbomira kukwedekerwa kwenguva pfupi uye rinyorwe pa dhisiki. Unechokwadi chekuti unoda kuita izvi?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Tsamba yakare yekutsinha svumbunuro yagamuchirwa.</string>
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Tagamuchira svumbunuro yekutsinha tsamba, baya kuti zvishishwe.</string>
   <string name="ConversationItem_group_action_left">%1$s abuda muboka.</string>
@@ -73,6 +74,7 @@ kuzviverenga. </string>
   <string name="ConversationItem_unable_to_open_media">Kushaikwa kwe apu inokwanisa kuvhura midhiya iyi.</string>
   <string name="ConversationItem_from_s">kubva %s</string>
   <string name="ConversationItem_to_s">kuna %s</string>
+  <string name="ConversationItem_xmpp_address">Kero yeXMPP. Natsa Silence kuti ubvumidze cherechedzo iyi.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Totanga chikamu chakakwedekera here?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Totanga chikamu chakakwedekera na %s here?</string>
@@ -110,6 +112,7 @@ kuzviverenga. </string>
   <string name="ConversationActivity_mms_not_supported_title">Tsamba ine midhiya haitsigirwe</string>
   <string name="ConversationActivity_mms_not_supported_message">Tsamba iyi haikwanise kutumirwa nekuti mutakuri haatsigire tsamba dzine midhiya.</string>
   <string name="ConversationActivity_specify_recipient">Tinokumbira kuti usarudze zita</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Batanidzo inodarika mwero yehukuru.</string>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Zvizere zvetsamba iyi</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -121,8 +124,25 @@ kuzviverenga. </string>
     <item quantity="other">Izvi zvichadzima tsamba dzese dzasarudzwa dziri %1$d. </item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Chengetedza mupfimbi?</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Kuchengetedza midhiya iry mupfimbi kunoita kuti mamwe ma apps ari pamuchina wako akwanise kuita hupindwa pariri.\n\nToenderera here?</item>
+    <item quantity="other">Kuchengetedza midhiya %1$d yose mupfimbi kunoita kuti mamwe ma apps ari pamuchina wako akwanise kuita hupindwa paari.\n\nToenderera here? </item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Pane chakanganisa kuchengetedza batanidzo iyi mupfimbi!</item>
+    <item quantity="other">Pane chakanganisa kuchengetedza batanidzo idzi mupfimbi!</item>
+  </plurals>
   <string name="ConversationFragment_file_saved_successfully">Faira rakwanisa kuchengetwa.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Yatadza kunyora mupfimbi!</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">kuchengetedza batanidzo</item>
+    <item quantity="other">Kuchengetedza batanidzo %1$d</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Kuchengetedza batanidzo mupfimbi...</item>
+    <item quantity="other">Kuchengetedza batanidzo %1$d mupfimbi...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Kuunganidza batanidzo...</string>
   <string name="ConversationFragment_pending">Wakamirira....</string>
   <string name="ConversationFragment_mms">Tsamba ine midhiya</string>
   <string name="ConversationFragment_sms">Tsamba pfupi</string>
@@ -135,10 +155,25 @@ kuzviverenga. </string>
     <item quantity="one">Dzima hutaurwa hwakasarudzwa here?</item>
     <item quantity="other">Dzima hutaurwa hwakasarudzwa here?</item>
   </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="one">Izvi zvichadzima hutaurwa hwasarudzwa zvamuchose.</item>
+    <item quantity="other">Izvi zvichadzima hutaurwa hwose %1$d hwasarudzwa zvamuchose.</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">Kudzima</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Kudzima hutaurwa hwakasarudzwa...</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="one">Hutaurwa hwaiswa mudura</item>
+    <item quantity="other">Hutaurwa hwaiswa mudura %d</item>
+  </plurals>
+  <string name="ConversationListFragment_undo">DZORERASHURE</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="one">Hutaurwa hwasudurutswa kuiswa kubokisi retsamba mbozha</item>
+    <item quantity="other">Hutaurwa %d hwasudurutswa kuiswa kubokisi retsamba mbozha</item>
+  </plurals>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Tsamba yekutsinha svumbunuro....</string>
   <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">Hutaurwa hwakaiswa mudura (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Kushandisa gadziro yako: %s</string>
   <string name="CustomDefaultPreference_using_default">Kushandisa hurongwa: %s</string>
@@ -149,10 +184,24 @@ kuzviverenga. </string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Gova na</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_silence">Tigashire paSilence!</string>
+  <string name="IntroScreenActivity_silence_description">Silence inokubvumira kuti udzivirire zvinhu zvako zvinepuraivheti kana uchibatana neshamwari.</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Kwedekera tsamba dzako</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence ichakwedekera tsamba dzako pakati pevamwe vashandisi veSilence zviri automatic.</string>
+  <string name="IntroScreenActivity_talk_to_everyone">Taura nemunhu wose</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Silence inokwanisa kushandisa tsamba dzisina kukwedekerwa kuti utaure nevashandisi vasina Silence.</string>
+  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure ndiyo yava Silence.</string>
+  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure ndiyo yava Silence. Tsamba dzako dzichiri pano uye zviricherechedzo zvitsva zvirikuwuya.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exupota</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Exupota bomhoremavara kuenda kupfimbi?</string>
   <string name="ExportFragment_cancel">Kanzura</string>
   <string name="ExportFragment_exporting">Kuexupota</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Kuexupota bomhoremavara kuenda kupfimbi...</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Kanganiso, takundikana kunyorera kupfimbi.</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Kanganiso pakati pekunyorera kupfimbi.</string>
+  <string name="ExportFragment_export_successful">Kuexuporta kwabudirira.</string>
+  <string name="ExportFragment_export_encrypted_backup">Exuporta bhekiapu yakakwedekerwa?</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Boka nyowani</string>
   <string name="GroupCreateActivity_actionbar_update_title">Zivisa boka</string>
