@@ -1,5 +1,8 @@
 # Silence Changelog
 
+### [0.14.6] - 2016-12-06
+- Fixed notifications when Silence is locked
+
 ### [0.14.5] - 2016-12-04
 - Fixed notification lights with encrypted messages
 - Updated translations
