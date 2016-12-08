@@ -49,17 +49,17 @@ public class SmsReceiveJob extends ContextJob {
 
   @Override
   public void onRun() {
-    Optional<IncomingTextMessage> message = assembleMessageFragments(pdus, subscriptionId);
+    MasterSecret masterSecret = KeyCachingService.getMasterSecret(context);
+    Optional<IncomingTextMessage> message = assembleMessageFragments(pdus, subscriptionId, masterSecret);
 
     if (message.isPresent() && !isBlocked(message.get())) {
       Pair<Long, Long> messageAndThreadId = storeMessage(message.get());
-      MasterSecret masterSecret = KeyCachingService.getMasterSecret(context);
 
       IncomingTextMessage incomingTextMessage = message.get();
-      if (masterSecret == null                     ||
-          (!incomingTextMessage.isSecureMessage()  &&
-           !incomingTextMessage.isKeyExchange()    &&
-           !incomingTextMessage.isXmppExchange()))
+      if (incomingTextMessage.isReceivedWhenLocked() ||
+         (!incomingTextMessage.isSecureMessage()     &&
+          !incomingTextMessage.isKeyExchange()       &&
+          !incomingTextMessage.isXmppExchange()))
       {
         MessageNotifier.updateNotification(context, masterSecret, messageAndThreadId.second, true);
       }
@@ -104,19 +104,19 @@ public class SmsReceiveJob extends ContextJob {
     if (masterSecret == null || message.isSecureMessage() || message.isKeyExchange() || message.isEndSession() || message.isXmppExchange()) {
       ApplicationContext.getInstance(context)
                         .getJobManager()
-                        .add(new SmsDecryptJob(context, messageAndThreadId.first));
+                        .add(new SmsDecryptJob(context, messageAndThreadId.first, masterSecret == null));
     }
 
     return messageAndThreadId;
   }
 
-  private Optional<IncomingTextMessage> assembleMessageFragments(Object[] pdus, int subscriptionId) {
+  private Optional<IncomingTextMessage> assembleMessageFragments(Object[] pdus, int subscriptionId, MasterSecret masterSecret) {
     List<IncomingTextMessage> messages = new LinkedList<>();
 
     for (Object pdu : pdus) {
       SmsMessage msg = SmsMessage.createFromPdu((byte[]) pdu);
       if (msg != null){
-        messages.add(new IncomingTextMessage(msg, subscriptionId));
+        messages.add(new IncomingTextMessage(msg, subscriptionId, masterSecret == null));
       }
     }
 

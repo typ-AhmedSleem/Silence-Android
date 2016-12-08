@@ -44,20 +44,28 @@ public class SmsDecryptJob extends MasterSecretJob {
 
   private final long    messageId;
   private final boolean manualOverride;
+  private final Boolean isReceivedWhenLocked;
 
-  public SmsDecryptJob(Context context, long messageId, boolean manualOverride) {
+  public SmsDecryptJob(Context context, long messageId, boolean manualOverride, boolean isReceivedWhenLocked) {
     super(context, JobParameters.newBuilder()
                                 .withPersistence()
                                 .withRequirement(new MasterSecretRequirement(context))
                                 .create());
 
-    this.messageId = messageId;
-    this.manualOverride = manualOverride;
+    this.messageId            = messageId;
+    this.manualOverride       = manualOverride;
+    this.isReceivedWhenLocked = isReceivedWhenLocked;
+
     Log.w(TAG, "manualOverride: " + manualOverride);
+    Log.w(TAG, "isReceivedWhenLocked: " + isReceivedWhenLocked);
   }
 
   public SmsDecryptJob(Context context, long messageId) {
-    this(context, messageId, false);
+    this(context, messageId, false, false);
+  }
+
+  public SmsDecryptJob(Context context, long messageId, boolean isReceivedWhenLocked) {
+    this(context, messageId, false, isReceivedWhenLocked);
   }
 
   @Override
@@ -80,7 +88,7 @@ public class SmsDecryptJob extends MasterSecretJob {
       else if (message.isXmppExchange())  handleXmppExchangeMessage(masterSecret, messageId, threadId, (IncomingXmppExchangeMessage) message);
       else                                database.updateMessageBody(masterSecret, messageId, message.getMessageBody());
 
-      MessageNotifier.updateNotification(context, masterSecret, MessageNotifier.MNF_DEFAULTS, threadId, true);
+      MessageNotifier.updateNotification(context, masterSecret, MessageNotifier.MNF_DEFAULTS, threadId, !isReceivedWhenLocked);
     } catch (LegacyMessageException e) {
       Log.w(TAG, e);
       database.markAsLegacyVersion(messageId);

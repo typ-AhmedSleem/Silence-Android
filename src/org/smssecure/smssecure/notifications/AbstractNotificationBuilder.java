@@ -38,15 +38,16 @@ public abstract class AbstractNotificationBuilder extends NotificationCompat.Bui
     return builder;
   }
 
-  public void setAudibleAlarms(@Nullable Uri ringtone, RecipientPreferenceDatabase.VibrateState vibrate) {
+  public void setAudibleAlarms(@Nullable Uri ringtone, @Nullable RecipientPreferenceDatabase.VibrateState vibrate) {
     String defaultRingtoneName   = SilencePreferences.getNotificationRingtone(context);
     boolean defaultVibrate       = SilencePreferences.isNotificationVibrateEnabled(context);
 
     if      (ringtone != null)                        setSound(ringtone);
     else if (!TextUtils.isEmpty(defaultRingtoneName)) setSound(Uri.parse(defaultRingtoneName));
 
-    if (vibrate == RecipientPreferenceDatabase.VibrateState.ENABLED ||
-        (vibrate == RecipientPreferenceDatabase.VibrateState.DEFAULT && defaultVibrate))
+    if (vibrate != null &&
+        (vibrate == RecipientPreferenceDatabase.VibrateState.ENABLED ||
+        (vibrate == RecipientPreferenceDatabase.VibrateState.DEFAULT && defaultVibrate)))
     {
       setDefaults(Notification.DEFAULT_VIBRATE);
     }

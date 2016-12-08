@@ -34,8 +34,13 @@ public class IncomingTextMessage implements Parcelable {
   private final String  groupId;
   private final boolean push;
   private final int     subscriptionId;
+  private final boolean receivedWhenLocked;
 
   public IncomingTextMessage(SmsMessage message, int subscriptionId) {
+    this(message, subscriptionId, false);
+  }
+
+  public IncomingTextMessage(SmsMessage message, int subscriptionId, boolean receivedWhenLocked) {
     this.message              = message.getDisplayMessageBody();
     this.sender               = message.getDisplayOriginatingAddress();
     this.senderDeviceId       = 1;
@@ -47,6 +52,7 @@ public class IncomingTextMessage implements Parcelable {
     this.subscriptionId       = subscriptionId;
     this.groupId              = null;
     this.push                 = false;
+    this.receivedWhenLocked   = receivedWhenLocked;
   }
 
   public IncomingTextMessage(String sender, int senderDeviceId, long sentTimestampMillis, String encodedBody) {
@@ -61,6 +67,7 @@ public class IncomingTextMessage implements Parcelable {
     this.push                 = true;
     this.subscriptionId       = -1;
     this.groupId = null;
+    this.receivedWhenLocked   = false;
   }
 
   public IncomingTextMessage(Parcel in) {
@@ -75,6 +82,7 @@ public class IncomingTextMessage implements Parcelable {
     this.groupId              = in.readString();
     this.push                 = (in.readInt() == 1);
     this.subscriptionId       = in.readInt();
+    this.receivedWhenLocked   = (in.readInt() == 1);
   }
 
   public IncomingTextMessage(IncomingTextMessage base, String newBody) {
@@ -89,6 +97,7 @@ public class IncomingTextMessage implements Parcelable {
     this.groupId              = base.getGroupId();
     this.push                 = base.isPush();
     this.subscriptionId       = base.getSubscriptionId();
+    this.receivedWhenLocked   = base.isReceivedWhenLocked();
   }
 
   public IncomingTextMessage(List<IncomingTextMessage> fragments) {
@@ -109,6 +118,7 @@ public class IncomingTextMessage implements Parcelable {
     this.groupId              = fragments.get(0).getGroupId();
     this.push                 = fragments.get(0).isPush();
     this.subscriptionId       = fragments.get(0).getSubscriptionId();
+    this.receivedWhenLocked   = fragments.get(0).isReceivedWhenLocked();
   }
 
   protected IncomingTextMessage(String sender, String groupId)
@@ -124,6 +134,7 @@ public class IncomingTextMessage implements Parcelable {
     this.groupId              = groupId;
     this.push                 = true;
     this.subscriptionId       = -1;
+    this.receivedWhenLocked   = false;
   }
 
   public int getSubscriptionId() {
@@ -198,6 +209,10 @@ public class IncomingTextMessage implements Parcelable {
     return false;
   }
 
+  public boolean isReceivedWhenLocked() {
+    return receivedWhenLocked;
+  }
+
   @Override
   public int describeContents() {
     return 0;
@@ -216,5 +231,6 @@ public class IncomingTextMessage implements Parcelable {
     out.writeString(groupId);
     out.writeInt(push ? 1 : 0);
     out.writeInt(subscriptionId);
+    out.writeInt(receivedWhenLocked ? 1 : 0);
   }
 }

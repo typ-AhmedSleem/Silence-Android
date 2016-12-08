@@ -205,7 +205,7 @@ public class ReceiveKeyDialog extends AlertDialog {
           } else {
             ApplicationContext.getInstance(getContext())
                     .getJobManager()
-                    .add(new SmsDecryptJob(context, messageRecord.getId(), true));
+                    .add(new SmsDecryptJob(context, messageRecord.getId(), true, false));
           }
           return null;
         }
