@@ -21,8 +21,13 @@ public class NotificationState {
 
   private final LinkedList<NotificationItem> notifications = new LinkedList<>();
   private final Set<Long>                    threads       = new HashSet<>();
+  private       boolean                      vibrate       = true;
 
   private int notificationCount = 0;
+
+  public void setVibrate(boolean vibrate) {
+    this.vibrate = vibrate;
+  }
 
   public void addNotification(NotificationItem item) {
     notifications.addFirst(item);
@@ -42,7 +47,8 @@ public class NotificationState {
     return null;
   }
 
-  public VibrateState getVibrate() {
+  public @Nullable VibrateState getVibrate() {
+    if (!vibrate) return null;
     if (!notifications.isEmpty()) {
       Recipients recipients = notifications.getFirst().getRecipients();
 
