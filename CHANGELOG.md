@@ -159,6 +159,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.14.6]: https://github.com/SilenceIM/Silence/compare/v0.14.5...v0.14.6
  [0.14.5]: https://github.com/SilenceIM/Silence/compare/v0.14.4...v0.14.5
  [0.14.4]: https://github.com/SilenceIM/Silence/compare/v0.14.3...v0.14.4
  [0.14.3]: https://github.com/SilenceIM/Silence/compare/v0.14.2...v0.14.3
