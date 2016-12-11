@@ -21,7 +21,6 @@ import android.content.res.Resources.Theme;
 import android.net.Uri;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.Attachment;
@@ -30,12 +29,10 @@ import org.smssecure.smssecure.util.ResUtil;
 
 import java.io.IOException;
 
-import com.google.android.mms.pdu_alt.PduPart;
-
 public class VideoSlide extends Slide {
 
   public VideoSlide(Context context, Uri uri, long dataSize) throws IOException {
-    super(context, constructAttachmentFromUri(context, uri, MediaUtil.VIDEO_UNSPECIFIED, dataSize));
+    super(context, constructAttachmentFromUri(context, uri, MediaUtil.VIDEO_UNSPECIFIED, dataSize, false));
   }
 
   public VideoSlide(Context context, Attachment attachment) {
@@ -43,13 +40,12 @@ public class VideoSlide extends Slide {
   }
 
   @Override
-  @Nullable
-  public Uri getThumbnailUri() {
-    return null;
+  public boolean hasPlaceholder() {
+    return true;
   }
 
   @Override
-  public boolean hasPlaceholder() {
+  public boolean hasPlayOverlay() {
     return true;
   }
 
@@ -68,7 +64,8 @@ public class VideoSlide extends Slide {
     return true;
   }
 
-  @NonNull @Override public String getContentDescription() {
+  @NonNull @Override
+  public String getContentDescription() {
     return context.getString(R.string.Slide_video);
   }
 }

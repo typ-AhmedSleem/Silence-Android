@@ -21,9 +21,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
@@ -41,7 +45,7 @@ import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.MediaUtil.ThumbnailData;
 import org.smssecure.smssecure.util.Util;
-import org.smssecure.smssecure.util.VisibleForTesting;
+import org.smssecure.smssecure.video.EncryptedMediaDataSource;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -69,7 +73,7 @@ public class AttachmentDatabase extends Database {
           static final String DATA                   = "_data";
           static final String TRANSFER_STATE         = "pending_push";
           static final String SIZE                   = "data_size";
-  private static final String THUMBNAIL              = "thumbnail";
+          static final String THUMBNAIL              = "thumbnail";
           static final String THUMBNAIL_ASPECT_RATIO = "aspect_ratio";
           static final String UNIQUE_ID              = "unique_id";
 
@@ -82,7 +86,7 @@ public class AttachmentDatabase extends Database {
 
   private static final String[] PROJECTION = new String[] {ROW_ID + " AS " + ATTACHMENT_ID_ALIAS,
                                                            MMS_ID, CONTENT_TYPE, NAME, CONTENT_DISPOSITION,
-                                                           CONTENT_LOCATION, DATA, TRANSFER_STATE,
+                                                           CONTENT_LOCATION, DATA, THUMBNAIL, TRANSFER_STATE,
                                                            SIZE, THUMBNAIL, THUMBNAIL_ASPECT_RATIO,
                                                            UNIQUE_ID};
 
@@ -149,6 +153,7 @@ public class AttachmentDatabase extends Database {
     notifyConversationListeners(DatabaseFactory.getMmsDatabase(context).getThreadIdForMessage(mmsId));
   }
 
+  @VisibleForTesting
   public @Nullable DatabaseAttachment getAttachment(AttachmentId attachmentId) {
     SQLiteDatabase database = databaseHelper.getReadableDatabase();
     Cursor cursor           = null;
@@ -310,6 +315,7 @@ public class AttachmentDatabase extends Database {
     return new DatabaseAttachment(databaseAttachment.getAttachmentId(),
                                   databaseAttachment.getMmsId(),
                                   databaseAttachment.hasData(),
+                                  databaseAttachment.hasThumbnail(),
                                   mediaStream.getMimeType(),
                                   databaseAttachment.getTransferState(),
                                   dataSize,
@@ -431,6 +437,7 @@ public class AttachmentDatabase extends Database {
                                                    cursor.getLong(cursor.getColumnIndexOrThrow(UNIQUE_ID))),
                                   cursor.getLong(cursor.getColumnIndexOrThrow(MMS_ID)),
                                   !cursor.isNull(cursor.getColumnIndexOrThrow(DATA)),
+                                  !cursor.isNull(cursor.getColumnIndexOrThrow(THUMBNAIL)),
                                   cursor.getString(cursor.getColumnIndexOrThrow(CONTENT_TYPE)),
                                   cursor.getInt(cursor.getColumnIndexOrThrow(TRANSFER_STATE)),
                                   cursor.getLong(cursor.getColumnIndexOrThrow(SIZE)),
@@ -471,11 +478,8 @@ public class AttachmentDatabase extends Database {
     long         rowId        = database.insert(TABLE_NAME, null, contentValues);
     AttachmentId attachmentId = new AttachmentId(rowId, uniqueId);
 
-    if (attachment.getThumbnail() != null && masterSecret != null) {
-      Log.w(TAG, "inserting pre-generated thumbnail");
-      ThumbnailData data = new ThumbnailData(attachment.getThumbnail());
-      updateAttachmentThumbnail(masterSecret, attachmentId, data.toDataStream(), data.getAspectRatio());
-    } else if (!attachment.isInProgress()) {
+    if (partData != null) {
+      Log.w(TAG, "Submitting thumbnail generation job...");
       thumbnailExecutor.submit(new ThumbnailFetchCallable(masterSecret, attachmentId));
     }
 
@@ -498,21 +502,33 @@ public class AttachmentDatabase extends Database {
     values.put(THUMBNAIL_ASPECT_RATIO, aspectRatio);
 
     database.update(TABLE_NAME, values, PART_ID_WHERE, attachmentId.toStrings());
+
+    Cursor cursor = database.query(TABLE_NAME, new String[] {MMS_ID}, PART_ID_WHERE, attachmentId.toStrings(), null, null, null);
+
+    try {
+      if (cursor != null && cursor.moveToFirst()) {
+        notifyConversationListeners(DatabaseFactory.getMmsDatabase(context).getThreadIdForMessage(cursor.getLong(cursor.getColumnIndexOrThrow(MMS_ID))));
+      }
+    } finally {
+      if (cursor != null) cursor.close();
+    }
   }
 
 
   @VisibleForTesting
   class ThumbnailFetchCallable implements Callable<InputStream> {
+
     private final MasterSecret masterSecret;
     private final AttachmentId attachmentId;
 
-    public ThumbnailFetchCallable(MasterSecret masterSecret, AttachmentId attachmentId) {
+    ThumbnailFetchCallable(MasterSecret masterSecret, AttachmentId attachmentId) {
       this.masterSecret = masterSecret;
       this.attachmentId = attachmentId;
     }
 
     @Override
     public @Nullable InputStream call() throws Exception {
+      Log.w(TAG, "Executing thumbnail job...");
       final InputStream stream = getDataStream(masterSecret, attachmentId, THUMBNAIL);
 
       if (stream != null) {
@@ -525,7 +541,13 @@ public class AttachmentDatabase extends Database {
         return null;
       }
 
-      ThumbnailData data = MediaUtil.generateThumbnail(context, masterSecret, attachment.getContentType(), attachment.getDataUri());
+      ThumbnailData data;
+
+      if (MediaUtil.isVideoType(attachment.getContentType())) {
+        data = generateVideoThumbnail(masterSecret, attachmentId);
+      } else{
+        data = MediaUtil.generateThumbnail(context, masterSecret, attachment.getContentType(), attachment.getDataUri());
+      }
 
       if (data == null) {
         return null;
@@ -534,6 +556,29 @@ public class AttachmentDatabase extends Database {
       updateAttachmentThumbnail(masterSecret, attachmentId, data.toDataStream(), data.getAspectRatio());
 
       return getDataStream(masterSecret, attachmentId, THUMBNAIL);
+    }
+
+    private ThumbnailData generateVideoThumbnail(MasterSecret masterSecret, AttachmentId attachmentId) {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+        Log.w(TAG, "Video thumbnails not supported...");
+        return null;
+      }
+
+      File mediaFile = getAttachmentDataFile(attachmentId, DATA);
+
+      if (mediaFile == null) {
+        Log.w(TAG, "No data file found for video thumbnail...");
+        return null;
+      }
+
+      EncryptedMediaDataSource dataSource = new EncryptedMediaDataSource(masterSecret, mediaFile);
+      MediaMetadataRetriever   retriever  = new MediaMetadataRetriever();
+      retriever.setDataSource(dataSource);
+
+      Bitmap bitmap = retriever.getFrameAtTime(1000);
+
+      Log.w(TAG, "Generated video thumbnail...");
+      return new ThumbnailData(bitmap);
     }
   }
 }

@@ -5,19 +5,24 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.AttachmentServer;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.mms.VideoSlide;
 import org.smssecure.smssecure.util.ViewUtil;
 
 import java.io.IOException;
 
 public class VideoPlayer extends FrameLayout {
+
+  private static final String TAG = VideoPlayer.class.getName();
 
   @NonNull  private final VideoView        videoView;
   @Nullable private       AttachmentServer attachmentServer;
@@ -45,10 +50,20 @@ public class VideoPlayer extends FrameLayout {
       this.attachmentServer.stop();
     }
 
-    this.attachmentServer = new AttachmentServer(getContext(), masterSecret, videoSource.asAttachment());
-    this.attachmentServer.start();
+    if (videoSource.getUri() != null && PartAuthority.isLocalUri(videoSource.getUri())) {
+      Log.w(TAG, "Starting video attachment server for part provider Uri...");
+      this.attachmentServer = new AttachmentServer(getContext(), masterSecret, videoSource.asAttachment());
+      this.attachmentServer.start();
 
-    this.videoView.setVideoURI(this.attachmentServer.getUri());
+      this.videoView.setVideoURI(this.attachmentServer.getUri());
+    } else if (videoSource.getUri() != null) {
+      Log.w(TAG, "Playing video directly from non-local Uri...");
+      this.videoView.setVideoURI(videoSource.getUri());
+    } else {
+      Toast.makeText(getContext(), "Error playing video...", Toast.LENGTH_LONG).show();
+      return;
+    }
+
     this.videoView.start();
   }
 

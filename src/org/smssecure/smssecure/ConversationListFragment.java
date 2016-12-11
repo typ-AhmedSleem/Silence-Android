@@ -394,7 +394,7 @@ public class ConversationListFragment extends Fragment
 
             private void sendMediaDraft(DraftDatabase.Draft draft, long threadId, @Nullable String forcedValue) {
               List<Attachment> attachment = new LinkedList<Attachment>();
-              attachment.add(new UriAttachment(Uri.parse(draft.getValue()), draft.getType() + "/*", AttachmentDatabase.TRANSFER_PROGRESS_DONE));
+              attachment.add(new UriAttachment(Uri.parse(draft.getValue()), draft.getType() + "/*", AttachmentDatabase.TRANSFER_PROGRESS_DONE, 0));
 
               OutgoingMediaMessage message = new OutgoingMediaMessage(recipients,
                                                                       forcedValue != null ? forcedValue : "",

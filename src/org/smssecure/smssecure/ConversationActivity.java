@@ -1131,9 +1131,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
 
     for (Slide slide : attachmentManager.buildSlideDeck().getSlides()) {
-      if      (slide.hasAudio()) drafts.add(new Draft(Draft.AUDIO, slide.getUri().toString()));
-      else if (slide.hasVideo()) drafts.add(new Draft(Draft.VIDEO, slide.getUri().toString()));
-      else if (slide.hasImage()) drafts.add(new Draft(Draft.IMAGE, slide.getUri().toString()));
+      if      (slide.hasAudio() && slide.getUri() != null) drafts.add(new Draft(Draft.AUDIO, slide.getUri().toString()));
+      else if (slide.hasVideo() && slide.getUri() != null) drafts.add(new Draft(Draft.VIDEO, slide.getUri().toString()));
+      else if (slide.hasImage() && slide.getUri() != null) drafts.add(new Draft(Draft.IMAGE, slide.getUri().toString()));
     }
 
     return drafts;

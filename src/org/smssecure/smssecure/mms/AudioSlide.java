@@ -33,7 +33,7 @@ import org.smssecure.smssecure.util.ResUtil;
 public class AudioSlide extends Slide {
 
   public AudioSlide(Context context, Uri uri, long dataSize) throws IOException {
-    super(context, constructAttachmentFromUri(context, uri, MediaUtil.AUDIO_UNSPECIFIED, dataSize));
+    super(context, constructAttachmentFromUri(context, uri, MediaUtil.AUDIO_UNSPECIFIED, dataSize, false));
   }
 
   public AudioSlide(Context context, Attachment attachment) {

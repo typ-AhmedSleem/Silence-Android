@@ -38,7 +38,7 @@ public class ImageSlide extends Slide {
   }
 
   public ImageSlide(Context context, Uri uri, long size) throws IOException {
-    super(context, constructAttachmentFromUri(context, uri, ContentType.IMAGE_JPEG, size));
+    super(context, constructAttachmentFromUri(context, uri, ContentType.IMAGE_JPEG, size, true));
   }
 
   @Override
@@ -51,7 +51,9 @@ public class ImageSlide extends Slide {
     return true;
   }
 
-  @NonNull @Override public String getContentDescription() {
+  @NonNull
+  @Override
+  public String getContentDescription() {
     return context.getString(R.string.Slide_image);
   }
 }

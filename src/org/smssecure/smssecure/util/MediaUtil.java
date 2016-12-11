@@ -29,6 +29,7 @@ import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
 
 public class MediaUtil {
+
   private static final String TAG = MediaUtil.class.getSimpleName();
 
   public static final String IMAGE_PNG         = "image/png";
