@@ -171,7 +171,6 @@ public class ConversationFragment extends Fragment
     if (this.recipients != null && this.threadId != -1) {
       list.setAdapter(new ConversationAdapter(getActivity(), masterSecret, locale, selectionClickListener, null, this.recipients));
       getLoaderManager().restartLoader(0, Bundle.EMPTY, this);
-      list.getItemAnimator().setSupportsChangeAnimations(false);
       list.getItemAnimator().setMoveDuration(120);
     }
   }
