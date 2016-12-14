@@ -43,6 +43,9 @@ dependencies {
     compile ('com.android.support:gridlayout-v7:22.2.0') {
         exclude module: 'support-v4'
     }
+    compile ('com.davemorrissey.labs:subsampling-scale-image-view:3.6.0') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 
     compile 'com.squareup.dagger:dagger:1.2.2'
     compile ("com.doomonafireball.betterpickers:library:1.5.3") {
@@ -123,6 +126,7 @@ dependencyVerification {
             'org.whispersystems:textsecure-java:b407ca6d1430204dfabf38e27db22d5177409072a9668238bd1877de7676ad3f',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
             'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
+            'com.davemorrissey.labs:subsampling-scale-image-view:550c5baa07e0bb4ff0a18b705e96d34436d22619248bd8c08c08c730b1f55cfe',
     ]
 }
 
