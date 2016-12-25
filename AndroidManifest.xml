@@ -313,7 +313,7 @@
 
     <receiver android:name=".notifications.MarkReadReceiver"
               android:enabled="true"
-              android:exported="true">
+              android:exported="false">
         <intent-filter>
             <action android:name="org.smssecure.smssecure.notifications.CLEAR"/>
         </intent-filter>

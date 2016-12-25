@@ -31,7 +31,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
+import android.service.notification.StatusBarNotification;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationManagerCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -75,7 +78,8 @@ public class MessageNotifier {
   private static final String TAG = MessageNotifier.class.getSimpleName();
   private static boolean bLightsActive = false;
 
-  public static final int NOTIFICATION_ID = 1338;
+  private static final int    SUMMARY_NOTIFICATION_ID   = 1338;
+  private static final String NOTIFICATION_GROUP        = "messages";
 
   private volatile static long visibleThread = -1;
 
@@ -98,12 +102,6 @@ public class MessageNotifier {
   public static boolean newNotificationRequested(int flags) {
     int mask = MNF_SOUND | MNF_LIGHTS;
     return ((flags & mask) != 0);
-  }
-
-  public static void cancelNotification(Context context) {
-    ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
-            .cancel(NOTIFICATION_ID);
-    bLightsActive = false;
   }
 
   public static void sendDeliveryToast(final Context context, final String recipientName){
@@ -131,6 +129,43 @@ public class MessageNotifier {
       FailedNotificationBuilder builder = new FailedNotificationBuilder(context, SilencePreferences.getNotificationPrivacy(context), intent);
       ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
         .notify((int)threadId, builder.build());
+    }
+  }
+
+  private static void cancelActiveNotifications(@NonNull Context context) {
+    NotificationManager notifications = ServiceUtil.getNotificationManager(context);
+    notifications.cancel(SUMMARY_NOTIFICATION_ID);
+
+    if (Build.VERSION.SDK_INT >= 23) {
+      StatusBarNotification[] activeNotifications = notifications.getActiveNotifications();
+
+      for (StatusBarNotification activeNotification : activeNotifications) {
+        notifications.cancel(activeNotification.getId());
+      }
+    }
+  }
+
+  private static void cancelOrphanedNotifications(@NonNull Context context, NotificationState notificationState) {
+    if (Build.VERSION.SDK_INT >= 23) {
+      NotificationManager     notifications       = ServiceUtil.getNotificationManager(context);
+      StatusBarNotification[] activeNotifications = notifications.getActiveNotifications();
+
+      for (StatusBarNotification notification : activeNotifications) {
+        boolean validNotification = false;
+
+        if (notification.getId() != SUMMARY_NOTIFICATION_ID) {
+          for (NotificationItem item : notificationState.getNotifications()) {
+            if (notification.getId() == (SUMMARY_NOTIFICATION_ID + item.getThreadId())) {
+              validNotification = true;
+              break;
+            }
+          }
+
+          if (!validNotification) {
+            notifications.cancel(notification.getId());
+          }
+        }
+      }
     }
   }
 
@@ -180,7 +215,7 @@ public class MessageNotifier {
       if ((telcoCursor == null || telcoCursor.isAfterLast()) &&
           (pushCursor == null || pushCursor.isAfterLast()))
       {
-        cancelNotification(context);
+        cancelActiveNotifications(context);
         updateBadge(context, 0);
         clearReminder(context);
         return;
@@ -189,11 +224,18 @@ public class MessageNotifier {
       NotificationState notificationState = constructNotificationState(context, masterSecret, telcoCursor);
 
       if (notificationState.hasMultipleThreads()) {
+        if (Build.VERSION.SDK_INT >= 23) {
+          for (long threadId : notificationState.getThreads()) {
+            sendSingleThreadNotification(context, masterSecret, new NotificationState(notificationState.getNotificationsForThread(threadId)), 0, true);
+          }
+        }
+
         sendMultipleThreadNotification(context, notificationState, flags);
       } else {
-        sendSingleThreadNotification(context, masterSecret, notificationState, flags);
+        sendSingleThreadNotification(context, masterSecret, notificationState, flags, false);
       }
 
+      cancelOrphanedNotifications(context, notificationState);
       updateBadge(context, notificationState.getMessageCount());
 
       if (newNotificationRequested(flags)) {
@@ -220,28 +262,30 @@ public class MessageNotifier {
   private static void sendSingleThreadNotification(Context context,
                                                    MasterSecret masterSecret,
                                                    NotificationState notificationState,
-                                                   int flags)
+                                                   int flags, boolean bundled)
   {
     if (notificationState.getNotifications().isEmpty()) {
-      cancelNotification(context);
+      if (!bundled) cancelActiveNotifications(context);
       return;
     }
 
-    SingleRecipientNotificationBuilder builder       = new SingleRecipientNotificationBuilder(context, masterSecret, SilencePreferences.getNotificationPrivacy(context));
-    List<NotificationItem>             notifications = notificationState.getNotifications();
-    Recipients                         recipients    = notifications.get(0).getRecipients();
+    SingleRecipientNotificationBuilder builder        = new SingleRecipientNotificationBuilder(context, masterSecret, SilencePreferences.getNotificationPrivacy(context));
+    List<NotificationItem>             notifications  = notificationState.getNotifications();
+    Recipients                         recipients     = notifications.get(0).getRecipients();
+    int                                notificationId = (int) (SUMMARY_NOTIFICATION_ID + (bundled ? notifications.get(0).getThreadId() : 0));
 
     builder.setThread(notifications.get(0).getRecipients());
     builder.setMessageCount(notificationState.getMessageCount());
     builder.setPrimaryMessageBody(recipients, notifications.get(0).getIndividualRecipient(),
                                   notifications.get(0).getText(), notifications.get(0).getSlideDeck());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
+    builder.setGroup(NOTIFICATION_GROUP);
 
     long timestamp = notifications.get(0).getTimestamp();
     if (timestamp != 0) builder.setWhen(timestamp);
 
     builder.addActions(masterSecret,
-                       notificationState.getMarkAsReadIntent(context),
+                       notificationState.getMarkAsReadIntent(context, notificationId),
                        notificationState.getQuickReplyIntent(context, notifications.get(0).getRecipients()),
                        notificationState.getWearableReplyIntent(context, notifications.get(0).getRecipients()));
 
@@ -259,8 +303,11 @@ public class MessageNotifier {
                         notifications.get(0).getText());
     }
 
-    ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
-      .notify(NOTIFICATION_ID, builder.build());
+    if (!bundled) {
+      builder.setGroupSummary(true);
+    }
+
+    NotificationManagerCompat.from(context).notify(notificationId, builder.build());
   }
 
   private static void sendMultipleThreadNotification(Context context,
@@ -272,11 +319,12 @@ public class MessageNotifier {
 
     builder.setMessageCount(notificationState.getMessageCount(), notificationState.getThreadCount());
     builder.setMostRecentSender(notifications.get(0).getIndividualRecipient());
+    builder.setGroup(NOTIFICATION_GROUP);
 
     long timestamp = notifications.get(0).getTimestamp();
     if (timestamp != 0) builder.setWhen(timestamp);
 
-    builder.addActions(notificationState.getMarkAsReadIntent(context));
+    builder.addActions(notificationState.getMarkAsReadIntent(context, SUMMARY_NOTIFICATION_ID));
 
     ListIterator<NotificationItem> iterator = notifications.listIterator(0);
 
@@ -292,8 +340,7 @@ public class MessageNotifier {
                         notifications.get(0).getText());
     }
 
-    ((NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE))
-      .notify(NOTIFICATION_ID, builder.build());
+    NotificationManagerCompat.from(context).notify(SUMMARY_NOTIFICATION_ID, builder.build());
   }
 
   private static void sendInThreadNotification(Context context, Recipients recipients) {
