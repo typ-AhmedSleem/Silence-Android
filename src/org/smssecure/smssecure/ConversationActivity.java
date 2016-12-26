@@ -35,9 +35,11 @@ import android.os.Bundle;
 import android.provider.Browser;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.WindowCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -126,6 +128,8 @@ import org.whispersystems.libaxolotl.util.guava.Optional;
 import java.io.IOException;
 import java.util.List;
 
+import ws.com.google.android.mms.ContentType;
+
 import static org.smssecure.smssecure.TransportOption.Type;
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
 
@@ -140,7 +144,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     implements ConversationFragment.ConversationFragmentListener,
                AttachmentManager.AttachmentListener,
                RecipientsModifiedListener,
-               OnKeyboardShownListener
+               OnKeyboardShownListener,
+               ComposeText.MediaListener
 {
   private static final String TAG = ConversationActivity.class.getSimpleName();
 
@@ -808,6 +813,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       emojiToggle.setVisibility(View.GONE);
 
     container.addOnKeyboardShownListener(this);
+    composeText.setMediaListener(this);
 
     int[]      attributes   = new int[]{R.attr.conversation_item_bubble_background};
     TypedArray colors       = obtainStyledAttributes(attributes);
@@ -964,7 +970,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
-  private void setMedia(Uri uri, MediaType mediaType) {
+  private void setMedia(@Nullable Uri uri, @NonNull MediaType mediaType) {
     if (uri == null) return;
     attachmentManager.setMedia(masterSecret, uri, mediaType, getCurrentMediaConstraints());
   }
@@ -1302,6 +1308,19 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     @Override public void onClick(View v) {
       if (container.getCurrentInput() == emojiDrawer) container.showSoftkey(composeText);
       else                                            container.show(composeText, emojiDrawer);
+    }
+  }
+
+  @Override
+  public void onMediaSelected(@NonNull Uri uri, String contentType) {
+    if (!TextUtils.isEmpty(contentType) && contentType.trim().equals("image/gif")) {
+      setMedia(uri, MediaType.GIF);
+    } else if (ContentType.isImageType(contentType)) {
+      setMedia(uri, MediaType.IMAGE);
+    } else if (ContentType.isVideoType(contentType)) {
+      setMedia(uri, MediaType.VIDEO);
+    } else if (ContentType.isAudioType(contentType)) {
+      setMedia(uri, MediaType.AUDIO);
     }
   }
 
