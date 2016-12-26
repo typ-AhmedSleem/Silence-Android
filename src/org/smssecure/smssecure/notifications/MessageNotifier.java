@@ -83,7 +83,7 @@ public class MessageNotifier {
 
   private volatile static long visibleThread = -1;
 
-  public static final String EXTRA_VOICE_REPLY = "extra_voice_reply";
+  public static final  String EXTRA_REMOTE_REPLY = "extra_remote_reply";
 
   public static void setVisibleThread(long threadId) {
     visibleThread = threadId;
@@ -287,7 +287,7 @@ public class MessageNotifier {
     builder.addActions(masterSecret,
                        notificationState.getMarkAsReadIntent(context, notificationId),
                        notificationState.getQuickReplyIntent(context, notifications.get(0).getRecipients()),
-                       notificationState.getWearableReplyIntent(context, notifications.get(0).getRecipients()));
+                       notificationState.getRemoteReplyIntent(context, notifications.get(0).getRecipients()));
 
     ListIterator<NotificationItem> iterator = notifications.listIterator(notifications.size());
 
