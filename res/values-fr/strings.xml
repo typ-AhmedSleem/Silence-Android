@@ -170,6 +170,11 @@ en mesure de les lire.</string>
     <item quantity="one">La conversation n\'est plus archivée</item>
     <item quantity="other">%d conversations ne sont plus archivées</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Envoyer les brouillons</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Ceci enverra les brouillons des conversations sélectionnées.</string>
+  <string name="ConversationListFragment_send">Envoyer</string>
+  <string name="ConversationListFragment_sending">Envoi en cours</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Envoi des brouillons sélectionnés en cours...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Message d’échange des clés…</string>
   <!--ConversationListItemAction-->
@@ -653,6 +658,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Supprimer les éléments sélectionnés</string>
   <string name="conversation_list_batch__menu_select_all">Tout sélectionner</string>
+  <string name="conversation_list_batch__menu_send_drafts">Envoyer les brouillons sélectionnés</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Archiver les conversations sélectionnées</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Ne pas archiver les conversations sélectionnées</string>
   <!--conversation_list-->
