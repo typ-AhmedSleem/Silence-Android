@@ -183,6 +183,11 @@
         <item quantity="one">Moved conversation to inbox</item>
         <item quantity="other">Moved %d conversations to inbox</item>
     </plurals>
+    <string name="ConversationListFragment_send_drafts">Send drafts</string>
+    <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">This will send drafts of selected conversations.</string>
+    <string name="ConversationListFragment_send">Send</string>
+    <string name="ConversationListFragment_sending">Sending</string>
+    <string name="ConversationListFragment_sending_selected_drafts">Sending selected drafts...</string>
 
     <!-- ConversationListItem -->
     <string name="ConversationListItem_key_exchange_message">Key exchange message...</string>
@@ -761,6 +766,7 @@
     <!-- conversation_list_batch -->
     <string name="conversation_list_batch__menu_delete_selected">Delete selected</string>
     <string name="conversation_list_batch__menu_select_all">Select all</string>
+    <string name="conversation_list_batch__menu_send_drafts">Send selected drafts</string>
     <string name="conversation_list_batch_archive__menu_archive_selected">Archive selected</string>
     <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Unarchive selected</string>
 
