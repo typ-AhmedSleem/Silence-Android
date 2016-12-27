@@ -27,6 +27,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -53,7 +54,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 
-import org.smssecure.smssecure.database.DraftDatabase;
+import org.smssecure.smssecure.attachments.Attachment;
+import org.smssecure.smssecure.attachments.UriAttachment;
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.reminder.DefaultSmsReminder;
 import org.smssecure.smssecure.components.reminder.DeliveryReportsReminder;
@@ -64,10 +66,14 @@ import org.smssecure.smssecure.components.reminder.SystemSmsImportReminder;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.SessionUtil;
+import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.DraftDatabase;
+import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.loaders.ConversationListLoader;
 import org.smssecure.smssecure.notifications.MessageNotifier;
+import org.smssecure.smssecure.mms.OutgoingMediaMessage;
+import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
@@ -79,6 +85,7 @@ import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Set;
 
@@ -319,6 +326,10 @@ public class ConversationListFragment extends Fragment
 
           new AsyncTask<Void, Void, Void>() {
             private ProgressDialog dialog;
+            private boolean        isSingleConversation;
+            private boolean        isSecureDestination;
+            private DraftDatabase  draftDatabase;
+            private Recipients     recipients;
 
             @Override
             protected void onPreExecute() {
@@ -330,24 +341,28 @@ public class ConversationListFragment extends Fragment
 
             @Override
             protected Void doInBackground(Void... params) {
-              DraftDatabase draftDatabase = DatabaseFactory.getDraftDatabase(getActivity());
+              draftDatabase = DatabaseFactory.getDraftDatabase(context);
 
               for (long threadId : selectedConversations) {
                 List<DraftDatabase.Draft> drafts = draftDatabase.getDrafts(masterCipher, threadId);
-                Recipients recipients = getListAdapter().getRecipientsFromThreadId(threadId);
+                recipients = getListAdapter().getRecipientsFromThreadId(threadId);
 
                 if (recipients != null) {
-                  boolean isSingleConversation = recipients.isSingleRecipient() && !recipients.isGroupRecipient();
-                  boolean isSecureDestination  = isSingleConversation && SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient());
+                  isSingleConversation = recipients.isSingleRecipient() && !recipients.isGroupRecipient();
+                  isSecureDestination  = isSingleConversation && SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient());
 
-                  for (DraftDatabase.Draft draft : drafts) {
-                    OutgoingTextMessage message;
-                    if (isSecureDestination) {
-                      message = new OutgoingEncryptedMessage(recipients, draft.getValue(), -1);
-                    } else {
-                      message = new OutgoingTextMessage(recipients, draft.getValue(), -1);
+                  Log.w(TAG, "Number of drafts: " + drafts.size());
+                  if (drafts.size() > 1 && !drafts.get(1).getType().equals(DraftDatabase.Draft.TEXT)) {
+                    sendMediaDraft(drafts.get(1), threadId, drafts.get(0).getValue());
+                  } else {
+                    for (DraftDatabase.Draft draft : drafts) {
+                      Log.w(TAG, "getType(): " + draft.getType());
+                      if (draft.getType().equals(DraftDatabase.Draft.TEXT)) {
+                        sendTextDraft(draft, threadId);
+                      } else {
+                        sendMediaDraft(draft, threadId, null);
+                      }
                     }
-                    MessageSender.send(context, masterSecret, message, threadId, false);
                   }
                 } else {
                   Log.w(TAG, "null recipients when sending drafts ?!");
@@ -364,6 +379,33 @@ public class ConversationListFragment extends Fragment
                 actionMode.finish();
                 actionMode = null;
               }
+            }
+
+            private void sendTextDraft(DraftDatabase.Draft draft, long threadId) {
+              OutgoingTextMessage message;
+              if (isSecureDestination) {
+                message = new OutgoingEncryptedMessage(recipients, draft.getValue(), -1);
+              } else {
+                message = new OutgoingTextMessage(recipients, draft.getValue(), -1);
+              }
+              MessageSender.send(context, masterSecret, message, threadId, false);
+            }
+
+            private void sendMediaDraft(DraftDatabase.Draft draft, long threadId, @Nullable String forcedValue) {
+              List<Attachment> attachment = new LinkedList<Attachment>();
+              attachment.add(new UriAttachment(Uri.parse(draft.getValue()), draft.getType() + "/*", AttachmentDatabase.TRANSFER_PROGRESS_DONE));
+
+              OutgoingMediaMessage message = new OutgoingMediaMessage(recipients,
+                                                                      forcedValue != null ? forcedValue : "",
+                                                                      attachment,
+                                                                      System.currentTimeMillis(),
+                                                                      -1,
+                                                                      ThreadDatabase.DistributionTypes.BROADCAST);
+
+              if (isSecureDestination) {
+                message = new OutgoingSecureMediaMessage(message);
+              }
+              MessageSender.send(context, masterSecret, message, threadId, false);
             }
           }.execute();
         }
