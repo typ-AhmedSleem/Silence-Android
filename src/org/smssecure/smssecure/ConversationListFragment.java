@@ -43,6 +43,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,6 +53,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 
+import org.smssecure.smssecure.database.DraftDatabase;
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.components.reminder.DefaultSmsReminder;
 import org.smssecure.smssecure.components.reminder.DeliveryReportsReminder;
@@ -59,24 +61,32 @@ import org.smssecure.smssecure.components.reminder.Reminder;
 import org.smssecure.smssecure.components.reminder.ReminderView;
 import org.smssecure.smssecure.components.reminder.StoreRatingReminder;
 import org.smssecure.smssecure.components.reminder.SystemSmsImportReminder;
+import org.smssecure.smssecure.crypto.MasterCipher;
+import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.crypto.SessionUtil;
 import org.smssecure.smssecure.database.DatabaseFactory;
+import org.smssecure.smssecure.database.DraftDatabase;
 import org.smssecure.smssecure.database.loaders.ConversationListLoader;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.sms.MessageSender;
+import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
+import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.task.SnackbarAsyncTask;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
-
 
 public class ConversationListFragment extends Fragment
   implements LoaderManager.LoaderCallbacks<Cursor>, ActionMode.Callback, ItemClickListener
 {
+
+  private static final String TAG = ConversationListFragment.class.getSimpleName();
 
   public static final String ARCHIVE = "archive";
 
@@ -291,6 +301,79 @@ public class ConversationListFragment extends Fragment
     ((ConversationSelectedListener)getActivity()).onCreateConversation(threadId, recipients, distributionType);
   }
 
+  private void handleSendDrafts() {
+    AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+    alert.setIconAttribute(R.attr.dialog_alert_icon);
+    alert.setTitle(getString(R.string.ConversationListFragment_send_drafts));
+    alert.setMessage(getString(R.string.ConversationListFragment_this_will_send_drafts_of_selected_conversations));
+    alert.setCancelable(true);
+
+    alert.setPositiveButton(R.string.ConversationListFragment_send, new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        final Set<Long> selectedConversations = new HashSet<>(getListAdapter().getBatchSelections());
+        final Context context = getActivity();
+
+        if (!selectedConversations.isEmpty() && masterSecret != null) {
+          final MasterCipher masterCipher = new MasterCipher(masterSecret);
+
+          new AsyncTask<Void, Void, Void>() {
+            private ProgressDialog dialog;
+
+            @Override
+            protected void onPreExecute() {
+              dialog = ProgressDialog.show(context,
+                                           context.getString(R.string.ConversationListFragment_sending),
+                                           context.getString(R.string.ConversationListFragment_sending_selected_drafts),
+                                           true, false);
+            }
+
+            @Override
+            protected Void doInBackground(Void... params) {
+              DraftDatabase draftDatabase = DatabaseFactory.getDraftDatabase(getActivity());
+
+              for (long threadId : selectedConversations) {
+                List<DraftDatabase.Draft> drafts = draftDatabase.getDrafts(masterCipher, threadId);
+                Recipients recipients = getListAdapter().getRecipientsFromThreadId(threadId);
+
+                if (recipients != null) {
+                  boolean isSingleConversation = recipients.isSingleRecipient() && !recipients.isGroupRecipient();
+                  boolean isSecureDestination  = isSingleConversation && SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient());
+
+                  for (DraftDatabase.Draft draft : drafts) {
+                    OutgoingTextMessage message;
+                    if (isSecureDestination) {
+                      message = new OutgoingEncryptedMessage(recipients, draft.getValue(), -1);
+                    } else {
+                      message = new OutgoingTextMessage(recipients, draft.getValue(), -1);
+                    }
+                    MessageSender.send(context, masterSecret, message, threadId, false);
+                  }
+                } else {
+                  Log.w(TAG, "null recipients when sending drafts ?!");
+                }
+                draftDatabase.clearDrafts(threadId);
+              }
+              return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result) {
+              dialog.dismiss();
+              if (actionMode != null) {
+                actionMode.finish();
+                actionMode = null;
+              }
+            }
+          }.execute();
+        }
+      }
+    });
+
+    alert.setNegativeButton(android.R.string.cancel, null);
+    alert.show();
+  }
+
   @Override
   public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
     return new ConversationListLoader(getActivity(), queryFilter, archive);
@@ -314,6 +397,7 @@ public class ConversationListFragment extends Fragment
     } else {
       ConversationListAdapter adapter = (ConversationListAdapter)list.getAdapter();
       adapter.toggleThreadInBatchSet(item.getThreadId());
+      adapter.populateRecipients(item.getThreadId(), item.getRecipients());
 
       if (adapter.getBatchSelections().size() == 0) {
         actionMode.finish();
@@ -332,6 +416,7 @@ public class ConversationListFragment extends Fragment
 
     getListAdapter().initializeBatchMode(true);
     getListAdapter().toggleThreadInBatchSet(item.getThreadId());
+    getListAdapter().populateRecipients(item.getThreadId(), item.getRecipients());
     getListAdapter().notifyDataSetChanged();
   }
 
@@ -353,6 +438,7 @@ public class ConversationListFragment extends Fragment
     else         inflater.inflate(R.menu.conversation_list_batch_archive, menu);
 
     inflater.inflate(R.menu.conversation_list_batch, menu);
+    inflater.inflate(R.menu.conversation_send_drafts, menu);
 
     mode.setTitle(R.string.conversation_fragment_cab__batch_selection_mode);
     mode.setSubtitle(null);
@@ -377,6 +463,7 @@ public class ConversationListFragment extends Fragment
     case R.id.menu_select_all:       handleSelectAllThreads();   return true;
     case R.id.menu_delete_selected:  handleDeleteAllSelected();  return true;
     case R.id.menu_archive_selected: handleArchiveAllSelected(); return true;
+    case R.id.menu_send_drafts:      handleSendDrafts();         return true;
     }
 
     return false;

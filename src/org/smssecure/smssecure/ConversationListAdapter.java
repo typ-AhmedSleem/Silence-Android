@@ -21,6 +21,7 @@ import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,11 +35,13 @@ import org.smssecure.smssecure.database.CursorRecyclerViewAdapter;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.model.ThreadRecord;
+import org.smssecure.smssecure.recipients.Recipients;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Set;
 
@@ -62,6 +65,8 @@ public class ConversationListAdapter extends CursorRecyclerViewAdapter<Conversat
 
   private final Set<Long> batchSet  = Collections.synchronizedSet(new HashSet<Long>());
   private       boolean   batchMode = false;
+
+  private LinkedList<Pair<Long, Recipients>> threadIdAndRecipients = new LinkedList<Pair<Long,Recipients>>();
 
   protected static class ViewHolder extends RecyclerView.ViewHolder {
     public <V extends View & BindableConversationListItem> ViewHolder(final @NonNull V itemView)
@@ -175,6 +180,17 @@ public class ConversationListAdapter extends CursorRecyclerViewAdapter<Conversat
     } else if (threadId != -1) {
       batchSet.add(threadId);
     }
+  }
+
+  public void populateRecipients(long threadId, Recipients recipients) {
+    threadIdAndRecipients.add(new Pair<Long,Recipients>(threadId, recipients));
+  }
+
+  public @Nullable Recipients getRecipientsFromThreadId(long threadId) {
+    for (Pair<Long,Recipients> pair : threadIdAndRecipients) {
+      if (threadId == pair.first) return pair.second;
+    }
+    return null;
   }
 
   public Set<Long> getBatchSelections() {
