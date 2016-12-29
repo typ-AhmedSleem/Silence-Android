@@ -196,6 +196,11 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
     <item quantity="few">%d pogovori premaknjeni v nabiralnik</item>
     <item quantity="other">%d pogovorov premaknjeno v nabiralnik</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Pošlji osnutke</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">S tem boste poslali vse osnute izbranih pogovorov.</string>
+  <string name="ConversationListFragment_send">Pošlji</string>
+  <string name="ConversationListFragment_sending">Pošiljam</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Pošiljam izbrane osnutke...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Sporočilo za izmenjavo ključev...</string>
   <!--ConversationListItemAction-->
@@ -679,6 +684,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Izbriši označeno</string>
   <string name="conversation_list_batch__menu_select_all">Označi vse</string>
+  <string name="conversation_list_batch__menu_send_drafts">Pošlji izbrane osnutke</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Premakni izbrano v arhiv</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Premakni izbrano v nabiralnik</string>
   <!--conversation_list-->

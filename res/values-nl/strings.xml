@@ -168,6 +168,11 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
     <item quantity="one">Gesprekken verplaatst naar inbox</item>
     <item quantity="other">%d gesprekken verplaatst naar inbox</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Concept verzenden</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Dit verzend de concepten van de geselecteerde gesprekken.</string>
+  <string name="ConversationListFragment_send">Zenden</string>
+  <string name="ConversationListFragment_sending">Aan het zenden</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Geselecteerde concepten verzenden</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Sleuteluitwisselingsbericht...</string>
   <!--ConversationListItemAction-->
@@ -649,6 +654,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Geselecteerde verwijderen</string>
   <string name="conversation_list_batch__menu_select_all">Alles selecteren</string>
+  <string name="conversation_list_batch__menu_send_drafts">Verzend geselecteerde concepten</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Archiveer geselecteerde</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Haal geselecteerde terug uit het archief</string>
   <!--conversation_list-->

@@ -170,6 +170,11 @@
     <item quantity="one">Разговорът е преместен във входящата кутия</item>
     <item quantity="other">%d разговора са преместени във входящата кутия</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Изпращане на чернова</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Това ще изпрати черновите на избраните разговори.</string>
+  <string name="ConversationListFragment_send">Изпращане</string>
+  <string name="ConversationListFragment_sending">Изпращане</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Изпращане на избраните чернови...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Съобщение за обмяна на ключовете...</string>
   <!--ConversationListItemAction-->
@@ -660,6 +665,7 @@
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Изтрий избраните</string>
   <string name="conversation_list_batch__menu_select_all">Избери всичко</string>
+  <string name="conversation_list_batch__menu_send_drafts">Изпращане на следните чернови</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Архивиране на избраните</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Разхивиране на избраните</string>
   <!--conversation_list-->

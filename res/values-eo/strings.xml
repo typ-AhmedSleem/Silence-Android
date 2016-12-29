@@ -173,6 +173,11 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
     <item quantity="one">Movis interparoladon al la Ricevujo</item>
     <item quantity="other">Movis %d interparoladojn al la Ricevujo</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Sendi malnetojn</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Tio ĉi sendos malnetojn de elektitaj interparoladoj.</string>
+  <string name="ConversationListFragment_send">Sendi</string>
+  <string name="ConversationListFragment_sending">Sendado</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Sendado de elektitaj malnetoj...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Ŝlosilo-interŝanĝo mesaĝo...</string>
   <!--ConversationListItemAction-->
@@ -652,6 +657,7 @@ Ricevis ŝlosilo-interŝanĝon mesaĝon por malkorekta versio de protokolo.</str
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Forigi elektitajn</string>
   <string name="conversation_list_batch__menu_select_all">Elekti ĉiujn</string>
+  <string name="conversation_list_batch__menu_send_drafts">Sendi elektitajn malnetojn</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Arĥivigi elektitajn</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Malarĥivigi elektitajn</string>
   <!--conversation_list-->

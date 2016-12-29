@@ -168,6 +168,11 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
     <item quantity="one">1 conversa movida para a caixa de entrada</item>
     <item quantity="other">%d conversas movidas para a caixa de entrada</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Enviar rascunhos</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Isto irá enviar os rascunhos das conversas selecionadas</string>
+  <string name="ConversationListFragment_send">Enviar</string>
+  <string name="ConversationListFragment_sending">A enviar</string>
+  <string name="ConversationListFragment_sending_selected_drafts">A enviar os rascunhos selecionados...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mensagem de intercâmbio de chaves...</string>
   <!--ConversationListItemAction-->
@@ -650,6 +655,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Apagar seleção</string>
   <string name="conversation_list_batch__menu_select_all">Selecionar tudo</string>
+  <string name="conversation_list_batch__menu_send_drafts">Enviar rascunhos selecionados</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Arquivar seleção</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Desarquivar seleção</string>
   <!--conversation_list-->

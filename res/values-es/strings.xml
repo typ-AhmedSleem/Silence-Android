@@ -170,6 +170,11 @@
     <item quantity="one">Se movió la conversación a la bandeja de entrada</item>
     <item quantity="other">Se movieron %d conversaciones a la bandeja de entrada</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Enviar borradores</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Esto enviará los borradores de las conversaciones seleccionadas</string>
+  <string name="ConversationListFragment_send">Enviar</string>
+  <string name="ConversationListFragment_sending">Enviando</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Enviando borradores seleccionados...</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de claves...</string>
   <!--ConversationListItemAction-->
@@ -663,6 +668,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Borrar seleccionado</string>
   <string name="conversation_list_batch__menu_select_all">Seleccionar todo</string>
+  <string name="conversation_list_batch__menu_send_drafts">Enviar borradores seleccionados</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Archivar seleccionado</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Desarchivar seleccionado</string>
   <!--conversation_list-->

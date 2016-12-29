@@ -155,6 +155,11 @@
   <plurals name="ConversationListFragment_moved_conversations_to_inbox">
     <item quantity="other">%d の会話を受信トレイに移動しました</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">下書きを送信</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">これは選択した会話の下書きを送信します。</string>
+  <string name="ConversationListFragment_send">送信</string>
+  <string name="ConversationListFragment_sending">送信中</string>
+  <string name="ConversationListFragment_sending_selected_drafts">選択した下書きを送信中…</string>
   <!--ConversationListItem-->
   <string name="ConversationListItem_key_exchange_message">鍵交換のメッセージ…</string>
   <!--ConversationListItemAction-->
@@ -640,6 +645,7 @@
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">選択したものを削除</string>
   <string name="conversation_list_batch__menu_select_all">すべて選択</string>
+  <string name="conversation_list_batch__menu_send_drafts">選択した下書きを送信</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">選択したものをアーカイブ</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">選択したものをアーカイブ解除</string>
   <!--conversation_list-->
