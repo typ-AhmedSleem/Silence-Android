@@ -179,7 +179,7 @@ public class EmojiPages {
       "\ud83d\udeb5", "\ud83c\udfce", "\ud83c\udfcd", "\ud83c\udfc5", "\ud83c\udfc6", "\ud83c\udfcf",
       "\ud83c\udfd0", "\ud83c\udfd1", "\ud83c\udfd2", "\ud83c\udfd3", "\ud83c\udff8", "\ud83d\udd79",
     }, "emoji_symbols.png"),
-    /*new StaticEmojiPageModel(R.attr.emoji_category_flags, new String[] {
+    new StaticEmojiPageModel(R.attr.emoji_category_flags, new String[] {
       "\ud83c\udde6\ud83c\udde9", "\ud83c\udde6\ud83c\uddea", "\ud83c\udde6\ud83c\uddeb",
       "\ud83c\udde6\ud83c\uddec", "\ud83c\udde6\ud83c\uddee", "\ud83c\udde6\ud83c\uddf1",
       "\ud83c\udde6\ud83c\uddf2", "\ud83c\udde6\ud83c\uddf4", "\ud83c\udde6\ud83c\uddf7",
@@ -255,7 +255,7 @@ public class EmojiPages {
       "\ud83c\uddff\ud83c\uddf2", "\ud83c\uddff\ud83c\uddfc", "\ud83c\udde6\ud83c\udde8",
       "\ud83c\udde6\ud83c\uddf6", "\ud83c\udde7\ud83c\uddfb", "\ud83c\uddee\ud83c\udde8",
       "\ud83c\uddf8\ud83c\udded", "\ud83c\uddf9\ud83c\udde6",
-    }, "emoji_flags.png"),*/
+    }, "emoji_flags.png"),
     new StaticEmojiPageModel(R.attr.emoji_category_emoticons, new String[] {
       ":-)",          ";-)",          "(-:",          ":->",          ":-D",          "\\o/",
       ":-P",          "B-)",          ":-$",          ":-*",          "O:-)",         "=-O",
