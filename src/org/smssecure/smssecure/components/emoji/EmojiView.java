@@ -15,7 +15,7 @@ public class EmojiView extends View implements Drawable.Callback {
   private String   emoji;
   private Drawable drawable;
 
-  private final Paint paint      = new Paint(Paint.ANTI_ALIAS_FLAG);
+  private final Paint paint      = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
 
   public EmojiView(Context context) {
     this(context, null);
@@ -32,7 +32,7 @@ public class EmojiView extends View implements Drawable.Callback {
   public void setEmoji(String emoji) {
     this.emoji    = emoji;
     this.drawable = EmojiProvider.getInstance(getContext())
-                                 .getEmojiDrawable(Character.codePointAt(emoji, 0));
+                                 .getEmojiDrawable(emoji);
     postInvalidate();
   }
 
