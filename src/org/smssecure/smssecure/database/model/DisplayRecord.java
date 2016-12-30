@@ -78,6 +78,10 @@ public abstract class DisplayRecord {
     return MmsSmsColumns.Types.isOutgoingMessageType(type);
   }
 
+  public boolean isDuplicateMessageType() {
+    return MmsSmsColumns.Types.isDuplicateMessageType(type);
+  }
+
   public abstract SpannableString getDisplayBody();
 
   public Recipients getRecipients() {
