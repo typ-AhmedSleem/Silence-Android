@@ -39,7 +39,9 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.smssecure.smssecure.providers.BadgeWidgetProvider;
 import org.smssecure.smssecure.ConversationActivity;
+import org.smssecure.smssecure.ConversationListActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -195,6 +197,7 @@ public class MessageNotifier {
           (pushCursor == null || pushCursor.isAfterLast()))
       {
         cancelNotification(context);
+        updateBadge(context, 0);
         clearReminder(context);
         return;
       }
@@ -206,6 +209,8 @@ public class MessageNotifier {
       } else {
         sendSingleThreadNotification(context, masterSecret, notificationState, flags);
       }
+
+      updateBadge(context, notificationState.getMessageCount());
 
       if (newNotificationRequested(flags)) {
         scheduleReminder(context, reminderCount);
@@ -453,4 +458,9 @@ public class MessageNotifier {
       clearReminder(context);
     }
   }
+
+  private static void updateBadge(Context context, int count) {
+    BadgeWidgetProvider.getInstance(context, (Class) ConversationListActivity.class).updateBadge(count);
+  }
+
 }
