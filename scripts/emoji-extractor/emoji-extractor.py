@@ -83,3 +83,15 @@ for emoji in emojis:
                     os.rename(args.output + '/emoji_' + emoji + '.png', args.output + '/emoji_u' + code + '.png')
                 except:
                     print '!! Cannot fix emoji_' + emoji + '.png'
+
+# Some flags aren't correctly sorted
+os.rename(args.output + '/emoji_ufe4e5.png', args.output + '/emoji_u1f1ef_u1f1f5.png')
+os.rename(args.output + '/emoji_ufe4e6.png', args.output + '/emoji_u1f1fa_u1f1f8.png')
+os.rename(args.output + '/emoji_ufe4e7.png', args.output + '/emoji_u1f1eb_u1f1f7.png')
+os.rename(args.output + '/emoji_ufe4e8.png', args.output + '/emoji_u1f1e9_u1f1ea.png')
+os.rename(args.output + '/emoji_ufe4e9.png', args.output + '/emoji_u1f1ee_u1f1f9.png')
+os.rename(args.output + '/emoji_ufe4ea.png', args.output + '/emoji_u1f1ec_u1f1e7.png')
+os.rename(args.output + '/emoji_ufe4eb.png', args.output + '/emoji_u1f1ea_u1f1f8.png')
+os.rename(args.output + '/emoji_ufe4ec.png', args.output + '/emoji_u1f1f7_u1f1fa.png')
+os.rename(args.output + '/emoji_ufe4ed.png', args.output + '/emoji_u1f1e8_u1f1f3.png')
+os.rename(args.output + '/emoji_ufe4ee.png', args.output + '/emoji_u1f1f0_u1f1f7.png')
