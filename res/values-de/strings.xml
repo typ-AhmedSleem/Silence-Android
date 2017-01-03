@@ -71,7 +71,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ConversationItem_unable_to_open_media">Keine App zum Öffnen dieser Medieninhalte gefunden.</string>
   <string name="ConversationItem_from_s">von %s</string>
   <string name="ConversationItem_to_s">an %s</string>
-  <string name="ConversationItem_xmpp_address">XMPP-Adresse. Aktualisiere Silence, um diese Funktion zu aktivieren.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP-Adresse. Aktualisiere Silence, um diese Funktion zu aktivieren.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Sichere Unterhaltung starten?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Sichere Unterhaltung mit %s starten?</string>

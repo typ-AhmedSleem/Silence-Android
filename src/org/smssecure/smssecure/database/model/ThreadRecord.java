@@ -77,7 +77,7 @@ public class ThreadRecord extends DisplayRecord {
     } else if (isDuplicateMessageType()) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_duplicate_message));
     } else if (isXmppExchange()) {
-      return emphasisAdded(context.getString(R.string.ConversationItem_xmpp_address));
+      return emphasisAdded(context.getString(R.string.ConversationItem_xmpp_address_update_silence));
     } else if (SmsDatabase.Types.isFailedDecryptType(type)) {
       return emphasisAdded(context.getString(R.string.MessageDisplayHelper_bad_encrypted_message));
     } else if (SmsDatabase.Types.isNoRemoteSessionType(type)) {

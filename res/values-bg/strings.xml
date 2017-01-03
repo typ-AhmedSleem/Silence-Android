@@ -74,7 +74,7 @@
   <string name="ConversationItem_unable_to_open_media">Липсва приложение за отваряне на медията.</string>
   <string name="ConversationItem_from_s">от %s</string>
   <string name="ConversationItem_to_s">до %s</string>
-  <string name="ConversationItem_xmpp_address">XMPP адрес. Обновете Silence, за да активирате тази функция.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP адрес. Обновете Silence, за да активирате тази функция.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започни сигурна сесия?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Започни сигурна сесия с %s?</string>

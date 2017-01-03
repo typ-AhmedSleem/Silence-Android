@@ -75,7 +75,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationItem_unable_to_open_media">Nie można odnaleźć aplikacji do otwarcia tego pliku multimedialnego.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">do %s</string>
-  <string name="ConversationItem_xmpp_address">Adres XMPP. Zaktualizuj Silence aby uaktywnić tę funkcję.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Adres XMPP. Zaktualizuj Silence aby uaktywnić tę funkcję.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Rozpocząć bezpieczną sesję z %s?</string>

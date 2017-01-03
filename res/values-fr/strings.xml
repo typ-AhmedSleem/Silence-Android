@@ -74,7 +74,7 @@ en mesure de les lire.</string>
   <string name="ConversationItem_unable_to_open_media">Impossible de trouver une application pour ouvrir le média.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">vers %s</string>
-  <string name="ConversationItem_xmpp_address">Adresse XMPP. Mettez à jour Silence pour activer cette fonctionnalité.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Adresse XMPP. Mettez à jour Silence pour activer cette fonctionnalité.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Commencer une session chiffrée ?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Commencer une session chiffrée avec %s ?</string>

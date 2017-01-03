@@ -83,7 +83,7 @@
     <string name="ConversationItem_unable_to_open_media">Can\'t find an app able to open this media.</string>
     <string name="ConversationItem_from_s">from %s</string>
     <string name="ConversationItem_to_s">to %s</string>
-    <string name="ConversationItem_xmpp_address">XMPP address. Update Silence to enable this feature.</string>
+    <string name="ConversationItem_xmpp_address_update_silence">XMPP address. Update Silence to enable this feature.</string>
 
     <!-- ConversationActivity -->
     <string name="ConversationActivity_initiate_secure_session_question">Initiate secure session?</string>

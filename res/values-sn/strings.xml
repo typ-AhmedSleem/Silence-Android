@@ -74,7 +74,7 @@ kuzviverenga. </string>
   <string name="ConversationItem_unable_to_open_media">Kushaikwa kwe apu inokwanisa kuvhura midhiya iyi.</string>
   <string name="ConversationItem_from_s">kubva %s</string>
   <string name="ConversationItem_to_s">kuna %s</string>
-  <string name="ConversationItem_xmpp_address">Kero yeXMPP. Natsa Silence kuti ubvumidze cherechedzo iyi.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Kero yeXMPP. Natsa Silence kuti ubvumidze cherechedzo iyi.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Totanga chikamu chakakwedekera here?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Totanga chikamu chakakwedekera na %s here?</string>

@@ -74,7 +74,7 @@
   <string name="ConversationItem_unable_to_open_media">No se pudo encontrar una aplicación capaz de abrir este audiovisual.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">a %s</string>
-  <string name="ConversationItem_xmpp_address">Dirección XMPP. Actualice Silence para habilitar esta característica.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Dirección XMPP. Actualice Silence para habilitar esta característica.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">¿Iniciar sesión segura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">¿Iniciar sesión segura con %s?</string>

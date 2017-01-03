@@ -72,7 +72,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationItem_unable_to_open_media">Não foi encontrada uma aplicação para abrir este ficheiro.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">para %s</string>
-  <string name="ConversationItem_xmpp_address">Endereço XMMP. Atualize o Silence para ativar esta funcionalidade.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Endereço XMMP. Atualize o Silence para ativar esta funcionalidade.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniciar sessão segura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Iniciar sessão segura com %s?</string>

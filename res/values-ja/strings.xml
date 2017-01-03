@@ -70,7 +70,7 @@
   <string name="ConversationItem_unable_to_open_media">このメディアを開くことができるアプリが見つかりません。</string>
   <string name="ConversationItem_from_s">%s から</string>
   <string name="ConversationItem_to_s">%s まで</string>
-  <string name="ConversationItem_xmpp_address">XMPP アドレス。Silence を更新して、この機能を有効にします。</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP アドレス。Silence を更新して、この機能を有効にします。</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">セキュア・セッションを開始しますか？</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%sさんとセキュア・セッションを開始しますか？</string>

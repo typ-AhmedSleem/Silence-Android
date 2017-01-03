@@ -77,7 +77,7 @@
   <string name="ConversationItem_unable_to_open_media">Нема апликације која може да отвори овај медијум.</string>
   <string name="ConversationItem_from_s">од %s</string>
   <string name="ConversationItem_to_s">за %s</string>
-  <string name="ConversationItem_xmpp_address">ИксМПП адреса. Надоградите Сајленс да бисте користили ову функционалност.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">ИксМПП адреса. Надоградите Сајленс да бисте користили ову функционалност.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започети безбедну сесију?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Започети безбедну сесију са %s?</string>

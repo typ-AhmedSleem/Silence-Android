@@ -73,7 +73,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationItem_unable_to_open_media">Ne povas trovi aplikaĵon por malfermi tiun ĉi aŭdvidaĵon.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">al %s</string>
-  <string name="ConversationItem_xmpp_address">XMPP-adreso. Ĝisdatigi Silence por aktivigi tiu ĉi eblon.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP-adreso. Ĝisdatigi Silence por aktivigi tiu ĉi eblon.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Ĉu inici sekuran seancon?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Ĉu inici sekuran seancon kun %s?</string>

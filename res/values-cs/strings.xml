@@ -74,7 +74,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationItem_unable_to_open_media">Není možné nalézt aplikaci vhodnou pro otevření těchto dat.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">pro %s</string>
-  <string name="ConversationItem_xmpp_address">XMPP adresa. Aktualizujte Silence pro povolení této funkce.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP adresa. Aktualizujte Silence pro povolení této funkce.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Navázat zabezpečené spojení?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Navázat zabezpečené spojení s %s?</string>
