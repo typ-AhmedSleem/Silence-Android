@@ -61,7 +61,7 @@ public class SmsReceiveJob extends ContextJob {
           !incomingTextMessage.isKeyExchange()       &&
           !incomingTextMessage.isXmppExchange()))
       {
-        MessageNotifier.updateNotification(context, masterSecret, messageAndThreadId.second, true);
+        MessageNotifier.updateNotification(context, masterSecret, messageAndThreadId.second);
       }
     } else if (message.isPresent()) {
       Log.w(TAG, "*** Received blocked SMS, ignoring...");

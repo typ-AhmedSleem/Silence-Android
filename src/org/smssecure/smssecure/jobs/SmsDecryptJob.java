@@ -88,7 +88,11 @@ public class SmsDecryptJob extends MasterSecretJob {
       else if (message.isXmppExchange())  handleXmppExchangeMessage(masterSecret, messageId, threadId, (IncomingXmppExchangeMessage) message);
       else                                database.updateMessageBody(masterSecret, messageId, message.getMessageBody());
 
-      MessageNotifier.updateNotification(context, masterSecret, MessageNotifier.MNF_DEFAULTS, threadId, !isReceivedWhenLocked);
+      if (!isReceivedWhenLocked) {
+        MessageNotifier.updateNotification(context, masterSecret, MessageNotifier.MNF_LIGHTS_KEEP);
+      } else {
+        MessageNotifier.updateNotification(context, masterSecret);
+      }
     } catch (LegacyMessageException e) {
       Log.w(TAG, e);
       database.markAsLegacyVersion(messageId);
