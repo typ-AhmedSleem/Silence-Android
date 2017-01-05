@@ -42,4 +42,14 @@
     <dimen name="onboarding_watermark_size">140dp</dimen>
     <dimen name="onboarding_title_size">34sp</dimen>
     <dimen name="onboarding_subtitle_size">20sp</dimen>
+
+    <dimen name="widget_corner">20dp</dimen>
+    <dimen name="widget_layout_padding">0dp</dimen>
+    <dimen name="widget_image_padding">0dp</dimen>
+    <dimen name="widget_count_padding_bottom_top">0.5dp</dimen>
+    <dimen name="widget_count_padding_right_left">5dp</dimen>
+    <dimen name="widget_count_text_size">11dp</dimen>
+    <dimen name="widget_app_name_margin_top">2dp</dimen>
+    <dimen name="widget_min_height">34dp</dimen>
+    <dimen name="widget_min_width">34dp</dimen>
 </resources>
