@@ -19,6 +19,8 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.model.ThreadRecord;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.BitmapUtil;
 
 import java.util.LinkedList;
@@ -45,16 +47,15 @@ public class DirectShareService extends ChooserTargetService {
       ThreadDatabase.Reader reader = threadDatabase.readerFor(cursor, new MasterCipher(masterSecret));
       ThreadRecord record;
 
-      while ((record = reader.getNext()) != null) {
-        String   name     = record.getRecipients().toShortString();
-        Drawable drawable = record.getRecipients().getContactPhoto()
-                                  .asDrawable(this, record.getRecipients().getColor()
-                                                          .toConversationColor(this));
-        Bitmap   avatar   = BitmapUtil.createFromDrawable(drawable, 500, 500);
+      while ((record = reader.getNext()) != null && results.size() < 10) {
+        Recipients recipients = RecipientFactory.getRecipientsForIds(this, record.getRecipients().getIds(), false);
+        String     name       = recipients.toShortString();
+        Drawable   drawable   = recipients.getContactPhoto().asDrawable(this, recipients.getColor().toConversationColor(this));
+        Bitmap     avatar     = BitmapUtil.createFromDrawable(drawable, 500, 500);
 
         Bundle bundle = new Bundle();
         bundle.putLong(ShareActivity.EXTRA_THREAD_ID, record.getThreadId());
-        bundle.putLongArray(ShareActivity.EXTRA_RECIPIENT_IDS, record.getRecipients().getIds());
+        bundle.putLongArray(ShareActivity.EXTRA_RECIPIENT_IDS, recipients.getIds());
         bundle.putInt(ShareActivity.EXTRA_DISTRIBUTION_TYPE, record.getDistributionType());
 
         results.add(new ChooserTarget(name, Icon.createWithBitmap(avatar), 1.0f, componentName, bundle));
