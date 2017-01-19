@@ -116,6 +116,7 @@ import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
+import org.smssecure.smssecure.util.views.Stub;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
@@ -180,7 +181,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   AttachmentManager             attachmentManager;
   private   BroadcastReceiver             securityUpdateReceiver;
   private   BroadcastReceiver             groupUpdateReceiver;
-  private   EmojiDrawer                   emojiDrawer;
+  private   Stub<EmojiDrawer>             emojiDrawerStub;
   private   EmojiToggle                   emojiToggle;
 
   private Recipients recipients;
@@ -277,7 +278,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     Log.w(TAG, "onConfigurationChanged(" + newConfig.orientation + ")");
     super.onConfigurationChanged(newConfig);
     composeText.setTransport(sendButton.getSelectedTransport());
-    if (container.getCurrentInput() == emojiDrawer) container.hideAttachedInput(true);
+
+    if (emojiDrawerStub.resolved() && container.getCurrentInput() == emojiDrawerStub.get()) {
+      container.hideAttachedInput(true);
+    }
   }
 
   @Override
@@ -796,18 +800,18 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeViews() {
-    titleView      = (ConversationTitleView) getSupportActionBar().getCustomView();
-    buttonToggle   = ViewUtil.findById(this, R.id.button_toggle);
-    sendButton     = ViewUtil.findById(this, R.id.send_button);
-    attachButton   = ViewUtil.findById(this, R.id.attach_button);
-    composeText    = ViewUtil.findById(this, R.id.embedded_text_editor);
-    charactersLeft = ViewUtil.findById(this, R.id.space_left);
-    emojiToggle    = ViewUtil.findById(this, R.id.emoji_toggle);
-    emojiDrawer    = ViewUtil.findById(this, R.id.emoji_drawer);
-    unblockButton  = ViewUtil.findById(this, R.id.unblock_button);
-    composePanel   = ViewUtil.findById(this, R.id.bottom_panel);
-    composeBubble  = ViewUtil.findById(this, R.id.compose_bubble);
-    container      = ViewUtil.findById(this, R.id.layout_container);
+    titleView       = (ConversationTitleView) getSupportActionBar().getCustomView();
+    buttonToggle    = ViewUtil.findById(this, R.id.button_toggle);
+    sendButton      = ViewUtil.findById(this, R.id.send_button);
+    attachButton    = ViewUtil.findById(this, R.id.attach_button);
+    composeText     = ViewUtil.findById(this, R.id.embedded_text_editor);
+    charactersLeft  = ViewUtil.findById(this, R.id.space_left);
+    emojiToggle     = ViewUtil.findById(this, R.id.emoji_toggle);
+    emojiDrawerStub = ViewUtil.findStubById(this, R.id.emoji_drawer_stub);
+    unblockButton   = ViewUtil.findById(this, R.id.unblock_button);
+    composePanel    = ViewUtil.findById(this, R.id.bottom_panel);
+    composeBubble   = ViewUtil.findById(this, R.id.compose_bubble);
+    container       = ViewUtil.findById(this, R.id.layout_container);
 
     if (SilencePreferences.isEmojiDrawerDisabled(this))
       emojiToggle.setVisibility(View.GONE);
@@ -827,9 +831,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     SendButtonListener        sendButtonListener        = new SendButtonListener();
     ComposeKeyPressedListener composeKeyPressedListener = new ComposeKeyPressedListener();
 
-    emojiToggle.attach(emojiDrawer);
+    emojiToggle.attach(emojiDrawerStub.get());
     emojiToggle.setOnClickListener(new EmojiToggleListener());
-    emojiDrawer.setEmojiEventListener(new EmojiEventListener() {
+    emojiDrawerStub.get().setEmojiEventListener(new EmojiEventListener() {
       @Override public void onKeyEvent(KeyEvent keyEvent) {
         composeText.dispatchKeyEvent(keyEvent);
       }
@@ -1306,8 +1310,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private class EmojiToggleListener implements OnClickListener {
 
     @Override public void onClick(View v) {
-      if (container.getCurrentInput() == emojiDrawer) container.showSoftkey(composeText);
-      else                                            container.show(composeText, emojiDrawer);
+      if (container.getCurrentInput() == emojiDrawerStub.get()) {
+        container.showSoftkey(composeText);
+      } else {
+        container.show(composeText, emojiDrawerStub.get());
+      }
     }
   }
 
