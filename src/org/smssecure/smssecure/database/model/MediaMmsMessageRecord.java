@@ -25,6 +25,7 @@ import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase.Status;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
 import org.smssecure.smssecure.database.documents.NetworkFailure;
+import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -40,12 +41,11 @@ import java.util.List;
  *
  */
 
-public class MediaMmsMessageRecord extends MessageRecord {
+public class MediaMmsMessageRecord extends MmsMessageRecord {
   private final static String TAG = MediaMmsMessageRecord.class.getSimpleName();
 
   private final Context context;
-  private final int partCount;
-  private final @NonNull SlideDeck slideDeck;
+  private final int     partCount;
 
   public MediaMmsMessageRecord(Context context, long id, Recipients recipients,
                                Recipient individualRecipient, int recipientDeviceId,
@@ -57,19 +57,11 @@ public class MediaMmsMessageRecord extends MessageRecord {
                                List<NetworkFailure> failures, int subscriptionId)
   {
     super(context, id, body, recipients, individualRecipient, recipientDeviceId, dateSent,
-          dateReceived, threadId, Status.STATUS_NONE, dateDeliveryReceived, mailbox, mismatches, failures, subscriptionId);
+          dateReceived, threadId, Status.STATUS_NONE, dateDeliveryReceived, mailbox, mismatches, failures,
+          subscriptionId, slideDeck);
 
     this.context   = context.getApplicationContext();
     this.partCount = partCount;
-    this.slideDeck = slideDeck;
-  }
-
-  public @NonNull SlideDeck getSlideDeck() {
-    return slideDeck;
-  }
-
-  public boolean containsMediaSlide() {
-    return slideDeck.containsMediaSlide();
   }
 
   public int getPartCount() {
@@ -77,12 +69,18 @@ public class MediaMmsMessageRecord extends MessageRecord {
   }
 
   @Override
-  public boolean isMms() {
-    return true;
+  public boolean isMmsNotification() {
+    return false;
   }
 
   @Override
-  public boolean isMmsNotification() {
+  public boolean isMediaPending() {
+    for (Slide slide : getSlideDeck().getSlides()) {
+      if (slide.isInProgress() || slide.isPendingDownload()) {
+        return true;
+      }
+    }
+
     return false;
   }
 

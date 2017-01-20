@@ -18,6 +18,7 @@ import org.smssecure.smssecure.mms.AudioSlide;
 import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
 import org.smssecure.smssecure.mms.GifSlide;
 import org.smssecure.smssecure.mms.ImageSlide;
+import org.smssecure.smssecure.mms.MmsSlide;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.VideoSlide;
@@ -83,6 +84,8 @@ public class MediaUtil {
       slide = new VideoSlide(context, attachment);
     } else if (isAudioType(attachment.getContentType())) {
       slide = new AudioSlide(context, attachment);
+    } else if (isMms(attachment.getContentType())) {
+      slide = new MmsSlide(context, attachment);
     }
 
     return slide;
@@ -146,6 +149,10 @@ public class MediaUtil {
 
   public static boolean isVideo(Attachment attachment) {
     return isVideoType(attachment.getContentType());
+  }
+
+  public static boolean isMms(String contentType) {
+    return !TextUtils.isEmpty(contentType) && contentType.trim().equals("application/mms");
   }
 
   public static boolean isGif(String contentType) {

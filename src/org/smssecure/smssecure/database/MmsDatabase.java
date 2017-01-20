@@ -37,6 +37,7 @@ import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.attachments.DatabaseAttachment;
+import org.smssecure.smssecure.attachments.MmsNotificationAttachment;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
@@ -829,29 +830,6 @@ public class MmsDatabase extends MessagingDatabase {
     public static final int DOWNLOAD_SOFT_FAILURE    = 4;
     public static final int DOWNLOAD_HARD_FAILURE    = 5;
     public static final int DOWNLOAD_APN_UNAVAILABLE = 6;
-
-    public static boolean isDisplayDownloadButton(Context context, int status) {
-      return
-          status == DOWNLOAD_INITIALIZED     ||
-          status == DOWNLOAD_NO_CONNECTIVITY ||
-          status == DOWNLOAD_SOFT_FAILURE    ||
-         (status == DOWNLOAD_APN_UNAVAILABLE && SilencePreferences.seenManualMmsSettings(context));
-    }
-
-    public static String getLabelForStatus(Context context, int status) {
-      switch (status) {
-        case DOWNLOAD_CONNECTING:      return context.getString(R.string.MmsDatabase_connecting_to_mms_server);
-        case DOWNLOAD_INITIALIZED:     return context.getString(R.string.MmsDatabase_downloading_mms);
-        case DOWNLOAD_HARD_FAILURE:    return context.getString(R.string.MmsDatabase_mms_download_failed);
-        case DOWNLOAD_APN_UNAVAILABLE: return context.getString(R.string.MmsDatabase_mms_pending_download);
-      }
-
-      return context.getString(R.string.MmsDatabase_downloading);
-    }
-
-    public static boolean isHardError(int status) {
-      return status == DOWNLOAD_HARD_FAILURE;
-    }
   }
 
   public static class MmsNotificationInfo {
@@ -936,11 +914,12 @@ public class MmsDatabase extends MessagingDatabase {
       if (!TextUtils.isEmpty(transactionId))
         transactionIdBytes = org.smssecure.smssecure.util.Util.toIsoBytes(transactionId);
 
+      SlideDeck slideDeck = new SlideDeck(context, new MmsNotificationAttachment(status, messageSize));
 
       return new NotificationMmsMessageRecord(context, id, recipients, recipients.getPrimaryRecipient(),
                                               addressDeviceId, dateSent, dateReceived, dateDeliveryReceived, threadId,
                                               contentLocationBytes, messageSize, expiry, status,
-                                              transactionIdBytes, mailbox, subscriptionId);
+                                              transactionIdBytes, mailbox, subscriptionId, slideDeck);
     }
 
     private MediaMmsMessageRecord getMediaMmsMessageRecord(Cursor cursor) {

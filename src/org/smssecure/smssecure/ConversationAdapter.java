@@ -39,8 +39,8 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.MmsSmsDatabase;
 import org.smssecure.smssecure.database.SmsDatabase;
-import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
+import org.smssecure.smssecure.database.model.MmsMessageRecord;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.LRUCache;
@@ -76,6 +76,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
 {
 
   private static final int MAX_CACHE_SIZE = 40;
+  private static final String TAG = ConversationAdapter.class.getName();
   private final Map<String,SoftReference<MessageRecord>> messageRecordCache =
       Collections.synchronizedMap(new LRUCache<String, SoftReference<MessageRecord>>(MAX_CACHE_SIZE));
 
@@ -184,10 +185,12 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     MessageRecord messageRecord = getMessageRecord(cursor);
 
     viewHolder.getView().bind(masterSecret, messageRecord, locale, batchSelected, recipients);
+    Log.w(TAG, "Bind time: " + (System.currentTimeMillis() - start));
   }
 
   @Override
   public ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
+    long start = System.currentTimeMillis();
     final V itemView = ViewUtil.inflate(inflater, parent, getLayoutForViewType(viewType));
     if (viewType == MESSAGE_TYPE_INCOMING || viewType == MESSAGE_TYPE_OUTGOING) {
       itemView.setOnClickListener(new OnClickListener() {
@@ -204,7 +207,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
         }
       });
     }
-
+    Log.w(TAG, "Inflate time: " + (System.currentTimeMillis() - start));
     return new ViewHolder(itemView);
   }
 
@@ -300,9 +303,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
   }
 
   private boolean hasAudio(MessageRecord messageRecord) {
-    return messageRecord.isMms() &&
-        !messageRecord.isMmsNotification() &&
-        ((MediaMmsMessageRecord)messageRecord).getSlideDeck().getAudioSlide() != null;
+    return messageRecord.isMms() && ((MmsMessageRecord)messageRecord).getSlideDeck().getAudioSlide() != null;
   }
 
   @Override
