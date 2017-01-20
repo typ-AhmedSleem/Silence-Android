@@ -41,7 +41,8 @@
                  android:supportsRtl="true"
                  tools:replace="android:allowBackup"
                  android:allowBackup="false"
-                 android:theme="@style/Silence.LightTheme">
+                 android:theme="@style/Silence.LightTheme"
+                 android:largeHeap="true">
 
     <receiver android:name="org.smssecure.smssecure.providers.BadgeWidgetProvider"
               android:icon="@drawable/icon"
