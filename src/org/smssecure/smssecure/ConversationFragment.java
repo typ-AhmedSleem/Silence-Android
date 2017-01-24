@@ -61,6 +61,7 @@ import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.SaveAttachmentTask;
 import org.smssecure.smssecure.util.SaveAttachmentTask.Attachment;
+import org.smssecure.smssecure.util.StickyHeaderDecoration;
 import org.smssecure.smssecure.util.ViewUtil;
 
 import java.util.Collections;
@@ -169,7 +170,10 @@ public class ConversationFragment extends Fragment
 
   private void initializeListAdapter() {
     if (this.recipients != null && this.threadId != -1) {
-      list.setAdapter(new ConversationAdapter(getActivity(), masterSecret, locale, selectionClickListener, null, this.recipients));
+      ConversationAdapter adapter = new ConversationAdapter(getActivity(), masterSecret, locale, selectionClickListener, null, this.recipients);
+      list.setAdapter(adapter);
+      list.addItemDecoration(new StickyHeaderDecoration(adapter, false));
+
       getLoaderManager().restartLoader(0, Bundle.EMPTY, this);
       list.getItemAnimator().setMoveDuration(120);
     }
