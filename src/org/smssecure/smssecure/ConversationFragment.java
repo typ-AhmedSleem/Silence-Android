@@ -48,8 +48,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.smssecure.smssecure.ConversationAdapter.HeaderViewHolder;
 import org.smssecure.smssecure.ConversationAdapter.ItemClickListener;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -95,6 +97,7 @@ public class ConversationFragment extends Fragment
   private View         loadMoreView;
   private View         composeDivider;
   private View         scrollToBottomButton;
+  private TextView     scrollDateHeader;
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -109,6 +112,7 @@ public class ConversationFragment extends Fragment
     list                 = ViewUtil.findById(view, android.R.id.list);
     composeDivider       = ViewUtil.findById(view, R.id.compose_divider);
     scrollToBottomButton = ViewUtil.findById(view, R.id.scroll_to_bottom_button);
+    scrollDateHeader     = ViewUtil.findById(view, R.id.scroll_date_header);
 
     scrollToBottomButton.setOnClickListener(new OnClickListener() {
       @Override
@@ -185,7 +189,7 @@ public class ConversationFragment extends Fragment
     if (this.recipients != null && this.threadId != -1) {
       ConversationAdapter adapter = new ConversationAdapter(getActivity(), masterSecret, locale, selectionClickListener, null, this.recipients);
       list.setAdapter(adapter);
-      list.addItemDecoration(new StickyHeaderDecoration(adapter, false));
+      list.addItemDecoration(new StickyHeaderDecoration(adapter, false, false));
 
       getLoaderManager().restartLoader(0, Bundle.EMPTY, this);
       list.getItemAnimator().setMoveDuration(120);
@@ -407,15 +411,18 @@ public class ConversationFragment extends Fragment
 
   private class ConversationScrollListener extends OnScrollListener {
 
-    private final Animation scrollButtonInAnimation;
-    private final Animation scrollButtonOutAnimation;
+    private final Animation              scrollButtonInAnimation;
+    private final Animation              scrollButtonOutAnimation;
+    private final ConversationDateHeader conversationDateHeader;
 
     private boolean wasAtBottom           = true;
     private boolean wasAtZoomScrollHeight = false;
+    private long    lastPositionId        = -1;
 
     ConversationScrollListener(@NonNull Context context) {
       this.scrollButtonInAnimation  = AnimationUtils.loadAnimation(context, R.anim.fade_scale_in);
       this.scrollButtonOutAnimation = AnimationUtils.loadAnimation(context, R.anim.fade_scale_out);
+      this.conversationDateHeader   = new ConversationDateHeader(context, scrollDateHeader);
 
       this.scrollButtonInAnimation.setDuration(100);
       this.scrollButtonOutAnimation.setDuration(50);
@@ -425,6 +432,7 @@ public class ConversationFragment extends Fragment
     public void onScrolled(final RecyclerView rv, final int dx, final int dy) {
       boolean currentlyAtBottom           = isAtBottom();
       boolean currentlyAtZoomScrollHeight = isAtZoomScrollHeight();
+      int     positionId                  = getHeaderPositionId();
 
       if (currentlyAtBottom && !wasAtBottom) {
         ViewUtil.fadeOut(composeDivider, 50, View.INVISIBLE);
@@ -437,8 +445,22 @@ public class ConversationFragment extends Fragment
         ViewUtil.animateIn(scrollToBottomButton, scrollButtonInAnimation);
       }
 
+      if (positionId != lastPositionId) {
+        bindScrollHeader(conversationDateHeader, positionId);
+      }
+
       wasAtBottom           = currentlyAtBottom;
       wasAtZoomScrollHeight = currentlyAtZoomScrollHeight;
+      lastPositionId        = positionId;
+    }
+
+    @Override
+    public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+      if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+        conversationDateHeader.show();
+      } else if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+        conversationDateHeader.hide();
+      }
     }
 
     private boolean isAtBottom() {
@@ -453,6 +475,14 @@ public class ConversationFragment extends Fragment
 
     private boolean isAtZoomScrollHeight() {
       return ((LinearLayoutManager) list.getLayoutManager()).findFirstCompletelyVisibleItemPosition() > 4;
+    }
+
+    private int getHeaderPositionId() {
+      return ((LinearLayoutManager)list.getLayoutManager()).findLastVisibleItemPosition();
+    }
+
+    private void bindScrollHeader(HeaderViewHolder headerViewHolder, int positionId) {
+      ((ConversationAdapter)list.getAdapter()).onBindHeaderViewHolder(headerViewHolder, positionId);
     }
   }
 
@@ -549,6 +579,45 @@ public class ConversationFragment extends Fragment
       }
 
       return false;
+    }
+  }
+
+  private static class ConversationDateHeader extends HeaderViewHolder {
+
+    private final Animation animateIn;
+    private final Animation animateOut;
+
+    private boolean pendingHide = false;
+
+    private ConversationDateHeader(Context context, TextView textView) {
+      super(textView);
+      this.animateIn  = AnimationUtils.loadAnimation(context, R.anim.slide_from_top);
+      this.animateOut = AnimationUtils.loadAnimation(context, R.anim.slide_to_top);
+
+      this.animateIn.setDuration(100);
+      this.animateOut.setDuration(100);
+    }
+
+    public void show() {
+      if (pendingHide) {
+        pendingHide = false;
+      } else {
+        ViewUtil.animateIn(textView, animateIn);
+      }
+    }
+
+    public void hide() {
+      pendingHide = true;
+
+      textView.postDelayed(new Runnable() {
+        @Override
+        public void run() {
+          if (pendingHide) {
+            pendingHide = false;
+            ViewUtil.animateOut(textView, animateOut, View.GONE);
+          }
+        }
+      }, 400);
     }
   }
 }
