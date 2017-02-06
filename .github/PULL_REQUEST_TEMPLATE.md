@@ -1,4 +1,5 @@
 <!-- Please ensure that:
+- You are requesting `unstable` as base branch
 - You have followed the Code Style Guidelines: https://github.com/WhisperSystems/Signal-Android/wiki/Code-Style-Guidelines
 - Your contribution is ready to be merged as is
 -->
