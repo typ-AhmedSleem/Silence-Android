@@ -30,6 +30,7 @@ import android.text.TextUtils;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -76,6 +77,8 @@ import org.whispersystems.libaxolotl.util.guava.Optional;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A view that displays an individual conversation item within a conversation
@@ -122,6 +125,26 @@ public class ConversationItem extends LinearLayout
   private final AttachmentDownloadClickListener downloadClickListener       = new AttachmentDownloadClickListener();
 
   private final Context context;
+
+  private static final Pattern XMPP_PATTERN = Pattern.compile("xmpp:[^\\s\"\':,]+", Pattern.CASE_INSENSITIVE);
+  public static Pattern GEO_URI_PATTERN = Pattern.compile("geo:-?[0-9\\.]+,-?[0-9\\.]+(;[^\\s\"\':]+)?", Pattern.CASE_INSENSITIVE);
+
+  private static final Linkify.TransformFilter WEBURL_TRANSFORM = new Linkify.TransformFilter() {
+    @Override
+    public String transformUrl(Matcher matcher, String url) {
+      if (url == null) {
+        return null;
+      }
+
+      String[] split = url.split(":", 2);
+      if (split.length == 2){
+        return split[0].toLowerCase() + ":" + split[1];
+      }
+      else{
+        return "http://" + url;
+      }
+    }
+  };
 
   public ConversationItem(Context context) {
     this(context, null);
@@ -256,7 +279,6 @@ public class ConversationItem extends LinearLayout
     mediaThumbnail.setFocusable(!shouldInterceptClicks(messageRecord) && batchSelected.isEmpty());
     mediaThumbnail.setClickable(!shouldInterceptClicks(messageRecord) && batchSelected.isEmpty());
     mediaThumbnail.setLongClickable(batchSelected.isEmpty());
-    bodyText.setAutoLinkMask(batchSelected.isEmpty() ? Linkify.ALL : 0);
 
     if (audioViewStub.resolved()) {
       audioViewStub.get().setFocusable(!shouldInterceptClicks(messageRecord) && batchSelected.isEmpty());
@@ -290,6 +312,26 @@ public class ConversationItem extends LinearLayout
     } else {
       bodyText.setText(messageRecord.getDisplayBody());
       bodyText.setVisibility(View.VISIBLE);
+      linkifyBodyText();
+    }
+    linkifyBodyText();
+  }
+
+  private void linkifyBodyText() {
+    if (batchSelected.isEmpty()) {
+      Linkify.addLinks(bodyText, XMPP_PATTERN, "xmpp:");
+      Linkify.addLinks(bodyText, GEO_URI_PATTERN, "geo:");
+
+      /*
+       * Linkify.addLinks(bodyText, Linkify.ALL) conflicts with custom patterns, so
+       * we recreate patterns by hand.
+       */
+      Linkify.addLinks(bodyText, Patterns.WEB_URL, null, Linkify.sUrlMatchFilter, WEBURL_TRANSFORM);
+      Linkify.addLinks(bodyText, Patterns.EMAIL_ADDRESS, "mailto:");
+      Linkify.addLinks(bodyText, Patterns.PHONE, "tel:");
+    } else {
+      Log.w(TAG, "batchSelected is not empty!");
+      bodyText.setAutoLinkMask(0);
     }
   }
 
@@ -415,7 +457,7 @@ public class ConversationItem extends LinearLayout
     return batchSelected.isEmpty() &&
            ((messageRecord.isFailed() && !messageRecord.isMmsNotification()) ||
            messageRecord.isKeyExchange());
-}
+  }
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
     if (groupThread && !messageRecord.isOutgoing()) {
