@@ -63,10 +63,12 @@ import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
-import org.smssecure.smssecure.util.TelephonyUtil;
-import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.dualsim.SubscriptionInfoCompat;
 import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
+import org.smssecure.smssecure.util.DynamicTheme;
+import org.smssecure.smssecure.util.TelephonyUtil;
+import org.smssecure.smssecure.util.Util;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.util.HashSet;
@@ -223,11 +225,24 @@ public class ConversationItem extends LinearLayout
     if (messageRecord.isOutgoing()) {
       bodyBubble.getBackground().setColorFilter(defaultBubbleColor, PorterDuff.Mode.MULTIPLY);
       mediaThumbnail.setBackgroundColorHint(defaultBubbleColor);
-      audioView.setTint(conversationRecipients.getColor().toConversationColor(context));
     } else {
       int color = recipient.getColor().toConversationColor(context);
       bodyBubble.getBackground().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
       mediaThumbnail.setBackgroundColorHint(color);
+    }
+
+    setAudioViewTint(messageRecord, conversationRecipients);
+  }
+
+  private void setAudioViewTint(MessageRecord messageRecord, Recipients recipients) {
+    if (messageRecord.isOutgoing()) {
+      if (DynamicTheme.LIGHT.equals(SilencePreferences.getTheme(context))) {
+        audioView.setTint(recipients.getColor().toConversationColor(context), defaultBubbleColor);
+      } else {
+        audioView.setTint(Color.WHITE, defaultBubbleColor);
+      }
+    } else {
+      audioView.setTint(Color.WHITE, recipients.getColor().toConversationColor(context));
     }
   }
 

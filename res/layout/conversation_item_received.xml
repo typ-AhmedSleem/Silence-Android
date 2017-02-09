@@ -64,7 +64,8 @@
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
-                    app:tintColor="@color/white"
+                    app:foregroundTintColor="@color/white"
+                    app:backgroundTintColor="@color/blue_500"
                     tools:visibility="visible"/>
 
             <org.smssecure.smssecure.components.emoji.EmojiTextView
