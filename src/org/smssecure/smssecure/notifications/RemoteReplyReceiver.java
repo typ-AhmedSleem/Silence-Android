@@ -88,6 +88,8 @@ public class RemoteReplyReceiver extends MasterSecretBroadcastReceiver {
           }
 
           DatabaseFactory.getThreadDatabase(context).setRead(threadId);
+          DatabaseFactory.getThreadDatabase(context).setLastSeen(threadId);
+
           MessageNotifier.updateNotification(context, masterSecret);
 
           return null;

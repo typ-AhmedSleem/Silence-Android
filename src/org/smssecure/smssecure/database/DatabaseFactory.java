@@ -73,8 +73,14 @@ public class DatabaseFactory {
   private static final int INTRODUCED_CONVERSATION_LIST_STATUS_VERSION     = 25;
   private static final int MIGRATED_CONVERSATION_LIST_STATUS_VERSION       = 26;
   private static final int INTRODUCED_SUBSCRIPTION_ID_VERSION              = 28;
-  private static final int INTRODUCED_XMPP_TRANSPORT                       = 29;
-  private static final int DATABASE_VERSION                                = 28;
+  private static final int INTRODUCED_LAST_SEEN                            = 29;
+
+  /*
+   * Yes, INTRODUCED_XMPP_TRANSPORT > DATABASE_VERSION to allow database
+   * downgrade when XMPP transport will be included in unstable branch.
+   */
+  private static final int INTRODUCED_XMPP_TRANSPORT                       = 30;
+  private static final int DATABASE_VERSION                                = 29;
 
   private static final String DATABASE_NAME    = "messages.db";
   private static final Object lock             = new Object();
@@ -826,6 +832,10 @@ public class DatabaseFactory {
         db.execSQL("ALTER TABLE recipient_preferences ADD COLUMN default_subscription_id INTEGER DEFAULT -1");
         db.execSQL("ALTER TABLE sms ADD COLUMN subscription_id INTEGER DEFAULT -1");
         db.execSQL("ALTER TABLE mms ADD COLUMN subscription_id INTEGER DEFAULT -1");
+      }
+
+      if (oldVersion < INTRODUCED_LAST_SEEN) {
+        db.execSQL("ALTER TABLE thread ADD COLUMN last_seen INTEGER DEFAULT 0");
       }
 
       db.setTransactionSuccessful();

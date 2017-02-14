@@ -36,6 +36,7 @@ public class MarkReadReceiver extends MasterSecretBroadcastReceiver {
           for (long threadId : threadIds) {
             Log.w(TAG, "Marking as read: " + threadId);
             DatabaseFactory.getThreadDatabase(context).setRead(threadId);
+            DatabaseFactory.getThreadDatabase(context).setLastSeen(threadId);
           }
 
           MessageNotifier.updateNotification(context, masterSecret);
