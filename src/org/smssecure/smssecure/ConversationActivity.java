@@ -320,10 +320,16 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public void startActivity(Intent intent) {
-    if (intent.getStringExtra(Browser.EXTRA_APPLICATION_ID) != null) {
-      intent.removeExtra(Browser.EXTRA_APPLICATION_ID);
+    try {
+      if (intent.getStringExtra(Browser.EXTRA_APPLICATION_ID) != null) {
+        intent.removeExtra(Browser.EXTRA_APPLICATION_ID);
+      }
+      super.startActivity(intent);
+      Log.d(TAG, "Opened link: " + intent.getDataString());
+    } catch (ActivityNotFoundException anfe) {
+      Log.w(TAG, "No app found to view the link '" + intent.getDataString() + "', ignoring...");
+      Toast.makeText(this, R.string.ConversationActivity_cant_open_link, Toast.LENGTH_SHORT).show();
     }
-    super.startActivity(intent);
   }
 
   @Override
