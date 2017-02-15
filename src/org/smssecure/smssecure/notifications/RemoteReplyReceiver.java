@@ -26,12 +26,14 @@ import android.support.v4.app.RemoteInput;
 
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.crypto.SessionUtil;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
+import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -73,7 +75,15 @@ public class RemoteReplyReceiver extends MasterSecretBroadcastReceiver {
             OutgoingMediaMessage reply = new OutgoingMediaMessage(recipients, responseText.toString(), new LinkedList<Attachment>(), System.currentTimeMillis(), subscriptionId, 0);
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
           } else {
-            OutgoingTextMessage reply = new OutgoingTextMessage(recipients, responseText.toString(), subscriptionId);
+            boolean secure = SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient());
+
+            OutgoingTextMessage reply;
+            if (!secure) {
+              reply = new OutgoingTextMessage(recipients, responseText.toString(), subscriptionId);
+            } else {
+              reply = new OutgoingEncryptedMessage(recipients, responseText.toString(), subscriptionId);
+            }
+
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
           }
 
