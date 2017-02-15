@@ -2,7 +2,6 @@ language: android
 cache:
   directories:
   - $HOME/.android
-  - $HOME/.gradle
 sudo: false
 
 android:
