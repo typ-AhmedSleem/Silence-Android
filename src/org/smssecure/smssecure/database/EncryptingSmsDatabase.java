@@ -63,7 +63,7 @@ public class EncryptingSmsDatabase extends SmsDatabase {
                                   OutgoingTextMessage message, boolean forceSms,
                                   long timestamp)
   {
-    long type = Types.BASE_OUTBOX_TYPE;
+    long type = Types.BASE_SENDING_TYPE;
     message   = message.withBody(getEncryptedBody(masterSecret, message.getMessageBody()));
     type     |= Types.ENCRYPTION_SYMMETRIC_BIT;
 
