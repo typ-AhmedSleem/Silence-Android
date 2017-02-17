@@ -28,7 +28,7 @@
                         app:matProg_barColor="@color/white"
                         app:matProg_linearProgress="true"
                         app:matProg_spinSpeed="0.333"
-                        tools:visibility="visible"/>
+                        tools:visibility="gone"/>
 
                 <ImageView android:id="@+id/play"
                            android:layout_width="wrap_content"
@@ -39,7 +39,9 @@
                            android:visibility="gone"
                            android:background="@drawable/circle_touch_highlight_background"
                            android:src="@drawable/ic_play_circle_fill_white_48dp"
-                           android:contentDescription="Play"/>
+                           android:scaleType="centerInside"
+                           tools:visibility="gone"
+                           android:contentDescription="@string/audio_view__play_accessibility_description"/>
 
                 <ImageView android:id="@+id/pause"
                            android:layout_width="wrap_content"
@@ -50,7 +52,8 @@
                            android:visibility="gone"
                            android:background="@drawable/circle_touch_highlight_background"
                            android:src="@drawable/ic_pause_circle_fill_white_48dp"
-                           android:contentDescription="Pause"/>
+                           android:scaleType="centerInside"
+                           android:contentDescription="@string/audio_view__pause_accessibility_description"/>
 
                 <ImageView android:id="@+id/download"
                            android:layout_width="wrap_content"
@@ -60,7 +63,7 @@
                            android:visibility="gone"
                            android:background="@drawable/circle_touch_highlight_background"
                            android:src="@drawable/ic_download_circle_fill_white_48dp"
-                           android:contentDescription="Download"/>
+                           android:contentDescription="@string/audio_view__download_accessibility_description"/>
 
             </org.smssecure.smssecure.components.AnimatingToggle>
 

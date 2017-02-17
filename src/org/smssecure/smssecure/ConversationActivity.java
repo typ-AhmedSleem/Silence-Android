@@ -35,9 +35,11 @@ import android.os.Bundle;
 import android.provider.Browser;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.WindowCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -114,6 +116,7 @@ import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
+import org.smssecure.smssecure.util.views.Stub;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.ViewUtil;
@@ -125,6 +128,8 @@ import org.whispersystems.libaxolotl.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.List;
+
+import ws.com.google.android.mms.ContentType;
 
 import static org.smssecure.smssecure.TransportOption.Type;
 import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
@@ -140,7 +145,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     implements ConversationFragment.ConversationFragmentListener,
                AttachmentManager.AttachmentListener,
                RecipientsModifiedListener,
-               OnKeyboardShownListener
+               OnKeyboardShownListener,
+               ComposeText.MediaListener
 {
   private static final String TAG = ConversationActivity.class.getSimpleName();
 
@@ -149,6 +155,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public static final String IS_ARCHIVED_EXTRA       = "is_archived";
   public static final String TEXT_EXTRA              = "draft_text";
   public static final String DISTRIBUTION_TYPE_EXTRA = "distribution_type";
+  public static final String TIMING_EXTRA            = "timing";
 
   private static final int PICK_IMAGE        = 1;
   private static final int PICK_VIDEO        = 2;
@@ -175,7 +182,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   AttachmentManager             attachmentManager;
   private   BroadcastReceiver             securityUpdateReceiver;
   private   BroadcastReceiver             groupUpdateReceiver;
-  private   EmojiDrawer                   emojiDrawer;
+  private   Stub<EmojiDrawer>             emojiDrawerStub;
   private   EmojiToggle                   emojiToggle;
 
   private Recipients recipients;
@@ -258,6 +265,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     MessageNotifier.setVisibleThread(threadId);
     markThreadAsRead();
+
+    Log.w(TAG, "onResume() Finished: " + (System.currentTimeMillis() - getIntent().getLongExtra(TIMING_EXTRA, 0)));
   }
 
   @Override
@@ -272,7 +281,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     Log.w(TAG, "onConfigurationChanged(" + newConfig.orientation + ")");
     super.onConfigurationChanged(newConfig);
     composeText.setTransport(sendButton.getSelectedTransport());
-    if (container.getCurrentInput() == emojiDrawer) container.hideAttachedInput(true);
+
+    if (emojiDrawerStub.resolved() && container.getCurrentInput() == emojiDrawerStub.get()) {
+      container.hideAttachedInput(true);
+    }
   }
 
   @Override
@@ -791,23 +803,24 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeViews() {
-    titleView      = (ConversationTitleView) getSupportActionBar().getCustomView();
-    buttonToggle   = ViewUtil.findById(this, R.id.button_toggle);
-    sendButton     = ViewUtil.findById(this, R.id.send_button);
-    attachButton   = ViewUtil.findById(this, R.id.attach_button);
-    composeText    = ViewUtil.findById(this, R.id.embedded_text_editor);
-    charactersLeft = ViewUtil.findById(this, R.id.space_left);
-    emojiToggle    = ViewUtil.findById(this, R.id.emoji_toggle);
-    emojiDrawer    = ViewUtil.findById(this, R.id.emoji_drawer);
-    unblockButton  = ViewUtil.findById(this, R.id.unblock_button);
-    composePanel   = ViewUtil.findById(this, R.id.bottom_panel);
-    composeBubble  = ViewUtil.findById(this, R.id.compose_bubble);
-    container      = ViewUtil.findById(this, R.id.layout_container);
+    titleView       = (ConversationTitleView) getSupportActionBar().getCustomView();
+    buttonToggle    = ViewUtil.findById(this, R.id.button_toggle);
+    sendButton      = ViewUtil.findById(this, R.id.send_button);
+    attachButton    = ViewUtil.findById(this, R.id.attach_button);
+    composeText     = ViewUtil.findById(this, R.id.embedded_text_editor);
+    charactersLeft  = ViewUtil.findById(this, R.id.space_left);
+    emojiToggle     = ViewUtil.findById(this, R.id.emoji_toggle);
+    emojiDrawerStub = ViewUtil.findStubById(this, R.id.emoji_drawer_stub);
+    unblockButton   = ViewUtil.findById(this, R.id.unblock_button);
+    composePanel    = ViewUtil.findById(this, R.id.bottom_panel);
+    composeBubble   = ViewUtil.findById(this, R.id.compose_bubble);
+    container       = ViewUtil.findById(this, R.id.layout_container);
 
     if (SilencePreferences.isEmojiDrawerDisabled(this))
       emojiToggle.setVisibility(View.GONE);
 
     container.addOnKeyboardShownListener(this);
+    composeText.setMediaListener(this);
 
     int[]      attributes   = new int[]{R.attr.conversation_item_bubble_background};
     TypedArray colors       = obtainStyledAttributes(attributes);
@@ -821,9 +834,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     SendButtonListener        sendButtonListener        = new SendButtonListener();
     ComposeKeyPressedListener composeKeyPressedListener = new ComposeKeyPressedListener();
 
-    emojiToggle.attach(emojiDrawer);
+    emojiToggle.attach(emojiDrawerStub.get());
     emojiToggle.setOnClickListener(new EmojiToggleListener());
-    emojiDrawer.setEmojiEventListener(new EmojiEventListener() {
+    emojiDrawerStub.get().setEmojiEventListener(new EmojiEventListener() {
       @Override public void onKeyEvent(KeyEvent keyEvent) {
         composeText.dispatchKeyEvent(keyEvent);
       }
@@ -964,7 +977,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
-  private void setMedia(Uri uri, MediaType mediaType) {
+  private void setMedia(@Nullable Uri uri, @NonNull MediaType mediaType) {
     if (uri == null) return;
     attachmentManager.setMedia(masterSecret, uri, mediaType, getCurrentMediaConstraints());
   }
@@ -1179,16 +1192,17 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void sendMessage() {
     try {
-      Recipients recipients     = getRecipients();
+      Recipients recipients = getRecipients();
+
+      if (recipients == null) {
+        throw new RecipientFormattingException("Badly formatted");
+      }
+
       boolean    forcePlaintext = sendButton.getSelectedTransport().isPlaintext();
       int        subscriptionId = sendButton.getSelectedTransport().getSimSubscriptionId().or(-1);
 
       Log.w(TAG, "isManual Selection: " + sendButton.isManualSelection());
       Log.w(TAG, "forcePlaintext: " + forcePlaintext);
-
-      if (recipients == null) {
-        throw new RecipientFormattingException("Badly formatted");
-      }
 
       if ((!recipients.isSingleRecipient() || recipients.isEmailRecipient()) && !isMmsEnabled) {
         handleManualMmsRequired();
@@ -1299,8 +1313,24 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private class EmojiToggleListener implements OnClickListener {
 
     @Override public void onClick(View v) {
-      if (container.getCurrentInput() == emojiDrawer) container.showSoftkey(composeText);
-      else                                            container.show(composeText, emojiDrawer);
+      if (container.getCurrentInput() == emojiDrawerStub.get()) {
+        container.showSoftkey(composeText);
+      } else {
+        container.show(composeText, emojiDrawerStub.get());
+      }
+    }
+  }
+
+  @Override
+  public void onMediaSelected(@NonNull Uri uri, String contentType) {
+    if (!TextUtils.isEmpty(contentType) && contentType.trim().equals("image/gif")) {
+      setMedia(uri, MediaType.GIF);
+    } else if (ContentType.isImageType(contentType)) {
+      setMedia(uri, MediaType.IMAGE);
+    } else if (ContentType.isVideoType(contentType)) {
+      setMedia(uri, MediaType.VIDEO);
+    } else if (ContentType.isAudioType(contentType)) {
+      setMedia(uri, MediaType.AUDIO);
     }
   }
 

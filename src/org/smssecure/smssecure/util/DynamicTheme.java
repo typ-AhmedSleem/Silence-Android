@@ -7,6 +7,9 @@ import org.smssecure.smssecure.R;
 
 public class DynamicTheme {
 
+  public static final String DARK  = "dark";
+  public static final String LIGHT = "light";
+
   private int currentTheme;
 
   public void onCreate(Activity activity) {
@@ -27,7 +30,7 @@ public class DynamicTheme {
   protected int getSelectedTheme(Activity activity) {
     String theme = SilencePreferences.getTheme(activity);
 
-    if (theme.equals("dark")) return R.style.Silence_DarkTheme;
+    if (theme.equals(DARK)) return R.style.Silence_DarkTheme;
 
     return R.style.Silence_LightTheme;
   }

@@ -59,13 +59,11 @@
                     tools:src="@drawable/ic_video_light"
                     tools:visibility="gone" />
 
-            <org.smssecure.smssecure.components.AudioView
-                    android:id="@+id/audio_view"
+            <ViewStub
+                    android:id="@+id/audio_view_stub"
+                    android:layout="@layout/conversation_item_received_audio"
                     android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:tintColor="@color/white"
-                    tools:visibility="visible"/>
+                    android:layout_height="wrap_content"/>
 
             <org.smssecure.smssecure.components.emoji.EmojiTextView
                     android:id="@+id/conversation_item_body"

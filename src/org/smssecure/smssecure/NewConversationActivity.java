@@ -41,7 +41,6 @@ public class NewConversationActivity extends ContactSelectionActivity {
   public void onCreate(Bundle bundle, MasterSecret masterSecret) {
     super.onCreate(bundle, masterSecret);
 
-    action.setVisibility(View.GONE);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
   }
 

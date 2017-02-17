@@ -1,4 +1,4 @@
-package org.smssecure.smssecure.audio;
+package org.smssecure.smssecure.attachments;
 
 
 import android.content.Context;
@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.spongycastle.util.encoders.Hex;
-import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.util.Util;
@@ -33,9 +32,9 @@ import java.util.StringTokenizer;
 /**
  * @author      Stefan "frostymarvelous" Froelich <stefan d0t froelich At whisppa DoT com>
  */
-public class AudioAttachmentServer implements Runnable {
+public class AttachmentServer implements Runnable {
 
-  private static final String TAG = AudioAttachmentServer.class.getSimpleName();
+  private static final String TAG = AttachmentServer.class.getSimpleName();
 
   private final Context      context;
   private final MasterSecret masterSecret;
@@ -46,7 +45,7 @@ public class AudioAttachmentServer implements Runnable {
 
   private volatile boolean isRunning;
 
-  public AudioAttachmentServer(Context context, MasterSecret masterSecret, Attachment attachment)
+  public AttachmentServer(Context context, MasterSecret masterSecret, Attachment attachment)
       throws IOException
   {
     try {

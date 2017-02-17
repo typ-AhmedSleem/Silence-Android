@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2011 Whisper Systems
+ * Copyright (C) 2016 Open Whisper Systems
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,12 +26,14 @@ import android.support.v4.app.RemoteInput;
 
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.crypto.SessionUtil;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
+import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.whispersystems.libaxolotl.util.guava.Optional;
 
@@ -40,9 +42,9 @@ import java.util.LinkedList;
 /**
  * Get the response text from the Wearable Device and sends an message as a reply
  */
-public class WearReplyReceiver extends MasterSecretBroadcastReceiver {
+public class RemoteReplyReceiver extends MasterSecretBroadcastReceiver {
 
-  public static final String TAG                 = WearReplyReceiver.class.getSimpleName();
+  public static final String TAG                 = RemoteReplyReceiver.class.getSimpleName();
   public static final String REPLY_ACTION        = "org.smssecure.smssecure.notifications.WEAR_REPLY";
   public static final String RECIPIENT_IDS_EXTRA = "recipient_ids";
 
@@ -57,7 +59,7 @@ public class WearReplyReceiver extends MasterSecretBroadcastReceiver {
     if (remoteInput == null) return;
 
     final long[]       recipientIds = intent.getLongArrayExtra(RECIPIENT_IDS_EXTRA);
-    final CharSequence responseText = remoteInput.getCharSequence(MessageNotifier.EXTRA_VOICE_REPLY);
+    final CharSequence responseText = remoteInput.getCharSequence(MessageNotifier.EXTRA_REMOTE_REPLY);
     final Recipients   recipients   = RecipientFactory.getRecipientsForIds(context, recipientIds, false);
 
     if (masterSecret != null && responseText != null) {
@@ -73,7 +75,15 @@ public class WearReplyReceiver extends MasterSecretBroadcastReceiver {
             OutgoingMediaMessage reply = new OutgoingMediaMessage(recipients, responseText.toString(), new LinkedList<Attachment>(), System.currentTimeMillis(), subscriptionId, 0);
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
           } else {
-            OutgoingTextMessage reply = new OutgoingTextMessage(recipients, responseText.toString(), subscriptionId);
+            boolean secure = SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient());
+
+            OutgoingTextMessage reply;
+            if (!secure) {
+              reply = new OutgoingTextMessage(recipients, responseText.toString(), subscriptionId);
+            } else {
+              reply = new OutgoingEncryptedMessage(recipients, responseText.toString(), subscriptionId);
+            }
+
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
           }
 
