@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.providers.PersistentBlobProvider;
+import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
@@ -52,6 +53,10 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
     implements ShareFragment.ConversationSelectedListener
 {
   private static final String TAG = ShareActivity.class.getSimpleName();
+
+  public static final String EXTRA_THREAD_ID         = "thread_id";
+  public static final String EXTRA_RECIPIENT_IDS     = "recipient_ids";
+  public static final String EXTRA_DISTRIBUTION_TYPE = "distribution_type";
 
   private final DynamicTheme    dynamicTheme    = new DynamicTheme   ();
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
@@ -113,11 +118,11 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
 
     Uri streamExtra = getIntent().getParcelableExtra(Intent.EXTRA_STREAM);
     mimeType        = getMimeType(streamExtra);
+
     if (streamExtra != null && PartAuthority.isLocalUri(streamExtra)) {
       isPassingAlongMedia = true;
       resolvedExtra       = streamExtra;
-      fragmentContainer.setVisibility(View.VISIBLE);
-      progressWheel.setVisibility(View.GONE);
+      handleResolvedMedia(getIntent(), false);
     } else {
       fragmentContainer.setVisibility(View.GONE);
       progressWheel.setVisibility(View.VISIBLE);
@@ -154,6 +159,24 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
   @Override
   public void onCreateConversation(long threadId, Recipients recipients, int distributionType) {
     createConversation(threadId, recipients, distributionType);
+  }
+
+  private void handleResolvedMedia(Intent intent, boolean animate) {
+    long   threadId         = intent.getLongExtra(EXTRA_THREAD_ID, -1);
+    long[] recipientIds     = intent.getLongArrayExtra(EXTRA_RECIPIENT_IDS);
+    int    distributionType = intent.getIntExtra(EXTRA_DISTRIBUTION_TYPE, -1);
+
+    boolean hasResolvedDestination = threadId != -1 && recipientIds != null && distributionType != -1;
+
+    if (!hasResolvedDestination && animate) {
+      ViewUtil.fadeIn(fragmentContainer, 300);
+      ViewUtil.fadeOut(progressWheel, 300);
+    } else if (!hasResolvedDestination) {
+      fragmentContainer.setVisibility(View.VISIBLE);
+      progressWheel.setVisibility(View.GONE);
+    } else {
+      createConversation(threadId, RecipientFactory.getRecipientsForIds(this, recipientIds, true), distributionType);
+    }
   }
 
   private void createConversation(long threadId, Recipients recipients, int distributionType) {
@@ -212,8 +235,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity
     @Override
     protected void onPostExecute(Uri uri) {
       resolvedExtra = uri;
-      ViewUtil.fadeIn(fragmentContainer, 300);
-      ViewUtil.fadeOut(progressWheel, 300);
+      handleResolvedMedia(getIntent(), true);
     }
   }
 }

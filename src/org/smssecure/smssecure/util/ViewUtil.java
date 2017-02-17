@@ -42,6 +42,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 import org.smssecure.smssecure.util.concurrent.SettableFuture;
+import org.smssecure.smssecure.util.views.Stub;
 
 public class ViewUtil {
   @SuppressWarnings("deprecation")
@@ -121,6 +122,10 @@ public class ViewUtil {
     return (T) parent.findViewById(resId);
   }
 
+  public static <T extends View> Stub<T> findStubById(@NonNull Activity parent, @IdRes int resId) {
+    return new Stub<T>((ViewStub)parent.findViewById(resId));
+  }
+
   private static Animation getAlphaAnimation(float from, float to, int duration) {
     final Animation anim = new AlphaAnimation(from, to);
     anim.setInterpolator(new FastOutSlowInInterpolator());
@@ -133,12 +138,16 @@ public class ViewUtil {
   }
 
   public static ListenableFuture<Boolean> fadeOut(final @NonNull View view, final int duration) {
-    return animateOut(view, getAlphaAnimation(1f, 0f, duration));
+    return fadeOut(view, duration, View.GONE);
   }
 
-  public static ListenableFuture<Boolean> animateOut(final @NonNull View view, final @NonNull Animation animation) {
+  public static ListenableFuture<Boolean> fadeOut(@NonNull View view, int duration, int visibility) {
+    return animateOut(view, getAlphaAnimation(1f, 0f, duration), visibility);
+  }
+
+  public static ListenableFuture<Boolean> animateOut(final @NonNull View view, final @NonNull Animation animation, final int visibility) {
     final SettableFuture future = new SettableFuture();
-    if (view.getVisibility() == View.GONE) {
+    if (view.getVisibility() == visibility) {
       future.set(true);
     } else {
       view.clearAnimation();
@@ -153,7 +162,7 @@ public class ViewUtil {
 
         @Override
         public void onAnimationEnd(Animation animation) {
-          view.setVisibility(View.GONE);
+          view.setVisibility(visibility);
           future.set(true);
         }
       });

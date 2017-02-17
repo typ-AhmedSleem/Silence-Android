@@ -3,7 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="org.smssecure.smssecure">
 
-    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots"/>
+    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots,android.support.v13,com.davemorrissey.labs.subscaleview"/>
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
                 android:label="Access to Silence Secrets"
@@ -41,7 +41,8 @@
                  android:supportsRtl="true"
                  tools:replace="android:allowBackup"
                  android:allowBackup="false"
-                 android:theme="@style/Silence.LightTheme">
+                 android:theme="@style/Silence.LightTheme"
+                 android:largeHeap="true">
 
     <receiver android:name="org.smssecure.smssecure.providers.BadgeWidgetProvider"
               android:icon="@drawable/icon"
@@ -86,6 +87,10 @@
             <data android:mimeType="text/plain" />
             <data android:mimeType="video/*" />
         </intent-filter>
+
+        <meta-data
+                android:name="android.service.chooser.chooser_target_service"
+                android:value=".service.DirectShareService" />
 
     </activity>
 
@@ -214,6 +219,7 @@
 
     <activity android:name=".MediaOverviewActivity"
               android:windowSoftInputMode="stateHidden"
+              android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
     <activity android:name=".DummyActivity"
@@ -277,6 +283,13 @@
         </intent-filter>
     </service>
 
+    <service android:name=".service.DirectShareService"
+             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
+        <intent-filter>
+            <action android:name="android.service.chooser.ChooserTargetService" />
+        </intent-filter>
+    </service>
+
     <receiver android:name=".service.SmsListener"
               android:permission="android.permission.BROADCAST_SMS"
               android:enabled="true"
@@ -312,13 +325,13 @@
 
     <receiver android:name=".notifications.MarkReadReceiver"
               android:enabled="true"
-              android:exported="true">
+              android:exported="false">
         <intent-filter>
             <action android:name="org.smssecure.smssecure.notifications.CLEAR"/>
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.WearReplyReceiver"
+    <receiver android:name=".notifications.RemoteReplyReceiver"
               android:enabled="true"
               android:exported="false">
         <intent-filter>

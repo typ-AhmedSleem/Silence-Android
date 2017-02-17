@@ -315,18 +315,18 @@ public class MmsDatabase extends MessagingDatabase {
     notifyConversationListeners(getThreadIdForMessage(messageId));
   }
 
-  public void markAsSending(long messageId) {
-    updateMailboxBitmask(messageId, Types.BASE_TYPE_MASK, Types.BASE_SENDING_TYPE);
-    notifyConversationListeners(getThreadIdForMessage(messageId));
-  }
+//  public void markAsSending(long messageId) {
+//    updateMailboxBitmask(messageId, Types.BASE_TYPE_MASK, Types.BASE_SENDING_TYPE);
+//    notifyConversationListeners(getThreadIdForMessage(messageId));
+//  }
 
   public void markAsSentFailed(long messageId) {
     updateMailboxBitmask(messageId, Types.BASE_TYPE_MASK, Types.BASE_SENT_FAILED_TYPE);
     notifyConversationListeners(getThreadIdForMessage(messageId));
   }
 
-  public void markAsSent(long messageId) {
-    updateMailboxBitmask(messageId, Types.BASE_TYPE_MASK, Types.BASE_SENT_TYPE);
+  public void markAsSent(long messageId, boolean secure) {
+    updateMailboxBitmask(messageId, Types.BASE_TYPE_MASK, Types.BASE_SENT_TYPE | (secure ? Types.SECURE_MESSAGE_BIT : 0));
     notifyConversationListeners(getThreadIdForMessage(messageId));
   }
 
@@ -353,16 +353,12 @@ public class MmsDatabase extends MessagingDatabase {
     notifyConversationListeners(threadId);
   }
 
-  public void markAsSecure(long messageId) {
-    updateMailboxBitmask(messageId, 0, Types.SECURE_MESSAGE_BIT);
-  }
+//  public void markAsSecure(long messageId) {
+//    updateMailboxBitmask(messageId, 0, Types.SECURE_MESSAGE_BIT);
+//  }
 
   public void markAsInsecure(long messageId) {
     updateMailboxBitmask(messageId, Types.SECURE_MESSAGE_BIT, 0);
-  }
-
-  public void markAsPush(long messageId) {
-    updateMailboxBitmask(messageId, 0, Types.PUSH_MESSAGE_BIT);
   }
 
   public void markAsDecryptFailed(long messageId, long threadId) {
@@ -630,7 +626,10 @@ public class MmsDatabase extends MessagingDatabase {
       contentValues.put(DATE_SENT, dateReceived);
 
     long messageId = db.insert(TABLE_NAME, null, contentValues);
-    addressDatabase.insertAddressesForId(messageId, MmsAddresses.forFrom(Util.toIsoString(notification.getFrom().getTextString())));
+
+    if (headers.getEncodedStringValue(PduHeaders.FROM) != null) {
+      addressDatabase.insertAddressesForId(messageId, MmsAddresses.forFrom(Util.toIsoString(notification.getFrom().getTextString())));
+    }
 
     return new Pair<>(messageId, threadId);
   }
@@ -650,7 +649,7 @@ public class MmsDatabase extends MessagingDatabase {
                                   long threadId, boolean forceSms)
       throws MmsException
   {
-    long type = Types.BASE_OUTBOX_TYPE | Types.ENCRYPTION_SYMMETRIC_BIT;
+    long type = Types.BASE_SENDING_TYPE | Types.ENCRYPTION_SYMMETRIC_BIT;
 
     if (message.isSecure()) type |= Types.SECURE_MESSAGE_BIT;
     if (forceSms)           type |= Types.MESSAGE_FORCE_SMS_BIT;

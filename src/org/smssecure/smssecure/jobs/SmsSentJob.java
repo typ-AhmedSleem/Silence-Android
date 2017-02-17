@@ -90,7 +90,7 @@ public class SmsSentJob extends MasterSecretJob {
 
       switch (result) {
         case Activity.RESULT_OK:
-          database.markAsSent(messageId);
+          database.markAsSent(messageId, record.isSecure());
 
           if (record != null && record.isEndSession()) {
             Log.w(TAG, "Ending session...");

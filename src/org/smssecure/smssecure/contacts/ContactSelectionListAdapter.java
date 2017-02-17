@@ -36,7 +36,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.RecyclerViewFastScroller.FastScrollAdapter;
-import org.smssecure.smssecure.ContactSelectionListFragment.StickyHeaderAdapter;
+import org.smssecure.smssecure.util.StickyHeaderDecoration.StickyHeaderAdapter;
 import org.smssecure.smssecure.contacts.ContactSelectionListAdapter.HeaderViewHolder;
 import org.smssecure.smssecure.contacts.ContactSelectionListAdapter.ViewHolder;
 import org.smssecure.smssecure.database.CursorRecyclerViewAdapter;
@@ -107,6 +107,8 @@ public class ContactSelectionListAdapter extends CursorRecyclerViewAdapter<ViewH
 
   @Override
   public long getHeaderId(int i) {
+    if (!isActiveCursor()) return -1;
+
     return getHeaderString(i).hashCode();
   }
 
