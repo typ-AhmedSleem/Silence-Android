@@ -132,7 +132,10 @@ en mesure de les lire.</string>
     <item quantity="one">Erreur lors de l\'enregistrement de la pièce jointe sur l\'espace de stockage!</item>
     <item quantity="other">Erreur lors de la sauvegarde des pièces jointes sur la mémoire !</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Fichier sauvegardé avec succès.</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Fichier sauvegardé avec succès.</item>
+    <item quantity="other">Fichiers sauvegardés avec succès.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Impossible d’écrire sur la mémoire !</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Sauvegarde de la pièce jointe</item>
@@ -149,7 +152,7 @@ en mesure de les lire.</string>
   <string name="ConversationFragment_deleting">Suppression...</string>
   <string name="ConversationFragment_deleting_messages">Suppression des messages...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Rechercher...</string>
+  <string name="ConversationListActivity_search">Chercher</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Supprimer la conversation sélectionnée ?</item>
@@ -176,7 +179,7 @@ en mesure de les lire.</string>
   <string name="ConversationListFragment_sending">Envoi en cours</string>
   <string name="ConversationListFragment_sending_selected_drafts">Envoi des brouillons sélectionnés en cours...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Message d’échange des clés…</string>
+  <string name="ConversationListItem_key_exchange_message">Message d’échange des clés</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversations archivées (%d)</string>
   <!--CustomDefaultPreference-->
@@ -186,6 +189,8 @@ en mesure de les lire.</string>
   <!--DateUtils-->
   <string name="DateUtils_now">À l\'instant</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <string name="DateUtils_today">Aujourd\'hui</string>
+  <string name="DateUtils_yesterday">Hier</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partager avec</string>
   <!--IntroScreenActivity-->
@@ -249,8 +254,8 @@ l\'importer à nouveau se traduira par des messages dupliqués.</string>
   <string name="MessageDetailsRecipient_new_identity">Nouvelle identité</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Erreur lors de la sauvegarde du MMS !</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Erreur de connexion au fournisseur MMS…</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Erreur de lecture des paramètres de fournisseur d’accès MMS…</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Erreur de connexion au fournisseur MMS</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Erreur de lecture des paramètres de fournisseur d’accès MMS</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Message multimédia</string>
   <!--MessageRecord-->
@@ -295,7 +300,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="SmsMessageRecord_secure_session_ended">La session chiffrée s’est terminée.</string>
   <string name="SmsMessageRecord_duplicate_message">Message doublon.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Groupe quitté…</string>
+  <string name="ThreadRecord_left_the_group">Groupe quitté</string>
   <string name="ThreadRecord_draft">Brouillon :</string>
   <string name="ThreadRecord_media_message">Message multimédia</string>
   <!--VerifyIdentityActivity-->
@@ -305,7 +310,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="VerifyIdentityActivity_display_your_qr_code">Afficher votre QR code</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATTENTION, la clé analysée NE correspond PAS ! Veuillez vérifier scrupuleusement le texte de l\'empreinte.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NON vérifié !</string>
-  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Leur clé est valide. Vous devez également vérifier votre clé avec eux.</string>
+  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La clé est valide. Vous devez également vérifier votre clé avec ce contact.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Vérifié !</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_scan_contacts_qr_code">Scanner le QR code du contact</string>
@@ -318,10 +323,10 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Vous avez déjà demandé à ce destinataire de commencer une session chiffrée. Êtes-vous sûr de vouloir lui demander à nouveau ? Ceci invalidera la première demande.</string>
   <string name="KeyExchangeInitiator_send">Envoyer</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Message mal chiffré…</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Message mal chiffré</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Déchiffrement, veuillez patienter…</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message chiffré pour une session non-existante…</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Demande de fin de chiffrement pour une session non-existante…</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message chiffré pour une session non-existante</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Demande de fin de session chiffrée inconnue</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Erreur lors du déchiffrement du message.</string>
   <!--MmsDatabase-->
@@ -333,8 +338,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="MmsDatabase_error_decrypting_message">Erreur lors du déchiffrement du message.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Déchiffrement du MMS, veuillez patienter…</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Message MMS mal chiffré…</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Message MMS chiffré pour une session non-existante…</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Message MMS mal chiffré</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Message MMS chiffré pour une session non-existante</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Masquer les notifications</string>
   <!--ApplicationMigrationService-->
@@ -350,7 +355,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d messages dans %2$d conversations</string>
   <string name="MessageNotifier_most_recent_from_s">Le plus récent de : %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Message chiffré…</string>
+  <string name="MessageNotifier_encrypted_message">Message chiffré</string>
   <string name="MessageNotifier_media_message_with_text">Message multimédia : %s</string>
   <string name="MessageNotifier_no_subject">(Aucun sujet)</string>
   <string name="MessageNotifier_message_delivery_failed">La distribution du message a échoué.</string>
@@ -381,7 +386,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Sélectionner pour</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Aucun contact bloqué...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Aucun contact bloqué</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Aucun appel récent.</string>
   <!--conversation_title_view-->
@@ -412,9 +417,15 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="conversation_item_received__download">Télécharger</string>
   <string name="conversation_item_received__contact_photo_description">Photo de contact</string>
   <string name="conversation_item_received__downloading">Téléchargement en cours</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Jouer</string>
+  <string name="audio_view__pause_accessibility_description">Pause</string>
+  <string name="audio_view__download_accessibility_description">Téléchargement</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mode de sélection par lot</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s sélectionné</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Aller en bas</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossible de récupérer les journaux de votre téléphone. Vous pouvez utiliser ADB pour récupérer les journaux de déboggage.</string>
   <string name="log_submit_activity__thanks">Merci pour votre aide !</string>
@@ -467,7 +478,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="recipients_panel__to"><small>Entrez un nom ou un numéro</small></string>
   <string name="recipients_panel__add_member">Ajouter un membre</string>
   <!--verify_identity_activity-->
-  <string name="verify_identity_activity__their_identity_they_read">Leur identité (ce qu\'ils lisent) :</string>
+  <string name="verify_identity_activity__their_identity_they_read">Identité du contact (ce qu\'il lit) :</string>
   <string name="verify_identity_activity__your_identity_you_read">Votre identité (ce que vous lisez) :</string>
   <!--message_details_header-->
   <string name="message_details_header__issues_need_your_attention">Des problèmes requièrent votre attention.</string>
@@ -703,6 +714,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="text_secure_normal__menu_settings">Paramètres</string>
   <string name="text_secure_normal__menu_clear_passphrase">Verrouiller</string>
   <string name="text_secure_normal__mark_all_as_read">Tout marquer comme lu</string>
+  <string name="text_secure_normal__menu_archived_conversations">Conversations archivées</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Définir comme application SMS par défaut ?</string>
   <string name="reminder_header_sms_default_text">Appuyez pour faire de Silence votre application SMS par défaut.</string>
@@ -724,6 +736,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--media_preview-->
   <string name="media_preview__save_title">Sauvegarder</string>
   <string name="media_preview__forward_title">Faire suivre</string>
+  <string name="media_preview__overview_title">Toutes les images</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Tout sauvegarder</string>
   <!--media_preview_activity-->

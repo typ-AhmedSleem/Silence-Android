@@ -122,7 +122,6 @@
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="other">첨부 파일을 저장소에 저장하는 도중 오류가 발생했습니다!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">파일이 성공적으로 저장되었습니다.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">저장소에 기록할 수 없습니다!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="other">%1$d 첨부 파일 저장 중</item>
@@ -137,7 +136,6 @@
   <string name="ConversationFragment_deleting">삭제중...</string>
   <string name="ConversationFragment_deleting_messages">메세지 삭제 중...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">검색...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="other">선택된 대화를 삭제할까요?</item>
@@ -155,7 +153,6 @@
     <item quantity="other">%d 대화를 수신함으로 이동했습니다</item>
   </plurals>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">키 교환 메세지...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">기록 보관된 대화 (%d)</string>
   <!--CustomDefaultPreference-->
@@ -226,8 +223,6 @@
   <string name="MessageDetailsRecipient_new_identity">새로운 신원</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS 저장 오류!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">MMS 공급자 접속 오류...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">통신사 MMS 설정 불러오기 오류...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">멀티미디어 메세지</string>
   <!--MessageRecord-->
@@ -269,7 +264,6 @@
   <string name="SmsMessageRecord_secure_session_ended">보안 세션이 끝났습니다.</string>
   <string name="SmsMessageRecord_duplicate_message">메세지가 중복되었습니다.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">그룹을 떠났습니다...</string>
   <string name="ThreadRecord_draft">임시 저장:</string>
   <string name="ThreadRecord_media_message">미디어 메세지</string>
   <!--VerifyIdentityActivity-->
@@ -292,10 +286,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">이미 이 수신자에게 세션 시작 요청을 보냈습니다. 정말로 또 다른 요청을 보낼까요? 이전의 요청은 무효가 됩니다.</string>
   <string name="KeyExchangeInitiator_send">보내기</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">잘못 암호화된 메세지...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">복호화중입니다, 잠시 기다려주세요...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">존재하지 않는 세션을 위해 메세지가 암호화되었습니다...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">존재하지 않는 세션 종료를 요청합니다...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">메세지 복호화 오류</string>
   <!--MmsDatabase-->
@@ -307,8 +298,6 @@
   <string name="MmsDatabase_error_decrypting_message">메세지 복호화 오류</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS 복호화중입니다, 잠시 기다려주세요...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">잘못 암호화된 MMS 메세지...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">존재하지 않는 세션을 위해 MMS 메세지가 암호화되었습니다...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">알림 음소거</string>
   <!--ApplicationMigrationService-->
@@ -324,7 +313,6 @@
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%2$d 대화의 %1$d 새 메세지</string>
   <string name="MessageNotifier_most_recent_from_s">다음으로부터의 최근 항목: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">메세지 암호화...</string>
   <string name="MessageNotifier_media_message_with_text">미디어 메세지: %s</string>
   <string name="MessageNotifier_no_subject">(No subject)</string>
   <string name="MessageNotifier_message_delivery_failed">메세지 전송 실패.</string>
@@ -355,7 +343,6 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">다음을 선택</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">차단된 연락처 없음...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">최근 통화가 없습니다.</string>
   <!--conversation_title_view-->
@@ -386,9 +373,11 @@
   <string name="conversation_item_received__download">다운로드</string>
   <string name="conversation_item_received__contact_photo_description">연락처 사진</string>
   <string name="conversation_item_received__downloading">다운로드 중</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">일괄 선택 모드</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s 선택됨</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">기기에서 디버그 기록을 얻을 수 없습니다. 하지만 대신 ADB를 사용해 디버그 기록을 얻을 수 있습니다.</string>
   <string name="log_submit_activity__thanks">도와주셔서 고맙습니다!</string>

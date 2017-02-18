@@ -81,7 +81,6 @@ im moći pristupiti.</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Brisanje</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Poruka za razmjenu ključa...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Niti jedna</string>
@@ -128,8 +127,6 @@ ponovno uvoženje će rezultirati duplim porukama.</string>
   <string name="MessageDetailsRecipient_new_identity">Novi identitet</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Greška prilikom pohrane MMSa!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Greška prilikom povezivanja na MMS pružatelja usluge...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Greška prilikom čitanja MMS postavki vašeg pružatelja usluge...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimedijalna poruka</string>
   <!--MessageRecord-->
@@ -160,7 +157,6 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sigurna sesija je završila.</string>
   <string name="SmsMessageRecord_duplicate_message">Dupla poruka.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Napustio grupu...</string>
   <string name="ThreadRecord_draft">Skica:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemate ključ identiteta.</string>
@@ -177,9 +173,7 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Već ste poslali zahtjev za pokretanje sesije ovom primatelju, jeste li sigurni da želite poslati još jedan? To će poništiti prvi zahtjev.</string>
   <string name="KeyExchangeInitiator_send">Pošalji</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Loše kriptirana poruka...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dekriptiranje, sačekajte...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Poruka kriptirana za nepostojeću sesiju...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Greška prilikom dekriptiranja poruke.</string>
   <!--MmsDatabase-->
@@ -191,8 +185,6 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="MmsDatabase_error_decrypting_message">Greška prilikom dekriptiranja poruke.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekriptiranje MMSa, sačekajte...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Loše kriptirana MMS poruka...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS poruka kriptirana za nepostojeću sesiju...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Uvoz u tijeku</string>
@@ -200,7 +192,6 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Zaključajte sa lozinkom</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Kriptirana poruka...</string>
   <string name="MessageNotifier_no_subject">(Bez naslova)</string>
   <string name="MessageNotifier_message_delivery_failed">Neuspješna isporuka poruke.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Isporuka poruke nije uspjela.</string>
@@ -244,9 +235,11 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="conversation_item_received__download">Preuzmi</string>
   <string name="conversation_item_received__contact_photo_description">Slika kontakta</string>
   <string name="conversation_item_received__downloading">Preuzimanje</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Način za višestruki odabir</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s odabrano</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Hvala na pomoći!</string>
   <string name="log_submit_activity__submitting">Slanje</string>

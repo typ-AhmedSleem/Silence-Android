@@ -130,7 +130,6 @@ hozzájuk férhet!
     <item quantity="one">Hiba történt a melléklet tárolóra mentése közben!</item>
     <item quantity="other">Hiba történt a mellékletek tárolóra mentése közben!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Fájl sikeresen mentve.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nem lehet a tárolóra írni!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Melléklet mentése</item>
@@ -147,7 +146,6 @@ hozzájuk férhet!
   <string name="ConversationFragment_deleting">Törlés...</string>
   <string name="ConversationFragment_deleting_messages">Üzenetek törlése...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Keresés...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Kiválasztott beszélgetés törlése?</item>
@@ -169,7 +167,6 @@ hozzájuk férhet!
     <item quantity="other">%d beszélgetés áthelyezve a beérkezőbe</item>
   </plurals>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Kulcs-csere üzenet...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivált beszélgetések (%d)</string>
   <!--CustomDefaultPreference-->
@@ -233,8 +230,6 @@ akkor az újbóli importálás duplikált üzeneteket eredményez.</string>
   <string name="MessageDetailsRecipient_new_identity">Új azonosító</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS mentés sikertelen!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">A kapcsolódás az MMS szolgáltatóhoz meghiúsult...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Hiba a vezeték nélküli szolgáltató MMS beállítások olvasása közben...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimédia üzenet</string>
   <!--MessageRecord-->
@@ -283,7 +278,6 @@ ezt a névjegyet.
   <string name="SmsMessageRecord_secure_session_ended">A biztonságos üzenetváltás befejeződött.</string>
   <string name="SmsMessageRecord_duplicate_message">Üzenet duplikálása.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Elhagyta a csoportot...</string>
   <string name="ThreadRecord_draft">Piszkozat:</string>
   <string name="ThreadRecord_media_message">Média üzenet</string>
   <!--VerifyIdentityActivity-->
@@ -306,10 +300,7 @@ ezt a névjegyet.
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Már küldtél üzenetváltási kezdeményezést ennek a fogadónak, biztosan szeretnél másikat küldeni? Ez érvényteleníteni fogja az első kérést.</string>
   <string name="KeyExchangeInitiator_send">Küldés</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Rosszul rejtjelezett üzenet...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dekódolás, várj kérlek...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Az üzenet titkosításra került egy nem létező üzenetváltáshoz.</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Kérelem egy nem létező folyamat befejezésére...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Hiba az üzenet dekódolása közben.</string>
   <!--MmsDatabase-->
@@ -321,8 +312,6 @@ ezt a névjegyet.
   <string name="MmsDatabase_error_decrypting_message">Hiba az üzenet dekódolása közben.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS dekódolása, kérlek várj...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Hibás titkosított MMS üzenet...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Az MMS üzenet titkosításra került egy nem létező üzenetváltáshoz.</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Értesítések némítása</string>
   <!--ApplicationMigrationService-->
@@ -334,7 +323,6 @@ ezt a névjegyet.
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d új üzenet %2$d beszélgetésben</string>
   <string name="MessageNotifier_most_recent_from_s">Legfelkapottabb tőle: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Biztonságos üzenet...</string>
   <string name="MessageNotifier_media_message_with_text">Média üzenet: %s</string>
   <string name="MessageNotifier_no_subject">(Nincs tárgy)</string>
   <string name="MessageNotifier_message_delivery_failed">Üzenet kézbesítése sikertelen!</string>
@@ -364,7 +352,6 @@ ezt a névjegyet.
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Kiválasztás...</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Nincs letiltott névjegy...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">A híváslista üres.</string>
   <!--conversation_title_view-->
@@ -395,9 +382,11 @@ ezt a névjegyet.
   <string name="conversation_item_received__download">Letölt</string>
   <string name="conversation_item_received__contact_photo_description">Névjegy fotó</string>
   <string name="conversation_item_received__downloading">Letöltés</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Kötegelt kijelölési mód</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s kijelölésre került</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nem lehet olvasni a naplót a készülékeden. Ehelyett még mindig használhatsz ADB-t, hogy kapj hibakeresési naplót.</string>
   <string name="log_submit_activity__thanks">Köszönjük a segítségedet!</string>

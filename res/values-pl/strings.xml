@@ -12,12 +12,14 @@
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
     <item quantity="one">1 wiadomość na konwersację</item>
     <item quantity="few">%d wiadomości na konwersację</item>
+    <item quantity="many">%d wiadomości na konwersację</item>
     <item quantity="other">%d wiadomości na konwersację</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Usunąć wszystkie stare wiadomości?</string>
   <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
     <item quantity="one">Przycina wszystkie konwersacje do ostatniej wiadomości.</item>
     <item quantity="few">Przycina wszystkie konwersacje do %d ostatnich wiadomości.</item>
+    <item quantity="many">Przycina wszystkie konwersacje do %d ostatnich wiadomości.</item>
     <item quantity="other">Przycina wszystkie konwersacje do %d ostatnich wiadomości.</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete">Usuń</string>
@@ -42,6 +44,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minuta</item>
     <item quantity="few">%d minut</item>
+    <item quantity="many">%d minut</item>
     <item quantity="other">%d minut</item>
   </plurals>
   <!--DraftDatabase-->
@@ -99,6 +102,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <plurals name="ConversationActivity_d_recipients_in_group">
     <item quantity="one">1 uczestnik</item>
     <item quantity="few">%d uczestników</item>
+    <item quantity="many">%d uczestników</item>
     <item quantity="other">%d uczestników</item>
   </plurals>
   <string name="ConversationActivity_saved_draft">Zapisane szkice</string>
@@ -120,11 +124,13 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <plurals name="ConversationFragment_delete_selected_messages">
     <item quantity="one">Usunąć wybraną wiadomość?</item>
     <item quantity="few">Usunąć wybrane wiadomości?</item>
+    <item quantity="many">Usunąć wybrane wiadomości?</item>
     <item quantity="other">Usunąć wybrane wiadomości?</item>
   </plurals>
   <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
     <item quantity="one">To permanentnie skasuje wybraną wiadomość.</item>
     <item quantity="few">To permanentnie skasuje wszystkie %1$d wybranych wiadomości.</item>
+    <item quantity="many">To permanentnie skasuje wszystkie %1$d wybranych wiadomości.</item>
     <item quantity="other">To permanentnie skasuje wszystkie %1$d wybranych wiadomości.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Zapisać na dysk?</string>
@@ -135,6 +141,9 @@ Kontynuować?</item>
     <item quantity="few">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
 
 Kontynuować?</item>
+    <item quantity="many">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
+
+Kontynuować?</item>
     <item quantity="other">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
 
 Kontynuować?</item>
@@ -142,18 +151,26 @@ Kontynuować?</item>
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="one">Błąd podczas zapisywania załącznika na dysk!</item>
     <item quantity="few">Błąd podczas zapisywania załączników na dysk!</item>
+    <item quantity="many">Błąd podczas zapisywania załączników na dysk!</item>
     <item quantity="other">Błąd podczas zapisywania załączników na dysk!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Plik zapisano pomyślnie.</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Plik zapisano pomyślnie.</item>
+    <item quantity="few">Pliki zapisano pomyślnie.</item>
+    <item quantity="many">Pliki zapisano pomyślnie.</item>
+    <item quantity="other">Pliki zapisano pomyślnie.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nie udało zapisać się pliku!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Zapisywanie załącznika</item>
     <item quantity="few">Zapisywanie %1$d załączników</item>
+    <item quantity="many">Zapisywanie %1$d załączników</item>
     <item quantity="other">Zapisywanie %1$d załączników</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
     <item quantity="one">Zapisywanie załącznika na dysk...</item>
     <item quantity="few">Zapisywanie %1$d załączników na dysk...</item>
+    <item quantity="many">Zapisywanie %1$d załączników na dysk...</item>
     <item quantity="other">Zapisywanie %1$d załączników na dysk...</item>
   </plurals>
   <string name="ConversationFragment_collecting_attahments">Zbieranie załączników...</string>
@@ -163,16 +180,18 @@ Kontynuować?</item>
   <string name="ConversationFragment_deleting">Usuwanie...</string>
   <string name="ConversationFragment_deleting_messages">Usuwanie wiadomości...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Szukaj</string>
+  <string name="ConversationListActivity_search">Wyszukaj</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Usunąć wybraną konwersację?</item>
     <item quantity="few">Usunąć wybrane konwersacje?</item>
+    <item quantity="many">Usunąć wybrane konwersacje?</item>
     <item quantity="other">Usunąć wybrane konwersacje?</item>
   </plurals>
   <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
     <item quantity="one">To permanentnie skasuje wybraną konwersację.</item>
     <item quantity="few">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
+    <item quantity="many">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
     <item quantity="other">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Usuwanie...</string>
@@ -180,12 +199,14 @@ Kontynuować?</item>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Konwersacja zarchiwizowana.</item>
     <item quantity="few">%d konwersacji zarchiwizowanych.</item>
+    <item quantity="many">%d konwersacji zarchiwizowanych.</item>
     <item quantity="other">%d konwersacji zarchiwizowanych.</item>
   </plurals>
   <string name="ConversationListFragment_undo">COFNIJ</string>
   <plurals name="ConversationListFragment_moved_conversations_to_inbox">
     <item quantity="one">Przeniesiono konwersację do Odebranych.</item>
     <item quantity="few">Przeniesiono %d konwersacji do Odebranych.</item>
+    <item quantity="many">Przeniesiono %d konwersacji do Odebranych.</item>
     <item quantity="other">Przeniesiono %d konwersacji do Odebranych.</item>
   </plurals>
   <string name="ConversationListFragment_send_drafts">Wyślij szkice</string>
@@ -194,7 +215,7 @@ Kontynuować?</item>
   <string name="ConversationListFragment_sending">Wysyłanie</string>
   <string name="ConversationListFragment_sending_selected_drafts">Wysyłanie wybranych szkiców...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Wiadomość wymiany kluczy...</string>
+  <string name="ConversationListItem_key_exchange_message">Wiadomość wymiany kluczy</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archiwum konwersacji (%d)</string>
   <!--CustomDefaultPreference-->
@@ -204,6 +225,8 @@ Kontynuować?</item>
   <!--DateUtils-->
   <string name="DateUtils_now">Teraz</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <string name="DateUtils_today">Dzisiaj</string>
+  <string name="DateUtils_yesterday">Wczoraj</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Podziel się z</string>
   <!--IntroScreenActivity-->
@@ -265,8 +288,8 @@ Kontynuować?</item>
   <string name="MessageDetailsRecipient_new_identity">Nowa tożsamość</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Błąd przechowywania MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Błąd połączenia z dostawcą usługi MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Błąd odczytu ustawień usługi MMS Twojego operatora...</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Błąd podczas połączenia z dostawcą MMS</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Błąd odczytu ustawień dostawcy MMS</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Wiadomość multimedialna</string>
   <!--MessageRecord-->
@@ -311,7 +334,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="SmsMessageRecord_secure_session_ended">Bezpieczna sesja zakończona.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikuj wiadomość.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Opuścił grupę...</string>
+  <string name="ThreadRecord_left_the_group">Opuścił grupę</string>
   <string name="ThreadRecord_draft">Szkic:</string>
   <string name="ThreadRecord_media_message">Wiadomość multimedialna</string>
   <!--VerifyIdentityActivity-->
@@ -334,10 +357,10 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Już wysłałeś żądanie o rozpoczęcie sesji do tego odbiorcy, czy na pewno chcesz wysłać jeszcze jedno żądanie? Spowoduje to utratę pierwszego żądania.</string>
   <string name="KeyExchangeInitiator_send">Wyślij</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Źle zaszyfrowana wiadomość...</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Nieprawidłowa zaszyfrowana wiadomość</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Trwa odszyfrowywanie, proszę czekać...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Wiadomość zaszyfrowana dla nieistniejącej sesji...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Zakańczanie nieistniejącej sesji...</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Wiadomość zaszyfrowana dla nieistniejącej sesji</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Poproś o zakończenie nieistniejącej sesji</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Błąd odszyfrowania wiadomości.</string>
   <!--MmsDatabase-->
@@ -349,8 +372,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="MmsDatabase_error_decrypting_message">Błąd odszyfrowania wiadomości.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Trwa odszyfrowywanie MMSa, proszę czekać...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Źle zaszyfrowana wiadomość MMS...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Wiadomość MMS zaszyfrowana dla nieistniejącej sesji...</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Nieprawidłowa zaszyfrowana wiadomość MMS</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Wiadomość MMS zaszyfrowana dla nieistniejącej sesji</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Wycisz powiadomienia</string>
   <!--ApplicationMigrationService-->
@@ -366,7 +389,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nowych wiadomości w %2$d konwersacjach</string>
   <string name="MessageNotifier_most_recent_from_s">Ostatnie zaczynając od %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Szyfrowana wiadomość...</string>
+  <string name="MessageNotifier_encrypted_message">Zaszyfrowana wiadomość</string>
   <string name="MessageNotifier_media_message_with_text">Wiadomość multimedialna: %s</string>
   <string name="MessageNotifier_no_subject">(Brak tematu)</string>
   <string name="MessageNotifier_message_delivery_failed">Nie udało się dostarczyć wiadomości.</string>
@@ -397,7 +420,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Wybierz dla</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Brak zablokowanych kontaktów...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Brak zablokowanych kontaktów</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Brak ostatnich połączeń.</string>
   <!--conversation_title_view-->
@@ -428,9 +451,15 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="conversation_item_received__download">Pobierz</string>
   <string name="conversation_item_received__contact_photo_description">Zdjęcie kontaktu</string>
   <string name="conversation_item_received__downloading">Pobieranie</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Odtwórz</string>
+  <string name="audio_view__pause_accessibility_description">Wstrzymaj</string>
+  <string name="audio_view__download_accessibility_description">Pobierz</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Tryb wyboru grupy</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s wybranych</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Przewiń na dół</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nie udało się odczytać logów z Twojego urządzenia. W dalszym ciągu możesz użyć ADB, aby pobrać logi debugowania.</string>
   <string name="log_submit_activity__thanks">Dziękujemy za Twoją pomoc!</string>
@@ -531,6 +560,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <plurals name="hours_ago">
     <item quantity="one">%d godzina</item>
     <item quantity="few">%d godzin</item>
+    <item quantity="many">%d godzin</item>
     <item quantity="other">%d godzin</item>
   </plurals>
   <!--preferences.xml-->
@@ -720,6 +750,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="text_secure_normal__menu_settings">Ustawienia</string>
   <string name="text_secure_normal__menu_clear_passphrase">Zablokuj</string>
   <string name="text_secure_normal__mark_all_as_read">Oznacz wszystkie jako przeczytane</string>
+  <string name="text_secure_normal__menu_archived_conversations">Zarchiwizowane konwersacje</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Użyć jako domyślnej aplikacji SMS?</string>
   <string name="reminder_header_sms_default_text">Dotknij, aby Silence stał się domyślną aplikacją SMS.</string>
@@ -741,6 +772,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Zapisz</string>
   <string name="media_preview__forward_title">Przekaż</string>
+  <string name="media_preview__overview_title">Wszystkie obrazy</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Zapisz wszystkie</string>
   <!--media_preview_activity-->

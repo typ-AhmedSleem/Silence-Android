@@ -146,7 +146,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
     <item quantity="few">Napaka pri shranjevanju priponk v shrambo!</item>
     <item quantity="other">Napaka pri shranjevanju priponk v shrambo!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Datoteka je bila uspešno shranjena.</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Datoteka je bila uspešno shranjena.</item>
+    <item quantity="two">Datoteki sta bili uspešno shranjeni.</item>
+    <item quantity="few">Datoteke so bile uspešno shranjene.</item>
+    <item quantity="other">Datoteke so bile uspešno shranjene.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ne morem shranjevati v sistemsko shrambo!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Shranjujem priponko</item>
@@ -167,7 +172,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationFragment_deleting">Brišem...</string>
   <string name="ConversationFragment_deleting_messages">Brišem sporočila...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Išči...</string>
+  <string name="ConversationListActivity_search">Iskanje</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Izbrišem izbran pogovor?</item>
@@ -202,7 +207,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationListFragment_sending">Pošiljam</string>
   <string name="ConversationListFragment_sending_selected_drafts">Pošiljam izbrane osnutke...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Sporočilo za izmenjavo ključev...</string>
+  <string name="ConversationListItem_key_exchange_message">Sporočilo s ključem za zamenjavo</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Arhivirani pogovori (%d)</string>
   <!--CustomDefaultPreference-->
@@ -212,6 +217,8 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <!--DateUtils-->
   <string name="DateUtils_now">Ravnokar</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <string name="DateUtils_today">Danes</string>
+  <string name="DateUtils_yesterday">Včeraj</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
   <!--IntroScreenActivity-->
@@ -273,8 +280,8 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="MessageDetailsRecipient_new_identity">Nova identiteta</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Napaka pri shranjevanju MMS sporočila!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Napaka pri povezavi s ponudnikom MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Ne morem razbrati MMS nastavitev vašega operaterja...</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Napaka pri povezovanju s ponudnikom MMS</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Napaka pri branju nastavitev ponudnika MMS</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Večpredstavno sporočilo</string>
   <!--MessageRecord-->
@@ -319,7 +326,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="SmsMessageRecord_secure_session_ended">Varna seja je zaključena.</string>
   <string name="SmsMessageRecord_duplicate_message">Podvojeno sporočilo.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Zapustili ste skupino...</string>
+  <string name="ThreadRecord_left_the_group">Zapustil skupino</string>
   <string name="ThreadRecord_draft">Osnutek:</string>
   <string name="ThreadRecord_media_message">Večpredstavno sporočilo</string>
   <!--VerifyIdentityActivity-->
@@ -342,10 +349,10 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Prejemniku ste že poslali zahtevo za inicijacijo, ste prepričani, da želite poslati še eno?    To bo razveljavilo prvo zahtevo.</string>
   <string name="KeyExchangeInitiator_send">Pošlji</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Okvarjeno šifrirano sporočilo...</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Okvarjeno šifrirano sporočilo</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dešifriram sporočilo, počakajte...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Sporočilo je šifrirano za neobstoječo sejo...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Zahteva za končanje neobstoječe seje...</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Sporočilo je bilo šifrirano za neobstoječo sejo</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Zahteva za končanje neobstoječe seje</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
   <!--MmsDatabase-->
@@ -357,8 +364,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="MmsDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Dešifriranje sporočila MMS, počakajte...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Okvarjeno šifrirano sporočilo MMS...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Sporočilo MMS šifrirano za neobstoječo sejo...</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Okvarjeno šifrirano sporočilo MMS</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Sporočilo MMS je bilo šifrirano za neobstoječo sejo</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Utišaj obvestila</string>
   <!--ApplicationMigrationService-->
@@ -374,7 +381,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">Nova sporočila: %1$d. Pogovori: %2$d.</string>
   <string name="MessageNotifier_most_recent_from_s">Zadnje od: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Šifrirano sporočilo...</string>
+  <string name="MessageNotifier_encrypted_message">Šifrirano sporočilo</string>
   <string name="MessageNotifier_media_message_with_text">Multimedijsko sporočilo: %s</string>
   <string name="MessageNotifier_no_subject">(brez naslova)</string>
   <string name="MessageNotifier_message_delivery_failed">Dostava sporočila ni uspela.</string>
@@ -405,7 +412,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Izberi za</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Ni blokiranih stikov...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Ni blokiranih stikov</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ni zadnjih klicev.</string>
   <!--conversation_title_view-->
@@ -436,9 +443,15 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="conversation_item_received__download">Prenos</string>
   <string name="conversation_item_received__contact_photo_description">Fotografija stika</string>
   <string name="conversation_item_received__downloading">Prenašam</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Predvajaj</string>
+  <string name="audio_view__pause_accessibility_description">Pavza</string>
+  <string name="audio_view__download_accessibility_description">Prenos</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Skupinski način izbire</string>
   <string name="conversation_fragment_cab__batch_selection_amount">Izbranih: %s</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Na dno</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Sistemski dnevnik vaše naprave ni dostopen. Za oddajo sistemske zabeležbe lahko uporabite ADB.</string>
   <string name="log_submit_activity__thanks">Hvala za pomoč!</string>
@@ -729,6 +742,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="text_secure_normal__menu_settings">Nastavitve</string>
   <string name="text_secure_normal__menu_clear_passphrase">Zakleni</string>
   <string name="text_secure_normal__mark_all_as_read">Označi vse kot prebrano</string>
+  <string name="text_secure_normal__menu_archived_conversations">Arhivirani pogovori</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Uporabljam kot privzeto aplikacijo SMS?</string>
   <string name="reminder_header_sms_default_text">Z dotikom nastavite Silence za privzeto aplikacijo SMS.</string>
@@ -750,6 +764,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <!--media_preview-->
   <string name="media_preview__save_title">Shrani</string>
   <string name="media_preview__forward_title">Posreduj</string>
+  <string name="media_preview__overview_title">Vse slike</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Shrani vse</string>
   <!--media_preview_activity-->

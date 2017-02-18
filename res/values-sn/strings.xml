@@ -132,7 +132,6 @@ kuzviverenga. </string>
     <item quantity="one">Pane chakanganisa kuchengetedza batanidzo iyi mupfimbi!</item>
     <item quantity="other">Pane chakanganisa kuchengetedza batanidzo idzi mupfimbi!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Faira rakwanisa kuchengetwa.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Yatadza kunyora mupfimbi!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">kuchengetedza batanidzo</item>
@@ -149,7 +148,6 @@ kuzviverenga. </string>
   <string name="ConversationFragment_deleting">kudzimura...</string>
   <string name="ConversationFragment_deleting_messages">Tirikudzima tsamba....</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Tsvaga...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Dzima hutaurwa hwakasarudzwa here?</item>
@@ -171,7 +169,6 @@ kuzviverenga. </string>
     <item quantity="other">Hutaurwa %d hwasudurutswa kuiswa kubokisi retsamba mbozha</item>
   </plurals>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Tsamba yekutsinha svumbunuro....</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Hutaurwa hwakaiswa mudura (%d)</string>
   <!--CustomDefaultPreference-->
@@ -236,8 +233,6 @@ kuimupota zvakare kunozokonzeresa kudzokorodzwa kwetsamba.</string>
   <string name="MessageDetailsRecipient_new_identity">Chitupa chitsva</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Paita kanganiso pakupfimbika tsamba ine midhiya iyi!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Paita kanganiso pakuhaka muyananisi wetsamba dzine midhiya...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Paita kanganiso pakukuverenga gadziro yetsamba dzine midhiya dzemuyananisi asina waya...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Tsamba ine nyepfenyuro</string>
   <!--MessageRecord-->
@@ -276,7 +271,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sesheni yakakwedekera yavharwa.</string>
   <string name="SmsMessageRecord_duplicate_message">Tsamba dzakafanana</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Kubuda muboka...</string>
   <string name="ThreadRecord_draft">Gadziro:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Hauna svumbunuro yechitupa.</string>
@@ -293,10 +287,7 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Watumidzira chikumbiro chekutanga chikamu kumugamuchiri uyu, unechokwadi chekuti unoda kutumidzira imwe here? Kuita izvi zvichashayisa basa chikumbiro chekutanga.</string>
   <string name="KeyExchangeInitiator_send">Kutumidzira</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Tsamba yakakwedekerwa zvakaipa...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Kubvisa pakakwedekerwa, rukumbiro kuti mumbomira…</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Tsamba yakwedekererwa shesheni isiripo...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Tokumbira kuvhara sesheni isiripo...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Paita kanganiso pakubvisa tsivatsaona patsamba iyi.</string>
   <!--MmsDatabase-->
@@ -308,8 +299,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="MmsDatabase_error_decrypting_message">Paita kanganiso pakubvisa pakakwedekwerwa petsamba.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Kubvisa kukwedekerwa patsamba yemidhiya, rukumbiro imbomira....</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Tsamba yemidhiya yakakwedekerwa iyi yakaipa...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Tsamba yemidhiya yakwedekererwa chikamu chisipo...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Misa zviziviso</string>
   <!--ApplicationMigrationService-->
@@ -320,7 +309,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d tsamba dzitsva muhutaurwa %2$d</string>
   <string name="MessageNotifier_most_recent_from_s">Zvichangobva kupfuura manje: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Tsamba yakakwedekerwa....</string>
   <string name="MessageNotifier_media_message_with_text">Tsamba dzine nyepfenyuro: %s</string>
   <string name="MessageNotifier_no_subject">(Hapana musoro wenyaya)</string>
   <string name="MessageNotifier_message_delivery_failed">Kutumidzira tsamba kwaramba.</string>
@@ -345,7 +333,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Sarudza kuitira</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Hapana mazita akadzivirwa...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Hapana kuchaya runhare kwaitika iyezvino.</string>
   <!--conversation_title_view-->
@@ -375,9 +362,11 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="conversation_item_received__download">Tutunura</string>
   <string name="conversation_item_received__contact_photo_description">Mufananidzo wezita iri</string>
   <string name="conversation_item_received__downloading">Kututunura</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mashandiro esarudzo dzezvikwata </string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s dzasarudzwa</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Waita basa nerubatsiro rwako!</string>
   <string name="log_submit_activity__submitting">Kutera</string>

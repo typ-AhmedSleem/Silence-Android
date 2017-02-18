@@ -123,7 +123,9 @@
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="other">添付ファイルをストレージに保存中にエラーが発生しました!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">ファイルを正常に保存しました。</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="other">ファイルを正常に保存しました。</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">メモリに書き込めませんでした。</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="other">%1$d 添付ファイルを保存しています</item>
@@ -138,7 +140,7 @@
   <string name="ConversationFragment_deleting">削除...</string>
   <string name="ConversationFragment_deleting_messages">メッセージの削除...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">検索...</string>
+  <string name="ConversationListActivity_search">検索</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="other">選択した会話を削除しますか?</item>
@@ -161,7 +163,7 @@
   <string name="ConversationListFragment_sending">送信中</string>
   <string name="ConversationListFragment_sending_selected_drafts">選択した下書きを送信中…</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">鍵交換のメッセージ…</string>
+  <string name="ConversationListItem_key_exchange_message">鍵交換メッセージ</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">会話をアーカイブしました (%d)</string>
   <!--CustomDefaultPreference-->
@@ -171,6 +173,8 @@
   <!--DateUtils-->
   <string name="DateUtils_now">今</string>
   <string name="DateUtils_minutes_ago">%d 分</string>
+  <string name="DateUtils_today">今日</string>
+  <string name="DateUtils_yesterday">昨日</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共有</string>
   <!--IntroScreenActivity-->
@@ -234,8 +238,8 @@
   <string name="MessageDetailsRecipient_new_identity">新規の認証キー</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS保存中にエラーがありました。</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">MMSのプロバイダー接続中にエラーが発生しました…</string>
-  <string name="MmsDownloader_error_reading_mms_settings">無線プロバイダーのMMS設定が見つかりませんでした。</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">MMSプロバイダーに接続中にエラーが発生しました</string>
+  <string name="MmsDownloader_error_reading_mms_settings">無線プロバイダーのMMS設定を読み込み時にエラーが発生しました</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">マルチメディアメッセージ</string>
   <!--MessageRecord-->
@@ -282,7 +286,7 @@
   <string name="SmsMessageRecord_secure_session_ended">セキュア・セッション終了</string>
   <string name="SmsMessageRecord_duplicate_message">多重送信メッセージ。</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">グループを出ました…</string>
+  <string name="ThreadRecord_left_the_group">グループを出ました</string>
   <string name="ThreadRecord_draft">草稿:</string>
   <string name="ThreadRecord_media_message">メディアメッセージ</string>
   <!--VerifyIdentityActivity-->
@@ -305,10 +309,10 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">セッション開始のリクエストはすでにこの受信者に送られています。別のリクエストをまた送ってもよろしいですか？送信すると、最初に送ったリクエストは無効になります。</string>
   <string name="KeyExchangeInitiator_send">送信</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">メッセージが正しく暗号化されていません…</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">メッセージが正しく暗号化されていません</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">復号しています。お待ち下さい…</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">メッセージは存在しないセッションのために暗号化されています…</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">存在しないセッションに対して終了セッションリクエストを暗号化しました…</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">メッセージは存在しないセッションのために暗号化されています</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">存在しないセッションの終了リクエスト</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">メッセージの復号化エラー。</string>
   <!--MmsDatabase-->
@@ -320,8 +324,8 @@
   <string name="MmsDatabase_error_decrypting_message">メッセージの復号化エラー。</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSを復号しています。お待ち下さい…</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">MMSメッセージが正しく暗号化されていません…</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMSメッセージは存在しないセッションのために暗号化されています…</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">MMSメッセージが正しく暗号化されていません</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMSメッセージは存在しないセッションのために暗号化されています</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">通知をミュート</string>
   <!--ApplicationMigrationService-->
@@ -337,7 +341,7 @@
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%2$d 会話中 %1$d の新しいメッセージ</string>
   <string name="MessageNotifier_most_recent_from_s">最新の送信者： %1$s</string>
-  <string name="MessageNotifier_encrypted_message">暗号化されたメッセージ…</string>
+  <string name="MessageNotifier_encrypted_message">暗号化されたメッセージ</string>
   <string name="MessageNotifier_media_message_with_text">メディアメッセージ: %s</string>
   <string name="MessageNotifier_no_subject">（無題）</string>
   <string name="MessageNotifier_message_delivery_failed">メッセージの配信に失敗しました。</string>
@@ -368,7 +372,7 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">選択</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">ブロックした連絡先はありません...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">ブロックした連絡先はありません</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">最近の通話はありません。</string>
   <!--conversation_title_view-->
@@ -399,9 +403,15 @@
   <string name="conversation_item_received__download">ダウンロード</string>
   <string name="conversation_item_received__contact_photo_description">連絡先の写真</string>
   <string name="conversation_item_received__downloading">ダウンロード中</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">再生</string>
+  <string name="audio_view__pause_accessibility_description">一時停止</string>
+  <string name="audio_view__download_accessibility_description">ダウンロード</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">一括選択モード</string>
   <string name="conversation_fragment_cab__batch_selection_amount">選択数: %s</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">下にスクロール</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">デバイスのログが読み込めませんでした。ADBを使ってデバッグログを取得することができます。</string>
   <string name="log_submit_activity__thanks">提出どうもありがとうございます！</string>
@@ -690,6 +700,7 @@
   <string name="text_secure_normal__menu_settings">設定</string>
   <string name="text_secure_normal__menu_clear_passphrase">ロック</string>
   <string name="text_secure_normal__mark_all_as_read">すべて既読にする</string>
+  <string name="text_secure_normal__menu_archived_conversations">アーカイブした会話</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">標準のSMSアプリに設定しますか？</string>
   <string name="reminder_header_sms_default_text">タップしてSilenceをデフォルトのSMSアプリにします。</string>
@@ -711,6 +722,7 @@
   <!--media_preview-->
   <string name="media_preview__save_title">保存</string>
   <string name="media_preview__forward_title">転送</string>
+  <string name="media_preview__overview_title">すべての画像</string>
   <!--media_overview-->
   <string name="media_overview__save_all">すべて保存</string>
   <!--media_preview_activity-->

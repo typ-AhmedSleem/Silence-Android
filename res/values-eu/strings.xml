@@ -78,7 +78,6 @@ gai izango da saiootan sartzeko.</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Ezabatzen</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Gakoaren datu-trukerako mezua...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Bat ere ez</string>
@@ -123,8 +122,6 @@ Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Errorea MMS gordetzen!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Errorea MMS hornitzailearekin konentatzerakoan...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Errorea hari-gabeko hornitzailearen MMS ezarpenak irakurtzen...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimedia mezua</string>
   <!--MessageRecord-->
@@ -157,7 +154,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="SmsMessageRecord_secure_session_ended">Saio segurua bukatu da.</string>
   <string name="SmsMessageRecord_duplicate_message">Mezu bikoiztua.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Taldea utzita...</string>
   <string name="ThreadRecord_draft">Zirriborroa:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
@@ -174,9 +170,7 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Dagoeneko saioa hasteko eskaera bat bidali diozu hartzaile honi, ziur zaude beste bat bidali nahi izateaz? Honek lehenengo eskaera baliogabetuko luke.</string>
   <string name="KeyExchangeInitiator_send">Bidali</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Gaizki enkriptatuako mezua...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Desenkriptatzen, mesedez itxaron...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Esistitzen ez den saio baterako enkriptatutako mezua...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
   <!--MmsDatabase-->
@@ -188,8 +182,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="MmsDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSa desenkriptatzen, mesedez itxaron...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Gaizki enkriptatuko MMS mezua...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS mezua enkriptatua esistitzen ez den saio baterako...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Inportaketa indarrean</string>
@@ -197,7 +189,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Blokeatu pasahitz bat erabiliz</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Enkriptatuko mezua...</string>
   <string name="MessageNotifier_no_subject">(Ez dago gairik)</string>
   <string name="MessageNotifier_message_delivery_failed">Mezuaren banaketak huts egin du.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Mezuaren banaketak huts egin du.</string>
@@ -241,9 +232,11 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="conversation_item_received__download">Behera kargatu</string>
   <string name="conversation_item_received__contact_photo_description">Kontaktuaren argazkia</string>
   <string name="conversation_item_received__downloading">Behera kargatzen</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Batch hautatzeko modua</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s hautatua</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Eskerrik asko zure laguntzagatik!</string>
   <string name="log_submit_activity__submitting">Bidaltzen</string>

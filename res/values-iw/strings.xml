@@ -41,7 +41,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">מוחק</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">הודעת החלפת מפתח...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
@@ -70,8 +69,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">שגיאה באחסון ה-MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">שגיאה בהתחברות לספק ה-MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">שגיאה בקריאת הגדרות ה-MMS של ספק השירות...</string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -103,9 +100,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">אתה כבר שלחת בקשת אתחול חיבור לנמען הזה, אתה בטוח שאתה רוצה לשלוח עוד אחד? זה יבטל את הבקשה הראשונה.</string>
   <string name="KeyExchangeInitiator_send">שלח</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">הודעה מוצפנת פגומה...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">מפענח, אנא המתן...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">ההודעה הוצפנה לחיבור שאינו קיים...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">מתחבר לשרת ה-MMS...</string>
@@ -114,14 +109,11 @@
   <string name="MmsDatabase_mms_pending_download">גע להגדרת תצורת ה-MMS ולהמשך הורדה.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">מפענח MMS, אנא המתן...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">הודעת MMS מוצפנת פגומה...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">הודעת ה-MMS הוצפנה לחיבור שלא קיים...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">בתהליך ייבוא</string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">הודעה מוצפנת...</string>
   <string name="MessageNotifier_message_delivery_failed">מסירת ההודעה נכשלה.</string>
   <string name="MessageNotifier_failed_to_deliver_message">כישלון במסירת ההודעה.</string>
   <string name="MessageNotifier_error_delivering_message">שגיאה במסירת ההודעה.</string>
@@ -149,7 +141,9 @@
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">הורד</string>
   <string name="conversation_item_received__downloading">מוריד</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">בסיס הנתונים ברירת המחדל של המערכת לא ישתנה בשום אופן.</string>

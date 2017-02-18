@@ -88,12 +88,10 @@ erişebilir.</string>
   <string name="ConversationFragment_deleting">Siliniyor...</string>
   <string name="ConversationFragment_deleting_messages">Mesajlar siliniyor...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Ara...</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Siliniyor</string>
   <string name="ConversationListFragment_undo">GERİ AL</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Anahtar takas mesajı...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Hiçbiri</string>
@@ -144,8 +142,6 @@ erişebilir.</string>
   <string name="MessageDetailsRecipient_new_identity">Yeni kimlik</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS depolama hatası!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">MMS sağlayıcısına bağlanma hatası...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Kablosuz sağlayıcı MMS ayarlarının okuma hatası...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimedya mesajı</string>
   <!--MessageRecord-->
@@ -181,7 +177,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="SmsMessageRecord_secure_session_ended">Güvenli oturum sona erdi.</string>
   <string name="SmsMessageRecord_duplicate_message">Çift mesaj.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Gruptan ayrıldı...</string>
   <string name="ThreadRecord_draft">Taslak:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
@@ -200,9 +195,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Bu alıcıya zaten bir oturum açma isteği gönderdiniz, bir tane daha göndermek istediğinize emin misiniz? Bu ilk isteği geçersiz kılacaktır.</string>
   <string name="KeyExchangeInitiator_send">Gönder</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Bozuk şifrelenmiş mesaj...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Şifre çözülüyor, bekleyin...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaj var olmayan oturum için şifrelendi...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsDatabase-->
@@ -214,8 +207,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="MmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS şifresi çözülüyor, bekleyin...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Bozuk şifrelenmiş MMS mesajı...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS mesajı var olmayan oturum için şifrelendi...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">İçe aktarma sürüyor</string>
@@ -225,7 +216,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="KeyCachingService_silence_passphrase_cached_with_lock">Açmak için dokunun, kapatmak için kilide dokunun.</string>
   <string name="KeyCachingService_lock">Parola ile kilitle</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Şifrelenmiş mesaj...</string>
   <string name="MessageNotifier_no_subject">(Konusuz)</string>
   <string name="MessageNotifier_message_delivery_failed">Mesaj iletimi başarısız.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Mesaj iletimi başarısız oldu.</string>
@@ -248,7 +238,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seç</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Engellenen kişi yok</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Yakın zamanda arama yok.</string>
   <!--conversation_title_view-->
@@ -275,9 +264,11 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="conversation_item_received__download">İndir</string>
   <string name="conversation_item_received__contact_photo_description">Kişi Fotosu</string>
   <string name="conversation_item_received__downloading">İndiriliyor</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Toplu seçim modu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s seçildi</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Yardımınız için teşekkürler!</string>
   <string name="log_submit_activity__submitting">Gönderilme</string>

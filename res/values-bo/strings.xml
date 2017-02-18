@@ -31,7 +31,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">གསུབ་་བཞིན་ཡོད།</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">ལྡེ་མིག་བརྗེ་ལེན་བྱེད་རྒྱུའི་བརྡ་ལན།</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
@@ -53,7 +52,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">སྣ་མང་བརྒྱུད་ལམ་ཅན་གྱི་འཕྲིན་ཐུང་གསོག་ཉར་ལ་སྐྱོན་འདུག </string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">སྣ་མང་བརྒྱུད་ལམ་ཅན་གྱི་འཕྲིན་ཐུང་མཁོ་སྤྲོད་བྱེད་མཁན་ལ་འབྲེལ་ཐག་གི་སྐྱོན་འདུག </string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -78,9 +76,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ཁྱེད་ཀྱིས་གཏོང་ཡུལ་དེར་རེ་སྐུལ་ཞིག་བཏང་ཚར་འདུག ཁྱེད་ཀྱིས་ཡང་བསྐྱར་གཅིག་གཏོང་འདོད་དམ།  འདི་ཡིས་ཁྱེད་ཀྱི་རེ་སྐུལ་དང་པོ་དེ་རྩིས་མེད་གཏོང་གི་རེད། </string>
   <string name="KeyExchangeInitiator_send">ཐོངས། </string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">གསང་སྡོམ་འཕྲིན་ཐུང་ཕན་མེད་ཞིག </string>
   <string name="MessageDisplayHelper_decrypting_please_wait">གསང་སྡོམ་བཤིག་བཞིན་ཡོད། ཅུང་སྒུག་དང་།</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">རྙེད་རྒྱུ་མེད་པའི་སྡེ་ཚན་ཞིག་གི་ཆེད་དུ་འཕྲིན་ཐུང་གསང་སྡོམ་བྱས་ཡོད། </string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་ MMS ཞབས་ཞུའི་ཡོ་ཆས་ལ་མཐུད་བཞིན་ཡོད།</string>
@@ -88,14 +84,11 @@
   <string name="MmsDatabase_downloading">ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་MMS གསང་གྲོལ་བྱེད་བཞིན་ཡོད། ཅུང་སྒུག་རོགས། </string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">མཁོ་མེད་གསང་སྡོམ་བྱས་བའི་བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་MMS </string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">སྡེ་ཚན་མི་མངོན་པ་དེའི་ཆེད་དུ་།  བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་MMS གསང་སྡོམ་བྱས་འདུག </string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">ནང་འདྲེན་བྱེད་བཞིན་ཡོད། </string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">གསང་སྡོམ་འཕྲིན་ཐུང་། </string>
   <string name="MessageNotifier_message_delivery_failed">འཕྲིན་ཐུང་བཏང་བ་དེ་འགྲོ་མི་འདུག </string>
   <string name="MessageNotifier_failed_to_deliver_message">འཕྲིན་ཐུང་གཏོང་ཐུབ་མ་སོང་། </string>
   <string name="MessageNotifier_error_delivering_message">འཕྲིན་ཐུང་གཏོང་བར་སྐྱོན་ཤོར་འདུག </string>
@@ -122,7 +115,9 @@
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">ཕབ་ལེན་བྱོས། </string>
   <string name="conversation_item_received__downloading">ཕབ་ལེན་བྱེད་བཞིན་ཡོད། </string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">གཏན་འཇགས་མཛོད་ཀྱི་མ་ལག་དེར་ཕྱོགས་གང་ཅིའི་ཐད་ནས་འགྱུར་བ་གཏོང་ཐུབ་གི་མ་རེད། </string>

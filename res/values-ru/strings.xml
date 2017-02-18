@@ -145,7 +145,6 @@
   <string name="ConversationFragment_deleting">Удаление...</string>
   <string name="ConversationFragment_deleting_messages">Удаляем сообщения...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Поиск...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Удалить выбранный разговор?</item>
@@ -175,7 +174,6 @@
     <item quantity="other">%d разговоров перемещено во Входящие</item>
   </plurals>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Сообщениe обмена ключами...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Архивированные разговоры (%d)</string>
   <!--CustomDefaultPreference-->
@@ -231,8 +229,6 @@
   <string name="MessageDetailsRecipient_new_identity">Идентификация</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Ошибка при сохранении MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Ошибка подключения к провайдеру MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Ошибка при чтении настроек MMS...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">MMS-сообщение</string>
   <!--MessageRecord-->
@@ -276,7 +272,6 @@
   <string name="SmsMessageRecord_secure_session_ended">Защищённый сеанс завершён.</string>
   <string name="SmsMessageRecord_duplicate_message">Дубликат сообщения.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Вы покинули группу...</string>
   <string name="ThreadRecord_draft">Черновик:</string>
   <string name="ThreadRecord_media_message">Медиа-сообщение</string>
   <!--VerifyIdentityActivity-->
@@ -298,10 +293,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вы уже отправили этому собеседнику запрос на начало сеанса. Вы уверены, что хотите отправить ещё один? Предыдущий будет аннулирован.</string>
   <string name="KeyExchangeInitiator_send">Отправить</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Зашифрованное сообщение испорчено...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Расшифровываем...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Сообщение зашифровано для несуществующей сессии...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Запросите завершение несуществующей сессии...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
   <!--MmsDatabase-->
@@ -313,8 +305,6 @@
   <string name="MmsDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Расшифровываем MMS-сообщение...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Зашифрованное MMS-сообщение испорчено...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-сообщение зашифрованно для несуществующей сессии...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Отключить звук уведомлений</string>
   <!--ApplicationMigrationService-->
@@ -326,7 +316,6 @@
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d новых сообщений в %2$d разговорах</string>
   <string name="MessageNotifier_most_recent_from_s">Последние полученные от: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Зашифрованное сообщение...</string>
   <string name="MessageNotifier_media_message_with_text">Медиа сообщение: %s</string>
   <string name="MessageNotifier_no_subject">(Нет темы)</string>
   <string name="MessageNotifier_message_delivery_failed">Сбой доставки сообщения.</string>
@@ -355,7 +344,6 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Выбрать для</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Нет заблокированных контактов...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Нет недавних звонков.</string>
   <!--conversation_title_view-->
@@ -385,9 +373,11 @@
   <string name="conversation_item_received__download">Скачать</string>
   <string name="conversation_item_received__contact_photo_description">Фотография контакта</string>
   <string name="conversation_item_received__downloading">Скачивание</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Выбрать несколько</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s выбрано</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Не удается получить доступ к журналу отладки с вашего устройства. Вместо этого вы можете использовать ADB для получения журнала.</string>
   <string name="log_submit_activity__thanks">Спасибо за помощь!</string>

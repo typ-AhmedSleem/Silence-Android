@@ -79,7 +79,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Poistetaan</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Avainvaihtoviesti...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Käyttäen mukautettua: %s</string>
@@ -127,8 +126,6 @@ aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <string name="MessageDetailsRecipient_new_identity">Uusi tunniste</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Virhe multimediaviestin tallentamisessa!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Virhe yhdistettäessä MMS-palveluntarjoajaan...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Virhe luettaessa operaattorin MMS-asetuksia...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediaviesti</string>
   <!--MessageRecord-->
@@ -157,7 +154,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="SmsMessageRecord_secure_session_ended">Salattu istunto päättyi</string>
   <string name="SmsMessageRecord_duplicate_message">Monistettu viesti.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Poistui ryhmästä...</string>
   <string name="ThreadRecord_draft">Luonnos:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Identiteettiavaimesi puuttuu.</string>
@@ -174,9 +170,7 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Olet jo lähettänyt istunnon aloituspyynnön tälle vastaanottajalle. Oletko varma, että haluat lähettää toisen pyynnön? Tämä mitätöi ensimmäisen pyynnön.</string>
   <string name="KeyExchangeInitiator_send">Lähetä</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Viestin salaus on kelvoton...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Puretaan salausta, odota hetki...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Viesti salattu olemattomalle istunnolle...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
   <!--MmsDatabase-->
@@ -188,8 +182,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="MmsDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Puretaan MMS-viestin salausta, odota hetki...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">MMS-viestin salaus on kelvoton...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-viesti salattu olemattomalle istunnolle...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Tuonti käynnissä</string>
@@ -197,7 +189,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Lukitse salalauseella</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Salattu viesti...</string>
   <string name="MessageNotifier_no_subject">(Ei otsikkoa)</string>
   <string name="MessageNotifier_message_delivery_failed">Viestin toimitus epäonnistui.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Viestin toimitus epäonnistui.</string>
@@ -242,9 +233,11 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="conversation_item_received__download">Lataa</string>
   <string name="conversation_item_received__contact_photo_description">Yhteystiedon kuva</string>
   <string name="conversation_item_received__downloading">Ladataan</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Valitse useampi</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s valittu</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Kiitos avustasi!</string>
   <string name="log_submit_activity__submitting">Lähetetään</string>

@@ -82,6 +82,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationActivity_abort_secure_session_confirmation">Ukončit zabezpečené spojení?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Jste si jisti, že chcete ukončit zabezpečené spojení?</string>
   <string name="ConversationActivity_delete_thread_question">Smazat konverzaci?</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Všechny zprávy této konverzace budou nenávratně smazány.</string>
   <string name="ConversationActivity_add_attachment">Vložit přílohu</string>
   <string name="ConversationActivity_select_contact_info">Vybrat informace o kontaktu</string>
   <string name="ConversationActivity_compose_message">Napsat zprávu</string>
@@ -131,7 +132,6 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="few">Chyba při ukládání příloh do úložiště!</item>
     <item quantity="other">Chyba při ukládání příloh do úložiště!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Soubor byl úspěšně uložen.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Do úložiště nelze zapisovat!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Ukládání přílohy</item>
@@ -144,12 +144,12 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="other">Ukládání %1$d příloh do úložiště...</item>
   </plurals>
   <string name="ConversationFragment_collecting_attahments">Příprava příloh...</string>
+  <string name="ConversationFragment_pending">Vyřizování...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Mazání...</string>
   <string name="ConversationFragment_deleting_messages">Mazání zpráv...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Hledat...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Smazat vybranou konverzaci?</item>
@@ -174,8 +174,12 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="few">%d konverzace přesunuty do složky Příchozí</item>
     <item quantity="other">%d konverzací přesunuto do složky Příchozí</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Odeslat koncepty</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Koncepty vybraných konverzací budou odeslány.</string>
+  <string name="ConversationListFragment_send">Odeslat</string>
+  <string name="ConversationListFragment_sending">Odesílání</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Odesílání vybraných konceptů...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Zpráva s výměnou klíčů...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivované konverzace (%d)</string>
   <!--CustomDefaultPreference-->
@@ -246,8 +250,6 @@ opětovným importem dojde ke zdvojení zpráv.</string>
   <string name="MessageDetailsRecipient_new_identity">Nová identita</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Chyba při ukládání MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Chyba při připojení k poskytovateli MMS..</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Chyba při čtení bezdrátového nastavení poskytovatele MMS...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediální zpráva</string>
   <!--MessageRecord-->
@@ -263,9 +265,28 @@ opětovným importem dojde ke zdvojení zpráv.</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ikona Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Nesprávné heslo!</string>
   <!--ReceiveKeyActivity-->
+  <string name="ReceiveKeyActivity_processing">Zpracovávání</string>
+  <string name="ReceiveKeyActivity_processing_key_exchange">Zpracovávání výměny klíčů...</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Měli byste ověřit identitu tohoto kontaktů.</string>
   <!--RecipientPreferencesActivity-->
+  <string name="RecipientPreferenceActivity_block_this_contact_question">Blokovat tento kontakt?</string>
+  <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Zprávy odeslané tímto uživatelem již neuvidíte.</string>
+  <string name="RecipientPreferenceActivity_block">Blokovat</string>
+  <string name="RecipientPreferenceActivity_unblock_this_contact_question">Odblokovat tento kontakt?</string>
+  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Určitě chcete odblokovat tento kontakt?</string>
+  <string name="RecipientPreferenceActivity_unblock">Odblokovat</string>
+  <string name="RecipientPreferenceActivity_enabled">Povoleno</string>
+  <string name="RecipientPreferenceActivity_disabled">Zakázáno</string>
   <!--Slide-->
+  <string name="Slide_image">Obrázek</string>
+  <string name="Slide_audio">Audio</string>
+  <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
+  <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Přijata porušená zpráva
+výměny klíčů</string>
+  <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
+Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
+  <string name="SmsMessageRecord_secure_session_ended">Zabezpečené sezení ukončeno.</string>
   <!--ThreadRecord-->
   <!--VerifyIdentityActivity-->
   <!--ViewIdentityActivity-->
@@ -292,7 +313,9 @@ opětovným importem dojde ke zdvojení zpráv.</string>
   <!--conversation_item-->
   <!--conversation_item_sent-->
   <!--conversation_item_received-->
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <!--database_upgrade_activity-->

@@ -69,7 +69,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Sletter</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Udvekslingsnøgle...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Ingen</string>
@@ -111,8 +110,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Fejl ved lagring af MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Fejl! Ingen forbindelse til MMS tjenesten...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Kunne ikke læse udbyderens MMS-indstillinger.</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">MMS-besked</string>
   <!--MessageRecord-->
@@ -142,7 +139,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sikker session afsluttet.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikeret besked.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Forlod gruppen...</string>
   <string name="ThreadRecord_draft">Kladder:</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen ID-nøgle.</string>
@@ -159,9 +155,7 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Du har allerede sendt en forespørgsel om at initialisere en session til denne modtager. Er du sikker på at du vil sende en til? Dette vil gøre en tidligere forespørgsel ugyldig.</string>
   <string name="KeyExchangeInitiator_send">Send</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Ugyldig krypteret besked...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Dekrypterer, vent venligst...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Besked krypteret for en ikke-eksisterende session...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fejl ved dekryptering af besked.</string>
   <!--MmsDatabase-->
@@ -173,8 +167,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="MmsDatabase_error_decrypting_message">Fejl ved dekryptering af besked.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekrypterer MMS, vent venligst...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Ugyldig krypteret MMS...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS krypteret fra en ikke-eksisterende session...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Henter...</string>
@@ -182,7 +174,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Lås med et kodeord</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Krypteret besked...</string>
   <string name="MessageNotifier_no_subject">(Intet emne)</string>
   <string name="MessageNotifier_message_delivery_failed">Levering af besked mislykkedes.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Kunne ikke sende besked.</string>
@@ -226,9 +217,11 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="conversation_item_received__download">Hent</string>
   <string name="conversation_item_received__contact_photo_description">Kontaktbillede</string>
   <string name="conversation_item_received__downloading">Henter</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Valgte mængde</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s valgt</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Tak for hjælpen!</string>
   <string name="log_submit_activity__submitting">Sender</string>

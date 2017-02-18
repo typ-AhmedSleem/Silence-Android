@@ -128,7 +128,6 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="one">Errore nel salvare l\'allegato in memoria!</item>
     <item quantity="other">Errore nel salvare gli allegati in memoria!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">File salvato con successo.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Impossibile scrivere sulla memoria!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Salvataggio allegato</item>
@@ -145,7 +144,6 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationFragment_deleting">Cancellazione...</string>
   <string name="ConversationFragment_deleting_messages">Cancellazione messaggi...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Ricerca...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Cancellare la conversazione selezionata?</item>
@@ -167,7 +165,6 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="other">%d conversazioni spostate nei messaggi in arrivo</item>
   </plurals>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Messaggio di scambio della chiave...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversazioni archiviate (%d)</string>
   <!--CustomDefaultPreference-->
@@ -240,8 +237,6 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="MessageDetailsRecipient_new_identity">Nuova identità</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Errore nel salvare l\'MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Errore durante la connessione al provider MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Errore durante la lettura delle impostazioni MMS</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Messaggio multimediale</string>
   <!--MessageRecord-->
@@ -288,7 +283,6 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="SmsMessageRecord_secure_session_ended">Sessione sicura terminata.</string>
   <string name="SmsMessageRecord_duplicate_message">Messaggio duplicato.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Gruppo abbandonato...</string>
   <string name="ThreadRecord_draft">Bozza:</string>
   <string name="ThreadRecord_media_message">Messaggio multimediale</string>
   <!--VerifyIdentityActivity-->
@@ -311,10 +305,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Hai giò inviata una richiesta di inizio di sessione a questo contatto, sei sicuro di volerne inviare un\'altra? Questo renderà invalida la precedente.</string>
   <string name="KeyExchangeInitiator_send">Inviata</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Cifratura messaggio errata...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Decifratura in corso...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Messaggio cifrato per una sessione non esistente...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Richiesta di finire una sessione non esistente...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Errore nel decifrare il messaggio.</string>
   <!--MmsDatabase-->
@@ -326,8 +317,6 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MmsDatabase_error_decrypting_message">Errore nel decifrare il messaggio.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Decifratura MMS in corso, attendere...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Cifratura MMS invalida..</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Messaggio MMS cifrato per una sessione non esistente</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Silenzia notifiche</string>
   <!--ApplicationMigrationService-->
@@ -343,7 +332,6 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nuovi messaggi in %2$d conversazioni</string>
   <string name="MessageNotifier_most_recent_from_s">Più recente da: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Messaggio cifrato...</string>
   <string name="MessageNotifier_media_message_with_text">Messaggio multimediale: %s</string>
   <string name="MessageNotifier_no_subject">(Nessun oggetto)</string>
   <string name="MessageNotifier_message_delivery_failed">Non è riuscito l\'invio del messaggio</string>
@@ -374,7 +362,6 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleziona per</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Nessun contatto bloccato...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nessuna chiamata recente.</string>
   <!--conversation_title_view-->
@@ -405,9 +392,11 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_item_received__download">Scarica</string>
   <string name="conversation_item_received__contact_photo_description">Foto del contatto</string>
   <string name="conversation_item_received__downloading">Caricamento in corso</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Modalità di selezione di gruppo</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s selezionati</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossibile leggere il log sul tuo dispositivo. Puoi comunque usare ADB per avere un log per il debug</string>
   <string name="log_submit_activity__thanks">Grazie dell\'aiuto!</string>

@@ -6,6 +6,7 @@
   <string name="delete">Löschen</string>
   <string name="please_wait">Bitte warten …</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Neue Nachricht</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du hast noch keine Passphrase festgelegt!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -129,7 +130,6 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
     <item quantity="one">Fehler beim Speichern des Anhangs im Gerätespeicher!</item>
     <item quantity="other">Fehler beim Speichern der Anhänge im Gerätespeicher!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Datei erfolgreich gespeichert.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kein Schreibzugriff auf Gerätespeicher!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Anhang speichern</item>
@@ -146,7 +146,6 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ConversationFragment_deleting">Löschen</string>
   <string name="ConversationFragment_deleting_messages">Nachrichten werden gelöscht …</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Suchen …</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Ausgewählte Unterhaltung löschen?</item>
@@ -167,8 +166,12 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
     <item quantity="one">Unterhaltung in Eingang verschoben</item>
     <item quantity="other">%d Unterhaltungen in Eingang verschoben</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Entwürfe senden</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Entwürfe der ausgewählten Unterhaltungen senden.</string>
+  <string name="ConversationListFragment_send">Senden</string>
+  <string name="ConversationListFragment_sending">Wird gesendet</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Ausgewählte Entwürfe werden gesendet …</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Schlüsselaustausch-Nachricht …</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivierte Unterhaltungen (%d)</string>
   <!--CustomDefaultPreference-->
@@ -239,8 +242,6 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="MessageDetailsRecipient_new_identity">Neuer Schlüssel</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Fehler beim Speichern der MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Verbindung zum MMS-Anbieter fehlgeschlagen …</string>
-  <string name="MmsDownloader_error_reading_mms_settings">MMS-Einstellungen des Mobilfunkanbieters konnten nicht gelesen werden …</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">MMS</string>
   <!--MessageRecord-->
@@ -283,7 +284,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="SmsMessageRecord_secure_session_ended">Sichere Unterhaltung beendet.</string>
   <string name="SmsMessageRecord_duplicate_message">Doppelte Nachricht.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Gruppe wurde verlassen …</string>
   <string name="ThreadRecord_draft">Entwurf:</string>
   <string name="ThreadRecord_media_message">Nachricht mit Medieninhalten</string>
   <!--VerifyIdentityActivity-->
@@ -306,10 +306,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Du hast bereits eine Unterhaltungsanfrage an diesen Kontakt gesendet. Möchtest du wirklich eine weitere senden? Dies wird die erste Anfrage ungültig machen.</string>
   <string name="KeyExchangeInitiator_send">Senden</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht …</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten …</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende Unterhaltung verschlüsselt …</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Anfrage an eine nicht vorhandene Sitzung beenden …</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsDatabase-->
@@ -321,8 +318,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="MmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wird entschlüsselt. Bitte warten …</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Fehlerhaft verschlüsselte MMS …</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS wurde für eine nicht existierende Unterhaltung verschlüsselt …</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Benachrichtigungen stummschalten</string>
   <!--ApplicationMigrationService-->
@@ -338,7 +333,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d neue Nachrichten in %2$d Unterhaltungen</string>
   <string name="MessageNotifier_most_recent_from_s">Neueste von: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Verschlüsselte Nachricht …</string>
   <string name="MessageNotifier_media_message_with_text">Nachricht mit Medieninhalten: %s</string>
   <string name="MessageNotifier_no_subject">(ohne Text)</string>
   <string name="MessageNotifier_message_delivery_failed">Nachrichtenübermittlung gescheitert.</string>
@@ -369,7 +363,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Auswählen für</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Keine blockierten Kontakte …</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Keine letzten Anrufe</string>
   <!--conversation_title_view-->
@@ -400,9 +393,11 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="conversation_item_received__download">Herunterladen</string>
   <string name="conversation_item_received__contact_photo_description">Kontaktbild</string>
   <string name="conversation_item_received__downloading">Herunterladen</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mehrfachauswahl</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s ausgewählt</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Das Diagnoseprotokoll auf deinem Gerät konnte nicht gelesen werden. Du kannst allerdings immer noch ADB verwenden, um ein Diagnoseprotokoll zu erhalten.</string>
   <string name="log_submit_activity__thanks">Danke für deine Hilfe!</string>
@@ -646,6 +641,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Ausgewählte löschen</string>
   <string name="conversation_list_batch__menu_select_all">Alle auswählen</string>
+  <string name="conversation_list_batch__menu_send_drafts">Ausgewählte Entwürfe senden</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Ausgewählte archivieren</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Ausgewählte in Eingang verschieben</string>
   <!--conversation_list-->
@@ -700,6 +696,9 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="reminder_header_rate_title">Bewerte diese App</string>
   <string name="reminder_header_rate_text">Hilf uns durch deine Bewertung, wenn Ihnen die App gefällt.</string>
   <string name="reminder_header_rate_button">Jetzt bewerten!</string>
+  <string name="reminder_header_delivery_reports_title">Zustellberichte aktivieren?</string>
+  <string name="reminder_header_delivery_reports_text">Zustellberichte lassen dich wissen, ob und wann dein Kontakt deine Nachrichten erhalten hat. Einige Mobilfunknetze berechnen hierfür eine zusätzliche Gebühr.</string>
+  <string name="reminder_header_delivery_reports_button">AKTIVIEREN</string>
   <string name="reminder_header_close_button">SCHLIESSEN</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Du</string>
@@ -707,6 +706,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="MediaPreviewActivity_unssuported_media_type">Nicht unterstützter Medieninhaltetyp</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Speichern</string>
+  <string name="media_preview__forward_title">Weiterleiten</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Alle speichern</string>
   <!--media_preview_activity-->
