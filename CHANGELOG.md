@@ -1,5 +1,16 @@
 # Silence Changelog
 
+### [0.15.0] - 2017-02-18
+- Added missing emojis flags
+- Added widget with unread messages count
+- Added support for image keyboard
+- Added Android N bundled notifications and quick reply
+- Added support for direct share targets
+- Added sticky date headers
+- Added scroll-to-bottom button
+- Updated translations
+- Minor bugs fixes
+
 ### [0.14.8] - 2016-12-30
 - Fixed emoji's support with Android <= 6.1
 - Updated emojis, added flags
@@ -170,6 +181,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.0]: https://github.com/SilenceIM/Silence/compare/v0.14.8...v0.15.0
  [0.14.8]: https://github.com/SilenceIM/Silence/compare/v0.14.7...v0.14.8
  [0.14.7]: https://github.com/SilenceIM/Silence/compare/v0.14.6...v0.14.7
  [0.14.6]: https://github.com/SilenceIM/Silence/compare/v0.14.5...v0.14.6
