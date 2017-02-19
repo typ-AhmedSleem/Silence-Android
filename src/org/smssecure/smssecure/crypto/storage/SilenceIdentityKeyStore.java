@@ -4,6 +4,7 @@ import android.content.Context;
 
 import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.crypto.SessionUtil;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.util.SilencePreferences;
@@ -58,8 +59,15 @@ public class SilenceIdentityKeyStore implements IdentityKeyStore {
 
   public boolean isTrustedIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
     long recipientId = RecipientFactory.getRecipientsFromString(context, address.getName(), true).getPrimaryRecipient().getRecipientId();
-    return DatabaseFactory.getIdentityDatabase(context)
-                          .isValidIdentity(masterSecret, recipientId, identityKey);
+
+    boolean trusted = DatabaseFactory.getIdentityDatabase(context)
+                                     .isValidIdentity(masterSecret, recipientId, identityKey);
+
+    if (!trusted) {
+      new SilenceSessionStore(context, masterSecret, subscriptionId).deleteAllSessions(address.getName());
+    }
+
+    return trusted;
   }
 
   @Override

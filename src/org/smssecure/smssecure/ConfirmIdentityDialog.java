@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.IdentityDatabase;
 import org.smssecure.smssecure.database.MmsAddressDatabase;
@@ -29,6 +30,8 @@ import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.util.Base64;
+import org.smssecure.smssecure.util.InvalidNumberException;
+import org.smssecure.smssecure.util.Util;
 
 import java.io.IOException;
 
@@ -44,21 +47,26 @@ public class ConfirmIdentityDialog extends AlertDialog {
                                IdentityKeyMismatch mismatch)
   {
     super(context);
-    Recipient       recipient       = RecipientFactory.getRecipientForId(context, mismatch.getRecipientId(), false);
-    String          name            = recipient.toShortString();
-    String          introduction    = String.format(context.getString(R.string.ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different), name, name);
-    SpannableString spannableString = new SpannableString(introduction + " " +
-                                                          context.getString(R.string.ConfirmIdentityDialog_you_may_wish_to_verify_this_contact));
+    try {
+      Recipient       recipient       = RecipientFactory.getRecipientForId(context, mismatch.getRecipientId(), false);
+      String          name            = recipient.toShortString();
+      String          number          = Util.canonicalizeNumber(context, recipient.getNumber());
+      String          introduction    = String.format(context.getString(R.string.ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different), name, name);
+      SpannableString spannableString = new SpannableString(introduction + " " +
+                                                            context.getString(R.string.ConfirmIdentityDialog_you_may_wish_to_verify_this_contact));
 
-    spannableString.setSpan(new VerifySpan(context, mismatch),
-                            introduction.length()+1, spannableString.length(),
-                            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      spannableString.setSpan(new VerifySpan(context, mismatch),
+                              introduction.length()+1, spannableString.length(),
+                              Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-    setTitle(name);
-    setMessage(spannableString);
+      setTitle(name);
+      setMessage(spannableString);
 
-    setButton(AlertDialog.BUTTON_POSITIVE, context.getString(R.string.ConfirmIdentityDialog_accept), new AcceptListener(masterSecret, messageRecord, mismatch));
-    setButton(AlertDialog.BUTTON_NEGATIVE, context.getString(android.R.string.cancel),               new CancelListener());
+      setButton(AlertDialog.BUTTON_POSITIVE, context.getString(R.string.ConfirmIdentityDialog_accept), new AcceptListener(masterSecret, messageRecord, mismatch, number));
+      setButton(AlertDialog.BUTTON_NEGATIVE, context.getString(android.R.string.cancel),               new CancelListener());
+    } catch (InvalidNumberException e) {
+      throw new AssertionError(e);
+    }
   }
 
   @Override
@@ -77,11 +85,13 @@ public class ConfirmIdentityDialog extends AlertDialog {
     private final MasterSecret        masterSecret;
     private final MessageRecord       messageRecord;
     private final IdentityKeyMismatch mismatch;
+    private final String              number;
 
-    private AcceptListener(MasterSecret masterSecret, MessageRecord messageRecord, IdentityKeyMismatch mismatch) {
+    private AcceptListener(MasterSecret masterSecret, MessageRecord messageRecord, IdentityKeyMismatch mismatch, String number) {
       this.masterSecret  = masterSecret;
       this.messageRecord = messageRecord;
       this.mismatch      = mismatch;
+      this.number        = number;
     }
 
     @Override
@@ -95,6 +105,8 @@ public class ConfirmIdentityDialog extends AlertDialog {
           identityDatabase.saveIdentity(masterSecret,
                                         mismatch.getRecipientId(),
                                         mismatch.getIdentityKey());
+
+          new SilenceSessionStore(getContext(), masterSecret, messageRecord.getSubscriptionId()).deleteAllSessions(number);
 
           processMessageRecord(messageRecord);
 
