@@ -39,7 +39,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Esborrant</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Missatge d\'intercanvi de clau...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
@@ -71,8 +70,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Error emmagatzemant MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Error connectant amb l\'operador de MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Error llegint els ajustaments MMS de l\'operador inalàmbric\u2026</string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -91,7 +88,6 @@
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">S\'ha rebut informació actualitzada però desconeguda. Pica per validar l\'identitat.</string>
   <string name="SmsMessageRecord_secure_session_ended">La sessió segura s\'ha acabat.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Ha deixat el grup...</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Tu no tens una clau d\'identitat.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatari no té clau d\'identitat.</string>
@@ -106,9 +102,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ja has enviat una petició per iniciar una sessió a aquest destinatari, estàs segur que vols enviar-ne una altra? Això invalidarà la primera petició.</string>
   <string name="KeyExchangeInitiator_send">Envia</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Missatge mal encriptat...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Desencriptant, si us plau espera...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Missatge encriptat per una sessió no existent...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Connectant al servidor MMS...</string>
@@ -117,15 +111,12 @@
   <string name="MmsDatabase_mms_pending_download">Pica i configura els ajustaments MMS per continuar la descàrrega.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Desencriptant MMS, si us plau espera...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Missatge MMS mal encriptat...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Missatge MMS encriptat per una sessió no existent...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importació en curs</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Bloqueja amb una frase contrasenya</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Missatge encriptat...</string>
   <string name="MessageNotifier_message_delivery_failed">Entrega del missatge fallida.</string>
   <string name="MessageNotifier_failed_to_deliver_message">No s\'ha pogut entregar el missatge.</string>
   <string name="MessageNotifier_error_delivering_message">Error entregant el missatge.</string>
@@ -153,7 +144,9 @@
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">Descàrrega</string>
   <string name="conversation_item_received__downloading">Descarregant</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Gràcies per la teva ajuda!</string>
   <!--database_migration_activity-->

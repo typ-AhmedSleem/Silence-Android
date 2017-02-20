@@ -130,7 +130,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
     <item quantity="one">Fout tijdens het opslaan van de bijlage!</item>
     <item quantity="other">Fout tijdens het opslaan van de bijlages!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Bestand succesvol opgeslagen.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Opslag niet beschrijfbaar!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Bijlage opslaan</item>
@@ -147,7 +146,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationFragment_deleting">Verwijderen...</string>
   <string name="ConversationFragment_deleting_messages">Berichten verwijderen...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Zoeken...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Geselecteerd gesprek verwijderen?</item>
@@ -174,7 +172,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationListFragment_sending">Aan het zenden</string>
   <string name="ConversationListFragment_sending_selected_drafts">Geselecteerde concepten verzenden</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Sleuteluitwisselingsbericht...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Gearchiveerde gesprekken (%d)</string>
   <!--CustomDefaultPreference-->
@@ -246,8 +243,6 @@ importeert de SMS-berichten uit de systeemdatabase in Silence. Als de SMS databa
   <string name="MessageDetailsRecipient_new_identity">Nieuwe identiteit</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS opslaan mislukt!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Fout bij verbinden met MMS provider...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Fout bij het lezen van de MMS-instellingen van uw provider...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediabericht</string>
   <!--MessageRecord-->
@@ -289,9 +284,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Bericht ontvangen met een onbekende identiteitssleutel. Klik om te verwerken en weer te geven.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Bijgewerkte maar onbekende identiteitsgegevens ontvangen. Raak aan om identiteit te bevestigen.</string>
   <string name="SmsMessageRecord_secure_session_ended">Beveiligde sessie beëindigd.</string>
-  <string name="SmsMessageRecord_duplicate_message">Dupliceer bericht.</string>
+  <string name="SmsMessageRecord_duplicate_message">Dubbel bericht.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Je hebt deze groep verlaten...</string>
   <string name="ThreadRecord_draft">Concept:</string>
   <string name="ThreadRecord_media_message">Media bericht</string>
   <!--VerifyIdentityActivity-->
@@ -314,10 +308,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">U heeft reeds een sessieinititatieverzoek verstuurd naar deze ontvanger, weet u zeker dat u er nog een wilt sturen? Dit maakt het eerdere verzoek ongeldig.</string>
   <string name="KeyExchangeInitiator_send">Verstuur</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Verkeerd versleuteld bericht...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Ontsleutelen, een moment...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Bericht ontsleuteld voor niet bestaande sessie...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Verzoek om een niet bestaande sessie te sluiten...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fout bij ontsleutelen  van bericht.</string>
   <!--MmsDatabase-->
@@ -329,8 +320,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="MmsDatabase_error_decrypting_message">Fout bij ontsleutelen  van bericht.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS ontsleutelen, een moment...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Verkeerd versleuteld MMS-bericht...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-bericht versleuteld voor niet bestaande sessie...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Geluid uit bij berichten</string>
   <!--ApplicationMigrationService-->
@@ -346,7 +335,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nieuwe berichten in %2$d gesprekken</string>
   <string name="MessageNotifier_most_recent_from_s">Laatste van: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Versleuteld bericht...</string>
   <string name="MessageNotifier_media_message_with_text">Media bericht: %s</string>
   <string name="MessageNotifier_no_subject">(Geen onderwerp)</string>
   <string name="MessageNotifier_message_delivery_failed">Berichtaflevering mislukt.</string>
@@ -377,7 +365,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Selecteer voor</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Geen geblokkeerde contacten...</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Geen recente gesprekken.</string>
   <!--conversation_title_view-->
@@ -408,9 +395,11 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="conversation_item_received__download">Download</string>
   <string name="conversation_item_received__contact_photo_description">Contact Foto</string>
   <string name="conversation_item_received__downloading">Downloaden</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode"> Meerdere tegelijk selecteren</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s geselecteerd</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Kan geen logs van het apparaat verzamelen. U kunt nog steeds ADB gebruiken om debug logs te verzamelen.</string>
   <string name="log_submit_activity__thanks">Bedankt voor uw hulp!</string>

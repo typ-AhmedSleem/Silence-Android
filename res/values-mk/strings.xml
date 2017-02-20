@@ -83,7 +83,9 @@
   <!--conversation_item-->
   <!--conversation_item_sent-->
   <!--conversation_item_received-->
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <!--database_upgrade_activity-->

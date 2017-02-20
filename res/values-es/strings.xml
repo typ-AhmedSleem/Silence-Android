@@ -132,7 +132,10 @@
     <item quantity="one">¡Error al guardar adjunto en el almacenamiento!</item>
     <item quantity="other">¡Error al guardar adjuntos en el almacenamiento!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">El fichero se guardó con éxito.</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Fichero guardado correctamente.</item>
+    <item quantity="other">Ficheros guardados correctamente.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">¡No se pudo escribir en el almacenamiento!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Guardando adjuntos</item>
@@ -149,7 +152,7 @@
   <string name="ConversationFragment_deleting">Borrando...</string>
   <string name="ConversationFragment_deleting_messages">Borrando mensajes...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Buscar...</string>
+  <string name="ConversationListActivity_search">Buscar</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">¿Borrar conversación seleccionada?</item>
@@ -176,7 +179,7 @@
   <string name="ConversationListFragment_sending">Enviando</string>
   <string name="ConversationListFragment_sending_selected_drafts">Enviando borradores seleccionados...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de claves...</string>
+  <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de clave</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversaciones archivadas (%d)</string>
   <!--CustomDefaultPreference-->
@@ -186,6 +189,8 @@
   <!--DateUtils-->
   <string name="DateUtils_now">Ahora</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <string name="DateUtils_today">Hoy</string>
+  <string name="DateUtils_yesterday">Ayer</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartir con</string>
   <!--IntroScreenActivity-->
@@ -250,8 +255,8 @@ importarla de nuevo dará como resultado mensajes duplicados.</string>
   <string name="MessageDetailsRecipient_new_identity">Nueva identidad</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">¡Error guardando MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Error conectando al proveedor MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Error al leer la configuración MMS del proveedor...</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Error al conectar al proveedor de MMS</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Error al leer la configuración MMS del proveedor móvil</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Mensaje multimedia</string>
   <!--MessageRecord-->
@@ -305,7 +310,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="SmsMessageRecord_secure_session_ended">La sesión segura finalizó.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplicar mensaje.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Ha dejado el grupo...</string>
+  <string name="ThreadRecord_left_the_group">Abandonar el grupo</string>
   <string name="ThreadRecord_draft">Borrador:</string>
   <string name="ThreadRecord_media_message">Mensaje audiovisual</string>
   <!--VerifyIdentityActivity-->
@@ -328,10 +333,10 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ya ha enviado una petición de inicio de sesión a este destinatario, ¿está seguro de que quiere enviar otra? Esto invalidará la primera petición. </string>
   <string name="KeyExchangeInitiator_send">Enviar</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Mensaje cifrado incorrecto...</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Mensaje cifrado defectuoso</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Descifrando, por favor espere...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mensaje cifrado para una sesión no existente...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Solicitar terminar una sesión no-existente...</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mensaje cifrado para una sesión no existente</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Petición para finalizar una sesión no existente</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
   <!--MmsDatabase-->
@@ -343,8 +348,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="MmsDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Descifrando MMS, por favor espere...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Mensaje MMS mal cifrado</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Mensaje MMS cifrado para sesión no existente...</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Mensaje MMS cifrado defectuoso</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Mensaje MMS cifrado para una sesión no existente</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Silenciar notifiicaciones</string>
   <!--ApplicationMigrationService-->
@@ -360,7 +365,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d mensajes nuevos en %2$d conversaciones</string>
   <string name="MessageNotifier_most_recent_from_s">Más reciente desde: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Mensaje cifrado...</string>
+  <string name="MessageNotifier_encrypted_message">Mensaje cifrado</string>
   <string name="MessageNotifier_media_message_with_text">Mensaje multimedia: %s</string>
   <string name="MessageNotifier_no_subject">(Sin asunto)</string>
   <string name="MessageNotifier_message_delivery_failed">Entrega de mensaje fallida.</string>
@@ -391,7 +396,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleccionar para</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">No hay contactos bloqueados...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">No hay contactos bloqueados</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">No hay llamadas recientes.</string>
   <!--conversation_title_view-->
@@ -422,9 +427,15 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="conversation_item_received__download">Descarga</string>
   <string name="conversation_item_received__contact_photo_description">Foto de contacto</string>
   <string name="conversation_item_received__downloading">Descargando</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Reproducir</string>
+  <string name="audio_view__pause_accessibility_description">Pausa</string>
+  <string name="audio_view__download_accessibility_description">Descargar</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Modo de selección por lotes</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s seleccionado</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Desplazar hasta el final</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">No se pudo leer el registro (log) en su dispositivo. Todavía puede usar ADB para obtener un registro de depuración en su lugar.</string>
   <string name="log_submit_activity__thanks">¡Gracias por su ayuda!</string>
@@ -713,6 +724,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="text_secure_normal__menu_settings">Parámetros</string>
   <string name="text_secure_normal__menu_clear_passphrase">Bloquear</string>
   <string name="text_secure_normal__mark_all_as_read">Marcar todos como leídos</string>
+  <string name="text_secure_normal__menu_archived_conversations">Conversaciones archivadas</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">¿Usar como aplicación de SMS por defecto?</string>
   <string name="reminder_header_sms_default_text">Pulse para hacer de Silence su aplicación de SMS predeterminada.</string>
@@ -734,6 +746,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--media_preview-->
   <string name="media_preview__save_title">Guardar</string>
   <string name="media_preview__forward_title">Avanzar</string>
+  <string name="media_preview__overview_title">Todas las imágenes</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Guardar todo</string>
   <!--media_preview_activity-->

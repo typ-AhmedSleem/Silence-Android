@@ -91,7 +91,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Διαγραφή</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Μήνυμα ανταλλαγής κλειδιών...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Χρήση προσαρμοσμένων: %s</string>
@@ -141,8 +140,6 @@
   <string name="MessageDetailsRecipient_new_identity">Νέα ταυτότητα</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Σφάλμα κατά την αποθήκευση MMS! </string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Σφάλμα κατά στη σύνδεση με τον πάροχο MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Σφάλμα κατά την διάβαση των ρυθμίσεων MMS του παροχέα...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Μήνυμα Πολυμέσων</string>
   <!--MessageRecord-->
@@ -178,7 +175,6 @@
   <string name="SmsMessageRecord_secure_session_ended">Η Ασφαλής συζήτηση τερματίστηκε.</string>
   <string name="SmsMessageRecord_duplicate_message">Διπλότυπο μήνυμα</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Έφυγε απο την ομάδα...</string>
   <string name="ThreadRecord_draft">Πρόχειρο</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>
@@ -195,10 +191,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Έχετε ήδη ζητήσει την έναρξη συζήτησης με αυτόν τον παραλήπτη, είστε σίγουροι πως θέλετε να στείλετε νέα αίτηση; Η πρώτη αίτηση θα ακυρωθεί.</string>
   <string name="KeyExchangeInitiator_send">Αποστολή</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Προβληματικό κρυπτογραφημένο μήνυμα...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Αποκρυπτογράφηση, παρακαλώ περιμένετε...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Το μήνυμα κρυπτογραφήθηκε για ανύπαρκτη συζήτηση...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Αίτημα να τελειώσει μια μη υπάρχουσα περίοδος...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Σφάλμα αποκρυπτογράφησης του μηνύματος.</string>
   <!--MmsDatabase-->
@@ -210,8 +203,6 @@
   <string name="MmsDatabase_error_decrypting_message">Σφάλμα κρυπτογράφησης του μηνύματος.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Γίνεται αποκρυπτογράφηση MMS, παρακαλώ περιμένετε...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Κακό κρυπτογραφημένο μήνυμα MMS...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Το μήνυμα MMS κρυπτογραφήθηκε για ανύπαρκτη συζήτηση...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Εισαγωγή σε εξέλιξη</string>
@@ -219,7 +210,6 @@
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Κλείδωμα με συνθηματική φράση</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Κρυπτογραφημένο μήνυμα...</string>
   <string name="MessageNotifier_media_message_with_text">Μήνυμα πολυμέσων: %s</string>
   <string name="MessageNotifier_no_subject">(Χωρίς Θέμα)</string>
   <string name="MessageNotifier_message_delivery_failed">Παράδοση μηνύματος απέτυχε.</string>
@@ -267,9 +257,11 @@
   <string name="conversation_item_received__download">Λήψη</string>
   <string name="conversation_item_received__contact_photo_description">Φωτογραφία επαφής</string>
   <string name="conversation_item_received__downloading">Γίνεται λήψη</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Λειτουργία Μαζικής Επιλογής</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s επιλέχτηκαν</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Ευχαριστούμε για τη βοήθειά σας!</string>
   <string name="log_submit_activity__submitting">Αποστολή</string>

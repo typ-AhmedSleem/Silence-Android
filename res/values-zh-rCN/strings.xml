@@ -5,6 +5,7 @@
   <string name="delete">删除</string>
   <string name="please_wait">请稍候…</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">新信息</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">您尚未设置密码！</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -18,6 +19,7 @@
   <string name="ApplicationPreferencesActivity_disable">禁用</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">已开启接收短信</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">已停用接收短信</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">点击来将 Silence 设定为默认的短信应用</string>
   <string name="ApplicationPreferencesActivity_on">开启</string>
   <string name="ApplicationPreferencesActivity_On">开</string>
   <string name="ApplicationPreferencesActivity_off">关闭</string>
@@ -25,6 +27,7 @@
   <string name="ApplicationPreferencesActivity_sms">短信</string>
   <string name="ApplicationPreferencesActivity_mms">彩信</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">接收%s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">主题 %1$s，语言 %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="other">%d 分钟</item>
@@ -48,6 +51,7 @@
   <string name="ConversationItem_expires_s">过期时间： %s</string>
   <string name="ConversationItem_error_not_delivered">未送达</string>
   <string name="ConversationItem_view_secure_media_question">查看安全媒体？</string>
+  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">该媒体已经被存储在加密数据库中，但是当您使用外部查看器查看该媒体时需要将不加密的副本临时保存在磁盘上，您确定要这样做吗？</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">错误：收到旧密钥交换消息。</string>
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">收到密钥交换信息，轻按以处理。</string>
   <string name="ConversationItem_group_action_left">%1$s 已经离开了该群组。</string>
@@ -99,7 +103,6 @@
   <string name="ConversationFragment_deleting">正在删除…</string>
   <string name="ConversationFragment_deleting_messages">正在删除信息…</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">搜索...</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="other">删除已选会话？</item>
@@ -107,7 +110,6 @@
   <string name="ConversationListFragment_deleting">正在删除</string>
   <string name="ConversationListFragment_undo">撤销</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">密钥交换消息...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">使用定制：%s</string>
@@ -157,8 +159,6 @@
   <string name="MessageDetailsRecipient_new_identity">新身份</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">存储彩信错误！</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">连接彩信服务器错误…</string>
-  <string name="MmsDownloader_error_reading_mms_settings">在读取彩信服务器设置时遇到错误…</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">多媒体信息</string>
   <!--MessageRecord-->
@@ -198,7 +198,6 @@
   <string name="SmsMessageRecord_secure_session_ended">安全会话已结束。</string>
   <string name="SmsMessageRecord_duplicate_message">重复的信息。</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">离开此群组...</string>
   <string name="ThreadRecord_draft">草稿：</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您没有身份密钥。</string>
@@ -215,10 +214,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">您已经向收件人发送了一个会话启动请求，是否确定要再次发送？  这将使第一个请求无效。</string>
   <string name="KeyExchangeInitiator_send">发送</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">已损坏的加密信息…</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">正在解密，请稍后...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">已为不存在的会话加密消息...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">结束一个不存在的会话的请求</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">解密信息时遇到错误。</string>
   <!--MmsDatabase-->
@@ -230,8 +226,6 @@
   <string name="MmsDatabase_error_decrypting_message">解密消息时遇到错误</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">正在解密彩信，请稍后...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">已损坏的加密彩信…</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">已为不存在的会话加密彩信消息...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">关闭通知</string>
   <!--ApplicationMigrationService-->
@@ -241,7 +235,6 @@
   <string name="KeyCachingService_lock">使用密码锁定</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_most_recent_from_s">最近来自：%1$s</string>
-  <string name="MessageNotifier_encrypted_message">加密信息...</string>
   <string name="MessageNotifier_media_message_with_text">多媒体信息：%s</string>
   <string name="MessageNotifier_no_subject">（无主题）</string>
   <string name="MessageNotifier_message_delivery_failed">信息发送失败。</string>
@@ -269,7 +262,6 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">选择</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">没有被屏蔽的联系人</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">没有最近呼叫。</string>
   <!--conversation_title_view-->
@@ -299,9 +291,11 @@
   <string name="conversation_item_received__download">下载</string>
   <string name="conversation_item_received__contact_photo_description">联系人照片</string>
   <string name="conversation_item_received__downloading">下载中</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">批量选择模式</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s 已选择</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">感谢！</string>
   <string name="log_submit_activity__submitting">正在提交</string>

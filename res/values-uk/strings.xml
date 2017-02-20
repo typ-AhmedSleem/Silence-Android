@@ -39,7 +39,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Вилучення</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Повідомлення обміну ключами\u2026</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
@@ -69,8 +68,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Помилка при збереженні MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Помилка підключення до MMS провайдеру\u2026</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Помилка читання налаштувань MMS провайдера\u2026</string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -102,9 +99,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ви вже відправили цьому співрозмовнику запит на початок сеансу. Ви впевнені, що хочете відправити ще один? Попередній буде анульовано.</string>
   <string name="KeyExchangeInitiator_send">Відправити</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Зашифроване повідомлення зіпсоване\u2026</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Триває розшифрування, зачекайте, будь ласка\u2026</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Повідомлення зашифровано для неіснуючої сесії\u2026</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Підключення до MMS сервера\u2026</string>
@@ -113,14 +108,11 @@
   <string name="MmsDatabase_mms_pending_download">Торкніться аби підлаштувати параметри MMS та продовжити завантаження.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Розшифрування MMS, зачекайте, будь ласка\u2026</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Зашифроване MMS повідомлення зіпсоване\u2026</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS повідомлення зашифровано для неіснуючої сесії\u2026</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Триває імпортування</string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Зашифроване повідомлення\u2026</string>
   <string name="MessageNotifier_message_delivery_failed">Збій доставки повідомлення.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Не вдалось доставити повідомлення.</string>
   <string name="MessageNotifier_error_delivering_message">Помилка доставки повідомлення.</string>
@@ -148,7 +140,9 @@
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">Завантажити</string>
   <string name="conversation_item_received__downloading">Завантаження</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Дякуємо за вашу допомогу!</string>
   <!--database_migration_activity-->

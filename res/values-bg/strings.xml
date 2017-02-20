@@ -132,7 +132,10 @@
     <item quantity="one">Грешка при запазване на прикачения файл на диска!</item>
     <item quantity="other">Грешка при запазване на прикачените файлове на диска!</item>
   </plurals>
-  <string name="ConversationFragment_file_saved_successfully">Файлът е успешно запазен.</string>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Файлът е успешно запазен.</item>
+    <item quantity="other">Файловете са успешно запазени.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Неуспеше запис на SD карта!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Запазване на прикачения файла.</item>
@@ -149,7 +152,7 @@
   <string name="ConversationFragment_deleting">Изтриване...</string>
   <string name="ConversationFragment_deleting_messages">Изтриване на съобщения...</string>
   <!--ConversationListActivity-->
-  <string name="ConversationListActivity_search">Търсене...</string>
+  <string name="ConversationListActivity_search">Търсене</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Изтрий избраният разговор?</item>
@@ -176,7 +179,7 @@
   <string name="ConversationListFragment_sending">Изпращане</string>
   <string name="ConversationListFragment_sending_selected_drafts">Изпращане на избраните чернови...</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Съобщение за обмяна на ключовете...</string>
+  <string name="ConversationListItem_key_exchange_message">Съобшение за обмяна на ключове</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Архивирани разговора (%d)</string>
   <!--CustomDefaultPreference-->
@@ -187,6 +190,8 @@
   <!--DateUtils-->
   <string name="DateUtils_now">Току що</string>
   <string name="DateUtils_minutes_ago">%d мин</string>
+  <string name="DateUtils_today">Днес</string>
+  <string name="DateUtils_yesterday">Вчера</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Сподели с</string>
   <!--IntroScreenActivity-->
@@ -200,7 +205,7 @@
   <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure е вече Silence. Вашите съобщения са все още тук и нови функции са на хоризонта</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Изнасяне</string>
-  <string name="ExportFragment_export_plaintext_to_storage">Изнеси некриптирано на диска?</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Изнесяне некриптирано на диска?</string>
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Внимание, това ще изнесе съдържанието на Вашите Silence съобщения на диска в некриптирана форма.</string>
   <string name="ExportFragment_cancel">Отказ</string>
   <string name="ExportFragment_exporting">Изнасяне</string>
@@ -221,13 +226,13 @@
   <!--GroupMembersDialog-->
   <string name="GroupMembersDialog_me">Аз</string>
   <!--ImportExportActivity-->
-  <string name="ImportExportActivity_import">Внеси</string>
-  <string name="ImportExportActivity_export">Изнеси</string>
+  <string name="ImportExportActivity_import">Внасяне</string>
+  <string name="ImportExportActivity_export">Изнесяне</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">Добави всички съществуващи SMS-и?</string>
   <string name="ImportFragment_this_will_import_messages_from_the_system">Това ще внесе съобщенията от SMS приложението по подразбиране в Silence. 
 Ако вече сте внесли съобщенията от SMS приложението по подразбиране, повторно внасяне ще доведе то дублиращи се съобщения.</string>
-  <string name="ImportFragment_import">Внеси</string>
+  <string name="ImportFragment_import">Внасяне</string>
   <string name="ImportFragment_cancel">Отказ</string>
   <string name="ImportFragment_restore_encrypted_backup">Възстановяване на криптиран архив?</string>
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Възстановяването на криптиран архив ще замени напълно съществуващите ключове, настройки и съобщения. Ще изгубите всяка информация, която в момента е в Silince, но не е архивирана. Silince ще спре след внасянето.</string>
@@ -251,8 +256,8 @@
   <string name="MessageDetailsRecipient_new_identity">Нова самоличност</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Грешка при съхраняване на MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Грешка при свързването с MMS доставчика...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Грешка при четене на MMS настройките...</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Грешкка при свързване с MMS доставчика</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Грешка при прочитането на настройките на MMS доставчика</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Мултимедийно съобщение</string>
   <!--MessageRecord-->
@@ -264,7 +269,7 @@
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Грешна стара парола!</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Не е въведена парола!</string>
   <!--PassphrasePromptActivity-->
-  <string name="PassphrasePromptActivity_enter_passphrase">Въведи паролата</string>
+  <string name="PassphrasePromptActivity_enter_passphrase">Въведете паролата</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Silince икона</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Грешна парола!</string>
   <!--ReceiveKeyActivity-->
@@ -301,7 +306,7 @@
   <string name="SmsMessageRecord_secure_session_ended">Сигурната сесия приключи.</string>
   <string name="SmsMessageRecord_duplicate_message">Дублирай съобщението.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Напусна групата...</string>
+  <string name="ThreadRecord_left_the_group">Напусна групата</string>
   <string name="ThreadRecord_draft">Чернова:</string>
   <string name="ThreadRecord_media_message">Медийно съобщение</string>
   <!--VerifyIdentityActivity-->
@@ -324,10 +329,10 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вече изпрати искане за започване на сесия до този получател, сигурен ли си, че искаш да го изпратиш повторно? Това ще анулира първото искане.</string>
   <string name="KeyExchangeInitiator_send">Изпрати</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Лошо криптирано съобщение...</string>
+  <string name="MessageDisplayHelper_bad_encrypted_message">Неправилно криптирано съобщение</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Декриптиране, моля изчакайте...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Съобщението е криптирано за несъществуваща сесия...</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Няма сигурна сесия, която да бъде прекратена...</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Съобщението е криптирано за несъществуваща сесия</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Заявка за прекратяване на несъществуваща сесия</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Грешка при декриптиране на съобщение.</string>
   <!--MmsDatabase-->
@@ -339,8 +344,8 @@
   <string name="MmsDatabase_error_decrypting_message">Грешка при декриптиране на съобщение.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Декриптиране на MMS, моля изчакайте...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Лошо криптирано MMS съобщение...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS съобщението е криптирано за несъществуваща сесия...</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Неправилно криптирано MMS съобщение</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS съобщението е криптирано за несъществуваща сесия</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Забрани известия</string>
   <!--ApplicationMigrationService-->
@@ -352,11 +357,11 @@
   <string name="KeyCachingService_silence_passphrase_cached">Натиснете, за да отворите.</string>
   <string name="KeyCachingService_silence_passphrase_cached_with_lock">Натиснете, за да отворите или натиснете, за да заключите и затворите.</string>
   <string name="KeyCachingService_passphrase_cached">Silence е отключен</string>
-  <string name="KeyCachingService_lock">Заключи паролата</string>
+  <string name="KeyCachingService_lock">Заключете с парола</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d нови съобщения в %2$d разговора</string>
   <string name="MessageNotifier_most_recent_from_s">Най-скорошен от: %1$s</string>
-  <string name="MessageNotifier_encrypted_message">Криптирано съобщение...</string>
+  <string name="MessageNotifier_encrypted_message">Криптирано съобщение</string>
   <string name="MessageNotifier_media_message_with_text">Медийно съобщение: %s</string>
   <string name="MessageNotifier_no_subject">(Няма зададена тема)</string>
   <string name="MessageNotifier_message_delivery_failed">Изпращането на съобщението неуспешно.</string>
@@ -378,7 +383,7 @@
   <string name="change_passphrase_activity__new_passphrase">Нова парола</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">Повторно нова парола</string>
   <!--contact_selection_activity-->
-  <string name="contact_selection_activity__enter_name_or_number">Въведи име или номер</string>
+  <string name="contact_selection_activity__enter_name_or_number">Въведете име или номер</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Няма контакти.</string>
   <string name="contact_selection_group_activity__finding_contacts">Зареждане на контакти...</string>
@@ -387,7 +392,7 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Избери за</string>
   <!--blocked_contacts_fragment-->
-  <string name="blocked_contacts_fragment__no_blocked_contacts">Няма блокирани контакти...</string>
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Няма блокирани контакти</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Няма скорошни обаждания.</string>
   <!--conversation_title_view-->
@@ -418,9 +423,15 @@
   <string name="conversation_item_received__download">Изтегли</string>
   <string name="conversation_item_received__contact_photo_description">Снимка на контакта</string>
   <string name="conversation_item_received__downloading">Изтегля се</string>
+  <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Пускане</string>
+  <string name="audio_view__pause_accessibility_description">Пауза</string>
+  <string name="audio_view__download_accessibility_description">Изтегляне</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Режим на групово избиране</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s избран/и</string>
+  <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Скролиране до края</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Неуспешен опит за прочит на доклада на Вашето устройство. Може да използвате ADB, за да извлечете доклада.</string>
   <string name="log_submit_activity__thanks">Благодаря за помоща!</string>
@@ -430,19 +441,19 @@
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Желаете ли да внесете съществуващите съобщения в криптиранта база данни на Silience?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Системната база данни няма да бъде променена по никакъв начин.</string>
   <string name="database_migration_activity__skip">Пропусни</string>
-  <string name="database_migration_activity__import">Внеси</string>
+  <string name="database_migration_activity__import">Внасяне</string>
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Това ще отнеме момент. Моля, бъдете търпеливи. Ще бъдете уведомени, когато внасянето е завършено.</string>
   <string name="database_migration_activity__importing">ВНАСЯНЕ</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Обновяване на базата данни...</string>
-  <string name="export_fragment__export_plaintext_backup">Изнеси некриптиран архив</string>
+  <string name="export_fragment__export_plaintext_backup">Изнесяне на некриптиран архив</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">
 Изнасяне на некриптиран архив съвместим с \'SMSBackup &amp; Restore.\'</string>
-  <string name="import_fragment__import_system_sms_database">Внеси всички съществуващи SMS-и</string>
+  <string name="import_fragment__import_system_sms_database">Внесяне на всички съществуващи SMS-и</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Внасяне на базата данни от SMS програмата по подразбиране</string>
   <string name="import_fragment__restore_encrypted_backup">Възстановяване на криптиран архив</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Възстановяване на предварително изнесен криптиран архив</string>
-  <string name="import_fragment__import_plaintext_backup">Внеси некриптиран архив </string>
+  <string name="import_fragment__import_plaintext_backup">Внасяне на некриптиран архив </string>
   <string name="import_fragment__import_a_plaintext_backup_file">Внасяне на некриптиран архив съвмесим с \'SMS Backup &amp; Restore.\'</string>
   <string name="export_fragment__export_encrypted_backup">Изнасяне на криптиран архив</string>
   <string name="export_fragment__export_an_encrypted_backup_to_storage">Изнасяне на криптиран архив на диска</string>
@@ -471,7 +482,7 @@
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Завършен</string>
   <!--recipients_panel-->
-  <string name="recipients_panel__to"><small>Въведи име или номер</small></string>
+  <string name="recipients_panel__to"><small>Въведете име или номер</small></string>
   <string name="recipients_panel__add_member">Добави член</string>
   <!--verify_identity_activity-->
   <string name="verify_identity_activity__their_identity_they_read">Тяхната самоличност (те четат):</string>
@@ -486,7 +497,7 @@
   <string name="message_details_header__with">С:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Създай парола</string>
-  <string name="AndroidManifest__enter_passphrase">Въведи парола</string>
+  <string name="AndroidManifest__enter_passphrase">Въведете парола</string>
   <string name="AndroidManifest__select_contacts">Избери контакти</string>
   <string name="AndroidManifest__public_identity_key">Публичен ключ за самоличност</string>
   <string name="AndroidManifest__change_passphrase">Промяна на паролата</string>
@@ -708,13 +719,14 @@
   <string name="text_secure_normal__menu_new_message">Ново съобщение</string>
   <string name="text_secure_normal__menu_new_group">Нова група</string>
   <string name="text_secure_normal__menu_settings">Настройки</string>
-  <string name="text_secure_normal__menu_clear_passphrase">Заключи</string>
-  <string name="text_secure_normal__mark_all_as_read">Маркирай всички като прочетени</string>
+  <string name="text_secure_normal__menu_clear_passphrase">Заключване</string>
+  <string name="text_secure_normal__mark_all_as_read">Маркиране на всички като прочетени</string>
+  <string name="text_secure_normal__menu_archived_conversations">Архивирани разговори</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Използвай като SMS програма по подразбиране?</string>
   <string name="reminder_header_sms_default_text">Натиснете, за да направите Silince SMS програма по подразбиране.</string>
   <string name="reminder_header_sms_default_button">ЗАДАЙ</string>
-  <string name="reminder_header_sms_import_title">Внеси вече съществуващите SMS?</string>
+  <string name="reminder_header_sms_import_title">Внасяне на вече съществуващите SMS?</string>
   <string name="reminder_header_sms_import_text">Натиснете, за да копирате SMS съобщенията на телефона в криптиранта база данни на Silince.</string>
   <string name="reminder_header_sms_import_button">ВНАСЯНЕ</string>
   <string name="reminder_header_rate_title">Оценете това приложение</string>
@@ -731,6 +743,7 @@
   <!--media_preview-->
   <string name="media_preview__save_title">Запази</string>
   <string name="media_preview__forward_title">Препращане</string>
+  <string name="media_preview__overview_title">Всички изображения</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Запазване на всички</string>
   <!--media_preview_activity-->

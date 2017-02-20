@@ -31,7 +31,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">ဖျက်နေသည်</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">ကီးပြောင်းလဲခြင်းစာတို...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
@@ -51,7 +50,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">MMS အားသိမ်းဆည်းခြင်းအမှား</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">MMS ထောက်ပံ့သူသို့ဆက်သွယ်ခြင်းအမှား...</string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -76,9 +74,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ဒီအဆက်အသွယ်ထံ ဆက်ရှင်စရန် တောင်းဆိုချက် ပို့ထားပြီးသားဖြစ်သည်။ ထပ်မံပို့မှာ သေချာလား။ ထပ်ပို့ပါက ယခင်ပို့ထားသော တောင်းဆိုချက်ကို ပယ်ဖျက်မည်ဖြစ်သည်</string>
   <string name="KeyExchangeInitiator_send">ပို့</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">ဝှက်သိမ်းမှုလွဲမှားနေသောစာသား...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">ဝှက်စာအားဖေါ်နေသည်၊ ခေတ္တစောင့်ပါ...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">စာသားများကို နဂိုမရှိသောဆက်ရှင်မားအတွက် ဝှက်သိမ်းထားပါသည်...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">MMS　ဆာဗာသို့ချိတ်ဆက်နေသည်...</string>
@@ -86,14 +82,11 @@
   <string name="MmsDatabase_downloading">ကူးဆွဲနေသည်...</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSမှဝှက်စာ ဖော်နေသည်၊ ခေတ္တစောင့်ပါ...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">ဝှက်ထားမှုလွဲနေသော MMS စာသား....</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS စာသားများကို နဂိုမရှိသောဆက်ရှင်အတွက် ဝှက်သိမ်းလိုက်ပါသည်...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">သွင်းယူနေ</string>
   <!--KeyCachingService-->
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">စာဝှက်စနစ်ဖြင့်　အကြောင်းကြားချက်...</string>
   <string name="MessageNotifier_message_delivery_failed">အကြောင်းကြားချက်ပို့လွတ်ခြင်းမအောင်မြင်</string>
   <string name="MessageNotifier_failed_to_deliver_message">အကြောင်းကြားချက်ပို့လွတ်ရန်မအောင်မြင်</string>
   <string name="MessageNotifier_error_delivering_message">အကြောင်းကြားချက်ပို့လွတ်စဉ်အမှား</string>
@@ -120,7 +113,9 @@
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">ကူးဆွဲ</string>
   <string name="conversation_item_received__downloading">ကူးဆွဲနေသည်</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">စနစ်ပိုင်းဆိုင်ရာ နဂိုဒေတာဘေ့စ်ကို ပြောင်းလဲမည် မဟုတ်ပါ</string>

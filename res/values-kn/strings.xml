@@ -78,7 +78,6 @@
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">ಅಳಿಸಲಾಗುತ್ತಿದೆ</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">ಕೀಲಿ ವಿನಿಮಯ ಸಂದೇಶ...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">ಯಾವುದೂ ಇಲ್ಲ</string>
@@ -121,8 +120,6 @@
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">ಎಂ. ಎಂ. ಎಸ್ ಸಂಗ್ರಹಿಸಿಡುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">ಎಂ.ಎಂ.ಎಸ್ ಪೂರೈಕೆದಾರರಿಗೆ ಸಂಪರ್ಕಿಸುವಾಗ ದೋಷ ...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">ನಿಸ್ತಂತು ಒದಗಿಸುವವರ ಎಂ.ಎಂ.ಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಓದುವಲ್ಲಿ ದೋಷವಾಗಿದೆ...</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">ಬಹುಮಾಧ್ಯಮ ಸಂದೇಶ</string>
   <!--MessageRecord-->
@@ -151,7 +148,6 @@
   <string name="SmsMessageRecord_secure_session_ended">ಸುರಕ್ಷಿತ ಸೆಷನ್ ಕೊನೆಗೋಂಡಿದೆ</string>
   <string name="SmsMessageRecord_duplicate_message">ನಕಲಿ ಸಂದೇಶ.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">ಗುಂಪನ್ನು ಬಿಟ್ಟಿದ್ದಾರೆ ...</string>
   <string name="ThreadRecord_draft">ಕರಡು</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">ನೀವು ಗುರುತಿನ ಕೀಲಿಯನ್ನು ಹೊಂದಿಲ್ಲ.</string>
@@ -168,9 +164,7 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ನೀವು ಈಗಾಗಲೇ ಈ ಸ್ವೀಕತದಾರರಿಗೆ  ಒಂದು ಸೆಷನ್ ಇನಿಷಿಯೇಷನ್ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಿದ್ದಿರಿ, ನೀವು ಮತ್ತೊಂದು ಕಳುಹಿಸಲು ಬಯಸುವುವಿರ? ಇದು ಅ ಮೊದಲ ವಿನಂತಿಯನ್ನು ಅಮಾನ್ಯಗೊಳಿಸುತ್ತದೆ.</string>
   <string name="KeyExchangeInitiator_send">ಕಳುಹಿಸು</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">ಕಳಪೆ ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ಸಂದೇಶ...</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">ಅಸಂಕೇತಿಕರಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">ಈ ಸಂದೇಶ ಅಸ್ತಿತ್ವದಲ್ಲಿರದ ಸೆಶನ್ನಿಗೆ ಗೂಢಲಿಪೀಕರಣಗೊಂಡಿದೆ ...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">ಸಂದೇಶ ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡುವಾಗ ದೋಷ.</string>
   <!--MmsDatabase-->
@@ -182,8 +176,6 @@
   <string name="MmsDatabase_error_decrypting_message">ಸಂದೇಶ ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡುವಾಗ ದೋಷ.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">ಎಂ. ಎಂ. ಎಸ್ ಅಸಂಕೇತಿಕರಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">ಕಳಪೆ ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ಎಂ. ಎಂ. ಎಸ್ ಸಂದೇಶ ...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">ಎಂಎಂಎಸ್ ಸಂದೇಶವು ಅಸ್ತಿತ್ವದಲ್ಲಿರದ ಸೆಶನ್ನಿಗೆ ಗೂಢಲಿಪೀಕರಣಗೊಂಡಿದೆ...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">ಆಮದು ಪ್ರಗತಿಯಲ್ಲಿದೆ</string>
@@ -191,7 +183,6 @@
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">ಗುಪ್ತಪದವನ್ನು ಉಪಯೋಗಿಸಿಕೊಂಡು ಬೀಗ ಹಾಕಿ</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">ಗೂಢಲಿಪೀಕರಣಗೊಂಡ ಸಂದೇಶ...</string>
   <string name="MessageNotifier_no_subject">(ವಿಷಯವಸ್ತು ಇಲ್ಲ)</string>
   <string name="MessageNotifier_message_delivery_failed">ಸಂದೇಶ ತಲುಪಿಸಲು ವಿಫಲವಾಗಿದೆ.</string>
   <string name="MessageNotifier_failed_to_deliver_message">ಸಂದೇಶ ತಲುಪಿಸಲು ವಿಫಲವಾಗಿದೆ.</string>
@@ -235,9 +226,11 @@
   <string name="conversation_item_received__download">ಡೌನ್ಲೋಡ್</string>
   <string name="conversation_item_received__contact_photo_description">ಸಂಪರ್ಕದ ಛಾಯಾಚಿತ್ರ</string>
   <string name="conversation_item_received__downloading">ಡೌನ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">ಗುಂಪು ಆಯ್ಕೆಯ ಕ್ರಮ</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</string>
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</string>
   <string name="log_submit_activity__submitting">ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ</string>

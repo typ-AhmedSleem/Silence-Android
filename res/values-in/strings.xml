@@ -71,7 +71,6 @@ dapat mengaksesnya</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Menghapus</string>
   <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Pesan pertukaran kunci...</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Kosong</string>
@@ -106,8 +105,6 @@ telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikas
   <!--MessageDetailsRecipient-->
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Kesalahan dalam menyimpan MMS!</string>
-  <string name="MmsDownloader_error_connecting_to_mms_provider">Kesalahan dalam menghubungi penyedia layanan MMS...</string>
-  <string name="MmsDownloader_error_reading_mms_settings">Kesalahan dalam membaca pengaturan MMS penyedia...</string>
   <!--NotificationMmsMessageRecord-->
   <!--MessageRecord-->
   <!--PassphraseChangeActivity-->
@@ -134,7 +131,6 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Menerima pembaharuan atas identitas yang tidak diketahui. Sentuh untuk memvalidasi identitas</string>
   <string name="SmsMessageRecord_secure_session_ended">Sesi aman berakhir.</string>
   <!--ThreadRecord-->
-  <string name="ThreadRecord_left_the_group">Tinggalkan grup...</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Anda tidak memiliki kunci identitas.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Penerima tidak memiliki kunci identitas.</string>
@@ -149,9 +145,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Anda telah mengirimkan permintaan inisiasi sesi untuk penerima ini, apakah anda yakin untuk mengirimkan lagi? Hal ini akan membuat permintaan sesi sebelumnya menjadi tidak sah</string>
   <string name="KeyExchangeInitiator_send">Kirim</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_bad_encrypted_message">Enkripsi pada pesan tidak dapat dikenali</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Melakukan dekripsi, mohon tunggu...</string>
-  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Pesan di enkripsi untuk sesi yang tidak ada</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Memulai koneksi ke Server MMS...</string>
@@ -160,15 +154,12 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="MmsDatabase_mms_pending_download">Sentuh untuk mengkonfigurasi pengaturan MMS untuk lanjut mengunduh.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Proses deskripsi MMS, mohon tunggu...</string>
-  <string name="MmsMessageRecord_bad_encrypted_mms_message">Enkripsi pada pesan MMS tidak dapat dikenali</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS di enkripsi untuk sesi yang tidak ada</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Dalam proses mengimport</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Kunci dengan kata sandi</string>
   <!--MessageNotifier-->
-  <string name="MessageNotifier_encrypted_message">Mengenkripsi pesan...</string>
   <string name="MessageNotifier_message_delivery_failed">Pengiriman pesan gagal.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Gagal mengirimkan pesan.</string>
   <string name="MessageNotifier_error_delivering_message">Kesalahan dalam mengirimkan pesan.</string>
@@ -197,7 +188,9 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">Unduh</string>
   <string name="conversation_item_received__downloading">Mengunduh</string>
+  <!--audio_view-->
   <!--conversation_fragment_cab-->
+  <!--conversation_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Terimakasih atas bantuan anda</string>
   <!--database_migration_activity-->
