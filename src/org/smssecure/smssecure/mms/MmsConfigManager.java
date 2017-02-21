@@ -35,7 +35,7 @@ public class MmsConfigManager {
 
   private static MmsConfig loadMmsConfig(Context context, int subscriptionId) {
     if (subscriptionId != -1 && Build.VERSION.SDK_INT >= 24) {
-      Optional<SubscriptionInfoCompat> subscriptionInfo = new SubscriptionManagerCompat(context).getActiveSubscriptionInfo(subscriptionId);
+      Optional<SubscriptionInfoCompat> subscriptionInfo = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfo(subscriptionId);
 
       if (subscriptionInfo.isPresent()) {
         Configuration configuration = context.getResources().getConfiguration();

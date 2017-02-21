@@ -34,7 +34,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment {
     this.findPreference(SilencePreferences.ENTER_KEY_TYPE).setOnPreferenceChangeListener(new ListSummaryListener());
     initializeListSummary((ListPreference) this.findPreference(SilencePreferences.ENTER_KEY_TYPE));
 
-    if (new SubscriptionManagerCompat(getActivity()).getActiveSubscriptionInfoList().size() <= 1) {
+    if (SubscriptionManagerCompat.from(getActivity()).getActiveSubscriptionInfoList().size() <= 1) {
       this.findPreference(SilencePreferences.ASK_FOR_SIM_CARD).setVisible(false);
     }
   }
