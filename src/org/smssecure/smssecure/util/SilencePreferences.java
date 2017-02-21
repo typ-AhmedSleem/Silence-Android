@@ -99,16 +99,21 @@ public class SilencePreferences {
   private static final String MEDIA_DOWNLOAD_ROAMING_PREF      = "pref_media_download_roaming";
 
   public  static final String SYSTEM_EMOJI_PREF                = "pref_system_emoji";
-
   public  static final String INCOGNITO_KEYBORAD_PREF          = "pref_incognito_keyboard";
   public  static final String ASK_FOR_SIM_CARD                 = "pref_always_ask_for_sim_card";
+
+  private static final String APP_SUBSCRIPTION_ID_FOR_DEVICE_SUBSCRIPTION_ID_PREF = "app_subscription_id_for_device_subscription_id";
+  private static final String LAST_APP_SUBSCRIPTION_ID_PREF                       = "last_app_subscription_id";
+  private static final String NUMBER_FOR_APP_SUBSCRIPTION_ID_PREF                 = "number_for_app_subscription_id";
+  private static final String ICC_ID_FOR_APP_SUBSCRIPTION_ID_PREF                 = "icc_id_for_app_subscription_id";
+  private static final String SUBSCRIPTIONS_PREF                                  = "pref_subscriptions";
 
   public static boolean isIncognitoKeyboardEnabled(Context context) {
     return getBooleanPreference(context, INCOGNITO_KEYBORAD_PREF, true);
   }
 
   public static boolean isSimCardAsked(Context context) {
-    return new SubscriptionManagerCompat(context).getActiveSubscriptionInfoList().size() > 1 &&
+    return SubscriptionManagerCompat.from(context).getActiveSubscriptionInfoList().size() > 1 &&
            getBooleanPreference(context, ASK_FOR_SIM_CARD, true);
   }
 
@@ -171,7 +176,7 @@ public class SilencePreferences {
 
   public static void setGcmRegistrationId(Context context, String registrationId) {
     setStringPreference(context, GCM_REGISTRATION_ID_PREF, registrationId);
-    setIntegerPrefrence(context, GCM_REGISTRATION_ID_VERSION_PREF, Util.getCurrentApkReleaseVersion(context));
+    setIntegerPreference(context, GCM_REGISTRATION_ID_VERSION_PREF, Util.getCurrentApkReleaseVersion(context));
   }
 
   public static String getGcmRegistrationId(Context context) {
@@ -229,7 +234,7 @@ public class SilencePreferences {
   }
 
   public static void setLocalRegistrationId(Context context, int registrationId) {
-    setIntegerPrefrence(context, LOCAL_REGISTRATION_ID_PREF, registrationId);
+    setIntegerPreference(context, LOCAL_REGISTRATION_ID_PREF, registrationId);
   }
 
   public static boolean isInThreadNotifications(Context context) {
@@ -397,7 +402,7 @@ public class SilencePreferences {
   }
 
   public static void setLastVersionCode(Context context, int versionCode) throws IOException {
-    if (!setIntegerPrefrenceBlocking(context, LAST_VERSION_CODE_PREF, versionCode)) {
+    if (!setIntegerPreferenceBlocking(context, LAST_VERSION_CODE_PREF, versionCode)) {
       throw new IOException("couldn't write version code to sharedpreferences");
     }
   }
@@ -448,7 +453,7 @@ public class SilencePreferences {
   }
 
   public static void setPassphraseTimeoutInterval(Context context, int interval) {
-    setIntegerPrefrence(context, PASSPHRASE_TIMEOUT_INTERVAL_PREF, interval);
+    setIntegerPreference(context, PASSPHRASE_TIMEOUT_INTERVAL_PREF, interval);
   }
 
   public static String getLanguage(Context context) {
@@ -571,6 +576,46 @@ public class SilencePreferences {
     return getBooleanPreference(context, HIDE_UNREAD_MESSAGE_DIVIDER, false);
   }
 
+  public static int getLastAppSubscriptionId(Context context) {
+    return getIntegerPreference(context, LAST_APP_SUBSCRIPTION_ID_PREF, 0);
+  }
+
+  public static void setLastAppSubscriptionId(Context context, int appSubscriptionId) {
+    setIntegerPreference(context, LAST_APP_SUBSCRIPTION_ID_PREF, appSubscriptionId);
+  }
+  public static int getAppSubscriptionId(Context context, int deviceSubscriptionId) {
+    return getIntegerPreference(context, APP_SUBSCRIPTION_ID_FOR_DEVICE_SUBSCRIPTION_ID_PREF + "_" + deviceSubscriptionId, -1);
+  }
+
+  public static void setAppSubscriptionId(Context context, int deviceSubscriptionId, int appSubscriptionId) {
+    setIntegerPreference(context, APP_SUBSCRIPTION_ID_FOR_DEVICE_SUBSCRIPTION_ID_PREF + "_" + appSubscriptionId, deviceSubscriptionId);
+    if (appSubscriptionId > getLastAppSubscriptionId(context)) setLastAppSubscriptionId(context, appSubscriptionId);
+  }
+
+  public static void setNumberForSubscriptionId(Context context, int subscriptionId, String number) {
+    setStringPreference(context, NUMBER_FOR_APP_SUBSCRIPTION_ID_PREF + "_" + subscriptionId, number);
+  }
+
+  public static String getNumberForSubscriptionId(Context context, int subscriptionId) {
+    return getStringPreference(context, NUMBER_FOR_APP_SUBSCRIPTION_ID_PREF + "_" + subscriptionId, null);
+  }
+
+  public static void setIccIdForSubscriptionId(Context context, int subscriptionId, String iccId) {
+    setStringPreference(context, ICC_ID_FOR_APP_SUBSCRIPTION_ID_PREF + "_" + subscriptionId, iccId);
+  }
+
+  public static String getIccIdForSubscriptionId(Context context, int subscriptionId) {
+    return getStringPreference(context, ICC_ID_FOR_APP_SUBSCRIPTION_ID_PREF + "_" + subscriptionId, null);
+  }
+
+  public static void setDeviceSubscriptions(Context context, String subscriptions) {
+    setStringPreference(context, SUBSCRIPTIONS_PREF, subscriptions);
+  }
+
+  public static String getDeviceSubscriptions(Context context) {
+    return getStringPreference(context, SUBSCRIPTIONS_PREF, "");
+  }
+
   public static void setBooleanPreference(Context context, String key, boolean value) {
     PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(key, value).apply();
   }
@@ -591,11 +636,11 @@ public class SilencePreferences {
     return PreferenceManager.getDefaultSharedPreferences(context).getInt(key, defaultValue);
   }
 
-  private static void setIntegerPrefrence(Context context, String key, int value) {
+  private static void setIntegerPreference(Context context, String key, int value) {
     PreferenceManager.getDefaultSharedPreferences(context).edit().putInt(key, value).apply();
   }
 
-  private static boolean setIntegerPrefrenceBlocking(Context context, String key, int value) {
+  private static boolean setIntegerPreferenceBlocking(Context context, String key, int value) {
     return PreferenceManager.getDefaultSharedPreferences(context).edit().putInt(key, value).commit();
   }
 

@@ -85,7 +85,7 @@ public class AndroidAutoReplyReceiver extends MasterSecretBroadcastReceiver {
             replyThreadId = MessageSender.send(context, masterSecret, reply, threadId, false);
           } else {
             Log.i(TAG, "Sending regular message");
-            boolean secure = SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient().getNumber());
+            boolean secure = SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient().getNumber(), subscriptionId);
 
             OutgoingTextMessage reply;
             if (!secure) {
