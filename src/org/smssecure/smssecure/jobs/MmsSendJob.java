@@ -89,7 +89,7 @@ public class MmsSendJob extends SendJob {
 
       if (message.isSecure()) {
         Log.w(TAG, "Encrypting MMS...");
-        pdu = getEncryptedMessage(masterSecret, pdu);
+        pdu = getEncryptedMessage(masterSecret, pdu, message.getSubscriptionId());
         upgradedSecure = true;
       }
 
@@ -145,11 +145,11 @@ public class MmsSendJob extends SendJob {
     }
   }
 
-  private SendReq getEncryptedMessage(MasterSecret masterSecret, SendReq pdu)
+  private SendReq getEncryptedMessage(MasterSecret masterSecret, SendReq pdu, int subscriptionId)
       throws UndeliverableMessageException
   {
     try {
-      MmsCipher cipher = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
+      MmsCipher cipher = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret, subscriptionId));
       return cipher.encrypt(context, pdu);
     } catch (UntrustedIdentityException | NoSessionException e) {
       throw new UndeliverableMessageException(e);

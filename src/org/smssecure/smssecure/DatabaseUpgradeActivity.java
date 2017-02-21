@@ -21,22 +21,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.database.MmsDatabase;
-import org.smssecure.smssecure.database.MmsDatabase.Reader;
-import org.smssecure.smssecure.database.EncryptingSmsDatabase;
-import org.smssecure.smssecure.database.model.MessageRecord;
-import org.smssecure.smssecure.database.SmsDatabase;
-import org.smssecure.smssecure.database.model.SmsMessageRecord;
-import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.notifications.MessageNotifier;
+import org.smssecure.smssecure.util.dualsim.DualSimUpgradeUtil;
+import org.smssecure.smssecure.util.dualsim.SubscriptionInfoCompat;
 import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
 import org.smssecure.smssecure.util.ParcelUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
@@ -44,7 +41,6 @@ import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.VersionTracker;
 import org.whispersystems.jobqueue.EncryptionKeys;
 
-import java.io.File;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -52,25 +48,12 @@ import java.util.TreeSet;
 public class DatabaseUpgradeActivity extends BaseActivity {
   private static final String TAG = DatabaseUpgradeActivity.class.getSimpleName();
 
-  public static final int NO_MORE_KEY_EXCHANGE_PREFIX_VERSION  = 46;
-  public static final int MMS_BODY_VERSION                     = 46;
-  public static final int TOFU_IDENTITIES_VERSION              = 50;
-  public static final int CURVE25519_VERSION                   = 63;
-  public static final int ASYMMETRIC_MASTER_SECRET_FIX_VERSION = 73;
-  public static final int NO_V1_VERSION                        = 83;
-  public static final int SIGNED_PREKEY_VERSION                = 83;
-  public static final int NO_DECRYPT_QUEUE_VERSION             = 84;
-  public static final int ASK_FOR_SIM_CARD_VERSION             = 143;
+  public static final int ASK_FOR_SIM_CARD_VERSION     = 143;
+  public static final int MULTI_SIM_MULTI_KEYS_VERSION = 129;
 
   private static final SortedSet<Integer> UPGRADE_VERSIONS = new TreeSet<Integer>() {{
-    add(NO_MORE_KEY_EXCHANGE_PREFIX_VERSION);
-    add(TOFU_IDENTITIES_VERSION);
-    add(CURVE25519_VERSION);
-    add(ASYMMETRIC_MASTER_SECRET_FIX_VERSION);
-    add(NO_V1_VERSION);
-    add(SIGNED_PREKEY_VERSION);
-    add(NO_DECRYPT_QUEUE_VERSION);
     add(ASK_FOR_SIM_CARD_VERSION);
+    add(MULTI_SIM_MULTI_KEYS_VERSION);
   }};
 
   private MasterSecret masterSecret;
@@ -81,7 +64,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     this.masterSecret = getIntent().getParcelableExtra("master_secret");
 
     if (needsUpgradeTask()) {
-      Log.w("DatabaseUpgradeActivity", "Upgrading...");
+      Log.w(TAG, "Upgrading...");
       setContentView(R.layout.database_upgrade_activity);
 
       ProgressBar indeterminateProgress = (ProgressBar)findViewById(R.id.indeterminate_progress);
@@ -105,13 +88,13 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     int currentVersionCode = Util.getCurrentApkReleaseVersion(this);
     int lastSeenVersion    = VersionTracker.getLastSeenVersion(this);
 
-    Log.w("DatabaseUpgradeActivity", "LastSeenVersion: " + lastSeenVersion);
+    Log.w(TAG, "LastSeenVersion: " + lastSeenVersion);
 
     if (lastSeenVersion >= currentVersionCode)
       return false;
 
     for (int version : UPGRADE_VERSIONS) {
-      Log.w("DatabaseUpgradeActivity", "Comparing: " + version);
+      Log.w(TAG, "Comparing: " + version);
       if (lastSeenVersion < version)
         return true;
     }
@@ -160,58 +143,39 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     protected Void doInBackground(Integer... params) {
       Context context = DatabaseUpgradeActivity.this.getApplicationContext();
 
-      Log.w("DatabaseUpgradeActivity", "Running background upgrade..");
+      Log.w(TAG, "Running background upgrade..");
       DatabaseFactory.getInstance(DatabaseUpgradeActivity.this)
                      .onApplicationLevelUpgrade(context, masterSecret, params[0], this);
 
-      if (params[0] < CURVE25519_VERSION) {
-        if (!IdentityKeyUtil.hasCurve25519IdentityKeys(context)) {
-          IdentityKeyUtil.generateCurve25519IdentityKeys(context, masterSecret);
-        }
-      }
-
-      if (params[0] < NO_V1_VERSION) {
-        File v1sessions = new File(context.getFilesDir(), "sessions");
-
-        if (v1sessions.exists() && v1sessions.isDirectory()) {
-          File[] contents = v1sessions.listFiles();
-
-          if (contents != null) {
-            for (File session : contents) {
-              session.delete();
-            }
-          }
-
-          v1sessions.delete();
-        }
-      }
-
-      if (params[0] < NO_DECRYPT_QUEUE_VERSION) {
-        EncryptingSmsDatabase smsDatabase  = DatabaseFactory.getEncryptingSmsDatabase(getApplicationContext());
-
-        SmsDatabase.Reader smsReader  = null;
-
-        SmsMessageRecord record;
-
-        try {
-          smsReader = smsDatabase.getDecryptInProgressMessages(masterSecret);
-
-          while ((record = smsReader.getNext()) != null) {
-            ApplicationContext.getInstance(getApplicationContext())
-                              .getJobManager()
-                              .add(new SmsDecryptJob(getApplicationContext(), record.getId()));
-          }
-        } finally {
-          if (smsReader != null)
-            smsReader.close();
-        }
-      }
-
       if (params[0] < ASK_FOR_SIM_CARD_VERSION) {
         if (!SilencePreferences.isFirstRun(context) &&
-            new SubscriptionManagerCompat(context).getActiveSubscriptionInfoList().size() > 1)
+            SubscriptionManagerCompat.from(context).getActiveSubscriptionInfoList().size() > 1)
         {
           SilencePreferences.setSimCardAsked(context, false);
+        }
+      }
+
+      if (params[0] < MULTI_SIM_MULTI_KEYS_VERSION) {
+        if (Build.VERSION.SDK_INT >= 22) {
+          SubscriptionManager subscriptionManager = SubscriptionManager.from(context);
+          List<SubscriptionInfo> activeSubscriptions = subscriptionManager.getActiveSubscriptionInfoList();
+
+          for (SubscriptionInfo subscriptionInfo : activeSubscriptions) {
+            int subscriptionId = subscriptionInfo.getSubscriptionId();
+            SilencePreferences.setAppSubscriptionId(context, subscriptionId, subscriptionId);
+          }
+
+          /*
+           * getDefaultSubscriptionId() is available for API 24+ only, so we
+           * move keys and sessions to SIM card in slot 1, not to the default one.
+           */
+          int defaultSubscriptionId = activeSubscriptions.get(0).getSubscriptionId();
+
+          List<SubscriptionInfoCompat> activeSubscriptionsCompat = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfoList();
+
+          DualSimUpgradeUtil.moveIdentityKeysAndSessionsToSubscriptionId(context, -1, defaultSubscriptionId);
+          DualSimUpgradeUtil.generateKeysIfDoNotExist(context, masterSecret, activeSubscriptionsCompat);
+          DualSimUpgradeUtil.bindSubscriptionId(context, activeSubscriptionsCompat);
         }
       }
 
