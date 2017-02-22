@@ -28,13 +28,13 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ApplicationPreferencesActivity_sms_disabled">Alvenaj SMS-oj malaktivaj</string>
   <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Frapetu por ke Silence iĝu via ĉefa SMS-aplikaĵo.</string>
   <string name="ApplicationPreferencesActivity_on">ŝaltita(j)</string>
-  <string name="ApplicationPreferencesActivity_On">Ŝaltita</string>
+  <string name="ApplicationPreferencesActivity_On">Ŝaltita(j)</string>
   <string name="ApplicationPreferencesActivity_off">malŝaltita(j)</string>
-  <string name="ApplicationPreferencesActivity_Off">Malŝaltita</string>
+  <string name="ApplicationPreferencesActivity_Off">Malŝaltita(j)</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Ricevitaj %s</string>
-  <string name="ApplicationPreferencesActivity_privacy_summary">Pasfrazo %1$s, ekrano-ŝirmilo %2$s</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">Pasfrazo %1$s, ekran-ŝirmo %2$s</string>
   <string name="ApplicationPreferencesActivity_appearance_summary">Etoso %1$s, lingvo %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
@@ -295,7 +295,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Ricevis mesaĝon kun nekonata ident-ŝlosilo. Frapetu por prilabori kaj montri.</string>
-  <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Ricevis ĝisdatan sed nekonatan idento-informojn. Frapetu por kontroli identecon.</string>
+  <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Ricevis ĝisdatan sed nekonatan ident-informojn. Frapetu por kontroli identigilon.</string>
   <string name="SmsMessageRecord_secure_session_ended">Sekura seanco finita.</string>
   <string name="SmsMessageRecord_duplicate_message">Duplikata mesaĝo.</string>
   <!--ThreadRecord-->
@@ -491,7 +491,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="AndroidManifest__create_passphrase">Krei pasfrazon</string>
   <string name="AndroidManifest__enter_passphrase">Entajpu pasfrazon</string>
   <string name="AndroidManifest__select_contacts">Elektu kontaktojn</string>
-  <string name="AndroidManifest__public_identity_key">Publikigi idento-ŝlosilon</string>
+  <string name="AndroidManifest__public_identity_key">Publikigi ident-ŝlosilon</string>
   <string name="AndroidManifest__change_passphrase">Ŝanĝi pasfrazon</string>
   <string name="AndroidManifest__verify_identity">Verigi identecon</string>
   <string name="AndroidManifest__complete_key_exchange">Fini ŝlosil-interŝanĝon</string>
@@ -504,7 +504,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="AndroidManifest_configure_mms_settings">MMS-aj agordoj</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Enporti / elporti</string>
-  <string name="arrays__your_identity_key">Via idento-ŝlosilo</string>
+  <string name="arrays__your_identity_key">Via ident-ŝlosilo</string>
   <string name="arrays__use_default">Uzi implicitan</string>
   <string name="arrays__use_custom">Uzi propran</string>
   <string name="arrays__mute_for_one_hour">Silentigi por 1 horo</string>
@@ -544,9 +544,9 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__enable_passphrase">Aktivigi pasfrazon</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Aktivigas lokan ĉifradon de mesaĝoj kaj ŝlosiloj</string>
   <string name="preferences__screen_security">Ekrana sekureco</string>
-  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Aŭtomate finas ŝlosil-interŝanĝojn por novaj seancoj aŭ por estantaj seancoj kun sama idento-ŝlosilo</string>
+  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Aŭtomate finas ŝlosil-interŝanĝojn por novaj seancoj aŭ por estantaj seancoj kun sama ident-ŝlosilo</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokas ekrankopiojn en listo de lastaj kaj en aplikaĵo</string>
-  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Bezonas pasfrazon por legi mesaĝojn post difina tempo</string>
+  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Postulas pasfrazon por legi mesaĝojn post difina tempo</string>
   <string name="preferences__timeout_passphrase">Templimo de pasfrazo</string>
   <string name="preferences__pref_timeout_interval_dialogtitle">Elekti templimon de pasfrazon</string>
   <string name="preferences__pref_timeout_interval_title">Templima intervalo</string>
@@ -600,7 +600,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__mmsc_username">MMSC-a uzantnomo</string>
   <string name="preferences__mmsc_password">MMSC-a pasvorto</string>
   <string name="preferences__sms_delivery_reports">Liveraj raportoj de SMS-oj</string>
-  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Petas pri livera raporto por ĉiu SMS-a mesaĝo kiu vi sendas</string>
+  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Petas pri livera raporto por ĉiu SMS-a mesaĝo, kiun vi sendas</string>
   <string name="preferences__sms_delivery_reports_notification">Sciigoj pri liveraj raportoj de SMS-oj</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Montras sciigon kiam livera raporto estas ricevita</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Aŭtomate forigas pli malnovajn mesaĝojn kiam interparolado trograndas difinitan longon</string>
