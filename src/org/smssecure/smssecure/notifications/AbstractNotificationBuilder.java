@@ -19,6 +19,8 @@ import org.smssecure.smssecure.util.Util;
 
 public abstract class AbstractNotificationBuilder extends NotificationCompat.Builder {
 
+  private static final int MAX_DISPLAY_LENGTH = 500;
+
   protected Context                       context;
   protected NotificationPrivacyPreference privacy;
 
@@ -82,5 +84,12 @@ public abstract class AbstractNotificationBuilder extends NotificationCompat.Bui
       blinkPattern = blinkPatternCustom;
 
     return blinkPattern.split(",");
+  }
+
+  protected @NonNull CharSequence trimToDisplayLength(@Nullable CharSequence text) {
+    text = text == null ? "" : text;
+
+    return text.length() <= MAX_DISPLAY_LENGTH ? text
+                                               : text.subSequence(0, MAX_DISPLAY_LENGTH);
   }
 }
