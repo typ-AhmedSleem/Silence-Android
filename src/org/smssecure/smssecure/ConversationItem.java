@@ -213,13 +213,13 @@ public class ConversationItem extends LinearLayout
 
     setInteractionState(messageRecord);
     setBodyText(messageRecord);
-    setMediaAttributes(messageRecord);
     setBubbleState(messageRecord, recipient);
     setStatusIcons(messageRecord);
     setContactPhoto(recipient);
     setGroupMessageStatus(messageRecord, recipient);
     checkForAutoInitiate(messageRecord);
     setMinimumWidth();
+    setMediaAttributes(messageRecord);
     setSimInfo(messageRecord);
   }
 

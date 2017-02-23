@@ -96,7 +96,7 @@ public class SmsDecryptJob extends MasterSecretJob {
       else                                database.updateMessageBody(masterSecret, messageId, message.getMessageBody());
 
       if (!isReceivedWhenLocked) {
-        MessageNotifier.updateNotification(context, masterSecret, MessageNotifier.MNF_LIGHTS_KEEP);
+        MessageNotifier.updateNotification(context, masterSecret, threadId);
       } else {
         MessageNotifier.updateNotification(context, masterSecret);
       }

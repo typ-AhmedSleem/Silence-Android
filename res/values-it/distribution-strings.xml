@@ -11,7 +11,7 @@ Caratteristiche:
 * Affidabile. Silence comunica utilizzando SMS cifrati. Non è richiesta nessuna connessione a server o a internet.
 * Privata. Silence offre crittografia end-to-end per i tuoi messaggi utilizzando Axolotl, un protocollo crittografico progettato con grande attenzione.
 * Sicura. Tutti i messaggi sono cifrati in locale, così se il tuo telefono viene smarrito o rubato i tuoi messaggi sono al sicuro.
-* Open Source. Silence è Free ed Open Source, ciò permette a tutti di verificarne la sicurezza esaminando il codice sorgente.
+* Open Source. Silence è software libero ed Open Source, ciò permette a tutti di verificarne la sicurezza esaminando il codice sorgente.
 
 Comunica eventuali bug, problematiche o richieste di nuove funzioni all\'indirizzo:
 https://github.com/SilenceIM/Silence/issues

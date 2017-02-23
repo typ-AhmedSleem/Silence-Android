@@ -6,6 +6,7 @@
   <string name="delete">Elimina</string>
   <string name="please_wait">Attendere...</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Nuovo messaggio</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Non hai ancora impostato una password!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -55,13 +56,13 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Contatti bloccati</string>
   <!--ConversationItem-->
-  <string name="ConversationItem_message_size_d_kb">Dimensione Messaggio: %d KB</string>
+  <string name="ConversationItem_message_size_d_kb">Dimensione messaggio: %d KB</string>
   <string name="ConversationItem_expires_s">Scadenza: %s</string>
   <string name="ConversationItem_error_not_delivered">Non consegnato</string>
   <string name="ConversationItem_view_secure_media_question">Vuoi vedere il file multimediale?</string>
   <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Questo contenuto multimediale è stato memorizzato in un database crittato. Sfortunatamente, per aprirlo con un visualizzatore di contenuti esterno è necessario che esso vengo temporaneamente decrittato e scritto in memoria. Sei sicuro di voler procedere?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Errore, ricevuto messaggio per la contrattazione della chiave scaduto.</string>
-  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Ricevuto messaggio per lo scambio della chiave, tap per procedere</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Ricevuto messaggio per lo scambio della chiave, tocca per procedere</string>
   <string name="ConversationItem_group_action_left">%1$s ha lasciato il gruppo.</string>
   <string name="ConversationItem_click_for_details">Tocca per i dettagli</string>
   <string name="ConversationItem_click_to_approve_unencrypted">Selezione per tornare alla comunicazione non sicura</string>
@@ -69,8 +70,9 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Ripiegare su MMS non cifrati?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Questo messaggio <b>non</b> sarà cifrato  perché non è possibile stabilire una sessione sicura.\n\nInviare il messaggio non cifrato?</string>
   <string name="ConversationItem_unable_to_open_media">Impossibile trovare un\'app per aprire il file</string>
-  <string name="ConversationItem_from_s">Da %s</string>
+  <string name="ConversationItem_from_s">da %s</string>
   <string name="ConversationItem_to_s">a %s</string>
+  <string name="ConversationItem_xmpp_address_update_silence">Indirizzo XMPP. Aggiornare Silence per abilitare questa funzionalità.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniziare sessione sicura?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Iniziare una sessione sicura con %s?</string>
@@ -83,7 +85,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationActivity_select_contact_info">Seleziona informazioni dei contatti</string>
   <string name="ConversationActivity_compose_message">Componi messaggio</string>
   <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Attenzione, c\'è stato un errore nell\'inserimento del tuo allegato.</string>
-  <string name="ConversationActivity_the_gif_you_selected_was_too_big">La GIF selezioanta è troppo grande!</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">La GIF selezionata è troppo grande!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Errore, il video selezionato supera la dimensione massima (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Errore, l\'audio selezionato supera la dimensione massima (%1$skB).</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Il destinatario non è un numero o un\'indirizzo email valido!</string>
@@ -128,6 +130,10 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="one">Errore nel salvare l\'allegato in memoria!</item>
     <item quantity="other">Errore nel salvare gli allegati in memoria!</item>
   </plurals>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">File salvato con successo.</item>
+    <item quantity="other">File salvati con successo.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Impossibile scrivere sulla memoria!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Salvataggio allegato</item>
@@ -144,6 +150,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationFragment_deleting">Cancellazione...</string>
   <string name="ConversationFragment_deleting_messages">Cancellazione messaggi...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Cerca</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Cancellare la conversazione selezionata?</item>
@@ -164,7 +171,13 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="one">Conversazione spostata nei messaggi in arrivo</item>
     <item quantity="other">%d conversazioni spostate nei messaggi in arrivo</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Invia bozze</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Invierà le bozze delle conversazioni selezionate.</string>
+  <string name="ConversationListFragment_send">Invia</string>
+  <string name="ConversationListFragment_sending">Invio</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Invio delle bozze selezionate...</string>
   <!--ConversationListItem-->
+  <string name="ConversationListItem_key_exchange_message">Messaggio per la contrattazione della chiave</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversazioni archiviate (%d)</string>
   <!--CustomDefaultPreference-->
@@ -174,6 +187,8 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <!--DateUtils-->
   <string name="DateUtils_now">Adesso</string>
   <string name="DateUtils_minutes_ago">%d minuti</string>
+  <string name="DateUtils_today">Oggi</string>
+  <string name="DateUtils_yesterday">Ieri</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Condividi con</string>
   <!--IntroScreenActivity-->
@@ -233,10 +248,12 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installare Barcode Scanner?</string>
   <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence necessita di Barcode Scanner per leggere i codici QR. </string>
   <!--MessageDetailsRecipient-->
-  <string name="MessageDetailsRecipient_failed_to_send">Invio fallito</string>
+  <string name="MessageDetailsRecipient_failed_to_send">Invio non riuscito</string>
   <string name="MessageDetailsRecipient_new_identity">Nuova identità</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Errore nel salvare l\'MMS!</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Errore di connessione al fornitore MMS</string>
+  <string name="MmsDownloader_error_reading_mms_settings">Errore di lettura impostazioni fornitore wireless MMS </string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Messaggio multimediale</string>
   <!--MessageRecord-->
@@ -257,8 +274,7 @@ una nuova importazione creerà dei messaggi duplicati.</string>
 firma di questa chiave è fidata, ma al momento hai lo scambio automatico della chiave disabilitato.</string>
   <string name="ReceiveKeyActivity_processing">Elaborazione</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Elaborazione scambio delle chiavi…</string>
-  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dovresti verificare
-questo contatto.</string>
+  <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dovresti verificare l\'identità di questo contatto.</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Bloccare questo contatto?</string>
   <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Non riceverai più messaggi di questo contatto.</string>
@@ -283,6 +299,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="SmsMessageRecord_secure_session_ended">Sessione sicura terminata.</string>
   <string name="SmsMessageRecord_duplicate_message">Messaggio duplicato.</string>
   <!--ThreadRecord-->
+  <string name="ThreadRecord_left_the_group">Ha lasciato il gruppo</string>
   <string name="ThreadRecord_draft">Bozza:</string>
   <string name="ThreadRecord_media_message">Messaggio multimediale</string>
   <!--VerifyIdentityActivity-->
@@ -293,7 +310,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATTENZIONE, la chiave scansionata non corrisponde! Controlla il testo della chiave con attenzione.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NON verificata!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La chiave è corretta. È anche necessario verificare la tua chiave.</string>
-  <string name="VerifyIdentityActivity_verified_exclamation">Verificato!</string>
+  <string name="VerifyIdentityActivity_verified_exclamation">Verificata!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_scan_contacts_qr_code">Scansiona il QR code del contatto</string>
   <string name="ViewIdentityActivity_display_your_qr_code">Mostra il tuo QR code</string>
@@ -305,18 +322,23 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Hai giò inviata una richiesta di inizio di sessione a questo contatto, sei sicuro di volerne inviare un\'altra? Questo renderà invalida la precedente.</string>
   <string name="KeyExchangeInitiator_send">Inviata</string>
   <!--MessageDisplayHelper-->
+  <string name="MessageDisplayHelper_bad_encrypted_message">Messaggio con cifratura errata</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Decifratura in corso...</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Messaggio cifrato per una sessione non esistente</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Richiesta di terminare una sessione non esistente</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Errore nel decifrare il messaggio.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Connessione al server MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Download MMS...</string>
-  <string name="MmsDatabase_mms_download_failed">Download dell\'MMS fallito!</string>
+  <string name="MmsDatabase_downloading_mms">Scaricamento MMS...</string>
+  <string name="MmsDatabase_mms_download_failed">Scaricamento dell\'MMS fallito!</string>
   <string name="MmsDatabase_downloading">Scaricamento...</string>
   <string name="MmsDatabase_mms_pending_download">Tocca e configura le impstazioni MMS per continuare a scaricare.</string>
   <string name="MmsDatabase_error_decrypting_message">Errore nel decifrare il messaggio.</string>
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Decifratura MMS in corso, attendere...</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Messaggio MMS con cifratura errata</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Messaggio MMS cifrato per una sessione non esistente</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Silenzia notifiche</string>
   <!--ApplicationMigrationService-->
@@ -332,6 +354,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nuovi messaggi in %2$d conversazioni</string>
   <string name="MessageNotifier_most_recent_from_s">Più recente da: %1$s</string>
+  <string name="MessageNotifier_encrypted_message">Messaggio cifrato</string>
   <string name="MessageNotifier_media_message_with_text">Messaggio multimediale: %s</string>
   <string name="MessageNotifier_no_subject">(Nessun oggetto)</string>
   <string name="MessageNotifier_message_delivery_failed">Non è riuscito l\'invio del messaggio</string>
@@ -353,7 +376,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="change_passphrase_activity__new_passphrase">Nuova passphrase</string>
   <string name="change_passphrase_activity__repeat_new_passphrase">Ripeti la nuova passphrase</string>
   <!--contact_selection_activity-->
-  <string name="contact_selection_activity__enter_name_or_number">Inserici un nome o un numero</string>
+  <string name="contact_selection_activity__enter_name_or_number">Inserisci un nome o un numero</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Nessun contatto.</string>
   <string name="contact_selection_group_activity__finding_contacts">Caricamento contatti...</string>
@@ -362,6 +385,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleziona per</string>
   <!--blocked_contacts_fragment-->
+  <string name="blocked_contacts_fragment__no_blocked_contacts">Nessun contatto bloccato</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nessuna chiamata recente.</string>
   <!--conversation_title_view-->
@@ -384,7 +408,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_item__secure_message_description">Messaggio sicuro</string>
   <!--conversation_item_sent-->
   <string name="conversation_item_sent__download">Scarica</string>
-  <string name="conversation_item_sent__downloading">Caricamento in corso</string>
+  <string name="conversation_item_sent__downloading">Scaricamento in corso</string>
   <string name="conversation_item_sent__send_failed_indicator_description">Invio non riuscito</string>
   <string name="conversation_item_sent__pending_approval_description">In attesa di approvazione</string>
   <string name="conversation_item_sent__delivered_description">Consegnato</string>
@@ -393,15 +417,19 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_item_received__contact_photo_description">Foto del contatto</string>
   <string name="conversation_item_received__downloading">Caricamento in corso</string>
   <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Riproduci</string>
+  <string name="audio_view__pause_accessibility_description">Pausa</string>
+  <string name="audio_view__download_accessibility_description">Scarica</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Modalità di selezione di gruppo</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s selezionati</string>
   <!--conversation_fragment-->
+  <string name="conversation_fragment__scroll_to_the_bottom_content_description">Scorri in fondo</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossibile leggere il log sul tuo dispositivo. Puoi comunque usare ADB per avere un log per il debug</string>
   <string name="log_submit_activity__thanks">Grazie dell\'aiuto!</string>
   <string name="log_submit_activity__submitting">Invio in corso</string>
-  <string name="log_submit_activity__posting_logs">Salvando i logs su gist...</string>
+  <string name="log_submit_activity__posting_logs">Salvando i log su gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Vuoi importare i tuoi SMS esistenti nel database cifrato di Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Il database di default non verrà modificat o alterato in nessun modo.</string>
@@ -455,7 +483,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="message_details_header__issues_need_your_attention">Alcuni problemi necessitano della tua attenzione.</string>
   <string name="message_details_header__sent">Inviato</string>
   <string name="message_details_header__received">Ricevuto</string>
-  <string name="message_details_header__via">Attrave</string>
+  <string name="message_details_header__via">Tramite</string>
   <string name="message_details_header__to">A:</string>
   <string name="message_details_header__from">Da:</string>
   <string name="message_details_header__with">Con:</string>
@@ -473,6 +501,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="AndroidManifest__media_overview_named">Tutte le immagini con %1$s</string>
   <string name="AndroidManifest__message_details">Dettagli messaggio</string>
   <string name="AndroidManifest_archived_conversations">Conversazioni archiviate</string>
+  <string name="AndroidManifest_configure_mms_settings">Configura impostazioni MMS</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">Importa / Esporta</string>
   <string name="arrays__your_identity_key">La chiave della tua identità</string>
@@ -483,13 +512,13 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="arrays__mute_for_one_day">Silenzia per 1 giorno</string>
   <string name="arrays__mute_for_seven_days">Silenzia per 7 giorni</string>
   <string name="arrays__mute_for_one_year">Silenzia per 1 anno</string>
-  <string name="arrays__settings_default">Impostazioni di default</string>
+  <string name="arrays__settings_default">Impostazioni predefinite</string>
   <string name="arrays__enabled">Attivato</string>
   <string name="arrays__disabled">Disattivato</string>
   <string name="arrays__name_and_message">Nome e messaggio</string>
   <string name="arrays__name_only">Nome solo</string>
   <string name="arrays__no_name_or_message">Nessun nome o messaggio</string>
-  <string name="arrays__enter_key">Mostrare il tasto enter</string>
+  <string name="arrays__enter_key">Mostrare il tasto invio</string>
   <string name="arrays__emoji_key">Mostrare il tasto emoji</string>
   <string name="arrays__send_key">Mostrare il tasto inviare</string>
   <!--plurals.xml-->
@@ -573,7 +602,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__sms_delivery_reports">Rapporti di consegna SMS</string>
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Richiedi un rapporto di consegna per ogni SMS inviato</string>
   <string name="preferences__sms_delivery_reports_notification">Notifica di rapporti di consegna SMS</string>
-  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Mostrare una notificazione quando un rapporto di consegna è ricevuto</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Mostrare una notifica quando un rapporto di consegna è ricevuto</string>
   <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Cancella automaticamente i messaggi più vecchi quando la conversazione supera la lunghezza specificata</string>
   <string name="preferences__delete_old_messages">Elimina i messaggi vecchi</string>
   <string name="preferences__chats">Conversazioni e contenuti multimediali</string>
@@ -639,6 +668,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Elimina selezionati</string>
   <string name="conversation_list_batch__menu_select_all">Seleziona tutto</string>
+  <string name="conversation_list_batch__menu_send_drafts">Invia le bozze selezionate</string>
   <string name="conversation_list_batch_archive__menu_archive_selected">Archivia selezionate</string>
   <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Ripristina selezionate</string>
   <!--conversation_list-->
@@ -683,6 +713,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="text_secure_normal__menu_settings">Impostazioni</string>
   <string name="text_secure_normal__menu_clear_passphrase">Blocca</string>
   <string name="text_secure_normal__mark_all_as_read">Segnala tutto come già letto</string>
+  <string name="text_secure_normal__menu_archived_conversations">Conversazioni archiviate</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Adotta come applicazione predefinita per SMS.</string>
   <string name="reminder_header_sms_default_text">Tocca per rendere Silence l\'applicazione predefinita per gli SMS.</string>
@@ -693,6 +724,9 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="reminder_header_rate_title">Valuta quest\'applicazione</string>
   <string name="reminder_header_rate_text">Se ti piace quest\'applicazione, perfavore aiutaci valutandola</string>
   <string name="reminder_header_rate_button">RATE NOW!</string>
+  <string name="reminder_header_delivery_reports_title">Abilitare i rapporti di consegna?</string>
+  <string name="reminder_header_delivery_reports_text">I rapporti di consegna ti permettono di capire se e quando il tuo destinatario ha ricevuto il messaggio. Alcune reti di telefonia fanno pagare un costo aggiuntivo.</string>
+  <string name="reminder_header_delivery_reports_button">ABILITA</string>
   <string name="reminder_header_close_button">CHIUDERE</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">Tu</string>
@@ -700,6 +734,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MediaPreviewActivity_unssuported_media_type">Tipo di media non supportato</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Salva</string>
+  <string name="media_preview__forward_title">Inoltra</string>
+  <string name="media_preview__overview_title">Tutte le immagini</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Salva tutto</string>
   <!--media_preview_activity-->
