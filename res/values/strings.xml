@@ -63,6 +63,9 @@
     <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
     <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
 
+    <!-- AudioSlidePlayer -->
+    <string name="AudioSlidePlayer_error_playing_audio">Error playing audio!</string>
+
     <!-- BlockedContactsActivity -->
     <string name="BlockedContactsActivity_blocked_contacts">Blocked contacts</string>
 

@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -21,11 +22,14 @@ import android.widget.TextView;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.audio.AudioSlidePlayer;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.AttachmentDatabase;
-import org.smssecure.smssecure.jobs.PartProgressEvent;
+import org.smssecure.smssecure.events.PartProgressEvent;
 import org.smssecure.smssecure.mms.AudioSlide;
 import org.smssecure.smssecure.mms.SlideClickListener;
 import org.smssecure.smssecure.util.Util;
@@ -33,11 +37,13 @@ import org.smssecure.smssecure.util.Util;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+
 public class AudioView extends FrameLayout implements AudioSlidePlayer.Listener {
 
   private static final String TAG = AudioView.class.getSimpleName();
 
   private final @NonNull AnimatingToggle controlToggle;
+  private final @NonNull ViewGroup       container;
   private final @NonNull ImageView       playButton;
   private final @NonNull ImageView       pauseButton;
   private final @NonNull ImageView       downloadButton;
@@ -61,6 +67,7 @@ public class AudioView extends FrameLayout implements AudioSlidePlayer.Listener 
     super(context, attrs, defStyleAttr);
     inflate(context, R.layout.audio_view, this);
 
+    this.container        = (ViewGroup) findViewById(R.id.audio_widget_container);
     this.controlToggle    = (AnimatingToggle) findViewById(R.id.control_toggle);
     this.playButton       = (ImageView) findViewById(R.id.play);
     this.pauseButton      = (ImageView) findViewById(R.id.pause);
@@ -84,8 +91,21 @@ public class AudioView extends FrameLayout implements AudioSlidePlayer.Listener 
       TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AudioView, 0, 0);
       setTint(typedArray.getColor(R.styleable.AudioView_foregroundTintColor, Color.WHITE),
               typedArray.getColor(R.styleable.AudioView_backgroundTintColor, Color.WHITE));
+      container.setBackgroundColor(typedArray.getColor(R.styleable.AudioView_widgetBackground, Color.TRANSPARENT));
       typedArray.recycle();
     }
+  }
+
+  @Override
+  protected void onAttachedToWindow() {
+    super.onAttachedToWindow();
+    if (!EventBus.getDefault().isRegistered(this)) EventBus.getDefault().register(this);
+  }
+
+  @Override
+  protected void onDetachedFromWindow() {
+    super.onDetachedFromWindow();
+    EventBus.getDefault().unregister(this);
   }
 
   public void setAudio(final @NonNull MasterSecret masterSecret,
@@ -305,7 +325,7 @@ public class AudioView extends FrameLayout implements AudioSlidePlayer.Listener 
     }
   }
 
-  @SuppressWarnings("unused")
+  @Subscribe(sticky = true, threadMode = ThreadMode.ASYNC)
   public void onEventAsync(final PartProgressEvent event) {
     if (audioSlidePlayer != null && event.attachment.equals(this.audioSlidePlayer.getAudioSlide().asAttachment())) {
       Util.runOnMain(new Runnable() {

@@ -16,3 +16,6 @@
 [submodule "libs/org.whispersystems.libpastelog"]
 	path = libs/org.whispersystems.libpastelog
 	url = https://github.com/SMSSecure/libpastelog.git
+[submodule "libs/org.greenrobot.eventbus"]
+	path = libs/org.greenrobot.eventbus
+	url = https://github.com/greenrobot/EventBus

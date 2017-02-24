@@ -12,3 +12,6 @@ project(':org.whispersystems.jobmanager').projectDir = new File(rootDir, 'libs/o
 
 include ':org.whispersystems.libpastelog'
 project(':org.whispersystems.libpastelog').projectDir = new File(rootDir, 'libs/org.whispersystems.libpastelog/library')
+
+include ':org.greenrobot.eventbus'
+project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')
