@@ -1,10 +1,12 @@
-package org.smssecure.smssecure.jobs;
+package org.smssecure.smssecure.events;
+
 
 import android.support.annotation.NonNull;
 
 import org.smssecure.smssecure.attachments.Attachment;
 
 public class PartProgressEvent {
+
   public final Attachment attachment;
   public final long       total;
   public final long       progress;
