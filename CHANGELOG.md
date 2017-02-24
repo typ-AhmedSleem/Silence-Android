@@ -1,5 +1,11 @@
 # Silence Changelog
 
+### [0.16.0-unstable] - 2017-02-25
+- Linkified geo: and  xmpp: URIs
+- Improved multi-SIM support
+- Added Android auto support
+- Fixed duplicated notifications with MMS messages
+
 ### [0.15.2] - 2017-02-22
 - Fixed button to download MMS messages
 - Updated translations
@@ -188,6 +194,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.16.0-unstable]: https://github.com/SilenceIM/Silence/compare/v0.15.2...v0.16.0-unstable
  [0.15.2]: https://github.com/SilenceIM/Silence/compare/v0.15.1...v0.15.2
  [0.15.1]: https://github.com/SilenceIM/Silence/compare/v0.15.0...v0.15.1
  [0.15.0]: https://github.com/SilenceIM/Silence/compare/v0.14.8...v0.15.0
