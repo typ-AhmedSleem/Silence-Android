@@ -227,6 +227,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Yeni mesaj</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">İsim ya da numara girin</string>

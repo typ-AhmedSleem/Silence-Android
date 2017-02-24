@@ -249,6 +249,7 @@
   <string name="QuickResponseService_problem_sending_message">发送消息时出现问题！</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">新信息</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">旧密码</string>
   <string name="change_passphrase_activity__new_passphrase">新密码</string>

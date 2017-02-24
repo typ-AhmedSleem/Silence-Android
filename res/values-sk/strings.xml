@@ -209,6 +209,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="QuickResponseService_problem_sending_message">Problém odosielania správy!</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">Nová správa</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staré heslo</string>
   <string name="change_passphrase_activity__new_passphrase">Nové heslo</string>

@@ -103,6 +103,7 @@
   <string name="ConversationActivity_invalid_recipient">¡Destinatario inválido!</string>
   <string name="ConversationActivity_calls_not_supported">Llamadas incompatibles</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Este dispositivo no es compatible con la función de realizar llamadas.</string>
+  <string name="ConversationActivity_cant_open_link">No se pudo encontrar una aplicación capaz de abrir este enlace.</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS no seguro</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS no seguro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS seguro</string>
@@ -382,6 +383,9 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nuevo mensaje</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Posición %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (posición %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Frase-contraseña antigua</string>
   <string name="change_passphrase_activity__new_passphrase">Nueva frase-contraseña</string>

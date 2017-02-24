@@ -102,6 +102,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationActivity_invalid_recipient">Erara ricevonto!</string>
   <string name="ConversationActivity_calls_not_supported">Vokoj ne estas subtenataj</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Per tiu ĉi aparato oni ne poveblas voĉparoli.</string>
+  <string name="ConversationActivity_cant_open_link">Ne povas trovi aplikaĵon por malfermi tiun ĉi ligilon.</string>
   <string name="ConversationActivity_transport_insecure_sms">Malsekura SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Malsekura MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sekura SMS</string>
@@ -371,6 +372,9 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nova mesaĝo</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Karto %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (karto %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Malnova pasfrazo</string>
   <string name="change_passphrase_activity__new_passphrase">Nova pasfrazo</string>

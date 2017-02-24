@@ -329,6 +329,7 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">사일런스</string>
   <string name="SingleRecipientNotificationBuilder_new_message">새 메세지</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">기존 암호</string>
   <string name="change_passphrase_activity__new_passphrase">새 암호</string>

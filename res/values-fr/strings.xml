@@ -103,6 +103,7 @@ en mesure de les lire.</string>
   <string name="ConversationActivity_invalid_recipient">Destinataire invalide !</string>
   <string name="ConversationActivity_calls_not_supported">Appels non supportés</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Cet appareil ne semble pas prendre en charge les actions de numérotation.</string>
+  <string name="ConversationActivity_cant_open_link">Impossible de trouver une application pour ouvrir ce lien.</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS non-chiffré</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS non-chiffré</string>
   <string name="ConversationActivity_transport_secure_sms">SMS chiffré</string>
@@ -372,6 +373,9 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nouveau message</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Emplacement %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (empl. %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Ancienne phrase de passe</string>
   <string name="change_passphrase_activity__new_passphrase">Nouvelle phrase de passe</string>
