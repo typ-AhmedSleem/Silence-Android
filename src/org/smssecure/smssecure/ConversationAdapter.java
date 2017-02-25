@@ -277,7 +277,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
       Cursor        cursor        = getCursorAtPositionOrThrow(i);
       MessageRecord messageRecord = getMessageRecord(cursor);
 
-      if (messageRecord.getTimestamp() < lastSeen) {
+      if (messageRecord.getDateReceived() <= lastSeen) {
         return i;
       }
     }
@@ -320,7 +320,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     return Util.hashCode(calendar.get(Calendar.YEAR), calendar.get(Calendar.DAY_OF_YEAR));
   }
 
-  public long getTimestamp(int position) {
+  public long getReceivedTimestamp(int position) {
     if (!isActiveCursor())          return 0;
     if (isHeaderPosition(position)) return 0;
     if (isFooterPosition(position)) return 0;
@@ -330,7 +330,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
     Cursor        cursor        = getCursorAtPositionOrThrow(position);
     MessageRecord messageRecord = getMessageRecord(cursor);
 
-    return messageRecord.getTimestamp();
+    return messageRecord.getDateReceived();
   }
 
   @Override
@@ -373,8 +373,8 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
         return false;
       }
 
-      long currentRecordTimestamp  = adapter.getTimestamp(position);
-      long previousRecordTimestamp = adapter.getTimestamp(position + 1);
+      long currentRecordTimestamp  = adapter.getReceivedTimestamp(position);
+      long previousRecordTimestamp = adapter.getReceivedTimestamp(position + 1);
 
       return (currentRecordTimestamp > lastSeenTimestamp) && (previousRecordTimestamp < lastSeenTimestamp);
     }
