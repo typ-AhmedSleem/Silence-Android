@@ -38,6 +38,14 @@ See [CONTRIBUTING.md](https://github.com/SilenceIM/Silence/blob/master/CONTRIBUT
 
 Instructions on how to setup a development environment and build Silence can be found in [BUILDING.md](https://github.com/SilenceIM/Silence/blob/master/BUILDING.md).
 
+# Donate
+
+We accept Bitcoin donations. This will help us to pay various costs (web hosting, domain name, etc.). Our Bitcoin address is:
+
+```
+1LoKZXg3bx6kfwAhEFQqS9pgeCE1CFMEJb
+```
+
 # Help
 ## Documentation
 Looking for documentation? Check out the wiki of the original project:
