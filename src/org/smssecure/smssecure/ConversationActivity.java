@@ -156,6 +156,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public static final String TEXT_EXTRA              = "draft_text";
   public static final String DISTRIBUTION_TYPE_EXTRA = "distribution_type";
   public static final String TIMING_EXTRA            = "timing";
+  public static final String LAST_SEEN_EXTRA         = "last_seen";
 
   private static final int PICK_IMAGE        = 1;
   private static final int PICK_VIDEO        = 2;
@@ -274,6 +275,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     super.onPause();
     MessageNotifier.setVisibleThread(-1L);
     if (isFinishing()) overridePendingTransition(R.anim.fade_scale_in, R.anim.slide_to_right);
+    fragment.setLastSeen(System.currentTimeMillis());
+    markLastSeen();
     AudioSlidePlayer.stopAll();
   }
 
@@ -1171,6 +1174,16 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }.execute(threadId);
   }
 
+  private void markLastSeen() {
+    new AsyncTask<Long, Void, Void>() {
+      @Override
+      protected Void doInBackground(Long... params) {
+        DatabaseFactory.getThreadDatabase(ConversationActivity.this).setLastSeen(params[0]);
+        return null;
+      }
+    }.execute(threadId);
+  }
+
   protected void sendComplete(long threadId) {
     boolean refreshFragment = (threadId != this.threadId);
     this.threadId = threadId;
@@ -1178,6 +1191,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if (fragment == null || !fragment.isVisible() || isFinishing()) {
       return;
     }
+
+    fragment.setLastSeen(0);
 
     if (refreshFragment) {
       fragment.reload(recipients, threadId);
