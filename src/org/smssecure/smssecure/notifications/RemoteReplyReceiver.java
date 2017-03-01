@@ -60,7 +60,6 @@ public class RemoteReplyReceiver extends MasterSecretBroadcastReceiver {
 
     final long[]       recipientIds = intent.getLongArrayExtra(RECIPIENT_IDS_EXTRA);
     final CharSequence responseText = remoteInput.getCharSequence(MessageNotifier.EXTRA_REMOTE_REPLY);
-    final Recipients   recipients   = RecipientFactory.getRecipientsForIds(context, recipientIds, false);
 
     if (masterSecret != null && responseText != null) {
       new AsyncTask<Void, Void, Void>() {
@@ -71,6 +70,7 @@ public class RemoteReplyReceiver extends MasterSecretBroadcastReceiver {
           Optional<RecipientsPreferences> preferences = DatabaseFactory.getRecipientPreferenceDatabase(context).getRecipientsPreferences(recipientIds);
           int subscriptionId = preferences.isPresent() ? preferences.get().getDefaultSubscriptionId().or(-1) : -1;
 
+          Recipients recipients = RecipientFactory.getRecipientsForIds(context, recipientIds, false);
           if (recipients.isGroupRecipient()) {
             OutgoingMediaMessage reply = new OutgoingMediaMessage(recipients, responseText.toString(), new LinkedList<Attachment>(), System.currentTimeMillis(), subscriptionId, 0);
             threadId = MessageSender.send(context, masterSecret, reply, -1, false);
