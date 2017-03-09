@@ -35,10 +35,7 @@ import android.service.notification.StatusBarNotification;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationManagerCompat;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.style.StyleSpan;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -55,7 +52,6 @@ import org.smssecure.smssecure.database.model.MediaMmsMessageRecord;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
-import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.ServiceUtil;
@@ -291,6 +287,7 @@ public class MessageNotifier {
                                   notifications.get(0).getText(), notifications.get(0).getSlideDeck());
     builder.setContentIntent(notifications.get(0).getPendingIntent(context));
     builder.setGroup(NOTIFICATION_GROUP);
+    builder.setDeleteIntent(notificationState.getDeleteIntent(context));
 
     long timestamp = notifications.get(0).getTimestamp();
     if (timestamp != 0) builder.setWhen(timestamp);
@@ -331,6 +328,7 @@ public class MessageNotifier {
     builder.setMessageCount(notificationState.getMessageCount(), notificationState.getThreadCount());
     builder.setMostRecentSender(notifications.get(0).getIndividualRecipient());
     builder.setGroup(NOTIFICATION_GROUP);
+    builder.setDeleteIntent(notificationState.getDeleteIntent(context));
 
     long timestamp = notifications.get(0).getTimestamp();
     if (timestamp != 0) builder.setWhen(timestamp);
@@ -414,6 +412,8 @@ public class MessageNotifier {
     else                      reader = DatabaseFactory.getMmsSmsDatabase(context).readerFor(cursor, masterSecret);
 
     while ((record = reader.getNext()) != null) {
+      long         id               = record.getId();
+      boolean      mms              = record.isMms() || record.isMmsNotification();
       Recipient    recipient        = record.getIndividualRecipient();
       Recipients   recipients       = record.getRecipients();
       long         threadId         = record.getThreadId();
@@ -439,7 +439,7 @@ public class MessageNotifier {
       }
 
       if (threadRecipients == null || !threadRecipients.isMuted()) {
-        notificationState.addNotification(new NotificationItem(recipient, recipients, threadRecipients, threadId, body, timestamp, slideDeck));
+        notificationState.addNotification(new NotificationItem(id, mms, recipient, recipients, threadRecipients, threadId, body, timestamp, slideDeck));
       }
     }
 
@@ -462,7 +462,7 @@ public class MessageNotifier {
     alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + timeout, pendingIntent);
   }
 
-  private static void clearReminder(Context context) {
+  public static void clearReminder(Context context) {
     Intent        alarmIntent   = new Intent(ReminderReceiver.REMINDER_ACTION);
     PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT);
     AlarmManager  alarmManager  = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -485,16 +485,6 @@ public class MessageNotifier {
           return null;
         }
       }.execute();
-    }
-  }
-
-  public static class DeleteReceiver extends BroadcastReceiver {
-
-    public static final String DELETE_REMINDER_ACTION = "org.smssecure.smssecure.MessageNotifier.DELETE_REMINDER_ACTION";
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      clearReminder(context);
     }
   }
 

@@ -52,7 +52,6 @@ public class SingleRecipientNotificationBuilder extends AbstractNotificationBuil
     setColor(context.getResources().getColor(R.color.silence_primary));
     setPriority(NotificationCompat.PRIORITY_HIGH);
     setCategory(NotificationCompat.CATEGORY_MESSAGE);
-    setDeleteIntent(PendingIntent.getBroadcast(context, 0, new Intent(MessageNotifier.DeleteReceiver.DELETE_REMINDER_ACTION), 0));
   }
 
   public void setThread(@NonNull Recipients recipients) {

@@ -77,12 +77,13 @@ public class SmsDatabase extends MessagingDatabase {
     DATE_RECEIVED  + " INTEGER, " + DATE_SENT + " INTEGER, " + PROTOCOL + " INTEGER, " + READ + " INTEGER DEFAULT 0, " +
     STATUS + " INTEGER DEFAULT -1," + TYPE + " INTEGER, " + REPLY_PATH_PRESENT + " INTEGER, " +
     DATE_DELIVERY_RECEIVED + " INTEGER DEFAULT 0," + SUBJECT + " TEXT, " + BODY + " TEXT, " +
-    MISMATCHED_IDENTITIES + " TEXT DEFAULT NULL, " + SERVICE_CENTER + " TEXT, " + SUBSCRIPTION_ID + " INTEGER DEFAULT -1);";
+    MISMATCHED_IDENTITIES + " TEXT DEFAULT NULL, " + SERVICE_CENTER + " TEXT, " + SUBSCRIPTION_ID + " INTEGER DEFAULT -1, " +
+    NOTIFIED + " DEFAULT 0);";
 
   public static final String[] CREATE_INDEXS = {
     "CREATE INDEX IF NOT EXISTS sms_thread_id_index ON " + TABLE_NAME + " (" + THREAD_ID + ");",
     "CREATE INDEX IF NOT EXISTS sms_read_index ON " + TABLE_NAME + " (" + READ + ");",
-    "CREATE INDEX IF NOT EXISTS sms_read_and_thread_id_index ON " + TABLE_NAME + "(" + READ + "," + THREAD_ID + ");",
+    "CREATE INDEX IF NOT EXISTS sms_read_and_notified_and_thread_id_index ON " + TABLE_NAME + "(" + READ + "," + NOTIFIED + ","  + THREAD_ID + ");",
     "CREATE INDEX IF NOT EXISTS sms_type_index ON " + TABLE_NAME + " (" + TYPE + ");",
     "CREATE INDEX IF NOT EXISTS sms_date_sent_index ON " + TABLE_NAME + " (" + DATE_SENT + ");",
     "CREATE INDEX IF NOT EXISTS sms_thread_date_index ON " + TABLE_NAME + " (" + THREAD_ID + ", " + DATE_RECEIVED + ");"
@@ -94,7 +95,8 @@ public class SmsDatabase extends MessagingDatabase {
       DATE_SENT + " AS " + NORMALIZED_DATE_SENT,
       PROTOCOL, READ, STATUS, TYPE,
       REPLY_PATH_PRESENT, SUBJECT, BODY, SERVICE_CENTER, DATE_DELIVERY_RECEIVED,
-      MISMATCHED_IDENTITIES, SUBSCRIPTION_ID
+      MISMATCHED_IDENTITIES, SUBSCRIPTION_ID,
+      NOTIFIED
   };
 
   private final JobManager jobManager;
@@ -270,6 +272,15 @@ public class SmsDatabase extends MessagingDatabase {
 
   public void markAsSentFailed(long id) {
     updateTypeBitmask(id, Types.BASE_TYPE_MASK, Types.BASE_SENT_FAILED_TYPE);
+  }
+
+  public void markAsNotified(long id) {
+    SQLiteDatabase database      = databaseHelper.getWritableDatabase();
+    ContentValues  contentValues = new ContentValues();
+
+    contentValues.put(NOTIFIED, 1);
+
+    database.update(TABLE_NAME, contentValues, ID_WHERE, new String[] {String.valueOf(id)});
   }
 
   public void setMessagesRead(long threadId) {

@@ -102,7 +102,7 @@ public class MmsSmsDatabase extends Database {
 
   public Cursor getUnread() {
     String order           = MmsSmsColumns.NORMALIZED_DATE_RECEIVED + " ASC";
-    String selection       = MmsSmsColumns.READ + " = 0";
+    String selection       = MmsSmsColumns.READ + " = 0 AND " + MmsSmsColumns.NOTIFIED + " = 0";
 
     return queryTables(PROJECTION, selection, order, null);
   }
@@ -128,7 +128,9 @@ public class MmsSmsDatabase extends Database {
                               MmsDatabase.CONTENT_LOCATION, MmsDatabase.TRANSACTION_ID,
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY, MmsDatabase.STATUS,
                               MmsSmsColumns.DATE_DELIVERY_RECEIVED, MmsSmsColumns.MISMATCHED_IDENTITIES,
-                              MmsSmsColumns.SUBSCRIPTION_ID, MmsDatabase.NETWORK_FAILURE,  TRANSPORT,
+                              MmsSmsColumns.SUBSCRIPTION_ID,
+                              MmsSmsColumns.NOTIFIED,
+                              MmsDatabase.NETWORK_FAILURE,  TRANSPORT,
                               AttachmentDatabase.UNIQUE_ID,
                               AttachmentDatabase.MMS_ID,
                               AttachmentDatabase.SIZE,
@@ -153,6 +155,7 @@ public class MmsSmsDatabase extends Database {
                               MmsDatabase.MESSAGE_SIZE, MmsDatabase.EXPIRY, MmsDatabase.STATUS,
                               MmsSmsColumns.DATE_DELIVERY_RECEIVED, MmsSmsColumns.MISMATCHED_IDENTITIES,
                               MmsSmsColumns.SUBSCRIPTION_ID,
+                              MmsSmsColumns.NOTIFIED,
                               MmsDatabase.NETWORK_FAILURE, TRANSPORT,
                               AttachmentDatabase.UNIQUE_ID,
                               AttachmentDatabase.MMS_ID,
@@ -199,6 +202,7 @@ public class MmsSmsDatabase extends Database {
     mmsColumnsPresent.add(MmsDatabase.TRANSACTION_ID);
     mmsColumnsPresent.add(MmsDatabase.MESSAGE_SIZE);
     mmsColumnsPresent.add(MmsDatabase.EXPIRY);
+    mmsColumnsPresent.add(MmsDatabase.NOTIFIED);
     mmsColumnsPresent.add(MmsDatabase.STATUS);
     mmsColumnsPresent.add(MmsDatabase.NETWORK_FAILURE);
 
@@ -221,6 +225,7 @@ public class MmsSmsDatabase extends Database {
     smsColumnsPresent.add(MmsSmsColumns.DATE_DELIVERY_RECEIVED);
     smsColumnsPresent.add(MmsSmsColumns.MISMATCHED_IDENTITIES);
     smsColumnsPresent.add(MmsSmsColumns.SUBSCRIPTION_ID);
+    smsColumnsPresent.add(MmsSmsColumns.NOTIFIED);
     smsColumnsPresent.add(SmsDatabase.TYPE);
     smsColumnsPresent.add(SmsDatabase.SUBJECT);
     smsColumnsPresent.add(SmsDatabase.DATE_SENT);

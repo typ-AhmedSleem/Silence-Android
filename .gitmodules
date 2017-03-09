@@ -1,6 +1,6 @@
 [submodule "libs/com.android.support.support-v4-preferencefragment"]
 	path = libs/com.android.support.support-v4-preferencefragment
-	url = https://github.com/kolavar/android-support-v4-preferencefragment.git
+	url = https://github.com/SilenceIM/android-support-v4-preferencefragment.git
 [submodule "libs/org.w3c.dom"]
 	path = libs/org.w3c.dom
 	url = https://github.com/SMSSecure/org.w3c.dom.git
@@ -9,7 +9,7 @@
 	url = https://github.com/WhisperSystems/gradle-witness.git
 [submodule "libs/com.amulyakhare.textdrawable"]
 	path = libs/com.amulyakhare.textdrawable
-	url = https://github.com/amulyakhare/TextDrawable.git
+	url = https://github.com/SilenceIM/TextDrawable.git
 [submodule "libs/org.whispersystems.jobmanager"]
 	path = libs/org.whispersystems.jobmanager
 	url = https://github.com/SMSSecure/jobmanager.git

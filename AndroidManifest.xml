@@ -362,9 +362,9 @@
         </intent-filter>
     </receiver>
 
-    <receiver android:name=".notifications.MessageNotifier$DeleteReceiver">
+    <receiver android:name=".notifications.DeleteNotificationReceiver">
         <intent-filter>
-            <action android:name="org.smssecure.smssecure.MessageNotifier.DELETE_REMINDER_ACTION"/>
+            <action android:name="org.smssecure.smssecure.DELETE_NOTIFICATION"/>
         </intent-filter>
     </receiver>
 
