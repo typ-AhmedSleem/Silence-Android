@@ -17,10 +17,12 @@
 package org.smssecure.smssecure;
 
 import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -70,6 +72,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   private static final String PREFERENCE_CATEGORY_CHATS          = "preference_category_chats";
   private static final String PREFERENCE_CATEGORY_ADVANCED       = "preference_category_advanced";
   private static final String PREFERENCE_ABOUT                   = "preference_about";
+  private static final String PREFERENCE_PRIVACY_POLICY          = "preference_privacy_policy";
 
   private static final String PUSH_MESSAGING_PREF = "pref_toggle_push_messaging";
 
@@ -155,6 +158,15 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
         .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_CHATS));
       this.findPreference(PREFERENCE_CATEGORY_ADVANCED)
         .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_ADVANCED));
+
+      this.findPreference(PREFERENCE_PRIVACY_POLICY)
+        .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+          @Override
+          public boolean onPreferenceClick(Preference preference) {
+            handlePrivacyPolicy();
+            return true;
+          }
+        });
     }
 
     @Override
@@ -162,6 +174,14 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
       super.onResume();
       ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.text_secure_normal__menu_settings);
       setCategorySummaries();
+    }
+
+    private void handlePrivacyPolicy() {
+      try {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://silence.im/privacy")));
+      } catch (ActivityNotFoundException e) {
+        Toast.makeText(((ApplicationPreferencesActivity) getActivity()).getApplicationContext(), R.string.ConversationActivity_cant_open_link, Toast.LENGTH_LONG).show();
+      }
     }
 
     private void setCategorySummaries() {

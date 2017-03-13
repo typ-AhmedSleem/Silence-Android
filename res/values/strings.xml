@@ -730,6 +730,7 @@
     <string name="preferences__about">About Silence</string>
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__about_build_id">Build ID: %s</string>
+    <string name="preferences__privacy_policy">Privacy policy</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
     <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
     <string name="preferences__show_sent_time">Show sent time</string>

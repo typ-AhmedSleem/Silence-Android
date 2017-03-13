@@ -27,4 +27,7 @@
 
     <Preference android:key="preference_about"
                 android:title="@string/preferences__about"/>
+
+    <Preference android:key="preference_privacy_policy"
+                android:title="@string/preferences__privacy_policy"/>
 </PreferenceScreen>
