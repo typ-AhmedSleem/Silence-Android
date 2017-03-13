@@ -1,5 +1,9 @@
 # Silence Changelog
 
+### [0.15.4] - 2017-03-14
+- Fixed build
+- Updated translations
+
 ### [0.15.3] - 2017-03-14
 - Added link to our Privacy policy in Settings
 - Added "New messages" divider
@@ -195,6 +199,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.4]: https://github.com/SilenceIM/Silence/compare/v0.15.3...v0.15.4
  [0.15.3]: https://github.com/SilenceIM/Silence/compare/v0.15.2...v0.15.3
  [0.15.2]: https://github.com/SilenceIM/Silence/compare/v0.15.1...v0.15.2
  [0.15.1]: https://github.com/SilenceIM/Silence/compare/v0.15.0...v0.15.1
