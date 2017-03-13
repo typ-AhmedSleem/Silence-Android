@@ -34,6 +34,7 @@ gai izango da saiootan sartzeko.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Bideoa</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audioa</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontaktuaren informazioa</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Mezuaren tamaina: %d KB</string>
@@ -41,10 +42,6 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationItem_view_secure_media_question">Euskarri segurua ikusi?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Errorea, jaso da iraungita dagoen datu-trukerako gakoaren mezua.</string>
   <string name="ConversationItem_group_action_left">%1$s taldea utzi du</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Tap egin segurtasunik gabeko alternatibarako</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Enkriptatzerik gabeko SMSra pasatu aukera gisa?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Enkriptatzerik gabeko MMSra pasatu aukera gisa?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Mezu hau <b>ez</b> da enkriptatuko zeren eta saio seguru bat ezin izan baita ezarri.\n\nSegurtasunik gabeko mezua bidali?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Hasi saio segurua?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s-(r)ekin saio segurua abiatu?</string>
@@ -66,6 +63,7 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS ez segurua</string>
   <string name="ConversationActivity_transport_secure_sms">SMS segurua</string>
   <string name="ConversationActivity_transport_secure_mms">SMS segurua</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mezuaren detaileak</string>
   <string name="ConversationFragment_save_to_sd_card">Biltegian gorde?</string>
@@ -196,6 +194,7 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="MessageNotifier_mark_all_as_read">Denak irrakurritako gisa markatu</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

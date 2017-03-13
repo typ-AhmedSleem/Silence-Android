@@ -32,6 +32,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Äänitallenne</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Yhteystieto</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Viestin koko: %d kt</string>
@@ -41,10 +42,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationItem_error_received_stale_key_exchange_message">Virhe. Vastaanotettu avainvaihtoviesti on vanhentunut.</string>
   <string name="ConversationItem_group_action_left">%1$s on lähtenyt ryhmästä.</string>
   <string name="ConversationItem_click_for_details">Lisätietoja näpäyttämällä</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Napsauta lähettääksesi viestin salaamattomana</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Käytä salaamattomia tekstiviestejä?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Käytä salaamattomia MMS-viestejä?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tätä viestiä <b>ei</b> voida salata, koska suojattua istuntoa ei voitu muodostaa. Lähetä salaamaton viesti?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Aloita suojattu istunto?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Aloita salattu istunto %s:n kanssa?</string>
@@ -66,6 +63,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationActivity_transport_insecure_mms">Salaamaton MMS-viesti</string>
   <string name="ConversationActivity_transport_secure_sms">Salattu tekstiviesti</string>
   <string name="ConversationActivity_transport_secure_mms">Salattu MMS-viesti</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Viestin tiedot</string>
   <string name="ConversationFragment_save_to_sd_card">Tallenna muistiin?</string>
@@ -196,6 +194,7 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="MessageNotifier_mark_all_as_read">Merkitse kaikki luetuiksi</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

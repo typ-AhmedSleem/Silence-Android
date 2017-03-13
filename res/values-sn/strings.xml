@@ -55,6 +55,7 @@ kuzviverenga. </string>
   <string name="AttachmentTypeSelectorAdapter_video">Vhidhiyo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Izwi</string>
   <string name="AttachmentTypeSelectorAdapter_contact">zvizere zvezita iri</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Mazita akashoshwa</string>
   <!--ConversationItem-->
@@ -67,10 +68,6 @@ kuzviverenga. </string>
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Tagamuchira svumbunuro yekutsinha tsamba, baya kuti zvishishwe.</string>
   <string name="ConversationItem_group_action_left">%1$s abuda muboka.</string>
   <string name="ConversationItem_click_for_details">Bayai pano kuti muwone zvizere</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Bata kuti zvisina kukwedekerwa zvidzoke</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Dzokera kutsamba pfupi dzisina kukwedekerwa?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Dzokera kutsamba dzemidhiya isina kukwedekerwa?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tsamba iyi &lt;b&gt;haikwanisi&lt;b&gt; kukwedekerwa nekuda kwekuti sesheni ine tsivatsaona haina kukwanisa kutangwa.\n\nTotumira tsamba isina tsivatsaona here?</string>
   <string name="ConversationItem_unable_to_open_media">Kushaikwa kwe apu inokwanisa kuvhura midhiya iyi.</string>
   <string name="ConversationItem_from_s">kubva %s</string>
   <string name="ConversationItem_to_s">kuna %s</string>
@@ -113,6 +110,7 @@ kuzviverenga. </string>
   <string name="ConversationActivity_mms_not_supported_message">Tsamba iyi haikwanise kutumirwa nekuti mutakuri haatsigire tsamba dzine midhiya.</string>
   <string name="ConversationActivity_specify_recipient">Tinokumbira kuti usarudze zita</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Batanidzo inodarika mwero yehukuru.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Zvizere zvetsamba iyi</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -322,6 +320,7 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--QuickResponseService-->
   <string name="QuickResponseService_problem_sending_message">Paita dambudziko pakutumira tsamba!</string>
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">Nyora zita kana kuti nhamba</string>

@@ -53,6 +53,8 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Aŭdio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informoj pri kontakto</string>
+  <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Eraro dum ludado de sono!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokitaj kontaktoj</string>
   <!--ConversationItem-->
@@ -65,11 +67,6 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Ricevis ŝlosil-interŝanĝan mesaĝon, frapetu por plui.</string>
   <string name="ConversationItem_group_action_left">%1$s forlasis la grupon.</string>
   <string name="ConversationItem_click_for_details">Frapetu por detaloj</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Frapetu por malsekura retropaŝo.</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Ĉu retropaŝi al malĉifrita SMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Ĉu retropaŝi al malĉifrita MMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tiu ĉi mesaĝo <b>ne</b> estos ĉifrita ĉar ne povas startigi sekuran seancon.
-Ĉu sendi malsekuran mesaĝon?</string>
   <string name="ConversationItem_unable_to_open_media">Ne povas trovi aplikaĵon por malfermi tiun ĉi aŭdvidaĵon.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">al %s</string>
@@ -102,6 +99,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationActivity_invalid_recipient">Erara ricevonto!</string>
   <string name="ConversationActivity_calls_not_supported">Vokoj ne estas subtenataj</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Per tiu ĉi aparato oni ne poveblas voĉparoli.</string>
+  <string name="ConversationActivity_cant_open_link">Ne povas trovi aplikaĵon por malfermi tiun ĉi ligilon.</string>
   <string name="ConversationActivity_transport_insecure_sms">Malsekura SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Malsekura MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sekura SMS</string>
@@ -112,6 +110,11 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationActivity_mms_not_supported_message">Ne povas sendi tiun ĉi mesaĝon ĉar via telefon-provizanto ne subtenas MMS-ojn.</string>
   <string name="ConversationActivity_specify_recipient">Bonvolu elekti kontakton</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Kunsendaĵo trograndas limiton.</string>
+  <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d nelegita mesaĝo</item>
+    <item quantity="other">%d nelegitaj mesaĝoj</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaĝaj detaloj</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -371,6 +374,9 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nova mesaĝo</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Karto %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (karto %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Malnova pasfrazo</string>
   <string name="change_passphrase_activity__new_passphrase">Nova pasfrazo</string>
@@ -623,6 +629,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__about">Pri Silence</string>
   <string name="preferences__about_version">Versio %s</string>
   <string name="preferences__about_build_id">Kompilaĵo: %s</string>
+  <string name="preferences__privacy_policy">Politiko pri privateco</string>
   <string name="preferences_app_protection__blocked_contacts">Blokitaj kontaktoj</string>
   <string name="preferences_notifications__display_in_notifications">Montri en sciigoj</string>
   <string name="preferences__show_sent_time">Montri tempon de sendo</string>
@@ -732,6 +739,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="MediaPreviewActivity_you">Vi</string>
   <string name="MediaPreviewActivity_cant_display">Antaŭrigardo de tiu ĉi bildo malsukcesis</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nesubtenata speco de aŭdvidaĵo</string>
+  <string name="MediaPreviewActivity_draft">Malneto</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Konvervi</string>
   <string name="media_preview__forward_title">Plusendi</string>

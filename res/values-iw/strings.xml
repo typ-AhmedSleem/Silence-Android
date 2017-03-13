@@ -22,6 +22,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">תמונה</string>
   <string name="AttachmentTypeSelectorAdapter_video">וידאו</string>
   <string name="AttachmentTypeSelectorAdapter_audio">שמע</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">גודל ההודעה: %d KB</string>
@@ -35,6 +36,7 @@
   <string name="ConversationActivity_message_is_empty_exclamation">ההודעה ריקה!</string>
   <string name="ConversationActivity_invalid_recipient">נמען שגוי!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">נראה כי מכשיר זה אינו תומך בפעולות חיוג.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">פרטי הודעה</string>
   <!--ConversationListActivity-->
@@ -120,6 +122,7 @@
   <string name="MessageNotifier_mark_all_as_read">סמן הכל כנקרא</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

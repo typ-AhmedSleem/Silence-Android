@@ -22,7 +22,9 @@ sessioner kommer fortsätta att fungera, men vem som helst med fysisk tillgång 
 kommer kunna komma åt dem.</string>
   <string name="ApplicationPreferencesActivity_disable">Inaktivera</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Inkommande SMS påslaget</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tryck för att ändra din standard SMS-app</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Inkommande SMS avslaget</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tryck för att göra Silence till din standard SMS-app</string>
   <string name="ApplicationPreferencesActivity_on">på</string>
   <string name="ApplicationPreferencesActivity_On">På</string>
   <string name="ApplicationPreferencesActivity_off">av</string>
@@ -30,6 +32,7 @@ kommer kunna komma åt dem.</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Inkommande %s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Tema %1$s, Språk %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minut</item>
@@ -46,6 +49,7 @@ kommer kunna komma åt dem.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Ljud</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontaktinformation</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blockerade kontakter</string>
   <!--ConversationItem-->
@@ -56,10 +60,6 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Ett fel uppstod. Mottog ett gammalt meddelande för nyckelutbyte.</string>
   <string name="ConversationItem_group_action_left">%1$s har lämnat gruppen.</string>
   <string name="ConversationItem_click_for_details">Tryck för detaljer</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Tryck för oskyddad fallback</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Använd okrypterat SMS istället?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Använd okrypterat MMS istället?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Det här meddelandet kommer <b>inte</b> att krypteras på grund av att en säker session inte kunde upprättas. Skicka okrypterat meddelande?</string>
   <string name="ConversationItem_from_s">från %s</string>
   <string name="ConversationItem_to_s">till %s</string>
   <!--ConversationActivity-->
@@ -94,6 +94,7 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS stöds ej</string>
   <string name="ConversationActivity_mms_not_supported_message">Detta meddelande kunde inte skickas eftersom din mobiloperatör inte stödjer MMS.</string>
   <string name="ConversationActivity_specify_recipient">Vänligen välj en kontakt</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Meddelandedetaljer</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -108,6 +109,7 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationFragment_deleting">Raderar...</string>
   <string name="ConversationFragment_deleting_messages">Raderar meddelanden...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Sök</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Raderar</string>
   <string name="ConversationListFragment_undo">ÅNGRA</string>
@@ -122,6 +124,8 @@ kommer kunna komma åt dem.</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Nu</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <string name="DateUtils_today">Idag</string>
+  <string name="DateUtils_yesterday">Igår</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Dela med</string>
   <!--IntroScreenActivity-->
@@ -173,6 +177,7 @@ kommer kunna komma åt dem.</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Ingen lösenfras inknappad!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Ange lösenord</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Silenceikon</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Fel lösenord!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Signaturen för detta nyckelutbytet är betrodd, men du har inställningen \'fullborda nyckelutbyten automatiskt\' avstängd.</string>
@@ -236,7 +241,9 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Import pågår</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importerar SMS</string>
+  <string name="ApplicationMigrationService_import_complete">Importering färdig</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_silence_passphrase_cached">Tryck för att öppna.</string>
   <string name="KeyCachingService_lock">Lås med lösenord</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_most_recent_from_s">Senaste från: %1$s</string>
@@ -250,6 +257,9 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="MessageNotifier_reply">Svara</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
+  <string name="SingleRecipientNotificationBuilder_new_message">Nytt meddelande</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
@@ -269,6 +279,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="conversation_activity__type_message_sms_insecure">Skicka okrypterat SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Skicka säkert MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Skicka okrypterat MMS</string>
+  <string name="conversation_activity__from_sim_name">Från %1$s</string>
   <string name="conversation_activity__send">Skicka</string>
   <string name="conversation_activity__remove">Ta bort</string>
   <string name="conversation_activity__window_description">Meddelanden med %1$s</string>
@@ -290,6 +301,9 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="conversation_item_received__contact_photo_description">Kontaktfoto</string>
   <string name="conversation_item_received__downloading">Laddar ner</string>
   <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Spela</string>
+  <string name="audio_view__pause_accessibility_description">Pausa</string>
+  <string name="audio_view__download_accessibility_description">Hämta</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Flervalsläge</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vald</string>
@@ -324,6 +338,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="recipient_preferences__disable_notifications_for_this_conversation">Stäng av notifikationer för denna konversation</string>
   <string name="recipient_preferences__vibrate">Vibrera</string>
   <string name="recipient_preferences__block">Blockera</string>
+  <string name="recipient_preferences__color">Färg</string>
   <!--receive_key_dialog-->
   <string name="receive_key_activity__complete">Klart</string>
   <!--recipients_panel-->
@@ -360,6 +375,8 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="arrays__mute_for_seven_days">Tysta i 7 dagar</string>
   <string name="arrays__enabled">Påslagen</string>
   <string name="arrays__disabled">Avstängd</string>
+  <string name="arrays__name_and_message">Namn och meddelande</string>
+  <string name="arrays__name_only">Endast namn</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d timme</item>
@@ -442,6 +459,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="preferences__language">Språk</string>
   <string name="preferences__make_default_sms_app">Använd som standardapp för SMS</string>
   <string name="preferences__submit_debug_log">Skicka in loggfilen för felsökning</string>
+  <string name="preferences__about">Om Silence</string>
   <string name="preferences__about_version">Version %s</string>
   <string name="preferences__about_build_id">Bygg-ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Blockerade kontakter</string>
@@ -486,6 +504,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">Kontaktavatar</string>
   <string name="conversation_list_item_view__error_alert">Varning för fel</string>
+  <string name="conversation_list_item_view__archived">Arkiverad</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">Ny konversation</string>
   <!--conversation_secure_verified-->
@@ -521,6 +540,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="reminder_header_sms_default_button">STÄLL IN</string>
   <string name="reminder_header_sms_import_title">Importera systemets SMS?</string>
   <string name="reminder_header_sms_import_button">IMPORTERA</string>
+  <string name="reminder_header_rate_title">Betygsätt denna app</string>
   <string name="reminder_header_rate_button">BETYGSÄTT NU!</string>
   <string name="reminder_header_delivery_reports_button">AKTIVERA</string>
   <string name="reminder_header_close_button">STÄNG</string>
@@ -530,6 +550,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Mediatypen stöds ej</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Spara</string>
+  <string name="media_preview__overview_title">Alla bilder</string>
   <!--media_overview-->
   <string name="media_overview__save_all">Spara alla</string>
   <!--media_preview_activity-->

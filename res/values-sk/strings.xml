@@ -23,6 +23,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="AttachmentTypeSelectorAdapter_picture">Obrázok</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokované kontakty</string>
   <!--ConversationItem-->
@@ -31,7 +32,6 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationItem_view_secure_media_question">Zobraziť kryptované údaje?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Chyba, prijal som zaseknutú správu vzájomnej výmeny kľúčov.</string>
   <string name="ConversationItem_group_action_left">%1$s opustil/a skupinu.</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Táto správa <b>nebude</b> zašifrovaná, lebo bezpečné spojenie sa nepodarilo vytvoriť. Poslať nezabezpečenú správu?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Vytvoriť bezpečné spojenie?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Vytvoriť bezpečné spojenie s %s?</string>
@@ -60,6 +60,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_mms_not_supported_message">Táto správa nemože byť poslaná, lebo Váš operátor nepodporuje MMS.</string>
   <string name="ConversationActivity_specify_recipient">Prosím, vyberte kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Príloha je príliš veľká.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily správy</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -209,6 +210,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="QuickResponseService_problem_sending_message">Problém odosielania správy!</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">Nová správa</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Staré heslo</string>
   <string name="change_passphrase_activity__new_passphrase">Nové heslo</string>

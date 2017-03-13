@@ -51,6 +51,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">動画</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音声</string>
   <string name="AttachmentTypeSelectorAdapter_contact">連絡先情報</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">ブロックした連絡先</string>
   <!--ConversationItem-->
@@ -63,10 +64,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">鍵交換のメッセージを受信しました。タップすると実行します。</string>
   <string name="ConversationItem_group_action_left">%1$sがグループを抜けました。</string>
   <string name="ConversationItem_click_for_details">タップして詳細</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">タップしてセキュアでない通信を行う</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">代替として暗号化されていないSMSに切り替わりますか？</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">代替として暗号化されていないMMSに切り替わりますか？</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">このメッセージは暗号化されて<b>いない</b> なぜならセキュア・セッションを確立できなかったため。\n\n安全ではないメッセージの送信を行うか?</string>
   <string name="ConversationItem_unable_to_open_media">このメディアを開くことができるアプリが見つかりません。</string>
   <string name="ConversationItem_from_s">%s から</string>
   <string name="ConversationItem_to_s">%s まで</string>
@@ -98,6 +95,7 @@
   <string name="ConversationActivity_invalid_recipient">受信先が無効です。</string>
   <string name="ConversationActivity_calls_not_supported">通話には対応していません</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">お使いの端末は、ダイヤル機能に対応していないようです。</string>
+  <string name="ConversationActivity_cant_open_link">このリンクを開くことができるアプリが見つかりません。</string>
   <string name="ConversationActivity_transport_insecure_sms">暗号化されていないSMS</string>
   <string name="ConversationActivity_transport_insecure_mms">暗号化されていないMMS</string>
   <string name="ConversationActivity_transport_secure_sms">暗号化されているSMS</string>
@@ -108,6 +106,7 @@
   <string name="ConversationActivity_mms_not_supported_message">お使いの無線通信事業者がMMSに対応していないため、このメッセージを送信できません。</string>
   <string name="ConversationActivity_specify_recipient">連絡先を選択してください</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">添付ファイルのサイズが制限を越えています。</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">メッセージの詳細</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -358,6 +357,9 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">新規メッセージ</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">スロット %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (スロット %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">古いパスワード</string>
   <string name="change_passphrase_activity__new_passphrase">新しいパスワード</string>

@@ -44,6 +44,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">视频</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音频</string>
   <string name="AttachmentTypeSelectorAdapter_contact">联系人信息</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">阻止的联系人</string>
   <!--ConversationItem-->
@@ -56,10 +57,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">收到密钥交换信息，轻按以处理。</string>
   <string name="ConversationItem_group_action_left">%1$s 已经离开了该群组。</string>
   <string name="ConversationItem_click_for_details">点击查看详情</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">点击退回不安全的通信</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">退回未加密的短信？</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">退回到未加密的彩信？</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">此消息将<b>不会</b>被加密，因为无法建立安全会话\n\n是否发送不安全的消息？</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">发起安全会话？</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">与 %s 启动安全会话？</string>
@@ -90,6 +87,7 @@
   <string name="ConversationActivity_mms_not_supported_message">由于你的运营商不支持彩信，这条信息不能被发送。</string>
   <string name="ConversationActivity_specify_recipient">请选择一个联系人。</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">附件过大。</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">信息详情</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -249,6 +247,7 @@
   <string name="QuickResponseService_problem_sending_message">发送消息时出现问题！</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">新信息</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">旧密码</string>
   <string name="change_passphrase_activity__new_passphrase">新密码</string>

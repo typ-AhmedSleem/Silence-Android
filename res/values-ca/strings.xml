@@ -18,6 +18,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">Fotografia</string>
   <string name="AttachmentTypeSelectorAdapter_video">Vídeo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">So</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Mida del missatge: %d KB</string>
@@ -33,6 +34,7 @@
   <string name="ConversationActivity_message_is_empty_exclamation">El missatge és buit!</string>
   <string name="ConversationActivity_invalid_recipient">Destinatari invàlid!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Aquest dispositiu no sembla suportar accions de trucada.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalls del missatge</string>
   <!--ConversationListActivity-->
@@ -123,6 +125,7 @@
   <string name="MessageNotifier_mark_all_as_read">Marca-ho tot com a llegit</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

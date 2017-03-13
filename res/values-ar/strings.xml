@@ -38,6 +38,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">فيديو</string>
   <string name="AttachmentTypeSelectorAdapter_audio">صوت</string>
   <string name="AttachmentTypeSelectorAdapter_contact">بيانات الاتصال</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">المراسلون المحبوسون</string>
   <!--ConversationItem-->
@@ -48,10 +49,6 @@
   <string name="ConversationItem_error_received_stale_key_exchange_message">خطأ. تم استقبال رسالة تبادل مفاتيح غير صالحة.</string>
   <string name="ConversationItem_group_action_left">%1$s تَرك المجموعة.</string>
   <string name="ConversationItem_click_for_details">إضغط للتفاصيل</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">أنقر من أجل استعاضة غير آمنة</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">الاستعاضة برسالة غير مشفرة؟</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">الاستعاضة برسالة وسائط متعددة غير مشفرة؟</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">هذه الرسالة <b>لن تكون</b> مشفرة بسبب تعذر بدء اتصال مشفر.\n\n أرسل رسالة غير مشفرة؟</string>
   <string name="ConversationItem_from_s">من : %s</string>
   <string name="ConversationItem_to_s">إلى : %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">عنوان XMPP. حدث تطبيق سايلنس لتفعيل هذه الميزة.</string>
@@ -81,6 +78,7 @@
   <string name="ConversationActivity_transport_secure_mms">رسالة وسائط متعددة آمنة</string>
   <string name="ConversationActivity_install_smssecure">هيا نتحدث بشكلٍ آمن : %s</string>
   <string name="ConversationActivity_specify_recipient">إختر مراسلاً من فضلك</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">تفاصيل الرسالة</string>
   <string name="ConversationFragment_save_to_sd_card">أحفظ في الذاكرة؟</string>
@@ -251,6 +249,7 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">سايلنس</string>
   <string name="SingleRecipientNotificationBuilder_new_message">رسالة جديدة</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">العبارة السرية القديمة</string>
   <string name="change_passphrase_activity__new_passphrase">العبارة السرية الجديدة</string>

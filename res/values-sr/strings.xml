@@ -58,6 +58,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Звук</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Подаци о контакту</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Блокирани контакти</string>
   <!--ConversationItem-->
@@ -70,10 +71,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Примљена порука размене кључева, тапните за обраду.</string>
   <string name="ConversationItem_group_action_left">%1$s напусти групу.</string>
   <string name="ConversationItem_click_for_details">Тапните за детаље</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Тапните за необезбеђену одступницу</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Да спаднем на нешифровани СМС?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Да спаднем на нешифровани ММС?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ова порука <b>неће</b> бити шифрована јер безбедна сесија не може бити успостављена.\n\nДа пошаљем необезбеђену поруку?</string>
   <string name="ConversationItem_unable_to_open_media">Нема апликације која може да отвори овај медијум.</string>
   <string name="ConversationItem_from_s">од %s</string>
   <string name="ConversationItem_to_s">за %s</string>
@@ -117,6 +114,7 @@
   <string name="ConversationActivity_mms_not_supported_message">Порука није послата јер ваш оператер не подржава ММС.</string>
   <string name="ConversationActivity_specify_recipient">Одредите примаоца</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Прилог прекорачује ограничење величине.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Детаљи поруке</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -378,6 +376,7 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Сајленс</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Нова порука</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Стара лозинка</string>
   <string name="change_passphrase_activity__new_passphrase">Нова лозинка</string>

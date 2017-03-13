@@ -55,6 +55,8 @@
   <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Аудио</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Визитка на контакт</string>
+  <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Грешка при пускането на аудио!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Блокирани контакти</string>
   <!--ConversationItem-->
@@ -67,10 +69,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Получи се съобщение за обмяна на ключове, натисните, за да продължите.</string>
   <string name="ConversationItem_group_action_left">%1$s напусна групата.</string>
   <string name="ConversationItem_click_for_details">Натисни за повече информация</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Натисни, за да разрешиш преминавене към не шфировани съобщения в краен случай</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Разреши преминавене към некриптирани SMS-и?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Разреши преминавене към некриптирани MMS-и?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Това съобщение <b>няма</b> да бъде криптирано поради невъзожността за установяване на сигурна сесия.\n\nИзпрати некриптирано съобщение?</string>
   <string name="ConversationItem_unable_to_open_media">Липсва приложение за отваряне на медията.</string>
   <string name="ConversationItem_from_s">от %s</string>
   <string name="ConversationItem_to_s">до %s</string>
@@ -103,6 +101,7 @@
   <string name="ConversationActivity_invalid_recipient">Невалиден получател!</string>
   <string name="ConversationActivity_calls_not_supported">Функцията за разговори не се подържа</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Това устройство не поддържа повиквания.</string>
+  <string name="ConversationActivity_cant_open_link">Неуспешно откриване на приложение, което може да отвори тази връзка.</string>
   <string name="ConversationActivity_transport_insecure_sms">Некриптиран SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Некриптиран MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Криптиран SMS</string>
@@ -113,6 +112,11 @@
   <string name="ConversationActivity_mms_not_supported_message">Това съобщение не може да бъде изпратено, защото мобилния ви оператор не поддържа MMS.</string>
   <string name="ConversationActivity_specify_recipient">Избери контакт</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Прикаченият файл надхвърля ограниченията за размер.</string>
+  <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d непрочетено съобщение</item>
+    <item quantity="other">%d непрочетени съобщения</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Информация за съобщението</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -378,6 +382,9 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Ново съобщение</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Слот %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (слот %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Стара парола</string>
   <string name="change_passphrase_activity__new_passphrase">Нова парола</string>
@@ -631,6 +638,7 @@
   <string name="preferences__about">За Silince</string>
   <string name="preferences__about_version">Версия %s</string>
   <string name="preferences__about_build_id">Билд: %s</string>
+  <string name="preferences__privacy_policy">Политика на личното пространство</string>
   <string name="preferences_app_protection__blocked_contacts">Блокирани контакти</string>
   <string name="preferences_notifications__display_in_notifications">Покажи в полето за известия</string>
   <string name="preferences__show_sent_time">Покажи часът на изпращане</string>
@@ -740,6 +748,7 @@
   <string name="MediaPreviewActivity_you">Ти</string>
   <string name="MediaPreviewActivity_cant_display">Неуспешен преглед на това изображение</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Неподдържан медиен формат.</string>
+  <string name="MediaPreviewActivity_draft">Чернова</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Запази</string>
   <string name="media_preview__forward_title">Препращане</string>

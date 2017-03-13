@@ -55,6 +55,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informace o kontaktu</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokované kontakty</string>
   <!--ConversationItem-->
@@ -67,10 +68,6 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Přijata zpráva s výměnou klíčů, klepněte pro pokračování.</string>
   <string name="ConversationItem_group_action_left">%1$s opustil skupinu.</string>
   <string name="ConversationItem_click_for_details">Klepnutím zobrazíte detaily</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Klepněte pro návrat na nezabezpečenou komunikaci.</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Ponížit na nešifrovanou SMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Ponížit na nešifrovanou MMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tato zpráva <b>nebude</b> zašifrována, protože nemůže být navázáno zabezpečené spojení.\n\nOdeslat nezabezpečenou zprávu?</string>
   <string name="ConversationItem_unable_to_open_media">Není možné nalézt aplikaci vhodnou pro otevření těchto dat.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">pro %s</string>
@@ -114,6 +111,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationActivity_mms_not_supported_message">Tuto zprávu nelze odeslat, protože váš operátor nepodporuje MMS.</string>
   <string name="ConversationActivity_specify_recipient">Prosím vyberte kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Příloha je příliš velká</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily zprávy</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -301,6 +299,7 @@ Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
   <!--MessageNotifier-->
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

@@ -38,6 +38,7 @@ erişebilir.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Görüntü</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Ses</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kişi bilgisi</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Engellenen kişiler</string>
   <!--ConversationItem-->
@@ -47,10 +48,6 @@ erişebilir.</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Hata, bozuk anahtar takas mesajı alındı.</string>
   <string name="ConversationItem_group_action_left">%1$s gruptan ayrıldı.</string>
   <string name="ConversationItem_click_for_details">Ayrıntılar için dokunun</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Teminatsız geri düşme için hafifçe vur</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Şifrelenmemiş SMS geri düşülmesi?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Şifrelenmemiş MMS geri düşülmesi?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Bu mesaj güvenli bir oturum olmaması nedeni ile şifrelenmiş <b>gönderilemiyor</b>.\n\nGüvensiz mesaj gönderilsin mi?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Güvenli oturum başlatılsın mı?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s ile güvenli oturum başlat?</string>
@@ -79,6 +76,7 @@ erişebilir.</string>
   <string name="ConversationActivity_transport_secure_mms">Güvenli MMS</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS desteklenmiyor</string>
   <string name="ConversationActivity_specify_recipient">Lütfen bir kişi seçin</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Mesaj detayları</string>
   <string name="ConversationFragment_save_to_sd_card">Depolama alanına kaydedilsin mi?</string>
@@ -227,6 +225,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Yeni mesaj</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <string name="contact_selection_activity__enter_name_or_number">İsim ya da numara girin</string>

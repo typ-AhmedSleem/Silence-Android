@@ -53,6 +53,8 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informazioni contatto</string>
+  <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Errore nella riproduzione dell\'audio!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Contatti bloccati</string>
   <!--ConversationItem-->
@@ -65,10 +67,6 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Ricevuto messaggio per lo scambio della chiave, tocca per procedere</string>
   <string name="ConversationItem_group_action_left">%1$s ha lasciato il gruppo.</string>
   <string name="ConversationItem_click_for_details">Tocca per i dettagli</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Selezione per tornare alla comunicazione non sicura</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Ripiegare su SMS non cifrati?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Ripiegare su MMS non cifrati?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Questo messaggio <b>non</b> sarà cifrato  perché non è possibile stabilire una sessione sicura.\n\nInviare il messaggio non cifrato?</string>
   <string name="ConversationItem_unable_to_open_media">Impossibile trovare un\'app per aprire il file</string>
   <string name="ConversationItem_from_s">da %s</string>
   <string name="ConversationItem_to_s">a %s</string>
@@ -101,6 +99,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationActivity_invalid_recipient">Destinatario non valido!</string>
   <string name="ConversationActivity_calls_not_supported">Chiamate non supportate</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Il dispositivo non sembra supportare le telefonate.</string>
+  <string name="ConversationActivity_cant_open_link">Impossibile trovare un\'app per aprire questo link</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS non sicuro</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS non sicuro</string>
   <string name="ConversationActivity_transport_secure_sms">SMS sicuro</string>
@@ -111,6 +110,11 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationActivity_mms_not_supported_message">Questo messaggio non può essere inviato perchè il tuo operatore non supporta gli MMS</string>
   <string name="ConversationActivity_specify_recipient">Scegliere un contatto</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">L\'allegato supera le dimensioni massime.</string>
+  <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d messaggio non letto</item>
+    <item quantity="other">%d messaggi non letti</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Dettagli messaggio</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -371,6 +375,9 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nuovo messaggio</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Vecchia passphrase</string>
   <string name="change_passphrase_activity__new_passphrase">Nuova passphrase</string>
@@ -623,6 +630,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__about">A proposito di Silence</string>
   <string name="preferences__about_version">Versione %s</string>
   <string name="preferences__about_build_id">ID compilazione: %s</string>
+  <string name="preferences__privacy_policy">Politica di privacy</string>
   <string name="preferences_app_protection__blocked_contacts">Contatti bloccati</string>
   <string name="preferences_notifications__display_in_notifications">Mostrare nelle notifiche</string>
   <string name="preferences__show_sent_time">Mostrare la data dell\'invio</string>
@@ -732,6 +740,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MediaPreviewActivity_you">Tu</string>
   <string name="MediaPreviewActivity_cant_display">Impossibile mostrare l\'anteprima</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Tipo di media non supportato</string>
+  <string name="MediaPreviewActivity_draft">Bozza</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Salva</string>
   <string name="media_preview__forward_title">Inoltra</string>

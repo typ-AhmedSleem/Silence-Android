@@ -12,7 +12,7 @@ Możliwości:
 * Niezawodność. Silence komunikuje się przez szyfrowane wiadomości SMS. Nie są wymagane żadne serwery, ani połączenie z Internetem.
 * Prywatność. Silence oferuje pełne (ang. end-to-end) szyfrowanie Twoich wiadomości używając starannie opracowanego protokołu szyfrującego Axolotl.
 * Bezpieczeństwo. Wszystkie wiadomości są szyfrowane lokalnie, więc jeżeli Twój telefon zaginie lub zostanie skradziony Twoje wiadomości pozostaną bezpieczne.
-* Open Source. Silence jest wolnym i otwarto-źródłowym oprogramowaniem, każdy może sprawdzić jego bezpieczeństwo analizując kod źródłowy.
+* Otwarty kod. Silence jest wolnym i otwartoźródłowym oprogramowaniem, każdy może sprawdzić jego bezpieczeństwo analizując kod źródłowy.
 
 Prosimy zgłaszać błędy, lub proponować nowe funkcje:
 https://github.com/SilenceIM/Silence/issues
@@ -21,5 +21,8 @@ Kod źródłowy:
 https://github.com/SilenceIM/Silence
 
 Więcej informacji:
-https://silence.im</string>
+https://silence.im
+
+Polityka prywatności:
+https://silence.im/privacy</string>
 </resources>

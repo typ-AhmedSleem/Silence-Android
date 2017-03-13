@@ -15,6 +15,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">ပုံ</string>
   <string name="AttachmentTypeSelectorAdapter_video">ဗွီဒီယို</string>
   <string name="AttachmentTypeSelectorAdapter_audio">အသံ</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">စာတိုအရွယ်အစား: %d KB</string>
@@ -25,6 +26,7 @@
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s ဖြင့်လံုခြုံသောဆက်ရှင်အစပြုမည်လား?</string>
   <string name="ConversationActivity_add_attachment">ပူးတွဲမှုအားပေါင်းထည့်</string>
   <string name="ConversationActivity_message_is_empty_exclamation">စာတိုမရှိ</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">စာတို အသေးစိတ်အချက်အလက်များ</string>
   <!--ConversationListActivity-->
@@ -92,6 +94,7 @@
   <string name="MessageNotifier_error_delivering_message">အကြောင်းကြားချက်ပို့လွတ်စဉ်အမှား</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

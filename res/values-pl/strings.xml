@@ -59,6 +59,8 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="AttachmentTypeSelectorAdapter_video">Film</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Dźwięk</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informacje kontaktowe</string>
+  <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Błąd podczas odtwarzania dźwięku!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Zablokowane kontakty</string>
   <!--ConversationItem-->
@@ -71,10 +73,6 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Otrzymano wiadomość wymiany kluczy, stuknij aby kontynuować.</string>
   <string name="ConversationItem_group_action_left">%1$s opuścił grupę.</string>
   <string name="ConversationItem_click_for_details">Dotknij, aby zobaczyć szczegóły</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Dotknij w celu użycia niezabezpieczonej alternatywy</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Awaryjnie powrócić do nieszyfrowanych SMS-ów?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Awaryjnie powrócić do nieszyfrowanych MMS-ów?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ta wiadomość <b>nie będzie</b> szyfrowana ponieważ nie udało się ustanowić bezpiecznego połączenia. \n\n\Wysłać niezaszyfrowaną wiadomość?</string>
   <string name="ConversationItem_unable_to_open_media">Nie można odnaleźć aplikacji do otwarcia tego pliku multimedialnego.</string>
   <string name="ConversationItem_from_s">od %s</string>
   <string name="ConversationItem_to_s">do %s</string>
@@ -109,6 +107,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationActivity_invalid_recipient">Nieprawidłowy adresat!</string>
   <string name="ConversationActivity_calls_not_supported">Połączenia nie są obsługiwane</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Wygląda na to, że urządzenie nie wspiera wybierania numeru.</string>
+  <string name="ConversationActivity_cant_open_link">Nie można odnaleźć aplikacji do otwarcia tego odnośnika.</string>
   <string name="ConversationActivity_transport_insecure_sms">Nieszyfrowany SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Nieszyfrowany MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Bezpieczny SMS</string>
@@ -119,6 +118,13 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationActivity_mms_not_supported_message">Nie można przesłać tej wiadomości, ponieważ Twój operator nie obsługuje MMS-ów.</string>
   <string name="ConversationActivity_specify_recipient">Proszę wybrać kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Zbyt duży rozmiar załącznika.</string>
+  <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d nieprzeczytana wiadomość</item>
+    <item quantity="few">%d nieprzeczytane wiadomości</item>
+    <item quantity="many">%d nieprzeczytanych wiadomości</item>
+    <item quantity="other">%d nieprzeczytanych wiadomości</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Szczegóły wiadomości</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -406,6 +412,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nowa wiadomość</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Stare hasło</string>
   <string name="change_passphrase_activity__new_passphrase">Nowe hasło</string>
@@ -660,6 +669,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences__about">O Silence</string>
   <string name="preferences__about_version">Wersja %s</string>
   <string name="preferences__about_build_id">ID kompilacji: %s</string>
+  <string name="preferences__privacy_policy">Polityka prywatności</string>
   <string name="preferences_app_protection__blocked_contacts">Zablokowane kontakty</string>
   <string name="preferences_notifications__display_in_notifications">Pokazuj w powiadomieniach</string>
   <string name="preferences__show_sent_time">Pokaż datę wysłania</string>
@@ -769,6 +779,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="MediaPreviewActivity_you">Ty</string>
   <string name="MediaPreviewActivity_cant_display">Podgląd tego obrazu nie udał się</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nieobsługiwany typ media</string>
+  <string name="MediaPreviewActivity_draft">Szkic</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Zapisz</string>
   <string name="media_preview__forward_title">Przekaż</string>

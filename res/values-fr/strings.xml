@@ -55,6 +55,8 @@ en mesure de les lire.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Vidéo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informations sur le contact</string>
+  <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Erreur de lecture !</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Contacts bloqués</string>
   <!--ConversationItem-->
@@ -67,10 +69,6 @@ en mesure de les lire.</string>
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Message d’échange de clés reçu, appuyez pour le traiter.</string>
   <string name="ConversationItem_group_action_left">%1$s a quitté le groupe.</string>
   <string name="ConversationItem_click_for_details">Appuyez pour obtenir des détails</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Appuyez pour utiliser la solution de repli non sécurisée</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Utiliser la solution de repli sur les SMS non chiffrés ?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Utiliser la solution de repli sur les MMS non chiffrés ?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ce message <b>ne</b> sera <b>pas</b> chiffré car une session sécurisée n\'a pu être établie.\n\nEnvoyer un message non sécurisé ?</string>
   <string name="ConversationItem_unable_to_open_media">Impossible de trouver une application pour ouvrir le média.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">vers %s</string>
@@ -103,6 +101,7 @@ en mesure de les lire.</string>
   <string name="ConversationActivity_invalid_recipient">Destinataire invalide !</string>
   <string name="ConversationActivity_calls_not_supported">Appels non supportés</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Cet appareil ne semble pas prendre en charge les actions de numérotation.</string>
+  <string name="ConversationActivity_cant_open_link">Impossible de trouver une application pour ouvrir ce lien.</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS non-chiffré</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS non-chiffré</string>
   <string name="ConversationActivity_transport_secure_sms">SMS chiffré</string>
@@ -113,6 +112,11 @@ en mesure de les lire.</string>
   <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut être envoyé car votre opérateur ne supporte pas les MMS.</string>
   <string name="ConversationActivity_specify_recipient">Veuillez sélectionner un contact</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">La pièce jointe dépasse la limite de taille.</string>
+  <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d message non lu</item>
+    <item quantity="other">%d messages non lus</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Détails du message</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -372,6 +376,9 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nouveau message</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Emplacement %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (empl. %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Ancienne phrase de passe</string>
   <string name="change_passphrase_activity__new_passphrase">Nouvelle phrase de passe</string>
@@ -624,6 +631,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences__about">À propos de Silence</string>
   <string name="preferences__about_version">Version %s</string>
   <string name="preferences__about_build_id">ID de compilation : %s</string>
+  <string name="preferences__privacy_policy">Politique de vie privée</string>
   <string name="preferences_app_protection__blocked_contacts">Contacts bloqués</string>
   <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>
   <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
@@ -733,6 +741,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="MediaPreviewActivity_you">Vous</string>
   <string name="MediaPreviewActivity_cant_display">La prévisualisation de l\'image a échouée</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Type de média non supporté</string>
+  <string name="MediaPreviewActivity_draft">Brouillon</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Sauvegarder</string>
   <string name="media_preview__forward_title">Faire suivre</string>

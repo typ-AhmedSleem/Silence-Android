@@ -34,6 +34,7 @@ im moći pristupiti.</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontakt informacije</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Veličina poruke: %d KB</string>
@@ -43,10 +44,6 @@ im moći pristupiti.</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Greška, primljena stara poruka za razmjenu ključeva.</string>
   <string name="ConversationItem_group_action_left">%1$s je napustio grupu.</string>
   <string name="ConversationItem_click_for_details">Pritisnite za više detalja</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Pritisnite za nesigurnu rezervu</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Nekriptirani SMS kao rezerva?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Nekriptirani MMS kao rezerva?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Ova poruka <b>neće</b> biti kriptirana zato što nije bili moguće uspostaviti sigurnu sesiju.\n\nPošalji nesigurnu poruku?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Započmi sigurnu sesiju?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Započmi sigurnu sesiju sa %s?</string>
@@ -68,6 +65,7 @@ im moći pristupiti.</string>
   <string name="ConversationActivity_transport_insecure_mms">Nesigurni MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Sigurni SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Sigurni MMS</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalji poruke</string>
   <string name="ConversationFragment_save_to_sd_card">Spremi na disk?</string>
@@ -199,6 +197,7 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="MessageNotifier_mark_all_as_read">Označi sve kao pročitano</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

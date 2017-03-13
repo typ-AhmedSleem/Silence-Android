@@ -55,6 +55,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Аудио</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Контактная информация</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Заблокированные контакты</string>
   <!--ConversationItem-->
@@ -67,10 +68,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Получено сообщение обмена ключами. Нажмите, чтобы его обработать.</string>
   <string name="ConversationItem_group_action_left">%1$s покинул группу.</string>
   <string name="ConversationItem_click_for_details">Нажмите для подробностей</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Отправить незащищённым</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Отправить как незашифрованное SMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Отправить как незашифрованное MMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Это сообщение <b>не будет</b> зашифровано, так как не удалось установить защищённый сеанс.\n\nОтправить сообщение незащищённым?</string>
   <string name="ConversationItem_unable_to_open_media">Не найдено приложение, которое может открыть этот медиа-файл.</string>
   <string name="ConversationItem_from_s">с %s</string>
   <string name="ConversationItem_to_s">по %s</string>
@@ -111,6 +108,7 @@
   <string name="ConversationActivity_mms_not_supported_message">Сообщение не может быть отправлено, потому что Ваш оператор не поддерживает MMS.</string>
   <string name="ConversationActivity_specify_recipient">Пожалуйста, выберите контакт</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Вложение превышает допустимый размер.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Подробности</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -330,6 +328,7 @@
   <string name="QuickResponseService_problem_sending_message">Проблема при отправке сообщения!</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">Новое сообщение</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Старая парольная фраза</string>
   <string name="change_passphrase_activity__new_passphrase">Новая парольная фраза</string>

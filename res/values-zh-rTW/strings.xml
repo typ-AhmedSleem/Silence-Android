@@ -24,6 +24,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">照片</string>
   <string name="AttachmentTypeSelectorAdapter_video">影片</string>
   <string name="AttachmentTypeSelectorAdapter_audio">音樂</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">訊息大小: %d KB</string>
@@ -31,8 +32,6 @@
   <string name="ConversationItem_view_secure_media_question">檢視安全的媒體檔案？</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">錯誤，收到的是過期的金鑰交換訊息。</string>
   <string name="ConversationItem_group_action_left">%1$s 已經離開群組。</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">撤回未加密的手機簡訊？</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">撤回未加密的多媒體簡訊？</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">開啟一條安全連線？</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">與 %s 開啟安全連線？</string>
@@ -48,6 +47,7 @@
   <string name="ConversationActivity_invalid_recipient">無效的連絡人！</string>
   <string name="ConversationActivity_calls_not_supported">不支援的通話</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">您使用的裝置看來不支援撥號通話功能。</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">訊息細節</string>
   <string name="ConversationFragment_save_to_sd_card">儲存到儲存裝置？</string>
@@ -169,6 +169,7 @@
   <string name="MessageNotifier_mark_all_as_read">全部標示為已讀</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

@@ -51,6 +51,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">비디오</string>
   <string name="AttachmentTypeSelectorAdapter_audio">오디오</string>
   <string name="AttachmentTypeSelectorAdapter_contact">연락처 정보</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">차단된 연락처</string>
   <!--ConversationItem-->
@@ -63,10 +64,6 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">키 교환 메세지를 받았습니다, 진행하려면 터치하세요.</string>
   <string name="ConversationItem_group_action_left">%1$s이(가) 그룹을 떠났습니다.</string>
   <string name="ConversationItem_click_for_details">눌러서 자세한 내용 확인</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">눌러서 보안되지 않은 통신으로 후퇴</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">암호화되지 않은 SMS로 후퇴하시겠습니까?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">암호화되지 않은 MMS로 후퇴하시겠습니까?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">이 메세지는 보안 세션이 시작되지 않았으므로 암호화 <b>없이</b> 진행됩니다.\n\n보호되지 않은 메세지를 보내시겠습니까?</string>
   <string name="ConversationItem_unable_to_open_media">이 미디어를 열 수 있는 앱을 찾을 수 없습니다.</string>
   <string name="ConversationItem_from_s">%s (으)로부터</string>
   <string name="ConversationItem_to_s">%s 에게</string>
@@ -107,6 +104,7 @@
   <string name="ConversationActivity_mms_not_supported_message">사용중인 통신사가 MMS를 지원하지 않기 때문에 이 메세지를 보낼 수 없습니다.</string>
   <string name="ConversationActivity_specify_recipient">연락처를 선택하세요</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">첨부 파일이 용량 제한을 초과했습니다.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">메세지 상세 정보</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -329,6 +327,7 @@
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">사일런스</string>
   <string name="SingleRecipientNotificationBuilder_new_message">새 메세지</string>
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">기존 암호</string>
   <string name="change_passphrase_activity__new_passphrase">새 암호</string>

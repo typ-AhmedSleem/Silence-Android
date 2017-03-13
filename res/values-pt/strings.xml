@@ -53,6 +53,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="AttachmentTypeSelectorAdapter_video">Vídeo</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Áudio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informação de contacto</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Contactos bloqueados</string>
   <!--ConversationItem-->
@@ -65,10 +66,6 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">Recebeu uma mensagem para intercâmbio de chaves. Toque para executar.</string>
   <string name="ConversationItem_group_action_left">%1$s saiu do grupo.</string>
   <string name="ConversationItem_click_for_details">Toque para detalhes</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Toque para enviar de modo inseguro</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Recorrer a SMS não cifrada?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Recorrer a MMS não cifrada?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Esta mensagem <b>não</b> será cifrada porque não foi possível estabelecer uma sessão segura.\n\nEnviar mensagem não cifrada?</string>
   <string name="ConversationItem_unable_to_open_media">Não foi encontrada uma aplicação para abrir este ficheiro.</string>
   <string name="ConversationItem_from_s">de %s</string>
   <string name="ConversationItem_to_s">para %s</string>
@@ -101,6 +98,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationActivity_invalid_recipient">Destinatário inválido!</string>
   <string name="ConversationActivity_calls_not_supported">Chamadas não suportadas</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Parece que este dispositivo não tem suporte a ações de marcação.</string>
+  <string name="ConversationActivity_cant_open_link">Não foi encontrada uma aplicação adequada.</string>
   <string name="ConversationActivity_transport_insecure_sms">SMS insegura</string>
   <string name="ConversationActivity_transport_insecure_mms">MMS insegura</string>
   <string name="ConversationActivity_transport_secure_sms">SMS segura</string>
@@ -111,6 +109,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationActivity_mms_not_supported_message">Esta mensagem não pode ser enviada porque a operadora não tem suporte a MMS.</string>
   <string name="ConversationActivity_specify_recipient">Por favor escolha um contacto</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">O anexo excede o tamanho permitido.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalhes da mensagem</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -369,6 +368,9 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nova mensagem</string>
+  <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Palavra-passe atual</string>
   <string name="change_passphrase_activity__new_passphrase">Nova palavra-passe</string>

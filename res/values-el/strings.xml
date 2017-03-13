@@ -36,6 +36,7 @@
   <string name="AttachmentTypeSelectorAdapter_video">Βίντεο</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Ήχος</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Πληροφοριες επαφής</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Μέγεθος μηνύματος: %d KB</string>
@@ -45,12 +46,6 @@
   <string name="ConversationItem_error_received_stale_key_exchange_message">Σφάλμα, λάβαμε παλιό μήνυμα ανταλλαγής κλειδιών.</string>
   <string name="ConversationItem_group_action_left">%1$s έφυγαν απο την ομάδα.</string>
   <string name="ConversationItem_click_for_details">Πατήστε για λεπτομέρειες</string>
-  <string name="ConversationItem_click_to_approve_unencrypted">Πατήστε για ακάλυπτη εναλλακτική</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Να γίνει αποστολή ΜΗ κρυπτογραφημενου μηνύματος?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Χρήση απροστάτευτου MMS ως εναλλακτικό κανάλι?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Αυτό το μήνυμα <b>δεν</b> θα προστατευτεί επειδή δε μπορέσαμε να ξεκινήσουμε ασφαλή συζήτηση με τον παραλήπτη.
-
-Να σταλεί το μήνυμα απροστάτευτο;</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Εκκίνηση ασφαλούς συνεδρίας;</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Έναρξη ασφαλούς συζήτησης με %s;</string>
@@ -78,6 +73,7 @@
   <string name="ConversationActivity_mms_not_supported_title">MMS δεν υποστηρίζεται</string>
   <string name="ConversationActivity_mms_not_supported_message">Αυτό το μήνυμα δεν μπορεί να αποσταλεί δεδομένου ότι φορέα σας δεν υποστηρίζει MMS</string>
   <string name="ConversationActivity_specify_recipient">Παρακαλώ επιλέξτε μια επαφή</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_save_to_sd_card">Να αποθηκευτεί στην κάρτα μνήμης;</string>
@@ -219,6 +215,7 @@
   <string name="MessageNotifier_media_message">Μήνυμα πολυμέσων</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

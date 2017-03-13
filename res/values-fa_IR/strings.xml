@@ -1,37 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="yes">Да</string>
-  <string name="no">Не</string>
-  <string name="delete">Избриши</string>
-  <string name="please_wait">Се вчитува...</string>
+  <string name="app_name">سایلنس</string>
+  <string name="yes">بله</string>
+  <string name="no">نه</string>
+  <string name="delete">حذف</string>
+  <string name="please_wait">لطفاً صبر کنید…</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">پیام جدید</string>
   <!--ApplicationPreferencesActivity-->
-  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Немате поставено лозинка!</string>
-  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Избриши ги сите стари пораки?</string>
-  <string name="ApplicationPreferencesActivity_delete">Избриши</string>
-  <string name="ApplicationPreferencesActivity_disable_storage_encryption">Исклучи локална енкрипција?</string>
-  <string name="ApplicationPreferencesActivity_disable">Исклучи</string>
-  <string name="ApplicationPreferencesActivity_on">вклучено</string>
-  <string name="ApplicationPreferencesActivity_On">Вклучено</string>
-  <string name="ApplicationPreferencesActivity_off">исклучено</string>
-  <string name="ApplicationPreferencesActivity_Off">Исклучено</string>
-  <string name="ApplicationPreferencesActivity_sms">СМС</string>
-  <string name="ApplicationPreferencesActivity_mms">ММС</string>
   <!--AppProtectionPreferenceFragment-->
   <!--DraftDatabase-->
-  <string name="DraftDatabase_Draft_image_snippet">(слика)</string>
-  <string name="DraftDatabase_Draft_audio_snippet">(аудио)</string>
-  <string name="DraftDatabase_Draft_video_snippet">(видео)</string>
   <!--AttchmentManager-->
   <!--AttachmentTypeSelectorAdapter-->
-  <string name="AttachmentTypeSelectorAdapter_picture">Слика</string>
-  <string name="AttachmentTypeSelectorAdapter_video">Видео</string>
-  <string name="AttachmentTypeSelectorAdapter_audio">Аудио</string>
-  <string name="AttachmentTypeSelectorAdapter_contact">Контакт инфо</string>
   <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
-  <string name="ConversationItem_click_for_details">Притисни за детали</string>
   <!--ConversationActivity-->
   <!--ConversationAdapter-->
   <!--ConversationFragment-->

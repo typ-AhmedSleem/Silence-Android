@@ -48,6 +48,7 @@ dapat mengaksesnya</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Info Kontak</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Kontak diblokir</string>
   <!--ConversationItem-->
@@ -65,6 +66,7 @@ dapat mengaksesnya</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Pesan kosong!</string>
   <string name="ConversationActivity_invalid_recipient">Penerima tidak lengkap!</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Perangkat ini sepertinya tidak mendukung untuk panggilan.</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Rincian pesan</string>
   <!--ConversationListActivity-->
@@ -166,6 +168,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="MessageNotifier_mark_all_as_read">Tandai telah dibaca semuanya</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

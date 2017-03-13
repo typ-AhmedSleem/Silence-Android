@@ -15,6 +15,7 @@
   <string name="AttachmentTypeSelectorAdapter_picture">འདྲ་པར།</string>
   <string name="AttachmentTypeSelectorAdapter_video">བརྙན་པར།</string>
   <string name="AttachmentTypeSelectorAdapter_audio">སྒྲ་ཟློས། </string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">འཕྲིན་ཐུང་ཆེ་ཆུང་།%d KB</string>
@@ -25,6 +26,7 @@
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s དང་ལྷན་དུ་བདེ་འཇགས་ཀྱི་གླེང་མོལ་འགོ་རྩོམ་གྱི་ཡིན་ནམ།</string>
   <string name="ConversationActivity_add_attachment">ཟུར་སྣོན་ཁ་སྣོན་བྱོས། </string>
   <string name="ConversationActivity_message_is_empty_exclamation">འཕྲིན་ཐུང་སྟོང་པ་རེད་འདུག </string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">འཕྲིན་ཐུང་གི་ཞིབ་ཆ།</string>
   <!--ConversationListActivity-->
@@ -94,6 +96,7 @@
   <string name="MessageNotifier_error_delivering_message">འཕྲིན་ཐུང་གཏོང་བར་སྐྱོན་ཤོར་འདུག </string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->

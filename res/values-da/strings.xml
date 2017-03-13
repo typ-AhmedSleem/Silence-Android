@@ -31,6 +31,7 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Lyd</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontakt information</string>
+  <!--AudioSlidePlayer-->
   <!--BlockedContactsActivity-->
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Besked størrelse: %d KB</string>
@@ -38,8 +39,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationItem_view_secure_media_question">Gennemse sikret data?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Fejl! Modtog en gammel udvekslingsnøgle.</string>
   <string name="ConversationItem_group_action_left">%1$s har forladt gruppen.</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_sms_dialog_title">Godkend ukrypteret SMS?</string>
-  <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Godkend ukrypteret MMS?</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Opret en sikker forbindelse?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Opret en sikker forbindelse med %s?</string>
@@ -59,6 +58,7 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationActivity_transport_insecure_mms">Usikker (ikke krypteret) MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Krypteret SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Krypteret MMS</string>
+  <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Besked detaljer</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -181,6 +181,7 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="MessageNotifier_mark_all_as_read">Marker alle som læst</string>
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->
+  <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
   <!--contact_selection_activity-->
   <!--contact_selection_group_activity-->
