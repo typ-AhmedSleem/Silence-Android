@@ -126,8 +126,8 @@ public class ConversationItem extends LinearLayout
 
   private final Context context;
 
-  private static final Pattern XMPP_PATTERN = Pattern.compile("xmpp:[^\\s\"\':,]+", Pattern.CASE_INSENSITIVE);
-  public static Pattern GEO_URI_PATTERN = Pattern.compile("geo:-?[0-9\\.]+,-?[0-9\\.]+(;[^\\s\"\':]+)?", Pattern.CASE_INSENSITIVE);
+  private static final Pattern XMPP_PATTERN    = Pattern.compile("xmpp:[^ \t\n\"\':,<>]+",              Pattern.CASE_INSENSITIVE);
+  private static final Pattern GEO_URI_PATTERN = Pattern.compile("geo:[-0-9.]+,[-0-9.]+[^ \t\n\"\':]*", Pattern.CASE_INSENSITIVE);
 
   private static final Linkify.TransformFilter WEBURL_TRANSFORM = new Linkify.TransformFilter() {
     @Override
@@ -314,7 +314,6 @@ public class ConversationItem extends LinearLayout
       bodyText.setVisibility(View.VISIBLE);
       linkifyBodyText();
     }
-    linkifyBodyText();
   }
 
   private void linkifyBodyText() {
