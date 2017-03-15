@@ -228,7 +228,7 @@ public class ConversationAdapter <V extends View & BindableConversationItem>
   public int getItemViewType(@NonNull Cursor cursor) {
     MessageRecord messageRecord = getMessageRecord(cursor);
 
-    if (messageRecord.isGroupAction() || messageRecord.isEndSession()) {
+    if (messageRecord.isGroupAction()) {
       return MESSAGE_TYPE_UPDATE;
     } else if (hasAudio(messageRecord)) {
       if (messageRecord.isOutgoing()) return MESSAGE_TYPE_AUDIO_OUTGOING;
