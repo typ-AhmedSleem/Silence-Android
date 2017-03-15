@@ -1,5 +1,9 @@
 # Silence Changelog
 
+### [0.15.5] - 2017-03-16
+- Fixed glitch with "Secure session ended" items
+- Updated translations
+
 ### [0.15.4] - 2017-03-14
 - Fixed build
 - Updated translations
@@ -199,6 +203,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.5]: https://github.com/SilenceIM/Silence/compare/v0.15.4...v0.15.5
  [0.15.4]: https://github.com/SilenceIM/Silence/compare/v0.15.3...v0.15.4
  [0.15.3]: https://github.com/SilenceIM/Silence/compare/v0.15.2...v0.15.3
  [0.15.2]: https://github.com/SilenceIM/Silence/compare/v0.15.1...v0.15.2
