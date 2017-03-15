@@ -54,6 +54,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="AttachmentTypeSelectorAdapter_audio">Áudio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informação de contacto</string>
   <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Erro de reprodução áudio!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Contactos bloqueados</string>
   <!--ConversationItem-->
@@ -110,6 +111,10 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationActivity_specify_recipient">Por favor escolha um contacto</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">O anexo excede o tamanho permitido.</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d mensagem não lida</item>
+    <item quantity="other">%d mensagens não lidas</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detalhes da mensagem</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -623,6 +628,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="preferences__about">Sobre o Silence</string>
   <string name="preferences__about_version">Versão %s</string>
   <string name="preferences__about_build_id">ID de compilação: %s</string>
+  <string name="preferences__privacy_policy">Política de privacidade</string>
   <string name="preferences_app_protection__blocked_contacts">Contactos bloqueados</string>
   <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>
   <string name="preferences__show_sent_time">Mostrar data/hora de envio</string>
@@ -732,6 +738,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="MediaPreviewActivity_you">Você</string>
   <string name="MediaPreviewActivity_cant_display">Falha ao prévisualizar a imagem</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Tipo multimédia não suportado</string>
+  <string name="MediaPreviewActivity_draft">Rascunho</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Guardar</string>
   <string name="media_preview__forward_title">Reencaminhar</string>

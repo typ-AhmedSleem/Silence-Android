@@ -3,4 +3,27 @@
   <string name="Distribution_title">Silence</string>
   <string name="Distribution_tagline">¡Convierte en fácil el cifrado de conversaciones SMS/MMS!</string>
   <string name="Distribution_description">Silence es una aplicación SMS/MMS que le permite proteger su privacidad cuando se comunica con amigos.</string>
+  <string name="Distribution_long_description">
+        Silence es una aplicación de SMS/MMS que le permite proteger su privacidad mientras se comunica con amigos.
+        Usando Silence, puede enviar mensajes SMS y compartir audiovisuales o adjuntos con total privacidad.
+
+        Características:
+        * Fácil. Silence funciona como cualquier otra aplicación de SMS. No hay nada para lo que tenga que registrarse ni ningún nuevo servicio al que sus amigos tengan que unirse.
+        * Fiable. Silence se comunica usando mensajes SMS cifrados. No se requieren servidores o conexión a Internet.
+        * Privado. Silence proporciona cifrado extremo-a-extremo para sus mensajes usando el protocolo Axolotl que fue concienzudamente diseñado.
+        * Seguro. Todos los mensajes se cifran localmente, así que si pierde su teléfono o se lo roban, sus mensajes están protegidos.
+        * Código abierto. Silence es libre y de código abierto, lo que permite que cualquiera verifique su seguridad mediante auditando el código.
+
+        Por favor, consigne cualquier fallo, problema, o petición de nueva característica en:
+        https://github.com/SilenceIM/Silence/issues
+
+        El código fuente se puede encontrar en:
+        https://github.com/SilenceIM/Silence
+
+        Más detalles:
+        https://silence.im
+
+        Política de privacidad:
+        https://silence.im/privacy
+    </string>
 </resources>

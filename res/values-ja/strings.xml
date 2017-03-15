@@ -52,6 +52,7 @@
   <string name="AttachmentTypeSelectorAdapter_audio">音声</string>
   <string name="AttachmentTypeSelectorAdapter_contact">連絡先情報</string>
   <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">オーディオの再生中にエラーが発生しました!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">ブロックした連絡先</string>
   <!--ConversationItem-->
@@ -107,6 +108,9 @@
   <string name="ConversationActivity_specify_recipient">連絡先を選択してください</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">添付ファイルのサイズが制限を越えています。</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="other">%d 未読メッセージ</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">メッセージの詳細</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -286,7 +290,7 @@
   <string name="SmsMessageRecord_duplicate_message">多重送信メッセージ。</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">グループを出ました</string>
-  <string name="ThreadRecord_draft">草稿:</string>
+  <string name="ThreadRecord_draft">下書き:</string>
   <string name="ThreadRecord_media_message">メディアメッセージ</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">認証キーがありません。</string>
@@ -612,6 +616,7 @@
   <string name="preferences__about">Silenceについて</string>
   <string name="preferences__about_version">バージョン %s</string>
   <string name="preferences__about_build_id">ビルド ID: %s</string>
+  <string name="preferences__privacy_policy">プライバシーポリシー</string>
   <string name="preferences_app_protection__blocked_contacts">ブロックした連絡先</string>
   <string name="preferences_notifications__display_in_notifications">通知に表示</string>
   <string name="preferences__show_sent_time">送信した時間を表示</string>
@@ -721,6 +726,7 @@
   <string name="MediaPreviewActivity_you">あなた</string>
   <string name="MediaPreviewActivity_cant_display">この画像のプレビューに失敗</string>
   <string name="MediaPreviewActivity_unssuported_media_type">サポートされないメディア種別</string>
+  <string name="MediaPreviewActivity_draft">下書き</string>
   <!--media_preview-->
   <string name="media_preview__save_title">保存</string>
   <string name="media_preview__forward_title">転送</string>
