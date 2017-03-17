@@ -34,8 +34,8 @@ import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.IdentityKey;
-import org.whispersystems.libaxolotl.InvalidMessageException;
+import org.whispersystems.libsignal.IdentityKey;
+import org.whispersystems.libsignal.InvalidMessageException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -100,7 +100,6 @@ public class DatabaseFactory {
   private final MmsSmsDatabase mmsSmsDatabase;
   private final IdentityDatabase identityDatabase;
   private final DraftDatabase draftDatabase;
-  private final GroupDatabase groupDatabase;
   private final RecipientPreferenceDatabase recipientPreferenceDatabase;
   private final ContactsDatabase contactsDatabase;
 
@@ -157,10 +156,6 @@ public class DatabaseFactory {
     return getInstance(context).draftDatabase;
   }
 
-  public static GroupDatabase getGroupDatabase(Context context) {
-    return getInstance(context).groupDatabase;
-  }
-
   public static RecipientPreferenceDatabase getRecipientPreferenceDatabase(Context context) {
     return getInstance(context).recipientPreferenceDatabase;
   }
@@ -182,7 +177,6 @@ public class DatabaseFactory {
     this.mmsSmsDatabase              = new MmsSmsDatabase(context, databaseHelper);
     this.identityDatabase            = new IdentityDatabase(context, databaseHelper);
     this.draftDatabase               = new DraftDatabase(context, databaseHelper);
-    this.groupDatabase               = new GroupDatabase(context, databaseHelper);
     this.recipientPreferenceDatabase = new RecipientPreferenceDatabase(context, databaseHelper);
     this.contactsDatabase            = new ContactsDatabase(context);
   }
@@ -200,7 +194,6 @@ public class DatabaseFactory {
     this.mmsSmsDatabase.reset(databaseHelper);
     this.identityDatabase.reset(databaseHelper);
     this.draftDatabase.reset(databaseHelper);
-    this.groupDatabase.reset(databaseHelper);
     this.recipientPreferenceDatabase.reset(databaseHelper);
     old.close();
 
@@ -511,7 +504,6 @@ public class DatabaseFactory {
       db.execSQL(MmsAddressDatabase.CREATE_TABLE);
       db.execSQL(IdentityDatabase.CREATE_TABLE);
       db.execSQL(DraftDatabase.CREATE_TABLE);
-      db.execSQL(GroupDatabase.CREATE_TABLE);
       db.execSQL(RecipientPreferenceDatabase.CREATE_TABLE);
 
       executeStatements(db, SmsDatabase.CREATE_INDEXS);
@@ -520,7 +512,6 @@ public class DatabaseFactory {
       executeStatements(db, ThreadDatabase.CREATE_INDEXS);
       executeStatements(db, MmsAddressDatabase.CREATE_INDEXS);
       executeStatements(db, DraftDatabase.CREATE_INDEXS);
-      executeStatements(db, GroupDatabase.CREATE_INDEXS);
     }
 
     @Override

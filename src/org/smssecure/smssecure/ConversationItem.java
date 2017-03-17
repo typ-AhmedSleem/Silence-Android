@@ -72,7 +72,7 @@ import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.SilencePreferences;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.HashSet;
 import java.util.Locale;

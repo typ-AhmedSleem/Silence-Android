@@ -32,13 +32,11 @@ import org.smssecure.smssecure.contacts.avatars.ContactPhoto;
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.database.CanonicalAddressDatabase;
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.database.GroupDatabase;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.LRUCache;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -81,7 +79,7 @@ class RecipientProvider {
     if (asynchronous) {
       cachedRecipient = new Recipient(recipientId, number, cachedRecipient, getRecipientDetailsAsync(context, recipientId, number));
     } else {
-      cachedRecipient = new Recipient(recipientId, getRecipientDetailsSync(context, recipientId, number));
+      cachedRecipient = new Recipient(recipientId, getIndividualRecipientDetails(context, recipientId, number));
     }
 
     recipientCache.set(recipientId, cachedRecipient);
@@ -119,18 +117,13 @@ class RecipientProvider {
     Callable<RecipientDetails> task = new Callable<RecipientDetails>() {
       @Override
       public RecipientDetails call() throws Exception {
-        return getRecipientDetailsSync(context, recipientId, number);
+        return getIndividualRecipientDetails(context, recipientId, number);
       }
     };
 
     ListenableFutureTask<RecipientDetails> future = new ListenableFutureTask<>(task);
     asyncRecipientResolver.submit(future);
     return future;
-  }
-
-  private @NonNull RecipientDetails getRecipientDetailsSync(Context context, long recipientId, @NonNull String number) {
-    if (GroupUtil.isEncodedGroup(number)) return getGroupRecipientDetails(context, number);
-    else                                  return getIndividualRecipientDetails(context, recipientId, number);
   }
 
   private @NonNull RecipientDetails getIndividualRecipientDetails(Context context, long recipientId, @NonNull String number) {
@@ -162,23 +155,6 @@ class RecipientProvider {
 
     if (STATIC_DETAILS.containsKey(number)) return STATIC_DETAILS.get(number);
     else                                    return new RecipientDetails(null, number, null, ContactPhotoFactory.getDefaultContactPhoto(null), color);
-  }
-
-  private @NonNull RecipientDetails getGroupRecipientDetails(Context context, String groupId) {
-    try {
-      GroupDatabase.GroupRecord record  = DatabaseFactory.getGroupDatabase(context)
-                                                         .getGroup(GroupUtil.getDecodedId(groupId));
-
-      if (record != null) {
-        ContactPhoto contactPhoto = ContactPhotoFactory.getGroupContactPhoto(record.getAvatar());
-        return new RecipientDetails(record.getTitle(), groupId, null, contactPhoto, null);
-      }
-
-      return new RecipientDetails(null, groupId, null, ContactPhotoFactory.getDefaultGroupPhoto(), null);
-    } catch (IOException e) {
-      Log.w("RecipientProvider", e);
-      return new RecipientDetails(null, groupId, null, ContactPhotoFactory.getDefaultGroupPhoto(), null);
-    }
   }
 
   private @Nullable RecipientsPreferences getRecipientsPreferencesSync(Context context, long[] recipientIds) {

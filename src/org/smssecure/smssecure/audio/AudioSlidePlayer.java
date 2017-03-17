@@ -16,7 +16,7 @@ import org.smssecure.smssecure.attachments.AttachmentServer;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.AudioSlide;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;

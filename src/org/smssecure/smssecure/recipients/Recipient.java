@@ -27,7 +27,6 @@ import org.smssecure.smssecure.contacts.avatars.ContactPhoto;
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory;
 import org.smssecure.smssecure.recipients.RecipientProvider.RecipientDetails;
 import org.smssecure.smssecure.util.FutureTaskListener;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 
 import java.util.Collections;
@@ -136,7 +135,7 @@ public class Recipient {
   }
 
   public boolean isGroupRecipient() {
-    return GroupUtil.isEncodedGroup(number);
+    return false;
   }
 
   public synchronized void addListener(RecipientModifiedListener listener) {

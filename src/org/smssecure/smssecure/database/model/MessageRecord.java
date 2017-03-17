@@ -31,7 +31,6 @@ import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.SilencePreferences;
-import org.smssecure.smssecure.util.GroupUtil;
 
 import java.util.List;
 
@@ -90,8 +89,6 @@ public abstract class MessageRecord extends DisplayRecord {
   public SpannableString getDisplayBody() {
     if (isGroupUpdate() && isOutgoing()) {
       return emphasisAdded(context.getString(R.string.MessageRecord_updated_group));
-    } else if (isGroupUpdate()) {
-      return emphasisAdded(GroupUtil.getDescription(context, getBody().getBody()).toString());
     } else if (isGroupQuit() && isOutgoing()) {
       return emphasisAdded(context.getString(R.string.MessageRecord_left_group));
     } else if (isGroupQuit()) {

@@ -22,7 +22,7 @@ import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.util.MediaUtil;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.LinkedList;
 import java.util.List;

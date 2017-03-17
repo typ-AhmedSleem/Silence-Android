@@ -10,7 +10,7 @@ import org.smssecure.smssecure.TransportOptions;
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
 import org.smssecure.smssecure.TransportOptionsPopup;
 import org.smssecure.smssecure.util.ViewUtil;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 public class SendButton extends ImageButton
     implements TransportOptions.OnTransportChangedListener,

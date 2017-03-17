@@ -42,7 +42,7 @@ import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;

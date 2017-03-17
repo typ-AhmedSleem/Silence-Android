@@ -27,13 +27,12 @@ import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.LRUCache;
 import org.smssecure.smssecure.util.ShortCodeUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.VisibleForTesting;
-import org.whispersystems.textsecure.api.util.InvalidNumberException;
-import org.whispersystems.textsecure.api.util.PhoneNumberFormatter;
+import org.smssecure.smssecure.util.InvalidNumberException;
+import org.smssecure.smssecure.util.PhoneNumberFormatter;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -232,7 +231,6 @@ public class CanonicalAddressDatabase {
   @VisibleForTesting
   static boolean isNumberAddress(@NonNull String number) {
     if (number.contains("@"))             return false;
-    if (GroupUtil.isEncodedGroup(number)) return false;
 
     final String networkNumber = PhoneNumberUtils.extractNetworkPortion(number);
 

@@ -39,7 +39,7 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.InvalidMessageException;
+import org.whispersystems.libsignal.InvalidMessageException;
 
 import java.util.Arrays;
 import java.util.HashSet;

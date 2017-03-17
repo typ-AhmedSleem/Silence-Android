@@ -11,7 +11,7 @@ import org.smssecure.smssecure.util.SmsCharacterCalculator;
 import org.smssecure.smssecure.util.EncryptedSmsCharacterCalculator;
 import org.smssecure.smssecure.util.dualsim.SubscriptionInfoCompat;
 import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.LinkedList;
 import java.util.List;

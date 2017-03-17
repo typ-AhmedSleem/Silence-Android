@@ -46,7 +46,6 @@ import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.SelectedRecipientsAdapter;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.textsecure.internal.push.TextSecureProtos.GroupContext;
 
 import java.io.File;
 import java.util.ArrayList;

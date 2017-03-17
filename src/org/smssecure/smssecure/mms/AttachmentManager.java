@@ -46,7 +46,7 @@ import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.concurrent.ListenableFuture.Listener;
 import org.smssecure.smssecure.util.views.Stub;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.Iterator;

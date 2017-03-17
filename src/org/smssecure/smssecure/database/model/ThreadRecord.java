@@ -30,7 +30,6 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.GroupUtil;
 
 /**
  * The message record model which represents thread heading messages.
@@ -71,8 +70,6 @@ public class ThreadRecord extends DisplayRecord {
   public SpannableString getDisplayBody() {
     if (SmsDatabase.Types.isDecryptInProgressType(type)) {
       return emphasisAdded(context.getString(R.string.MessageDisplayHelper_decrypting_please_wait));
-    } else if (isGroupUpdate()) {
-      return emphasisAdded(GroupUtil.getDescription(context, getBody().getBody()).toString());
     } else if (isGroupQuit()) {
       return emphasisAdded(context.getString(R.string.ThreadRecord_left_the_group));
     } else if (isKeyExchange()) {

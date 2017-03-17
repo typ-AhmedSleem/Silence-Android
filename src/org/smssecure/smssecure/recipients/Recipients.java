@@ -30,7 +30,6 @@ import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPr
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.VibrateState;
 import org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
 import org.smssecure.smssecure.util.FutureTaskListener;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.ListenableFutureTask;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.Util;
@@ -208,7 +207,7 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
   }
 
   public boolean isGroupRecipient() {
-    return isSingleRecipient() && GroupUtil.isEncodedGroup(recipients.get(0).getNumber());
+    return false;
   }
 
   public boolean isEmpty() {
@@ -266,8 +265,7 @@ public class Recipients implements Iterable<Recipient>, RecipientModifiedListene
       String number = iterator.next().getNumber();
 
       if (scrub && number != null &&
-          !Patterns.EMAIL_ADDRESS.matcher(number).matches() &&
-          !GroupUtil.isEncodedGroup(number))
+          !Patterns.EMAIL_ADDRESS.matcher(number).matches());
       {
         number = number.replaceAll("[^0-9+]", "");
       }

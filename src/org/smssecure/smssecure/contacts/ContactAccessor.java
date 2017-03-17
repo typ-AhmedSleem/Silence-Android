@@ -29,14 +29,11 @@ import android.provider.ContactsContract.PhoneLookup;
 import android.telephony.PhoneNumberUtils;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
-import org.smssecure.smssecure.database.GroupDatabase;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-
-import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
 
 /**
  * This class was originally a layer of indirection between
@@ -123,20 +120,6 @@ public class ContactAccessor {
     } finally {
       if (cursor != null)
         cursor.close();
-    }
-
-    GroupDatabase.Reader reader = null;
-    GroupRecord record;
-
-    try {
-      reader = DatabaseFactory.getGroupDatabase(context).getGroupsFilteredByTitle(constraint);
-
-      while ((record = reader.getNext()) != null) {
-        numberList.add(record.getEncodedId());
-      }
-    } finally {
-      if (reader != null)
-        reader.close();
     }
 
     return numberList;

@@ -19,3 +19,6 @@
 [submodule "libs/org.greenrobot.eventbus"]
 	path = libs/org.greenrobot.eventbus
 	url = https://github.com/greenrobot/EventBus
+[submodule "libs/org.whispersystems.libsignal"]
+	path = libs/org.whispersystems.libsignal
+	url = https://github.com/SilenceIM/libsignal-protocol-java

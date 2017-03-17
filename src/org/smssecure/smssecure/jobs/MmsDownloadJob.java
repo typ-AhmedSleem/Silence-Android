@@ -11,7 +11,7 @@ import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.attachments.UriAttachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MmsCipher;
-import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSignalProtocolStore;
 import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
@@ -32,11 +32,11 @@ import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
-import org.whispersystems.libaxolotl.DuplicateMessageException;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.LegacyMessageException;
-import org.whispersystems.libaxolotl.NoSessionException;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.DuplicateMessageException;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.LegacyMessageException;
+import org.whispersystems.libsignal.NoSessionException;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -118,7 +118,7 @@ public class MmsDownloadJob extends MasterSecretJob {
       }
 
       if (retrieveConf.getSubject() != null && WirePrefix.isEncryptedMmsSubject(retrieveConf.getSubject().getString())) {
-        MmsCipher    mmsCipher    = new MmsCipher(new SilenceAxolotlStore(context, masterSecret));
+        MmsCipher    mmsCipher    = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
         RetrieveConf plaintextPdu = (RetrieveConf) mmsCipher.decrypt(context, retrieveConf);
 
         storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, plaintextPdu, true, notification.get().second);

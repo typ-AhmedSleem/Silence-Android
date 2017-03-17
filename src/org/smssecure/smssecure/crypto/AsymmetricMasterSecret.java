@@ -17,8 +17,8 @@
  */
 package org.smssecure.smssecure.crypto;
 
-import org.whispersystems.libaxolotl.ecc.ECPrivateKey;
-import org.whispersystems.libaxolotl.ecc.ECPublicKey;
+import org.whispersystems.libsignal.ecc.ECPrivateKey;
+import org.whispersystems.libsignal.ecc.ECPublicKey;
 
 /**
  * When a user first initializes Silence, a few secrets

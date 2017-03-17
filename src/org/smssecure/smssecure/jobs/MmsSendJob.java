@@ -7,7 +7,7 @@ import android.util.Log;
 import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MmsCipher;
-import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSignalProtocolStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.MmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -30,7 +30,7 @@ import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
-import org.whispersystems.libaxolotl.NoSessionException;
+import org.whispersystems.libsignal.NoSessionException;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -152,7 +152,7 @@ public class MmsSendJob extends SendJob {
       throws UndeliverableMessageException
   {
     try {
-      MmsCipher cipher = new MmsCipher(new SilenceAxolotlStore(context, masterSecret));
+      MmsCipher cipher = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
       return cipher.encrypt(context, pdu);
     } catch (NoSessionException e) {
       throw new UndeliverableMessageException(e);

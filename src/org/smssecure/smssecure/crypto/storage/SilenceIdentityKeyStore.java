@@ -7,9 +7,10 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.util.SilencePreferences;
-import org.whispersystems.libaxolotl.IdentityKey;
-import org.whispersystems.libaxolotl.IdentityKeyPair;
-import org.whispersystems.libaxolotl.state.IdentityKeyStore;
+import org.whispersystems.libsignal.IdentityKey;
+import org.whispersystems.libsignal.IdentityKeyPair;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.state.IdentityKeyStore;
 
 public class SilenceIdentityKeyStore implements IdentityKeyStore {
 
@@ -32,14 +33,14 @@ public class SilenceIdentityKeyStore implements IdentityKeyStore {
   }
 
   @Override
-  public void saveIdentity(String name, IdentityKey identityKey) {
-    long recipientId = RecipientFactory.getRecipientsFromString(context, name, true).getPrimaryRecipient().getRecipientId();
+  public void saveIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
+    long recipientId = RecipientFactory.getRecipientsFromString(context, address.getName(), true).getPrimaryRecipient().getRecipientId();
     DatabaseFactory.getIdentityDatabase(context).saveIdentity(masterSecret, recipientId, identityKey);
   }
 
   @Override
-  public boolean isTrustedIdentity(String name, IdentityKey identityKey) {
-    long recipientId = RecipientFactory.getRecipientsFromString(context, name, true).getPrimaryRecipient().getRecipientId();
+  public boolean isTrustedIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
+    long recipientId = RecipientFactory.getRecipientsFromString(context, address.getName(), true).getPrimaryRecipient().getRecipientId();
     return DatabaseFactory.getIdentityDatabase(context)
                           .isValidIdentity(masterSecret, recipientId, identityKey);
   }

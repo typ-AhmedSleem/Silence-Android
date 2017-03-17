@@ -13,7 +13,6 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.Util;
 
 import java.util.Locale;
@@ -70,10 +69,6 @@ public class ConversationUpdateItem extends LinearLayout
         body.setText(R.string.MessageRecord_left_group);
       } else if (messageRecord.isGroupQuit()) {
         body.setText(getContext().getString(R.string.ConversationItem_group_action_left, sender.toShortString()));
-      } else {
-        GroupUtil.GroupDescription description = GroupUtil.getDescription(getContext(), messageRecord.getBody().getBody());
-        description.addListener(this);
-        body.setText(description.toString());
       }
     }
   }

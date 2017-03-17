@@ -47,7 +47,6 @@ import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.database.model.NotificationMmsMessageRecord;
 import org.smssecure.smssecure.jobs.TrimThreadJob;
 import org.smssecure.smssecure.mms.IncomingMediaMessage;
-import org.smssecure.smssecure.mms.OutgoingGroupMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.SlideDeck;
@@ -55,15 +54,14 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.JsonUtils;
 import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobManager;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -76,7 +74,7 @@ import ws.com.google.android.mms.pdu.NotificationInd;
 import ws.com.google.android.mms.pdu.PduHeaders;
 
 import static org.smssecure.smssecure.util.Util.canonicalizeNumber;
-import static org.smssecure.smssecure.util.Util.canonicalizeNumberOrGroup;
+import static org.smssecure.smssecure.util.Util.canonicalizeNumber;
 
 public class MmsDatabase extends MessagingDatabase {
 
@@ -434,10 +432,6 @@ public class MmsDatabase extends MessagingDatabase {
 
         Recipients recipients = RecipientFactory.getRecipientsFromStrings(context, destinations, false);
 
-        if (body != null && (Types.isGroupQuit(outboxType) || Types.isGroupUpdate(outboxType))) {
-          return new OutgoingGroupMediaMessage(recipients, body, attachments, timestamp);
-        }
-
         OutgoingMediaMessage message = new OutgoingMediaMessage(recipients, body, attachments, timestamp, subscriptionId,
                                                                 !addresses.getBcc().isEmpty() ? ThreadDatabase.DistributionTypes.BROADCAST :
                                                                                                 ThreadDatabase.DistributionTypes.DEFAULT);
@@ -449,8 +443,6 @@ public class MmsDatabase extends MessagingDatabase {
       }
 
       throw new NoSuchMessageException("No record found for id: " + messageId);
-    } catch (IOException e) {
-      throw new MmsException(e);
     } finally {
       if (cursor != null)
         cursor.close();
@@ -643,11 +635,6 @@ public class MmsDatabase extends MessagingDatabase {
 
     if (message.isSecure()) type |= Types.SECURE_MESSAGE_BIT;
     if (forceSms)           type |= Types.MESSAGE_FORCE_SMS_BIT;
-
-    if (message.isGroup()) {
-      if      (((OutgoingGroupMediaMessage)message).isGroupUpdate()) type |= Types.GROUP_UPDATE_BIT;
-      else if (((OutgoingGroupMediaMessage)message).isGroupQuit())   type |= Types.GROUP_QUIT_BIT;
-    }
 
     List<String> recipientNumbers = message.getRecipients().toNumberStringList(true);
 

@@ -18,7 +18,7 @@ import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.sms.MultipartSmsMessageHandler;
 import org.whispersystems.jobqueue.JobParameters;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.LinkedList;
 import java.util.List;

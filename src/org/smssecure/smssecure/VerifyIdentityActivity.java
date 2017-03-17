@@ -30,10 +30,10 @@ import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.util.Hex;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.IdentityKey;
-import org.whispersystems.libaxolotl.state.SessionRecord;
-import org.whispersystems.libaxolotl.state.SessionStore;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.IdentityKey;
+import org.whispersystems.libsignal.state.SessionRecord;
+import org.whispersystems.libsignal.state.SessionStore;
 
 /**
  * Activity for verifying identity keys.
@@ -158,7 +158,7 @@ public class VerifyIdentityActivity extends KeyScanningActivity {
     }
 
     SessionStore   sessionStore   = new SilenceSessionStore(this, masterSecret);
-    AxolotlAddress axolotlAddress = new AxolotlAddress(recipient.getNumber(), 1);
+    SignalProtocolAddress axolotlAddress = new SignalProtocolAddress(recipient.getNumber(), 1);
     SessionRecord  record         = sessionStore.loadSession(axolotlAddress);
 
     if (record == null) {

@@ -37,7 +37,6 @@ import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.sms.IncomingGroupMessage;
 import org.smssecure.smssecure.sms.IncomingKeyExchangeMessage;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
@@ -353,8 +352,6 @@ public class SmsDatabase extends MessagingDatabase {
 //      type |= Types.ENCRYPTION_REMOTE_BIT;
     } else if (message.isGroup()) {
       type |= Types.SECURE_MESSAGE_BIT;
-      if      (((IncomingGroupMessage)message).isUpdate()) type |= Types.GROUP_UPDATE_BIT;
-      else if (((IncomingGroupMessage)message).isQuit())   type |= Types.GROUP_QUIT_BIT;
     } else if (message.isEndSession()) {
       type |= Types.SECURE_MESSAGE_BIT;
       type |= Types.END_SESSION_BIT;

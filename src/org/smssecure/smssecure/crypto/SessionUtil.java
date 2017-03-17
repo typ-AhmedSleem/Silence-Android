@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 
 import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
 import org.smssecure.smssecure.recipients.Recipient;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.state.SessionStore;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.state.SessionStore;
 
 public class SessionUtil {
 
@@ -16,7 +16,7 @@ public class SessionUtil {
 
   public static boolean hasSession(Context context, MasterSecret masterSecret, @NonNull String number) {
     SessionStore   sessionStore   = new SilenceSessionStore(context, masterSecret);
-    AxolotlAddress axolotlAddress = new AxolotlAddress(number, 1);
+    SignalProtocolAddress axolotlAddress = new SignalProtocolAddress(number, 1);
 
     return sessionStore.containsSession(axolotlAddress);
   }

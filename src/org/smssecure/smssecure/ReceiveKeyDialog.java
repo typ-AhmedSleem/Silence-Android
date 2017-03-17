@@ -37,21 +37,22 @@ import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.IdentityDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
+import org.smssecure.smssecure.protocol.KeyExchangeMessage;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.sms.IncomingIdentityUpdateMessage;
 import org.smssecure.smssecure.sms.IncomingKeyExchangeMessage;
 import org.smssecure.smssecure.sms.IncomingPreKeyBundleMessage;
 import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.util.Base64;
-import org.whispersystems.libaxolotl.IdentityKey;
-import org.whispersystems.libaxolotl.InvalidKeyException;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.InvalidVersionException;
-import org.whispersystems.libaxolotl.LegacyMessageException;
-import org.whispersystems.libaxolotl.protocol.KeyExchangeMessage;
-import org.whispersystems.libaxolotl.protocol.PreKeyWhisperMessage;
-import org.whispersystems.libaxolotl.state.IdentityKeyStore;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.IdentityKey;
+import org.whispersystems.libsignal.InvalidKeyException;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.InvalidVersionException;
+import org.whispersystems.libsignal.LegacyMessageException;
+import org.whispersystems.libsignal.protocol.PreKeySignalMessage;
+import org.whispersystems.libsignal.state.IdentityKeyStore;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 
@@ -123,7 +124,7 @@ public class ReceiveKeyDialog extends AlertDialog {
   private boolean isTrusted(MasterSecret masterSecret, IdentityKey identityKey, Recipient recipient) {
     IdentityKeyStore identityKeyStore = new SilenceIdentityKeyStore(getContext(), masterSecret);
 
-    return identityKeyStore.isTrustedIdentity(recipient.getNumber(), identityKey);
+    return identityKeyStore.isTrustedIdentity(new SignalProtocolAddress(recipient.getNumber(), 1), identityKey);
   }
 
   private static IncomingKeyExchangeMessage getMessage(MessageRecord messageRecord)
@@ -152,7 +153,7 @@ public class ReceiveKeyDialog extends AlertDialog {
       if (message.isIdentityUpdate()) {
         return new IdentityKey(Base64.decodeWithoutPadding(message.getMessageBody()), 0);
       } else if (message.isPreKeyBundle()) {
-        return new PreKeyWhisperMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
+        return new PreKeySignalMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       } else {
         return new KeyExchangeMessage(Base64.decodeWithoutPadding(message.getMessageBody())).getIdentityKey();
       }

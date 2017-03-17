@@ -9,7 +9,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.crypto.SecurityEvent;
 import org.smssecure.smssecure.crypto.SmsCipher;
-import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSignalProtocolStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -27,14 +27,14 @@ import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingKeyExchangeMessage;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
-import org.whispersystems.libaxolotl.DuplicateMessageException;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.InvalidVersionException;
-import org.whispersystems.libaxolotl.LegacyMessageException;
-import org.whispersystems.libaxolotl.NoSessionException;
-import org.whispersystems.libaxolotl.StaleKeyExchangeException;
-import org.whispersystems.libaxolotl.UntrustedIdentityException;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.DuplicateMessageException;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.InvalidVersionException;
+import org.whispersystems.libsignal.LegacyMessageException;
+import org.whispersystems.libsignal.NoSessionException;
+import org.whispersystems.libsignal.StaleKeyExchangeException;
+import org.whispersystems.libsignal.UntrustedIdentityException;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 
@@ -82,7 +82,7 @@ public class SmsDecryptJob extends MasterSecretJob {
       long                threadId  = record.getThreadId();
 
       if      (message.isSecureMessage()) handleSecureMessage(masterSecret, messageId, threadId, message);
-      else if (message.isPreKeyBundle())  handlePreKeyWhisperMessage(masterSecret, messageId, threadId, (IncomingPreKeyBundleMessage) message);
+      else if (message.isPreKeyBundle())  handlePreKeySignalMessage(masterSecret, messageId, threadId, (IncomingPreKeyBundleMessage) message);
       else if (message.isKeyExchange())   handleKeyExchangeMessage(masterSecret, messageId, threadId, (IncomingKeyExchangeMessage) message);
       else if (message.isEndSession())    handleSecureMessage(masterSecret, messageId, threadId, message);
       else if (message.isXmppExchange())  handleXmppExchangeMessage(masterSecret, messageId, threadId, (IncomingXmppExchangeMessage) message);
@@ -124,7 +124,7 @@ public class SmsDecryptJob extends MasterSecretJob {
       InvalidMessageException, LegacyMessageException
   {
     EncryptingSmsDatabase database  = DatabaseFactory.getEncryptingSmsDatabase(context);
-    SmsCipher             cipher    = new SmsCipher(new SilenceAxolotlStore(context, masterSecret));
+    SmsCipher             cipher    = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
     IncomingTextMessage   plaintext = cipher.decrypt(context, message);
 
     database.updateMessageBody(masterSecret, messageId, plaintext.getMessageBody());
@@ -132,7 +132,7 @@ public class SmsDecryptJob extends MasterSecretJob {
     if (message.isEndSession()) SecurityEvent.broadcastSecurityUpdateEvent(context, threadId);
   }
 
-  private void handlePreKeyWhisperMessage(MasterSecret masterSecret, long messageId, long threadId,
+  private void handlePreKeySignalMessage(MasterSecret masterSecret, long messageId, long threadId,
                                           IncomingPreKeyBundleMessage message)
       throws NoSessionException, DuplicateMessageException,
       InvalidMessageException, LegacyMessageException
@@ -140,7 +140,7 @@ public class SmsDecryptJob extends MasterSecretJob {
     EncryptingSmsDatabase database = DatabaseFactory.getEncryptingSmsDatabase(context);
 
     try {
-      SmsCipher                smsCipher = new SmsCipher(new SilenceAxolotlStore(context, masterSecret));
+      SmsCipher                smsCipher = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
       IncomingEncryptedMessage plaintext = smsCipher.decrypt(context, message);
 
       database.updateBundleMessageBody(masterSecret, messageId, plaintext.getMessageBody());
@@ -161,7 +161,7 @@ public class SmsDecryptJob extends MasterSecretJob {
 
     if (SilencePreferences.isAutoRespondKeyExchangeEnabled(context) || manualOverride) {
       try {
-        SmsCipher                  cipher   = new SmsCipher(new SilenceAxolotlStore(context, masterSecret));
+        SmsCipher                  cipher   = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
         OutgoingKeyExchangeMessage response = cipher.process(context, message);
 
         database.markAsProcessedKeyExchange(messageId);

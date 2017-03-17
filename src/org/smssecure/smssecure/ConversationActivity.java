@@ -84,7 +84,6 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.DraftDatabase;
 import org.smssecure.smssecure.database.DraftDatabase.Draft;
 import org.smssecure.smssecure.database.DraftDatabase.Drafts;
-import org.smssecure.smssecure.database.GroupDatabase;
 import org.smssecure.smssecure.database.MmsSmsColumns.Types;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.RecipientsPreferences;
 import org.smssecure.smssecure.database.ThreadDatabase;
@@ -113,7 +112,6 @@ import org.smssecure.smssecure.util.CharacterCalculator.CharacterState;
 import org.smssecure.smssecure.util.Dialogs;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.views.Stub;
@@ -123,8 +121,8 @@ import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.concurrent.ListenableFuture;
 import org.smssecure.smssecure.util.concurrent.SettableFuture;
 import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.List;
@@ -132,7 +130,6 @@ import java.util.List;
 import ws.com.google.android.mms.ContentType;
 
 import static org.smssecure.smssecure.TransportOption.Type;
-import static org.smssecure.smssecure.database.GroupDatabase.GroupRecord;
 
 /**
  * Activity for displaying a message thread, as well as
@@ -182,7 +179,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private   AttachmentTypeSelectorAdapter attachmentAdapter;
   private   AttachmentManager             attachmentManager;
   private   BroadcastReceiver             securityUpdateReceiver;
-  private   BroadcastReceiver             groupUpdateReceiver;
   private   Stub<EmojiDrawer>             emojiDrawerStub;
   private   EmojiToggle                   emojiToggle;
 
@@ -295,7 +291,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     saveDraft();
     if (recipients != null) recipients.removeListener(this);
     if (securityUpdateReceiver != null) unregisterReceiver(securityUpdateReceiver);
-    if (groupUpdateReceiver != null) unregisterReceiver(groupUpdateReceiver);
     super.onDestroy();
   }
 
@@ -946,26 +941,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       }
     };
 
-    groupUpdateReceiver = new BroadcastReceiver() {
-      @Override
-      public void onReceive(Context context, Intent intent) {
-        Log.w("ConversationActivity", "Group update received...");
-        if (recipients != null) {
-          long[] ids = recipients.getIds();
-          Log.w("ConversationActivity", "Looking up new recipients...");
-          recipients = RecipientFactory.getRecipientsForIds(context, ids, true);
-          recipients.addListener(ConversationActivity.this);
-          titleView.setTitle(recipients);
-        }
-      }
-    };
-
     registerReceiver(securityUpdateReceiver,
                      new IntentFilter(SecurityEvent.SECURITY_UPDATE_EVENT),
                      KeyCachingService.KEY_PERMISSION, null);
-
-    registerReceiver(groupUpdateReceiver,
-                     new IntentFilter(GroupDatabase.DATABASE_UPDATE_ACTION));
   }
 
   //////// Helper Methods
@@ -1120,17 +1098,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private boolean isActiveGroup() {
-    if (!isGroupConversation()) return false;
-
-    try {
-      byte[]      groupId = GroupUtil.getDecodedId(getRecipients().getPrimaryRecipient().getNumber());
-      GroupRecord record  = DatabaseFactory.getGroupDatabase(this).getGroup(groupId);
-
-      return record != null && record.isActive();
-    } catch (IOException e) {
-      Log.w("ConversationActivity", e);
-      return false;
-    }
+    return false;
   }
 
   private boolean isGroupConversation() {

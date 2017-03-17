@@ -18,7 +18,7 @@ import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.service.SmsDeliveryListener;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
-import org.whispersystems.libaxolotl.state.SessionStore;
+import org.whispersystems.libsignal.state.SessionStore;
 
 public class SmsSentJob extends MasterSecretJob {
 

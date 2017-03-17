@@ -27,7 +27,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.model.MessageRecord;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.util.HashSet;
 import java.util.Set;

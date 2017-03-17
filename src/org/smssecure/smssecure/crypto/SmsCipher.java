@@ -14,23 +14,23 @@ import org.smssecure.smssecure.sms.OutgoingKeyExchangeMessage;
 import org.smssecure.smssecure.sms.OutgoingPrekeyBundleMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
 import org.smssecure.smssecure.sms.SmsTransportDetails;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.DuplicateMessageException;
-import org.whispersystems.libaxolotl.InvalidKeyException;
-import org.whispersystems.libaxolotl.InvalidKeyIdException;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.InvalidVersionException;
-import org.whispersystems.libaxolotl.LegacyMessageException;
-import org.whispersystems.libaxolotl.NoSessionException;
-import org.whispersystems.libaxolotl.SessionBuilder;
-import org.whispersystems.libaxolotl.SessionCipher;
-import org.whispersystems.libaxolotl.StaleKeyExchangeException;
-import org.whispersystems.libaxolotl.UntrustedIdentityException;
-import org.whispersystems.libaxolotl.protocol.CiphertextMessage;
-import org.whispersystems.libaxolotl.protocol.KeyExchangeMessage;
-import org.whispersystems.libaxolotl.protocol.PreKeyWhisperMessage;
-import org.whispersystems.libaxolotl.protocol.WhisperMessage;
-import org.whispersystems.libaxolotl.state.AxolotlStore;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.DuplicateMessageException;
+import org.whispersystems.libsignal.InvalidKeyException;
+import org.whispersystems.libsignal.InvalidKeyIdException;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.InvalidVersionException;
+import org.whispersystems.libsignal.LegacyMessageException;
+import org.whispersystems.libsignal.NoSessionException;
+import org.smssecure.smssecure.crypto.SessionBuilder;
+import org.whispersystems.libsignal.SessionCipher;
+import org.whispersystems.libsignal.StaleKeyExchangeException;
+import org.whispersystems.libsignal.UntrustedIdentityException;
+import org.whispersystems.libsignal.protocol.CiphertextMessage;
+import org.smssecure.smssecure.protocol.KeyExchangeMessage;
+import org.whispersystems.libsignal.protocol.PreKeySignalMessage;
+import org.whispersystems.libsignal.protocol.SignalMessage;
+import org.whispersystems.libsignal.state.SignalProtocolStore;
 
 import java.io.IOException;
 
@@ -38,9 +38,9 @@ public class SmsCipher {
 
   private final SmsTransportDetails transportDetails = new SmsTransportDetails();
 
-  private final AxolotlStore axolotlStore;
+  private final SignalProtocolStore axolotlStore;
 
-  public SmsCipher(AxolotlStore axolotlStore) {
+  public SmsCipher(SignalProtocolStore axolotlStore) {
     this.axolotlStore = axolotlStore;
   }
 
@@ -50,13 +50,13 @@ public class SmsCipher {
   {
     try {
       byte[]         decoded        = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
-      WhisperMessage whisperMessage = new WhisperMessage(decoded);
-      SessionCipher  sessionCipher  = new SessionCipher(axolotlStore, new AxolotlAddress(message.getSender(), 1));
+      SignalMessage whisperMessage = new SignalMessage(decoded);
+      SessionCipher  sessionCipher  = new SessionCipher(axolotlStore, new SignalProtocolAddress(message.getSender(), 1));
       byte[]         padded         = sessionCipher.decrypt(whisperMessage);
       byte[]         plaintext      = transportDetails.getStrippedPaddingMessageBody(padded);
 
       if (message.isEndSession() && "TERMINATE".equals(new String(plaintext))) {
-        axolotlStore.deleteSession(new AxolotlAddress(message.getSender(), 1));
+        axolotlStore.deleteSession(new SignalProtocolAddress(message.getSender(), 1));
       }
 
       return message.withMessageBody(new String(plaintext));
@@ -71,8 +71,8 @@ public class SmsCipher {
   {
     try {
       byte[]               decoded       = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
-      PreKeyWhisperMessage preKeyMessage = new PreKeyWhisperMessage(decoded);
-      SessionCipher        sessionCipher = new SessionCipher(axolotlStore, new AxolotlAddress(message.getSender(), 1));
+      PreKeySignalMessage preKeyMessage = new PreKeySignalMessage(decoded);
+      SessionCipher        sessionCipher = new SessionCipher(axolotlStore, new SignalProtocolAddress(message.getSender(), 1));
       byte[]               padded        = sessionCipher.decrypt(preKeyMessage);
       byte[]               plaintext     = transportDetails.getStrippedPaddingMessageBody(padded);
 
@@ -86,11 +86,11 @@ public class SmsCipher {
     byte[] paddedBody      = transportDetails.getPaddedMessageBody(message.getMessageBody().getBytes());
     String recipientNumber = message.getRecipients().getPrimaryRecipient().getNumber();
 
-    if (!axolotlStore.containsSession(new AxolotlAddress(recipientNumber, 1))) {
+    if (!axolotlStore.containsSession(new SignalProtocolAddress(recipientNumber, 1))) {
       throw new NoSessionException("No session for: " + recipientNumber);
     }
 
-    SessionCipher     cipher            = new SessionCipher(axolotlStore, new AxolotlAddress(recipientNumber, 1));
+    SessionCipher     cipher            = new SessionCipher(axolotlStore, new SignalProtocolAddress(recipientNumber, 1));
     CiphertextMessage ciphertextMessage = cipher.encrypt(paddedBody);
     String            encodedCiphertext = new String(transportDetails.getEncodedMessage(ciphertextMessage.serialize()));
 
@@ -107,7 +107,7 @@ public class SmsCipher {
   {
     try {
       Recipients         recipients      = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
-      AxolotlAddress     axolotlAddress  = new AxolotlAddress(message.getSender(), 1);
+      SignalProtocolAddress     axolotlAddress  = new SignalProtocolAddress(message.getSender(), 1);
       KeyExchangeMessage exchangeMessage = new KeyExchangeMessage(transportDetails.getDecodedMessage(message.getMessageBody().getBytes()));
       SessionBuilder     sessionBuilder  = new SessionBuilder(axolotlStore, axolotlAddress);
 

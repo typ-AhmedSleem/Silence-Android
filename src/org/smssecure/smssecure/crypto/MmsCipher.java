@@ -8,16 +8,16 @@ import org.smssecure.smssecure.protocol.WirePrefix;
 import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.DuplicateMessageException;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.LegacyMessageException;
-import org.whispersystems.libaxolotl.NoSessionException;
-import org.whispersystems.libaxolotl.SessionCipher;
-import org.whispersystems.libaxolotl.protocol.CiphertextMessage;
-import org.whispersystems.libaxolotl.protocol.WhisperMessage;
-import org.whispersystems.libaxolotl.state.AxolotlStore;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.DuplicateMessageException;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.LegacyMessageException;
+import org.whispersystems.libsignal.NoSessionException;
+import org.whispersystems.libsignal.SessionCipher;
+import org.whispersystems.libsignal.protocol.CiphertextMessage;
+import org.whispersystems.libsignal.protocol.SignalMessage;
+import org.whispersystems.libsignal.state.SignalProtocolStore;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 
@@ -36,9 +36,9 @@ public class MmsCipher {
   private static final String TAG = MmsCipher.class.getSimpleName();
 
   private final TextTransport textTransport = new TextTransport();
-  private final AxolotlStore axolotlStore;
+  private final SignalProtocolStore axolotlStore;
 
-  public MmsCipher(AxolotlStore axolotlStore) {
+  public MmsCipher(SignalProtocolStore axolotlStore) {
     this.axolotlStore = axolotlStore;
   }
 
@@ -47,7 +47,7 @@ public class MmsCipher {
              NoSessionException
   {
     try {
-      SessionCipher sessionCipher = new SessionCipher(axolotlStore, new AxolotlAddress(pdu.getFrom().getString(), 1));
+      SessionCipher sessionCipher = new SessionCipher(axolotlStore, new SignalProtocolAddress(pdu.getFrom().getString(), 1));
       Optional<byte[]> ciphertext = getEncryptedData(pdu);
 
       if (!ciphertext.isPresent()) {
@@ -62,7 +62,7 @@ public class MmsCipher {
       }
 
       try {
-        plaintext = sessionCipher.decrypt(new WhisperMessage(decodedCiphertext));
+        plaintext = sessionCipher.decrypt(new SignalMessage(decodedCiphertext));
       } catch (InvalidMessageException e) {
         // NOTE - For some reason, Sprint seems to append a single character to the
         // end of message text segments.  I don't know why, so here we just try
@@ -71,7 +71,7 @@ public class MmsCipher {
           Log.w(TAG, "Attempting truncated decrypt...");
           byte[] truncated = Util.trim(ciphertext.get(), ciphertext.get().length - 1);
           decodedCiphertext = textTransport.getDecodedMessage(truncated);
-          plaintext = sessionCipher.decrypt(new WhisperMessage(decodedCiphertext));
+          plaintext = sessionCipher.decrypt(new SignalMessage(decodedCiphertext));
         } else {
           throw e;
         }
@@ -95,11 +95,11 @@ public class MmsCipher {
       throw new UndeliverableMessageException("PDU composition failed, null payload");
     }
 
-    if (!axolotlStore.containsSession(new AxolotlAddress(recipientString, 1))) {
+    if (!axolotlStore.containsSession(new SignalProtocolAddress(recipientString, 1))) {
       throw new NoSessionException("No session for: " + recipientString);
     }
 
-    SessionCipher     cipher            = new SessionCipher(axolotlStore, new AxolotlAddress(recipientString, 1));
+    SessionCipher     cipher            = new SessionCipher(axolotlStore, new SignalProtocolAddress(recipientString, 1));
     CiphertextMessage ciphertextMessage = cipher.encrypt(pduBytes);
     byte[]            encryptedPduBytes = textTransport.getEncodedMessage(ciphertextMessage.serialize());
 

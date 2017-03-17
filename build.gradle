@@ -21,6 +21,12 @@ repositories {
     mavenLocal()
 }
 
+subprojects {
+    ext.version_number     = "2.4.0"
+    ext.group_info         = "org.whispersystems"
+    ext.curve25519_version = "0.3.0"
+}
+
 dependencies {
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.jpardogo.materialtabstrip:library:1.0.9'
@@ -56,7 +62,13 @@ dependencies {
 
     compile project (':org.whispersystems.jobmanager')
     compile project (':org.whispersystems.libpastelog')
-    compile 'org.whispersystems:textsecure-android:1.8.3'
+    compile project (':org.whispersystems.libsignal')
+
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.8.7'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
+    compile 'com.googlecode.libphonenumber:libphonenumber:8.3.3'
+
     compile project (':com.amulyakhare.textdrawable')
     compile 'me.relex:circleindicator:1.0.0@aar'
 
@@ -99,14 +111,14 @@ dependencyVerification {
             'com.android.support:gridlayout-v7:a9b770cffca2c7c5cd83cba4dd12503365de5e8d9c79c479165adf18ab3bc25b',
             'com.doomonafireball.betterpickers:library:132ecd685c95a99e7377c4e27bfadbb2d7ed0bea995944060cd62d4369fdaf3d',
             'com.madgag.spongycastle:prov:b8c3fec3a59aac1aa04ccf4dad7179351e54ef7672f53f508151b614c131398a',
-            'com.fasterxml.jackson.core:jackson-annotations:0ca408c24202a7626ec8b861e99d85eca5e38b73311dd6dd12e3e9deecc3fe94',
-            'com.fasterxml.jackson.core:jackson-core:cbf4604784b4de226262845447a1ad3bb38a6728cebe86562e2c5afada8be2c0',
-            'com.fasterxml.jackson.core:jackson-databind:835097bcdd11f5bc8a08378c70d4c8054dfa4b911691cc2752063c75534d198d',
+            'com.fasterxml.jackson.core:jackson-annotations:6b7802f6c22c09c4a92a2ebeb76e755c3c0a58dfbf419835fae470d89e469b86',
+            'com.fasterxml.jackson.core:jackson-core:256ff34118ab292d1b4f3ee4d2c3e5e5f0f609d8e07c57e8ad1f51c46d4fbb46',
+            'com.fasterxml.jackson.core:jackson-databind:4f74337b6d18664be0f5b15c6664b17aa3972c9c175092328b139b894ff66f19',
             'com.github.bumptech.glide:glide:76ef123957b5fbaebb05fcbe6606dd58c3bc3fcdadb257f99811d0ac9ea9b88b',
             'com.github.chrisbanes.photoview:library:8b5344e206f125e7ba9d684008f36c4992d03853c57e5814125f88496126e3cc',
             'com.google.protobuf:protobuf-java:e0c1c64575c005601725e7c6a02cebf9e1285e888f756b2a1d73ffa8d725cc74',
             'com.google.zxing:android-integration:89e56aadf1164bd71e57949163c53abf90af368b51669c0d4a47a163335f95c4',
-            'com.googlecode.libphonenumber:libphonenumber:9625de9d2270e9a280ff4e6d9ef3106573fb4828773fd32c9b7614f4e17d2811',
+            'com.googlecode.libphonenumber:libphonenumber:48c03059241d52411e6b775962adf5a1e95c3de1e7f0efaf577bc1548ded616a',
             'com.jpardogo.materialtabstrip:library:c6ef812fba4f74be7dc4a905faa4c2908cba261a94c13d4f96d5e67e4aad4aaa',
             'com.makeramen:roundedimageview:1f5a1865796b308c6cdd114acc6e78408b110f0a62fc63553278fbeacd489cd1',
             'com.pnikosis:materialish-progress:d71d80e00717a096784482aee21001a9d299fec3833e4ebd87739ed36cf77c54',
@@ -114,17 +126,9 @@ dependencyVerification {
             'com.melnykov:floatingactionbutton:15d58d4fac0f7a288d0e5301bbaf501a146f5b3f5921277811bf99bd3b397263',
             'com.nineoldandroids:library:68025a14e3e7673d6ad2f95e4b46d78d7d068343aa99256b686fe59de1b3163a',
             'com.squareup.dagger:dagger:789aca24537022e49f91fc6444078d9de8f1dd99e1bfb090f18491b186967883',
-            'com.squareup.okio:okio:5e1098bd3fdee4c3347f5ab815b40ba851e4ab1b348c5e49a5b0362f0ce6e978',
             'javax.inject:javax.inject:91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff',
             'org.apache.httpcomponents:httpclient-android:6f56466a9bd0d42934b90bfbfe9977a8b654c058bf44a12bdc2877c4e1f033f1',
-            'org.whispersystems:axolotl-android:40d3db5004a84749a73f68d2f0d01b2ae35a73c54df96d8c6c6723b96efb6fc0',
-            'org.whispersystems:axolotl-java:6daee739b89d8d7101de6d98f77132fee48495c6ea647d880e77def842f999ea',
-            'org.whispersystems:curve25519-android:3c29a4131a69b0d16baaa3d707678deb39602c3a3ffd75805ce7f9db252e5d0d',
-            'org.whispersystems:curve25519-java:9ccef8f5aba05d9942336f023c589d6278b4f9135bdc34a7bade1f4e7ad65fa3',
-            'org.whispersystems:textsecure-android:aec5fc59952d9f5482491091091687816f46be1144342a0244f48fd55d6ab393',
-            'org.whispersystems:textsecure-java:b407ca6d1430204dfabf38e27db22d5177409072a9668238bd1877de7676ad3f',
             'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
-            'com.squareup.okhttp:okhttp:89b7f63e2e5b6c410266abc14f50fe52ea8d2d8a57260829e499b1cd9f0e61af',
             'com.davemorrissey.labs:subsampling-scale-image-view:550c5baa07e0bb4ff0a18b705e96d34436d22619248bd8c08c08c730b1f55cfe',
     ]
 }

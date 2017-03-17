@@ -164,13 +164,6 @@ public class Util {
     return PhoneNumberFormatter.formatNumber(number, localNumber);
   }
 
-  public static String canonicalizeNumberOrGroup(@NonNull Context context, @NonNull String number)
-      throws InvalidNumberException
-  {
-    if (GroupUtil.isEncodedGroup(number)) return number;
-    else                                  return canonicalizeNumber(context, number);
-  }
-
   public static byte[] readFully(InputStream in) throws IOException {
     ByteArrayOutputStream bout = new ByteArrayOutputStream();
     byte[] buffer              = new byte[4096];
@@ -183,6 +176,17 @@ public class Util {
     in.close();
 
     return bout.toByteArray();
+  }
+
+  public static void readFully(InputStream in, byte[] buffer) throws IOException {
+    int offset = 0;
+
+    for (;;) {
+      int read = in.read(buffer, offset, buffer.length - offset);
+
+      if (read + offset < buffer.length) offset += read;
+      else                		           return;
+    }
   }
 
   public static String readFullyAsString(InputStream in) throws IOException {
@@ -276,6 +280,13 @@ public class Util {
     System.arraycopy(input, 0, result, 0, result.length);
 
     return result;
+  }
+
+  public static int toIntExact(long value) {
+    if ((int)value != value) {
+      throw new ArithmeticException("integer overflow");
+    }
+    return (int)value;
   }
 
   @SuppressLint("NewApi")

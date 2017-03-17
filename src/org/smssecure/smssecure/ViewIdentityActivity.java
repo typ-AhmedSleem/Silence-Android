@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.util.Hex;
-import org.whispersystems.libaxolotl.IdentityKey;
+import org.whispersystems.libsignal.IdentityKey;
 import org.smssecure.smssecure.crypto.IdentityKeyParcelable;
 
 /**

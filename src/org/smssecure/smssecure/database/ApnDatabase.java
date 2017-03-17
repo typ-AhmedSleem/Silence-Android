@@ -27,7 +27,7 @@ import android.util.Log;
 import org.smssecure.smssecure.mms.LegacyMmsConnection.Apn;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.File;
 import java.io.FileOutputStream;

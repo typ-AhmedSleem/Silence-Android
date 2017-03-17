@@ -22,9 +22,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.crypto.SessionBuilder;
 import org.smssecure.smssecure.crypto.storage.SilenceIdentityKeyStore;
 import org.smssecure.smssecure.crypto.storage.SilencePreKeyStore;
 import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
+import org.smssecure.smssecure.protocol.KeyExchangeMessage;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -32,14 +34,12 @@ import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingKeyExchangeMessage;
 import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.ResUtil;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.SessionBuilder;
-import org.whispersystems.libaxolotl.protocol.KeyExchangeMessage;
-import org.whispersystems.libaxolotl.state.IdentityKeyStore;
-import org.whispersystems.libaxolotl.state.PreKeyStore;
-import org.whispersystems.libaxolotl.state.SessionRecord;
-import org.whispersystems.libaxolotl.state.SessionStore;
-import org.whispersystems.libaxolotl.state.SignedPreKeyStore;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.state.IdentityKeyStore;
+import org.whispersystems.libsignal.state.PreKeyStore;
+import org.whispersystems.libsignal.state.SessionRecord;
+import org.whispersystems.libsignal.state.SessionStore;
+import org.whispersystems.libsignal.state.SignedPreKeyStore;
 
 public class KeyExchangeInitiator {
 
@@ -70,7 +70,7 @@ public class KeyExchangeInitiator {
     IdentityKeyStore  identityKeyStore  = new SilenceIdentityKeyStore(context, masterSecret);
 
     SessionBuilder    sessionBuilder    = new SessionBuilder(sessionStore, preKeyStore, signedPreKeyStore,
-                                                             identityKeyStore, new AxolotlAddress(recipient.getNumber(), 1));
+                                                             identityKeyStore, new SignalProtocolAddress(recipient.getNumber(), 1));
 
     KeyExchangeMessage         keyExchangeMessage = sessionBuilder.process();
     String                     serializedMessage  = Base64.encodeBytesWithoutPadding(keyExchangeMessage.serialize());
@@ -84,7 +84,7 @@ public class KeyExchangeInitiator {
   {
     Recipient     recipient     = recipients.getPrimaryRecipient();
     SessionStore  sessionStore  = new SilenceSessionStore(context, masterSecret);
-    SessionRecord sessionRecord = sessionStore.loadSession(new AxolotlAddress(recipient.getNumber(), 1));
+    SessionRecord sessionRecord = sessionStore.loadSession(new SignalProtocolAddress(recipient.getNumber(), 1));
 
     return sessionRecord.getSessionState().hasPendingKeyExchange();
   }

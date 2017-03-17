@@ -49,7 +49,6 @@ import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
@@ -322,19 +321,17 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
         intermediaryRecipients = messageRecord.getRecipients();
       }
 
-      if (!intermediaryRecipients.isGroupRecipient()) {
-        Log.w(TAG, "Recipient is not a group, resolving members immediately.");
-        recipients = intermediaryRecipients;
-      } else {
-        try {
-          String groupId = intermediaryRecipients.getPrimaryRecipient().getNumber();
-          recipients = DatabaseFactory.getGroupDatabase(context)
-                                      .getGroupMembers(GroupUtil.getDecodedId(groupId), false);
-        } catch (IOException e) {
-          Log.w(TAG, e);
-          recipients = RecipientFactory.getRecipientsFor(MessageDetailsActivity.this, new LinkedList<Recipient>(), false);
-        }
-      }
+      /*
+       * isGroupRecipient() will always return false as encrypted group messages
+       * are not implemented yet.
+       */
+      //if (!intermediaryRecipients.isGroupRecipient()) {
+      //  Log.w(TAG, "Recipient is not a group, resolving members immediately.");
+      //  recipients = intermediaryRecipients;
+      //} else {
+      //  // TODO
+      //}
+      recipients = intermediaryRecipients;
 
       return recipients;
     }

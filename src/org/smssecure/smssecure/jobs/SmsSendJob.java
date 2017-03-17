@@ -11,7 +11,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.SmsCipher;
-import org.smssecure.smssecure.crypto.storage.SilenceAxolotlStore;
+import org.smssecure.smssecure.crypto.storage.SilenceSignalProtocolStore;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.NoSuchMessageException;
@@ -29,7 +29,7 @@ import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
-import org.whispersystems.libaxolotl.NoSessionException;
+import org.whispersystems.libsignal.NoSessionException;
 
 import java.util.ArrayList;
 
@@ -91,7 +91,7 @@ public class SmsSendJob extends SendJob {
   }
 
   private void deliverSecureMessage(MasterSecret masterSecret, SmsMessageRecord message)
-      throws UndeliverableMessageException, InsecureFallbackApprovalException
+      throws UndeliverableMessageException
   {
     MultipartSmsMessageHandler multipartMessageHandler = new MultipartSmsMessageHandler();
     OutgoingTextMessage        transportMessage        = OutgoingTextMessage.from(message);
@@ -178,7 +178,7 @@ public class SmsSendJob extends SendJob {
       throws UndeliverableMessageException
   {
     try {
-      return new SmsCipher(new SilenceAxolotlStore(context, masterSecret)).encrypt(message);
+      return new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret)).encrypt(message);
     } catch (NoSessionException e) {
       throw new UndeliverableMessageException(e);
     }

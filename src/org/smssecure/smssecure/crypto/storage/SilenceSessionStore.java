@@ -8,11 +8,11 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.util.Conversions;
-import org.whispersystems.libaxolotl.AxolotlAddress;
-import org.whispersystems.libaxolotl.InvalidMessageException;
-import org.whispersystems.libaxolotl.state.SessionRecord;
-import org.whispersystems.libaxolotl.state.SessionState;
-import org.whispersystems.libaxolotl.state.SessionStore;
+import org.whispersystems.libsignal.SignalProtocolAddress;
+import org.whispersystems.libsignal.InvalidMessageException;
+import org.whispersystems.libsignal.state.SessionRecord;
+import org.whispersystems.libsignal.state.SessionState;
+import org.whispersystems.libsignal.state.SessionStore;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +23,7 @@ import java.nio.channels.FileChannel;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.whispersystems.libaxolotl.state.StorageProtos.SessionStructure;
+import static org.whispersystems.libsignal.state.StorageProtos.SessionStructure;
 
 public class SilenceSessionStore implements SessionStore {
 
@@ -44,7 +44,7 @@ public class SilenceSessionStore implements SessionStore {
   }
 
   @Override
-  public SessionRecord loadSession(AxolotlAddress address) {
+  public SessionRecord loadSession(SignalProtocolAddress address) {
     synchronized (FILE_LOCK) {
       try {
         MasterCipher    cipher = new MasterCipher(masterSecret);
@@ -76,7 +76,7 @@ public class SilenceSessionStore implements SessionStore {
   }
 
   @Override
-  public void storeSession(AxolotlAddress address, SessionRecord record) {
+  public void storeSession(SignalProtocolAddress address, SessionRecord record) {
     synchronized (FILE_LOCK) {
       try {
         MasterCipher     masterCipher = new MasterCipher(masterSecret);
@@ -96,13 +96,13 @@ public class SilenceSessionStore implements SessionStore {
   }
 
   @Override
-  public boolean containsSession(AxolotlAddress address) {
+  public boolean containsSession(SignalProtocolAddress address) {
     return getSessionFile(address).exists() &&
            loadSession(address).getSessionState().hasSenderChain();
   }
 
   @Override
-  public void deleteSession(AxolotlAddress address) {
+  public void deleteSession(SignalProtocolAddress address) {
     getSessionFile(address).delete();
   }
 
@@ -110,10 +110,10 @@ public class SilenceSessionStore implements SessionStore {
   public void deleteAllSessions(String name) {
     List<Integer> devices = getSubDeviceSessions(name);
 
-    deleteSession(new AxolotlAddress(name, 1));
+    deleteSession(new SignalProtocolAddress(name, 1));
 
     for (int device : devices) {
-      deleteSession(new AxolotlAddress(name, device));
+      deleteSession(new SignalProtocolAddress(name, device));
     }
   }
 
@@ -142,7 +142,7 @@ public class SilenceSessionStore implements SessionStore {
     return results;
   }
 
-  private File getSessionFile(AxolotlAddress address) {
+  private File getSessionFile(SignalProtocolAddress address) {
     return new File(getSessionDirectory(), getSessionName(address));
   }
 
@@ -158,7 +158,7 @@ public class SilenceSessionStore implements SessionStore {
     return directory;
   }
 
-  private String getSessionName(AxolotlAddress axolotlAddress) {
+  private String getSessionName(SignalProtocolAddress axolotlAddress) {
     Recipient recipient   = RecipientFactory.getRecipientsFromString(context, axolotlAddress.getName(), true)
                                           .getPrimaryRecipient();
     long      recipientId = recipient.getRecipientId();

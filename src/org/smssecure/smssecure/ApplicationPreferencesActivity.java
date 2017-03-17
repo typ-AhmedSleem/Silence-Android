@@ -49,7 +49,7 @@ import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.task.ProgressDialogAsyncTask;
 import org.smssecure.smssecure.util.ResUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 

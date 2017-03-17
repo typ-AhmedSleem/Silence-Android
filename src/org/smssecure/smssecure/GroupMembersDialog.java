@@ -4,26 +4,21 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
-import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
-import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
-import org.smssecure.smssecure.util.GroupUtil;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
-
+public class GroupMembersDialog {
   private static final String TAG = GroupMembersDialog.class.getSimpleName();
 
   private final Recipients recipients;
@@ -34,24 +29,8 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
     this.context    = context;
   }
 
-  @Override
-  public void onPreExecute() {}
-
-  @Override
-  protected Recipients doInBackground(Void... params) {
-    try {
-      String groupId = recipients.getPrimaryRecipient().getNumber();
-      return DatabaseFactory.getGroupDatabase(context)
-                            .getGroupMembers(GroupUtil.getDecodedId(groupId), true);
-    } catch (IOException e) {
-      Log.w(TAG, e);
-      return RecipientFactory.getRecipientsFor(context, new LinkedList<Recipient>(), true);
-    }
-  }
-
-  @Override
-  public void onPostExecute(Recipients members) {
-    GroupMembers groupMembers = new GroupMembers(members);
+  public void display() {
+    GroupMembers groupMembers = new GroupMembers(recipients);
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
     builder.setTitle(R.string.ConversationActivity_group_members);
     builder.setIconAttribute(R.attr.group_members_dialog_icon);
@@ -59,11 +38,6 @@ public class GroupMembersDialog extends AsyncTask<Void, Void, Recipients> {
     builder.setItems(groupMembers.getRecipientStrings(), new GroupMembersOnClickListener(context, groupMembers));
     builder.setPositiveButton(android.R.string.ok, null);
     builder.show();
-  }
-
-  public void display() {
-    if (recipients.isGroupRecipient()) execute();
-    else                               onPostExecute(recipients);
   }
 
   private static class GroupMembersOnClickListener implements DialogInterface.OnClickListener {

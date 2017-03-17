@@ -36,8 +36,7 @@ public class NumberUtil {
 
   public static boolean isValidSmsOrEmailOrGroup(String number) {
     return PhoneNumberUtils.isWellFormedSmsAddress(number) ||
-        isValidEmail(number) ||
-        GroupUtil.isEncodedGroup(number);
+        isValidEmail(number);
   }
 
   public static String filterNumber(String number) {
