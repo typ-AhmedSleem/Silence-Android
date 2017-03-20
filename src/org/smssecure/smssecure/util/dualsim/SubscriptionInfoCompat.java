@@ -62,6 +62,10 @@ public class SubscriptionInfoCompat {
     return subscriptionId;
   }
 
+  public int getIccSlot() {
+    return iccSlot;
+  }
+
   public void setSubscriptionId(int subscriptionId) {
     SilencePreferences.setAppSubscriptionId(context, deviceSubscriptionId, subscriptionId);
     this.subscriptionId = subscriptionId;
