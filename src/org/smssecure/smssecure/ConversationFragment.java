@@ -250,13 +250,7 @@ public class ConversationFragment extends Fragment
   }
 
   public void scrollToBottom() {
-    list.getItemAnimator().isRunning(new ItemAnimatorFinishedListener() {
-      @Override
-      public void onAnimationsFinished() {
-        list.stopScroll();
-        list.smoothScrollToPosition(0);
-      }
-    });
+    list.scrollToPosition(0);
   }
 
   public void setLastSeen(long lastSeen) {
