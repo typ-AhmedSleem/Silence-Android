@@ -56,7 +56,7 @@ public interface MmsSmsColumns {
     protected static final long GROUP_QUIT_BIT   = 0x20000;
 
     // XMPP Message Information
-    protected static final long XMPP_EXCHANGE_BIT = 0x3000000;
+    protected static final long XMPP_EXCHANGE_BIT = 0x30000;
 
     // Encrypted Storage Information
     protected static final long ENCRYPTION_MASK                  = 0xFF000000;
