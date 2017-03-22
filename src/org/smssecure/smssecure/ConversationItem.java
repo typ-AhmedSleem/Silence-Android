@@ -381,7 +381,6 @@ public class ConversationItem extends LinearLayout
     indicatorText.setVisibility(View.GONE);
 
     secureImage.setVisibility(messageRecord.isSecure() ? View.VISIBLE : View.GONE);
-    bodyText.setCompoundDrawablesWithIntrinsicBounds(0, 0, messageRecord.isKeyExchange() ? R.drawable.ic_menu_login : 0, 0);
 
     dateText.setText(DateUtils.getExtendedRelativeTimeSpanString(getContext(), locale, messageRecord.getTimestamp()));
 

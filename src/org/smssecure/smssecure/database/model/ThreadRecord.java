@@ -74,7 +74,7 @@ public class ThreadRecord extends DisplayRecord {
     } else if (isGroupQuit()) {
       return emphasisAdded(context.getString(R.string.ThreadRecord_left_the_group));
     } else if (isKeyExchange()) {
-      return emphasisAdded(context.getString(R.string.ConversationListItem_key_exchange_message));
+      return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message));
     } else if (isDuplicateMessageType()) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_duplicate_message));
     } else if (isXmppExchange()) {

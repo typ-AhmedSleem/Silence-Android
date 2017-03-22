@@ -93,6 +93,8 @@ public abstract class MessageRecord extends DisplayRecord {
       return emphasisAdded(context.getString(R.string.MessageRecord_left_group));
     } else if (isGroupQuit()) {
       return emphasisAdded(context.getString(R.string.ConversationItem_group_action_left, getIndividualRecipient().toShortString()));
+    } else if (isProcessedKeyExchange() || (isKeyExchange() && isOutgoing())) {
+      return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message));
     } else if (getBody().getBody().length() > MAX_DISPLAY_LENGTH) {
       return new SpannableString(getBody().getBody().substring(0, MAX_DISPLAY_LENGTH));
     }

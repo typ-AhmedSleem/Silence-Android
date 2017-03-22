@@ -198,9 +198,6 @@
     <string name="ConversationListFragment_sending">Sending</string>
     <string name="ConversationListFragment_sending_selected_drafts">Sending selected drafts...</string>
 
-    <!-- ConversationListItem -->
-    <string name="ConversationListItem_key_exchange_message">Key exchange message</string>
-
     <!-- ConversationListItemAction -->
     <string name="ConversationListItemAction_archived_conversations_d">Archived conversations (%d)</string>
 
@@ -303,6 +300,7 @@
     <string name="MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported_auto_response">Received a key exchange message generated using an old version of Silence. An updated key exchange message has been sent.</string>
     <string name="MessageRecord_left_group">You have left the group.</string>
     <string name="MessageRecord_updated_group">Updated the group.</string>
+    <string name="MessageRecord_key_exchange_message">Key exchange message</string>
 
     <!-- PassphraseChangeActivity -->
     <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Passphrases don\'t match!</string>
