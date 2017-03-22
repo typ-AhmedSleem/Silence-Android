@@ -30,6 +30,7 @@ import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 /**
  * The message record model which represents thread heading messages.
@@ -90,6 +91,11 @@ public class ThreadRecord extends DisplayRecord {
       return emphasisAdded(context.getString(R.string.MessageNotifier_encrypted_message));
     } else if (SmsDatabase.Types.isEndSessionType(type)) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_secure_session_ended));
+    } else if (MmsSmsColumns.Types.isLegacyType(type) && isKeyExchange()) {
+      if (SilencePreferences.isAutoRespondKeyExchangeEnabled(context))
+        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported_auto_response));
+      else
+        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (MmsSmsColumns.Types.isLegacyType(type)) {
       return emphasisAdded(context.getString(R.string.MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (MmsSmsColumns.Types.isDraftMessageType(type)) {

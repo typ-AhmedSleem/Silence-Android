@@ -28,6 +28,7 @@ import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.mms.SlideDeck;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.List;
 
@@ -95,6 +96,11 @@ public class MediaMmsMessageRecord extends MessageRecord {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_duplicate_message));
     } else if (MmsDatabase.Types.isNoRemoteSessionType(type)) {
       return emphasisAdded(context.getString(R.string.MmsMessageRecord_mms_message_encrypted_for_non_existing_session));
+    } else if (isLegacyMessage() && isKeyExchange()) {
+      if (SilencePreferences.isAutoRespondKeyExchangeEnabled(context))
+        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported_auto_response));
+      else
+        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (isLegacyMessage()) {
       return emphasisAdded(context.getString(R.string.MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (!getBody().isPlaintext()) {
