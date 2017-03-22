@@ -38,10 +38,10 @@ public class SmsCipher {
 
   private final SmsTransportDetails transportDetails = new SmsTransportDetails();
 
-  private final SignalProtocolStore axolotlStore;
+  private final SignalProtocolStore signalProtocolStore;
 
-  public SmsCipher(SignalProtocolStore axolotlStore) {
-    this.axolotlStore = axolotlStore;
+  public SmsCipher(SignalProtocolStore signalProtocolStore) {
+    this.signalProtocolStore = signalProtocolStore;
   }
 
   public IncomingTextMessage decrypt(Context context, IncomingTextMessage message)
@@ -49,14 +49,14 @@ public class SmsCipher {
              DuplicateMessageException, NoSessionException
   {
     try {
-      byte[]         decoded        = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
-      SignalMessage whisperMessage = new SignalMessage(decoded);
-      SessionCipher  sessionCipher  = new SessionCipher(axolotlStore, new SignalProtocolAddress(message.getSender(), 1));
-      byte[]         padded         = sessionCipher.decrypt(whisperMessage);
-      byte[]         plaintext      = transportDetails.getStrippedPaddingMessageBody(padded);
+      byte[]        decoded       = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
+      SignalMessage signalMessage = new SignalMessage(decoded);
+      SessionCipher sessionCipher = new SessionCipher(signalProtocolStore, new SignalProtocolAddress(message.getSender(), 1));
+      byte[]        padded        = sessionCipher.decrypt(signalMessage);
+      byte[]        plaintext     = transportDetails.getStrippedPaddingMessageBody(padded);
 
       if (message.isEndSession() && "TERMINATE".equals(new String(plaintext))) {
-        axolotlStore.deleteSession(new SignalProtocolAddress(message.getSender(), 1));
+        signalProtocolStore.deleteSession(new SignalProtocolAddress(message.getSender(), 1));
       }
 
       return message.withMessageBody(new String(plaintext));
@@ -70,11 +70,11 @@ public class SmsCipher {
              UntrustedIdentityException, LegacyMessageException
   {
     try {
-      byte[]               decoded       = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
+      byte[]              decoded       = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
       PreKeySignalMessage preKeyMessage = new PreKeySignalMessage(decoded);
-      SessionCipher        sessionCipher = new SessionCipher(axolotlStore, new SignalProtocolAddress(message.getSender(), 1));
-      byte[]               padded        = sessionCipher.decrypt(preKeyMessage);
-      byte[]               plaintext     = transportDetails.getStrippedPaddingMessageBody(padded);
+      SessionCipher       sessionCipher = new SessionCipher(signalProtocolStore, new SignalProtocolAddress(message.getSender(), 1));
+      byte[]              padded        = sessionCipher.decrypt(preKeyMessage);
+      byte[]              plaintext     = transportDetails.getStrippedPaddingMessageBody(padded);
 
       return new IncomingEncryptedMessage(message, new String(plaintext));
     } catch (IOException | InvalidKeyException | InvalidKeyIdException e) {
@@ -86,11 +86,11 @@ public class SmsCipher {
     byte[] paddedBody      = transportDetails.getPaddedMessageBody(message.getMessageBody().getBytes());
     String recipientNumber = message.getRecipients().getPrimaryRecipient().getNumber();
 
-    if (!axolotlStore.containsSession(new SignalProtocolAddress(recipientNumber, 1))) {
+    if (!signalProtocolStore.containsSession(new SignalProtocolAddress(recipientNumber, 1))) {
       throw new NoSessionException("No session for: " + recipientNumber);
     }
 
-    SessionCipher     cipher            = new SessionCipher(axolotlStore, new SignalProtocolAddress(recipientNumber, 1));
+    SessionCipher     cipher            = new SessionCipher(signalProtocolStore, new SignalProtocolAddress(recipientNumber, 1));
     CiphertextMessage ciphertextMessage = cipher.encrypt(paddedBody);
     String            encodedCiphertext = new String(transportDetails.getEncodedMessage(ciphertextMessage.serialize()));
 
@@ -106,10 +106,10 @@ public class SmsCipher {
              InvalidVersionException, LegacyMessageException, InvalidMessageException
   {
     try {
-      Recipients         recipients      = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
-      SignalProtocolAddress     axolotlAddress  = new SignalProtocolAddress(message.getSender(), 1);
-      KeyExchangeMessage exchangeMessage = new KeyExchangeMessage(transportDetails.getDecodedMessage(message.getMessageBody().getBytes()));
-      SessionBuilder     sessionBuilder  = new SessionBuilder(axolotlStore, axolotlAddress);
+      Recipients            recipients            = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
+      SignalProtocolAddress signalProtocolAddress = new SignalProtocolAddress(message.getSender(), 1);
+      KeyExchangeMessage    exchangeMessage       = new KeyExchangeMessage(transportDetails.getDecodedMessage(message.getMessageBody().getBytes()));
+      SessionBuilder        sessionBuilder        = new SessionBuilder(signalProtocolStore, signalProtocolAddress);
 
       KeyExchangeMessage response        = sessionBuilder.process(exchangeMessage);
 

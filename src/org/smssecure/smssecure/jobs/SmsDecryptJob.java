@@ -5,6 +5,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.crypto.AsymmetricMasterCipher;
 import org.smssecure.smssecure.crypto.AsymmetricMasterSecret;
+import org.smssecure.smssecure.crypto.KeyExchangeInitiator;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.crypto.SecurityEvent;
@@ -16,6 +17,8 @@ import org.smssecure.smssecure.database.NoSuchMessageException;
 import org.smssecure.smssecure.database.model.SmsMessageRecord;
 import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirement;
 import org.smssecure.smssecure.notifications.MessageNotifier;
+import org.smssecure.smssecure.recipients.RecipientFactory;
+import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.sms.IncomingEncryptedMessage;
 import org.smssecure.smssecure.sms.IncomingEndSessionMessage;
@@ -180,6 +183,9 @@ public class SmsDecryptJob extends MasterSecretJob {
       } catch (LegacyMessageException e) {
         Log.w(TAG, e);
         database.markAsLegacyVersion(messageId);
+        Log.w(TAG, "Legacy message found, sending updated key exchange message...");
+        Recipients recipients = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
+        KeyExchangeInitiator.initiate(context, masterSecret, recipients, false, message.getSubscriptionId());
       } catch (StaleKeyExchangeException e) {
         Log.w(TAG, e);
         database.markAsStaleKeyExchange(messageId);
