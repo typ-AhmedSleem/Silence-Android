@@ -440,7 +440,7 @@ public class ConversationItem extends LinearLayout
   private boolean shouldInterceptClicks(MessageRecord messageRecord) {
     return batchSelected.isEmpty() &&
            ((messageRecord.isFailed() && !messageRecord.isMmsNotification()) ||
-           messageRecord.isKeyExchange());
+           (messageRecord.isKeyExchange() && !messageRecord.isLegacyMessage()));
   }
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
@@ -655,7 +655,8 @@ public class ConversationItem extends LinearLayout
       } else if (messageRecord.isKeyExchange()           &&
                  !messageRecord.isOutgoing()             &&
                  !messageRecord.isProcessedKeyExchange() &&
-                 !messageRecord.isStaleKeyExchange())
+                 !messageRecord.isStaleKeyExchange()     &&
+                 !messageRecord.isLegacyMessage())
       {
         handleKeyExchangeClicked();
       }
