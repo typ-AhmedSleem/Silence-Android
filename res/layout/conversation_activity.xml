@@ -92,7 +92,6 @@
                         android:layout_height="match_parent"
                         android:contentDescription="@string/conversation_activity__send"
                         android:nextFocusLeft="@+id/embedded_text_editor"
-                        android:src="?conversation_send_button_sms_insecure"
                         android:background="@drawable/circle_touch_highlight_background" />
 
             </org.smssecure.smssecure.components.AnimatingToggle>

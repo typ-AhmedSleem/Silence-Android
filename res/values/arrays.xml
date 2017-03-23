@@ -156,16 +156,6 @@
     <item>secure_sms</item>
   </string-array>
 
-  <string-array name="transport_selection_icons_light">
-    <item>@drawable/ic_send_sms_insecure</item>
-    <item>@drawable/ic_send_sms_secure</item>
-  </string-array>
-
-  <string-array name="transport_selection_icons_dark">
-    <item>@drawable/ic_send_sms_insecure_dark</item>
-    <item>@drawable/ic_send_sms_secure</item>
-  </string-array>
-
   <string-array name="pref_repeat_alerts_entries">
       <item>@string/preferences__never</item>
       <item>@string/preferences__one_time</item>
