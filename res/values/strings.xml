@@ -847,7 +847,7 @@
 
     <!-- reminder_header -->
     <string name="reminder_header_sms_default_title">Use as default SMS app?</string>
-    <string name="reminder_header_sms_default_text">Tap to make Silence your default SMS app.</string>
+    <string name="reminder_header_sms_default_text_mandatory">Silence must be your default SMS/MMS app to receive messages.</string>
     <string name="reminder_header_sms_default_button">SET</string>
     <string name="reminder_header_sms_import_title">Import system SMS?</string>
     <string name="reminder_header_sms_import_text">Tap to copy your phone\'s SMS messages into Silence\'s encrypted database.</string>
