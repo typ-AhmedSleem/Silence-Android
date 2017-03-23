@@ -24,7 +24,7 @@ public class SmsCharacterCalculator extends CharacterCalculator {
   public CharacterState calculateCharacters(String messageBody) {
 
     int[] length            = SmsMessage.calculateLength(messageBody, false);
-    int messagesSpent       = length[0];
+    int messagesSpent       = (length[0] > 0) ? length[0] : 1;
     int charactersSpent     = length[1];
     int charactersRemaining = length[2];
     int maxMessageSize      = (charactersSpent + charactersRemaining) / messagesSpent;
