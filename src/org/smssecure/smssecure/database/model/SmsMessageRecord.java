@@ -72,11 +72,10 @@ public class SmsMessageRecord extends MessageRecord {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version));
     } else if (isXmppExchange()) {
       return emphasisAdded(context.getString(R.string.ConversationItem_xmpp_address_update_silence));
-    } else if (MmsSmsColumns.Types.isLegacyType(type) && isKeyExchange()) {
-      if (SilencePreferences.isAutoRespondKeyExchangeEnabled(context))
-        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported_auto_response));
-      else
-        return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message_generated_with_a_legacy_protocol_version_that_is_no_longer_supported));
+    } else if (isLegacyMessage() && isKeyExchange() && !isProcessedKeyExchange()) {
+        return emphasisAdded(context.getString(R.string.MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated));
+    } else if (isLegacyMessage() && isKeyExchange() && isProcessedKeyExchange()) {
+      return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message));
     } else if (MmsSmsColumns.Types.isLegacyType(type)) {
       return emphasisAdded(context.getString(R.string.MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported));
     } else if (isBundleKeyExchange()) {

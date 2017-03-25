@@ -63,6 +63,7 @@ import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideClickListener;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
+import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DateUtils;
 import org.smssecure.smssecure.util.dualsim.SubscriptionInfoCompat;
@@ -439,7 +440,13 @@ public class ConversationItem extends LinearLayout
   private boolean shouldInterceptClicks(MessageRecord messageRecord) {
     return batchSelected.isEmpty() &&
            ((messageRecord.isFailed() && !messageRecord.isMmsNotification()) ||
-           (messageRecord.isKeyExchange() && !messageRecord.isLegacyMessage()));
+           shouldInterceptKeyExchangeMessage(messageRecord));
+  }
+
+  private boolean shouldInterceptKeyExchangeMessage(MessageRecord keyExchangeMessage) {
+    return keyExchangeMessage.isKeyExchange()          &&
+          !keyExchangeMessage.isProcessedKeyExchange() &&
+          !keyExchangeMessage.isOutgoing();
   }
 
   private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
@@ -525,6 +532,12 @@ public class ConversationItem extends LinearLayout
 
   private void handleKeyExchangeClicked() {
     new ReceiveKeyDialog(context, masterSecret, messageRecord).show();
+  }
+
+  private void handleLegacyKeyExchangeClicked() {
+    KeyExchangeInitiator.initiate(context, masterSecret, RecipientFactory.getRecipientsFor(context, recipient, false), false, messageRecord.getSubscriptionId());
+    SmsDatabase smsDatabase = DatabaseFactory.getSmsDatabase(context);
+    smsDatabase.markAsProcessedKeyExchange(messageRecord.getId());
   }
 
   @Override
@@ -658,6 +671,8 @@ public class ConversationItem extends LinearLayout
                  !messageRecord.isLegacyMessage())
       {
         handleKeyExchangeClicked();
+      } else if (shouldInterceptKeyExchangeMessage(messageRecord)) {
+        handleLegacyKeyExchangeClicked();
       }
     }
   }

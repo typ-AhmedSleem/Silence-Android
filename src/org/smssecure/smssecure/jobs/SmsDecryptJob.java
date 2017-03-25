@@ -162,37 +162,43 @@ public class SmsDecryptJob extends MasterSecretJob {
   {
     EncryptingSmsDatabase database = DatabaseFactory.getEncryptingSmsDatabase(context);
 
-    if (SilencePreferences.isAutoRespondKeyExchangeEnabled(context) || manualOverride) {
-      try {
-        SmsCipher                  cipher   = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
-        OutgoingKeyExchangeMessage response = cipher.process(context, message);
+    try {
+      SmsCipher                  cipher   = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
+      OutgoingKeyExchangeMessage response = cipher.process(context, message);
 
+      if (shouldSend()) {
         database.markAsProcessedKeyExchange(messageId);
-
         SecurityEvent.broadcastSecurityUpdateEvent(context, threadId);
 
         if (response != null) {
           MessageSender.send(context, masterSecret, response, threadId, true);
         }
-      } catch (InvalidVersionException e) {
-        Log.w(TAG, e);
-        database.markAsInvalidVersionKeyExchange(messageId);
-      } catch (InvalidMessageException e) {
-        Log.w(TAG, e);
-        database.markAsCorruptKeyExchange(messageId);
-      } catch (LegacyMessageException e) {
-        Log.w(TAG, e);
-        database.markAsLegacyVersion(messageId);
+      }
+    } catch (InvalidVersionException e) {
+      Log.w(TAG, e);
+      database.markAsInvalidVersionKeyExchange(messageId);
+    } catch (InvalidMessageException e) {
+      Log.w(TAG, e);
+      database.markAsCorruptKeyExchange(messageId);
+    } catch (LegacyMessageException e) {
+      Log.w(TAG, e);
+      database.markAsLegacyVersion(messageId);
+      if (shouldSend()) {
         Log.w(TAG, "Legacy message found, sending updated key exchange message...");
         Recipients recipients = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
         KeyExchangeInitiator.initiate(context, masterSecret, recipients, false, message.getSubscriptionId());
-      } catch (StaleKeyExchangeException e) {
-        Log.w(TAG, e);
-        database.markAsStaleKeyExchange(messageId);
-      } catch (UntrustedIdentityException e) {
-        Log.w(TAG, e);
+        database.markAsProcessedKeyExchange(messageId);
       }
+    } catch (StaleKeyExchangeException e) {
+      Log.w(TAG, e);
+      database.markAsStaleKeyExchange(messageId);
+    } catch (UntrustedIdentityException e) {
+      Log.w(TAG, e);
     }
+  }
+
+  private boolean shouldSend() {
+    return (SilencePreferences.isAutoRespondKeyExchangeEnabled(context) || manualOverride);
   }
 
   private void handleXmppExchangeMessage(MasterSecret masterSecret, long messageId, long threadId,
