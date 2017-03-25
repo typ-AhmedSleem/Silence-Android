@@ -4,7 +4,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="delete">Delete</string>
-    <string name="please_wait">Please wait...</string>
+    <string name="please_wait">Please wait…</string>
 
     <!-- AbstractNotificationBuilder -->
     <string name="AbstractNotificationBuilder_new_message">New message</string>
@@ -159,15 +159,15 @@
         <item quantity="other">Saving %1$d attachments</item>
     </plurals>
     <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-        <item quantity="one">Saving attachment to storage...</item>
-        <item quantity="other">Saving %1$d attachments to storage...</item>
+        <item quantity="one">Saving attachment to storage…</item>
+        <item quantity="other">Saving %1$d attachments to storage…</item>
     </plurals>
-    <string name="ConversationFragment_collecting_attahments">Collecting attachments...</string>
-    <string name="ConversationFragment_pending">Pending...</string>
+    <string name="ConversationFragment_collecting_attahments">Collecting attachments…</string>
+    <string name="ConversationFragment_pending">Pending…</string>
     <string name="ConversationFragment_mms">MMS</string>
     <string name="ConversationFragment_sms">SMS</string>
-    <string name="ConversationFragment_deleting">Deleting...</string>
-    <string name="ConversationFragment_deleting_messages">Deleting messages...</string>
+    <string name="ConversationFragment_deleting">Deleting…</string>
+    <string name="ConversationFragment_deleting_messages">Deleting messages…</string>
 
     <!-- ConversationListActivity -->
     <string name="ConversationListActivity_search">Search</string>
@@ -182,7 +182,7 @@
         <item quantity="other">This will permanently delete all %1$d selected conversations.</item>
     </plurals>
     <string name="ConversationListFragment_deleting">Deleting</string>
-    <string name="ConversationListFragment_deleting_selected_conversations">Deleting selected conversations...</string>
+    <string name="ConversationListFragment_deleting_selected_conversations">Deleting selected conversations…</string>
     <plurals name="ConversationListFragment_conversations_archived">
         <item quantity="one">Conversation archived</item>
         <item quantity="other">%d conversations archived</item>
@@ -196,7 +196,7 @@
     <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">This will send drafts of selected conversations.</string>
     <string name="ConversationListFragment_send">Send</string>
     <string name="ConversationListFragment_sending">Sending</string>
-    <string name="ConversationListFragment_sending_selected_drafts">Sending selected drafts...</string>
+    <string name="ConversationListFragment_sending_selected_drafts">Sending selected drafts…</string>
 
     <!-- ConversationListItemAction -->
     <string name="ConversationListItemAction_archived_conversations_d">Archived conversations (%d)</string>
@@ -231,13 +231,13 @@
     <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Warning, this will export the contents of your Silence messages to storage in plaintext.</string>
     <string name="ExportFragment_cancel">Cancel</string>
     <string name="ExportFragment_exporting">Exporting</string>
-    <string name="ExportFragment_exporting_plaintext_to_storage">Exporting plaintext to storage...</string>
+    <string name="ExportFragment_exporting_plaintext_to_storage">Exporting plaintext to storage…</string>
     <string name="ExportFragment_error_unable_to_write_to_storage">Error, unable to write to storage.</string>
     <string name="ExportFragment_error_while_writing_to_storage">Error while writing to storage.</string>
     <string name="ExportFragment_export_successful">Export successful.</string>
     <string name="ExportFragment_export_encrypted_backup">Export encrypted backup?</string>
     <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">This will export your encrypted keys, settings, and messages to storage.</string>
-    <string name="ExportFragment_exporting_keys_settings_and_messages">Exporting encrypted keys, settings, and messages...</string>
+    <string name="ExportFragment_exporting_keys_settings_and_messages">Exporting encrypted keys, settings, and messages…</string>
 
     <!-- GroupCreateActivity -->
     <string name="GroupCreateActivity_actionbar_title">New group</string>
@@ -270,11 +270,11 @@
         importing again will result in duplicated messages.
     </string>
     <string name="ImportFragment_importing">Importing</string>
-    <string name="ImportFragment_import_plaintext_backup_elipse">Importing plaintext backup...</string>
+    <string name="ImportFragment_import_plaintext_backup_elipse">Importing plaintext backup…</string>
     <string name="ImportFragment_no_plaintext_backup_found">No plaintext backup found!</string>
     <string name="ImportFragment_error_importing_backup">Error importing backup!</string>
     <string name="ImportFragment_import_complete">Import complete!</string>
-    <string name="ImportFragment_restoring_encrypted_backup">Restoring encrypted backup...</string>
+    <string name="ImportFragment_restoring_encrypted_backup">Restoring encrypted backup…</string>
     <string name="ImportFragment_no_encrypted_backup_found">No encrypted backup found!</string>
 
     <!-- KeyScanningActivity -->
@@ -381,7 +381,7 @@
 
     <!-- MessageDisplayHelper -->
     <string name="MessageDisplayHelper_bad_encrypted_message">Bad encrypted message</string>
-    <string name="MessageDisplayHelper_decrypting_please_wait">Decrypting, please wait...</string>
+    <string name="MessageDisplayHelper_decrypting_please_wait">Decrypting, please wait…</string>
     <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Message encrypted for non-existing session</string>
     <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Request to end a non-existing session</string>
 
@@ -389,15 +389,15 @@
     <string name="EncryptingSmsDatabase_error_decrypting_message">Error decrypting message.</string>
 
     <!-- MmsDatabase -->
-    <string name="MmsDatabase_connecting_to_mms_server">Connecting to MMS server...</string>
-    <string name="MmsDatabase_downloading_mms">Downloading MMS...</string>
+    <string name="MmsDatabase_connecting_to_mms_server">Connecting to MMS server…</string>
+    <string name="MmsDatabase_downloading_mms">Downloading MMS…</string>
     <string name="MmsDatabase_mms_download_failed">MMS download failed!</string>
-    <string name="MmsDatabase_downloading">Downloading...</string>
+    <string name="MmsDatabase_downloading">Downloading…</string>
     <string name="MmsDatabase_mms_pending_download">Tap and configure MMS settings to continue download.</string>
     <string name="MmsDatabase_error_decrypting_message">Error decrypting message.</string>
 
     <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_decrypting_mms_please_wait">Decrypting MMS, please wait...</string>
+    <string name="MmsMessageRecord_decrypting_mms_please_wait">Decrypting MMS, please wait…</string>
     <string name="MmsMessageRecord_bad_encrypted_mms_message">Bad encrypted MMS message</string>
     <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS message encrypted for non-existing session</string>
 
@@ -512,7 +512,7 @@
     <string name="log_submit_activity__log_fetch_failed">Could not read the log on your device. You can still use ADB to get a debug log instead.</string>
     <string name="log_submit_activity__thanks">Thanks for your help!</string>
     <string name="log_submit_activity__submitting">Submitting</string>
-    <string name="log_submit_activity__posting_logs">Posting the logs to gist...</string>
+    <string name="log_submit_activity__posting_logs">Posting the logs to gist…</string>
 
     <!-- database_migration_activity -->
     <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Would you like to import your existing text messages into Silence\'s encrypted database?</string>
@@ -523,7 +523,7 @@
     <string name="database_migration_activity__importing">IMPORTING</string>
 
     <!-- database_upgrade_activity -->
-    <string name="database_upgrade_activity__updating_database">Updating database...</string>
+    <string name="database_upgrade_activity__updating_database">Updating database…</string>
 
     <string name="export_fragment__export_plaintext_backup">Export plaintext backup</string>
     <string name="export_fragment__export_a_plaintext_backup_compatible_with">Export a plaintext backup compatible with \'SMS Backup &amp; Restore\' to storage</string>
@@ -748,7 +748,7 @@
     <string name="contact_selection_list__menu_select_all">Select all</string>
     <string name="contact_selection_list__menu_unselect_all">Unselect all</string>
     <string name="contact_selection_list__header">ALL CONTACTS</string>
-    <string name="contact_selection_list__unknown_contact">New message to...</string>
+    <string name="contact_selection_list__unknown_contact">New message to…</string>
 
     <!-- contact_selection -->
     <string name="contact_selection__menu_finished">Finished</string>
@@ -877,8 +877,8 @@
     <string name="media_preview_activity__image_content_description">Image preview</string>
 
     <!-- Trimmer -->
-    <string name="trimmer__deleting">Deleting...</string>
-    <string name="trimmer__deleting_old_messages">Deleting old messages...</string>
+    <string name="trimmer__deleting">Deleting…</string>
+    <string name="trimmer__deleting_old_messages">Deleting old messages…</string>
     <string name="trimmer__old_messages_successfully_deleted">Old messages successfully deleted</string>
 
     <!-- transport_selection_list_item -->
