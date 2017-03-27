@@ -30,16 +30,37 @@ public class CompatMmsConnection implements OutgoingMmsConnection, IncomingMmsCo
       throws UndeliverableMessageException
   {
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-      Log.w(TAG, "Sending via Lollipop API");
-      return new OutgoingLollipopMmsConnection(context).send(pduBytes, subscriptionId);
+      try {
+        return sendLollipop(context, pduBytes, subscriptionId);
+      } catch (UndeliverableMessageException ume) {
+        Log.w(TAG, ume);
+        try {
+          return sendLegacy(context, pduBytes, subscriptionId);
+        } catch (UndeliverableMessageException | ApnUnavailableException e) {
+          throw new UndeliverableMessageException(e);
+        }
+      }
     } else {
       try {
-        Log.w(TAG, "Sending via legacy connection");
-        return new OutgoingLegacyMmsConnection(context).send(pduBytes, subscriptionId);
+        return sendLegacy(context, pduBytes, subscriptionId);
       } catch (UndeliverableMessageException | ApnUnavailableException e) {
         throw new UndeliverableMessageException(e);
       }
     }
+  }
+
+  private static SendConf sendLollipop(Context context, @NonNull byte[] pduBytes, int subscriptionId)
+    throws UndeliverableMessageException
+  {
+    Log.w(TAG, "Sending via Lollipop API");
+    return new OutgoingLollipopMmsConnection(context).send(pduBytes, subscriptionId);
+  }
+
+  private static SendConf sendLegacy(Context context, @NonNull byte[] pduBytes, int subscriptionId)
+    throws UndeliverableMessageException, ApnUnavailableException
+  {
+    Log.w(TAG, "Sending via legacy connection");
+    return new OutgoingLegacyMmsConnection(context).send(pduBytes, subscriptionId);
   }
 
   @Nullable
