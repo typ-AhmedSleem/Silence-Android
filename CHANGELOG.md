@@ -1,5 +1,14 @@
 # Silence Changelog
 
+### [0.15.6] - 2017-03-16
+- Moved from Axolotl to Signal protocol
+- Fixed crash when opening a conversation
+- Added fallback to legacy MMS API on failure
+- Added minor UI improvements
+- Fixed minor bugs
+- Removed dead code
+- Updated translations
+
 ### [0.15.5] - 2017-03-16
 - Fixed glitch with "Secure session ended" items
 - Updated translations
@@ -203,6 +212,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.6]: https://github.com/SilenceIM/Silence/compare/v0.15.5...v0.15.6
  [0.15.5]: https://github.com/SilenceIM/Silence/compare/v0.15.4...v0.15.5
  [0.15.4]: https://github.com/SilenceIM/Silence/compare/v0.15.3...v0.15.4
  [0.15.3]: https://github.com/SilenceIM/Silence/compare/v0.15.2...v0.15.3
