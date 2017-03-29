@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">是</string>
   <string name="no">否</string>
   <string name="delete">删除</string>
-  <string name="please_wait">请稍候…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">新信息</string>
   <!--ApplicationPreferencesActivity-->
@@ -95,11 +95,8 @@
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">保存到存储？</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">存储无法写入！</string>
-  <string name="ConversationFragment_pending">待定…</string>
   <string name="ConversationFragment_mms">彩信</string>
   <string name="ConversationFragment_sms">短信</string>
-  <string name="ConversationFragment_deleting">正在删除…</string>
-  <string name="ConversationFragment_deleting_messages">正在删除信息…</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -107,7 +104,6 @@
   </plurals>
   <string name="ConversationListFragment_deleting">正在删除</string>
   <string name="ConversationListFragment_undo">撤销</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">使用定制：%s</string>
@@ -116,6 +112,7 @@
   <!--DateUtils-->
   <string name="DateUtils_now">现在</string>
   <string name="DateUtils_minutes_ago">%d 分钟前</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共享给</string>
   <!--IntroScreenActivity-->
@@ -144,7 +141,6 @@
 来自明文备份的信息。如果您以前已经导入过该备份，
 再次导入将会出现重复信息。</string>
   <string name="ImportFragment_importing">导入中</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">导入明文备份…</string>
   <string name="ImportFragment_no_plaintext_backup_found">没有发现明文备份！</string>
   <string name="ImportFragment_error_importing_backup">导入备份的过程中发生错误！</string>
   <string name="ImportFragment_import_complete">导入完成！</string>
@@ -212,18 +208,13 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">您已经向收件人发送了一个会话启动请求，是否确定要再次发送？  这将使第一个请求无效。</string>
   <string name="KeyExchangeInitiator_send">发送</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">正在解密，请稍后...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">解密信息时遇到错误。</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">正在连接到彩信服务器...</string>
-  <string name="MmsDatabase_downloading_mms">正在下载彩信...</string>
   <string name="MmsDatabase_mms_download_failed">彩信下载失败！</string>
-  <string name="MmsDatabase_downloading">正在下载...</string>
   <string name="MmsDatabase_mms_pending_download">点击并配置彩信设置以便继续下载。</string>
   <string name="MmsDatabase_error_decrypting_message">解密消息时遇到错误</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">正在解密彩信，请稍后...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">关闭通知</string>
   <!--ApplicationMigrationService-->
@@ -298,14 +289,12 @@
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">感谢！</string>
   <string name="log_submit_activity__submitting">正在提交</string>
-  <string name="log_submit_activity__posting_logs">正在将日志发布到 gist …</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">默认的系统数据库将不会被修改或改变。</string>
   <string name="database_migration_activity__skip">略过</string>
   <string name="database_migration_activity__import">导入</string>
   <string name="database_migration_activity__importing">正在导入</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">更新数据库…</string>
   <string name="export_fragment__export_plaintext_backup">导出明文备份</string>
   <string name="import_fragment__import_system_sms_database">导入系统短信数据库</string>
   <string name="import_fragment__import_plaintext_backup">导入明文备份</string>
@@ -464,7 +453,6 @@
   <string name="contact_selection_list__menu_select_all">全选</string>
   <string name="contact_selection_list__menu_unselect_all">全部取消选择</string>
   <string name="contact_selection_list__header">所有联系人</string>
-  <string name="contact_selection_list__unknown_contact">新信息至…</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">已完成</string>
   <!--refreshing push directory from menu-->
@@ -541,8 +529,6 @@
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">正在删除…</string>
-  <string name="trimmer__deleting_old_messages">正在删除旧信息…</string>
   <string name="trimmer__old_messages_successfully_deleted">旧信息已被成功删除。</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">传输图标</string>

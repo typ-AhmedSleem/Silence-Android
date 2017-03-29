@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Ya</string>
   <string name="no">Tidak</string>
   <string name="delete">Hapus</string>
-  <string name="please_wait">Mohon tunggu...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Anda belum mengatur kata kunci!</string>
@@ -72,11 +72,11 @@ dapat mengaksesnya</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Menghapus</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Kosong</string>
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
@@ -97,7 +97,6 @@ dapat mengaksesnya</string>
 pesan dari basis data SMS standar ke SMSSecure. Jika anda sebelumnya
 telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikasi pesan.</string>
   <string name="ImportFragment_importing">Mengimport</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Mengimport cadangan teks polos...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Cadangan teks polos tidak ditemukan!</string>
   <string name="ImportFragment_error_importing_backup">Gagal mengimport cadangan!</string>
   <string name="ImportFragment_import_complete">Selesai mengimport!</string>
@@ -147,15 +146,10 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Anda telah mengirimkan permintaan inisiasi sesi untuk penerima ini, apakah anda yakin untuk mengirimkan lagi? Hal ini akan membuat permintaan sesi sebelumnya menjadi tidak sah</string>
   <string name="KeyExchangeInitiator_send">Kirim</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Melakukan dekripsi, mohon tunggu...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Memulai koneksi ke Server MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Mengunduh MMS...</string>
-  <string name="MmsDatabase_downloading">Mengunduh...</string>
   <string name="MmsDatabase_mms_pending_download">Sentuh untuk mengkonfigurasi pengaturan MMS untuk lanjut mengunduh.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Proses deskripsi MMS, mohon tunggu...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Dalam proses mengimport</string>

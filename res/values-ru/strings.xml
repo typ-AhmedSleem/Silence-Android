@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Да</string>
   <string name="no">Нет</string>
   <string name="delete">Удалить</string>
-  <string name="please_wait">Пожалуйста, подождите...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Вы ещё не задали парольную фразу!</string>
@@ -137,11 +137,8 @@
     <item quantity="other">В процессе сохранения вложений произошла ошибка!</item>
   </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Невозможно произвести запись на SD-карту!</string>
-  <string name="ConversationFragment_pending">В ожидании...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Удаление...</string>
-  <string name="ConversationFragment_deleting_messages">Удаляем сообщения...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -157,7 +154,6 @@
     <item quantity="other">%1$d выбранных разговоров будут навсегда удалены.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Удаление</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Удаление выбранных разговоров...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Разговор заархивирован</item>
     <item quantity="few">%d разговора заархивировано</item>
@@ -171,7 +167,6 @@
     <item quantity="many">%d разговоров перемещено во Входящие</item>
     <item quantity="other">%d разговоров перемещено во Входящие</item>
   </plurals>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Архивированные разговоры (%d)</string>
   <!--CustomDefaultPreference-->
@@ -181,6 +176,7 @@
   <!--DateUtils-->
   <string name="DateUtils_now">Только что</string>
   <string name="DateUtils_minutes_ago">%d мин</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Поделиться с</string>
   <!--IntroScreenActivity-->
@@ -191,7 +187,6 @@
   <string name="ExportFragment_export_plaintext_to_storage">Экспортировать открытым текстом на SD-карту?</string>
   <string name="ExportFragment_cancel">Отмена</string>
   <string name="ExportFragment_exporting">Экспорт</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Экспортируем открытый текст на SD-карту...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Невозможно произвести запись на SD-карту.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Ошибка при записи на SD-карту.</string>
   <string name="ExportFragment_export_encrypted_backup">Экспортировать шифрованный бэкап?</string>
@@ -214,7 +209,6 @@
   <string name="ImportFragment_import_plaintext_backup">Импортировать из простой резервной копии?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Вы собираетесь импортировать сообщения из простой резервной копии. Если вы ранее уже импортировали сообщения из этой копии, повторный импорт приведёт к их дублированию.</string>
   <string name="ImportFragment_importing">Импорт</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Импортируем из простой резервной копии...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Простая резервная копия не найдена!</string>
   <string name="ImportFragment_error_importing_backup">Ошибка при импорте!</string>
   <string name="ImportFragment_import_complete">Импорт завершён.</string>
@@ -291,18 +285,13 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вы уже отправили этому собеседнику запрос на начало сеанса. Вы уверены, что хотите отправить ещё один? Предыдущий будет аннулирован.</string>
   <string name="KeyExchangeInitiator_send">Отправить</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Расшифровываем...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Соединяемся с MMS-сервером...</string>
-  <string name="MmsDatabase_downloading_mms">Скачиваем MMS-сообщение...</string>
   <string name="MmsDatabase_mms_download_failed">Не удалось скачать MMS-сообщение!</string>
-  <string name="MmsDatabase_downloading">Скачиваем...</string>
   <string name="MmsDatabase_mms_pending_download">Чтобы продолжить скачивание, нажмите здесь и настройте MMS.</string>
   <string name="MmsDatabase_error_decrypting_message">Ошибка при расшифровке сообщения.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Расшифровываем MMS-сообщение...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Отключить звук уведомлений</string>
   <!--ApplicationMigrationService-->
@@ -381,14 +370,12 @@
   <string name="log_submit_activity__log_fetch_failed">Не удается получить доступ к журналу отладки с вашего устройства. Вместо этого вы можете использовать ADB для получения журнала.</string>
   <string name="log_submit_activity__thanks">Спасибо за помощь!</string>
   <string name="log_submit_activity__submitting">Отправка</string>
-  <string name="log_submit_activity__posting_logs">Отправляем логи на gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Cистемная база данных изменена не будет.</string>
   <string name="database_migration_activity__skip">Пропустить</string>
   <string name="database_migration_activity__import">Импортировать</string>
   <string name="database_migration_activity__importing">ИМПОРТИРОВАНИЕ</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Обновляем базу данных...</string>
   <string name="export_fragment__export_plaintext_backup">Экспорт простой резервной копии.</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Экспортировать на SD-карту незашифрованную резервную копию, совместимую с приложением «SMS Backup &amp; Restore».</string>
   <string name="import_fragment__import_system_sms_database">Импорт системной базы SMS</string>
@@ -578,7 +565,6 @@
   <string name="contact_selection_list__menu_select_all">Выбрать все</string>
   <string name="contact_selection_list__menu_unselect_all">Снять выделение</string>
   <string name="contact_selection_list__header">ВСЕ КОНТАКТЫ</string>
-  <string name="contact_selection_list__unknown_contact">Новое сообщение для...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Закончено</string>
   <!--refreshing push directory from menu-->
@@ -666,8 +652,6 @@
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Предпросмотр</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">Удаляем...</string>
-  <string name="trimmer__deleting_old_messages">Удаляем старые сообщения</string>
   <string name="trimmer__old_messages_successfully_deleted">Старые сообщения успешно удалены</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Иконка транспорта</string>

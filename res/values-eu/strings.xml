@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Bai</string>
   <string name="no">Ez</string>
   <string name="delete">Ezabatu</string>
-  <string name="please_wait">Itxaron, mesedez...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Oraindik ez duzu pasahitza ezarri!</string>
@@ -70,16 +70,14 @@ gai izango da saiootan sartzeko.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ezgai biltegian idazteko!</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Ezabatzen...</string>
-  <string name="ConversationFragment_deleting_messages">Mezuak ezabatzen...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Ezabatzen</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Bat ere ez</string>
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Norekin konpartitu</string>
   <!--IntroScreenActivity-->
@@ -109,7 +107,6 @@ batetik mezuak inportatuko dira.
 Babeskopia hau lehenago inportatu baduzu, mezu bikoiztuak sortu daitezke.
 </string>
   <string name="ImportFragment_importing">Inportatzen</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Inportatu enkriptatuko gabeko babeskopia...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Ez da enkriptatu gabeko babeskopiarik topatu!</string>
   <string name="ImportFragment_error_importing_backup">Errorea babeskopia inportatzerakoan!</string>
   <string name="ImportFragment_import_complete">Inportaketa bukatuta!</string>
@@ -168,18 +165,13 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Dagoeneko saioa hasteko eskaera bat bidali diozu hartzaile honi, ziur zaude beste bat bidali nahi izateaz? Honek lehenengo eskaera baliogabetuko luke.</string>
   <string name="KeyExchangeInitiator_send">Bidali</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Desenkriptatzen, mesedez itxaron...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">MMS zerbitzari batekin konektatzen...</string>
-  <string name="MmsDatabase_downloading_mms">MMS behera kargatzen...</string>
   <string name="MmsDatabase_mms_download_failed">MMS-aren behera kargatzeak huts egin du!</string>
-  <string name="MmsDatabase_downloading">Behera kargatzen...</string>
   <string name="MmsDatabase_mms_pending_download">Ukitu eta MMSaren ezarpenak konfiguratu behera kargatzearekin jarraitzeko.</string>
   <string name="MmsDatabase_error_decrypting_message">Mezua desenkriptatzerakoan errorea.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSa desenkriptatzen, mesedez itxaron...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Inportaketa indarrean</string>
@@ -239,14 +231,12 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Eskerrik asko zure laguntzagatik!</string>
   <string name="log_submit_activity__submitting">Bidaltzen</string>
-  <string name="log_submit_activity__posting_logs">Logak gist-era bidaltzen...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Sistemaren lehenetsitako datubasea ez da inolako moduan aldatuko.</string>
   <string name="database_migration_activity__skip">Saltatu</string>
   <string name="database_migration_activity__import">Inportatu</string>
   <string name="database_migration_activity__importing">INPORTATZEN</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Datubasea eguneratzen...</string>
   <string name="export_fragment__export_plaintext_backup">Esportatu enkriptatu gabeko babeskopia</string>
   <string name="import_fragment__import_system_sms_database">Inportatu sistemaren SMS datubasea</string>
   <string name="import_fragment__import_plaintext_backup">Enkriptatu gabeko babeskopia inportatu</string>
@@ -346,7 +336,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Denak hautatu</string>
   <string name="contact_selection_list__menu_unselect_all">Denak ez-hautatu</string>
-  <string name="contact_selection_list__unknown_contact">Mezu berria honi...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Bukatua</string>
   <!--refreshing push directory from menu-->
@@ -413,8 +402,6 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">Ezabatzen...</string>
-  <string name="trimmer__deleting_old_messages">Mezu zaharrak ezabatzen...</string>
   <string name="trimmer__old_messages_successfully_deleted">Mezu zaharrak ondo ezabatu dira</string>
   <!--transport_selection_list_item-->
   <!--EOF-->

@@ -4,7 +4,6 @@
   <string name="yes">Evet</string>
   <string name="no">Hayır</string>
   <string name="delete">Sil</string>
-  <string name="please_wait">Lütfen bekleyin...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Hâlâ bir parola belirlememişsiniz!</string>
@@ -83,18 +82,16 @@ erişebilir.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Depolama alanına yazılamıyor!</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Siliniyor...</string>
-  <string name="ConversationFragment_deleting_messages">Mesajlar siliniyor...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Siliniyor</string>
   <string name="ConversationListFragment_undo">GERİ AL</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Hiçbiri</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Şimdi</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Paylaşılan kişi</string>
   <!--IntroScreenActivity-->
@@ -128,7 +125,6 @@ erişebilir.</string>
   <string name="ImportFragment_import_plaintext_backup">Şifresiz metin yedeği içe aktarılsın mı?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Bu mesajları açık metin bir yedekten SMSSecure\'a aktarır. Eğer bu yedeği daha önce aktardı iseniz, yeniden aktarım çifte mesajlarla sonuçlanabilir.</string>
   <string name="ImportFragment_importing">İçe aktarılıyor</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Şifresiz metin yedeğinden içe aktar</string>
   <string name="ImportFragment_no_plaintext_backup_found">Şifresiz metin yedeği bulunamadı!</string>
   <string name="ImportFragment_error_importing_backup">Yedek içe aktarımında hata!</string>
   <string name="ImportFragment_import_complete">İçe aktarma tamamlandı!</string>
@@ -193,18 +189,13 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Bu alıcıya zaten bir oturum açma isteği gönderdiniz, bir tane daha göndermek istediğinize emin misiniz? Bu ilk isteği geçersiz kılacaktır.</string>
   <string name="KeyExchangeInitiator_send">Gönder</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Şifre çözülüyor, bekleyin...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">MMS sunucusuna bağlanılıyor...</string>
-  <string name="MmsDatabase_downloading_mms">MMS indiriliyor...</string>
   <string name="MmsDatabase_mms_download_failed">MMS indirme hatası!</string>
-  <string name="MmsDatabase_downloading">İndiriliyor...</string>
   <string name="MmsDatabase_mms_pending_download">İndirmeye devam etmek için hafifçe vur ve MMS ayarlarını yapılandırın.</string>
   <string name="MmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS şifresi çözülüyor, bekleyin...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">İçe aktarma sürüyor</string>
@@ -271,14 +262,12 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Yardımınız için teşekkürler!</string>
   <string name="log_submit_activity__submitting">Gönderilme</string>
-  <string name="log_submit_activity__posting_logs">loglar gist\'e gönderiliyor...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Öntanımlı sistem veritabanı hiçbir şekilde değiştirilmeyecektir.</string>
   <string name="database_migration_activity__skip">Atla</string>
   <string name="database_migration_activity__import">İçeri Aktar</string>
   <string name="database_migration_activity__importing">İÇE AKTARILIYOR</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Veritabanı güncelleniyor...</string>
   <string name="export_fragment__export_plaintext_backup">Şifrelenmemiş açık metin yedeği dışa aktar</string>
   <string name="import_fragment__import_system_sms_database">Sistem SMS veritabanını içe aktar</string>
   <string name="import_fragment__import_plaintext_backup">Şifrelenmemiş açık metin yedeği içe aktar</string>
@@ -418,7 +407,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="contact_selection_list__menu_select_all">Hepsini seç</string>
   <string name="contact_selection_list__menu_unselect_all">Tüm seçimleri kaldır</string>
   <string name="contact_selection_list__header">TÜM KİŞİLER</string>
-  <string name="contact_selection_list__unknown_contact">Yeni mesajın gittiği...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Tamamlanmış</string>
   <!--refreshing push directory from menu-->
@@ -486,7 +474,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="text_secure_normal__mark_all_as_read">Tümünü okundu işaretle</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Öntanımlı SMS uygulaması olarak kullanılsın mı?</string>
-  <string name="reminder_header_sms_default_text">Silence\'ı öntanımlı SMS uygulaması yapmak için dokunun.</string>
   <string name="reminder_header_sms_default_button">AYARLA</string>
   <string name="reminder_header_sms_import_title">Sistem SMS içe aktarılsın mı?</string>
   <string name="reminder_header_rate_title">Uygulamayı oyla</string>
@@ -501,8 +488,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">Siliniyor...</string>
-  <string name="trimmer__deleting_old_messages">Eski mesajlar siliniyor...</string>
   <string name="trimmer__old_messages_successfully_deleted">Eski mesajlar silindi</string>
   <!--transport_selection_list_item-->
   <!--EOF-->

@@ -4,7 +4,6 @@
   <string name="yes">Ano</string>
   <string name="no">Ne</string>
   <string name="delete">Smazat</string>
-  <string name="please_wait">Prosím čekejte...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nová zpráva</string>
   <!--ApplicationPreferencesActivity-->
@@ -49,6 +48,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="DraftDatabase_Draft_audio_snippet">(zvuk)</string>
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
+  <string name="AttachmentManager_cant_open_media_selection">Není možné nalézt aplikaci pro výběr médií.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Fotoaparát</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Obrázek</string>
@@ -56,6 +56,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Informace o kontaktu</string>
   <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">Chyba při přehrávání audia!</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokované kontakty</string>
   <!--ConversationItem-->
@@ -101,6 +102,7 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationActivity_invalid_recipient">Neplatný příjemce!</string>
   <string name="ConversationActivity_calls_not_supported">Hovory nejsou podporovány</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Zdá se, že toto zařízení nepodporuje vytáčení.</string>
+  <string name="ConversationActivity_cant_open_link">Není možné nalézt aplikaci vhodnou pro otevření tohoto odkazu.</string>
   <string name="ConversationActivity_transport_insecure_sms">Nezabezpečená SMS</string>
   <string name="ConversationActivity_transport_insecure_mms">Nezabezpečená MMS</string>
   <string name="ConversationActivity_transport_secure_sms">Zabezpečená SMS</string>
@@ -112,6 +114,11 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationActivity_specify_recipient">Prosím vyberte kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Příloha je příliš velká</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d nepřečtená zpráva</item>
+    <item quantity="few">%d nepřečtené zprávy</item>
+    <item quantity="other">%d nepřečtených zpráv</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily zprávy</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -125,10 +132,20 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="other">Takto trvale smažete všech %1$d vybraných zpráv.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Uložit do úložiště?</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Pokud uložíte tuto přílohu do místního úložiště, zpřístupníte ji ostatním aplikacím.\n\nPokračovat?</item>
+    <item quantity="few">Pokud uložíte všechny %1$d přílohy do místního úložiště, zpřístupníte je ostatním aplikacím.\n\nPokračovat?</item>
+    <item quantity="other">Pokud uložíte všech %1$d příloh do místního úložiště, zpřístupníte je ostatním aplikacím.\n\nPokračovat?</item>
+  </plurals>
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="one">Chyba při ukládání přílohy do úložiště!</item>
     <item quantity="few">Chyba při ukládání příloh do úložiště!</item>
     <item quantity="other">Chyba při ukládání příloh do úložiště!</item>
+  </plurals>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Soubor byl úspěšně uložen.</item>
+    <item quantity="few">Soubory byly úspěšně uloženy.</item>
+    <item quantity="other">Soubory byly úspěšně uloženy.</item>
   </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Do úložiště nelze zapisovat!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
@@ -136,18 +153,10 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="few">Ukládání %1$d příloh</item>
     <item quantity="other">Ukládání %1$d příloh</item>
   </plurals>
-  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Ukládání přílohy do úložiště...</item>
-    <item quantity="few">Ukládání %1$d příloh do úložiště...</item>
-    <item quantity="other">Ukládání %1$d příloh do úložiště...</item>
-  </plurals>
-  <string name="ConversationFragment_collecting_attahments">Příprava příloh...</string>
-  <string name="ConversationFragment_pending">Vyřizování...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Mazání...</string>
-  <string name="ConversationFragment_deleting_messages">Mazání zpráv...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Hledat</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Smazat vybranou konverzaci?</item>
@@ -160,7 +169,6 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
     <item quantity="other">Tato volba trvale smaže všech %1$d vybraných konverzací.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Mazání</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Mazání vybraných konverzací...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Konverzace archivována</item>
     <item quantity="few">%d konverzace archivovány</item>
@@ -176,15 +184,18 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Koncepty vybraných konverzací budou odeslány.</string>
   <string name="ConversationListFragment_send">Odeslat</string>
   <string name="ConversationListFragment_sending">Odesílání</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Odesílání vybraných konceptů...</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivované konverzace (%d)</string>
   <!--CustomDefaultPreference-->
+  <string name="CustomDefaultPreference_using_custom">Použít vlastní: %s</string>
+  <string name="CustomDefaultPreference_using_default">Použít výchozí: %s</string>
   <string name="CustomDefaultPreference_none">Žádné</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Nyní</string>
   <string name="DateUtils_minutes_ago">%d min.</string>
+  <string name="DateUtils_today">Dnes</string>
+  <string name="DateUtils_yesterday">Včera</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Sdílet s</string>
   <!--IntroScreenActivity-->
@@ -202,13 +213,11 @@ Pozor, tato volba zruší šifrování všech zpráv a všechny kliče. Vaše š
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Pozor, chystáte se exportovat obsah vašich zpráv ze Silence na úložiště v nešifrované podobě.</string>
   <string name="ExportFragment_cancel">Zrušit</string>
   <string name="ExportFragment_exporting">Exportování</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Exportování nešifrovaných zpráv na úložiště...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Chyba, na úložiště nelze zapsat.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Chyba při zápisu na úložiště.</string>
   <string name="ExportFragment_export_successful">Export proběhl úspěšně.</string>
   <string name="ExportFragment_export_encrypted_backup">Exportovat nešifrovanou zálohu?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Tímto exportujete vaše zašifrované klíče a zprávy do úložiště.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Exportování zašifrovaných klíčů, nastavení a zpráv...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nová skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aktualizovat skupinu</string>
@@ -233,11 +242,9 @@ opětovným importem dojde ke zdvojení zpráv.</string>
   <string name="ImportFragment_import_plaintext_backup">Importovat nešifrovanou zálohu?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tímto importujete zprávy z nešifrované zálohy. Pokud jste zálohu již importovali, opětovným importem dojde ke zdvojení zpráv.</string>
   <string name="ImportFragment_importing">Importování</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importování nešifrované zálohy...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nenalezena žádná nešifrovaná záloha.</string>
   <string name="ImportFragment_error_importing_backup">Chyba při importu zálohy!</string>
   <string name="ImportFragment_import_complete">Import dokončen!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Obnovování šifrované zálohy...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nenalezena žádná šifrovaná záloha.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nenalezen žádný načtený klíč!</string>
@@ -248,21 +255,24 @@ opětovným importem dojde ke zdvojení zpráv.</string>
   <string name="MessageDetailsRecipient_new_identity">Nová identita</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">Chyba při ukládání MMS!</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">Chyba při připojení k poskytovateli MMS</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediální zpráva</string>
   <!--MessageRecord-->
-  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Přijata šifrovaná zpráva že starší verze Silence, která již není podporována. Požádejte prosím odesílatele, aby aktualizoval Silence na poslední verzi a zprávu odeslal znovu.</string>
+  <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Byla přijata šifrovaná zpráva ze starší verze Silence, která již není podporována. Požádejte prosím odesílatele, aby si aktualizoval Silence na poslední verzi a zprávu odeslal znovu.</string>
   <string name="MessageRecord_left_group">Opustili jste skupinu.</string>
   <string name="MessageRecord_updated_group">Skupina aktualizována.</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Hesla si neodpovídají!</string>
-  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Staré heslo nebo správné!</string>
+  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Staré heslo není správné!</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Heslo nebylo zadáno!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Zadejte heslo</string>
   <string name="PassphrasePromptActivity_watermark_content_description">Ikona Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Nesprávné heslo!</string>
   <!--ReceiveKeyActivity-->
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Podpis ve zprávě pro výměnu klíčů je odlišný od podpisu, který jste od tohoto kontaktu obdrželi dříve. To může znamenat buď, že se někdo snaží zachytit vaši komunikaci, nebo váš kontakt jednoduše přeinstaloval Silence a nyní používá nový identifikační klíč.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis v této zprávě s výměnou klíčů je důvěryhodný, ale máte vypnutou možnost \'automaticky dokončovat výměny klíčů\'.</string>
   <string name="ReceiveKeyActivity_processing">Zpracovávání</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Zpracovávání výměny klíčů...</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Měli byste ověřit identitu tohoto kontaktů.</string>
@@ -284,18 +294,51 @@ opětovným importem dojde ke zdvojení zpráv.</string>
 výměny klíčů</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
+  <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Byla přijata zpráva s neznámým identifikačním klíčem. Klepněte pro pokračování a zobrazení.</string>
   <string name="SmsMessageRecord_secure_session_ended">Zabezpečené sezení ukončeno.</string>
+  <string name="SmsMessageRecord_duplicate_message">Duplicitní zpráva.</string>
   <!--ThreadRecord-->
+  <string name="ThreadRecord_left_the_group">Opustit skupinu</string>
+  <string name="ThreadRecord_draft">Koncept:</string>
+  <string name="ThreadRecord_media_message">Multimediální zpráva</string>
   <!--VerifyIdentityActivity-->
+  <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte žádný identifikační klíč.</string>
+  <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Příjemce nemá žádný identifikační klíč.</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skenovat QR kód kontaktu</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Zobrazit váš QR kód</string>
+  <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">POZOR, naskenované klíče si NEODPOVÍDAJÍ! Zkontrolujte prosím pozorně text otisku.</string>
+  <string name="VerifyIdentityActivity_not_verified_exclamation">NEOVĚŘENO!</string>
+  <string name="VerifyIdentityActivity_verified_exclamation">Ověřeno!</string>
   <!--ViewIdentityActivity-->
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Skenovat QR kód kontaktu</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Zobrazit váš QR kód</string>
+  <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">POZOR, naskenované klíče si NEODPOVÍDAJÍ!</string>
+  <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Naskenované klíče si odpovídají!</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">Váš identifikační otisk</string>
   <!--KeyExchangeInitiator-->
+  <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Zahájit i přes existující požadavek?</string>
+  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Již jste odeslali žádost o zahájení spojení s tímto příjemcem, opravdu chcete poslat další? Původní požadavek bude zrušen.</string>
+  <string name="KeyExchangeInitiator_send">Odeslat</string>
   <!--MessageDisplayHelper-->
+  <string name="MessageDisplayHelper_bad_encrypted_message">Chybná šifrovaná zpráva</string>
   <!--EncryptingSmsDatabase-->
+  <string name="EncryptingSmsDatabase_error_decrypting_message">Chyba při dešifrování zprávy.</string>
   <!--MmsDatabase-->
+  <string name="MmsDatabase_mms_download_failed">Chyba pri stahování MMS!</string>
+  <string name="MmsDatabase_error_decrypting_message">Chyba při dešifrování zprávy.</string>
   <!--MmsMessageRecord-->
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">Chybná šifrovaná MMS zpráva</string>
   <!--MuteDialog-->
+  <string name="MuteDialog_mute_notifications">Ztlumit upozornění</string>
   <!--ApplicationMigrationService-->
+  <string name="ApplicationMigrationService_import_in_progress">Probíhá import</string>
+  <string name="ApplicationMigrationService_importing_text_messages">Importování textových zpráv</string>
+  <string name="ApplicationMigrationService_import_complete">Import dokončen</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Dokončen import systémové databáze.</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_silence_passphrase_cached">Klepněte pro otevření.</string>
+  <string name="KeyCachingService_silence_passphrase_cached_with_lock">Klepněte pro otevření, nebo klepněte na zámek pro zavření.</string>
+  <string name="KeyCachingService_passphrase_cached">Silence je odemčená</string>
   <!--MessageNotifier-->
   <!--QuickResponseService-->
   <!--SingleRecipientNotificationBuilder-->

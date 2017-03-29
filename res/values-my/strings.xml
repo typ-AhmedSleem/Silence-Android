@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">ဟုတ်ကဲ့</string>
   <string name="no">မလုပ်ပါ</string>
   <string name="delete">ဖျက်ရန်</string>
@@ -32,10 +33,10 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">ဖျက်နေသည်</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
@@ -76,14 +77,9 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ဒီအဆက်အသွယ်ထံ ဆက်ရှင်စရန် တောင်းဆိုချက် ပို့ထားပြီးသားဖြစ်သည်။ ထပ်မံပို့မှာ သေချာလား။ ထပ်ပို့ပါက ယခင်ပို့ထားသော တောင်းဆိုချက်ကို ပယ်ဖျက်မည်ဖြစ်သည်</string>
   <string name="KeyExchangeInitiator_send">ပို့</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">ဝှက်စာအားဖေါ်နေသည်၊ ခေတ္တစောင့်ပါ...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">MMS　ဆာဗာသို့ချိတ်ဆက်နေသည်...</string>
-  <string name="MmsDatabase_downloading_mms">MMS အားကူးဆွဲနေသည်...</string>
-  <string name="MmsDatabase_downloading">ကူးဆွဲနေသည်...</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSမှဝှက်စာ ဖော်နေသည်၊ ခေတ္တစောင့်ပါ...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">သွင်းယူနေ</string>

@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="Distribution_title">Сајленс</string>
+  <string name="Distribution_title">Silence</string>
   <string name="Distribution_tagline">Шифроване СМС/ММС преписке за свакога!</string>
   <string name="Distribution_description">Сајленс је апликација за СМС/ММС која вам омогућава да заштитите вашу приватност приликом комуникације са пријатељима.</string>
   <string name="Distribution_long_description">
-Сајленс је апликација за СМС/ММС која вам омогућава да заштитите вашу приватност приликом комуникације са пријатељима.
+Silence је апликација за СМС/ММС која вам омогућава да заштитите вашу приватност приликом комуникације са пријатељима.
 Користећи Сајленс можете да шаљете СМС поруке и делите медије или прилоге у потпуности приватно.
 
 Својства:

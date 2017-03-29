@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
   <string name="delete">Избриши</string>
-  <string name="please_wait">Се вчитува...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Немате поставено лозинка!</string>
@@ -37,10 +37,10 @@
   <!--ConversationFragment-->
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->

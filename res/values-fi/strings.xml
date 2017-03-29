@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Kyllä</string>
   <string name="no">Ei</string>
   <string name="delete">Poista</string>
-  <string name="please_wait">Hetki vain...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Et ole vielä määritellyt salalausetta!</string>
@@ -68,15 +68,11 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationFragment_message_details">Viestin tiedot</string>
   <string name="ConversationFragment_save_to_sd_card">Tallenna muistiin?</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Muistiin tallentaminen epäonnistui!</string>
-  <string name="ConversationFragment_pending">Käsiteltävänä...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Poistetaan...</string>
-  <string name="ConversationFragment_deleting_messages">Viestejä poistetaan...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Poistetaan</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Käyttäen mukautettua: %s</string>
@@ -84,6 +80,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="CustomDefaultPreference_none">Ei yhtäkään</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Nyt</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Jaa</string>
   <!--IntroScreenActivity-->
@@ -111,7 +108,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tämä toiminto tuo viestit salaamattomasta varmuuskopiosta. Jos viestit on tuotu jo
 aiemmin, seuraa niiden uudelleen tuonnista viestien kaksoiskappaleita.</string>
   <string name="ImportFragment_importing">Tuodaan</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Tuo salaamaton varmuuskopio...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Salaamatonta varmuuskopiota ei löytynyt!</string>
   <string name="ImportFragment_error_importing_backup">Virhe tuotaessa varmuuskopiota!</string>
   <string name="ImportFragment_import_complete">Tuonti suoritettu!</string>
@@ -168,18 +164,13 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Olet jo lähettänyt istunnon aloituspyynnön tälle vastaanottajalle. Oletko varma, että haluat lähettää toisen pyynnön? Tämä mitätöi ensimmäisen pyynnön.</string>
   <string name="KeyExchangeInitiator_send">Lähetä</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Puretaan salausta, odota hetki...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Yhdistetään MMS-palvelimeen...</string>
-  <string name="MmsDatabase_downloading_mms">Ladataan MMS-viestiä...</string>
   <string name="MmsDatabase_mms_download_failed">MMS-viestin lataus epäonnistui!</string>
-  <string name="MmsDatabase_downloading">Ladataan...</string>
   <string name="MmsDatabase_mms_pending_download">Napsauta ja säädä MMS-asetuksia jatkaaksesi latausta.</string>
   <string name="MmsDatabase_error_decrypting_message">Viestin salauksen purussa sattui virhe.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Puretaan MMS-viestin salausta, odota hetki...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Tuonti käynnissä</string>
@@ -240,14 +231,12 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Kiitos avustasi!</string>
   <string name="log_submit_activity__submitting">Lähetetään</string>
-  <string name="log_submit_activity__posting_logs">Lokit lähetetään gistiin...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Järjestelmän oletustietokantaa ei tulla muuttamaan millään tavalla.</string>
   <string name="database_migration_activity__skip">Ohita</string>
   <string name="database_migration_activity__import">Tuo</string>
   <string name="database_migration_activity__importing">TUONTI KÄYNNISSÄ</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Tietokantaa päivitetään...</string>
   <string name="export_fragment__export_plaintext_backup">Vie salaamaton varmuuskopio</string>
   <string name="import_fragment__import_system_sms_database">Tuo järjestelmän tekstiviestit</string>
   <string name="import_fragment__import_plaintext_backup">Tuo salaamaton varmuuskopio</string>
@@ -377,7 +366,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Valitse kaikki</string>
   <string name="contact_selection_list__menu_unselect_all">Poista kaikkien valinta</string>
-  <string name="contact_selection_list__unknown_contact">Uusi viesti henkilölle...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Valmis</string>
   <!--refreshing push directory from menu-->
@@ -449,8 +437,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">Poistetaan...</string>
-  <string name="trimmer__deleting_old_messages">Vanhat viestit poistetaan...</string>
   <string name="trimmer__old_messages_successfully_deleted">Vanhojen viestien poisto onnistui</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Tyypin kuvake</string>

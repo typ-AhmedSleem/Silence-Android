@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Si</string>
   <string name="no">No</string>
   <string name="delete">Esborra</string>
@@ -40,10 +41,10 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Esborrant</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
@@ -62,7 +63,6 @@
   <string name="ImportFragment_cancel">Cancel·la</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Això importarà els missatges des d\'una còpia de seguretat en text pla. Si has importat prèviament la base de dades SMS del sistema, importar-la de nou provocarà la generació de missatges duplicats.</string>
   <string name="ImportFragment_importing">Important</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importa còpia de seguretat en text pla...</string>
   <string name="ImportFragment_no_plaintext_backup_found">No s\'ha trobat la còpia de seguretat en text pla!</string>
   <string name="ImportFragment_error_importing_backup">Error important la còpia de seguretat!</string>
   <string name="ImportFragment_import_complete">Importació completada!</string>
@@ -104,15 +104,10 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ja has enviat una petició per iniciar una sessió a aquest destinatari, estàs segur que vols enviar-ne una altra? Això invalidarà la primera petició.</string>
   <string name="KeyExchangeInitiator_send">Envia</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Desencriptant, si us plau espera...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Connectant al servidor MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Descarregant MMS...</string>
-  <string name="MmsDatabase_downloading">Descarregant...</string>
   <string name="MmsDatabase_mms_pending_download">Pica i configura els ajustaments MMS per continuar la descàrrega.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Desencriptant MMS, si us plau espera...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importació en curs</string>

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Ναι</string>
   <string name="no">Όχι</string>
   <string name="delete">Διαγραφή</string>
-  <string name="please_wait">Παρακαλώ περιμένετε...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Δεν έχετε ορίσει συνθηματική φράση!</string>
@@ -78,15 +78,11 @@
   <string name="ConversationFragment_message_details">Στοιχεία μηνύματος</string>
   <string name="ConversationFragment_save_to_sd_card">Να αποθηκευτεί στην κάρτα μνήμης;</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Αδύνατη η εγγραφή στην αποθήκευση</string>
-  <string name="ConversationFragment_pending">Εν αναμονή...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Γίνεται διαγραφή...</string>
-  <string name="ConversationFragment_deleting_messages">Διαγραφή μηνυμάτων...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Διαγραφή</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Χρήση προσαρμοσμένων: %s</string>
@@ -94,6 +90,7 @@
   <string name="CustomDefaultPreference_none">Κανένα</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Τώρα</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Διαμοιρασμός με</string>
   <!--IntroScreenActivity-->
@@ -123,7 +120,6 @@
         η επανα-εισαγωγή θα έχει ως αποτέλεσμα διπλά μηνύματα.
     </string>
   <string name="ImportFragment_importing">Γίνεται εισαγωγή</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Εισαγωγή μη κρυπτογραφημένου αντιγράφου ασφαλείας...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Δε βρέθηκε μη κρυπτογραφημένο αντίγραφο ασφαλείας!</string>
   <string name="ImportFragment_error_importing_backup">Σφάλμα κατά την εισαγωγή αντιγράφων ασφαλείας!</string>
   <string name="ImportFragment_import_complete">Η εισαγωγή ολοκληρώθηκε!</string>
@@ -187,18 +183,13 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Έχετε ήδη ζητήσει την έναρξη συζήτησης με αυτόν τον παραλήπτη, είστε σίγουροι πως θέλετε να στείλετε νέα αίτηση; Η πρώτη αίτηση θα ακυρωθεί.</string>
   <string name="KeyExchangeInitiator_send">Αποστολή</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Αποκρυπτογράφηση, παρακαλώ περιμένετε...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Σφάλμα αποκρυπτογράφησης του μηνύματος.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Σύνδεση στο διακομιστή MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Γίνεται λήψη MMS...</string>
   <string name="MmsDatabase_mms_download_failed">Λήψη MMS απέτυχε!</string>
-  <string name="MmsDatabase_downloading">Γίνεται λήψη...</string>
   <string name="MmsDatabase_mms_pending_download">Πατήστε και ρυθμίσετε το MMS για να συνεχίσετε την λήψη.</string>
   <string name="MmsDatabase_error_decrypting_message">Σφάλμα κρυπτογράφησης του μηνύματος.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Γίνεται αποκρυπτογράφηση MMS, παρακαλώ περιμένετε...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Εισαγωγή σε εξέλιξη</string>
@@ -262,14 +253,12 @@
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Ευχαριστούμε για τη βοήθειά σας!</string>
   <string name="log_submit_activity__submitting">Αποστολή</string>
-  <string name="log_submit_activity__posting_logs">Αποστολή των αρχείων καταγραφής στο gist…</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Το υπάρχον αρχείο μηνυμάτων δε θα αλλαχθεί.</string>
   <string name="database_migration_activity__skip">Παράληψη</string>
   <string name="database_migration_activity__import">Εισαγωγή</string>
   <string name="database_migration_activity__importing">ΕΙΣΑΓΩΓΗ</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Ενημέρωση Βάσης Δεδομένων...</string>
   <string name="export_fragment__export_plaintext_backup">Εξαγωγή Μη Κρυπτογραφημένου Αντιγράφου Ασφαλείας</string>
   <string name="import_fragment__import_system_sms_database">Εισαγωγή Της Βάσης Δεδομένων SMS Του Συστήματος</string>
   <string name="import_fragment__import_plaintext_backup">Εισαγωγή μη κρυπτογραφημένου αντιγράφου ασφαλείας</string>
@@ -403,7 +392,6 @@
   <string name="contact_selection_list__menu_select_all">Επιλογή Όλων</string>
   <string name="contact_selection_list__menu_unselect_all">Εκκαθάριση Όλων</string>
   <string name="contact_selection_list__header">ΟΛΕΣ ΟΙ ΕΠΑΦΕΣ</string>
-  <string name="contact_selection_list__unknown_contact">Νέο Μήνυμα</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Ολοκληρώθηκε</string>
   <!--refreshing push directory from menu-->
@@ -475,8 +463,6 @@
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">Γίνεται διαγραφή...</string>
-  <string name="trimmer__deleting_old_messages">Τα παλία μηνύματα διαγράφονται...</string>
   <string name="trimmer__old_messages_successfully_deleted">Τα παλιά μηνύματα διεγράφτηκαν επιτυχώς</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Μεταφορά εικονίδιου</string>

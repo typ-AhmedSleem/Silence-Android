@@ -182,8 +182,6 @@
   <string name="ConversationListFragment_send">Enviar</string>
   <string name="ConversationListFragment_sending">Enviando</string>
   <string name="ConversationListFragment_sending_selected_drafts">Enviando borradores seleccionados...</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Mensaje de intercambio de clave</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversaciones archivadas (%d)</string>
   <!--CustomDefaultPreference-->
@@ -195,6 +193,10 @@
   <string name="DateUtils_minutes_ago">%d min</string>
   <string name="DateUtils_today">Hoy</string>
   <string name="DateUtils_yesterday">Ayer</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Nueva tarjeta SIM detectada</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Se ha generado una nueva clave.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Se ha generado una nueva clave para esa tarjeta SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartir con</string>
   <!--IntroScreenActivity-->
@@ -244,7 +246,7 @@ mensajes desde la base de datos de SMS predeterminada del sistema hacia Silence.
 mensajes desde una copia de respaldo en texto plano. Si ha importado previamente esta copia de respaldo,
 importarla de nuevo dará como resultado mensajes duplicados.</string>
   <string name="ImportFragment_importing">Importando</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importando copia de seguridad de mensajes en claro...</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Importando copia de seguridad como texto sin cifrar...</string>
   <string name="ImportFragment_no_plaintext_backup_found">¡No se encontró una copia de seguridad de los mensajes en claro!</string>
   <string name="ImportFragment_error_importing_backup">¡Error importando copia de seguridad!</string>
   <string name="ImportFragment_import_complete">¡Se ha importado correctamente!</string>
@@ -265,8 +267,10 @@ importarla de nuevo dará como resultado mensajes duplicados.</string>
   <string name="NotificationMmsMessageRecord_multimedia_message">Mensaje multimedia</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Se recibió un mensaje cifrado usando una versión antigua de Silence que ya no está soportada. Por favor, pida al remitente que se actualice a la versión más reciente y reenvíe el mensaje.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">El mensaje de intercambio que recibió vino de una versión de Silence que está demasiado desactualizada para comunicarse con su versión. Tiene que enviar el suyo manualmente para iniciar una sesión segura. Pulse para enviar un mensaje de intercambio de clave.</string>
   <string name="MessageRecord_left_group">Ha dejado el grupo.</string>
   <string name="MessageRecord_updated_group">Grupo actualizado.</string>
+  <string name="MessageRecord_key_exchange_message">Mensaje de intercambio de clave</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">¡Las claves de acceso no coinciden!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">¡Clave de acceso antigua incorrecta!</string>
@@ -344,8 +348,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Error al descifrar mensaje.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Conectando con el servidor MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Descargado MMS...</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Conectando al servidor MMS...</string>
+  <string name="MmsDatabase_downloading_mms">Descargando MMS...</string>
   <string name="MmsDatabase_mms_download_failed">¡Fallo de la descarga de MMS!</string>
   <string name="MmsDatabase_downloading">Descargando...</string>
   <string name="MmsDatabase_mms_pending_download">Pulse y configure las preferencias MMS para continuar la descarga.</string>
@@ -387,8 +391,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nuevo mensaje</string>
   <!--SubscriptionInfoCompat-->
-  <string name="SubscriptionInfoCompat_slot">Posición %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name">%1$s (posición %2$s)</string>
+  <string name="SubscriptionInfoCompat_slot">Puesto %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (puesto %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Frase-contraseña antigua</string>
   <string name="change_passphrase_activity__new_passphrase">Nueva frase-contraseña</string>
@@ -447,7 +451,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="log_submit_activity__log_fetch_failed">No se pudo leer el registro (log) en su dispositivo. Todavía puede usar ADB para obtener un registro de depuración en su lugar.</string>
   <string name="log_submit_activity__thanks">¡Gracias por su ayuda!</string>
   <string name="log_submit_activity__submitting">Enviando</string>
-  <string name="log_submit_activity__posting_logs">Publicando registros de actividad en gist...</string>
+  <string name="log_submit_activity__posting_logs">Publicando los registros (logs) en gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">¿Desea importar sus mensajes de texto existentes hacia la base de datos cifrada de Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La base de datos de sistema por defecto no será modificada o alterada de ningún modo.</string>
@@ -659,7 +663,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="contact_selection_list__menu_select_all">Seleccionar todos</string>
   <string name="contact_selection_list__menu_unselect_all">Deseleccionar todos</string>
   <string name="contact_selection_list__header">TODOS LOS CONTACTOS</string>
-  <string name="contact_selection_list__unknown_contact">Nuevo mensaje para...</string>
+  <string name="contact_selection_list__unknown_contact">Nuevo mensaje a...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Terminado</string>
   <!--refreshing push directory from menu-->
@@ -735,7 +739,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="text_secure_normal__menu_archived_conversations">Conversaciones archivadas</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">¿Usar como aplicación de SMS por defecto?</string>
-  <string name="reminder_header_sms_default_text">Pulse para hacer de Silence su aplicación de SMS predeterminada.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence debe ser su aplicación de SMS/MMS predeterminada para recibir mensajes.</string>
   <string name="reminder_header_sms_default_button">ESTABLECER</string>
   <string name="reminder_header_sms_import_title">¿Importar SMS del sistema?</string>
   <string name="reminder_header_sms_import_text">Pulse para copiar los mensajes SMS de su teléfono a la base de datos cifrada de Silence.</string>

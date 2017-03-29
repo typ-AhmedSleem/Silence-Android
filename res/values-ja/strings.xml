@@ -4,7 +4,7 @@
   <string name="yes">はい</string>
   <string name="no">いいえ</string>
   <string name="delete">削除</string>
-  <string name="please_wait">お待ち下さい…</string>
+  <string name="please_wait">お待ちください…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">新規メッセージ</string>
   <!--ApplicationPreferencesActivity-->
@@ -134,14 +134,14 @@
     <item quantity="other">%1$d 添付ファイルを保存しています</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="other">%1$d 添付ファイルをストレージに保存しています...</item>
+    <item quantity="other">%1$d の添付ファイルをストレージに保存しています…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">添付ファイルを収集しています...</string>
-  <string name="ConversationFragment_pending">ペンディング</string>
+  <string name="ConversationFragment_collecting_attahments">添付ファイルを収集しています…</string>
+  <string name="ConversationFragment_pending">保留中…</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">削除...</string>
-  <string name="ConversationFragment_deleting_messages">メッセージの削除...</string>
+  <string name="ConversationFragment_deleting">削除中…</string>
+  <string name="ConversationFragment_deleting_messages">メッセージの削除中…</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">検索</string>
   <!--ConversationListFragment-->
@@ -152,7 +152,7 @@
     <item quantity="other">選択した%1$dの会話を完全に削除します。</item>
   </plurals>
   <string name="ConversationListFragment_deleting">削除</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">選択した会話を削除中…</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">選択した会話の削除中…</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="other">%d の会話をアーカイブしました</item>
   </plurals>
@@ -165,8 +165,6 @@
   <string name="ConversationListFragment_send">送信</string>
   <string name="ConversationListFragment_sending">送信中</string>
   <string name="ConversationListFragment_sending_selected_drafts">選択した下書きを送信中…</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">鍵交換メッセージ</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">会話をアーカイブしました (%d)</string>
   <!--CustomDefaultPreference-->
@@ -178,6 +176,10 @@
   <string name="DateUtils_minutes_ago">%d 分</string>
   <string name="DateUtils_today">今日</string>
   <string name="DateUtils_yesterday">昨日</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">新しい SIM カードが検出されました</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">新しい鍵が生成されました。</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">その SIM カードに新しい鍵が生成されました。</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共有</string>
   <!--IntroScreenActivity-->
@@ -192,7 +194,7 @@
   <!--ExportFragment-->
   <string name="ExportFragment_export">エクスポート</string>
   <string name="ExportFragment_export_plaintext_to_storage">暗号化されていないテキストをストレージにエクスポートしますか?</string>
-  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">警告。これは平文でストレージにSilenceのメッセージ内容をエクスポートします。</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">警告。これは暗号化されていないテキストで、ストレージにSilenceのメッセージ内容をエクスポートします。</string>
   <string name="ExportFragment_cancel">中止</string>
   <string name="ExportFragment_exporting">エクスポート中…</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">暗号化されていないテキストをストレージにエクスポート中…</string>
@@ -201,7 +203,7 @@
   <string name="ExportFragment_export_successful">正常にエクスポートしました。</string>
   <string name="ExportFragment_export_encrypted_backup">暗号化されたバックアップをエクスポートしますか?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">暗号化された鍵、設定、メッセージをストレージにエクスポートします。</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">暗号化された鍵、設定、メッセージをエクスポートしています...</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">暗号化された鍵、設定、メッセージをエクスポートしています…</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新規グループ</string>
   <string name="GroupCreateActivity_actionbar_update_title">グループを更新する</string>
@@ -226,7 +228,7 @@
   <string name="ImportFragment_import_plaintext_backup">暗号化されていないテキストのバックアップをインポートしますか？</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">暗号化されていないテキストのバックアップ・ファイルからメッセージをインポートします。以前に同じバックアップ・ファイルをインポートしたことがある場合、メッセージが重複することになります。</string>
   <string name="ImportFragment_importing">インポート中…</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">非暗号テキストのバックアップ・ファイルをインポート中…</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">暗号化されていないテキストのバックアップ・ファイルをインポート中…</string>
   <string name="ImportFragment_no_plaintext_backup_found">非暗号テキストのバックアップ・ファイルが見つかりませんでした。</string>
   <string name="ImportFragment_error_importing_backup">バックアップ・ファイルのインポート中にエラーが発生しました。</string>
   <string name="ImportFragment_import_complete">インポート完了！</string>
@@ -247,8 +249,10 @@
   <string name="NotificationMmsMessageRecord_multimedia_message">マルチメディアメッセージ</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">もうサポートされていない古いバージョンのSilenceから暗号化されたメッセージを受信しました。最新バージョンに更新して、再び送信するよう伝えてください</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Silenceのバージョンから届いた交換メッセージは、お使いのバージョンと通信するには古すぎます。 安全なセッションを開始するには、手動で送信する必要があります。 タップすると鍵交換メッセージを送信します。</string>
   <string name="MessageRecord_left_group">グループを出ました。</string>
   <string name="MessageRecord_updated_group">グループを更新しました。</string>
+  <string name="MessageRecord_key_exchange_message">鍵交換メッセージ</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">パスワードが一致していません！</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">古いパスワードが正しくありません。</string>
@@ -313,7 +317,7 @@
   <string name="KeyExchangeInitiator_send">送信</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">メッセージが正しく暗号化されていません</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">復号しています。お待ち下さい…</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">復号化しています。お待ち下さい…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">メッセージは存在しないセッションのために暗号化されています</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">存在しないセッションの終了リクエスト</string>
   <!--EncryptingSmsDatabase-->
@@ -326,7 +330,7 @@
   <string name="MmsDatabase_mms_pending_download">ダウンロードを続行するのに、MMS設定を行って下さい。</string>
   <string name="MmsDatabase_error_decrypting_message">メッセージの復号化エラー。</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSを復号しています。お待ち下さい…</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMSを復号化しています。お待ち下さい…</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">MMSメッセージが正しく暗号化されていません</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMSメッセージは存在しないセッションのために暗号化されています</string>
   <!--MuteDialog-->
@@ -710,7 +714,7 @@
   <string name="text_secure_normal__menu_archived_conversations">アーカイブした会話</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">標準のSMSアプリに設定しますか？</string>
-  <string name="reminder_header_sms_default_text">タップしてSilenceをデフォルトのSMSアプリにします。</string>
+  <string name="reminder_header_sms_default_text_mandatory">メッセージを受信するには、Silence をデフォルトの SMS/MMS アプリにする必要があります。</string>
   <string name="reminder_header_sms_default_button">設定</string>
   <string name="reminder_header_sms_import_title">システムのSMSをインポートしますか？</string>
   <string name="reminder_header_sms_import_text">タップして携帯のSMSメッセージをSilenceの暗号化されたデータベースにコピーします。</string>
@@ -736,8 +740,8 @@
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">画像プレビュー</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">削除...</string>
-  <string name="trimmer__deleting_old_messages">古いメッセージを削除...</string>
+  <string name="trimmer__deleting">削除中…</string>
+  <string name="trimmer__deleting_old_messages">古いメッセージを削除中…</string>
   <string name="trimmer__old_messages_successfully_deleted">古いメッセージの削除に成功</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">転送アイコン</string>

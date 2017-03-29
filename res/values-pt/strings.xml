@@ -144,10 +144,10 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
     <item quantity="other">A guardar %1$d anexos</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">A guardar anexo no armazenamento...</item>
+    <item quantity="one">A guardar anexo no armazenamento</item>
     <item quantity="other">A guardar %1$d anexos no armazenamento...</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">A recolher anexos...</string>
+  <string name="ConversationFragment_collecting_attahments">A obter anexos...</string>
   <string name="ConversationFragment_pending">Pendente...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -179,9 +179,7 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Isto irá enviar os rascunhos das conversas selecionadas</string>
   <string name="ConversationListFragment_send">Enviar</string>
   <string name="ConversationListFragment_sending">A enviar</string>
-  <string name="ConversationListFragment_sending_selected_drafts">A enviar os rascunhos selecionados...</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Mensagem de troca de chaves</string>
+  <string name="ConversationListFragment_sending_selected_drafts">A enviar rascunhos selecionados...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversas arquivadas (%d)</string>
   <!--CustomDefaultPreference-->
@@ -193,6 +191,10 @@ Atenção, isto desativa a cifra de armazenamento para todas as mensagens e chav
   <string name="DateUtils_minutes_ago">%d min.</string>
   <string name="DateUtils_today">Hoje</string>
   <string name="DateUtils_yesterday">Ontem</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Detetado novo cartão SIM</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Gerada uma nova chave.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Gerada uma nova chave para o novo cartão SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partilhar com</string>
   <!--IntroScreenActivity-->
@@ -262,8 +264,10 @@ Se você já importou este backup anteriormente, uma nova importação poderá o
   <string name="NotificationMmsMessageRecord_multimedia_message">Mensagem multimédia</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Recebeu uma mensagem cifrada através de uma versão antiga do Silence que já não é suportada. Por favor peça ao remetente para atualizar a aplicação e para reenviar a mensagem.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">A mensagem de troca recebida teve como origem uma versão do Silence muito antiga e não consegue comunicar com a sua versão. Tem que a enviar manualmente para iniciar uma sessão segura. Toque para enviar uma mensagem para troca de chaves.</string>
   <string name="MessageRecord_left_group">Você saiu do grupo.</string>
   <string name="MessageRecord_updated_group">Atualizou o grupo.</string>
+  <string name="MessageRecord_key_exchange_message">Mensagem de troca de chaves</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">As palavras-passe não são iguais.</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Palavra-passe atual incorreta!</string>
@@ -443,7 +447,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Esta operação poderá demorar algum tempo. Por favor seja paciente. Será notificado quando a importação estiver terminada.</string>
   <string name="database_migration_activity__importing">A importar</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">A atualizar a base de dados...</string>
+  <string name="database_upgrade_activity__updating_database">A atualizar base de dados...</string>
   <string name="export_fragment__export_plaintext_backup">Exportar backup em texto simples</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exportar um ficheiro em texto simples. Compatível com \'SMS Backup &amp;amp Restore\'.</string>
   <string name="import_fragment__import_system_sms_database">Importar base de dados SMS do sistema</string>
@@ -722,7 +726,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="text_secure_normal__menu_archived_conversations">Conversas arquivadas</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Utilizar como aplicação padrão para SMS?</string>
-  <string name="reminder_header_sms_default_text">Toque para tornar o Silence a sua aplicação padrão para SMS.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Tem que definir o Silence como aplicação padrão de SMS/MMS para receber mensagens.</string>
   <string name="reminder_header_sms_default_button">Definir</string>
   <string name="reminder_header_sms_import_title">Importar SMS do sistema?</string>
   <string name="reminder_header_sms_import_text">Toque para copiar as SMS do seu dispositivo para a base de dados cifrada do Silence.</string>

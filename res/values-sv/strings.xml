@@ -4,7 +4,6 @@
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
   <string name="delete">Radera</string>
-  <string name="please_wait">Var vänlig vänta...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nytt meddelande</string>
   <!--ApplicationPreferencesActivity-->
@@ -103,11 +102,8 @@ kommer kunna komma åt dem.</string>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Spara till lagring?</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kan inte skriva till lagring!</string>
-  <string name="ConversationFragment_pending">Väntar...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Raderar...</string>
-  <string name="ConversationFragment_deleting_messages">Raderar meddelanden...</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Sök</string>
   <!--ConversationListFragment-->
@@ -115,7 +111,6 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationListFragment_undo">ÅNGRA</string>
   <string name="ConversationListFragment_send">Skicka</string>
   <string name="ConversationListFragment_sending">Skickar</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Använder skräddarsydd: %s</string>
@@ -126,6 +121,7 @@ kommer kunna komma åt dem.</string>
   <string name="DateUtils_minutes_ago">%d min</string>
   <string name="DateUtils_today">Idag</string>
   <string name="DateUtils_yesterday">Igår</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Dela med</string>
   <!--IntroScreenActivity-->
@@ -153,7 +149,6 @@ kommer kunna komma åt dem.</string>
   <string name="ImportFragment_import_plaintext_backup">Importera okrypterad backup?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Denna åtgärd importerar meddelanden från en säkerhetskopia i klartext. Om du redan har importerat denna säkerhetskopia och importerar igen kommer du att få duplicerade meddelanden.</string>
   <string name="ImportFragment_importing">Importerar</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importera okrypterad säkerhetskopia...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Ingen okrypterad säkerhetskopia kunde hittas!</string>
   <string name="ImportFragment_error_importing_backup">Ett fel inträffade vid importering av säkerhetskopian.</string>
   <string name="ImportFragment_import_complete">Importeringen lyckades!</string>
@@ -224,18 +219,13 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Du har redan skickat en sessionsinitieringsbegäran till denna mottagare, är du säker på att du vill skicka en till? Detta kommer göra din första begäran ogiltig.</string>
   <string name="KeyExchangeInitiator_send">Skicka</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Dekrypterar, var vänlig vänta...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fel vid dekryptering av meddelande.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Ansluter till MMS server...</string>
-  <string name="MmsDatabase_downloading_mms">Laddar ner MMS...</string>
   <string name="MmsDatabase_mms_download_failed">MMS-nedladdning misslyckades!</string>
-  <string name="MmsDatabase_downloading">Laddar ner...</string>
   <string name="MmsDatabase_mms_pending_download">Tappa och ställ in MMS inställningar för att fortsätta nedladdning.</string>
   <string name="MmsDatabase_error_decrypting_message">Fel vid dekryptering av meddelande.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekrypterar MMS, var vänlig vänta...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Tysta notifikationer</string>
   <!--ApplicationMigrationService-->
@@ -311,14 +301,12 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Tack för din hjälp!</string>
   <string name="log_submit_activity__submitting">Skickar</string>
-  <string name="log_submit_activity__posting_logs">Skickar loggar till gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Systemets standarddatabas kommer på intet sätt att modifieras eller ändras.</string>
   <string name="database_migration_activity__skip">Hoppa över</string>
   <string name="database_migration_activity__import">Importera</string>
   <string name="database_migration_activity__importing">IMPORTERAR</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Uppgraderar databasen...</string>
   <string name="export_fragment__export_plaintext_backup">Exportera okrypterad backup</string>
   <string name="import_fragment__import_system_sms_database">Importera systemets SMS-databas</string>
   <string name="import_fragment__import_plaintext_backup">Importera okrypterad backup</string>
@@ -471,7 +459,6 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="contact_selection_list__menu_select_all">Markera alla</string>
   <string name="contact_selection_list__menu_unselect_all">Avmarkera alla</string>
   <string name="contact_selection_list__header">ALLA KONTAKTER</string>
-  <string name="contact_selection_list__unknown_contact">Nytt meddelande till...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Färdig</string>
   <!--refreshing push directory from menu-->
@@ -555,8 +542,6 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="media_overview__save_all">Spara alla</string>
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">Raderar...</string>
-  <string name="trimmer__deleting_old_messages">Raderar gamla meddelanden...</string>
   <string name="trimmer__old_messages_successfully_deleted">Gamla meddelanden har raderats</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transportikon</string>

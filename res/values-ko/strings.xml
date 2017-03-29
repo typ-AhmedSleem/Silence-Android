@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">사일런스</string>
+  <string name="app_name">Silence</string>
   <string name="yes">예</string>
   <string name="no">아니오</string>
   <string name="delete">삭제</string>
-  <string name="please_wait">잠시 기다려주세요...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">아직 암호가 설정되지 않았습니다!</string>
@@ -124,15 +123,8 @@
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="other">%1$d 첨부 파일 저장 중</item>
   </plurals>
-  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="other">%1$d 첨부 파일을 저장소에 저장 중</item>
-  </plurals>
-  <string name="ConversationFragment_collecting_attahments">첨부 파일 수집 중...</string>
-  <string name="ConversationFragment_pending">대기중...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">삭제중...</string>
-  <string name="ConversationFragment_deleting_messages">메세지 삭제 중...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -142,7 +134,6 @@
     <item quantity="other">이것은 선택한 모든 %1$d 대화를 영구적으로 삭제합니다.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">삭제중</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">선택한 대화 삭제하는 중...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="other">%d 대화가 기록 보관되었습니다.</item>
   </plurals>
@@ -150,7 +141,6 @@
   <plurals name="ConversationListFragment_moved_conversations_to_inbox">
     <item quantity="other">%d 대화를 수신함으로 이동했습니다</item>
   </plurals>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">기록 보관된 대화 (%d)</string>
   <!--CustomDefaultPreference-->
@@ -160,6 +150,7 @@
   <!--DateUtils-->
   <string name="DateUtils_now">지금</string>
   <string name="DateUtils_minutes_ago">%d 분</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">공유하기</string>
   <!--IntroScreenActivity-->
@@ -177,13 +168,11 @@
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">주의하세요, 이것은 사일런스 메세지의 내용을 평문 텍스트로 저장소로 내보냅니다.</string>
   <string name="ExportFragment_cancel">취소</string>
   <string name="ExportFragment_exporting">내보내는 중</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">평문 텍스트를 저장소로 내보내는 중...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">오류 발생, 저장소에 기록할 수 없습니다.</string>
   <string name="ExportFragment_error_while_writing_to_storage">저장소에 기록 중 오류가 발생했습니다.</string>
   <string name="ExportFragment_export_successful">내보내기 성공</string>
   <string name="ExportFragment_export_encrypted_backup">암호화된 백업 파일을 내보낼까요?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">암호화된 키, 설정, 메세지를 저장소로 내보냅니다.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">암호화된 키, 설정, 메세지 내보내는 중...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">새 그룹</string>
   <string name="GroupCreateActivity_actionbar_update_title">그룹 업데이트</string>
@@ -206,11 +195,9 @@
   <string name="ImportFragment_import_plaintext_backup">평문 텍스트 백업 파일을 가져올까요?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">평문 텍스트 백업 파일로부터 메세지를 가져옵니다. 만약 이전에 이 백업 파일로부터 가져온 적이 있다면, 지금 다시 가져오면 메세지가 중복될 수 있습니다.</string>
   <string name="ImportFragment_importing">가져오는 중</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">평문 텍스트 백업 파일을 가져오는 중...</string>
   <string name="ImportFragment_no_plaintext_backup_found">평문 텍스트 백업 파일을 찾을 수 없습니다!</string>
   <string name="ImportFragment_error_importing_backup">백업 파일을 가져오는 도중 오류가 발생했습니다!</string>
   <string name="ImportFragment_import_complete">가져오기 완료!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">암호화된 백업 파일 복원하는 중...</string>
   <string name="ImportFragment_no_encrypted_backup_found">암호화된 백업 파일을 찾을 수 없습니다!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">검색된 키를 찾을 수 없습니다!</string>
@@ -284,18 +271,13 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">이미 이 수신자에게 세션 시작 요청을 보냈습니다. 정말로 또 다른 요청을 보낼까요? 이전의 요청은 무효가 됩니다.</string>
   <string name="KeyExchangeInitiator_send">보내기</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">복호화중입니다, 잠시 기다려주세요...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">메세지 복호화 오류</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">MMS 서버에 접속중입니다...</string>
-  <string name="MmsDatabase_downloading_mms">MMS를 다운로드 중...</string>
   <string name="MmsDatabase_mms_download_failed">MMS 다운로드 실패!</string>
-  <string name="MmsDatabase_downloading">다운로드 중...</string>
   <string name="MmsDatabase_mms_pending_download">다운로드를 계속하려면 눌러서 MMS를 설정하세요.</string>
   <string name="MmsDatabase_error_decrypting_message">메세지 복호화 오류</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS 복호화중입니다, 잠시 기다려주세요...</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">알림 음소거</string>
   <!--ApplicationMigrationService-->
@@ -381,7 +363,6 @@
   <string name="log_submit_activity__log_fetch_failed">기기에서 디버그 기록을 얻을 수 없습니다. 하지만 대신 ADB를 사용해 디버그 기록을 얻을 수 있습니다.</string>
   <string name="log_submit_activity__thanks">도와주셔서 고맙습니다!</string>
   <string name="log_submit_activity__submitting">제출하는 중</string>
-  <string name="log_submit_activity__posting_logs">디버그 기록 올리는 중</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">기존의 텍스트 메세지를 사일런스의 암호화된 데이터베이스로 가져오시겠습니까?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">기본 시스템 데이터베이스는 교체되거나 변경되지 않습니다.</string>
@@ -390,7 +371,6 @@
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">시간이 걸릴 수 있습니다. 기다려 주세요. 가져오기가 끝나면 알려드립니다.</string>
   <string name="database_migration_activity__importing">가져오는 중</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">데이터베이스 업데이트 중...</string>
   <string name="export_fragment__export_plaintext_backup">평문 텍스트 백업 내보내기</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">\'SMS Backup &amp; Restore\'와 호환되는 평문 텍스트 백업을 저장소로 내보내기</string>
   <string name="import_fragment__import_system_sms_database">시스템 SMS 데이터베이스 가져오기</string>
@@ -590,7 +570,6 @@
   <string name="contact_selection_list__menu_select_all">모두 선택</string>
   <string name="contact_selection_list__menu_unselect_all">모두 선택 해제</string>
   <string name="contact_selection_list__header">모든 연락처</string>
-  <string name="contact_selection_list__unknown_contact">새 메세지...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">완료됨</string>
   <!--refreshing push directory from menu-->
@@ -664,7 +643,6 @@
   <string name="text_secure_normal__mark_all_as_read">모두 읽음으로 표시</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">기본 SMS 앱으로 지정할까요?</string>
-  <string name="reminder_header_sms_default_text">터치하여 사일런스를 기본 SMS 앱으로 지정</string>
   <string name="reminder_header_sms_default_button">설정</string>
   <string name="reminder_header_sms_import_title">시스템 SMS를 가져올까요?</string>
   <string name="reminder_header_sms_import_text">기기의 SMS 메세지를 사일런스의 암호화된 데이터베이스로 복사하기 위해 터치</string>
@@ -684,8 +662,6 @@
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">이미지 미리보기</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">삭제 중...</string>
-  <string name="trimmer__deleting_old_messages">오래된 메세지 삭제 중...</string>
   <string name="trimmer__old_messages_successfully_deleted">오래된 메세지가 성공적으로 삭제되었습니다</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transport 아이콘</string>

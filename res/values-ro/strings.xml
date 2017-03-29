@@ -4,7 +4,6 @@
   <string name="yes">Da</string>
   <string name="no">Nu</string>
   <string name="delete">Șterge</string>
-  <string name="please_wait">Te rog așteaptă...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Mesaj nou</string>
   <!--ApplicationPreferencesActivity-->
@@ -109,11 +108,8 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Salvez pe spațiul de stocare?</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nu se poate scrie pe spațiul de stocare!</string>
-  <string name="ConversationFragment_pending">În curs...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Se șterge...</string>
-  <string name="ConversationFragment_deleting_messages">Se șterg mesajele...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -122,7 +118,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
     <item quantity="other">Șterg conversațiile selectate?</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Se șterge</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Se șterg conversațiile selectate...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Conversație arhivată</item>
     <item quantity="few">%d conversații arhivate</item>
@@ -132,8 +127,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationListFragment_send_drafts">Trimite ciornele</string>
   <string name="ConversationListFragment_send">Trimite</string>
   <string name="ConversationListFragment_sending">Se trimite</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Se trimit ciornele selectate...</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversații arhivate (%d)</string>
   <!--CustomDefaultPreference-->
@@ -141,6 +134,7 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <!--DateUtils-->
   <string name="DateUtils_now">Acum</string>
   <string name="DateUtils_minutes_ago">%d min</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partajează cu</string>
   <!--IntroScreenActivity-->
@@ -174,7 +168,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ImportFragment_import_plaintext_backup">Importă backup necriptat?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Această acțiune va importa mesajele din backup-ul necriptat. Dacă ați mai importat acest backup atunci importarea curentă va crea mesaje duplicate. </string>
   <string name="ImportFragment_importing">Se importă</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importă backup text...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nu a fost găsit nici un backup text!</string>
   <string name="ImportFragment_error_importing_backup">Eroare la importul backup-ului!</string>
   <string name="ImportFragment_import_complete">Import complet!</string>
@@ -250,18 +243,13 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Ai trimis deja o cerere pentru inițializarea sesiunii către acest destinatar, ești sigur că dorești să trimiți încă una? Această acțiune va invalida cererea deja trimisă.</string>
   <string name="KeyExchangeInitiator_send">Trimite</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Se decripteaza, te rog asteapta...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Eroare la decriptarea mesajului.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Se conecteaza la serverul MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Se descarca MMS...</string>
   <string name="MmsDatabase_mms_download_failed">Descărcare MMS eşuată!</string>
-  <string name="MmsDatabase_downloading">Se descarca...</string>
   <string name="MmsDatabase_mms_pending_download">Atingeți și configurați setările MMS pentru a continua descărcarea.</string>
   <string name="MmsDatabase_error_decrypting_message">Eroare la decriptarea mesajului.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Se decripteaza MMS, te rog asteapta...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Import în curs</string>
@@ -339,14 +327,12 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Vă mulțumim pentru ajutor!</string>
   <string name="log_submit_activity__submitting">Se trimite</string>
-  <string name="log_submit_activity__posting_logs">Se trimit log-urile către gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Baza de date a sistemului nu va fi modificată în nici un fel.</string>
   <string name="database_migration_activity__skip">Treci peste</string>
   <string name="database_migration_activity__import">Importă</string>
   <string name="database_migration_activity__importing">SE IMPORTĂ</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Se actualizează baza de date...</string>
   <string name="export_fragment__export_plaintext_backup">Exportă backup necriptat</string>
   <string name="import_fragment__import_system_sms_database">Import baza de date cu SMS-uri?</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Importă baza de date din aplicația de mesagerie implicită</string>
@@ -531,7 +517,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="contact_selection_list__menu_select_all">Selectează tot</string>
   <string name="contact_selection_list__menu_unselect_all">Deselectează tot</string>
   <string name="contact_selection_list__header">TOATE CONTACTELE</string>
-  <string name="contact_selection_list__unknown_contact">Mesajul nou către...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Terminat</string>
   <!--refreshing push directory from menu-->
@@ -598,7 +583,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="text_secure_normal__mark_all_as_read">Marchează tot ca citit</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Seteaz ca aplicație implicită SMS?</string>
-  <string name="reminder_header_sms_default_text">Apasă pentru a seta Silence ca şi aplicaţie SMS implicită.</string>
   <string name="reminder_header_sms_default_button">SETEAZĂ</string>
   <string name="reminder_header_sms_import_title">Import baza de date cu SMS-uri?</string>
   <string name="reminder_header_sms_import_button">IMPORTĂ</string>
@@ -619,8 +603,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Previzualizare imagine</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">Se șterge...</string>
-  <string name="trimmer__deleting_old_messages">Se șterg mesajele vechi...</string>
   <string name="trimmer__old_messages_successfully_deleted">Mesajele vechi au fost șterse cu succes</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icoană transport</string>

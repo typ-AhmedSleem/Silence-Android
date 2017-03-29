@@ -4,7 +4,6 @@
   <string name="yes">Hongu</string>
   <string name="no">Kwete</string>
   <string name="delete">Dzima</string>
-  <string name="please_wait">Mirai kwekanguva...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Tsamba itsva</string>
   <!--ApplicationPreferencesActivity-->
@@ -135,16 +134,8 @@ kuzviverenga. </string>
     <item quantity="one">kuchengetedza batanidzo</item>
     <item quantity="other">Kuchengetedza batanidzo %1$d</item>
   </plurals>
-  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Kuchengetedza batanidzo mupfimbi...</item>
-    <item quantity="other">Kuchengetedza batanidzo %1$d mupfimbi...</item>
-  </plurals>
-  <string name="ConversationFragment_collecting_attahments">Kuunganidza batanidzo...</string>
-  <string name="ConversationFragment_pending">Wakamirira....</string>
   <string name="ConversationFragment_mms">Tsamba ine midhiya</string>
   <string name="ConversationFragment_sms">Tsamba pfupi</string>
-  <string name="ConversationFragment_deleting">kudzimura...</string>
-  <string name="ConversationFragment_deleting_messages">Tirikudzima tsamba....</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -156,7 +147,6 @@ kuzviverenga. </string>
     <item quantity="other">Izvi zvichadzima hutaurwa hwose %1$d hwasarudzwa zvamuchose.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Kudzima</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Kudzima hutaurwa hwakasarudzwa...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Hutaurwa hwaiswa mudura</item>
     <item quantity="other">Hutaurwa hwaiswa mudura %d</item>
@@ -166,7 +156,6 @@ kuzviverenga. </string>
     <item quantity="one">Hutaurwa hwasudurutswa kuiswa kubokisi retsamba mbozha</item>
     <item quantity="other">Hutaurwa %d hwasudurutswa kuiswa kubokisi retsamba mbozha</item>
   </plurals>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Hutaurwa hwakaiswa mudura (%d)</string>
   <!--CustomDefaultPreference-->
@@ -176,6 +165,7 @@ kuzviverenga. </string>
   <!--DateUtils-->
   <string name="DateUtils_now">Ikozvino</string>
   <string name="DateUtils_minutes_ago">maminiti %d</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Gova na</string>
   <!--IntroScreenActivity-->
@@ -192,7 +182,6 @@ kuzviverenga. </string>
   <string name="ExportFragment_export_plaintext_to_storage">Exupota bomhoremavara kuenda kupfimbi?</string>
   <string name="ExportFragment_cancel">Kanzura</string>
   <string name="ExportFragment_exporting">Kuexupota</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Kuexupota bomhoremavara kuenda kupfimbi...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Kanganiso, takundikana kunyorera kupfimbi.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Kanganiso pakati pekunyorera kupfimbi.</string>
   <string name="ExportFragment_export_successful">Kuexuporta kwabudirira.</string>
@@ -218,7 +207,6 @@ kuzviverenga. </string>
 tsamba kubva mubhekiapu rebomhoremavara. Kana wanga wambo imupota bhekiapu iyi,
 kuimupota zvakare kunozokonzeresa kudzokorodzwa kwetsamba.</string>
   <string name="ImportFragment_importing">Ku imupota</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Tiri ku imupota bhekiapu re bomhoremavara...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Hapana bhekiapu re bomhoremavara rawanikwa!</string>
   <string name="ImportFragment_error_importing_backup">Pane chakanganisa kuimupota bhekiapu!</string>
   <string name="ImportFragment_import_complete">Kuimupota kwazadziswa!</string>
@@ -285,18 +273,13 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Watumidzira chikumbiro chekutanga chikamu kumugamuchiri uyu, unechokwadi chekuti unoda kutumidzira imwe here? Kuita izvi zvichashayisa basa chikumbiro chekutanga.</string>
   <string name="KeyExchangeInitiator_send">Kutumidzira</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Kubvisa pakakwedekerwa, rukumbiro kuti mumbomira…</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Paita kanganiso pakubvisa tsivatsaona patsamba iyi.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Tiri kuedza kuhakira ku\"server\" yetsamba dzemidhiya...</string>
-  <string name="MmsDatabase_downloading_mms">Kututunura tsamba ine midhiya..</string>
   <string name="MmsDatabase_mms_download_failed">Kututunura tsamba ine midhiya kwaramba!</string>
-  <string name="MmsDatabase_downloading">Kututunura....</string>
   <string name="MmsDatabase_mms_pending_download">Bata uye gadzirisa gadziro retsamba dzemidhiya kuti uenderere mberi nekututunura.</string>
   <string name="MmsDatabase_error_decrypting_message">Paita kanganiso pakubvisa pakakwedekwerwa petsamba.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Kubvisa kukwedekerwa patsamba yemidhiya, rukumbiro imbomira....</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Misa zviziviso</string>
   <!--ApplicationMigrationService-->
@@ -369,14 +352,12 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Waita basa nerubatsiro rwako!</string>
   <string name="log_submit_activity__submitting">Kutera</string>
-  <string name="log_submit_activity__posting_logs">Kutumira bhuku kuruzororo....</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Gumbapamwe yepfimbi redhata harizoshandurwa kana kuchinjwa kana nenzira ipi zvayo.</string>
   <string name="database_migration_activity__skip">Darika</string>
   <string name="database_migration_activity__import">Imupota</string>
   <string name="database_migration_activity__importing">KU IMUPOTA</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Ziviso yepfimbi redhata...</string>
   <string name="export_fragment__export_plaintext_backup">Exupota bhekiapu re bomhoremavara</string>
   <string name="import_fragment__import_system_sms_database">Imupota gumbapamwe yepfimbi redhata retsamba pfupi</string>
   <string name="import_fragment__import_plaintext_backup">Imupota bhekiapu re bomhoremavara</string>
@@ -534,7 +515,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="contact_selection_list__menu_select_all">Sarudza zvese</string>
   <string name="contact_selection_list__menu_unselect_all">Usasarudza zvese</string>
   <string name="contact_selection_list__header">MAZITA OSE</string>
-  <string name="contact_selection_list__unknown_contact">Tsamba itsva kuna...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Kupedza</string>
   <!--refreshing push directory from menu-->
@@ -610,8 +590,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">kudzimura...</string>
-  <string name="trimmer__deleting_old_messages">Tirikudzima tsamba dzekare....</string>
   <string name="trimmer__old_messages_successfully_deleted">Tsamba dzekare dzakwanisa kudzimwa </string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Tumidzira chimiriro chemufananidzo</string>

@@ -4,7 +4,7 @@
   <string name="yes">Sì</string>
   <string name="no">No</string>
   <string name="delete">Elimina</string>
-  <string name="please_wait">Attendere...</string>
+  <string name="please_wait">Attendere prego...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nuovo messaggio</string>
   <!--ApplicationPreferencesActivity-->
@@ -144,15 +144,15 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="other">Salvataggio %1$d allegati</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Salvataggio allegato in memoria...</item>
-    <item quantity="other">Salvataggio %1$d allegati in memoria...</item>
+    <item quantity="one">Salvataggio dell\'allegato nell\'archiviazione…</item>
+    <item quantity="other">Salvataggio di %1$d allegati nell\'archiviazione…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Recupero allegati...</string>
-  <string name="ConversationFragment_pending">In sospeso...</string>
+  <string name="ConversationFragment_collecting_attahments">Raccolta degli allegati...</string>
+  <string name="ConversationFragment_pending">In attesa...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Cancellazione...</string>
-  <string name="ConversationFragment_deleting_messages">Cancellazione messaggi...</string>
+  <string name="ConversationFragment_deleting">Eliminazione...</string>
+  <string name="ConversationFragment_deleting_messages">Eliminazione messaggi...</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Cerca</string>
   <!--ConversationListFragment-->
@@ -165,7 +165,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
     <item quantity="other">Sei sicuro di voler eliminare definitivamente tutte le %1$d conversazioni selezionate?</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Eliminando</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Eliminazione delle conversazioni selezionate...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Eliminazione conversazioni selezionate...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Conversazione archiviata</item>
     <item quantity="other">%d conversazioni archiviate</item>
@@ -179,9 +179,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Invierà le bozze delle conversazioni selezionate.</string>
   <string name="ConversationListFragment_send">Invia</string>
   <string name="ConversationListFragment_sending">Invio</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Invio delle bozze selezionate...</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Messaggio per la contrattazione della chiave</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Invio bozze selezionate...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Conversazioni archiviate (%d)</string>
   <!--CustomDefaultPreference-->
@@ -193,6 +191,10 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="DateUtils_minutes_ago">%d minuti</string>
   <string name="DateUtils_today">Oggi</string>
   <string name="DateUtils_yesterday">Ieri</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Nuova scheda SIM rilevata</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">È stata generata una nuova chiave.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">È stata generata una nuova chiave per quella scheda SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Condividi con</string>
   <!--IntroScreenActivity-->
@@ -210,13 +212,13 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Attenzione, stai per esportare in chiaro il contenuto dei messaggi Silence nella memoria.</string>
   <string name="ExportFragment_cancel">Annulla</string>
   <string name="ExportFragment_exporting">In esportazione</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Esportazione </string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Esportazione testo nell\'archiviazione...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Errore, impossibile scrivere sulla memoria</string>
   <string name="ExportFragment_error_while_writing_to_storage">Errore durante la scrittura in memoria</string>
   <string name="ExportFragment_export_successful">Esportazione effettuata con successo.</string>
   <string name="ExportFragment_export_encrypted_backup">Esportare il backup crittato?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Questo esporterà le tue chiavi, le impostazioni ed i messaggi nella memoria</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Esportazione chiavi, impostazioni e messaggi...</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Esportazione chiavi cifrate, impostazioni e messaggi...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nuovo gruppo</string>
   <string name="GroupCreateActivity_actionbar_update_title">Aggiorna gruppo</string>
@@ -241,11 +243,11 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
 messaggi da una copia. Se hai già importato questa copia,
 una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="ImportFragment_importing">Importazione</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importo la copia in chiaro...</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Importazione backup testi...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Nessuna copia in chiaro trovato!</string>
   <string name="ImportFragment_error_importing_backup">Errore durante l\'importazione della copia!</string>
   <string name="ImportFragment_import_complete">Importazione terminata!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Ripristino copia cifrata in corso...</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Ripristino backup cifrato...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nessuna copia cifrata trovata!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nessuna chiave scansionata trovata!</string>
@@ -262,8 +264,10 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="NotificationMmsMessageRecord_multimedia_message">Messaggio multimediale</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Hai ricevuto un messaggio cifrato usando una vecchia versione di Silence che non è più supportata. Ti preghiamo di chiedere al mittente di aggiornare l\'app alla versione più recente e rimandare il messaggio.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Il messaggio di scambio che hai ricevuto proviene da una versione di Silence troppo vecchia per comunicare con la tua. Devi inviarlo manualmente per iniziare una sessione sicura. Tocca per inviare un messaggio di scambio chiavi.</string>
   <string name="MessageRecord_left_group">Hai lasciato il gruppo.</string>
   <string name="MessageRecord_updated_group">Gruppo aggiornato.</string>
+  <string name="MessageRecord_key_exchange_message">Messaggio di scambio chiavi</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Le password non corrispondono!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Vecchia password errata!</string>
@@ -327,7 +331,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="KeyExchangeInitiator_send">Inviata</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Messaggio con cifratura errata</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Decifratura in corso...</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Decodifica, attendere prego...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Messaggio cifrato per una sessione non esistente</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Richiesta di terminare una sessione non esistente</string>
   <!--EncryptingSmsDatabase-->
@@ -340,7 +344,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MmsDatabase_mms_pending_download">Tocca e configura le impstazioni MMS per continuare a scaricare.</string>
   <string name="MmsDatabase_error_decrypting_message">Errore nel decifrare il messaggio.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Decifratura MMS in corso, attendere...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">Decodifica MMS, attendere prego...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Messaggio MMS con cifratura errata</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Messaggio MMS cifrato per una sessione non esistente</string>
   <!--MuteDialog-->
@@ -436,7 +440,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="log_submit_activity__log_fetch_failed">Impossibile leggere il log sul tuo dispositivo. Puoi comunque usare ADB per avere un log per il debug</string>
   <string name="log_submit_activity__thanks">Grazie dell\'aiuto!</string>
   <string name="log_submit_activity__submitting">Invio in corso</string>
-  <string name="log_submit_activity__posting_logs">Salvando i log su gist...</string>
+  <string name="log_submit_activity__posting_logs">Invio dei log a gist...</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Vuoi importare i tuoi SMS esistenti nel database cifrato di Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Il database di default non verrà modificat o alterato in nessun modo.</string>
@@ -445,7 +449,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Potrebbe volerci un po\'. Attendi per favore, sarai avvisato quando l\'importazione sarà completata.</string>
   <string name="database_migration_activity__importing">COPIA</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Aggiornando il database...</string>
+  <string name="database_upgrade_activity__updating_database">Aggiornamento database...</string>
   <string name="export_fragment__export_plaintext_backup">Esportare copia in chiaro</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Esporta un file di backup in chiaro in memoria. Compatibile con \'SMS Backup &amp; Restore\'</string>
   <string name="import_fragment__import_system_sms_database">Importa gli SMS dal database criptato</string>
@@ -630,7 +634,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__about">A proposito di Silence</string>
   <string name="preferences__about_version">Versione %s</string>
   <string name="preferences__about_build_id">ID compilazione: %s</string>
-  <string name="preferences__privacy_policy">Politica di privacy</string>
+  <string name="preferences__privacy_policy">Politica sulla privacy</string>
   <string name="preferences_app_protection__blocked_contacts">Contatti bloccati</string>
   <string name="preferences_notifications__display_in_notifications">Mostrare nelle notifiche</string>
   <string name="preferences__show_sent_time">Mostrare la data dell\'invio</string>
@@ -724,7 +728,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="text_secure_normal__menu_archived_conversations">Conversazioni archiviate</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Adotta come applicazione predefinita per SMS.</string>
-  <string name="reminder_header_sms_default_text">Tocca per rendere Silence l\'applicazione predefinita per gli SMS.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence deve essere la tua app predefinita di SMS/MMS per ricevere messaggi.</string>
   <string name="reminder_header_sms_default_button">SET</string>
   <string name="reminder_header_sms_import_title">Vuoi importare gli SMS precedenti?</string>
   <string name="reminder_header_sms_import_text">Tocca per copiare gli SMS del tuo telefono nel database cifrato di Silence.</string>
@@ -750,8 +754,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Anteprima immagine</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">Cancellazione...</string>
-  <string name="trimmer__deleting_old_messages">Cancellazione vecchi messaggi...</string>
+  <string name="trimmer__deleting">Eliminazione...</string>
+  <string name="trimmer__deleting_old_messages">Eliminazione vecchi messaggi...</string>
   <string name="trimmer__old_messages_successfully_deleted">Vecchi messaggi cancellati con successo</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icona trasporto</string>

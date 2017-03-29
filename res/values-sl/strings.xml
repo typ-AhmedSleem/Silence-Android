@@ -4,7 +4,7 @@
   <string name="yes">Da</string>
   <string name="no">Ne</string>
   <string name="delete">Izbriši</string>
-  <string name="please_wait">Počakajte...</string>
+  <string name="please_wait">Prosimo počakajte...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Novo sporočilo</string>
   <!--ApplicationPreferencesActivity-->
@@ -166,12 +166,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
     <item quantity="other">Shranjujem %1$d priponk</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Shranjujem priponko v shrambo...</item>
-    <item quantity="two">Shranjujem %1$d priponki v shrambo...</item>
-    <item quantity="few">Shranjujem %1$d priponke v shrambo...</item>
-    <item quantity="other">Shranjujem %1$d priponk v shrambo...</item>
+    <item quantity="one">Shranjujem priponko v shrambo…</item>
+    <item quantity="two">Shranjujem %1$d priponki v shrambo…</item>
+    <item quantity="few">Shranjujem %1$d priponke v shrambo…</item>
+    <item quantity="other">Shranjujem %1$d priponk v shrambo…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Zbiram priponke...</string>
+  <string name="ConversationFragment_collecting_attahments">Pridobivam priponke...</string>
   <string name="ConversationFragment_pending">V teku...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -193,7 +193,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
     <item quantity="other">To bo nepovratno izbrisalo vseh %1$d izbranih pogovorov.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Brisanje</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Brišem izbrane pogovore...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Brišem izbrana sporočila...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Pogovor arhiviran</item>
     <item quantity="two">%d pogovora arhivirana</item>
@@ -212,8 +212,6 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationListFragment_send">Pošlji</string>
   <string name="ConversationListFragment_sending">Pošiljam</string>
   <string name="ConversationListFragment_sending_selected_drafts">Pošiljam izbrane osnutke...</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Sporočilo s ključem za zamenjavo</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Arhivirani pogovori (%d)</string>
   <!--CustomDefaultPreference-->
@@ -225,6 +223,10 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DateUtils_minutes_ago">%d min</string>
   <string name="DateUtils_today">Danes</string>
   <string name="DateUtils_yesterday">Včeraj</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Zaznana je bila nova kartica SIM.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Generiran je bil nov ključ.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Za kartico SIM je bil generiran nov ključ.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
   <!--IntroScreenActivity-->
@@ -242,13 +244,13 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Pozor, s tem boste izvozili vsa sporočila iz aplikacije Silence v sistemsko shrambo v nešifrirani obliki.</string>
   <string name="ExportFragment_cancel">Prekliči</string>
   <string name="ExportFragment_exporting">Izvažam</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Izvažam nešifrirano vsebino...</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Izvažam v shrambo v šifrirani obliki...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Napaka - ne morem shranjevati v sistemsko shrambo!</string>
   <string name="ExportFragment_error_while_writing_to_storage">Napaka pri zapisovanju.</string>
   <string name="ExportFragment_export_successful">Izvoz je bil uspešno opravljen.</string>
   <string name="ExportFragment_export_encrypted_backup">Izvozim šifrirano varnostno kopijo?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">S tem boste izvozil svoje šifrirne ključe, nastavitve in sporočila v shrambo.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Izvažam šifrirne ključe, nastavitve in sporočila...</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Izvažam ključe, nastavitve in sporočila v šifrirani obliki...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova skupina</string>
   <string name="GroupCreateActivity_actionbar_update_title">Posodobi skupino</string>
@@ -275,7 +277,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ImportFragment_no_plaintext_backup_found">Ne najdem nobene nešifrirane varnostne kopije!</string>
   <string name="ImportFragment_error_importing_backup">Napaka pri uvozu iz varnostne kopije!</string>
   <string name="ImportFragment_import_complete">Uvoz dokončan!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Uvažam vsebino iz šifrirane datoteke...</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Obnavljam iz šifrirane varnostne kopije...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ne najdem nobene šifrirane varnostne kopije!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Noben skeniran ključ ni bil najden!</string>
@@ -292,8 +294,10 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="NotificationMmsMessageRecord_multimedia_message">Večpredstavno sporočilo</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Prejeto je bilo sporočilo, šifrirano z zastarelo verziijo aplikacije Silence, ki ni več podprta. Obrnite se na pošiljatelja, naj posodobi aplikacijo Silence na zadnjo različico in ponovno pošlje sporočilo.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Sporočilo za izmenjavo ključev je bilo poslano iz različice aplikacije Silence. ki je preveč zastarela za komunikacijo z vašo različico. Za začetek varne seje ga morate še enkrat ročno poslati sami. Tapnite za pošiljanje sporočila o izmenjavi.</string>
   <string name="MessageRecord_left_group">Zapustili ste skupino.</string>
   <string name="MessageRecord_updated_group">Skupina je bila posodobljena.</string>
+  <string name="MessageRecord_key_exchange_message">Sporočilo o izmenjavi ključev</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Gesli se ne ujemata</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Napačno staro geslo!</string>
@@ -356,20 +360,20 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="KeyExchangeInitiator_send">Pošlji</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Okvarjeno šifrirano sporočilo</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Dešifriram sporočilo, počakajte...</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Dešifriram, prosim počakajte...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Sporočilo je bilo šifrirano za neobstoječo sejo</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Zahteva za končanje neobstoječe seje</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Povezovanje s strežnikom za MMS...</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Povezujem se s strežnikom za MMS...</string>
   <string name="MmsDatabase_downloading_mms">Prejemam MMS...</string>
   <string name="MmsDatabase_mms_download_failed">Nalaganje sporočila MMS ni uspelo!</string>
   <string name="MmsDatabase_downloading">Prejemam...</string>
   <string name="MmsDatabase_mms_pending_download">Za dolpoteg klikni in spremeni nastavitve MMS.</string>
   <string name="MmsDatabase_error_decrypting_message">Napaka pri dešifriranju sporočila.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Dešifriranje sporočila MMS, počakajte...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">Dešifriram MMS, prosim počakajte...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Okvarjeno šifrirano sporočilo MMS</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Sporočilo MMS je bilo šifrirano za neobstoječo sejo</string>
   <!--MuteDialog-->
@@ -755,7 +759,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="text_secure_normal__menu_archived_conversations">Arhivirani pogovori</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Uporabljam kot privzeto aplikacijo SMS?</string>
-  <string name="reminder_header_sms_default_text">Z dotikom nastavite Silence za privzeto aplikacijo SMS.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Za prejemanje sporočil mora biti Silence nastavljena kot privzeta SMS/MMS aplikacija.</string>
   <string name="reminder_header_sms_default_button">NASTAVI</string>
   <string name="reminder_header_sms_import_title">Uvozim iz sistemske zbirke sporočil SMS?</string>
   <string name="reminder_header_sms_import_text">Tapnite za prenos sporočil SMS iz vašega telefona v šifrirano zbirko.</string>

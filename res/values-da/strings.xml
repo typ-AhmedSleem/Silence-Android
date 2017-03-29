@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
   <string name="delete">Slet</string>
-  <string name="please_wait">Vent venligst...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Du har endnu ikke indtastet et kodeord</string>
@@ -63,16 +63,14 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ConversationFragment_message_details">Besked detaljer</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Sletter...</string>
-  <string name="ConversationFragment_deleting_messages">Sletter beskeder...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Sletter</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Ingen</string>
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Del med</string>
   <!--IntroScreenActivity-->
@@ -99,7 +97,6 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <string name="ImportFragment_import_plaintext_backup">Importer klartekst backup?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dette vil importere beskeder fra en klartekst backup. Hvis du tidligere har importeret den samme backup, vil det resultere i dupletter.</string>
   <string name="ImportFragment_importing">Importerer</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Importerer klartekst backup...</string>
   <string name="ImportFragment_no_plaintext_backup_found">Der blev ikke fundet en klartekst backup!</string>
   <string name="ImportFragment_error_importing_backup">Fejl opstod ved import af backup!</string>
   <string name="ImportFragment_import_complete">Import fuldført!</string>
@@ -155,18 +152,13 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Du har allerede sendt en forespørgsel om at initialisere en session til denne modtager. Er du sikker på at du vil sende en til? Dette vil gøre en tidligere forespørgsel ugyldig.</string>
   <string name="KeyExchangeInitiator_send">Send</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Dekrypterer, vent venligst...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fejl ved dekryptering af besked.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Forbinder til MMS tjenesten...</string>
-  <string name="MmsDatabase_downloading_mms">Henter MMS...</string>
   <string name="MmsDatabase_mms_download_failed">Fejl ved afhentning af MMS!</string>
-  <string name="MmsDatabase_downloading">Henter...</string>
   <string name="MmsDatabase_mms_pending_download">Tryk og konfigurere MMS-indstillinger for at fortsætte download.</string>
   <string name="MmsDatabase_error_decrypting_message">Fejl ved dekryptering af besked.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Dekrypterer MMS, vent venligst...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Henter...</string>
@@ -232,7 +224,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <string name="database_migration_activity__import">Importer</string>
   <string name="database_migration_activity__importing">IMPORTERER</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Opdaterer databasen...</string>
   <string name="export_fragment__export_plaintext_backup">Eksporter klartekst backup</string>
   <string name="import_fragment__import_system_sms_database">Importer enhedens SMS database</string>
   <string name="import_fragment__import_plaintext_backup">Importer klartekst backup</string>
@@ -324,7 +315,6 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">Marker alle</string>
   <string name="contact_selection_list__menu_unselect_all">Fjern markering</string>
-  <string name="contact_selection_list__unknown_contact">Ny besked til...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Afslut</string>
   <!--refreshing push directory from menu-->

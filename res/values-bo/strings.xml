@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">ཡིན།</string>
   <string name="no">མིན། </string>
   <string name="delete">གསུབ། </string>
@@ -32,10 +33,10 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">གསུབ་་བཞིན་ཡོད།</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
@@ -78,14 +79,9 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ཁྱེད་ཀྱིས་གཏོང་ཡུལ་དེར་རེ་སྐུལ་ཞིག་བཏང་ཚར་འདུག ཁྱེད་ཀྱིས་ཡང་བསྐྱར་གཅིག་གཏོང་འདོད་དམ།  འདི་ཡིས་ཁྱེད་ཀྱི་རེ་སྐུལ་དང་པོ་དེ་རྩིས་མེད་གཏོང་གི་རེད། </string>
   <string name="KeyExchangeInitiator_send">ཐོངས། </string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">གསང་སྡོམ་བཤིག་བཞིན་ཡོད། ཅུང་སྒུག་དང་།</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་ MMS ཞབས་ཞུའི་ཡོ་ཆས་ལ་མཐུད་བཞིན་ཡོད།</string>
-  <string name="MmsDatabase_downloading_mms">བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་ MMS ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</string>
-  <string name="MmsDatabase_downloading">ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">བརྒྱུད་ལམ་སྣ་མང་ཅན་གྱི་འཕྲིན་ཐུང་MMS གསང་གྲོལ་བྱེད་བཞིན་ཡོད། ཅུང་སྒུག་རོགས། </string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">ནང་འདྲེན་བྱེད་བཞིན་ཡོད། </string>

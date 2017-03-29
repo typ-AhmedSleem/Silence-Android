@@ -13,7 +13,7 @@
     <item quantity="one">1 melding per samtale</item>
     <item quantity="other">%d meldinger per samtale</item>
   </plurals>
-  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Slette alle gamle meldinger nå?</string>
+  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Slett alle gamle meldinger nå?</string>
   <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
     <item quantity="one">Bekreft at du ønsker å kvitte deg med alle samtaler unntatt sist mottatte melding.</item>
     <item quantity="other">Bekreft at du ønsker å kvitte deg med alle samtaler unntatt de %d nyeste meldingene.</item>
@@ -35,7 +35,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Innkommende meldinger %s</string>
   <string name="ApplicationPreferencesActivity_privacy_summary">Passordsekvens %1$s, Skjermsikkerhet %2$s</string>
-  <string name="ApplicationPreferencesActivity_appearance_summary">%1$s tema, %2$s språk</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">Drakt: %1$s Språk: %2$s</string>
   <!--AppProtectionPreferenceFragment-->
   <plurals name="AppProtectionPreferenceFragment_minutes">
     <item quantity="one">1 minutt</item>
@@ -54,7 +54,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="AttachmentTypeSelectorAdapter_audio">Lyd</string>
   <string name="AttachmentTypeSelectorAdapter_contact">Kontaktinformasjon</string>
   <!--AudioSlidePlayer-->
-  <string name="AudioSlidePlayer_error_playing_audio">Kan ikke spille lydklippet</string>
+  <string name="AudioSlidePlayer_error_playing_audio">Kan ikke spille av lydklippet.</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">Blokkerte kontakter</string>
   <!--ConversationItem-->
@@ -82,7 +82,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationActivity_add_attachment">Legg til vedlegg</string>
   <string name="ConversationActivity_select_contact_info">Velg kontaktinformasjon</string>
   <string name="ConversationActivity_compose_message">Skriv melding</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Beklager, vedlegget kunne ikke legges til.</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Kunne ikke legge til vedlegget.</string>
   <string name="ConversationActivity_the_gif_you_selected_was_too_big">GIF-en du valgte var for stor!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Beklager, den valgte videofilen overstiger avgrensningen for meldingsstørrelse (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Beklager, den valgte lydfilen overstiger avgrensningen for meldingsstørrelse (%1$skB).</string>
@@ -109,7 +109,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationActivity_mms_not_supported_title">MMS er ikke støttet</string>
   <string name="ConversationActivity_mms_not_supported_message">Denne meldingen kan ikke sendes siden din tilkoblingstilbyder ikke støtter MMS.</string>
   <string name="ConversationActivity_specify_recipient">Velg en kontakt</string>
-  <string name="ConversationActivity_attachment_exceeds_size_limits">Vedlegger er for stort for å sendes.</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Vedlegget er for stort for å sendes.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d ulest melding</item>
@@ -122,8 +122,8 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
     <item quantity="other">Slett valgte meldinger?</item>
   </plurals>
   <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-    <item quantity="one">Dette vil slette valgt melding for godt.</item>
-    <item quantity="other">Dette vil slette alle %1$d valgte meldinger for godt.</item>
+    <item quantity="one">Dette vil slette den valgte meldingen for godt.</item>
+    <item quantity="other">Dette vil slette alle de %1$d valgte meldingene for godt.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Lagre til lagringsmedium?</string>
   <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
@@ -144,15 +144,15 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
     <item quantity="other">Lagrer %1$d vedlegg</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Lagrer vedlegg til lagringsmedium …</item>
-    <item quantity="other">Lagrer %1$d vedlegg til lagringsmedium …</item>
+    <item quantity="one">Lagrer vedlegg til lagringsmedium…</item>
+    <item quantity="other">Lagrer %1$d vedlegg til lagringsmedium…</item>
   </plurals>
   <string name="ConversationFragment_collecting_attahments">Innhenter vedlegg …</string>
-  <string name="ConversationFragment_pending">Venter...</string>
+  <string name="ConversationFragment_pending">Venter…</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Sletter …</string>
-  <string name="ConversationFragment_deleting_messages">Sletter meldinger …</string>
+  <string name="ConversationFragment_deleting">Sletter…</string>
+  <string name="ConversationFragment_deleting_messages">Sletter meldinger…</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Søk</string>
   <!--ConversationListFragment-->
@@ -165,7 +165,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
     <item quantity="other">Dette vil slette alle %1$d valgte samtaler for godt.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Sletter</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Sletter valgte samtaler …</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Sletter valgte samtaler…</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Samtale arkivert</item>
     <item quantity="other">%d samtaler arkivert</item>
@@ -180,8 +180,6 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationListFragment_send">Send</string>
   <string name="ConversationListFragment_sending">Sender</string>
   <string name="ConversationListFragment_sending_selected_drafts">Sender valgte kladder…</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Nøkkelutvekslings-melding</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Arkiverte samtaler (%d)</string>
   <!--CustomDefaultPreference-->
@@ -193,6 +191,10 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="DateUtils_minutes_ago">%d minutt</string>
   <string name="DateUtils_today">I dag</string>
   <string name="DateUtils_yesterday">I går</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Nytt SIM-kort oppdaget</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">En ny nøkkel har blitt opprettet.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">En ny nøkkel har blitt opprettet for det SIM-kortet.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Del med</string>
   <!--IntroScreenActivity-->
@@ -213,7 +215,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ExportFragment_exporting_plaintext_to_storage">Eksporterer klartekst til lagringsmedium…</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Feil, kunne ikke skrive til lagringsmedium.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Feil under skriving til lagringsmedium.</string>
-  <string name="ExportFragment_export_successful">Eksportering vellykket.</string>
+  <string name="ExportFragment_export_successful">Eksportert</string>
   <string name="ExportFragment_export_encrypted_backup">Eksporter kryptert sikkerhetskopi?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Dette vil eksportere dine krypterte nøkler, innstillinger og meldinger til lagringsmedium.</string>
   <string name="ExportFragment_exporting_keys_settings_and_messages">Eksporter krypterte nøkler, innstillinger og meldinger…</string>
@@ -233,13 +235,13 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ImportFragment_import_system_sms_database">Importer systemets SMS-database?</string>
   <string name="ImportFragment_this_will_import_messages_from_the_system">Dette vil importere
 meldinger fra systemets forvalgte SMS-database til Silence. Hvis du har importert
-systemets SMS-database før, vil annengangs import føre med seg duplisering av meldinger.
+systemets SMS-database før, vil annengangs import medføre duplisering av meldinger.
 </string>
   <string name="ImportFragment_import">Importer</string>
   <string name="ImportFragment_cancel">Avbryt</string>
   <string name="ImportFragment_restore_encrypted_backup">Gjenopprett kryptert sikkerhetskopi?</string>
-  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Gjenoppretting av en kryptert sikkerhetskopi vil erstatte dine eksisterende nøkler, innstillinger og meldinger. Du vil miste enhver info som ikke er i din nåværende Silence-installasjon men ikke i sikkerhetskopien. Silence vil stoppe etter importen.</string>
-  <string name="ImportFragment_import_plaintext_backup">Importere klartekst-sikkerhetskopi?</string>
+  <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Gjenoppretting av en kryptert sikkerhetskopi vil erstatte dine eksisterende nøkler, innstillinger og meldinger. Du vil miste enhver info som ikke er i din nåværende Silence-installasjon men ikke i sikkerhetskopien. Silence vil stoppe etter importeringen.</string>
+  <string name="ImportFragment_import_plaintext_backup">Importer klartekst-sikkerhetskopi?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dette vil importere meldinger fra en klartekst-sikkerhetskopi. Dersom du har gjort en import tidligere, vil dette føre til dupliserte meldinger.</string>
   <string name="ImportFragment_importing">Importerer</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">Importerer klartekst-sikkerhetskopi…</string>
@@ -251,7 +253,7 @@ systemets SMS-database før, vil annengangs import føre med seg duplisering av 
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Fant ingen skannet nøkkel.</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installer Strekkodeskanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence trenger strekkodeskanner for QR-koder</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence trenger Strekkodeskanner for QR-koder</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Forsendelse feilet</string>
   <string name="MessageDetailsRecipient_new_identity">Ny identitet</string>
@@ -263,8 +265,10 @@ systemets SMS-database før, vil annengangs import føre med seg duplisering av 
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediamelding</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Mottok en kryptert melding fra en gammel versjon av Silence som ikke lenger støttes. Du kan be senderen om å oppgradere til nyeste versjon og sende meldingen på ny.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Utvekslingsmeldingen du fikk kom fra en versjon av Silence som er for utdatert til å kommunisere med din versjon. Du må sende den manuelt for å starte ei sikret økt. Trykk for å sende ei nøkkelutvekslingsmelding.</string>
   <string name="MessageRecord_left_group">Du har forlatt gruppen.</string>
   <string name="MessageRecord_updated_group">Gruppen er oppdatert.</string>
+  <string name="MessageRecord_key_exchange_message">Nøkkelutvekslingsmelding</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Passordsekvensene samsvarer ikke.</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Gammel passordsekvens er feil!</string>
@@ -319,7 +323,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="VerifyIdentityActivity_verified_exclamation">Bekreftet!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_scan_contacts_qr_code">Skann kontaktens QR-kode</string>
-  <string name="ViewIdentityActivity_display_your_qr_code">VIs din QR-kode</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Vis din QR-kode</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVARSEL. Den skannede nøkkelen SAMSVARER IKKE!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Den skannede nøkkelen stemmer overens!</string>
   <string name="ViewIdentityActivity_your_identity_fingerprint">Ditt ID-fingeravtrykk</string>
@@ -359,13 +363,13 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="KeyCachingService_lock">Lås med passordsekvens</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nye meldinger i %2$d samtaler</string>
-  <string name="MessageNotifier_most_recent_from_s">Nyeste fra. %1$s</string>
+  <string name="MessageNotifier_most_recent_from_s">Nyeste fra: %1$s</string>
   <string name="MessageNotifier_encrypted_message">Kryptert melding</string>
   <string name="MessageNotifier_media_message_with_text">Multimedia-melding: %s</string>
   <string name="MessageNotifier_no_subject">(Mangler emne)</string>
   <string name="MessageNotifier_message_delivery_failed">Meldingslevering mislyktes.</string>
-  <string name="MessageNotifier_failed_to_deliver_message">Klarte ikke å levere meldinge.</string>
-  <string name="MessageNotifier_error_delivering_message">Feil ved levering av meldinge.</string>
+  <string name="MessageNotifier_failed_to_deliver_message">Klarte ikke å levere meldingen.</string>
+  <string name="MessageNotifier_error_delivering_message">Feil ved levering av melding.</string>
   <string name="MessageNotifier_mark_all_as_read">Marker alle som lest</string>
   <string name="MessageNotifier_mark_read">Merk som lest</string>
   <string name="MessageNotifier_media_message">Multimedia-melding</string>
@@ -379,7 +383,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Ny melding</string>
   <!--SubscriptionInfoCompat-->
   <string name="SubscriptionInfoCompat_slot">Kortplass %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name">%1$s (kortplass %2$s)</string>
+  <string name="SubscriptionInfoCompat_display_name"> %1$s (kortplass %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Gammel passordsekvens</string>
   <string name="change_passphrase_activity__new_passphrase">Ny passordsekvens</string>
@@ -396,7 +400,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Ingen blokkerte kontakter</string>
   <!--contact_selection_recent_activity-->
-  <string name="contact_selection_recent_activity__no_recent_calls">Ingen nye samtaler.</string>
+  <string name="contact_selection_recent_activity__no_recent_calls">Ingen nylige samtaler.</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Samtale dempet</string>
   <!--conversation_activity-->
@@ -469,7 +473,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="prompt_passphrase_activity__unlock">Lås opp</string>
   <!--prompt_mms_activity-->
   <string name="prompt_mms_activity__silence_requires_mms_settings_to_deliver_media_and_group_messages">Silence krever MMS-innstillinger for å levere media og gruppemeldinger gjennom din telefonoperatør. Din enhet deler ikke av seg denne informasjonen, noe som vekselvis er et problem for låste enheter og andre begrensede oppsett.</string>
-  <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Send multimedia- og gruppe-meldinger, trykk \'OK\' og fullfør forespurte innstillinger. MMS-innstillingene for din tilbyder kan i hovedsak finnes ved å søke etter \'din tilbyder APN\'. Du trenger bare å gjøre dette én gang.</string>
+  <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Send multimedia- og gruppe-meldinger, trykk \'OK\' og fullfør forespurte innstillinger. MMS-innstillingene for din tilbyder kan i hovedsak finnes ved å søke etter \'din tilbyder+APN\'. Du trenger bare å gjøre dette én gang.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">BLOKKERT</string>
   <!--recipient_preferences-->
@@ -545,7 +549,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="preferences__keyboard_settings">Tastaturvalg</string>
   <string name="preferences__disable_emoji_drawer">Skru av emoji-skuff</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Skru på dette valget hvis ditt tastatur støtter emoji-er.</string>
-  <string name="preferences__display_settings">Innstillinger for visning</string>
+  <string name="preferences__display_settings">Visningsinnstillinger</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Velg din kontakt fra kontaktlisten.</string>
   <string name="preferences__change_passphrase">Bytt passordsekvens</string>
   <string name="preferences__change_your_passphrase">Endre din passordsekvens</string>
@@ -618,10 +622,10 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="preferences__conversation_length_limit">Avgrensning for samtalelengde</string>
   <string name="preferences__trim_all_conversations_now">Trim alle samtaler nå</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Gjennomgå alle samtaler og håndhev grensen for samtalelengde </string>
-  <string name="preferences__light_theme">Lyst</string>
-  <string name="preferences__dark_theme">Mørkt</string>
+  <string name="preferences__light_theme">Lys</string>
+  <string name="preferences__dark_theme">Mørk</string>
   <string name="preferences__appearance">Utseende</string>
-  <string name="preferences__theme">Tema</string>
+  <string name="preferences__theme">Drakt</string>
   <string name="preferences__default">Forvalg</string>
   <string name="preferences__language">Språk</string>
   <string name="preferences__make_default_sms_app">Sett som forvalgt SMS-program</string>
@@ -632,7 +636,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="preferences__about">Om Silence</string>
   <string name="preferences__about_version">Versjon %s</string>
   <string name="preferences__about_build_id">Kompilerings-ID: %s</string>
-  <string name="preferences__privacy_policy">Personvernpolicy</string>
+  <string name="preferences__privacy_policy">Personvernspraksis</string>
   <string name="preferences_app_protection__blocked_contacts">Blokkerte kontakter</string>
   <string name="preferences_notifications__display_in_notifications">Vis i varslinger</string>
   <string name="preferences__show_sent_time">Vis tid sendt</string>
@@ -726,10 +730,10 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="text_secure_normal__menu_archived_conversations">Arkiverte samtaler</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Bruk som forvalgt SMS-program?</string>
-  <string name="reminder_header_sms_default_text">Trykk for å gjøre Signal til ditt forvalgte SMS-program.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence må være ditt forvalgte SMS/MMS-program for å motta meldinger.</string>
   <string name="reminder_header_sms_default_button">SETT</string>
   <string name="reminder_header_sms_import_title">Importer enhetens SMS-database?</string>
-  <string name="reminder_header_sms_import_text">Trykk for å kopiere dine tidligere SMS-meldinger inn i Signals krypterte database.</string>
+  <string name="reminder_header_sms_import_text">Trykk for å kopiere dine tidligere SMS-meldinger inn i Silence sin krypterte database.</string>
   <string name="reminder_header_sms_import_button">IMPORTER</string>
   <string name="reminder_header_rate_title">Vurder dette programmet</string>
   <string name="reminder_header_rate_text">Hvis du liker dette programmet, ta et øyeblikks pause og hjelp oss ved å vurdere det.</string>

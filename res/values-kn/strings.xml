@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">ಹೌದು</string>
   <string name="no">ಇಲ್ಲ</string>
   <string name="delete">ಅಳಿಸಿಹಾಕು</string>
-  <string name="please_wait">ದಯವಿಟ್ಟು  ಕಾಯಿರಿ...</string>
   <!--AbstractNotificationBuilder-->
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">ನೀವು ಇನ್ನೂ ಗುಪ್ತಪದವನ್ನು ಹೊಂದಿಸಿಲ್ಲ!</string>
@@ -70,17 +70,15 @@
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">ಸಂಗ್ರಹಕ್ಕೆ ಬರೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ!</string>
   <string name="ConversationFragment_mms">ಎಮ್ ಎಮ್ ಎಸ್</string>
   <string name="ConversationFragment_sms">ಎಸ್ ಎಮ್ ಎಸ್</string>
-  <string name="ConversationFragment_deleting">ಅಳಿಸಲಾಗುತ್ತಿದೆ...</string>
-  <string name="ConversationFragment_deleting_messages">ಸಂದೇಶವನ್ನು ಅಳಿಸಲಾಗುತ್ತಿದೆ...</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">ಅಳಿಸಲಾಗುತ್ತಿದೆ</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">ಯಾವುದೂ ಇಲ್ಲ</string>
   <!--DateUtils-->
   <string name="DateUtils_now">ಈಗ</string>
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">ಜೊತೆ ಹಂಚಿಕೊಳ್ಳಿ </string>
   <!--IntroScreenActivity-->
@@ -107,7 +105,6 @@
   <string name="ImportFragment_import_plaintext_backup">ಸರಳಪಠ್ಯದ  ಬ್ಯಾಕಪ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ...</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">ಇದು ಒಂದು ಸರಳಪಠ್ಯ ಬ್ಯಾಕ್ಅಪ್ನಿಂದ ಸಂದೇಶಗಳನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ. ನೀವು ಈ ಹಿಂದೆ, ಈ ಬ್ಯಾಕ್ಅಪ್ನಿಂದ ಸಂದೇಶಗಳನ್ನು ಆಮದು ಮಾಡಿಕೊಂಡಿದ್ದರೆ, ಮತ್ತೆ ಆಮದು, ನಕಲು ಸಂದೇಶಗಳಿಗೆ ಕಾರಣವಾಗುತ್ತದೆ.</string>
   <string name="ImportFragment_importing">ಆಮದು ಮಾಡಲಾಗುತ್ತಿದೆ</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">ಸರಳಪಠ್ಯದ  ಬ್ಯಾಕಪ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ...</string>
   <string name="ImportFragment_no_plaintext_backup_found">ಸರಳಪಠ್ಯದ ಬ್ಯಾಕ್ಅಪ್ ಕಂಡುಬಂದಿಲ್ಲ!</string>
   <string name="ImportFragment_error_importing_backup">ಬ್ಯಾಕ್ಅಪ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುವಾಗ ದೋಷವಾಗಿದೆ!</string>
   <string name="ImportFragment_import_complete">ಆಮದು ಪೂರ್ಣಗೊಂಡಿದೆ!</string>
@@ -162,18 +159,13 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">ನೀವು ಈಗಾಗಲೇ ಈ ಸ್ವೀಕತದಾರರಿಗೆ  ಒಂದು ಸೆಷನ್ ಇನಿಷಿಯೇಷನ್ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಿದ್ದಿರಿ, ನೀವು ಮತ್ತೊಂದು ಕಳುಹಿಸಲು ಬಯಸುವುವಿರ? ಇದು ಅ ಮೊದಲ ವಿನಂತಿಯನ್ನು ಅಮಾನ್ಯಗೊಳಿಸುತ್ತದೆ.</string>
   <string name="KeyExchangeInitiator_send">ಕಳುಹಿಸು</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">ಅಸಂಕೇತಿಕರಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">ಸಂದೇಶ ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡುವಾಗ ದೋಷ.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">ಎಮ್. ಎಮ್. ಎಸ್ ಸರ್ವರ್ ಕಂಪ್ಯೂಟರ್ನ್ನು ಸಂಪರ್ಕಿಸಲಾಗುತ್ತಿದೆ ...</string>
-  <string name="MmsDatabase_downloading_mms">ಎಂ. ಎಂ. ಎಸ್ ಡೌನ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
   <string name="MmsDatabase_mms_download_failed">ಎಂ. ಎಂ. ಎಸ್ ಡೌನ್ಲೋಡ್ ವಿಫಲವಾಗಿದೆ!</string>
-  <string name="MmsDatabase_downloading">ಡೌನ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
   <string name="MmsDatabase_mms_pending_download">ಡೌನ್ಲೋಡ್ ಮುಂದುವರಿಸಲು ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಎಂಎಂಎಸ್ ಸೆಟ್ಟಿಂಗ್ಗಳನ್ನು ಗೊತ್ತುಪಡಿಸಿ.</string>
   <string name="MmsDatabase_error_decrypting_message">ಸಂದೇಶ ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡುವಾಗ ದೋಷ.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">ಎಂ. ಎಂ. ಎಸ್ ಅಸಂಕೇತಿಕರಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ ...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">ಆಮದು ಪ್ರಗತಿಯಲ್ಲಿದೆ</string>
@@ -233,14 +225,12 @@
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</string>
   <string name="log_submit_activity__submitting">ಸಲ್ಲಿಸಲಾಗುತ್ತಿದೆ</string>
-  <string name="log_submit_activity__posting_logs">ಲಾಗ್ಗಳನ್ನು ಜಿಸ್ಟ್ಗೆ ಪೋಸ್ಟ್ ಮಾಡಲಾಗುತ್ತಿದೆ... </string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">ಪ್ರಸ್ತುತ ವ್ಯವಸ್ಥೆಯ ದತ್ತಾಂಶವನ್ನು ಯಾವುದೇ ರೀತಿಯಲ್ಲಿ ಮಾರ್ಪಡಿಸಿವುದಿಲ್ಲ.</string>
   <string name="database_migration_activity__skip">ಬಿಟ್ಟು ಮುಂದುವರಿ</string>
   <string name="database_migration_activity__import">ಆಯಾತ</string>
   <string name="database_migration_activity__importing">ಆಮದು ಮಾಡಲಾಗುತ್ತಿದೆ</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">ದತ್ತಾಂಶ ಆಧುನಿಕಗೊಳಿಸಲಾಗುತ್ತಿದೆ ...</string>
   <string name="export_fragment__export_plaintext_backup">ಸರಳಪಠ್ಯದ ಬ್ಯಾಕಪ್ ಅನ್ನು ರಫ್ತು ಮಾಡಿ</string>
   <string name="import_fragment__import_system_sms_database">ವ್ಯವಸ್ಥೆಯ ಎಸ್.ಎಮ್.ಎಸ್ ದತ್ತಾಂಶವನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ</string>
   <string name="import_fragment__import_plaintext_backup">ಸರಳಪಠ್ಯದ  ಬ್ಯಾಕಪ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ</string>
@@ -346,7 +336,6 @@
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="contact_selection_list__menu_unselect_all">ಎಲ್ಲದರ ಆಯ್ಕೆರದ್ದುಮಾಡು</string>
-  <string name="contact_selection_list__unknown_contact">..ಗೆ ಹೊಸ ಸಂದೇಶಗಳು</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">ಮುಗಿದಿದೆ</string>
   <!--refreshing push directory from menu-->
@@ -414,8 +403,6 @@
   <!--media_overview-->
   <!--media_preview_activity-->
   <!--Trimmer-->
-  <string name="trimmer__deleting">ಅಳಿಸಲಾಗುತ್ತಿದೆ...</string>
-  <string name="trimmer__deleting_old_messages">ಹಳೆಯ ಸಂದೇಶವನ್ನು ಅಳಿಸಲಾಗುತ್ತಿದೆ...</string>
   <string name="trimmer__old_messages_successfully_deleted">ಹಳೆಯ ಸಂದೇಶಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ</string>
   <!--transport_selection_list_item-->
   <!--EOF-->

@@ -4,7 +4,7 @@
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
   <string name="delete">Verwijder</string>
-  <string name="please_wait">Een moment alsjeblieft...</string>
+  <string name="please_wait">Een moment alsjeblieft…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nieuw bericht</string>
   <!--ApplicationPreferencesActivity-->
@@ -82,7 +82,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_add_attachment">Voeg bijlage toe</string>
   <string name="ConversationActivity_select_contact_info">Selecteer contactinformatie</string>
   <string name="ConversationActivity_compose_message">Bericht opstellen</string>
-  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sorry, er is een fout opgetreden bij het instellen van het attachment.</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sorry, er is een fout opgetreden bij het instellen van de bijlage.</string>
   <string name="ConversationActivity_the_gif_you_selected_was_too_big">De geselecteerde GIF afbeelding is te groot!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Excuses, het videobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Excuses, het audiobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
@@ -109,7 +109,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_mms_not_supported_title">MMS niet ondersteund.</string>
   <string name="ConversationActivity_mms_not_supported_message">Dit bericht kan niet worden verstuurd omdat uw provider geen MMS ondersteunt.</string>
   <string name="ConversationActivity_specify_recipient">Kies een contact a.u.b.</string>
-  <string name="ConversationActivity_attachment_exceeds_size_limits">Bijvoegsel groter dan limiet.</string>
+  <string name="ConversationActivity_attachment_exceeds_size_limits">Bijlage groter dan limiet.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d ongelezen bericht</item>
@@ -132,7 +132,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   </plurals>
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="one">Fout tijdens het opslaan van de bijlage!</item>
-    <item quantity="other">Fout tijdens het opslaan van de bijlages!</item>
+    <item quantity="other">Fout tijdens het opslaan van de bijlagen!</item>
   </plurals>
   <plurals name="ConversationFragment_files_saved_successfully">
     <item quantity="one">Bestand succesvol opgeslagen.</item>
@@ -140,19 +140,19 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Opslag niet beschrijfbaar!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
-    <item quantity="one">Bijlage opslaan</item>
-    <item quantity="other">%1$d bijlages opslaan</item>
+    <item quantity="one">Bijlage wordt opgeslagen</item>
+    <item quantity="other">%1$d bijlagen worden opgeslagen</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Bijlage opslaan in opslag...</item>
-    <item quantity="other">%1$d bijlages opslaan in opslag...</item>
+    <item quantity="one">Bijlage wordt opgeslagen naar opslag…</item>
+    <item quantity="other">%1$d bijlagen worden opgeslagen naar opslag…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Bijlages aan het verzamelen...</string>
-  <string name="ConversationFragment_pending">Wachtend...</string>
+  <string name="ConversationFragment_collecting_attahments">Bijlagen worden verzameld…</string>
+  <string name="ConversationFragment_pending">Wachten...</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Verwijderen...</string>
-  <string name="ConversationFragment_deleting_messages">Berichten verwijderen...</string>
+  <string name="ConversationFragment_deleting_messages">Berichten aan het verwijderen...</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Zoeken</string>
   <!--ConversationListFragment-->
@@ -179,9 +179,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Dit verzend de concepten van de geselecteerde gesprekken.</string>
   <string name="ConversationListFragment_send">Zenden</string>
   <string name="ConversationListFragment_sending">Aan het zenden</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Geselecteerde concepten verzenden</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Sleuteluitwisselingsbericht</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Geselecteerde concepten aan het verzenden...</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Gearchiveerde gesprekken (%d)</string>
   <!--CustomDefaultPreference-->
@@ -193,6 +191,10 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="DateUtils_minutes_ago">%d min</string>
   <string name="DateUtils_today">Vandaag</string>
   <string name="DateUtils_yesterday">Gisteren</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Nieuwe simkaart gedetecteerd</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Er is een nieuwe sleutel gegenereerd.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Er is een nieuwe sleutel gegenereerd voor deze SIM kaart.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Delen met</string>
   <!--IntroScreenActivity-->
@@ -210,13 +212,13 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Waarschuwing, hiermee exportreert u de berichten van Silence in een onversleuteld formaat.</string>
   <string name="ExportFragment_cancel">Annuleren</string>
   <string name="ExportFragment_exporting">Aan het exporteren</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Onversleutelde berichten aan het exporteren naar het opslaggeheugen...</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Onversleutelde berichten worden geëxporteren naar opslag...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Fout, kan niet schrijven naar het opslaggeheugen.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fout tijdens het schrijven naar het opslaggeheugen.</string>
   <string name="ExportFragment_export_successful">Export succesvol.</string>
   <string name="ExportFragment_export_encrypted_backup">Exporteer versleutelde backup?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Dit exporteert je keys, instellingen en berichten versleuteld naar het opslaggeheugen.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Keys, instellingen en berichten versleuteld naar het opslaggeheugen aan het exporteren...</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Versleutelde sleutels, instellingen en berichten worden geëxporteerd...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nieuwe groep</string>
   <string name="GroupCreateActivity_actionbar_update_title">Groep bijwerken</string>
@@ -261,8 +263,10 @@ importeert de SMS-berichten uit de systeemdatabase in Silence. Als de SMS databa
   <string name="NotificationMmsMessageRecord_multimedia_message">Multimediabericht</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Dit bericht gebruikt verouderde versleuteling die niet meer ondersteund wordt. Vraag de afzender om Silence te updaten naar de meest recente versie en het bericht opnieuw te verzenden.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Het ontvangen sleuteluitwisselingsbericht is door een oude versie van Silence verstuurd die niet meer automatisch met deze versie kan communiceren. U moet handmatig een veilige sessie starten. Tik om een sleuteluitwisselingsbericht te versturen.</string>
   <string name="MessageRecord_left_group">Je hebt de groep verlaten.</string>
   <string name="MessageRecord_updated_group">Groep bijgewerkt.</string>
+  <string name="MessageRecord_key_exchange_message">Sleutel uitwisselings bericht</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Wachtwoorden komen niet overeen</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Incorrect oud wachtwoord!</string>
@@ -324,20 +328,20 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="KeyExchangeInitiator_send">Verstuur</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Verkeerd versleuteld bericht</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Ontsleutelen, een moment...</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Aan het ontsleutelen, een moment…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Bericht versleuteld voor niet bestaande sessie</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Verzoek om een niet bestaande sessie te beëindigen</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fout bij ontsleutelen  van bericht.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Verbinden met MMS-server...</string>
-  <string name="MmsDatabase_downloading_mms">Downloaden van MMS...</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Aan het verbinden met de MMS-server…</string>
+  <string name="MmsDatabase_downloading_mms">MMS aan het downloaden…</string>
   <string name="MmsDatabase_mms_download_failed">MMS download mislukt!</string>
-  <string name="MmsDatabase_downloading">Downloaden...</string>
+  <string name="MmsDatabase_downloading">Aan het downloaden…</string>
   <string name="MmsDatabase_mms_pending_download">Tik en configureer MMS-instellingen om de download te hervatten.</string>
   <string name="MmsDatabase_error_decrypting_message">Fout bij ontsleutelen  van bericht.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS ontsleutelen, een moment...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wordt ontsleuteld, een moment…</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Verkeerd versleuteld MMS-bericht</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS bericht versleuteld voor niet bestaande sessie</string>
   <!--MuteDialog-->
@@ -373,8 +377,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nieuw bericht</string>
   <!--SubscriptionInfoCompat-->
-  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
+  <string name="SubscriptionInfoCompat_slot">Simslot %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (simslot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Oude wachtwoord</string>
   <string name="change_passphrase_activity__new_passphrase">Nieuwe wachtwoord</string>
@@ -405,7 +409,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="conversation_activity__window_description">Gesprek met %1$s</string>
   <string name="conversation_activity__compose_description">Bericht samenstelling</string>
   <string name="conversation_activity__emoji_toggle_description">Wissel emoji toetsenbord</string>
-  <string name="conversation_activity__attachment_thumbnail">Aanhangsel miniatuur</string>
+  <string name="conversation_activity__attachment_thumbnail">Bijlage miniatuur</string>
   <!--conversation_item-->
   <string name="conversation_item__mms_downloading_description">Media bericht wordt gedownload</string>
   <string name="conversation_item__mms_image_description">Mediabericht</string>
@@ -442,7 +446,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Dit kan even duren. Heb geduld, we zullen melden wanneer het importeren voltooid is.</string>
   <string name="database_migration_activity__importing">AAN HET IMPORTEREN</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Database aan het updaten...</string>
+  <string name="database_upgrade_activity__updating_database">Database aan het updaten…</string>
   <string name="export_fragment__export_plaintext_backup">Onversleutelde back-up exporteren</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exporteer een niet-versleutelde back-up compatibel met \'SMS Back-up En Herstellen\' naar het opslaggeheugen.</string>
   <string name="import_fragment__import_system_sms_database">SMS-berichten uit de systeemdatabase importeren?</string>
@@ -645,7 +649,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="contact_selection_list__menu_select_all">Alles selecteren</string>
   <string name="contact_selection_list__menu_unselect_all">Alles deselecteren</string>
   <string name="contact_selection_list__header">ALLE CONTACTEN</string>
-  <string name="contact_selection_list__unknown_contact">Nieuw bericht naar...</string>
+  <string name="contact_selection_list__unknown_contact">Nieuw bericht aan…</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Voltooid</string>
   <!--refreshing push directory from menu-->
@@ -721,7 +725,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="text_secure_normal__menu_archived_conversations">Gearchiveerde gesprekken</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Als standaard SMS-app gebruiken?</string>
-  <string name="reminder_header_sms_default_text">Raak aan om van SMSSecure de standaard SMS applicatie te maken.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence moet je standaard SMS-/MMS-app zijn om berichten te kunnen ontvangen.</string>
   <string name="reminder_header_sms_default_button">STEL IN</string>
   <string name="reminder_header_sms_import_title">SMS importeren uit systeem?</string>
   <string name="reminder_header_sms_import_text">Tik om de huidige SMS database te importeren naar de versleutelde database van Silence.</string>
@@ -748,7 +752,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="media_preview_activity__image_content_description">Media Voorvertoning</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Verwijderen...</string>
-  <string name="trimmer__deleting_old_messages">Oude berichten verwijderen...</string>
+  <string name="trimmer__deleting_old_messages">Oude berichten aan het verwijderen...</string>
   <string name="trimmer__old_messages_successfully_deleted">Oude berichten succesvol verwijderd</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transport icoon</string>

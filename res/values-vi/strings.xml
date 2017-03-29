@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">Có</string>
   <string name="no">Không</string>
   <string name="delete">Xóa</string>
@@ -55,11 +56,11 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">Đang xóa</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_none">Không</string>
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Chia sẻ với</string>
   <!--IntroScreenActivity-->
@@ -85,7 +86,6 @@ Cảnh báo, điều này tắt mã hóa lưu trữ cho tất cả tin nhắn v�
   <string name="ImportFragment_import_plaintext_backup">Xuất dữ liệu sao lưu dạng thuần văn bản?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Thao tác này sẽ nhập các tin nhắn từ bản sao lưu thường (không mã hóa). Nếu bạn đã nhập sao lưu này trước đó, nhập lần nữa sẽ dẫn đến việc có tin nhắn trùng lập.</string>
   <string name="ImportFragment_importing">Đang nhập</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Nhập sao lưu thường-không mã hóa</string>
   <string name="ImportFragment_no_plaintext_backup_found">Không tìm thấy sao lưu thường-không mã hóa</string>
   <string name="ImportFragment_error_importing_backup">Có lỗi khi nhập sao lưu!</string>
   <string name="ImportFragment_import_complete">Nhập hoàn tất!</string>
@@ -136,15 +136,10 @@ Nhận thông tin trao đổi chìa khóa về phiên bản giao thức không h
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Bạn đã gửi yêu cầu khởi tạo phiên trao đổi với người nhận này, bạn có chắc là muốn gửi lần nữa? Điều này sẽ làm yêu cầu đầu tiên mất hiệu lực.</string>
   <string name="KeyExchangeInitiator_send">Gửi</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">Đang giải mã, xin chờ...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Đang kết nối vào máy chủ MMS...</string>
-  <string name="MmsDatabase_downloading_mms">Đang tải xuống MMS...</string>
-  <string name="MmsDatabase_downloading">Đang tải xuống...</string>
   <string name="MmsDatabase_mms_pending_download">Nhấn vào để cấu hình thiết đặt MMS và tiếp tục tải xuống.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Giải mã MMS, xin chờ...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Đang tiến hành việc nhập vào</string>
@@ -268,7 +263,6 @@ Nhận thông tin trao đổi chìa khóa về phiên bản giao thức không h
   <!--menus-->
   <!--****************************************-->
   <!--contact_selection_list-->
-  <string name="contact_selection_list__unknown_contact">Tin nhắn mới cho...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Xong</string>
   <!--refreshing push directory from menu-->

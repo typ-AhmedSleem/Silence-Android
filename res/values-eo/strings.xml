@@ -148,15 +148,15 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
     <item quantity="other">Konservado de %1$d kunsendaĵoj</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
-    <item quantity="one">Konservado de kunsendaĵo al memorejo...</item>
-    <item quantity="other">Konservado de %1$d kunsendaĵoj al memorejo...</item>
+    <item quantity="one">Konservado de kunsendaĵo al memorejo…</item>
+    <item quantity="other">Konservado de %1$d kunsendaĵoj al memorejo…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Kolektado de kunsendaĵoj...</string>
-  <string name="ConversationFragment_pending">Okupata...</string>
+  <string name="ConversationFragment_collecting_attahments">Kolektado de kunsendaĵoj…</string>
+  <string name="ConversationFragment_pending">Atendado…</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
-  <string name="ConversationFragment_deleting">Forigado...</string>
-  <string name="ConversationFragment_deleting_messages">Forigado de mesaĝoj...</string>
+  <string name="ConversationFragment_deleting">Forigado…</string>
+  <string name="ConversationFragment_deleting_messages">Forigado de mesaĝoj…</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Serĉi</string>
   <!--ConversationListFragment-->
@@ -169,7 +169,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
     <item quantity="other">Tio ĉi forigos neinversigeble ĉiujn %1$d elektitajn interparoladojn.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Forigado</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Forigado de elektitaj interparoladoj...</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Forigado de elektitaj interparoladoj…</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Interparolado arĥivita.</item>
     <item quantity="other">%d interparoladoj arĥivitaj.</item>
@@ -183,9 +183,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Tio ĉi sendos malnetojn de elektitaj interparoladoj.</string>
   <string name="ConversationListFragment_send">Sendi</string>
   <string name="ConversationListFragment_sending">Sendado</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Sendado de elektitaj malnetoj...</string>
-  <!--ConversationListItem-->
-  <string name="ConversationListItem_key_exchange_message">Ŝlosil-interŝanĝa mesaĝo</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Sendado de elektitaj malnetoj…</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Arĥivitaj interparoladoj (%d)</string>
   <!--CustomDefaultPreference-->
@@ -197,6 +195,10 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="DateUtils_minutes_ago">%d min</string>
   <string name="DateUtils_today">Hodiaŭ</string>
   <string name="DateUtils_yesterday">Hieraŭ</string>
+  <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Nova SIM-karto detektita</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Kreis novan ŝlosilon.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Kreis novan ŝlosilon por tiu ĉi SIM-karto.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Kunhavigi kun</string>
   <!--IntroScreenActivity-->
@@ -214,13 +216,13 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Atentu, tio ĉi elportos la enhavon de viaj mesaĝoj el Silence al memorejo plattekste.</string>
   <string name="ExportFragment_cancel">Rezigni</string>
   <string name="ExportFragment_exporting">Elportado</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Elportado de platteksto al memorejo...</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Elportado de platteksto al memorejo…</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Eraro, ne eblas konservi al memorejo.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Eraro dum konservado al memorejo.</string>
   <string name="ExportFragment_export_successful">Elportado sukcesis.</string>
   <string name="ExportFragment_export_encrypted_backup">Ĉu elporti ĉifritan sekurkopion?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Tio ĉi elportos viajn ĉifritajn ślosilojn, agordojn kaj mesaĝojn al memorejo.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Elportado de ĉifritaj ŝlosiloj, agordoj kaj mesaĝoj...</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Elportado de ĉifritaj ŝlosiloj, agordoj kaj mesaĝoj…</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova grupo</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ĝisdatigi grupon</string>
@@ -243,11 +245,11 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ImportFragment_import_plaintext_backup">Ĉu enporti plattekstan sekurkopion?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tio ĉi enportos mesaĝojn el platteksta sekurkopio. Se vi antaŭe enportis tiun ĉi sekurkopion, re-enportado kaŭzos mesaĝojn duplikati.</string>
   <string name="ImportFragment_importing">Enportado</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Enportado de platteksta sekurkopio...</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Enportado de platteksta sekurkopio…</string>
   <string name="ImportFragment_no_plaintext_backup_found">Platteksta sekurkopio ne trovita!</string>
   <string name="ImportFragment_error_importing_backup">Eraro dum enportado de sekurkopio!</string>
   <string name="ImportFragment_import_complete">Enportado finita!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Restarigado de ĉifrita sekurkopio...</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Restarigado de ĉifrita sekurkopio…</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ĉifrita sekurkopio ne trovita!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Skanita ŝlosilo ne trovita!</string>
@@ -264,8 +266,10 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="NotificationMmsMessageRecord_multimedia_message">Aŭdovida mesaĝo</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Ricevis mesaĝon ĉifritan per malnova versio de Silence, kiu ne estas plu subtenata. Bonvolu peti sendinton, ke li instalu la plej novan version kaj resendu mesaĝon.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">La ricevita ŝlosil-interŝanĝa mesaĝo devenas de versio de Silence, kiu estas tro malnova por komunikadi kun via versio. Vi devas sendi ĝin permane por komenci sekuran seancon. Frapetu por sendi ŝlosil-interŝanĝan mesaĝon.</string>
   <string name="MessageRecord_left_group">Vi forlasis la grupon.</string>
   <string name="MessageRecord_updated_group">La grupo estas ĝisdata.</string>
+  <string name="MessageRecord_key_exchange_message">Ŝlosil-interŝanĝa mesaĝo</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Pasfrazoj malsamas!</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Eks-pasfazo eraras!</string>
@@ -278,7 +282,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosil-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian komunikadon, aŭ ke tiu ĉi kontakto simple reinstalis na Silence kaj li nun posedas novan ident-ŝlosilon.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosil-interŝanĝo konfidindas, sed vi havas la agordon \'\'aŭtomate fini ŝlosilo-interŝanĝon\" malaktiva.</string>
   <string name="ReceiveKeyActivity_processing">Prilaborado</string>
-  <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosil-interŝanĝo...</string>
+  <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosil-interŝanĝo…</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Vi devas kontroli identigilon de tiu ĉi kontakto.</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Ĉu bloki tiun ĉi kontakton?</string>
@@ -326,20 +330,20 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="KeyExchangeInitiator_send">Sendi</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Erara ĉifrita mesaĝo</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Malĉifrado, bonvolu atendi...</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Malĉifrado, bonvolu atendi…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaĝo ĉifrita por neekzistanta seanco</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Peti pri fini neekzistanta seanco</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Eraro dum malĉifrado de mesaĝo.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Konektado al MMS-a servilo...</string>
-  <string name="MmsDatabase_downloading_mms">Elŝutado de MMS...</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Konektado al MMS-servilo…</string>
+  <string name="MmsDatabase_downloading_mms">Elŝutado de MMS…</string>
   <string name="MmsDatabase_mms_download_failed">Elŝutado de MMS malsukcesis!</string>
-  <string name="MmsDatabase_downloading">Elŝutado...</string>
+  <string name="MmsDatabase_downloading">Elŝutado…</string>
   <string name="MmsDatabase_mms_pending_download">Frapetu kaj agordu MMS-aj agordojn por elŝuti.</string>
   <string name="MmsDatabase_error_decrypting_message">Eraro dum malĉifrado de mesaĝo.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">Malĉifrado de MMS, bonvolu atendi...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">Malĉifrado de MMS, bonvolu atendi…</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Erara ĉifrita MMS-a mesaĝo</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-a mesaĝo ĉifrita por neekzistanta seanco</string>
   <!--MuteDialog-->
@@ -385,7 +389,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="contact_selection_activity__enter_name_or_number">Entajpu nomon aŭ numeron</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Neniaj kontaktoj.</string>
-  <string name="contact_selection_group_activity__finding_contacts">Ŝargado de kontaktoj...</string>
+  <string name="contact_selection_group_activity__finding_contacts">Ŝargado de kontaktoj…</string>
   <!--single_contact_selection_activity-->
   <string name="SingleContactSelectionActivity_contact_photo">Kontakta Bildo</string>
   <!--ContactSelectionListFragment-->
@@ -435,7 +439,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi ADB por atingi senerarig-protokolon.</string>
   <string name="log_submit_activity__thanks">Dankon por via helpo!</string>
   <string name="log_submit_activity__submitting">Alŝutado</string>
-  <string name="log_submit_activity__posting_logs">Sendado de viaj protokoloj al gist...</string>
+  <string name="log_submit_activity__posting_logs">Sendado de protokoloj al gist…</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Ĉu vi volas enporti viajn estantajn tekstajn mesaĝojn al ĉifrita datumbazo de Silence?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">La ĉefa sistema datumbazo ne estos ŝanĝita aŭ modifita iumaniere.</string>
@@ -444,7 +448,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Tio ĉi daŭros momente. Bonvolu pacienci, ni sciigos vin kiam la enportado estos finita.</string>
   <string name="database_migration_activity__importing">ENPORTADO</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Ĝisdatigado de datumbazo...</string>
+  <string name="database_upgrade_activity__updating_database">Ĝisdatigado de datumbazo…</string>
   <string name="export_fragment__export_plaintext_backup">Elporti plattekstan sekurkopion</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Elportas plattekstan sekurkopion kongruan kun \'SMS Backup &amp; Restore\' al memorejo</string>
   <string name="import_fragment__import_system_sms_database">Enporti sisteman SMS-an datumbazon</string>
@@ -647,7 +651,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="contact_selection_list__menu_select_all">Elekti ĉiujn</string>
   <string name="contact_selection_list__menu_unselect_all">Malelekti ĉiujn</string>
   <string name="contact_selection_list__header">ĈIUJ KONTAKTOJ</string>
-  <string name="contact_selection_list__unknown_contact">Nova mesaĝo al...</string>
+  <string name="contact_selection_list__unknown_contact">Nova mesaĝo al…</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Finita</string>
   <!--refreshing push directory from menu-->
@@ -723,7 +727,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="text_secure_normal__menu_archived_conversations">Arĥivitaj interparoladoj</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Ĉu uzi kiel ĉefan SMS-an aplikaĵon?</string>
-  <string name="reminder_header_sms_default_text">Frapetu por ke Silence iĝu via ĉefa SMS-aplikaĵo.</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence devas esti ĉefan SMS/MMS-an aplikaĵon por ricevi mesaĝojn.</string>
   <string name="reminder_header_sms_default_button">AGORDI</string>
   <string name="reminder_header_sms_import_title">Ĉu enporti sistemajn SMS-ojn?</string>
   <string name="reminder_header_sms_import_text">Frapetu por kopii viajn telefonajn SMS-ajn mesaĝojn al ĉifrita datumbazo de Silence.</string>
@@ -749,8 +753,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Antaŭrigardo de bildo</string>
   <!--Trimmer-->
-  <string name="trimmer__deleting">Forigado...</string>
-  <string name="trimmer__deleting_old_messages">Forigado de malnovaj mesaĝoj...</string>
+  <string name="trimmer__deleting">Forigado…</string>
+  <string name="trimmer__deleting_old_messages">Forigado de malnovaj mesaĝoj…</string>
   <string name="trimmer__old_messages_successfully_deleted">Malnovaj mesaĝoj forigitaj sukcese</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Emblemo de transporto</string>

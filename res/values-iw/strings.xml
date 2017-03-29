@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+  <string name="app_name">Silence</string>
   <string name="yes">כן</string>
   <string name="no">לא</string>
   <string name="delete">מחק</string>
@@ -42,10 +43,10 @@
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">מוחק</string>
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
@@ -61,7 +62,6 @@
   <string name="ImportFragment_import">יבא</string>
   <string name="ImportFragment_cancel">בטל</string>
   <string name="ImportFragment_importing">מייבא</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">יבא גיבוי לא מוצפן...</string>
   <string name="ImportFragment_no_plaintext_backup_found">לא נמצא גיבוי לא מוצפן!</string>
   <string name="ImportFragment_error_importing_backup">שגיאה בייבוא הגיבוי!</string>
   <string name="ImportFragment_import_complete">הייבוא הסתיים!</string>
@@ -102,15 +102,10 @@
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">אתה כבר שלחת בקשת אתחול חיבור לנמען הזה, אתה בטוח שאתה רוצה לשלוח עוד אחד? זה יבטל את הבקשה הראשונה.</string>
   <string name="KeyExchangeInitiator_send">שלח</string>
   <!--MessageDisplayHelper-->
-  <string name="MessageDisplayHelper_decrypting_please_wait">מפענח, אנא המתן...</string>
   <!--EncryptingSmsDatabase-->
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">מתחבר לשרת ה-MMS...</string>
-  <string name="MmsDatabase_downloading_mms">מוריד MMS...</string>
-  <string name="MmsDatabase_downloading">מוריד...</string>
   <string name="MmsDatabase_mms_pending_download">גע להגדרת תצורת ה-MMS ולהמשך הורדה.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">מפענח MMS, אנא המתן...</string>
   <!--MuteDialog-->
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">בתהליך ייבוא</string>
