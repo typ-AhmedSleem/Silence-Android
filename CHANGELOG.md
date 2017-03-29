@@ -1,6 +1,6 @@
 # Silence Changelog
 
-### [0.15.6] - 2017-03-16
+### [0.15.6] - 2017-03-29
 - Moved from Axolotl to Signal protocol
 - Fixed crash when opening a conversation
 - Added fallback to legacy MMS API on failure
