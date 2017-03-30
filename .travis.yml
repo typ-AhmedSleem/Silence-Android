@@ -12,6 +12,7 @@ android:
     - tools
     - platform-tools
     - build-tools-25.1.1
+    - build-tools-25.0.2
     - build-tools-23.0.2
     - build-tools-23.0.1
     - build-tools-22.0.1
