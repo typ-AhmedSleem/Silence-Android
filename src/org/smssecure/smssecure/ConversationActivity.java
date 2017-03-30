@@ -1300,6 +1300,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void sendMessage() {
+    TransportOption transportOption = sendButton.getSelectedTransport();
+
+    if (transportOption == null || transportOption.getType() == Type.DISABLED) return;
+
     try {
       Recipients recipients = getRecipients();
 
