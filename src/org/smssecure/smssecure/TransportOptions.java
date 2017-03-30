@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.util.CharacterCalculator;
+import org.smssecure.smssecure.util.DummyCharacterCalculator;
 import org.smssecure.smssecure.util.MmsCharacterCalculator;
 import org.smssecure.smssecure.util.SmsCharacterCalculator;
 import org.smssecure.smssecure.util.EncryptedSmsCharacterCalculator;
@@ -99,7 +100,7 @@ public class TransportOptions {
       }
     }
 
-    throw new AssertionError("No options of default type!");
+    return getDefaultTransportOption();
   }
 
   public void disableTransport(Type type) {
@@ -219,5 +220,16 @@ public class TransportOptions {
 
   public interface OnTransportChangedListener {
     public void onChange(TransportOption newTransport, boolean manuallySelected);
+  }
+
+  private TransportOption getDefaultTransportOption() {
+    return new TransportOption(Type.DISABLED,
+                               R.drawable.ic_send_insecure_white_24dp,
+                               context.getResources().getColor(R.color.grey_600),
+                               context.getString(R.string.TransportOptions_sms_disabled),
+                               context.getString(R.string.TransportOptions_no_sim_card_found),
+                               new DummyCharacterCalculator(),
+                               Optional.of((CharSequence) ""),
+                               Optional.of(-1));
   }
 }
