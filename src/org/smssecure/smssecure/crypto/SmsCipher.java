@@ -33,6 +33,8 @@ import org.whispersystems.libsignal.protocol.SignalMessage;
 import org.whispersystems.libsignal.state.SignalProtocolStore;
 
 import java.io.IOException;
+import java.lang.IllegalArgumentException;
+import java.lang.NullPointerException;
 
 public class SmsCipher {
 
@@ -60,7 +62,7 @@ public class SmsCipher {
       }
 
       return message.withMessageBody(new String(plaintext));
-    } catch (IOException e) {
+    } catch (IOException | IllegalArgumentException | NullPointerException e) {
       throw new InvalidMessageException(e);
     }
   }
