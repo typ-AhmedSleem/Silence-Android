@@ -4,6 +4,7 @@
   <string name="yes">نعم</string>
   <string name="no">لا</string>
   <string name="delete">حذف</string>
+  <string name="please_wait">الرجاء الانتظار ...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">رسالة جديدة</string>
   <!--ApplicationPreferencesActivity-->
@@ -85,9 +86,12 @@
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">تعذر الإضافة إلى الذاكرة!</string>
   <string name="ConversationFragment_mms">رسالة وسائط متعددة</string>
   <string name="ConversationFragment_sms">رسالة نصية قصيرة</string>
+  <string name="ConversationFragment_deleting">الحذف جارٍ...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">ابحث</string>
   <!--ConversationListFragment-->
   <string name="ConversationListFragment_deleting">حذف</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">جار حذف المحادثات المختارة ...</string>
   <string name="ConversationListFragment_undo">إلغي</string>
   <string name="ConversationListFragment_send">إرسل</string>
   <string name="ConversationListFragment_sending">إرسال</string>
@@ -215,6 +219,7 @@
   <string name="EncryptingSmsDatabase_error_decrypting_message">خطأ بفك شفرة الرسالة.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_mms_download_failed">تنزيل رسالة الوسائط المتعددة فشلت!</string>
+  <string name="MmsDatabase_downloading">التنزيل جارٍ ...</string>
   <string name="MmsDatabase_mms_pending_download">أنقر وقم بضبط إعدادات رسائل الوسائط المتعددة ثم تابع التنزيل</string>
   <string name="MmsDatabase_error_decrypting_message">خطأ بفك شفرة الرسالة.</string>
   <!--MmsMessageRecord-->
@@ -501,6 +506,7 @@
   <!--contact_selection_list-->
   <string name="contact_selection_list__menu_select_all">أختر الكل</string>
   <string name="contact_selection_list__menu_unselect_all">إلغاء التحديد</string>
+  <string name="contact_selection_list__unknown_contact">رسالة جديدة لـ ...</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">تم الانتهاء</string>
   <!--refreshing push directory from menu-->
@@ -585,12 +591,15 @@
   <string name="MediaPreviewActivity_draft">مسودة</string>
   <!--media_preview-->
   <string name="media_preview__save_title">أحفظ</string>
+  <string name="media_preview__forward_title">إعادة الإرسال</string>
   <string name="media_preview__overview_title">جميع الصور</string>
   <!--media_overview-->
   <string name="media_overview__save_all">احفظ الكل</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">معاينة الصورة</string>
   <!--Trimmer-->
+  <string name="trimmer__deleting">الحذف جارٍ...</string>
+  <string name="trimmer__deleting_old_messages">جارٍ حذف الرسائل القديمة</string>
   <string name="trimmer__old_messages_successfully_deleted">تم حذف الرسائل القديمة بنجاح</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">أيقونة النقل.</string>

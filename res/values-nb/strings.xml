@@ -86,7 +86,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationActivity_the_gif_you_selected_was_too_big">GIF-en du valgte var for stor!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Beklager, den valgte videofilen overstiger avgrensningen for meldingsstørrelse (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Beklager, den valgte lydfilen overstiger avgrensningen for meldingsstørrelse (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Oppgitt mottaker er ikke en gyldig SMS eller e-postadresse</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Oppgitt mottaker er ikke en gyldig SMS- eller e-postadresse.</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Meldingen du prøver å sende er tom.</string>
   <string name="ConversationActivity_group_members">Gruppemedlemmer</string>
   <string name="ConversationActivity_group_conversation">Gruppesamtale</string>
@@ -147,7 +147,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
     <item quantity="one">Lagrer vedlegg til lagringsmedium…</item>
     <item quantity="other">Lagrer %1$d vedlegg til lagringsmedium…</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Innhenter vedlegg …</string>
+  <string name="ConversationFragment_collecting_attahments">Innhenter vedlegg…</string>
   <string name="ConversationFragment_pending">Venter…</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
@@ -253,7 +253,7 @@ systemets SMS-database før, vil annengangs import medføre duplisering av meldi
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Fant ingen skannet nøkkel.</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installer Strekkodeskanner?</string>
-  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence trenger Strekkodeskanner for QR-koder</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence trenger Strekkodeskanner for QR-koder.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Forsendelse feilet</string>
   <string name="MessageDetailsRecipient_new_identity">Ny identitet</string>
@@ -275,7 +275,7 @@ systemets SMS-database før, vil annengangs import medføre duplisering av meldi
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Ingen passordsekvens oppgitt.</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Tast inn passord</string>
-  <string name="PassphrasePromptActivity_watermark_content_description">Silcene-ikonet</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Silence-ikonet</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Ugyldig passordsekvens!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Signaturen
@@ -300,7 +300,7 @@ eller at denne kontakten simpelthen re-installerte Silence og nå har en ny iden
   <string name="Slide_audio">Lyd</string>
   <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
-  <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Mottok korrupt
+  <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Mottok feilaktig
 nøkkelutvekslingsmelding!</string>
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">
 Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
@@ -341,7 +341,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <!--MmsDatabase-->
   <string name="MmsDatabase_connecting_to_mms_server">Kobler til MMS-tjener…</string>
   <string name="MmsDatabase_downloading_mms">Laster ned MMS…</string>
-  <string name="MmsDatabase_mms_download_failed">MMS-nedlasting feilet!</string>
+  <string name="MmsDatabase_mms_download_failed">MMS-nedlasting mislyktes!</string>
   <string name="MmsDatabase_downloading">Laster ned…</string>
   <string name="MmsDatabase_mms_pending_download">Trykk og sett opp MMS-innstillingene for å fortsette nedlastingen.</string>
   <string name="MmsDatabase_error_decrypting_message">Feil ved dekryptering av melding.</string>
@@ -719,7 +719,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="conversation_group_options__broadcast">Kringkast</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Sammenlign</string>
-  <string name="key_scanning__menu_display_your_qr_code">VIs din QR-kode</string>
+  <string name="key_scanning__menu_display_your_qr_code">Vis din QR-kode</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Skann kontaktens QR-kode</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Ny melding</string>
@@ -739,7 +739,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="reminder_header_rate_text">Hvis du liker dette programmet, ta et øyeblikks pause og hjelp oss ved å vurdere det.</string>
   <string name="reminder_header_rate_button">VURDER NÅ!</string>
   <string name="reminder_header_delivery_reports_title">Skru på leveringsrapporter?</string>
-  <string name="reminder_header_delivery_reports_text">Forsendelsesrapporter lar deg vite når og om en mottaker har mottatt dine meldinger. Noen mobiloperatører tar seg ekstra betalt for dette.</string>
+  <string name="reminder_header_delivery_reports_text">Leveringsrapporter lar deg vite når og om en mottaker har mottatt dine meldinger. Noen mobiloperatører tar seg ekstra betalt for dette.</string>
   <string name="reminder_header_delivery_reports_button">SKRU PÅ</string>
   <string name="reminder_header_close_button">LUKK</string>
   <!--MediaPreviewActivity-->

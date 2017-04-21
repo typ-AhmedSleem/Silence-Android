@@ -283,9 +283,9 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="RecipientPreferenceActivity_block_this_contact_question">Kontakt blockieren?</string>
   <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Nachrichten dieses Kontakts werden nicht mehr angezeigt werden.</string>
   <string name="RecipientPreferenceActivity_block">Blockieren</string>
-  <string name="RecipientPreferenceActivity_unblock_this_contact_question">Nicht mehr blockieren?</string>
-  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Diesen Kontakt nicht mehr blockieren.</string>
-  <string name="RecipientPreferenceActivity_unblock">Nicht mehr blockieren</string>
+  <string name="RecipientPreferenceActivity_unblock_this_contact_question">Diesen Kontakt freigeben?</string>
+  <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Hebt die Blockierung dieses Kontakts auf.</string>
+  <string name="RecipientPreferenceActivity_unblock">Freigeben</string>
   <string name="RecipientPreferenceActivity_enabled">Aktiviert</string>
   <string name="RecipientPreferenceActivity_disabled">Deaktiviert</string>
   <!--Slide-->
@@ -327,6 +327,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten …</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende sichere Sitzung verschlüsselt</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Beendigungsanfrage für eine nicht existierende sichere Sitzung</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsDatabase-->
@@ -721,6 +722,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="text_secure_normal__menu_archived_conversations">Archivierte Unterhaltungen</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Als Standard-SMS-App verwenden?</string>
+  <string name="reminder_header_sms_default_text_mandatory">Silence muss als Standard-App für SMS/MMS festgelegt sein, um Nachrichten empfangen zu können.</string>
   <string name="reminder_header_sms_default_button">FESTLEGEN</string>
   <string name="reminder_header_sms_import_title">SMS des Telefons importieren?</string>
   <string name="reminder_header_sms_import_text">Antippen, um auf deinem Mobilgerät gespeicherte SMS-Nachrichten in die verschlüsselte Datenbank von Silence zu importieren.</string>
