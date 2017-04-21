@@ -1,5 +1,9 @@
 # Silence Changelog
 
+### [0.15.7] - 2017-04-21
+- Fixed crash on malformed encrypted messages
+- Updated translations
+
 ### [0.15.6] - 2017-03-29
 - Moved from Axolotl to Signal protocol
 - Fixed crash when opening a conversation
@@ -212,6 +216,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.7]: https://github.com/SilenceIM/Silence/compare/v0.15.6...v0.15.7
  [0.15.6]: https://github.com/SilenceIM/Silence/compare/v0.15.5...v0.15.6
  [0.15.5]: https://github.com/SilenceIM/Silence/compare/v0.15.4...v0.15.5
  [0.15.4]: https://github.com/SilenceIM/Silence/compare/v0.15.3...v0.15.4
