@@ -19,7 +19,7 @@ Also include the value of any relevant preferences you have set in the app.
 ### Device info
 - Device:
 - Android version:
-- Silence version and build ID:
+- Silence version:
 
 ### Link to debug log
 <!--
@@ -27,4 +27,3 @@ Immediately after the bug has happened capture a debug log via Settings -> Advan
 If you can't access the menu, you can use ADB to grab the debug log: `adb logcat | grep $(adb shell ps | grep org.smssecure.smssecure | cut -c10-15)`.
 If your debug log contains sensitive data, you can censor it (please don't remove any relevant data) or send it to support@silence.im instead
 -->
-

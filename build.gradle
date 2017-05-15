@@ -148,13 +148,6 @@ android {
         targetSdkVersion 22
 
         vectorDrawables.useSupportLibrary = true
-
-        try{
-            buildConfigField "String", "BUILD_GIT_COMMIT", "\"" + 'git rev-parse --short HEAD'.execute().text.trim() + "\""
-        }
-        catch(IOException e){
-            buildConfigField "String", "BUILD_GIT_COMMIT", '""'
-        }
     }
 
     compileOptions {
