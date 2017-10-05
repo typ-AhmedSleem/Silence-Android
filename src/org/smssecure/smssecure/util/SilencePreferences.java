@@ -95,6 +95,12 @@ public class SilencePreferences {
   private static final String MEDIA_DOWNLOAD_PREF              = "pref_media_download";
   private static final String MEDIA_DOWNLOAD_ROAMING_PREF      = "pref_media_download_roaming";
 
+  public  static final String INCOGNITO_KEYBORAD_PREF          = "pref_incognito_keyboard";
+
+  public static boolean isIncognitoKeyboardEnabled(Context context) {
+    return getBooleanPreference(context, INCOGNITO_KEYBORAD_PREF, true);
+  }
+
   public static NotificationPrivacyPreference getNotificationPrivacy(Context context) {
     return new NotificationPrivacyPreference(getStringPreference(context, NOTIFICATION_PRIVACY_PREF, "all"));
   }

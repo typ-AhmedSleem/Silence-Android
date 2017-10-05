@@ -38,14 +38,17 @@ public class ComposeText extends EmojiEditText {
 
   public ComposeText(Context context) {
     super(context);
+    initialize();
   }
 
   public ComposeText(Context context, AttributeSet attrs) {
     super(context, attrs);
+    initialize();
   }
 
   public ComposeText(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
+    initialize();
   }
 
   @Override
@@ -105,6 +108,7 @@ public class ComposeText extends EmojiEditText {
 
   public void setTransport(TransportOption transport) {
     final String enterKeyType = SilencePreferences.getEnterKeyType(getContext());
+    final boolean isIncognito = SilencePreferences.isIncognitoKeyboardEnabled(getContext());
 
     int imeOptions = (getImeOptions() & ~EditorInfo.IME_MASK_ACTION) | EditorInfo.IME_ACTION_SEND;
     int inputType  = getInputType();
@@ -141,6 +145,12 @@ public class ComposeText extends EmojiEditText {
 
   public void setMediaListener(@Nullable MediaListener mediaListener) {
     this.mediaListener = mediaListener;
+  }
+
+  private void initialize() {
+    if (SilencePreferences.isIncognitoKeyboardEnabled(getContext())) {
+      setImeOptions(getImeOptions() | 16777216);
+    }
   }
 
   @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB_MR2)
