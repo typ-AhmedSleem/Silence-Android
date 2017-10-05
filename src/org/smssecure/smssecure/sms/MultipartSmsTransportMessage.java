@@ -12,6 +12,7 @@ import org.smssecure.smssecure.util.Base64;
 import org.smssecure.smssecure.util.Conversions;
 
 import java.io.IOException;
+import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
 
 public class MultipartSmsTransportMessage {
@@ -38,16 +39,20 @@ public class MultipartSmsTransportMessage {
   private final IncomingTextMessage message;
 
   public MultipartSmsTransportMessage(IncomingTextMessage message) throws IOException {
-    this.message         = message;
-    this.decodedMessage  = Base64.decodeWithoutPadding(message.getMessageBody().substring(WirePrefix.PREFIX_SIZE));
+    try {
+      this.message         = message;
+      this.decodedMessage  = Base64.decodeWithoutPadding(message.getMessageBody().substring(WirePrefix.PREFIX_SIZE));
 
-    if      (WirePrefix.isEncryptedMessage(message.getMessageBody())) wireType = WIRETYPE_SECURE;
-    else if (WirePrefix.isPreKeyBundle(message.getMessageBody()))     wireType = WIRETYPE_PREKEY;
-    else if (WirePrefix.isEndSession(message.getMessageBody()))       wireType = WIRETYPE_END_SESSION;
-    else if (WirePrefix.isXmppExchange(message.getMessageBody()))     wireType = WIRETYPE_XMPP_EXCHANGE;
-    else                                                              wireType = WIRETYPE_KEY;
+      if      (WirePrefix.isEncryptedMessage(message.getMessageBody())) wireType = WIRETYPE_SECURE;
+      else if (WirePrefix.isPreKeyBundle(message.getMessageBody()))     wireType = WIRETYPE_PREKEY;
+      else if (WirePrefix.isEndSession(message.getMessageBody()))       wireType = WIRETYPE_END_SESSION;
+      else if (WirePrefix.isXmppExchange(message.getMessageBody()))     wireType = WIRETYPE_XMPP_EXCHANGE;
+      else                                                              wireType = WIRETYPE_KEY;
 
-    Log.w(TAG, "Decoded message with version: " + getCurrentVersion());
+      Log.w(TAG, "Decoded message with version: " + getCurrentVersion());
+    } catch (IllegalArgumentException iae) {
+      throw new IOException(iae);
+    }
   }
 
   public int getWireType() {

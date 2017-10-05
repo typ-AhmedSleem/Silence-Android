@@ -1244,8 +1244,8 @@ public class Base64
         return decode( s, NO_OPTIONS );
     }
 
-    
-    public static byte[] decodeWithoutPadding(String source) throws java.io.IOException {
+
+    public static byte[] decodeWithoutPadding(String source) throws java.io.IOException, java.lang.IllegalArgumentException {
 		int padding    = source.length() % 4;
 		
 		if      (padding == 1) source = source + "=";
