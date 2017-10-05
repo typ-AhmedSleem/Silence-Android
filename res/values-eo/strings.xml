@@ -332,7 +332,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="MessageDisplayHelper_bad_encrypted_message">Erara ĉifrita mesaĝo</string>
   <string name="MessageDisplayHelper_decrypting_please_wait">Malĉifrado, bonvolu atendi…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaĝo ĉifrita por neekzistanta seanco</string>
-  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Peti pri fini neekzistanta seanco</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Petis pri fini neekzistantan seancon</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Eraro dum malĉifrado de mesaĝo.</string>
   <!--MmsDatabase-->

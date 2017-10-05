@@ -3,8 +3,8 @@
   <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
-  <string name="delete">Verwijder</string>
-  <string name="please_wait">Een moment alsjeblieft…</string>
+  <string name="delete">Verwijderen</string>
+  <string name="please_wait">Even geduld…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nieuw bericht</string>
   <!--ApplicationPreferencesActivity-->
@@ -13,7 +13,7 @@
     <item quantity="one">1 bericht per gesprek</item>
     <item quantity="other">%d berichten per gesprek</item>
   </plurals>
-  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Nu alle oude berichten verwijderen?</string>
+  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Alle oude berichten nu verwijderen?</string>
   <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
     <item quantity="one">Dit trimt alle gesprekken tot het meest recente bericht.</item>
     <item quantity="other">Dit trimt alle gesprekken tot de %d meest recente berichten.</item>
@@ -23,17 +23,17 @@
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je versleutelde sessies zullen blijven werken, maar iedereen met fysieke toegang tot je apparaat zal er toegang toe hebben.</string>
   <string name="ApplicationPreferencesActivity_disable">Uitschakelen</string>
-  <string name="ApplicationPreferencesActivity_sms_enabled">Inkomende SMS geactiveerd</string>
-  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Stel de standaard SMS app in</string>
+  <string name="ApplicationPreferencesActivity_sms_enabled">Inkomende SMS ingeschakeld</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tik om de standaard-SMS-app in te stellen</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Inkomende SMS uitgeschakeld</string>
-  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Stel in als standaard SMS-app</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tik om Silence als standaard-SMS-app in te stellen</string>
   <string name="ApplicationPreferencesActivity_on">aan</string>
   <string name="ApplicationPreferencesActivity_On">Aan</string>
   <string name="ApplicationPreferencesActivity_off">uit</string>
   <string name="ApplicationPreferencesActivity_Off">Uit</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
-  <string name="ApplicationPreferencesActivity_incoming_summary">Binnenkomend %s</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">Inkomend %s</string>
   <string name="ApplicationPreferencesActivity_privacy_summary">Wachtwoord %1$s, schermbeveiliging %2$s</string>
   <string name="ApplicationPreferencesActivity_appearance_summary">Thema %1$s, taal %2$s</string>
   <!--AppProtectionPreferenceFragment-->
@@ -52,7 +52,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="AttachmentTypeSelectorAdapter_picture">Afbeelding</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Audio</string>
-  <string name="AttachmentTypeSelectorAdapter_contact">Contact info</string>
+  <string name="AttachmentTypeSelectorAdapter_contact">Contactinfo</string>
   <!--AudioSlidePlayer-->
   <string name="AudioSlidePlayer_error_playing_audio">Fout bij het afspelen van audio!</string>
   <!--BlockedContactsActivity-->
@@ -61,32 +61,32 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationItem_message_size_d_kb">Berichtgrootte: %d KB</string>
   <string name="ConversationItem_expires_s">Verloopt: %s</string>
   <string name="ConversationItem_error_not_delivered">Niet afgeleverd</string>
-  <string name="ConversationItem_view_secure_media_question">Bekijk beveiligde media?</string>
-  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Deze media is opgeslagen in een versleutelde database. Om het weer te geven in een externe app, zal het tijdelijk moeten worden ontsleuteld en naar het opslaggeheugen worden weggeschreven. Weet u zeker dat u dit wil doen?</string>
+  <string name="ConversationItem_view_secure_media_question">Beveiligde media bekijken?</string>
+  <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Deze media is opgeslagen in een versleutelde database. Om het weer te geven in een externe app, zal het tijdelijk moeten worden ontsleuteld en naar het opslaggeheugen worden weggeschreven. Weet je zeker dat je dit wil doen?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Fout, verouderd sleuteluitwisselingsbericht ontvangen.</string>
-  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Sleuteluitwisselingsbericht ontvangen, klik hier om te verwerken.</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">Sleuteluitwisselingsbericht ontvangen, tik om te verwerken.</string>
   <string name="ConversationItem_group_action_left">%1$s heeft de groep verlaten.</string>
-  <string name="ConversationItem_click_for_details">Tap voor details</string>
+  <string name="ConversationItem_click_for_details">Tik voor details</string>
   <string name="ConversationItem_unable_to_open_media">Geen app gevonden om dit bestand te openen.</string>
   <string name="ConversationItem_from_s">van %s</string>
   <string name="ConversationItem_to_s">naar %s</string>
-  <string name="ConversationItem_xmpp_address_update_silence">XMPP adres. Update Silence om deze functionaliteit te gebruiken.</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP-adres. Werk Silence bij om deze functionaliteit te gebruiken.</string>
   <!--ConversationActivity-->
-  <string name="ConversationActivity_initiate_secure_session_question">Veilige sessie initiëren?</string>
-  <string name="ConversationActivity_initiate_secure_session_with_s_question">Initieer beveiligde sessie met %s?</string>
-  <string name="ConversationActivity_detected_silence_initiate_session_question">Bericht ontvangen van iemand die ook Silence heeft, wilt u een versleutelde berichtenuitwisseling starten?</string>
-  <string name="ConversationActivity_abort_secure_session_confirmation">Beëindigen beveiligde sessie bevestigen</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Weet u zeker dat u deze beveiligde sessie wilt beëindigen?</string>
+  <string name="ConversationActivity_initiate_secure_session_question">Beveiligde sessie initiëren?</string>
+  <string name="ConversationActivity_initiate_secure_session_with_s_question">Beveiligde sessie met %s initiëren?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Bericht ontvangen van iemand die ook Silence heeft, wil je een versleutelde berichtenuitwisseling starten?</string>
+  <string name="ConversationActivity_abort_secure_session_confirmation">Beveiligde sessie beëindigen?</string>
+  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Weet je zeker dat je deze beveiligde sessie wil beëindigen?</string>
   <string name="ConversationActivity_delete_thread_question">Gesprek verwijderen?</string>
-  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Dit verwijderd alle berichten in dit gesprek permanent.</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Dit verwijdert voorgoed alle berichten in dit gesprek.</string>
   <string name="ConversationActivity_add_attachment">Voeg bijlage toe</string>
   <string name="ConversationActivity_select_contact_info">Selecteer contactinformatie</string>
   <string name="ConversationActivity_compose_message">Bericht opstellen</string>
   <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sorry, er is een fout opgetreden bij het instellen van de bijlage.</string>
-  <string name="ConversationActivity_the_gif_you_selected_was_too_big">De geselecteerde GIF afbeelding is te groot!</string>
-  <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Excuses, het videobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
-  <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Excuses, het audiobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
-  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Ontvanger heeft geen geldig SMS of email adres!</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">De geselecteerde GIF-afbeelding is te groot!</string>
+  <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Sorry, het videobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
+  <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sorry, het audiobestand overschrijdt de maximale berichtgrootte (%1$skB).</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Ontvanger heeft geen geldig SMS- of e-mailadres!</string>
   <string name="ConversationActivity_message_is_empty_exclamation">Bericht is leeg!</string>
   <string name="ConversationActivity_group_members">Groepsleden</string>
   <string name="ConversationActivity_group_conversation">Groepsgesprek</string>
@@ -108,7 +108,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_recipient_self">Beveiligde sessies kunnen alleen met andere personen worden gevoerd.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS niet ondersteund.</string>
   <string name="ConversationActivity_mms_not_supported_message">Dit bericht kan niet worden verstuurd omdat uw provider geen MMS ondersteunt.</string>
-  <string name="ConversationActivity_specify_recipient">Kies een contact a.u.b.</string>
+  <string name="ConversationActivity_specify_recipient">Kies een contact</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Bijlage groter dan limiet.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">

@@ -27,10 +27,10 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Trykk for å endre forvalgt SMS-program</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Mottak av SMS avskrudd</string>
   <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Trykk for å gjøre Silence til ditt forvalgte SMS-program</string>
-  <string name="ApplicationPreferencesActivity_on">på</string>
-  <string name="ApplicationPreferencesActivity_On">På</string>
-  <string name="ApplicationPreferencesActivity_off">av</string>
-  <string name="ApplicationPreferencesActivity_Off">Av</string>
+  <string name="ApplicationPreferencesActivity_on">påslått</string>
+  <string name="ApplicationPreferencesActivity_On">Påslått</string>
+  <string name="ApplicationPreferencesActivity_off">avslått</string>
+  <string name="ApplicationPreferencesActivity_Off">Avslått</string>
   <string name="ApplicationPreferencesActivity_sms">SMS</string>
   <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <string name="ApplicationPreferencesActivity_incoming_summary">Innkommende meldinger %s</string>

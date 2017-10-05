@@ -16,7 +16,7 @@
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Alle alten Nachrichten löschen?</string>
   <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
     <item quantity="one">Jetzt alle Unterhaltungen bis auf die letzte Nachricht kürzen.</item>
-    <item quantity="other">Jetzt alle Unterhaltungen bis auf die %d letzten Nachrichten kürzen.</item>
+    <item quantity="other">Dies wird alle Unterhaltungen bis auf die %d letzten Nachrichten sofort löschen.</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete">Löschen</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">Speicherverschlüsselung deaktivieren?</string>
@@ -78,7 +78,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ConversationActivity_abort_secure_session_confirmation">Sichere Unterhaltung beenden?</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Diese sichere Unterhaltung beenden.</string>
   <string name="ConversationActivity_delete_thread_question">Unterhaltung löschen?</string>
-  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Alle Nachrichten dieser Unterhaltung unwiderruflich löschen.</string>
+  <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Dies wird alle Nachrichten dieser Unterhaltung unwiderruflich löschen.</string>
   <string name="ConversationActivity_add_attachment">Anhang hinzufügen</string>
   <string name="ConversationActivity_select_contact_info">Kontaktinfo wählen</string>
   <string name="ConversationActivity_compose_message">Nachricht verfassen</string>
@@ -123,7 +123,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   </plurals>
   <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
     <item quantity="one">Unwiderruflich die ausgewählte Nachricht löschen.</item>
-    <item quantity="other">Unwiderruflich alle %1$d ausgewählten Nachrichten löschen.</item>
+    <item quantity="other">Dies wird alle %1$d ausgewählten Nachrichten unwiderruflich löschen.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Im Gerätespeicher speichern?</string>
   <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
@@ -162,7 +162,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   </plurals>
   <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
     <item quantity="one">Unwiderruflich die ausgewählte Unterhaltung löschen.</item>
-    <item quantity="other">Unwiderruflich alle %1$d ausgewählten Unterhaltungen löschen.</item>
+    <item quantity="other">Dies wird alle %1$d ausgewählten Unterhaltungen unwiderruflich löschen.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Löschen</string>
   <string name="ConversationListFragment_deleting_selected_conversations">Ausgewählte Unterhaltungen werden gelöscht …</string>
@@ -209,7 +209,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportieren</string>
   <string name="ExportFragment_export_plaintext_to_storage">Klartextsicherung exportieren?</string>
-  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Achtung: Exportiert die unverschlüsselten Inhalte deiner Silence-Nachrichten in den Gerätespeicher.</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Achtung: Dies wird die unverschlüsselten Inhalte deiner Silence-Nachrichten in den Gerätespeicher exportieren.</string>
   <string name="ExportFragment_cancel">Abbruch</string>
   <string name="ExportFragment_exporting">Exportieren</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Klartext wird in Gerätespeicher exportiert …</string>
@@ -233,13 +233,13 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ImportExportActivity_export">Exportieren</string>
   <!--ImportFragment-->
   <string name="ImportFragment_import_system_sms_database">SMS-Systemdatenbank importieren?</string>
-  <string name="ImportFragment_this_will_import_messages_from_the_system">Nachrichten aus der Standard-SMS-Datenbank in Silence importieren. Falls du dies schon einmal gemacht hast, wird es zu doppelten Nachrichten kommen.</string>
+  <string name="ImportFragment_this_will_import_messages_from_the_system">Dies wird die Nachrichten aus der Standard-SMS-Datenbank in Silence importieren. Falls du dies schon einmal gemacht hast, wird es zu doppelten Nachrichten kommen.</string>
   <string name="ImportFragment_import">Importieren</string>
   <string name="ImportFragment_cancel">Abbruch</string>
   <string name="ImportFragment_restore_encrypted_backup">Verschlüsselte Sicherung wiederherstellen?</string>
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Das Wiederherstellen einer verschlüsselten Datensicherung ersetzt deine bestehenden Schlüssel, Einstellungen und Nachrichten. Du wirst jegliche Informationen deiner jetzigen Silence-Installation verlieren, die nicht in dieser Datensicherung enthalten sind. Silence wird nach dem Importieren beendet.</string>
   <string name="ImportFragment_import_plaintext_backup">Klartextsicherung importieren?</string>
-  <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Nachrichten aus einer Klartext-Datensicherung in Silence importieren. Falls du bereits zuvor diese Datensicherung importiert hast, wird es zu doppelten Nachrichten kommen.</string>
+  <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dies wird Nachrichten aus einer Klartext-Datensicherung in Silence importieren. Falls du bereits zuvor diese Datensicherung importiert hast, wird es zu doppelten Nachrichten kommen.</string>
   <string name="ImportFragment_importing">Importieren</string>
   <string name="ImportFragment_import_plaintext_backup_elipse">Klartextsicherung wird importiert …</string>
   <string name="ImportFragment_no_plaintext_backup_found">Keine Klartextsicherung gefunden!</string>
@@ -262,6 +262,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="NotificationMmsMessageRecord_multimedia_message">MMS</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Die empfangene Nachricht wurde mit einer alten Version von Silence verschlüsselt, welche nicht mehr unterstützt wird. Bitte den Absender, Silence zu aktualisieren und die Nachricht erneut zu senden.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Die von dir empfangene Schlüsseltausch-Nachricht wurde von einer Silence-Version gesendet, die zu veraltet ist, um mit Deiner Version zu kommunizieren. Um eine sichere Sitzung zu beginnen, musst du sie manuell versenden. Zum Senden der Schlüsselaustausch-Nachricht antippen.</string>
   <string name="MessageRecord_left_group">Du hast die Gruppe verlassen.</string>
   <string name="MessageRecord_updated_group">Gruppe wurde aktualisiert.</string>
   <string name="MessageRecord_key_exchange_message">Schlüsselaustausch-Nachricht</string>

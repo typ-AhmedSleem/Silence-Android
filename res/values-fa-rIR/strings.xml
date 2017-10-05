@@ -1,29 +1,84 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">سایلنس</string>
+  <string name="app_name">Silence</string>
   <string name="yes">بله</string>
   <string name="no">نه</string>
   <string name="delete">حذف</string>
-  <string name="please_wait">لطفاً صبر کنید…</string>
+  <string name="please_wait">شکیبا باشید…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">پیام جدید</string>
   <!--ApplicationPreferencesActivity-->
+  <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">هنوز عبارت عبوری تنظیم نکرده‌اید!</string>
+  <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+    <item quantity="other">‫%d پیام در گفت‌وگو</item>
+  </plurals>
+  <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">حذف تمام پیام‌های قدیمی؟</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="other">این کار تمام گفت‌وگو ها تا %d پیام اخیر را فوراً پاک خواهد کرد.</item>
+  </plurals>
+  <string name="ApplicationPreferencesActivity_delete">حذف</string>
+  <string name="ApplicationPreferencesActivity_disable_storage_encryption">غیرفعّال کردن رمزنگاری حافظه؟</string>
+  <string name="ApplicationPreferencesActivity_disable">غیرفعّال</string>
+  <string name="ApplicationPreferencesActivity_sms_enabled">پیامک ورودی فعّال شد</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">برای تغییر کارهٔ پیامک پیش‌گزیده، ضربه بزنید</string>
+  <string name="ApplicationPreferencesActivity_sms_disabled">پیامک ورودی غیرفعّال شد</string>
+  <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">برای کارهٔ پیامک پیش‌گزیده کردن سایلنس، ضربه بزنید</string>
+  <string name="ApplicationPreferencesActivity_on">روشن</string>
+  <string name="ApplicationPreferencesActivity_On">روشن</string>
+  <string name="ApplicationPreferencesActivity_off">خاموش</string>
+  <string name="ApplicationPreferencesActivity_Off">خاموش</string>
+  <string name="ApplicationPreferencesActivity_sms">پیامک</string>
+  <string name="ApplicationPreferencesActivity_mms">ام‌ام‌اس</string>
+  <string name="ApplicationPreferencesActivity_incoming_summary">‫%s وارده</string>
+  <string name="ApplicationPreferencesActivity_privacy_summary">عبارت عبور %1$s، امنیت صفحه %2$s</string>
+  <string name="ApplicationPreferencesActivity_appearance_summary">زمینه%1$s، زبان %2$s</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="other">‫%d دقیقه</item>
+  </plurals>
   <!--DraftDatabase-->
+  <string name="DraftDatabase_Draft_image_snippet">(تصویر)</string>
+  <string name="DraftDatabase_Draft_audio_snippet">(صدا)</string>
+  <string name="DraftDatabase_Draft_video_snippet">(ویدیو)</string>
   <!--AttchmentManager-->
+  <string name="AttachmentManager_cant_open_media_selection">نمی‌توان کاره‌ای برای گزینش رسانه یافت.</string>
   <!--AttachmentTypeSelectorAdapter-->
+  <string name="AttachmentTypeSelectorAdapter_camera">دوربین</string>
+  <string name="AttachmentTypeSelectorAdapter_picture">عکس</string>
+  <string name="AttachmentTypeSelectorAdapter_video">ویدیو</string>
+  <string name="AttachmentTypeSelectorAdapter_audio">صدا</string>
+  <string name="AttachmentTypeSelectorAdapter_contact">اطّلاعات تماس</string>
   <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">خطا در پخش صدا!</string>
   <!--BlockedContactsActivity-->
+  <string name="BlockedContactsActivity_blocked_contacts">مخاطبان مسدود شده</string>
   <!--ConversationItem-->
+  <string name="ConversationItem_message_size_d_kb">اندازهٔ پیام: %dک‌ب</string>
+  <string name="ConversationItem_expires_s">انقضا: %s</string>
+  <string name="ConversationItem_error_not_delivered">نرسیده</string>
+  <string name="ConversationItem_view_secure_media_question">مشاهدهٔ رسانهٔ امن؟</string>
+  <string name="ConversationItem_error_received_stale_key_exchange_message">پیام تبادل کلید قدیمی رسید.</string>
+  <string name="ConversationItem_received_key_exchange_message_tap_to_process">پیام تبادل کلید رسید. برای پردازش ضربه بزنید.</string>
+  <string name="ConversationItem_group_action_left">‫%1$s گروه را ترک کرد</string>
+  <string name="ConversationItem_click_for_details">برای جزئیات ضربه بزنید</string>
+  <string name="ConversationItem_unable_to_open_media">نمی توان کاره‌ای یافت که بتواند این رسانه را بگشاید.</string>
+  <string name="ConversationItem_from_s">از %s</string>
+  <string name="ConversationItem_to_s">به %s</string>
+  <string name="ConversationItem_xmpp_address_update_silence">نشانی XMPP. برای فعّال کردن این ویژگی، سایلنس را به‌روز کنید.</string>
   <!--ConversationActivity-->
+  <string name="ConversationActivity_initiate_secure_session_question">آغاز نشست امن؟</string>
+  <string name="ConversationActivity_initiate_secure_session_with_s_question">آغاز نشست امن با %s؟</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">پیام از سوی کسی که سالنس دارد، رسید. نشستی امن آغاز شود؟</string>
+  <string name="ConversationActivity_abort_secure_session_confirmation">پایان نشست امن؟</string>
+  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">مطمئنید که می‌خواهید به این نشست امن پایان دهید؟</string>
   <!--ConversationAdapter-->
   <!--ConversationFragment-->
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
-  <!--ConversationListItem-->
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <!--DateUtils-->
+  <!--DualSimUtil-->
   <!--ShareActivity-->
   <!--IntroScreenActivity-->
   <!--ExportFragment-->
