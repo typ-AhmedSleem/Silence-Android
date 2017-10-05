@@ -27,6 +27,7 @@
       <item>Norsk</item>
       <item>Polski</item>
       <item>Português</item>
+      <item>Português (Brasil)</item>
       <item>Română</item>
       <item>Russian Pусский</item>
       <item>Serbian српски</item>
@@ -38,6 +39,7 @@
       <item>Tibetan བོད་སྐད།</item>
       <item>Türkçe</item>
       <item>Ukrainian Український</item>
+      <item>Čeština</item>
   </string-array>
 
   <string-array name="language_values">
@@ -66,6 +68,7 @@
       <item>nb</item>
       <item>pl</item>
       <item>pt</item>
+      <item>pt-rBR</item>
       <item>ro</item>
       <item>ru</item>
       <item>sr</item>
@@ -77,6 +80,7 @@
       <item>bo</item>
       <item>tr</item>
       <item>uk</item>
+      <item>cs</item>
   </string-array>
 
   <string-array name="minutes_hours">
