@@ -733,7 +733,7 @@
     <string name="preferences__about_version">Version %s</string>
     <string name="preferences__privacy_policy">Privacy policy</string>
     <string name="preferences__incognito_keyboard">Incognito keyboard</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">If set to incognito mode, the keyboard won't remember, learn, or store any words you type</string>
+    <string name="preferences__request_keyboard_to_disable_personalized_learning">If set to incognito mode, the keyboard won\'t remember, learn, or store any words you type</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
     <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
     <string name="preferences__show_sent_time">Show sent time</string>
