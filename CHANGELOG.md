@@ -1,5 +1,14 @@
 # Silence Changelog
 
+### [0.15.8] - 2017-10-05
+- Updated emojis to Android O
+- Improved build reproducibility
+- Fixed crash on malformed messages
+- Enabled incognito keyboard mode by default
+- Removed cleartext password that may leak
+- Enabled Czech and Portuguese (Brazil) languages
+- Updated translations
+
 ### [0.15.7] - 2017-04-21
 - Fixed crash on malformed encrypted messages
 - Updated translations
@@ -216,6 +225,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.8]: https://github.com/SilenceIM/Silence/compare/v0.15.7...v0.15.8
  [0.15.7]: https://github.com/SilenceIM/Silence/compare/v0.15.6...v0.15.7
  [0.15.6]: https://github.com/SilenceIM/Silence/compare/v0.15.5...v0.15.6
  [0.15.5]: https://github.com/SilenceIM/Silence/compare/v0.15.4...v0.15.5
