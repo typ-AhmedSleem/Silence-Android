@@ -94,9 +94,9 @@ public class MultipartSmsMessageHandler {
     }
   }
 
-  public synchronized ArrayList<String> divideMessage(OutgoingTextMessage message) {
+  public synchronized String getEncodedMessage(OutgoingTextMessage message) {
     String number     = message.getRecipients().getPrimaryRecipient().getNumber();
     byte   identifier = MultipartSmsIdentifier.getInstance().getIdForRecipient(number);
-    return MultipartSmsTransportMessage.getEncoded(message, identifier);
+    return MultipartSmsTransportMessage.getEncodedMessage(message, identifier);
   }
 }

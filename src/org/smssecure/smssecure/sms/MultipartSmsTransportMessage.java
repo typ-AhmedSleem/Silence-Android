@@ -25,16 +25,17 @@ public class MultipartSmsTransportMessage {
   public static final int FIRST_MULTI_MESSAGE_MULTIPART_OVERHEAD = 2;
 
   public static final int WIRETYPE_SECURE        = 1;
-  public static final int WIRETYPE_KEY           = 2;
-  public static final int WIRETYPE_PREKEY        = 3;
-  public static final int WIRETYPE_END_SESSION   = 4;
-  public static final int WIRETYPE_XMPP_EXCHANGE = 5;
+  public static final int WIRETYPE_PREKEY        = 2;
+  public static final int WIRETYPE_END_SESSION   = 3;
+  public static final int WIRETYPE_XMPP_EXCHANGE = 4;
+  public static final int WIRETYPE_KEY           = 5;
+  public static final int LAST_PREFIX_TO_TEST    = 5;
 
   private static final int VERSION_OFFSET    = 0;
   private static final int MULTIPART_OFFSET  = 1;
   private static final int IDENTIFIER_OFFSET = 2;
 
-  private final int                 wireType;
+  private       int                 wireType;
   private final byte[]              decodedMessage;
   private final IncomingTextMessage message;
 
@@ -43,16 +44,28 @@ public class MultipartSmsTransportMessage {
       this.message         = message;
       this.decodedMessage  = Base64.decodeWithoutPadding(message.getMessageBody().substring(WirePrefix.PREFIX_SIZE));
 
-      if      (WirePrefix.isEncryptedMessage(message.getMessageBody())) wireType = WIRETYPE_SECURE;
-      else if (WirePrefix.isPreKeyBundle(message.getMessageBody()))     wireType = WIRETYPE_PREKEY;
-      else if (WirePrefix.isEndSession(message.getMessageBody()))       wireType = WIRETYPE_END_SESSION;
-      else if (WirePrefix.isXmppExchange(message.getMessageBody()))     wireType = WIRETYPE_XMPP_EXCHANGE;
-      else                                                              wireType = WIRETYPE_KEY;
-
-      Log.w(TAG, "Decoded message with version: " + getCurrentVersion());
+      redecodeWirePrefix(-1);
     } catch (IllegalArgumentException iae) {
       throw new IOException(iae);
     }
+  }
+
+  public void redecodeWirePrefix(int lastIncorrectWirePrefix) throws IOException {
+    if (lastIncorrectWirePrefix >= LAST_PREFIX_TO_TEST)
+      throw new IOException("Invalid message!");
+
+    if      (lastIncorrectWirePrefix < WIRETYPE_SECURE        &&
+             WirePrefix.isEncryptedMessage(message.getMessageBody())) wireType = WIRETYPE_SECURE;
+    else if (lastIncorrectWirePrefix < WIRETYPE_PREKEY        &&
+             WirePrefix.isPreKeyBundle(message.getMessageBody()))     wireType = WIRETYPE_PREKEY;
+    else if (lastIncorrectWirePrefix < WIRETYPE_END_SESSION   &&
+             WirePrefix.isEndSession(message.getMessageBody()))       wireType = WIRETYPE_END_SESSION;
+    else if (lastIncorrectWirePrefix < WIRETYPE_XMPP_EXCHANGE &&
+             WirePrefix.isXmppExchange(message.getMessageBody()))     wireType = WIRETYPE_XMPP_EXCHANGE;
+    else                                                              wireType = WIRETYPE_KEY;
+
+    Log.w(TAG, "Decoded message with version:   " + getCurrentVersion());
+    Log.w(TAG, "Decoded message with wire type: " + wireType);
   }
 
   public int getWireType() {
@@ -159,7 +172,7 @@ public class MultipartSmsTransportMessage {
     return message;
   }
 
-  public static ArrayList<String> getEncoded(OutgoingTextMessage message, byte identifier)
+  public static String getEncodedMessage(OutgoingTextMessage message, byte identifier)
   {
     try {
       byte[] decoded = Base64.decodeWithoutPadding(message.getMessageBody());
@@ -172,16 +185,14 @@ public class MultipartSmsTransportMessage {
       else if (message.isEndSession())   prefix = new EndSessionWirePrefix();
       else                               prefix = new SecureMessageWirePrefix();
 
-      if (count == 1) return getSingleEncoded(decoded, prefix);
-      else            return getMultiEncoded(decoded, prefix, count, identifier);
+      return getEncoded(decoded, prefix);
 
     } catch (IOException e) {
       throw new AssertionError(e);
     }
   }
 
-  private static ArrayList<String> getSingleEncoded(byte[] decoded, WirePrefix prefix) {
-    ArrayList<String> list            = new ArrayList<String>(1);
+  private static String getEncoded(byte[] decoded, WirePrefix prefix) {
     byte[] messageWithMultipartHeader = new byte[decoded.length + 1];
     System.arraycopy(decoded, 0, messageWithMultipartHeader, 1, decoded.length);
 
@@ -190,41 +201,7 @@ public class MultipartSmsTransportMessage {
 
     String encodedMessage = Base64.encodeBytesWithoutPadding(messageWithMultipartHeader);
 
-    list.add(prefix.calculatePrefix(encodedMessage) + encodedMessage);
-
-    Log.w(TAG, "Complete fragment size: " + list.get(list.size()-1).length());
-
-    return list;
-  }
-
-  private static ArrayList<String> getMultiEncoded(byte[] decoded, WirePrefix prefix,
-                                                   int segmentCount, byte id)
-  {
-    ArrayList<String> list            = new ArrayList<String>(segmentCount);
-    byte versionByte                  = decoded[VERSION_OFFSET];
-    int messageOffset                 = 1;
-    int segmentIndex                  = 0;
-
-    while (messageOffset < decoded.length-1) {
-      int segmentSize = Math.min(SmsTransportDetails.BASE_MAX_BYTES, decoded.length-messageOffset+3);
-
-      byte[] segment             = new byte[segmentSize];
-      segment[VERSION_OFFSET]    = versionByte;
-      segment[MULTIPART_OFFSET]  = Conversions.intsToByteHighAndLow(segmentIndex++, segmentCount);
-      segment[IDENTIFIER_OFFSET] = id;
-
-      Log.w(TAG, "Fragment: (" + segmentIndex + "/" + segmentCount +") -- ID: " + id);
-
-      System.arraycopy(decoded, messageOffset, segment, 3, segmentSize-3);
-      messageOffset  += segmentSize-3;
-
-      String encodedSegment = Base64.encodeBytesWithoutPadding(segment);
-      list.add(prefix.calculatePrefix(encodedSegment) + encodedSegment);
-
-      Log.w(TAG, "Complete fragment size: " + list.get(list.size()-1).length());
-    }
-
-    return list;
+    return (prefix.calculatePrefix(encodedMessage) + encodedMessage);
   }
 
 }

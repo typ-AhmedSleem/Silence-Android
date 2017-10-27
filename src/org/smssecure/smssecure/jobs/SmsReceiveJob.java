@@ -124,7 +124,7 @@ public class SmsReceiveJob extends ContextJob {
       return Optional.absent();
     }
 
-    IncomingTextMessage message =  new IncomingTextMessage(messages);
+    IncomingTextMessage message = new IncomingTextMessage(messages);
 
     if (WirePrefix.isPrefixedMessage(message.getMessageBody())) {
       return Optional.fromNullable(multipartMessageHandler.processPotentialMultipartMessage(message));

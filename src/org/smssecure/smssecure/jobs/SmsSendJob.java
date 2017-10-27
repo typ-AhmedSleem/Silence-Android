@@ -93,6 +93,16 @@ public class SmsSendJob extends SendJob {
   private void deliverSecureMessage(MasterSecret masterSecret, SmsMessageRecord message)
       throws UndeliverableMessageException
   {
+    String recipient = message.getIndividualRecipient().getNumber();
+
+    // See issue #1516 for bug report, and discussion on commits related to #4833 for problems
+    // related to the original fix to #1516. This still may not be a correct fix if networks allow
+    // SMS/MMS sending to alphanumeric recipients other than email addresses, but should also
+    // help to fix issue #3099.
+    if (!NumberUtil.isValidEmail(recipient)) {
+      recipient = PhoneNumberUtils.stripSeparators(PhoneNumberUtils.convertKeypadLettersToDigits(recipient));
+    }
+
     MultipartSmsMessageHandler multipartMessageHandler = new MultipartSmsMessageHandler();
     OutgoingTextMessage        transportMessage        = OutgoingTextMessage.from(message);
 
@@ -100,31 +110,22 @@ public class SmsSendJob extends SendJob {
       transportMessage = getAsymmetricEncrypt(masterSecret, transportMessage);
     }
 
-    ArrayList<String> messages                = multipartMessageHandler.divideMessage(transportMessage);
+    ArrayList<String> messages                = SmsManager.getDefault().divideMessage(multipartMessageHandler.getEncodedMessage(transportMessage));
     ArrayList<PendingIntent> sentIntents      = constructSentIntents(message.getId(), message.getType(), messages, message.isSecure());
     ArrayList<PendingIntent> deliveredIntents = constructDeliveredIntents(message.getId(), message.getType(), messages);
 
     Log.w("SmsTransport", "Secure divide into message parts: " + messages.size());
 
-    for (int i=0;i<messages.size();i++) {
-      // NOTE 11/04/14 -- There's apparently a bug where for some unknown recipients
-      // and messages, this will throw an NPE.  We have no idea why, so we're just
-      // catching it and marking the message as a failure.  That way at least it
-      // doesn't repeatedly crash every time you start the app.
-      try {
-        SmsManager.getDefault().sendTextMessage(message.getIndividualRecipient().getNumber(), null, messages.get(i),
-                                                sentIntents.get(i),
-                                                deliveredIntents == null ? null : deliveredIntents.get(i));
-      } catch (NullPointerException npe) {
-        Log.w(TAG, npe);
-        Log.w(TAG, "Recipient: " + message.getIndividualRecipient().getNumber());
-        Log.w(TAG, "Message Total Parts/Current: " + messages.size() + "/" + i);
-        Log.w(TAG, "Message Part Length: " + messages.get(i).getBytes().length);
-        throw new UndeliverableMessageException(npe);
-      } catch (IllegalArgumentException iae) {
-        Log.w(TAG, iae);
-        throw new UndeliverableMessageException(iae);
-      }
+    try {
+      getSmsManagerFor(message.getSubscriptionId()).sendMultipartTextMessage(recipient, null, messages, sentIntents, deliveredIntents);
+    } catch (NullPointerException npe) {
+      Log.w(TAG, npe);
+      Log.w(TAG, "Recipient: " + recipient);
+      Log.w(TAG, "Message Parts: " + messages.size());
+      throw new UndeliverableMessageException(npe);
+    } catch (IllegalArgumentException iae) {
+      Log.w(TAG, iae);
+      throw new UndeliverableMessageException(iae);
     }
   }
 
@@ -191,7 +192,7 @@ public class SmsSendJob extends SendJob {
 
     for (String ignored : messages) {
       sentIntents.add(PendingIntent.getBroadcast(context, 0,
-                                                 constructSentIntent(context, messageId, type, secure, false),
+                                                 constructSentIntent(context, messageId, type, secure),
                                                  0));
     }
 
@@ -214,17 +215,14 @@ public class SmsSendJob extends SendJob {
     return deliveredIntents;
   }
 
-  private Intent constructSentIntent(Context context, long messageId, long type,
-                                       boolean upgraded, boolean push)
-  {
+  private Intent constructSentIntent(Context context, long messageId, long type, boolean secure) {
     Intent pending = new Intent(SmsDeliveryListener.SENT_SMS_ACTION,
                                 Uri.parse("custom://" + messageId + System.currentTimeMillis()),
                                 context, SmsDeliveryListener.class);
 
     pending.putExtra("type", type);
     pending.putExtra("message_id", messageId);
-    pending.putExtra("upgraded", upgraded);
-    pending.putExtra("push", push);
+    pending.putExtra("secure", secure);
 
     return pending;
   }
