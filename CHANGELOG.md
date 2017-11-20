@@ -1,5 +1,9 @@
 # Silence Changelog
 
+### [0.15.9] - 2017-11-20
+- Switched to a new way to send encrypted messages
+- Updated translations
+
 ### [0.15.8] - 2017-10-05
 - Updated emojis to Android O
 - Improved build reproducibility
@@ -225,6 +229,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.9]: https://github.com/SilenceIM/Silence/compare/v0.15.8...v0.15.9
  [0.15.8]: https://github.com/SilenceIM/Silence/compare/v0.15.7...v0.15.8
  [0.15.7]: https://github.com/SilenceIM/Silence/compare/v0.15.6...v0.15.7
  [0.15.6]: https://github.com/SilenceIM/Silence/compare/v0.15.5...v0.15.6
