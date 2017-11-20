@@ -98,6 +98,7 @@
   <!--Slide-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <!--ViewIdentityActivity-->
   <!--KeyExchangeInitiator-->
@@ -127,6 +128,7 @@
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <!--database_upgrade_activity-->

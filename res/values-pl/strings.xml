@@ -347,6 +347,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="ThreadRecord_left_the_group">Opuścił grupę</string>
   <string name="ThreadRecord_draft">Szkic:</string>
   <string name="ThreadRecord_media_message">Wiadomość multimedialna</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">Wyłączono wiadomości SMS</string>
+  <string name="TransportOptions_no_sim_card_found">Brak karty SIM</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nie posiadasz klucza tożsamości.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Odbiorca nie posiada klucza tożsamości.</string>
@@ -473,6 +476,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s wybranych</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Przewiń na dół</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Eksportuj</string>
+  <string name="import_export_fragment__import">Importuj</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nie udało się odczytać logów z Twojego urządzenia. W dalszym ciągu możesz użyć ADB, aby pobrać logi debugowania.</string>
   <string name="log_submit_activity__thanks">Dziękujemy za Twoją pomoc!</string>
@@ -672,8 +678,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Włącz jeśli Twoje urządzenie używa dostarczania SMS/MMS przez Wi-Fi (włącz tylko wtedy gdy \'Wi-Fi Calling\' jest włączone na Twoim urządzeniu).</string>
   <string name="preferences__about">O Silence</string>
   <string name="preferences__about_version">Wersja %s</string>
-  <string name="preferences__about_build_id">ID kompilacji: %s</string>
   <string name="preferences__privacy_policy">Polityka prywatności</string>
+  <string name="preferences__incognito_keyboard">Prywatna klawiatura</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">W trybie prywatnym wpisywane słowa nie będą zapamiętywane i przechowywane przez klawiaturę</string>
   <string name="preferences_app_protection__blocked_contacts">Zablokowane kontakty</string>
   <string name="preferences_notifications__display_in_notifications">Pokazuj w powiadomieniach</string>
   <string name="preferences__show_sent_time">Pokaż datę wysłania</string>

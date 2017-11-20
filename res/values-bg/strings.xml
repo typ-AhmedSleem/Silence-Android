@@ -317,6 +317,9 @@
   <string name="ThreadRecord_left_the_group">Напусна групата</string>
   <string name="ThreadRecord_draft">Чернова:</string>
   <string name="ThreadRecord_media_message">Медийно съобщение</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">SMS-ти са деактивирани</string>
+  <string name="TransportOptions_no_sim_card_found">Не е открита SIM карта</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Нямаш ключ за самоличност.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Получателят няма ключ за самоличност.</string>
@@ -443,6 +446,9 @@
   <string name="conversation_fragment_cab__batch_selection_amount">%s избран/и</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Скролиране до края</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Изнасяне</string>
+  <string name="import_export_fragment__import">Внасяне</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Неуспешен опит за прочит на доклада на Вашето устройство. Може да използвате ADB, за да извлечете доклада.</string>
   <string name="log_submit_activity__thanks">Благодаря за помоща!</string>
@@ -641,8 +647,9 @@
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Разрешете ако устройството Ви използва SMS/MMS доставяне през Wi-Fi (използвайте единствено и само когато \'Wi-Fi обаждания\' е включено на Вашето устройство).</string>
   <string name="preferences__about">За Silince</string>
   <string name="preferences__about_version">Версия %s</string>
-  <string name="preferences__about_build_id">Билд: %s</string>
   <string name="preferences__privacy_policy">Политика на личното пространство</string>
+  <string name="preferences__incognito_keyboard">Инкогнито клавиатура</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Ако е заложен режим инкогнито, клавиатурата няма запомня, научва или запазва думите, които пишете</string>
   <string name="preferences_app_protection__blocked_contacts">Блокирани контакти</string>
   <string name="preferences_notifications__display_in_notifications">Покажи в полето за известия</string>
   <string name="preferences__show_sent_time">Покажи часът на изпращане</string>

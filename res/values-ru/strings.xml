@@ -232,7 +232,7 @@
   <!--IntroScreenActivity-->
   <string name="IntroScreenActivity_welcome_to_silence">Добро пожаловать в Silence!</string>
   <string name="IntroScreenActivity_silence_description">Silence позволяет защитить вашу конфиденциальность при общении с друзьями.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Шифруйте Ваши сообщения</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">Шифруйте ваши сообщения</string>
   <string name="IntroScreenActivity_encrypt_your_messages_description">Silence будет автоматически шифровать сообщения с другими пользователями Silence.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Общайтесь со всеми</string>
   <string name="IntroScreenActivity_talk_to_everyone_description">Silence может использовать незашифрованные сообщения для общения с пользователями без Silence.</string>
@@ -240,11 +240,11 @@
   <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure теперь Silence. Ваши сообщения все еще здесь, и скоро появятся  новые функции.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Экспорт</string>
-  <string name="ExportFragment_export_plaintext_to_storage">Экспортировать открытым текстом на SD-карту?</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Экспортировать в открытом виде?</string>
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Внимание, ваши сообщения в Silence будут экспортированы на SD-карту в незашифрованном виде.</string>
   <string name="ExportFragment_cancel">Отмена</string>
   <string name="ExportFragment_exporting">Экспорт</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Экспортируем в незашифрованном виде на SD-карту...</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Экспортировать в незашифрованном виде...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Невозможно произвести запись на SD-карту.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Ошибка при записи на SD-карту.</string>
   <string name="ExportFragment_export_successful">Экспорт успешно завершен.</string>
@@ -340,6 +340,9 @@
   <string name="ThreadRecord_left_the_group">Вы покинули группу</string>
   <string name="ThreadRecord_draft">Черновик:</string>
   <string name="ThreadRecord_media_message">Медиа-сообщение</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">SMS-сообщения отключены</string>
+  <string name="TransportOptions_no_sim_card_found">SIM-карта не найдена</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">У вас нет личного ключа.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У получателя нет личного ключа.</string>
@@ -466,8 +469,11 @@
   <string name="conversation_fragment_cab__batch_selection_amount">%s выбрано</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Прокрутить вниз</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Экспорт</string>
+  <string name="import_export_fragment__import">Импорт</string>
   <!--log_submit_activity-->
-  <string name="log_submit_activity__log_fetch_failed">Не удается получить доступ к журналу отладки с вашего устройства. Вместо этого вы можете использовать ADB для получения журнала.</string>
+  <string name="log_submit_activity__log_fetch_failed">Не удалось прочитать журнал на вашем устройстве. Используйте ADB для получения журнала отладки.</string>
   <string name="log_submit_activity__thanks">Спасибо за помощь!</string>
   <string name="log_submit_activity__submitting">Отправка</string>
   <string name="log_submit_activity__posting_logs">Отправляем логи на gist...</string>
@@ -481,15 +487,15 @@
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Обновляем базу данных...</string>
   <string name="export_fragment__export_plaintext_backup">Экспорт простой резервной копии.</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Экспортировать на SD-карту незашифрованную резервную копию, совместимую с приложением «SMS Backup &amp; Restore».</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Экспортировать на SD-карту незашифрованную резервную копию, совместимую с приложением \'SMS Backup &amp; Restore\'</string>
   <string name="import_fragment__import_system_sms_database">Импорт системной базы SMS</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Импортировать сообщения из системного SMS-приложения.</string>
   <string name="import_fragment__restore_encrypted_backup">Восстановление зашифрованной резервной копии</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Восстановить ранее экспортированную зашифрованную резервную копию</string>
   <string name="import_fragment__import_plaintext_backup">Импорт простой резервной копии</string>
   <string name="import_fragment__import_a_plaintext_backup_file">Импортировать незашифрованную резервную копию. Совместимо с приложением «SMS Backup &amp; Restore».</string>
-  <string name="export_fragment__export_encrypted_backup">Экспортировать зашифрованную резервную копию</string>
-  <string name="export_fragment__export_an_encrypted_backup_to_storage">Экспортируем в зашифрованном виде на SD-карту...</string>
+  <string name="export_fragment__export_encrypted_backup">Экспорт зашифрованной резервной копии</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Экспортировать в зашифрованном виде...</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Посмотреть весь разговор</string>
   <!--media_overview_activity-->
@@ -558,10 +564,10 @@
   <string name="arrays__disabled">Выключено</string>
   <string name="arrays__name_and_message">Имя и сообщение</string>
   <string name="arrays__name_only">Только имя</string>
-  <string name="arrays__no_name_or_message">Нет имени или сообщения</string>
-  <string name="arrays__enter_key">Показывать кнопку Ввод</string>
+  <string name="arrays__no_name_or_message">Ни имени, ни сообщения</string>
+  <string name="arrays__enter_key">Показывать кнопку Enter</string>
   <string name="arrays__emoji_key">Показывать кнопку смайлов</string>
-  <string name="arrays__send_key">Показывать кнопку Отправить</string>
+  <string name="arrays__send_key">Показывать кнопку \'Отправить\'</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="one">%d час</item>
@@ -578,7 +584,7 @@
   <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Использовать Silence для просмотра и хранения всех входящих мультимедийных сообщений</string>
   <string name="preferences__keyboard_settings">Опции клавиатуры</string>
   <string name="preferences__disable_emoji_drawer">Отключить встроенные смайлы</string>
-  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Включите эту опцию, если Ваша клавиатура содержит смайлы.</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Включите эту опцию, если ваша клавиатура поддерживает смайлы.</string>
   <string name="preferences__display_settings">Внешний вид</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">Выберите себя из списка контактов.</string>
   <string name="preferences__change_passphrase">Изменить парольную фразу</string>
@@ -607,7 +613,7 @@
   <string name="preferences__change_notification_sound">Изменить мелодию уведомления</string>
   <string name="preferences__silent">Без звука</string>
   <string name="preferences__in_conversation_notifications">Уведомления при разговоре</string>
-  <string name="preferences__play_inthread_notifications">Проигрывать мелодию уведомления даже во время активной переписки</string>
+  <string name="preferences__play_inthread_notifications">Воспроизведение уведомлений при просмотре активной беседы.</string>
   <string name="preferences__repeat_alerts">Повторять сигналы</string>
   <string name="preferences__never">Никогда</string>
   <string name="preferences__one_time">Один раз</string>
@@ -660,13 +666,14 @@
   <string name="preferences__language">Язык</string>
   <string name="preferences__make_default_sms_app">SMS-приложение по умолчанию</string>
   <string name="preferences__make_silence_the_default_sms_mms_app">Сделать Silence приложением по умолчанию для SMS и MMS.</string>
-  <string name="preferences__submit_debug_log">Отправлять лог отладки</string>
+  <string name="preferences__submit_debug_log">Отправить журнал отладки</string>
   <string name="preferences__support_wifi_calling">Режим совместимости с \'Wi-Fi Calling\'</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Включите, если устройство использует доставку SMS/MMS через Wi-Fi (включить, только если на вашем устройстве активирована опция \'Wi-Fi Calling\')</string>
+  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Включите, если устройство использует доставку SMS/MMS через Wi-Fi (работает, только если на вашем устройстве активирована опция \'Wi-Fi Calling\')</string>
   <string name="preferences__about">О Silence</string>
   <string name="preferences__about_version">Версия %s</string>
-  <string name="preferences__about_build_id">Номер сборки: %s</string>
   <string name="preferences__privacy_policy">Политика конфиденциальности</string>
+  <string name="preferences__incognito_keyboard">Инкогнито-клавиатура</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Если установлен режим инкогнито, клавиатура не запоминает, не изучает и не сохраняет любые слова, которые вы вводите</string>
   <string name="preferences_app_protection__blocked_contacts">Заблокированные контакты</string>
   <string name="preferences_notifications__display_in_notifications">Отображение в уведомлениях</string>
   <string name="preferences__show_sent_time">Показывать время отправки</string>

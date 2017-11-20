@@ -299,6 +299,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="ThreadRecord_left_the_group">Lämnade gruppen</string>
   <string name="ThreadRecord_draft">Utkast:</string>
   <string name="ThreadRecord_media_message">Media meddelande</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Du har ingen identitetsnyckel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Mottagaren har ingen identitetsnyckel.</string>
@@ -422,6 +423,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vald</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Bläddra till slutet</string>
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Tack för din hjälp!</string>
   <string name="log_submit_activity__submitting">Skickar</string>
@@ -612,7 +614,6 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="preferences__submit_debug_log">Skicka in loggfilen för felsökning</string>
   <string name="preferences__about">Om Silence</string>
   <string name="preferences__about_version">Version %s</string>
-  <string name="preferences__about_build_id">Bygg-ID: %s</string>
   <string name="preferences__privacy_policy">Sekretesspolicy</string>
   <string name="preferences_app_protection__blocked_contacts">Blockerade kontakter</string>
   <string name="preferences_notifications__display_in_notifications">Visa i notifikationer</string>

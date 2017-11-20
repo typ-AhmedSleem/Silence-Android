@@ -87,6 +87,7 @@
   <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Отримано повідомлення обміну ключами для неправильної версії протоколу.</string>
   <string name="SmsMessageRecord_secure_session_ended">Захищений сеанс завершено.</string>
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">У вас немає особистого ключа.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У одержувача немає особистого ключа.</string>
@@ -141,6 +142,7 @@
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Дякуємо за вашу допомогу!</string>
   <!--database_migration_activity-->

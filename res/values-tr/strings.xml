@@ -172,6 +172,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="SmsMessageRecord_duplicate_message">Çift mesaj.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Taslak:</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Alıcının kimlik anahtarı yok.</string>
@@ -259,6 +260,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="conversation_fragment_cab__batch_selection_mode">Toplu seçim modu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s seçildi</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Yardımınız için teşekkürler!</string>
   <string name="log_submit_activity__submitting">Gönderilme</string>
@@ -397,7 +399,6 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="preferences__submit_debug_log">Hata ayıklama kaydı gönder</string>
   <string name="preferences__about">Silence hakkında</string>
   <string name="preferences__about_version">Sürüm %s</string>
-  <string name="preferences__about_build_id">Yapım numarası: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Engellenen kişiler</string>
   <string name="preferences_chats__mms">MMS</string>
   <!--****************************************-->

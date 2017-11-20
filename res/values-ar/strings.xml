@@ -199,6 +199,7 @@
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">ترك المجموعة</string>
   <string name="ThreadRecord_draft">مسودة:</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">لا يوجد لديك مفتاح تعريفي.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">لا يوجد لدى الطرف الاخر مفتاح تعريفي.</string>
@@ -301,6 +302,7 @@
   <string name="conversation_fragment_cab__batch_selection_mode">وضع اختيار الدفعات</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s اختيار</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">تعذر التقاط سجلات التصحيح من هاتفك. يمكنك استخدام ADB للحصول على سجلات التصحيح بدلا من ذلك.</string>
   <string name="log_submit_activity__thanks">شكرا للمساعدة!</string>
@@ -493,7 +495,6 @@
   <string name="preferences__support_wifi_calling">وضع التوافق مع \'مكالمات \'الواي فاي\'</string>
   <string name="preferences__about">عن تطبيق سايلنس</string>
   <string name="preferences__about_version">الإصدار %s</string>
-  <string name="preferences__about_build_id">معرف الإصدار : %s</string>
   <string name="preferences__privacy_policy">الخصوصية</string>
   <string name="preferences_app_protection__blocked_contacts">المراسلون المحبوسون</string>
   <string name="preferences_notifications__display_in_notifications">اعرض في الإشعارات</string>

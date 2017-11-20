@@ -264,6 +264,7 @@ ezt a névjegyet.
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Piszkozat:</string>
   <string name="ThreadRecord_media_message">Média üzenet</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nincsen azonosító kulcsod.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">A címzettnek nincs azonosító kulcsa.</string>
@@ -367,6 +368,7 @@ ezt a névjegyet.
   <string name="conversation_fragment_cab__batch_selection_mode">Kötegelt kijelölési mód</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s kijelölésre került</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nem lehet olvasni a naplót a készülékeden. Ehelyett még mindig használhatsz ADB-t, hogy kapj hibakeresési naplót.</string>
   <string name="log_submit_activity__thanks">Köszönjük a segítségedet!</string>
@@ -551,7 +553,6 @@ ezt a névjegyet.
   <string name="preferences__make_default_sms_app">Beállítás alapértelmezett SMS alkalmazásként</string>
   <string name="preferences__submit_debug_log">Hibakeresési napló küldése</string>
   <string name="preferences__about_version">Verzió %s</string>
-  <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Letiltott névjegyek</string>
   <string name="preferences_notifications__display_in_notifications">Megjelenítés értesítésekben</string>
   <string name="preferences__show_sent_time">Küldési idő megjelenítése</string>

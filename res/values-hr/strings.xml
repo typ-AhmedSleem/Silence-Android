@@ -152,6 +152,7 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="SmsMessageRecord_duplicate_message">Dupla poruka.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Skica:</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemate ključ identiteta.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Primatelj nema ključ identiteta.</string>
@@ -230,6 +231,7 @@ Primljena poruka razmjene ključeva za pogrešnu inačicu protokola.</string>
   <string name="conversation_fragment_cab__batch_selection_mode">Način za višestruki odabir</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s odabrano</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Hvala na pomoći!</string>
   <string name="log_submit_activity__submitting">Slanje</string>

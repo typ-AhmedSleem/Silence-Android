@@ -321,6 +321,9 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="ThreadRecord_left_the_group">Abandonar el grupo</string>
   <string name="ThreadRecord_draft">Borrador:</string>
   <string name="ThreadRecord_media_message">Mensaje audiovisual</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">Mensajes SMS deshabilitados</string>
+  <string name="TransportOptions_no_sim_card_found">No se encontró tarjeta SIM</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatario no tiene clave de identidad.</string>
@@ -447,6 +450,9 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="conversation_fragment_cab__batch_selection_amount">%s seleccionado</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Desplazar hasta el final</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Exportar</string>
+  <string name="import_export_fragment__import">Importar</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">No se pudo leer el registro (log) en su dispositivo. Todavía puede usar ADB para obtener un registro de depuración en su lugar.</string>
   <string name="log_submit_activity__thanks">¡Gracias por su ayuda!</string>
@@ -644,8 +650,9 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Habilítelo si su dispositivo usa entrega de SMS/MMS sobre Wi-Fi (hágalo sólo cuando la \'Llamada Wi-Fi\' esté habilitada en su dispositivo).</string>
   <string name="preferences__about">Acerca de Silence</string>
   <string name="preferences__about_version">Versión %s</string>
-  <string name="preferences__about_build_id">Identificación de la versión: %s</string>
   <string name="preferences__privacy_policy">Política de privacidad</string>
+  <string name="preferences__incognito_keyboard">Teclado incógnito</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Si está establecido en modo incógnito, el teclado no recordará, aprenderá, o almacenará ninguna palabra que escriba</string>
   <string name="preferences_app_protection__blocked_contacts">Contactos bloqueados</string>
   <string name="preferences_notifications__display_in_notifications">Mostrar en las notificaciones</string>
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>

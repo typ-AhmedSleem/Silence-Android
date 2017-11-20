@@ -132,6 +132,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Menerima pembaharuan atas identitas yang tidak diketahui. Sentuh untuk memvalidasi identitas</string>
   <string name="SmsMessageRecord_secure_session_ended">Sesi aman berakhir.</string>
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Anda tidak memiliki kunci identitas.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Penerima tidak memiliki kunci identitas.</string>
@@ -188,6 +189,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Terimakasih atas bantuan anda</string>
   <!--database_migration_activity-->

@@ -161,6 +161,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="SmsMessageRecord_secure_session_ended">Bezpečné spojenie ukončené.</string>
   <string name="SmsMessageRecord_duplicate_message">Zduplikuj správu.</string>
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte kľúč totožnosti.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Príjemca nemá kľúč totožnosti.</string>
@@ -238,6 +239,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="conversation_fragment_cab__batch_selection_mode">Mód hromadného výberu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vybraných</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Ďakujem za tvoju pomoc!</string>
   <string name="log_submit_activity__submitting">Posielanie</string>
@@ -347,7 +349,6 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="preferences__submit_debug_log">Odošli ladiaci log</string>
   <string name="preferences__about">O Silence</string>
   <string name="preferences__about_version">Verzia %s</string>
-  <string name="preferences__about_build_id">Číslo zostavenia: %s</string>
   <string name="preferences__show_sent_time">Zobraziť čas poslania</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Zobraziť čas poslania, namiesto času prijatia prichádzajúcich správ</string>
   <string name="preferences_chats__mms">MMS</string>

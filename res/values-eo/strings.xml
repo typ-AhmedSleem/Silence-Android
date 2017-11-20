@@ -272,7 +272,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="MessageRecord_key_exchange_message">Ŝlosil-interŝanĝa mesaĝo</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Pasfrazoj malsamas!</string>
-  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Eks-pasfazo eraras!</string>
+  <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Ekspasfazo eraras!</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nenia pasfrazo entajpita!</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">Entajpu pasfrazon</string>
@@ -280,7 +280,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Erara pasfrazo!</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosil-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian komunikadon, aŭ ke tiu ĉi kontakto simple reinstalis na Silence kaj li nun posedas novan ident-ŝlosilon.</string>
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosil-interŝanĝo konfidindas, sed vi havas la agordon \'\'aŭtomate fini ŝlosilo-interŝanĝon\" malaktiva.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosil-interŝanĝo konfidindas, sed vi havas la agordon \'“aŭtomate fini ŝlosilo-interŝanĝon” malaktiva.</string>
   <string name="ReceiveKeyActivity_processing">Prilaborado</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosil-interŝanĝo…</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Vi devas kontroli identigilon de tiu ĉi kontakto.</string>
@@ -309,9 +309,12 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="ThreadRecord_left_the_group">Forlasis grupon</string>
   <string name="ThreadRecord_draft">Malneto:</string>
   <string name="ThreadRecord_media_message">Aŭdovida mesaĝo</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">SMS-mesaĝoj malaktivaj</string>
+  <string name="TransportOptions_no_sim_card_found">Neniu SIM-karto trovita</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Vi ne havas ident-ŝlosilon.</string>
-  <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ricevanto ne havas ident-ŝlosilon.</string>
+  <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ricevonto ne havas ident-ŝlosilon.</string>
   <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skani QR-kodon de kontakto</string>
   <string name="VerifyIdentityActivity_display_your_qr_code">Montri vian QR-kodon</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATENTU, la skanitaj ŝlosiloj NE konformas! Bonvolu kontroli fingrospuron singarde.</string>
@@ -435,6 +438,9 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s elektitaj</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Rulumi malsupren</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Elporti</string>
+  <string name="import_export_fragment__import">Enporti</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Ne eblis legi protokolon de via aparato. Tamen vi povas uzi ADB por atingi senerarig-protokolon.</string>
   <string name="log_submit_activity__thanks">Dankon por via helpo!</string>
@@ -541,8 +547,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__sms_mms">SMS kaj MMS</string>
   <string name="preferences__pref_all_sms_title">Ricevi ĉiujn SMS-ojn</string>
   <string name="preferences__pref_all_mms_title">Ricevi ĉiujn MMS-ojn</string>
-  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Uzas na Silence por rigardi kaj konservi ĉiujn ricevotajn tekstajn mesaĝojn</string>
-  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Uzas na Silence por rigardi kaj konservi ĉiujn ricevotajn aŭdovidajn mesaĝojn</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Uzi na Silence por rigardi kaj konservi ĉiujn ricevotajn tekstajn mesaĝojn</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Uzi Silence por rigardi kaj konservi ĉiujn ricevotajn aŭdovidajn mesaĝojn</string>
   <string name="preferences__keyboard_settings">Klav-agordoj</string>
   <string name="preferences__disable_emoji_drawer">Malaktivigi emoĝi-desegnilon</string>
   <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">Aktivigu tiun ĉi agordon se via klavaro subtenas emoĝiojn.</string>
@@ -552,17 +558,17 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__change_your_passphrase">Ŝanĝi vian pasfrazon</string>
   <string name="preferences__complete_key_exchanges">Fini ŝlosil-interŝanĝojn</string>
   <string name="preferences__enable_passphrase">Aktivigi pasfrazon</string>
-  <string name="preferences__enable_local_encryption_of_messages_and_keys">Aktivigas lokan ĉifradon de mesaĝoj kaj ŝlosiloj</string>
+  <string name="preferences__enable_local_encryption_of_messages_and_keys">Aktivigi lokan ĉifradon de mesaĝoj kaj ŝlosiloj</string>
   <string name="preferences__screen_security">Ekrana sekureco</string>
-  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Aŭtomate finas ŝlosil-interŝanĝojn por novaj seancoj aŭ por estantaj seancoj kun sama ident-ŝlosilo</string>
-  <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokas ekrankopiojn en listo de lastaj kaj en aplikaĵo</string>
-  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Postulas pasfrazon por legi mesaĝojn post difina tempo</string>
+  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Aŭtomate fini ŝlosil-interŝanĝojn por novaj seancoj aŭ por estantaj seancoj kun sama ident-ŝlosilo</string>
+  <string name="preferences__disable_screen_security_to_allow_screen_shots">Bloki ekrankopiojn en listo de lastaj kaj en aplikaĵo</string>
+  <string name="preferences__forget_passphrase_from_memory_after_some_interval">Postuli pasfrazon por legi mesaĝojn post difina tempo</string>
   <string name="preferences__timeout_passphrase">Templimo de pasfrazo</string>
   <string name="preferences__pref_timeout_interval_dialogtitle">Elekti templimon de pasfrazon</string>
   <string name="preferences__pref_timeout_interval_title">Templima intervalo</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Kiom longe atendi antaŭ forgesi pasfrazon de memoro</string>
   <string name="preferences__notifications">Sciigoj</string>
-  <string name="preferences__enable_message_notifications">Aktivigas mesaĝajn sciigojn</string>
+  <string name="preferences__enable_message_notifications">Aktivigi mesaĝajn sciigojn</string>
   <string name="preferences__led_color">Koloro de LED</string>
   <string name="preferences__led_color_unknown">Nekonata</string>
   <string name="preferences__pref_led_blink_title">Lumpulsa sekvenco de LED</string>
@@ -574,7 +580,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__change_notification_sound">Ŝanĝi sciigan sonon</string>
   <string name="preferences__silent">Silenta</string>
   <string name="preferences__in_conversation_notifications">En-interparoladaj sciigoj</string>
-  <string name="preferences__play_inthread_notifications">Ludas sciigan sonon dum montri aktivan interparoladon.</string>
+  <string name="preferences__play_inthread_notifications">Ludi sciigan sonon dum montri aktivan interparoladon.</string>
   <string name="preferences__repeat_alerts">Repepi</string>
   <string name="preferences__never">Neniam</string>
   <string name="preferences__one_time">Unufoje</string>
@@ -583,7 +589,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__five_times">Kvinfoje</string>
   <string name="preferences__ten_times">Dekfoje</string>
   <string name="preferences__vibrate">Vibri</string>
-  <string name="preferences__also_vibrate_when_notified">Vibras ankaŭ dum sciigoj</string>
+  <string name="preferences__also_vibrate_when_notified">Vibri ankaŭ dum sciigoj</string>
   <string name="preferences__minutes">minutoj</string>
   <string name="preferences__hours">horoj</string>
   <string name="preferences__green">Verda</string>
@@ -603,22 +609,22 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__mms_user_agent">MMS-a klienta aplikaĵo</string>
   <string name="preferences__advanced_mms_access_point_names">Permanaj agordoj de MMS</string>
   <string name="preferences__enable_manual_mms">Uzi permanaj agordoj de MMS</string>
-  <string name="preferences__override_system_mms_settings">Superskribas sistemajn MMS-ajn agordojn per jenaj parametroj.</string>
+  <string name="preferences__override_system_mms_settings">Superskribi sistemajn MMS-ajn agordojn per la jenaj parametroj.</string>
   <string name="preferences__mmsc_url">MMSC URL</string>
-  <string name="preferences__mms_proxy_host">MMS-a prokura adreso</string>
-  <string name="preferences__mms_proxy_port">MMS-a prokura pordo</string>
+  <string name="preferences__mms_proxy_host">Adreso de MMS-retperanto</string>
+  <string name="preferences__mms_proxy_port">Pordo de MMS-retperanto</string>
   <string name="preferences__mmsc_username">MMSC-a uzantnomo</string>
   <string name="preferences__mmsc_password">MMSC-a pasvorto</string>
   <string name="preferences__sms_delivery_reports">Liveraj raportoj de SMS-oj</string>
-  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Petas pri livera raporto por ĉiu SMS-a mesaĝo, kiun vi sendas</string>
+  <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Peti pri livera raporto por ĉiu SMS-a mesaĝo, kiun vi sendas</string>
   <string name="preferences__sms_delivery_reports_notification">Sciigoj pri liveraj raportoj de SMS-oj</string>
-  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Montras sciigon kiam livera raporto estas ricevita</string>
-  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Aŭtomate forigas pli malnovajn mesaĝojn kiam interparolado trograndas difinitan longon</string>
+  <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Montri sciigon kiam livera raporto estas ricevita</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Aŭtomate forigi pli malnovajn mesaĝojn kiam interparolado trograndas difinitan longon</string>
   <string name="preferences__delete_old_messages">Forigi malnovajn mesaĝojn</string>
   <string name="preferences__chats">Babiloj kaj aŭdvidaĵoj</string>
   <string name="preferences__conversation_length_limit">Longlimo de interparolado</string>
   <string name="preferences__trim_all_conversations_now">Tranĉi ĉiujn interparoladojn nun</string>
-  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Skanas tra ĉiuj interparoladoj kaj devigas longlimojn de interparoladoj</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Skani tra ĉiuj interparoladoj kaj devigi longlimojn de interparoladoj</string>
   <string name="preferences__light_theme">Hela</string>
   <string name="preferences__dark_theme">Malhela</string>
   <string name="preferences__appearance">Aspekto</string>
@@ -629,20 +635,21 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__make_silence_the_default_sms_mms_app">Igi na Silence ĉefa aplikaĵo por via sistemo.</string>
   <string name="preferences__submit_debug_log">Alŝuti senerarig-protokolon</string>
   <string name="preferences__support_wifi_calling">\'Wi-Fi Calling\' kongrueca reĝimo</string>
-  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivigu se via aparato uzas SMS/MMS-an liveradon tra vifio (aktivigu nur kiam \'Wi-Fi Calling\' estas aktiva en via aparato). </string>
+  <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Aktivigu se via aparato uzas SMS/MMS-an liveradon tra vifio (aktivigu nur kiam “Wi-Fi Calling” estas aktiva en via aparato). </string>
   <string name="preferences__about">Pri Silence</string>
   <string name="preferences__about_version">Versio %s</string>
-  <string name="preferences__about_build_id">Kompilaĵo: %s</string>
   <string name="preferences__privacy_policy">Politiko pri privateco</string>
+  <string name="preferences__incognito_keyboard">Privata klavaro</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">En privata reĝimo la klavaro ne memoros, lernos kaj konservos iujn ajn entajpitajn vortojn</string>
   <string name="preferences_app_protection__blocked_contacts">Blokitaj kontaktoj</string>
   <string name="preferences_notifications__display_in_notifications">Montri en sciigoj</string>
   <string name="preferences__show_sent_time">Montri tempon de sendo</string>
-  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Montras tempon de sendo anstataŭ tempon de ricevo por ricevitaj mesaĝoj</string>
+  <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Montri tempon de sendo anstataŭ tempon de ricevo por ricevitaj mesaĝoj</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Aŭtomate elŝuti</string>
-  <string name="preferences__automatically_retrieve_mms_messages">Aŭtomate elŝutas MMS-ajn mesaĝojn</string>
+  <string name="preferences__automatically_retrieve_mms_messages">Aŭtomate elŝuti MMS-ajn mesaĝojn</string>
   <string name="preferences__roaming_auto_retrieve">Retmigrade aŭtomate elŝuti</string>
-  <string name="preferences__automatically_retrieve_mms_when_roaming">Aŭtomate elŝutas MMS-ojn dum retmigrado (ang. roaming)</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">Aŭtomate elŝuti MMS-ojn dum retmigrado (ang. roaming)</string>
   <string name="preferences_chats__message_trimming">Mesaĝa tranĉado</string>
   <!--****************************************-->
   <!--menus-->

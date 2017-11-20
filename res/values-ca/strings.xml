@@ -90,6 +90,7 @@
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">S\'ha rebut informació actualitzada però desconeguda. Pica per validar l\'identitat.</string>
   <string name="SmsMessageRecord_secure_session_ended">La sessió segura s\'ha acabat.</string>
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Tu no tens una clau d\'identitat.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatari no té clau d\'identitat.</string>
@@ -145,6 +146,7 @@
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Gràcies per la teva ajuda!</string>
   <!--database_migration_activity-->

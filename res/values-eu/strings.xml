@@ -150,6 +150,7 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="SmsMessageRecord_duplicate_message">Mezu bikoiztua.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Zirriborroa:</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Ez daukazu nortasun gakorik.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Hartzaileak ez dauka nortasun gakorik.</string>
@@ -228,6 +229,7 @@ Gakoaren elkar-trukeraro mezua jaso da protokoloaren bertsio baliogabe baterako.
   <string name="conversation_fragment_cab__batch_selection_mode">Batch hautatzeko modua</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s hautatua</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Eskerrik asko zure laguntzagatik!</string>
   <string name="log_submit_activity__submitting">Bidaltzen</string>

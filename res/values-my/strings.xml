@@ -63,6 +63,7 @@
   <!--Slide-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">သင့်တွင်အသိအမှတ်ပြုကီးမရှိပါ</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">လက်ခံသူတွင်အသိအမှတ်ပြုကီးမရှိပါ</string>
@@ -115,6 +116,7 @@
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">စနစ်ပိုင်းဆိုင်ရာ နဂိုဒေတာဘေ့စ်ကို ပြောင်းလဲမည် မဟုတ်ပါ</string>

@@ -328,6 +328,7 @@ Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
   <string name="ThreadRecord_left_the_group">Opustit skupinu</string>
   <string name="ThreadRecord_draft">Koncept:</string>
   <string name="ThreadRecord_media_message">Multimediální zpráva</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte žádný identifikační klíč.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Příjemce nemá žádný identifikační klíč.</string>
@@ -454,6 +455,7 @@ Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vybráno</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Přesunout se dolů</string>
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nebylo možné přečíst log na vašem zařízení. Můžete ovšem použít ADB a získat místo něj debug log.</string>
   <string name="log_submit_activity__thanks">Děkujeme za vaši pomoc!</string>
@@ -647,7 +649,6 @@ Přijatá zpráva výměny klíčů pro nesprávnou verzi protokolu.</string>
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Povolte, pokud vaše zařízení používá SMS/MMS doručování přes Wi-Fi (povolte pouze pokud \"Wi-Fi Calling\" je povoleno na vašem zařízení).</string>
   <string name="preferences__about">O Silence</string>
   <string name="preferences__about_version">Verze %s</string>
-  <string name="preferences__about_build_id">Číslo sestavení: %s</string>
   <string name="preferences__privacy_policy">Privacy policy</string>
   <string name="preferences_app_protection__blocked_contacts">Blokované kontakty</string>
   <string name="preferences_notifications__display_in_notifications">Zobrazit v notifikacích</string>

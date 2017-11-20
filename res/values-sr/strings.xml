@@ -4,6 +4,7 @@
   <string name="yes">Да</string>
   <string name="no">Не</string>
   <string name="delete">Обриши</string>
+  <string name="please_wait">Сачекајте…</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Нова порука</string>
   <!--ApplicationPreferencesActivity-->
@@ -155,8 +156,17 @@
     <item quantity="few">Уписивање %1$d прилога</item>
     <item quantity="other">Уписивање %1$d прилога</item>
   </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Уписујем прилог у складиште…</item>
+    <item quantity="few">Уписујем %1$d прилога у складиште…</item>
+    <item quantity="other">Уписујем %1$d прилога у складиште…</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Сакупљам прилоге…</string>
+  <string name="ConversationFragment_pending">На чекању…</string>
   <string name="ConversationFragment_mms">ММС</string>
   <string name="ConversationFragment_sms">СМС</string>
+  <string name="ConversationFragment_deleting">Бришем…</string>
+  <string name="ConversationFragment_deleting_messages">Бришем поруке…</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Тражи</string>
   <!--ConversationListFragment-->
@@ -171,6 +181,7 @@
     <item quantity="other">Ово ће трајно да обрише свих %1$d изабраних преписки.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Брисање</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Бришем изабране преписке…</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Преписка архивирана</item>
     <item quantity="few">%d преписке архивиране</item>
@@ -186,6 +197,7 @@
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Слање нацрта изабраних преписки.</string>
   <string name="ConversationListFragment_send">Пошаљи</string>
   <string name="ConversationListFragment_sending">Шаљем</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Шаљем изабране нацрте…</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Архивиране преписке (%d)</string>
   <!--CustomDefaultPreference-->
@@ -198,6 +210,9 @@
   <string name="DateUtils_today">Данас</string>
   <string name="DateUtils_yesterday">Јуче</string>
   <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Нова СИМ картица откривена</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Нови кључ је направљен.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Нови кључ је направљен за ту СИМ картицу.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Подели са</string>
   <!--IntroScreenActivity-->
@@ -215,11 +230,13 @@
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Упозорење, ово ће да извезе садржај ваших порука у складиште у обичном текстуалном формату.</string>
   <string name="ExportFragment_cancel">Одустани</string>
   <string name="ExportFragment_exporting">Извозим</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Извозим обични текст у складиште…</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Грешка, не могу да уписујем у складиште.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Грешка при упису у складиште.</string>
   <string name="ExportFragment_export_successful">Извоз је успео.</string>
   <string name="ExportFragment_export_encrypted_backup">Да извезем шифровану резерву?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages"> Ово ће да извезе ваше шифроване кључеве, поставке и поруке у складиште.</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages"> Извозим шифроване кључеве, поставке и поруке…</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Нова група</string>
   <string name="GroupCreateActivity_actionbar_update_title">Ажурирај групу</string>
@@ -247,9 +264,11 @@
 ову резерву,
 поновним увозом имаћете дупле поруке.</string>
   <string name="ImportFragment_importing">Увоз</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Увозим текстуалну резерву…</string>
   <string name="ImportFragment_no_plaintext_backup_found">Обична текстуална резерва није нађена!</string>
   <string name="ImportFragment_error_importing_backup">Грешка увоза резерве!</string>
   <string name="ImportFragment_import_complete">Увоз завршен!</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Враћам шифровану резерву…</string>
   <string name="ImportFragment_no_encrypted_backup_found">Шифрована резерва није нађена!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Нема очитаног кључа!</string>
@@ -266,6 +285,7 @@
   <string name="NotificationMmsMessageRecord_multimedia_message">Мултимедијална порука</string>
   <!--MessageRecord-->
   <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Примљена је порука шифрована старим издањем Сајленса које више није подржано. Замолите пошиљаоца да надогради на најновије издање и поново пошаље поруку.</string>
+  <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Порука размене коју сте добили потиче од застарелог издања Сајленса које не може да комуницира са вашим издањем. Морате је послати ручно да бисте да бисте почели безбедну сесију. Тапните да пошаљете поруку размене кључа.</string>
   <string name="MessageRecord_left_group">Напустили сте групу.</string>
   <string name="MessageRecord_updated_group">Група ажурирана.</string>
   <string name="MessageRecord_key_exchange_message">Порука размене кључева</string>
@@ -314,6 +334,9 @@
   <string name="ThreadRecord_left_the_group">Напусти групу</string>
   <string name="ThreadRecord_draft">Нацрт:</string>
   <string name="ThreadRecord_media_message">Мултимедијална порука</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">СМС поруке онемогућене</string>
+  <string name="TransportOptions_no_sim_card_found">Нема СИМ картице</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Немате кључ идентитета.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Прималац нема кључ идентитета.</string>
@@ -335,15 +358,20 @@
   <string name="KeyExchangeInitiator_send">Пошаљи</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Лоше шифрована порука</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Дешифрујем, сачекајте…</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Порука шифрована за непостојећу сесију</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Захтев за окончање непостојеће сесије</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Грешка дешифровања поруке.</string>
   <!--MmsDatabase-->
+  <string name="MmsDatabase_connecting_to_mms_server">Повезујем се на ММС сервер…</string>
+  <string name="MmsDatabase_downloading_mms">Преузимам ММС…</string>
   <string name="MmsDatabase_mms_download_failed">Преузимање ММС поруке није успело!</string>
+  <string name="MmsDatabase_downloading">Преузимам…</string>
   <string name="MmsDatabase_mms_pending_download">Додирните и подесите ММС поставке да бисте наставили преузимање.</string>
   <string name="MmsDatabase_error_decrypting_message">Грешка дешифровања поруке.</string>
   <!--MmsMessageRecord-->
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">Дешифрујем ММС, сачекајте…</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Лоше шифрована ММС порука</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">ММС порука шифрована за непостојећу сесију</string>
   <!--MuteDialog-->
@@ -379,6 +407,8 @@
   <string name="SingleRecipientNotificationBuilder_silence">Сајленс</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Нова порука</string>
   <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Слот %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (слот %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Стара лозинка</string>
   <string name="change_passphrase_activity__new_passphrase">Нова лозинка</string>
@@ -433,10 +463,14 @@
   <string name="conversation_fragment_cab__batch_selection_amount">Изабрано: %s</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Клизај на дно</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Извоз</string>
+  <string name="import_export_fragment__import">Увоз</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Не могу да очитам дневник на вашем уређају. Можете да искористите АДБ да бисте добавили дневник исправљања грешака.</string>
   <string name="log_submit_activity__thanks">Хвала вам на помоћи!</string>
   <string name="log_submit_activity__submitting">Шаљем</string>
+  <string name="log_submit_activity__posting_logs">Отпремам дневник на гист…</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Желите ли да увезете постојеће текстуалне поруке у Сајленсову шифровану базу података?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Подразумевана системска база података неће бити измењена или преуређена на било који начин.</string>
@@ -445,6 +479,7 @@
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Ово би могло мало да потраје. Будите стрпљиви, бићете обавештени када се увоз заврши.</string>
   <string name="database_migration_activity__importing">УВОЗИМ</string>
   <!--database_upgrade_activity-->
+  <string name="database_upgrade_activity__updating_database">Ажурирам базу података…</string>
   <string name="export_fragment__export_plaintext_backup">Извези текстуалну резерву</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Извоз обичне текстуалне резерве компатибилне са апликацијом „SMS Backup &amp; Restore“ у складиште.</string>
   <string name="import_fragment__import_system_sms_database">Увези системску СМС базу података</string>
@@ -629,8 +664,9 @@
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Укључите ако ваш уређај доставља СМС/ММС преко бежичне мреже (укључите само ако је „WiFi Calling“ укључено на вашем уређају).</string>
   <string name="preferences__about">О Сајленсу</string>
   <string name="preferences__about_version">Издање %s</string>
-  <string name="preferences__about_build_id">ИД  изградње: %s</string>
   <string name="preferences__privacy_policy">Политика приватности</string>
+  <string name="preferences__incognito_keyboard">Инкогнито тастатура</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Ако је постављен инкогнито режим, тастатура неће памтити, учити или складиштити речи које куцате</string>
   <string name="preferences_app_protection__blocked_contacts">Блокирани контакти</string>
   <string name="preferences_notifications__display_in_notifications">Прикажи у обавештењу</string>
   <string name="preferences__show_sent_time">Прикажи време слања</string>
@@ -648,6 +684,7 @@
   <string name="contact_selection_list__menu_select_all">Изабери све</string>
   <string name="contact_selection_list__menu_unselect_all">Поништи избор</string>
   <string name="contact_selection_list__header">СВИ КОНТАКТИ</string>
+  <string name="contact_selection_list__unknown_contact">Нова порука за…</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Завршено</string>
   <!--refreshing push directory from menu-->
@@ -723,6 +760,7 @@
   <string name="text_secure_normal__menu_archived_conversations">Архивиране преписке</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">Користити као подразумевану СМС апликацију?</string>
+  <string name="reminder_header_sms_default_text_mandatory">Сајленс мора бити ваша подразумевана апликација за СМС/ММС да би примао поруке.</string>
   <string name="reminder_header_sms_default_button">ПОСТАВИ</string>
   <string name="reminder_header_sms_import_title">Увести СМС поруке са система?</string>
   <string name="reminder_header_sms_import_text">Тапните да копирате СМС поруке са вашег телефона у Сајленсову шифровану базу.</string>
@@ -748,6 +786,8 @@
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Преглед слике</string>
   <!--Trimmer-->
+  <string name="trimmer__deleting">Брисање…</string>
+  <string name="trimmer__deleting_old_messages">Бришем старе поруке…</string>
   <string name="trimmer__old_messages_successfully_deleted">Старе поруке успешно обрисане</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Икона преноса</string>

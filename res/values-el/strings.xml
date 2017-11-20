@@ -168,6 +168,7 @@
   <string name="SmsMessageRecord_duplicate_message">Διπλότυπο μήνυμα</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Πρόχειρο</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Δεν έχετε κλειδί ταυτότητας.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Ο παραλήπτης δεν έχει κλειδί ταυτότητας.</string>
@@ -250,6 +251,7 @@
   <string name="conversation_fragment_cab__batch_selection_mode">Λειτουργία Μαζικής Επιλογής</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s επιλέχτηκαν</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Ευχαριστούμε για τη βοήθειά σας!</string>
   <string name="log_submit_activity__submitting">Αποστολή</string>
@@ -384,7 +386,6 @@
   <string name="preferences__make_default_sms_app">Ανάθεση ως προεπιλεγμένη εφαρμογή για SMS</string>
   <string name="preferences__submit_debug_log">Αποστολή αρχείων καταγραφής αποσφαλμάτωσης</string>
   <string name="preferences__about_version">Έκδοση %s</string>
-  <string name="preferences__about_build_id">Build ID: %s</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

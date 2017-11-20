@@ -311,6 +311,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="ThreadRecord_left_the_group">Groupe quitté</string>
   <string name="ThreadRecord_draft">Brouillon :</string>
   <string name="ThreadRecord_media_message">Message multimédia</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Vous n’avez pas de clé d’identité.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Le destinataire n’a pas de clé d’identité.</string>
@@ -437,6 +438,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="conversation_fragment_cab__batch_selection_amount">%s sélectionné</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Aller en bas</string>
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossible de récupérer les journaux de votre téléphone. Vous pouvez utiliser ADB pour récupérer les journaux de déboggage.</string>
   <string name="log_submit_activity__thanks">Merci pour votre aide !</string>
@@ -634,7 +636,6 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Activer si votre appareil délivre les SMS/MMS à l\'aide du Wi-FI (ne sera actif que si le \'Wi-Fi Calling\' est activé sur votre appareil).</string>
   <string name="preferences__about">À propos de Silence</string>
   <string name="preferences__about_version">Version %s</string>
-  <string name="preferences__about_build_id">ID de compilation : %s</string>
   <string name="preferences__privacy_policy">Politique de vie privée</string>
   <string name="preferences_app_protection__blocked_contacts">Contacts bloqués</string>
   <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>

@@ -223,6 +223,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Ciornă:</string>
   <string name="ThreadRecord_media_message">Mesaj media</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nu ai o cheie de identitate.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Destinatarul nu are o cheie de identitate.</string>
@@ -324,6 +325,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="conversation_fragment_cab__batch_selection_mode">Mod selecţie multiplă</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s selectate</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Vă mulțumim pentru ajutor!</string>
   <string name="log_submit_activity__submitting">Se trimite</string>
@@ -504,7 +506,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__support_wifi_calling">Mod compatibilitate \'Apel Wi-Fi\'</string>
   <string name="preferences__about">Despre Silence</string>
   <string name="preferences__about_version">Versiunea %s</string>
-  <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Contacte blocate</string>
   <string name="preferences_notifications__display_in_notifications">Afișează în notificări</string>
   <string name="preferences__show_sent_time">Afisează data trimiterii</string>

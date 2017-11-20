@@ -296,6 +296,9 @@
   <string name="ThreadRecord_left_the_group">グループを出ました</string>
   <string name="ThreadRecord_draft">下書き:</string>
   <string name="ThreadRecord_media_message">メディアメッセージ</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">SMS メッセージは無効です</string>
+  <string name="TransportOptions_no_sim_card_found">SIM カードが見つかりません</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">認証キーがありません。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">受信者は認証キーがありません。</string>
@@ -422,6 +425,9 @@
   <string name="conversation_fragment_cab__batch_selection_amount">選択数: %s</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">下にスクロール</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">エクスポート</string>
+  <string name="import_export_fragment__import">インポート</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">デバイスのログが読み込めませんでした。ADBを使ってデバッグログを取得することができます。</string>
   <string name="log_submit_activity__thanks">提出どうもありがとうございます！</string>
@@ -619,8 +625,9 @@
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">お使いの端末で Wi-Fi での SMS/MMS 配信を使用する場合、有効にしてください (お使いの端末で \'Wi-Fi Calling\' が有効になっている場合のみ)。</string>
   <string name="preferences__about">Silenceについて</string>
   <string name="preferences__about_version">バージョン %s</string>
-  <string name="preferences__about_build_id">ビルド ID: %s</string>
   <string name="preferences__privacy_policy">プライバシーポリシー</string>
+  <string name="preferences__incognito_keyboard">シークレットキーボード</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">シークレットモードに設定した場合、キーボードは、入力した単語を記憶したり、学習したり、保存したりしません</string>
   <string name="preferences_app_protection__blocked_contacts">ブロックした連絡先</string>
   <string name="preferences_notifications__display_in_notifications">通知に表示</string>
   <string name="preferences__show_sent_time">送信した時間を表示</string>

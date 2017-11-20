@@ -193,6 +193,7 @@
   <string name="SmsMessageRecord_duplicate_message">重复的信息。</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">草稿：</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您没有身份密钥。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件人没有身份密钥。</string>
@@ -286,6 +287,7 @@
   <string name="conversation_fragment_cab__batch_selection_mode">批量选择模式</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s 已选择</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">感谢！</string>
   <string name="log_submit_activity__submitting">正在提交</string>
@@ -441,7 +443,6 @@
   <string name="preferences__make_default_sms_app">设置为默认的短信应用</string>
   <string name="preferences__submit_debug_log">提交调试日志</string>
   <string name="preferences__about_version">版本 %s</string>
-  <string name="preferences__about_build_id">Build ID: %s</string>
   <string name="preferences_app_protection__blocked_contacts">屏蔽的联系人</string>
   <string name="preferences__show_sent_time">显示发送时间</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">为消息显示发送时间而不是接收时间</string>

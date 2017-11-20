@@ -258,6 +258,7 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="SmsMessageRecord_duplicate_message">Tsamba dzakafanana</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">Gadziro:</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Hauna svumbunuro yechitupa.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Anogamuchira haana svumbunuro yechitupa.</string>
@@ -349,6 +350,7 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="conversation_fragment_cab__batch_selection_mode">Mashandiro esarudzo dzezvikwata </string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s dzasarudzwa</string>
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Waita basa nerubatsiro rwako!</string>
   <string name="log_submit_activity__submitting">Kutera</string>
@@ -503,7 +505,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="preferences__make_default_sms_app">Gadzira apu yetsamba pfupi sehurongwa hwako</string>
   <string name="preferences__submit_debug_log">Kuendesa dhayari yekubviswa kwaitwa zvipfukuto</string>
   <string name="preferences__about_version">Vezheni %s</string>
-  <string name="preferences__about_build_id">Chitupa chekuvaka: %s</string>
   <string name="preferences_app_protection__blocked_contacts">Mazita akadzivirirwa</string>
   <string name="preferences_notifications__display_in_notifications">Ratidza muzviziviso</string>
   <string name="preferences__show_sent_time">Taridza nguva yekutumira</string>

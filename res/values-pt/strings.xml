@@ -308,6 +308,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="ThreadRecord_left_the_group">Sair do grupo</string>
   <string name="ThreadRecord_draft">Rascunho:</string>
   <string name="ThreadRecord_media_message">Mensagem multimédia.</string>
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Você não tem uma chave de identidade.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">O destinatário não tem uma chave de identidade.</string>
@@ -434,6 +435,7 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="conversation_fragment_cab__batch_selection_amount">%s selecionadas</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Deslizar para o fundo</string>
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Não foi possível  ler o registo do dispositivo. No entanto, pode utilizar o ADB para o obter.</string>
   <string name="log_submit_activity__thanks">Obrigado pela sua ajuda!</string>
@@ -631,7 +633,6 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Ative esta opção se o seu dispositivo permitir a entrega de SMS/MMS por Wi-Fi (apenas deve ativar se a opção \"Chamada Wi-Fi\" estiver ativa no seu dispositivo).</string>
   <string name="preferences__about">Sobre o Silence</string>
   <string name="preferences__about_version">Versão %s</string>
-  <string name="preferences__about_build_id">ID de compilação: %s</string>
   <string name="preferences__privacy_policy">Política de privacidade</string>
   <string name="preferences_app_protection__blocked_contacts">Contactos bloqueados</string>
   <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>

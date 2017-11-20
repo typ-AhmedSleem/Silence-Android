@@ -65,6 +65,7 @@
   <!--Slide-->
   <!--SmsMessageRecord-->
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">ཁྱེད་ལ་ངོས་འཛིན་བྱེད་ཀྱི་ལྡེ་མིག་མི་འདུག</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">གཏོང་ཡུལ་ལ་ངོས་འཛིན་བྱེད་ཀྱི་ལྡེ་མིག་མི་འདུག</string>
@@ -117,6 +118,7 @@
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <!--database_migration_activity-->
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">གཏན་འཇགས་མཛོད་ཀྱི་མ་ལག་དེར་ཕྱོགས་གང་ཅིའི་ཐད་ནས་འགྱུར་བ་གཏོང་ཐུབ་གི་མ་རེད། </string>

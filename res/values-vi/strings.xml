@@ -122,6 +122,7 @@ Nhận thông tin trao đổi chìa khóa về phiên bản giao thức không h
   <string name="SmsMessageRecord_secure_session_ended">Phiên an toàn chấm dứt.</string>
   <string name="SmsMessageRecord_duplicate_message">Tin nhắn trùng lập.</string>
   <!--ThreadRecord-->
+  <!--TransportOptions-->
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Bạn không có chìa khóa nhận diện.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Người nhận không có chìa khóa nhận diện.</string>
@@ -180,6 +181,7 @@ Nhận thông tin trao đổi chìa khóa về phiên bản giao thức không h
   <!--audio_view-->
   <!--conversation_fragment_cab-->
   <!--conversation_fragment-->
+  <!--import_export_fragment-->
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">Cám ơn sự trợ giúp của bạn!</string>
   <string name="log_submit_activity__submitting">Đang nộp</string>

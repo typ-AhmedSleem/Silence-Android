@@ -310,6 +310,9 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="ThreadRecord_left_the_group">Ha lasciato il gruppo</string>
   <string name="ThreadRecord_draft">Bozza:</string>
   <string name="ThreadRecord_media_message">Messaggio multimediale</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">Messaggi SMS disattivati</string>
+  <string name="TransportOptions_no_sim_card_found">Nessuna scheda SIM trovata</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Non hai una chiave di identità.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Il destinatario non ha una chiave di identità.</string>
@@ -436,6 +439,9 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_fragment_cab__batch_selection_amount">%s selezionati</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Scorri in fondo</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Esporta</string>
+  <string name="import_export_fragment__import">Importa</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossibile leggere il log sul tuo dispositivo. Puoi comunque usare ADB per avere un log per il debug</string>
   <string name="log_submit_activity__thanks">Grazie dell\'aiuto!</string>
@@ -633,8 +639,9 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Attiva questa opzione se il tuo dispositivo invia SMS/MMS tramite WiFi (attiva solo quando \'WiFi Calling\' è attivo sul tuo dispositivo).</string>
   <string name="preferences__about">A proposito di Silence</string>
   <string name="preferences__about_version">Versione %s</string>
-  <string name="preferences__about_build_id">ID compilazione: %s</string>
   <string name="preferences__privacy_policy">Politica sulla privacy</string>
+  <string name="preferences__incognito_keyboard">Tastiera incognito</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Se impostata in modalità incognito, la tastiera non ricorderà, imparerà o memorizzerà alcuna parola digitata</string>
   <string name="preferences_app_protection__blocked_contacts">Contatti bloccati</string>
   <string name="preferences_notifications__display_in_notifications">Mostrare nelle notifiche</string>
   <string name="preferences__show_sent_time">Mostrare la data dell\'invio</string>

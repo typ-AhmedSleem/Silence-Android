@@ -317,6 +317,9 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="ThreadRecord_left_the_group">Sair do grupo</string>
   <string name="ThreadRecord_draft">Rascunho:</string>
   <string name="ThreadRecord_media_message">Mensagem multimídia.</string>
+  <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">Mensagens SMS desativadas</string>
+  <string name="TransportOptions_no_sim_card_found">Nenhum cartão SIM identificado</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Você não tem uma chave de identidade.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">O destinatário não tem uma chave de identidade.</string>
@@ -443,6 +446,9 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="conversation_fragment_cab__batch_selection_amount">%s selecionadas</string>
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Rolar para o fundo</string>
+  <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Exportar</string>
+  <string name="import_export_fragment__import">Importar</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Não foi possível ler o log de registro do dispositivo. No entanto, pode utilizar o ADB para obter o log de depuração.</string>
   <string name="log_submit_activity__thanks">Obrigado pela sua ajuda!</string>
@@ -640,8 +646,9 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Ative esta opção se o seu dispositivo permitir a entrega de SMS/MMS por Wi-Fi (apenas ative se a opção \"Chamada Wi-Fi\" também estiver ativada em seu dispositivo).</string>
   <string name="preferences__about">Sobre o Silence</string>
   <string name="preferences__about_version">Versão %s</string>
-  <string name="preferences__about_build_id">ID de compilação: %s</string>
   <string name="preferences__privacy_policy">Política de privacidade</string>
+  <string name="preferences__incognito_keyboard">Teclado em modo privativo</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">O teclado não irá lembrar, aprender or armazenar as palavras que digitar com o modo privativo ativado.</string>
   <string name="preferences_app_protection__blocked_contacts">Contatos bloqueados</string>
   <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>
   <string name="preferences__show_sent_time">Mostrar data/hora de envio</string>
