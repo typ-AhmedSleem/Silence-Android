@@ -83,26 +83,31 @@ public class EncryptedBackupExporter {
   }
 
   private static void exportDirectory(Context context, String directoryName) throws IOException {
-    File directory       = new File(context.getFilesDir().getParent() + File.separatorChar + directoryName);
-    File exportDirectory = new File(getExportDirectoryPath() + File.separatorChar + directoryName);
+    if (!directoryName.equals("/lib")) {
+      File directory       = new File(context.getFilesDir().getParent() + File.separatorChar + directoryName);
+      File exportDirectory = new File(getExportDirectoryPath() + File.separatorChar + directoryName);
 
-    if (directory.exists() && directory.isDirectory()) {
-      exportDirectory.mkdirs();
+      if (directory.exists() && directory.isDirectory()) {
+        exportDirectory.mkdirs();
 
-      File[] contents = directory.listFiles();
+        File[] contents = directory.listFiles();
 
-      for (int i=0;i<contents.length;i++) {
-        File localFile = contents[i];
+        if (contents == null)
+          throw new IOException("directory.listFiles() is null for " + context.getFilesDir().getParent() + File.separatorChar + directoryName + "!");
 
-        if (localFile.isFile() && !localFile.getAbsolutePath().contains("libcurve25519.so")) {
-          File exportedFile = new File(exportDirectory.getAbsolutePath() + File.separator + localFile.getName());
-          migrateFile(localFile, exportedFile);
-        } else {
-          exportDirectory(context, directoryName + File.separator + localFile.getName());
+        for (int i=0;i<contents.length;i++) {
+          File localFile = contents[i];
+
+          if (localFile.isFile() && !localFile.getAbsolutePath().contains("libcurve25519.so")) {
+            File exportedFile = new File(exportDirectory.getAbsolutePath() + File.separator + localFile.getName());
+            migrateFile(localFile, exportedFile);
+          } else {
+            exportDirectory(context, directoryName + File.separator + localFile.getName());
+          }
         }
+      } else {
+        Log.w(TAG, "Could not find directory: " + directory.getAbsolutePath() + " (or it is not a directory)");
       }
-    } else {
-      Log.w(TAG, "Could not find directory: " + directory.getAbsolutePath() + " (or it is not a directory)");
     }
   }
 
