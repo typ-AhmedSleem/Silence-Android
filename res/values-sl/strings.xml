@@ -224,9 +224,9 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DateUtils_today">Danes</string>
   <string name="DateUtils_yesterday">Včeraj</string>
   <!--DualSimUtil-->
-  <string name="DualSimUtil__new_sim_card_detected">Zaznana je bila nova kartica SIM.</string>
-  <string name="DualSimUtil__a_new_key_has_been_generated">Generiran je bil nov ključ.</string>
-  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Za kartico SIM je bil generiran nov ključ.</string>
+  <string name="DualSimUtil__new_sim_card_detected">Zaznana je bila nova kartica SIM</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Generiran je bil nov ključ</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Za to kartico SIM je bil generiran nov ključ.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
   <!--IntroScreenActivity-->
@@ -340,8 +340,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="ThreadRecord_draft">Osnutek:</string>
   <string name="ThreadRecord_media_message">Večpredstavno sporočilo</string>
   <!--TransportOptions-->
-  <string name="TransportOptions_sms_disabled">Sporočila SMS so izklopljena</string>
-  <string name="TransportOptions_no_sim_card_found">Kartica SIM ni bia najdena</string>
+  <string name="TransportOptions_sms_disabled">Sporočila SMS so onemogočena</string>
+  <string name="TransportOptions_no_sim_card_found">Kartica SIM ni bila zaznana</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nimate identifikacijskega ključa.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Prejemnik nima identifikacijskega ključa.</string>
@@ -683,6 +683,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__roaming_auto_retrieve">Samodejna poizvedba med gostovanjem</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Samodejno pridobi sporočila MMS med gostovanjem</string>
   <string name="preferences_chats__message_trimming">Izbris starih sporočil</string>
+  <string name="preferences_advanced__use_system_emoji">Uporabi sistemske znake emoji</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Onemogoči vgrajeno podporo za znake emoji aplikacije Signal</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

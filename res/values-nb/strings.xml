@@ -386,7 +386,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Ny melding</string>
   <!--SubscriptionInfoCompat-->
   <string name="SubscriptionInfoCompat_slot">Kortplass %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name"> %1$s (kortplass %2$s)</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (kortplass %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Gammel passordsekvens</string>
   <string name="change_passphrase_activity__new_passphrase">Ny passordsekvens</string>

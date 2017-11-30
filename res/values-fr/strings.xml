@@ -312,6 +312,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="ThreadRecord_draft">Brouillon :</string>
   <string name="ThreadRecord_media_message">Message multimédia</string>
   <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">Messages SMS désactivés</string>
+  <string name="TransportOptions_no_sim_card_found">Aucune carte SIM détectée</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Vous n’avez pas de clé d’identité.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Le destinataire n’a pas de clé d’identité.</string>
@@ -439,6 +441,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <!--conversation_fragment-->
   <string name="conversation_fragment__scroll_to_the_bottom_content_description">Aller en bas</string>
   <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Exporter</string>
+  <string name="import_export_fragment__import">Importer</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Impossible de récupérer les journaux de votre téléphone. Vous pouvez utiliser ADB pour récupérer les journaux de déboggage.</string>
   <string name="log_submit_activity__thanks">Merci pour votre aide !</string>
@@ -637,6 +641,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences__about">À propos de Silence</string>
   <string name="preferences__about_version">Version %s</string>
   <string name="preferences__privacy_policy">Politique de vie privée</string>
+  <string name="preferences__incognito_keyboard">Mode clavier incognito</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">Si le mode incognito est activé, le clavier ne retiendra pas, n\'apprendra pas et ne stockera pas les mots que vous écrivez</string>
   <string name="preferences_app_protection__blocked_contacts">Contacts bloqués</string>
   <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>
   <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
@@ -647,6 +653,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences__roaming_auto_retrieve">Récupération auto en itinérance</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Récupère automatiquement les MMS en itinérance</string>
   <string name="preferences_chats__message_trimming">Suppression de messages</string>
+  <string name="preferences_advanced__use_system_emoji">Utiliser les émojis du système</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Désactiver les émojis embarqués dans Silence</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

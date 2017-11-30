@@ -420,8 +420,6 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nowa wiadomość</string>
   <!--SubscriptionInfoCompat-->
-  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Stare hasło</string>
   <string name="change_passphrase_activity__new_passphrase">Nowe hasło</string>

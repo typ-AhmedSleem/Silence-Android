@@ -379,8 +379,6 @@ Recebida uma mensagem de intercâmbio de chaves para uma versão de protocolo in
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nova mensagem</string>
   <!--SubscriptionInfoCompat-->
-  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
-  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Palavra-passe atual</string>
   <string name="change_passphrase_activity__new_passphrase">Nova palavra-passe</string>
