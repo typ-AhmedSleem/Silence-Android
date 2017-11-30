@@ -12,6 +12,7 @@ import android.util.AttributeSet;
 
 import org.smssecure.smssecure.components.emoji.EmojiProvider.EmojiDrawable;
 import org.smssecure.smssecure.util.ViewUtil;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 public class EmojiTextView extends AppCompatTextView {
   private CharSequence source;
@@ -30,11 +31,19 @@ public class EmojiTextView extends AppCompatTextView {
   }
 
   @Override public void setText(@Nullable CharSequence text, BufferType type) {
+    if (useSystemEmoji()) {
+      super.setText(text, type);
+      return;
+    }
     source = EmojiProvider.getInstance(getContext()).emojify(text, this);
     setTextEllipsized(source);
   }
 
-  public void setTextEllipsized(final @Nullable CharSequence source) {
+  private boolean useSystemEmoji() {
+   return SilencePreferences.isSystemEmojiPreferred(getContext());
+  }
+
+  private void setTextEllipsized(final @Nullable CharSequence source) {
     super.setText(needsEllipsizing ? ViewUtil.ellipsize(source, this) : source, BufferType.SPANNABLE);
   }
 
@@ -46,7 +55,8 @@ public class EmojiTextView extends AppCompatTextView {
   @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     final int size = MeasureSpec.getSize(widthMeasureSpec);
     final int mode = MeasureSpec.getMode(widthMeasureSpec);
-    if (getEllipsize() == TruncateAt.END                             &&
+    if (!useSystemEmoji()                                            &&
+        getEllipsize() == TruncateAt.END                             &&
         !TextUtils.isEmpty(source)                                   &&
         (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.EXACTLY) &&
         getPaint().breakText(source, 0, source.length()-1, true, size, null) != source.length())
@@ -62,7 +72,7 @@ public class EmojiTextView extends AppCompatTextView {
   }
 
   @Override protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-    if (changed) setTextEllipsized(source);
+    if (changed && !useSystemEmoji()) setTextEllipsized(source);
     super.onLayout(changed, left, top, right, bottom);
   }
 }
