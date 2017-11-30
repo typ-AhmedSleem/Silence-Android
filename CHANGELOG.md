@@ -1,5 +1,10 @@
 # Silence Changelog
 
+### [0.15.10] - 2017-11-30
+- Fixed crash on some devices when exporting data
+- Added fallback to ROM's emojis
+- Updated translations
+
 ### [0.15.9] - 2017-11-20
 - Switched to a new way to send encrypted messages
 - Updated translations
@@ -229,6 +234,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.10]: https://github.com/SilenceIM/Silence/compare/v0.15.9...v0.15.10
  [0.15.9]: https://github.com/SilenceIM/Silence/compare/v0.15.8...v0.15.9
  [0.15.8]: https://github.com/SilenceIM/Silence/compare/v0.15.7...v0.15.8
  [0.15.7]: https://github.com/SilenceIM/Silence/compare/v0.15.6...v0.15.7
