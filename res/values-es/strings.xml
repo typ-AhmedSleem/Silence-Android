@@ -663,6 +663,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="preferences__roaming_auto_retrieve">Auto-descarga en roaming</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Descargar automáticamente MMS estando en roaming</string>
   <string name="preferences_chats__message_trimming">Recortado de mensaje</string>
+  <string name="preferences_advanced__use_system_emoji">Usar emojis del sistema</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Deshabilitar soporte de emojis integrado de Silence</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

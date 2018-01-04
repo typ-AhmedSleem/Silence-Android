@@ -648,6 +648,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="preferences__roaming_auto_retrieve">Automatisch ophalen bij roaming</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Mms-berichten automatisch ophalen bij roaming</string>
   <string name="preferences_chats__message_trimming">Bericht inkorten</string>
+  <string name="preferences_advanced__use_system_emoji">Systeememoji gebruiken</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Ingebouwde emoji-ondersteuning van Silence uitschakelen</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

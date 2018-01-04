@@ -196,7 +196,7 @@
   <!--DualSimUtil-->
   <string name="DualSimUtil__new_sim_card_detected">Novo cartão SIM detectado</string>
   <string name="DualSimUtil__a_new_key_has_been_generated">Uma nova chave foi gerada.</string>
-  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Uma nova chave for gerada para esse cartão SIM.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Uma nova chave foi gerada para esse cartão SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartilhar com</string>
   <!--IntroScreenActivity-->
@@ -319,7 +319,7 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="ThreadRecord_media_message">Mensagem multimídia.</string>
   <!--TransportOptions-->
   <string name="TransportOptions_sms_disabled">Mensagens SMS desativadas.</string>
-  <string name="TransportOptions_no_sim_card_found">Nenhum cartão SIM encontrado</string>
+  <string name="TransportOptions_no_sim_card_found">Nenhum cartão SIM identificado</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Você não tem uma chave de identidade.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">O destinatário não tem uma chave de identidade.</string>

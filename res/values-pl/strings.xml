@@ -689,6 +689,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences__roaming_auto_retrieve">Auto-pobieranie w roamingu</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Automatycznie pobieraj wiadomości MMS w roamingu</string>
   <string name="preferences_chats__message_trimming">Obcinanie wiadomości</string>
+  <string name="preferences_advanced__use_system_emoji">Użyj systemowych emoji</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Wyłącz wbudowane wsparcie dla emoji</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

@@ -652,6 +652,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__roaming_auto_retrieve">Recupero automatico durante il roaming</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Recupera automaticamente gli MMS durante il roaming</string>
   <string name="preferences_chats__message_trimming">Pulizia messaggi</string>
+  <string name="preferences_advanced__use_system_emoji">Usa emoji di sistema</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Disattiva il supporto agli emoji integrato in Silence</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

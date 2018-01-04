@@ -651,6 +651,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__roaming_auto_retrieve">Retmigrade aŭtomate elŝuti</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Aŭtomate elŝuti MMS-ojn dum retmigrado (ang. roaming)</string>
   <string name="preferences_chats__message_trimming">Mesaĝa tranĉado</string>
+  <string name="preferences_advanced__use_system_emoji">Uzi sistemajn emoĝiojn</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Malaktivigi enkonstruitan subtenon por mien-simboloj</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

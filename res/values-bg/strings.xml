@@ -660,6 +660,8 @@
   <string name="preferences__roaming_auto_retrieve">Автоматично изтегляне при включен роуминг</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Автоматично изтелгяй MMS съобщения при роуминг</string>
   <string name="preferences_chats__message_trimming">Намаляване на броя съобщения</string>
+  <string name="preferences_advanced__use_system_emoji">Използване на системните емоджита</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Деактивиране на вградените в Silience емоджита</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

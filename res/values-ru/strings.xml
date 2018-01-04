@@ -78,11 +78,11 @@
   <string name="ConversationItem_to_s">по %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Адрес XMPP. Обновите Silence, чтобы включить эту функцию.</string>
   <!--ConversationActivity-->
-  <string name="ConversationActivity_initiate_secure_session_question">Начать защищенный сеанс?</string>
-  <string name="ConversationActivity_initiate_secure_session_with_s_question">Начать защищенный сеанс связи с %s?</string>
-  <string name="ConversationActivity_detected_silence_initiate_session_question">Получено сообщение от кого-то, кто также имеет Silence, инициировать безопасный зашифрованный сеанс?</string>
-  <string name="ConversationActivity_abort_secure_session_confirmation">Подтвердите завершение сеанса</string>
-  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Вы уверены, что хотите завершить этот защищённый сеанс связи?</string>
+  <string name="ConversationActivity_initiate_secure_session_question">Начать защищенную сессию?</string>
+  <string name="ConversationActivity_initiate_secure_session_with_s_question">Начать защищенную сессию с %s?</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">Получено сообщение от кого-то, кто также имеет Silence. Инициировать безопасную защищенную сессию?</string>
+  <string name="ConversationActivity_abort_secure_session_confirmation">Завершить защищенную сессию?</string>
+  <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Вы действительно хотите завершить эту защищенную сессию?</string>
   <string name="ConversationActivity_delete_thread_question">Удалить разговор?</string>
   <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Это удалит все сообщения в этом разговоре.</string>
   <string name="ConversationActivity_add_attachment">Добавить вложение</string>
@@ -113,7 +113,7 @@
   <string name="ConversationActivity_transport_secure_sms">Защищенное SMS</string>
   <string name="ConversationActivity_transport_secure_mms">Защищенное MMS</string>
   <string name="ConversationActivity_install_smssecure">Давайте переписываться безопасно: %s</string>
-  <string name="ConversationActivity_recipient_self">Защищенный сеанс можно установить только с другими людьми.</string>
+  <string name="ConversationActivity_recipient_self">Защищенную сессию можно установить только с другими людьми.</string>
   <string name="ConversationActivity_mms_not_supported_title">MMS не поддерживаются</string>
   <string name="ConversationActivity_mms_not_supported_message">Сообщение не может быть отправлено, потому что Ваш оператор не поддерживает MMS.</string>
   <string name="ConversationActivity_specify_recipient">Пожалуйста, выберите контакт</string>
@@ -334,7 +334,7 @@
 </string>
   <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Получено сообщение с неизвестным личным ключом. Нажмите, чтобы обработать и показать его.</string>
   <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Получены новые, но неизвестные данные о личности. Нажмите, чтобы проверить.</string>
-  <string name="SmsMessageRecord_secure_session_ended">Защищенный сеанс завершен.</string>
+  <string name="SmsMessageRecord_secure_session_ended">Защищенная сессия завершена.</string>
   <string name="SmsMessageRecord_duplicate_message">Дубликат сообщения.</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_left_the_group">Вы покинули группу</string>
@@ -360,7 +360,7 @@
   <string name="ViewIdentityActivity_your_identity_fingerprint">Отпечаток вашего личного ключа</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Игнорировать предыдущий запрос?</string>
-  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вы уже отправили этому собеседнику запрос на начало сеанса. Вы уверены, что хотите отправить ещё один? Предыдущий будет аннулирован.</string>
+  <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Вы уже отправили этому собеседнику запрос на начало сессии. Вы уверены, что хотите отправить еще один? Предыдущий будет аннулирован.</string>
   <string name="KeyExchangeInitiator_send">Отправить</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Зашифрованное сообщение испорчено</string>
@@ -379,7 +379,7 @@
   <!--MmsMessageRecord-->
   <string name="MmsMessageRecord_decrypting_mms_please_wait">Расшифровываем MMS-сообщение, пожалуйста, подождите…</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Зашифрованное MMS-сообщение испорчено...</string>
-  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-сообщение зашифрованно для несуществующей сессии...</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-сообщение зашифрованно для несуществующей сессии</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">Отключить звук уведомлений</string>
   <!--ApplicationMigrationService-->
@@ -593,13 +593,13 @@
   <string name="preferences__enable_passphrase">Включить парольную фразу</string>
   <string name="preferences__enable_local_encryption_of_messages_and_keys">Включить шифрование при хранении сообщений и ключей</string>
   <string name="preferences__screen_security">Защита экрана</string>
-  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Автоматически выполнять обмен ключами в новых сеансах, а также в существующих сеансах с не изменившимся личным ключом</string>
+  <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Автоматически выполнять обмен ключами в новых сессиях, а также в существующих сессиях с не изменившимся личным ключом</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">Блокировать снимки экрана внутри приложения</string>
   <string name="preferences__forget_passphrase_from_memory_after_some_interval">Стирать из памяти парольную фразу через некоторое время</string>
   <string name="preferences__timeout_passphrase">Забывать парольную фразу</string>
   <string name="preferences__pref_timeout_interval_dialogtitle">Выберите срок хранения парольной фразы</string>
   <string name="preferences__pref_timeout_interval_title">Срок хранения</string>
-  <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Время, по прошествии которого парольная фраза будет стёрта из памяти</string>
+  <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Время, по прошествии которого парольная фраза будет стерта из памяти</string>
   <string name="preferences__notifications">Уведомления</string>
   <string name="preferences__enable_message_notifications">Включить уведомления о сообщениях</string>
   <string name="preferences__led_color">Цвет светодиода</string>
@@ -684,6 +684,8 @@
   <string name="preferences__roaming_auto_retrieve">Автополучение в роуминге</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Автоматически загружать MMS-сообщения в роуминге</string>
   <string name="preferences_chats__message_trimming">Очистка сообщений</string>
+  <string name="preferences_advanced__use_system_emoji">Использовать системные смайлы</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Отключить встроенные в Silence смайлы</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -697,10 +699,10 @@
   <!--refreshing push directory from menu-->
   <string name="push_directory__menu_refresh">Обновить контакты</string>
   <!--conversation_button_context-->
-  <string name="conversation_button_context__send_secure_sms">Отправить защищённое SMS</string>
+  <string name="conversation_button_context__send_secure_sms">Отправить защищенное SMS</string>
   <string name="conversation_button_context__send_insecure_sms">Отправить незащищенное SMS</string>
-  <string name="conversation_button_context__send_secure_mms">Отправить защищённое MMS</string>
-  <string name="conversation_button_context__send_insecure_mms">Отправить незащищённое MMS</string>
+  <string name="conversation_button_context__send_secure_mms">Отправить защищенное MMS</string>
+  <string name="conversation_button_context__send_insecure_mms">Отправить незащищенное MMS</string>
   <!--conversation_callable-->
   <string name="conversation_callable__menu_call">Звонок</string>
   <!--conversation_context-->
@@ -714,7 +716,7 @@
   <!--conversation_insecure-->
   <string name="conversation_insecure__invite">Пригласить</string>
   <!--conversation_insecure_no_push-->
-  <string name="conversation_insecure__menu_start_secure_session">Начать защищённый сеанс</string>
+  <string name="conversation_insecure__menu_start_secure_session">Начать защищенную сессию</string>
   <string name="conversation_insecure__security">Безопасность</string>
   <!--conversation_list_batch-->
   <string name="conversation_list_batch__menu_delete_selected">Удалить выбранное</string>
@@ -733,7 +735,7 @@
   <!--conversation_secure_verified-->
   <string name="conversation_secure_verified__menu_security">Безопасность</string>
   <string name="conversation_secure_verified__menu_verify_identity">Подтвердить личность</string>
-  <string name="conversation_secure_verified__menu_abort_secure_session">Завершить защищенный сеанс</string>
+  <string name="conversation_secure_verified__menu_abort_secure_session">Завершить защищенную сессию</string>
   <!--conversation_muted-->
   <string name="conversation_muted__unmute">Включить звук уведомлений</string>
   <!--conversation_unmuted-->

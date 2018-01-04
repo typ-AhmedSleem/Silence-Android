@@ -638,6 +638,8 @@
   <string name="preferences__roaming_auto_retrieve">ローミング自動取得</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">ローミング時に MMS を自動的に取得します</string>
   <string name="preferences_chats__message_trimming">メッセージのトリミング</string>
+  <string name="preferences_advanced__use_system_emoji">システムの絵文字を使用する</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Silence のビルトイン絵文字サポートを無効にする</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
