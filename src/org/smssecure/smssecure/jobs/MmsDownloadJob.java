@@ -38,6 +38,7 @@ import org.whispersystems.libsignal.LegacyMessageException;
 import org.whispersystems.libsignal.NoSessionException;
 import org.whispersystems.libsignal.util.guava.Optional;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -129,7 +130,7 @@ public class MmsDownloadJob extends MasterSecretJob {
       Log.w(TAG, e);
       handleDownloadError(masterSecret, messageId, threadId, MmsDatabase.Status.DOWNLOAD_APN_UNAVAILABLE,
                           automatic);
-    } catch (MmsException e) {
+    } catch (FileNotFoundException | MmsException e) {
       Log.w(TAG, e);
       handleDownloadError(masterSecret, messageId, threadId,
                           MmsDatabase.Status.DOWNLOAD_HARD_FAILURE,
