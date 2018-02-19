@@ -1,5 +1,11 @@
 # Silence Changelog
 
+### [0.15.12] - 2018-02-19
+- Added option to hide "new message" separator
+- Updated APNs with fix for Free Mobile (FR)
+- Switched to a new way to receive encrypted messages (started in v0.15.9)
+- Updated translations
+
 ### [0.15.11] - 2018-01-04
 - Fixed persistent crash when downloading some MMS messages
 - Updated translations
@@ -238,6 +244,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.12]: https://github.com/SilenceIM/Silence/compare/v0.15.11...v0.15.12
  [0.15.11]: https://github.com/SilenceIM/Silence/compare/v0.15.10...v0.15.11
  [0.15.10]: https://github.com/SilenceIM/Silence/compare/v0.15.9...v0.15.10
  [0.15.9]: https://github.com/SilenceIM/Silence/compare/v0.15.8...v0.15.9
