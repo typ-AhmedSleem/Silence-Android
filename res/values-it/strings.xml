@@ -360,7 +360,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <!--KeyCachingService-->
   <string name="KeyCachingService_silence_passphrase_cached">Tocca per aprire.</string>
   <string name="KeyCachingService_silence_passphrase_cached_with_lock">Tocca per aprire o tocca il lucchetto per chiudere.</string>
-  <string name="KeyCachingService_passphrase_cached">Silence è bloccato</string>
+  <string name="KeyCachingService_passphrase_cached">Silence è sbloccato</string>
   <string name="KeyCachingService_lock">Chiudi con password</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d nuovi messaggi in %2$d conversazioni</string>
@@ -646,6 +646,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences_notifications__display_in_notifications">Mostrare nelle notifiche</string>
   <string name="preferences__show_sent_time">Mostrare la data dell\'invio</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostra l\'ora dell\'invio al posto dell\'ora di ricevimento per i messaggi in entrata</string>
+  <string name="preferences__hide_unread_message_divider">Nascondi divisore messaggi non letti</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Nascondi il divisore del messaggio non letto nella conversazione</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Recupero automatico</string>
   <string name="preferences__automatically_retrieve_mms_messages">Recupera automaticamente gli MMS</string>

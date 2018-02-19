@@ -641,12 +641,16 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="preferences_notifications__display_in_notifications">In Benachrichtigungen anzeigen</string>
   <string name="preferences__show_sent_time">Versandzeitpunkt anzeigen</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Versandzeitpunkt anstatt Empfangzeitpunkt für eingehende Nachrichten anzeigen</string>
+  <string name="preferences__hide_unread_message_divider">Trennstrich für ungelesene Nachrichten ausblenden</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Trennstrich für ungelesene Nachrichten in einer Unterhaltung ausblenden</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Automatisch herunterladen</string>
   <string name="preferences__automatically_retrieve_mms_messages">MMS automatisch herunterladen</string>
   <string name="preferences__roaming_auto_retrieve">Bei Roaming</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Bei Roaming MMS automatisch herunterladen</string>
   <string name="preferences_chats__message_trimming">Unterhaltungen kürzen</string>
+  <string name="preferences_advanced__use_system_emoji">System-Emojis verwenden</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Silences integrierte Emoji-Unterstützung deaktivieren</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

@@ -187,7 +187,7 @@
     <item quantity="other">Удалить выбранные разговоры?</item>
   </plurals>
   <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
-    <item quantity="one">Выбранный разговор будет навсегда удалён.</item>
+    <item quantity="one">Выбранный разговор будет навсегда удален.</item>
     <item quantity="few">%1$d выбранных разговора будут навсегда удалены.</item>
     <item quantity="many">%1$d выбранных разговоров будут навсегда удалены.</item>
     <item quantity="other">%1$d выбранных разговоров будут навсегда удалены.</item>
@@ -216,7 +216,7 @@
   <string name="ConversationListItemAction_archived_conversations_d">Архивированные разговоры (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">Используется настройка: %s</string>
-  <string name="CustomDefaultPreference_using_default">Используется по-умолчанию: %s</string>
+  <string name="CustomDefaultPreference_using_default">По умолчанию: %s</string>
   <string name="CustomDefaultPreference_none">Нет</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Только что</string>
@@ -235,13 +235,13 @@
   <string name="IntroScreenActivity_encrypt_your_messages">Шифруйте ваши сообщения</string>
   <string name="IntroScreenActivity_encrypt_your_messages_description">Silence будет автоматически шифровать сообщения с другими пользователями Silence.</string>
   <string name="IntroScreenActivity_talk_to_everyone">Общайтесь со всеми</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence может использовать незашифрованные сообщения для общения с пользователями без Silence.</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Silence позволяет отправлять незашифрованные SMS-сообщения абсолютно любым пользователям.</string>
   <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure теперь Silence.</string>
   <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure теперь Silence. Ваши сообщения все еще здесь, и скоро появятся  новые функции.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Экспорт</string>
   <string name="ExportFragment_export_plaintext_to_storage">Экспортировать в открытом виде?</string>
-  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Внимание, ваши сообщения в Silence будут экспортированы на SD-карту в незашифрованном виде.</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Внимание, ваши сообщения из Silence будут экспортированы на SD-карту в незашифрованном виде.</string>
   <string name="ExportFragment_cancel">Отмена</string>
   <string name="ExportFragment_exporting">Экспорт</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Экспортировать в незашифрованном виде...</string>
@@ -249,7 +249,7 @@
   <string name="ExportFragment_error_while_writing_to_storage">Ошибка при записи на SD-карту.</string>
   <string name="ExportFragment_export_successful">Экспорт успешно завершен.</string>
   <string name="ExportFragment_export_encrypted_backup">Экспортировать зашифрованную резервную копию?</string>
-  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">При этом зашифрованные ключи, настройки и сообщения будут экспортированы в на SD-карту.</string>
+  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">При этом зашифрованные ключи, настройки и сообщения будут экспортированы на SD-карту.</string>
   <string name="ExportFragment_exporting_keys_settings_and_messages">Экспорт зашифрованных ключей, настроек и сообщений...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Новая группа</string>
@@ -315,7 +315,7 @@
 этот контакт.</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Блокировать контакт?</string>
-  <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Вы больше не можете видеть сообщения, отправленные этим пользователем.</string>
+  <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Вы больше не сможете видеть сообщения, отправленные этим пользователем.</string>
   <string name="RecipientPreferenceActivity_block">Блокировать</string>
   <string name="RecipientPreferenceActivity_unblock_this_contact_question">Разблокировать контакт?</string>
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Вы уверены, что хотите разблокировать этот контакт?</string>
@@ -552,14 +552,14 @@
   <!--arrays.xml-->
   <string name="arrays__import_export">Импорт / экспорт</string>
   <string name="arrays__your_identity_key">Ваш личный ключ</string>
-  <string name="arrays__use_default">Использовать по-умолчанию</string>
+  <string name="arrays__use_default">Использовать по умолчанию</string>
   <string name="arrays__use_custom">Настроить</string>
   <string name="arrays__mute_for_one_hour">Отключить на 1 час</string>
   <string name="arrays__mute_for_two_hours">Отключить на 2 часа</string>
   <string name="arrays__mute_for_one_day">Отключить на 1 день</string>
   <string name="arrays__mute_for_seven_days">Отключить на 7 дней</string>
-  <string name="arrays__mute_for_one_year">Выкл. звук на 1 год</string>
-  <string name="arrays__settings_default">Настройки по-умолчанию</string>
+  <string name="arrays__mute_for_one_year">Отключить на 1 год</string>
+  <string name="arrays__settings_default">Настройки по умолчанию</string>
   <string name="arrays__enabled">Включено</string>
   <string name="arrays__disabled">Выключено</string>
   <string name="arrays__name_and_message">Имя и сообщение</string>
@@ -678,6 +678,8 @@
   <string name="preferences_notifications__display_in_notifications">Отображение в уведомлениях</string>
   <string name="preferences__show_sent_time">Показывать время отправки</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Показывать время отправки вместо времени получения во входящих сообщениях</string>
+  <string name="preferences__hide_unread_message_divider">Скрыть разделитель непрочитанных сообщений</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Скрыть разделитель непрочитанных сообщений в беседах</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Автополучение</string>
   <string name="preferences__automatically_retrieve_mms_messages">Автоматически загружать MMS-сообщения</string>

@@ -647,6 +647,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences_notifications__display_in_notifications">Afficher dans les notifications</string>
   <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Afficher la l\'heure d\'envoi au lieu de celle de réception des messages</string>
+  <string name="preferences__hide_unread_message_divider">Masquer le séparateur pour les messages non lus</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Masquer le séparateur pour les messages non lus dans une conversation</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Récupération auto</string>
   <string name="preferences__automatically_retrieve_mms_messages">Récupère automatiquement les MMS</string>

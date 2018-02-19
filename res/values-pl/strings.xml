@@ -420,6 +420,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nowa wiadomość</string>
   <!--SubscriptionInfoCompat-->
+  <string name="SubscriptionInfoCompat_slot">Slot %1$s</string>
+  <string name="SubscriptionInfoCompat_display_name">%1$s (slot %2$s)</string>
   <!--change_passphrase_activity-->
   <string name="change_passphrase_activity__old_passphrase">Stare hasło</string>
   <string name="change_passphrase_activity__new_passphrase">Nowe hasło</string>
@@ -683,6 +685,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences_notifications__display_in_notifications">Pokazuj w powiadomieniach</string>
   <string name="preferences__show_sent_time">Pokaż datę wysłania</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pokaż czas wysłania zamiast czasu otrzymania dla Odebranych wiadomości</string>
+  <string name="preferences__hide_unread_message_divider">Ukryj rozdzielacz nieprzeczytanych wiadomości</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Ukryj rozdzielacz nieprzeczytanych wiadomości w oknie rozmowy</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Auto-pobieranie</string>
   <string name="preferences__automatically_retrieve_mms_messages">Automatycznie pobieraj wiadomości MMS</string>

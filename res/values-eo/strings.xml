@@ -645,6 +645,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences_notifications__display_in_notifications">Montri en sciigoj</string>
   <string name="preferences__show_sent_time">Montri tempon de sendo</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Montri tempon de sendo anstataŭ tempon de ricevo por ricevitaj mesaĝoj</string>
+  <string name="preferences__hide_unread_message_divider">Kaŝi disigilon de nelegitaj masaĝoj</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Kaŝi disigan strekon de nelegitaj mesaĝoj en interparoladoj</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Aŭtomate elŝuti</string>
   <string name="preferences__automatically_retrieve_mms_messages">Aŭtomate elŝuti MMS-ajn mesaĝojn</string>

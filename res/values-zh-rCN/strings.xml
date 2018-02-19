@@ -4,6 +4,7 @@
   <string name="yes">是</string>
   <string name="no">否</string>
   <string name="delete">删除</string>
+  <string name="please_wait">请稍候……</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">新信息</string>
   <!--ApplicationPreferencesActivity-->
@@ -12,12 +13,16 @@
     <item quantity="other">每个会话 %d 个信息</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">删除所有旧信息？</string>
+  <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+    <item quantity="other">这将立即使所有会话只保留至最近的第%d条消息</item>
+  </plurals>
   <string name="ApplicationPreferencesActivity_delete">删除</string>
   <string name="ApplicationPreferencesActivity_disable_storage_encryption">禁用存储加密？</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
 警告：这将会禁用所有信息和密钥的存储加密。您的加密会话继续有效，但是任何能物理接触到此设备的人都能够访问这些数据。</string>
   <string name="ApplicationPreferencesActivity_disable">禁用</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">已开启接收短信</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">点击以切换默认短信应用</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">已停用接收短信</string>
   <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">点击来将 Silence 设定为默认的短信应用</string>
   <string name="ApplicationPreferencesActivity_on">开启</string>
@@ -45,6 +50,7 @@
   <string name="AttachmentTypeSelectorAdapter_audio">音频</string>
   <string name="AttachmentTypeSelectorAdapter_contact">联系人信息</string>
   <!--AudioSlidePlayer-->
+  <string name="AudioSlidePlayer_error_playing_audio">音频播放出错！</string>
   <!--BlockedContactsActivity-->
   <string name="BlockedContactsActivity_blocked_contacts">阻止的联系人</string>
   <!--ConversationItem-->
@@ -57,9 +63,14 @@
   <string name="ConversationItem_received_key_exchange_message_tap_to_process">收到密钥交换信息，轻按以处理。</string>
   <string name="ConversationItem_group_action_left">%1$s 已经离开了该群组。</string>
   <string name="ConversationItem_click_for_details">点击查看详情</string>
+  <string name="ConversationItem_unable_to_open_media">无法找到能打开该媒体的应用</string>
+  <string name="ConversationItem_from_s">发自 %s</string>
+  <string name="ConversationItem_to_s">到 %s</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP 地址。更新 Silence 以启用该特性。</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">发起安全会话？</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">与 %s 启动安全会话？</string>
+  <string name="ConversationActivity_detected_silence_initiate_session_question">信息来自另一 Silence 用户。是否开始一个安全会话？</string>
   <string name="ConversationActivity_abort_secure_session_confirmation">结束安全会话？</string>
   <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">你确定要结束此安全会话？</string>
   <string name="ConversationActivity_delete_thread_question">删除会话？</string>
@@ -67,16 +78,22 @@
   <string name="ConversationActivity_add_attachment">添加附件</string>
   <string name="ConversationActivity_select_contact_info">选择联系人信息</string>
   <string name="ConversationActivity_compose_message">编写信息</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">抱歉，添加附件时出现了错误</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">抱歉，选择的视频超过了消息大小限制 (%1$skB)</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">抱歉，选择的音频超过了信息大小限制（%1$skB）</string>
+  <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人不是有效的短信或电子邮件地址</string>
   <string name="ConversationActivity_message_is_empty_exclamation">信息为空！</string>
   <string name="ConversationActivity_group_members">群组成员</string>
   <string name="ConversationActivity_group_conversation">群组会话</string>
   <string name="ConversationActivity_unnamed_group">未命名的群组</string>
+  <plurals name="ConversationActivity_d_recipients_in_group">
+    <item quantity="other">%d 名成员</item>
+  </plurals>
   <string name="ConversationActivity_saved_draft">保存草稿</string>
   <string name="ConversationActivity_invalid_recipient">无效收件人！</string>
   <string name="ConversationActivity_calls_not_supported">不支持呼叫</string>
   <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">当前设备不支持拨号动作。</string>
+  <string name="ConversationActivity_cant_open_link">无法找到能打开该链接的应用</string>
   <string name="ConversationActivity_transport_insecure_sms">不安全的短信</string>
   <string name="ConversationActivity_transport_insecure_mms">不安全的彩信</string>
   <string name="ConversationActivity_transport_secure_sms">安全短信</string>
@@ -88,22 +105,59 @@
   <string name="ConversationActivity_specify_recipient">请选择一个联系人。</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">附件过大。</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="other">%d条未读信息</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">信息详情</string>
   <plurals name="ConversationFragment_delete_selected_messages">
     <item quantity="other">删除已选消息？</item>
   </plurals>
+  <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+    <item quantity="other">这将永久删除%1$d条选中信息</item>
+  </plurals>
   <string name="ConversationFragment_save_to_sd_card">保存到存储？</string>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="other">保存附件到存储时出错</item>
+  </plurals>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="other">文件保存成功</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">存储无法写入！</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="other">正在保存%1$d个附件</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="other">正在将%1$d个附件保存到存储……</item>
+  </plurals>
+  <string name="ConversationFragment_pending">等待中……</string>
   <string name="ConversationFragment_mms">彩信</string>
   <string name="ConversationFragment_sms">短信</string>
+  <string name="ConversationFragment_deleting">正在删除……</string>
+  <string name="ConversationFragment_deleting_messages">正在删除信息……</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">搜索</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="other">删除已选会话？</item>
   </plurals>
+  <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+    <item quantity="other">这将永久删除%1$d个选中会话</item>
+  </plurals>
   <string name="ConversationListFragment_deleting">正在删除</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">正在删除选中会话……</string>
+  <plurals name="ConversationListFragment_conversations_archived">
+    <item quantity="other">已归档%d个会话</item>
+  </plurals>
   <string name="ConversationListFragment_undo">撤销</string>
+  <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+    <item quantity="other">已将%d个会话移至收件箱</item>
+  </plurals>
+  <string name="ConversationListFragment_send_drafts">发送草稿</string>
+  <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">这将发送选中会话中的草稿</string>
+  <string name="ConversationListFragment_send">发送</string>
+  <string name="ConversationListFragment_sending">发送中……</string>
+  <string name="ConversationListFragment_sending_selected_drafts">正在发送选中的草稿……</string>
   <!--ConversationListItemAction-->
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">使用定制：%s</string>
@@ -112,14 +166,36 @@
   <!--DateUtils-->
   <string name="DateUtils_now">现在</string>
   <string name="DateUtils_minutes_ago">%d 分钟前</string>
+  <string name="DateUtils_today">今天</string>
+  <string name="DateUtils_yesterday">昨天</string>
   <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">检测到新 SIM 卡</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">已生成一个新密钥</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">已为那张 SIM 卡生成一个新密钥</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共享给</string>
   <!--IntroScreenActivity-->
+  <string name="IntroScreenActivity_welcome_to_silence">欢迎来到 Silence！</string>
+  <string name="IntroScreenActivity_silence_description">Silence 使您能够在与朋友通信时保护自己的隐私</string>
+  <string name="IntroScreenActivity_encrypt_your_messages">加密您的信息</string>
+  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence 将会自动加密与其他 Silence 用户间的信息</string>
+  <string name="IntroScreenActivity_talk_to_everyone">与任何人交谈</string>
+  <string name="IntroScreenActivity_talk_to_everyone_description">Silence 能够用未加密信息与非 Silence 用户通信</string>
+  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure 现已迁至 Silence</string>
+  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure 现名为 Silence。您的信息仍然在这儿，而新的特性即将到来。</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">导出</string>
+  <string name="ExportFragment_export_plaintext_to_storage">导出明文到 SD 卡？</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">警告：这会将您的 Silence 信息以明文形式导出到 SD 卡上</string>
   <string name="ExportFragment_cancel">取消</string>
   <string name="ExportFragment_exporting">正在导出</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">正在导出明文到 SD 卡……</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">错误：无法写入存储</string>
+  <string name="ExportFragment_error_while_writing_to_storage">写入存储时出错</string>
+  <string name="ExportFragment_export_successful">导出成功</string>
+  <string name="ExportFragment_export_encrypted_backup">导出加密备份？</string>
+  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">这将导出您的加密密钥、设置和信息到存储</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">正在导出加密密钥、设置和信息……</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">新群组</string>
   <string name="GroupCreateActivity_actionbar_update_title">更新群组</string>
@@ -136,18 +212,22 @@
   <string name="ImportFragment_import_system_sms_database">导入系统短信数据库？</string>
   <string name="ImportFragment_import">导入</string>
   <string name="ImportFragment_cancel">取消</string>
+  <string name="ImportFragment_restore_encrypted_backup">恢复加密备份？</string>
   <string name="ImportFragment_import_plaintext_backup">导入明文备份？</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">这将会导入
 来自明文备份的信息。如果您以前已经导入过该备份，
 再次导入将会出现重复信息。</string>
   <string name="ImportFragment_importing">导入中</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">正在导入明文备份……</string>
   <string name="ImportFragment_no_plaintext_backup_found">没有发现明文备份！</string>
   <string name="ImportFragment_error_importing_backup">导入备份的过程中发生错误！</string>
   <string name="ImportFragment_import_complete">导入完成！</string>
+  <string name="ImportFragment_restoring_encrypted_backup">正在恢复加密备份……</string>
   <string name="ImportFragment_no_encrypted_backup_found">未找到加密的备份！</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">没有扫描到密钥！</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">安装条码扫描器？</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence 需要 Barcode Scanner 来扫描二维码</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">发送失败</string>
   <string name="MessageDetailsRecipient_new_identity">新身份</string>
@@ -158,12 +238,14 @@
   <!--MessageRecord-->
   <string name="MessageRecord_left_group">您已经离开了此群组。</string>
   <string name="MessageRecord_updated_group">已更新群组。</string>
+  <string name="MessageRecord_key_exchange_message">密钥交换信息</string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">口令不符！</string>
   <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">旧密码不正确！</string>
   <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">未输入密码！</string>
   <!--PassphrasePromptActivity-->
   <string name="PassphrasePromptActivity_enter_passphrase">输入密钥</string>
+  <string name="PassphrasePromptActivity_watermark_content_description">Silence 图标</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">不真实的密钥！</string>
   <!--ReceiveKeyActivity-->
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">在此密钥交换上签名可信，但是“设置”中的“自动完成密钥交换”已经被您禁用。</string>
@@ -193,38 +275,60 @@
   <string name="SmsMessageRecord_duplicate_message">重复的信息。</string>
   <!--ThreadRecord-->
   <string name="ThreadRecord_draft">草稿：</string>
+  <string name="ThreadRecord_media_message">多媒体信息</string>
   <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">短信息已停用</string>
+  <string name="TransportOptions_no_sim_card_found">未找到 SIM 卡</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">您没有身份密钥。</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">收件人没有身份密钥。</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">扫描联系人二维码</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">显示您的二维码</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">警告：扫描的密钥不匹配！ 请仔细检查指纹文本。</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">未验证！</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">他们的密钥正确。 还需要他们验证您的密钥。</string>
   <string name="VerifyIdentityActivity_verified_exclamation">已验证！</string>
   <!--ViewIdentityActivity-->
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">扫描联系人二维码</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">显示你的二维码</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告：扫描的密钥不匹配！</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">扫描的密钥匹配！</string>
+  <string name="ViewIdentityActivity_your_identity_fingerprint">您的身份标识</string>
   <!--KeyExchangeInitiator-->
   <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">发起一个已经存在的请求？</string>
   <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">您已经向收件人发送了一个会话启动请求，是否确定要再次发送？  这将使第一个请求无效。</string>
   <string name="KeyExchangeInitiator_send">发送</string>
   <!--MessageDisplayHelper-->
+  <string name="MessageDisplayHelper_bad_encrypted_message">已损坏的加密信息</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">解密中，请稍后……</string>
+  <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">已为不存在的会话加密信息</string>
+  <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">请求结束一个不存在的会话</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">解密信息时遇到错误。</string>
   <!--MmsDatabase-->
+  <string name="MmsDatabase_connecting_to_mms_server">正在连接到彩信服务器……</string>
+  <string name="MmsDatabase_downloading_mms">正在下载彩信……</string>
   <string name="MmsDatabase_mms_download_failed">彩信下载失败！</string>
+  <string name="MmsDatabase_downloading">下载中……</string>
   <string name="MmsDatabase_mms_pending_download">点击并配置彩信设置以便继续下载。</string>
   <string name="MmsDatabase_error_decrypting_message">解密消息时遇到错误</string>
   <!--MmsMessageRecord-->
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">正在解密彩信，请稍后……</string>
+  <string name="MmsMessageRecord_bad_encrypted_mms_message">已损坏的加密彩信</string>
+  <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">已为不存在的会话加密彩信</string>
   <!--MuteDialog-->
   <string name="MuteDialog_mute_notifications">关闭通知</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">正在导入数据</string>
   <string name="ApplicationMigrationService_importing_text_messages">正在导入文本信息</string>
+  <string name="ApplicationMigrationService_import_complete">导入完成</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">系统数据库导入完成</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_passphrase_cached">Silence 已解锁</string>
   <string name="KeyCachingService_lock">使用密码锁定</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_most_recent_from_s">最近来自：%1$s</string>
+  <string name="MessageNotifier_encrypted_message">已加密的信息</string>
   <string name="MessageNotifier_media_message_with_text">多媒体信息：%s</string>
   <string name="MessageNotifier_no_subject">（无主题）</string>
   <string name="MessageNotifier_message_delivery_failed">信息发送失败。</string>
@@ -236,6 +340,7 @@
   <string name="MessageNotifier_message_received">消息被 %s 接收</string>
   <string name="MessageNotifier_reply">回复</string>
   <!--QuickResponseService-->
+  <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">快捷回复在 Silence 锁定时不可用</string>
   <string name="QuickResponseService_problem_sending_message">发送消息时出现问题！</string>
   <!--SingleRecipientNotificationBuilder-->
   <string name="SingleRecipientNotificationBuilder_new_message">新信息</string>
@@ -253,6 +358,7 @@
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">选择</string>
   <!--blocked_contacts_fragment-->
+  <string name="blocked_contacts_fragment__no_blocked_contacts">没有被屏蔽的联系人</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">没有最近呼叫。</string>
   <!--conversation_title_view-->
@@ -283,11 +389,16 @@
   <string name="conversation_item_received__contact_photo_description">联系人照片</string>
   <string name="conversation_item_received__downloading">下载中</string>
   <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">播放</string>
+  <string name="audio_view__pause_accessibility_description">暂停</string>
+  <string name="audio_view__download_accessibility_description">下载</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">批量选择模式</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s 已选择</string>
   <!--conversation_fragment-->
   <!--import_export_fragment-->
+  <string name="import_export_fragment__export">导出</string>
+  <string name="import_export_fragment__import">导入</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__thanks">感谢！</string>
   <string name="log_submit_activity__submitting">正在提交</string>
@@ -295,11 +406,18 @@
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">默认的系统数据库将不会被修改或改变。</string>
   <string name="database_migration_activity__skip">略过</string>
   <string name="database_migration_activity__import">导入</string>
+  <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">请稍候，这需要一些时间。您将在导入完成后接到通知。</string>
   <string name="database_migration_activity__importing">正在导入</string>
   <!--database_upgrade_activity-->
+  <string name="database_upgrade_activity__updating_database">正在更新数据库……</string>
   <string name="export_fragment__export_plaintext_backup">导出明文备份</string>
   <string name="import_fragment__import_system_sms_database">导入系统短信数据库</string>
+  <string name="import_fragment__import_the_database_from_the_default_system">从系统默认短信应用导入数据库</string>
+  <string name="import_fragment__restore_encrypted_backup">恢复加密备份</string>
+  <string name="import_fragment__restore_a_previously_exported_encrypted_backup">恢复先前导出的加密备份</string>
   <string name="import_fragment__import_plaintext_backup">导入明文备份</string>
+  <string name="export_fragment__export_encrypted_backup">导出加密备份</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">导出一份加密备份到存储</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">查看完整对话</string>
   <!--media_overview_activity-->
@@ -344,20 +462,32 @@
   <string name="AndroidManifest__change_passphrase"> 修改密码</string>
   <string name="AndroidManifest__verify_identity">验证身份</string>
   <string name="AndroidManifest__complete_key_exchange">完成密钥交换</string>
+  <string name="AndroidManifest__log_submit">提交调试日志</string>
+  <string name="AndroidManifest__media_preview">媒体预览</string>
   <string name="AndroidManifest__media_overview">所有图片</string>
   <string name="AndroidManifest__media_overview_named">所有图片和%1$s</string>
+  <string name="AndroidManifest__message_details">信息详情</string>
+  <string name="AndroidManifest_archived_conversations">已归档的会话</string>
+  <string name="AndroidManifest_configure_mms_settings">调整彩信设置</string>
   <!--arrays.xml-->
   <string name="arrays__import_export">导入/导出</string>
+  <string name="arrays__your_identity_key">您的身份密钥</string>
   <string name="arrays__use_default">使用默认</string>
   <string name="arrays__use_custom">使用定制</string>
   <string name="arrays__mute_for_one_hour">静音 1小时</string>
   <string name="arrays__mute_for_two_hours">静音 2小时</string>
   <string name="arrays__mute_for_one_day">静音 1天</string>
   <string name="arrays__mute_for_seven_days">静音 7天</string>
+  <string name="arrays__mute_for_one_year">静音 1 年</string>
   <string name="arrays__settings_default">默认设置</string>
   <string name="arrays__enabled">启用</string>
   <string name="arrays__disabled">禁用</string>
-  <string name="arrays__send_key">显示发送按钮</string>
+  <string name="arrays__name_and_message">名称和信息</string>
+  <string name="arrays__name_only">仅名称</string>
+  <string name="arrays__no_name_or_message">不显示</string>
+  <string name="arrays__enter_key">显示回车键</string>
+  <string name="arrays__emoji_key">显示表情键</string>
+  <string name="arrays__send_key">显示发送键</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
     <item quantity="other">%d 小时</item>
@@ -367,7 +497,11 @@
   <string name="preferences__sms_mms">短信和彩信</string>
   <string name="preferences__pref_all_sms_title">获得所有的短信</string>
   <string name="preferences__pref_all_mms_title">获得所有的彩信</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">使用 Silence 查看和储存所有文本来信</string>
+  <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">使用 Silence 查看和储存所有多媒体来信</string>
   <string name="preferences__keyboard_settings">键盘选项</string>
+  <string name="preferences__disable_emoji_drawer">停用表情抽屉</string>
+  <string name="preferences__enable_this_option_if_your_keyboard_supports_emojis">如果您的键盘支持表情输入，请启用该选项</string>
   <string name="preferences__display_settings">显示设置</string>
   <string name="preferences__choose_your_contact_entry_from_the_contacts_list">从联系人列表选择您的联系人条目。</string>
   <string name="preferences__change_passphrase"> 修改密码</string>
@@ -384,6 +518,7 @@
   <string name="preferences__pref_timeout_interval_title">超时间隔</string>
   <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">忘记缓存密码的等待时间</string>
   <string name="preferences__notifications">通知</string>
+  <string name="preferences__enable_message_notifications">启用信息通知</string>
   <string name="preferences__led_color">LED颜色</string>
   <string name="preferences__led_color_unknown">未知</string>
   <string name="preferences__pref_led_blink_title">LED闪烁规律</string>
@@ -393,7 +528,8 @@
   <string name="preferences__pref_led_blink_custom_pattern_set">自定义LED闪烁模式已设定！</string>
   <string name="preferences__sound">声音</string>
   <string name="preferences__change_notification_sound">改变提示音</string>
-  <string name="preferences__play_inthread_notifications">正在查看的会话接到新信息时播放提醒声音。</string>
+  <string name="preferences__in_conversation_notifications">会话内通知</string>
+  <string name="preferences__play_inthread_notifications">正在查看的会话接到新信息时播放提示音</string>
   <string name="preferences__repeat_alerts">重复警报</string>
   <string name="preferences__never">永不</string>
   <string name="preferences__one_time">一次</string>
@@ -432,8 +568,12 @@
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">请求发送报告</string>
   <string name="preferences__sms_delivery_reports_notification">短信发送报告通知</string>
   <string name="preferences__display_a_notification_when_a_delivery_report_is_received">收到发送报告时显示通知</string>
+  <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">在会话长度超过指定值后自动删除旧信息</string>
   <string name="preferences__delete_old_messages">删除旧信息</string>
+  <string name="preferences__chats">聊天和媒体</string>
   <string name="preferences__conversation_length_limit">对话数量限制</string>
+  <string name="preferences__trim_all_conversations_now">立即清理所有信息</string>
+  <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">扫描所有会话并应用会话长度限制</string>
   <string name="preferences__light_theme">明亮</string>
   <string name="preferences__dark_theme">黑暗</string>
   <string name="preferences__appearance">外观</string>
@@ -441,12 +581,25 @@
   <string name="preferences__default">默认</string>
   <string name="preferences__language">语言</string>
   <string name="preferences__make_default_sms_app">设置为默认的短信应用</string>
+  <string name="preferences__make_silence_the_default_sms_mms_app">将 Silence 设为您的默认短信应用</string>
   <string name="preferences__submit_debug_log">提交调试日志</string>
+  <string name="preferences__about">关于 Silence</string>
   <string name="preferences__about_version">版本 %s</string>
+  <string name="preferences__privacy_policy">隐私权政策</string>
+  <string name="preferences__incognito_keyboard">键盘隐身模式</string>
+  <string name="preferences__request_keyboard_to_disable_personalized_learning">启用隐私模式后，键盘将不会记住、了解或储存您输入的任何字符</string>
   <string name="preferences_app_protection__blocked_contacts">屏蔽的联系人</string>
+  <string name="preferences_notifications__display_in_notifications">在通知中显示的内容</string>
   <string name="preferences__show_sent_time">显示发送时间</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">为消息显示发送时间而不是接收时间</string>
   <string name="preferences_chats__mms">彩信</string>
+  <string name="preferences__auto_retrieve">自动检索</string>
+  <string name="preferences__automatically_retrieve_mms_messages">自动检索彩信</string>
+  <string name="preferences__roaming_auto_retrieve">漫游时自动检索</string>
+  <string name="preferences__automatically_retrieve_mms_when_roaming">漫游时自动检索彩信</string>
+  <string name="preferences_chats__message_trimming">清理信息</string>
+  <string name="preferences_advanced__use_system_emoji">使用系统表情</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">停用 Silence 内置的表情支持</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -486,6 +639,7 @@
   <!--conversation_list_item_view-->
   <string name="conversation_list_item_view__contact_photo_image">联系人照片</string>
   <string name="conversation_list_item_view__error_alert">错误警报</string>
+  <string name="conversation_list_item_view__archived">已归档</string>
   <!--conversation_list_fragment-->
   <string name="conversation_list_fragment__fab_content_description">新会话</string>
   <!--conversation_secure_verified-->
@@ -499,6 +653,8 @@
   <!--conversation-->
   <string name="conversation__menu_add_attachment">添加附件</string>
   <string name="conversation__menu_delete_conversation">删除会话</string>
+  <string name="conversation__menu_archive_conversation">归档会话</string>
+  <string name="conversation__menu_unarchive_conversation">取消归档</string>
   <string name="conversation__menu_view_media">所有图片</string>
   <string name="conversation__menu_conversation_settings">会话设置</string>
   <!--conversation_popup-->
@@ -512,24 +668,35 @@
   <string name="conversation_group_options__broadcast">广播</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">比较</string>
+  <string name="key_scanning__menu_display_your_qr_code">显示您的二维码</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">扫描联系人二维码</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">新信息</string>
   <string name="text_secure_normal__menu_new_group">新群组</string>
   <string name="text_secure_normal__menu_settings">设置</string>
   <string name="text_secure_normal__menu_clear_passphrase">锁定</string>
   <string name="text_secure_normal__mark_all_as_read">全部标记为已读</string>
+  <string name="text_secure_normal__menu_archived_conversations">已归档的会话</string>
   <!--reminder_header-->
   <string name="reminder_header_sms_default_title">使用默认的SMS应用程序？</string>
   <string name="reminder_header_sms_import_title">导入系统短信？</string>
+  <string name="reminder_header_rate_title">为本应用评分</string>
+  <string name="reminder_header_delivery_reports_title">启用送达情况报告？</string>
   <!--MediaPreviewActivity-->
   <string name="MediaPreviewActivity_you">您</string>
   <string name="MediaPreviewActivity_cant_display">预览图片失败</string>
   <string name="MediaPreviewActivity_unssuported_media_type">不支持的媒体类型。</string>
+  <string name="MediaPreviewActivity_draft">草稿</string>
   <!--media_preview-->
   <string name="media_preview__save_title">保存</string>
+  <string name="media_preview__forward_title">转发</string>
+  <string name="media_preview__overview_title">所有图片</string>
   <!--media_overview-->
+  <string name="media_overview__save_all">全部保存</string>
   <!--media_preview_activity-->
+  <string name="media_preview_activity__image_content_description">图片预览</string>
   <!--Trimmer-->
+  <string name="trimmer__deleting">删除中……</string>
   <string name="trimmer__old_messages_successfully_deleted">旧信息已被成功删除。</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">传输图标</string>

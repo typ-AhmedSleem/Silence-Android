@@ -632,6 +632,8 @@
   <string name="preferences_notifications__display_in_notifications">通知に表示</string>
   <string name="preferences__show_sent_time">送信した時間を表示</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">受信したメッセージの受信した時間の代わりに送信した時間を表示します</string>
+  <string name="preferences__hide_unread_message_divider">未読メッセージの区切りを非表示</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">会話中の未読メッセージの区切りを非表示</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">自動取得</string>
   <string name="preferences__automatically_retrieve_mms_messages">MMS メッセージを自動的に取得します</string>

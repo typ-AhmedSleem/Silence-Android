@@ -657,6 +657,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="preferences_notifications__display_in_notifications">Mostrar en las notificaciones</string>
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar hora de envío en lugar de hora de recepción para mensajes entrantes.</string>
+  <string name="preferences__hide_unread_message_divider">Ocultar divisor de mensaje no leído</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Oculta el divisor de mensaje no leído en la conversación</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Auto-descarga</string>
   <string name="preferences__automatically_retrieve_mms_messages">Descargar automáticamente mensajes MMS</string>

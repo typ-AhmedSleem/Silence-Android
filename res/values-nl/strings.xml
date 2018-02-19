@@ -642,6 +642,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="preferences_notifications__display_in_notifications">Toon in notificaties</string>
   <string name="preferences__show_sent_time">Toon verzendtijd</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Toon verzendtijd in plaats van ontvangsttijd voor inkomende berichten</string>
+  <string name="preferences__hide_unread_message_divider">Scheidingslijn voor ongelezen berichten verbergen</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Verberg de scheidingslijn voor ongelezen berichten in gesprekken</string>
   <string name="preferences_chats__mms">Mms</string>
   <string name="preferences__auto_retrieve">Automatisch ophalen</string>
   <string name="preferences__automatically_retrieve_mms_messages">Mms-berichten automatisch ophalen</string>

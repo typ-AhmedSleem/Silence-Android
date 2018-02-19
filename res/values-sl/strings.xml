@@ -677,6 +677,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences_notifications__display_in_notifications">Prikaži v obvestilih</string>
   <string name="preferences__show_sent_time">Prikaz časa pošiljanja</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pri dohodnih sporočilih bo namesto časa prejema prikazan čas pošiljanja.</string>
+  <string name="preferences__hide_unread_message_divider">Skrij ločnik z neprebranimi sporočili</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Skrije ločnik z neprebranimi sporočili v pogovoru</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Pridobi samodejno</string>
   <string name="preferences__automatically_retrieve_mms_messages">Samodejno pridobi sporočila MMS</string>

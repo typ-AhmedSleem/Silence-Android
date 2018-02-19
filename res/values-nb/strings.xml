@@ -648,12 +648,16 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="preferences_notifications__display_in_notifications">Vis i varslinger</string>
   <string name="preferences__show_sent_time">Vis tid sendt</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Vis tid sendt i stedet for mottatt tid for innkommende meldinger</string>
+  <string name="preferences__hide_unread_message_divider">Skjul oppdeler for uleste meldinger</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Skjul oppdeler for uleste meldinger i samtale</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Automatisk innhenting</string>
   <string name="preferences__automatically_retrieve_mms_messages">Automatisk innhenting av MMS-meldinger</string>
   <string name="preferences__roaming_auto_retrieve"> Automatisk mottak ved hjemmenettsvandring</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Automatisk mottak av MMS ved hjemmenettsvandring</string>
   <string name="preferences_chats__message_trimming">Meldingstrimming</string>
+  <string name="preferences_advanced__use_system_emoji">Bruk systemets emoji</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Skru av den innebygde emoji-støtten i Silence</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
