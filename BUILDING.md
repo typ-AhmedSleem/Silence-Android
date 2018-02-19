@@ -32,7 +32,7 @@ The following steps should help you (re)build Silence from the command line.
 
 6. Execute Gradle:
 
-        ./gradlew build
+        ./gradlew assembleDebug
 
 If you get a `Configuration with name 'default' not found.`, please update submodules:
 
