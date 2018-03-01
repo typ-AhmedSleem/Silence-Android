@@ -232,9 +232,8 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         }
 
         int line = layout.getLineForVertical(y);
-        int off = layout.getOffsetForHorizontal(line, x);
 
-        return off;
+        return layout.getOffsetForHorizontal(line, x);
     }
 
     @Override
@@ -280,9 +279,9 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
     }
 
     private static String getAnnotation(Annotation[] a, String key) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i].getKey().equals(key)) {
-                return a[i].getValue();
+        for (Annotation anA : a) {
+            if (anA.getKey().equals(key)) {
+                return anA.getValue();
             }
         }
 
