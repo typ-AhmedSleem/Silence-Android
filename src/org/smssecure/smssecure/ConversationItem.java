@@ -416,6 +416,10 @@ public class ConversationItem extends LinearLayout
       }
     }
   }
+  
+  public void hideClickForDetails(){
+    indicatorText.setVisibility(View.GONE);
+  }
 
   private void setFailedStatusIcons() {
     alertView.setFailed();
