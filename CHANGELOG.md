@@ -1,5 +1,11 @@
 # Silence Changelog
 
+### [0.15.13] - 2018-03-23
+- Fixed logs sending
+- Added option to share key fingerprint
+- Minor UI fixes
+- Updated translations
+
 ### [0.15.12] - 2018-02-19
 - Added option to hide "new message" separator
 - Updated APNs with fix for Free Mobile (FR)
@@ -244,6 +250,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.13]: https://github.com/SilenceIM/Silence/compare/v0.15.12...v0.15.13
  [0.15.12]: https://github.com/SilenceIM/Silence/compare/v0.15.11...v0.15.12
  [0.15.11]: https://github.com/SilenceIM/Silence/compare/v0.15.10...v0.15.11
  [0.15.10]: https://github.com/SilenceIM/Silence/compare/v0.15.9...v0.15.10
