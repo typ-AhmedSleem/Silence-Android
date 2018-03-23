@@ -4,6 +4,7 @@
   <string name="yes">Áno</string>
   <string name="no">Nie</string>
   <string name="delete">Zmaž</string>
+  <string name="please_wait">Čakajte prosím...</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Nová správa</string>
   <!--ApplicationPreferencesActivity-->
@@ -15,9 +16,20 @@
 Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpečné spojenia budú naďalej fungovať, ale hocikto s fyzickým prístupom k zariadeniu ich bude schopný čítať.</string>
   <string name="ApplicationPreferencesActivity_disable">Vypnúť</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Prichádzajúce SMS povolené</string>
+  <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Nastaviť predvolenú SMS aplikáciu</string>
   <string name="ApplicationPreferencesActivity_sms_disabled">Prichádzajúce SMS zakazané </string>
+  <string name="ApplicationPreferencesActivity_sms">SMS</string>
+  <string name="ApplicationPreferencesActivity_mms">MMS</string>
   <!--AppProtectionPreferenceFragment-->
+  <plurals name="AppProtectionPreferenceFragment_minutes">
+    <item quantity="one">1 minúta</item>
+    <item quantity="few">%d minúty</item>
+    <item quantity="other">%d minút</item>
+  </plurals>
   <!--DraftDatabase-->
+  <string name="DraftDatabase_Draft_image_snippet">(obrázok)</string>
+  <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
+  <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_picture">Obrázok</string>
@@ -29,9 +41,12 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <!--ConversationItem-->
   <string name="ConversationItem_message_size_d_kb">Veľkosť správy: %d KB</string>
   <string name="ConversationItem_expires_s">Vyprší: %s</string>
+  <string name="ConversationItem_error_not_delivered">Nedoručená</string>
   <string name="ConversationItem_view_secure_media_question">Zobraziť kryptované údaje?</string>
   <string name="ConversationItem_error_received_stale_key_exchange_message">Chyba, prijal som zaseknutú správu vzájomnej výmeny kľúčov.</string>
   <string name="ConversationItem_group_action_left">%1$s opustil/a skupinu.</string>
+  <string name="ConversationItem_from_s">od %s</string>
+  <string name="ConversationItem_to_s">do %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Vytvoriť bezpečné spojenie?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Vytvoriť bezpečné spojenie s %s?</string>
@@ -61,6 +76,11 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="ConversationActivity_specify_recipient">Prosím, vyberte kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Príloha je príliš veľká.</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d nová správa</item>
+    <item quantity="few">%d nové správy</item>
+    <item quantity="other">%d nových správ</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Detaily správy</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -68,6 +88,8 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
     <item quantity="few">Vymazať vybrané správy?</item>
     <item quantity="other">Vymazať vybrané správy?</item>
   </plurals>
+  <string name="ConversationFragment_mms">MMS</string>
+  <string name="ConversationFragment_sms">SMS</string>
   <!--ConversationListActivity-->
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
@@ -83,6 +105,8 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="CustomDefaultPreference_none">Žiadna</string>
   <!--DateUtils-->
   <string name="DateUtils_now">Teraz</string>
+  <string name="DateUtils_today">Dnes</string>
+  <string name="DateUtils_yesterday">Včera</string>
   <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Zdieľaj s</string>
@@ -157,6 +181,9 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Naozaj chcete odblokovať tento kontakt?</string>
   <string name="RecipientPreferenceActivity_unblock">Odbokovať</string>
   <!--Slide-->
+  <string name="Slide_image">Obrázok</string>
+  <string name="Slide_audio">Audio</string>
+  <string name="Slide_video">Video</string>
   <!--SmsMessageRecord-->
   <string name="SmsMessageRecord_secure_session_ended">Bezpečné spojenie ukončené.</string>
   <string name="SmsMessageRecord_duplicate_message">Zduplikuj správu.</string>
@@ -188,9 +215,11 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Prebieha import</string>
   <string name="ApplicationMigrationService_importing_text_messages">Nahrávanie textových správ</string>
+  <string name="ApplicationMigrationService_import_complete">Import dokončený</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_lock">Zamkni s heslom</string>
   <!--MessageNotifier-->
+  <string name="MessageNotifier_encrypted_message">Šifrovaná správa</string>
   <string name="MessageNotifier_no_subject">(bez predmetu)</string>
   <string name="MessageNotifier_message_delivery_failed">Doručenie správy zlyhalo.</string>
   <string name="MessageNotifier_failed_to_deliver_message">Zlyhanie doručenia správy.</string>
@@ -199,6 +228,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <!--QuickResponseService-->
   <string name="QuickResponseService_problem_sending_message">Problém odosielania správy!</string>
   <!--SingleRecipientNotificationBuilder-->
+  <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
   <string name="SingleRecipientNotificationBuilder_new_message">Nová správa</string>
   <!--SubscriptionInfoCompat-->
   <!--change_passphrase_activity-->
@@ -223,6 +253,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="conversation_activity__type_message_sms_insecure">Pošli nešifrovanú SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Pošli šifrovanú MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Pošli nešifrovanú MMS</string>
+  <string name="conversation_activity__from_sim_name">Od %1$s</string>
   <string name="conversation_activity__send">Odoslať</string>
   <string name="conversation_activity__remove">Odstrániť</string>
   <!--conversation_item-->
@@ -230,11 +261,15 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="conversation_item_sent__download">Stiahnuť</string>
   <string name="conversation_item_sent__downloading">Sťahujem</string>
   <string name="conversation_item_sent__pending_approval_description">Čaká na schválenie</string>
+  <string name="conversation_item_sent__delivered_description">Doručená</string>
   <!--conversation_item_received-->
   <string name="conversation_item_received__download">Stiahnuť</string>
   <string name="conversation_item_received__contact_photo_description">Fotografia kontaktu</string>
   <string name="conversation_item_received__downloading">Sťahujem</string>
   <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Prehrať</string>
+  <string name="audio_view__pause_accessibility_description">Pozastaviť</string>
+  <string name="audio_view__download_accessibility_description">Stiahnuť</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Mód hromadného výberu</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s vybraných</string>
@@ -273,6 +308,7 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="verify_identity_activity__their_identity_they_read">Ich totožnosť (oni vidia):</string>
   <string name="verify_identity_activity__your_identity_you_read">Vaša totožnosť (vy vidíte):</string>
   <!--message_details_header-->
+  <string name="message_details_header__from">Od:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Vytvor heslo</string>
   <string name="AndroidManifest__enter_passphrase">Zadaj heslo</string>
@@ -286,6 +322,11 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="arrays__name_only">Len meno</string>
   <string name="arrays__no_name_or_message">Žiadne meno ani správa</string>
   <!--plurals.xml-->
+  <plurals name="hours_ago">
+    <item quantity="one">%d hodina</item>
+    <item quantity="few">%d hodiny</item>
+    <item quantity="other">%d hodín</item>
+  </plurals>
   <!--preferences.xml-->
   <string name="preferences__general">Všeobecné</string>
   <string name="preferences__sms_mms">SMS a MMS</string>
@@ -341,6 +382,8 @@ Upozornenie, toto vypne šifrovanie úložiska správ a kľúčov. Vaše bezpeč
   <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Pre každú odoslanú SMS vyžiadaj správu o doručení</string>
   <string name="preferences__delete_old_messages">Zmaž staré správy</string>
   <string name="preferences__conversation_length_limit">Obmedzenie dĺžky konverzácie</string>
+  <string name="preferences__light_theme">Svetlá</string>
+  <string name="preferences__dark_theme">Tmavá</string>
   <string name="preferences__appearance">Vzhľad</string>
   <string name="preferences__theme">Téma</string>
   <string name="preferences__default">Pôvodné</string>

@@ -654,6 +654,8 @@
   <string name="preferences_notifications__display_in_notifications">Покажи в полето за известия</string>
   <string name="preferences__show_sent_time">Покажи часът на изпращане</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Покажи часът на изпращане вместо часът на получаване за входящи съобщения</string>
+  <string name="preferences__hide_unread_message_divider">Скриване на разделителя за непрочетени съобщения</string>
+  <string name="preferences__hide_unread_message_divider_in_conversation">Скриване на разделителя за непрочетени съобщения в разговор</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Автоматично изтегляне</string>
   <string name="preferences__automatically_retrieve_mms_messages">Автоматично изтелгяй MMS съобщения</string>
