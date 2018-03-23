@@ -3,7 +3,7 @@
 	url = https://github.com/SilenceIM/android-support-v4-preferencefragment.git
 [submodule "libs/org.w3c.dom"]
 	path = libs/org.w3c.dom
-	url = https://github.com/SMSSecure/org.w3c.dom.git
+	url = https://github.com/SilenceIM/org.w3c.dom.git
 [submodule "libs/gradle-witness"]
 	path = libs/gradle-witness
 	url = https://github.com/WhisperSystems/gradle-witness.git
@@ -12,10 +12,10 @@
 	url = https://github.com/SilenceIM/TextDrawable.git
 [submodule "libs/org.whispersystems.jobmanager"]
 	path = libs/org.whispersystems.jobmanager
-	url = https://github.com/SMSSecure/jobmanager.git
+	url = https://github.com/SilenceIM/jobmanager.git
 [submodule "libs/org.whispersystems.libpastelog"]
 	path = libs/org.whispersystems.libpastelog
-	url = https://github.com/SMSSecure/libpastelog.git
+	url = https://github.com/SilenceIM/libpastelog.git
 [submodule "libs/org.greenrobot.eventbus"]
 	path = libs/org.greenrobot.eventbus
 	url = https://github.com/greenrobot/EventBus
