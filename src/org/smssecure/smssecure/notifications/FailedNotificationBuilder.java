@@ -24,6 +24,7 @@ public class FailedNotificationBuilder extends AbstractNotificationBuilder {
     setAutoCancel(true);
     setAudibleAlarms(null, RecipientPreferenceDatabase.VibrateState.DEFAULT);
     setVisualAlarms();
+    setChannelId(NotificationChannels.FAILURES);
   }
 
 

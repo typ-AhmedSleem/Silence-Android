@@ -440,6 +440,12 @@
     <string name="MessageNotifier_message_received">Message received by %s.</string>
     <string name="MessageNotifier_reply">Reply</string>
 
+    <!-- Notification Channels -->
+    <string name="NotificationChannel_messages">Messages</string>
+    <string name="NotificationChannel_failures">Failures</string>
+    <string name="NotificationChannel_locked_status">Locked status</string>
+    <string name="NotificationChannel_other">Other</string>
+
     <!-- QuickResponseService -->
     <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">Quick response unavailable when Silence is locked!</string>
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>

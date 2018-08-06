@@ -13,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 
 import org.smssecure.smssecure.BaseActionBarActivity;
+import org.smssecure.smssecure.notifications.NotificationChannels;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.util.ServiceUtil;
@@ -103,7 +104,7 @@ public class WelcomeActivity extends BaseActionBarActivity {
 
   private static void displayPermissionsNotification(Context context) {
     Intent       targetIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-    Notification notification = new NotificationCompat.Builder(context)
+    Notification notification = new NotificationCompat.Builder(context, NotificationChannels.OTHER)
                                     .setPriority(Notification.PRIORITY_MAX)
                                     .setVisibility(Notification.VISIBILITY_PUBLIC)
                                     .setSmallIcon(R.drawable.icon_notification)
