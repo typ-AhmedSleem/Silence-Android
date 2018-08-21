@@ -368,6 +368,18 @@
               android:exported="false"
               android:authorities="org.smssecure.provider.smssecure.mms" />
 
+    <provider android:name=".database.DatabaseContentProviders$Conversation"
+              android:authorities="org.smssecure.smssecure.database.conversation"
+              android:exported="false" />
+
+    <provider android:name=".database.DatabaseContentProviders$ConversationList"
+              android:authorities="org.smssecure.smssecure.database.conversationlist"
+              android:exported="false" />
+
+    <provider android:name=".database.DatabaseContentProviders$Attachment"
+              android:authorities="org.smssecure.smssecure.database.attachment"
+              android:exported="false" />
+
     <receiver android:name=".service.RegistrationNotifier"
               android:exported="false">
         <intent-filter>
