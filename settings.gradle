@@ -1,5 +1,5 @@
 include ':com.amulyakhare.textdrawable'
-project(':com.amulyakhare.textdrawable').projectDir = new File(rootDir, 'libs/com.amulyakhare.textdrawable/library')
+project(':com.amulyakhare.textdrawable').projectDir = new File(rootDir, 'libs/com.amulyakhare.textdrawable')
 
 include ':com.android.support.support-v4-preferencefragment'
 project(':com.android.support.support-v4-preferencefragment').projectDir = new File(rootDir, 'libs/com.android.support.support-v4-preferencefragment')

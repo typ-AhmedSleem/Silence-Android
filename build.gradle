@@ -3,9 +3,12 @@ buildscript {
         maven {
             url "https://repo1.maven.org/maven2"
         }
+        // Required for the Gradle plugin
+        google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.3.2'
         classpath files('libs/gradle-witness.jar')
     }
 }
@@ -17,6 +20,7 @@ repositories {
     maven {
         url "https://repo1.maven.org/maven2/"
     }
+    google()
     jcenter()
     mavenLocal()
 }
@@ -28,6 +32,17 @@ subprojects {
 }
 
 dependencies {
+    def supportVersion = '28.0.0'
+
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile "com.android.support:recyclerview-v7:$supportVersion"
+    compile "com.android.support:design:$supportVersion"
+    compile "com.android.support:support-v13:$supportVersion"
+    compile "com.android.support:cardview-v7:$supportVersion"
+    compile ("com.android.support:gridlayout-v7:$supportVersion") {
+        exclude module: 'support-v4'
+    }
+
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.jpardogo.materialtabstrip:library:1.0.9'
     compile project (':org.w3c.dom')
@@ -39,30 +54,23 @@ dependencies {
     compile 'com.pnikosis:materialish-progress:1.5'
     compile project (':org.greenrobot.eventbus')
     compile 'pl.tajchert:waitingdots:0.1.0'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:recyclerview-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.android.support:support-v13:25.1.0'
-    compile 'com.android.support:cardview-v7:25.1.0'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
     compile 'com.google.zxing:android-integration:3.1.0'
-    compile project (':com.android.support.support-v4-preferencefragment')
-    compile ('com.android.support:gridlayout-v7:22.2.0') {
-        exclude module: 'support-v4'
-    }
     compile ('com.davemorrissey.labs:subsampling-scale-image-view:3.6.0') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 
     compile 'com.squareup.dagger:dagger:1.2.2'
+    annotationProcessor 'com.squareup.dagger:dagger-compiler:1.2.2'
+    compileOnly 'com.squareup.dagger:dagger-compiler:1.2.2'
+
     compile ("com.doomonafireball.betterpickers:library:1.5.3") {
         exclude group: 'com.android.support', module: 'support-v4'
     }
-    provided 'com.squareup.dagger:dagger-compiler:1.2.2'
 
-    compile project (':org.whispersystems.jobmanager')
-    compile project (':org.whispersystems.libpastelog')
-    compile project (':org.whispersystems.libsignal')
+    compile project (path: ':org.whispersystems.jobmanager', configuration: 'default')
+    compile project (path: ':org.whispersystems.libpastelog', configuration: 'default')
+    compile project (path: ':org.whispersystems.libsignal', configuration: 'default')
 
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
     compile 'com.fasterxml.jackson.core:jackson-core:2.8.7'
@@ -93,43 +101,7 @@ dependencies {
 
 dependencyVerification {
     verify = [
-            'pl.tajchert:waitingdots:2835d49e0787dbcb606c5a60021ced66578503b1e9fddcd7a5ef0cd5f095ba2c',
-            'com.android.support:appcompat-v7:b48bfd5efc14da938ba0647f9894aa7d3d90f0b618167652a318f6f336ef303e',
-            'com.android.support:recyclerview-v7:45beed1778f785c75540b68aa7735b8973a518ac21e8d763188dbbdae6c5b65d',
-            'com.android.support:design:92466557dc6a222bbff361801b26979573cb7086119331e78c74a2df34d5e11e',
-            'com.android.support:support-v13:deeb43c2878025f2a0485791f66b5f59a1c6a4c6671c6ad7bb20abfeffaa313f',
-            'com.android.support:cardview-v7:cd6f472f130a75f029cd1b7c56f72174023d56a2eee2b97577837fe39169d5df',
-            'com.android.support:support-vector-drawable:2697503d3e8e709023ae176ba5db7f98ca0aa0b4e6290aedcb3c371904806bf7',
-            'com.android.support:animated-vector-drawable:6d05cb63d1f68900220f85c56dfe1066a9bb19cb0ec1247cc68fc2ba32f6b4a7',
-            'com.android.support:support-v4:ed4cda7c752f51d33f9bbdfff3422b425b323d356cd1bdc9786aa413c912e594',
-            'com.android.support:support-media-compat:8d6a1a5ba3d9eb1a25cb8f21bb312ac6280202e3d2900cb0b447d065d0d8a125',
-            'com.android.support:support-core-utils:a7649e18c04143dde40c218c5ce9a030e7ae674089cd7b18c6cf8ed2a22cf01a',
-            'com.android.support:support-fragment:1294500b357f52cf3779e2521c79f54ae7844f3b9a5f6727495dbbda7f231377',
-            'com.android.support:support-annotations:fb941680f43afbd70ce01ec3cc837a5037f0a774701b12a9fd3090bd4727cf15',
-            'com.android.support:support-compat:e880fb1209c33fcb43e2b25716808e1a6e0b4d3170d5a8dc7704e15084428f88',
-            'com.android.support:support-core-ui:0149b54fd3bc9f4b3b2d321ff53c11821b31a2eca1e664d0cee224e8f53073d6',
-            'com.android.support:transition:cf53f778352fe0b74ff14d838bef9fe79264f3fd43eac499b6e0d1664dbd8997',
-            'com.android.support:gridlayout-v7:a9b770cffca2c7c5cd83cba4dd12503365de5e8d9c79c479165adf18ab3bc25b',
-            'com.doomonafireball.betterpickers:library:132ecd685c95a99e7377c4e27bfadbb2d7ed0bea995944060cd62d4369fdaf3d',
-            'com.fasterxml.jackson.core:jackson-annotations:6b7802f6c22c09c4a92a2ebeb76e755c3c0a58dfbf419835fae470d89e469b86',
-            'com.fasterxml.jackson.core:jackson-core:256ff34118ab292d1b4f3ee4d2c3e5e5f0f609d8e07c57e8ad1f51c46d4fbb46',
-            'com.fasterxml.jackson.core:jackson-databind:4f74337b6d18664be0f5b15c6664b17aa3972c9c175092328b139b894ff66f19',
-            'com.github.bumptech.glide:glide:76ef123957b5fbaebb05fcbe6606dd58c3bc3fcdadb257f99811d0ac9ea9b88b',
-            'com.github.chrisbanes.photoview:library:8b5344e206f125e7ba9d684008f36c4992d03853c57e5814125f88496126e3cc',
-            'com.google.protobuf:protobuf-java:e0c1c64575c005601725e7c6a02cebf9e1285e888f756b2a1d73ffa8d725cc74',
-            'com.google.zxing:android-integration:89e56aadf1164bd71e57949163c53abf90af368b51669c0d4a47a163335f95c4',
-            'com.googlecode.libphonenumber:libphonenumber:48c03059241d52411e6b775962adf5a1e95c3de1e7f0efaf577bc1548ded616a',
-            'com.jpardogo.materialtabstrip:library:c6ef812fba4f74be7dc4a905faa4c2908cba261a94c13d4f96d5e67e4aad4aaa',
-            'com.makeramen:roundedimageview:1f5a1865796b308c6cdd114acc6e78408b110f0a62fc63553278fbeacd489cd1',
-            'com.pnikosis:materialish-progress:d71d80e00717a096784482aee21001a9d299fec3833e4ebd87739ed36cf77c54',
-            'info.guardianproject.trustedintents:trustedintents:6221456d8821a8d974c2acf86306900237cf6afaaa94a4c9c44e161350f80f3e',
-            'com.melnykov:floatingactionbutton:15d58d4fac0f7a288d0e5301bbaf501a146f5b3f5921277811bf99bd3b397263',
-            'com.nineoldandroids:library:68025a14e3e7673d6ad2f95e4b46d78d7d068343aa99256b686fe59de1b3163a',
-            'com.squareup.dagger:dagger:789aca24537022e49f91fc6444078d9de8f1dd99e1bfb090f18491b186967883',
-            'javax.inject:javax.inject:91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff',
-            'org.apache.httpcomponents:httpclient-android:6f56466a9bd0d42934b90bfbfe9977a8b654c058bf44a12bdc2877c4e1f033f1',
-            'se.emilsjolander:stickylistheaders:a08ca948aa6b220f09d82f16bbbac395f6b78897e9eeac6a9f0b0ba755928eeb',
-            'com.davemorrissey.labs:subsampling-scale-image-view:550c5baa07e0bb4ff0a18b705e96d34436d22619248bd8c08c08c730b1f55cfe',
+            
     ]
 }
 
@@ -142,15 +114,15 @@ android {
         versionCode 142
         versionName "0.15.13"
 
-        minSdkVersion 9
-        targetSdkVersion 22
+        minSdkVersion 14
+        targetSdkVersion 23
 
         vectorDrawables.useSupportLibrary = true
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     packagingOptions {
