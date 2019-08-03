@@ -43,16 +43,6 @@ public class SilenceSignalProtocolStore implements SignalProtocolStore {
   }
 
   @Override
-  public void saveIdentity(SignalProtocolAddress number, IdentityKey identityKey) {
-    identityKeyStore.saveIdentity(number, identityKey);
-  }
-
-  @Override
-  public boolean isTrustedIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
-    return identityKeyStore.isTrustedIdentity(address, identityKey);
-  }
-
-  @Override
   public PreKeyRecord loadPreKey(int preKeyId) throws InvalidKeyIdException {
     return preKeyStore.loadPreKey(preKeyId);
   }
@@ -125,5 +115,20 @@ public class SilenceSignalProtocolStore implements SignalProtocolStore {
   @Override
   public void removeSignedPreKey(int signedPreKeyId) {
     signedPreKeyStore.removeSignedPreKey(signedPreKeyId);
+  }
+
+  @Override
+  public IdentityKey getIdentity(SignalProtocolAddress address) {
+    return null;
+  }
+
+  @Override
+  public boolean isTrustedIdentity(SignalProtocolAddress address, IdentityKey identityKey, Direction direction) {
+    return false;
+  }
+
+  @Override
+  public boolean saveIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
+    return false;
   }
 }

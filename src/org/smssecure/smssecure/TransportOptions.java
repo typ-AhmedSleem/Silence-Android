@@ -1,10 +1,12 @@
 package org.smssecure.smssecure;
 
+import android.Manifest;
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.util.CharacterCalculator;
 import org.smssecure.smssecure.util.MmsCharacterCalculator;
 import org.smssecure.smssecure.util.SmsCharacterCalculator;
@@ -158,7 +160,13 @@ public class TransportOptions {
   {
     List<TransportOption>        results             = new LinkedList<>();
     SubscriptionManagerCompat    subscriptionManager = new SubscriptionManagerCompat(context);
-    List<SubscriptionInfoCompat> subscriptions       = subscriptionManager.getActiveSubscriptionInfoList();
+    List<SubscriptionInfoCompat> subscriptions;
+
+    if (Permissions.hasAll(context, Manifest.permission.READ_PHONE_STATE)) {
+      subscriptions = subscriptionManager.getActiveSubscriptionInfoList();
+    } else {
+      subscriptions = new LinkedList<>();
+    }
 
     if (subscriptions.size() < 2) {
       results.add(new TransportOption(type,

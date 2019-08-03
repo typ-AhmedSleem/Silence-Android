@@ -90,7 +90,7 @@ public class SessionBuilder {
   {
     IdentityKey theirIdentityKey = message.getIdentityKey();
 
-    if (!identityKeyStore.isTrustedIdentity(remoteAddress, theirIdentityKey)) {
+    if (!identityKeyStore.isTrustedIdentity(remoteAddress, theirIdentityKey, IdentityKeyStore.Direction.RECEIVING)) {
       throw new UntrustedIdentityException(remoteAddress.getName(), theirIdentityKey);
     }
 
@@ -153,7 +153,7 @@ public class SessionBuilder {
    */
   public void process(PreKeyBundle preKey) throws InvalidKeyException, UntrustedIdentityException {
     synchronized (SessionCipher.SESSION_LOCK) {
-      if (!identityKeyStore.isTrustedIdentity(remoteAddress, preKey.getIdentityKey())) {
+      if (!identityKeyStore.isTrustedIdentity(remoteAddress, preKey.getIdentityKey(), IdentityKeyStore.Direction.SENDING)) {
         throw new UntrustedIdentityException(remoteAddress.getName(), preKey.getIdentityKey());
       }
 
@@ -194,8 +194,8 @@ public class SessionBuilder {
       sessionRecord.getSessionState().setRemoteRegistrationId(preKey.getRegistrationId());
       sessionRecord.getSessionState().setAliceBaseKey(ourBaseKey.getPublicKey().serialize());
 
-      sessionStore.storeSession(remoteAddress, sessionRecord);
       identityKeyStore.saveIdentity(remoteAddress, preKey.getIdentityKey());
+      sessionStore.storeSession(remoteAddress, sessionRecord);
     }
   }
 
@@ -211,7 +211,7 @@ public class SessionBuilder {
       throws InvalidKeyException, UntrustedIdentityException, StaleKeyExchangeException
   {
     synchronized (SessionCipher.SESSION_LOCK) {
-      if (!identityKeyStore.isTrustedIdentity(remoteAddress, message.getIdentityKey())) {
+      if (!identityKeyStore.isTrustedIdentity(remoteAddress, message.getIdentityKey(), IdentityKeyStore.Direction.SENDING)) {
         throw new UntrustedIdentityException(remoteAddress.getName(), message.getIdentityKey());
       }
 
@@ -258,8 +258,8 @@ public class SessionBuilder {
 
     RatchetingSession.initializeSession(sessionRecord.getSessionState(), parameters);
 
-    sessionStore.storeSession(remoteAddress, sessionRecord);
     identityKeyStore.saveIdentity(remoteAddress, message.getIdentityKey());
+    sessionStore.storeSession(remoteAddress, sessionRecord);
 
     byte[] baseKeySignature = Curve.calculateSignature(parameters.getOurIdentityKey().getPrivateKey(),
                                                        parameters.getOurBaseKey().getPublicKey().serialize());
@@ -305,8 +305,8 @@ public class SessionBuilder {
       throw new InvalidKeyException("Base key signature doesn't match!");
     }
 
-    sessionStore.storeSession(remoteAddress, sessionRecord);
     identityKeyStore.saveIdentity(remoteAddress, message.getIdentityKey());
+    sessionStore.storeSession(remoteAddress, sessionRecord);
   }
 
   /**

@@ -30,6 +30,7 @@ import org.smssecure.smssecure.util.NumberUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.libsignal.NoSessionException;
+import org.whispersystems.libsignal.UntrustedIdentityException;
 
 import java.util.ArrayList;
 
@@ -60,6 +61,10 @@ public class SmsSendJob extends SendJob {
       Log.w(TAG, ude);
       DatabaseFactory.getSmsDatabase(context).markAsSentFailed(record.getId());
       MessageNotifier.notifyMessageDeliveryFailed(context, record.getRecipients(), record.getThreadId());
+    } catch (UntrustedIdentityException uid) {
+      Log.w(TAG, uid);
+      DatabaseFactory.getSmsDatabase(context).markAsNoSession(record.getId());
+      MessageNotifier.notifyMessageDeliveryFailed(context, record.getRecipients(), record.getThreadId());
     }
   }
 
@@ -81,7 +86,7 @@ public class SmsSendJob extends SendJob {
   }
 
   private void deliver(MasterSecret masterSecret, SmsMessageRecord message)
-      throws UndeliverableMessageException
+      throws UndeliverableMessageException, UntrustedIdentityException
   {
     if (message.isSecure() || message.isKeyExchange() || message.isEndSession()) {
       deliverSecureMessage(masterSecret, message);
@@ -91,7 +96,7 @@ public class SmsSendJob extends SendJob {
   }
 
   private void deliverSecureMessage(MasterSecret masterSecret, SmsMessageRecord message)
-      throws UndeliverableMessageException
+      throws UndeliverableMessageException, UntrustedIdentityException
   {
     String recipient = message.getIndividualRecipient().getNumber();
 
@@ -126,7 +131,10 @@ public class SmsSendJob extends SendJob {
     } catch (IllegalArgumentException iae) {
       Log.w(TAG, iae);
       throw new UndeliverableMessageException(iae);
-    }
+    } catch (SecurityException se) {
+      Log.w(TAG, se);
+      throw new UndeliverableMessageException(se);
+    } 
   }
 
   private void deliverPlaintextMessage(SmsMessageRecord message)
@@ -170,13 +178,20 @@ public class SmsSendJob extends SendJob {
       } catch (NullPointerException npe2) {
         Log.w(TAG, npe);
         throw new UndeliverableMessageException(npe2);
+      } catch (SecurityException se) {
+        Log.w(TAG, se);
+        throw new UndeliverableMessageException(se);
       }
+    } catch (SecurityException se) {
+      Log.w(TAG, se);
+      throw new UndeliverableMessageException(se);
     }
   }
 
   private OutgoingTextMessage getAsymmetricEncrypt(MasterSecret masterSecret,
                                                    OutgoingTextMessage message)
-      throws UndeliverableMessageException
+      throws UndeliverableMessageException, UntrustedIdentityException
+
   {
     try {
       return new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret)).encrypt(message);

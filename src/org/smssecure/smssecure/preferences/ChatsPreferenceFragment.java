@@ -3,11 +3,11 @@ package org.smssecure.smssecure.preferences;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.support.v4.preference.PreferenceFragment;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.preference.EditTextPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class ChatsPreferenceFragment extends PreferenceFragment {
+public class ChatsPreferenceFragment extends CorrectedPreferenceFragment {
   private static final String TAG = ChatsPreferenceFragment.class.getSimpleName();
 
   @Override
@@ -33,6 +33,11 @@ public class ChatsPreferenceFragment extends PreferenceFragment {
     findPreference(SilencePreferences.THREAD_TRIM_LENGTH)
         .setOnPreferenceChangeListener(new TrimLengthValidationListener());
 
+  }
+
+  @Override
+  public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+    addPreferencesFromResource(R.xml.preferences_chats);
   }
 
   @Override

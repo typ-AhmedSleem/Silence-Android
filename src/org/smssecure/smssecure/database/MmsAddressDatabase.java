@@ -23,14 +23,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
+import com.google.android.mms.pdu_alt.PduHeaders;
+
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import ws.com.google.android.mms.pdu.PduHeaders;
 
 public class MmsAddressDatabase extends Database {
 

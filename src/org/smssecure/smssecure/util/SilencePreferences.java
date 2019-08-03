@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
+import org.smssecure.smssecure.preferences.widgets.NotificationPrivacyPreference;
 
 import java.io.IOException;
 import java.util.Arrays;

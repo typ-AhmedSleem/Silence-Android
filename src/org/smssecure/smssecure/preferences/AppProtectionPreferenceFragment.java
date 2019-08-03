@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.Preference;
-import android.preference.PreferenceScreen;
-import android.support.v4.preference.PreferenceFragment;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceScreen;
 import android.widget.Toast;
 
 import com.doomonafireball.betterpickers.hmspicker.HmsPickerBuilder;
@@ -27,7 +27,7 @@ import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.util.concurrent.TimeUnit;
 
-public class AppProtectionPreferenceFragment extends PreferenceFragment {
+public class AppProtectionPreferenceFragment extends CorrectedPreferenceFragment {
 
   private static final String PREFERENCE_CATEGORY_BLOCKED = "preference_category_blocked";
 
@@ -37,7 +37,6 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
-    addPreferencesFromResource(R.xml.preferences_app_protection);
 
     masterSecret      = getArguments().getParcelable("master_secret");
     disablePassphrase = (CheckBoxPreference) this.findPreference("pref_enable_passphrase_temporary");
@@ -50,6 +49,11 @@ public class AppProtectionPreferenceFragment extends PreferenceFragment {
         .setOnPreferenceClickListener(new BlockedContactsClickListener());
     disablePassphrase
         .setOnPreferenceChangeListener(new DisablePassphraseClickListener());
+  }
+
+  @Override
+  public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+    addPreferencesFromResource(R.xml.preferences_app_protection);
   }
 
   @Override

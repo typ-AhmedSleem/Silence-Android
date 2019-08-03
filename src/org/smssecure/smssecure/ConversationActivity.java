@@ -16,6 +16,7 @@
  */
 package org.smssecure.smssecure;
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -91,11 +92,11 @@ import org.smssecure.smssecure.mms.AttachmentManager;
 import org.smssecure.smssecure.mms.AttachmentManager.MediaType;
 import org.smssecure.smssecure.mms.AttachmentTypeSelectorAdapter;
 import org.smssecure.smssecure.mms.MediaConstraints;
-import org.smssecure.smssecure.mms.MmsMediaConstraints;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.notifications.MessageNotifier;
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -126,8 +127,6 @@ import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.List;
-
-import ws.com.google.android.mms.ContentType;
 
 import static org.smssecure.smssecure.TransportOption.Type;
 
@@ -431,6 +430,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     startActivity(intent);
     finish();
+  }
+
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    Permissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
   }
 
   private void handleMuteNotifications() {
@@ -1138,7 +1142,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private MediaConstraints getCurrentMediaConstraints() {
-    return MediaConstraints.MMS_CONSTRAINTS;
+    return MediaConstraints.getMmsMediaConstraints(sendButton.getSelectedTransport().getSimSubscriptionId().or(-1));
   }
 
   private void markThreadAsRead() {
@@ -1220,58 +1224,80 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       throws InvalidMessageException
   {
     final Context context                = getApplicationContext();
-    OutgoingMediaMessage outgoingMessage = new OutgoingMediaMessage(recipients,
+    OutgoingMediaMessage outgoingMessageCandidate = new OutgoingMediaMessage(recipients,
                                                                     attachmentManager.buildSlideDeck(),
                                                                     getMessage(),
                                                                     System.currentTimeMillis(),
                                                                     subscriptionId,
                                                                     distributionType);
 
+    final OutgoingMediaMessage outgoingMessage;
+
     if (isEncryptedConversation && !forcePlaintext) {
-      outgoingMessage = new OutgoingSecureMediaMessage(outgoingMessage);
+      outgoingMessage = new OutgoingSecureMediaMessage(outgoingMessageCandidate);
+    } else {
+      outgoingMessage = outgoingMessageCandidate;
     }
 
-    attachmentManager.clear();
-    composeText.setText("");
+    Permissions.with(this)
+               .request(Manifest.permission.SEND_SMS)
+               .ifNecessary()
+               .withPermanentDenialDialog(getString(R.string.ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms))
+               .onAllGranted(() -> {
+                 attachmentManager.clear();
+                 composeText.setText("");
 
-    new AsyncTask<OutgoingMediaMessage, Void, Long>() {
-      @Override
-      protected Long doInBackground(OutgoingMediaMessage... messages) {
-        return MessageSender.send(context, masterSecret, messages[0], threadId, true);
-      }
+                 new AsyncTask<Void, Void, Long>() {
+                   @Override
+                   protected Long doInBackground(Void... param) {
+                     return MessageSender.send(context, masterSecret, outgoingMessage, threadId, true);
+                   }
 
-      @Override
-      protected void onPostExecute(Long result) {
-        sendComplete(result);
-      }
-    }.execute(outgoingMessage);
+                   @Override
+                   protected void onPostExecute(Long result) {
+                     sendComplete(result);
+                   }
+                 }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+               })
+               .onAnyDenied(() -> sendComplete(threadId))
+               .execute();
   }
 
   private void sendTextMessage(boolean forcePlaintext, final int subscriptionId)
       throws InvalidMessageException
   {
-    final Context context = getApplicationContext();
+    final Context context     = getApplicationContext();
+    final String  messageBody = getMessage();
+
     OutgoingTextMessage message;
 
     if (isEncryptedConversation && !forcePlaintext) {
-      message = new OutgoingEncryptedMessage(recipients, getMessage(), subscriptionId);
+      message = new OutgoingEncryptedMessage(recipients, messageBody, subscriptionId);
     } else {
-      message = new OutgoingTextMessage(recipients, getMessage(), subscriptionId);
+      message = new OutgoingTextMessage(recipients, messageBody, subscriptionId);
     }
 
-    this.composeText.setText("");
+    Permissions.with(this)
+               .request(Manifest.permission.SEND_SMS)
+               .ifNecessary()
+               .withPermanentDenialDialog(getString(R.string.ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms))
+               .onAllGranted(() -> {
+                 this.composeText.setText("");
 
-    new AsyncTask<OutgoingTextMessage, Void, Long>() {
-      @Override
-      protected Long doInBackground(OutgoingTextMessage... messages) {
-        return MessageSender.send(context, masterSecret, messages[0], threadId, true);
-      }
+                 new AsyncTask<OutgoingTextMessage, Void, Long>() {
+                   @Override
+                   protected Long doInBackground(OutgoingTextMessage... messages) {
+                     return MessageSender.send(context, masterSecret, messages[0], threadId, true);
+                   }
 
-      @Override
-      protected void onPostExecute(Long result) {
-        sendComplete(result);
-      }
-    }.execute(message);
+                   @Override
+                   protected void onPostExecute(Long result) {
+                     sendComplete(result);
+                   }
+                 }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, message);
+
+               })
+               .execute();
   }
 
   private void updateToggleButtonState() {
@@ -1318,11 +1344,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public void onMediaSelected(@NonNull Uri uri, String contentType) {
     if (!TextUtils.isEmpty(contentType) && contentType.trim().equals("image/gif")) {
       setMedia(uri, MediaType.GIF);
-    } else if (ContentType.isImageType(contentType)) {
+    } else if (MediaUtil.isImageType(contentType)) {
       setMedia(uri, MediaType.IMAGE);
-    } else if (ContentType.isVideoType(contentType)) {
+    } else if (MediaUtil.isVideoType(contentType)) {
       setMedia(uri, MediaType.VIDEO);
-    } else if (ContentType.isAudioType(contentType)) {
+    } else if (MediaUtil.isAudioType(contentType)) {
       setMedia(uri, MediaType.AUDIO);
     }
   }

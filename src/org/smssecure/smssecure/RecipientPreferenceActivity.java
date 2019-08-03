@@ -1,5 +1,6 @@
 package org.smssecure.smssecure;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Ringtone;
@@ -9,14 +10,14 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.preference.PreferenceFragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,14 +30,16 @@ import org.smssecure.smssecure.components.AvatarImageView;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase.VibrateState;
-import org.smssecure.smssecure.preferences.AdvancedRingtonePreference;
-import org.smssecure.smssecure.preferences.ColorPreference;
+import org.smssecure.smssecure.preferences.CorrectedPreferenceFragment;
+import org.smssecure.smssecure.preferences.widgets.AdvancedRingtonePreference;
+import org.smssecure.smssecure.preferences.widgets.ColorPickerPreference;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicNoActionBarTheme;
 import org.smssecure.smssecure.util.DynamicTheme;
 
+@SuppressLint("StaticFieldLeak")
 public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActivity implements Recipients.RecipientsModifiedListener
 {
   private static final String TAG = RecipientPreferenceActivity.class.getSimpleName();
@@ -145,7 +148,7 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
   }
 
   public static class RecipientPreferenceFragment
-      extends    PreferenceFragment
+      extends    CorrectedPreferenceFragment
       implements Recipients.RecipientsModifiedListener
   {
 
@@ -156,8 +159,6 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
     @Override
     public void onCreate(Bundle icicle) {
       super.onCreate(icicle);
-
-      addPreferencesFromResource(R.xml.recipient_preferences);
 
       this.recipients = RecipientFactory.getRecipientsForIds(getActivity(),
                                                              getArguments().getLongArray(RECIPIENTS_EXTRA),
@@ -177,6 +178,11 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
     }
 
     @Override
+    public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+      addPreferencesFromResource(R.xml.recipient_preferences);
+    }
+
+    @Override
     public void onResume() {
       super.onResume();
       setSummaries(recipients);
@@ -192,7 +198,7 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
       CheckBoxPreference         mutePreference     = (CheckBoxPreference) this.findPreference(PREFERENCE_MUTED);
       AdvancedRingtonePreference ringtonePreference = (AdvancedRingtonePreference) this.findPreference(PREFERENCE_TONE);
       ListPreference             vibratePreference  = (ListPreference) this.findPreference(PREFERENCE_VIBRATE);
-      ColorPreference            colorPreference    = (ColorPreference) this.findPreference(PREFERENCE_COLOR);
+      ColorPickerPreference      colorPreference    = (ColorPickerPreference) this.findPreference(PREFERENCE_COLOR);
       Preference                 blockPreference    = this.findPreference(PREFERENCE_BLOCK);
 
       mutePreference.setChecked(recipients.isMuted());
@@ -229,8 +235,8 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
         if (colorPreference    != null) getPreferenceScreen().removePreference(colorPreference);
         if (blockPreference    != null) getPreferenceScreen().removePreference(blockPreference);
       } else {
-        colorPreference.setChoices(MaterialColors.CONVERSATION_PALETTE.asConversationColorArray(getActivity()));
-        colorPreference.setValue(recipients.getColor().toActionBarColor(getActivity()));
+        colorPreference.setColors(MaterialColors.CONVERSATION_PALETTE.asConversationColorArray(getActivity()));
+        colorPreference.setColor(recipients.getColor().toActionBarColor(getActivity()));
 
         if (recipients.isBlocked()) blockPreference.setTitle(R.string.RecipientPreferenceActivity_unblock);
         else                        blockPreference.setTitle(R.string.RecipientPreferenceActivity_block);
@@ -250,14 +256,14 @@ public class RecipientPreferenceActivity extends PassphraseRequiredActionBarActi
     private class RingtoneChangeListener implements Preference.OnPreferenceChangeListener {
       @Override
       public boolean onPreferenceChange(Preference preference, Object newValue) {
-        String value = (String)newValue;
+        Uri value = (Uri)newValue;
 
         final Uri uri;
 
-        if (Settings.System.DEFAULT_NOTIFICATION_URI.toString().equals(value)) {
+        if (Settings.System.DEFAULT_NOTIFICATION_URI.equals(value)) {
           uri = null;
         } else {
-          uri = Uri.parse(value);
+          uri = value;
         }
 
         recipients.setRingtone(uri);

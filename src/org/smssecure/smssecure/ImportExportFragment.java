@@ -1,12 +1,13 @@
 package org.smssecure.smssecure;
 
-import android.app.Dialog;
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -20,12 +21,16 @@ import org.smssecure.smssecure.database.EncryptedBackupExporter;
 import org.smssecure.smssecure.database.NoExternalStorageException;
 import org.smssecure.smssecure.database.PlaintextBackupExporter;
 import org.smssecure.smssecure.database.PlaintextBackupImporter;
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.service.ApplicationMigrationService;
 
 import java.io.IOException;
 
 
 public class ImportExportFragment extends Fragment {
+
+  @SuppressWarnings("unused")
+  private static final String TAG = ImportExportFragment.class.getSimpleName();
 
   private static final int SUCCESS    = 0;
   private static final int NO_SD_CARD = 1;
@@ -49,40 +54,11 @@ public class ImportExportFragment extends Fragment {
     View exportEncryptedView = layout.findViewById(R.id.export_encrypted_backup);
     View exportPlaintextView = layout.findViewById(R.id.export_plaintext_backup);
 
-    importSmsView.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        handleImportSms();
-      }
-    });
-
-    importEncryptedView.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        handleImportEncryptedBackup();
-      }
-    });
-
-    importPlaintextView.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        handleImportPlaintextBackup();
-      }
-    });
-
-    exportEncryptedView.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        handleExportEncryptedBackup();
-      }
-    });
-
-    exportPlaintextView.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        handleExportPlaintextBackup();
-      }
-    });
+    importSmsView.setOnClickListener(v -> handleImportSms());
+    importEncryptedView.setOnClickListener(v -> handleImportEncryptedBackup());
+    importPlaintextView.setOnClickListener(v -> handleImportPlaintextBackup());
+    exportEncryptedView.setOnClickListener(v -> handleExportEncryptedBackup());
+    exportPlaintextView.setOnClickListener(v -> handleExportPlaintextBackup());
 
     return layout;
   }
@@ -97,55 +73,76 @@ public class ImportExportFragment extends Fragment {
     }
   }
 
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    Permissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+  }
+
+  @SuppressWarnings("CodeBlock2Expr")
   private void handleImportSms() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_info_icon);
     builder.setTitle(getActivity().getString(R.string.ImportFragment_import_system_sms_database));
     builder.setMessage(getActivity().getString(R.string.ImportFragment_this_will_import_messages_from_the_system));
-    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), new AlertDialog.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        Intent intent = new Intent(getActivity(), ApplicationMigrationService.class);
-        intent.setAction(ApplicationMigrationService.MIGRATE_DATABASE);
-        intent.putExtra("master_secret", masterSecret);
-        getActivity().startService(intent);
+    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), (dialog, which) -> {
+      Permissions.with(this)
+                 .request(Manifest.permission.READ_SMS)
+                 .ifNecessary()
+                 .withPermanentDenialDialog(getString(R.string.ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages))
+                 .onAllGranted(() -> {
+                   Intent intent = new Intent(getActivity(), ApplicationMigrationService.class);
+                   intent.setAction(ApplicationMigrationService.MIGRATE_DATABASE);
+                   intent.putExtra("master_secret", masterSecret);
+                   getActivity().startService(intent);
 
-        Intent nextIntent = new Intent(getActivity(), ConversationListActivity.class);
+                   Intent nextIntent = new Intent(getActivity(), ConversationListActivity.class);
 
-        Intent activityIntent = new Intent(getActivity(), DatabaseMigrationActivity.class);
-        activityIntent.putExtra("next_intent", nextIntent);
-        getActivity().startActivity(activityIntent);
-      }
+                   Intent activityIntent = new Intent(getActivity(), DatabaseMigrationActivity.class);
+                   activityIntent.putExtra("next_intent", nextIntent);
+                   getActivity().startActivity(activityIntent);
+                 })
+                 .onAnyDenied(() -> Toast.makeText(getContext(), R.string.ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast, Toast.LENGTH_LONG).show())
+                 .execute();
     });
     builder.setNegativeButton(getActivity().getString(R.string.ImportFragment_cancel), null);
     builder.show();
   }
 
+  @SuppressWarnings("CodeBlock2Expr")
+  @SuppressLint("InlinedApi")
   private void handleImportEncryptedBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setTitle(getActivity().getString(R.string.ImportFragment_restore_encrypted_backup));
     builder.setMessage(getActivity().getString(R.string.ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys));
-    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), new AlertDialog.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        new ImportEncryptedBackupTask().execute();
-      }
+    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), (dialog, which) -> {
+      Permissions.with(this)
+                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                 .ifNecessary()
+                 .withPermanentDenialDialog(getString(R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied))
+                 .onAllGranted(() -> new ImportEncryptedBackupTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR))
+                 .onAnyDenied(() -> Toast.makeText(getContext(), R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage, Toast.LENGTH_LONG).show())
+                 .execute();
     });
     builder.setNegativeButton(getActivity().getString(R.string.ImportFragment_cancel), null);
     builder.show();
   }
 
+  @SuppressWarnings("CodeBlock2Expr")
+  @SuppressLint("InlinedApi")
   private void handleImportPlaintextBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setTitle(getActivity().getString(R.string.ImportFragment_import_plaintext_backup));
     builder.setMessage(getActivity().getString(R.string.ImportFragment_this_will_import_messages_from_a_plaintext_backup));
-    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), new AlertDialog.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        new ImportPlaintextBackupTask().execute();
-      }
+    builder.setPositiveButton(getActivity().getString(R.string.ImportFragment_import), (dialog, which) -> {
+      Permissions.with(ImportExportFragment.this)
+                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                 .ifNecessary()
+                 .withPermanentDenialDialog(getString(R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied))
+                 .onAllGranted(() -> new ImportPlaintextBackupTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR))
+                 .onAnyDenied(() -> Toast.makeText(getContext(), R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage, Toast.LENGTH_LONG).show())
+                 .execute();
     });
     builder.setNegativeButton(getActivity().getString(R.string.ImportFragment_cancel), null);
     builder.show();
@@ -156,31 +153,40 @@ public class ImportExportFragment extends Fragment {
     builder.setIconAttribute(R.attr.dialog_info_icon);
     builder.setTitle(getActivity().getString(R.string.ExportFragment_export_encrypted_backup));
     builder.setMessage(getActivity().getString(R.string.ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages));
-    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), new AlertDialog.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        new ExportEncryptedBackupTask().execute();
-      }
+    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), (dialog, which) -> {
+      Permissions.with(ImportExportFragment.this)
+                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                 .ifNecessary()
+                 .withPermanentDenialDialog(getString(R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied))
+                 .onAllGranted(() -> new ExportEncryptedBackupTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR))
+                 .onAnyDenied(() -> Toast.makeText(getContext(), R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage, Toast.LENGTH_LONG).show())
+                 .execute();
     });
     builder.setNegativeButton(getActivity().getString(R.string.ExportFragment_cancel), null);
     builder.show();
   }
 
+  @SuppressWarnings("CodeBlock2Expr")
+  @SuppressLint("InlinedApi")
   private void handleExportPlaintextBackup() {
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
     builder.setIconAttribute(R.attr.dialog_alert_icon);
     builder.setTitle(getActivity().getString(R.string.ExportFragment_export_plaintext_to_storage));
     builder.setMessage(getActivity().getString(R.string.ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext));
-    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), new Dialog.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialog, int which) {
-        new ExportPlaintextTask().execute();
-      }
+    builder.setPositiveButton(getActivity().getString(R.string.ExportFragment_export), (dialog, which) -> {
+      Permissions.with(ImportExportFragment.this)
+                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                 .ifNecessary()
+                 .withPermanentDenialDialog(getString(R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied))
+                 .onAllGranted(() -> new ExportPlaintextTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR))
+                 .onAnyDenied(() -> Toast.makeText(getContext(), R.string.ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage, Toast.LENGTH_LONG).show())
+                 .execute();
     });
     builder.setNegativeButton(getActivity().getString(R.string.ExportFragment_cancel), null);
     builder.show();
   }
 
+  @SuppressLint("StaticFieldLeak")
   private class ImportPlaintextBackupTask extends AsyncTask<Void, Void, Integer> {
 
     @Override
@@ -232,8 +238,9 @@ public class ImportExportFragment extends Fragment {
         return ERROR_IO;
       }
     }
-}
+  }
 
+  @SuppressLint("StaticFieldLeak")
   private class ExportPlaintextTask extends AsyncTask<Void, Void, Integer> {
     private ProgressDialog dialog;
 
@@ -289,6 +296,7 @@ public class ImportExportFragment extends Fragment {
     }
   }
 
+  @SuppressLint("StaticFieldLeak")
   private class ImportEncryptedBackupTask extends AsyncTask<Void, Void, Integer> {
 
     @Override
@@ -339,6 +347,7 @@ public class ImportExportFragment extends Fragment {
     }
   }
 
+  @SuppressLint("StaticFieldLeak")
   private class ExportEncryptedBackupTask extends AsyncTask<Void, Void, Integer> {
     private ProgressDialog dialog;
 

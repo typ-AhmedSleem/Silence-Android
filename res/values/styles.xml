@@ -230,4 +230,7 @@
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
+    <style name="PreferenceThemeOverlay.Fix" parent="PreferenceThemeOverlay.v14.Material">
+    </style>
+
 </resources>

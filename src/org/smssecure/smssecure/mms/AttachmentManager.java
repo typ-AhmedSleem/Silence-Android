@@ -16,6 +16,8 @@
  */
 package org.smssecure.smssecure.mms;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -40,6 +42,7 @@ import org.smssecure.smssecure.components.AudioView;
 import org.smssecure.smssecure.components.RemovableMediaView;
 import org.smssecure.smssecure.components.ThumbnailView;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.providers.PersistentBlobProvider;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.MediaUtil;
@@ -53,8 +56,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-
-import ws.com.google.android.mms.ContentType;
 
 public class AttachmentManager {
 
@@ -151,6 +152,7 @@ public class AttachmentManager {
     this.slide      = Optional.of(slide);
   }
 
+  @SuppressLint("StaticFieldLeak")
   public void setMedia(@NonNull final MasterSecret masterSecret,
                        @NonNull final Uri uri,
                        @NonNull final MediaType mediaType,
@@ -218,15 +220,30 @@ public class AttachmentManager {
   }
 
   public static void selectVideo(Activity activity, int requestCode) {
-    selectMediaType(activity, "video/*", requestCode);
+    Permissions.with(activity)
+               .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+               .ifNecessary()
+               .withPermanentDenialDialog(activity.getString(R.string.AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio))
+               .onAllGranted(() -> selectMediaType(activity, "video/*", requestCode))
+               .execute();
   }
 
   public static void selectImage(Activity activity, int requestCode) {
-    selectMediaType(activity, "image/*", requestCode);
+    Permissions.with(activity)
+               .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+               .ifNecessary()
+               .withPermanentDenialDialog(activity.getString(R.string.AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio))
+               .onAllGranted(() -> selectMediaType(activity, "image/*", requestCode))
+               .execute();
   }
 
   public static void selectAudio(Activity activity, int requestCode) {
-    selectMediaType(activity, "audio/*", requestCode);
+    Permissions.with(activity)
+               .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+               .ifNecessary()
+               .withPermanentDenialDialog(activity.getString(R.string.AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio))
+               .onAllGranted(() -> selectMediaType(activity, "audio/*", requestCode))
+               .execute();
   }
 
   public static void selectContactInfo(Activity activity, int requestCode) {
@@ -248,7 +265,7 @@ public class AttachmentManager {
       if (captureIntent.resolveActivity(activity.getPackageManager()) != null) {
         if (captureUri == null) {
           captureUri = PersistentBlobProvider.getInstance(context)
-                                             .createForExternal(ContentType.IMAGE_JPEG);
+                                             .createForExternal(MediaUtil.IMAGE_JPEG);
         }
         Log.w(TAG, "captureUri path is " + captureUri.getPath());
         captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, captureUri);
@@ -342,9 +359,9 @@ public class AttachmentManager {
     public static @Nullable MediaType from(final @Nullable String mimeType) {
       if (TextUtils.isEmpty(mimeType))       return null;
       if (MediaUtil.isGif(mimeType))         return GIF;
-      if (ContentType.isImageType(mimeType)) return IMAGE;
-      if (ContentType.isAudioType(mimeType)) return AUDIO;
-      if (ContentType.isVideoType(mimeType)) return VIDEO;
+      if (MediaUtil.isImageType(mimeType)) return IMAGE;
+      if (MediaUtil.isAudioType(mimeType)) return AUDIO;
+      if (MediaUtil.isVideoType(mimeType)) return VIDEO;
       return null;
     }
   }

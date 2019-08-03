@@ -26,12 +26,12 @@ import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
-import android.preference.Preference;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.preference.PreferenceFragment;
+import android.support.v7.preference.Preference;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -39,6 +39,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.preferences.AdvancedPreferenceFragment;
 import org.smssecure.smssecure.preferences.AppProtectionPreferenceFragment;
 import org.smssecure.smssecure.preferences.AppearancePreferenceFragment;
+import org.smssecure.smssecure.preferences.CorrectedPreferenceFragment;
 import org.smssecure.smssecure.preferences.NotificationsPreferenceFragment;
 import org.smssecure.smssecure.preferences.SmsMmsPreferenceFragment;
 import org.smssecure.smssecure.preferences.ChatsPreferenceFragment;
@@ -138,12 +139,10 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
     }
   }
 
-  public static class ApplicationPreferenceFragment extends PreferenceFragment {
+  public static class ApplicationPreferenceFragment extends CorrectedPreferenceFragment {
     @Override
     public void onCreate(Bundle icicle) {
       super.onCreate(icicle);
-
-      addPreferencesFromResource(R.xml.preferences);
 
       MasterSecret masterSecret = getArguments().getParcelable("master_secret");
       this.findPreference(PREFERENCE_CATEGORY_SMS_MMS)
@@ -167,6 +166,11 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
             return true;
           }
         });
+    }
+
+    @Override
+    public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+      addPreferencesFromResource(R.xml.preferences);
     }
 
     @Override

@@ -32,20 +32,22 @@ subprojects {
 }
 
 dependencies {
-    def supportVersion = '28.0.0'
+    def supportVersion = '27.0.0'
 
     compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
     compile "com.android.support:design:$supportVersion"
     compile "com.android.support:support-v13:$supportVersion"
     compile "com.android.support:cardview-v7:$supportVersion"
+    compile "com.android.support:preference-v7:$supportVersion"
+    compile "com.android.support:preference-v14:$supportVersion"
+    compile "com.android.support:gridlayout-v7:$supportVersion"
     compile ("com.android.support:gridlayout-v7:$supportVersion") {
         exclude module: 'support-v4'
     }
 
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.jpardogo.materialtabstrip:library:1.0.9'
-    compile project (':org.w3c.dom')
     compile 'info.guardianproject.trustedintents:trustedintents:0.2'
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
     compile 'com.github.chrisbanes.photoview:library:1.2.3'
@@ -68,9 +70,15 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-v4'
     }
 
-    compile project (path: ':org.whispersystems.jobmanager', configuration: 'default')
-    compile project (path: ':org.whispersystems.libpastelog', configuration: 'default')
-    compile project (path: ':org.whispersystems.libsignal', configuration: 'default')
+    compile project (path: ':org.whispersystems.jobmanager')
+    compile project (path: ':org.whispersystems.libpastelog')
+    compile project (path: ':org.whispersystems.libsignal')
+
+    compile 'com.annimon:stream:1.2.1'
+    compile ('com.takisoft.fix:colorpicker:0.9.1') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
 
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
     compile 'com.fasterxml.jackson.core:jackson-core:2.8.7'
@@ -80,6 +88,8 @@ dependencies {
     compile project (':com.amulyakhare.textdrawable')
     compile 'me.relex:circleindicator:1.0.0@aar'
 
+    compile ('com.klinkerapps:android-smsmms:5.1.4')
+
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:1.7.1'
     testCompile 'org.mockito:mockito-core:1.9.5'
@@ -88,6 +98,8 @@ dependencies {
     testCompile 'org.powermock:powermock-module-junit4-rule:1.6.1'
     testCompile 'org.powermock:powermock-classloading-xstream:1.6.1'
 
+    androidTestCompile 'com.android.support:multidex:1.0.2'
+    androidTestCompile 'com.android.support:multidex-instrumentation:1.0.2'
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
     androidTestCompile ('org.assertj:assertj-core:1.7.1') {
@@ -106,8 +118,8 @@ dependencyVerification {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.0'
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {

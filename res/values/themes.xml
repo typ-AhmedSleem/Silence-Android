@@ -18,6 +18,7 @@
         <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/silence_primary_dark</item>
         <item name="dialog_background_color">@color/background_material_light</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
     </style>
 
     <style name="Silence.DarkNoActionBar" parent="@style/Theme.AppCompat.NoActionBar">
@@ -34,6 +35,7 @@
         <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
         <item name="dialog_background_color">@color/background_material_dark</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
     </style>
 
     <style name="Silence.LightIntroTheme" parent="@style/Theme.AppCompat.Light">
@@ -191,6 +193,7 @@
         <item name="app_protect_timeout_picker_color">@style/BetterPickersDialogFragment.Light</item>
 
         <item name="group_members_dialog_icon">@drawable/ic_group_grey600_24dp</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
     </style>
 
     <style name="Silence.DarkTheme" parent="@style/Theme.AppCompat">
@@ -306,5 +309,10 @@
         <item name="app_protect_timeout_picker_color">@style/BetterPickersDialogFragment</item>
 
         <item name="group_members_dialog_icon">@drawable/ic_group_white_24dp</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
+    </style>
+
+    <style name="RationaleDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/permission_rationale_dialog_corners</item>
     </style>
 </resources>

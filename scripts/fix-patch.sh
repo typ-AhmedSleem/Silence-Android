@@ -7,8 +7,7 @@ fi
 
 for file in "$@"; do
     commit=$(echo ${file##*/} | sed 's/.patch$//')
-    sed -i -e 's/thoughtcrime\/securesms/smssecure\/smssecure/g' \
-           -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
+    sed -i -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
            -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.Silence/g' \
            -e 's/org.thoughtcrime.redphone.util/org.smssecure.smssecure.util/g' \
@@ -24,6 +23,13 @@ for file in "$@"; do
            -e 's/TextSecure.LightIntroTheme/Silence.LightIntroTheme/g' \
            -e 's/TextSecure.TitleTextStyle/Silence.TitleTextStyle/g' \
            -e 's/queryTextSecureContacts/querySilenceContacts/g' \
+           -e 's/ContactSelectionListFragment_signal/ContactSelectionListFragment_silence/g' \
+           -e 's/contact_selection_list_fragment__signal/contact_selection_list_fragment__silence/g' \
+           -e 's/textsecure_primary/silence_primary/g' \
+           -e 's/SignalListPreference/SilenceListPreference/g' \
+           -e 's/ConversationActivity_signal/ConversationActivity_silence/g' \
+           -e 's/MediaPreviewActivity_signal/MediaPreviewActivity_silence/g' \
+           -e 's/TextSecureIdentityKeyStore/SilenceIdentityKeyStore/g' \
            -e 's/@color\/signal/@color\/silence/g' \
            -e 's/@color\/textsecure/@color\/silence/g' \
            -e 's/^[Ff]ixes #/Fixes https:\/\/github.com\/WhisperSystems\/Signal-Android\/issues\//g' \

@@ -130,10 +130,8 @@ class RecipientProvider {
     Optional<RecipientsPreferences> preferences = DatabaseFactory.getRecipientPreferenceDatabase(context).getRecipientsPreferences(new long[]{recipientId});
     MaterialColor                   color       = preferences.isPresent() ? preferences.get().getColor() : null;
     Uri                             uri         = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number));
-    Cursor                          cursor      = context.getContentResolver().query(uri, CALLER_ID_PROJECTION,
-                                                                                     null, null, null);
 
-    try {
+    try (Cursor cursor = context.getContentResolver().query(uri, CALLER_ID_PROJECTION, null, null, null)) {
       if (cursor != null && cursor.moveToFirst()) {
         final String resultNumber = cursor.getString(3);
         if (resultNumber != null) {
@@ -148,9 +146,8 @@ class RecipientProvider {
           Log.w(TAG, "resultNumber is null");
         }
       }
-    } finally {
-      if (cursor != null)
-        cursor.close();
+    } catch (SecurityException se) {
+      Log.w(TAG, se);
     }
 
     if (STATIC_DETAILS.containsKey(number)) return STATIC_DETAILS.get(number);

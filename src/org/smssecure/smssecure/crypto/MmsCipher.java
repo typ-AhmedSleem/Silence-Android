@@ -14,6 +14,7 @@ import org.whispersystems.libsignal.InvalidMessageException;
 import org.whispersystems.libsignal.LegacyMessageException;
 import org.whispersystems.libsignal.NoSessionException;
 import org.whispersystems.libsignal.SessionCipher;
+import org.whispersystems.libsignal.UntrustedIdentityException;
 import org.whispersystems.libsignal.protocol.CiphertextMessage;
 import org.whispersystems.libsignal.protocol.SignalMessage;
 import org.whispersystems.libsignal.state.SignalProtocolStore;
@@ -21,15 +22,15 @@ import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 
-import ws.com.google.android.mms.ContentType;
-import ws.com.google.android.mms.pdu.EncodedStringValue;
-import ws.com.google.android.mms.pdu.MultimediaMessagePdu;
-import ws.com.google.android.mms.pdu.PduBody;
-import ws.com.google.android.mms.pdu.PduComposer;
-import ws.com.google.android.mms.pdu.PduParser;
-import ws.com.google.android.mms.pdu.PduPart;
-import ws.com.google.android.mms.pdu.RetrieveConf;
-import ws.com.google.android.mms.pdu.SendReq;
+import com.google.android.mms.ContentType;
+import com.google.android.mms.pdu_alt.EncodedStringValue;
+import com.google.android.mms.pdu_alt.MultimediaMessagePdu;
+import com.google.android.mms.pdu_alt.PduBody;
+import com.google.android.mms.pdu_alt.PduComposer;
+import com.google.android.mms.pdu_alt.PduParser;
+import com.google.android.mms.pdu_alt.PduPart;
+import com.google.android.mms.pdu_alt.RetrieveConf;
+import com.google.android.mms.pdu_alt.SendReq;
 
 public class MmsCipher {
 
@@ -44,7 +45,7 @@ public class MmsCipher {
 
   public MultimediaMessagePdu decrypt(Context context, MultimediaMessagePdu pdu)
       throws InvalidMessageException, LegacyMessageException, DuplicateMessageException,
-             NoSessionException
+             NoSessionException, UntrustedIdentityException
   {
     try {
       SessionCipher sessionCipher = new SessionCipher(axolotlStore, new SignalProtocolAddress(pdu.getFrom().getString(), 1));
@@ -77,15 +78,15 @@ public class MmsCipher {
         }
       }
 
-      MultimediaMessagePdu plaintextGenericPdu = (MultimediaMessagePdu) new PduParser(plaintext).parse();
-      return new RetrieveConf(pdu.getPduHeaders(), plaintextGenericPdu.getBody());
+      return (MultimediaMessagePdu) new PduParser(plaintext).parse();
     } catch (IOException e) {
       throw new InvalidMessageException(e);
     }
   }
 
   public SendReq encrypt(Context context, SendReq message)
-      throws NoSessionException, RecipientFormattingException, UndeliverableMessageException
+      throws NoSessionException, RecipientFormattingException, UndeliverableMessageException,
+             UntrustedIdentityException
   {
     EncodedStringValue[] encodedRecipient = message.getTo();
     String               recipientString  = encodedRecipient[0].getString();
@@ -105,17 +106,16 @@ public class MmsCipher {
 
     PduBody body         = new PduBody();
     PduPart part         = new PduPart();
-    SendReq encryptedPdu = new SendReq(message.getPduHeaders(), body);
 
     part.setContentId((System.currentTimeMillis()+"").getBytes());
     part.setContentType(ContentType.TEXT_PLAIN.getBytes());
     part.setName((System.currentTimeMillis()+"").getBytes());
     part.setData(encryptedPduBytes);
     body.addPart(part);
-    encryptedPdu.setSubject(new EncodedStringValue(WirePrefix.calculateEncryptedMmsSubject()));
-    encryptedPdu.setBody(body);
+    message.setSubject(new EncodedStringValue(WirePrefix.calculateEncryptedMmsSubject()));
+    message.setBody(body);
 
-    return encryptedPdu;
+    return message;
   }
 
 

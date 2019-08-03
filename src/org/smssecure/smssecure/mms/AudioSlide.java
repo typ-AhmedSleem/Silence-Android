@@ -23,19 +23,17 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.attachments.Attachment;
-import org.smssecure.smssecure.util.ResUtil;
-
 import java.io.IOException;
 
-import ws.com.google.android.mms.ContentType;
-import ws.com.google.android.mms.pdu.PduPart;
+import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.attachments.Attachment;
+import org.smssecure.smssecure.util.MediaUtil;
+import org.smssecure.smssecure.util.ResUtil;
 
 public class AudioSlide extends Slide {
 
   public AudioSlide(Context context, Uri uri, long dataSize) throws IOException {
-    super(context, constructAttachmentFromUri(context, uri, ContentType.AUDIO_UNSPECIFIED, dataSize));
+    super(context, constructAttachmentFromUri(context, uri, MediaUtil.AUDIO_UNSPECIFIED, dataSize));
   }
 
   public AudioSlide(Context context, Attachment attachment) {

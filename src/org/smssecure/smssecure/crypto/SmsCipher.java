@@ -47,8 +47,8 @@ public class SmsCipher {
   }
 
   public IncomingTextMessage decrypt(Context context, IncomingTextMessage message)
-      throws LegacyMessageException, InvalidMessageException,
-             DuplicateMessageException, NoSessionException
+      throws LegacyMessageException, InvalidMessageException, DuplicateMessageException,
+             NoSessionException, UntrustedIdentityException
   {
     try {
       byte[]        decoded       = transportDetails.getDecodedMessage(message.getMessageBody().getBytes());
@@ -84,7 +84,9 @@ public class SmsCipher {
     }
   }
 
-  public OutgoingTextMessage encrypt(OutgoingTextMessage message) throws NoSessionException {
+  public OutgoingTextMessage encrypt(OutgoingTextMessage message)
+    throws NoSessionException, UntrustedIdentityException
+  {
     byte[] paddedBody      = transportDetails.getPaddedMessageBody(message.getMessageBody().getBytes());
     String recipientNumber = message.getRecipients().getPrimaryRecipient().getNumber();
 

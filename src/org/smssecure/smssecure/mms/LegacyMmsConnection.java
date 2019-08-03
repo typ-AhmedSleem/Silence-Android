@@ -37,7 +37,6 @@ import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.message.BasicHeader;
 import org.smssecure.smssecure.database.ApnDatabase;
-import org.smssecure.smssecure.util.Conversions;
 import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.TelephonyUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
@@ -143,10 +142,7 @@ public abstract class LegacyMmsConnection {
       Log.w(TAG, ite);
     }
 
-    final int     ipAddress           = Conversions.byteArrayToIntLittleEndian(ipAddressBytes, 0);
-    final boolean routeToHostObtained = manager.requestRouteToHost(MmsRadio.TYPE_MOBILE_MMS, ipAddress);
-    Log.w(TAG, "requestRouteToHost(" + ipAddress + ") -> " + routeToHostObtained);
-    return routeToHostObtained;
+    return false;
   }
 
   protected static byte[] parseResponse(InputStream is) throws IOException {

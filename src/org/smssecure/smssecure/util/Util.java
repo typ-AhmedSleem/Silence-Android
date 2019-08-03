@@ -30,12 +30,16 @@ import android.os.Looper;
 import android.provider.Telephony;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.StyleSpan;
 import android.widget.EditText;
+
+import com.google.android.mms.pdu_alt.CharacterSets;
+import com.google.android.mms.pdu_alt.EncodedStringValue;
 
 import org.smssecure.smssecure.BuildConfig;
 import org.smssecure.smssecure.mms.OutgoingLegacyMmsConnection;
@@ -58,9 +62,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
-import ws.com.google.android.mms.pdu.CharacterSets;
-import ws.com.google.android.mms.pdu.EncodedStringValue;
 
 public class Util {
   public static Handler handler = new Handler(Looper.getMainLooper());
@@ -97,12 +98,8 @@ public class Util {
   public static ExecutorService newSingleThreadedLifoExecutor() {
     ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingLifoQueue<Runnable>());
 
-    executor.execute(new Runnable() {
-      @Override
-      public void run() {
-//        Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-        Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
-      }
+    executor.execute(() -> {
+      Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
     });
 
     return executor;
@@ -209,6 +206,12 @@ public class Util {
     return total;
   }
 
+  @RequiresPermission(anyOf = {
+    android.Manifest.permission.READ_PHONE_STATE,
+    android.Manifest.permission.READ_SMS,
+    android.Manifest.permission.READ_PHONE_NUMBERS
+  })
+  @SuppressLint("MissingPermission")
   public static String getDeviceE164Number(Context context) {
     String localNumber = ((TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE))
         .getLine1Number();

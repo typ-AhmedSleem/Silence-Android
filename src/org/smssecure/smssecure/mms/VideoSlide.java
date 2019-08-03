@@ -25,17 +25,17 @@ import android.support.annotation.Nullable;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.Attachment;
+import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.ResUtil;
 
 import java.io.IOException;
 
-import ws.com.google.android.mms.ContentType;
-import ws.com.google.android.mms.pdu.PduPart;
+import com.google.android.mms.pdu_alt.PduPart;
 
 public class VideoSlide extends Slide {
 
   public VideoSlide(Context context, Uri uri, long dataSize) throws IOException {
-    super(context, constructAttachmentFromUri(context, uri, ContentType.VIDEO_UNSPECIFIED, dataSize));
+    super(context, constructAttachmentFromUri(context, uri, MediaUtil.VIDEO_UNSPECIFIED, dataSize));
   }
 
   public VideoSlide(Context context, Attachment attachment) {

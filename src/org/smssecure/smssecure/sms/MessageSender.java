@@ -30,6 +30,7 @@ import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.jobs.MmsSendJob;
 import org.smssecure.smssecure.jobs.SmsSendJob;
+import org.smssecure.smssecure.mms.MmsException;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -40,8 +41,6 @@ import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
-
-import ws.com.google.android.mms.MmsException;
 
 public class MessageSender {
 

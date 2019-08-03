@@ -7,7 +7,7 @@ import android.graphics.BitmapFactory;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.database.RecipientPreferenceDatabase;
-import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
+import org.smssecure.smssecure.preferences.widgets.NotificationPrivacyPreference;
 
 public class FailedNotificationBuilder extends AbstractNotificationBuilder {
 

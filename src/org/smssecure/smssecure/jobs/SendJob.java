@@ -10,18 +10,14 @@ import org.smssecure.smssecure.database.AttachmentDatabase;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.mms.MediaConstraints;
 import org.smssecure.smssecure.mms.MediaStream;
+import org.smssecure.smssecure.mms.MmsException;
 import org.smssecure.smssecure.transport.UndeliverableMessageException;
-import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
-
-import ws.com.google.android.mms.ContentType;
-import ws.com.google.android.mms.MmsException;
 
 public abstract class SendJob extends MasterSecretJob {
 

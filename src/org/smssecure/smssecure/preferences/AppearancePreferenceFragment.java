@@ -2,7 +2,8 @@ package org.smssecure.smssecure.preferences;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.preference.ListPreference;
+import android.support.annotation.Nullable;
+import android.support.v7.preference.ListPreference;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;
@@ -15,12 +16,16 @@ public class AppearancePreferenceFragment extends ListSummaryPreferenceFragment 
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
-    addPreferencesFromResource(R.xml.preferences_appearance);
 
     this.findPreference(SilencePreferences.THEME_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
     this.findPreference(SilencePreferences.LANGUAGE_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
     initializeListSummary((ListPreference)findPreference(SilencePreferences.THEME_PREF));
     initializeListSummary((ListPreference)findPreference(SilencePreferences.LANGUAGE_PREF));
+  }
+
+  @Override
+  public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+    addPreferencesFromResource(R.xml.preferences_appearance);
   }
 
   @Override

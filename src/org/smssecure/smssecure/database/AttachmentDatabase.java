@@ -36,6 +36,7 @@ import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.EncryptingPartOutputStream;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.MediaStream;
+import org.smssecure.smssecure.mms.MmsException;
 import org.smssecure.smssecure.mms.PartAuthority;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.MediaUtil.ThumbnailData;
@@ -52,8 +53,6 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
-
-import ws.com.google.android.mms.MmsException;
 
 public class AttachmentDatabase extends Database {
 

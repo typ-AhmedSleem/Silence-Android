@@ -27,7 +27,7 @@ import org.smssecure.smssecure.R;
 
 import java.io.IOException;
 
-import ws.com.google.android.mms.ContentType;
+import com.google.android.mms.ContentType;
 
 public class ImageSlide extends Slide {
 

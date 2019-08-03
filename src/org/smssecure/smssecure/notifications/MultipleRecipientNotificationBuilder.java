@@ -10,7 +10,7 @@ import android.support.v4.app.NotificationCompat;
 
 import org.smssecure.smssecure.ConversationListActivity;
 import org.smssecure.smssecure.R;
-import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
+import org.smssecure.smssecure.preferences.widgets.NotificationPrivacyPreference;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.util.Util;
 

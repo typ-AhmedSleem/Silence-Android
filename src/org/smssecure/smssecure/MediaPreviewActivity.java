@@ -16,10 +16,12 @@
  */
 package org.smssecure.smssecure;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
@@ -35,6 +37,7 @@ import android.widget.Toast;
 import org.smssecure.smssecure.components.ZoomingImageView;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.VideoSlide;
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipient.RecipientModifiedListener;
 import org.smssecure.smssecure.recipients.RecipientFactory;
@@ -87,6 +90,11 @@ public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity im
     initializeViews();
     initializeResources();
     initializeActionBar();
+  }
+
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    Permissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
   }
 
   @TargetApi(VERSION_CODES.JELLY_BEAN)
@@ -204,13 +212,18 @@ public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity im
   }
 
   private void saveToDisk() {
-    SaveAttachmentTask.showWarningDialog(this, new DialogInterface.OnClickListener() {
-      @Override
-      public void onClick(DialogInterface dialogInterface, int i) {
-        SaveAttachmentTask saveTask = new SaveAttachmentTask(MediaPreviewActivity.this, masterSecret);
-        long saveDate = (date > 0) ? date : System.currentTimeMillis();
-        saveTask.execute(new Attachment(mediaUri, mediaType, saveDate));
-      }
+    SaveAttachmentTask.showWarningDialog(this, (dialogInterface, i) -> {
+      Permissions.with(this)
+           .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+           .ifNecessary()
+           .withPermanentDenialDialog(getString(R.string.MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied))
+           .onAnyDenied(() -> Toast.makeText(this, R.string.MediaPreviewActivity_unable_to_write_to_external_storage_without_permission, Toast.LENGTH_LONG).show())
+           .onAllGranted(() -> {
+             SaveAttachmentTask saveTask = new SaveAttachmentTask(MediaPreviewActivity.this, masterSecret);
+             long saveDate = (date > 0) ? date : System.currentTimeMillis();
+             saveTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Attachment(mediaUri, mediaType, saveDate));
+           })
+           .execute();
     });
   }
 

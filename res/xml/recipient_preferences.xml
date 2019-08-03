@@ -9,7 +9,7 @@
             android:disableDependentsState="true"
             android:persistent="false" />
 
-    <org.smssecure.smssecure.preferences.AdvancedRingtonePreference
+    <org.smssecure.smssecure.preferences.widgets.AdvancedRingtonePreference
                         android:dependency="pref_key_recipient_mute"
                         android:key="pref_key_recipient_ringtone"
                         android:title="@string/recipient_preferences__notification_sound"
@@ -18,7 +18,8 @@
                         android:showDefault="true"
                         android:persistent="false"/>
 
-    <ListPreference android:dependency="pref_key_recipient_mute"
+    <org.smssecure.smssecure.preferences.widgets.SilenceListPreference
+                    android:dependency="pref_key_recipient_mute"
                     android:key="pref_key_recipient_vibrate"
                     android:title="@string/recipient_preferences__vibrate"
                     android:entries="@array/recipient_vibrate_entries"
@@ -26,7 +27,7 @@
                     android:defaultValue="0"
                     android:persistent="false"/>
 
-    <org.smssecure.smssecure.preferences.ColorPreference
+    <org.smssecure.smssecure.preferences.widgets.ColorPickerPreference
             android:key="pref_key_recipient_color"
             android:title="@string/recipient_preferences__color"
             android:summary="@string/recipient_preferences__color_for_this_contact"

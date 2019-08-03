@@ -105,7 +105,7 @@ public class SmsDecryptJob extends MasterSecretJob {
     } catch (DuplicateMessageException e) {
       Log.w(TAG, e);
       database.markAsDecryptDuplicate(messageId);
-    } catch (NoSessionException e) {
+    } catch (NoSessionException | UntrustedIdentityException e) {
       Log.w(TAG, e);
       database.markAsNoSession(messageId);
     }
@@ -124,7 +124,8 @@ public class SmsDecryptJob extends MasterSecretJob {
   private void handleSecureMessage(MasterSecret masterSecret, long messageId, long threadId,
                                    IncomingTextMessage message)
       throws NoSessionException, DuplicateMessageException,
-      InvalidMessageException, LegacyMessageException
+             InvalidMessageException, LegacyMessageException,
+             UntrustedIdentityException
   {
     EncryptingSmsDatabase database  = DatabaseFactory.getEncryptingSmsDatabase(context);
     SmsCipher             cipher    = new SmsCipher(new SilenceSignalProtocolStore(context, masterSecret));

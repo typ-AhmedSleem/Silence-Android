@@ -22,7 +22,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.DecryptableStreamUriLoader;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.mms.SlideDeck;
-import org.smssecure.smssecure.preferences.NotificationPrivacyPreference;
+import org.smssecure.smssecure.preferences.widgets.NotificationPrivacyPreference;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.BitmapUtil;

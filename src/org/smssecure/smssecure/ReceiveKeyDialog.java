@@ -124,7 +124,7 @@ public class ReceiveKeyDialog extends AlertDialog {
   private boolean isTrusted(MasterSecret masterSecret, IdentityKey identityKey, Recipient recipient) {
     IdentityKeyStore identityKeyStore = new SilenceIdentityKeyStore(getContext(), masterSecret);
 
-    return identityKeyStore.isTrustedIdentity(new SignalProtocolAddress(recipient.getNumber(), 1), identityKey);
+    return identityKeyStore.isTrustedIdentity(new SignalProtocolAddress(recipient.getNumber(), 1), identityKey, IdentityKeyStore.Direction.RECEIVING);
   }
 
   private static IncomingKeyExchangeMessage getMessage(MessageRecord messageRecord)
