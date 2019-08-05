@@ -57,8 +57,6 @@
     <string name="AttachmentManager_cant_open_media_selection">Can\'t find an app to select media.</string>
     <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence requires the External Storage permission in order to attach photos, videos, or audio, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Storage\".</string>
     <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence requires Contacts permission in order to attach contact information, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and eanble \"Contacts\".</string>
-    <string name="AttachmentManager_silence_requires_location_information_in_order_to_attach_a_location">Silence requires Location permission in order to attach a location, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Location\".</string>
-    <string name="AttachmentManager_silence_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Silence requires the Camera permission in order to take photos, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Camera\".</string>
 
     <!-- AttachmentTypeSelectorAdapter -->
     <string name="AttachmentTypeSelectorAdapter_camera">Camera</string>
@@ -178,7 +176,6 @@
     <string name="ConversationListActivity_search">Search</string>
 
     <!-- ConversationListFragment -->
-    <string name="ConversationListFragment_no_results_found_for_s_">No results found for \'%s\'</string>
     <plurals name="ConversationListFragment_delete_selected_conversations">
         <item quantity="one">Delete selected conversation?</item>
         <item quantity="other">Delete selected conversations?</item>
@@ -337,10 +334,6 @@
     <string name="ReceiveKeyActivity_processing_key_exchange">Processing key exchange…</string>
     <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">You should verify the identity of this contact.</string>
 
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_recent_chats">Recent chats</string>
-    <string name="ContactsCursorLoader_contacts">Contacts</string>
-
     <!-- RecipientPreferencesActivity -->
     <string name="RecipientPreferenceActivity_block_this_contact_question">Block this contact?</string>
     <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">You will no longer see messages sent from this user.</string>
@@ -451,9 +444,6 @@
     <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">Quick response unavailable when Silence is locked!</string>
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
 
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Search</string>
-
     <!-- SingleRecipientNotificationBuilder -->
     <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
     <string name="SingleRecipientNotificationBuilder_new_message">New message</string>
@@ -476,7 +466,6 @@
     <!-- ContactSelectionListFragment-->
     <string name="ContactSelectionlistFragment_select_for">Select for</string>
     <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence requires the Contacts permission in order to display your contacts, but it has been permanently denied. Please continue to the app settings menu, select \"Permissions\", and enable \"Contacts\".</string>
-    <string name="ContactSelectionListFragment_error_retrieving_contacts_check_your_network_connection">Error retrieving contacts, check your network connection</string>
 
     <!-- blocked_contacts_fragment -->
     <string name="blocked_contacts_fragment__no_blocked_contacts">No blocked contacts</string>
@@ -584,7 +573,6 @@
 
     <!-- recipient_preferences_activity -->
     <string name="recipient_preference_activity__blocked">BLOCKED</string>
-    <string name="recipient_preference_activity__shared_media">Shared media</string>
 
     <!-- recipient_preferences -->
     <string name="recipient_preferences__mute_conversation">Mute conversation</string>
@@ -762,7 +750,6 @@
     <string name="preferences__request_keyboard_to_disable_personalized_learning">If set to incognito mode, the keyboard won\'t remember, learn, or store any words you type</string>
     <string name="preferences_app_protection__blocked_contacts">Blocked contacts</string>
     <string name="preferences_notifications__display_in_notifications">Display in notifications</string>
-    <string name="preferences_notifications__show">Show</string>
     <string name="preferences__show_sent_time">Show sent time</string>
     <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Show sent time instead of received time for incoming messages</string>
     <string name="preferences__hide_unread_message_divider">Hide unread message divider</string>
@@ -832,12 +819,8 @@
     <string name="conversation_list_item_view__error_alert">Error alert</string>
     <string name="conversation_list_item_view__archived">Archived</string>
 
-    <string name="conversation_list_item_inbox_zero__inbox_zeeerrro">Inbox zeeerrro</string>
-    <string name="conversation_list_item_inbox_zero__zip_zilch_zero_nada_nyou_re_all_caught_up">Zip. Zilch. Zero. Nada.\nYou\'re all caught up!</string>
-
     <!-- conversation_list_fragment -->
     <string name="conversation_list_fragment__fab_content_description">New conversation</string>
-    <string name="conversation_list_fragment__give_your_inbox_something_to_write_home_about_get_started_by_messaging_a_friend">Give your inbox something to write home about. Get started by messaging a friend.</string>
 
     <!-- conversation_secure_verified -->
     <string name="conversation_secure_verified__menu_security">Security</string>
@@ -913,7 +896,6 @@
     <string name="media_preview__overview_title">All images</string>
 
     <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">No documents</string>
     <string name="media_overview__save_all">Save all</string>
 
     <!-- media_preview_activity -->
