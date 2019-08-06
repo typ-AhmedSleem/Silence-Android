@@ -124,11 +124,11 @@ public class SilenceSignalProtocolStore implements SignalProtocolStore {
 
   @Override
   public boolean isTrustedIdentity(SignalProtocolAddress address, IdentityKey identityKey, Direction direction) {
-    return false;
+    return identityKeyStore.isTrustedIdentity(address, identityKey, direction);
   }
 
   @Override
   public boolean saveIdentity(SignalProtocolAddress address, IdentityKey identityKey) {
-    return false;
+    return identityKeyStore.saveIdentity(address, identityKey);
   }
 }
