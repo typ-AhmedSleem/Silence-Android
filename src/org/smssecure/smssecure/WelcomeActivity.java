@@ -32,12 +32,12 @@ public class WelcomeActivity extends BaseActionBarActivity {
 
   private void onContinueClicked() {
     Permissions.with(this)
-        .request(Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.READ_PHONE_STATE)
+        .request(Manifest.permission.WRITE_CONTACTS,
+                 Manifest.permission.READ_CONTACTS,
+                 Manifest.permission.READ_PHONE_STATE)
         .ifNecessary()
-        .withRationaleDialog(getString(R.string.WelcomeActivity_silence_needs_access_to_your_contacts_media_and_phone),
-          R.drawable.ic_contacts_white_36dp, R.drawable.ic_folder_white_36dp, R.drawable.ic_phone_white_36dp)
+        .withRationaleDialog(getString(R.string.WelcomeActivity_silence_needs_access_to_your_contacts_and_phone),
+          R.drawable.ic_contacts_white_48dp, R.drawable.ic_phone_white_48dp)
         .onAnyResult(() -> {
           SilencePreferences.setFirstRun((Context)WelcomeActivity.this);
 

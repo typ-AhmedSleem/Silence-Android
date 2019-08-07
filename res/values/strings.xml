@@ -221,7 +221,7 @@
     <!-- WelcomeActivity -->
     <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Improve your privacy, talk to everyone</string>
     <string name="WelcomeActivity_encrypt_your_messages">Encrypt your messages with Silence users while using regular SMS/MMS messages with others.</string>
-    <string name="WelcomeActivity_silence_needs_access_to_your_contacts_media_and_phone">Silence needs access to your contacts, media and phone in order to connect with friends, exchange messages, and manage your encryption keys.</string>
+    <string name="WelcomeActivity_silence_needs_access_to_your_contacts_and_phone">Silence needs access to your contacts and phone in order to connect with friends and manage your encryption keys.</string>
     <string name="WelcomeActivity_continue">Continue</string>
     
     <!-- ExportFragment -->
