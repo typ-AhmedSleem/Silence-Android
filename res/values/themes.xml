@@ -315,4 +315,10 @@
     <style name="RationaleDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/permission_rationale_dialog_corners</item>
     </style>
+
+    <style name="Silence.WelcomeTheme" parent="Silence.LightNoActionBar">
+        <item name="actionBarStyle">@style/Silence.DarkActionBar</item>
+        <item name="actionBarTabBarStyle">@style/Silence.DarkActionBar.TabBar</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+    </style>
 </resources>

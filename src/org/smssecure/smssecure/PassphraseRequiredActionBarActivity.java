@@ -17,6 +17,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.SilencePreferences;
+import org.smssecure.smssecure.WelcomeActivity;
 
 import java.util.Locale;
 
@@ -29,7 +30,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   private static final int STATE_CREATE_PASSPHRASE = 1;
   private static final int STATE_PROMPT_PASSPHRASE = 2;
   private static final int STATE_UPGRADE_DATABASE  = 3;
-  private static final int STATE_INTRO_SCREEN      = 4;
+  private static final int STATE_WELCOME           = 4;
 
   private BroadcastReceiver clearKeyReceiver;
   private boolean           isVisible;
@@ -131,7 +132,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     case STATE_CREATE_PASSPHRASE: return getCreatePassphraseIntent();
     case STATE_PROMPT_PASSPHRASE: return getPromptPassphraseIntent();
     case STATE_UPGRADE_DATABASE:  return getUpgradeDatabaseIntent(masterSecret);
-    case STATE_INTRO_SCREEN:      return getIntroScreenIntent();
+    case STATE_WELCOME:           return getWelcomeIntent();
     default:                      return null;
     }
   }
@@ -140,7 +141,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     if (!MasterSecretUtil.isPassphraseInitialized(this)) {
       return STATE_CREATE_PASSPHRASE;
     } else if (SilencePreferences.isFirstRun(this)) {
-      return STATE_INTRO_SCREEN;
+      return STATE_WELCOME;
     } else if (masterSecret == null) {
       return STATE_PROMPT_PASSPHRASE;
     } else if (DatabaseUpgradeActivity.isUpdate(this)) {
@@ -173,8 +174,8 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     return new Intent(this, ConversationListActivity.class);
   }
 
-  private Intent getIntroScreenIntent() {
-    return getRoutedIntent(IntroScreenActivity.class, getIntent(), null);
+  private Intent getWelcomeIntent() {
+    return getRoutedIntent(WelcomeActivity.class, getIntent(), null);
   }
 
   private void initializeClearKeyReceiver() {

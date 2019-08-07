@@ -37,12 +37,6 @@
     <dimen name="conversation_list_fragment_archive_padding">16dp</dimen>
     <dimen name="contact_selection_actions_tap_area">10dp</dimen>
 
-    <dimen name="onboarding_margin_vert">35dp</dimen>
-    <dimen name="onboarding_margin_land">20dp</dimen>
-    <dimen name="onboarding_watermark_size">140dp</dimen>
-    <dimen name="onboarding_title_size">34sp</dimen>
-    <dimen name="onboarding_subtitle_size">20sp</dimen>
-
     <dimen name="widget_corner">20dp</dimen>
     <dimen name="widget_layout_padding">0dp</dimen>
     <dimen name="widget_image_padding">0dp</dimen>

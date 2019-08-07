@@ -162,8 +162,8 @@
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
-    <activity android:name=".IntroScreenActivity"
-              android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    <activity android:name=".WelcomeActivity"
+              android:theme="@style/Silence.WelcomeTheme"
               android:launchMode="singleTask"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
 
@@ -383,13 +383,6 @@
     <receiver android:name=".notifications.DeleteNotificationReceiver">
         <intent-filter>
             <action android:name="org.smssecure.smssecure.DELETE_NOTIFICATION"/>
-        </intent-filter>
-    </receiver>
-
-    <receiver android:name=".IntroScreenActivity$AppUpgradeReceiver">
-        <intent-filter>
-            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
-            <data android:scheme="package" />
         </intent-filter>
     </receiver>
 
