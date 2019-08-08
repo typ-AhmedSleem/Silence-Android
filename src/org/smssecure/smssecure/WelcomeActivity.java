@@ -34,9 +34,13 @@ public class WelcomeActivity extends BaseActionBarActivity {
     Permissions.with(this)
         .request(Manifest.permission.WRITE_CONTACTS,
                  Manifest.permission.READ_CONTACTS,
-                 Manifest.permission.READ_PHONE_STATE)
+                 Manifest.permission.READ_PHONE_STATE,
+                 Manifest.permission.RECEIVE_SMS,
+                 Manifest.permission.RECEIVE_MMS,
+                 Manifest.permission.READ_SMS,
+                 Manifest.permission.SEND_SMS)
         .ifNecessary()
-        .withRationaleDialog(getString(R.string.WelcomeActivity_silence_needs_access_to_your_contacts_and_phone),
+        .withRationaleDialog(getString(R.string.WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms),
           R.drawable.ic_contacts_white_48dp, R.drawable.ic_phone_white_48dp)
         .onAnyResult(() -> {
           SilencePreferences.setFirstRun((Context)WelcomeActivity.this);
