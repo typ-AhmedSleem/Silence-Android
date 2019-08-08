@@ -139,10 +139,10 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   }
 
   private int getApplicationState(MasterSecret masterSecret) {
-    if (!MasterSecretUtil.isPassphraseInitialized(this)) {
-      return STATE_CREATE_PASSPHRASE;
-    } else if (shouldDisplayWelcomeActivity()) {
+    if (shouldDisplayWelcomeActivity()) {
       return STATE_WELCOME;
+    } else if (!MasterSecretUtil.isPassphraseInitialized(this)) {
+      return STATE_CREATE_PASSPHRASE;
     } else if (masterSecret == null) {
       return STATE_PROMPT_PASSPHRASE;
     } else if (DatabaseUpgradeActivity.isUpdate(this)) {
