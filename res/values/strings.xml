@@ -228,7 +228,7 @@
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">You need to grant some permissions to Silence in order to continue to use it. Tap to continue.</string>
     <string name="WelcomeActivity_last_update_introduced_a_new_way_to_manage_permissions">Last update introduced a new way to manage permissions. You need to grant some of them now to continue to receive and send messages.</string>
     <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence needs the Phone permission in order to manage encryption keys and bind them to your SIM cards, and SMS permission in order to receive SMS messages.</string>
-    <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence needs the Phone and SMS permissions in order to work, but it has been permanently denied. Please continue to app settings, select \"Permissions\", then enable \"Phone\" and \"Phone\".</string>
+    <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence needs the Phone and SMS permissions in order to work, but they has been permanently denied. Please continue to app settings, select \"Permissions\", then enable \"Phone\" and \"SMS\".</string>
     
     <!-- ExportFragment -->
     <string name="ExportFragment_export">Export</string>
