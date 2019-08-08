@@ -42,6 +42,7 @@ public class SilencePreferences {
 
   private static final String LAST_VERSION_CODE_PREF           = "last_version_code";
   private static final String IS_FIRST_RUN                     = "is_first_run";
+  private static final String PERMISSIONS_ASKED                = "permissions_asked";
   private static final String SEEN_BRAND_NAME_UPDATE           = "seen_brand_name_update";
   public  static final String RINGTONE_PREF                    = "pref_key_ringtone";
   private static final String VIBRATE_PREF                     = "pref_key_vibrate";
@@ -398,12 +399,12 @@ public class SilencePreferences {
     setBooleanPreference(context, IS_FIRST_RUN, false);
   }
 
-  public static boolean seenBrandNameUpdate(Context context) {
-    return getBooleanPreference(context, SEEN_BRAND_NAME_UPDATE, false);
+  public static boolean permissionsAsked(Context context) {
+    return getBooleanPreference(context, PERMISSIONS_ASKED, false);
   }
 
-  public static void setBrandNameUpdateAsSeen(Context context) {
-    setBooleanPreference(context, SEEN_BRAND_NAME_UPDATE, true);
+  public static void setPermissionsAsked(Context context) {
+    setBooleanPreference(context, PERMISSIONS_ASKED, true);
   }
 
   public static String getTheme(Context context) {

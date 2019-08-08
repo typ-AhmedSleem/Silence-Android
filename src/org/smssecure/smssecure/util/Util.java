@@ -22,6 +22,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.Manifest;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -43,8 +44,10 @@ import com.google.android.mms.pdu_alt.EncodedStringValue;
 
 import org.smssecure.smssecure.BuildConfig;
 import org.smssecure.smssecure.mms.OutgoingLegacyMmsConnection;
+import org.smssecure.smssecure.permissions.Permissions;
 import org.smssecure.smssecure.util.InvalidNumberException;
 import org.smssecure.smssecure.util.PhoneNumberFormatter;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -367,5 +370,17 @@ public class Util {
 
   public static float clamp(float value, float min, float max) {
     return Math.min(Math.max(value, min), max);
+  }
+
+  public static boolean shouldDisplayUpgradeNotification(Context context) {
+    return !SilencePreferences.permissionsAsked(context) &&
+           !Permissions.hasAll(context,
+                               Manifest.permission.WRITE_CONTACTS,
+                               Manifest.permission.READ_CONTACTS,
+                               Manifest.permission.READ_PHONE_STATE,
+                               Manifest.permission.RECEIVE_SMS,
+                               Manifest.permission.RECEIVE_MMS,
+                               Manifest.permission.READ_SMS,
+                               Manifest.permission.SEND_SMS);
   }
 }

@@ -386,5 +386,12 @@
         </intent-filter>
     </receiver>
 
+    <receiver android:name=".WelcomeActivity$AppUpgradeReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            <data android:scheme="package" />
+        </intent-filter>
+    </receiver>
+
 </application>
 </manifest>

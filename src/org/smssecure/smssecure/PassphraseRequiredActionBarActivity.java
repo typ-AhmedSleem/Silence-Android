@@ -17,6 +17,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.SilencePreferences;
+import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.WelcomeActivity;
 
 import java.util.Locale;
@@ -140,7 +141,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   private int getApplicationState(MasterSecret masterSecret) {
     if (!MasterSecretUtil.isPassphraseInitialized(this)) {
       return STATE_CREATE_PASSPHRASE;
-    } else if (SilencePreferences.isFirstRun(this)) {
+    } else if (shouldDisplayWelcomeActivity()) {
       return STATE_WELCOME;
     } else if (masterSecret == null) {
       return STATE_PROMPT_PASSPHRASE;
@@ -149,6 +150,10 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
     } else {
       return STATE_NORMAL;
     }
+  }
+
+  private boolean shouldDisplayWelcomeActivity() {
+    return SilencePreferences.isFirstRun(this) || Util.shouldDisplayUpgradeNotification(this);
   }
 
   private Intent getCreatePassphraseIntent() {

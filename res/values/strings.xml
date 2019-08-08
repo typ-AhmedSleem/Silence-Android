@@ -223,6 +223,10 @@
     <string name="WelcomeActivity_encrypt_your_messages">Encrypt your messages with Silence users while using regular SMS/MMS messages with others.</string>
     <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence needs access to your contacts, phone status and SMS messages in order to connect with friends, manage your encryption keys and chat.</string>
     <string name="WelcomeActivity_continue">Continue</string>
+    <string name="WelcomeActivity_action_required">Action required!</string>
+    <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">You need to grant some permissions to Silence.</string>
+    <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">You need to grant some permissions to Silence in order to continue to use it. Click to continue.</string>
+    <string name="WelcomeActivity_last_update_introduced_a_new_way_to_manage_permissions">Last update introduced a new way to manage permissions. You need to grant some of them now to continue to receive and send messages.</string>
     
     <!-- ExportFragment -->
     <string name="ExportFragment_export">Export</string>
