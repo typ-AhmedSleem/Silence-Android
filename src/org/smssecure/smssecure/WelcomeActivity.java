@@ -25,16 +25,25 @@ public class WelcomeActivity extends BaseActionBarActivity {
 
   private static final int NOTIFICATION_ID = 1339;
 
+  private Context context;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    context = (Context)WelcomeActivity.this;
+
     setStatusBarColor();
-    if (SilencePreferences.isFirstRun((Context)WelcomeActivity.this)) {
+
+    if (SilencePreferences.isFirstRun(context)) {
       setContentView(R.layout.welcome_activity);
-    } else {
+      findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueClicked());
+    } else if (Util.shouldDisplayUpgradeNotification(context)) {
       setContentView(R.layout.welcome_activity_update);
+      findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueClicked());
+    } else {
+      setContentView(R.layout.welcome_activity_missing_perms);
+      findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueMissingPermsClicked());
     }
-    findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueClicked());
   }
 
   @Override
@@ -55,20 +64,37 @@ public class WelcomeActivity extends BaseActionBarActivity {
         .withRationaleDialog(getString(R.string.WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms),
           R.drawable.ic_contacts_white_48dp, R.drawable.ic_phone_white_48dp)
         .onAnyResult(() -> {
-          SilencePreferences.setFirstRun((Context)WelcomeActivity.this);
-          SilencePreferences.setPermissionsAsked((Context)WelcomeActivity.this);
+          SilencePreferences.setFirstRun(context);
+          SilencePreferences.setPermissionsAsked(context);
 
-          Intent nextIntent = getIntent().getParcelableExtra("next_intent");
-
-          if (nextIntent == null) {
-            throw new IllegalStateException("Was not supplied a next_intent.");
-          }
-
-          startActivity(nextIntent);
-          overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
-          finish();
+          goToNextIntent();
         })
         .execute();
+  }
+
+  private void onContinueMissingPermsClicked() {
+    Permissions.with(this)
+               .request(Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.RECEIVE_SMS,
+                        Manifest.permission.RECEIVE_MMS)
+               .ifNecessary()
+               .withPermanentDenialDialog(getString(R.string.WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied))
+               .onSomeGranted((permissions) -> {
+                 goToNextIntent();
+               })
+               .execute();
+  }
+
+  private void goToNextIntent() {
+    Intent nextIntent = getIntent().getParcelableExtra("next_intent");
+
+    if (nextIntent == null) {
+      throw new IllegalStateException("Was not supplied a next_intent.");
+    }
+
+    startActivity(nextIntent);
+    overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
+    finish();
   }
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP)

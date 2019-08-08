@@ -383,4 +383,11 @@ public class Util {
                                Manifest.permission.READ_SMS,
                                Manifest.permission.SEND_SMS);
   }
+
+  public static boolean hasMandatoryPermissions(Context context) {
+    return Permissions.hasAll(context,
+                              Manifest.permission.READ_PHONE_STATE,
+                              Manifest.permission.RECEIVE_SMS,
+                              Manifest.permission.RECEIVE_MMS);
+  }
 }
