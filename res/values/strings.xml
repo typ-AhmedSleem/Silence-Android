@@ -225,7 +225,7 @@
     <string name="WelcomeActivity_continue">Continue</string>
     <string name="WelcomeActivity_action_required">Action required!</string>
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">You need to grant some permissions to Silence.</string>
-    <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">You need to grant some permissions to Silence in order to continue to use it. Click to continue.</string>
+    <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">You need to grant some permissions to Silence in order to continue to use it. Tap to continue.</string>
     <string name="WelcomeActivity_last_update_introduced_a_new_way_to_manage_permissions">Last update introduced a new way to manage permissions. You need to grant some of them now to continue to receive and send messages.</string>
     
     <!-- ExportFragment -->
