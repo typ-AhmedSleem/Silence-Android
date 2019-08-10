@@ -372,18 +372,6 @@ public class Util {
     return Math.min(Math.max(value, min), max);
   }
 
-  public static boolean shouldDisplayUpgradeNotification(Context context) {
-    return !SilencePreferences.permissionsAsked(context) &&
-           !Permissions.hasAll(context,
-                               Manifest.permission.WRITE_CONTACTS,
-                               Manifest.permission.READ_CONTACTS,
-                               Manifest.permission.READ_PHONE_STATE,
-                               Manifest.permission.RECEIVE_SMS,
-                               Manifest.permission.RECEIVE_MMS,
-                               Manifest.permission.READ_SMS,
-                               Manifest.permission.SEND_SMS);
-  }
-
   public static boolean hasMandatoryPermissions(Context context) {
     return Permissions.hasAll(context,
                               Manifest.permission.READ_PHONE_STATE,

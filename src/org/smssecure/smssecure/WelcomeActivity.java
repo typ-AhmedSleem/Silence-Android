@@ -37,9 +37,6 @@ public class WelcomeActivity extends BaseActionBarActivity {
     if (SilencePreferences.isFirstRun(context)) {
       setContentView(R.layout.welcome_activity);
       findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueClicked());
-    } else if (Util.shouldDisplayUpgradeNotification(context)) {
-      setContentView(R.layout.welcome_activity_update);
-      findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueClicked());
     } else {
       setContentView(R.layout.welcome_activity_missing_perms);
       findViewById(R.id.welcome_continue_button).setOnClickListener(v -> onContinueMissingPermsClicked());
@@ -104,30 +101,30 @@ public class WelcomeActivity extends BaseActionBarActivity {
     }
   }
 
-  public static class AppUpgradeReceiver extends BroadcastReceiver {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      if(Intent.ACTION_PACKAGE_REPLACED.equals(intent.getAction()) &&
-         intent.getData().getSchemeSpecificPart().equals(context.getPackageName()))
-      {
-        if (SilencePreferences.isFirstRun(context) || !Util.shouldDisplayUpgradeNotification(context)) return;
+  private static void displayPermissionsNotification(Context context) {
+    Intent       targetIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+    Notification notification = new NotificationCompat.Builder(context)
+                                    .setPriority(Notification.PRIORITY_MAX)
+                                    .setVisibility(Notification.VISIBILITY_PUBLIC)
+                                    .setSmallIcon(R.drawable.icon_notification)
+                                    .setColor(context.getResources().getColor(R.color.silence_primary))
+                                    .setContentTitle(context.getString(R.string.WelcomeActivity_action_required))
+                                    .setContentText(context.getString(R.string.WelcomeActivity_you_need_to_grant_some_permissions_to_silence))
+                                    .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it)))
+                                    .setAutoCancel(false)
+                                    .setContentIntent(PendingIntent.getActivity(context, 0,
+                                                                                targetIntent,
+                                                                                PendingIntent.FLAG_UPDATE_CURRENT))
+                                    .build();
+    ServiceUtil.getNotificationManager(context).notify(NOTIFICATION_ID, notification);
+  }
 
-        Intent       targetIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-        Notification notification = new NotificationCompat.Builder(context)
-                                        .setPriority(Notification.PRIORITY_MAX)
-                                        .setVisibility(Notification.VISIBILITY_PUBLIC)
-                                        .setSmallIcon(R.drawable.icon_notification)
-                                        .setColor(context.getResources().getColor(R.color.silence_primary))
-                                        .setContentTitle(context.getString(R.string.WelcomeActivity_action_required))
-                                        .setContentText(context.getString(R.string.WelcomeActivity_you_need_to_grant_some_permissions_to_silence))
-                                        .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getString(R.string.WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it)))
-                                        .setAutoCancel(false)
-                                        .setContentIntent(PendingIntent.getActivity(context, 0,
-                                                                                    targetIntent,
-                                                                                    PendingIntent.FLAG_UPDATE_CURRENT))
-                                        .build();
-        ServiceUtil.getNotificationManager(context).notify(NOTIFICATION_ID, notification);
-      }
+  public static void checkForPermissions(Context context, Intent intent) {
+    if (intent == null) return;
+
+    if (!Util.hasMandatoryPermissions(context) && !SilencePreferences.isFirstRun(context))
+    {
+      displayPermissionsNotification(context);
     }
   }
 }

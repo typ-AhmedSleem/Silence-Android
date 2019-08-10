@@ -153,7 +153,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
   }
 
   private boolean shouldDisplayWelcomeActivity() {
-    return SilencePreferences.isFirstRun(this) || Util.shouldDisplayUpgradeNotification(this) || !Util.hasMandatoryPermissions(this);
+    return SilencePreferences.isFirstRun(this) || !Util.hasMandatoryPermissions(this);
   }
 
   private Intent getCreatePassphraseIntent() {
