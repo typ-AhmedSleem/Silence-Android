@@ -1142,7 +1142,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private MediaConstraints getCurrentMediaConstraints() {
-    return MediaConstraints.getMmsMediaConstraints(sendButton.getSelectedTransport().getSimSubscriptionId().or(-1));
+    return MediaConstraints.getMmsMediaConstraints(sendButton.getSelectedTransport().getSimSubscriptionId().or(-1), isSecureSmsDestination);
   }
 
   private void markThreadAsRead() {

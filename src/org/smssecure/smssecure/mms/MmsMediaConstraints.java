@@ -10,10 +10,14 @@ class MmsMediaConstraints extends MediaConstraints {
   private static final int DEFAULT_MAX_IMAGE_DIMEN  = 1024;
   private static final int DEFAULT_MAX_MESSAGE_SIZE = 280 * 1024;
 
-  private final int subscriptionId;
+  private static final double RATIO_IF_ENCRYPTED = 0.75; // Reduce by 25% max size for encrypted MMS mesages
 
-  MmsMediaConstraints(int subscriptionId) {
+  private final int subscriptionId;
+  private final boolean isSecure;
+
+  MmsMediaConstraints(int subscriptionId, boolean isSecure) {
     this.subscriptionId = subscriptionId;
+    this.isSecure = isSecure;
   }
 
   @Override
@@ -65,7 +69,14 @@ class MmsMediaConstraints extends MediaConstraints {
 
     if (mmsConfig != null) {
       MmsConfig.Overridden overridden = new MmsConfig.Overridden(mmsConfig, new Bundle());
-      return overridden.getMaxMessageSize();
+      int size;
+      double plaintextMaxSize = (double) overridden.getMaxMessageSize();
+      if (isSecure) {
+        size = (int)(plaintextMaxSize * RATIO_IF_ENCRYPTED);
+      } else {
+        size = (int)plaintextMaxSize;
+      }
+      return size;
     }
 
     return DEFAULT_MAX_MESSAGE_SIZE;

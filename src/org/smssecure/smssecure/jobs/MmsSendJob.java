@@ -191,7 +191,7 @@ public class MmsSendJob extends SendJob {
     SendReq          req               = new SendReq();
     String           lineNumber        = Utils.getMyPhoneNumber(context);
     List<String>     numbers           = message.getRecipients().toNumberStringList(true);
-    MediaConstraints mediaConstraints = MediaConstraints.getMmsMediaConstraints(message.getSubscriptionId());
+    MediaConstraints mediaConstraints = MediaConstraints.getMmsMediaConstraints(message.getSubscriptionId(), message.isSecure());
     List<Attachment> scaledAttachments = scaleAttachments(masterSecret, mediaConstraints, message.getAttachments());
 
     if (!TextUtils.isEmpty(lineNumber)) {

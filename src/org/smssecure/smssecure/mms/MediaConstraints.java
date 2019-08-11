@@ -21,8 +21,8 @@ import java.io.InputStream;
 public abstract class MediaConstraints {
   private static final String TAG = MediaConstraints.class.getSimpleName();
 
-  public static MediaConstraints getMmsMediaConstraints(int subscriptionId) {
-    return new MmsMediaConstraints(subscriptionId);
+  public static MediaConstraints getMmsMediaConstraints(int subscriptionId, boolean isSecure) {
+    return new MmsMediaConstraints(subscriptionId, isSecure);
   }
 
   public abstract int getImageMaxWidth(Context context);
