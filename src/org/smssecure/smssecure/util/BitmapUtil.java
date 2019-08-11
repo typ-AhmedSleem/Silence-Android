@@ -40,10 +40,9 @@ public class BitmapUtil {
 
   private static final String TAG = BitmapUtil.class.getSimpleName();
 
-  private static final int MAX_COMPRESSION_QUALITY          = 90;
+  private static final int MAX_COMPRESSION_QUALITY          = 95;
   private static final int MIN_COMPRESSION_QUALITY          = 45;
-  private static final int MAX_COMPRESSION_ATTEMPTS         = 5;
-  private static final int MIN_COMPRESSION_QUALITY_DECREASE = 5;
+  private static final int COMPRESSION_QUALITY_DECREASE     = 2;
 
   public static <T> byte[] createScaledBytes(Context context, T model, MediaConstraints constraints)
       throws BitmapDecodingException
@@ -64,23 +63,16 @@ public class BitmapUtil {
     
     try {
       do {
+        attempts++;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         scaledBitmap.compress(CompressFormat.JPEG, quality, baos);
         bytes = baos.toByteArray();
 
         Log.w(TAG, "iteration with quality " + quality + " size " + (bytes.length / 1024) + "kb");
-        if (quality == MIN_COMPRESSION_QUALITY) break;
 
-        int nextQuality = (int)Math.floor(quality * Math.sqrt((double)constraints.getImageMaxSize(context) / bytes.length));
-        if (quality - nextQuality < MIN_COMPRESSION_QUALITY_DECREASE) {
-          nextQuality = quality - MIN_COMPRESSION_QUALITY_DECREASE;
-        }
-        quality = Math.max(nextQuality, MIN_COMPRESSION_QUALITY);
+        quality = quality - COMPRESSION_QUALITY_DECREASE;
       }
-      while (bytes.length > constraints.getImageMaxSize(context) && attempts++ < MAX_COMPRESSION_ATTEMPTS);
-      if (bytes.length > constraints.getImageMaxSize(context)) {
-        throw new BitmapDecodingException("Unable to scale image below: " + bytes.length);
-      }
+      while (bytes.length > constraints.getImageMaxSize(context));
       Log.w(TAG, "createScaledBytes(" + model.toString() + ") -> quality " + Math.min(quality, MAX_COMPRESSION_QUALITY) + ", " + attempts + " attempt(s)");
       return bytes;
     } finally {
