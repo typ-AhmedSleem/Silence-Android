@@ -22,6 +22,7 @@ import android.util.Pair;
 
 import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.attachments.Attachment;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.EncryptingSmsDatabase;
 import org.smssecure.smssecure.database.MmsDatabase;
@@ -32,6 +33,7 @@ import org.smssecure.smssecure.jobs.MmsSendJob;
 import org.smssecure.smssecure.jobs.SmsSendJob;
 import org.smssecure.smssecure.mms.MmsException;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
+import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.InvalidNumberException;
@@ -41,6 +43,8 @@ import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MessageSender {
 
@@ -102,18 +106,43 @@ public class MessageSender {
   }
 
   public static void resend(Context context, MasterSecret masterSecret, MessageRecord messageRecord) {
-    try {
-      long messageId = messageRecord.getId();
+    long    messageId      = messageRecord.getId();
+    boolean isSecure       = messageRecord.isSecure();
+    long    threadId       = messageRecord.getThreadId();
+    String  body           = messageRecord.getBody().getBody();
+    int     subscriptionId = messageRecord.getSubscriptionId();
 
-      if (messageRecord.isMms()) {
-        Recipients recipients = DatabaseFactory.getMmsAddressDatabase(context).getRecipientsForId(messageId);
-        sendMediaMessage(context, messageId);
+    if (messageRecord.isMms()) {
+      Recipients       recipients     = DatabaseFactory.getMmsAddressDatabase(context).getRecipientsForId(messageId);
+      long             sentTimeMillis = System.currentTimeMillis();
+      List<Attachment> attachments    = new LinkedList<Attachment>(DatabaseFactory.getAttachmentDatabase(context).getAttachmentsForMessage(messageId));
+
+      OutgoingMediaMessage newMessage = new OutgoingMediaMessage(recipients,
+                                                                 body,
+                                                                 attachments,
+                                                                 sentTimeMillis,
+                                                                 subscriptionId,
+                                                                 ThreadDatabase.DistributionTypes.BROADCAST);
+
+      if (isSecure) {
+        send(context, masterSecret, new OutgoingSecureMediaMessage(newMessage), threadId, true);
       } else {
-        Recipients recipients  = messageRecord.getRecipients();
-        sendTextMessage(context, recipients, messageId);
+        send(context, masterSecret, newMessage, threadId, true);
       }
-    } catch (MmsException e) {
-      Log.w(TAG, e);
+
+      DatabaseFactory.getMmsDatabase(context).delete(messageId);
+    } else {
+      Recipients recipients = messageRecord.getRecipients();
+      OutgoingTextMessage newMessage;
+
+      if (isSecure) {
+        newMessage = new OutgoingTextMessage(recipients, body, subscriptionId);
+      } else {
+        newMessage = new OutgoingEncryptedMessage(recipients, body, subscriptionId);
+      }
+
+      send(context, masterSecret, newMessage, threadId, true);
+      DatabaseFactory.getSmsDatabase(context).deleteMessage(messageId);
     }
   }
 

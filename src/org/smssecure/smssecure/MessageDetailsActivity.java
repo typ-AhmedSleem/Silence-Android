@@ -345,6 +345,12 @@ public class MessageDetailsActivity extends PassphraseRequiredActionBarActivity 
         return;
       }
 
+      if (messageRecord == null) {
+        Log.w(TAG, "messageRecord is null, finishing activity...");
+        finish();
+        return;
+      }
+
       inflateMessageViewIfAbsent(messageRecord);
 
       updateRecipients(messageRecord, recipients);

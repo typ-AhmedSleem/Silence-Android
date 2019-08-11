@@ -115,7 +115,6 @@ public class MessageRecipientListItem extends RelativeLayout
       resendButton.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View v) {
-          resendButton.setEnabled(false);
           new ResendAsyncTask(masterSecret, record, networkFailure).execute();
         }
       });
@@ -178,13 +177,7 @@ public class MessageRecipientListItem extends RelativeLayout
 
     @Override
     protected Void doInBackground(Void... params) {
-      MmsDatabase mmsDatabase = DatabaseFactory.getMmsDatabase(getContext());
-      mmsDatabase.removeFailure(record.getId(), failure);
-
-      // TODO: push service disabled
-      if (!record.getRecipients().isGroupRecipient()) {
-        MessageSender.resend(getContext(), masterSecret, record);
-      }
+      MessageSender.resend(getContext(), masterSecret, record);
       return null;
     }
   }
