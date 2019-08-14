@@ -10,6 +10,7 @@ import android.util.Log;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.preferences.widgets.NotificationPrivacyPreference;
+import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -100,9 +101,15 @@ public class SilencePreferences {
   public  static final String SYSTEM_EMOJI_PREF                = "pref_system_emoji";
 
   public  static final String INCOGNITO_KEYBORAD_PREF          = "pref_incognito_keyboard";
+  public  static final String ASK_FOR_SIM_CARD                 = "pref_always_ask_for_sim_card";
 
   public static boolean isIncognitoKeyboardEnabled(Context context) {
     return getBooleanPreference(context, INCOGNITO_KEYBORAD_PREF, true);
+  }
+
+  public static boolean isSimCardAsked(Context context) {
+    return new SubscriptionManagerCompat(context).getActiveSubscriptionInfoList().size() > 1 &&
+           getBooleanPreference(context, ASK_FOR_SIM_CARD, true);
   }
 
   public static NotificationPrivacyPreference getNotificationPrivacy(Context context) {

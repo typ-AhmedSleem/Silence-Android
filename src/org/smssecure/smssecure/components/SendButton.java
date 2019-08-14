@@ -22,6 +22,8 @@ public class SendButton extends ImageButton
 
   private Optional<TransportOptionsPopup> transportOptionsPopup = Optional.absent();
 
+  private boolean forceSend = false;
+
   @SuppressWarnings("unused")
   public SendButton(Context context) {
     super(context);
@@ -87,6 +89,26 @@ public class SendButton extends ImageButton
     transportOptions.setDefaultSubscriptionId(subscriptionId);
   }
 
+  public boolean displayTransports(boolean forceSend) {
+    if (transportOptions.getEnabledTransports().size() > 1) {
+      getTransportOptionsPopup().display(transportOptions.getEnabledTransports());
+      this.forceSend = forceSend;
+      return true;
+    }
+
+    return false;
+  }
+
+  public boolean isForceSend() {
+    if (forceSend) {
+      forceSend = false;
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
   @Override
   public void onSelected(TransportOption option) {
     transportOptions.setSelectedTransport(option);
@@ -101,11 +123,6 @@ public class SendButton extends ImageButton
 
   @Override
   public boolean onLongClick(View v) {
-    if (transportOptions.getEnabledTransports().size() > 1) {
-      getTransportOptionsPopup().display(transportOptions.getEnabledTransports());
-      return true;
-    }
-
-    return false;
+    return displayTransports(false);
   }
 }

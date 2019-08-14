@@ -15,6 +15,7 @@ import org.smssecure.smssecure.LogSubmitActivity;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.crypto.MasterSecret;
+import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
 import org.smssecure.smssecure.util.SilencePreferences;
 
 public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment {
@@ -32,6 +33,10 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment {
 
     this.findPreference(SilencePreferences.ENTER_KEY_TYPE).setOnPreferenceChangeListener(new ListSummaryListener());
     initializeListSummary((ListPreference) this.findPreference(SilencePreferences.ENTER_KEY_TYPE));
+
+    if (new SubscriptionManagerCompat(getActivity()).getActiveSubscriptionInfoList().size() <= 1) {
+      this.findPreference(SilencePreferences.ASK_FOR_SIM_CARD).setVisible(false);
+    }
   }
 
   @Override

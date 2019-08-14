@@ -761,6 +761,8 @@
     <string name="preferences_chats__message_trimming">Message trimming</string>
     <string name="preferences_advanced__use_system_emoji">Use system emoji</string>
     <string name="preferences_advanced__disable_silences_built_in_emoji_support">Disable Silence\'s built-in emoji support</string>
+    <string name="preferences_advanced__always_ask_for_sim_card">Always ask for SIM card</string>
+    <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Always ask for the SIM card to use when sending messages</string>
 
     <!-- **************************************** -->
     <!-- menus -->

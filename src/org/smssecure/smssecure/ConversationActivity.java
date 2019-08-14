@@ -870,7 +870,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         composeText.setTransport(newTransport);
         buttonToggle.getBackground().setColorFilter(newTransport.getBackgroundColor(), Mode.MULTIPLY);
         buttonToggle.getBackground().invalidateSelf();
-        if (manuallySelected) recordSubscriptionIdPreference(newTransport.getSimSubscriptionId());
+        if (manuallySelected) {
+          recordSubscriptionIdPreference(newTransport.getSimSubscriptionId());
+          sendIfSimCardNotAsked(false);
+        }
       }
     });
 
@@ -1319,6 +1322,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }.execute();
   }
 
+  private boolean sendIfSimCardNotAsked(boolean fromSendButton) {
+    if (!SilencePreferences.isSimCardAsked(ConversationActivity.this) || (!fromSendButton && sendButton.isForceSend())) {
+      sendMessage();
+      return true;
+    }
+    return false;
+  }
+
   // Listeners
 
   private class AttachmentTypeListener implements DialogInterface.OnClickListener {
@@ -1356,7 +1367,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private class SendButtonListener implements OnClickListener, TextView.OnEditorActionListener {
     @Override
     public void onClick(View v) {
-      sendMessage();
+      if (!sendIfSimCardNotAsked(true)) {
+        sendButton.displayTransports(true);
+      }
     }
 
     @Override

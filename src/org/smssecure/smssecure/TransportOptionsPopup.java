@@ -15,6 +15,8 @@ public class TransportOptionsPopup extends ListPopupWindow implements ListView.O
   private final TransportOptionsAdapter adapter;
   private final SelectedListener        listener;
 
+  private boolean forceSend = false;
+
   public TransportOptionsPopup(@NonNull Context context, @NonNull View anchor, @NonNull SelectedListener listener) {
     super(context);
     this.listener = listener;
