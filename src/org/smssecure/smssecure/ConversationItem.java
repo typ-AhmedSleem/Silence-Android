@@ -409,11 +409,8 @@ public class ConversationItem extends LinearLayout
     } else {
       Optional<SubscriptionInfoCompat> subscriptionInfo = subscriptionManager.getActiveSubscriptionInfo(messageRecord.getSubscriptionId());
 
-      if (subscriptionInfo.isPresent() && messageRecord.isOutgoing()) {
-        simInfoText.setText(getContext().getString(R.string.ConversationItem_from_s, subscriptionInfo.get().getDisplayName()));
-        simInfoText.setVisibility(View.VISIBLE);
-      } else if (subscriptionInfo.isPresent()) {
-        simInfoText.setText(getContext().getString(R.string.ConversationItem_to_s,  subscriptionInfo.get().getDisplayName()));
+      if (subscriptionInfo.isPresent()) {
+        simInfoText.setText(getContext().getString(R.string.ConversationItem_via_s,  subscriptionInfo.get().getDisplayName()));
         simInfoText.setVisibility(View.VISIBLE);
       } else {
         simInfoText.setVisibility(View.GONE);
