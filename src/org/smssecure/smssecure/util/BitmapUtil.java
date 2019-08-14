@@ -47,7 +47,9 @@ public class BitmapUtil {
   public static <T> byte[] createScaledBytes(Context context, T model, MediaConstraints constraints)
       throws BitmapDecodingException
   {
-    int    quality  = MAX_COMPRESSION_QUALITY;
+    CompressFormat compressFormat = CompressFormat.PNG;
+
+    int    quality  = 100;
     int    attempts = 0;
     byte[] bytes;
 
@@ -65,15 +67,20 @@ public class BitmapUtil {
       do {
         attempts++;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        scaledBitmap.compress(CompressFormat.JPEG, quality, baos);
+        scaledBitmap.compress(compressFormat, quality, baos);
         bytes = baos.toByteArray();
 
-        Log.w(TAG, "iteration with quality " + quality + " size " + (bytes.length / 1024) + "kb");
+        Log.w(TAG, "iteration with quality " + quality + "; size " + (bytes.length / 1024) + "kb; attempts " + attempts);
 
-        quality = quality - COMPRESSION_QUALITY_DECREASE;
+        compressFormat = CompressFormat.JPEG;
+
+        if (quality >= MAX_COMPRESSION_QUALITY) {
+          quality = MAX_COMPRESSION_QUALITY;
+        } else {
+          quality = quality - COMPRESSION_QUALITY_DECREASE;
+        }
       }
       while (bytes.length > constraints.getImageMaxSize(context));
-      Log.w(TAG, "createScaledBytes(" + model.toString() + ") -> quality " + Math.min(quality, MAX_COMPRESSION_QUALITY) + ", " + attempts + " attempt(s)");
       return bytes;
     } finally {
       if (scaledBitmap != null) scaledBitmap.recycle();
