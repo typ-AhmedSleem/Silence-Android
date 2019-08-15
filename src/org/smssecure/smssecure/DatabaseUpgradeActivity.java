@@ -37,7 +37,9 @@ import org.smssecure.smssecure.database.SmsDatabase;
 import org.smssecure.smssecure.database.model.SmsMessageRecord;
 import org.smssecure.smssecure.jobs.SmsDecryptJob;
 import org.smssecure.smssecure.notifications.MessageNotifier;
+import org.smssecure.smssecure.util.dualsim.SubscriptionManagerCompat;
 import org.smssecure.smssecure.util.ParcelUtil;
+import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.smssecure.smssecure.util.VersionTracker;
 import org.whispersystems.jobqueue.EncryptionKeys;
@@ -58,6 +60,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
   public static final int NO_V1_VERSION                        = 83;
   public static final int SIGNED_PREKEY_VERSION                = 83;
   public static final int NO_DECRYPT_QUEUE_VERSION             = 84;
+  public static final int ASK_FOR_SIM_CARD_VERSION             = 143;
 
   private static final SortedSet<Integer> UPGRADE_VERSIONS = new TreeSet<Integer>() {{
     add(NO_MORE_KEY_EXCHANGE_PREFIX_VERSION);
@@ -67,6 +70,7 @@ public class DatabaseUpgradeActivity extends BaseActivity {
     add(NO_V1_VERSION);
     add(SIGNED_PREKEY_VERSION);
     add(NO_DECRYPT_QUEUE_VERSION);
+    add(ASK_FOR_SIM_CARD_VERSION);
   }};
 
   private MasterSecret masterSecret;
@@ -200,6 +204,14 @@ public class DatabaseUpgradeActivity extends BaseActivity {
         } finally {
           if (smsReader != null)
             smsReader.close();
+        }
+      }
+
+      if (params[0] < ASK_FOR_SIM_CARD_VERSION) {
+        if (!SilencePreferences.isFirstRun(context) &&
+            new SubscriptionManagerCompat(context).getActiveSubscriptionInfoList().size() > 1)
+        {
+          SilencePreferences.setSimCardAsked(context, false);
         }
       }
 

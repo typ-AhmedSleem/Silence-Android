@@ -112,6 +112,10 @@ public class SilencePreferences {
            getBooleanPreference(context, ASK_FOR_SIM_CARD, true);
   }
 
+  public static void setSimCardAsked(Context context, boolean enabled) {
+    setBooleanPreference(context, ASK_FOR_SIM_CARD, enabled);
+  }
+
   public static NotificationPrivacyPreference getNotificationPrivacy(Context context) {
     return new NotificationPrivacyPreference(getStringPreference(context, NOTIFICATION_PRIVACY_PREF, "all"));
   }
