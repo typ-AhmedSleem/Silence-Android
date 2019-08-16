@@ -2,9 +2,9 @@
 <resources>
   <string name="Distribution_title">Silence</string>
   <string name="Distribution_tagline">Зашифрованное SMS/MMS-общение стало проще!</string>
-  <string name="Distribution_description">Silence - это SMS/MMS приложение, которое позволяет защитить конфиденциальность при общении с друзьями.</string>
+  <string name="Distribution_description">Silence - это SMS/MMS приложение, позволяющее защитить вашу конфиденциальность при общении с друзьями.</string>
   <string name="Distribution_long_description">
-        Silence - это приложение SMS/MMS, которое позволяет защитить конфиденциальность при общении с друзьями.
+        Silence - это приложение SMS/MMS, позволяющее защитить вашу конфиденциальность при общении с друзьями.
         Используя Silence, вы можете отправлять SMS-сообщения и обмениваться мультимедийными файлами или вложениями конфиденциально.
 
         Особенности:

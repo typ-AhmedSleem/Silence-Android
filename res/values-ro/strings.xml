@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Da</string>
   <string name="no">Nu</string>
   <string name="delete">Șterge</string>
@@ -71,8 +70,6 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="ConversationItem_group_action_left">%1$s a ieșit din grup.</string>
   <string name="ConversationItem_click_for_details">Atingeți pentru detalii</string>
   <string name="ConversationItem_unable_to_open_media">Nu pot găsi o aplicație pentru a deschide acest tip de fișier media.</string>
-  <string name="ConversationItem_from_s">de la %s</string>
-  <string name="ConversationItem_to_s">către %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Adresă XMPP. Actualizați Silence pentru a activa această caracteristică.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Inițializare sesiune securizată?</string>
@@ -213,15 +210,12 @@ Atenție, acestă acțiune va dezactiva stocarea criptată a tuturor mesajelor �
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">O nouă cheie a fost generată pentru acea cartelă SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partajează cu</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Bun venit la Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence vă permite să vă protejați confidențialitatea atunci când comunicați cu prietenii.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Criptează mesajele dumneavoastră</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence va cripta automat mesajele cu alți utilizatori Silence.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Vorbește cu toată lumea</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence poate utiliza mesaje necriptate pentru a conversa cu cei/cele ce nu folosesc aplicația.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure este acum Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure este acum Silence. Mesajele dumneavoastră sunt încă aici și caracteristici noi urmează să apară.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Îmbunătățiți-vă confidențialitatea, vorbiți cu toată lumea</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Criptați mesajele către utilizatorii Silence în timp ce folosiți SMS/MMS ca de obicei cu toți ceilalți.</string>
+  <string name="WelcomeActivity_continue">Continuă</string>
+  <string name="WelcomeActivity_action_required">Acțiune necesară!</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Este necesară acordarea unor permisiuni pentru Silence.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportă</string>
   <string name="ExportFragment_export_plaintext_to_storage">Se exportă în format text pe spațiul de stocare?</string>
@@ -414,6 +408,9 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="blocked_contacts_fragment__no_blocked_contacts">Nici un contact blocat</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nu există apeluri recente.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence are nevoie să vă poate accesa contactele pentru a le afișa.</string>
+  <string name="contact_selection_list_fragment__show_contacts">Arată contactele</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Notificări dezactivate pentru această conversație</string>
   <!--conversation_activity-->
@@ -421,7 +418,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="conversation_activity__type_message_sms_insecure">Trimite SMS nesecurizat</string>
   <string name="conversation_activity__type_message_mms_secure">Trimite MMS securizat</string>
   <string name="conversation_activity__type_message_mms_insecure">Trimite SMS nesecurizat</string>
-  <string name="conversation_activity__from_sim_name">De la %1$s</string>
+  <string name="conversation_activity__via_sim_name">Prin %1$s</string>
   <string name="conversation_activity__send">Trimite</string>
   <string name="conversation_activity__remove">Șterge</string>
   <string name="conversation_activity__window_description">Conversaţie cu %1$s</string>
@@ -512,10 +509,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="message_details_header__issues_need_your_attention">Anumite probleme necesită atenția dumneavoastră.</string>
   <string name="message_details_header__sent">Trimis</string>
   <string name="message_details_header__received">Primit</string>
-  <string name="message_details_header__via">Via</string>
-  <string name="message_details_header__to">Către:</string>
-  <string name="message_details_header__from">De la:</string>
-  <string name="message_details_header__with">Cu:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Creează parolă</string>
   <string name="AndroidManifest__enter_passphrase">Introduceţi parola</string>
@@ -660,7 +653,6 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="preferences__show_sent_time">Afișează data trimiterii</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Arată ora de trimitere în loc de ora de primire pentru mesajele recepționate</string>
   <string name="preferences__hide_unread_message_divider">Ascunde linia de marcaj a mesajelor necitite</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Ascunde linia de marcaj a mesajelor necitite dintr-o conversație</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Descărcare automată</string>
   <string name="preferences__automatically_retrieve_mms_messages">Descarcă automat mesajele MMS</string>
@@ -743,6 +735,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="key_scanning__menu_compare">Compara</string>
   <string name="key_scanning__menu_display_your_qr_code">Afișează codul dumneavoastră QR</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Scanează codul QR al contactului</string>
+  <string name="share_identity_fingerprint">Partajați-vă amprenta de identitate</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Mesaj nou</string>
   <string name="text_secure_normal__menu_new_group">Grup nou</string>
@@ -769,6 +762,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="MediaPreviewActivity_cant_display">Previzualizarea imaginii a eșuat</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Tip fișier media nesuportat</string>
   <string name="MediaPreviewActivity_draft">Ciornă</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Nu se poate salva pe stocarea externă fără această permisiune</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Salvează</string>
   <string name="media_preview__forward_title">Redirecționare</string>
@@ -783,5 +777,15 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
   <string name="trimmer__old_messages_successfully_deleted">Mesajele vechi au fost șterse cu succes</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icoană transport</string>
+  <string name="RingtonePreference_ringtone_default">Ton implicit</string>
+  <string name="RingtonePreference_ringtone_silent">Niciunul</string>
+  <string name="RingtonePreference_ringtone_picker_title">Tonuri</string>
+  <string name="RingtonePreference_notification_sound_default">Sunet de notificare implicit</string>
+  <string name="RingtonePreference_alarm_sound_default">Sunet de alarmă implicit</string>
+  <string name="RingtonePreference_add_ringtone_text">Adaugă ton</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Nu s-a putut adăuga ton personalizat</string>
+  <string name="Permissions_permission_required">Este necesară permisiunea</string>
+  <string name="Permissions_continue">Continuă</string>
+  <string name="Permissions_not_now">Nu acum</string>
   <!--EOF-->
 </resources>

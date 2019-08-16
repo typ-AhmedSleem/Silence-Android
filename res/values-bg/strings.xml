@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
   <string name="delete">Изтрий</string>
@@ -70,8 +69,6 @@
   <string name="ConversationItem_group_action_left">%1$s напусна групата.</string>
   <string name="ConversationItem_click_for_details">Натисни за повече информация</string>
   <string name="ConversationItem_unable_to_open_media">Липсва приложение за отваряне на медията.</string>
-  <string name="ConversationItem_from_s">от %s</string>
-  <string name="ConversationItem_to_s">до %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP адрес. Обновете Silence, за да активирате тази функция.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започни сигурна сесия?</string>
@@ -200,15 +197,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Генериран е нов ключ за тази SIM карта.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Сподели с</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Добре дошли в Silince!</string>
-  <string name="IntroScreenActivity_silence_description">Silence предпазва личното Ви пространство докато комуникирате с приятелите си.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Криптирайте съобщенията си</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence ще криптира съобщения с други Silence потребители автоматично.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Говори с всекиго</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence може да използва некриптирани съобщения за разговори с потребители, които не използват Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure е вече Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure е вече Silence. Вашите съобщения са все още тук и нови функции са на хоризонта</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Изнасяне</string>
   <string name="ExportFragment_export_plaintext_to_storage">Изнесяне некриптирано на диска?</string>
@@ -218,7 +207,7 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">Изнася се нешифриран архив на диска...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Грешка, неуспешно запазване в диска.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Грешка при запазване на диска.</string>
-  <string name="ExportFragment_export_successful">Изнясянето е успешно.</string>
+  <string name="ExportFragment_export_successful">Изнасянето е успешно.</string>
   <string name="ExportFragment_export_encrypted_backup">Изнасяне като криптиран архив?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Това ще изнесе криптираните ключове, настройки и съобщения на диска.</string>
   <string name="ExportFragment_exporting_keys_settings_and_messages">Изнасят се криптирани ключове, настройки и съобщения...</string>
@@ -409,6 +398,7 @@
   <string name="blocked_contacts_fragment__no_blocked_contacts">Няма блокирани контакти</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Няма скорошни обаждания.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Разговорът премина в тих режим</string>
   <!--conversation_activity-->
@@ -416,7 +406,6 @@
   <string name="conversation_activity__type_message_sms_insecure">Изпрати некриптиран SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Изпрати сигурен MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Изпрати некриптиран MMS</string>
-  <string name="conversation_activity__from_sim_name">От %1$s</string>
   <string name="conversation_activity__send">Изпрати</string>
   <string name="conversation_activity__remove">Премахни</string>
   <string name="conversation_activity__window_description">Разговор с %1$s</string>
@@ -466,7 +455,7 @@
   <string name="export_fragment__export_plaintext_backup">Изнесяне на некриптиран архив</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">
 Изнасяне на некриптиран архив съвместим с \'SMSBackup &amp; Restore.\'</string>
-  <string name="import_fragment__import_system_sms_database">Внесяне на всички съществуващи SMS-и</string>
+  <string name="import_fragment__import_system_sms_database">Внасяне на всички съществуващи SMS-и</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Внасяне на базата данни от SMS програмата по подразбиране</string>
   <string name="import_fragment__restore_encrypted_backup">Възстановяване на криптиран архив</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Възстановяване на предварително изнесен криптиран архив</string>
@@ -508,10 +497,6 @@
   <string name="message_details_header__issues_need_your_attention">Няколко проблема изискват вашето внимание.</string>
   <string name="message_details_header__sent">Изпратен</string>
   <string name="message_details_header__received">Получен</string>
-  <string name="message_details_header__via">През</string>
-  <string name="message_details_header__to">До:</string>
-  <string name="message_details_header__from">От:</string>
-  <string name="message_details_header__with">С:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Създай парола</string>
   <string name="AndroidManifest__enter_passphrase">Въведете парола</string>
@@ -655,7 +640,6 @@
   <string name="preferences__show_sent_time">Покажи часът на изпращане</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Покажи часът на изпращане вместо часът на получаване за входящи съобщения</string>
   <string name="preferences__hide_unread_message_divider">Скриване на разделителя за непрочетени съобщения</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Скриване на разделителя за непрочетени съобщения в разговор</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Автоматично изтегляне</string>
   <string name="preferences__automatically_retrieve_mms_messages">Автоматично изтелгяй MMS съобщения</string>

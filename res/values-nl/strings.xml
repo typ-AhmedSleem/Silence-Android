@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
   <string name="delete">Verwijderen</string>
@@ -68,8 +67,6 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationItem_group_action_left">%1$s heeft de groep verlaten.</string>
   <string name="ConversationItem_click_for_details">Tik voor details</string>
   <string name="ConversationItem_unable_to_open_media">Geen app gevonden om dit bestand te openen.</string>
-  <string name="ConversationItem_from_s">van %s</string>
-  <string name="ConversationItem_to_s">naar %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-adres. Werk Silence bij om deze functionaliteit te gebruiken.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Beveiligde sessie initiëren?</string>
@@ -197,15 +194,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Er is een nieuwe sleutel gegenereerd voor deze simkaart.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Delen met</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Welkom bij Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence is een SMS/MMS programma dat uw privacy beschermd als u met uw vrienden communiceert</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Versleutel uw berichten</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence versleuteld automatisch berichten naar andere Silence gebruikers.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Spreek met iedereen</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kan onversleutelde berichten sturen naar niet-Silence gebruikers.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure is nu Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure is nu Silence. Je berichten zijn er nog steeds en nieuwe functies zijn in ontwikkelng.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exporteer</string>
   <string name="ExportFragment_export_plaintext_to_storage">Onversleutelde tekst exporteren naar opslag?</string>
@@ -398,6 +387,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="blocked_contacts_fragment__no_blocked_contacts">Geen geblokkeerde contacten</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Geen recente gesprekken.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Geluid uit</string>
   <!--conversation_activity-->
@@ -405,7 +395,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="conversation_activity__type_message_sms_insecure">Verstuur onbeveiligde sms</string>
   <string name="conversation_activity__type_message_mms_secure">Verstuur beveiligde mms</string>
   <string name="conversation_activity__type_message_mms_insecure">Verstuur onbeveiligde mms</string>
-  <string name="conversation_activity__from_sim_name">Van %1$s</string>
   <string name="conversation_activity__send">Verstuur</string>
   <string name="conversation_activity__remove">Verwijder</string>
   <string name="conversation_activity__window_description">Gesprek met %1$s</string>
@@ -496,10 +485,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="message_details_header__issues_need_your_attention">Enkele zaken vereisen uw aandacht.</string>
   <string name="message_details_header__sent">Verstuurd</string>
   <string name="message_details_header__received">Ontvangen</string>
-  <string name="message_details_header__via">Via</string>
-  <string name="message_details_header__to">Aan:</string>
-  <string name="message_details_header__from">Van:</string>
-  <string name="message_details_header__with">Met:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Wachtwoord creëren</string>
   <string name="AndroidManifest__enter_passphrase">Wachtwoord invoeren</string>
@@ -643,7 +628,6 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="preferences__show_sent_time">Toon verzendtijd</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Toon verzendtijd in plaats van ontvangsttijd voor inkomende berichten</string>
   <string name="preferences__hide_unread_message_divider">Scheidingslijn voor ongelezen berichten verbergen</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Verberg de scheidingslijn voor ongelezen berichten in gesprekken</string>
   <string name="preferences_chats__mms">Mms</string>
   <string name="preferences__auto_retrieve">Automatisch ophalen</string>
   <string name="preferences__automatically_retrieve_mms_messages">Mms-berichten automatisch ophalen</string>

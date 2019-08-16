@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Sí</string>
   <string name="no">No</string>
   <string name="delete">Borrar</string>
@@ -70,8 +69,6 @@
   <string name="ConversationItem_group_action_left">%1$s ha abandonado el grupo.</string>
   <string name="ConversationItem_click_for_details">Pulse para ver los detalles</string>
   <string name="ConversationItem_unable_to_open_media">No se pudo encontrar una aplicación capaz de abrir este audiovisual.</string>
-  <string name="ConversationItem_from_s">de %s</string>
-  <string name="ConversationItem_to_s">a %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Dirección XMPP. Actualice Silence para habilitar esta característica.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">¿Iniciar sesión segura?</string>
@@ -199,15 +196,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Se ha generado una nueva clave para esa tarjeta SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartir con</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">¡Bienvenido a Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence le permite proteger su privacidad cuando se comunica con amigos.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Cifre sus mensajes</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence cifrará automáticamente los mensajes intercambiados con otros usuarios de Silence.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Hable con cualquiera</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence puede usar mensajes no cifrados para chatear con usuarios sin Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure es ahora Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure es ahora Silence. Los mensajes todavía están aquí y hay nuevas características por venir.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportar</string>
   <string name="ExportFragment_export_plaintext_to_storage">¿Exportar texto sin cifrar al almacenamiento?</string>
@@ -413,6 +402,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="blocked_contacts_fragment__no_blocked_contacts">No hay contactos bloqueados</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">No hay llamadas recientes.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Conversación silenciada</string>
   <!--conversation_activity-->
@@ -420,7 +410,6 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="conversation_activity__type_message_sms_insecure">Enviar SMS no seguro</string>
   <string name="conversation_activity__type_message_mms_secure">Enviar MMS seguro</string>
   <string name="conversation_activity__type_message_mms_insecure">Enviar MMS no seguro</string>
-  <string name="conversation_activity__from_sim_name">De %1$s</string>
   <string name="conversation_activity__send">Enviar</string>
   <string name="conversation_activity__remove">Eliminar</string>
   <string name="conversation_activity__window_description">Conversación con %1$s</string>
@@ -511,10 +500,6 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="message_details_header__issues_need_your_attention">Algunos asuntos necesitan su atención</string>
   <string name="message_details_header__sent">Enviado</string>
   <string name="message_details_header__received">Recibido</string>
-  <string name="message_details_header__via">Vía</string>
-  <string name="message_details_header__to">Para:</string>
-  <string name="message_details_header__from">Desde:</string>
-  <string name="message_details_header__with">Con:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Crear clave de acceso</string>
   <string name="AndroidManifest__enter_passphrase">Introduzca clave de acceso</string>
@@ -658,7 +643,6 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="preferences__show_sent_time">Mostrar hora de envío</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar hora de envío en lugar de hora de recepción para mensajes entrantes.</string>
   <string name="preferences__hide_unread_message_divider">Ocultar divisor de mensaje no leído</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Oculta el divisor de mensaje no leído en la conversación</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Auto-descarga</string>
   <string name="preferences__automatically_retrieve_mms_messages">Descargar automáticamente mensajes MMS</string>

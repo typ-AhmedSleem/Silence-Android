@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Da</string>
   <string name="no">Ne</string>
   <string name="delete">Izbriši</string>
@@ -53,6 +52,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Ne najdem ustrezne aplikacije za to opravilo.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Dostop do shrambe je bil trajno onemogočen. Aplikacija Silence potrebuje dovoljenje za dostop do sistemske shrambe za pripenjanje fotografij, videov in zvoka. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Shramba\".</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Kamera</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Slika</string>
@@ -74,8 +74,6 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationItem_group_action_left">Oseba %1$s je zapustila skupino.</string>
   <string name="ConversationItem_click_for_details">Tapnite za več informacij</string>
   <string name="ConversationItem_unable_to_open_media">Ne najdem aplikacije za odpiranje te vrste datotek.</string>
-  <string name="ConversationItem_from_s">od %s</string>
-  <string name="ConversationItem_to_s">za %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Naslov XMPP. Za aktivacijo te funkcije posodobite aplikacijo Silence.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Začnem varno sejo?</string>
@@ -118,6 +116,7 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ConversationActivity_mms_not_supported_message">To sporočilo ne more biti poslano, ker vaš operater ne podpira sporočil MMS.</string>
   <string name="ConversationActivity_specify_recipient">Prosimo, izberite stik</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Priponka presega omejitev velikosti</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Dovoljenje za dostop do sporočil SMS je bilo trajno odvzeto. Aplikacija Silence potrebuje dovoljenje za dostop do sporočil SMS za pošiljanje sporočil SMS. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"SMS\".</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d neprebrano sporočilo</item>
@@ -229,15 +228,10 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Za to kartico SIM je bil generiran nov ključ.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Deli z</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Dobrodošli v aplikacijo Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Aplikacija Silence vam pomaga ohranjati zasebnost pri komunikaciji s prijatelji.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Zaščitite svoja sporočila s šifriranjem</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Aplikacija Silence bo avtomatično šifrirala vse pogovore z drugimi uporabniki aplikacije Silence.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Govorite z vsemi</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Sporočila namenjena ljudem, ki nimajo nameščene aplikacije Silence ne bodo šifrirana.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">Aplikacija SMSSecure se od zdaj imenuje Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure je od zdaj Slience. Vaša sporočila so še vedno tu, obetajo se tudi nove funkcije.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Izboljšajte svojo zasebnost!</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Uporabljajte šifrirana sporočila z uporabniki aplikacije Silence in navadna sporočila SMS/MMS z drugimi.</string>
+  <string name="WelcomeActivity_continue">Nadaljuj</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Izvozi</string>
   <string name="ExportFragment_export_plaintext_to_storage">Izvozim v nešifrirani obliki?</string>
@@ -279,6 +273,12 @@ Pozor, s tem boste onemogočili šifriranje sporočil in ključev v pomnilniku n
   <string name="ImportFragment_import_complete">Uvoz dokončan!</string>
   <string name="ImportFragment_restoring_encrypted_backup">Obnavljam iz šifrirane varnostne kopije...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ne najdem nobene šifrirane varnostne kopije!</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Dovoljenje za dostop do sporočil SMS je bilo trajno odvzeto. Aplikacija Signal potrebuje dovoljenje za dostop do sporočil SMS za uvoz sporočil iz sistemske shrambe. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"SMS\".</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Za uvoz SMS sporočil potrebuje aplikacija Silence dovoljenje za dostop do SMS sporočil.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Dostop do shrambe je bil trajno onemogočen. Aplikacija Silence potrebuje dovoljenje za dostop do sistemske shrambe za branje iz zunanjega pomnilnika naprave. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Shramba\".</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Za branje iz zunanjega pomnilnika potrebuje aplikacija Silence dovoljenje za dostop do pomnilnika.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Dostop do shrambe je bil trajno onemogočen. Aplikacija Silence potrebuje dovoljenje za dostop do sistemske shrambe za zapisovanje na zunanji pomnilnik naprave. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Shramba\".</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Za zapisovanje na zunanji pomnilnik potrebuje aplikacija Silence dovoljenje za dostop do pomnilnika.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Noben skeniran ključ ni bil najden!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Želite namestiti Barcode Scanner?</string>
@@ -427,10 +427,14 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="SingleContactSelectionActivity_contact_photo">Fotografija stika</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Izberi za</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Dostop do stikov je bil trajno onemogočen. Aplikacija Silence potrebuje dovoljenje za dostop do stikov, da lahko prikazuje imena stikov iz vašega imenika. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Stiki\".</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Ni blokiranih stikov</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ni zadnjih klicev.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Za prikaz imen potrebuje aplikacija Silence dostop do vaših stikov.</string>
+  <string name="contact_selection_list_fragment__show_contacts">Prikaži stike</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Pogovor je bil utišan</string>
   <!--conversation_activity-->
@@ -438,7 +442,6 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="conversation_activity__type_message_sms_insecure">Pošlji nezavarovan SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Pošlji zavarovan MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Pošlji nezavarovan MMS</string>
-  <string name="conversation_activity__from_sim_name">Od %1$s</string>
   <string name="conversation_activity__send">Pošlji</string>
   <string name="conversation_activity__remove">Odstrani</string>
   <string name="conversation_activity__window_description">Pogovor: %1$s</string>
@@ -529,10 +532,6 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="message_details_header__issues_need_your_attention">Prišlo je do težav, ki zahtevajo vašo pozornost.</string>
   <string name="message_details_header__sent">Poslano:</string>
   <string name="message_details_header__received">Prejeto:</string>
-  <string name="message_details_header__via">Način:</string>
-  <string name="message_details_header__to">Za:</string>
-  <string name="message_details_header__from">Pošiljatelj:</string>
-  <string name="message_details_header__with">Z:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Ustvari geslo</string>
   <string name="AndroidManifest__enter_passphrase">Vnesite geslo</string>
@@ -678,7 +677,6 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="preferences__show_sent_time">Prikaz časa pošiljanja</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pri dohodnih sporočilih bo namesto časa prejema prikazan čas pošiljanja.</string>
   <string name="preferences__hide_unread_message_divider">Skrij ločnik z neprebranimi sporočili</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Skrije ločnik z neprebranimi sporočili v pogovoru</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Pridobi samodejno</string>
   <string name="preferences__automatically_retrieve_mms_messages">Samodejno pridobi sporočila MMS</string>
@@ -761,6 +759,7 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="key_scanning__menu_compare">Primerjaj</string>
   <string name="key_scanning__menu_display_your_qr_code">Prikaži mojo kodo QR</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Skeniraj kodo QR stika</string>
+  <string name="share_identity_fingerprint">Delite svoj indentifikacijski prstni odtis</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Novo sporočilo</string>
   <string name="text_secure_normal__menu_new_group">Nova skupina</string>
@@ -787,6 +786,8 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="MediaPreviewActivity_cant_display">Predogled te slike ni mogoč</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nepodprt medij</string>
   <string name="MediaPreviewActivity_draft">Osnutek</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Dostop do shrambe je bil trajno onemogočen. Aplikacija Silence potrebuje dovoljenje za dostop do sistemske shrambe za shranjevanje na zunanji pomnilnik naprave. Prosimo, pojdite v meni Nastavitve aplikacij, izberite \"Dovoljenja\" in omogočite dovoljenje pod postavko \"Shramba\".</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Brez dovoljenja ne morem shranjevati na zunanji pomnilnik</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Shrani</string>
   <string name="media_preview__forward_title">Posreduj</string>
@@ -801,5 +802,15 @@ Prejeto sporočilo za izmenjavo ključev za napačno različico protokola.</stri
   <string name="trimmer__old_messages_successfully_deleted">Stara sporočila so bila uspešno izbrisana</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ikona transporta</string>
+  <string name="RingtonePreference_ringtone_default">Prednastavljeno zvonenje</string>
+  <string name="RingtonePreference_ringtone_silent">Brez</string>
+  <string name="RingtonePreference_ringtone_picker_title">Zvoki zvonenja</string>
+  <string name="RingtonePreference_notification_sound_default">Prednastavljen zvok obvestila</string>
+  <string name="RingtonePreference_alarm_sound_default">Prednastavljen zvok alarma</string>
+  <string name="RingtonePreference_add_ringtone_text">Dodaj zvonjenje</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Ne morem dodati izbirnega zvonenja</string>
+  <string name="Permissions_permission_required">Zahtevano dovoljenje</string>
+  <string name="Permissions_continue">Nadaljuj</string>
+  <string name="Permissions_not_now">Ne zdaj</string>
   <!--EOF-->
 </resources>

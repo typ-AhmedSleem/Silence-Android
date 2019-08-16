@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">是</string>
   <string name="no">否</string>
   <string name="delete">删除</string>
@@ -64,8 +63,6 @@
   <string name="ConversationItem_group_action_left">%1$s 已经离开了该群组。</string>
   <string name="ConversationItem_click_for_details">点击查看详情</string>
   <string name="ConversationItem_unable_to_open_media">无法找到能打开该媒体的应用</string>
-  <string name="ConversationItem_from_s">发自 %s</string>
-  <string name="ConversationItem_to_s">到 %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP 地址。更新 Silence 以启用该特性。</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">发起安全会话？</string>
@@ -79,6 +76,7 @@
   <string name="ConversationActivity_select_contact_info">选择联系人信息</string>
   <string name="ConversationActivity_compose_message">编写信息</string>
   <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">抱歉，添加附件时出现了错误</string>
+  <string name="ConversationActivity_the_gif_you_selected_was_too_big">你选择的 GIF 太大了！</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">抱歉，选择的视频超过了消息大小限制 (%1$skB)</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">抱歉，选择的音频超过了信息大小限制（%1$skB）</string>
   <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人不是有效的短信或电子邮件地址</string>
@@ -159,6 +157,7 @@
   <string name="ConversationListFragment_sending">发送中……</string>
   <string name="ConversationListFragment_sending_selected_drafts">正在发送选中的草稿……</string>
   <!--ConversationListItemAction-->
+  <string name="ConversationListItemAction_archived_conversations_d">已归档的会话 (%d)</string>
   <!--CustomDefaultPreference-->
   <string name="CustomDefaultPreference_using_custom">使用定制：%s</string>
   <string name="CustomDefaultPreference_using_default">使用默认：%s</string>
@@ -174,15 +173,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">已为那张 SIM 卡生成一个新密钥</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共享给</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">欢迎来到 Silence！</string>
-  <string name="IntroScreenActivity_silence_description">Silence 使您能够在与朋友通信时保护自己的隐私</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">加密您的信息</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence 将会自动加密与其他 Silence 用户间的信息</string>
-  <string name="IntroScreenActivity_talk_to_everyone">与任何人交谈</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence 能够用未加密信息与非 Silence 用户通信</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure 现已迁至 Silence</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure 现名为 Silence。您的信息仍然在这儿，而新的特性即将到来。</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">导出</string>
   <string name="ExportFragment_export_plaintext_to_storage">导出明文到 SD 卡？</string>
@@ -233,6 +224,7 @@
   <string name="MessageDetailsRecipient_new_identity">新身份</string>
   <!--MmsDownloader-->
   <string name="MmsDownloader_error_storing_mms">存储彩信错误！</string>
+  <string name="MmsDownloader_error_connecting_to_mms_provider">连接彩信提供商错误</string>
   <!--NotificationMmsMessageRecord-->
   <string name="NotificationMmsMessageRecord_multimedia_message">多媒体信息</string>
   <!--MessageRecord-->
@@ -274,6 +266,7 @@
   <string name="SmsMessageRecord_secure_session_ended">安全会话已结束。</string>
   <string name="SmsMessageRecord_duplicate_message">重复的信息。</string>
   <!--ThreadRecord-->
+  <string name="ThreadRecord_left_the_group">离开此群组</string>
   <string name="ThreadRecord_draft">草稿：</string>
   <string name="ThreadRecord_media_message">多媒体信息</string>
   <!--TransportOptions-->
@@ -361,6 +354,7 @@
   <string name="blocked_contacts_fragment__no_blocked_contacts">没有被屏蔽的联系人</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">没有最近呼叫。</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">会话静音</string>
   <!--conversation_activity-->
@@ -450,10 +444,6 @@
   <string name="message_details_header__issues_need_your_attention">一些问题需要您的注意</string>
   <string name="message_details_header__sent">发送</string>
   <string name="message_details_header__received">接收</string>
-  <string name="message_details_header__via">来自</string>
-  <string name="message_details_header__to">到：</string>
-  <string name="message_details_header__from">来自：</string>
-  <string name="message_details_header__with">与：</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">创建口令</string>
   <string name="AndroidManifest__enter_passphrase">输入密钥</string>

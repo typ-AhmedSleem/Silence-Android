@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Hongu</string>
   <string name="no">Kwete</string>
   <string name="delete">Dzima</string>
@@ -68,8 +67,6 @@ kuzviverenga. </string>
   <string name="ConversationItem_group_action_left">%1$s abuda muboka.</string>
   <string name="ConversationItem_click_for_details">Bayai pano kuti muwone zvizere</string>
   <string name="ConversationItem_unable_to_open_media">Kushaikwa kwe apu inokwanisa kuvhura midhiya iyi.</string>
-  <string name="ConversationItem_from_s">kubva %s</string>
-  <string name="ConversationItem_to_s">kuna %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Kero yeXMPP. Natsa Silence kuti ubvumidze cherechedzo iyi.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Totanga chikamu chakakwedekera here?</string>
@@ -168,15 +165,7 @@ kuzviverenga. </string>
   <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Gova na</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Tigashire paSilence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence inokubvumira kuti udzivirire zvinhu zvako zvinepuraivheti kana uchibatana neshamwari.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Kwedekera tsamba dzako</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence ichakwedekera tsamba dzako pakati pevamwe vashandisi veSilence zviri automatic.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Taura nemunhu wose</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence inokwanisa kushandisa tsamba dzisina kukwedekerwa kuti utaure nevashandisi vasina Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure ndiyo yava Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure ndiyo yava Silence. Tsamba dzako dzichiri pano uye zviricherechedzo zvitsva zvirikuwuya.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exupota</string>
   <string name="ExportFragment_export_plaintext_to_storage">Exupota bomhoremavara kuenda kupfimbi?</string>
@@ -318,6 +307,7 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Hapana kuchaya runhare kwaitika iyezvino.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Hutaurwa hwambomiswa</string>
   <!--conversation_activity-->
@@ -393,10 +383,6 @@ Tagamuchira svumbunuro yekutsinha tsamba yevhezheni isingachashande.</string>
   <string name="message_details_header__issues_need_your_attention">Pane nhaurwa dzinoda teerero yako.</string>
   <string name="message_details_header__sent">Kutumirwa</string>
   <string name="message_details_header__received">Kugamuchira</string>
-  <string name="message_details_header__via">Kupfurikidza ne</string>
-  <string name="message_details_header__to">Kuna:</string>
-  <string name="message_details_header__from">Kubva:</string>
-  <string name="message_details_header__with">Ne:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Gadzira izwi rekudarika</string>
   <string name="AndroidManifest__enter_passphrase">Pinza izwi rekudarika</string>

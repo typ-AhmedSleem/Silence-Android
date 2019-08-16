@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
   <string name="delete">Slet</string>
@@ -73,7 +72,7 @@ men alle med fysisk adgang til din enhed kan få adgang til dem.
   <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Del med</string>
-  <!--IntroScreenActivity-->
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Eksportér</string>
   <string name="ExportFragment_cancel">Afbryd</string>
@@ -187,6 +186,7 @@ Modtog en nøgle-besked for en ugyldig protokol-version.</string>
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ingen nye samtaler.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Send krypteret SMS</string>

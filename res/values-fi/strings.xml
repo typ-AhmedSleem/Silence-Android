@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Kyllä</string>
   <string name="no">Ei</string>
   <string name="delete">Poista</string>
@@ -68,8 +67,6 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="ConversationItem_group_action_left">%1$s on lähtenyt ryhmästä.</string>
   <string name="ConversationItem_click_for_details">Lisätietoja näpäyttämällä</string>
   <string name="ConversationItem_unable_to_open_media">Tiedoston avaamiseen soveltuvaa sovellusta ei löytynyt.</string>
-  <string name="ConversationItem_from_s">%s:lta</string>
-  <string name="ConversationItem_to_s">%s:lle</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-osoite. Päivitä Silence saadaksesi tämän ominaisuuden.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Aloita suojattu istunto?</string>
@@ -195,15 +192,7 @@ Varoitus. Viestiesi ja avaimiesi tallennustilan salaus poistetaan käytöstä. S
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Uusi salausavain on luotu tälle SIM-kortille.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Jaa</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Silence toivottaa sinut tervetulleeksi!</string>
-  <string name="IntroScreenActivity_silence_description">Silence mahdollistaa yksityisyyden suojaamiseen salaamalla keskustelut ystäviesi kanssa.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Salaa viestisi</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence automaattisesti salaa viestisi muille Silencen käyttäjille</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Viesti kaikille</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence käyttää salaamattomia viestejä, jos vastaanottaja ei käytä Silenceä</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure on nyt Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure on nyt Silence. Viestisi ovat yhtä täällä ja uusia ominaisuuksia on tulossa.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Vie</string>
   <string name="ExportFragment_export_plaintext_to_storage">Vie selkokielisenä muistiin?</string>
@@ -329,6 +318,7 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ei uusia soittoja.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">Lähetä salattu tekstiviesti</string>
@@ -395,10 +385,6 @@ Vastaanotettu avainvaihtolähetys kuuluu väärälle protokollan versiolle.</str
   <string name="message_details_header__issues_need_your_attention">Jotkin asiat kaipaavat huomiotasi.</string>
   <string name="message_details_header__sent">Lähetetyt</string>
   <string name="message_details_header__received">Vastaanotetut</string>
-  <string name="message_details_header__via">Kautta</string>
-  <string name="message_details_header__to">Vast.ott:</string>
-  <string name="message_details_header__from">Lähettäjä:</string>
-  <string name="message_details_header__with">Avulla:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Luo salasana</string>
   <string name="AndroidManifest__enter_passphrase">Syötä salasana</string>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Tak</string>
   <string name="no">Nie</string>
   <string name="delete">Usuń</string>
@@ -53,6 +52,8 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="DraftDatabase_Draft_video_snippet">(film)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Nie można znaleźć aplikacji do obsługi mediów.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence wymaga uprawnienia odczytu pamięci, aby móc dołączać zdjęcia, wideo bądź audio do wiadomości lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence wymaga uprawnienia odczytu kontaktów, aby móc dołączać informacje o kontakcie do wiadomości, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „kontakty”.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Aparat</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Zdjęcie</string>
@@ -74,8 +75,6 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationItem_group_action_left">%1$s opuścił grupę.</string>
   <string name="ConversationItem_click_for_details">Dotknij, aby zobaczyć szczegóły</string>
   <string name="ConversationItem_unable_to_open_media">Nie można odnaleźć aplikacji do otwarcia tego pliku multimedialnego.</string>
-  <string name="ConversationItem_from_s">od %s</string>
-  <string name="ConversationItem_to_s">do %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Adres XMPP. Zaktualizuj Silence aby uaktywnić tę funkcję.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
@@ -118,6 +117,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationActivity_mms_not_supported_message">Nie można przesłać tej wiadomości, ponieważ Twój operator nie obsługuje MMS-ów.</string>
   <string name="ConversationActivity_specify_recipient">Proszę wybrać kontakt</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Zbyt duży rozmiar załącznika.</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence wymaga uprawnienia SMS, aby móc wysyłać wiadomości SMS, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „SMS”.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d nieprzeczytana wiadomość</item>
@@ -237,15 +237,16 @@ Kontynuować?</item>
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Utworzono nowy klucz dla tej karty SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Podziel się z</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Witamy w Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence pozwala Ci chronić Twoją prywatność podczas rozmów z przyjaciółmi.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Zaszyfruj swoje wiadomości</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence zaszyfruje wiadomości z innymi użytkownikami Silence automatycznie.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Rozmawiaj z każdym</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence pozwala wysyłać nieszyfrowane wiadomości do rozmów z ludźmi, którzy nie posiadają Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure to teraz Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure to teraz Silence. Twoje wiadomości dalej tu są i spodziewaj się wkrótce nowych funkcji.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Zwiększ swoją prywatność, rozmawiaj ze wszystkimi</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Wymieniaj się szyfrowanymi wiadomościami z użytkownikami Silence i zwykłymi wiadomościami SMS/MMS z innymi.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence wymaga dostępu do kontaktów, stanu telefonu i wiadomości SMS, aby łączyć się ze znajomymi, zarządzać kluczami szyfrującymi i wymieniać wiadomości.</string>
+  <string name="WelcomeActivity_continue">Kontynuuj</string>
+  <string name="WelcomeActivity_action_required">Wymagana akcja!</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Musisz udzielić kilku uprawnień aplikacji Silence.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Musisz udzielić kilku uprawnień aplikacji Silence, aby móc z niej korzystać. Stuknij, aby kontynuować.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence wymaga uprawnienia „telefon”, aby móc zarządzać kluczami szyfrującymi i przypisywać je do Twoich kart SIM i uprawnienia „SMS”, aby móc odbierać wiadomości SMS.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence wymaga uprawnień „telefon” i „SMS”, aby działać, ale zostały one permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, an następnie zezwól na „telefon” i „SMS”.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Eksport</string>
   <string name="ExportFragment_export_plaintext_to_storage">Wyeksportować nieszyfrowaną kopię na dysk?</string>
@@ -287,6 +288,12 @@ Kontynuować?</item>
   <string name="ImportFragment_import_complete">Importowanie zakończone!</string>
   <string name="ImportFragment_restoring_encrypted_backup">Przywracanie szyfrowanej kopii zapasowej…</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nie odnaleziono szyfrowanej kopii zapasowej!</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence wymaga uprawnienia SMS, aby móc zaimportować wiadomości SMS, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „SMS”.</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence wymaga uprawnienia „SMS”, aby zaimportować wiadomości</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence wymaga uprawnienia odczytu pamięci, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc czytać z pamięci zewnętrznej</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence wymaga uprawnienia zapisu pamięci, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc zapisywać do pamięci zewnętrznej</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nie znaleziono żadnego zeskanowanego klucza!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Zainstalować Barcode Scanner?</string>
@@ -435,10 +442,14 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="SingleContactSelectionActivity_contact_photo">Obrazek kontaktu</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Wybierz dla</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence wymaga uprawnienia odczytu kontaktów, aby móc wyświetlać listę Twoich kontaktów, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „kontakty”.</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Brak zablokowanych kontaktów</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Brak ostatnich połączeń.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence wymaga dostępu do kontaktów, aby móc je wyświetlać</string>
+  <string name="contact_selection_list_fragment__show_contacts">Wyświetl kontakty</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Rozmowa wyciszona</string>
   <!--conversation_activity-->
@@ -446,7 +457,6 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="conversation_activity__type_message_sms_insecure">Wyślij nieszyfrowany SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Wyślij szyfrowany MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Wyślij nieszyfrowany MMS</string>
-  <string name="conversation_activity__from_sim_name">Od %1$s</string>
   <string name="conversation_activity__send">Wyślij</string>
   <string name="conversation_activity__remove">Usuń</string>
   <string name="conversation_activity__window_description">Rozmowa z %1$s</string>
@@ -526,7 +536,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="recipient_preferences__color">Kolor</string>
   <string name="recipient_preferences__color_for_this_contact">Kolor dla tego kontaktu</string>
   <!--receive_key_dialog-->
-  <string name="receive_key_activity__complete">Zakończono</string>
+  <string name="receive_key_activity__complete">Kontynuuj</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to">Wprowadź nazwę lub numer kontaktu</string>
   <string name="recipients_panel__add_member">Dodaj uczestnika</string>
@@ -537,10 +547,6 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="message_details_header__issues_need_your_attention">Niektóre kwestie wymagają Twojej uwagi.</string>
   <string name="message_details_header__sent">Wysłano</string>
   <string name="message_details_header__received">Otrzymano</string>
-  <string name="message_details_header__via">Przez</string>
-  <string name="message_details_header__to">Do:</string>
-  <string name="message_details_header__from">Od:</string>
-  <string name="message_details_header__with">Z:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Utwórz hasło</string>
   <string name="AndroidManifest__enter_passphrase">Podaj hasło</string>
@@ -686,7 +692,6 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences__show_sent_time">Pokaż datę wysłania</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Pokaż czas wysłania zamiast czasu otrzymania dla Odebranych wiadomości</string>
   <string name="preferences__hide_unread_message_divider">Ukryj rozdzielacz nieprzeczytanych wiadomości</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Ukryj rozdzielacz nieprzeczytanych wiadomości w oknie rozmowy</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Auto-pobieranie</string>
   <string name="preferences__automatically_retrieve_mms_messages">Automatycznie pobieraj wiadomości MMS</string>
@@ -769,6 +774,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="key_scanning__menu_compare">Porównaj</string>
   <string name="key_scanning__menu_display_your_qr_code">Wyświetl Twój kod QR</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Skanuj kod QR kontaktu</string>
+  <string name="share_identity_fingerprint">Udostępnij odcisk klucza</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nowa wiadomość</string>
   <string name="text_secure_normal__menu_new_group">Nowa grupa</string>
@@ -795,6 +801,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="MediaPreviewActivity_cant_display">Podgląd tego obrazu nie udał się</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nieobsługiwany typ media</string>
   <string name="MediaPreviewActivity_draft">Szkic</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence wymaga uprawnienia zapisu pamięci, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Nie można zapisywać do pamięci zewnętrznej bez uprawnienia systemu Android</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Zapisz</string>
   <string name="media_preview__forward_title">Przekaż</string>
@@ -809,5 +817,15 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="trimmer__old_messages_successfully_deleted">Stare wiadomości zostały pomyślnie usunięte</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Ikona transportu</string>
+  <string name="RingtonePreference_ringtone_default">Domyślny dzwonek</string>
+  <string name="RingtonePreference_ringtone_silent">Brak</string>
+  <string name="RingtonePreference_ringtone_picker_title">Dzwonki</string>
+  <string name="RingtonePreference_notification_sound_default">Domyślny dźwięk powiadomienia</string>
+  <string name="RingtonePreference_alarm_sound_default">Domyślny dźwięk alarmu</string>
+  <string name="RingtonePreference_add_ringtone_text">Dodaj dzwonek</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Nie można dodać własnego dzwonka</string>
+  <string name="Permissions_permission_required">Wymagane uprawnienie</string>
+  <string name="Permissions_continue">Kontynuuj</string>
+  <string name="Permissions_not_now">Nie teraz</string>
   <!--EOF-->
 </resources>

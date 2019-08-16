@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Igen</string>
   <string name="no">Nem</string>
   <string name="delete">Törlés</string>
+  <string name="please_wait">Kérlek várj...</string>
   <!--AbstractNotificationBuilder-->
+  <string name="AbstractNotificationBuilder_new_message">Új üzenet</string>
   <!--ApplicationPreferencesActivity-->
   <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Még nem állítottál be a jelszót!</string>
   <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
@@ -68,8 +69,7 @@ hozzájuk férhet!
   <string name="ConversationItem_group_action_left">%1$s elhagyta a csoportot.</string>
   <string name="ConversationItem_click_for_details">A részletekhez koppints ide</string>
   <string name="ConversationItem_unable_to_open_media">Nem található alkalmazás ez a média megnyitásához.</string>
-  <string name="ConversationItem_from_s">tőle: %s</string>
-  <string name="ConversationItem_to_s">neki: %s</string>
+  <string name="ConversationItem_xmpp_address_update_silence">XMPP cím. Frissítsd a Silence -t a funkció engedélyezéséhez.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Biztonságos üzenetváltás indítása?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">Indítasz biztonságos üzenetváltást vele: %s?</string>
@@ -81,6 +81,7 @@ hozzájuk férhet!
   <string name="ConversationActivity_add_attachment">Melléklet hozzáadása</string>
   <string name="ConversationActivity_select_contact_info">Válassz névjegy adatot!</string>
   <string name="ConversationActivity_compose_message">Üzenetírás</string>
+  <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Sajnáljuk, nem sikerült hozzáadni a mellékleted.</string>
   <string name="ConversationActivity_the_gif_you_selected_was_too_big">Az általad választott gif túl nagy volt!</string>
   <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Sajnos a kiválasztott mozgókép mérete meghaladja a maximális üzenetméret határt (%1$skB).</string>
   <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Sajnos a kiválasztott hangállomány mérete meghaladja a maximális üzenetméret határt (%1$skB).</string>
@@ -108,6 +109,10 @@ hozzájuk férhet!
   <string name="ConversationActivity_specify_recipient">Válassz egy névjegyet!</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">A melléklet meghaladja a mérethatárt.</string>
   <!--ConversationAdapter-->
+  <plurals name="ConversationAdapter_n_unread_messages">
+    <item quantity="one">%d olvasatlan üzenet</item>
+    <item quantity="other">%d olvasatlan üzenet</item>
+  </plurals>
   <!--ConversationFragment-->
   <string name="ConversationFragment_message_details">Üzenet részletei</string>
   <plurals name="ConversationFragment_delete_selected_messages">
@@ -127,14 +132,25 @@ hozzájuk férhet!
     <item quantity="one">Hiba történt a melléklet tárolóra mentése közben!</item>
     <item quantity="other">Hiba történt a mellékletek tárolóra mentése közben!</item>
   </plurals>
+  <plurals name="ConversationFragment_files_saved_successfully">
+    <item quantity="one">Fájl sikeresen mentve.</item>
+    <item quantity="other">Fájlok sikeresen mentve.</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nem lehet a tárolóra írni!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Melléklet mentése</item>
     <item quantity="other"> %1$d melléklet mentése</item>
   </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Melléklet mentése tárolóra...</item>
+    <item quantity="other">%1$dmelléklet mentése tárolóra...</item>
+  </plurals>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
+  <string name="ConversationFragment_deleting">Törlés...</string>
+  <string name="ConversationFragment_deleting_messages">Üzenetek törlése...</string>
   <!--ConversationListActivity-->
+  <string name="ConversationListActivity_search">Keresés</string>
   <!--ConversationListFragment-->
   <plurals name="ConversationListFragment_delete_selected_conversations">
     <item quantity="one">Kiválasztott beszélgetés törlése?</item>
@@ -145,6 +161,7 @@ hozzájuk férhet!
     <item quantity="other">Ez végelegesen törölni fogja mind a(z) %1$d kiválasztott beszélgetést.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Törlés</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Kiválasztott beszélgetések törlése...</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Beszélgetés archiválva</item>
     <item quantity="other">%d beszélgetés archiválva</item>
@@ -154,6 +171,7 @@ hozzájuk férhet!
     <item quantity="one">Beszélgetés áthelyezve a beérkezőbe</item>
     <item quantity="other">%d beszélgetés áthelyezve a beérkezőbe</item>
   </plurals>
+  <string name="ConversationListFragment_send_drafts">Piszkozatok küldése</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivált beszélgetések (%d)</string>
   <!--CustomDefaultPreference-->
@@ -163,23 +181,28 @@ hozzájuk férhet!
   <!--DateUtils-->
   <string name="DateUtils_now">Most</string>
   <string name="DateUtils_minutes_ago">%d perc</string>
+  <string name="DateUtils_today">Ma</string>
+  <string name="DateUtils_yesterday">Tegnap</string>
   <!--DualSimUtil-->
+  <string name="DualSimUtil__new_sim_card_detected">Új SIM kártya érzékelve</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated">Egy új kulcs lett generálva.</string>
+  <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Egy új kulcs lett generálva ahhoz a SIM kártyához.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Megosztás...</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Üdvözöl a Silence!</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Üzeneteid titkosítása</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Beszélni mindenkinek</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportálás</string>
   <string name="ExportFragment_export_plaintext_to_storage">Nyílt szöveg exportálása tárolóra?</string>
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Figyelem, ez exportálni fogja a Silence üzeneteid tartalmait a tárolóra nyílt szövegben.</string>
-  <string name="ExportFragment_cancel">Mégsem</string>
+  <string name="ExportFragment_cancel">Mégse</string>
   <string name="ExportFragment_exporting">Exportálás</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Nyílt szöveg exportálása tárolóra...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Hiba, nem lehet írni a tárolóra.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Hiba a tárolóra írás közben.</string>
-  <string name="ExportFragment_export_encrypted_backup">Névjegy QR kódjának szkennelése</string>
+  <string name="ExportFragment_export_successful">Exportálás sikeres.</string>
+  <string name="ExportFragment_export_encrypted_backup">Exportálsz titkosított biztonsági mentést?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Ez exportálni fogja a titkosított kulcsaidat, beállításaidat és üzeneteidet a tárolóra.</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Titkosított kulcsok, beállítások és üzenetek exportálása...</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Új csoport</string>
   <string name="GroupCreateActivity_actionbar_update_title">Csoport frissítése</string>
@@ -202,13 +225,16 @@ hozzájuk férhet!
 az üzeneteket egy titkosítatlan biztonsági mentésből. Ha már korábban importáltad ezt a biztonsági mentést,
 akkor az újbóli importálás duplikált üzeneteket eredményez.</string>
   <string name="ImportFragment_importing">Importálás</string>
-  <string name="ImportFragment_no_plaintext_backup_found">Nem található kódolatlan biztonsági mentés!</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Nyílt szöveg biztonsági mentés importálása...</string>
+  <string name="ImportFragment_no_plaintext_backup_found">Nem található nyílt szöveg biztonsági mentés!</string>
   <string name="ImportFragment_error_importing_backup">Hiba a biztonsági mentés importálásakor!</string>
   <string name="ImportFragment_import_complete">Importálás befejezve!</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Titkosított biztonsági mentés visszaállítása...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nem található titkosított biztonsági mentés!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nem talált szkennelt kulcsot!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Telepítsük a Barcode Scanner -vonalkód olvasó- alkalmazást?</string>
+  <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">A Silence -nek szüksége van a Barcode Scanner -re QR kódokhoz.</string>
   <!--MessageDetailsRecipient-->
   <string name="MessageDetailsRecipient_failed_to_send">Sikertelen kézbesítés</string>
   <string name="MessageDetailsRecipient_new_identity">Új azonosító</string>
@@ -265,6 +291,8 @@ ezt a névjegyet.
   <string name="ThreadRecord_draft">Piszkozat:</string>
   <string name="ThreadRecord_media_message">Média üzenet</string>
   <!--TransportOptions-->
+  <string name="TransportOptions_sms_disabled">SMS üzenetek letiltva</string>
+  <string name="TransportOptions_no_sim_card_found">Nem található SIM kártya</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nincsen azonosító kulcsod.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">A címzettnek nincs azonosító kulcsa.</string>
@@ -288,7 +316,9 @@ ezt a névjegyet.
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Hiba az üzenet dekódolása közben.</string>
   <!--MmsDatabase-->
+  <string name="MmsDatabase_downloading_mms">MMS letöltése...</string>
   <string name="MmsDatabase_mms_download_failed">MMS letöltés sikertelen!</string>
+  <string name="MmsDatabase_downloading">Letöltés...</string>
   <string name="MmsDatabase_mms_pending_download">Koppints és add meg az MMS beállításokat a letöltés folyatásához.</string>
   <string name="MmsDatabase_error_decrypting_message">Hiba az üzenet dekódolása közben.</string>
   <!--MmsMessageRecord-->
@@ -299,10 +329,12 @@ ezt a névjegyet.
   <string name="ApplicationMigrationService_importing_text_messages">SMS üzenetek importálása</string>
   <string name="ApplicationMigrationService_import_complete">Importálás befejezve</string>
   <!--KeyCachingService-->
+  <string name="KeyCachingService_passphrase_cached">Silence feloldva</string>
   <string name="KeyCachingService_lock">Lezárás jelszóval</string>
   <!--MessageNotifier-->
   <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d új üzenet %2$d beszélgetésben</string>
   <string name="MessageNotifier_most_recent_from_s">Legfelkapottabb tőle: %1$s</string>
+  <string name="MessageNotifier_encrypted_message">Titkosított üzenet</string>
   <string name="MessageNotifier_media_message_with_text">Média üzenet: %s</string>
   <string name="MessageNotifier_no_subject">(Nincs tárgy)</string>
   <string name="MessageNotifier_message_delivery_failed">Üzenet kézbesítése sikertelen!</string>
@@ -335,6 +367,7 @@ ezt a névjegyet.
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">A híváslista üres.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Beszélgetés némítva</string>
   <!--conversation_activity-->
@@ -342,7 +375,6 @@ ezt a névjegyet.
   <string name="conversation_activity__type_message_sms_insecure">Nem biztonságos SMS küldése</string>
   <string name="conversation_activity__type_message_mms_secure">Biztonságos MMS küldése</string>
   <string name="conversation_activity__type_message_mms_insecure">Nem biztonságos MMS küldése</string>
-  <string name="conversation_activity__from_sim_name">Tőle: %1$s</string>
   <string name="conversation_activity__send">Küldés</string>
   <string name="conversation_activity__remove">Törlés</string>
   <string name="conversation_activity__window_description">Beszélgetés vele: %1$s</string>
@@ -364,11 +396,16 @@ ezt a névjegyet.
   <string name="conversation_item_received__contact_photo_description">Névjegy fotó</string>
   <string name="conversation_item_received__downloading">Letöltés</string>
   <!--audio_view-->
+  <string name="audio_view__play_accessibility_description">Lejátszás</string>
+  <string name="audio_view__pause_accessibility_description">Szünet</string>
+  <string name="audio_view__download_accessibility_description">Letölt</string>
   <!--conversation_fragment_cab-->
   <string name="conversation_fragment_cab__batch_selection_mode">Kötegelt kijelölési mód</string>
   <string name="conversation_fragment_cab__batch_selection_amount">%s kijelölésre került</string>
   <!--conversation_fragment-->
   <!--import_export_fragment-->
+  <string name="import_export_fragment__export">Exportálás</string>
+  <string name="import_export_fragment__import">Importálás</string>
   <!--log_submit_activity-->
   <string name="log_submit_activity__log_fetch_failed">Nem lehet olvasni a naplót a készülékeden. Ehelyett még mindig használhatsz ADB-t, hogy kapj hibakeresési naplót.</string>
   <string name="log_submit_activity__thanks">Köszönjük a segítségedet!</string>
@@ -379,6 +416,7 @@ ezt a névjegyet.
   <string name="database_migration_activity__import">Importálás</string>
   <string name="database_migration_activity__importing">IMPORTÁLÁS</string>
   <!--database_upgrade_activity-->
+  <string name="database_upgrade_activity__updating_database">Adatbázis frissítése...</string>
   <string name="export_fragment__export_plaintext_backup">Titkosítatlan biztonsági mentés exportálása</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Az \'SMS Backup &amp; Restore\'-ral kompatibilis nyílt szöveg biztonsági mentés exportálása tárolóra</string>
   <string name="import_fragment__import_system_sms_database">Rendszer SMS adatbázis importálása</string>
@@ -421,10 +459,6 @@ ezt a névjegyet.
   <string name="message_details_header__issues_need_your_attention">Némely probléma tüzetes figyelmet igényel.</string>
   <string name="message_details_header__sent">Elküldve</string>
   <string name="message_details_header__received">Érkezett</string>
-  <string name="message_details_header__via">Keresztül</string>
-  <string name="message_details_header__to">Címzett:</string>
-  <string name="message_details_header__from">Feladó:</string>
-  <string name="message_details_header__with">Továbbá:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Jelszó létrehozása</string>
   <string name="AndroidManifest__enter_passphrase">Jelszó megadása</string>

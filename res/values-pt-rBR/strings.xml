@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Sim</string>
   <string name="no">Não</string>
   <string name="delete">Apagar</string>
@@ -70,8 +69,6 @@
   <string name="ConversationItem_group_action_left">%1$s saiu do grupo.</string>
   <string name="ConversationItem_click_for_details">Toque para detalhes</string>
   <string name="ConversationItem_unable_to_open_media">Não foi encontrado um aplicativo para abrir esse arquivo.</string>
-  <string name="ConversationItem_from_s">de %s</string>
-  <string name="ConversationItem_to_s">para %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Endereço XMPP. Atualize o Silence para ativar esta função.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniciar sessão segura?</string>
@@ -199,15 +196,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Uma nova chave foi gerada para esse cartão SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Compartilhar com</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Bem-vindo ao Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence permite proteger a privacidade da comunicação com seus amigos.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Criptografar suas mensagens</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">O Silence criptografa automaticamente as mensagens entre seus usuários.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Falar com todos</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">O Silence envia mensagens não criptografadas para quem não tem o aplicativo.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">O SMSSecure agora é Silence</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">O SMSSecure agora é Silence. As suas mensagens ainda estão aqui e logo surgirão novas funções.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportar</string>
   <string name="ExportFragment_export_plaintext_to_storage">Exportar como texto puro?</string>
@@ -409,6 +398,7 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="blocked_contacts_fragment__no_blocked_contacts">Nenhum contato bloqueado</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Sem chamadas recentes.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Conversa silenciada</string>
   <!--conversation_activity-->
@@ -416,7 +406,6 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="conversation_activity__type_message_sms_insecure">Enviar SMS inseguro</string>
   <string name="conversation_activity__type_message_mms_secure">Enviar MMS seguro</string>
   <string name="conversation_activity__type_message_mms_insecure">Enviar MMS inseguro</string>
-  <string name="conversation_activity__from_sim_name">De %1$s</string>
   <string name="conversation_activity__send">Enviar</string>
   <string name="conversation_activity__remove">Remover</string>
   <string name="conversation_activity__window_description">Conversa com %1$s</string>
@@ -507,10 +496,6 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="message_details_header__issues_need_your_attention">Alguns itens necessitam de sua atenção.</string>
   <string name="message_details_header__sent">Enviada</string>
   <string name="message_details_header__received">Recebida</string>
-  <string name="message_details_header__via">Por</string>
-  <string name="message_details_header__to">Para:</string>
-  <string name="message_details_header__from">De:</string>
-  <string name="message_details_header__with">Com:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Criar senha</string>
   <string name="AndroidManifest__enter_passphrase">Introduza a senha</string>
@@ -653,6 +638,7 @@ Uma mensagem de troca de chaves para uma versão inválida do protocolo foi rece
   <string name="preferences_notifications__display_in_notifications">Mostrar nas notificações</string>
   <string name="preferences__show_sent_time">Mostrar data/hora de envio</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostrar data/hora de envio em vez da data/hora de recepção para mensagens recebidas</string>
+  <string name="preferences__hide_unread_message_divider">Ocultar separador de mensagens não lidas</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Baixar automaticamente</string>
   <string name="preferences__automatically_retrieve_mms_messages">Baixar automaticamente mensagens MMS</string>

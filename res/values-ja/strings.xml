@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">はい</string>
   <string name="no">いいえ</string>
   <string name="delete">削除</string>
@@ -66,8 +65,6 @@
   <string name="ConversationItem_group_action_left">%1$sがグループを抜けました。</string>
   <string name="ConversationItem_click_for_details">タップして詳細</string>
   <string name="ConversationItem_unable_to_open_media">このメディアを開くことができるアプリが見つかりません。</string>
-  <string name="ConversationItem_from_s">%s から</string>
-  <string name="ConversationItem_to_s">%s まで</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP アドレス。Silence を更新して、この機能を有効にします。</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">セキュア・セッションを開始しますか？</string>
@@ -182,15 +179,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">その SIM カードに新しい鍵が生成されました。</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">共有</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Silenceへようこそ!</string>
-  <string name="IntroScreenActivity_silence_description">Silenceは、友だちと通信するときに、プライバシーを保護することができます。</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">メッセージを暗号化</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silenceは、自動的に他のSilenceユーザーとのメッセージを暗号化します。</string>
-  <string name="IntroScreenActivity_talk_to_everyone">みんなと話す</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silenceは、暗号化されていないメッセージを使用して、Silenceではないユーザーとチャットすることができます。</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecureはSilenceになりました。</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecureはSilenceになりました。メッセージはまだここにあります。新しい機能があります。</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">エクスポート</string>
   <string name="ExportFragment_export_plaintext_to_storage">暗号化されていないテキストをストレージにエクスポートしますか?</string>
@@ -388,6 +377,8 @@
   <string name="blocked_contacts_fragment__no_blocked_contacts">ブロックした連絡先はありません</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">最近の通話はありません。</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__show_contacts">連絡先を表示</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">会話をミュートしました</string>
   <!--conversation_activity-->
@@ -395,7 +386,6 @@
   <string name="conversation_activity__type_message_sms_insecure">セキュアではないSMSを送信</string>
   <string name="conversation_activity__type_message_mms_secure">暗号化されているMMSを送信</string>
   <string name="conversation_activity__type_message_mms_insecure">セキュアではないMMSを送信</string>
-  <string name="conversation_activity__from_sim_name">%1$s から</string>
   <string name="conversation_activity__send">送信</string>
   <string name="conversation_activity__remove">削除</string>
   <string name="conversation_activity__window_description">%1$sとの会話</string>
@@ -486,10 +476,6 @@
   <string name="message_details_header__issues_need_your_attention">いくつかの問題に着目する必要があります。</string>
   <string name="message_details_header__sent">送信</string>
   <string name="message_details_header__received">受信</string>
-  <string name="message_details_header__via">経由</string>
-  <string name="message_details_header__to">To:</string>
-  <string name="message_details_header__from">From:</string>
-  <string name="message_details_header__with">With:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">パスワードの作成</string>
   <string name="AndroidManifest__enter_passphrase">パスワード入力</string>
@@ -633,7 +619,6 @@
   <string name="preferences__show_sent_time">送信した時間を表示</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">受信したメッセージの受信した時間の代わりに送信した時間を表示します</string>
   <string name="preferences__hide_unread_message_divider">未読メッセージの区切りを非表示</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">会話中の未読メッセージの区切りを非表示</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">自動取得</string>
   <string name="preferences__automatically_retrieve_mms_messages">MMS メッセージを自動的に取得します</string>

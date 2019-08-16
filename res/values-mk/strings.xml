@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
   <string name="delete">Избриши</string>
@@ -42,7 +41,7 @@
   <!--DateUtils-->
   <!--DualSimUtil-->
   <!--ShareActivity-->
-  <!--IntroScreenActivity-->
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <!--GroupCreateActivity-->
   <!--GroupMembersDialog-->
@@ -82,6 +81,7 @@
   <!--ContactSelectionListFragment-->
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <!--conversation_activity-->
   <!--conversation_item-->

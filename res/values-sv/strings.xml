@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
   <string name="delete">Radera</string>
@@ -70,8 +69,6 @@ kommer kunna komma åt dem.</string>
   <string name="ConversationItem_group_action_left">%1$s har lämnat gruppen.</string>
   <string name="ConversationItem_click_for_details">Tryck för detaljer</string>
   <string name="ConversationItem_unable_to_open_media">Kan ej hitta app som kan öppna denna fil</string>
-  <string name="ConversationItem_from_s">från %s</string>
-  <string name="ConversationItem_to_s">till %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP adress. Uppdatera Silence för att aktivera denna funktion.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Påbörja säker session?</string>
@@ -199,15 +196,7 @@ kommer kunna komma åt dem.</string>
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">En ny nyckel har skapats för SIM-kortet.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Dela med</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Välkommen till Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence gör det möjligt att skydda din integritet när du kommunicerar med dina vänner.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Kryptera dina meddelanden</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence kommer kryptera meddelanden till andra Silence-användare automatiskt.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Prata med alla</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kan skicka okrypterade meddelanden till personer som inte använder Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure har bytt namn till Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure har bytt namn till Silence. Dina meddelanden finns fortfarande kvar och nya funktioner är på väg.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportera</string>
   <string name="ExportFragment_export_plaintext_to_storage">Exportera okrypterat till lagring?</string>
@@ -405,6 +394,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="blocked_contacts_fragment__no_blocked_contacts">Inga blockerade kontakter</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Inga nyliga samtal.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Konversationen tystad</string>
   <!--conversation_activity-->
@@ -412,7 +402,6 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="conversation_activity__type_message_sms_insecure">Skicka okrypterat SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Skicka säkert MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Skicka okrypterat MMS</string>
-  <string name="conversation_activity__from_sim_name">Från %1$s</string>
   <string name="conversation_activity__send">Skicka</string>
   <string name="conversation_activity__remove">Ta bort</string>
   <string name="conversation_activity__window_description">Meddelanden med %1$s</string>
@@ -503,10 +492,6 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="message_details_header__issues_need_your_attention">Vissa frågor behöver din uppmärksamhet.</string>
   <string name="message_details_header__sent">Skickat</string>
   <string name="message_details_header__received">Mottaget</string>
-  <string name="message_details_header__via">Via</string>
-  <string name="message_details_header__to">Till:</string>
-  <string name="message_details_header__from">Från:</string>
-  <string name="message_details_header__with">Med:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Skapa lösenord</string>
   <string name="AndroidManifest__enter_passphrase">Ange lösenord</string>
@@ -585,7 +570,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="preferences__silent">Tyst</string>
   <string name="preferences__in_conversation_notifications">Aviseringar i konversationer</string>
   <string name="preferences__play_inthread_notifications">Spela aviseringssljud när en aktiv konversation visas</string>
-  <string name="preferences__repeat_alerts">Upprepa notifieringar</string>
+  <string name="preferences__repeat_alerts">Upprepa aviseringar</string>
   <string name="preferences__never">Aldrig</string>
   <string name="preferences__one_time">En gång</string>
   <string name="preferences__two_times">Två gånger</string>
@@ -593,7 +578,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="preferences__five_times">Fem gånger</string>
   <string name="preferences__ten_times">Tio gånger</string>
   <string name="preferences__vibrate">Vibrera</string>
-  <string name="preferences__also_vibrate_when_notified">Vibrera också vid notifikation</string>
+  <string name="preferences__also_vibrate_when_notified">Vibrera även vid avisering</string>
   <string name="preferences__minutes">minuter</string>
   <string name="preferences__hours">timmar</string>
   <string name="preferences__green">Grön</string>
@@ -649,6 +634,7 @@ Tog emot meddelande för nyckelutbyte för ogiltig protokollversion.</string>
   <string name="preferences_notifications__display_in_notifications">Visa i aviseringar</string>
   <string name="preferences__show_sent_time">Visa tiden meddelandet skickades</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Visa tiden inkommande meddelanden skickades istället tiden då de mottogs</string>
+  <string name="preferences__hide_unread_message_divider">Dölj avdelare för olästa meddelanden</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Hämta automatiskt</string>
   <string name="preferences__automatically_retrieve_mms_messages">Ta emot MMS-meddelanden automatiskt</string>

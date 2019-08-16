@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Sì</string>
   <string name="no">No</string>
   <string name="delete">Elimina</string>
@@ -68,8 +67,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationItem_group_action_left">%1$s ha lasciato il gruppo.</string>
   <string name="ConversationItem_click_for_details">Tocca per i dettagli</string>
   <string name="ConversationItem_unable_to_open_media">Impossibile trovare un\'app per aprire il file</string>
-  <string name="ConversationItem_from_s">da %s</string>
-  <string name="ConversationItem_to_s">a %s</string>
+  <string name="ConversationItem_via_s">via %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Indirizzo XMPP. Aggiornare Silence per abilitare questa funzionalità.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Iniziare sessione sicura?</string>
@@ -197,15 +195,10 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">È stata generata una nuova chiave per quella scheda SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Condividi con</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Benvenuto in Silence!</string>
-  <string name="IntroScreenActivity_silence_description">SIlence ti permette di proteggere la tua privacy quando comunichi con i tuoi amici.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Critta i tuoi messaggi</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence cifrerà i messaggi scambiati con gli altri utenti Silence automaticamente.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Parla a tutti</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence può inviare messaggi non cifrati per parlare con utenti non Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure è diventato Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure è diventato Silence. I tuoi messaggi sono ancora presenti e altre nuove funzionalità sono in arrrivo.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_continue">Continua</string>
+  <string name="WelcomeActivity_action_required">Azione necessaria</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Devi dare permessi a Silence.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Esporta</string>
   <string name="ExportFragment_export_plaintext_to_storage">Esportare il testo in chiaro nella memoria?</string>
@@ -402,6 +395,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="blocked_contacts_fragment__no_blocked_contacts">Nessun contatto bloccato</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nessuna chiamata recente.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__show_contacts">Mostra i contatti</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Conversazione silenziata</string>
   <!--conversation_activity-->
@@ -409,7 +404,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="conversation_activity__type_message_sms_insecure">Invia SMS non cifrato</string>
   <string name="conversation_activity__type_message_mms_secure">Manda MMS sicuro</string>
   <string name="conversation_activity__type_message_mms_insecure">Invia MMS non cifrato</string>
-  <string name="conversation_activity__from_sim_name">Da %1$s</string>
+  <string name="conversation_activity__via_sim_name">Via %1$s</string>
   <string name="conversation_activity__send">Invia</string>
   <string name="conversation_activity__remove">Elimina</string>
   <string name="conversation_activity__window_description">Conversazione con %1$s</string>
@@ -500,10 +495,10 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="message_details_header__issues_need_your_attention">Alcuni problemi necessitano della tua attenzione.</string>
   <string name="message_details_header__sent">Inviato</string>
   <string name="message_details_header__received">Ricevuto</string>
-  <string name="message_details_header__via">Tramite</string>
-  <string name="message_details_header__to">A:</string>
-  <string name="message_details_header__from">Da:</string>
-  <string name="message_details_header__with">Con:</string>
+  <string name="message_details_header__type">Tipo</string>
+  <string name="message_details_header__to">A</string>
+  <string name="message_details_header__from">Da</string>
+  <string name="message_details_header__with">Con</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Crea password</string>
   <string name="AndroidManifest__enter_passphrase">Inserire la password</string>
@@ -647,7 +642,6 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences__show_sent_time">Mostrare la data dell\'invio</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Mostra l\'ora dell\'invio al posto dell\'ora di ricevimento per i messaggi in entrata</string>
   <string name="preferences__hide_unread_message_divider">Nascondi divisore messaggi non letti</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Nascondi il divisore del messaggio non letto nella conversazione</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Recupero automatico</string>
   <string name="preferences__automatically_retrieve_mms_messages">Recupera automaticamente gli MMS</string>
@@ -770,5 +764,14 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="trimmer__old_messages_successfully_deleted">Vecchi messaggi cancellati con successo</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icona trasporto</string>
+  <string name="RingtonePreference_ringtone_default">Suono predefinito</string>
+  <string name="RingtonePreference_ringtone_silent">Nessuno</string>
+  <string name="RingtonePreference_ringtone_picker_title">Suoni</string>
+  <string name="RingtonePreference_notification_sound_default">Suono di notifica predefinito</string>
+  <string name="RingtonePreference_alarm_sound_default">Suoneria predefinita</string>
+  <string name="RingtonePreference_add_ringtone_text">Aggiungi una suoneria</string>
+  <string name="Permissions_permission_required">Permesso necessario</string>
+  <string name="Permissions_continue">Continua</string>
+  <string name="Permissions_not_now">Non ora</string>
   <!--EOF-->
 </resources>

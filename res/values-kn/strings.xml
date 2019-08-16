@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">ಹೌದು</string>
   <string name="no">ಇಲ್ಲ</string>
   <string name="delete">ಅಳಿಸಿಹಾಕು</string>
@@ -81,7 +80,7 @@
   <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">ಜೊತೆ ಹಂಚಿಕೊಳ್ಳಿ </string>
-  <!--IntroScreenActivity-->
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">ರಫ್ತು ಮಾಡಿ</string>
   <string name="ExportFragment_cancel">ರದ್ದುಮಾಡು</string>
@@ -194,6 +193,7 @@
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">ಯಾವುದೇ ಇತ್ತೀಚಿನ ಕರೆಗಳಿಲ್ಲ.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__type_message_sms_secure">ಸುರಕ್ಷಿತ ಎಸ್ಎಂಎಸ್ ಕಳುಹಿಸಿ</string>
@@ -268,6 +268,7 @@
   <string name="arrays__import_export">ಆಮದು / ರಫ್ತು</string>
   <!--plurals.xml-->
   <plurals name="hours_ago">
+    <item quantity="one">%d ಗಂಟೆಗಳು</item>
     <item quantity="other">%d ಗಂಟೆಗಳು</item>
   </plurals>
   <!--preferences.xml-->

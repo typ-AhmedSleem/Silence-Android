@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Oui</string>
   <string name="no">Non</string>
   <string name="delete">Supprimer</string>
@@ -49,6 +48,8 @@ en mesure de les lire.</string>
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Impossible de trouver une application pour sélectionner le média.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence a besoin de la permission Stockage externe afin de pouvoir joindre des photos, vidéos ou fichiers audio, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Stockage ».</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence a besoin de la permission Contacts afin de pouvoir joindre des informations sur les contacts, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Contacts ».</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Appareil photo</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Image</string>
@@ -70,8 +71,7 @@ en mesure de les lire.</string>
   <string name="ConversationItem_group_action_left">%1$s a quitté le groupe.</string>
   <string name="ConversationItem_click_for_details">Appuyez pour obtenir des détails</string>
   <string name="ConversationItem_unable_to_open_media">Impossible de trouver une application pour ouvrir le média.</string>
-  <string name="ConversationItem_from_s">de %s</string>
-  <string name="ConversationItem_to_s">vers %s</string>
+  <string name="ConversationItem_via_s">avec %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Adresse XMPP. Mettez à jour Silence pour activer cette fonctionnalité.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Commencer une session chiffrée ?</string>
@@ -112,6 +112,7 @@ en mesure de les lire.</string>
   <string name="ConversationActivity_mms_not_supported_message">Ce message ne peut être envoyé car votre opérateur ne supporte pas les MMS.</string>
   <string name="ConversationActivity_specify_recipient">Veuillez sélectionner un contact</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">La pièce jointe dépasse la limite de taille.</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence a besoin de votre permission SMS pour pouvoir envoyer des SMS, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « SMS ».</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d message non lu</item>
@@ -199,15 +200,16 @@ en mesure de les lire.</string>
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Une nouvelle clé a été générée pour cette carte SIM.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Partager avec</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Bienvenue sur Silence !</string>
-  <string name="IntroScreenActivity_silence_description">Silence vous permet de communiquer avec vos amis tout en protégeant votre vie privée.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Chiffrez vos messages</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence chiffrera automatiquement les messages avec les autres utilisateurs de Silence.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Parlez à tout le monde</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence peut ne pas chiffrer les messages pour que vous puissiez discuter avec ceux qui n\'utilisent pas Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure devient Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure devient Silence. Vos messages sont toujours là et de nouvelles fonctionnalités arrivent.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Améliorez votre vie privée, parlez à tout le monde</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Chiffrez vos messages avec les utilisateurs de Silence tout en utilisant des SMS/MMS normaux avec les autres.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence a besoin d\'accéder à vos contacts, le statut du téléphone et les messages SMS afin de vous connecter avec vos amis, gérer les clés de chiffrement et pouvoir discuter.</string>
+  <string name="WelcomeActivity_continue">Continuer</string>
+  <string name="WelcomeActivity_action_required">Action nécessaire !</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Vous devez accorder à Silence quelques permissions.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Vous devez accorder à Silence quelques permissions afin de pouvoir continuer à l\'utiliser. Appuyez pour continuer.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence a besoin de la permission Téléphone afin de gérer les clés de chiffrement et les lier à vos cartes SIM, et de la permission SMS afin de recevoir des messages SMS.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence a besoin des permissions Téléphone et SMS afin de fonctionner, mais elles ont été refusées. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Téléphone » et « SMS ».</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exporter</string>
   <string name="ExportFragment_export_plaintext_to_storage">Exporter en clair vers le stockage ?</string>
@@ -251,6 +253,12 @@ l\'importer à nouveau se traduira par des messages dupliqués.</string>
   <string name="ImportFragment_import_complete">Importation terminée !</string>
   <string name="ImportFragment_restoring_encrypted_backup">Restauration de la sauvegarde chiffrée…</string>
   <string name="ImportFragment_no_encrypted_backup_found">Aucune sauvegarde chiffrée trouvée !</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence a besoin de la permission SMS pour pouvoir importer des SMS, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « SMS ».</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence a besoin de la permission SMS pour pouvoir importer des SMS.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence a besoin de la permission Stockage externe pour pouvoir lire le contenu du téléphone, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Stockage ».</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence a besoin de la permission Stockage externe afin de lire le contenu du téléphone.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence a besoin de la permission Stockage externe afin de pouvoir écrire du contenu sur le téléphone, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Stockage ».</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence a besoin de la permission Stockage externe afin de pouvoir écrire sur le téléphone.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Aucune clé scannée n’a été trouvée !</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installer Barcode Scanner ?</string>
@@ -399,10 +407,14 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="SingleContactSelectionActivity_contact_photo">Photo de contact</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Sélectionner pour</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence a besoin de la permission Contacts afin de pouvoir afficher vos contacts, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Contacts ».</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Aucun contact bloqué</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Aucun appel récent.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence a besoin d\'accéder aux contacts afin de les afficher.</string>
+  <string name="contact_selection_list_fragment__show_contacts">Montrer les contacts</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Conversation silencieuse</string>
   <!--conversation_activity-->
@@ -410,7 +422,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="conversation_activity__type_message_sms_insecure">Envoyer un SMS non-chiffré</string>
   <string name="conversation_activity__type_message_mms_secure">Envoyer un MMS chiffré</string>
   <string name="conversation_activity__type_message_mms_insecure">Envoyer un MMS non-chiffré</string>
-  <string name="conversation_activity__from_sim_name">De %1$s</string>
+  <string name="conversation_activity__via_sim_name">Avec %1$s</string>
   <string name="conversation_activity__send">Envoyer</string>
   <string name="conversation_activity__remove">Supprimer</string>
   <string name="conversation_activity__window_description">Conversation avec %1$s</string>
@@ -501,10 +513,10 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="message_details_header__issues_need_your_attention">Des problèmes requièrent votre attention.</string>
   <string name="message_details_header__sent">Envoyé</string>
   <string name="message_details_header__received">Reçu</string>
-  <string name="message_details_header__via">Via</string>
-  <string name="message_details_header__to">Pour :</string>
-  <string name="message_details_header__from">De :</string>
-  <string name="message_details_header__with">Avec :</string>
+  <string name="message_details_header__type">Type</string>
+  <string name="message_details_header__to">Pour</string>
+  <string name="message_details_header__from">De</string>
+  <string name="message_details_header__with">Avec</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Créer une phrase de passe</string>
   <string name="AndroidManifest__enter_passphrase">Entrez la phrase de passe</string>
@@ -648,7 +660,6 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences__show_sent_time">Afficher la date d\'envoi</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Afficher la l\'heure d\'envoi au lieu de celle de réception des messages</string>
   <string name="preferences__hide_unread_message_divider">Masquer le séparateur pour les messages non lus</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Masquer le séparateur pour les messages non lus dans une conversation</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Récupération auto</string>
   <string name="preferences__automatically_retrieve_mms_messages">Récupère automatiquement les MMS</string>
@@ -657,6 +668,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="preferences_chats__message_trimming">Suppression de messages</string>
   <string name="preferences_advanced__use_system_emoji">Utiliser les émojis du système</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Désactiver les émojis embarqués dans Silence</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Toujours demander la carte SIM</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Toujours demander quelle carte SIM utiliser pour l\'envoi des messages</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -731,6 +744,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="key_scanning__menu_compare">Comparer</string>
   <string name="key_scanning__menu_display_your_qr_code">Afficher votre QR code</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Scanner le QR code du contact</string>
+  <string name="share_identity_fingerprint">Partagez votre empreinte d\'identité</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nouveau message</string>
   <string name="text_secure_normal__menu_new_group">Nouveau groupe</string>
@@ -757,6 +771,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="MediaPreviewActivity_cant_display">La prévisualisation de l\'image a échouée</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Type de média non supporté</string>
   <string name="MediaPreviewActivity_draft">Brouillon</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence a besoin de la permission Stockage afin de sauvegarder du contenu sur le téléphone, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Stockage ».</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Impossible de sauvegarder sur le téléphone sans permission.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Sauvegarder</string>
   <string name="media_preview__forward_title">Faire suivre</string>
@@ -771,5 +787,15 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
   <string name="trimmer__old_messages_successfully_deleted">Anciens messages supprimés avec succès</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Icône de transport</string>
+  <string name="RingtonePreference_ringtone_default">Sonnerie par défaut.</string>
+  <string name="RingtonePreference_ringtone_silent">Aucune</string>
+  <string name="RingtonePreference_ringtone_picker_title">Sonneries</string>
+  <string name="RingtonePreference_notification_sound_default">Son de notification par défaut</string>
+  <string name="RingtonePreference_alarm_sound_default">Son de l\'alarme par défaut</string>
+  <string name="RingtonePreference_add_ringtone_text">Ajouter une sonnerie</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Impossible d\'ajouter une sonnerie personnalisée</string>
+  <string name="Permissions_permission_required">Permission requise</string>
+  <string name="Permissions_continue">Continuer</string>
+  <string name="Permissions_not_now">Pas maintenant</string>
   <!--EOF-->
 </resources>

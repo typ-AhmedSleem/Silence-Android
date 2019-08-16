@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nein</string>
   <string name="delete">Löschen</string>
-  <string name="please_wait">Bitte warten …</string>
+  <string name="please_wait">Bitte warten …</string>
   <!--AbstractNotificationBuilder-->
   <string name="AbstractNotificationBuilder_new_message">Neue Nachricht</string>
   <!--ApplicationPreferencesActivity-->
@@ -68,8 +67,6 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ConversationItem_group_action_left">%1$s hat die Gruppe verlassen.</string>
   <string name="ConversationItem_click_for_details">Für Details antippen</string>
   <string name="ConversationItem_unable_to_open_media">Keine App zum Öffnen dieser Medieninhalte gefunden.</string>
-  <string name="ConversationItem_from_s">von %s</string>
-  <string name="ConversationItem_to_s">an %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-Adresse. Aktualisiere Silence, um diese Funktion zu aktivieren.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Sichere Unterhaltung starten?</string>
@@ -145,14 +142,14 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
     <item quantity="one">Anhang wird im Gerätespeicher gespeichert …</item>
-    <item quantity="other">%1$d Anhänge werden im Gerätespeicher gespeichert …</item>
+    <item quantity="other">%1$d Anhänge werden im Gerätespeicher gespeichert …</item>
   </plurals>
-  <string name="ConversationFragment_collecting_attahments">Anhänge werden gesammelt …</string>
-  <string name="ConversationFragment_pending">Ausstehend …</string>
+  <string name="ConversationFragment_collecting_attahments">Anhänge werden gesammelt …</string>
+  <string name="ConversationFragment_pending">Ausstehend …</string>
   <string name="ConversationFragment_mms">MMS</string>
   <string name="ConversationFragment_sms">SMS</string>
   <string name="ConversationFragment_deleting">Löschen</string>
-  <string name="ConversationFragment_deleting_messages">Nachrichten werden gelöscht …</string>
+  <string name="ConversationFragment_deleting_messages">Nachrichten werden gelöscht …</string>
   <!--ConversationListActivity-->
   <string name="ConversationListActivity_search">Suchen</string>
   <!--ConversationListFragment-->
@@ -165,7 +162,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
     <item quantity="other">Dies wird alle %1$d ausgewählten Unterhaltungen unwiderruflich löschen.</item>
   </plurals>
   <string name="ConversationListFragment_deleting">Löschen</string>
-  <string name="ConversationListFragment_deleting_selected_conversations">Ausgewählte Unterhaltungen werden gelöscht …</string>
+  <string name="ConversationListFragment_deleting_selected_conversations">Ausgewählte Unterhaltungen werden gelöscht …</string>
   <plurals name="ConversationListFragment_conversations_archived">
     <item quantity="one">Unterhaltung archiviert</item>
     <item quantity="other">%d Unterhaltungen archiviert</item>
@@ -179,7 +176,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Entwürfe der ausgewählten Unterhaltungen senden.</string>
   <string name="ConversationListFragment_send">Senden</string>
   <string name="ConversationListFragment_sending">Wird gesendet</string>
-  <string name="ConversationListFragment_sending_selected_drafts">Ausgewählte Entwürfe werden gesendet …</string>
+  <string name="ConversationListFragment_sending_selected_drafts">Ausgewählte Entwürfe werden gesendet …</string>
   <!--ConversationListItemAction-->
   <string name="ConversationListItemAction_archived_conversations_d">Archivierte Unterhaltungen (%d)</string>
   <!--CustomDefaultPreference-->
@@ -197,28 +194,20 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Ein neuer Schlüssel wurde für diese SIM-Karte erzeugt.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Teilen mit</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Willkommen bei Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence ermöglicht, deine Privatsphäre bei der Kommunikation mit Freunden zu schützen.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Verschlüssele deine Nachrichten</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence verschlüsselt Nachrichten mit anderen Silence-Nutzern automatisch.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Kommuniziere mit jedem</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kann unverschlüsselte Nachrichten für Unterhaltungen mit Kontakten ohne Silence verwenden.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure ist jetzt Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure ist jetzt Silence. Deine Nachrichten sind weiterhin hier und neue Funktionen in Vorbereitung.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exportieren</string>
   <string name="ExportFragment_export_plaintext_to_storage">Klartextsicherung exportieren?</string>
   <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Achtung: Dies wird die unverschlüsselten Inhalte deiner Silence-Nachrichten in den Gerätespeicher exportieren.</string>
-  <string name="ExportFragment_cancel">Abbruch</string>
+  <string name="ExportFragment_cancel">Abbrechen</string>
   <string name="ExportFragment_exporting">Exportieren</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Klartext wird in Gerätespeicher exportiert …</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Klartext wird in Gerätespeicher exportiert …</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Kein Schreibzugriff auf Gerätespeicher.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fehler beim Schreiben auf Gerätespeicher.</string>
   <string name="ExportFragment_export_successful">Exportieren erfolgreich.</string>
   <string name="ExportFragment_export_encrypted_backup">Verschlüsselte Sicherung exportieren?</string>
   <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Dies wird deine verschlüsselten Schlüssel, Einstellungen und Nachrichten in den Gerätespeicher exportieren.</string>
-  <string name="ExportFragment_exporting_keys_settings_and_messages">Verschlüsselte Schlüssel, Einstellungen und Nachrichten werden exportiert …</string>
+  <string name="ExportFragment_exporting_keys_settings_and_messages">Verschlüsselte Schlüssel, Einstellungen und Nachrichten werden exportiert …</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Neue Gruppe</string>
   <string name="GroupCreateActivity_actionbar_update_title">Gruppe bearbeiten</string>
@@ -235,17 +224,17 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ImportFragment_import_system_sms_database">SMS-Systemdatenbank importieren?</string>
   <string name="ImportFragment_this_will_import_messages_from_the_system">Dies wird die Nachrichten aus der Standard-SMS-Datenbank in Silence importieren. Falls du dies schon einmal gemacht hast, wird es zu doppelten Nachrichten kommen.</string>
   <string name="ImportFragment_import">Importieren</string>
-  <string name="ImportFragment_cancel">Abbruch</string>
+  <string name="ImportFragment_cancel">Abbrechen</string>
   <string name="ImportFragment_restore_encrypted_backup">Verschlüsselte Sicherung wiederherstellen?</string>
   <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">Das Wiederherstellen einer verschlüsselten Datensicherung ersetzt deine bestehenden Schlüssel, Einstellungen und Nachrichten. Du wirst jegliche Informationen deiner jetzigen Silence-Installation verlieren, die nicht in dieser Datensicherung enthalten sind. Silence wird nach dem Importieren beendet.</string>
   <string name="ImportFragment_import_plaintext_backup">Klartextsicherung importieren?</string>
   <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Dies wird Nachrichten aus einer Klartext-Datensicherung in Silence importieren. Falls du bereits zuvor diese Datensicherung importiert hast, wird es zu doppelten Nachrichten kommen.</string>
   <string name="ImportFragment_importing">Importieren</string>
-  <string name="ImportFragment_import_plaintext_backup_elipse">Klartextsicherung wird importiert …</string>
+  <string name="ImportFragment_import_plaintext_backup_elipse">Klartextsicherung wird importiert …</string>
   <string name="ImportFragment_no_plaintext_backup_found">Keine Klartextsicherung gefunden!</string>
   <string name="ImportFragment_error_importing_backup">Fehler beim Importieren der Datensicherung!</string>
   <string name="ImportFragment_import_complete">Import abgeschlossen!</string>
-  <string name="ImportFragment_restoring_encrypted_backup">Verschlüsselte Datensicherung wird wiederhergestellt …</string>
+  <string name="ImportFragment_restoring_encrypted_backup">Verschlüsselte Datensicherung wird wiederhergestellt …</string>
   <string name="ImportFragment_no_encrypted_backup_found">Keine verschlüsselte Datensicherung gefunden!</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Keinen scanbaren Schlüssel gefunden!</string>
@@ -278,7 +267,7 @@ Achtung: Deaktiviert die verschlüsselte Speicherung für alle Nachrichten und S
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Die Signatur dieses Schlüsselaustauschs hat sich geändert. Dies könnte bedeuten, dass jemand versucht, dein Gespräch abzuhören. Vielleicht hat dieser Kontakt Silence aber auch nur neu installiert und verwendet daher einen neuen Schlüssel.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Die Signatur dieses Schlüsselaustauschs ist vertrauenswürdig, aber die Einstellung »Automatischer Schlüsselaustausch« ist deaktiviert.</string>
   <string name="ReceiveKeyActivity_processing">Schlüsselaustausch</string>
-  <string name="ReceiveKeyActivity_processing_key_exchange">Schlüsselaustausch wird durchgeführt …</string>
+  <string name="ReceiveKeyActivity_processing_key_exchange">Schlüsselaustausch wird durchgeführt …</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Du solltest diesen Kontakt ggf. überprüfen.</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Kontakt blockieren?</string>
@@ -329,20 +318,20 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="KeyExchangeInitiator_send">Senden</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Fehlerhaft verschlüsselte Nachricht</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten …</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Entschlüsselung läuft, bitte warten …</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Nachricht wurde für eine nicht existierende sichere Sitzung verschlüsselt</string>
   <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">Beendigungsanfrage für eine nicht existierende sichere Sitzung</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsDatabase-->
-  <string name="MmsDatabase_connecting_to_mms_server">Verbindung zum MMS-Server wird aufgebaut …</string>
-  <string name="MmsDatabase_downloading_mms">MMS wird heruntergeladen …</string>
+  <string name="MmsDatabase_connecting_to_mms_server">Verbindung zum MMS-Server wird aufgebaut …</string>
+  <string name="MmsDatabase_downloading_mms">MMS wird heruntergeladen …</string>
   <string name="MmsDatabase_mms_download_failed">Herunterladen der MMS gescheitert!</string>
-  <string name="MmsDatabase_downloading">Wird heruntergeladen …</string>
+  <string name="MmsDatabase_downloading">Wird heruntergeladen …</string>
   <string name="MmsDatabase_mms_pending_download">Antippen und MMS-Einstellungen konfigurieren, um das Herunterladen fortzusetzen.</string>
   <string name="MmsDatabase_error_decrypting_message">Fehler beim Entschlüsseln der Nachricht.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wird entschlüsselt. Bitte warten …</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS wird entschlüsselt. Bitte warten …</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Fehlerhaft verschlüsselte MMS</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS wurde für eine nicht existierende sichere Sitzung verschlüsselt</string>
   <!--MuteDialog-->
@@ -388,7 +377,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="contact_selection_activity__enter_name_or_number">Name/Rufnummer eingeben</string>
   <!--contact_selection_group_activity-->
   <string name="contact_selection_group_activity__no_contacts">Keine Kontakte.</string>
-  <string name="contact_selection_group_activity__finding_contacts">Kontakte werden geladen …</string>
+  <string name="contact_selection_group_activity__finding_contacts">Kontakte werden geladen …</string>
   <!--single_contact_selection_activity-->
   <string name="SingleContactSelectionActivity_contact_photo">Kontaktbild</string>
   <!--ContactSelectionListFragment-->
@@ -397,6 +386,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="blocked_contacts_fragment__no_blocked_contacts">Keine blockierten Kontakte</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Keine letzten Anrufe</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Unterhaltung stummgeschaltet</string>
   <!--conversation_activity-->
@@ -404,7 +394,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="conversation_activity__type_message_sms_insecure">Unsichere SMS schreiben</string>
   <string name="conversation_activity__type_message_mms_secure">Sichere MMS schreiben</string>
   <string name="conversation_activity__type_message_mms_insecure">Unsichere MMS schreiben</string>
-  <string name="conversation_activity__from_sim_name">Von %1$s</string>
   <string name="conversation_activity__send">Senden</string>
   <string name="conversation_activity__remove">Entfernen</string>
   <string name="conversation_activity__window_description">Unterhaltung mit %1$s</string>
@@ -441,7 +430,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="log_submit_activity__log_fetch_failed">Das Diagnoseprotokoll auf deinem Gerät konnte nicht gelesen werden. Du kannst allerdings immer noch ADB verwenden, um ein Diagnoseprotokoll zu erhalten.</string>
   <string name="log_submit_activity__thanks">Danke für deine Hilfe!</string>
   <string name="log_submit_activity__submitting">Übermitteln</string>
-  <string name="log_submit_activity__posting_logs">Diagnoseprotokoll wird übermittelt …</string>
+  <string name="log_submit_activity__posting_logs">Diagnoseprotokoll wird übermittelt …</string>
   <!--database_migration_activity-->
   <string name="database_migration_activity__would_you_like_to_import_your_existing_text_messages">Möchtest du deine vorhandenen Nachrichten in die verschlüsselte Datenbank von Silence importieren?</string>
   <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Die System-Datenbank des Geräts wird in keiner Weise verändert.</string>
@@ -450,7 +439,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="database_migration_activity__this_could_take_a_moment_please_be_patient">Dies kann eine Weile dauern, bitte etwas Geduld. Du wirst benachrichtigt, sobald der Import abgeschlossen ist.</string>
   <string name="database_migration_activity__importing">IMPORTIEREN</string>
   <!--database_upgrade_activity-->
-  <string name="database_upgrade_activity__updating_database">Datenbank wird aktualisiert …</string>
+  <string name="database_upgrade_activity__updating_database">Datenbank wird aktualisiert …</string>
   <string name="export_fragment__export_plaintext_backup">Klartextsicherung exportieren</string>
   <string name="export_fragment__export_a_plaintext_backup_compatible_with">Eine mit »SMS Backup &amp; Restore« kompatible Klartextsicherung exportieren</string>
   <string name="import_fragment__import_system_sms_database">SMS-Systemdatenbank importieren</string>
@@ -495,10 +484,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="message_details_header__issues_need_your_attention">Einige Vorgänge benötigen deine Aufmerksamkeit.</string>
   <string name="message_details_header__sent">Gesendet</string>
   <string name="message_details_header__received">Empfangen</string>
-  <string name="message_details_header__via">Über</string>
-  <string name="message_details_header__to">An:</string>
-  <string name="message_details_header__from">Von:</string>
-  <string name="message_details_header__with">Mit:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Passphrase erstellen</string>
   <string name="AndroidManifest__enter_passphrase">Passphrase eingeben</string>
@@ -642,7 +627,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="preferences__show_sent_time">Versandzeitpunkt anzeigen</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Versandzeitpunkt anstatt Empfangzeitpunkt für eingehende Nachrichten anzeigen</string>
   <string name="preferences__hide_unread_message_divider">Trennstrich für ungelesene Nachrichten ausblenden</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Trennstrich für ungelesene Nachrichten in einer Unterhaltung ausblenden</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Automatisch herunterladen</string>
   <string name="preferences__automatically_retrieve_mms_messages">MMS automatisch herunterladen</string>
@@ -658,7 +642,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="contact_selection_list__menu_select_all">Alle auswählen</string>
   <string name="contact_selection_list__menu_unselect_all">Alle abwählen</string>
   <string name="contact_selection_list__header">ALLE KONTAKTE</string>
-  <string name="contact_selection_list__unknown_contact">Neue Nachricht an …</string>
+  <string name="contact_selection_list__unknown_contact">Neue Nachricht an …</string>
   <!--contact_selection-->
   <string name="contact_selection__menu_finished">Fertig</string>
   <!--refreshing push directory from menu-->
@@ -761,7 +745,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="media_preview_activity__image_content_description">Bildvorschau</string>
   <!--Trimmer-->
   <string name="trimmer__deleting">Löschen</string>
-  <string name="trimmer__deleting_old_messages">Alte Nachrichten werden gelöscht …</string>
+  <string name="trimmer__deleting_old_messages">Alte Nachrichten werden gelöscht …</string>
   <string name="trimmer__old_messages_successfully_deleted">Alte Nachrichten wurden erfolgreich gelöscht</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Übertragungssymbol</string>

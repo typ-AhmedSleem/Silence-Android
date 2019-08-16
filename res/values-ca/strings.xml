@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Si</string>
   <string name="no">No</string>
   <string name="delete">Esborra</string>
@@ -46,7 +45,7 @@
   <!--DateUtils-->
   <!--DualSimUtil-->
   <!--ShareActivity-->
-  <!--IntroScreenActivity-->
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exporta</string>
   <string name="ExportFragment_cancel">Cancel·la</string>
@@ -132,6 +131,7 @@
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Sense trucades recents.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <!--conversation_activity-->
   <string name="conversation_activity__send">Envia</string>

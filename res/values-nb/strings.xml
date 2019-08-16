@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Ja</string>
   <string name="no">Nei</string>
   <string name="delete">Slett</string>
@@ -68,8 +67,6 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="ConversationItem_group_action_left">%1$s har forlatt gruppen.</string>
   <string name="ConversationItem_click_for_details">Klikk for detaljer</string>
   <string name="ConversationItem_unable_to_open_media">Kan ikke finne program til å åpne denne multimedia-fila.</string>
-  <string name="ConversationItem_from_s">fra %s</string>
-  <string name="ConversationItem_to_s">til %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-adresse. Oppdater Silence for å skru på denne funksjonen.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Igangsett sikret økt?</string>
@@ -197,15 +194,7 @@ Advarsel! Dette vil deaktivere kryptert lagring av alle meldinger og nøkler. Di
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">En ny nøkkel har blitt opprettet for det SIM-kortet.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Del med</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Velkommen til Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence lar deg hegne om ditt personvern mens du snakker med venner.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Krypter dine meldinger</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence vil kryptere meldinger fra og til andre Silence-brukere automatisk.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Snakk til alle</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence kan bruke ukrypterte meldinger til sludring med brukere som ikke har Silence.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure er nå Silence.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure er nå Silence. Dine meldinger er fremdeles her, og nye funksjoner er forestående.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Eksporter</string>
   <string name="ExportFragment_export_plaintext_to_storage">Eksporter klartekst til SD-kort?</string>
@@ -404,6 +393,7 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="blocked_contacts_fragment__no_blocked_contacts">Ingen blokkerte kontakter</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Ingen nylige samtaler.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Samtale dempet</string>
   <!--conversation_activity-->
@@ -411,7 +401,6 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="conversation_activity__type_message_sms_insecure">Send usikret SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Send sikret MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Send usikret MMS</string>
-  <string name="conversation_activity__from_sim_name">Fra %1$s</string>
   <string name="conversation_activity__send">Send</string>
   <string name="conversation_activity__remove">Fjern</string>
   <string name="conversation_activity__window_description">Samtale med %1$s</string>
@@ -502,10 +491,6 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="message_details_header__issues_need_your_attention">Noen problemer krever din oppmerksomhet.</string>
   <string name="message_details_header__sent">Sendt</string>
   <string name="message_details_header__received">Mottatt</string>
-  <string name="message_details_header__via">Via</string>
-  <string name="message_details_header__to">Til:</string>
-  <string name="message_details_header__from">Fra:</string>
-  <string name="message_details_header__with">Med:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Opprett passordsekvens</string>
   <string name="AndroidManifest__enter_passphrase">Tast inn passordsekvens</string>
@@ -649,7 +634,6 @@ Mottok nøkkelutvekslingsmelding for ugyldig protokollversjon.</string>
   <string name="preferences__show_sent_time">Vis tid sendt</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Vis tid sendt i stedet for mottatt tid for innkommende meldinger</string>
   <string name="preferences__hide_unread_message_divider">Skjul oppdeler for uleste meldinger</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Skjul oppdeler for uleste meldinger i samtale</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Automatisk innhenting</string>
   <string name="preferences__automatically_retrieve_mms_messages">Automatisk innhenting av MMS-meldinger</string>

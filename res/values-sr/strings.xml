@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
   <string name="delete">Обриши</string>
@@ -73,8 +72,6 @@
   <string name="ConversationItem_group_action_left">%1$s напусти групу.</string>
   <string name="ConversationItem_click_for_details">Тапните за детаље</string>
   <string name="ConversationItem_unable_to_open_media">Нема апликације која може да отвори овај медијум.</string>
-  <string name="ConversationItem_from_s">од %s</string>
-  <string name="ConversationItem_to_s">за %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">ИксМПП адреса. Надоградите Сајленс да бисте користили ову функционалност.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Започети безбедну сесију?</string>
@@ -215,15 +212,7 @@
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Нови кључ је направљен за ту СИМ картицу.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Подели са</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Добро дошли у Сајленс!</string>
-  <string name="IntroScreenActivity_silence_description">Сајленс вам омогућава да заштитите приватност комуникације са пријатељима.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Шифрујте ваше поруке</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Сајленс аутоматски шифрује поруке другим корисницима Сајленса.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Дописујте се са свима</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Сајленс може да шаље нешифроване поруке осталим контактима.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">Сигурни СМС је сада Сајленс.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">Сигурни СМС је сада Сајленс. Ваше поруке су и даље ту а још функција долази ускоро.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">Извези</string>
   <string name="ExportFragment_export_plaintext_to_storage">Извести обични текст у складиште?</string>
@@ -426,6 +415,7 @@
   <string name="blocked_contacts_fragment__no_blocked_contacts">Нема блокираних контаката</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Нема недавних позива.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Преписка утишана</string>
   <!--conversation_activity-->
@@ -433,7 +423,6 @@
   <string name="conversation_activity__type_message_sms_insecure">Пошаљи необезбеђени СМС</string>
   <string name="conversation_activity__type_message_mms_secure">Пошаљи обезбеђени ММС</string>
   <string name="conversation_activity__type_message_mms_insecure">Пошаљи необезбеђени ММС</string>
-  <string name="conversation_activity__from_sim_name">од %1$s</string>
   <string name="conversation_activity__send">Пошаљи</string>
   <string name="conversation_activity__remove">Уклони</string>
   <string name="conversation_activity__window_description">Преписка са %1$s</string>
@@ -524,10 +513,6 @@
   <string name="message_details_header__issues_need_your_attention">Неки од проблема захтевају вашу пажњу.</string>
   <string name="message_details_header__sent">Послата</string>
   <string name="message_details_header__received">Примљена</string>
-  <string name="message_details_header__via">Преко</string>
-  <string name="message_details_header__to">За:</string>
-  <string name="message_details_header__from">Од:</string>
-  <string name="message_details_header__with">Са:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Направи лозинку</string>
   <string name="AndroidManifest__enter_passphrase">Унесите лозинку</string>
@@ -671,12 +656,15 @@
   <string name="preferences_notifications__display_in_notifications">Прикажи у обавештењу</string>
   <string name="preferences__show_sent_time">Прикажи време слања</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Прикажи време слања уместо време пристизања долазне поруке</string>
+  <string name="preferences__hide_unread_message_divider">Сакриј раздвајач непрочитаних порука</string>
   <string name="preferences_chats__mms">ММС</string>
   <string name="preferences__auto_retrieve">Ауто-добављање</string>
   <string name="preferences__automatically_retrieve_mms_messages">Аутоматско добављање ММС порука</string>
   <string name="preferences__roaming_auto_retrieve">Ауто-добављање у ромингу</string>
   <string name="preferences__automatically_retrieve_mms_when_roaming">Аутоматско добављање ММС порука у ромингу</string>
   <string name="preferences_chats__message_trimming">Скраћивање порука</string>
+  <string name="preferences_advanced__use_system_emoji">Користи системске емоџије</string>
+  <string name="preferences_advanced__disable_silences_built_in_emoji_support">Искључи уграђене емоџије</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">Jes</string>
   <string name="no">Ne</string>
   <string name="delete">Forigi</string>
@@ -19,9 +18,9 @@
     <item quantity="other">Tio ĉi tuj tranĉos ĉiujn interparoladojn al %d plej lastaj mesaĝoj.</item>
   </plurals>
   <string name="ApplicationPreferencesActivity_delete">Forigi</string>
-  <string name="ApplicationPreferencesActivity_disable_storage_encryption">Ĉu malaktivigi ĉifradon de memorejo?</string>
+  <string name="ApplicationPreferencesActivity_disable_storage_encryption">Ĉu malaktivigi ĉifradon de konservejo?</string>
   <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
-Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosiloj. Viaj ĉifritaj seancojn pluos funkcii, sed kiu ajn, kiu akiros rektan atingon al la aparato povos legi ilin.</string>
+Atentu, tio ĉi malaktivigos ĉifradon de konservejo por ĉiuj mesaĝoj kaj ŝlosiloj. Viaj ĉifritaj seancojn pluos funkcii, sed kiu ajn, kiu akiros rektan atingon al la aparato povos legi ilin.</string>
   <string name="ApplicationPreferencesActivity_disable">Malaktivigi</string>
   <string name="ApplicationPreferencesActivity_sms_enabled">Alvenaj SMS-oj aktivaj</string>
   <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Frapetu por ŝanĝi la ĉefan SMS-aplikaĵon</string>
@@ -47,12 +46,14 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Ne povas trovi aplikaĵon por elekti aŭdvidaĵojn.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence bezonas la permeson por legi eksteran konservejon por kunhavigi fotojn, videaĵojn kaj aŭdaĵojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “konservejon”.</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence bezonas la permeson al kontaktoj por kunhavigi informojn pri kontakto, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “kontaktojn”.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Fotilo</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Bildo</string>
   <string name="AttachmentTypeSelectorAdapter_video">Video</string>
   <string name="AttachmentTypeSelectorAdapter_audio">Aŭdio</string>
-  <string name="AttachmentTypeSelectorAdapter_contact">Informoj pri kontakto</string>
+  <string name="AttachmentTypeSelectorAdapter_contact">Kontaktinformoj</string>
   <!--AudioSlidePlayer-->
   <string name="AudioSlidePlayer_error_playing_audio">Eraro dum ludado de sono!</string>
   <!--BlockedContactsActivity-->
@@ -68,8 +69,6 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationItem_group_action_left">%1$s forlasis la grupon.</string>
   <string name="ConversationItem_click_for_details">Frapetu por detaloj</string>
   <string name="ConversationItem_unable_to_open_media">Ne povas trovi aplikaĵon por malfermi tiun ĉi aŭdvidaĵon.</string>
-  <string name="ConversationItem_from_s">de %s</string>
-  <string name="ConversationItem_to_s">al %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-adreso. Ĝisdatigi Silence por aktivigi tiun ĉi eblon.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Ĉu komenci sekuran seancon?</string>
@@ -110,6 +109,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ConversationActivity_mms_not_supported_message">Ne povas sendi tiun ĉi mesaĝon ĉar via telefon-provizanto ne subtenas MMS-ojn.</string>
   <string name="ConversationActivity_specify_recipient">Bonvolu elekti kontakton</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Kunsendaĵo trograndas limiton.</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence bezonas la permeson al SMS por sendi SMS‑ajn mesaĝojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “SMS”.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d nelegita mesaĝo</item>
@@ -125,31 +125,31 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
     <item quantity="one">Tio ĉi forigos neinversigeble la elektitan mesaĝon.</item>
     <item quantity="other">Tio ĉi forigos neinversigeble ĉiujn %1$d elektitajn mesaĝojn.</item>
   </plurals>
-  <string name="ConversationFragment_save_to_sd_card">Ĉu konservi al memorejo?</string>
+  <string name="ConversationFragment_save_to_sd_card">Ĉu konservi al konservejo?</string>
   <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
     <item quantity="one">Konservado de tiu ĉi aŭdvidaĵo ebligos al aliaj aplikaĵoj en via aparato atingi ĝin.
 
 Ĉu pluigi?</item>
-    <item quantity="other">Konservado de ĉiuj %1$d aŭdidaĵoj al memorejo ebligos al aliaj aplikaĵoj en via aparato atingi ilin.
+    <item quantity="other">Konservado de ĉiuj %1$d aŭdidaĵoj al konservejo ebligos al aliaj aplikaĵoj en via aparato atingi ilin.
 
 Ĉu pluigi?</item>
   </plurals>
   <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
     <item quantity="one">Eraro dum konservado de kunsendaĵo al memorejo!</item>
-    <item quantity="other">Eraro dum konservado de kunsendaĵoj al memorejo!</item>
+    <item quantity="other">Eraro dum konservado de kunsendaĵoj al konservejo!</item>
   </plurals>
   <plurals name="ConversationFragment_files_saved_successfully">
     <item quantity="one">Dosiero konservita sukcese.</item>
     <item quantity="other">Dosieroj konservitaj sukcese.</item>
   </plurals>
-  <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ne eblas konservi al memorejo!</string>
+  <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Ne eblas skribi al konservejo!</string>
   <plurals name="ConversationFragment_saving_n_attachments">
     <item quantity="one">Konservado de kunsendaĵo</item>
     <item quantity="other">Konservado de %1$d kunsendaĵoj</item>
   </plurals>
   <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
     <item quantity="one">Konservado de kunsendaĵo al memorejo…</item>
-    <item quantity="other">Konservado de %1$d kunsendaĵoj al memorejo…</item>
+    <item quantity="other">Konservado de %1$d kunsendaĵoj al konservejo…</item>
   </plurals>
   <string name="ConversationFragment_collecting_attahments">Kolektado de kunsendaĵoj…</string>
   <string name="ConversationFragment_pending">Atendado…</string>
@@ -201,27 +201,28 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Kreis novan ŝlosilon por tiu ĉi SIM-karto.</string>
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Kunhavigi kun</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">Bonvenon al Silence!</string>
-  <string name="IntroScreenActivity_silence_description">Silence ebligas al vi protekti vian privatecon dum komunikadi kun amikoj.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">Ĉifradi viajn mesaĝojn</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">Silence ĉifros mesaĝojn kun aliaj uzantoj de Silence aŭtomate.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">Diri al ĉiuj</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">Silence povas uzi malĉifritajn mesaĝojn por babili kun neuzantoj de Silence. </string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMSSecure iĝis Silence nun.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMSSecure iĝis Silence nun. Viaj mesaĝoj plue estas tie ĉi kaj novaj aĵoj baldaŭas.</string>
+  <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Plibonigi vian privatecon, paroli kun ĉiuj</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Sendi ĉifritajn mesaĝojn al uzantoj de Silence kaj kutimaj mesaĝoj SMS/MMS kun aliaj.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence bezonas atingon al kontaktoj, stato de telefono kaj SMS‑mesaĝoj por konekti kun amikoj, administri ĉifrajn ŝlosilojn kaj interŝanĝi mesaĝojn.</string>
+  <string name="WelcomeActivity_continue">Pluigi</string>
+  <string name="WelcomeActivity_action_required">Ago necesas!</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Necesas doni permesojn al Silence.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Vi devas doni kelkajn Androidajn permesojn al Silence por pluigi uzi ĝin. Frapetu por pluigi.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence bezonas la permeson al telefono por administri ĉifrajn ŝlosilojn kaj ligi ilin al viaj SIM‑kartoj, kaj la permeson al SMS por ricevi SMS‑mesaĝojn.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence bezonas la permesojn al SMS kaj telefono por funkcii, sed ili estas rifuzitaj. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “telefonon” kaj “SMS”</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Elporti</string>
-  <string name="ExportFragment_export_plaintext_to_storage">Ĉu elporti plattekston al memorejo?</string>
-  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Atentu, tio ĉi elportos la enhavon de viaj mesaĝoj el Silence al memorejo plattekste.</string>
+  <string name="ExportFragment_export_plaintext_to_storage">Ĉu elporti plattekston al konservejo?</string>
+  <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Atentu, tio ĉi elportos la enhavon de viaj mesaĝoj el Silence al konservejo plattekste.</string>
   <string name="ExportFragment_cancel">Rezigni</string>
   <string name="ExportFragment_exporting">Elportado</string>
-  <string name="ExportFragment_exporting_plaintext_to_storage">Elportado de platteksto al memorejo…</string>
-  <string name="ExportFragment_error_unable_to_write_to_storage">Eraro, ne eblas konservi al memorejo.</string>
-  <string name="ExportFragment_error_while_writing_to_storage">Eraro dum konservado al memorejo.</string>
+  <string name="ExportFragment_exporting_plaintext_to_storage">Elportado de platteksto al konservejo…</string>
+  <string name="ExportFragment_error_unable_to_write_to_storage">Eraro, ne eblas skribi al konservejo.</string>
+  <string name="ExportFragment_error_while_writing_to_storage">Eraro dum skribi al konservejo.</string>
   <string name="ExportFragment_export_successful">Elportado sukcesis.</string>
   <string name="ExportFragment_export_encrypted_backup">Ĉu elporti ĉifritan sekurkopion?</string>
-  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Tio ĉi elportos viajn ĉifritajn ślosilojn, agordojn kaj mesaĝojn al memorejo.</string>
+  <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Tio ĉi elportos viajn ĉifritajn ślosilojn, agordojn kaj mesaĝojn al konservejo.</string>
   <string name="ExportFragment_exporting_keys_settings_and_messages">Elportado de ĉifritaj ŝlosiloj, agordoj kaj mesaĝoj…</string>
   <!--GroupCreateActivity-->
   <string name="GroupCreateActivity_actionbar_title">Nova grupo</string>
@@ -251,6 +252,12 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="ImportFragment_import_complete">Enportado finita!</string>
   <string name="ImportFragment_restoring_encrypted_backup">Restarigado de ĉifrita sekurkopio…</string>
   <string name="ImportFragment_no_encrypted_backup_found">Ĉifrita sekurkopio ne trovita!</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence bezonas la permeson al SMS por enporti SMS‑ajn mesaĝojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “SMS”.</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence bezonas la permeson al SMS por enporti mesaĝojn</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence bezonas la permeson por legi eksteran konservejon, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “konservejon”.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence bezonas la permeson al konservejo por legi el ekstera konservejo.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence bezonas la permeson por skribi al ekstera konservejo, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “konservejon”.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence bezonas la permeson al konservejo por skribi al ekstera konservejo.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Skanita ŝlosilo ne trovita!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Ĉu instali na Barcode Scanner?</string>
@@ -279,7 +286,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de memorejo por ĉiuj mesaĝoj kaj ŝlosi
   <string name="PassphrasePromptActivity_watermark_content_description">Emblemo de Silence</string>
   <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Erara pasfrazo!</string>
   <!--ReceiveKeyActivity-->
-  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosil-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian komunikadon, aŭ ke tiu ĉi kontakto simple reinstalis na Silence kaj li nun posedas novan ident-ŝlosilon.</string>
+  <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">La subskribo de tiu ĉi ŝlosil-interŝanĝo malsamas de tiu, kiu vi antaŭe ricevis de tiu ĉi kontakto. Tio ĉi povas signifi, ke iu provas interkapti vian komunikadon, aŭ ke tiu ĉi kontakto simple reinstalis na Silence kaj ĝi nun posedas novan ident-ŝlosilon.</string>
   <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosil-interŝanĝo konfidindas, sed vi havas la agordon \'“aŭtomate fini ŝlosilo-interŝanĝon” malaktiva.</string>
   <string name="ReceiveKeyActivity_processing">Prilaborado</string>
   <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosil-interŝanĝo…</string>
@@ -319,7 +326,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="VerifyIdentityActivity_display_your_qr_code">Montri vian QR-kodon</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ATENTU, la skanitaj ŝlosiloj NE konformas! Bonvolu kontroli fingrospuron singarde.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NE kontrolita!</string>
-  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Lia ŝlosilo estas erara. Tamen vi ankaŭ devas kontroli vian ŝlosilon kun lia. </string>
+  <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ĝia ŝlosilo estas erara. Tamen vi ankaŭ devas kontroli vian ŝlosilon kun ĝia. </string>
   <string name="VerifyIdentityActivity_verified_exclamation">Kontrolita!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_scan_contacts_qr_code">Skani QR-kodon de kontakto</string>
@@ -397,10 +404,14 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="SingleContactSelectionActivity_contact_photo">Kontakta Bildo</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Elekti por</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence bezonas la permeson al kontaktoj por montri viajn kontaktojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “kontaktojn”.</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Neniuj blokitaj kontaktoj</string>
   <!--contact_selection_recent_activity-->
-  <string name="contact_selection_recent_activity__no_recent_calls">Sen lastaj vokoj.</string>
+  <string name="contact_selection_recent_activity__no_recent_calls">Ne lastatempaj alvokoj.</string>
+  <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence bezonas aliron al viaj kontaktoj por vidigi ilin.</string>
+  <string name="contact_selection_list_fragment__show_contacts">Montri kontaktoj</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Interparolado silentigita</string>
   <!--conversation_activity-->
@@ -408,7 +419,6 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="conversation_activity__type_message_sms_insecure">Sendi malsekuran SMS-on</string>
   <string name="conversation_activity__type_message_mms_secure">Sendi sekuran MMS-on</string>
   <string name="conversation_activity__type_message_mms_insecure">Sendi malsekuran MMS-on</string>
-  <string name="conversation_activity__from_sim_name">De %1$s</string>
   <string name="conversation_activity__send">Sendi</string>
   <string name="conversation_activity__remove">Forigi</string>
   <string name="conversation_activity__window_description">Interparolado kun %1$s</string>
@@ -456,7 +466,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <!--database_upgrade_activity-->
   <string name="database_upgrade_activity__updating_database">Ĝisdatigado de datumbazo…</string>
   <string name="export_fragment__export_plaintext_backup">Elporti plattekstan sekurkopion</string>
-  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Elportas plattekstan sekurkopion kongruan kun \'SMS Backup &amp; Restore\' al memorejo</string>
+  <string name="export_fragment__export_a_plaintext_backup_compatible_with">Elportas plattekstan sekurkopion kongruan kun “SMS Backup &amp; Restore” al konservejo</string>
   <string name="import_fragment__import_system_sms_database">Enporti sisteman SMS-an datumbazon</string>
   <string name="import_fragment__import_the_database_from_the_default_system">Enportas datumbazon de ĉefa sistema mesaĝilo</string>
   <string name="import_fragment__restore_encrypted_backup">Restarigi ĉifritan sekurkopion</string>
@@ -464,7 +474,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="import_fragment__import_plaintext_backup">Enporti plattekstan sekurkopion</string>
   <string name="import_fragment__import_a_plaintext_backup_file">Enportas plattekstan dosieron de sekurkopio kongruan kun  \'SMS Backup &amp; Restore\'</string>
   <string name="export_fragment__export_encrypted_backup">Elporti ĉifritan sekurkopion</string>
-  <string name="export_fragment__export_an_encrypted_backup_to_storage">Elportas ĉifritan sekurkopion al memorejo</string>
+  <string name="export_fragment__export_an_encrypted_backup_to_storage">Elportas ĉifritan sekurkopion al konservejo</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Montri plenan interparoladon</string>
   <!--media_overview_activity-->
@@ -488,7 +498,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="recipient_preferences__color">Koloro</string>
   <string name="recipient_preferences__color_for_this_contact">Koloro por tiu ĉi kontakto</string>
   <!--receive_key_dialog-->
-  <string name="receive_key_activity__complete">Farite</string>
+  <string name="receive_key_activity__complete">Pluigi</string>
   <!--recipients_panel-->
   <string name="recipients_panel__to"><small>Entajpu nomon aŭ numeron</small></string>
   <string name="recipients_panel__add_member">Aldoni anon</string>
@@ -499,10 +509,6 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="message_details_header__issues_need_your_attention">Kelkaj aferoj bezonas vian atenton.</string>
   <string name="message_details_header__sent">Sendita</string>
   <string name="message_details_header__received">Recevita</string>
-  <string name="message_details_header__via">Tra</string>
-  <string name="message_details_header__to">Al:</string>
-  <string name="message_details_header__from">De:</string>
-  <string name="message_details_header__with">Kun:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Krei pasfrazon</string>
   <string name="AndroidManifest__enter_passphrase">Entajpu pasfrazon</string>
@@ -646,7 +652,6 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences__show_sent_time">Montri tempon de sendo</string>
   <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">Montri tempon de sendo anstataŭ tempon de ricevo por ricevitaj mesaĝoj</string>
   <string name="preferences__hide_unread_message_divider">Kaŝi disigilon de nelegitaj masaĝoj</string>
-  <string name="preferences__hide_unread_message_divider_in_conversation">Kaŝi disigan strekon de nelegitaj mesaĝoj en interparoladoj</string>
   <string name="preferences_chats__mms">MMS</string>
   <string name="preferences__auto_retrieve">Aŭtomate elŝuti</string>
   <string name="preferences__automatically_retrieve_mms_messages">Aŭtomate elŝuti MMS-ajn mesaĝojn</string>
@@ -729,6 +734,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="key_scanning__menu_compare">Kompari</string>
   <string name="key_scanning__menu_display_your_qr_code">Montri vian QR-kodon</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Skani QR-kodon de kontakto</string>
+  <string name="share_identity_fingerprint">Kunhavigi fingrospuro de via identigo</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nova mesaĝo</string>
   <string name="text_secure_normal__menu_new_group">Nova grupo</string>
@@ -755,6 +761,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="MediaPreviewActivity_cant_display">Antaŭrigardo de tiu ĉi bildo malsukcesis</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nesubtenata speco de aŭdvidaĵo</string>
   <string name="MediaPreviewActivity_draft">Malneto</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence bezonas la permeson por skribi al ekstera konservejo, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “konservejon”.</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Ne eblas skribi al ekstera konservejo sen Androida permeso</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Konvervi</string>
   <string name="media_preview__forward_title">Plusendi</string>
@@ -769,5 +777,15 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="trimmer__old_messages_successfully_deleted">Malnovaj mesaĝoj forigitaj sukcese</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Emblemo de transporto</string>
+  <string name="RingtonePreference_ringtone_default">Implicita voksono</string>
+  <string name="RingtonePreference_ringtone_silent">Neniu</string>
+  <string name="RingtonePreference_ringtone_picker_title">Voksonoj</string>
+  <string name="RingtonePreference_notification_sound_default">Implicita sono de sciigo</string>
+  <string name="RingtonePreference_alarm_sound_default">Implicita sono de alarmo</string>
+  <string name="RingtonePreference_add_ringtone_text">Aldoni voksonon</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Ne eblas aldoni propran voksonon</string>
+  <string name="Permissions_permission_required">Permeso bezonata</string>
+  <string name="Permissions_continue">Pluigi</string>
+  <string name="Permissions_not_now">Ne nun</string>
   <!--EOF-->
 </resources>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Silence</string>
   <string name="yes">예</string>
   <string name="no">아니오</string>
   <string name="delete">삭제</string>
@@ -64,8 +63,6 @@
   <string name="ConversationItem_group_action_left">%1$s이(가) 그룹을 떠났습니다.</string>
   <string name="ConversationItem_click_for_details">눌러서 자세한 내용 확인</string>
   <string name="ConversationItem_unable_to_open_media">이 미디어를 열 수 있는 앱을 찾을 수 없습니다.</string>
-  <string name="ConversationItem_from_s">%s (으)로부터</string>
-  <string name="ConversationItem_to_s">%s 에게</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">보안 세션을 시작할까요?</string>
   <string name="ConversationActivity_initiate_secure_session_with_s_question">%s에 보안 세션을 시작할까요?</string>
@@ -153,15 +150,7 @@
   <!--DualSimUtil-->
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">공유하기</string>
-  <!--IntroScreenActivity-->
-  <string name="IntroScreenActivity_welcome_to_silence">사일런스에 오신 것을 환영합니다!</string>
-  <string name="IntroScreenActivity_silence_description">사일런스는 프라이버시를 지키면서 친구들과 대화할 수 있게 해줍니다.</string>
-  <string name="IntroScreenActivity_encrypt_your_messages">메세지 암호화</string>
-  <string name="IntroScreenActivity_encrypt_your_messages_description">사일런스는 다른 사일런스 사용자와의 메세지를 자동적으로 암호화합니다.</string>
-  <string name="IntroScreenActivity_talk_to_everyone">모두에게 말하기</string>
-  <string name="IntroScreenActivity_talk_to_everyone_description">사일런스는 암호화되지 않은 메세지를 사일런스를 사용하지 않는 사용자와 주고받을 수 있습니다.</string>
-  <string name="IntroScreenActivity_smssecure_is_now_silence">SMS시큐어가 사일런스로 이름을 바꿨습니다.</string>
-  <string name="IntroScreenActivity_your_messages_are_still_here">SMS시큐어가 사일런스로 이름을 바꿨습니다. 메세지는 그대로 있으며 새 기능이 추가됩니다.</string>
+  <!--WelcomeActivity-->
   <!--ExportFragment-->
   <string name="ExportFragment_export">내보내기</string>
   <string name="ExportFragment_export_plaintext_to_storage">평문 텍스트를 저장소로 내보낼까요?</string>
@@ -327,6 +316,7 @@
   <!--blocked_contacts_fragment-->
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">최근 통화가 없습니다.</string>
+  <!--contact_selection_list_fragment-->
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">대화가 음소거됨</string>
   <!--conversation_activity-->
@@ -334,7 +324,6 @@
   <string name="conversation_activity__type_message_sms_insecure">보안되지 않은 SMS 전송</string>
   <string name="conversation_activity__type_message_mms_secure">보안 MMS 전송</string>
   <string name="conversation_activity__type_message_mms_insecure">보안되지 않은 MMS 전송</string>
-  <string name="conversation_activity__from_sim_name">%1$s (으)로부터</string>
   <string name="conversation_activity__send">보내기</string>
   <string name="conversation_activity__remove">제거</string>
   <string name="conversation_activity__window_description">%1$s와의 대화</string>
@@ -417,10 +406,6 @@
   <string name="message_details_header__issues_need_your_attention">몇가지 사안들에 주의하세요.</string>
   <string name="message_details_header__sent">전송됨</string>
   <string name="message_details_header__received">수신됨</string>
-  <string name="message_details_header__via">경유</string>
-  <string name="message_details_header__to">받는 사람:</string>
-  <string name="message_details_header__from">보내는 사람:</string>
-  <string name="message_details_header__with">다음과 함께:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">암호 만들기</string>
   <string name="AndroidManifest__enter_passphrase">암호 입력</string>
