@@ -1,5 +1,14 @@
 # Silence Changelog
 
+### [0.15.14] - 2019-08-17
+- Improved MMS support and quality of scaled images
+- Added Android Auto support
+- Added UI fixes on failed messages
+- Added selective permissions
+- Improved welcome screen
+- Added option to always ask for the SIM card to use to send a message
+- Updated translations
+
 ### [0.15.13] - 2018-03-23
 - Fixed logs sending
 - Added option to share key fingerprint
@@ -250,6 +259,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.14]: https://github.com/SilenceIM/Silence/compare/v0.15.13...v0.15.14
  [0.15.13]: https://github.com/SilenceIM/Silence/compare/v0.15.12...v0.15.13
  [0.15.12]: https://github.com/SilenceIM/Silence/compare/v0.15.11...v0.15.12
  [0.15.11]: https://github.com/SilenceIM/Silence/compare/v0.15.10...v0.15.11
