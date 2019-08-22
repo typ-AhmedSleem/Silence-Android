@@ -9,6 +9,7 @@ import android.util.Pair;
 
 import com.google.android.mms.pdu_alt.CharacterSets;
 import com.google.android.mms.pdu_alt.EncodedStringValue;
+import com.google.android.mms.pdu_alt.MultimediaMessagePdu;
 import com.google.android.mms.pdu_alt.PduBody;
 import com.google.android.mms.pdu_alt.PduPart;
 import com.google.android.mms.pdu_alt.RetrieveConf;
@@ -126,8 +127,8 @@ public class MmsDownloadJob extends MasterSecretJob {
       }
 
       if (retrieveConf.getSubject() != null && WirePrefix.isEncryptedMmsSubject(retrieveConf.getSubject().getString())) {
-        MmsCipher    mmsCipher    = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
-        RetrieveConf plaintextPdu = (RetrieveConf) mmsCipher.decrypt(context, retrieveConf);
+        MmsCipher            mmsCipher    = new MmsCipher(new SilenceSignalProtocolStore(context, masterSecret));
+        MultimediaMessagePdu plaintextPdu = (MultimediaMessagePdu) mmsCipher.decrypt(context, retrieveConf);
 
         storeRetrievedMms(masterSecret, contentLocation, messageId, threadId, retrieveConf.getFrom(), retrieveConf.getTo(), retrieveConf.getCc(),
                           plaintextPdu.getBody(), retrieveConf.getDate(), true, notification.get().getSubscriptionId());
