@@ -1,5 +1,10 @@
 # Silence Changelog
 
+### [0.15.15] - 2019-08-23
+- Fixed infinite loop when sending MMS messages
+- Fixed crash when receiving encrypted MMS message
+- Updated translations
+
 ### [0.15.14] - 2019-08-17
 - Improved MMS support and quality of scaled images
 - Added Android Auto support
@@ -259,6 +264,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.15]: https://github.com/SilenceIM/Silence/compare/v0.15.14...v0.15.15
  [0.15.14]: https://github.com/SilenceIM/Silence/compare/v0.15.13...v0.15.14
  [0.15.13]: https://github.com/SilenceIM/Silence/compare/v0.15.12...v0.15.13
  [0.15.12]: https://github.com/SilenceIM/Silence/compare/v0.15.11...v0.15.12
