@@ -74,7 +74,7 @@ public class BitmapUtil {
 
         compressFormat = CompressFormat.JPEG;
 
-        if (quality >= MAX_COMPRESSION_QUALITY) {
+        if (quality > MAX_COMPRESSION_QUALITY) {
           quality = MAX_COMPRESSION_QUALITY;
         } else {
           quality = quality - COMPRESSION_QUALITY_DECREASE;
