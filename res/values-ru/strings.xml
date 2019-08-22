@@ -56,6 +56,7 @@
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Не удалось найти приложение для выбора медиа.</string>
   <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence требуется разрешение на доступ к внешнему хранилищу для прикрепления фото, видео или аудио, но оно было отклонено. Перейдите в настройки приложений, найдите там Silence, выберите \"Разрешения\" и включите \"Хранилище\".</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence требуется разрешение на доступ к контактам для возможности ими поделиться, но оно было отклонено. Перейдите в настройки приложений, найдите там Silence, выберите \"Разрешения\" и включите \"Контакты\".</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Камера</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Изображение</string>
@@ -77,6 +78,7 @@
   <string name="ConversationItem_group_action_left">%1$s покинул группу.</string>
   <string name="ConversationItem_click_for_details">Нажмите для подробностей</string>
   <string name="ConversationItem_unable_to_open_media">Не найдено приложение, которое может открыть этот медиа-файл.</string>
+  <string name="ConversationItem_via_s">через %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Адрес XMPP. Обновите Silence, чтобы включить эту функцию.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Начать защищенную сессию?</string>
@@ -232,6 +234,15 @@
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Поделиться с</string>
   <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Повысьте вашу конфиденциальность, общайтесь с кем угодно</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Шифруйте свое общение с другими пользователями через SMS/MMS при помощи Silence.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence необходим доступ к вашим контактам, статусу телефона и SMS-сообщениям для связи с друзьями, управления ключами шифрования и общения.</string>
+  <string name="WelcomeActivity_continue">Продолжить</string>
+  <string name="WelcomeActivity_action_required">Требуется действие!</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Вы должны предоставить Silence некоторые разрешения.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Для продолжения использования Silence, необходимо предоставить некоторые разрешения. Нажмите, чтобы продолжить.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence требуется разрешение на использование телефона для управления ключами шифрования и их привязки к SIM-карте, а также разрешение SMS для получения SMS-сообщений.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Для работы Silence требуются разрешения на использование телефона и SMS, но они были отклонены. Перейдите в настройки приложений, найдите там Silence, выберите \"Разрешения\" и включите \"Телефон\" и \"SMS\".</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Экспорт</string>
   <string name="ExportFragment_export_plaintext_to_storage">Экспортировать в открытом виде?</string>
@@ -455,6 +466,7 @@
   <string name="conversation_activity__type_message_sms_insecure">Отправить незащищенное SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Отправить защищенное MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Отправить незащищенное MMS</string>
+  <string name="conversation_activity__via_sim_name">Через %1$s</string>
   <string name="conversation_activity__send">Отправить</string>
   <string name="conversation_activity__remove">Удалить</string>
   <string name="conversation_activity__window_description">Разговор с %1$s</string>
@@ -545,6 +557,9 @@
   <string name="message_details_header__issues_need_your_attention">Некоторые проблемы требуют вашего внимания.</string>
   <string name="message_details_header__sent">Отправлено</string>
   <string name="message_details_header__received">Получено</string>
+  <string name="message_details_header__to">Кому</string>
+  <string name="message_details_header__from">От кого</string>
+  <string name="message_details_header__with">С:</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Создать парольную фразу</string>
   <string name="AndroidManifest__enter_passphrase">Введите парольную фразу</string>
@@ -698,6 +713,8 @@
   <string name="preferences_chats__message_trimming">Очистка сообщений</string>
   <string name="preferences_advanced__use_system_emoji">Использовать системные эмоджи</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Отключить встроенную в Silence поддержку эмоджи</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Всегда запрашивать SIM-карту</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Выводить запрос SIM-карты при отправке сообщений</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

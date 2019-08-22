@@ -75,6 +75,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
   <string name="ConversationItem_group_action_left">%1$s opuścił grupę.</string>
   <string name="ConversationItem_click_for_details">Dotknij, aby zobaczyć szczegóły</string>
   <string name="ConversationItem_unable_to_open_media">Nie można odnaleźć aplikacji do otwarcia tego pliku multimedialnego.</string>
+  <string name="ConversationItem_via_s">przez %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">Adres XMPP. Zaktualizuj Silence aby uaktywnić tę funkcję.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
@@ -457,6 +458,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="conversation_activity__type_message_sms_insecure">Wyślij nieszyfrowany SMS</string>
   <string name="conversation_activity__type_message_mms_secure">Wyślij szyfrowany MMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Wyślij nieszyfrowany MMS</string>
+  <string name="conversation_activity__via_sim_name">Przez %1$s</string>
   <string name="conversation_activity__send">Wyślij</string>
   <string name="conversation_activity__remove">Usuń</string>
   <string name="conversation_activity__window_description">Rozmowa z %1$s</string>
@@ -547,6 +549,10 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="message_details_header__issues_need_your_attention">Niektóre kwestie wymagają Twojej uwagi.</string>
   <string name="message_details_header__sent">Wysłano</string>
   <string name="message_details_header__received">Otrzymano</string>
+  <string name="message_details_header__type">Rodzaj</string>
+  <string name="message_details_header__to">Do</string>
+  <string name="message_details_header__from">Od</string>
+  <string name="message_details_header__with">Z</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Utwórz hasło</string>
   <string name="AndroidManifest__enter_passphrase">Podaj hasło</string>
@@ -700,6 +706,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
   <string name="preferences_chats__message_trimming">Obcinanie wiadomości</string>
   <string name="preferences_advanced__use_system_emoji">Użyj systemowych emoji</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Wyłącz wbudowane wsparcie dla emoji</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Zawsze pytaj o kartę SIM</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Zawsze pytaj której karty SIM użyć do wysłania wiadomości</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

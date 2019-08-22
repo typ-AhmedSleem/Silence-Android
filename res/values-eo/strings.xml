@@ -69,6 +69,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de konservejo por ĉiuj mesaĝoj kaj ŝlo
   <string name="ConversationItem_group_action_left">%1$s forlasis la grupon.</string>
   <string name="ConversationItem_click_for_details">Frapetu por detaloj</string>
   <string name="ConversationItem_unable_to_open_media">Ne povas trovi aplikaĵon por malfermi tiun ĉi aŭdvidaĵon.</string>
+  <string name="ConversationItem_via_s">per %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-adreso. Ĝisdatigi Silence por aktivigi tiun ĉi eblon.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Ĉu komenci sekuran seancon?</string>
@@ -419,6 +420,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="conversation_activity__type_message_sms_insecure">Sendi malsekuran SMS-on</string>
   <string name="conversation_activity__type_message_mms_secure">Sendi sekuran MMS-on</string>
   <string name="conversation_activity__type_message_mms_insecure">Sendi malsekuran MMS-on</string>
+  <string name="conversation_activity__via_sim_name">Per %1$s</string>
   <string name="conversation_activity__send">Sendi</string>
   <string name="conversation_activity__remove">Forigi</string>
   <string name="conversation_activity__window_description">Interparolado kun %1$s</string>
@@ -509,6 +511,10 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="message_details_header__issues_need_your_attention">Kelkaj aferoj bezonas vian atenton.</string>
   <string name="message_details_header__sent">Sendita</string>
   <string name="message_details_header__received">Recevita</string>
+  <string name="message_details_header__type">Speco</string>
+  <string name="message_details_header__to">Al</string>
+  <string name="message_details_header__from">De</string>
+  <string name="message_details_header__with">Per</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Krei pasfrazon</string>
   <string name="AndroidManifest__enter_passphrase">Entajpu pasfrazon</string>
@@ -660,6 +666,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
   <string name="preferences_chats__message_trimming">Mesaĝa tranĉado</string>
   <string name="preferences_advanced__use_system_emoji">Uzi sistemajn emoĝiojn</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Malaktivigi enkonstruitan subtenon por mien-simboloj</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Ĉiam demandi pri SIM‑karto</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Ĉiam demandi kiun SIM‑karton uzi por sendi mesaĝon</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->

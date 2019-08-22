@@ -46,6 +46,8 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Impossibile trovare un\'app per selezionare un file.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence richiede l\'autorizzazione per l\'archiviazione esterna per poter allegare foto, video o audio, ma è stata negata in modo permanente. Vai nel menu di impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Archiviazione\".</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence richiede l\'autorizzazione per i contatti per poter allegare informazioni di contatto, ma è stata negata in modo permanente. Vai nel menu di impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Contatti\".</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Fotocamera</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Immagine</string>
@@ -108,6 +110,7 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <string name="ConversationActivity_mms_not_supported_message">Questo messaggio non può essere inviato perchè il tuo operatore non supporta gli MMS</string>
   <string name="ConversationActivity_specify_recipient">Scegliere un contatto</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">L\'allegato supera le dimensioni massime.</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence richiede l\'autorizzazione per gli SMS per poter inviare messaggi, ma è stata negata in modo permanente. Vai nel menu di impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"SMS\".</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d messaggio non letto</item>
@@ -196,9 +199,15 @@ Attenzione, così facendo interromperai la cifratura di tutti i messaggi e le ch
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Condividi con</string>
   <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Migliora la tua privacy, parla con tutti</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Cifra i tuoi messaggi con gli utenti Silence mentre usi i normali SMS/MMS con tutti gli altri.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence richiede l\'accesso ai tuoi contatti, allo stato del telefono e ai messaggi SMS per poterti connettere con gli amici, gestire le chiavi di cifratura e chattare.</string>
   <string name="WelcomeActivity_continue">Continua</string>
   <string name="WelcomeActivity_action_required">Azione necessaria</string>
   <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Devi dare permessi a Silence.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Devi concedere alcune autorizzazioni a Silence per continuare ad usarlo. Tocca per continuare.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence richiede l\'autorizzazione per il telefono per poter gestire le chiavi di cifratura e legarle alle tue schede SIM, e l\'autorizzazione per gli SMS per ricevere i messaggi.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence richiede le autorizzazioni per il telefono e per gli SMS per poter funzionare, ma sono state negate in modo permanente. Vai nelle impostazioni dell\'app, seleziona \"Autorizzazioni\", poi attiva \"Telefono\" e \"SMS\".</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Esporta</string>
   <string name="ExportFragment_export_plaintext_to_storage">Esportare il testo in chiaro nella memoria?</string>
@@ -242,6 +251,12 @@ una nuova importazione creerà dei messaggi duplicati.</string>
   <string name="ImportFragment_import_complete">Importazione terminata!</string>
   <string name="ImportFragment_restoring_encrypted_backup">Ripristino backup cifrato...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Nessuna copia cifrata trovata!</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence richiede l\'autorizzazione per gli SMS per poter importare i messaggi, ma è stata negata in modo permanente. Vai nelle impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"SMS\".</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence richiede l\'autorizzazione per gli SMS per importare i messaggi</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence richiede l\'autorizzazione per l\'archiviazione per poter leggere da archiviazione esterna, ma è stata negata in modo permanente. Vai nelle impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Archiviazione\".</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence richiede l\'autorizzazione per l\'archiviazione per leggere da archiviazione esterna.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence richiede l\'autorizzazione per l\'archiviazione per poter scrivere su archiviazione esterna, ma è stata negata in modo permanente. Vai nelle impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Archiviazione\".</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence richiede l\'autorizzazione per l\'archiviazione per scrivere su archiviazione esterna.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nessuna chiave scansionata trovata!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installare Barcode Scanner?</string>
@@ -391,11 +406,13 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="SingleContactSelectionActivity_contact_photo">Foto del contatto</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Seleziona per</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence richiede l\'autorizzazione per i contatti per poter mostrare i tuoi contatti, ma è stata negata in modo permanente. Vai nel menu di impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Contatti\".</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Nessun contatto bloccato</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Nessuna chiamata recente.</string>
   <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence richiede l\'accesso ai tuoi contatti per poterli mostrare.</string>
   <string name="contact_selection_list_fragment__show_contacts">Mostra i contatti</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Conversazione silenziata</string>
@@ -650,6 +667,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="preferences_chats__message_trimming">Pulizia messaggi</string>
   <string name="preferences_advanced__use_system_emoji">Usa emoji di sistema</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Disattiva il supporto agli emoji integrato in Silence</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Chiedi sempre la scheda SIM</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Chiedi sempre la scheda SIM da usare quando invii messaggi</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -724,6 +743,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="key_scanning__menu_compare">Controlla</string>
   <string name="key_scanning__menu_display_your_qr_code">Mostra il tuo QR code</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Scansiona il QR code del contatto</string>
+  <string name="share_identity_fingerprint">Condividi l\'impronta della tua identità</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nuovo messaggio</string>
   <string name="text_secure_normal__menu_new_group">Nuovo gruppo</string>
@@ -750,6 +770,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="MediaPreviewActivity_cant_display">Impossibile mostrare l\'anteprima</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Tipo di media non supportato</string>
   <string name="MediaPreviewActivity_draft">Bozza</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence richiede l\'autorizzazione per l\'archiviazione per poter salvare su archiviazione esterna, ma è stata negata in modo permanente. Vai nelle impostazioni dell\'app, seleziona \"Autorizzazioni\" ed attiva \"Archiviazione\".</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Impossibile salvare su archiviazione esterna senza l\'autorizzazione</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Salva</string>
   <string name="media_preview__forward_title">Inoltra</string>
@@ -770,6 +792,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
   <string name="RingtonePreference_notification_sound_default">Suono di notifica predefinito</string>
   <string name="RingtonePreference_alarm_sound_default">Suoneria predefinita</string>
   <string name="RingtonePreference_add_ringtone_text">Aggiungi una suoneria</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Impossibile aggiungere suoneria personalizzata</string>
   <string name="Permissions_permission_required">Permesso necessario</string>
   <string name="Permissions_continue">Continua</string>
   <string name="Permissions_not_now">Non ora</string>
