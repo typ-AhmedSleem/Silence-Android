@@ -46,7 +46,7 @@ Looking for documentation? Check out the wiki of the original project:
 https://github.com/WhisperSystems/TextSecure/wiki
 
 ## Chat
-Have a question? Want to help out? Join our IRC channel: [#Silence on Freenode](https://webchat.freenode.net/?channels=Silence) or follow [@SilenceIM](https://twitter.com/SilenceIM) on Twitter.
+Have a question? Want to help out? Join us on Mattermost on [chat.silence.dev](https://chat.silence.dev/), or follow [@SilenceIM](https://twitter.com/SilenceIM) on Twitter or [@silence@mastodon.social](https://mastodon.social/@silence) on Mastodon.
 
 # Legal
 ## Cryptography Notice
