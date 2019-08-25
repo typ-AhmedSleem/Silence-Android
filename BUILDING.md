@@ -14,7 +14,7 @@ The following steps should help you (re)build Silence from the command line.
 
 1. Checkout the source somewhere on your filesystem with
 
-        git clone --recursive https://github.com/SilenceIM/Silence.git
+        git clone --recursive https://git.silence.dev/Silence/Silence-Android.git
 
 2. Make sure you have the [Android SDK](https://developer.android.com/sdk/index.html) installed somewhere on your system.
 3. Ensure that the following packages are installed from the Android SDK manager:
@@ -26,7 +26,7 @@ The following steps should help you (re)build Silence from the command line.
 
         sdk.dir=\<path to your sdk installation\>
 
-5. (Optional) Build [Gradle-Witness](https://github.com/WhisperSystems/gradle-witness)
+5. (Optional) Build [Gradle-Witness](https://git.silence.dev/Silence/gradle-witness)
 
         ./scripts/build-witness.sh
 
@@ -52,33 +52,7 @@ pngs_from_svg.py ic_audio.svg /path/to/Silence/res/ 150 --color #fff --opacity 1
 Translations
 ------------
 
-Install the [Transifex Client](http://docs.transifex.com/developer/client/setup) to update project strings
-
-Pull down all new translation updates:
- - `tx pull -af --minimum-perc=1`
-
-Pull down specific locales:
- - `tx pull -l <locales>`
-
-Push updated default strings:
- - `tx push -s`
-
-Push specific locales:
- - `tx push -t -l <locales>`
-
-Changing the source strings (this is a pain):
- 1. Make the string change
- 2. Pull the latest translations - `tx pull -af --minimum-perc=1`
- 3. Push your latest source strings - `tx push -s` (this will delete all the translations of the source strings you changed)
- 4. Push your local translations - `tx push -t` (this will restore the deleted translations)
-
- NOTES:
-   - If anyone knows of a better way to do this, please contribute it, this way sucks.
-   - This should only be done where the meaning of the source string doesn't change (ie. fixing a typo/rewording).
-   - This will cause the restored translations to look like they're from you, not the original translator.
-
-
-Full documentation at <http://docs.transifex.com/developer/client/>
+Translations are available on [Weblate](https://translate.silence.dev) and automatically updated in the source code. Make sure you run on the latest `master` revision.
 
 Setting up a development environment
 ------------------------------------
@@ -97,4 +71,4 @@ Setting up a development environment
 Contributing code
 -----------------
 
-Code contributions should be sent via github as pull requests, from feature branches [as explained here](https://help.github.com/articles/using-pull-requests).
+Code contributions should be sent via GitLab as merge requests, from feature branches.
