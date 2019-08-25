@@ -1,5 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <string name="Distribution_title">Silence</string>
-  <string name="Distribution_tagline">带给您简便的安全会话体验。</string>
+  <string name="Distribution_tagline">让加密短信/彩信会话轻而易举！</string>
+  <string name="Distribution_description">Silence 是一个短信/彩信应用，使您可以在与朋友交流时保护隐私。</string>
+  <string name="Distribution_long_description">
+Silence 是一个短信/彩信应用，使您可以在与朋友交流时保护隐私。
+通过 Silence ，你可以完全私密地发送短信并分享媒体或附件。
+
+特点：
+* 简便。Silence 像其它的短信应用一样，无需注册登录，你的朋友也不必加入新的服务。
+* 可靠。Silence 发送加密信息，无需服务器或互联网连接。
+* 私密。Silence 使用竭力设计地 Signal 加密协议为您的消息提供端到端加密。
+* 安全。所有消息本地加密，所以如果您的设备丢失或失窃，您的消息仍受保护。
+* 开源。Silence 是自由开源应用，使得任何人都可以通过代码审计验证它的安全性。
+请提交错误，问题或功能请求到：
+https://github.com/SilenceIM/Silence/issues
+
+源码可在此处获取：
+https://github.com/SilenceIM/Silence
+
+更多详情：
+https://silence.im
+
+隐私政策：
+https://silence.im/privacy</string>
 </resources>

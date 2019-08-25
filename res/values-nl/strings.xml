@@ -46,6 +46,8 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="DraftDatabase_Draft_video_snippet">(video)</string>
   <!--AttchmentManager-->
   <string name="AttachmentManager_cant_open_media_selection">Kan geen app vinden om media te selecteren.</string>
+  <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence heeft toegang nodig tot de camera om foto\'s te kunnen maken, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Opslagruimte’ in.</string>
+  <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence heeft toegang nodig tot SMS om een SMS te versturen maar deze toestemming is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘SMS’ in.</string>
   <!--AttachmentTypeSelectorAdapter-->
   <string name="AttachmentTypeSelectorAdapter_camera">Camera</string>
   <string name="AttachmentTypeSelectorAdapter_picture">Afbeelding</string>
@@ -67,6 +69,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationItem_group_action_left">%1$s heeft de groep verlaten.</string>
   <string name="ConversationItem_click_for_details">Tik voor details</string>
   <string name="ConversationItem_unable_to_open_media">Geen app gevonden om dit bestand te openen.</string>
+  <string name="ConversationItem_via_s">via %s</string>
   <string name="ConversationItem_xmpp_address_update_silence">XMPP-adres. Werk Silence bij om deze functionaliteit te gebruiken.</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_initiate_secure_session_question">Beveiligde sessie initiëren?</string>
@@ -107,6 +110,7 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ConversationActivity_mms_not_supported_message">Dit bericht kan niet worden verstuurd omdat je provider geen mms ondersteunt.</string>
   <string name="ConversationActivity_specify_recipient">Kies een contact</string>
   <string name="ConversationActivity_attachment_exceeds_size_limits">Bijlage groter dan limiet.</string>
+  <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence heeft toegang nodig tot SMS om een SMS te versturen maar deze toestemming is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘SMS’ in.</string>
   <!--ConversationAdapter-->
   <plurals name="ConversationAdapter_n_unread_messages">
     <item quantity="one">%d ongelezen bericht</item>
@@ -195,6 +199,15 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <!--ShareActivity-->
   <string name="ShareActivity_share_with">Delen met</string>
   <!--WelcomeActivity-->
+  <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Verhoog je privacy, spreek met iedereen</string>
+  <string name="WelcomeActivity_encrypt_your_messages">Versleutel uw berichten met andere Silence gebruikers en wissel gewone SMS/MMS berichten uit met anderen.</string>
+  <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence heeft toegang nodig tot contacten, telefoon status en SMS berichten om berichten uit te wisselen met uw vrienden en uw encryptiesleutels te beheren.</string>
+  <string name="WelcomeActivity_continue">Doorgaan</string>
+  <string name="WelcomeActivity_action_required">Actie vereist!</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">U moet enkele rechten toekennen aan Silence.</string>
+  <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">U moet enkele rechten toekennen aan Silence om verder te kunnen gaan. Tik om verder te gaan.</string>
+  <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence heeft toegang nodig tot de telefoon status uw encryptiesleutels te beheren en deze te relateren aan uw SIM kaarten, en toegang tot SMS om SMS berichtente ontvangen.</string>
+  <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence heeft toegang nodig tot de telefoon status en SMS berichten om te werken, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Telefoon’ en  ‘SMS’ in.</string>
   <!--ExportFragment-->
   <string name="ExportFragment_export">Exporteer</string>
   <string name="ExportFragment_export_plaintext_to_storage">Onversleutelde tekst exporteren naar opslag?</string>
@@ -236,6 +249,12 @@ Let op, dit schakelt opslagversleuteling uit voor alle berichten en sleutels. Je
   <string name="ImportFragment_import_complete">Importeren voltooid!</string>
   <string name="ImportFragment_restoring_encrypted_backup">Versleutelde backup aan het terugzetten...</string>
   <string name="ImportFragment_no_encrypted_backup_found">Geen versleutelde back-up gevonden!</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence heeft toegang nodig tot SMS berichten om SMS berichten te importeren, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘SMS’ in.</string>
+  <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence heeft toegang tot SMS berichten nodig om deze te kunnen importeren.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence heeft toegang nodig tot het opslaggeheugen om daarvan te kunnen lezen, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Opslag’ in.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence heeft toegang nodig tot het opslaggeheugen om daarvan te kunnen lezen.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence heeft toegang nodig tot het opslaggeheugen om daarnaar te kunnen schrijven, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Opslag’ in.</string>
+  <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence heeft toegang nodig tot het opslaggeheugen om daarnaar te kunnen schrijven.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Geen gescande sleutel gevonden!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Installeer Barcode Scanner?</string>
@@ -383,11 +402,14 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="SingleContactSelectionActivity_contact_photo">Contactfoto</string>
   <!--ContactSelectionListFragment-->
   <string name="ContactSelectionlistFragment_select_for">Selecteer voor</string>
+  <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence heeft toegang nodig tot de contacten om deze weer te kunnen geven, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Contacten’ in.</string>
   <!--blocked_contacts_fragment-->
   <string name="blocked_contacts_fragment__no_blocked_contacts">Geen geblokkeerde contacten</string>
   <!--contact_selection_recent_activity-->
   <string name="contact_selection_recent_activity__no_recent_calls">Geen recente gesprekken.</string>
   <!--contact_selection_list_fragment-->
+  <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence heeft toegang nodig tot de contacten om deze weer te kunnen geven.</string>
+  <string name="contact_selection_list_fragment__show_contacts">Contacten tonen.</string>
   <!--conversation_title_view-->
   <string name="conversation_title_view__conversation_muted">Geluid uit</string>
   <!--conversation_activity-->
@@ -395,6 +417,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="conversation_activity__type_message_sms_insecure">Verstuur onbeveiligde sms</string>
   <string name="conversation_activity__type_message_mms_secure">Verstuur beveiligde mms</string>
   <string name="conversation_activity__type_message_mms_insecure">Verstuur onbeveiligde mms</string>
+  <string name="conversation_activity__via_sim_name">Via %1$s</string>
   <string name="conversation_activity__send">Verstuur</string>
   <string name="conversation_activity__remove">Verwijder</string>
   <string name="conversation_activity__window_description">Gesprek met %1$s</string>
@@ -485,6 +508,10 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="message_details_header__issues_need_your_attention">Enkele zaken vereisen uw aandacht.</string>
   <string name="message_details_header__sent">Verstuurd</string>
   <string name="message_details_header__received">Ontvangen</string>
+  <string name="message_details_header__type">Type</string>
+  <string name="message_details_header__to">Naar</string>
+  <string name="message_details_header__from">Van</string>
+  <string name="message_details_header__with">Met</string>
   <!--AndroidManifest.xml-->
   <string name="AndroidManifest__create_passphrase">Wachtwoord creëren</string>
   <string name="AndroidManifest__enter_passphrase">Wachtwoord invoeren</string>
@@ -636,6 +663,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="preferences_chats__message_trimming">Bericht inkorten</string>
   <string name="preferences_advanced__use_system_emoji">Systeememoji gebruiken</string>
   <string name="preferences_advanced__disable_silences_built_in_emoji_support">Ingebouwde emoji-ondersteuning van Silence uitschakelen</string>
+  <string name="preferences_advanced__always_ask_for_sim_card">Altijd vragen naar SIM kaart</string>
+  <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Altijd vragen welke SIM kaart gebruikt moet worden om berichten te versturen</string>
   <!--****************************************-->
   <!--menus-->
   <!--****************************************-->
@@ -710,6 +739,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="key_scanning__menu_compare">Vergelijk</string>
   <string name="key_scanning__menu_display_your_qr_code">Toon uw eigen QR code</string>
   <string name="key_scanning__menu_scan_contacts_qr_code">Scan de QR code van uw contact</string>
+  <string name="share_identity_fingerprint">Identiteitssleutel delen</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nieuw bericht</string>
   <string name="text_secure_normal__menu_new_group">Nieuwe groep</string>
@@ -736,6 +766,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="MediaPreviewActivity_cant_display">Weergeven van deze afbeelding is mislukt</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Niet ondersteund mediatype</string>
   <string name="MediaPreviewActivity_draft">Concept</string>
+  <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence heeft toegang nodig tot het opslaggeheugen om daarnaar te kunnen opslaan, maar deze toegang is permanent geweigerd. Ga naar de instellingen, selecteer ‘Toestemmingen’ en schakel ‘Opslag’ in.</string>
+  <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Kan niet opslaan in het externe geheugen zonder de vereiste toestemming.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Opslaan</string>
   <string name="media_preview__forward_title">Doorsturen</string>
@@ -750,5 +782,15 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="trimmer__old_messages_successfully_deleted">Oude berichten succesvol verwijderd</string>
   <!--transport_selection_list_item-->
   <string name="transport_selection_list_item__transport_icon">Transport icoon</string>
+  <string name="RingtonePreference_ringtone_default">Standaard beltoon</string>
+  <string name="RingtonePreference_ringtone_silent">Geen</string>
+  <string name="RingtonePreference_ringtone_picker_title">Beltonen</string>
+  <string name="RingtonePreference_notification_sound_default">Standaard geluid voor berichtmeldingen</string>
+  <string name="RingtonePreference_alarm_sound_default">Standaard alarmgeluid</string>
+  <string name="RingtonePreference_add_ringtone_text">Beltoon toevoegen</string>
+  <string name="RingtonePreference_unable_to_add_ringtone">Niet in staat om aangepaste beltoon toe te voegen</string>
+  <string name="Permissions_permission_required">Toestemming vereist</string>
+  <string name="Permissions_continue">Doorgaan</string>
+  <string name="Permissions_not_now">Nu niet</string>
   <!--EOF-->
 </resources>
