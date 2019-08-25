@@ -445,7 +445,7 @@
     <string name="QuickResponseService_problem_sending_message">Problem sending message!</string>
 
     <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_silence">Silence</string>
+    <string name="SingleRecipientNotificationBuilder_silence" translatable="false">Silence</string>
     <string name="SingleRecipientNotificationBuilder_new_message">New message</string>
 
     <!-- change_passphrase_activity -->

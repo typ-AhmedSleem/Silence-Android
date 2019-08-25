@@ -10,7 +10,7 @@
 
 <resources>
 
-    <string name="Distribution_title">Silence</string>
+    <string name="Distribution_title" translatable="false">Silence</string>
     <string name="Distribution_tagline">Encrypted SMS/MMS conversations made easy!</string>
     <string name="Distribution_description">Silence is an SMS/MMS application that allows you to protect your privacy while communicating with friends.</string>
     <string name="Distribution_long_description">
