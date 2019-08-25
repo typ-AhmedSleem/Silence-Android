@@ -14,10 +14,10 @@ Silence 是一个短信/彩信应用，使您可以在与朋友交流时保护�
 * 安全。所有消息本地加密，所以如果您的设备丢失或失窃，您的消息仍受保护。
 * 开源。Silence 是自由开源应用，使得任何人都可以通过代码审计验证它的安全性。
 请提交错误，问题或功能请求到：
-https://github.com/SilenceIM/Silence/issues
+https://git.silence.dev/Silence/Silence-Android/issues
 
 源码可在此处获取：
-https://github.com/SilenceIM/Silence
+https://git.silence.dev/Silence/Silence-Android
 
 更多详情：
 https://silence.im
