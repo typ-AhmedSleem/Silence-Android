@@ -1,6 +1,6 @@
 ## Translations
 
-Please do not submit issues or pull requests for translation fixes. Anyone can update the translations in [Transifex](https://www.transifex.com/silence/silence/).
+Please do not submit issues or pull requests for translation fixes. Anyone can update the translations in [Weblate](https://translate.silence.dev).
 Please submit your corrections there.
 
 
