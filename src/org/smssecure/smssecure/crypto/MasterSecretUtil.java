@@ -271,9 +271,9 @@ public class MasterSecretUtil {
   }
 
   private static int generateIterationCount(String passphrase, byte[] salt) {
-    int TARGET_ITERATION_TIME     = 50;   //ms
-    int MINIMUM_ITERATION_COUNT   = 100;   //default for low-end devices
-    int BENCHMARK_ITERATION_COUNT = 10000; //baseline starting iteration count
+    int TARGET_ITERATION_TIME     = 1000;   //ms
+    int MINIMUM_ITERATION_COUNT   = 10000;  //default for low-end devices
+    int BENCHMARK_ITERATION_COUNT = 100000; //baseline starting iteration count
 
     try {
       PBEKeySpec       keyspec = new PBEKeySpec(passphrase.toCharArray(), salt, BENCHMARK_ITERATION_COUNT);
