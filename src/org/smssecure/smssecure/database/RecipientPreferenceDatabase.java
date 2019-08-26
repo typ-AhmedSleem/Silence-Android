@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.smssecure.smssecure.color.MaterialColor;
+import org.smssecure.smssecure.database.DatabaseContentProviders;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.libsignal.util.guava.Optional;
@@ -21,7 +22,7 @@ import java.util.Arrays;
 public class RecipientPreferenceDatabase extends Database {
 
   private static final String TAG = RecipientPreferenceDatabase.class.getSimpleName();
-  private static final String RECIPIENT_PREFERENCES_URI = "content://textsecure/recipients/";
+  private static final Uri RECIPIENT_PREFERENCES_URI = DatabaseContentProviders.RecipientPreference.CONTENT_URI;
 
   private static final String TABLE_NAME              = "recipient_preferences";
   private static final String ID                      = "_id";
@@ -71,7 +72,7 @@ public class RecipientPreferenceDatabase extends Database {
 
     Cursor cursor = database.query(TABLE_NAME, new String[] {ID, RECIPIENT_IDS}, BLOCK + " = 1",
                                    null, null, null, null, null);
-    cursor.setNotificationUri(context.getContentResolver(), Uri.parse(RECIPIENT_PREFERENCES_URI));
+    cursor.setNotificationUri(context.getContentResolver(), RECIPIENT_PREFERENCES_URI);
 
     return cursor;
   }
@@ -172,7 +173,7 @@ public class RecipientPreferenceDatabase extends Database {
     database.setTransactionSuccessful();
     database.endTransaction();
 
-    context.getContentResolver().notifyChange(Uri.parse(RECIPIENT_PREFERENCES_URI), null);
+    context.getContentResolver().notifyChange(RECIPIENT_PREFERENCES_URI, null);
   }
 
   public static class RecipientsPreferences {

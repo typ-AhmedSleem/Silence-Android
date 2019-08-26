@@ -24,6 +24,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.util.Log;
 
+import org.smssecure.smssecure.database.DatabaseContentProviders;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.util.Base64;
@@ -36,7 +37,7 @@ import java.io.IOException;
 
 public class IdentityDatabase extends Database {
 
-  private static final Uri CHANGE_URI = Uri.parse("content://textsecure/identities");
+  private static final Uri CHANGE_URI = DatabaseContentProviders.Identities.CONTENT_URI;
 
   private static final String TABLE_NAME    = "identities";
   private static final String ID            = "_id";

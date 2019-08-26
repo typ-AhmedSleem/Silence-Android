@@ -29,6 +29,14 @@ public class DatabaseContentProviders {
     public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.attachment");
   }
 
+  public static class Identities extends NoopContentProvider {
+    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.identities");
+  }
+
+  public static class RecipientPreference extends NoopContentProvider {
+    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.recipients/");
+  }
+
   private static abstract class NoopContentProvider extends ContentProvider {
 
     @Override
