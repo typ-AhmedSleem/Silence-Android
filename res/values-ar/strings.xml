@@ -398,7 +398,7 @@
     <string name="receive_key_activity__complete">انتهاء</string>
     <!--recipients_panel-->
     <string name="recipients_panel__to">
-        <small>أدخل اسم أو رقم</small>
+        <small>ادخل اسمًا أو رقمًا</small>
     </string>
     <string name="recipients_panel__add_member">إضافة عضو</string>
     <!--verify_identity_activity-->
@@ -698,7 +698,7 @@
     <string name="ConversationActivity_mms_not_supported_message">لا يمكن إرسال هذه الرسالة لأنّ متعاملكم الهاتفي لا يدعم رسائل الوسائط المتعددة MMS.</string>
     <string name="ConversationItem_received_key_exchange_message_tap_to_process">تم تلقّي رسالة تبادل مفاتيح، اضغط للمواصلة.</string>
     <plurals name="ConversationActivity_d_recipients_in_group">
-        <item quantity="zero">1 عضو</item>
+        <item quantity="zero">0 أعضاء</item>
         <item quantity="one">%d عضو</item>
         <item quantity="two">%d عضوين</item>
         <item quantity="few">%d أعضاء</item>
