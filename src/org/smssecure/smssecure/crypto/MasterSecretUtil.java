@@ -285,8 +285,9 @@ public class MasterSecretUtil {
 
       int scaledIterationTarget = (int) (((double)BENCHMARK_ITERATION_COUNT / (double)(finishTime - startTime)) * TARGET_ITERATION_TIME);
 
-      if (scaledIterationTarget < MINIMUM_ITERATION_COUNT) return MINIMUM_ITERATION_COUNT;
-      else                                                 return scaledIterationTarget;
+      if (scaledIterationTarget < MINIMUM_ITERATION_COUNT)        return MINIMUM_ITERATION_COUNT;
+      else if (scaledIterationTarget > BENCHMARK_ITERATION_COUNT) return BENCHMARK_ITERATION_COUNT;
+      else                                                        return scaledIterationTarget;
     } catch (NoSuchAlgorithmException e) {
       Log.w("MasterSecretUtil", e);
       return MINIMUM_ITERATION_COUNT;
