@@ -7,7 +7,8 @@ fi
 
 for file in "$@"; do
     commit=$(echo ${file##*/} | sed 's/.patch$//')
-    sed -i -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
+    sed -i -e 's/org\/thoughtcrime\/securesms/org\/smssecure\/smssecure/' \
+           -e 's/org.thoughtcrime.securesms/org.smssecure.smssecure/g' \
            -e 's/org.thoughtcrime.provider.securesms/org.smssecure.provider.smssecure/g' \
            -e 's/org.smssecure.smssecure.util.TextSecure/org.smssecure.smssecure.util.Silence/g' \
            -e 's/org.thoughtcrime.redphone.util/org.smssecure.smssecure.util/g' \
