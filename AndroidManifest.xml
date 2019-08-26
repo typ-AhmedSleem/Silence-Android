@@ -384,6 +384,10 @@
               android:authorities="org.smssecure.smssecure.database.identities"
               android:exported="false" />
 
+    <provider android:name=".database.DatabaseContentProviders$RecipientPreference"
+              android:authorities="org.smssecure.smssecure.database.recipients"
+              android:exported="false" />
+
     <receiver android:name=".service.RegistrationNotifier"
               android:exported="false">
         <intent-filter>
