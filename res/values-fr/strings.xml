@@ -800,4 +800,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="Permissions_continue">Continuer</string>
     <string name="Permissions_not_now">Pas maintenant</string>
     <!--EOF-->
+    <string name="NotificationChannel_other">Autre</string>
+    <string name="NotificationChannel_locked_status">État du verrouillage</string>
+    <string name="NotificationChannel_failures">Échecs</string>
+    <string name="NotificationChannel_messages">Messages</string>
 </resources>
