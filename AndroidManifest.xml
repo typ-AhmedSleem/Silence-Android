@@ -422,12 +422,15 @@
 
     </provider>
 
-    <receiver android:enabled="true"
-              android:name=".service.BootReceiver">
+    <receiver android:name=".service.BootReceiver">
         <intent-filter>
-            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
-            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
             <data android:scheme="package" />
+        </intent-filter>
+
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            <action android:name="org.smssecure.smssecure.RESTART"/>
         </intent-filter>
     </receiver>
 
