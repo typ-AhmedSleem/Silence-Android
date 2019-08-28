@@ -1,5 +1,11 @@
 # Silence Changelog
 
+### [0.15.16] - 2019-08-28
+- Improved local encryption
+- Fixed duplicated MMS settings
+- Added notifications channels
+- Updated translations
+
 ### [0.15.15] - 2019-08-23
 - Fixed infinite loop when sending MMS messages
 - Fixed crash when receiving encrypted MMS message
@@ -264,6 +270,7 @@
 - Changed app name
 - Removed non-free libraries
 
+ [0.15.16]: https://git.silence.dev/Silence/Silence-Android/compare/v0.15.15...v0.15.16
  [0.15.15]: https://git.silence.dev/Silence/Silence-Android/compare/v0.15.14...v0.15.15
  [0.15.14]: https://git.silence.dev/Silence/Silence-Android/compare/v0.15.13...v0.15.14
  [0.15.13]: https://git.silence.dev/Silence/Silence-Android/compare/v0.15.12...v0.15.13
