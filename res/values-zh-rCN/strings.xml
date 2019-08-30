@@ -72,14 +72,14 @@
     <string name="ConversationActivity_initiate_secure_session_with_s_question">是否与 %s 启动安全会话？</string>
     <string name="ConversationActivity_detected_silence_initiate_session_question">消息来自另一 Silence 用户。是否开始一个安全会话？</string>
     <string name="ConversationActivity_abort_secure_session_confirmation">是否结束安全会话？</string>
-    <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">你确定要结束此安全会话？</string>
+    <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">您确定要结束此安全会话吗？</string>
     <string name="ConversationActivity_delete_thread_question">是否删除会话？</string>
-    <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">这会永久删除此对话中所有消息。</string>
+    <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">这会永久删除此会话中所有消息。</string>
     <string name="ConversationActivity_add_attachment">添加附件</string>
     <string name="ConversationActivity_select_contact_info">选择联系人信息</string>
     <string name="ConversationActivity_compose_message">编写消息</string>
     <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">抱歉，添加附件时出现了错误。</string>
-    <string name="ConversationActivity_the_gif_you_selected_was_too_big">你选择的 GIF 太大了！</string>
+    <string name="ConversationActivity_the_gif_you_selected_was_too_big">您选择的 GIF 太大了！</string>
     <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">抱歉，选择的视频超过了消息大小限制 (%1$skB)。</string>
     <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">抱歉，选择的音频超过了消息大小限制（%1$skB）。</string>
     <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">收件人不是有效的短信或电子邮件地址！</string>
@@ -95,8 +95,8 @@
     <string name="ConversationActivity_calls_not_supported">不支持呼叫</string>
     <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">当前设备不支持拨号动作。</string>
     <string name="ConversationActivity_cant_open_link">无法找到能打开该链接的应用。</string>
-    <string name="ConversationActivity_transport_insecure_sms">不安全的短信</string>
-    <string name="ConversationActivity_transport_insecure_mms">不安全的彩信</string>
+    <string name="ConversationActivity_transport_insecure_sms">不安全短信</string>
+    <string name="ConversationActivity_transport_insecure_mms">不安全彩信</string>
     <string name="ConversationActivity_transport_secure_sms">安全短信</string>
     <string name="ConversationActivity_transport_secure_mms">安全彩信</string>
     <string name="ConversationActivity_install_smssecure">开始安全聊天：%s</string>
@@ -184,7 +184,7 @@
     <!--ShareActivity-->
     <string name="ShareActivity_share_with">分享到</string>
     <!--WelcomeActivity-->
-    <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">提高您的隐私，与所有人聊天</string>
+    <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">改善您的隐私，与所有人聊天</string>
     <string name="WelcomeActivity_encrypt_your_messages">与 Silence 用户使用加密消息并与其他用户使用普通短信/彩信。</string>
     <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence 需要访问您的联系人，设备信息和短信以与朋友连接，管理您的加密密钥和会话。</string>
     <string name="WelcomeActivity_continue">继续</string>
@@ -275,10 +275,10 @@
     <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">您可能希望验证这个联系人。</string>
     <!--RecipientPreferencesActivity-->
     <string name="RecipientPreferenceActivity_block_this_contact_question">是否屏蔽此联系人？</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">您将不再会收到来自此用户的消息。</string>
+    <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">您将不会再收到来自此用户的消息。</string>
     <string name="RecipientPreferenceActivity_block">屏蔽</string>
     <string name="RecipientPreferenceActivity_unblock_this_contact_question">是否解除对此联系人的屏蔽？</string>
-    <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">你确定要解除对此联系人的屏蔽？</string>
+    <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">您确定要解除对此联系人的屏蔽吗？</string>
     <string name="RecipientPreferenceActivity_unblock">解除屏蔽</string>
     <string name="RecipientPreferenceActivity_enabled">启用</string>
     <string name="RecipientPreferenceActivity_disabled">禁用</string>
@@ -311,7 +311,7 @@
     <string name="VerifyIdentityActivity_verified_exclamation">已验证！</string>
     <!--ViewIdentityActivity-->
     <string name="ViewIdentityActivity_scan_contacts_qr_code">扫描联系人二维码</string>
-    <string name="ViewIdentityActivity_display_your_qr_code">显示你的二维码</string>
+    <string name="ViewIdentityActivity_display_your_qr_code">显示您的二维码</string>
     <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">警告：扫描的密钥不匹配！</string>
     <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">扫描的密钥匹配！</string>
     <string name="ViewIdentityActivity_your_identity_fingerprint">您的身份标识</string>
@@ -403,7 +403,7 @@
     <string name="conversation_activity__via_sim_name">通过 %1$s</string>
     <string name="conversation_activity__send">发送</string>
     <string name="conversation_activity__remove">删除</string>
-    <string name="conversation_activity__window_description">与 %1$s 的对话</string>
+    <string name="conversation_activity__window_description">与 %1$s 的会话</string>
     <string name="conversation_activity__compose_description">编写消息</string>
     <string name="conversation_activity__emoji_toggle_description">切换表情键盘</string>
     <string name="conversation_activity__attachment_thumbnail">附件缩略图</string>
@@ -458,7 +458,7 @@
     <string name="export_fragment__export_encrypted_backup">导出加密备份</string>
     <string name="export_fragment__export_an_encrypted_backup_to_storage">导出一份加密备份到存储</string>
     <!--load_more_header-->
-    <string name="load_more_header__see_full_conversation">查看完整对话</string>
+    <string name="load_more_header__see_full_conversation">查看完整会话</string>
     <!--media_overview_activity-->
     <string name="media_overview_activity__no_images">没有图片</string>
     <!--message_recipients_list_item-->
@@ -615,7 +615,7 @@
     <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">在会话长度超过指定值后自动删除旧消息</string>
     <string name="preferences__delete_old_messages">删除旧消息</string>
     <string name="preferences__chats">聊天和媒体</string>
-    <string name="preferences__conversation_length_limit">对话数量限制</string>
+    <string name="preferences__conversation_length_limit">会话数量限制</string>
     <string name="preferences__trim_all_conversations_now">立即清理所有消息</string>
     <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">扫描所有会话并应用会话长度限制</string>
     <string name="preferences__light_theme">明亮</string>
@@ -631,10 +631,10 @@
     <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">如果您的设备通过 Wi-Fi 发送短信/彩信则启用（仅在您的设备启用 ‘Wi-Fi 呼叫’ 时启用）。</string>
     <string name="preferences__about">关于 Silence</string>
     <string name="preferences__about_version">版本 %s</string>
-    <string name="preferences__privacy_policy">隐私权政策</string>
+    <string name="preferences__privacy_policy">隐私政策</string>
     <string name="preferences__incognito_keyboard">键盘隐身模式</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">启用隐私模式后，键盘将不会记住、了解或储存您输入的任何字符</string>
-    <string name="preferences_app_protection__blocked_contacts">屏蔽的联系人</string>
+    <string name="preferences__request_keyboard_to_disable_personalized_learning">启用隐私模式后，键盘将不会记住、学习或储存您输入的任何字符</string>
+    <string name="preferences_app_protection__blocked_contacts">已屏蔽的联系人</string>
     <string name="preferences_notifications__display_in_notifications">在通知中显示的内容</string>
     <string name="preferences__show_sent_time">显示发送时间</string>
     <string name="preferences__show_sent_time_instead_of_received_time_in_conversations">为消息显示发送时间而不是接收时间</string>
@@ -671,8 +671,8 @@
     <!--conversation_context-->
     <string name="conversation_context__menu_message_details">消息详情</string>
     <string name="conversation_context__menu_copy_text">复制文本</string>
-    <string name="conversation_context__menu_delete_message">删除</string>
-    <string name="conversation_context__menu_forward_message">转发</string>
+    <string name="conversation_context__menu_delete_message">删除消息</string>
+    <string name="conversation_context__menu_forward_message">转发消息</string>
     <string name="conversation_context__menu_resend_message">重新发送消息</string>
     <!--conversation_context_image-->
     <string name="conversation_context_image__save_attachment">保存附件</string>
@@ -717,7 +717,7 @@
     <!--conversation_group_options-->
     <string name="convesation_group_options__recipients_list">接收人列表</string>
     <string name="conversation_group_options__delivery">发送</string>
-    <string name="conversation_group_options__conversation">对话</string>
+    <string name="conversation_group_options__conversation">会话</string>
     <string name="conversation_group_options__broadcast">广播</string>
     <!--key_scanning-->
     <string name="key_scanning__menu_compare">比较</string>
