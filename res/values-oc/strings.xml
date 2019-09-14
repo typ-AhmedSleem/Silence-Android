@@ -1,2 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="ConversationFragment_message_details">Detalhs del messatge</string>
+    <string name="ConversationActivity_specify_recipient">Seleccionatz un contacte</string>
+    <string name="ConversationActivity_mms_not_supported_title">MMS pas compatible</string>
+    <string name="ConversationActivity_transport_secure_mms">MMS chifrat</string>
+    <string name="ConversationActivity_transport_secure_sms">SMS chifrat</string>
+    <string name="ConversationActivity_transport_insecure_mms">MMS pas chifrat</string>
+    <string name="ConversationActivity_transport_insecure_sms">SMS pas chifrat</string>
+    <string name="ConversationActivity_calls_not_supported">Sonada pas compatibla</string>
+    <string name="ConversationActivity_invalid_recipient">Destinari invalid !</string>
+    <plurals name="ConversationActivity_d_recipients_in_group">
+        <item quantity="one">1 membre</item>
+        <item quantity="other">%d membres</item>
+    </plurals>
+    <string name="ConversationActivity_unnamed_group">Grop sens nom</string>
+    <string name="ConversationActivity_group_conversation">Conversacion de grop</string>
+    <string name="ConversationActivity_group_members">Membre del grop</string>
+    <string name="ConversationActivity_message_is_empty_exclamation">Lo messatge es void !</string>
+    <string name="ConversationActivity_delete_thread_question">Suprimir la conversacion \?</string>
+    <string name="ConversationItem_via_s">via %s</string>
+    <string name="ConversationItem_click_for_details">Tocatz pels detalhs</string>
+    <string name="ConversationItem_group_action_left">%1$s a quitat lo grop.</string>
+    <string name="ConversationItem_expires_s">Expira : %s</string>
+    <string name="ConversationItem_message_size_d_kb">Talha messatge : %d Ko</string>
+    <string name="BlockedContactsActivity_blocked_contacts">Contactes blocats</string>
+    <string name="AudioSlidePlayer_error_playing_audio">Error en legir l’àudio !</string>
+    <string name="AttachmentTypeSelectorAdapter_contact">Info del contacte</string>
+    <string name="AttachmentTypeSelectorAdapter_audio">Àudio</string>
+    <string name="AttachmentTypeSelectorAdapter_video">Vidèo</string>
+    <string name="AttachmentTypeSelectorAdapter_picture">Imatge</string>
+    <string name="AttachmentTypeSelectorAdapter_camera">Camèra</string>
+    <string name="DraftDatabase_Draft_video_snippet">(vidèo)</string>
+    <string name="DraftDatabase_Draft_audio_snippet">(àudio)</string>
+    <string name="DraftDatabase_Draft_image_snippet">(imatge)</string>
+    <plurals name="AppProtectionPreferenceFragment_minutes">
+        <item quantity="one">1 minuta</item>
+        <item quantity="other">%d minutas</item>
+    </plurals>
+    <string name="ApplicationPreferencesActivity_appearance_summary">Tèma %1$s, Lenga %2$s</string>
+    <string name="ApplicationPreferencesActivity_mms">MMS</string>
+    <string name="ApplicationPreferencesActivity_sms">SMS</string>
+    <string name="ApplicationPreferencesActivity_On">Activat</string>
+    <string name="ApplicationPreferencesActivity_on">activat</string>
+    <string name="Permissions_not_now">Pas ara</string>
+    <string name="AbstractNotificationBuilder_new_message">Nòu messatge</string>
+    <string name="please_wait">Volgatz esperar…</string>
+    <string name="delete">Suprimir</string>
+    <string name="no">Non</string>
+    <string name="yes">Òc</string>
+</resources>
