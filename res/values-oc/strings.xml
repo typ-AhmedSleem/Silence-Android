@@ -48,4 +48,27 @@
     <string name="delete">Suprimir</string>
     <string name="no">Non</string>
     <string name="yes">Òc</string>
+    <string name="ConversationActivity_compose_message">Escriure un messatge</string>
+    <string name="ConversationActivity_add_attachment">Ajustar una pèça junta</string>
+    <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Volètz vertadièrament acabar aquesta session chifrada \?</string>
+    <string name="ConversationActivity_abort_secure_session_confirmation">Acabar la session chifrada \?</string>
+    <string name="ConversationActivity_initiate_secure_session_with_s_question">Començar una session chifrada amb %s \?</string>
+    <string name="ConversationActivity_initiate_secure_session_question">Començar una session chifrada \?</string>
+    <string name="ConversationItem_error_not_delivered">Pas distribuit</string>
+    <string name="ApplicationPreferencesActivity_incoming_summary">Recepcion dels messatges %s</string>
+    <string name="ApplicationPreferencesActivity_Off">Desactivada</string>
+    <string name="ApplicationPreferencesActivity_off">desactivada</string>
+    <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Tocatz per definir Silence coma vòstra aplicacion SMS per defaut</string>
+    <string name="ApplicationPreferencesActivity_sms_disabled">SMS dintrants desactivats</string>
+    <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Tocatz per cambiar l’aplicacion de SMS per defaut</string>
+    <string name="ApplicationPreferencesActivity_sms_enabled">SMS dintrants activats</string>
+    <string name="ApplicationPreferencesActivity_disable">Desactivar</string>
+    <string name="ApplicationPreferencesActivity_disable_storage_encryption">Desactivar lo chiframent local \?</string>
+    <string name="ApplicationPreferencesActivity_delete">Escafar</string>
+    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Escafar totes los messatges ancian ara \?</string>
+    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+        <item quantity="one">1 messatge per conversacion</item>
+        <item quantity="other">%d messatges per conversacion</item>
+    </plurals>
+    <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Avètz pas encara definit de frasa de senhal !</string>
 </resources>
