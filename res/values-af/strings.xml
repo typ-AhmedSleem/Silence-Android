@@ -47,7 +47,7 @@
         <item quantity="other">%d gesprekke na inbus geskuif</item>
     </plurals>
     <plurals name="ConversationListFragment_conversations_archived">
-        <item quantity="one">"Gesprek  geärgiveer"</item>
+        <item quantity="one">Gesprek geärgiveer</item>
         <item quantity="other">%d gesprekke geärgiveer</item>
     </plurals>
     <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
@@ -99,9 +99,9 @@
         <item quantity="one">1 lid</item>
         <item quantity="other">%d lede</item>
     </plurals>
-    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">"Stilte vereis Kontakte toestemming om kontakinligting te kan aanheg, maar dit is permanent geweier. U moet liefs navigeer  na die toep instellings kieslys, \"Toestemmings\" selekteer en \"Kontakte\" aktiveer."</string>
+    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Stilte vereis Kontakte toestemming om kontakinligting te kan aanheg, maar dit is permanent geweier. U moet liefs navigeer na die toep instellings kieslys, \"Toestemmings\" selekteer en \"Kontakte\" aktiveer.</string>
     <string name="Permissions_not_now">Nie nou nie</string>
-    <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">"Stilte vereis die Eksterne Stoor toestemming om foto\\\'s, videos en klanksnitte te kan aanheg, maar dit is permanent geweier. U moet liefs na die toep instellings kieslys navigeer, \"Toestemming\"  selekteer en \"Stoor\" aktiveer."</string>
+    <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Stilte vereis die Eksterne Stoor toestemming om foto\\\'s, videos en klanksnitte te kan aanheg, maar dit is permanent geweier. U moet liefs na die toep instellings kieslys navigeer, \"Toestemming\" selekteer en \"Stoor\" aktiveer.</string>
     <plurals name="AppProtectionPreferenceFragment_minutes">
         <item quantity="one">1 minuut</item>
         <item quantity="other">%d minute</item>
