@@ -405,4 +405,33 @@
     </string>
     <string name="contact_selection_activity__enter_name_or_number">Anv pe niverenn</string>
     <string name="ConversationItem_via_s">dre %s</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dav eo deoc\'h gwiriañ an eskemm alc\'whezioù.</string>
+    <string name="ReceiveKeyActivity_processing_key_exchange">O keweriañ an eskemm alc\'hwezioù…</string>
+    <string name="ReceiveKeyActivity_processing">O keweriañ</string>
+    <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Fiziañs a c\'hallit kaout en eskemm alc\'hwezioù, met diweredekaet ho peus klokadur emgefreek an eskemmoù alc\'hwezioù.</string>
+    <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_different">Sinadur an eskemm alc\'hwezioù-se a zo disheñvel diouzh an hini ho peus degemeret a-raok digant an darempred-mañ. Gallout a ra talvezout e klask unan bennak lenn ho kaozeadenn pe eo bet adstaliet Silence gant an darempred hag ez eus ur pivelezh nevez gantañ/i.</string>
+    <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Frazenn dremen didalvoudek !</string>
+    <string name="PassphrasePromptActivity_watermark_content_description">Arlun SIlence</string>
+    <string name="PassphrasePromptActivity_enter_passphrase">Enankit ar frazenn dremen</string>
+    <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Enankit ur frazenn dremen nevez !</string>
+    <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Frazenn dremen kozh didalvoudek !</string>
+    <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Ne glot ket ar frazennoù tremen !</string>
+    <string name="MessageRecord_key_exchange_message">Kemennadenn eskemm alc\'hwezioù</string>
+    <string name="MessageRecord_updated_group">Strollad hizivaet.</string>
+    <string name="MessageRecord_left_group">Kuitaet hoc\'h eus ar strollad.</string>
+    <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">Ar gemennadenn eskemm alc\'hwezioù a zo bet kaset gant un handelv kozh eus Silence hag a zo re gozh evit kehentiñ gant hoc\'h hini. Ret eo deoc\'h kas ar gemennadenn eskemm alc\'hwezioù en-dro evit kregiñ gant un estez diogel. Pouezit evit kas ur gemennadenn eskemm alc\'hwezioù.</string>
+    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Enrineget eo bet ar gemennadenn gant un handelv kozh eus Silence, ha n\'eo ket skoret ken. Goulennit gant ar c\'haser da hizivaat Silence en e handelv nevesañ ha kas ar gemennadenn en-dro.</string>
+    <string name="NotificationMmsMessageRecord_multimedia_message">Kemennadenn liesvedia</string>
+    <string name="MmsDownloader_error_reading_mms_settings">Fazi en ul lenn arventennoù ar pourchaser MMS</string>
+    <string name="MmsDownloader_error_connecting_to_mms_provider">Fazi kennaskañ d\'ar pourchaser MMSoù</string>
+    <string name="MmsDownloader_error_storing_mms">Fazi en ur enrollañ an MMS !</string>
+    <string name="MessageDetailsRecipient_new_identity">Pivelezh nevez</string>
+    <string name="MessageDetailsRecipient_failed_to_send">C\'hwitadenn war ar c\'has</string>
+    <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Ezhomm a zo eus Barcode Scanner evit ar bonegoù QR.</string>
+    <string name="KeyScanningActivity_install_barcode_Scanner">Staliañ Barcode Scanner \?</string>
+    <string name="KeyScanningActivity_no_scanned_key_found_exclamation">N\'eus bet kavet alc\'hwez c\'hwilervet ebet !</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">An aotre kadaviñ a zo goulennet gant Silence evit gallout lenn ar pezh a zo er pellgomzer.</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">An aotre Kadaviñ a zo goulennet gant Silence evit lenn ur c\'hadaviñ divaez, met nac\'het eo bet. Kit betek arventennoù an arload, dibabit \"Aotreoù\" ha gweredekait \"Kadaviñ\".</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">An aotre SMS a zo goulennet gant Silence evit gallout enporzhiañ SMSoù</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">An aotre SMS a zo goulennet gant Silence evit enporzhiañ kemennadennoù SMS, met nac\'het eo bet. Kit betek arventennoù an arload, dibabit \"Aotreoù\" ha gweredekait \"SMS\".</string>
 </resources>
