@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="Distribution_title">Silence</string>
-  <string name="Distribution_tagline">Kryptering av SMS/MMS, helt enkelt.</string>
-  <string name="Distribution_description">Silence er et SMS/MMS-program som beskytter ditt personvern mens du snakker med venner.</string>
-  <string name="Distribution_long_description">
+    <string name="Distribution_title">Silence</string>
+    <string name="Distribution_tagline">Krypterte SMS/MMS-samtaler gjort enkelt!</string>
+    <string name="Distribution_description">Silence er et SMS/MMS-program som beskytter ditt personvern mens du snakker med venner.</string>
+    <string name="Distribution_long_description">
 Silence er et SMS/MMS-program som lar deg beskytte ditt personvern mens du snakker med venner.
 Ved bruk av Silence kan du sende SMS-meldinger og dele multimedia eller vedlegg i fullstendig fortrolighet.
 
