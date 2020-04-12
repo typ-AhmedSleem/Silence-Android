@@ -1,0 +1,33 @@
+image: registry.silence.dev/silence/android-ci:29
+
+variables:
+  GIT_SUBMODULE_STRATEGY: "recursive"
+  ANDROID_AVD_TEST_IMG:   "system-images;android-29;default;x86_64"
+
+stages:
+  - build
+  - test
+
+buildWitness:
+  stage: build
+  script:
+    - ./scripts/build-witness.sh
+
+assembleDebug:
+  stage: build
+  script:
+    - ./scripts/find-missing-strings.sh
+    - ./gradlew assembleDebug
+  artifacts:
+    paths:
+    - build/outputs/
+
+debugTests:
+  stage: test
+  script:
+    - sdkmanager --sdk_root=${ANDROID_HOME} ${ANDROID_AVD_TEST_IMG} >/dev/null
+    - avdmanager create avd --force --name android-10 -k ${ANDROID_AVD_TEST_IMG} --device "Nexus 5X"
+    - emulator -avd android-10 -wipe-data -no-window -no-audio -gpu swiftshader_indirect &
+    - /usr/bin/android-wait-for-emulator
+    - adb shell input keyevent 82 &
+    - ./gradlew connectedCheck -PdisablePreDex -PtaskThreads=1 -PandroidThread=1
