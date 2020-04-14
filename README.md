@@ -1,4 +1,4 @@
-# Silence [![Build Status](https://git.silence.dev/Silence/Silence-Android/badges/master/pipeline.svg)](https://git.silence.dev/Silence/Silence-Android/pipelines)
+# Silence [![Build Status](https://git.silence.dev/Silence/Silence-Android/badges/master/pipeline.svg)](https://git.silence.dev/Silence/Silence-Android/pipelines)[![Translation Status](https://translate.silence.dev/widgets/silence/-/svg-badge.svg)](https://translate.silence.dev/projects/silence/)
 
 [Silence](https://silence.im) (formerly SMSSecure) is an SMS/MMS application that allows you to protect your privacy while communicating with friends.
 
