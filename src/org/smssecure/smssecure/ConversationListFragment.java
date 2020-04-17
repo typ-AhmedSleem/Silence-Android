@@ -349,9 +349,8 @@ public class ConversationListFragment extends Fragment
                 recipients = getListAdapter().getRecipientsFromThreadId(threadId);
 
                 if (recipients != null) {
-                  int subscriptionId = SubscriptionManagerCompat.getDefaultMessagingSubscriptionId().or(-1);
                   isSingleConversation = recipients.isSingleRecipient() && !recipients.isGroupRecipient();
-                  isSecureDestination  = isSingleConversation && SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient().getNumber(), subscriptionId);
+                  isSecureDestination  = isSingleConversation && SessionUtil.hasSession(context, masterSecret, recipients.getPrimaryRecipient().getNumber(), recipients.getDefaultSubscriptionId());
 
                   Log.w(TAG, "Number of drafts: " + drafts.size());
                   if (drafts.size() > 1 && !drafts.get(1).getType().equals(DraftDatabase.Draft.TEXT)) {
@@ -386,9 +385,9 @@ public class ConversationListFragment extends Fragment
             private void sendTextDraft(DraftDatabase.Draft draft, long threadId) {
               OutgoingTextMessage message;
               if (isSecureDestination) {
-                message = new OutgoingEncryptedMessage(recipients, draft.getValue(), -1);
+                message = new OutgoingEncryptedMessage(recipients, draft.getValue(), recipients.getDefaultSubscriptionId());
               } else {
-                message = new OutgoingTextMessage(recipients, draft.getValue(), -1);
+                message = new OutgoingTextMessage(recipients, draft.getValue(), recipients.getDefaultSubscriptionId());
               }
               MessageSender.send(context, masterSecret, message, threadId, false);
             }
@@ -401,7 +400,7 @@ public class ConversationListFragment extends Fragment
                                                                       forcedValue != null ? forcedValue : "",
                                                                       attachment,
                                                                       System.currentTimeMillis(),
-                                                                      -1,
+                                                                      recipients.getDefaultSubscriptionId(),
                                                                       ThreadDatabase.DistributionTypes.BROADCAST);
 
               if (isSecureDestination) {
