@@ -519,7 +519,7 @@ public class ConversationItem extends LinearLayout
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
           @Override
           public void onClick(DialogInterface dialog, int which) {
-            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true);
+            KeyExchangeInitiator.initiate(context, masterSecret, recipients, true, messageRecord.getSubscriptionId());
           }
         });
         builder.show();

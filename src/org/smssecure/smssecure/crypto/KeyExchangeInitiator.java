@@ -56,17 +56,6 @@ public class KeyExchangeInitiator {
     MessageSender.send(context, masterSecret, endSessionMessage, -1, false);
   }
 
-  public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting) {
-    if (Build.VERSION.SDK_INT >= 22) {
-      List<SubscriptionInfo> listSubscriptionInfo = SubscriptionManager.from(context).getActiveSubscriptionInfoList();
-      for (SubscriptionInfo subscriptionInfo : listSubscriptionInfo) {
-        initiate(context, masterSecret, recipients, promptOnExisting, subscriptionInfo.getSubscriptionId());
-      }
-    } else {
-      initiate(context, masterSecret, recipients, promptOnExisting, -1);
-    }
-  }
-
   public static void initiate(final Context context, final MasterSecret masterSecret, final Recipients recipients, boolean promptOnExisting, final int subscriptionId) {
     if (promptOnExisting && hasInitiatedSession(context, masterSecret, recipients, subscriptionId)) {
       AlertDialog.Builder dialog = new AlertDialog.Builder(context);
