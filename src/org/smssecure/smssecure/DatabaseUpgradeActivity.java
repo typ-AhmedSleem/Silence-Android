@@ -23,7 +23,6 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.View;
@@ -157,20 +156,32 @@ public class DatabaseUpgradeActivity extends BaseActivity {
 
       if (params[0] < MULTI_SIM_MULTI_KEYS_VERSION) {
         if (Build.VERSION.SDK_INT >= 22) {
+
+          int eligibleDeviceSubscriptionId = -1;
+
+          List<SubscriptionInfoCompat> subscriptionInfoList = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfoList();
+
           /*
            * getDefaultSubscriptionId() is available for API 24+ only, so we
            * move keys and sessions to SIM card in the first available slot,
-           * not to the default one.
+           * not to the default one, on API < 24 or if getDefaultSubscriptionId()
+           * returns INVALID_SUBSCRIPTION_ID.
            */
-          List<SubscriptionInfoCompat> subscriptionInfoList = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfoList();
-          int smallerSlot = -1;
-          int eligibleDeviceSubscriptionId = -1;
+          if (Build.VERSION.SDK_INT >= 24)
+            eligibleDeviceSubscriptionId = SubscriptionManager.from(context).getDefaultSubscriptionId();
 
-          for (SubscriptionInfoCompat subscriptionInfo : subscriptionInfoList) {
-            if (smallerSlot == -1 || subscriptionInfo.getIccSlot() < smallerSlot) {
-              smallerSlot                  = subscriptionInfo.getIccSlot();
-              eligibleDeviceSubscriptionId = subscriptionInfo.getDeviceSubscriptionId();
+          if (eligibleDeviceSubscriptionId == -1) {
+            int smallerSlot = -1;
+
+            for (SubscriptionInfoCompat subscriptionInfo : subscriptionInfoList) {
+              if (smallerSlot == -1 || subscriptionInfo.getIccSlot() < smallerSlot) {
+                smallerSlot                  = subscriptionInfo.getIccSlot();
+                eligibleDeviceSubscriptionId = subscriptionInfo.getDeviceSubscriptionId();
+              }
             }
+
+            Log.w(TAG, "smallerSlot:                  " + smallerSlot);
+            Log.w(TAG, "eligibleDeviceSubscriptionId: " + eligibleDeviceSubscriptionId);
           }
 
           DualSimUtil.moveIdentityKeysAndSessionsToSubscriptionId(context, -1, eligibleDeviceSubscriptionId);
