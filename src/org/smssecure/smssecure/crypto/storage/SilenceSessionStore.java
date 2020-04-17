@@ -42,7 +42,7 @@ public class SilenceSessionStore implements SessionStore {
 
   public SilenceSessionStore(Context context, MasterSecret masterSecret, int subscriptionId) {
     Log.w(TAG, "SilenceSessionStore for subscription ID " + subscriptionId);
-    if (subscriptionId == -1) Log.w(TAG, "Subscription ID should not be -1!");
+    if (subscriptionId == -1 && Build.VERSION.SDK_INT >= 22) Log.w(TAG, "Subscription ID should not be -1!");
 
     this.context        = context.getApplicationContext();
     this.masterSecret   = masterSecret;
