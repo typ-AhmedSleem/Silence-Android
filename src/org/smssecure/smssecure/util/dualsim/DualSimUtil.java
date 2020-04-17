@@ -15,6 +15,7 @@ import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.crypto.storage.SilenceSessionStore;
+import org.smssecure.smssecure.notifications.NotificationChannels;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.util.ServiceUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
@@ -114,7 +115,7 @@ public class DualSimUtil {
 
   public static void displayNotification(Context context) {
     Intent       targetIntent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-    Notification notification = new NotificationCompat.Builder(context)
+    Notification notification = new NotificationCompat.Builder(context, NotificationChannels.OTHER)
                                     .setSmallIcon(R.drawable.icon_notification)
                                     .setColor(context.getResources().getColor(R.color.silence_primary))
                                     .setContentTitle(context.getString(R.string.DualSimUtil__new_sim_card_detected))
