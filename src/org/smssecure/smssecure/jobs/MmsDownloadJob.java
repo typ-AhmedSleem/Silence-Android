@@ -36,6 +36,7 @@ import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.protocol.WirePrefix;
 import org.smssecure.smssecure.providers.SingleUseBlobProvider;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.dualsim.DualSimUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
@@ -120,7 +121,9 @@ public class MmsDownloadJob extends MasterSecretJob {
         throw new MmsException("Invalid content location: "+contentLocation);
       }
 
-      RetrieveConf retrieveConf = new CompatMmsConnection(context).retrieve(contentLocation, transactionId, notification.get().getSubscriptionId());
+      int deviceSubbscriptionId = DualSimUtil.getSubscriptionIdFromDeviceSubscriptionId(context, notification.get().getSubscriptionId());
+
+      RetrieveConf retrieveConf = new CompatMmsConnection(context).retrieve(contentLocation, transactionId, deviceSubbscriptionId);
 
       if (retrieveConf == null) {
         throw new MmsException("RetrieveConf was null");

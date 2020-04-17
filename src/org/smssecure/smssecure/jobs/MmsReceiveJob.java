@@ -17,6 +17,7 @@ import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.service.KeyCachingService;
+import org.smssecure.smssecure.util.dualsim.DualSimUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
@@ -35,8 +36,11 @@ public class MmsReceiveJob extends ContextJob {
                                 .withWakeLock(true)
                                 .withPersistence().create());
 
+    Log.w(TAG, "subscriptionId: " + subscriptionId);
+    Log.w(TAG, "Found app subscription ID: " + DualSimUtil.getSubscriptionIdFromDeviceSubscriptionId(context, subscriptionId));
+
     this.data           = data;
-    this.subscriptionId = subscriptionId;
+    this.subscriptionId = DualSimUtil.getSubscriptionIdFromDeviceSubscriptionId(context, subscriptionId);
   }
 
   @Override
