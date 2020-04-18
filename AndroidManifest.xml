@@ -3,7 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="org.smssecure.smssecure">
 
-    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots,android.support.v13,com.davemorrissey.labs.subscaleview,,com.klinker.android.send_message,org.whispersystems.libsignal"/>
+    <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots,android.support.v13,com.davemorrissey.labs.subscaleview,,com.klinker.android.send_message"/>
 
     <permission android:name="org.smssecure.smssecure.ACCESS_SECRETS"
                 android:label="Access to Silence Secrets"
