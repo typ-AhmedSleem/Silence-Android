@@ -448,14 +448,17 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
       for (SubscriptionInfoCompat subscriptionInfo : activeSubscriptions) {
         final int subscriptionId = subscriptionInfo.getSubscriptionId();
-        identitiesMenu.add(Menu.NONE, Menu.NONE, Menu.NONE, subscriptionInfo.getDisplayName())
-                      .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem item) {
-                          handleVerifyIdentity(subscriptionId);
-                          return true;
-                        }
-                      });
+
+        if (SessionUtil.hasSession(this, masterSecret, recipients.getPrimaryRecipient().getNumber(), subscriptionId)) {
+          identitiesMenu.add(Menu.NONE, Menu.NONE, Menu.NONE, subscriptionInfo.getDisplayName())
+                        .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                          @Override
+                          public boolean onMenuItemClick(MenuItem item) {
+                            handleVerifyIdentity(subscriptionId);
+                            return true;
+                          }
+                        });
+        }
       }
     } else {
       menu.findItem(R.id.menu_verify_identity_dual_sim).setVisible(false);
@@ -510,7 +513,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         }
       }
     } else {
-      menu.findItem(R.id.menu_abort_session).setVisible(false);
+      menu.findItem(R.id.menu_abort_session_dual_sim).setVisible(false);
+      menu.findItem(R.id.menu_start_secure_session_dual_sim).setVisible(false);
     }
   }
 
