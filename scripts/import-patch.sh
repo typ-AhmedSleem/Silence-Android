@@ -23,5 +23,3 @@ for sha in "$@"; do
     wget "$UPSTREAM/commit/$sha.patch" 2> /dev/null
     $cwd/scripts/fix-patch.sh "$cwd/$sha.patch"
 done
-
-git checkout master > /dev/null 2>&1
