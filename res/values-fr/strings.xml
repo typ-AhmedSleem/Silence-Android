@@ -804,4 +804,8 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="NotificationChannel_locked_status">État du verrouillage</string>
     <string name="NotificationChannel_failures">Échecs</string>
     <string name="NotificationChannel_messages">Messages</string>
+    <string name="ConfirmIdentityDialog_accept">Accepter</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La clé de %1$s a changé. Cela pourrait signifier que quelqu\'un essaye d\'intercepter la communication, ou bien simplement que %2$s a réinstallé Silence et a désormais une nouvelle clé d\'identité.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Une erreur est survenue pendant le téléchargement du MMS, appuyez pour réessayer</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Téléchargement du MMS</string>
 </resources>
