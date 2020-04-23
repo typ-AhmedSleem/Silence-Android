@@ -81,7 +81,7 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
     <string name="ConversationActivity_initiate_secure_session_question">Rozpocząć bezpieczną sesję?</string>
     <string name="ConversationActivity_initiate_secure_session_with_s_question">Rozpocząć bezpieczną sesję z %s?</string>
     <string name="ConversationActivity_detected_silence_initiate_session_question">Otrzymano wiadomość od osoby, która także posiada Silence, zainicjować bezpieczną sesję?</string>
-    <string name="ConversationActivity_abort_secure_session_confirmation">Potwierdzenie zakończenia bezpiecznej sesji</string>
+    <string name="ConversationActivity_abort_secure_session_confirmation">Czy zakończyć bezpieczną sesję\?</string>
     <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Czy na pewno chcesz zakończyć bezpieczną sesję?</string>
     <string name="ConversationActivity_delete_thread_question">Usunąć konwersację?</string>
     <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">To permanentnie skasuje wszystkie wiadomości w tej konwersacji.</string>
@@ -143,17 +143,14 @@ Uwaga, szyfrowanie wszystkich Twoich wiadomości i kluczy zostanie wyłączone. 
     <string name="ConversationFragment_save_to_sd_card">Zapisać na dysk?</string>
     <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
         <item quantity="one">Zapisanie tego pliku na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do tego pliku.
-
-Kontynuować?</item>
+\n
+\nKontynuować\?</item>
         <item quantity="few">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
-
-Kontynuować?</item>
+\n
+\nKontynuować\?</item>
         <item quantity="many">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
-
-Kontynuować?</item>
-        <item quantity="other">Zapisanie wszystkich %1$d plików na dysku pozwoli innym aplikacjom na Twoim telefonie na dostęp do nich.
-
-Kontynuować?</item>
+\n
+\nKontynuować\?</item>
     </plurals>
     <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
         <item quantity="one">Błąd podczas zapisywania załącznika na dysk!</item>
@@ -201,20 +198,18 @@ Kontynuować?</item>
         <item quantity="many">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
         <item quantity="other">To permanentnie skasuje wszystkie %1$d wybranych konwersacji.</item>
     </plurals>
-    <string name="ConversationListFragment_deleting">Usuwanie…</string>
+    <string name="ConversationListFragment_deleting">Usuwanie</string>
     <string name="ConversationListFragment_deleting_selected_conversations">Usuwanie wybranych konwersacji…</string>
     <plurals name="ConversationListFragment_conversations_archived">
-        <item quantity="one">Konwersacja zarchiwizowana.</item>
-        <item quantity="few">%d konwersacji zarchiwizowanych.</item>
-        <item quantity="many">%d konwersacji zarchiwizowanych.</item>
-        <item quantity="other">%d konwersacji zarchiwizowanych.</item>
+        <item quantity="one">Konwersacja zarchiwizowana</item>
+        <item quantity="few">%d konwersacje zarchiwizowano</item>
+        <item quantity="many">%d konwersacji zarchiwizowano</item>
     </plurals>
     <string name="ConversationListFragment_undo">COFNIJ</string>
     <plurals name="ConversationListFragment_moved_conversations_to_inbox">
-        <item quantity="one">Przeniesiono konwersację do Odebranych.</item>
-        <item quantity="few">Przeniesiono %d konwersacji do Odebranych.</item>
-        <item quantity="many">Przeniesiono %d konwersacji do Odebranych.</item>
-        <item quantity="other">Przeniesiono %d konwersacji do Odebranych.</item>
+        <item quantity="one">Przeniesiono konwersację do Odebranych</item>
+        <item quantity="few">Przeniesiono %d konwersacje do Odebranych</item>
+        <item quantity="many">Przeniesiono %d konwersacji do Odebranych</item>
     </plurals>
     <string name="ConversationListFragment_send_drafts">Wyślij szkice</string>
     <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">To wyśle zapisane szkice wybranych rozmów.</string>
@@ -266,7 +261,7 @@ Kontynuować?</item>
     <string name="GroupCreateActivity_actionbar_update_title">Aktualizuj grupę</string>
     <string name="GroupCreateActivity_actionbar_mms_title">Nowa grupa MMS</string>
     <string name="GroupCreateActivity_contacts_mms_exception">Wystąpił błąd podczas tworzenia nowej grupy. Grupa nie została utworzona.</string>
-    <string name="GroupCreateActivity_contacts_no_members">Potrzebujesz przynajmniej jeden osoby w Twojej grupie.</string>
+    <string name="GroupCreateActivity_contacts_no_members">Potrzebujesz przynajmniej jeden osoby w Twojej grupie!</string>
     <string name="GroupCreateActivity_menu_create_title">Utwórz grupę</string>
     <!--GroupMembersDialog-->
     <string name="GroupMembersDialog_me">Ja</string>
@@ -292,9 +287,9 @@ Kontynuować?</item>
     <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence wymaga uprawnienia SMS, aby móc zaimportować wiadomości SMS, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „SMS”.</string>
     <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence wymaga uprawnienia „SMS”, aby zaimportować wiadomości</string>
     <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence wymaga uprawnienia odczytu pamięci, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
-    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc czytać z pamięci zewnętrznej</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc czytać z pamięci zewnętrznej.</string>
     <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence wymaga uprawnienia zapisu pamięci, lecz zostało ono permanentnie odrzucone. Prosimy otworzyć menu aplikacji Androida, „uprawnienia aplikacji”, a następnie zezwól na „pamięć”.</string>
-    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc zapisywać do pamięci zewnętrznej</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence wymaga uprawnienia „pamięć”, aby móc zapisywać do pamięci zewnętrznej.</string>
     <!--KeyScanningActivity-->
     <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Nie znaleziono żadnego zeskanowanego klucza!</string>
     <string name="KeyScanningActivity_install_barcode_Scanner">Zainstalować Barcode Scanner?</string>
@@ -327,9 +322,7 @@ Kontynuować?</item>
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Podpis pod tą wymianą kluczy jest zaufany, ale masz wyłączoną opcję \'automatyczna wymiana klucza\'.</string>
     <string name="ReceiveKeyActivity_processing">Przetwarzanie</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">Przetwarzanie wymiany kluczy…</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Może chcesz zweryfikować 
-ten kontakt.
-</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Może zechcesz zweryfikować ten kontakt.</string>
     <!--RecipientPreferencesActivity-->
     <string name="RecipientPreferenceActivity_block_this_contact_question">Zablokować ten kontakt?</string>
     <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Już więcej nie zobaczysz wiadomości przesłanych od tego użytkownika.</string>
@@ -363,7 +356,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Odbiorca nie posiada klucza tożsamości.</string>
     <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skanuj kod QR kontaktu</string>
     <string name="VerifyIdentityActivity_display_your_qr_code">Wyświetl Twój kod QR</string>
-    <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UWAGA, zeskanowane klucze NIE ZGADZAJĄ się! Proszę sprawdź klucz ostrożnie!</string>
+    <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UWAGA, zeskanowane klucze NIE ZGADZAJĄ się! Proszę ostrożnie sprawdzić klucze.</string>
     <string name="VerifyIdentityActivity_not_verified_exclamation">NIE zweryfikowany!</string>
     <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ich klucz jest poprawny. Niezbędna będzie także weryfikacja Twojego klucza z odbiorcami.</string>
     <string name="VerifyIdentityActivity_verified_exclamation">Zweryfikowano!</string>
@@ -449,7 +442,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <!--contact_selection_recent_activity-->
     <string name="contact_selection_recent_activity__no_recent_calls">Brak ostatnich połączeń.</string>
     <!--contact_selection_list_fragment-->
-    <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence wymaga dostępu do kontaktów, aby móc je wyświetlać</string>
+    <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence wymaga dostępu do kontaktów, aby móc je wyświetlać.</string>
     <string name="contact_selection_list_fragment__show_contacts">Wyświetl kontakty</string>
     <!--conversation_title_view-->
     <string name="conversation_title_view__conversation_muted">Rozmowa wyciszona</string>
@@ -466,7 +459,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="conversation_activity__emoji_toggle_description">Przełącz do emoji klawiatury</string>
     <string name="conversation_activity__attachment_thumbnail">Minaturka załącznika</string>
     <!--conversation_item-->
-    <string name="conversation_item__mms_downloading_description">Pobieranie wiadomości multimedialnej…</string>
+    <string name="conversation_item__mms_downloading_description">Pobieranie wiadomości multimedialnej</string>
     <string name="conversation_item__mms_image_description">Wiadomość multimedialna</string>
     <string name="conversation_item__secure_message_description">Bezpieczna wiadomość</string>
     <!--conversation_item_sent-->
@@ -506,17 +499,17 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <!--database_upgrade_activity-->
     <string name="database_upgrade_activity__updating_database">Aktualizowanie bazy danych…</string>
     <string name="export_fragment__export_plaintext_backup">Eksport nieszyfrowanej kopi zapasowej</string>
-    <string name="export_fragment__export_a_plaintext_backup_compatible_with">Eksportuj niezaszyfrowaną kopię zapasową kompatybilną z \'SMSBackup &amp; Restore\' na dysk.</string>
+    <string name="export_fragment__export_a_plaintext_backup_compatible_with">Eksportuj niezaszyfrowaną kopię zapasową kompatybilną z „SMSBackup &amp; Restore” do pamięci</string>
     <string name="import_fragment__import_system_sms_database">Importuj systemową bazę danych SMS</string>
-    <string name="import_fragment__import_the_database_from_the_default_system">Importuj bazę danych z domyślnej systemowej aplikacji SMS.</string>
-    <string name="import_fragment__restore_encrypted_backup">Przywróć z zaszyfrowanej kopii zapasowej.</string>
+    <string name="import_fragment__import_the_database_from_the_default_system">Importuj bazę danych z domyślnej systemowej aplikacji SMS</string>
+    <string name="import_fragment__restore_encrypted_backup">Przywróć z zaszyfrowanej kopii zapasowej</string>
     <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Przywróć poprzednio wyeksportowaną szyfrowaną kopię zapasową</string>
     <string name="import_fragment__import_plaintext_backup">Importuj nieszyfrowaną kopię zapasową</string>
-    <string name="import_fragment__import_a_plaintext_backup_file">Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z \'SMSBackup &amp; Restore\'.</string>
+    <string name="import_fragment__import_a_plaintext_backup_file">Importuj niezaszyfrowany plik kopii zapasowej, kompatybilny z „SMSBackup &amp; Restore”</string>
     <string name="export_fragment__export_encrypted_backup">Eksportuj zaszyfrowaną kopię zapasową</string>
     <string name="export_fragment__export_an_encrypted_backup_to_storage">Eksportuj zaszyfrowaną kopię zapasową na dysk</string>
     <!--load_more_header-->
-    <string name="load_more_header__see_full_conversation">Zobacz konwersację w całości.</string>
+    <string name="load_more_header__see_full_conversation">Zobacz konwersację w całości</string>
     <!--media_overview_activity-->
     <string name="media_overview_activity__no_images">Brak obrazów</string>
     <!--message_recipients_list_item-->
@@ -540,7 +533,9 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Kontynuuj</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">Wprowadź nazwę lub numer kontaktu</string>
+    <string name="recipients_panel__to">
+        <small>Wprowadź nazwę lub numer kontaktu</small>
+    </string>
     <string name="recipients_panel__add_member">Dodaj uczestnika</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Ich identyfikacja (oni widzą):</string>
@@ -615,7 +610,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="preferences__automatically_complete_key_exchanges_for_new_sessions_or_for_existing_sessions_with_the_same_identity_key">Automatycznie zakończ wymianę kluczy dla nowej lub obecnej sesji używając tego samego klucza tożsamości</string>
     <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokuj rzuty ekranu w obecnej liście oraz w aplikacji</string>
     <string name="preferences__forget_passphrase_from_memory_after_some_interval">Wymaż hasło z pamięci systemu po pewnym czasie</string>
-    <string name="preferences__timeout_passphrase">Limit czasu dla hasła?</string>
+    <string name="preferences__timeout_passphrase">Limit czasu dla hasła</string>
     <string name="preferences__pref_timeout_interval_dialogtitle">Wybierz czas wygaśnięcia hasła</string>
     <string name="preferences__pref_timeout_interval_title">Wybierz czas wygaśnięcia hasła</string>
     <string name="preferences__the_amount_of_time_to_wait_before_forgetting_passphrase">Ilość czasu zanim hasło zostanie wymazane z pamięci urządzenia</string>
@@ -840,4 +835,8 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="NotificationChannel_locked_status">Status zablokowany</string>
     <string name="NotificationChannel_failures">Awarie</string>
     <string name="NotificationChannel_messages">Wiadomości</string>
+    <string name="ConfirmIdentityDialog_accept">Akceptuj</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Klucz tożsamości dla kontaktu %1$s został zmieniony. To może oznaczać, że ktoś próbuje przechwycić waszą rozmowę, albo po prostu %2$s zainstalował(a) ponownie program Silence i teraz ma nowy klucz tożsamości.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Błąd pobierania wiadomości MMS, stuknij, aby powtórzyć</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Pobieranie wiadomości MMS</string>
 </resources>
