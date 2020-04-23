@@ -281,9 +281,9 @@ Atentu, tio ĉi malaktivigos ĉifradon de konservejo por ĉiuj mesaĝoj kaj ŝlo
     <!--PassphraseChangeActivity-->
     <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Pasfrazoj malsamas!</string>
     <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Ekspasfazo eraras!</string>
-    <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nenia pasfrazo entajpita!</string>
+    <string name="PassphraseChangeActivity_enter_new_passphrase_exclamation">Nenia pasfrazo enigita!</string>
     <!--PassphrasePromptActivity-->
-    <string name="PassphrasePromptActivity_enter_passphrase">Entajpu pasfrazon</string>
+    <string name="PassphrasePromptActivity_enter_passphrase">Enigu pasfrazon</string>
     <string name="PassphrasePromptActivity_watermark_content_description">Emblemo de Silence</string>
     <string name="PassphrasePromptActivity_invalid_passphrase_exclamation">Erara pasfrazo!</string>
     <!--ReceiveKeyActivity-->
@@ -291,7 +291,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de konservejo por ĉiuj mesaĝoj kaj ŝlo
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">La subskribo de tiu ĉi ŝlosil-interŝanĝo konfidindas, sed vi havas la agordon \'“aŭtomate fini ŝlosilo-interŝanĝon” malaktiva.</string>
     <string name="ReceiveKeyActivity_processing">Prilaborado</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">Prilaborado de ŝlosil-interŝanĝo…</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Vi devas kontroli identigilon de tiu ĉi kontakto.</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Eble vi volus verigi kontroli identigon de tiu ĉi kontakto.</string>
     <!--RecipientPreferencesActivity-->
     <string name="RecipientPreferenceActivity_block_this_contact_question">Ĉu bloki tiun ĉi kontakton?</string>
     <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">De nun vi ne vidos mesaĝojn senditajn de tiu ĉi uzanto.</string>
@@ -395,9 +395,9 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <!--change_passphrase_activity-->
     <string name="change_passphrase_activity__old_passphrase">Malnova pasfrazo</string>
     <string name="change_passphrase_activity__new_passphrase">Nova pasfrazo</string>
-    <string name="change_passphrase_activity__repeat_new_passphrase">Reentajpu novan pasfrazon</string>
+    <string name="change_passphrase_activity__repeat_new_passphrase">Reenigu novan pasfrazon</string>
     <!--contact_selection_activity-->
-    <string name="contact_selection_activity__enter_name_or_number">Entajpu nomon aŭ numeron</string>
+    <string name="contact_selection_activity__enter_name_or_number">Enigu nomon aŭ numeron</string>
     <!--contact_selection_group_activity-->
     <string name="contact_selection_group_activity__no_contacts">Neniaj kontaktoj.</string>
     <string name="contact_selection_group_activity__finding_contacts">Ŝargado de kontaktoj…</string>
@@ -503,7 +503,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="receive_key_activity__complete">Pluigi</string>
     <!--recipients_panel-->
     <string name="recipients_panel__to">
-        <small>Entajpu nomon aŭ numeron</small>
+        <small>Enigu nomon aŭ numeron</small>
     </string>
     <string name="recipients_panel__add_member">Aldoni anon</string>
     <!--verify_identity_activity-->
@@ -519,7 +519,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="message_details_header__with">Per</string>
     <!--AndroidManifest.xml-->
     <string name="AndroidManifest__create_passphrase">Krei pasfrazon</string>
-    <string name="AndroidManifest__enter_passphrase">Entajpu pasfrazon</string>
+    <string name="AndroidManifest__enter_passphrase">Enigu pasfrazon</string>
     <string name="AndroidManifest__select_contacts">Elektu kontaktojn</string>
     <string name="AndroidManifest__public_identity_key">Publikigi ident-ŝlosilon</string>
     <string name="AndroidManifest__change_passphrase">Ŝanĝi pasfrazon</string>
@@ -654,7 +654,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="preferences__about_version">Versio %s</string>
     <string name="preferences__privacy_policy">Politiko pri privateco</string>
     <string name="preferences__incognito_keyboard">Privata klavaro</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">En privata reĝimo la klavaro ne memoros, lernos kaj konservos iujn ajn entajpitajn vortojn</string>
+    <string name="preferences__request_keyboard_to_disable_personalized_learning">En privata reĝimo la klavaro ne memoros, lernos kaj konservos iujn ajn enigatajn vortojn</string>
     <string name="preferences_app_protection__blocked_contacts">Blokitaj kontaktoj</string>
     <string name="preferences_notifications__display_in_notifications">Montri en sciigoj</string>
     <string name="preferences__show_sent_time">Montri tempon de sendo</string>
@@ -706,8 +706,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="conversation_list_batch__menu_delete_selected">Forigi elektitajn</string>
     <string name="conversation_list_batch__menu_select_all">Elekti ĉiujn</string>
     <string name="conversation_list_batch__menu_send_drafts">Sendi elektitajn malnetojn</string>
-    <string name="conversation_list_batch_archive__menu_archive_selected">Arĥivigi elektitajn</string>
-    <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Malarĥivigi elektitajn</string>
+    <string name="conversation_list_batch_archive__menu_archive_selected">Arĥivi elektitajn</string>
+    <string name="conversation_list_batch_unarchive__menu_unarchive_selected">Malarĥivi elektitajn</string>
     <!--conversation_list-->
     <string name="conversation_list__menu_search">Serĉi</string>
     <!--conversation_list_item_view-->
@@ -727,8 +727,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <!--conversation-->
     <string name="conversation__menu_add_attachment">Aldoni kunsendaĵon</string>
     <string name="conversation__menu_delete_conversation">Forigi interparoladon</string>
-    <string name="conversation__menu_archive_conversation">Arĥivigi interparoladon</string>
-    <string name="conversation__menu_unarchive_conversation">Malarĥivigi interparoladon</string>
+    <string name="conversation__menu_archive_conversation">Arĥivi interparoladon</string>
+    <string name="conversation__menu_unarchive_conversation">Malarĥivi interparoladon</string>
     <string name="conversation__menu_view_media">Ĉiuj bildoj</string>
     <string name="conversation__menu_conversation_settings">Interparoladaj agordoj</string>
     <!--conversation_popup-->
@@ -802,4 +802,8 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="NotificationChannel_locked_status">Stato de ŝloso</string>
     <string name="NotificationChannel_failures">Paneoj</string>
     <string name="NotificationChannel_messages">Mesaĝoj</string>
+    <string name="ConfirmIdentityDialog_accept">Akcepti</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La ident‑ŝlosilo por la kontakto %1$s ŝanĝiĝis. Tio ĉi povas signifi, ke iu provas interkapti vian interparoladon, aŭ %2$s simple reinstalis la aplikaĵon Silence kaj nun havas novan ident‑ŝlosilon.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Eraro dum elŝuti MMS-mesaĝon, frapetu por reprovi</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Elŝutado de MMS-mesaĝo</string>
 </resources>
