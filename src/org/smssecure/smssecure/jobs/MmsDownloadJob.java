@@ -37,9 +37,11 @@ import org.smssecure.smssecure.protocol.WirePrefix;
 import org.smssecure.smssecure.providers.SingleUseBlobProvider;
 import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.dualsim.DualSimUtil;
+import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
+import org.whispersystems.jobqueue.util.Base64;
 import org.whispersystems.libsignal.DuplicateMessageException;
 import org.whispersystems.libsignal.InvalidMessageException;
 import org.whispersystems.libsignal.LegacyMessageException;
@@ -223,10 +225,31 @@ public class MmsDownloadJob extends MasterSecretJob {
         PduPart part = media.getPart(i);
 
         if (part.getData() != null) {
+          byte[]  decodedDigest = null;
+
+          if (isSecure) {
+            PduPart digestPart  = pduBody.getPartByName(Util.toIsoString(part.getName()) + ".digest");
+            byte[]  digestBytes = null;
+
+            if (digestPart != null) {
+              digestBytes = digestPart.getData();
+            }
+
+            if (digestBytes != null) {
+              decodedDigest = Base64.decode(digestBytes, Base64.NO_WRAP);
+            }
+
+            if (decodedDigest != null) {
+              Log.w(TAG, "Available digest for part name " + Util.toIsoString(part.getName()) + " (content id " + Util.toIsoString(part.getContentId()) + "): " + Hex.toString(decodedDigest));
+            } else {
+              Log.w(TAG, "No available digest for part name " + Util.toIsoString(part.getName()) + " (content id " + Util.toIsoString(part.getContentId()) + ")");
+            }
+          }
+
           Uri uri = provider.createUri(part.getData());
           attachments.add(new UriAttachment(uri, Util.toIsoString(part.getContentType()),
                                             AttachmentDatabase.TRANSFER_PROGRESS_DONE,
-                                            part.getData().length));
+                                            part.getData().length, decodedDigest));
         }
       }
     }

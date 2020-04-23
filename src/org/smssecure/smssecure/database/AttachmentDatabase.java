@@ -42,6 +42,7 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.MediaStream;
 import org.smssecure.smssecure.mms.MmsException;
 import org.smssecure.smssecure.mms.PartAuthority;
+import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.MediaUtil.ThumbnailData;
 import org.smssecure.smssecure.util.Util;
@@ -52,6 +53,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.security.MessageDigest;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -251,36 +253,6 @@ public class AttachmentDatabase extends Database {
     }
   }
 
-  public long insertAttachmentsForPlaceholder(@NonNull MasterSecret masterSecret, long mmsId,
-                                              @NonNull AttachmentId attachmentId,
-                                              @NonNull InputStream inputStream)
-      throws MmsException
-  {
-    SQLiteDatabase   database = databaseHelper.getWritableDatabase();
-    Pair<File, Long> partData = setAttachmentData(masterSecret, inputStream);
-    ContentValues    values   = new ContentValues();
-
-    values.put(DATA, partData.first.getAbsolutePath());
-    values.put(SIZE, partData.second);
-    values.put(TRANSFER_STATE, TRANSFER_PROGRESS_DONE);
-    values.put(CONTENT_LOCATION, (String)null);
-    values.put(CONTENT_DISPOSITION, (String)null);
-    values.put(DIGEST, (byte[])null);
-    values.put(NAME, (String) null);
-
-    if (database.update(TABLE_NAME, values, PART_ID_WHERE, attachmentId.toStrings()) == 0) {
-      //noinspection ResultOfMethodCallIgnored
-      partData.first.delete();
-    } else {
-      notifyConversationListeners(DatabaseFactory.getMmsDatabase(context).getThreadIdForMessage(mmsId));
-      notifyConversationListListeners();
-    }
-
-    thumbnailExecutor.submit(new ThumbnailFetchCallable(masterSecret, attachmentId));
-    return partData.second;
-  }
-
-
   void insertAttachmentsForMessage(@NonNull MasterSecret masterSecret,
                                    long mmsId,
                                    @NonNull List<Attachment> attachments)
@@ -307,10 +279,11 @@ public class AttachmentDatabase extends Database {
       throw new MmsException("No attachment data found!");
     }
 
-    long dataSize = setAttachmentData(masterSecret, dataFile, mediaStream.getStream());
+    Pair<Long, byte[]> dataSizeAndDigest = setAttachmentData(masterSecret, dataFile, mediaStream.getStream());
 
     ContentValues contentValues = new ContentValues();
-    contentValues.put(SIZE, dataSize);
+    contentValues.put(SIZE, dataSizeAndDigest.first);
+    contentValues.put(DIGEST, dataSizeAndDigest.second);    
     contentValues.put(CONTENT_TYPE, mediaStream.getMimeType());
 
     database.update(TABLE_NAME, contentValues, PART_ID_WHERE, databaseAttachment.getAttachmentId().toStrings());
@@ -321,11 +294,11 @@ public class AttachmentDatabase extends Database {
                                   databaseAttachment.hasThumbnail(),
                                   mediaStream.getMimeType(),
                                   databaseAttachment.getTransferState(),
-                                  dataSize,
+                                  dataSizeAndDigest.first,
                                   databaseAttachment.getLocation(),
                                   databaseAttachment.getKey(),
                                   databaseAttachment.getRelay(),
-                                  databaseAttachment.getDigest());
+                                  dataSizeAndDigest.second);
   }
 
 
@@ -362,8 +335,10 @@ public class AttachmentDatabase extends Database {
   {
     File dataFile = getAttachmentDataFile(attachmentId, dataType);
 
+    byte[] digest = (!dataType.equals(THUMBNAIL)) ? getAttachment(attachmentId).getDigest() : null;
+
     try {
-      if (dataFile != null) return new DecryptingPartInputStream(dataFile, masterSecret);
+      if (dataFile != null) return new DecryptingPartInputStream(dataFile, masterSecret, digest);
       else                  return null;
     } catch (FileNotFoundException e) {
       Log.w(TAG, e);
@@ -397,7 +372,7 @@ public class AttachmentDatabase extends Database {
 
   }
 
-  private @NonNull Pair<File, Long> setAttachmentData(@NonNull MasterSecret masterSecret,
+  private @NonNull Pair<File, Pair<Long,byte[]>> setAttachmentData(@NonNull MasterSecret masterSecret,
                                                       @NonNull Uri uri)
       throws MmsException
   {
@@ -409,7 +384,7 @@ public class AttachmentDatabase extends Database {
     }
   }
 
-  private @NonNull Pair<File, Long> setAttachmentData(@NonNull MasterSecret masterSecret,
+  private @NonNull Pair<File, Pair<Long,byte[]>> setAttachmentData(@NonNull MasterSecret masterSecret,
                                                       @NonNull InputStream in)
       throws MmsException
   {
@@ -423,14 +398,14 @@ public class AttachmentDatabase extends Database {
     }
   }
 
-  private long setAttachmentData(@NonNull MasterSecret masterSecret,
+  private @NonNull Pair<Long, byte[]> setAttachmentData(@NonNull MasterSecret masterSecret,
                                  @NonNull File destination,
                                  @NonNull InputStream in)
       throws MmsException
   {
     try {
-      OutputStream out = new EncryptingPartOutputStream(destination, masterSecret);
-      return Util.copy(in, out);
+      EncryptingPartOutputStream out = new EncryptingPartOutputStream(destination, masterSecret);
+      return new Pair<>(Util.copy(in, (OutputStream) out), out.getAttachmentDigest());
     } catch (IOException e) {
       throw new MmsException(e);
     }
@@ -457,9 +432,9 @@ public class AttachmentDatabase extends Database {
   {
     Log.w(TAG, "Inserting attachment for mms id: " + mmsId);
 
-    SQLiteDatabase   database = databaseHelper.getWritableDatabase();
-    Pair<File, Long> partData = null;
-    long             uniqueId = System.currentTimeMillis();
+    SQLiteDatabase                database = databaseHelper.getWritableDatabase();
+    Pair<File, Pair<Long,byte[]>> partData = null;
+    long                          uniqueId = System.currentTimeMillis();
 
     if (masterSecret != null && attachment.getDataUri() != null) {
       partData = setAttachmentData(masterSecret, attachment.getDataUri());
@@ -477,8 +452,9 @@ public class AttachmentDatabase extends Database {
     contentValues.put(NAME, attachment.getRelay());
 
     if (partData != null) {
-      contentValues.put(DATA, partData.first.getAbsolutePath());
-      contentValues.put(SIZE, partData.second);
+      contentValues.put(DATA,   partData.first.getAbsolutePath());
+      contentValues.put(SIZE,   partData.second.first);
+      contentValues.put(DIGEST, partData.second.second);
     }
 
     long         rowId        = database.insert(TABLE_NAME, null, contentValues);
@@ -499,12 +475,12 @@ public class AttachmentDatabase extends Database {
   {
     Log.w(TAG, "updating part thumbnail for #" + attachmentId);
 
-    Pair<File, Long> thumbnailFile = setAttachmentData(masterSecret, in);
+    File thumbnailFile = setAttachmentData(masterSecret, in).first;
 
     SQLiteDatabase database = databaseHelper.getWritableDatabase();
     ContentValues  values   = new ContentValues(2);
 
-    values.put(THUMBNAIL, thumbnailFile.first.getAbsolutePath());
+    values.put(THUMBNAIL, thumbnailFile.getAbsolutePath());
     values.put(THUMBNAIL_ASPECT_RATIO, aspectRatio);
 
     database.update(TABLE_NAME, values, PART_ID_WHERE, attachmentId.toStrings());

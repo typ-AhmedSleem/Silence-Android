@@ -25,7 +25,7 @@ public class EncryptedMediaDataSource extends MediaDataSource {
 
   @Override
   public int readAt(long position, byte[] bytes, int offset, int length) throws IOException {
-    DecryptingPartInputStream inputStream     = new DecryptingPartInputStream(mediaFile, masterSecret);
+    DecryptingPartInputStream inputStream     = new DecryptingPartInputStream(mediaFile, masterSecret, null);
     byte[]                    buffer          = new byte[4096];
     long                      headerRemaining = position;
 
@@ -44,7 +44,7 @@ public class EncryptedMediaDataSource extends MediaDataSource {
 
   @Override
   public long getSize() throws IOException {
-    DecryptingPartInputStream inputStream = new DecryptingPartInputStream(mediaFile, masterSecret);
+    DecryptingPartInputStream inputStream = new DecryptingPartInputStream(mediaFile, masterSecret, null);
     byte[]                    buffer      = new byte[4096];
     long                      size        = 0;
 

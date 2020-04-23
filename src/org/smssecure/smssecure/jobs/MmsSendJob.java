@@ -40,9 +40,11 @@ import org.smssecure.smssecure.transport.UndeliverableMessageException;
 import org.smssecure.smssecure.util.dualsim.DualSimUtil;
 import org.smssecure.smssecure.util.Hex;
 import org.smssecure.smssecure.util.NumberUtil;
+import org.smssecure.smssecure.util.MediaUtil;
 import org.smssecure.smssecure.util.Util;
 import org.whispersystems.jobqueue.JobParameters;
 import org.whispersystems.jobqueue.requirements.NetworkRequirement;
+import org.whispersystems.jobqueue.util.Base64;
 import org.whispersystems.libsignal.NoSessionException;
 import org.whispersystems.libsignal.UntrustedIdentityException;
 
@@ -192,7 +194,7 @@ public class MmsSendJob extends SendJob {
     SendReq          req               = new SendReq();
     String           lineNumber        = Utils.getMyPhoneNumber(context);
     List<String>     numbers           = message.getRecipients().toNumberStringList(true);
-    MediaConstraints mediaConstraints = MediaConstraints.getMmsMediaConstraints(message.getSubscriptionId(), message.isSecure());
+    MediaConstraints mediaConstraints  = MediaConstraints.getMmsMediaConstraints(message.getSubscriptionId(), message.isSecure());
     List<Attachment> scaledAttachments = scaleAttachments(masterSecret, mediaConstraints, message.getAttachments());
 
     if (!TextUtils.isEmpty(lineNumber)) {
@@ -226,7 +228,7 @@ public class MmsSendJob extends SendJob {
       try {
         if (attachment.getDataUri() == null) throw new IOException("Assertion failed, attachment for outgoing MMS has no data!");
 
-        PduPart part     = new PduPart();
+        PduPart part = new PduPart();
 
         String fileName      = String.valueOf(Math.abs(Util.getSecureRandom().nextLong()));
         String fileExtension = MimeTypeMap.getSingleton().getExtensionFromMimeType(attachment.getContentType());
@@ -248,6 +250,29 @@ public class MmsSendJob extends SendJob {
 
         body.addPart(part);
         size += getPartSize(part);
+
+        if (message.isSecure()) {
+          if (attachment.getDigest() != null) {
+            byte[]  base64Digest    = Base64.encode(attachment.getDigest(), Base64.NO_WRAP);
+            PduPart digestPart      = new PduPart();
+            String  name            = fileName + ".digest";
+            String  digestContentId = contentId + "-digest";
+
+            digestPart.setData(base64Digest);
+            digestPart.setCharset(CharacterSets.UTF_8);
+            digestPart.setContentType(MediaUtil.CONTENT_TYPE_OCTET_STREAM.getBytes());
+            digestPart.setContentId(digestContentId.getBytes());
+            digestPart.setContentLocation((name + ".txt").getBytes());
+            digestPart.setName(name.getBytes());
+
+            Log.w(TAG, "Inserting digest for file " + fileName);
+
+            body.addPart(digestPart);
+            size += getPartSize(digestPart);
+          } else {
+            Log.w(TAG, "Digest is null!");
+          }
+        }
       } catch (IOException e) {
         Log.w(TAG, e);
       }

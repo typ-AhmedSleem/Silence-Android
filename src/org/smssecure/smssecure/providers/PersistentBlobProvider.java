@@ -128,7 +128,7 @@ public class PersistentBlobProvider {
   public @NonNull InputStream getStream(MasterSecret masterSecret, long id) throws IOException {
     final byte[] cached = cache.get(id);
     return cached != null ? new ByteArrayInputStream(cached)
-                          : new DecryptingPartInputStream(getFile(id), masterSecret);
+                          : new DecryptingPartInputStream(getFile(id), masterSecret, null);
   }
 
   private File getFile(long id) {
