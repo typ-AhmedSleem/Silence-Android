@@ -526,7 +526,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="AndroidManifest__verify_identity">Verigi identecon</string>
     <string name="AndroidManifest__complete_key_exchange">Fini ŝlosil-interŝanĝon</string>
     <string name="AndroidManifest__log_submit">Alŝuti senerarig-protokolon</string>
-    <string name="AndroidManifest__media_preview">Antaŭrigardo de aŭdvidaĵo</string>
+    <string name="AndroidManifest__media_preview">Antaŭrigardi aŭdvidaĵon</string>
     <string name="AndroidManifest__media_overview">Ĉiuj bildoj</string>
     <string name="AndroidManifest__media_overview_named">Ĉiuj bildoj kun %1$s</string>
     <string name="AndroidManifest__message_details">Mesaĝaj detaletoj</string>
@@ -806,4 +806,10 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La ident‑ŝlosilo por la kontakto %1$s ŝanĝiĝis. Tio ĉi povas signifi, ke iu provas interkapti vian interparoladon, aŭ %2$s simple reinstalis la aplikaĵon Silence kaj nun havas novan ident‑ŝlosilon.</string>
     <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Eraro dum elŝuti MMS-mesaĝon, frapetu por reprovi</string>
     <string name="NotificationMmsMessageRecord_downloading_mms_message">Elŝutado de MMS-mesaĝo</string>
+    <string name="media_preview_activity__media_content_description">Antaŭrigardi aŭdvidaĵon</string>
+    <string name="media_preview__all_media_title">Ĉiuj aŭdvidaĵoj</string>
+    <string name="conversation__menu_view_all_media">Ĉiuj aŭdvidaĵoj</string>
+    <string name="AndroidManifest__all_media_named">Ĉiuj aŭdvidaĵoj kun %1$s</string>
+    <string name="AndroidManifest__all_media">Ĉiuj aŭdvidaĵoj</string>
+    <string name="media_overview_activity__no_media">Neniuj aŭdvidaĵoj</string>
 </resources>
