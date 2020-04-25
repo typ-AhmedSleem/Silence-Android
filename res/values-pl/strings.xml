@@ -839,4 +839,10 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Klucz tożsamości dla kontaktu %1$s został zmieniony. To może oznaczać, że ktoś próbuje przechwycić waszą rozmowę, albo po prostu %2$s zainstalował(a) ponownie program Silence i teraz ma nowy klucz tożsamości.</string>
     <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Błąd pobierania wiadomości MMS, stuknij, aby powtórzyć</string>
     <string name="NotificationMmsMessageRecord_downloading_mms_message">Pobieranie wiadomości MMS</string>
+    <string name="media_preview_activity__media_content_description">Podgląd pliku</string>
+    <string name="media_preview__all_media_title">Wszystkie multimedia</string>
+    <string name="conversation__menu_view_all_media">Wszystkie multimedia</string>
+    <string name="AndroidManifest__all_media_named">Wszystkie multimedia z %1$s</string>
+    <string name="AndroidManifest__all_media">Wszystkie multimedia</string>
+    <string name="media_overview_activity__no_media">Brak multimediów</string>
 </resources>
