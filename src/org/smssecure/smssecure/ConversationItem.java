@@ -202,15 +202,15 @@ public class ConversationItem extends LinearLayout
     this.recipient.addListener(this);
     this.conversationRecipients.addListener(this);
 
-    setInteractionState(messageRecord);
     setBodyText(messageRecord);
+    setMediaAttributes(messageRecord);
+    setInteractionState(messageRecord);
     setBubbleState(messageRecord, recipient);
     setStatusIcons(messageRecord);
     setContactPhoto(recipient);
     setGroupMessageStatus(messageRecord, recipient);
     checkForAutoInitiate(messageRecord);
     setMinimumWidth();
-    setMediaAttributes(messageRecord);
     setSimInfo(messageRecord);
   }
 
