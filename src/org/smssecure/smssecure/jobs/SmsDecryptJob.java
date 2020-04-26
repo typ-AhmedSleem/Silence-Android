@@ -203,7 +203,8 @@ public class SmsDecryptJob extends MasterSecretJob {
       Recipients recipients  = RecipientFactory.getRecipientsFromString(context, message.getSender(), false);
       long       recipientId = recipients.getPrimaryRecipient().getRecipientId();
 
-      database.addMismatchedIdentity(messageId, recipientId, e.getUntrustedIdentity());
+      database.notifyConversationListeners(threadId);
+      database.setMismatchedIdentity(messageId, recipientId, e.getUntrustedIdentity());
     }
   }
 

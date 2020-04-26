@@ -40,7 +40,7 @@ public abstract class Database {
       notifyConversationListeners(threadId);
   }
 
-  protected void notifyConversationListeners(long threadId) {
+  public void notifyConversationListeners(long threadId) {
     context.getContentResolver().notifyChange(DatabaseContentProviders.Conversation.getUriForThread(threadId), null);
   }
 
