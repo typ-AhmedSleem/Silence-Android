@@ -796,4 +796,14 @@
     <string name="ConversationItem_via_s">via %s</string>
     <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">O Silence requer a permissão de Contactos a fim de anexar informações dos seus contactos, que foi permanentemente negada. Por favor navegue até ao menu de definições da aplicação, seleccione \"Permissões\" e active a permissão de \"Contactos\".</string>
     <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">O Silence requer a permissão de Armazenamento Externo para poder anexar fotos, vídeos ou áudio, que foi permanentemente negada. Por favor navegue até ao menu de definições da aplicação, seleccione \"Permissões\" e active a permissão de \"Armazenamento\".</string>
+    <string name="media_overview_activity__no_media">Sem mídia</string>
+    <string name="AndroidManifest__all_media_named">Toda a mídia com %1$s</string>
+    <string name="media_preview_activity__media_content_description">Visualização da mídia</string>
+    <string name="media_preview__all_media_title">Toda a mídia</string>
+    <string name="conversation__menu_view_all_media">Toda a mídia</string>
+    <string name="AndroidManifest__all_media">Toda a mídia</string>
+    <string name="ConfirmIdentityDialog_accept">Aceitar</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">A chave de indentificação para %1$s foi alterada. Isto significa que ou alguém está a intercetar esta comunicação ou que %2$s simplesmente reinstalou Silence e que agora possui uma nova chave de identificação.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Erro ao descarregar MMS, toque para tentar novamente</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">A descarregar MMS</string>
 </resources>
