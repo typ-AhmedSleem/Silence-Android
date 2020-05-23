@@ -399,7 +399,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <!--contact_selection_activity-->
     <string name="contact_selection_activity__enter_name_or_number">Enigu nomon aŭ numeron</string>
     <!--contact_selection_group_activity-->
-    <string name="contact_selection_group_activity__no_contacts">Neniaj kontaktoj.</string>
+    <string name="contact_selection_group_activity__no_contacts">Neniu kontakto.</string>
     <string name="contact_selection_group_activity__finding_contacts">Ŝargado de kontaktoj…</string>
     <!--single_contact_selection_activity-->
     <string name="SingleContactSelectionActivity_contact_photo">Kontakta Bildo</string>
@@ -407,7 +407,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="ContactSelectionlistFragment_select_for">Elekti por</string>
     <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence bezonas la permeson al kontaktoj por montri viajn kontaktojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “kontaktojn”.</string>
     <!--blocked_contacts_fragment-->
-    <string name="blocked_contacts_fragment__no_blocked_contacts">Neniuj blokitaj kontaktoj</string>
+    <string name="blocked_contacts_fragment__no_blocked_contacts">Neniu blokita kontakto</string>
     <!--contact_selection_recent_activity-->
     <string name="contact_selection_recent_activity__no_recent_calls">Ne lastatempaj alvokoj.</string>
     <!--contact_selection_list_fragment-->
@@ -811,5 +811,5 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="conversation__menu_view_all_media">Ĉiuj aŭdvidaĵoj</string>
     <string name="AndroidManifest__all_media_named">Ĉiuj aŭdvidaĵoj kun %1$s</string>
     <string name="AndroidManifest__all_media">Ĉiuj aŭdvidaĵoj</string>
-    <string name="media_overview_activity__no_media">Neniuj aŭdvidaĵoj</string>
+    <string name="media_overview_activity__no_media">Neniu aŭdvidaĵo</string>
 </resources>
