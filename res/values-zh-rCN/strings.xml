@@ -781,4 +781,14 @@
     <string name="NotificationChannel_locked_status">锁定状态</string>
     <string name="NotificationChannel_failures">失败</string>
     <string name="NotificationChannel_messages">消息</string>
+    <string name="media_preview_activity__media_content_description">媒体预览</string>
+    <string name="media_preview__all_media_title">所有媒体</string>
+    <string name="conversation__menu_view_all_media">所有媒体</string>
+    <string name="AndroidManifest__all_media_named">所有带%1$s的媒体</string>
+    <string name="AndroidManifest__all_media">所有媒体</string>
+    <string name="media_overview_activity__no_media">无媒体</string>
+    <string name="ConfirmIdentityDialog_accept">接受</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">%1$s的身份识别密钥已更改。这意味着有人试图拦截您的通讯，或者％2 $ s重新安装了Silence，现在有了新的身份密钥。</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">下载彩信出错，点击重试</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">下载彩信中</string>
 </resources>
