@@ -713,4 +713,10 @@
         <item quantity="many">%d دقائق</item>
         <item quantity="other">%d دقائق</item>
     </plurals>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">خطأ أثناء تنزيل رسالة MMS المشفرة ، اضغط لإعادة المحاولة</string>
+    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">رسالة MMS مشفرة لجلسة غير موجودة</string>
+    <string name="ConfirmIdentityDialog_accept">موافقة</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">جارٍ تنزيل رسالة MMS</string>
+    <string name="ImportFragment_import_plaintext_backup_elipse">جارٍ استيراد النسخة الإحتاطية غير المشفرة…</string>
+    <string name="ConversationActivity_the_gif_you_selected_was_too_big">حجم صورة GIF التي قمت باختيارها كبير جدًا!</string>
 </resources>
