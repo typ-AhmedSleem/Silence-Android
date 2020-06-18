@@ -290,7 +290,7 @@ una nuova importazione creerà dei messaggi duplicati.</string>
 firma di questa chiave è fidata, ma al momento hai lo scambio automatico della chiave disabilitato.</string>
     <string name="ReceiveKeyActivity_processing">Elaborazione</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">Elaborazione scambio delle chiavi…</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dovresti verificare l\'identità di questo contatto.</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Potresti voler verificare questo contatto.</string>
     <!--RecipientPreferencesActivity-->
     <string name="RecipientPreferenceActivity_block_this_contact_question">Bloccare questo contatto?</string>
     <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Non riceverai più messaggi di questo contatto.</string>
@@ -803,4 +803,8 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
     <string name="NotificationChannel_locked_status">Stato bloccato</string>
     <string name="NotificationChannel_failures">Errori</string>
     <string name="NotificationChannel_messages">Messaggi</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Scaricamento MMS…</string>
+    <string name="ConfirmIdentityDialog_accept">Accetta</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La chiave di identificazione di %1$s è cambiata. Può voler dire che qualcuno cerca di intercettare la vostra comunicazione o che %2$s ha solamente reinstallato Silence ed ha una nuova chiave di identitificazione</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Errore durante lo scaricamento MMS, tocca per riprovare</string>
 </resources>
