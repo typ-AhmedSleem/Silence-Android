@@ -544,9 +544,7 @@
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Выполнить</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Введите имя или номер</small>
-    </string>
+    <string name="recipients_panel__to"><small>Введите имя или номер</small></string>
     <string name="recipients_panel__add_member">Добавить участника</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Идентичность собеседника (он читает):</string>
@@ -856,4 +854,5 @@
     <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Идентификационный ключ для %1$s изменился. Это может означать, что кто-то пытается перехватить ваше сообщение, либо %2$s переустановил Silence и теперь имеет новый идентификационный ключ.</string>
     <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Ошибка загрузки MMS-сообщения, нажмите, чтобы повторить попытку</string>
     <string name="NotificationMmsMessageRecord_downloading_mms_message">Загрузка MMS-сообщения</string>
+    <string name="VideoPlayer_error_playing_video">Ошибка воспроизведения видео</string>
 </resources>
