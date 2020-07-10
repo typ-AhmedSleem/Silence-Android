@@ -814,4 +814,5 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="AndroidManifest__all_media_named">Tous les médias avec %1$s</string>
     <string name="AndroidManifest__all_media">Tous les médias</string>
     <string name="media_overview_activity__no_media">Pas de médias</string>
+    <string name="VideoPlayer_error_playing_video">Erreur pendant la lecture de la vidéo</string>
 </resources>
