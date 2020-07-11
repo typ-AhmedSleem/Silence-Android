@@ -791,4 +791,5 @@
     <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">%1$s的身份识别密钥已更改。这意味着有人试图拦截您的通讯，或者％2 $ s重新安装了Silence，现在有了新的身份密钥。</string>
     <string name="NotificationMmsMessageRecord_error_downloading_mms_message">下载彩信出错，点击重试</string>
     <string name="NotificationMmsMessageRecord_downloading_mms_message">下载彩信中</string>
+    <string name="VideoPlayer_error_playing_video">播放视频时出错</string>
 </resources>
