@@ -45,7 +45,7 @@ en mesure de les lire.</string>
     <!--DraftDatabase-->
     <string name="DraftDatabase_Draft_image_snippet">(image)</string>
     <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(video)</string>
+    <string name="DraftDatabase_Draft_video_snippet">(vidéo)</string>
     <!--AttchmentManager-->
     <string name="AttachmentManager_cant_open_media_selection">Impossible de trouver une application pour sélectionner le média.</string>
     <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence a besoin de la permission Stockage externe afin de pouvoir joindre des photos, vidéos ou fichiers audio, mais cela a été refusé. Veuillez aller dans les paramètres de l\'application, sélectionner « Permissions » et activer « Stockage ».</string>
@@ -86,8 +86,8 @@ en mesure de les lire.</string>
     <string name="ConversationActivity_compose_message">Rédiger un message</string>
     <string name="ConversationActivity_sorry_there_was_an_error_adding_your_attachment">Désolé, il y a eu une erreur lors de l\'ajout de votre pièce jointe.</string>
     <string name="ConversationActivity_the_gif_you_selected_was_too_big">Le GIF que vous avez sélectionné est trop gros !</string>
-    <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Désolé, la vidéo sélectionnée dépasse les restrictions de taille de message (%1$skB).</string>
-    <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Désolé, le fichier audio sélectionné dépasse les restrictions de taille de message (%1$skB).</string>
+    <string name="ConversationActivity_sorry_the_selected_video_exceeds_message_size_restrictions">Désolé, la vidéo sélectionnée dépasse les restrictions de taille de message (%1$s ko).</string>
+    <string name="ConversationActivity_sorry_the_selected_audio_exceeds_message_size_restrictions">Désolé, le fichier audio sélectionné dépasse les restrictions de taille de message (%1$s ko).</string>
     <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Le destinataire n’est pas un numéro ou une adresse e-mail valide !</string>
     <string name="ConversationActivity_message_is_empty_exclamation">Le message est vide !</string>
     <string name="ConversationActivity_group_members">Membres du groupe</string>
@@ -102,8 +102,8 @@ en mesure de les lire.</string>
     <string name="ConversationActivity_calls_not_supported">Appels non supportés</string>
     <string name="ConversationActivity_this_device_does_not_appear_to_support_dial_actions">Cet appareil ne semble pas prendre en charge les actions de numérotation.</string>
     <string name="ConversationActivity_cant_open_link">Impossible de trouver une application pour ouvrir ce lien.</string>
-    <string name="ConversationActivity_transport_insecure_sms">SMS non-chiffré</string>
-    <string name="ConversationActivity_transport_insecure_mms">MMS non-chiffré</string>
+    <string name="ConversationActivity_transport_insecure_sms">SMS non chiffré</string>
+    <string name="ConversationActivity_transport_insecure_mms">MMS non chiffré</string>
     <string name="ConversationActivity_transport_secure_sms">SMS chiffré</string>
     <string name="ConversationActivity_transport_secure_mms">MMS chiffré</string>
     <string name="ConversationActivity_install_smssecure">Et si on discutait de manière sécurisée ? %s</string>
@@ -242,13 +242,11 @@ en mesure de les lire.</string>
     <string name="ImportFragment_cancel">Annuler</string>
     <string name="ImportFragment_restore_encrypted_backup">Restaurer une sauvegarde chiffrée ?</string>
     <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">La restauration d\'une sauvegarde chiffrée remplacera complètement vos clés existantes, préférences et messages. Vous perdrez toutes les informations qui se trouve dans votre installation de Silence actuelle mais pas dans la sauvegarde. Silence s\'arrêtera après la restauration.</string>
-    <string name="ImportFragment_import_plaintext_backup">Importer une sauvegarde non-chiffrée ?</string>
-    <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ceci importera
-les messages provenant d\'une sauvegarde non-chiffrée. Si vous avez déjà importé la base de données SMS du système,
-l\'importer à nouveau se traduira par des messages dupliqués.</string>
+    <string name="ImportFragment_import_plaintext_backup">Importer une sauvegarde non chiffrée \?</string>
+    <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ceci importera les messages provenant d\'une sauvegarde non chiffrée. Si vous avez déjà importé la base de données SMS du système, l\'importer à nouveau se traduira par des messages dupliqués.</string>
     <string name="ImportFragment_importing">Importation en cours</string>
     <string name="ImportFragment_import_plaintext_backup_elipse">Restauration de la sauvegarde non chiffrée…</string>
-    <string name="ImportFragment_no_plaintext_backup_found">Aucune sauvegarde non-chiffrée trouvée !</string>
+    <string name="ImportFragment_no_plaintext_backup_found">Aucune sauvegarde non chiffrée trouvée !</string>
     <string name="ImportFragment_error_importing_backup">Erreur lors de l\'importation de la sauvegarde !</string>
     <string name="ImportFragment_import_complete">Importation terminée !</string>
     <string name="ImportFragment_restoring_encrypted_backup">Restauration de la sauvegarde chiffrée…</string>
@@ -419,9 +417,9 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="conversation_title_view__conversation_muted">Conversation silencieuse</string>
     <!--conversation_activity-->
     <string name="conversation_activity__type_message_sms_secure">Envoyer un SMS chiffré</string>
-    <string name="conversation_activity__type_message_sms_insecure">Envoyer un SMS non-chiffré</string>
+    <string name="conversation_activity__type_message_sms_insecure">Envoyer un SMS non chiffré</string>
     <string name="conversation_activity__type_message_mms_secure">Envoyer un MMS chiffré</string>
-    <string name="conversation_activity__type_message_mms_insecure">Envoyer un MMS non-chiffré</string>
+    <string name="conversation_activity__type_message_mms_insecure">Envoyer un MMS non chiffré</string>
     <string name="conversation_activity__via_sim_name">Avec %1$s</string>
     <string name="conversation_activity__send">Envoyer</string>
     <string name="conversation_activity__remove">Supprimer</string>
@@ -469,13 +467,13 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="database_migration_activity__importing">IMPORTATION</string>
     <!--database_upgrade_activity-->
     <string name="database_upgrade_activity__updating_database">Mise à jour de la base de donnée…</string>
-    <string name="export_fragment__export_plaintext_backup">Exporter une sauvegarde non-chiffrée</string>
+    <string name="export_fragment__export_plaintext_backup">Exporter une sauvegarde non chiffrée</string>
     <string name="export_fragment__export_a_plaintext_backup_compatible_with">Exporter une sauvegarde en texte clair compatible avec « SMS Backup &amp; Restore » vers le stockage</string>
     <string name="import_fragment__import_system_sms_database">Importer la base de données SMS du système</string>
     <string name="import_fragment__import_the_database_from_the_default_system">Importer la base de données depuis l\'application SMS par défaut</string>
     <string name="import_fragment__restore_encrypted_backup">Restaurer une sauvegarde chiffrée</string>
     <string name="import_fragment__restore_a_previously_exported_encrypted_backup">Restaurer une sauvegarde chiffrée précédemment exportée</string>
-    <string name="import_fragment__import_plaintext_backup">Importer la sauvegarde non-chiffrée</string>
+    <string name="import_fragment__import_plaintext_backup">Importer la sauvegarde non chiffrée</string>
     <string name="import_fragment__import_a_plaintext_backup_file">Importer un fichier de sauvegarde en clair. Compatible avec « SMS Backup &amp; Restore »</string>
     <string name="export_fragment__export_encrypted_backup">Exporter une sauvegarde chiffrée</string>
     <string name="export_fragment__export_an_encrypted_backup_to_storage">Exporter une sauvegarde chiffrée vers l\'espace de stockage</string>
@@ -504,9 +502,7 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Compléter</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Entrez un nom ou un numéro</small>
-    </string>
+    <string name="recipients_panel__to"><small>Entrez un nom ou un numéro</small></string>
     <string name="recipients_panel__add_member">Ajouter un membre</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Identité du contact (ce qu\'il lit) :</string>
@@ -686,9 +682,9 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="push_directory__menu_refresh">Rafraîchir la liste des contacts</string>
     <!--conversation_button_context-->
     <string name="conversation_button_context__send_secure_sms">Envoyer un SMS chiffré</string>
-    <string name="conversation_button_context__send_insecure_sms">Envoyer un SMS non-chiffré</string>
+    <string name="conversation_button_context__send_insecure_sms">Envoyer un SMS non chiffré</string>
     <string name="conversation_button_context__send_secure_mms">Envoyer un MMS chiffré</string>
-    <string name="conversation_button_context__send_insecure_mms">Envoyer un MMS non-chiffré</string>
+    <string name="conversation_button_context__send_insecure_mms">Envoyer un MMS non chiffré</string>
     <!--conversation_callable-->
     <string name="conversation_callable__menu_call">Appeler</string>
     <!--conversation_context-->
@@ -814,5 +810,5 @@ Réception d\'un message d\'échange de clés pour une version invalide du proto
     <string name="AndroidManifest__all_media_named">Tous les médias avec %1$s</string>
     <string name="AndroidManifest__all_media">Tous les médias</string>
     <string name="media_overview_activity__no_media">Pas de médias</string>
-    <string name="VideoPlayer_error_playing_video">Erreur pendant la lecture de la vidéo</string>
+    <string name="VideoPlayer_error_playing_video">Erreur lors de la lecture de la vidéo</string>
 </resources>
