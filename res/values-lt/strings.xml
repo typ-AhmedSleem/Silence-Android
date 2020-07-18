@@ -158,4 +158,13 @@
     <string name="preferences__enable_passphrase">Įjungti slaptafrazę</string>
     <string name="preferences__change_passphrase">Keisti slaptafrazę</string>
     <string name="ConversationListFragment_deleting">Ištrinama</string>
+    <string name="preferences__keyboard_settings">Klaviatūros parinktys</string>
+    <string name="preferences__sms_mms">SMS ir MMS</string>
+    <string name="preferences__general">Bendra</string>
+    <string name="arrays__send_key">Rodyti siuntimo mygtuką</string>
+    <string name="arrays__no_name_or_message">Jokio vardo ir žinutės</string>
+    <string name="arrays__name_only">Tik vardas</string>
+    <string name="arrays__name_and_message">Vardas ir žinutė</string>
+    <string name="arrays__disabled">Išjungta</string>
+    <string name="arrays__enabled">Įjungta</string>
 </resources>
