@@ -22,11 +22,7 @@
     </plurals>
     <string name="ApplicationPreferencesActivity_delete">Удалить</string>
     <string name="ApplicationPreferencesActivity_disable_storage_encryption">Отключить шифрование хранилища?</string>
-    <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">
-        Внимание, это отключит шифрование хранилища для всех сообщений и ключей. Ваши зашифрованные
-        сессии будут продолжать функционировать, но любой, кто получит физический доступ к вашему устройству,
-        сможет их прочитать..
-    </string>
+    <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Внимание, это отключит шифрование хранилища для всех сообщений и ключей. Ваши зашифрованные сессии будут продолжать функционировать, но любой, кто получит физический доступ к вашему устройству, сможет их прочитать.</string>
     <string name="ApplicationPreferencesActivity_disable">Отключить</string>
     <string name="ApplicationPreferencesActivity_sms_enabled">Входящие SMS включены</string>
     <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Нажмите, чтобы изменить приложение SMS по умолчанию</string>
@@ -367,15 +363,15 @@
     <string name="VerifyIdentityActivity_recipient_has_no_identity_key">У получателя нет идентификационного ключа.</string>
     <string name="VerifyIdentityActivity_scan_contacts_qr_code">Сканировать QR-код контакта</string>
     <string name="VerifyIdentityActivity_display_your_qr_code">Показать ваш QR-код</string>
-    <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ВНИМАНИЕ, отсканированный ключ НЕ совпадает! Пожалуйста, внимательно проверьте текст отпечатка.</string>
+    <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ВНИМАНИЕ, сосканированный ключ НЕ совпадает! Пожалуйста, внимательно проверьте текст отпечатка.</string>
     <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ подтверждено!</string>
     <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Ключ собеседника верен. Также необходимо, чтобы собеседник подтвердил ваш ключ.</string>
     <string name="VerifyIdentityActivity_verified_exclamation">Подтверждено!</string>
     <!--ViewIdentityActivity-->
     <string name="ViewIdentityActivity_scan_contacts_qr_code">Сканировать QR-код контакта</string>
     <string name="ViewIdentityActivity_display_your_qr_code">Отобразить ваш QR-код</string>
-    <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ВНИМАНИЕ, просканированный ключ НЕ СОВПАДАЕТ!</string>
-    <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Отсканированный ключ совпадает!</string>
+    <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ВНИМАНИЕ, сосканированный ключ НЕ СОВПАДАЕТ!</string>
+    <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Сосканированный ключ совпадает!</string>
     <string name="ViewIdentityActivity_your_identity_fingerprint">Отпечаток вашего личного ключа</string>
     <!--KeyExchangeInitiator-->
     <string name="KeyExchangeInitiator_initiate_despite_existing_request_question">Инициировать, несмотря на существующий запрос?</string>
