@@ -405,7 +405,7 @@
     </string>
     <string name="contact_selection_activity__enter_name_or_number">Anv pe niverenn</string>
     <string name="ConversationItem_via_s">dre %s</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dav eo deoc\'h gwiriañ an eskemm alc\'whezioù.</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Dav eo deoc\'h gwiriañ an eskemm alc\'hwezioù.</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">O keweriañ an eskemm alc\'hwezioù…</string>
     <string name="ReceiveKeyActivity_processing">O keweriañ</string>
     <string name="ReceiveKeyActivity_the_signature_on_this_key_exchange_is_trusted_but">Fiziañs a c\'hallit kaout en eskemm alc\'hwezioù, met diweredekaet ho peus klokadur emgefreek an eskemmoù alc\'hwezioù.</string>
@@ -434,4 +434,24 @@
     <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">An aotre Kadaviñ a zo goulennet gant Silence evit lenn ur c\'hadaviñ divaez, met nac\'het eo bet. Kit betek arventennoù an arload, dibabit \"Aotreoù\" ha gweredekait \"Kadaviñ\".</string>
     <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">An aotre SMS a zo goulennet gant Silence evit gallout enporzhiañ SMSoù</string>
     <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">An aotre SMS a zo goulennet gant Silence evit enporzhiañ kemennadennoù SMS, met nac\'het eo bet. Kit betek arventennoù an arload, dibabit \"Aotreoù\" ha gweredekait \"SMS\".</string>
+    <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Degemeret ez eus bet ur gemennadenn gant un alc\'hwez pivelezh dianav. Stokit da genderc\'hel ha diskouez anezhañ.</string>
+    <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Degemeret ez eus bet ur gemennadenn eskemm an alc\'hwezioù evit un handelv komenad didalvoudek.</string>
+    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Degemeret ez eus bet un alc\'hwez kontronet!</string>
+    <string name="Slide_video">Video</string>
+    <string name="Slide_audio">Son</string>
+    <string name="Slide_image">Skeudenn</string>
+    <string name="RecipientPreferenceActivity_disabled">Diweredekaat</string>
+    <string name="RecipientPreferenceActivity_enabled">Gweredekaat</string>
+    <string name="RecipientPreferenceActivity_unblock">Distankañ</string>
+    <string name="RecipientPreferenceActivity_are_you_sure_you_want_to_unblock_this_contact">Sur oc\'h e fell deoc\'h distankañ an darempred-mañ\?</string>
+    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Distankañ an darempred-mañ\?</string>
+    <string name="RecipientPreferenceActivity_block">Stankañ</string>
+    <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">Ne resevot kemennadenn ebet eus an darempred-mañ.</string>
+    <string name="RecipientPreferenceActivity_block_this_contact_question">Stankañ an darempred\?</string>
+    <string name="ConfirmIdentityDialog_accept">Asantiñ</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Kemmet eo bet alc\'hwez %1$s. Gallout a ra talvezout e klask unan bennak dastapout ho kaozeadenn, pe eo bet adstaliet Silence gant %2$s hag un alc\'hwez pivelezh nevez a zo gantañ pe ganti.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Degouezhet ez eus bet ur fazi en ur bellgargañ an MMS, stokit da adloc\'hañ</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">O pellgargañ ar gemennadenn MMS</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence en deus ezhomm eus an aotre Kadaviñ evit skrivañ war ar pellgomz.</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Ezhomm en deus Silence an aotre Kadaviñ evit skrivañ war ur c\'hadaviñ diavaez, met nac\'het eo bet. Kit e arentennoù an arload dibabit \"Aotreoù\" ha \"Kadaviñ\".</string>
 </resources>
