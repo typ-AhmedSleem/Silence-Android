@@ -9,23 +9,24 @@
     <!--ApplicationPreferencesActivity-->
     <string name="ApplicationPreferenceActivity_you_havent_set_a_passphrase_yet">Вы еще не задали парольную фразу!</string>
     <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="one">1 сообщение в разговоре</item>
-        <item quantity="few">%d сообщения в разговоре</item>
-        <item quantity="many">%d сообщений в разговоре</item>
-        <item quantity="other">%d сообщений в разговоре</item>
+        <item quantity="one">1 сообщение в беседе</item>
+        <item quantity="few">%d сообщения в беседе</item>
+        <item quantity="many">%d сообщений в беседе</item>
+        <item quantity="other">%d сообщений в беседе</item>
     </plurals>
     <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Удалить все старые сообщения?</string>
     <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="one">Все разговоры будут обрезаны до самого последнего сообщения.</item>
-        <item quantity="few">Все разговоры будут обрезаны до %d последних сообщений.</item>
-        <item quantity="many">Все разговоры будут обрезаны до %d последних сообщений.</item>
+        <item quantity="one">Все беседы будут обрезаны до самого последнего сообщения.</item>
+        <item quantity="few">Все беседы будут обрезаны до %d последних сообщений.</item>
+        <item quantity="many">Все беседы будут обрезаны до %d последних сообщений.</item>
+        <item quantity="other">Все беседы будут обрезаны до %d последних сообщений.</item>
     </plurals>
     <string name="ApplicationPreferencesActivity_delete">Удалить</string>
     <string name="ApplicationPreferencesActivity_disable_storage_encryption">Отключить шифрование хранилища?</string>
     <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Внимание, это отключит шифрование хранилища для всех сообщений и ключей. Ваши зашифрованные сессии будут продолжать функционировать, но любой, кто получит физический доступ к вашему устройству, сможет их прочитать.</string>
     <string name="ApplicationPreferencesActivity_disable">Отключить</string>
     <string name="ApplicationPreferencesActivity_sms_enabled">Входящие SMS включены</string>
-    <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Нажмите, чтобы изменить приложение SMS по умолчанию</string>
+    <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">Нажмите, чтобы изменить приложение для SMS по умолчанию</string>
     <string name="ApplicationPreferencesActivity_sms_disabled">Входящие SMS отключены</string>
     <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Нажмите, чтобы сделать Silence вашим приложением SMS по умолчанию</string>
     <string name="ApplicationPreferencesActivity_on">включено</string>
@@ -81,8 +82,8 @@
     <string name="ConversationActivity_detected_silence_initiate_session_question">Получено сообщение от кого-то, кто также имеет Silence. Инициировать безопасную защищенную сессию?</string>
     <string name="ConversationActivity_abort_secure_session_confirmation">Завершить защищенную сессию?</string>
     <string name="ConversationActivity_are_you_sure_that_you_want_to_abort_this_secure_session_question">Вы действительно хотите завершить эту защищенную сессию?</string>
-    <string name="ConversationActivity_delete_thread_question">Удалить разговор?</string>
-    <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Это удалит все сообщения в этом разговоре.</string>
+    <string name="ConversationActivity_delete_thread_question">Удалить беседу\?</string>
+    <string name="ConversationActivity_this_will_permanently_delete_all_messages_in_this_conversation">Это удалит все сообщения в этой беседе.</string>
     <string name="ConversationActivity_add_attachment">Добавить вложение</string>
     <string name="ConversationActivity_select_contact_info">Выбрать контакт</string>
     <string name="ConversationActivity_compose_message">Написать сообщение</string>
@@ -93,7 +94,7 @@
     <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">Получатель не является корректным адресом SMS или email!</string>
     <string name="ConversationActivity_message_is_empty_exclamation">Сообщение, которое вы пытаетесь отправить, пустое!</string>
     <string name="ConversationActivity_group_members">Участники группы</string>
-    <string name="ConversationActivity_group_conversation">Групповой разговор</string>
+    <string name="ConversationActivity_group_conversation">Групповая беседа</string>
     <string name="ConversationActivity_unnamed_group">Группа без названия</string>
     <plurals name="ConversationActivity_d_recipients_in_group">
         <item quantity="one">1 участник</item>
@@ -180,39 +181,39 @@
     <string name="ConversationListActivity_search">Поиск</string>
     <!--ConversationListFragment-->
     <plurals name="ConversationListFragment_delete_selected_conversations">
-        <item quantity="one">Удалить выбранный разговор?</item>
-        <item quantity="few">Удалить выбранные разговоры?</item>
-        <item quantity="many">Удалить выбранные разговоры?</item>
-        <item quantity="other">Удалить выбранные разговоры?</item>
+        <item quantity="one">Удалить выбранную беседу\?</item>
+        <item quantity="few">Удалить выбранные беседы\?</item>
+        <item quantity="many">Удалить выбранные беседы\?</item>
+        <item quantity="other">Удалить выбранные беседы\?</item>
     </plurals>
     <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
-        <item quantity="one">Выбранный разговор будет удален навсегда.</item>
-        <item quantity="few">%1$d выбранных разговора будут удалены навсегда.</item>
-        <item quantity="many">%1$d выбранных разговоров будут удалены навсегда.</item>
-        <item quantity="other">%1$d выбранных разговоров будут удалены навсегда.</item>
+        <item quantity="one">Выбранная беседа будет удалена навсегда.</item>
+        <item quantity="few">%1$d выбранных беседы будут удалены навсегда.</item>
+        <item quantity="many">%1$d выбранных бесед будут удалены навсегда.</item>
+        <item quantity="other">%1$d выбранных бесед будут удалены навсегда.</item>
     </plurals>
     <string name="ConversationListFragment_deleting">Удаление</string>
-    <string name="ConversationListFragment_deleting_selected_conversations">Удаление выбранных разговоров…</string>
+    <string name="ConversationListFragment_deleting_selected_conversations">Удаление выбранных бесед…</string>
     <plurals name="ConversationListFragment_conversations_archived">
-        <item quantity="one">Разговор архивирован</item>
-        <item quantity="few">%d разговора архивировано</item>
-        <item quantity="many">%d разговоров архивировано</item>
-        <item quantity="other">%d разговоров архивировано</item>
+        <item quantity="one">беседа архивирована</item>
+        <item quantity="few">%d беседы архивированы</item>
+        <item quantity="many">%d бесед архивированы</item>
+        <item quantity="other">%d бесед архивированы</item>
     </plurals>
     <string name="ConversationListFragment_undo">ОТМЕНИТЬ</string>
     <plurals name="ConversationListFragment_moved_conversations_to_inbox">
-        <item quantity="one">Разговор перемещен во Входящие</item>
-        <item quantity="few">%d разговора перемещено во Входящие</item>
-        <item quantity="many">%d разговоров перемещено во Входящие</item>
-        <item quantity="other">%d разговоров перемещено во входящие</item>
+        <item quantity="one">Беседа перемещена во Входящие</item>
+        <item quantity="few">%d беседы перемещены во Входящие</item>
+        <item quantity="many">%d бесед перемещены во Входящие</item>
+        <item quantity="other">%d бесед перемещены во Входящие</item>
     </plurals>
     <string name="ConversationListFragment_send_drafts">Отправить черновики</string>
-    <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Будут отправлены черновики выбранных разговоров.</string>
+    <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">Будут отправлены черновики выбранных бесед.</string>
     <string name="ConversationListFragment_send">Отправить</string>
     <string name="ConversationListFragment_sending">Отправка</string>
     <string name="ConversationListFragment_sending_selected_drafts">Отправка выбранных черновиков…</string>
     <!--ConversationListItemAction-->
-    <string name="ConversationListItemAction_archived_conversations_d">Архивированные разговоры (%d)</string>
+    <string name="ConversationListItemAction_archived_conversations_d">Архивированные беседы (%d)</string>
     <!--CustomDefaultPreference-->
     <string name="CustomDefaultPreference_using_custom">Используется настройка: %s</string>
     <string name="CustomDefaultPreference_using_default">По умолчанию: %s</string>
@@ -408,7 +409,7 @@
     <string name="KeyCachingService_passphrase_cached">Silence разблокирован</string>
     <string name="KeyCachingService_lock">Заблокировать парольной фразой</string>
     <!--MessageNotifier-->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d новых сообщений в %2$d разговорах</string>
+    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d новых сообщений в %2$d беседах</string>
     <string name="MessageNotifier_most_recent_from_s">Последние полученные от: %1$s</string>
     <string name="MessageNotifier_encrypted_message">Зашифрованное сообщение</string>
     <string name="MessageNotifier_media_message_with_text">Медиа сообщение: %s</string>
@@ -452,7 +453,7 @@
     <string name="contact_selection_list_fragment__silence_needs_access_to_your_contacts_in_order_to_display_them">Silence требуется разрешение на доступ к контактам для их отображения.</string>
     <string name="contact_selection_list_fragment__show_contacts">Показать контакты</string>
     <!--conversation_title_view-->
-    <string name="conversation_title_view__conversation_muted">Разговор приглушен</string>
+    <string name="conversation_title_view__conversation_muted">Беседа без звука</string>
     <!--conversation_activity-->
     <string name="conversation_activity__type_message_sms_secure">Отправить защищенное SMS</string>
     <string name="conversation_activity__type_message_sms_insecure">Отправить незащищенное SMS</string>
@@ -461,7 +462,7 @@
     <string name="conversation_activity__via_sim_name">Через %1$s</string>
     <string name="conversation_activity__send">Отправить</string>
     <string name="conversation_activity__remove">Удалить</string>
-    <string name="conversation_activity__window_description">Разговор с %1$s</string>
+    <string name="conversation_activity__window_description">Беседа с %1$s</string>
     <string name="conversation_activity__compose_description">Создание сообщения</string>
     <string name="conversation_activity__emoji_toggle_description">Переключить клавиатуру эмоджи</string>
     <string name="conversation_activity__attachment_thumbnail">Миниатюра вложения</string>
@@ -516,7 +517,7 @@
     <string name="export_fragment__export_encrypted_backup">Экспорт зашифрованной резервной копии</string>
     <string name="export_fragment__export_an_encrypted_backup_to_storage">Экспорт зашифрованной резервной копии в хранилище</string>
     <!--load_more_header-->
-    <string name="load_more_header__see_full_conversation">Посмотреть весь разговор</string>
+    <string name="load_more_header__see_full_conversation">Посмотреть всю беседу</string>
     <!--media_overview_activity-->
     <string name="media_overview_activity__no_images">Изображений нет</string>
     <!--message_recipients_list_item-->
@@ -530,8 +531,8 @@
     <!--recipient_preferences_activity-->
     <string name="recipient_preference_activity__blocked">ЗАБЛОКИРОВАНО</string>
     <!--recipient_preferences-->
-    <string name="recipient_preferences__mute_conversation">Приглушить разговор</string>
-    <string name="recipient_preferences__disable_notifications_for_this_conversation">Отключить уведомления для этого разговора</string>
+    <string name="recipient_preferences__mute_conversation">Беседа без звука</string>
+    <string name="recipient_preferences__disable_notifications_for_this_conversation">Отключить уведомления для этой беседы</string>
     <string name="recipient_preferences__notification_sound">Звук уведомления</string>
     <string name="recipient_preferences__vibrate">Вибрация</string>
     <string name="recipient_preferences__block">Блок</string>
@@ -565,7 +566,7 @@
     <string name="AndroidManifest__media_overview">Все изображения</string>
     <string name="AndroidManifest__media_overview_named">Все изображения с %1$s</string>
     <string name="AndroidManifest__message_details">Детали сообщения</string>
-    <string name="AndroidManifest_archived_conversations">Архивированные разговоры</string>
+    <string name="AndroidManifest_archived_conversations">Архивированные беседы</string>
     <string name="AndroidManifest_configure_mms_settings">Настройка параметров MMS</string>
     <!--arrays.xml-->
     <string name="arrays__import_export">Импорт / экспорт</string>
@@ -577,7 +578,7 @@
     <string name="arrays__mute_for_one_day">Отключить на 1 день</string>
     <string name="arrays__mute_for_seven_days">Отключить на 7 дней</string>
     <string name="arrays__mute_for_one_year">Отключить на 1 год</string>
-    <string name="arrays__settings_default">Настройки по умолчанию</string>
+    <string name="arrays__settings_default">По умолчанию</string>
     <string name="arrays__enabled">Включено</string>
     <string name="arrays__disabled">Выключено</string>
     <string name="arrays__name_and_message">Имя и сообщение</string>
@@ -630,7 +631,7 @@
     <string name="preferences__sound">Мелодия</string>
     <string name="preferences__change_notification_sound">Изменить мелодию уведомления</string>
     <string name="preferences__silent">Без звука</string>
-    <string name="preferences__in_conversation_notifications">Уведомления в разговоре</string>
+    <string name="preferences__in_conversation_notifications">Уведомления в беседе</string>
     <string name="preferences__play_inthread_notifications">Воспроизведение уведомлений при просмотре активной беседы.</string>
     <string name="preferences__repeat_alerts">Повторять сигналы</string>
     <string name="preferences__never">Никогда</string>
@@ -670,19 +671,19 @@
     <string name="preferences__request_a_delivery_report_for_each_sms_message_you_send">Запрашивать отчет о доставке каждого отправленного SMS-сообщения</string>
     <string name="preferences__sms_delivery_reports_notification">Уведомления о доставке SMS</string>
     <string name="preferences__display_a_notification_when_a_delivery_report_is_received">Отображать уведомление при получении отчета о доставке</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Автоматически удалять старые сообщения, если разговор превышает заданную длину</string>
+    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Автоматически удалять старые сообщения, если беседа превышает заданную длину</string>
     <string name="preferences__delete_old_messages">Удаление старых сообщений</string>
     <string name="preferences__chats">Чаты и медиа</string>
-    <string name="preferences__conversation_length_limit">Ограничение длины разговора</string>
-    <string name="preferences__trim_all_conversations_now">Обрезать все разговоры сейчас</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Привести длину всех разговоров в соответствие с заданной</string>
+    <string name="preferences__conversation_length_limit">Ограничение длины беседы</string>
+    <string name="preferences__trim_all_conversations_now">Обрезать все беседы сейчас</string>
+    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Привести длину всех бесед в соответствие с заданной</string>
     <string name="preferences__light_theme">Светлая</string>
     <string name="preferences__dark_theme">Темная</string>
     <string name="preferences__appearance">Внешний вид</string>
     <string name="preferences__theme">Тема</string>
     <string name="preferences__default">По умолчанию</string>
     <string name="preferences__language">Язык</string>
-    <string name="preferences__make_default_sms_app">Установить как приложение по умолчанию для SMS</string>
+    <string name="preferences__make_default_sms_app">Установить как приложение для SMS по умолчанию</string>
     <string name="preferences__make_silence_the_default_sms_mms_app">Сделайте Silence приложением по умолчанию для SMS и MMS.</string>
     <string name="preferences__submit_debug_log">Отправить журнал отладки</string>
     <string name="preferences__support_wifi_calling">Режим совместимости с \'Wi-Fi Calling\'</string>
@@ -752,7 +753,7 @@
     <string name="conversation_list_item_view__error_alert">Предупреждение об ошибке</string>
     <string name="conversation_list_item_view__archived">Архивировано</string>
     <!--conversation_list_fragment-->
-    <string name="conversation_list_fragment__fab_content_description">Новый разговор</string>
+    <string name="conversation_list_fragment__fab_content_description">Новая беседа</string>
     <!--conversation_secure_verified-->
     <string name="conversation_secure_verified__menu_security">Безопасность</string>
     <string name="conversation_secure_verified__menu_verify_identity">Подтвердить личность</string>
@@ -763,11 +764,11 @@
     <string name="conversation_unmuted__mute_notifications">Отключить звук уведомлений</string>
     <!--conversation-->
     <string name="conversation__menu_add_attachment">Добавить вложение</string>
-    <string name="conversation__menu_delete_conversation">Удалить разговор</string>
-    <string name="conversation__menu_archive_conversation">Архивировать разговор</string>
-    <string name="conversation__menu_unarchive_conversation">Разархивировать разговор</string>
+    <string name="conversation__menu_delete_conversation">Удалить беседу</string>
+    <string name="conversation__menu_archive_conversation">Архивировать беседу</string>
+    <string name="conversation__menu_unarchive_conversation">Разархивировать беседу</string>
     <string name="conversation__menu_view_media">Все изображения</string>
-    <string name="conversation__menu_conversation_settings">Настройки разговора</string>
+    <string name="conversation__menu_conversation_settings">Настройки беседы</string>
     <!--conversation_popup-->
     <string name="conversation_popup__menu_expand_popup">Развернуть всплывающее окно</string>
     <!--conversation_callable-->
@@ -775,7 +776,7 @@
     <!--conversation_group_options-->
     <string name="convesation_group_options__recipients_list">Список получателей</string>
     <string name="conversation_group_options__delivery">Доставка</string>
-    <string name="conversation_group_options__conversation">Разговор</string>
+    <string name="conversation_group_options__conversation">Беседа</string>
     <string name="conversation_group_options__broadcast">Вещание</string>
     <!--key_scanning-->
     <string name="key_scanning__menu_compare">Сравнить</string>
@@ -788,9 +789,9 @@
     <string name="text_secure_normal__menu_settings">Настройки</string>
     <string name="text_secure_normal__menu_clear_passphrase">Заблокировать</string>
     <string name="text_secure_normal__mark_all_as_read">Отметить все как прочитанные</string>
-    <string name="text_secure_normal__menu_archived_conversations">Архивированные разговоры</string>
+    <string name="text_secure_normal__menu_archived_conversations">Архивированные беседы</string>
     <!--reminder_header-->
-    <string name="reminder_header_sms_default_title">Использовать в качестве SMS-приложения по умолчанию?</string>
+    <string name="reminder_header_sms_default_title">Использовать в качестве приложения для SMS по умолчанию\?</string>
     <string name="reminder_header_sms_default_text_mandatory">Silence должен быть вашим приложением SMS/MMS по умолчанию, чтобы иметь возможность получать сообщения.</string>
     <string name="reminder_header_sms_default_button">НАСТРОИТЬ</string>
     <string name="reminder_header_sms_import_title">Импортировать системные SMS?</string>
@@ -824,7 +825,7 @@
     <string name="trimmer__old_messages_successfully_deleted">Старые сообщения успешно удалены</string>
     <!--transport_selection_list_item-->
     <string name="transport_selection_list_item__transport_icon">Значок транспорта</string>
-    <string name="RingtonePreference_ringtone_default">Рингтон по умолчанию</string>
+    <string name="RingtonePreference_ringtone_default">Стандартная мелодия звонка</string>
     <string name="RingtonePreference_ringtone_silent">Нет</string>
     <string name="RingtonePreference_ringtone_picker_title">Мелодии</string>
     <string name="RingtonePreference_notification_sound_default">Звук уведомления по умолчанию</string>
