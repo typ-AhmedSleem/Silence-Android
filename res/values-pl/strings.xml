@@ -533,9 +533,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Kontynuuj</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Wprowadź nazwę lub numer kontaktu</small>
-    </string>
+    <string name="recipients_panel__to"><small>Wprowadź nazwę lub numer kontaktu</small></string>
     <string name="recipients_panel__add_member">Dodaj uczestnika</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Ich identyfikacja (oni widzą):</string>
@@ -845,4 +843,5 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="AndroidManifest__all_media_named">Wszystkie multimedia z %1$s</string>
     <string name="AndroidManifest__all_media">Wszystkie multimedia</string>
     <string name="media_overview_activity__no_media">Brak multimediów</string>
+    <string name="VideoPlayer_error_playing_video">Błąd podczas odtwarzania filmiku</string>
 </resources>
