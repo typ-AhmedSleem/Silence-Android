@@ -107,7 +107,7 @@ Atentu, tio ĉi malaktivigos ĉifradon de konservejo por ĉiuj mesaĝoj kaj ŝlo
     <string name="ConversationActivity_install_smssecure">Ni interparolu sekure per Silence: %s</string>
     <string name="ConversationActivity_recipient_self">Vi ne povas komenci sekuran seancon kun vi mem!</string>
     <string name="ConversationActivity_mms_not_supported_title">MMS-oj ne estas subtenataj</string>
-    <string name="ConversationActivity_mms_not_supported_message">Ne povas sendi tiun ĉi mesaĝon ĉar via telefon-provizanto ne subtenas MMS-ojn.</string>
+    <string name="ConversationActivity_mms_not_supported_message">Ne povas sendi tiun ĉi mesaĝon ĉar via telefonret‑provizanto ne subtenas MMS-ojn.</string>
     <string name="ConversationActivity_specify_recipient">Bonvolu elekti kontakton</string>
     <string name="ConversationActivity_attachment_exceeds_size_limits">Kunsendaĵo trograndas limiton.</string>
     <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence bezonas la permeson al SMS por sendi SMS‑ajn mesaĝojn, sed ĝi estas rifuzita. Bonvolu malfermi Androidan menuon de aplikaĵaj agordoj → permesoj, kaj aktivigu “SMS”.</string>
@@ -502,9 +502,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Pluigi</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Enigu nomon aŭ numeron</small>
-    </string>
+    <string name="recipients_panel__to"><small>Enigu nomon aŭ numeron</small></string>
     <string name="recipients_panel__add_member">Aldoni anon</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Lia identeco (li legas):</string>
@@ -812,4 +810,5 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="AndroidManifest__all_media_named">Ĉiuj aŭdvidaĵoj kun %1$s</string>
     <string name="AndroidManifest__all_media">Ĉiuj aŭdvidaĵoj</string>
     <string name="media_overview_activity__no_media">Neniu aŭdvidaĵo</string>
+    <string name="VideoPlayer_error_playing_video">Eraro dum ludado de video</string>
 </resources>
