@@ -470,4 +470,137 @@
     <string name="AttachmentTypeSelectorAdapter_video">Vaizdo įrašas</string>
     <string name="AttachmentTypeSelectorAdapter_picture">Paveikslas</string>
     <string name="AttachmentTypeSelectorAdapter_camera">Kamera</string>
+    <plurals name="AppProtectionPreferenceFragment_minutes">
+        <item quantity="one">1 min.</item>
+        <item quantity="few">%d min.</item>
+        <item quantity="other">%d min.</item>
+    </plurals>
+    <string name="ApplicationPreferencesActivity_warning_this_will_disable_storage_encryption_for_all_messages">Įspėjimas, tai išjungs visų žinučių ir raktų saugyklos šifravimą. Jūsų šifruoti seansai ir toliau veiks, tačiau bet kuris asmuo, turintis fizinę prieigą prie jūsų įrenginio, galės juos skaityti.</string>
+    <string name="ApplicationPreferencesActivity_disable_storage_encryption">Išjungti saugyklos šifravimą\?</string>
+    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
+        <item quantity="one">1 žinutė pokalbyje</item>
+        <item quantity="few">%d žinutės pokalbyje</item>
+        <item quantity="other">%d žinučių pokalbyje</item>
+    </plurals>
+    <string name="PassphraseChangeActivity_incorrect_old_passphrase_exclamation">Neteisinga sena slaptafrazė!</string>
+    <string name="AndroidManifest__enter_passphrase">Įveskite slaptafrazę</string>
+    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Nepavyko be leidimų įrašyti į išorinę saugyklą</string>
+    <string name="reminder_header_rate_text">Jeigu mėgaujatės šia programėle, skirkite minutėlę ir padėkite mums ją įvertindami.</string>
+    <string name="share_identity_fingerprint">Bendrinti jūsų tapatybės kontrolinį kodą</string>
+    <string name="conversation_popup__menu_expand_popup">Išskleisti iškylantįjį langą</string>
+    <string name="conversation_list_item_view__archived">Archyvuotas</string>
+    <string name="conversation_list_item_view__error_alert">Klaidos įspėjimas</string>
+    <string name="conversation_insecure__menu_start_secure_session">Pradėti saugųjį seansą</string>
+    <string name="preferences_advanced__disable_silences_built_in_emoji_support">Išjungti įtaisytą Silence jaustukų palaikymą</string>
+    <string name="preferences__hide_unread_message_divider">Slėpti neskaitytų žinučių dalytuvą</string>
+    <string name="preferences_notifications__display_in_notifications">Rodyti pranešimuose</string>
+    <string name="preferences__request_keyboard_to_disable_personalized_learning">Jei nustatyta į inkognito veikseną, klaviatūra neįsimins, nesimokys ir nesaugos jokių jūsų rašomų žodžių</string>
+    <string name="preferences__incognito_keyboard">Inkognito klaviatūra</string>
+    <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">Įjunkite, jeigu jūsų įrenginys siunčia SMS/MMS per belaidį (WiFi) tinklą (įjunkite tik tuo atveju, jeigu jūsų įrenginyje yra įjungta „WiFi skambučių“ funkcija).</string>
+    <string name="preferences__support_wifi_calling">„Wi-Fi skambučių“ suderinamumo veiksena</string>
+    <string name="preferences__make_silence_the_default_sms_mms_app">Paversti Silence numatytąją SMS/MMS programėle jūsų sistemoje.</string>
+    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Peržiūrėti visus pokalbius ir priverstinai pritaikyti pokalbio ilgio ribas</string>
+    <string name="preferences__conversation_length_limit">Pokalbio ilgio riba</string>
+    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Automatiškai ištrinti senesnes žinutes, kai pokalbis viršija nurodytą ilgį</string>
+    <string name="preferences__repeat_alerts">Kartoti įspėjimus</string>
+    <string name="preferences__pref_led_blink_custom_pattern_off_for">Išjungtas:</string>
+    <string name="preferences__pref_led_blink_custom_pattern_on_for">Įjungtas:</string>
+    <string name="preferences__pref_timeout_interval_title">Laiko limito intervalas</string>
+    <string name="preferences__pref_timeout_interval_dialogtitle">Pasirinkite slaptafrazės laiko limitą</string>
+    <string name="preferences__timeout_passphrase">Slaptafrazės laiko limitas</string>
+    <string name="preferences__forget_passphrase_from_memory_after_some_interval">Reikalauti slaptafrazės, norint po tam tikro laiko gauti prieigą prie žinučių</string>
+    <string name="preferences__change_your_passphrase">Pasikeisti slaptafrazę</string>
+    <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_multimedia_messages">Naudoti Silence visų gaunamųjų multimedijos žinučių peržiūrai ir saugojimui</string>
+    <string name="preferences__use_silence_for_viewing_and_storing_all_incoming_text_messages">Naudoti Silence visų gaunamųjų tekstinių žinučių peržiūrai ir saugojimui</string>
+    <string name="arrays__emoji_key">Rodyti jaustukų klavišą</string>
+    <string name="arrays__mute_for_one_year">Išjungti 1 metams</string>
+    <string name="arrays__mute_for_seven_days">Išjungti 7 dienoms</string>
+    <string name="arrays__mute_for_one_day">Išjungti 1 dienai</string>
+    <string name="arrays__mute_for_two_hours">Išjungti 2 valandoms</string>
+    <string name="arrays__mute_for_one_hour">Išjungti 1 valandai</string>
+    <string name="verify_identity_activity__your_identity_you_read">Jūsų tapatybė (skaitote jūs):</string>
+    <string name="verify_identity_activity__their_identity_they_read">Asmens tapatybė (skaito kitas žmogus):</string>
+    <string name="conversation_fragment_cab__batch_selection_amount">Pažymėta: %s</string>
+    <string name="change_passphrase_activity__repeat_new_passphrase">Pakartokite naują slaptafrazę</string>
+    <string name="change_passphrase_activity__new_passphrase">Nauja slaptafrazė</string>
+    <string name="change_passphrase_activity__old_passphrase">Sena slaptafrazė</string>
+    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS žinutė šifruota seansui, kurio nėra</string>
+    <string name="KeyExchangeInitiator_youve_already_sent_a_session_initiation_request_to_this_recipient_are_you_sure">Šiam gavėjui jau esate išsiuntę seanso inicijavimo užklausą, ar tikrai norėtumėte išsiųsti dar vieną\? Tai padarys ankstesnę užklausą negaliojančią.</string>
+    <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Nuskenuotas raktas sutampa!</string>
+    <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ĮSPĖJIMAS, nuskenuotas raktas NESUTAMPA!</string>
+    <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ĮSPĖJIMAS, nuskenuotas raktas NESUTAMPA! Atidžiai patikrinkite kontrolinio kodo tekstą.</string>
+    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Gauta žinutė, šifruota naudojant seną, daugiau nebepalaikomą Silence versiją. Paprašykite siuntėjo, kad atnaujintų Silence iki naujausios versijos ir iš naujo atsiųstų žinutę.</string>
+    <string name="MmsDownloader_error_reading_mms_settings">Klaida skaitant belaidžio teikėjo MMS nustatymus</string>
+    <string name="KeyScanningActivity_this_application_requires_barcode_scanner_would_you_like_to_install_it">Silence reikia brūkšninių kodų skenerio, kad galėtų skenuoti QR kodus.</string>
+    <string name="KeyScanningActivity_install_barcode_Scanner">Įdiegti brūkšninių kodų skenerį\?</string>
+    <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Tai importuos žinutes iš grynojo teksto atsarginės kopijos. Jei anksčiau esate importavę iš šios atsarginės kopijos, tuomet importuojant antrą kartą atsiras žinučių dublikatai.</string>
+    <string name="ImportFragment_import_plaintext_backup">Importuoti grynojo teksto atsarginę kopiją\?</string>
+    <string name="ExportFragment_error_while_writing_to_storage">Klaida rašant į saugyklą.</string>
+    <string name="ExportFragment_error_unable_to_write_to_storage">Klaida, nepavyko rašyti į saugyklą.</string>
+    <string name="ExportFragment_exporting_plaintext_to_storage">Eksportuojamas grynasis tekstas į saugyklą…</string>
+    <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Įspėjimas, tai eksportuos į saugyklą jūsų Silence žinučių turinį grynojo teksto pavidalu.</string>
+    <string name="ExportFragment_export_plaintext_to_storage">Eksportuoti grynąjį tekstą į saugyklą\?</string>
+    <plurals name="ConversationListFragment_conversations_archived">
+        <item quantity="one">Pokalbis archyvuotas</item>
+        <item quantity="few">%d pokalbiai archyvuoti</item>
+        <item quantity="other">%d pokalbių archyvuota</item>
+    </plurals>
+    <plurals name="ConversationListFragment_this_will_permanently_delete_all_n_selected_conversations">
+        <item quantity="one">Tai visam laikui ištrins pažymėtą pokalbį.</item>
+        <item quantity="few">Tai visam laikui ištrins visus %1$d pažymėtus pokalbius.</item>
+        <item quantity="other">Tai visam laikui ištrins visus %1$d pažymėtų pokalbių.</item>
+    </plurals>
+    <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+        <item quantity="one">Priedas įrašomas į saugyklą…</item>
+        <item quantity="few">%1$d priedai įrašomi į saugyklą…</item>
+        <item quantity="other">%1$d priedų įrašoma į saugyklą…</item>
+    </plurals>
+    <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nepavyko rašyti į saugyklą!</string>
+    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+        <item quantity="one">Klaida įrašant priedą į saugyklą!</item>
+        <item quantity="few">Klaida įrašant priedus į saugyklą!</item>
+        <item quantity="other">Klaida įrašant priedus į saugyklą!</item>
+    </plurals>
+    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+        <item quantity="one">Įrašius šią mediją į saugyklą, bet kuri kita programėlė įrenginyje turės prieigą prie šios medijos.
+\n
+\nTęsti\?</item>
+        <item quantity="few">Įrašius visas %1$d medijas į saugyklą, bet kuri kita programėlė įrenginyje turės prieigą prie šių medijų.
+\n
+\nTęsti\?</item>
+        <item quantity="other">Įrašius visas %1$d medijų į saugyklą, bet kuri kita programėlė įrenginyje turės prieigą prie šių medijų.
+\n
+\nTęsti\?</item>
+    </plurals>
+    <string name="ConversationFragment_save_to_sd_card">Įrašyti į saugyklą\?</string>
+    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
+        <item quantity="one">Tai visam laikui ištrins pažymėtą žinutę.</item>
+        <item quantity="few">Tai visam laikui ištrins visas %1$d pažymėtas žinutes.</item>
+        <item quantity="other">Tai visam laikui ištrins visas %1$d pažymėtų žinučių.</item>
+    </plurals>
+    <string name="ConversationActivity_recipient_self">Saugieji seansai gali būti užmegzti tik su kitais žmonėmis.</string>
+    <plurals name="ConversationActivity_d_recipients_in_group">
+        <item quantity="one">%d dalyvis</item>
+        <item quantity="few">%d dalyviai</item>
+        <item quantity="other">%d dalyvių</item>
+    </plurals>
+    <string name="ConversationActivity_detected_silence_initiate_session_question">Žinutė gauta nuo žmogaus, kuris taip pat naudojasi Silence. Inicijuoti saugųjį šifruotąjį seansą\?</string>
+    <string name="ConversationItem_click_for_details">Bakstelėkite išsamesnei informacijai</string>
+    <string name="ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning">Ši medija saugoma šifruotoje duomenų bazėje. Deja, norint ją peržiūrėti naudojant išorinę turinio žiūryklę, reikia laikinai iššifruoti duomenis ir įrašyti juos į saugyklą. Ar tikrai norėtumėte tai padaryti\?</string>
+    <string name="ConversationItem_view_secure_media_question">Rodyti saugią mediją\?</string>
+    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence reikia adresatų leidimo, kad galėtų pridėti kontaktinę informaciją, tačiau šis leidimas yra visam laikui atmestas. Pereikite į programų nustatymų meniu, pasirinkite „Leidimai“ ir įjunkite „Kontaktai“.</string>
+    <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence reikia išorinės saugyklos leidimo, kad galėtų pridėti nuotraukas bei vaizdo ar garso įrašus, tačiau šis leidimas yra visam laikui atmestas. Pereikite į programų nustatymų meniu, pasirinkite „Leidimai“ ir įjunkite „Saugykla“.</string>
+    <string name="ApplicationPreferencesActivity_privacy_summary">Slaptafrazė %1$s, Ekrano saugumas %2$s</string>
+    <string name="ApplicationPreferencesActivity_Off">Išjungta</string>
+    <string name="ApplicationPreferencesActivity_off">išjungta</string>
+    <string name="ApplicationPreferencesActivity_On">Įjungta</string>
+    <string name="ApplicationPreferencesActivity_on">įjungta</string>
+    <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">Bakstelėkite norėdami paversti Silence savo numatytąja SMS programėle</string>
+    <string name="ApplicationPreferencesActivity_sms_disabled">Gaunamosios SMS išjungtos</string>
+    <string name="ApplicationPreferencesActivity_sms_enabled">Gaunamosios SMS įjungtos</string>
+    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
+        <item quantity="one">Tai nedelsiant išvalys visus pokalbius iki %d paskiausios žinutės.</item>
+        <item quantity="few">Tai nedelsiant išvalys visus pokalbius iki %d paskiausių žinučių.</item>
+        <item quantity="other">Tai nedelsiant išvalys visus pokalbius iki %d paskiausių žinučių.</item>
+    </plurals>
 </resources>
