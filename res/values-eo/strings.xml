@@ -737,7 +737,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="convesation_group_options__recipients_list">Listo de ricevantoj</string>
     <string name="conversation_group_options__delivery">Liverado</string>
     <string name="conversation_group_options__conversation">Interparolado</string>
-    <string name="conversation_group_options__broadcast">Elsendo</string>
+    <string name="conversation_group_options__broadcast">Dissendo</string>
     <!--key_scanning-->
     <string name="key_scanning__menu_compare">Kompari</string>
     <string name="key_scanning__menu_display_your_qr_code">Montri vian QR-kodon</string>
