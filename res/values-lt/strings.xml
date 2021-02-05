@@ -603,4 +603,27 @@
         <item quantity="few">Tai nedelsiant išvalys visus pokalbius iki %d paskiausių žinučių.</item>
         <item quantity="other">Tai nedelsiant išvalys visus pokalbius iki %d paskiausių žinučių.</item>
     </plurals>
+    <string name="RingtonePreference_alarm_sound_default">Numatytasis signalo garsas</string>
+    <string name="media_preview__forward_title">Persiųsti</string>
+    <string name="conversation_list_item_view__contact_photo_image">Adresato avataras</string>
+    <string name="conversation_list_batch__menu_send_drafts">Siųsti pažymėtus juodraščius</string>
+    <string name="preferences__mms_proxy_port">MMS įgaliotojo serverio prievadas</string>
+    <string name="preferences__mms_proxy_host">MMS įgaliotasis serveris</string>
+    <string name="arrays__use_custom">Naudoti tinkintą</string>
+    <string name="AndroidManifest__public_identity_key">Viešasis tapatybės raktas</string>
+    <string name="NotificationChannel_other">Kita</string>
+    <string name="KeyCachingService_silence_passphrase_cached_with_lock">Bakstelėkite norėdami atverti arba bakstelėkite spyną norėdami užverti.</string>
+    <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Gauta apsikeitimo raktais žinutė, skirta neteisingai protokolo versijai.</string>
+    <string name="ImportFragment_this_will_import_messages_from_the_system">Tai importuos žinutes iš jūsų sistemos numatytosios SMS duomenų bazės į Silence. Jeigu anksčiau jau esate importavę sistemos SMS duomenų bazę, tuomet pakartotinis importavimas sukurs žinučių dublikatus.</string>
+    <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">Tai eksportuos jūsų šifruotus raktus, nustatymus ir žinutes į saugyklą.</string>
+    <string name="CustomDefaultPreference_using_default">Naudojamas numatytasis: %s</string>
+    <string name="CustomDefaultPreference_using_custom">Naudojamas tinkintas: %s</string>
+    <plurals name="ConversationListFragment_moved_conversations_to_inbox">
+        <item quantity="one">Pokalbis perkeltas į gautųjų aplanką</item>
+        <item quantity="few">%d pokalbiai perkelti į gautųjų aplanką</item>
+        <item quantity="other">%d pokalbių perkelta į gautųjų aplanką</item>
+    </plurals>
+    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Gauta apsikeitimo raktais žinutė, bakstelėkite norėdami apdoroti.</string>
+    <string name="ConversationItem_error_received_stale_key_exchange_message">Gauta pasenusi apsikeitimo raktais žinutė.</string>
+    <string name="AttachmentManager_cant_open_media_selection">Nepavyksta rasti programėlės, skirtos pasirinkti mediją.</string>
 </resources>
