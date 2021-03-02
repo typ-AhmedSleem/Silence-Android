@@ -258,8 +258,7 @@
 無効になっています。</string>
     <string name="ReceiveKeyActivity_processing">処理中</string>
     <string name="ReceiveKeyActivity_processing_key_exchange">鍵交換を処理中...</string>
-    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">この連絡先を
-照合することが推奨されています。</string>
+    <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">連絡者を認証した方がいいかもしれません。</string>
     <!--RecipientPreferencesActivity-->
     <string name="RecipientPreferenceActivity_block_this_contact_question">この連絡先をブロックしますか?</string>
     <string name="RecipientPreferenceActivity_you_will_no_longer_see_messages_from_this_user">このユーザーから送られたメッセージはもう表示されません。</string>
@@ -789,4 +788,11 @@
     <string name="ConversationItem_via_s">%s で</string>
     <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence は、連絡先情報を添付するために連絡先のアクセス許可が必要ですが、完全に拒否されています。 アプリの設定メニューに進んで「アクセス許可」を選択して、「連絡先」を有効にしてください。</string>
     <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence は、写真、ビデオ、または音声を添付するために外部ストレージのアクセス許可が必要ですが、完全に拒否されています。 アプリの設定メニューに進んで「アクセス許可」を選択して、「ストレージ」を有効にしてください。</string>
+    <string name="media_preview__all_media_title">各メディア</string>
+    <string name="conversation__menu_view_all_media">各メディア</string>
+    <string name="AndroidManifest__all_media_named">%1$sを含めたメディア</string>
+    <string name="media_overview_activity__no_media">メディアなし</string>
+    <string name="VideoPlayer_error_playing_video">再生エラー</string>
+    <string name="ConfirmIdentityDialog_accept">許可</string>
+    <string name="media_preview_activity__media_content_description">メディアのプレビュー</string>
 </resources>
