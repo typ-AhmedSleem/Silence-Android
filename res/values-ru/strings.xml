@@ -225,7 +225,7 @@
     <string name="DateUtils_yesterday">Вчера</string>
     <!--DualSimUtil-->
     <string name="DualSimUtil__new_sim_card_detected">Обнаружена новая SIM-карта</string>
-    <string name="DualSimUtil__a_new_key_has_been_generated">Был сгенерирован новый ключ.</string>
+    <string name="DualSimUtil__a_new_key_has_been_generated">Сгенерирован новый ключ.</string>
     <string name="DualSimUtil__a_new_key_has_been_generated_for_that_new_sim_card">Для этой SIM-карты создан новый ключ.</string>
     <!--ShareActivity-->
     <string name="ShareActivity_share_with">Поделиться с</string>
