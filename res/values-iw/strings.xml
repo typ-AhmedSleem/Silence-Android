@@ -265,4 +265,16 @@
     </plurals>
     <string name="AbstractNotificationBuilder_new_message">הודעה חדשה</string>
     <string name="please_wait">נא להמתין…</string>
+    <string name="Permissions_not_now">לא עכשיו</string>
+    <string name="ApplicationPreferencesActivity_incoming_summary">%s נכנס</string>
+    <string name="ApplicationPreferencesActivity_mms">הודעות מולטימדיה</string>
+    <string name="ApplicationPreferencesActivity_sms">מסרון</string>
+    <string name="ApplicationPreferencesActivity_Off">כבוי</string>
+    <string name="ApplicationPreferencesActivity_off">כבוי</string>
+    <string name="ApplicationPreferencesActivity_On">פעיל</string>
+    <string name="ApplicationPreferencesActivity_on">פעיל</string>
+    <string name="ApplicationPreferencesActivity_tap_to_make_silence_your_default_sms_app">יש לגעת כדי להפוך את Silence ליישומון המסרונים כבררת המחדל שלך</string>
+    <string name="ApplicationPreferencesActivity_sms_disabled">מסרונים נכנסים מושבתים</string>
+    <string name="ApplicationPreferencesActivity_tap_to_change_your_default_sms_app">יש לגעת כדי לשנות את יישומון המסרונים כבררת המחדל</string>
+    <string name="ApplicationPreferencesActivity_sms_enabled">מסרונים נכנסים פעילים</string>
 </resources>
