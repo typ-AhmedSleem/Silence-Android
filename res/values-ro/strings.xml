@@ -499,9 +499,7 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Complet</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Introduceţi un nume sau un număr</small>
-    </string>
+    <string name="recipients_panel__to"><small>Introduceţi un nume sau un număr</small></string>
     <string name="recipients_panel__add_member">Adăugare membru</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">Identitatea partenerului (cum apare el):</string>
@@ -789,4 +787,41 @@ Am primit mesajul conform căruia schimbul de chei a avut loc pentru o versiune 
     <string name="Permissions_continue">Continuă</string>
     <string name="Permissions_not_now">Nu acum</string>
     <!--EOF-->
+    <string name="media_preview_activity__media_content_description">Previzualizare media</string>
+    <string name="media_preview__all_media_title">Toate mediile</string>
+    <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence are nevoie de permisiunea de stocare pentru a salva în memoria externă, dar aceasta a fost refuzată permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\" și activați \"Storage\" .</string>
+    <string name="conversation__menu_view_all_media">Toate mediile</string>
+    <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Cereți întotdeauna cartela SIM pe care o utilizați atunci când trimiteți mesaje</string>
+    <string name="preferences_advanced__always_ask_for_sim_card">Cereți întotdeauna o cartelă SIM</string>
+    <string name="AndroidManifest__all_media_named">Toate mediile cu %1$s</string>
+    <string name="AndroidManifest__all_media">Toate mediile</string>
+    <string name="message_details_header__with">Cu</string>
+    <string name="message_details_header__from">De la</string>
+    <string name="message_details_header__to">La</string>
+    <string name="message_details_header__type">Tip</string>
+    <string name="media_overview_activity__no_media">Fără media</string>
+    <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">Silence necesită permisiunea Contacts pentru a vă afișa contactele, dar aceasta a fost refuzată permanent. Vă rugăm să continuați în meniul de setări al aplicației, selectați \"Permissions\" și activați \"Contacts\" .</string>
+    <string name="VideoPlayer_error_playing_video">Eroare de redare video</string>
+    <string name="NotificationChannel_other">Altele</string>
+    <string name="NotificationChannel_locked_status">Stare blocată</string>
+    <string name="NotificationChannel_failures">Eșecuri</string>
+    <string name="NotificationChannel_messages">Mesaje</string>
+    <string name="ConfirmIdentityDialog_accept">Acceptă</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">Materialul cheie de identificare pentru %1$s s-a schimbat. Acest lucru ar putea însemna fie că cineva încearcă să vă intercepteze comunicarea, fie că %2$s pur și simplu a reinstalat Silence și acum are o nouă cheie de identificare.</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Eroare la descărcarea mesajului MMS, atingeți pentru a reîncerca</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Descărcarea mesajului MMS</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage">Silence are nevoie de permisiunea Storage pentru a putea scrie în memoria externă.</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence are nevoie de permisiunea de stocare pentru a scrie în memoria externă, dar aceasta a fost refuzată permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\" , apoi activați \"Storage\" .</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage">Silence are nevoie de permisiunea \"Storage\" pentru a putea citi din memoria externă.</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence are nevoie de permisiunea de stocare pentru a citi din memoria externă, dar aceasta a fost refuzată permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\", apoi activați \"Storage\".</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence are nevoie de permisiunea SMS pentru a importa mesaje SMS</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence are nevoie de permisiunea SMS pentru a importa mesaje SMS, dar aceasta a fost refuzată permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\" și activați \"SMS\".</string>
+    <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Pentru a funcționa, Silence are nevoie de permisiunile Phone și SMS, dar acestea au fost refuzate permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\", apoi activați \"Phone\" și \"SMS\".</string>
+    <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence are nevoie de permisiunea Phone pentru a gestiona cheile de criptare și pentru a le lega de cartelele SIM, precum și de permisiunea SMS pentru a primi mesaje SMS.</string>
+    <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Trebuie să acordați anumite permisiuni pentru Silence pentru a putea continua să îl utilizați. Atingeți ușor pentru a continua.</string>
+    <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence are nevoie de acces la contactele dumneavoastră, la starea telefonului și la mesajele SMS pentru a vă conecta cu prietenii, pentru a vă gestiona cheile de criptare și pentru a discuta pe chat.</string>
+    <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence are nevoie de permisiunea SMS pentru a trimite un SMS, dar aceasta a fost refuzată permanent. Vă rugăm să continuați la setările aplicației, selectați \"Permissions\" și activați \"SMS\".</string>
+    <string name="ConversationItem_via_s">prin %s</string>
+    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence necesită permisiunea Contacts pentru a atașa informații de contact, dar aceasta a fost refuzată permanent. Vă rugăm să continuați în meniul de setări al aplicației, selectați \"Permissions\" și activați \"Contacts\" .</string>
+    <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence are nevoie de permisiunea de stocare externă pentru a atașa fotografii, videoclipuri sau înregistrări audio, dar aceasta a fost refuzată permanent. Vă rugăm să continuați în meniul de setări al aplicației, selectați \"Permissions\" și activați \"Storage\".</string>
 </resources>
