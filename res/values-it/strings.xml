@@ -503,9 +503,7 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
     <!--receive_key_dialog-->
     <string name="receive_key_activity__complete">Completato</string>
     <!--recipients_panel-->
-    <string name="recipients_panel__to">
-        <small>Inserisci un nome o un numero</small>
-    </string>
+    <string name="recipients_panel__to"><small>Inserisci un nome o un numero</small></string>
     <string name="recipients_panel__add_member">Aggiungi partecipante</string>
     <!--verify_identity_activity-->
     <string name="verify_identity_activity__their_identity_they_read">La sua identità ( legge ):</string>
@@ -803,14 +801,15 @@ Ricevuto un messaggio di scambio chiavi per una versione di protocollo non valid
     <string name="NotificationChannel_locked_status">Stato bloccato</string>
     <string name="NotificationChannel_failures">Errori</string>
     <string name="NotificationChannel_messages">Messaggi</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">Scaricamento MMS…</string>
+    <string name="NotificationMmsMessageRecord_downloading_mms_message">Scaricamento MMS</string>
     <string name="ConfirmIdentityDialog_accept">Accetta</string>
     <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">La chiave di identificazione di %1$s è cambiata. Può voler dire che qualcuno cerca di intercettare la vostra comunicazione o che %2$s ha solamente reinstallato Silence ed ha una nuova chiave di identitificazione.</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Errore durante lo scaricamento MMS, tocca per riprovare</string>
+    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Errore durante lo scaricamento del messaggio MMS, tocca per riprovare</string>
     <string name="media_preview_activity__media_content_description">Anteprima dei media</string>
     <string name="media_preview__all_media_title">Tutti i media</string>
     <string name="conversation__menu_view_all_media">Tutti i media</string>
     <string name="AndroidManifest__all_media_named">Tutti i media condivisi con %1$s</string>
     <string name="media_overview_activity__no_media">Nessun media</string>
     <string name="AndroidManifest__all_media">Tutti i media</string>
+    <string name="VideoPlayer_error_playing_video">Errore esecuzione video</string>
 </resources>
