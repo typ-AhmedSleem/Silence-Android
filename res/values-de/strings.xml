@@ -774,10 +774,10 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
     <string name="message_details_header__to">An</string>
     <string name="message_details_header__type">Typ</string>
     <string name="conversation_activity__via_sim_name">Via %1$s</string>
-    <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence muss auf deine Kontakte, den Telefonstatus und SMS-Nachrichten zugreifen können, um die Verbindung zu Freunden herzustellen, Schlüssel und Chat zu verwalten.</string>
+    <string name="WelcomeActivity_silence_needs_access_to_your_contacts_phone_status_and_sms">Silence muss auf deine Kontakte, den Telefonstatus und SMS-Nachrichten zugreifen können, um die Verbindung zu Freunden zu ermöglichen, sowie Verschlüsselungs Tokens und Chats verwalten zu können.</string>
     <string name="ConversationItem_via_s">via %s</string>
     <string name="AttachmentManager_silence_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Silence benötigt die Berechtigung zum Zugriff auf externe Speichermedien um Fotos, Videos oder Tonaufzeichnungen anhängen zu können, diese wurde aber abgelehnt. Bitte wähle im Einstellungen-Menü der App \"Berechtigungen\" und aktiviere \"Speicherzugriff\"</string>
-    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence benötigt die Berechtigung zum Zugriff auf Kontakte um Kontaktinformation anhängen zu können, diese wurde aber abgelehnt. Bitte wähle im Einstellungen-Menü der App \"Berechtigungen\" und aktiviere \"Kontakte\".</string>
+    <string name="AttachmentManager_silence_requires_contacts_permission_in_order_to_attach_contact_information">Silence benötigt die Berechtigung zum Zugriff auf Kontakte um Kontaktinformation anhängen zu können, dieser Zugriff wird aber permanent abgelehnt. Bitte wähle im Einstellungen-Menü der App \"Berechtigungen\" und aktiviere \"Kontakte\".</string>
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Du musst Silence einige Berechtigungen erteilen.</string>
     <string name="WelcomeActivity_action_required">Aktion erforderlich!</string>
     <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence benötigt die Telefonie- und SMS-Berechtigungen um zu funktionieren, aber diese wurden abgelehnt. Bitte wähle \"Berechtigungen\" in den Einstellungen zur App und aktiviere \"Telefon\" und \"SMS\".</string>
@@ -785,4 +785,6 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Bevor es weitergeht, musst Du Silence einige Berechtigungen erteilen. Zum Fortsetzen hier drücken.</string>
     <string name="WelcomeActivity_continue">Weiter</string>
     <string name="ConversationActivity_silence_needs_sms_permission_in_order_to_send_an_sms">Silence benötigt die Berechtigung zum Versenden von SMS, diese wurde aber abgelehnt. Bitte wähle im Einstellungen-Menü der App \"Berechtigungen\" und aktiviere \"SMS\".</string>
+    <string name="WelcomeActivity_improve_your_privacy_talk_to_everyone">Verbessere deine Privatssphäre, sprich mit jedem</string>
+    <string name="WelcomeActivity_encrypt_your_messages">Verschlüssele deine Nachrichten mit Silence-Benutzern, während du mit anderen ganz normale SMS/MMS verwendest.</string>
 </resources>
