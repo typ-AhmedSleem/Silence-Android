@@ -312,7 +312,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Ricevis mesaĝon kun nekonata ident-ŝlosilo. Frapetu por prilabori kaj montri.</string>
     <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Ricevis ĝisdatan sed nekonatan ident-informojn. Frapetu por kontroli identigilon.</string>
     <string name="SmsMessageRecord_secure_session_ended">Sekura seanco finita.</string>
-    <string name="SmsMessageRecord_duplicate_message">Duplikata mesaĝo.</string>
+    <string name="SmsMessageRecord_duplicate_message">Duplikato de mesaĝo.</string>
     <!--ThreadRecord-->
     <string name="ThreadRecord_left_the_group">Forlasis grupon</string>
     <string name="ThreadRecord_draft">Malneto:</string>
@@ -742,7 +742,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <string name="key_scanning__menu_compare">Kompari</string>
     <string name="key_scanning__menu_display_your_qr_code">Montri vian QR-kodon</string>
     <string name="key_scanning__menu_scan_contacts_qr_code">Skani QR-kodon de kontakto</string>
-    <string name="share_identity_fingerprint">Kunhavigi fingrospuro de via identigo</string>
+    <string name="share_identity_fingerprint">Kunhavigi fingrospuron de via identigo</string>
     <!--text_secure_normal-->
     <string name="text_secure_normal__menu_new_message">Nova mesaĝo</string>
     <string name="text_secure_normal__menu_new_group">Nova grupo</string>
