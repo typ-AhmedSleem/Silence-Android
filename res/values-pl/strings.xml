@@ -343,7 +343,7 @@ Otrzymano wiadomość wymiany klucz dla niepoprawnej wersji protokołu.</string>
     <string name="SmsMessageRecord_received_message_with_unknown_identity_key_tap_to_process">Otrzymano wiadomość z nieznanym kluczem tożsamości. Stuknij aby przetworzyć i wyświetlić.</string>
     <string name="SmsMessageRecord_received_updated_but_unknown_identity_information">Otrzymał zaktualizowany, ale z nieznaną informacją tożsamości. Dotknij aby potwierdzić tożsamość.</string>
     <string name="SmsMessageRecord_secure_session_ended">Bezpieczna sesja zakończona.</string>
-    <string name="SmsMessageRecord_duplicate_message">Duplikuj wiadomość.</string>
+    <string name="SmsMessageRecord_duplicate_message">Duplikat wiadomości.</string>
     <!--ThreadRecord-->
     <string name="ThreadRecord_left_the_group">Opuścił grupę</string>
     <string name="ThreadRecord_draft">Szkic:</string>
