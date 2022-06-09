@@ -425,7 +425,7 @@
     <string name="AndroidManifest_archived_conversations">المحادثات المحفوظة</string>
     <string name="AndroidManifest_configure_mms_settings">إعدادات رسائل الوسائط المتعددة</string>
     <!--arrays.xml-->
-    <string name="arrays__import_export">"استيراد/  تصدير"</string>
+    <string name="arrays__import_export">استيراد/ تصدير</string>
     <string name="arrays__your_identity_key">مفتاح هويتك</string>
     <string name="arrays__use_default">استخدم الافتراضي</string>
     <string name="arrays__use_custom">تخصيص</string>
@@ -722,21 +722,21 @@
         <item quantity="one">تم نقل المحادثة إلى البريد الوارد</item>
         <item quantity="two">تم نقل المحادثتين إلى البريد الوارد</item>
         <item quantity="few">تم نقل المحادثات إلى البريد الوارد</item>
-        <item quantity="many">"تم نقل  المحادثات إلى البريد الوارد"</item>
-        <item quantity="other"></item>
+        <item quantity="many">تم نقل المحادثات إلى البريد الوارد</item>
+        <item quantity="other">تم نقل المحادثات إلى البريد الوارد</item>
     </plurals>
     <string name="ConversationListFragment_this_will_send_drafts_of_selected_conversations">سيؤدي هذا إلى إرسال مسودات المحادثات المختارة.</string>
     <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">يحتاج Silence إلى إذن الهاتف من أجل إدارة مفاتيح التشفير وربطها بشريحة الهاتف الخاصة بك ، وإذن الرسائل القصيرة لتلقي الرسائل القصيرة.</string>
-    <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">"يحتاج Silence إلى أذونات الهاتف والرسائل القصيرة لكي يتثنى له العمل ، ولكن تم رفض الأذونات نهائياً.  الرجاء الإستمرار فى إعدادات التطبيق ، وتحديد \"أذونات\" ، ثم تمكين \"الهاتف\" و \"الرسائل القصيرة\"."</string>
+    <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">يحتاج Silence إلى أذونات الهاتف والرسائل القصيرة لكي يتثنى له العمل ، ولكن تم رفض الأذونات نهائياً. الرجاء الإستمرار فى إعدادات التطبيق ، وتحديد \"أذونات\" ، ثم تمكين \"الهاتف\" و \"الرسائل القصيرة\".</string>
     <string name="ExportFragment_export_plaintext_to_storage">تصدير نص عادي إلى التخزين؟</string>
     <string name="ExportFragment_exporting_plaintext_to_storage">جارٍ تصدير نص عادي إلى وحدة التخزين …</string>
     <string name="ExportFragment_this_will_export_your_encrypted_keys_settings_and_messages">سيؤدي ذلك إلى تصدير مفاتيحك وإعداداتك ورسائلك المشفرة إلى وحدة التخزين.</string>
-    <string name="ImportFragment_this_will_import_messages_from_the_system">"سيؤدي هذا إلى استيراد الرسائل من قاعدة بيانات الرسائل القصيرة الافتراضية للنظام إلى Silence.  إذا قمت باستيراد قاعدة بيانات  الرسائل القصيرة  للنظام من قبل ، فسيؤدي الاستيراد مرة أخرى إلى تكرار الرسائل."</string>
-    <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">"ستؤدي استعادة نسخة احتياطية مشفرة إلى استبدال مفاتيحك وتفضيلاتك ورسائلك الحالية تمامًا.  ستفقد أي معلومات موجودة في تثبيت Silence الحالي ولكن ليس في النسخة الاحتياطية.  سيتوقف Silence بعد الاستيراد."</string>
-    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">"يحتاج Silence إلى إذن الرسائل القصيرة لاستيراد الرسائل القصيرة  ، ولكن تم رفضه نهائيًا.  يرجى الاستمرار في إعدادات التطبيق ، وتحديد \"الأذونات\" ، وتمكين \"الرسائل القصيرة\"."</string>
-    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">"يحتاج Silence إلى إذن التخزين من أجل القراءة من وحدة التخزين الخارجية ، ولكن تم رفضه نهائيًا.  الرجاء الاستمرار فى  إعدادات التطبيق ، وتحديد \"أذونات\" ، ثم تمكين \"التخزين\"."</string>
-    <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">"رسالة التبادل التي تلقيتها جاءت من إصدار Silence قديم جدًا بحيث يتعذر  الاتصال بإصدارك.  يجب عليك إرسالها يدويًا لبدء جلسة آمنة.  انقر لإرسال رسالة تبادل مفتاح التشفير."</string>
-    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">تم تغيير ملفات مفتاح الهوية الفريد لـ%1 $. هذا يعني إما أن شخص ما يحاول اعتراض اتصالك، أو أن%2$ببساطة إعادة تثبيت Silence والآن لديه مفتاح هوية جديد.</string>
+    <string name="ImportFragment_this_will_import_messages_from_the_system">سيؤدي هذا إلى استيراد الرسائل من قاعدة بيانات الرسائل القصيرة الافتراضية للنظام إلى Silence. إذا قمت باستيراد قاعدة بيانات الرسائل القصيرة للنظام من قبل ، فسيؤدي الاستيراد مرة أخرى إلى تكرار الرسائل.</string>
+    <string name="ImportFragment_restoring_an_encrypted_backup_will_completely_replace_your_existing_keys">ستؤدي استعادة نسخة احتياطية مشفرة إلى استبدال مفاتيحك وتفضيلاتك ورسائلك الحالية تمامًا. ستفقد أي معلومات موجودة في تثبيت Silence الحالي ولكن ليس في النسخة الاحتياطية. سيتوقف Silence بعد الاستيراد.</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">يحتاج Silence إلى إذن الرسائل القصيرة لاستيراد الرسائل القصيرة ، ولكن تم رفضه نهائيًا. يرجى الاستمرار في إعدادات التطبيق ، وتحديد \"الأذونات\" ، وتمكين \"الرسائل القصيرة\".</string>
+    <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">يحتاج Silence إلى إذن التخزين من أجل القراءة من وحدة التخزين الخارجية ، ولكن تم رفضه نهائيًا. الرجاء الاستمرار فى إعدادات التطبيق ، وتحديد \"أذونات\" ، ثم تمكين \"التخزين\".</string>
+    <string name="MessageRecord_the_exchange_message_you_got_came_from_a_version_of_silence_that_is_too_outdated">رسالة التبادل التي تلقيتها جاءت من إصدار Silence قديم جدًا بحيث يتعذر الاتصال بإصدارك. يجب عليك إرسالها يدويًا لبدء جلسة آمنة. انقر لإرسال رسالة تبادل مفتاح التشفير.</string>
+    <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">تم تغيير ملفات مفتاح الهوية الفريد لـ %1$s. هذا يعني إما أن شخص ما يحاول اعتراض اتصالك، أو أن %2$s ببساطة أعاد تثبيت Silence والآن لديه مفتاح هوية جديد.</string>
     <string name="MessageDisplayHelper_end_session_encrypted_for_non_existing_session">طلب إنهاء جلسة غير موجودة</string>
     <string name="NotificationChannel_messages">الرسائل</string>
     <string name="NotificationChannel_locked_status">حالة الانغلاق</string>
@@ -744,7 +744,7 @@
     <string name="QuickResponseService_quick_response_unavailable_when_Silence_is_locked">الاستجابة السريعة غير متاحة عند إنغلاق Silence!</string>
     <string name="VideoPlayer_error_playing_video">خطأ في تشغيل الفيديو</string>
     <string name="SubscriptionInfoCompat_slot">منفذ %1$s</string>
-    <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">"يتطلب  Silence إذن جهات الاتصال لعرض جهات الاتصال الخاصة بك ، ولكن تم رفضه نهائيًا.  الرجاء الاستمرار مع قائمة إعدادات التطبيق ، وتحديد \"أذونات\" ، وتمكين \"جهات الاتصال\"."</string>
+    <string name="ContactSelectionListFragment_silence_requires_the_contacts_permission_in_order_to_display_your_contacts">يتطلب Silence إذن جهات الاتصال لعرض جهات الاتصال الخاصة بك ، ولكن تم رفضه نهائيًا. الرجاء الاستمرار مع قائمة إعدادات التطبيق ، وتحديد \"أذونات\" ، وتمكين \"جهات الاتصال\".</string>
     <string name="AndroidManifest__all_media">كل الوسائط</string>
     <string name="preferences__mms_user_agent">وكيل مستخدم الرسائل متعددة الوسائط</string>
     <string name="preferences__enable_if_your_device_supports_sms_mms_delivery_over_wifi">قم بتمكينه إذا كان جهازك يستخدم تسليم الرسائل القصيرة / رسائل الوسائط المتعددة عبر شبكة Wi-Fi (يتم التمكين فقط عند تمكين \"مكالمات Wi-Fi\" على جهازك).</string>
@@ -752,4 +752,12 @@
     <string name="preferences__roaming_auto_retrieve">جل تلقائي أثناء التجوال</string>
     <string name="preferences__automatically_retrieve_mms_when_roaming">جلب تلقائي لرسائل الوسائط المتعددة أثناء التجوال</string>
     <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">اطلب دائمًا استخدام بطاقة SIM عند إرسال الرسائل</string>
+    <string name="media_overview_activity__no_media">لا يوجد وسائط</string>
+    <string name="conversation__menu_view_all_media">كل الوسائط</string>
+    <string name="media_preview_activity__media_content_description">معاينة الوسائط</string>
+    <string name="media_preview__all_media_title">كل الوسائط</string>
+    <string name="reminder_header_rate_text">إذا كنت تستمتع باستخدام هذا التطبيق ، فالرجاء تخصيص بعض الوقت لمساعدتنا من خلال تقييمه.</string>
+    <string name="ConversationActivity_detected_silence_initiate_session_question">لقد تلقيت رسالة من شخص يدير جلسات Silence المشفرة. هل تريد بدء جلسة مشفرة؟</string>
+    <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">المستلم ليس رقمًا صالحًا أو عنوان بريد إلكتروني!</string>
+    <string name="NotificationChannel_failures">حالات الفشل</string>
 </resources>
