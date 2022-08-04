@@ -76,22 +76,20 @@
     <!--ShareActivity-->
     <!--WelcomeActivity-->
     <!--ExportFragment-->
-    <string name="ExportFragment_export">Eksport</string>
+    <string name="ExportFragment_export">Ekspor</string>
     <string name="ExportFragment_cancel">Batal</string>
-    <string name="ExportFragment_exporting">Mengeksport</string>
+    <string name="ExportFragment_exporting">Mengekspor</string>
     <!--GroupCreateActivity-->
     <string name="GroupCreateActivity_contacts_mms_exception">Terjadi kesalahan tidak terduga yang menggagalkan pembuatan grup.</string>
     <string name="GroupCreateActivity_contacts_no_members">Anda butuh minimal satu orang dalam grup anda!</string>
     <!--GroupMembersDialog-->
     <!--ImportExportActivity-->
-    <string name="ImportExportActivity_import">Import</string>
-    <string name="ImportExportActivity_export">Eksport</string>
+    <string name="ImportExportActivity_import">Impor</string>
+    <string name="ImportExportActivity_export">Ekspor</string>
     <!--ImportFragment-->
-    <string name="ImportFragment_import">Import</string>
+    <string name="ImportFragment_import">Impor</string>
     <string name="ImportFragment_cancel">Batal</string>
-    <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ini akan mengimport
-pesan dari basis data SMS standar ke SMSSecure. Jika anda sebelumnya
-telah mengimport basis data sistem SMS, hal ini akan menyebabkan adanya duplikasi pesan.</string>
+    <string name="ImportFragment_this_will_import_messages_from_a_plaintext_backup">Ini akan mengimpor pesan dari basis data SMS default ke SMSSecure. Jika anda sebelumnya telah mengimpor basis data sistem SMS, hal ini akan menyebabkan adanya duplikasi pesan.</string>
     <string name="ImportFragment_importing">Mengimport</string>
     <string name="ImportFragment_no_plaintext_backup_found">Cadangan teks polos tidak ditemukan!</string>
     <string name="ImportFragment_error_importing_backup">Gagal mengimport cadangan!</string>
@@ -144,7 +142,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <!--MessageDisplayHelper-->
     <!--EncryptingSmsDatabase-->
     <!--MmsDatabase-->
-    <string name="MmsDatabase_mms_pending_download">Sentuh untuk mengkonfigurasi pengaturan MMS untuk lanjut mengunduh.</string>
+    <string name="MmsDatabase_mms_pending_download">Ketuk untuk mengkonfigurasi pengaturan MMS untuk lanjut mengunduh.</string>
     <!--MmsMessageRecord-->
     <!--MuteDialog-->
     <!--ApplicationMigrationService-->
@@ -191,7 +189,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <!--database_migration_activity-->
     <string name="database_migration_activity__the_default_system_database_will_not_be_modified">Basis data default sistem tidak akan diubah atau dimodifikasi.</string>
     <string name="database_migration_activity__skip">Lewati</string>
-    <string name="database_migration_activity__import">Import</string>
+    <string name="database_migration_activity__import">Impor</string>
     <string name="database_migration_activity__importing">MENGIMPORT</string>
     <!--database_upgrade_activity-->
     <!--load_more_header-->
@@ -431,7 +429,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <string name="WelcomeActivity_action_required">Diperlukan tindakan!</string>
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence">Anda perlu memberikan beberapa izin ke Silence.</string>
     <string name="WelcomeActivity_you_need_to_grant_some_permissions_to_silence_in_order_to_continue_to_use_it">Anda perlu memberikan beberapa izin ke Silence agar dapat terus menggunakannya. Ketuk untuk melanjutkan.</string>
-    <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Diam membutuhkan izin Telepon untuk mengelola kunci enkripsi dan mengikatnya ke kartu SIM anda, dan izin SMS untuk menerima pesan SMS.</string>
+    <string name="WelcomeActivity_silence_needs_the_phone_permission_in_order_to_manage_encryption_keys_and_bind_them_to_your_sim_cards_and_sms_permission_in_order_to_receive_sms_messages">Silence membutuhkan izin Telepon untuk mengelola kunci enkripsi dan mengikatnya ke kartu SIM anda, dan izin SMS untuk menerima pesan SMS.</string>
     <string name="WelcomeActivity_silence_requires_the_phone_and_sms_permissions_in_order_to_work_but_it_has_been_permanently_denied">Silence membutuhkan izin Telepon dan SMS agar dapat berfungsi, tetapi izin tersebut telah ditolak secara permanen. Silakan lanjutkan ke pengaturan aplikasi, pilih \"Izin\", lalu aktifkan \"Telepon\" dan \"SMS\".</string>
     <string name="ExportFragment_warning_this_will_export_the_contents_of_your_messages_to_storage_in_plaintext">Peringatan, ini akan mengekspor konten pesan Silence anda ke penyimpanan dalam teks biasa.</string>
     <string name="ExportFragment_exporting_plaintext_to_storage">Mengekspor plaintext ke penyimpanan…</string>
@@ -454,7 +452,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <string name="ImportFragment_import_plaintext_backup_elipse">Mengimpor cadangan teks biasa…</string>
     <string name="ImportFragment_restoring_encrypted_backup">Memulihkan cadangan terenkripsi…</string>
     <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages">Silence memerlukan izin SMS untuk mengimpor pesan SMS, tetapi telah ditolak secara permanen. Silakan lanjutkan ke pengaturan aplikasi, pilih \"Izin\", dan aktifkan \"SMS\".</string>
-    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Diam membutuhkan izin SMS untuk mengimpor pesan SMS</string>
+    <string name="ImportExportFragment_silence_needs_the_sms_permission_in_order_to_import_sms_messages_toast">Silence membutuhkan izin SMS untuk mengimpor pesan SMS</string>
     <string name="ImportExportFragment_silence_needs_the_storage_permission_in_order_to_read_from_external_storage_but_it_has_been_permanently_denied">Silence membutuhkan izin Penyimpanan untuk membaca dari penyimpanan eksternal, tetapi telah ditolak secara permanen. Silakan lanjutkan ke pengaturan aplikasi, pilih \"Izin\", lalu aktifkan \"Penyimpanan\".</string>
     <string name="MessageDetailsRecipient_new_identity">Identitas baru</string>
     <string name="MmsDownloader_error_reading_mms_settings">Kesalahan membaca pengaturan MMS penyedia nirkabel</string>
@@ -707,7 +705,7 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <string name="preferences__automatically_retrieve_mms_when_roaming">Secara otomatis mengambil MMS saat roaming</string>
     <string name="preferences_chats__message_trimming">Pemangkasan pesan</string>
     <string name="preferences_advanced__use_system_emoji">Gunakan emoji sistem</string>
-    <string name="preferences_advanced__disable_silences_built_in_emoji_support">Nonaktifkan dukungan emoji bawaan Silence</string>
+    <string name="preferences_advanced__disable_silences_built_in_emoji_support">Nonaktifkan dukungan emoji default Silence</string>
     <string name="preferences_advanced__always_ask_for_sim_card">Selalu tanyakan kartu SIM</string>
     <string name="preferences_advanced__always_ask_for_the_sim_card_to_use_when_sending_messages">Selalu tanyakan kartu SIM untuk digunakan saat mengirim pesan</string>
     <string name="contact_selection_list__menu_select_all">Pilih semua</string>
@@ -770,4 +768,25 @@ Diterima pesan pertukaran kunci untuk versi protokol yang tidak valid.
     <string name="MediaPreviewActivity_cant_display">Gagal melihat pratinjau gambar ini</string>
     <string name="MediaPreviewActivity_unssuported_media_type">Jenis media yang tidak didukung</string>
     <string name="MediaPreviewActivity_draft">Draf</string>
+    <string name="media_preview__all_media_title">Semua media</string>
+    <string name="media_preview_activity__media_content_description">Pratinjau media</string>
+    <string name="Permissions_not_now">Tidak sekarang</string>
+    <string name="MediaPreviewActivity_silence_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Silence membutuhkan izin Penyimpanan untuk menyimpan ke penyimpanan eksternal, tetapi telah ditolak secara permanen. Silakan lanjutkan ke pengaturan aplikasi, pilih \"Izin\", dan aktifkan \"Penyimpanan\".</string>
+    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Tidak dapat menyimpan ke penyimpanan eksternal tanpa izin</string>
+    <string name="media_preview__save_title">Simpan</string>
+    <string name="media_preview__forward_title">Teruskan</string>
+    <string name="media_overview__save_all">Simpan semua</string>
+    <string name="trimmer__deleting">Menghapus…</string>
+    <string name="trimmer__deleting_old_messages">Menghapus pesan lama…</string>
+    <string name="trimmer__old_messages_successfully_deleted">Pesan lama berhasil dihapus</string>
+    <string name="transport_selection_list_item__transport_icon">Ikon transportasi</string>
+    <string name="RingtonePreference_ringtone_default">Nada dering default</string>
+    <string name="RingtonePreference_ringtone_silent">Tidak ada</string>
+    <string name="RingtonePreference_ringtone_picker_title">Nada dering</string>
+    <string name="RingtonePreference_notification_sound_default">Suara notifikasi default</string>
+    <string name="RingtonePreference_alarm_sound_default">Suara alarm default</string>
+    <string name="RingtonePreference_add_ringtone_text">Tambahkan nada dering</string>
+    <string name="RingtonePreference_unable_to_add_ringtone">Tidak dapat menambahkan nada dering khusus</string>
+    <string name="Permissions_permission_required">Izin diperlukan</string>
+    <string name="Permissions_continue">Melanjutkan</string>
 </resources>
