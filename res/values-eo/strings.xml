@@ -510,7 +510,7 @@ Ricevis ŝlosil-interŝanĝan mesaĝon por erara versio de protokolo.</string>
     <!--message_details_header-->
     <string name="message_details_header__issues_need_your_attention">Kelkaj aferoj bezonas vian atenton.</string>
     <string name="message_details_header__sent">Sendita</string>
-    <string name="message_details_header__received">Recevita</string>
+    <string name="message_details_header__received">Ricevita</string>
     <string name="message_details_header__type">Speco</string>
     <string name="message_details_header__to">Al</string>
     <string name="message_details_header__from">De</string>
