@@ -15,50 +15,50 @@ import java.io.IOException;
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class EncryptedMediaDataSource extends MediaDataSource {
 
-  private final File         mediaFile;
-  private final MasterSecret masterSecret;
+    private final File mediaFile;
+    private final MasterSecret masterSecret;
 
-  public EncryptedMediaDataSource(MasterSecret masterSecret, File mediaFile) {
-    this.mediaFile    = mediaFile;
-    this.masterSecret = masterSecret;
-  }
-
-  @Override
-  public int readAt(long position, byte[] bytes, int offset, int length) throws IOException {
-    DecryptingPartInputStream inputStream     = new DecryptingPartInputStream(mediaFile, masterSecret, null);
-    byte[]                    buffer          = new byte[4096];
-    long                      headerRemaining = position;
-
-    while (headerRemaining > 0) {
-      int read = inputStream.read(buffer, 0, Util.toIntExact(Math.min((long)buffer.length, headerRemaining)));
-
-      if (read == -1) return -1;
-
-      headerRemaining -= read;
+    public EncryptedMediaDataSource(MasterSecret masterSecret, File mediaFile) {
+        this.mediaFile = mediaFile;
+        this.masterSecret = masterSecret;
     }
 
-    int returnValue = inputStream.read(bytes, offset, length);
-    inputStream.close();
-    return returnValue;
-  }
+    @Override
+    public int readAt(long position, byte[] bytes, int offset, int length) throws IOException {
+        DecryptingPartInputStream inputStream = new DecryptingPartInputStream(mediaFile, masterSecret, null);
+        byte[] buffer = new byte[4096];
+        long headerRemaining = position;
 
-  @Override
-  public long getSize() throws IOException {
-    DecryptingPartInputStream inputStream = new DecryptingPartInputStream(mediaFile, masterSecret, null);
-    byte[]                    buffer      = new byte[4096];
-    long                      size        = 0;
+        while (headerRemaining > 0) {
+            int read = inputStream.read(buffer, 0, Util.toIntExact(Math.min(buffer.length, headerRemaining)));
 
-    int read;
+            if (read == -1) return -1;
 
-    while ((read = inputStream.read(buffer)) != -1) {
-      size += read;
+            headerRemaining -= read;
+        }
+
+        int returnValue = inputStream.read(bytes, offset, length);
+        inputStream.close();
+        return returnValue;
     }
 
-    return size;
-  }
+    @Override
+    public long getSize() throws IOException {
+        DecryptingPartInputStream inputStream = new DecryptingPartInputStream(mediaFile, masterSecret, null);
+        byte[] buffer = new byte[4096];
+        long size = 0;
 
-  @Override
-  public void close() throws IOException {
+        int read;
 
-  }
+        while ((read = inputStream.read(buffer)) != -1) {
+            size += read;
+        }
+
+        return size;
+    }
+
+    @Override
+    public void close() throws IOException {
+
+    }
 }

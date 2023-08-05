@@ -10,10 +10,7 @@ import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.load.model.stream.StreamModelLoader;
 
-import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.mms.AttachmentStreamUriLoader.AttachmentModel;
-import org.smssecure.smssecure.mms.DecryptableStreamUriLoader.DecryptableUri;
-import org.smssecure.smssecure.util.SaveAttachmentTask.Attachment;
 
 import java.io.File;
 import java.io.InputStream;
@@ -24,57 +21,57 @@ import java.io.InputStream;
  * {@link #getResourceFetcher(Uri, int, int)}.
  */
 public class AttachmentStreamUriLoader implements StreamModelLoader<AttachmentModel> {
-  private final Context context;
+    private final Context context;
 
-  /**
-   * THe default factory for {@link com.bumptech.glide.load.model.stream.StreamUriLoader}s.
-   */
-  public static class Factory implements ModelLoaderFactory<AttachmentModel, InputStream> {
-
-    @Override
-    public StreamModelLoader<AttachmentModel> build(Context context, GenericLoaderFactory factories) {
-      return new AttachmentStreamUriLoader(context);
+    public AttachmentStreamUriLoader(Context context) {
+        this.context = context;
     }
 
     @Override
-    public void teardown() {
-      // Do nothing.
-    }
-  }
-
-  public AttachmentStreamUriLoader(Context context) {
-    this.context = context;
-  }
-
-  @Override
-  public DataFetcher<InputStream> getResourceFetcher(AttachmentModel model, int width, int height) {
-    return new AttachmentStreamLocalUriFetcher(model.attachment, model.key);
-  }
-
-  public static class AttachmentModel {
-    public @NonNull File   attachment;
-    public @NonNull byte[] key;
-
-    public AttachmentModel(@NonNull File attachment, @NonNull byte[] key) {
-      this.attachment = attachment;
-      this.key        = key;
+    public DataFetcher<InputStream> getResourceFetcher(AttachmentModel model, int width, int height) {
+        return new AttachmentStreamLocalUriFetcher(model.attachment, model.key);
     }
 
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+    /**
+     * THe default factory for {@link com.bumptech.glide.load.model.stream.StreamUriLoader}s.
+     */
+    public static class Factory implements ModelLoaderFactory<AttachmentModel, InputStream> {
 
-      AttachmentModel that = (AttachmentModel)o;
+        @Override
+        public StreamModelLoader<AttachmentModel> build(Context context, GenericLoaderFactory factories) {
+            return new AttachmentStreamUriLoader(context);
+        }
 
-      return attachment.equals(that.attachment);
-
+        @Override
+        public void teardown() {
+            // Do nothing.
+        }
     }
 
-    @Override
-    public int hashCode() {
-      return attachment.hashCode();
+    public static class AttachmentModel {
+        public @NonNull File attachment;
+        public @NonNull byte[] key;
+
+        public AttachmentModel(@NonNull File attachment, @NonNull byte[] key) {
+            this.attachment = attachment;
+            this.key = key;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            AttachmentModel that = (AttachmentModel) o;
+
+            return attachment.equals(that.attachment);
+
+        }
+
+        @Override
+        public int hashCode() {
+            return attachment.hashCode();
+        }
     }
-  }
 }
 

@@ -7,14 +7,14 @@ import org.smssecure.smssecure.attachments.Attachment;
 
 public class MmsSlide extends ImageSlide {
 
-  public MmsSlide(@NonNull Context context, @NonNull Attachment attachment) {
-    super(context, attachment);
-  }
+    public MmsSlide(@NonNull Context context, @NonNull Attachment attachment) {
+        super(context, attachment);
+    }
 
-  @NonNull
-  @Override
-  public String getContentDescription() {
-    return "MMS";
-  }
+    @NonNull
+    @Override
+    public String getContentDescription() {
+        return "MMS";
+    }
 
 }

@@ -13,20 +13,19 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class ContactPhotoLocalUriFetcher extends StreamLocalUriFetcher {
-  private static final String TAG = ContactPhotoLocalUriFetcher.class.getSimpleName();
+    private static final String TAG = ContactPhotoLocalUriFetcher.class.getSimpleName();
 
-  public ContactPhotoLocalUriFetcher(Context context, Uri uri) {
-    super(context, uri);
-  }
-
-  @Override
-  protected InputStream loadResource(Uri uri, ContentResolver contentResolver)
-      throws FileNotFoundException
-  {
-    if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
-      return ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri, true);
-    } else {
-      return ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri);
+    public ContactPhotoLocalUriFetcher(Context context, Uri uri) {
+        super(context, uri);
     }
-  }
+
+    @Override
+    protected InputStream loadResource(Uri uri, ContentResolver contentResolver)
+            throws FileNotFoundException {
+        if (VERSION.SDK_INT >= VERSION_CODES.ICE_CREAM_SANDWICH) {
+            return ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri, true);
+        } else {
+            return ContactsContract.Contacts.openContactPhotoInputStream(contentResolver, uri);
+        }
+    }
 }

@@ -6,8 +6,8 @@ import android.content.Intent;
 
 public class LocaleChangedReceiver extends BroadcastReceiver {
 
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    NotificationChannels.create(context);
-  }
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        NotificationChannels.create(context);
+    }
 }

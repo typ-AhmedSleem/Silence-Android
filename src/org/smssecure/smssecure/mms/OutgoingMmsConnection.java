@@ -9,6 +9,6 @@ import org.smssecure.smssecure.transport.UndeliverableMessageException;
 
 
 public interface OutgoingMmsConnection {
-  @Nullable
-  SendConf send(@NonNull byte[] pduBytes, int subscriptionId) throws UndeliverableMessageException;
+    @Nullable
+    SendConf send(@NonNull byte[] pduBytes, int subscriptionId) throws UndeliverableMessageException;
 }

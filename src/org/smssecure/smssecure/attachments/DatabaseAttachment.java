@@ -7,68 +7,67 @@ import org.smssecure.smssecure.mms.PartAuthority;
 
 public class DatabaseAttachment extends Attachment {
 
-  private final AttachmentId attachmentId;
-  private final long         mmsId;
-  private final boolean      hasData;
-  private final boolean      hasThumbnail;
+    private final AttachmentId attachmentId;
+    private final long mmsId;
+    private final boolean hasData;
+    private final boolean hasThumbnail;
 
-  public DatabaseAttachment(AttachmentId attachmentId, long mmsId,
-                            boolean hasData, boolean hasThumbnail,
-                            String contentType, int transferProgress, long size,
-                            String location, String key, String relay, byte[] digest)
-  {
-    super(contentType, transferProgress, size, location, key, relay, digest);
-    this.attachmentId = attachmentId;
-    this.hasData      = hasData;
-    this.hasThumbnail = hasThumbnail;
-    this.mmsId        = mmsId;
-  }
-
-  @Override
-  @Nullable
-  public Uri getDataUri() {
-    if (hasData) {
-      return PartAuthority.getAttachmentDataUri(attachmentId);
-    } else {
-      return null;
+    public DatabaseAttachment(AttachmentId attachmentId, long mmsId,
+                              boolean hasData, boolean hasThumbnail,
+                              String contentType, int transferProgress, long size,
+                              String location, String key, String relay, byte[] digest) {
+        super(contentType, transferProgress, size, location, key, relay, digest);
+        this.attachmentId = attachmentId;
+        this.hasData = hasData;
+        this.hasThumbnail = hasThumbnail;
+        this.mmsId = mmsId;
     }
-  }
 
-  @Override
-  @Nullable
-  public Uri getThumbnailUri() {
-    if (hasThumbnail) {
-      return PartAuthority.getAttachmentThumbnailUri(attachmentId);
-    } else {
-      return null;
+    @Override
+    @Nullable
+    public Uri getDataUri() {
+        if (hasData) {
+            return PartAuthority.getAttachmentDataUri(attachmentId);
+        } else {
+            return null;
+        }
     }
-  }
 
-  public AttachmentId getAttachmentId() {
-    return attachmentId;
-  }
+    @Override
+    @Nullable
+    public Uri getThumbnailUri() {
+        if (hasThumbnail) {
+            return PartAuthority.getAttachmentThumbnailUri(attachmentId);
+        } else {
+            return null;
+        }
+    }
 
-  @Override
-  public boolean equals(Object other) {
-    return other != null &&
-           other instanceof DatabaseAttachment &&
-           ((DatabaseAttachment) other).attachmentId.equals(this.attachmentId);
-  }
+    public AttachmentId getAttachmentId() {
+        return attachmentId;
+    }
 
-  @Override
-  public int hashCode() {
-    return attachmentId.hashCode();
-  }
+    @Override
+    public boolean equals(Object other) {
+        return other != null &&
+                other instanceof DatabaseAttachment &&
+                ((DatabaseAttachment) other).attachmentId.equals(this.attachmentId);
+    }
 
-  public long getMmsId() {
-    return mmsId;
-  }
+    @Override
+    public int hashCode() {
+        return attachmentId.hashCode();
+    }
 
-  public boolean hasData() {
-    return hasData;
-  }
+    public long getMmsId() {
+        return mmsId;
+    }
 
-  public boolean hasThumbnail() {
-    return hasThumbnail;
-  }
+    public boolean hasData() {
+        return hasData;
+    }
+
+    public boolean hasThumbnail() {
+        return hasThumbnail;
+    }
 }

@@ -14,39 +14,39 @@ import org.smssecure.smssecure.mms.ContactPhotoUriLoader.ContactPhotoUri;
 import java.io.InputStream;
 
 public class ContactPhotoUriLoader implements StreamModelLoader<ContactPhotoUri> {
-  private final Context context;
+    private final Context context;
 
-  /**
-   * THe default factory for {@link com.bumptech.glide.load.model.stream.StreamUriLoader}s.
-   */
-  public static class Factory implements ModelLoaderFactory<ContactPhotoUri, InputStream> {
-
-    @Override
-    public StreamModelLoader<ContactPhotoUri> build(Context context, GenericLoaderFactory factories) {
-      return new ContactPhotoUriLoader(context);
+    public ContactPhotoUriLoader(Context context) {
+        this.context = context;
     }
 
     @Override
-    public void teardown() {
-      // Do nothing.
+    public DataFetcher<InputStream> getResourceFetcher(ContactPhotoUri model, int width, int height) {
+        return new ContactPhotoLocalUriFetcher(context, model.uri);
     }
-  }
 
-  public ContactPhotoUriLoader(Context context) {
-    this.context = context;
-  }
+    /**
+     * THe default factory for {@link com.bumptech.glide.load.model.stream.StreamUriLoader}s.
+     */
+    public static class Factory implements ModelLoaderFactory<ContactPhotoUri, InputStream> {
 
-  @Override
-  public DataFetcher<InputStream> getResourceFetcher(ContactPhotoUri model, int width, int height) {
-    return new ContactPhotoLocalUriFetcher(context, model.uri);
-  }
+        @Override
+        public StreamModelLoader<ContactPhotoUri> build(Context context, GenericLoaderFactory factories) {
+            return new ContactPhotoUriLoader(context);
+        }
 
-  public static class ContactPhotoUri {
-    public @NonNull Uri uri;
-
-    public ContactPhotoUri(@NonNull Uri uri) {
-      this.uri = uri;
+        @Override
+        public void teardown() {
+            // Do nothing.
+        }
     }
-  }
+
+    public static class ContactPhotoUri {
+        public @NonNull Uri uri;
+
+        public ContactPhotoUri(@NonNull Uri uri) {
+            this.uri = uri;
+        }
+    }
 }
 

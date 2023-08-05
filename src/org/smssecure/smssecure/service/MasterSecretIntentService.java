@@ -8,14 +8,14 @@ import org.smssecure.smssecure.crypto.MasterSecret;
 
 public abstract class MasterSecretIntentService extends IntentService {
 
-  public MasterSecretIntentService(String name) {
-    super(name);
-  }
+    public MasterSecretIntentService(String name) {
+        super(name);
+    }
 
-  @Override
-  protected final void onHandleIntent(Intent intent) {
-    onHandleIntent(intent, KeyCachingService.getMasterSecret(this));
-  }
+    @Override
+    protected final void onHandleIntent(Intent intent) {
+        onHandleIntent(intent, KeyCachingService.getMasterSecret(this));
+    }
 
-  protected abstract void onHandleIntent(Intent intent, @Nullable MasterSecret masterSecret);
+    protected abstract void onHandleIntent(Intent intent, @Nullable MasterSecret masterSecret);
 }

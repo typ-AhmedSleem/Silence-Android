@@ -23,73 +23,73 @@ import java.io.InputStream;
 
 public class AttachmentRegionDecoder implements ImageRegionDecoder {
 
-  private static final String TAG = AttachmentRegionDecoder.class.getName();
+    private static final String TAG = AttachmentRegionDecoder.class.getName();
 
-  private SkiaImageRegionDecoder passthrough;
+    private SkiaImageRegionDecoder passthrough;
 
-  private BitmapRegionDecoder bitmapRegionDecoder;
+    private BitmapRegionDecoder bitmapRegionDecoder;
 
-  @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
-  @Override
-  public Point init(Context context, Uri uri) throws Exception {
-    Log.w(TAG, "Init!");
-    if (!PartAuthority.isLocalUri(uri)) {
-      passthrough = new SkiaImageRegionDecoder();
-      return passthrough.init(context, uri);
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
+    @Override
+    public Point init(Context context, Uri uri) throws Exception {
+        Log.w(TAG, "Init!");
+        if (!PartAuthority.isLocalUri(uri)) {
+            passthrough = new SkiaImageRegionDecoder();
+            return passthrough.init(context, uri);
+        }
+
+        MasterSecret masterSecret = KeyCachingService.getMasterSecret(context);
+
+        if (masterSecret == null) {
+            throw new IllegalStateException("No master secret available...");
+        }
+
+        InputStream inputStream = PartAuthority.getAttachmentStream(context, masterSecret, uri);
+
+        this.bitmapRegionDecoder = BitmapRegionDecoder.newInstance(inputStream, false);
+        inputStream.close();
+
+        return new Point(bitmapRegionDecoder.getWidth(), bitmapRegionDecoder.getHeight());
     }
 
-    MasterSecret masterSecret = KeyCachingService.getMasterSecret(context);
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
+    @Override
+    public Bitmap decodeRegion(Rect rect, int sampleSize) {
+        Log.w(TAG, "Decode region: " + rect);
 
-    if (masterSecret == null) {
-      throw new IllegalStateException("No master secret available...");
+        if (passthrough != null) {
+            return passthrough.decodeRegion(rect, sampleSize);
+        }
+
+        synchronized (this) {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = sampleSize;
+            options.inPreferredConfig = Bitmap.Config.RGB_565;
+
+            Bitmap bitmap = bitmapRegionDecoder.decodeRegion(rect, options);
+
+            if (bitmap == null) {
+                throw new RuntimeException("Skia image decoder returned null bitmap - image format may not be supported");
+            }
+
+            return bitmap;
+        }
     }
 
-    InputStream inputStream = PartAuthority.getAttachmentStream(context, masterSecret, uri);
-
-    this.bitmapRegionDecoder = BitmapRegionDecoder.newInstance(inputStream, false);
-    inputStream.close();
-
-    return new Point(bitmapRegionDecoder.getWidth(), bitmapRegionDecoder.getHeight());
-  }
-
-  @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
-  @Override
-  public Bitmap decodeRegion(Rect rect, int sampleSize) {
-    Log.w(TAG, "Decode region: " + rect);
-
-    if (passthrough != null) {
-      return passthrough.decodeRegion(rect, sampleSize);
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
+    public boolean isReady() {
+        Log.w(TAG, "isReady");
+        return (passthrough != null && passthrough.isReady()) ||
+                (bitmapRegionDecoder != null && !bitmapRegionDecoder.isRecycled());
     }
 
-    synchronized(this) {
-      BitmapFactory.Options options = new BitmapFactory.Options();
-      options.inSampleSize      = sampleSize;
-      options.inPreferredConfig = Bitmap.Config.RGB_565;
-
-      Bitmap bitmap = bitmapRegionDecoder.decodeRegion(rect, options);
-
-      if (bitmap == null) {
-        throw new RuntimeException("Skia image decoder returned null bitmap - image format may not be supported");
-      }
-
-      return bitmap;
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
+    public void recycle() {
+        if (passthrough != null) {
+            passthrough.recycle();
+            passthrough = null;
+        } else {
+            bitmapRegionDecoder.recycle();
+        }
     }
-  }
-
-  @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
-  public boolean isReady() {
-    Log.w(TAG, "isReady");
-    return (passthrough != null && passthrough.isReady()) ||
-           (bitmapRegionDecoder != null && !bitmapRegionDecoder.isRecycled());
-  }
-
-  @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD_MR1)
-  public void recycle() {
-    if (passthrough != null) {
-      passthrough.recycle();
-      passthrough = null;
-    } else {
-      bitmapRegionDecoder.recycle();
-    }
-  }
 }

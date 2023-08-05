@@ -11,26 +11,26 @@ import org.whispersystems.jobqueue.requirements.RequirementProvider;
 
 public class MasterSecretRequirementProvider implements RequirementProvider {
 
-  private final BroadcastReceiver newKeyReceiver;
+    private final BroadcastReceiver newKeyReceiver;
 
-  private RequirementListener listener;
+    private RequirementListener listener;
 
-  public MasterSecretRequirementProvider(Context context) {
-    this.newKeyReceiver = new BroadcastReceiver() {
-      @Override
-      public void onReceive(Context context, Intent intent) {
-        if (listener != null) {
-          listener.onRequirementStatusChanged();
-        }
-      }
-    };
+    public MasterSecretRequirementProvider(Context context) {
+        this.newKeyReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if (listener != null) {
+                    listener.onRequirementStatusChanged();
+                }
+            }
+        };
 
-    IntentFilter filter = new IntentFilter(KeyCachingService.NEW_KEY_EVENT);
-    context.registerReceiver(newKeyReceiver, filter, KeyCachingService.KEY_PERMISSION, null);
-  }
+        IntentFilter filter = new IntentFilter(KeyCachingService.NEW_KEY_EVENT);
+        context.registerReceiver(newKeyReceiver, filter, KeyCachingService.KEY_PERMISSION, null);
+    }
 
-  @Override
-  public void setListener(RequirementListener listener) {
-    this.listener = listener;
-  }
+    @Override
+    public void setListener(RequirementListener listener) {
+        this.listener = listener;
+    }
 }

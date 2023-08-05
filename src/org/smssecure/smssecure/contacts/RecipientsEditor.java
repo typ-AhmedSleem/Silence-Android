@@ -30,7 +30,6 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MotionEvent;
 import android.view.inputmethod.EditorInfo;
@@ -38,7 +37,6 @@ import android.widget.MultiAutoCompleteTextView;
 
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.RecipientFactory;
-import org.smssecure.smssecure.recipients.RecipientFormattingException;
 import org.smssecure.smssecure.recipients.Recipients;
 import org.smssecure.smssecure.recipients.RecipientsFormatter;
 
@@ -49,10 +47,10 @@ import java.util.List;
  * Provide UI for editing the recipients of multi-media messages.
  */
 public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
-    private int mLongPressedPosition = -1;
     private final RecipientsEditorTokenizer mTokenizer;
+    private int mLongPressedPosition = -1;
     private char mLastSeparator = ',';
-    private Context mContext;
+    private final Context mContext;
 
     public RecipientsEditor(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -75,13 +73,13 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
             private Annotation[] mAffected;
 
             public void beforeTextChanged(CharSequence s, int start,
-                    int count, int after) {
+                                          int count, int after) {
                 mAffected = ((Spanned) s).getSpans(start, start + count,
                         Annotation.class);
             }
 
             public void onTextChanged(CharSequence s, int start,
-                    int before, int after) {
+                                      int before, int after) {
                 if (before == 0 && after == 1) {    // inserting a character
                     char c = s.charAt(start);
                     if (c == ',' || c == ';') {
@@ -104,6 +102,61 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         });
     }
 
+    public static CharSequence contactToToken(Recipient c) {
+        String name = c.getName();
+        String number = c.getNumber();
+        SpannableString s = new SpannableString(RecipientsFormatter.formatNameAndNumber(name, number));
+        int len = s.length();
+
+        if (len == 0) {
+            return s;
+        }
+
+        s.setSpan(new Annotation("number", c.getNumber()), 0, len,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return s;
+    }
+
+    private static String getNumberAt(Spanned sp, int start, int end, Context context) {
+        return getFieldAt("number", sp, start, end, context);
+    }
+
+    private static int getSpanLength(Spanned sp, int start, int end, Context context) {
+        // TODO: there's a situation where the span can lose its annotations:
+        //   - add an auto-complete contact
+        //   - add another auto-complete contact
+        //   - delete that second contact and keep deleting into the first
+        //   - we lose the annotation and can no longer get the span.
+        // Need to fix this case because it breaks auto-complete contacts with commas in the name.
+        Annotation[] a = sp.getSpans(start, end, Annotation.class);
+        if (a.length > 0) {
+            return sp.getSpanEnd(a[0]);
+        }
+        return 0;
+    }
+
+    private static String getFieldAt(String field, Spanned sp, int start, int end,
+                                     Context context) {
+        Annotation[] a = sp.getSpans(start, end, Annotation.class);
+        String fieldValue = getAnnotation(a, field);
+        if (TextUtils.isEmpty(fieldValue)) {
+            fieldValue = TextUtils.substring(sp, start, end);
+        }
+        return fieldValue;
+
+    }
+
+    private static String getAnnotation(Annotation[] a, String key) {
+        for (Annotation anA : a) {
+            if (anA.getKey().equals(key)) {
+                return anA.getValue();
+            }
+        }
+
+        return "";
+    }
+
     @Override
     public boolean enoughToFilter() {
         if (!super.enoughToFilter()) {
@@ -120,37 +173,6 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         return end == len;
     }
 
-    public int getRecipientCount() {
-        return mTokenizer.getNumbers().size();
-    }
-
-    public List<String> getNumbers() {
-        return mTokenizer.getNumbers();
-    }
-
-    public Recipients constructContactsFromInput() {
-      return RecipientFactory.getRecipientsFromString(mContext, mTokenizer.getRawString(), false);
-    }
-
-    private boolean isValidAddress(String number, boolean isMms) {
-        /*if (isMms) {
-            return MessageUtils.isValidMmsAddress(number);
-        } else {*/
-            // TODO: PhoneNumberUtils.isWellFormedSmsAddress() only check if the number is a valid
-            // GSM SMS address. If the address contains a dialable char, it considers it a well
-            // formed SMS addr. CDMA doesn't work that way and has a different parser for SMS
-            // address (see CdmaSmsAddress.parse(String address)). We should definitely fix this!!!
-        return PhoneNumberUtils.isWellFormedSmsAddress(number);
-    }
-
-    public boolean hasValidRecipient(boolean isMms) {
-        for (String number : mTokenizer.getNumbers()) {
-            if (isValidAddress(number, isMms))
-                return true;
-        }
-        return false;
-    }
-
     /*public boolean hasInvalidRecipient(boolean isMms) {
         for (String number : mTokenizer.getNumbers()) {
             if (!isValidAddress(number, isMms)) {
@@ -164,17 +186,8 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         return false;
     }*/
 
-    public String formatInvalidNumbers(boolean isMms) {
-        StringBuilder sb = new StringBuilder();
-        for (String number : mTokenizer.getNumbers()) {
-            if (!isValidAddress(number, isMms)) {
-                if (sb.length() != 0) {
-                    sb.append(", ");
-                }
-                sb.append(number);
-            }
-        }
-        return sb.toString();
+    public int getRecipientCount() {
+        return mTokenizer.getNumbers().size();
     }
 
     /*public boolean containsEmail() {
@@ -189,20 +202,44 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         return false;
     }*/
 
-    public static CharSequence contactToToken(Recipient c) {
-      String name       = c.getName();
-      String number     = c.getNumber();
-      SpannableString s = new SpannableString(RecipientsFormatter.formatNameAndNumber(name, number));
-      int len           = s.length();
+    public List<String> getNumbers() {
+        return mTokenizer.getNumbers();
+    }
 
-      if (len == 0) {
-        return s;
-      }
+    public Recipients constructContactsFromInput() {
+        return RecipientFactory.getRecipientsFromString(mContext, mTokenizer.getRawString(), false);
+    }
 
-      s.setSpan(new Annotation("number", c.getNumber()), 0, len,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+    private boolean isValidAddress(String number, boolean isMms) {
+        /*if (isMms) {
+            return MessageUtils.isValidMmsAddress(number);
+        } else {*/
+        // TODO: PhoneNumberUtils.isWellFormedSmsAddress() only check if the number is a valid
+        // GSM SMS address. If the address contains a dialable char, it considers it a well
+        // formed SMS addr. CDMA doesn't work that way and has a different parser for SMS
+        // address (see CdmaSmsAddress.parse(String address)). We should definitely fix this!!!
+        return PhoneNumberUtils.isWellFormedSmsAddress(number);
+    }
 
-      return s;
+    public boolean hasValidRecipient(boolean isMms) {
+        for (String number : mTokenizer.getNumbers()) {
+            if (isValidAddress(number, isMms))
+                return true;
+        }
+        return false;
+    }
+
+    public String formatInvalidNumbers(boolean isMms) {
+        StringBuilder sb = new StringBuilder();
+        for (String number : mTokenizer.getNumbers()) {
+            if (!isValidAddress(number, isMms)) {
+                if (sb.length() != 0) {
+                    sb.append(", ");
+                }
+                sb.append(number);
+            }
+        }
+        return sb.toString();
     }
 
     public void populate(Recipients list) {
@@ -249,43 +286,12 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
         return super.onTouchEvent(ev);
     }
 
-    private static String getNumberAt(Spanned sp, int start, int end, Context context) {
-        return getFieldAt("number", sp, start, end, context);
-    }
+    static class RecipientContextMenuInfo implements ContextMenuInfo {
+        final Recipient recipient;
 
-    private static int getSpanLength(Spanned sp, int start, int end, Context context) {
-        // TODO: there's a situation where the span can lose its annotations:
-        //   - add an auto-complete contact
-        //   - add another auto-complete contact
-        //   - delete that second contact and keep deleting into the first
-        //   - we lose the annotation and can no longer get the span.
-        // Need to fix this case because it breaks auto-complete contacts with commas in the name.
-        Annotation[] a = sp.getSpans(start, end, Annotation.class);
-        if (a.length > 0) {
-            return sp.getSpanEnd(a[0]);
+        RecipientContextMenuInfo(Recipient r) {
+            recipient = r;
         }
-        return 0;
-    }
-
-    private static String getFieldAt(String field, Spanned sp, int start, int end,
-            Context context) {
-        Annotation[] a = sp.getSpans(start, end, Annotation.class);
-        String fieldValue = getAnnotation(a, field);
-        if (TextUtils.isEmpty(fieldValue)) {
-            fieldValue = TextUtils.substring(sp, start, end);
-        }
-        return fieldValue;
-
-    }
-
-    private static String getAnnotation(Annotation[] a, String key) {
-        for (Annotation anA : a) {
-            if (anA.getKey().equals(key)) {
-                return anA.getValue();
-            }
-        }
-
-        return "";
     }
 
     private class RecipientsEditorTokenizer
@@ -360,16 +366,18 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
                 if (text instanceof Spanned) {
                     SpannableString sp = new SpannableString(text + separator);
                     TextUtils.copySpansFrom((Spanned) text, 0, text.length(),
-                                            Object.class, sp, 0);
+                            Object.class, sp, 0);
                     return sp;
                 } else {
                     return text + separator;
                 }
             }
         }
+
         public String getRawString() {
-        	return mList.getText().toString();
+            return mList.getText().toString();
         }
+
         public List<String> getNumbers() {
             Spanned sp = mList.getText();
             int len = sp.length();
@@ -406,14 +414,6 @@ public class RecipientsEditor extends AppCompatMultiAutoCompleteTextView {
             }
 
             return list;
-        }
-    }
-
-    static class RecipientContextMenuInfo implements ContextMenuInfo {
-        final Recipient recipient;
-
-        RecipientContextMenuInfo(Recipient r) {
-            recipient = r;
         }
     }
 }

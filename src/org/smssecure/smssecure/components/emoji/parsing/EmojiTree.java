@@ -6,10 +6,10 @@
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
  * sell copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,99 +30,99 @@ import java.util.Map;
  */
 public class EmojiTree {
 
-  private final EmojiTreeNode root = new EmojiTreeNode();
+    private final EmojiTreeNode root = new EmojiTreeNode();
 
-  public void add(String emojiEncoding, EmojiDrawInfo emoji) {
-    EmojiTreeNode tree = root;
+    public void add(String emojiEncoding, EmojiDrawInfo emoji) {
+        EmojiTreeNode tree = root;
 
-    for (char c: emojiEncoding.toCharArray()) {
-      if (!tree.hasChild(c)) {
-        tree.addChild(c);
-      }
+        for (char c : emojiEncoding.toCharArray()) {
+            if (!tree.hasChild(c)) {
+                tree.addChild(c);
+            }
 
-      tree = tree.getChild(c);
+            tree = tree.getChild(c);
+        }
+
+        tree.setEmoji(emoji);
     }
 
-    tree.setEmoji(emoji);
-  }
+    public Matches isEmoji(CharSequence sequence, int startPosition, int endPosition) {
+        if (sequence == null) {
+            return Matches.POSSIBLY;
+        }
 
-  public Matches isEmoji(CharSequence sequence, int startPosition, int endPosition) {
-    if (sequence == null) {
-      return Matches.POSSIBLY;
+        EmojiTreeNode tree = root;
+
+        for (int i = startPosition; i < endPosition; i++) {
+            char character = sequence.charAt(i);
+
+            if (!tree.hasChild(character)) {
+                return Matches.IMPOSSIBLE;
+            }
+
+            tree = tree.getChild(character);
+        }
+
+        return tree.isEndOfEmoji() ? Matches.EXACTLY : Matches.POSSIBLY;
     }
 
-    EmojiTreeNode tree = root;
+    public @Nullable EmojiDrawInfo getEmoji(CharSequence unicode, int startPosition, int endPostiion) {
+        EmojiTreeNode tree = root;
 
-    for (int i=startPosition; i<endPosition; i++) {
-      char character = sequence.charAt(i);
+        for (int i = startPosition; i < endPostiion; i++) {
+            char character = unicode.charAt(i);
 
-      if (!tree.hasChild(character)) {
-        return Matches.IMPOSSIBLE;
-      }
+            if (!tree.hasChild(character)) {
+                return null;
+            }
 
-      tree = tree.getChild(character);
+            tree = tree.getChild(character);
+        }
+
+        return tree.getEmoji();
     }
 
-    return tree.isEndOfEmoji() ? Matches.EXACTLY : Matches.POSSIBLY;
-  }
 
-  public @Nullable EmojiDrawInfo getEmoji(CharSequence unicode, int startPosition, int endPostiion) {
-    EmojiTreeNode tree = root;
+    public enum Matches {
+        EXACTLY, POSSIBLY, IMPOSSIBLE;
 
-    for (int i=startPosition; i<endPostiion; i++) {
-      char character = unicode.charAt(i);
+        public boolean exactMatch() {
+            return this == EXACTLY;
+        }
 
-      if (!tree.hasChild(character)) {
-        return null;
-      }
-
-      tree = tree.getChild(character);
+        public boolean impossibleMatch() {
+            return this == IMPOSSIBLE;
+        }
     }
 
-    return tree.getEmoji();
-  }
+    private static class EmojiTreeNode {
 
+        private final Map<Character, EmojiTreeNode> children = new HashMap<>();
+        private EmojiDrawInfo emoji;
 
-  private static class EmojiTreeNode {
+        public @Nullable EmojiDrawInfo getEmoji() {
+            return emoji;
+        }
 
-    private Map<Character, EmojiTreeNode> children = new HashMap<>();
-    private EmojiDrawInfo emoji;
+        public void setEmoji(EmojiDrawInfo emoji) {
+            this.emoji = emoji;
+        }
 
-    public void setEmoji(EmojiDrawInfo emoji) {
-      this.emoji = emoji;
+        boolean hasChild(char child) {
+            return children.containsKey(child);
+        }
+
+        void addChild(char child) {
+            children.put(child, new EmojiTreeNode());
+        }
+
+        EmojiTreeNode getChild(char child) {
+            return children.get(child);
+        }
+
+        boolean isEndOfEmoji() {
+            return emoji != null;
+        }
     }
-
-    public @Nullable EmojiDrawInfo getEmoji() {
-      return emoji;
-    }
-
-    boolean hasChild(char child) {
-      return children.containsKey(child);
-    }
-
-    void addChild(char child) {
-      children.put(child, new EmojiTreeNode());
-    }
-
-    EmojiTreeNode getChild(char child) {
-      return children.get(child);
-    }
-
-    boolean isEndOfEmoji() {
-      return emoji != null;
-    }
-  }
-
-  public enum Matches {
-    EXACTLY, POSSIBLY, IMPOSSIBLE;
-
-    public boolean exactMatch() {
-      return this == EXACTLY;
-    }
-
-    public boolean impossibleMatch() {
-      return this == IMPOSSIBLE;
-    }
-  }
 
 }

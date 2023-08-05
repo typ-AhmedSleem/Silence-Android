@@ -12,55 +12,53 @@ import java.io.IOException;
 
 public class PlaintextBackupExporter {
 
-  public static void exportPlaintextToSd(Context context, MasterSecret masterSecret)
-      throws NoExternalStorageException, IOException
-  {
-    verifyExternalStorageForPlaintextExport();
-    exportPlaintext(context, masterSecret);
-  }
+    public static void exportPlaintextToSd(Context context, MasterSecret masterSecret)
+            throws NoExternalStorageException, IOException {
+        verifyExternalStorageForPlaintextExport();
+        exportPlaintext(context, masterSecret);
+    }
 
-  private static void verifyExternalStorageForPlaintextExport() throws NoExternalStorageException {
-    if (!Environment.getExternalStorageDirectory().canWrite())
-      throw new NoExternalStorageException();
-  }
+    private static void verifyExternalStorageForPlaintextExport() throws NoExternalStorageException {
+        if (!Environment.getExternalStorageDirectory().canWrite())
+            throw new NoExternalStorageException();
+    }
 
-  private static String getPlaintextExportDirectoryPath() {
-    File sdDirectory = Environment.getExternalStorageDirectory();
-    return sdDirectory.getAbsolutePath() + File.separator + "SilencePlaintextBackup.xml";
-  }
+    private static String getPlaintextExportDirectoryPath() {
+        File sdDirectory = Environment.getExternalStorageDirectory();
+        return sdDirectory.getAbsolutePath() + File.separator + "SilencePlaintextBackup.xml";
+    }
 
-  private static void exportPlaintext(Context context, MasterSecret masterSecret)
-      throws IOException
-  {
-    int count               = DatabaseFactory.getSmsDatabase(context).getMessageCount();
-    XmlBackup.Writer writer = new XmlBackup.Writer(getPlaintextExportDirectoryPath(), count);
+    private static void exportPlaintext(Context context, MasterSecret masterSecret)
+            throws IOException {
+        int count = DatabaseFactory.getSmsDatabase(context).getMessageCount();
+        XmlBackup.Writer writer = new XmlBackup.Writer(getPlaintextExportDirectoryPath(), count);
 
 
-    SmsMessageRecord record;
-    EncryptingSmsDatabase.Reader reader = null;
-    int skip                            = 0;
-    int ROW_LIMIT                       = 500;
+        SmsMessageRecord record;
+        EncryptingSmsDatabase.Reader reader = null;
+        int skip = 0;
+        int ROW_LIMIT = 500;
 
-    do {
-      if (reader != null)
-        reader.close();
+        do {
+            if (reader != null)
+                reader.close();
 
-      reader = DatabaseFactory.getEncryptingSmsDatabase(context).getMessages(masterSecret, skip, ROW_LIMIT);
+            reader = DatabaseFactory.getEncryptingSmsDatabase(context).getMessages(masterSecret, skip, ROW_LIMIT);
 
-      while ((record = reader.getNext()) != null) {
-        XmlBackup.XmlBackupItem item =
-            new XmlBackup.XmlBackupItem(0, record.getIndividualRecipient().getNumber(),
-                                        record.getDateReceived(),
-                                        MmsSmsColumns.Types.translateToSystemBaseType(record.getType()),
-                                        null, record.getDisplayBody().toString(), null,
-                                        1, record.getDeliveryStatus());
+            while ((record = reader.getNext()) != null) {
+                XmlBackup.XmlBackupItem item =
+                        new XmlBackup.XmlBackupItem(0, record.getIndividualRecipient().getNumber(),
+                                record.getDateReceived(),
+                                MmsSmsColumns.Types.translateToSystemBaseType(record.getType()),
+                                null, record.getDisplayBody().toString(), null,
+                                1, record.getDeliveryStatus());
 
-        writer.writeItem(item);
-      }
+                writer.writeItem(item);
+            }
 
-      skip += ROW_LIMIT;
-    } while (reader.getCount() > 0);
+            skip += ROW_LIMIT;
+        } while (reader.getCount() > 0);
 
-    writer.close();
-  }
+        writer.close();
+    }
 }

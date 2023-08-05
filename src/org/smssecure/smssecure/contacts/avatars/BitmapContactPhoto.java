@@ -9,21 +9,21 @@ import com.makeramen.roundedimageview.RoundedDrawable;
 
 public class BitmapContactPhoto implements ContactPhoto {
 
-  private final Bitmap bitmap;
+    private final Bitmap bitmap;
 
-  BitmapContactPhoto(Bitmap bitmap) {
-    this.bitmap = bitmap;
-  }
+    BitmapContactPhoto(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 
-  @Override
-  public Drawable asDrawable(Context context, int color) {
-    return asDrawable(context, color, false);
-  }
+    @Override
+    public Drawable asDrawable(Context context, int color) {
+        return asDrawable(context, color, false);
+    }
 
-  @Override
-  public Drawable asDrawable(Context context, int color, boolean inverted) {
-    return RoundedDrawable.fromBitmap(bitmap)
-                          .setScaleType(ImageView.ScaleType.CENTER_CROP)
-                          .setOval(true);
-  }
+    @Override
+    public Drawable asDrawable(Context context, int color, boolean inverted) {
+        return RoundedDrawable.fromBitmap(bitmap)
+                .setScaleType(ImageView.ScaleType.CENTER_CROP)
+                .setOval(true);
+    }
 }

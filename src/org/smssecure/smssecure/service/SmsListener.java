@@ -1,16 +1,16 @@
 /**
  * Copyright (C) 2011 Whisper Systems
- *
+ * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,100 +28,94 @@ import android.util.Log;
 import org.smssecure.smssecure.ApplicationContext;
 import org.smssecure.smssecure.jobs.SmsReceiveJob;
 import org.smssecure.smssecure.protocol.WirePrefix;
-import org.smssecure.smssecure.sms.IncomingTextMessage;
 import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.Util;
 
-import java.util.ArrayList;
-
 public class SmsListener extends BroadcastReceiver {
 
-  private static final String SMS_RECEIVED_ACTION  = Telephony.Sms.Intents.SMS_RECEIVED_ACTION;
-  private static final String SMS_DELIVERED_ACTION = Telephony.Sms.Intents.SMS_DELIVER_ACTION;
+    private static final String SMS_RECEIVED_ACTION = Telephony.Sms.Intents.SMS_RECEIVED_ACTION;
+    private static final String SMS_DELIVERED_ACTION = Telephony.Sms.Intents.SMS_DELIVER_ACTION;
 
-  private boolean isExemption(SmsMessage message, String messageBody) {
+    private boolean isExemption(SmsMessage message, String messageBody) {
 
-    // ignore CLASS0 ("flash") messages
-    if (message.getMessageClass() == SmsMessage.MessageClass.CLASS_0)
-      return true;
+        // ignore CLASS0 ("flash") messages
+        if (message.getMessageClass() == SmsMessage.MessageClass.CLASS_0)
+            return true;
 
-    // ignore OTP messages from Sparebank1 (Norwegian bank)
-    if (messageBody.startsWith("Sparebank1://otp?")) {
-      return true;
+        // ignore OTP messages from Sparebank1 (Norwegian bank)
+        if (messageBody.startsWith("Sparebank1://otp?")) {
+            return true;
+        }
+
+        return
+                message.getOriginatingAddress().length() < 7 &&
+                        (messageBody.toUpperCase().startsWith("//ANDROID:") || // Sprint Visual Voicemail
+                                messageBody.startsWith("//BREW:")); //BREW stands for “Binary Runtime Environment for Wireless"
     }
 
-    return
-      message.getOriginatingAddress().length() < 7 &&
-      (messageBody.toUpperCase().startsWith("//ANDROID:") || // Sprint Visual Voicemail
-       messageBody.startsWith("//BREW:")); //BREW stands for “Binary Runtime Environment for Wireless"
-  }
+    private SmsMessage getSmsMessageFromIntent(Intent intent) {
+        Bundle bundle = intent.getExtras();
+        Object[] pdus = (Object[]) bundle.get("pdus");
 
-  private SmsMessage getSmsMessageFromIntent(Intent intent) {
-    Bundle bundle             = intent.getExtras();
-    Object[] pdus             = (Object[])bundle.get("pdus");
+        if (pdus == null || pdus.length == 0)
+            return null;
 
-    if (pdus == null || pdus.length == 0)
-      return null;
-
-    return SmsMessage.createFromPdu((byte[])pdus[0]);
-  }
-
-  private String getSmsMessageBodyFromIntent(Intent intent) {
-    Bundle bundle             = intent.getExtras();
-    Object[] pdus             = (Object[])bundle.get("pdus");
-    StringBuilder bodyBuilder = new StringBuilder();
-
-    if (pdus == null)
-      return null;
-
-    for (Object pdu : pdus)
-      bodyBuilder.append(SmsMessage.createFromPdu((byte[])pdu).getDisplayMessageBody());
-
-    return bodyBuilder.toString();
-  }
-
-  private boolean isRelevant(Context context, Intent intent) {
-    SmsMessage message = getSmsMessageFromIntent(intent);
-    String messageBody = getSmsMessageBodyFromIntent(intent);
-
-    if (message == null && messageBody == null)
-      return false;
-
-    if (isExemption(message, messageBody))
-      return false;
-
-    if (!ApplicationMigrationService.isDatabaseImported(context))
-      return false;
-
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT &&
-        SMS_RECEIVED_ACTION.equals(intent.getAction()) &&
-        Util.isDefaultSmsProvider(context))
-    {
-      return false;
+        return SmsMessage.createFromPdu((byte[]) pdus[0]);
     }
 
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT &&
-        SilencePreferences.isInterceptAllSmsEnabled(context))
-    {
-      return true;
+    private String getSmsMessageBodyFromIntent(Intent intent) {
+        Bundle bundle = intent.getExtras();
+        Object[] pdus = (Object[]) bundle.get("pdus");
+        StringBuilder bodyBuilder = new StringBuilder();
+
+        if (pdus == null)
+            return null;
+
+        for (Object pdu : pdus)
+            bodyBuilder.append(SmsMessage.createFromPdu((byte[]) pdu).getDisplayMessageBody());
+
+        return bodyBuilder.toString();
     }
 
-    return WirePrefix.isPrefixedMessage(messageBody);
-  }
+    private boolean isRelevant(Context context, Intent intent) {
+        SmsMessage message = getSmsMessageFromIntent(intent);
+        String messageBody = getSmsMessageBodyFromIntent(intent);
 
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    Log.w("SMSListener", "Got SMS broadcast...");
+        if (message == null && messageBody == null)
+            return false;
 
-    if ((intent.getAction().equals(SMS_DELIVERED_ACTION)) ||
-               (intent.getAction().equals(SMS_RECEIVED_ACTION)) && isRelevant(context, intent))
-    {
-      Object[] pdus           = (Object[]) intent.getExtras().get("pdus");
-      int      subscriptionId = intent.getExtras().getInt("subscription", -1);
+        if (isExemption(message, messageBody))
+            return false;
 
-      ApplicationContext.getInstance(context).getJobManager().add(new SmsReceiveJob(context, pdus, subscriptionId));
+        if (!ApplicationMigrationService.isDatabaseImported(context))
+            return false;
 
-      abortBroadcast();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT &&
+                SMS_RECEIVED_ACTION.equals(intent.getAction()) &&
+                Util.isDefaultSmsProvider(context)) {
+            return false;
+        }
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT &&
+                SilencePreferences.isInterceptAllSmsEnabled(context)) {
+            return true;
+        }
+
+        return WirePrefix.isPrefixedMessage(messageBody);
     }
-  }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.w("SMSListener", "Got SMS broadcast...");
+
+        if ((intent.getAction().equals(SMS_DELIVERED_ACTION)) ||
+                (intent.getAction().equals(SMS_RECEIVED_ACTION)) && isRelevant(context, intent)) {
+            Object[] pdus = (Object[]) intent.getExtras().get("pdus");
+            int subscriptionId = intent.getExtras().getInt("subscription", -1);
+
+            ApplicationContext.getInstance(context).getJobManager().add(new SmsReceiveJob(context, pdus, subscriptionId));
+
+            abortBroadcast();
+        }
+    }
 }

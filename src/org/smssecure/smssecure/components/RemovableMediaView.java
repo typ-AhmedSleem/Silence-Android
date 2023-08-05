@@ -13,53 +13,53 @@ import org.smssecure.smssecure.R;
 
 public class RemovableMediaView extends FrameLayout {
 
-  private final @NonNull ImageView remove;
-  private final int removeSize;
+    private final @NonNull ImageView remove;
+    private final int removeSize;
 
-  private @Nullable View current;
+    private @Nullable View current;
 
-  public RemovableMediaView(Context context) {
-    this(context, null);
-  }
-
-  public RemovableMediaView(Context context, AttributeSet attrs) {
-    this(context, attrs, 0);
-  }
-
-  public RemovableMediaView(Context context, AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
-
-    this.remove     = (ImageView)LayoutInflater.from(context).inflate(R.layout.media_view_remove_button, this, false);
-    this.removeSize = getResources().getDimensionPixelSize(R.dimen.media_bubble_remove_button_size);
-
-    this.remove.setVisibility(View.GONE);
-  }
-
-  @Override
-  public void onFinishInflate() {
-    super.onFinishInflate();
-    this.addView(remove);
-  }
-
-  public void display(@Nullable View view) {
-    if (view == current) return;
-    if (current != null) current.setVisibility(View.GONE);
-
-    if (view != null) {
-      MarginLayoutParams params = (MarginLayoutParams)view.getLayoutParams();
-      params.setMargins(0, removeSize / 2, removeSize / 2, 0);
-      view.setLayoutParams(params);
-
-      view.setVisibility(View.VISIBLE);
-      remove.setVisibility(View.VISIBLE);
-    } else {
-      remove.setVisibility(View.GONE);
+    public RemovableMediaView(Context context) {
+        this(context, null);
     }
 
-    current = view;
-  }
+    public RemovableMediaView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
 
-  public void setRemoveClickListener(View.OnClickListener listener) {
-    this.remove.setOnClickListener(listener);
-  }
+    public RemovableMediaView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+
+        this.remove = (ImageView) LayoutInflater.from(context).inflate(R.layout.media_view_remove_button, this, false);
+        this.removeSize = getResources().getDimensionPixelSize(R.dimen.media_bubble_remove_button_size);
+
+        this.remove.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onFinishInflate() {
+        super.onFinishInflate();
+        this.addView(remove);
+    }
+
+    public void display(@Nullable View view) {
+        if (view == current) return;
+        if (current != null) current.setVisibility(View.GONE);
+
+        if (view != null) {
+            MarginLayoutParams params = (MarginLayoutParams) view.getLayoutParams();
+            params.setMargins(0, removeSize / 2, removeSize / 2, 0);
+            view.setLayoutParams(params);
+
+            view.setVisibility(View.VISIBLE);
+            remove.setVisibility(View.VISIBLE);
+        } else {
+            remove.setVisibility(View.GONE);
+        }
+
+        current = view;
+    }
+
+    public void setRemoveClickListener(View.OnClickListener listener) {
+        this.remove.setOnClickListener(listener);
+    }
 }

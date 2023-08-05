@@ -6,24 +6,24 @@ import android.view.ViewStub;
 
 public class Stub<T> {
 
-  private ViewStub viewStub;
-  private T view;
+    private ViewStub viewStub;
+    private T view;
 
-  public Stub(@NonNull ViewStub viewStub) {
-    this.viewStub = viewStub;
-  }
-
-  public T get() {
-    if (view == null) {
-      view = (T)viewStub.inflate();
-      viewStub = null;
+    public Stub(@NonNull ViewStub viewStub) {
+        this.viewStub = viewStub;
     }
 
-    return view;
-  }
+    public T get() {
+        if (view == null) {
+            view = (T) viewStub.inflate();
+            viewStub = null;
+        }
 
-  public boolean resolved() {
-    return view != null;
-  }
+        return view;
+    }
+
+    public boolean resolved() {
+        return view != null;
+    }
 
 }

@@ -1,56 +1,53 @@
 package org.smssecure.smssecure.components.reminder;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 import android.view.View.OnClickListener;
 
 public abstract class Reminder {
-  private CharSequence buttonText;
-  private CharSequence title;
-  private CharSequence text;
+    private final CharSequence buttonText;
+    private final CharSequence title;
+    private final CharSequence text;
 
-  private OnClickListener okListener;
-  private OnClickListener dismissListener;
+    private OnClickListener okListener;
+    private OnClickListener dismissListener;
 
-  public Reminder(@NonNull CharSequence title,
-                  @NonNull CharSequence text,
-                  @NonNull CharSequence buttonText)
-  {
-    this.title      = title;
-    this.text       = text;
-    this.buttonText = buttonText;
-  }
+    public Reminder(@NonNull CharSequence title,
+                    @NonNull CharSequence text,
+                    @NonNull CharSequence buttonText) {
+        this.title = title;
+        this.text = text;
+        this.buttonText = buttonText;
+    }
 
-  public CharSequence getTitle() {
-    return title;
-  }
+    public CharSequence getTitle() {
+        return title;
+    }
 
-  public CharSequence getText() {
-    return text;
-  }
+    public CharSequence getText() {
+        return text;
+    }
 
-  public CharSequence getButtonText() {
-    return buttonText;
-  }
+    public CharSequence getButtonText() {
+        return buttonText;
+    }
 
-  public OnClickListener getOkListener() {
-    return okListener;
-  }
+    public OnClickListener getOkListener() {
+        return okListener;
+    }
 
-  public OnClickListener getDismissListener() {
-    return dismissListener;
-  }
+    public void setOkListener(OnClickListener okListener) {
+        this.okListener = okListener;
+    }
 
-  public void setOkListener(OnClickListener okListener) {
-    this.okListener = okListener;
-  }
+    public OnClickListener getDismissListener() {
+        return dismissListener;
+    }
 
-  public void setDismissListener(OnClickListener dismissListener) {
-    this.dismissListener = dismissListener;
-  }
+    public void setDismissListener(OnClickListener dismissListener) {
+        this.dismissListener = dismissListener;
+    }
 
-  public boolean isDismissable() {
-    return true;
-  }
+    public boolean isDismissable() {
+        return true;
+    }
 }

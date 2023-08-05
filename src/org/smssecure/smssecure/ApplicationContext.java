@@ -17,12 +17,7 @@
 package org.smssecure.smssecure;
 
 import android.app.Application;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Context;
-import android.util.Log;
-
-import android.support.v4.app.NotificationManagerCompat;
 
 import org.smssecure.smssecure.crypto.PRNGFixes;
 import org.smssecure.smssecure.dependencies.InjectableType;
@@ -31,7 +26,6 @@ import org.smssecure.smssecure.jobs.requirements.MasterSecretRequirementProvider
 import org.smssecure.smssecure.jobs.requirements.MediaNetworkRequirementProvider;
 import org.smssecure.smssecure.jobs.requirements.ServiceRequirementProvider;
 import org.smssecure.smssecure.notifications.NotificationChannels;
-import org.smssecure.smssecure.util.SilencePreferences;
 import org.smssecure.smssecure.util.dualsim.SimChangedReceiver;
 import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.jobqueue.dependencies.DependencyInjector;
@@ -39,78 +33,76 @@ import org.whispersystems.jobqueue.requirements.NetworkRequirementProvider;
 import org.whispersystems.libsignal.logging.SignalProtocolLoggerProvider;
 import org.whispersystems.libsignal.util.AndroidSignalProtocolLogger;
 
-import java.security.Security;
-
 import dagger.ObjectGraph;
 
 /**
  * Will be called once when the Silence process is created.
- *
+ * <p>
  * We're using this as an insertion point to patch up the Android PRNG disaster
  * and to initialize the job manager.
  *
  * @author Moxie Marlinspike
  */
 public class ApplicationContext extends Application implements DependencyInjector {
-  private static final String TAG = ApplicationContext.class.getSimpleName();
+    private static final String TAG = ApplicationContext.class.getSimpleName();
 
-  private JobManager  jobManager;
-  private ObjectGraph objectGraph;
+    private JobManager jobManager;
+    private ObjectGraph objectGraph;
 
-  private MediaNetworkRequirementProvider mediaNetworkRequirementProvider = new MediaNetworkRequirementProvider();
+    private final MediaNetworkRequirementProvider mediaNetworkRequirementProvider = new MediaNetworkRequirementProvider();
 
-  public static ApplicationContext getInstance(Context context) {
-    return (ApplicationContext)context.getApplicationContext();
-  }
-
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    initializeRandomNumberFix();
-    initializeLogging();
-    initializeJobManager();
-    checkSimState();
-    NotificationChannels.create(this);
-  }
-
-  @Override
-  public void injectDependencies(Object object) {
-    if (object instanceof InjectableType) {
-      objectGraph.inject(object);
+    public static ApplicationContext getInstance(Context context) {
+        return (ApplicationContext) context.getApplicationContext();
     }
-  }
 
-  public JobManager getJobManager() {
-    return jobManager;
-  }
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initializeRandomNumberFix();
+        initializeLogging();
+        initializeJobManager();
+        checkSimState();
+        NotificationChannels.create(this);
+    }
 
-  private void initializeRandomNumberFix() {
-    PRNGFixes.apply();
-  }
+    @Override
+    public void injectDependencies(Object object) {
+        if (object instanceof InjectableType) {
+            objectGraph.inject(object);
+        }
+    }
 
-  private void initializeLogging() {
-    SignalProtocolLoggerProvider.setProvider(new AndroidSignalProtocolLogger());
-  }
+    public JobManager getJobManager() {
+        return jobManager;
+    }
 
-  private void initializeJobManager() {
-    this.jobManager = JobManager.newBuilder(this)
-                                .withName("SilenceJobs")
-                                .withDependencyInjector(this)
-                                .withJobSerializer(new EncryptingJobSerializer())
-                                .withRequirementProviders(new MasterSecretRequirementProvider(this),
-                                                          new ServiceRequirementProvider(this),
-                                                          new NetworkRequirementProvider(this),
-                                                          mediaNetworkRequirementProvider)
-                                .withConsumerThreads(5)
-                                .build();
-  }
+    private void initializeRandomNumberFix() {
+        PRNGFixes.apply();
+    }
 
-  public void notifyMediaControlEvent() {
-    mediaNetworkRequirementProvider.notifyMediaControlEvent();
-  }
+    private void initializeLogging() {
+        SignalProtocolLoggerProvider.setProvider(new AndroidSignalProtocolLogger());
+    }
 
-  private void checkSimState() {
-    SimChangedReceiver.checkSimState(this);
-  }
+    private void initializeJobManager() {
+        this.jobManager = JobManager.newBuilder(this)
+                .withName("SilenceJobs")
+                .withDependencyInjector(this)
+                .withJobSerializer(new EncryptingJobSerializer())
+                .withRequirementProviders(new MasterSecretRequirementProvider(this),
+                        new ServiceRequirementProvider(this),
+                        new NetworkRequirementProvider(this),
+                        mediaNetworkRequirementProvider)
+                .withConsumerThreads(5)
+                .build();
+    }
+
+    public void notifyMediaControlEvent() {
+        mediaNetworkRequirementProvider.notifyMediaControlEvent();
+    }
+
+    private void checkSimState() {
+        SimChangedReceiver.checkSimState(this);
+    }
 
 }

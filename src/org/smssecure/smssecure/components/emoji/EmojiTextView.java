@@ -11,68 +11,71 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 
 import org.smssecure.smssecure.components.emoji.EmojiProvider.EmojiDrawable;
-import org.smssecure.smssecure.util.ViewUtil;
 import org.smssecure.smssecure.util.SilencePreferences;
+import org.smssecure.smssecure.util.ViewUtil;
 
 public class EmojiTextView extends AppCompatTextView {
-  private CharSequence source;
-  private boolean      needsEllipsizing;
+    private CharSequence source;
+    private boolean needsEllipsizing;
 
-  public EmojiTextView(Context context) {
-    this(context, null);
-  }
-
-  public EmojiTextView(Context context, AttributeSet attrs) {
-    this(context, attrs, 0);
-  }
-
-  public EmojiTextView(Context context, AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
-  }
-
-  @Override public void setText(@Nullable CharSequence text, BufferType type) {
-    if (useSystemEmoji()) {
-      super.setText(text, type);
-      return;
+    public EmojiTextView(Context context) {
+        this(context, null);
     }
-    source = EmojiProvider.getInstance(getContext()).emojify(text, this);
-    setTextEllipsized(source);
-  }
 
-  private boolean useSystemEmoji() {
-   return SilencePreferences.isSystemEmojiPreferred(getContext());
-  }
-
-  private void setTextEllipsized(final @Nullable CharSequence source) {
-    super.setText(needsEllipsizing ? ViewUtil.ellipsize(source, this) : source, BufferType.SPANNABLE);
-  }
-
-  @Override public void invalidateDrawable(@NonNull Drawable drawable) {
-    if (drawable instanceof EmojiDrawable) invalidate();
-    else                                   super.invalidateDrawable(drawable);
-  }
-
-  @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    final int size = MeasureSpec.getSize(widthMeasureSpec);
-    final int mode = MeasureSpec.getMode(widthMeasureSpec);
-    if (!useSystemEmoji()                                            &&
-        getEllipsize() == TruncateAt.END                             &&
-        !TextUtils.isEmpty(source)                                   &&
-        (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.EXACTLY) &&
-        getPaint().breakText(source, 0, source.length()-1, true, size, null) != source.length())
-    {
-      needsEllipsizing = true;
-      FontMetricsInt font = getPaint().getFontMetricsInt();
-      super.onMeasure(MeasureSpec.makeMeasureSpec(size, MeasureSpec.EXACTLY),
-                      MeasureSpec.makeMeasureSpec(Math.abs(font.top - font.bottom), MeasureSpec.EXACTLY));
-    } else {
-      needsEllipsizing = false;
-      super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    public EmojiTextView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
-  }
 
-  @Override protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-    if (changed && !useSystemEmoji()) setTextEllipsized(source);
-    super.onLayout(changed, left, top, right, bottom);
-  }
+    public EmojiTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    public void setText(@Nullable CharSequence text, BufferType type) {
+        if (useSystemEmoji()) {
+            super.setText(text, type);
+            return;
+        }
+        source = EmojiProvider.getInstance(getContext()).emojify(text, this);
+        setTextEllipsized(source);
+    }
+
+    private boolean useSystemEmoji() {
+        return SilencePreferences.isSystemEmojiPreferred(getContext());
+    }
+
+    private void setTextEllipsized(final @Nullable CharSequence source) {
+        super.setText(needsEllipsizing ? ViewUtil.ellipsize(source, this) : source, BufferType.SPANNABLE);
+    }
+
+    @Override
+    public void invalidateDrawable(@NonNull Drawable drawable) {
+        if (drawable instanceof EmojiDrawable) invalidate();
+        else super.invalidateDrawable(drawable);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        final int size = MeasureSpec.getSize(widthMeasureSpec);
+        final int mode = MeasureSpec.getMode(widthMeasureSpec);
+        if (!useSystemEmoji() &&
+                getEllipsize() == TruncateAt.END &&
+                !TextUtils.isEmpty(source) &&
+                (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.EXACTLY) &&
+                getPaint().breakText(source, 0, source.length() - 1, true, size, null) != source.length()) {
+            needsEllipsizing = true;
+            FontMetricsInt font = getPaint().getFontMetricsInt();
+            super.onMeasure(MeasureSpec.makeMeasureSpec(size, MeasureSpec.EXACTLY),
+                    MeasureSpec.makeMeasureSpec(Math.abs(font.top - font.bottom), MeasureSpec.EXACTLY));
+        } else {
+            needsEllipsizing = false;
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        }
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        if (changed && !useSystemEmoji()) setTextEllipsized(source);
+        super.onLayout(changed, left, top, right, bottom);
+    }
 }

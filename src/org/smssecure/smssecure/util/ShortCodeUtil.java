@@ -13,38 +13,38 @@ import java.util.Set;
 
 public class ShortCodeUtil {
 
-  private static final String TAG = ShortCodeUtil.class.getSimpleName();
+    private static final String TAG = ShortCodeUtil.class.getSimpleName();
 
-  private static final Set<String> SHORT_COUNTRIES = new HashSet<String>() {{
-    add("NU");
-    add("TK");
-    add("NC");
-    add("AC");
-  }};
+    private static final Set<String> SHORT_COUNTRIES = new HashSet<String>() {{
+        add("NU");
+        add("TK");
+        add("NC");
+        add("AC");
+    }};
 
-  public static boolean isShortCode(@NonNull String localNumber, @NonNull String number) {
-    try {
-      PhoneNumberUtil         util              = PhoneNumberUtil.getInstance();
-      Phonenumber.PhoneNumber localNumberObject = util.parse(localNumber, null);
-      String                  localCountryCode  = util.getRegionCodeForNumber(localNumberObject);
-      String                  bareNumber        = number.replaceAll("[^0-9+]", "");
+    public static boolean isShortCode(@NonNull String localNumber, @NonNull String number) {
+        try {
+            PhoneNumberUtil util = PhoneNumberUtil.getInstance();
+            Phonenumber.PhoneNumber localNumberObject = util.parse(localNumber, null);
+            String localCountryCode = util.getRegionCodeForNumber(localNumberObject);
+            String bareNumber = number.replaceAll("[^0-9+]", "");
 
-      // libphonenumber doesn't seem to be correct for Germany and Finland
-      if (bareNumber.length() <= 6 && ("DE".equals(localCountryCode) || "FI".equals(localCountryCode) || "SK".equals(localCountryCode))) {
-        return true;
-      }
+            // libphonenumber doesn't seem to be correct for Germany and Finland
+            if (bareNumber.length() <= 6 && ("DE".equals(localCountryCode) || "FI".equals(localCountryCode) || "SK".equals(localCountryCode))) {
+                return true;
+            }
 
-      // libphonenumber seems incorrect for Russia and a few other countries with 4 digit short codes.
-      if (bareNumber.length() <= 4 && !SHORT_COUNTRIES.contains(localCountryCode)) {
-        return true;
-      }
+            // libphonenumber seems incorrect for Russia and a few other countries with 4 digit short codes.
+            if (bareNumber.length() <= 4 && !SHORT_COUNTRIES.contains(localCountryCode)) {
+                return true;
+            }
 
-      Phonenumber.PhoneNumber shortCode = util.parse(number, localCountryCode);
-      return ShortNumberInfo.getInstance().isPossibleShortNumberForRegion(shortCode, localCountryCode);
-    } catch (NumberParseException e) {
-      Log.w(TAG, e);
-      return false;
+            Phonenumber.PhoneNumber shortCode = util.parse(number, localCountryCode);
+            return ShortNumberInfo.getInstance().isPossibleShortNumberForRegion(shortCode, localCountryCode);
+        } catch (NumberParseException e) {
+            Log.w(TAG, e);
+            return false;
+        }
     }
-  }
 
 }

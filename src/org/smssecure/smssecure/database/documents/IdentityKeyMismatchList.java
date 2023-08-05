@@ -7,25 +7,25 @@ import java.util.List;
 
 public class IdentityKeyMismatchList implements Document<IdentityKeyMismatch> {
 
-  @JsonProperty(value = "m")
-  private List<IdentityKeyMismatch> mismatches;
+    @JsonProperty(value = "m")
+    private final List<IdentityKeyMismatch> mismatches;
 
-  public IdentityKeyMismatchList() {
-    this.mismatches = new LinkedList<>();
-  }
+    public IdentityKeyMismatchList() {
+        this.mismatches = new LinkedList<>();
+    }
 
-  public IdentityKeyMismatchList(List<IdentityKeyMismatch> mismatches) {
-    this.mismatches = mismatches;
-  }
+    public IdentityKeyMismatchList(List<IdentityKeyMismatch> mismatches) {
+        this.mismatches = mismatches;
+    }
 
-  @Override
-  public int size() {
-    if (mismatches == null) return 0;
-    else                    return mismatches.size();
-  }
+    @Override
+    public int size() {
+        if (mismatches == null) return 0;
+        else return mismatches.size();
+    }
 
-  @Override
-  public List<IdentityKeyMismatch> getList() {
-    return mismatches;
-  }
+    @Override
+    public List<IdentityKeyMismatch> getList() {
+        return mismatches;
+    }
 }

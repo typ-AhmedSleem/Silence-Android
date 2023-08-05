@@ -18,36 +18,36 @@ import java.util.Map;
 
 public class MmsConfigManager {
 
-  private static Map<Integer, MmsConfig> mmsConfigMap = new HashMap<>();
+    private static final Map<Integer, MmsConfig> mmsConfigMap = new HashMap<>();
 
-  @WorkerThread
-  public synchronized static @Nullable MmsConfig getMmsConfig(Context context, int subscriptionId) {
-    if (mmsConfigMap.containsKey(subscriptionId)) {
-      return mmsConfigMap.get(subscriptionId);
+    @WorkerThread
+    public synchronized static @Nullable MmsConfig getMmsConfig(Context context, int subscriptionId) {
+        if (mmsConfigMap.containsKey(subscriptionId)) {
+            return mmsConfigMap.get(subscriptionId);
+        }
+
+        MmsConfig loadedConfig = loadMmsConfig(context, subscriptionId);
+
+        if (loadedConfig != null) mmsConfigMap.put(subscriptionId, loadedConfig);
+
+        return loadedConfig;
     }
 
-    MmsConfig loadedConfig = loadMmsConfig(context, subscriptionId);
+    private static MmsConfig loadMmsConfig(Context context, int subscriptionId) {
+        if (subscriptionId != -1 && Build.VERSION.SDK_INT >= 24) {
+            Optional<SubscriptionInfoCompat> subscriptionInfo = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfo(subscriptionId);
 
-    if (loadedConfig != null) mmsConfigMap.put(subscriptionId, loadedConfig);
+            if (subscriptionInfo.isPresent()) {
+                Configuration configuration = context.getResources().getConfiguration();
+                configuration.mcc = subscriptionInfo.get().getMcc();
+                configuration.mnc = subscriptionInfo.get().getMnc();
 
-    return loadedConfig;
-  }
+                Context subcontext = context.createConfigurationContext(configuration);
+                return new MmsConfig(subcontext, subscriptionId);
+            }
+        }
 
-  private static MmsConfig loadMmsConfig(Context context, int subscriptionId) {
-    if (subscriptionId != -1 && Build.VERSION.SDK_INT >= 24) {
-      Optional<SubscriptionInfoCompat> subscriptionInfo = SubscriptionManagerCompat.from(context).getActiveSubscriptionInfo(subscriptionId);
-
-      if (subscriptionInfo.isPresent()) {
-        Configuration configuration = context.getResources().getConfiguration();
-        configuration.mcc = subscriptionInfo.get().getMcc();
-        configuration.mnc = subscriptionInfo.get().getMnc();
-
-        Context subcontext = context.createConfigurationContext(configuration);
-        return new MmsConfig(subcontext, subscriptionId);
-      }
+        return new MmsConfig(context, subscriptionId);
     }
-
-    return new MmsConfig(context, subscriptionId);
-  }
 
 }

@@ -19,35 +19,35 @@ import org.smssecure.smssecure.util.ViewUtil;
 
 public class RationaleDialog {
 
-  public static AlertDialog.Builder createFor(@NonNull Context context, @NonNull String message, @DrawableRes int... drawables) {
-    View      view   = LayoutInflater.from(context).inflate(R.layout.permissions_rationale_dialog, null);
-    ViewGroup header = view.findViewById(R.id.header_container);
-    TextView  text   = view.findViewById(R.id.message);
+    public static AlertDialog.Builder createFor(@NonNull Context context, @NonNull String message, @DrawableRes int... drawables) {
+        View view = LayoutInflater.from(context).inflate(R.layout.permissions_rationale_dialog, null);
+        ViewGroup header = view.findViewById(R.id.header_container);
+        TextView text = view.findViewById(R.id.message);
 
-    for (int i=0;i<drawables.length;i++) {
-      ImageView imageView = new ImageView(context);
-      imageView.setImageDrawable(context.getResources().getDrawable(drawables[i]));
-      imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        for (int i = 0; i < drawables.length; i++) {
+            ImageView imageView = new ImageView(context);
+            imageView.setImageDrawable(context.getResources().getDrawable(drawables[i]));
+            imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 
-      header.addView(imageView);
+            header.addView(imageView);
 
-      if (i != drawables.length - 1) {
-        TextView plus = new TextView(context);
-        plus.setText("+");
-        plus.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
-        plus.setTextColor(Color.WHITE);
+            if (i != drawables.length - 1) {
+                TextView plus = new TextView(context);
+                plus.setText("+");
+                plus.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+                plus.setTextColor(Color.WHITE);
 
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(ViewUtil.dpToPx(context, 20), 0, ViewUtil.dpToPx(context, 20), 0);
+                LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(ViewUtil.dpToPx(context, 20), 0, ViewUtil.dpToPx(context, 20), 0);
 
-        plus.setLayoutParams(layoutParams);
-        header.addView(plus);
-      }
+                plus.setLayoutParams(layoutParams);
+                header.addView(plus);
+            }
+        }
+
+        text.setText(message);
+
+        return new AlertDialog.Builder(context, R.style.RationaleDialog).setView(view);
     }
-
-    text.setText(message);
-
-    return new AlertDialog.Builder(context, R.style.RationaleDialog).setView(view);
-  }
 
 }

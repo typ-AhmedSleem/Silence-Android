@@ -2,21 +2,21 @@ package org.smssecure.smssecure.sms;
 
 public class IncomingEndSessionMessage extends IncomingTextMessage {
 
-  public IncomingEndSessionMessage(IncomingTextMessage base) {
-    this(base, base.getMessageBody());
-  }
+    public IncomingEndSessionMessage(IncomingTextMessage base) {
+        this(base, base.getMessageBody());
+    }
 
-  public IncomingEndSessionMessage(IncomingTextMessage base, String newBody) {
-    super(base, newBody);
-  }
+    public IncomingEndSessionMessage(IncomingTextMessage base, String newBody) {
+        super(base, newBody);
+    }
 
-  @Override
-  public IncomingEndSessionMessage withMessageBody(String messageBody) {
-    return new IncomingEndSessionMessage(this, messageBody);
-  }
+    @Override
+    public IncomingEndSessionMessage withMessageBody(String messageBody) {
+        return new IncomingEndSessionMessage(this, messageBody);
+    }
 
-  @Override
-  public boolean isEndSession() {
-    return true;
-  }
+    @Override
+    public boolean isEndSession() {
+        return true;
+    }
 }

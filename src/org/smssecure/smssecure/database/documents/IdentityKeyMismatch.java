@@ -20,66 +20,65 @@ import java.io.IOException;
 
 public class IdentityKeyMismatch {
 
-  private static final String TAG = IdentityKeyMismatch.class.getSimpleName();
+    private static final String TAG = IdentityKeyMismatch.class.getSimpleName();
 
-  @JsonProperty(value = "r")
-  private long recipientId;
+    @JsonProperty(value = "r")
+    private long recipientId;
 
-  @JsonProperty(value = "k")
-  @JsonSerialize(using = IdentityKeySerializer.class)
-  @JsonDeserialize(using = IdentityKeyDeserializer.class)
-  private IdentityKey identityKey;
+    @JsonProperty(value = "k")
+    @JsonSerialize(using = IdentityKeySerializer.class)
+    @JsonDeserialize(using = IdentityKeyDeserializer.class)
+    private IdentityKey identityKey;
 
-  public IdentityKeyMismatch() {}
-
-  public IdentityKeyMismatch(long recipientId, IdentityKey identityKey) {
-    this.recipientId = recipientId;
-    this.identityKey = identityKey;
-  }
-
-  public long getRecipientId() {
-    return recipientId;
-  }
-
-  public IdentityKey getIdentityKey() {
-    return identityKey;
-  }
-
-  @Override
-  public boolean equals(Object other) {
-    if (other == null || !(other instanceof IdentityKeyMismatch)) {
-      return false;
+    public IdentityKeyMismatch() {
     }
 
-    IdentityKeyMismatch that = (IdentityKeyMismatch)other;
-    return that.recipientId == this.recipientId && that.identityKey.equals(this.identityKey);
-  }
+    public IdentityKeyMismatch(long recipientId, IdentityKey identityKey) {
+        this.recipientId = recipientId;
+        this.identityKey = identityKey;
+    }
 
-  @Override
-  public int hashCode() {
-    return (int)recipientId ^ identityKey.hashCode();
-  }
+    public long getRecipientId() {
+        return recipientId;
+    }
 
-  private static class IdentityKeySerializer extends JsonSerializer<IdentityKey> {
+    public IdentityKey getIdentityKey() {
+        return identityKey;
+    }
+
     @Override
-    public void serialize(IdentityKey value, JsonGenerator jsonGenerator, SerializerProvider serializers)
-        throws IOException
-    {
-      jsonGenerator.writeString(Base64.encodeBytes(value.serialize()));
-    }
-  }
+    public boolean equals(Object other) {
+        if (other == null || !(other instanceof IdentityKeyMismatch)) {
+            return false;
+        }
 
-  private static class IdentityKeyDeserializer extends JsonDeserializer<IdentityKey> {
-    @Override
-    public IdentityKey deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-        throws IOException
-    {
-      try {
-        return new IdentityKey(Base64.decode(jsonParser.getValueAsString()), 0);
-      } catch (InvalidKeyException e) {
-        Log.w(TAG, e);
-        throw new IOException(e);
-      }
+        IdentityKeyMismatch that = (IdentityKeyMismatch) other;
+        return that.recipientId == this.recipientId && that.identityKey.equals(this.identityKey);
     }
-  }
+
+    @Override
+    public int hashCode() {
+        return (int) recipientId ^ identityKey.hashCode();
+    }
+
+    private static class IdentityKeySerializer extends JsonSerializer<IdentityKey> {
+        @Override
+        public void serialize(IdentityKey value, JsonGenerator jsonGenerator, SerializerProvider serializers)
+                throws IOException {
+            jsonGenerator.writeString(Base64.encodeBytes(value.serialize()));
+        }
+    }
+
+    private static class IdentityKeyDeserializer extends JsonDeserializer<IdentityKey> {
+        @Override
+        public IdentityKey deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+                throws IOException {
+            try {
+                return new IdentityKey(Base64.decode(jsonParser.getValueAsString()), 0);
+            } catch (InvalidKeyException e) {
+                Log.w(TAG, e);
+                throw new IOException(e);
+            }
+        }
+    }
 }

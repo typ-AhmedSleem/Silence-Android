@@ -7,15 +7,16 @@ import com.makeramen.roundedimageview.RoundedDrawable;
 
 public class TransparentContactPhoto implements ContactPhoto {
 
-  TransparentContactPhoto() {}
+    TransparentContactPhoto() {
+    }
 
-  @Override
-  public Drawable asDrawable(Context context, int color) {
-    return asDrawable(context, color, false);
-  }
+    @Override
+    public Drawable asDrawable(Context context, int color) {
+        return asDrawable(context, color, false);
+    }
 
-  @Override
-  public Drawable asDrawable(Context context, int color, boolean inverted) {
-    return RoundedDrawable.fromDrawable(context.getResources().getDrawable(android.R.color.transparent));
-  }
+    @Override
+    public Drawable asDrawable(Context context, int color, boolean inverted) {
+        return RoundedDrawable.fromDrawable(context.getResources().getDrawable(android.R.color.transparent));
+    }
 }

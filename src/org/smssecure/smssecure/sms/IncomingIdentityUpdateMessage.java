@@ -5,26 +5,26 @@ import org.whispersystems.libsignal.IdentityKey;
 
 public class IncomingIdentityUpdateMessage extends IncomingKeyExchangeMessage {
 
-  public IncomingIdentityUpdateMessage(IncomingTextMessage base, String newBody) {
-    super(base, newBody);
-  }
+    public IncomingIdentityUpdateMessage(IncomingTextMessage base, String newBody) {
+        super(base, newBody);
+    }
 
-  @Override
-  public IncomingIdentityUpdateMessage withMessageBody(String messageBody) {
-    return new IncomingIdentityUpdateMessage(this, messageBody);
-  }
+    public static IncomingIdentityUpdateMessage createFor(String sender, IdentityKey identityKey) {
+        return createFor(sender, identityKey, null);
+    }
 
-  @Override
-  public boolean isIdentityUpdate() {
-    return true;
-  }
+    public static IncomingIdentityUpdateMessage createFor(String sender, IdentityKey identityKey, String groupId) {
+        IncomingTextMessage base = new IncomingTextMessage(sender, groupId);
+        return new IncomingIdentityUpdateMessage(base, Base64.encodeBytesWithoutPadding(identityKey.serialize()));
+    }
 
-  public static IncomingIdentityUpdateMessage createFor(String sender, IdentityKey identityKey) {
-    return createFor(sender, identityKey, null);
-  }
+    @Override
+    public IncomingIdentityUpdateMessage withMessageBody(String messageBody) {
+        return new IncomingIdentityUpdateMessage(this, messageBody);
+    }
 
-  public static IncomingIdentityUpdateMessage createFor(String sender, IdentityKey identityKey, String groupId) {
-    IncomingTextMessage base = new IncomingTextMessage(sender, groupId);
-    return new IncomingIdentityUpdateMessage(base, Base64.encodeBytesWithoutPadding(identityKey.serialize()));
-  }
+    @Override
+    public boolean isIdentityUpdate() {
+        return true;
+    }
 }

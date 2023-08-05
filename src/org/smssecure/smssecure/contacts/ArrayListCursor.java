@@ -18,7 +18,6 @@ package org.smssecure.smssecure.contacts;
 import android.database.AbstractCursor;
 import android.database.CursorWindow;
 
-import java.lang.System;
 import java.util.ArrayList;
 
 /**
@@ -27,7 +26,7 @@ import java.util.ArrayList;
  */
 public class ArrayListCursor extends AbstractCursor {
     private String[] mColumnNames;
-    private ArrayList<Object>[] mRows;
+    private final ArrayList<Object>[] mRows;
 
     @SuppressWarnings({"unchecked"})
     public ArrayListCursor(String[] columnNames, ArrayList<ArrayList> rows) {
@@ -100,7 +99,7 @@ public class ArrayListCursor extends AbstractCursor {
             }
 
             mPos = oldpos;
-        } catch (IllegalStateException e){
+        } catch (IllegalStateException e) {
             // simply ignore it
         } finally {
             window.releaseReference();

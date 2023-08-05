@@ -1,16 +1,16 @@
 /**
  * Copyright (C) 2011 Whisper Systems
- *
+ * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -33,37 +33,37 @@ import org.smssecure.smssecure.service.KeyCachingService;
  */
 public abstract class PassphraseActivity extends BaseActionBarActivity {
 
-  private KeyCachingService keyCachingService;
-  private MasterSecret masterSecret;
+    private KeyCachingService keyCachingService;
+    private MasterSecret masterSecret;
 
-  protected void setMasterSecret(MasterSecret masterSecret) {
-    this.masterSecret = masterSecret;
-    Intent bindIntent = new Intent(this, KeyCachingService.class);
-    startService(bindIntent);
-    bindService(bindIntent, serviceConnection, Context.BIND_AUTO_CREATE);
-  }
+    protected void setMasterSecret(MasterSecret masterSecret) {
+        this.masterSecret = masterSecret;
+        Intent bindIntent = new Intent(this, KeyCachingService.class);
+        startService(bindIntent);
+        bindService(bindIntent, serviceConnection, Context.BIND_AUTO_CREATE);
+    }
 
-  protected abstract void cleanup();
+    protected abstract void cleanup();
 
-  private ServiceConnection serviceConnection = new ServiceConnection() {
-      @Override
-      public void onServiceConnected(ComponentName className, IBinder service) {
-        keyCachingService = ((KeyCachingService.KeySetBinder)service).getService();
-        keyCachingService.setMasterSecret(masterSecret);
+    private final ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName className, IBinder service) {
+            keyCachingService = ((KeyCachingService.KeySetBinder) service).getService();
+            keyCachingService.setMasterSecret(masterSecret);
 
-        PassphraseActivity.this.unbindService(PassphraseActivity.this.serviceConnection);
+            PassphraseActivity.this.unbindService(PassphraseActivity.this.serviceConnection);
 
-        masterSecret = null;
-        cleanup();
+            masterSecret = null;
+            cleanup();
 
-        Intent nextIntent = getIntent().getParcelableExtra("next_intent");
-        if (nextIntent != null) startActivity(nextIntent);
-        finish();
-      }
+            Intent nextIntent = getIntent().getParcelableExtra("next_intent");
+            if (nextIntent != null) startActivity(nextIntent);
+            finish();
+        }
 
-      @Override
-      public void onServiceDisconnected(ComponentName name) {
-        keyCachingService = null;
-      }
-  };
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            keyCachingService = null;
+        }
+    };
 }

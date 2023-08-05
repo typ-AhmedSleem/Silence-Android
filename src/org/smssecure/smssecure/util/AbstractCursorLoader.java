@@ -9,82 +9,82 @@ import android.support.v4.content.AsyncTaskLoader;
  * to get the benefits of reloading when content has changed.
  */
 public abstract class AbstractCursorLoader extends AsyncTaskLoader<Cursor> {
-  private static final String TAG = AbstractCursorLoader.class.getSimpleName();
+    private static final String TAG = AbstractCursorLoader.class.getSimpleName();
 
-  protected final ForceLoadContentObserver observer;
-  protected final Context                  context;
-  protected       Cursor                   cursor;
+    protected final ForceLoadContentObserver observer;
+    protected final Context context;
+    protected Cursor cursor;
 
-  public AbstractCursorLoader(Context context) {
-    super(context);
-    this.context  = context.getApplicationContext();
-    this.observer = new ForceLoadContentObserver();
-  }
-
-  public abstract Cursor getCursor();
-
-  @Override
-  public void deliverResult(Cursor newCursor) {
-    if (isReset()) {
-      if (newCursor != null) {
-        newCursor.close();
-      }
-      return;
+    public AbstractCursorLoader(Context context) {
+        super(context);
+        this.context = context.getApplicationContext();
+        this.observer = new ForceLoadContentObserver();
     }
-    Cursor oldCursor = this.cursor;
 
-    this.cursor = newCursor;
+    public abstract Cursor getCursor();
 
-    if (isStarted()) {
-      super.deliverResult(newCursor);
+    @Override
+    public void deliverResult(Cursor newCursor) {
+        if (isReset()) {
+            if (newCursor != null) {
+                newCursor.close();
+            }
+            return;
+        }
+        Cursor oldCursor = this.cursor;
+
+        this.cursor = newCursor;
+
+        if (isStarted()) {
+            super.deliverResult(newCursor);
+        }
+        if (oldCursor != null && oldCursor != cursor && !oldCursor.isClosed()) {
+            oldCursor.close();
+        }
     }
-    if (oldCursor != null && oldCursor != cursor && !oldCursor.isClosed()) {
-      oldCursor.close();
+
+    @Override
+    protected void onStartLoading() {
+        if (cursor != null) {
+            deliverResult(cursor);
+        }
+        if (takeContentChanged() || cursor == null) {
+            forceLoad();
+        }
     }
-  }
 
-  @Override
-  protected void onStartLoading() {
-    if (cursor != null) {
-      deliverResult(cursor);
+    @Override
+    protected void onStopLoading() {
+        cancelLoad();
     }
-    if (takeContentChanged() || cursor == null) {
-      forceLoad();
+
+    @Override
+    public void onCanceled(Cursor cursor) {
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
     }
-  }
 
-  @Override
-  protected void onStopLoading() {
-    cancelLoad();
-  }
-
-  @Override
-  public void onCanceled(Cursor cursor) {
-    if (cursor != null && !cursor.isClosed()) {
-      cursor.close();
+    @Override
+    public Cursor loadInBackground() {
+        Cursor newCursor = getCursor();
+        if (newCursor != null) {
+            newCursor.getCount();
+            newCursor.registerContentObserver(observer);
+        }
+        return newCursor;
     }
-  }
 
-  @Override
-  public Cursor loadInBackground() {
-    Cursor newCursor = getCursor();
-    if (newCursor != null) {
-      newCursor.getCount();
-      newCursor.registerContentObserver(observer);
+    @Override
+    protected void onReset() {
+        super.onReset();
+
+        onStopLoading();
+
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
+        cursor = null;
     }
-    return newCursor;
-  }
-
-  @Override
-  protected void onReset() {
-    super.onReset();
-
-    onStopLoading();
-
-    if (cursor != null && !cursor.isClosed()) {
-      cursor.close();
-    }
-    cursor = null;
-  }
 
 }

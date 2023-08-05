@@ -10,10 +10,10 @@ import org.smssecure.smssecure.service.KeyCachingService;
 
 public abstract class MasterSecretBroadcastReceiver extends BroadcastReceiver {
 
-  @Override
-  public final void onReceive(Context context, Intent intent) {
-    onReceive(context, intent, KeyCachingService.getMasterSecret(context));
-  }
+    @Override
+    public final void onReceive(Context context, Intent intent) {
+        onReceive(context, intent, KeyCachingService.getMasterSecret(context));
+    }
 
-  protected abstract void onReceive(Context context, Intent intent, @Nullable MasterSecret masterSecret);
+    protected abstract void onReceive(Context context, Intent intent, @Nullable MasterSecret masterSecret);
 }

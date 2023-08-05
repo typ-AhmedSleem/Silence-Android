@@ -13,53 +13,52 @@ import org.whispersystems.libpastelog.SubmitLogFragment;
  */
 public class LogSubmitActivity extends BaseActionBarActivity implements SubmitLogFragment.OnLogSubmittedListener {
 
-  private static final String TAG = LogSubmitActivity.class.getSimpleName();
-  private DynamicTheme dynamicTheme = new DynamicTheme();
+    private static final String TAG = LogSubmitActivity.class.getSimpleName();
+    private final DynamicTheme dynamicTheme = new DynamicTheme();
 
-  @Override
-  protected void onCreate(Bundle icicle) {
-    dynamicTheme.onCreate(this);
-    super.onCreate(icicle);
-    setContentView(R.layout.log_submit_activity);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    SubmitLogFragment fragment = SubmitLogFragment.newInstance();
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.fragment_container, fragment);
-    transaction.commit();
-  }
-
-  @Override
-  protected void onResume() {
-    dynamicTheme.onResume(this);
-    super.onResume();
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    super.onOptionsItemSelected(item);
-    switch (item.getItemId()) {
-    case android.R.id.home:
-      finish();
-      return true;
+    @Override
+    protected void onCreate(Bundle icicle) {
+        dynamicTheme.onCreate(this);
+        super.onCreate(icicle);
+        setContentView(R.layout.log_submit_activity);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        SubmitLogFragment fragment = SubmitLogFragment.newInstance();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
     }
 
-    return false;
-  }
+    @Override
+    protected void onResume() {
+        dynamicTheme.onResume(this);
+        super.onResume();
+    }
 
-  @Override
-  public void onSuccess() {
-    Toast.makeText(getApplicationContext(), R.string.log_submit_activity__thanks, Toast.LENGTH_LONG).show();
-    finish();
-  }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
 
-  @Override
-  public void onFailure() {
-    Toast.makeText(getApplicationContext(), R.string.log_submit_activity__log_fetch_failed, Toast.LENGTH_LONG).show();
-    finish();
-  }
+        return false;
+    }
 
-  @Override
-  public void onCancel() {
-    finish();
-  }
+    @Override
+    public void onSuccess() {
+        Toast.makeText(getApplicationContext(), R.string.log_submit_activity__thanks, Toast.LENGTH_LONG).show();
+        finish();
+    }
+
+    @Override
+    public void onFailure() {
+        Toast.makeText(getApplicationContext(), R.string.log_submit_activity__log_fetch_failed, Toast.LENGTH_LONG).show();
+        finish();
+    }
+
+    @Override
+    public void onCancel() {
+        finish();
+    }
 }

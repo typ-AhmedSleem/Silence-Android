@@ -8,16 +8,16 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 
 public class IdentityLoader extends CursorLoader {
 
-  private final Context context;
+    private final Context context;
 
-  public IdentityLoader(Context context) {
-    super(context);
-    this.context      = context.getApplicationContext();
-  }
+    public IdentityLoader(Context context) {
+        super(context);
+        this.context = context.getApplicationContext();
+    }
 
-  @Override
-  public Cursor loadInBackground() {
-    return DatabaseFactory.getIdentityDatabase(context).getIdentities();
-  }
+    @Override
+    public Cursor loadInBackground() {
+        return DatabaseFactory.getIdentityDatabase(context).getIdentities();
+    }
 
 }

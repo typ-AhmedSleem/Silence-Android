@@ -8,12 +8,12 @@ import android.util.Log;
 import org.smssecure.smssecure.WelcomeActivity;
 
 public class BootReceiver extends BroadcastReceiver {
-  private static final String TAG = BootReceiver.class.getSimpleName();
+    private static final String TAG = BootReceiver.class.getSimpleName();
 
-  @Override
-  public void onReceive(Context context, Intent intent) {
-    Log.w(TAG, "onReceive()");
-    WelcomeActivity.checkForPermissions(context, intent);
-  }
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.w(TAG, "onReceive()");
+        WelcomeActivity.checkForPermissions(context, intent);
+    }
 
 }

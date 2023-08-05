@@ -6,10 +6,10 @@
  * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
  * sell copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,77 +32,77 @@ import java.util.List;
  */
 public class EmojiParser {
 
-  private final EmojiTree emojiTree;
+    private final EmojiTree emojiTree;
 
-  public EmojiParser(EmojiTree emojiTree) {
-    this.emojiTree = emojiTree;
-  }
+    public EmojiParser(EmojiTree emojiTree) {
+        this.emojiTree = emojiTree;
+    }
 
-  public @NonNull List<Candidate> findCandidates(@Nullable CharSequence text) {
-    List<Candidate> results = new LinkedList<>();
+    public @NonNull List<Candidate> findCandidates(@Nullable CharSequence text) {
+        List<Candidate> results = new LinkedList<>();
 
-    if (text == null) return results;
+        if (text == null) return results;
 
-    for (int i = 0; i < text.length(); i++) {
-      int emojiEnd = getEmojiEndPos(text, i);
+        for (int i = 0; i < text.length(); i++) {
+            int emojiEnd = getEmojiEndPos(text, i);
 
-      if (emojiEnd != -1) {
-        EmojiDrawInfo drawInfo = emojiTree.getEmoji(text, i, emojiEnd);
+            if (emojiEnd != -1) {
+                EmojiDrawInfo drawInfo = emojiTree.getEmoji(text, i, emojiEnd);
 
-        if (emojiEnd + 2 <= text.length()) {
-          if (Fitzpatrick.fitzpatrickFromUnicode(text, emojiEnd) != null) {
-            emojiEnd += 2;
-          }
+                if (emojiEnd + 2 <= text.length()) {
+                    if (Fitzpatrick.fitzpatrickFromUnicode(text, emojiEnd) != null) {
+                        emojiEnd += 2;
+                    }
+                }
+
+                results.add(new Candidate(i, emojiEnd, drawInfo));
+
+                i = emojiEnd - 1;
+            }
         }
 
-        results.add(new Candidate(i, emojiEnd, drawInfo));
-
-        i = emojiEnd - 1;
-      }
+        return results;
     }
 
-    return results;
-  }
+    private int getEmojiEndPos(CharSequence text, int startPos) {
+        int best = -1;
 
-  private int getEmojiEndPos(CharSequence text, int startPos) {
-    int best = -1;
+        for (int j = startPos + 1; j <= text.length(); j++) {
+            EmojiTree.Matches status = emojiTree.isEmoji(text, startPos, j);
 
-    for (int j = startPos + 1; j <= text.length(); j++) {
-      EmojiTree.Matches status = emojiTree.isEmoji(text, startPos, j);
+            if (status.exactMatch()) {
+                best = j;
+            } else if (status.impossibleMatch()) {
+                return best;
+            }
+        }
 
-      if (status.exactMatch()) {
-        best = j;
-      } else if (status.impossibleMatch()) {
         return best;
-      }
     }
 
-    return best;
-  }
+    public class Candidate {
 
-  public class Candidate {
+        private final int startIndex;
+        private final int endIndex;
+        private final EmojiDrawInfo drawInfo;
 
-    private final int           startIndex;
-    private final int           endIndex;
-    private final EmojiDrawInfo drawInfo;
+        Candidate(int startIndex, int endIndex, EmojiDrawInfo drawInfo) {
+            this.startIndex = startIndex;
+            this.endIndex = endIndex;
+            this.drawInfo = drawInfo;
+        }
 
-    Candidate(int startIndex, int endIndex, EmojiDrawInfo drawInfo) {
-      this.startIndex = startIndex;
-      this.endIndex = endIndex;
-      this.drawInfo = drawInfo;
+        public EmojiDrawInfo getDrawInfo() {
+            return drawInfo;
+        }
+
+        public int getEndIndex() {
+            return endIndex;
+        }
+
+        public int getStartIndex() {
+            return startIndex;
+        }
     }
-
-    public EmojiDrawInfo getDrawInfo() {
-      return drawInfo;
-    }
-
-    public int getEndIndex() {
-      return endIndex;
-    }
-
-    public int getStartIndex() {
-      return startIndex;
-    }
-  }
 
 }

@@ -8,14 +8,14 @@ import org.smssecure.smssecure.util.AbstractCursorLoader;
 
 public class BlockedContactsLoader extends AbstractCursorLoader {
 
-  public BlockedContactsLoader(Context context) {
-    super(context);
-  }
+    public BlockedContactsLoader(Context context) {
+        super(context);
+    }
 
-  @Override
-  public Cursor getCursor() {
-    return DatabaseFactory.getRecipientPreferenceDatabase(getContext())
-                          .getBlocked();
-  }
+    @Override
+    public Cursor getCursor() {
+        return DatabaseFactory.getRecipientPreferenceDatabase(getContext())
+                .getBlocked();
+    }
 
 }

@@ -1,16 +1,16 @@
 /**
  * Copyright (C) 2015 Open Whisper Systems
- *
+ * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,59 +28,59 @@ import org.smssecure.smssecure.util.Util;
 import java.util.concurrent.TimeoutException;
 
 public abstract class LollipopMmsConnection extends BroadcastReceiver {
-  private static final String TAG = LollipopMmsConnection.class.getSimpleName();
+    private static final String TAG = LollipopMmsConnection.class.getSimpleName();
 
-  private final Context context;
-  private final String action;
+    private final Context context;
+    private final String action;
 
-  private boolean resultAvailable;
+    private boolean resultAvailable;
 
-  public abstract void onResult(Context context, Intent intent);
-
-  protected LollipopMmsConnection(Context context, String action) {
-    super();
-    this.context = context;
-    this.action  = action;
-  }
-
-  @Override
-  public synchronized void onReceive(Context context, Intent intent) {
-    Log.w(TAG, "onReceive()");
-    if (!action.equals(intent.getAction())) {
-      Log.w(TAG, "received broadcast with unexpected action " + intent.getAction());
-      return;
+    protected LollipopMmsConnection(Context context, String action) {
+        super();
+        this.context = context;
+        this.action = action;
     }
 
-    onResult(context, intent);
+    public abstract void onResult(Context context, Intent intent);
 
-    resultAvailable = true;
-    notifyAll();
-  }
+    @Override
+    public synchronized void onReceive(Context context, Intent intent) {
+        Log.w(TAG, "onReceive()");
+        if (!action.equals(intent.getAction())) {
+            Log.w(TAG, "received broadcast with unexpected action " + intent.getAction());
+            return;
+        }
 
-  protected void beginTransaction() {
-    getContext().getApplicationContext().registerReceiver(this, new IntentFilter(action));
-  }
+        onResult(context, intent);
 
-  protected void endTransaction() {
-    getContext().getApplicationContext().unregisterReceiver(this);
-    resultAvailable = false;
-  }
-
-  protected void waitForResult() throws TimeoutException {
-    long timeoutExpiration = System.currentTimeMillis() + 60000;
-    while (!resultAvailable) {
-      Util.wait(this, Math.max(1, timeoutExpiration - System.currentTimeMillis()));
-      if (System.currentTimeMillis() >= timeoutExpiration) {
-        throw new TimeoutException("timeout when waiting for MMS");
-      }
+        resultAvailable = true;
+        notifyAll();
     }
-  }
 
-  protected PendingIntent getPendingIntent() {
-    return PendingIntent.getBroadcast(getContext(), 1, new Intent(action), PendingIntent.FLAG_ONE_SHOT);
-  }
+    protected void beginTransaction() {
+        getContext().getApplicationContext().registerReceiver(this, new IntentFilter(action));
+    }
 
-  protected Context getContext() {
-    return context;
-  }
+    protected void endTransaction() {
+        getContext().getApplicationContext().unregisterReceiver(this);
+        resultAvailable = false;
+    }
+
+    protected void waitForResult() throws TimeoutException {
+        long timeoutExpiration = System.currentTimeMillis() + 60000;
+        while (!resultAvailable) {
+            Util.wait(this, Math.max(1, timeoutExpiration - System.currentTimeMillis()));
+            if (System.currentTimeMillis() >= timeoutExpiration) {
+                throw new TimeoutException("timeout when waiting for MMS");
+            }
+        }
+    }
+
+    protected PendingIntent getPendingIntent() {
+        return PendingIntent.getBroadcast(getContext(), 1, new Intent(action), PendingIntent.FLAG_ONE_SHOT);
+    }
+
+    protected Context getContext() {
+        return context;
+    }
 }

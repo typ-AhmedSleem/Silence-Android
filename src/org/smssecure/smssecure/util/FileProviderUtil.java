@@ -11,11 +11,12 @@ import java.io.File;
 
 public class FileProviderUtil {
 
-  private static final String AUTHORITY = "org.smssecure.smssecure.fileprovider";
+    private static final String AUTHORITY = "org.smssecure.smssecure.fileprovider";
 
-  public static Uri getUriFor(@NonNull Context context, @NonNull File file) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) return FileProvider.getUriForFile(context, AUTHORITY, file);
-    else                                                       return Uri.fromFile(file);
-  }
+    public static Uri getUriFor(@NonNull Context context, @NonNull File file) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            return FileProvider.getUriForFile(context, AUTHORITY, file);
+        else return Uri.fromFile(file);
+    }
 
 }

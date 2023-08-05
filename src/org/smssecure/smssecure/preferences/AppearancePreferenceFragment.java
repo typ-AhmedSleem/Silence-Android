@@ -13,53 +13,53 @@ import java.util.Arrays;
 
 public class AppearancePreferenceFragment extends ListSummaryPreferenceFragment {
 
-  @Override
-  public void onCreate(Bundle paramBundle) {
-    super.onCreate(paramBundle);
+    public static CharSequence getSummary(Context context) {
+        String[] languageEntries = context.getResources().getStringArray(R.array.language_entries);
+        String[] languageEntryValues = context.getResources().getStringArray(R.array.language_values);
+        String[] themeEntries = context.getResources().getStringArray(R.array.pref_theme_entries);
+        String[] themeEntryValues = context.getResources().getStringArray(R.array.pref_theme_values);
 
-    this.findPreference(SilencePreferences.THEME_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
-    this.findPreference(SilencePreferences.LANGUAGE_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
-    initializeListSummary((ListPreference)findPreference(SilencePreferences.THEME_PREF));
-    initializeListSummary((ListPreference)findPreference(SilencePreferences.LANGUAGE_PREF));
-  }
+        int langIndex = Arrays.asList(languageEntryValues).indexOf(SilencePreferences.getLanguage(context));
+        int themeIndex = Arrays.asList(themeEntryValues).indexOf(SilencePreferences.getTheme(context));
 
-  @Override
-  public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
-    addPreferencesFromResource(R.xml.preferences_appearance);
-  }
+        if (langIndex == -1) langIndex = 0;
+        if (themeIndex == -1) themeIndex = 0;
 
-  @Override
-  public void onStart() {
-    super.onStart();
-    getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener((ApplicationPreferencesActivity)getActivity());
-  }
+        return context.getString(R.string.ApplicationPreferencesActivity_appearance_summary,
+                themeEntries[themeIndex],
+                languageEntries[langIndex]);
+    }
 
-  @Override
-  public void onResume() {
-    super.onResume();
-    ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.preferences__appearance);
-  }
+    @Override
+    public void onCreate(Bundle paramBundle) {
+        super.onCreate(paramBundle);
 
-  @Override
-  public void onStop() {
-    super.onStop();
-    getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener((ApplicationPreferencesActivity) getActivity());
-  }
+        this.findPreference(SilencePreferences.THEME_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
+        this.findPreference(SilencePreferences.LANGUAGE_PREF).setOnPreferenceChangeListener(new ListSummaryListener());
+        initializeListSummary((ListPreference) findPreference(SilencePreferences.THEME_PREF));
+        initializeListSummary((ListPreference) findPreference(SilencePreferences.LANGUAGE_PREF));
+    }
 
-  public static CharSequence getSummary(Context context) {
-    String[] languageEntries     = context.getResources().getStringArray(R.array.language_entries);
-    String[] languageEntryValues = context.getResources().getStringArray(R.array.language_values);
-    String[] themeEntries        = context.getResources().getStringArray(R.array.pref_theme_entries);
-    String[] themeEntryValues    = context.getResources().getStringArray(R.array.pref_theme_values);
+    @Override
+    public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.preferences_appearance);
+    }
 
-    int langIndex  = Arrays.asList(languageEntryValues).indexOf(SilencePreferences.getLanguage(context));
-    int themeIndex = Arrays.asList(themeEntryValues).indexOf(SilencePreferences.getTheme(context));
+    @Override
+    public void onStart() {
+        super.onStart();
+        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener((ApplicationPreferencesActivity) getActivity());
+    }
 
-    if (langIndex == -1)  langIndex = 0;
-    if (themeIndex == -1) themeIndex = 0;
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.preferences__appearance);
+    }
 
-    return context.getString(R.string.ApplicationPreferencesActivity_appearance_summary,
-                             themeEntries[themeIndex],
-                             languageEntries[langIndex]);
-  }
+    @Override
+    public void onStop() {
+        super.onStop();
+        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener((ApplicationPreferencesActivity) getActivity());
+    }
 }

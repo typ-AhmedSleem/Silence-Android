@@ -13,63 +13,63 @@ import android.support.annotation.Nullable;
  */
 public class DatabaseContentProviders {
 
-  public static class ConversationList extends NoopContentProvider {
-    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.conversationlist");
-  }
-
-  public static class Conversation extends NoopContentProvider {
-    private static final String CONTENT_URI_STRING = "content://org.smssecure.smssecure.database.conversation/";
-
-    public static Uri getUriForThread(long threadId) {
-      return Uri.parse(CONTENT_URI_STRING + threadId);
-    }
-  }
-
-  public static class Attachment extends NoopContentProvider {
-    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.attachment");
-  }
-
-  public static class Identities extends NoopContentProvider {
-    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.identities");
-  }
-
-  public static class RecipientPreference extends NoopContentProvider {
-    public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.recipients/");
-  }
-
-  private static abstract class NoopContentProvider extends ContentProvider {
-
-    @Override
-    public boolean onCreate() {
-      return false;
+    public static class ConversationList extends NoopContentProvider {
+        public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.conversationlist");
     }
 
-    @Nullable
-    @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-      return null;
+    public static class Conversation extends NoopContentProvider {
+        private static final String CONTENT_URI_STRING = "content://org.smssecure.smssecure.database.conversation/";
+
+        public static Uri getUriForThread(long threadId) {
+            return Uri.parse(CONTENT_URI_STRING + threadId);
+        }
     }
 
-    @Nullable
-    @Override
-    public String getType(@NonNull Uri uri) {
-      return null;
+    public static class Attachment extends NoopContentProvider {
+        public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.attachment");
     }
 
-    @Nullable
-    @Override
-    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-      return null;
+    public static class Identities extends NoopContentProvider {
+        public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.identities");
     }
 
-    @Override
-    public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
-      return 0;
+    public static class RecipientPreference extends NoopContentProvider {
+        public static final Uri CONTENT_URI = Uri.parse("content://org.smssecure.smssecure.database.recipients/");
     }
 
-    @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
-      return 0;
+    private static abstract class NoopContentProvider extends ContentProvider {
+
+        @Override
+        public boolean onCreate() {
+            return false;
+        }
+
+        @Nullable
+        @Override
+        public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+            return null;
+        }
+
+        @Nullable
+        @Override
+        public String getType(@NonNull Uri uri) {
+            return null;
+        }
+
+        @Nullable
+        @Override
+        public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
+            return null;
+        }
+
+        @Override
+        public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
+            return 0;
+        }
+
+        @Override
+        public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
+            return 0;
+        }
     }
-  }
 }

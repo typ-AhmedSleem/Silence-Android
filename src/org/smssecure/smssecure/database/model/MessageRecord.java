@@ -1,16 +1,16 @@
 /**
  * Copyright (C) 2012 Moxie Marlinpsike
- *
+ * <p>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -25,8 +25,8 @@ import android.text.style.StyleSpan;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.database.MmsSmsColumns;
 import org.smssecure.smssecure.database.SmsDatabase;
-import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.database.documents.IdentityKeyMismatch;
+import org.smssecure.smssecure.database.documents.NetworkFailure;
 import org.smssecure.smssecure.protocol.AutoInitiate;
 import org.smssecure.smssecure.recipients.Recipient;
 import org.smssecure.smssecure.recipients.Recipients;
@@ -44,161 +44,161 @@ import java.util.List;
  */
 public abstract class MessageRecord extends DisplayRecord {
 
-  private static final int MAX_DISPLAY_LENGTH = 2000;
+    private static final int MAX_DISPLAY_LENGTH = 2000;
 
-  private final Recipient                 individualRecipient;
-  private final int                       recipientDeviceId;
-  private final long                      id;
-  private final List<IdentityKeyMismatch> mismatches;
-  private final List<NetworkFailure>      networkFailures;
-  private final int                       subscriptionId;
+    private final Recipient individualRecipient;
+    private final int recipientDeviceId;
+    private final long id;
+    private final List<IdentityKeyMismatch> mismatches;
+    private final List<NetworkFailure> networkFailures;
+    private final int subscriptionId;
 
-  MessageRecord(Context context, long id, Body body, Recipients recipients,
-                Recipient individualRecipient, int recipientDeviceId,
-                long dateSent, long dateReceived, long threadId,
-                int deliveryStatus, long dateDeliveryReceived, long type,
-                List<IdentityKeyMismatch> mismatches,
-                List<NetworkFailure> networkFailures,
-                int subscriptionId)
-  {
-    super(context, body, recipients, dateSent, dateReceived, dateDeliveryReceived, threadId, deliveryStatus, type);
-    this.id                  = id;
-    this.individualRecipient = individualRecipient;
-    this.recipientDeviceId   = recipientDeviceId;
-    this.mismatches          = mismatches;
-    this.networkFailures     = networkFailures;
-    this.subscriptionId      = subscriptionId;
-  }
-
-  public abstract boolean isMms();
-  public abstract boolean isMmsNotification();
-
-  public boolean isSecure() {
-    return MmsSmsColumns.Types.isSecureType(type);
-  }
-
-  public boolean isLegacyMessage() {
-    return MmsSmsColumns.Types.isLegacyType(type);
-  }
-
-  public boolean isAsymmetricEncryption() {
-    return MmsSmsColumns.Types.isAsymmetricEncryption(type);
-  }
-
-  @Override
-  public SpannableString getDisplayBody() {
-    if (isGroupUpdate() && isOutgoing()) {
-      return emphasisAdded(context.getString(R.string.MessageRecord_updated_group));
-    } else if (isGroupQuit() && isOutgoing()) {
-      return emphasisAdded(context.getString(R.string.MessageRecord_left_group));
-    } else if (isGroupQuit()) {
-      return emphasisAdded(context.getString(R.string.ConversationItem_group_action_left, getIndividualRecipient().toShortString()));
-    } else if (isProcessedKeyExchange() || (isKeyExchange() && isOutgoing())) {
-      return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message));
-    } else if (getBody().getBody().length() > MAX_DISPLAY_LENGTH) {
-      return new SpannableString(getBody().getBody().substring(0, MAX_DISPLAY_LENGTH));
+    MessageRecord(Context context, long id, Body body, Recipients recipients,
+                  Recipient individualRecipient, int recipientDeviceId,
+                  long dateSent, long dateReceived, long threadId,
+                  int deliveryStatus, long dateDeliveryReceived, long type,
+                  List<IdentityKeyMismatch> mismatches,
+                  List<NetworkFailure> networkFailures,
+                  int subscriptionId) {
+        super(context, body, recipients, dateSent, dateReceived, dateDeliveryReceived, threadId, deliveryStatus, type);
+        this.id = id;
+        this.individualRecipient = individualRecipient;
+        this.recipientDeviceId = recipientDeviceId;
+        this.mismatches = mismatches;
+        this.networkFailures = networkFailures;
+        this.subscriptionId = subscriptionId;
     }
 
-    return new SpannableString(AutoInitiate.stripTag(getBody().getBody()));
-  }
+    public abstract boolean isMms();
 
-  public long getId() {
-    return id;
-  }
+    public abstract boolean isMmsNotification();
 
-  public boolean isPush() {
-    return SmsDatabase.Types.isPushType(type) && !SmsDatabase.Types.isForcedSms(type);
-  }
+    public boolean isSecure() {
+        return MmsSmsColumns.Types.isSecureType(type);
+    }
 
-  public long getTimestamp() {
-    if (SilencePreferences.showSentTime(context)) return getDateSent();
-    else                                            return getDateReceived();
-  }
+    public boolean isLegacyMessage() {
+        return MmsSmsColumns.Types.isLegacyType(type);
+    }
 
-  public boolean isForcedSms() {
-    return SmsDatabase.Types.isForcedSms(type);
-  }
+    public boolean isAsymmetricEncryption() {
+        return MmsSmsColumns.Types.isAsymmetricEncryption(type);
+    }
 
-  public boolean isStaleKeyExchange() {
-    return SmsDatabase.Types.isStaleKeyExchange(type);
-  }
+    @Override
+    public SpannableString getDisplayBody() {
+        if (isGroupUpdate() && isOutgoing()) {
+            return emphasisAdded(context.getString(R.string.MessageRecord_updated_group));
+        } else if (isGroupQuit() && isOutgoing()) {
+            return emphasisAdded(context.getString(R.string.MessageRecord_left_group));
+        } else if (isGroupQuit()) {
+            return emphasisAdded(context.getString(R.string.ConversationItem_group_action_left, getIndividualRecipient().toShortString()));
+        } else if (isProcessedKeyExchange() || (isKeyExchange() && isOutgoing())) {
+            return emphasisAdded(context.getString(R.string.MessageRecord_key_exchange_message));
+        } else if (getBody().getBody().length() > MAX_DISPLAY_LENGTH) {
+            return new SpannableString(getBody().getBody().substring(0, MAX_DISPLAY_LENGTH));
+        }
 
-  public boolean isProcessedKeyExchange() {
-    return SmsDatabase.Types.isProcessedKeyExchange(type);
-  }
+        return new SpannableString(AutoInitiate.stripTag(getBody().getBody()));
+    }
 
-  public boolean isIdentityMismatchFailure() {
-    return mismatches != null && !mismatches.isEmpty();
-  }
+    public long getId() {
+        return id;
+    }
 
-  public boolean isBundleKeyExchange() {
-    return SmsDatabase.Types.isBundleKeyExchange(type);
-  }
+    public boolean isPush() {
+        return SmsDatabase.Types.isPushType(type) && !SmsDatabase.Types.isForcedSms(type);
+    }
 
-  public boolean isIdentityUpdate() {
-    return SmsDatabase.Types.isIdentityUpdate(type);
-  }
+    public long getTimestamp() {
+        if (SilencePreferences.showSentTime(context)) return getDateSent();
+        else return getDateReceived();
+    }
 
-  public boolean isCorruptedKeyExchange() {
-    return SmsDatabase.Types.isCorruptedKeyExchange(type);
-  }
+    public boolean isForcedSms() {
+        return SmsDatabase.Types.isForcedSms(type);
+    }
 
-  public boolean isInvalidVersionKeyExchange() {
-    return SmsDatabase.Types.isInvalidVersionKeyExchange(type);
-  }
+    public boolean isStaleKeyExchange() {
+        return SmsDatabase.Types.isStaleKeyExchange(type);
+    }
 
-  public boolean isXmppExchange() {
-    return SmsDatabase.Types.isXmppExchangeType(type);
-  }
+    public boolean isProcessedKeyExchange() {
+        return SmsDatabase.Types.isProcessedKeyExchange(type);
+    }
 
-  public boolean isMediaPending() {
-    return false;
-  }
+    public boolean isIdentityMismatchFailure() {
+        return mismatches != null && !mismatches.isEmpty();
+    }
 
-  public Recipient getIndividualRecipient() {
-    return individualRecipient;
-  }
+    public boolean isBundleKeyExchange() {
+        return SmsDatabase.Types.isBundleKeyExchange(type);
+    }
 
-  public int getRecipientDeviceId() {
-    return recipientDeviceId;
-  }
+    public boolean isIdentityUpdate() {
+        return SmsDatabase.Types.isIdentityUpdate(type);
+    }
 
-  public long getType() {
-    return type;
-  }
+    public boolean isCorruptedKeyExchange() {
+        return SmsDatabase.Types.isCorruptedKeyExchange(type);
+    }
 
-  public List<IdentityKeyMismatch> getIdentityKeyMismatches() {
-    return mismatches;
-  }
+    public boolean isInvalidVersionKeyExchange() {
+        return SmsDatabase.Types.isInvalidVersionKeyExchange(type);
+    }
 
-  public List<NetworkFailure> getNetworkFailures() {
-    return networkFailures;
-  }
+    public boolean isXmppExchange() {
+        return SmsDatabase.Types.isXmppExchangeType(type);
+    }
 
-  public boolean hasNetworkFailures() {
-    return networkFailures != null && !networkFailures.isEmpty();
-  }
+    public boolean isMediaPending() {
+        return false;
+    }
 
-  protected SpannableString emphasisAdded(String sequence) {
-    SpannableString spannable = new SpannableString(sequence);
-    spannable.setSpan(new RelativeSizeSpan(0.9f), 0, sequence.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-    spannable.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, sequence.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+    public Recipient getIndividualRecipient() {
+        return individualRecipient;
+    }
 
-    return spannable;
-  }
+    public int getRecipientDeviceId() {
+        return recipientDeviceId;
+    }
 
-  public boolean equals(Object other) {
-    return other != null                              &&
-           other instanceof MessageRecord             &&
-           ((MessageRecord) other).getId() == getId() &&
-           ((MessageRecord) other).isMms() == isMms();
-  }
+    public long getType() {
+        return type;
+    }
 
-  public int hashCode() {
-    return (int)getId();
-  }
+    public List<IdentityKeyMismatch> getIdentityKeyMismatches() {
+        return mismatches;
+    }
 
-  public int getSubscriptionId() {
-    return subscriptionId;
-  }
+    public List<NetworkFailure> getNetworkFailures() {
+        return networkFailures;
+    }
+
+    public boolean hasNetworkFailures() {
+        return networkFailures != null && !networkFailures.isEmpty();
+    }
+
+    protected SpannableString emphasisAdded(String sequence) {
+        SpannableString spannable = new SpannableString(sequence);
+        spannable.setSpan(new RelativeSizeSpan(0.9f), 0, sequence.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannable.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, sequence.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return spannable;
+    }
+
+    public boolean equals(Object other) {
+        return other != null &&
+                other instanceof MessageRecord &&
+                ((MessageRecord) other).getId() == getId() &&
+                ((MessageRecord) other).isMms() == isMms();
+    }
+
+    public int hashCode() {
+        return (int) getId();
+    }
+
+    public int getSubscriptionId() {
+        return subscriptionId;
+    }
 }
