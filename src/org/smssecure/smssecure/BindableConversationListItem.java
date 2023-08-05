@@ -1,6 +1,6 @@
 package org.smssecure.smssecure;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.model.ThreadRecord;

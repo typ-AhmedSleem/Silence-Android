@@ -3,7 +3,7 @@ package org.smssecure.smssecure.video;
 
 import android.media.MediaDataSource;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import org.smssecure.smssecure.crypto.DecryptingPartInputStream;
 import org.smssecure.smssecure.crypto.MasterSecret;

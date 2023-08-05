@@ -1,7 +1,7 @@
 package org.smssecure.smssecure.service;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;

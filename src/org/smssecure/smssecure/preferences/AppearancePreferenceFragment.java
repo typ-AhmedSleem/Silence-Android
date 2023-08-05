@@ -2,8 +2,8 @@ package org.smssecure.smssecure.preferences;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.preference.ListPreference;
+import androidx.annotation.Nullable;
+import androidx.preference.ListPreference;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.R;

@@ -24,7 +24,7 @@ import android.os.AsyncTask;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -244,19 +244,19 @@ public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity im
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        switch (item.getItemId()) {
-            case R.id.media_preview__overview:
-                showOverview();
-                return true;
-            case R.id.media_preview__forward:
-                forward();
-                return true;
-            case R.id.save:
-                saveToDisk();
-                return true;
-            case android.R.id.home:
-                finish();
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.media_preview__overview) {
+            showOverview();
+            return true;
+        } else if (itemId == R.id.media_preview__forward) {
+            forward();
+            return true;
+        } else if (itemId == R.id.save) {
+            saveToDisk();
+            return true;
+        } else if (itemId == android.R.id.home) {
+            finish();
+            return true;
         }
 
         return false;

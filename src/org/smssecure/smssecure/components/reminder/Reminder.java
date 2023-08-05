@@ -1,6 +1,6 @@
 package org.smssecure.smssecure.components.reminder;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View.OnClickListener;
 
 public abstract class Reminder {

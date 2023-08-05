@@ -1,7 +1,7 @@
 package org.smssecure.smssecure.attachments;
 
 import android.net.Uri;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import org.smssecure.smssecure.mms.PartAuthority;
 

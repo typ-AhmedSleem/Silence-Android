@@ -16,8 +16,11 @@
  */
 package org.smssecure.smssecure.service;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
+import android.app.BackgroundServiceStartNotAllowedException;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -28,7 +31,10 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.SystemClock;
-import android.support.v4.app.NotificationCompat;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -55,6 +61,7 @@ import java.util.concurrent.TimeUnit;
  * @author Moxie Marlinspike
  */
 
+@RequiresApi(api = Build.VERSION_CODES.S)
 public class KeyCachingService extends Service {
 
     public static final int SERVICE_RUNNING_ID = 4141;
@@ -88,6 +95,8 @@ public class KeyCachingService extends Service {
                 return masterSecret;
             } catch (InvalidPassphraseException e) {
                 Log.w("KeyCachingService", e);
+            } catch (BackgroundServiceStartNotAllowedException e) {
+                Log.e("KeyCachingService", e.toString());
             }
         }
 
@@ -164,8 +173,11 @@ public class KeyCachingService extends Service {
     public void onCreate() {
         Log.w("KeyCachingService", "onCreate()");
         super.onCreate();
-        this.pending = PendingIntent.getService(this, 0, new Intent(PASSPHRASE_EXPIRED_EVENT, null,
-                this, KeyCachingService.class), 0);
+        this.pending = PendingIntent.getService(
+                this,
+                0,
+                new Intent(PASSPHRASE_EXPIRED_EVENT, null, this, KeyCachingService.class),
+                FLAG_IMMUTABLE);
 
         if (SilencePreferences.isPasswordDisabled(this)) {
             try {

@@ -1,4 +1,5 @@
 rootProject.name = "Silence-Android"
+
 include ':com.amulyakhare.textdrawable'
 project(':com.amulyakhare.textdrawable').projectDir = new File(rootDir, 'libs/com.amulyakhare.textdrawable')
 
@@ -15,5 +16,5 @@ project(':org.whispersystems.libsignal').projectDir = new File(rootDir, 'libs/or
 include ':org.whispersystems.libsignal.util'
 project(':org.whispersystems.libsignal.util').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/android')
 
-include ':org.greenrobot.eventbus'
-project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')
+//include ':org.greenrobot.eventbus'
+//project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')

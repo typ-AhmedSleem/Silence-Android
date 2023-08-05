@@ -1,6 +1,6 @@
 package org.smssecure.smssecure.contacts.avatars;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import org.smssecure.smssecure.color.MaterialColor;
 import org.smssecure.smssecure.color.MaterialColors;

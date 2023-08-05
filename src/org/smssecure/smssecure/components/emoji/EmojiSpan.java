@@ -3,7 +3,7 @@ package org.smssecure.smssecure.components.emoji;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetricsInt;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.widget.TextView;
 
 import org.smssecure.smssecure.R;

@@ -2,7 +2,7 @@ package org.smssecure.smssecure.util;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 
 /**
  * A Loader similar to CursorLoader that doesn't require queries to go through the ContentResolver

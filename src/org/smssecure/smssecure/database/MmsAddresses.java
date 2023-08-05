@@ -1,7 +1,7 @@
 package org.smssecure.smssecure.database;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;

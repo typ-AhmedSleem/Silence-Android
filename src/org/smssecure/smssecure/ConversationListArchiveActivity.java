@@ -2,7 +2,7 @@ package org.smssecure.smssecure;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.MenuItem;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -45,7 +45,7 @@ public class ConversationListArchiveActivity extends PassphraseRequiredActionBar
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        if (item.getItemId() == R.id.home) {
+        if (item.getItemId() == androidx.appcompat.R.id.home) {
             super.onBackPressed();
             return true;
         }

@@ -18,9 +18,9 @@ package org.smssecure.smssecure.preferences.widgets;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.support.annotation.NonNull;
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.PreferenceViewHolder;
+import androidx.annotation.NonNull;
+import androidx.preference.ListPreference;
+import androidx.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -105,7 +105,7 @@ public class LEDColorListPreference extends ListPreference {
                 color = getContext().getResources().getColor(R.color.white);
                 break;
             default:
-                color = getContext().getResources().getColor(R.color.transparent);
+                color = getContext().getResources().getColor(com.doomonafireball.betterpickers.R.color.transparent);
                 break;
         }
 

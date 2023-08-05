@@ -37,10 +37,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Browser;
 import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.WindowCompat;
-import android.support.v7.app.AlertDialog;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.WindowCompat;
+import androidx.appcompat.app.AlertDialog;
+
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -63,6 +65,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.TransportOptions.OnTransportChangedListener;
 import org.smssecure.smssecure.audio.AudioSlidePlayer;
 import org.smssecure.smssecure.color.MaterialColor;
@@ -131,7 +134,6 @@ import java.util.List;
  * composing/sending a new message into that thread.
  *
  * @author Moxie Marlinspike
- *
  */
 public class ConversationActivity extends PassphraseRequiredActionBarActivity
         implements ConversationFragment.ConversationFragmentListener,
@@ -154,6 +156,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     private static final int GROUP_EDIT = 5;
     private static final int TAKE_PHOTO = 6;
     private static final int ADD_CONTACT = 7;
+    private final DynamicTheme dynamicTheme = new DynamicTheme();
+    private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
     protected ComposeText composeText;
     protected ConversationTitleView titleView;
     private MasterSecret masterSecret;
@@ -166,13 +170,11 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     private InputAwareLayout container;
     private View composePanel;
     private View composeBubble;
-
     private AttachmentTypeSelectorAdapter attachmentAdapter;
     private AttachmentManager attachmentManager;
     private BroadcastReceiver securityUpdateReceiver;
     private Stub<EmojiDrawer> emojiDrawerStub;
     private EmojiToggle emojiToggle;
-
     private Recipients recipients;
     private long threadId;
     private int distributionType;
@@ -180,10 +182,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     private boolean isSecureSmsDestination;
     private boolean archived;
     private boolean isMmsEnabled = true;
-
-    private final DynamicTheme dynamicTheme = new DynamicTheme();
-    private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
-
     private List<SubscriptionInfoCompat> activeSubscriptions;
 
     @Override
@@ -215,6 +213,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     @Override
     protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
         Log.w(TAG, "onNewIntent()");
 
         if (isFinishing()) {
@@ -396,67 +395,67 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        switch (item.getItemId()) {
-            case R.id.menu_call:
-                handleDial(getRecipients().getPrimaryRecipient());
-                return true;
-            case R.id.menu_delete_conversation:
-                handleDeleteConversation();
-                return true;
-            case R.id.menu_archive_conversation:
-                handleArchiveConversation();
-                return true;
-            case R.id.menu_add_attachment:
-                handleAddAttachment();
-                return true;
-            case R.id.menu_view_media:
-                handleViewMedia();
-                return true;
-            case R.id.menu_add_to_contacts:
-                handleAddToContacts();
-                return true;
-            case R.id.menu_start_secure_session:
-                handleStartSecureSession();
-                return true;
-            case R.id.menu_start_secure_session_dual_sim:
-                handleStartSecureSession();
-                return true;
-            case R.id.menu_abort_session:
-                handleAbortSecureSession();
-                return true;
-            case R.id.menu_abort_session_dual_sim:
-                handleAbortSecureSession();
-                return true;
-            case R.id.menu_verify_identity:
-                handleVerifyIdentity();
-                return true;
-            case R.id.menu_verify_identity_dual_sim:
-                handleVerifyIdentity();
-                return true;
-            case R.id.menu_group_recipients:
-                handleDisplayGroupRecipients();
-                return true;
-            case R.id.menu_distribution_broadcast:
-                handleDistributionBroadcastEnabled(item);
-                return true;
-            case R.id.menu_distribution_conversation:
-                handleDistributionConversationEnabled(item);
-                return true;
-            case R.id.menu_invite:
-                handleInviteLink();
-                return true;
-            case R.id.menu_mute_notifications:
-                handleMuteNotifications();
-                return true;
-            case R.id.menu_unmute_notifications:
-                handleUnmuteNotifications();
-                return true;
-            case R.id.menu_conversation_settings:
-                handleConversationSettings();
-                return true;
-            case android.R.id.home:
-                handleReturnToConversationList();
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.menu_call) {
+            handleDial(getRecipients().getPrimaryRecipient());
+            return true;
+        } else if (itemId == R.id.menu_delete_conversation) {
+            handleDeleteConversation();
+            return true;
+        } else if (itemId == R.id.menu_archive_conversation) {
+            handleArchiveConversation();
+            return true;
+        } else if (itemId == R.id.menu_add_attachment) {
+            handleAddAttachment();
+            return true;
+        } else if (itemId == R.id.menu_view_media) {
+            handleViewMedia();
+            return true;
+        } else if (itemId == R.id.menu_add_to_contacts) {
+            handleAddToContacts();
+            return true;
+        } else if (itemId == R.id.menu_start_secure_session) {
+            handleStartSecureSession();
+            return true;
+        } else if (itemId == R.id.menu_start_secure_session_dual_sim) {
+            handleStartSecureSession();
+            return true;
+        } else if (itemId == R.id.menu_abort_session) {
+            handleAbortSecureSession();
+            return true;
+        } else if (itemId == R.id.menu_abort_session_dual_sim) {
+            handleAbortSecureSession();
+            return true;
+        } else if (itemId == R.id.menu_verify_identity) {
+            handleVerifyIdentity();
+            return true;
+        } else if (itemId == R.id.menu_verify_identity_dual_sim) {
+            handleVerifyIdentity();
+            return true;
+        } else if (itemId == R.id.menu_group_recipients) {
+            handleDisplayGroupRecipients();
+            return true;
+        } else if (itemId == R.id.menu_distribution_broadcast) {
+            handleDistributionBroadcastEnabled(item);
+            return true;
+        } else if (itemId == R.id.menu_distribution_conversation) {
+            handleDistributionConversationEnabled(item);
+            return true;
+        } else if (itemId == R.id.menu_invite) {
+            handleInviteLink();
+            return true;
+        } else if (itemId == R.id.menu_mute_notifications) {
+            handleMuteNotifications();
+            return true;
+        } else if (itemId == R.id.menu_unmute_notifications) {
+            handleUnmuteNotifications();
+            return true;
+        } else if (itemId == R.id.menu_conversation_settings) {
+            handleConversationSettings();
+            return true;
+        } else if (itemId == android.R.id.home) {
+            handleReturnToConversationList();
+            return true;
         }
 
         return false;
@@ -562,6 +561,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         Permissions.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
@@ -907,7 +907,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
         isSecureSmsDestination = isSingleConversation() && SessionUtil.hasAtLeastOneSession(this, masterSecret, primaryRecipient.getNumber(), activeSubscriptions);
 
-      this.isEncryptedConversation = isSecureSmsDestination;
+        this.isEncryptedConversation = isSecureSmsDestination;
 
         sendButton.resetAvailableTransports(isMediaMessage);
         if (!isSecureSmsDestination) sendButton.disableTransport(Type.SECURE_SMS);

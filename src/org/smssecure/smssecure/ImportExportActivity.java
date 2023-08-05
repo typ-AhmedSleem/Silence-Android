@@ -1,7 +1,7 @@
 package org.smssecure.smssecure;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.MenuItem;
 
 import org.smssecure.smssecure.crypto.MasterSecret;

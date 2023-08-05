@@ -19,7 +19,7 @@ package org.smssecure.smssecure;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 
 import org.smssecure.smssecure.crypto.IdentityKeyUtil;
 import org.smssecure.smssecure.crypto.MasterSecret;

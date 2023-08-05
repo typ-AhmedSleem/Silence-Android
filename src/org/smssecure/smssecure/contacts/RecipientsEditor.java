@@ -18,7 +18,7 @@
 package org.smssecure.smssecure.contacts;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatMultiAutoCompleteTextView;
+import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
 import android.telephony.PhoneNumberUtils;
 import android.text.Annotation;
 import android.text.Editable;

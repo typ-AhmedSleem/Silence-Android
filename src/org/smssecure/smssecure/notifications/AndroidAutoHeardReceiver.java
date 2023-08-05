@@ -20,8 +20,8 @@ package org.smssecure.smssecure.notifications;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationManagerCompat;
 import android.util.Log;
 
 import org.smssecure.smssecure.crypto.MasterSecret;

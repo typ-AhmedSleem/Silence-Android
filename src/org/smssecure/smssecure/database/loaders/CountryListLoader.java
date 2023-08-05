@@ -2,7 +2,7 @@ package org.smssecure.smssecure.database.loaders;
 
 
 import android.content.Context;
-import android.support.v4.content.AsyncTaskLoader;
+import androidx.loader.content.AsyncTaskLoader;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 

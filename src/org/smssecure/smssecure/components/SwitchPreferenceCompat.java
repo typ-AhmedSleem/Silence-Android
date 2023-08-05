@@ -3,7 +3,7 @@ package org.smssecure.smssecure.components;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
-import android.support.v7.preference.CheckBoxPreference;
+import androidx.preference.CheckBoxPreference;
 import android.util.AttributeSet;
 
 import org.smssecure.smssecure.R;

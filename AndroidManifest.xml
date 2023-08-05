@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.smssecure.smssecure">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-sdk tools:overrideLibrary="com.amulyakhare.textdrawable,com.astuetz.pagerslidingtabstrip,pl.tajchert.waitingdots,android.support.v13,com.davemorrissey.labs.subscaleview,,com.klinker.android.send_message" />
 
@@ -66,9 +65,9 @@
 
         <receiver
             android:name="org.smssecure.smssecure.providers.BadgeWidgetProvider"
+            android:exported="true"
             android:icon="@drawable/icon"
-            android:label="@string/app_name"
-            android:exported="true">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -77,7 +76,8 @@
                 android:resource="@xml/badge_widget_provider" />
         </receiver>
 
-        <receiver android:name="org.smssecure.smssecure.util.dualsim.SimChangedReceiver"
+        <receiver
+            android:name="org.smssecure.smssecure.util.dualsim.SimChangedReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
@@ -296,7 +296,9 @@
             android:noHistory="true"
             android:stateNotNeeded="true" />
 
-        <activity android:name=".SmsSendtoActivity">
+        <activity
+            android:name=".SmsSendtoActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SENDTO" />
                 <action android:name="android.intent.action.VIEW" />
@@ -324,6 +326,7 @@
         <!-- this can never have launchMode singleTask or singleInstance! -->
         <activity
             android:name=".PanicResponderActivity"
+            android:exported="true"
             android:noHistory="true"> <!-- android:theme="@android:style/Theme.NoDisplay" -->
             <intent-filter>
                 <action android:name="info.guardianproject.panic.action.TRIGGER" />
@@ -336,6 +339,7 @@
         <service
             android:name=".service.ApplicationMigrationService"
             android:enabled="true" />
+
         <service
             android:name=".service.KeyCachingService"
             android:enabled="true" />
@@ -356,6 +360,7 @@
         </service>
 
         <service
+            android:exported="true"
             android:name=".service.DirectShareService"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -433,7 +438,6 @@
             </intent-filter>
         </receiver>
 
-
         <provider
             android:name=".providers.PartProvider"
             android:authorities="org.smssecure.provider.smssecure"
@@ -471,34 +475,40 @@
             android:authorities="org.smssecure.smssecure.database.recipients"
             android:exported="false" />
 
-        <receiver
-            android:name=".service.RegistrationNotifier"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="org.smssecure.smssecure.REGISTRATION_EVENT" />
-            </intent-filter>
-        </receiver>
+        <!--        <receiver-->
+        <!--            android:name=".service.RegistrationNotifier"-->
+        <!--            android:exported="false">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="org.smssecure.smssecure.REGISTRATION_EVENT" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
 
-        <receiver android:name=".notifications.LocaleChangedReceiver">
+        <receiver
+            android:name=".notifications.LocaleChangedReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".notifications.MessageNotifier$ReminderReceiver">
+        <receiver
+            android:name=".notifications.MessageNotifier$ReminderReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="org.smssecure.smssecure.MessageNotifier.REMINDER_ACTION" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".notifications.DeleteNotificationReceiver">
+        <receiver
+            android:name=".notifications.DeleteNotificationReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="org.smssecure.smssecure.DELETE_NOTIFICATION" />
             </intent-filter>
         </receiver>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="org.smssecure.smssecure.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -509,7 +519,9 @@
 
         </provider>
 
-        <receiver android:name=".service.BootReceiver">
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 <data android:scheme="package" />

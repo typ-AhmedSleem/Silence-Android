@@ -3,10 +3,10 @@ package org.smssecure.smssecure.preferences;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.preference.EditTextPreference;
-import android.support.v7.preference.Preference;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.EditTextPreference;
+import androidx.preference.Preference;
 import android.util.Log;
 
 import org.smssecure.smssecure.ApplicationPreferencesActivity;

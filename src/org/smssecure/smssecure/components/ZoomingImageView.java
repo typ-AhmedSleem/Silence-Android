@@ -3,7 +3,7 @@ package org.smssecure.smssecure.components;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Pair;

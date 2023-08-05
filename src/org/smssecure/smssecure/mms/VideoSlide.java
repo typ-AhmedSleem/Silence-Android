@@ -19,8 +19,8 @@ package org.smssecure.smssecure.mms;
 import android.content.Context;
 import android.content.res.Resources.Theme;
 import android.net.Uri;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.attachments.Attachment;

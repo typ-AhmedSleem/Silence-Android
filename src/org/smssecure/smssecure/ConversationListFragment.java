@@ -16,6 +16,7 @@
  */
 package org.smssecure.smssecure;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -31,18 +32,18 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ActionMode;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ActionMode;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -301,6 +302,7 @@ public class ConversationListFragment extends Fragment
         alert.show();
     }
 
+    @SuppressLint("StringFormatMatches")
     private void handleSelectAllThreads() {
         getListAdapter().selectAllThreads();
         actionMode.setSubtitle(getString(R.string.conversation_fragment_cab__batch_selection_amount,
@@ -434,6 +436,7 @@ public class ConversationListFragment extends Fragment
         getListAdapter().changeCursor(null);
     }
 
+    @SuppressLint("StringFormatMatches")
     @Override
     public void onItemClick(ConversationListItem item) {
         if (actionMode == null) {
@@ -499,19 +502,19 @@ public class ConversationListFragment extends Fragment
 
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_select_all:
-                handleSelectAllThreads();
-                return true;
-            case R.id.menu_delete_selected:
-                handleDeleteAllSelected();
-                return true;
-            case R.id.menu_archive_selected:
-                handleArchiveAllSelected();
-                return true;
-            case R.id.menu_send_drafts:
-                handleSendDrafts();
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.menu_select_all) {
+            handleSelectAllThreads();
+            return true;
+        } else if (itemId == R.id.menu_delete_selected) {
+            handleDeleteAllSelected();
+            return true;
+        } else if (itemId == R.id.menu_archive_selected) {
+            handleArchiveAllSelected();
+            return true;
+        } else if (itemId == R.id.menu_send_drafts) {
+            handleSendDrafts();
+            return true;
         }
 
         return false;

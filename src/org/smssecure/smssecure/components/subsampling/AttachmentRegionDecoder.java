@@ -9,7 +9,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 
 import com.davemorrissey.labs.subscaleview.decoder.ImageRegionDecoder;

@@ -2,9 +2,9 @@ package org.smssecure.smssecure.components.emoji;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatEditText;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 
@@ -21,7 +21,7 @@ public class EmojiEditText extends AppCompatEditText {
     }
 
     public EmojiEditText(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.editTextStyle);
+        this(context, attrs, androidx.appcompat.R.attr.editTextStyle);
     }
 
     public EmojiEditText(Context context, AttributeSet attrs, int defStyleAttr) {

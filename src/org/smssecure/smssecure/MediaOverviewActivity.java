@@ -24,11 +24,11 @@ import android.database.Cursor;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -203,13 +203,13 @@ public class MediaOverviewActivity extends PassphraseRequiredActionBarActivity i
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        switch (item.getItemId()) {
-            case R.id.save:
-                saveToDisk();
-                return true;
-            case android.R.id.home:
-                finish();
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.save) {
+            saveToDisk();
+            return true;
+        } else if (itemId == android.R.id.home) {
+            finish();
+            return true;
         }
 
         return false;

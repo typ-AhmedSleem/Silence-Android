@@ -3,7 +3,7 @@ package org.smssecure.smssecure.notifications;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.service.KeyCachingService;

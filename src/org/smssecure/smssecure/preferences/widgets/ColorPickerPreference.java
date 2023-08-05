@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.TypedArrayUtils;
-import android.support.v7.preference.DialogPreference;
-import android.support.v7.preference.PreferenceViewHolder;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.TypedArrayUtils;
+import androidx.preference.DialogPreference;
+import androidx.preference.PreferenceViewHolder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -38,7 +38,7 @@ public class ColorPickerPreference extends DialogPreference {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ColorPickerPreference, defStyleAttr, 0);
 
-        int colorsId = a.getResourceId(R.styleable.ColorPickerPreference_colors, R.array.color_picker_default_colors);
+        int colorsId = a.getResourceId(R.styleable.ColorPickerPreference_colors, com.takisoft.colorpicker.R.array.color_picker_default_colors);
 
         if (colorsId != 0) {
             colors = context.getResources().getIntArray(colorsId);
@@ -61,7 +61,7 @@ public class ColorPickerPreference extends DialogPreference {
 
     @SuppressLint("RestrictedApi")
     public ColorPickerPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, TypedArrayUtils.getAttr(context, R.attr.dialogPreferenceStyle,
+        this(context, attrs, TypedArrayUtils.getAttr(context, androidx.preference.R.attr.dialogPreferenceStyle,
                 android.R.attr.dialogPreferenceStyle));
     }
 

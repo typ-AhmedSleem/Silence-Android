@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.service.chooser.ChooserTarget;
 import android.service.chooser.ChooserTargetService;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import org.smssecure.smssecure.ShareActivity;
 import org.smssecure.smssecure.crypto.MasterCipher;

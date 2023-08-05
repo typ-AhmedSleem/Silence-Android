@@ -1,7 +1,7 @@
 package org.smssecure.smssecure.color;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.TypedValue;
 
 import org.smssecure.smssecure.R;

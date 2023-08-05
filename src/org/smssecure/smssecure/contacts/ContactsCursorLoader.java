@@ -19,7 +19,7 @@ package org.smssecure.smssecure.contacts;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MergeCursor;
-import android.support.v4.content.CursorLoader;
+import androidx.loader.content.CursorLoader;
 import android.text.TextUtils;
 
 import org.smssecure.smssecure.database.DatabaseFactory;

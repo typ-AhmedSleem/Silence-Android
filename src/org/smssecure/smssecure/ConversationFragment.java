@@ -24,16 +24,16 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ActionMode;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.OnScrollListener;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ActionMode;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
 import android.text.ClipboardManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -634,31 +634,31 @@ public class ConversationFragment extends Fragment
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.menu_context_copy:
-                    handleCopyMessage(getListAdapter().getSelectedItems());
-                    actionMode.finish();
-                    return true;
-                case R.id.menu_context_delete_message:
-                    handleDeleteMessages(getListAdapter().getSelectedItems());
-                    actionMode.finish();
-                    return true;
-                case R.id.menu_context_details:
-                    handleDisplayDetails(getSelectedMessageRecord());
-                    actionMode.finish();
-                    return true;
-                case R.id.menu_context_forward:
-                    handleForwardMessage(getSelectedMessageRecord());
-                    actionMode.finish();
-                    return true;
-                case R.id.menu_context_resend:
-                    handleResendMessage(getSelectedMessageRecord());
-                    actionMode.finish();
-                    return true;
-                case R.id.menu_context_save_attachment:
-                    handleSaveAttachment((MediaMmsMessageRecord) getSelectedMessageRecord());
-                    actionMode.finish();
-                    return true;
+            int itemId = item.getItemId();
+            if (itemId == R.id.menu_context_copy) {
+                handleCopyMessage(getListAdapter().getSelectedItems());
+                actionMode.finish();
+                return true;
+            } else if (itemId == R.id.menu_context_delete_message) {
+                handleDeleteMessages(getListAdapter().getSelectedItems());
+                actionMode.finish();
+                return true;
+            } else if (itemId == R.id.menu_context_details) {
+                handleDisplayDetails(getSelectedMessageRecord());
+                actionMode.finish();
+                return true;
+            } else if (itemId == R.id.menu_context_forward) {
+                handleForwardMessage(getSelectedMessageRecord());
+                actionMode.finish();
+                return true;
+            } else if (itemId == R.id.menu_context_resend) {
+                handleResendMessage(getSelectedMessageRecord());
+                actionMode.finish();
+                return true;
+            } else if (itemId == R.id.menu_context_save_attachment) {
+                handleSaveAttachment((MediaMmsMessageRecord) getSelectedMessageRecord());
+                actionMode.finish();
+                return true;
             }
 
             return false;
