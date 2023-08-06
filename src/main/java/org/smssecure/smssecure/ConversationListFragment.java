@@ -22,11 +22,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -136,12 +139,38 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     }
 
     @Override
+    public void onViewCreated (@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final int sms = DatabaseFactory.getSmsDatabase(getContext()).getMessageCountForThread(2);
+        final Cursor cursor = DatabaseFactory.getThreadDatabase(getContext()).getFilterThreads("Dad");
+        Log.i(TAG, String.format("onViewCreated: SmsCount(%d) | ThreadsCount(%d)", sms, cursor.getCount()));
+    }
+
+    public Cursor searchPostsByThreadName (String query) {
+        SQLiteDatabase db = null;
+        String[] columns = {"COLUMN_ID", "COLUMN_THREAD_ID", "COLUMN_CONTENT", "COLUMN_TIMESTAMP", "COLUMN_PINNED", "COLUMN_THREAD_NAME"};
+        String selection = "COLUMN_THREAD_NAME" + " LIKE ?";
+        String[] selectionArgs = new String[]{"%" + query + "%"};
+        String orderBy = "COLUMN_THREAD_ID" + ", " + "COLUMN_PINNED" + " DESC, " + "COLUMN_TIMESTAMP" + " DESC";
+        return db.query("TN", new String[]{"*"}, selection, selectionArgs, null, null, orderBy);
+    }
+
+    @Override
     public void onActivityCreated (Bundle bundle) {
         super.onActivityCreated(bundle);
 
         setHasOptionsMenu(true);
         fab.setOnClickListener(v -> startActivity(new Intent(getActivity(), NewConversationActivity.class)));
         initializeListAdapter();
+    }
+
+    public void unselectAllThreads () {
+        try {
+            getListAdapter().unselectAllThreads();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -545,17 +574,19 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     private class ArchiveListenerCallback extends ItemTouchHelper.SimpleCallback {
 
         public ArchiveListenerCallback () {
-            super(0, ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT );
+            super(0, ItemTouchHelper.RIGHT);
         }
 
         @Override
         public boolean onMove (
-                RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                @NonNull RecyclerView recyclerView,
+                @NonNull RecyclerView.ViewHolder viewHolder,
+                @NonNull RecyclerView.ViewHolder target) {
             return false;
         }
 
         @Override
-        public int getSwipeDirs (RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        public int getSwipeDirs (@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
             if (viewHolder.itemView instanceof ConversationListItemAction) {
                 return 0;
             }
@@ -639,8 +670,8 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                 View itemView = viewHolder.itemView;
                 final long threadId = (long) viewHolder.itemView.getTag();
                 Paint p = new Paint();
+                p.setColor(getResources().getColor(R.color.green_500));
 
-                Log.i(TAG, "onChildDraw: dx= " + dX + " | dy= " + dY);
                 if (dX > 0) {
                     // Archive/Unarchive
                     final Bitmap icon;
@@ -660,18 +691,18 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                     // Pin/Unpin
                     final Bitmap icon;
                     if (DatabaseFactory.getThreadDatabase(getContext()).isThreadPinned(threadId)) {
-                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_archive_white_36dp);
+                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_arrow_forward_white_24dp);
                     } else {
-                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_archive_white_36dp);
+                        icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launch_white_24dp);
                     }
                     p.setColor(getResources().getColor(R.color.blue_500));
                     c.drawRect((float) itemView.getLeft(), (float) itemView.getTop(), dX, (float) itemView.getBottom(), p);
-                    assert icon != null : "Icon is null for pin swipe";
                     c.drawBitmap(
                             icon,
-                            (float) itemView.getLeft() + getResources().getDimension(R.dimen.conversation_list_fragment_archive_padding),
+                            (float) itemView.getWidth() - 3 * getResources().getDimension(R.dimen.conversation_list_fragment_archive_padding),
                             (float) itemView.getTop() + ((float) itemView.getBottom() - (float) itemView.getTop() - icon.getHeight()) / 2,
                             p);
+                    Log.i(TAG, "onChildDraw: direction= Left | dx= " + dX + " | dy= " + dY);
                 }
 
                 float alpha = 1.0f - Math.abs(dX) / (float) viewHolder.itemView.getWidth();

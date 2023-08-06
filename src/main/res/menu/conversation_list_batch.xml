@@ -6,7 +6,7 @@
         android:id="@+id/menu_toggle_pin_selected"
         android:icon="@drawable/ic_pin"
         android:title="@string/conversation_list_batch__menu_toggle_pin"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/menu_delete_selected"

@@ -58,9 +58,12 @@ public class ConversationListLoader extends AbstractCursorLoader {
                             ThreadDatabase.LAST_SEEN
                     }, 1);
 
-            switchToArchiveCursor.addRow(new Object[]{-1L, System.currentTimeMillis(), archivedCount,
-                                                      "-1", null, 1, ThreadDatabase.DistributionTypes.ARCHIVE,
-                                                      0, null, 0, -1, 0});
+            switchToArchiveCursor.addRow(new Object[]{
+                    -1L,
+                    System.currentTimeMillis(), archivedCount,
+                    "-1", null, 1,
+                    ThreadDatabase.DistributionTypes.ARCHIVE,
+                    0, null, 0, -1, 0});
 
             cursorList.add(switchToArchiveCursor);
         }

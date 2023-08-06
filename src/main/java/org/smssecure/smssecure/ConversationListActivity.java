@@ -16,6 +16,7 @@
  */
 package org.smssecure.smssecure;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.ContentObserver;
 import android.os.AsyncTask;
@@ -258,6 +259,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         startActivity(intent);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private void handleMarkAllRead() {
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -287,5 +289,14 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
         getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI,
                 true, observer);
+    }
+
+    @Override
+    public void onBackPressed () {
+        if (fragment != null) {
+            if (fragment.getListAdapter().getBatchSelections().size() > 0) {
+                fragment.unselectAllThreads();
+            }
+        } else super.onBackPressed();
     }
 }

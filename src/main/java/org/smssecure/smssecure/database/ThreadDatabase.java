@@ -22,9 +22,11 @@ import android.database.Cursor;
 import android.database.MergeCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 import androidx.annotation.Nullable;
+import androidx.core.database.CursorKt;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -92,6 +94,8 @@ public class ThreadDatabase extends Database {
             PINNED,
             STATUS,
             LAST_SEEN);
+
+    private static final String ORDER_BY_CLAUSE = String.format("%s DESC, %s DESC", PINNED, DATE);
 
     public ThreadDatabase (Context context, SQLiteOpenHelper databaseHelper) {
         super(context, databaseHelper);
@@ -306,6 +310,9 @@ public class ThreadDatabase extends Database {
         notifyConversationListListeners();
     }
 
+    /**
+     * RETURNS WRONG RESULTS SOMETIMES
+     */
     public Cursor getFilteredConversationList (List<String> query) {
         if (query == null || query.size() == 0) {
             return null;
@@ -331,17 +338,18 @@ public class ThreadDatabase extends Database {
                 selectionArgs[i++] = String.valueOf(id);
             }
 
-            cursors.add(db.query(TABLE_NAME, null, selection.toString(), selectionArgs, null, null, DATE + " DESC"));
+            cursors.add(db.query(TABLE_NAME, null, selection.toString(), selectionArgs, null, null, ORDER_BY_CLAUSE));
         }
 
         Cursor cursor = cursors.size() > 1 ? new MergeCursor(cursors.toArray(new Cursor[cursors.size()])) : cursors.get(0);
+
         setNotifyConverationListListeners(cursor);
         return cursor;
     }
 
     public Cursor getConversationList () {
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NAME, null, ARCHIVED + " = ?", new String[]{"0"}, null, null, DATE + " DESC");
+        Cursor cursor = db.query(TABLE_NAME, null, ARCHIVED + " = ?", new String[]{"0"}, null, null, ORDER_BY_CLAUSE);
 
         setNotifyConverationListListeners(cursor);
 
@@ -405,14 +413,29 @@ public class ThreadDatabase extends Database {
                 "SELECT " + PINNED + " FROM " + TABLE_NAME + " WHERE " + ID + " = " + threadId,
                 null)) {
             if (cursor != null && cursor.moveToFirst()) {
-                Log.i(TAG, String.format("isThreadPinned: Columns count is: %d", cursor.getColumnCount()));
                 return cursor.getInt(0) != 0;
             }
         }
         return false;
     }
 
-    public Cursor loadAllConversations() {
+    public Cursor loadAllConversations () {
+        throw new NotImplementedError();
+    }
+
+    public Cursor getFilterThreads (String query) {
+        if (query == null || query.trim().length() == 0) {
+            return null;
+        }
+
+        final SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        final Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + "  ORDER BY " + PINNED + " DESC, " + DATE + " DESC;", null);
+
+        setNotifyConverationListListeners(cursor);
+        return cursor;
+    }
+
+    public Cursor loadThreadMessages (long threadId) {
         throw new NotImplementedError();
     }
 

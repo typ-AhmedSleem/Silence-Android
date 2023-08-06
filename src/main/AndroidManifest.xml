@@ -62,6 +62,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/Silence.LightTheme"
+        android:enableOnBackInvokedCallback="true"
         tools:replace="android:allowBackup">
 
         <receiver
