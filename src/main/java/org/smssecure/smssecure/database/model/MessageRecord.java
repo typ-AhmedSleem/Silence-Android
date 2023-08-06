@@ -188,8 +188,7 @@ public abstract class MessageRecord extends DisplayRecord {
     }
 
     public boolean equals(Object other) {
-        return other != null &&
-                other instanceof MessageRecord &&
+        return other instanceof MessageRecord &&
                 ((MessageRecord) other).getId() == getId() &&
                 ((MessageRecord) other).isMms() == isMms();
     }

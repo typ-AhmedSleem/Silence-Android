@@ -23,9 +23,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+
 import android.text.TextUtils;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
@@ -82,7 +84,6 @@ import java.util.regex.Pattern;
  * thread.  Used by ComposeMessageActivity's ListActivity via a ConversationAdapter.
  *
  * @author Moxie Marlinspike
- *
  */
 
 public class ConversationItem extends LinearLayout
@@ -92,7 +93,7 @@ public class ConversationItem extends LinearLayout
     private static final Pattern GEO_URI_PATTERN = Pattern.compile("geo:[-0-9.]+,[-0-9.]+[^ \t\n\"':]*", Pattern.CASE_INSENSITIVE);
     private static final Linkify.TransformFilter WEBURL_TRANSFORM = new Linkify.TransformFilter() {
         @Override
-        public String transformUrl(Matcher matcher, String url) {
+        public String transformUrl (Matcher matcher, String url) {
             if (url == null) {
                 return null;
             }
@@ -129,22 +130,22 @@ public class ConversationItem extends LinearLayout
     private @NonNull Stub<AudioView> audioViewStub;
     private int defaultBubbleColor;
 
-    public ConversationItem(Context context) {
+    public ConversationItem (Context context) {
         this(context, null);
     }
 
-    public ConversationItem(Context context, AttributeSet attrs) {
+    public ConversationItem (Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
     }
 
     @Override
-    public void setOnClickListener(OnClickListener l) {
+    public void setOnClickListener (OnClickListener l) {
         super.setOnClickListener(new ClickListener(l));
     }
 
     @Override
-    protected void onFinishInflate() {
+    protected void onFinishInflate () {
         super.onFinishInflate();
 
         initializeAttributes();
@@ -169,11 +170,12 @@ public class ConversationItem extends LinearLayout
     }
 
     @Override
-    public void bind(@NonNull MasterSecret masterSecret,
-                     @NonNull MessageRecord messageRecord,
-                     @NonNull Locale locale,
-                     @NonNull Set<MessageRecord> batchSelected,
-                     @NonNull Recipients conversationRecipients) {
+    public void bind (
+            @NonNull MasterSecret masterSecret,
+            @NonNull MessageRecord messageRecord,
+            @NonNull Locale locale,
+            @NonNull Set<MessageRecord> batchSelected,
+            @NonNull Recipients conversationRecipients) {
         this.masterSecret = masterSecret;
         this.messageRecord = messageRecord;
         this.locale = locale;
@@ -197,10 +199,10 @@ public class ConversationItem extends LinearLayout
         setSimInfo(messageRecord);
     }
 
-    private void initializeAttributes() {
+    private void initializeAttributes () {
         final int[] attributes = new int[]{R.attr.conversation_item_bubble_background,
-                R.attr.conversation_list_item_background_selected,
-                R.attr.conversation_item_background};
+                                           R.attr.conversation_list_item_background_selected,
+                                           R.attr.conversation_item_background};
         final TypedArray attrs = context.obtainStyledAttributes(attributes);
 
         defaultBubbleColor = attrs.getColor(0, Color.WHITE);
@@ -208,28 +210,30 @@ public class ConversationItem extends LinearLayout
     }
 
     @Override
-    public void unbind() {
+    public void unbind () {
         if (recipient != null) {
             recipient.removeListener(this);
         }
     }
 
-    public MessageRecord getMessageRecord() {
+    public MessageRecord getMessageRecord () {
         return messageRecord;
     }
 
     /// MessageRecord Attribute Parsers
 
-    private void setBubbleState(MessageRecord messageRecord, Recipient recipient) {
+    private void setBubbleState (MessageRecord messageRecord, Recipient recipient) {
         if (messageRecord.isOutgoing()) {
             bodyBubble.getBackground().setColorFilter(defaultBubbleColor, PorterDuff.Mode.MULTIPLY);
-            if (mediaThumbnailStub.resolved())
+            if (mediaThumbnailStub.resolved()) {
                 mediaThumbnailStub.get().setBackgroundColorHint(defaultBubbleColor);
+            }
         } else {
             int color = recipient.getColor().toConversationColor(context);
             bodyBubble.getBackground().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
-            if (mediaThumbnailStub.resolved())
+            if (mediaThumbnailStub.resolved()) {
                 mediaThumbnailStub.get().setBackgroundColorHint(color);
+            }
         }
 
         if (audioViewStub.resolved()) {
@@ -237,7 +241,7 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void setAudioViewTint(MessageRecord messageRecord, Recipients recipients) {
+    private void setAudioViewTint (MessageRecord messageRecord, Recipients recipients) {
         if (messageRecord.isOutgoing()) {
             if (DynamicTheme.LIGHT.equals(SilencePreferences.getTheme(context))) {
                 audioViewStub.get().setTint(recipients.getColor().toConversationColor(context), defaultBubbleColor);
@@ -249,7 +253,7 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void setInteractionState(MessageRecord messageRecord) {
+    private void setInteractionState (MessageRecord messageRecord) {
         setSelected(batchSelected.contains(messageRecord));
 
         if (mediaThumbnailStub.resolved()) {
@@ -265,19 +269,19 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private boolean isCaptionlessMms(MessageRecord messageRecord) {
+    private boolean isCaptionlessMms (MessageRecord messageRecord) {
         return TextUtils.isEmpty(messageRecord.getDisplayBody()) && messageRecord.isMms();
     }
 
-    private boolean hasAudio(MessageRecord messageRecord) {
+    private boolean hasAudio (MessageRecord messageRecord) {
         return messageRecord.isMms() && ((MmsMessageRecord) messageRecord).getSlideDeck().getAudioSlide() != null;
     }
 
-    private boolean hasThumbnail(MessageRecord messageRecord) {
+    private boolean hasThumbnail (MessageRecord messageRecord) {
         return messageRecord.isMms() && ((MmsMessageRecord) messageRecord).getSlideDeck().getThumbnailSlide() != null;
     }
 
-    private void setBodyText(MessageRecord messageRecord) {
+    private void setBodyText (MessageRecord messageRecord) {
         bodyText.setClickable(false);
         bodyText.setFocusable(false);
 
@@ -290,7 +294,7 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void linkifyBodyText() {
+    private void linkifyBodyText () {
         if (batchSelected.isEmpty()) {
             Linkify.addLinks(bodyText, XMPP_PATTERN, "xmpp:");
             Linkify.addLinks(bodyText, GEO_URI_PATTERN, "geo:");
@@ -308,7 +312,7 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void setMediaAttributes(MessageRecord messageRecord) {
+    private void setMediaAttributes (MessageRecord messageRecord) {
         boolean showControls = !messageRecord.isFailed() && (!messageRecord.isOutgoing() || messageRecord.isPending());
 
         if (hasAudio(messageRecord)) {
@@ -326,7 +330,8 @@ public class ConversationItem extends LinearLayout
             if (audioViewStub.resolved()) audioViewStub.get().setVisibility(View.GONE);
 
             //noinspection ConstantConditions
-            mediaThumbnailStub.get().setImageResource(masterSecret,
+            mediaThumbnailStub.get().setImageResource(
+                    masterSecret,
                     ((MmsMessageRecord) messageRecord).getSlideDeck().getThumbnailSlide(),
                     showControls);
             mediaThumbnailStub.get().setThumbnailClickListener(new ThumbnailClickListener());
@@ -342,13 +347,13 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void setContactPhoto(Recipient recipient) {
+    private void setContactPhoto (Recipient recipient) {
         if (!messageRecord.isOutgoing()) {
             setContactPhotoForRecipient(recipient);
         }
     }
 
-    private void setStatusIcons(MessageRecord messageRecord) {
+    private void setStatusIcons (MessageRecord messageRecord) {
         indicatorText.setVisibility(View.GONE);
 
         secureImage.setVisibility(messageRecord.isSecure() ? View.VISIBLE : View.GONE);
@@ -360,14 +365,19 @@ public class ConversationItem extends LinearLayout
         } else {
             alertView.setNone();
 
-            if (!messageRecord.isOutgoing()) deliveryStatusIndicator.setNone();
-            else if (messageRecord.isPending()) deliveryStatusIndicator.setPending();
-            else if (messageRecord.isDelivered()) deliveryStatusIndicator.setDelivered();
-            else deliveryStatusIndicator.setSent();
+            if (!messageRecord.isOutgoing()) {
+                deliveryStatusIndicator.setNone();
+            } else if (messageRecord.isPending()) {
+                deliveryStatusIndicator.setPending();
+            } else if (messageRecord.isDelivered()) {
+                deliveryStatusIndicator.setDelivered();
+            } else {
+                deliveryStatusIndicator.setSent();
+            }
         }
     }
 
-    private void setSimInfo(MessageRecord messageRecord) {
+    private void setSimInfo (MessageRecord messageRecord) {
         SubscriptionManagerCompat subscriptionManager = SubscriptionManagerCompat.from(context);
 
         if (subscriptionManager.getActiveSubscriptionInfoList().size() < 2) {
@@ -384,11 +394,11 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    public void hideClickForDetails() {
+    public void hideClickForDetails () {
         indicatorText.setVisibility(View.GONE);
     }
 
-    private void setFailedStatusIcons() {
+    private void setFailedStatusIcons () {
         alertView.setFailed();
         deliveryStatusIndicator.setNone();
         dateText.setText(R.string.ConversationItem_error_not_delivered);
@@ -399,7 +409,7 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private void setMinimumWidth() {
+    private void setMinimumWidth () {
         if (indicatorText.getVisibility() == View.VISIBLE && indicatorText.getText() != null) {
             final float density = getResources().getDisplayMetrics().density;
             bodyBubble.setMinimumWidth(indicatorText.getText().length() * (int) (6.5 * density) + (int) (22.0 * density));
@@ -408,19 +418,19 @@ public class ConversationItem extends LinearLayout
         }
     }
 
-    private boolean shouldInterceptClicks(MessageRecord messageRecord) {
+    private boolean shouldInterceptClicks (MessageRecord messageRecord) {
         return batchSelected.isEmpty() &&
                 ((messageRecord.isFailed() && !messageRecord.isMmsNotification()) ||
                         shouldInterceptKeyExchangeMessage(messageRecord));
     }
 
-    private boolean shouldInterceptKeyExchangeMessage(MessageRecord keyExchangeMessage) {
+    private boolean shouldInterceptKeyExchangeMessage (MessageRecord keyExchangeMessage) {
         return keyExchangeMessage.isKeyExchange() &&
                 !keyExchangeMessage.isProcessedKeyExchange() &&
                 !keyExchangeMessage.isOutgoing();
     }
 
-    private void setGroupMessageStatus(MessageRecord messageRecord, Recipient recipient) {
+    private void setGroupMessageStatus (MessageRecord messageRecord, Recipient recipient) {
         if (groupThread && !messageRecord.isOutgoing()) {
             this.groupStatusText.setText(recipient.toShortString());
             this.groupStatusText.setVisibility(View.VISIBLE);
@@ -431,7 +441,7 @@ public class ConversationItem extends LinearLayout
 
     /// Helper Methods
 
-    private void checkForAutoInitiate(MessageRecord messageRecord) {
+    private void checkForAutoInitiate (MessageRecord messageRecord) {
         if (!messageRecord.isOutgoing() &&
                 messageRecord.getRecipients().isSingleRecipient() &&
                 !messageRecord.isSecure()) {
@@ -443,9 +453,10 @@ public class ConversationItem extends LinearLayout
             long threadId = messageRecord.getThreadId();
 
 
-            if (!groupThread &&
-                    !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber()) &&
-                    AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId)) {
+            if (!groupThread
+                    && !TelephonyUtil.isMyPhoneNumber(context, recipient.getNumber())
+                    && AutoInitiate.isValidAutoInitiateSituation(context, masterSecret, recipient, body, threadId)) {
+
                 AutoInitiate.exemptThread(context, threadId);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -454,18 +465,13 @@ public class ConversationItem extends LinearLayout
                 builder.setIconAttribute(R.attr.dialog_info_icon);
                 builder.setCancelable(true);
                 builder.setNegativeButton(R.string.no, null);
-                builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        KeyExchangeInitiator.initiate(context, masterSecret, recipients, true, messageRecord.getSubscriptionId());
-                    }
-                });
+                builder.setPositiveButton(R.string.yes, (dialog, which) -> KeyExchangeInitiator.initiate(context, masterSecret, recipients, true, messageRecord.getSubscriptionId()));
                 builder.show();
             }
         }
     }
 
-    private void setContactPhotoForRecipient(final Recipient recipient) {
+    private void setContactPhotoForRecipient (final Recipient recipient) {
         if (contactPhoto == null) return;
 
         contactPhoto.setAvatar(recipient, true);
@@ -474,7 +480,7 @@ public class ConversationItem extends LinearLayout
 
     /// Event handlers
 
-    private void handleApproveIdentity() {
+    private void handleApproveIdentity () {
         List<IdentityKeyMismatch> mismatches = messageRecord.getIdentityKeyMismatches();
 
         if (mismatches.size() != 1) {
@@ -484,29 +490,26 @@ public class ConversationItem extends LinearLayout
         new ConfirmIdentityDialog(context, masterSecret, messageRecord, mismatches.get(0)).show();
     }
 
-    private void handleLegacyKeyExchangeClicked() {
+    private void handleLegacyKeyExchangeClicked () {
         KeyExchangeInitiator.initiate(context, masterSecret, RecipientFactory.getRecipientsFor(context, recipient, false), false, messageRecord.getSubscriptionId());
         SmsDatabase smsDatabase = DatabaseFactory.getSmsDatabase(context);
         smsDatabase.markAsProcessedKeyExchange(messageRecord.getId());
     }
 
     @Override
-    public void onModified(final Recipient recipient) {
-        Util.runOnMain(new Runnable() {
-            @Override
-            public void run() {
-                setBubbleState(messageRecord, recipient);
-                setContactPhoto(recipient);
-                setGroupMessageStatus(messageRecord, recipient);
-            }
+    public void onModified (final Recipient recipient) {
+        Util.runOnMain(() -> {
+            setBubbleState(messageRecord, recipient);
+            setContactPhoto(recipient);
+            setGroupMessageStatus(messageRecord, recipient);
         });
     }
 
     @Override
-    public void onModified(final Recipients recipients) {
+    public void onModified (final Recipients recipients) {
         Util.runOnMain(new Runnable() {
             @Override
-            public void run() {
+            public void run () {
                 setAudioViewTint(messageRecord, recipients);
             }
         });
@@ -514,14 +517,15 @@ public class ConversationItem extends LinearLayout
 
     private class AttachmentDownloadClickListener implements SlideClickListener {
         @Override
-        public void onClick(View v, final Slide slide) {
+        public void onClick (View v, final Slide slide) {
             if (messageRecord.isMmsNotification()) {
                 ApplicationContext.getInstance(context)
-                        .getJobManager()
-                        .add(new MmsDownloadJob(context, messageRecord.getId(),
-                                messageRecord.getThreadId(), false));
+                                  .getJobManager()
+                                  .add(new MmsDownloadJob(context, messageRecord.getId(),
+                                                          messageRecord.getThreadId(), false));
             } else {
-                DatabaseFactory.getAttachmentDatabase(context).setTransferState(messageRecord.getId(),
+                DatabaseFactory.getAttachmentDatabase(context).setTransferState(
+                        messageRecord.getId(),
                         slide.asAttachment(),
                         AttachmentDatabase.TRANSFER_PROGRESS_STARTED);
             }
@@ -529,7 +533,7 @@ public class ConversationItem extends LinearLayout
     }
 
     private class ThumbnailClickListener implements SlideClickListener {
-        private void fireIntent(Slide slide) {
+        private void fireIntent (Slide slide) {
             Log.w(TAG, "Clicked: " + slide.getUri() + " , " + slide.getContentType());
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -542,15 +546,16 @@ public class ConversationItem extends LinearLayout
             }
         }
 
-        public void onClick(final View v, final Slide slide) {
+        public void onClick (final View v, final Slide slide) {
             if (shouldInterceptClicks(messageRecord) || !batchSelected.isEmpty()) {
                 performClick();
             } else if (MediaPreviewActivity.isContentTypeSupported(slide.getContentType()) && slide.getUri() != null) {
                 Intent intent = new Intent(context, MediaPreviewActivity.class);
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 intent.setDataAndType(slide.getUri(), slide.getContentType());
-                if (!messageRecord.isOutgoing())
+                if (!messageRecord.isOutgoing()) {
                     intent.putExtra(MediaPreviewActivity.RECIPIENT_EXTRA, recipient.getRecipientId());
+                }
                 intent.putExtra(MediaPreviewActivity.DATE_EXTRA, messageRecord.getTimestamp());
                 intent.putExtra(MediaPreviewActivity.SIZE_EXTRA, slide.asAttachment().getSize());
                 intent.putExtra(MediaPreviewActivity.THREAD_ID_EXTRA, messageRecord.getThreadId());
@@ -563,7 +568,7 @@ public class ConversationItem extends LinearLayout
                 builder.setCancelable(true);
                 builder.setMessage(R.string.ConversationItem_this_media_has_been_stored_in_an_encrypted_database_external_viewer_warning);
                 builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick (DialogInterface dialog, int which) {
                         fireIntent(slide);
                     }
                 });
@@ -576,13 +581,13 @@ public class ConversationItem extends LinearLayout
     private class PassthroughClickListener implements View.OnLongClickListener, View.OnClickListener {
 
         @Override
-        public boolean onLongClick(View v) {
+        public boolean onLongClick (View v) {
             performLongClick();
             return true;
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick (View v) {
             performClick();
         }
     }
@@ -590,11 +595,11 @@ public class ConversationItem extends LinearLayout
     private class ClickListener implements View.OnClickListener {
         private final OnClickListener parent;
 
-        public ClickListener(@Nullable OnClickListener parent) {
+        public ClickListener (@Nullable OnClickListener parent) {
             this.parent = parent;
         }
 
-        public void onClick(View v) {
+        public void onClick (View v) {
             if (!shouldInterceptClicks(messageRecord) && parent != null) {
                 parent.onClick(v);
             } else if (messageRecord.isFailed()) {

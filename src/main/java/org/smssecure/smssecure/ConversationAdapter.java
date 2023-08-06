@@ -18,10 +18,12 @@ package org.smssecure.smssecure;
 
 import android.content.Context;
 import android.database.Cursor;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +66,6 @@ import java.util.Set;
  * thread in a ListActivity.
  *
  * @author Moxie Marlinspike
- *
  */
 public class ConversationAdapter<V extends View & BindableConversationItem>
         extends CursorRecyclerViewAdapter<ConversationAdapter.ViewHolder>
@@ -94,7 +95,7 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
 
     @SuppressWarnings("ConstantConditions")
     @VisibleForTesting
-    ConversationAdapter(Context context, Cursor cursor) {
+    ConversationAdapter (Context context, Cursor cursor) {
         super(context, cursor);
         try {
             this.masterSecret = null;
@@ -110,12 +111,13 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         }
     }
 
-    public ConversationAdapter(@NonNull Context context,
-                               @NonNull MasterSecret masterSecret,
-                               @NonNull Locale locale,
-                               @Nullable ItemClickListener clickListener,
-                               @Nullable Cursor cursor,
-                               @NonNull Recipients recipients) {
+    public ConversationAdapter (
+            @NonNull Context context,
+            @NonNull MasterSecret masterSecret,
+            @NonNull Locale locale,
+            @Nullable ItemClickListener clickListener,
+            @Nullable Cursor cursor,
+            @NonNull Recipients recipients) {
         super(context, cursor);
         try {
             this.masterSecret = masterSecret;
@@ -134,13 +136,13 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     }
 
     @Override
-    public void changeCursor(Cursor cursor) {
+    public void changeCursor (Cursor cursor) {
         messageRecordCache.clear();
         super.changeCursor(cursor);
     }
 
     @Override
-    public void onBindItemViewHolder(ViewHolder viewHolder, @NonNull Cursor cursor) {
+    public void onBindItemViewHolder (ViewHolder viewHolder, @NonNull Cursor cursor) {
         long start = System.currentTimeMillis();
         MessageRecord messageRecord = getMessageRecord(cursor);
 
@@ -149,24 +151,20 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     }
 
     @Override
-    public ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateItemViewHolder (ViewGroup parent, int viewType) {
         long start = System.currentTimeMillis();
         final V itemView = ViewUtil.inflate(inflater, parent, getLayoutForViewType(viewType));
         if (viewType == MESSAGE_TYPE_INCOMING || viewType == MESSAGE_TYPE_OUTGOING) {
-            itemView.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (clickListener != null)
-                        clickListener.onItemClick((ConversationItem) itemView);
+            itemView.setOnClickListener(view -> {
+                if (clickListener != null) {
+                    clickListener.onItemClick((ConversationItem) itemView);
                 }
             });
-            itemView.setOnLongClickListener(new OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    if (clickListener != null)
-                        clickListener.onItemLongClick((ConversationItem) itemView);
-                    return true;
+            itemView.setOnLongClickListener(view -> {
+                if (clickListener != null) {
+                    clickListener.onItemLongClick((ConversationItem) itemView);
                 }
+                return true;
             });
         }
         Log.w(TAG, "Inflate time: " + (System.currentTimeMillis() - start));
@@ -174,11 +172,11 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     }
 
     @Override
-    public void onItemViewRecycled(ViewHolder holder) {
+    public void onItemViewRecycled (ViewHolder holder) {
         holder.getView().unbind();
     }
 
-    private @LayoutRes int getLayoutForViewType(int viewType) {
+    private @LayoutRes int getLayoutForViewType (int viewType) {
         switch (viewType) {
             case MESSAGE_TYPE_AUDIO_OUTGOING:
             case MESSAGE_TYPE_THUMBNAIL_OUTGOING:
@@ -196,17 +194,23 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     }
 
     @Override
-    public int getItemViewType(@NonNull Cursor cursor) {
+    public int getItemViewType (@NonNull Cursor cursor) {
         MessageRecord messageRecord = getMessageRecord(cursor);
 
         if (messageRecord.isGroupAction()) {
             return MESSAGE_TYPE_UPDATE;
         } else if (hasAudio(messageRecord)) {
-            if (messageRecord.isOutgoing()) return MESSAGE_TYPE_AUDIO_OUTGOING;
-            else return MESSAGE_TYPE_AUDIO_INCOMING;
+            if (messageRecord.isOutgoing()) {
+                return MESSAGE_TYPE_AUDIO_OUTGOING;
+            } else {
+                return MESSAGE_TYPE_AUDIO_INCOMING;
+            }
         } else if (hasThumbnail(messageRecord)) {
-            if (messageRecord.isOutgoing()) return MESSAGE_TYPE_THUMBNAIL_OUTGOING;
-            else return MESSAGE_TYPE_THUMBNAIL_INCOMING;
+            if (messageRecord.isOutgoing()) {
+                return MESSAGE_TYPE_THUMBNAIL_OUTGOING;
+            } else {
+                return MESSAGE_TYPE_THUMBNAIL_INCOMING;
+            }
         } else if (messageRecord.isOutgoing()) {
             return MESSAGE_TYPE_OUTGOING;
         } else {
@@ -215,13 +219,13 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     }
 
     @Override
-    public long getItemId(@NonNull Cursor cursor) {
+    public long getItemId (@NonNull Cursor cursor) {
         final String unique = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsColumns.UNIQUE_ROW_ID));
         final byte[] bytes = digest.digest(unique.getBytes());
         return Conversions.byteArrayToLong(bytes);
     }
 
-    private MessageRecord getMessageRecord(Cursor cursor) {
+    private MessageRecord getMessageRecord (Cursor cursor) {
         long messageId = cursor.getLong(cursor.getColumnIndexOrThrow(MmsSmsColumns.ID));
         String type = cursor.getString(cursor.getColumnIndexOrThrow(MmsSmsDatabase.TRANSPORT));
 
@@ -237,11 +241,11 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         return messageRecord;
     }
 
-    public void close() {
+    public void close () {
         getCursor().close();
     }
 
-    public int findLastSeenPosition(long lastSeen) {
+    public int findLastSeenPosition (long lastSeen) {
         if (lastSeen <= 0) return -1;
         if (!isActiveCursor()) return -1;
 
@@ -259,26 +263,26 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         return -1;
     }
 
-    public void toggleSelection(MessageRecord messageRecord) {
+    public void toggleSelection (MessageRecord messageRecord) {
         if (!batchSelected.remove(messageRecord)) {
             batchSelected.add(messageRecord);
         }
     }
 
-    public void clearSelection() {
+    public void clearSelection () {
         batchSelected.clear();
     }
 
-    public Set<MessageRecord> getSelectedItems() {
+    public Set<MessageRecord> getSelectedItems () {
         return Collections.unmodifiableSet(new HashSet<>(batchSelected));
     }
 
-    private boolean hasAudio(MessageRecord messageRecord) {
+    private boolean hasAudio (MessageRecord messageRecord) {
         return messageRecord.isMms() && ((MmsMessageRecord) messageRecord).getSlideDeck().getAudioSlide() != null;
     }
 
     @Override
-    public long getHeaderId(int position) {
+    public long getHeaderId (int position) {
         if (!isActiveCursor()) return -1;
         if (isHeaderPosition(position)) return -1;
         if (isFooterPosition(position)) return -1;
@@ -292,7 +296,7 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         return Util.hashCode(calendar.get(Calendar.YEAR), calendar.get(Calendar.DAY_OF_YEAR));
     }
 
-    public long getReceivedTimestamp(int position) {
+    public long getReceivedTimestamp (int position) {
         if (!isActiveCursor()) return 0;
         if (isHeaderPosition(position)) return 0;
         if (isFooterPosition(position)) return 0;
@@ -302,48 +306,51 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         Cursor cursor = getCursorAtPositionOrThrow(position);
         MessageRecord messageRecord = getMessageRecord(cursor);
 
-        if (messageRecord.isOutgoing()) return 0;
-        else return messageRecord.getDateReceived();
+        if (messageRecord.isOutgoing()) {
+            return 0;
+        } else {
+            return messageRecord.getDateReceived();
+        }
     }
 
     @Override
-    public HeaderViewHolder onCreateHeaderViewHolder(ViewGroup parent) {
+    public HeaderViewHolder onCreateHeaderViewHolder (ViewGroup parent) {
         return new HeaderViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.conversation_item_header, parent, false));
     }
 
-    public HeaderViewHolder onCreateLastSeenViewHolder(ViewGroup parent) {
+    public HeaderViewHolder onCreateLastSeenViewHolder (ViewGroup parent) {
         return new HeaderViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.conversation_item_last_seen, parent, false));
     }
 
     @Override
-    public void onBindHeaderViewHolder(HeaderViewHolder viewHolder, int position) {
+    public void onBindHeaderViewHolder (HeaderViewHolder viewHolder, int position) {
         Cursor cursor = getCursorAtPositionOrThrow(position);
         viewHolder.setText(DateUtils.getRelativeDate(getContext(), locale, getMessageRecord(cursor).getDateReceived()));
     }
 
-    public void onBindLastSeenViewHolder(HeaderViewHolder viewHolder, int position) {
+    public void onBindLastSeenViewHolder (HeaderViewHolder viewHolder, int position) {
         viewHolder.setText(getContext().getResources().getQuantityString(R.plurals.ConversationAdapter_n_unread_messages, (position + 1), (position + 1)));
     }
 
-    private boolean hasThumbnail(MessageRecord messageRecord) {
+    private boolean hasThumbnail (MessageRecord messageRecord) {
         return messageRecord.isMms() &&
                 !messageRecord.isMmsNotification() &&
                 ((MmsMessageRecord) messageRecord).getSlideDeck().getThumbnailSlide() != null;
     }
 
     public interface ItemClickListener {
-        void onItemClick(ConversationItem item);
+        void onItemClick (ConversationItem item);
 
-        void onItemLongClick(ConversationItem item);
+        void onItemLongClick (ConversationItem item);
     }
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
-        public <V extends View & BindableConversationItem> ViewHolder(final @NonNull V itemView) {
+        public <V extends View & BindableConversationItem> ViewHolder (final @NonNull V itemView) {
             super(itemView);
         }
 
         @SuppressWarnings("unchecked")
-        public <V extends View & BindableConversationItem> V getView() {
+        public <V extends View & BindableConversationItem> V getView () {
             return (V) itemView;
         }
     }
@@ -351,17 +358,17 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
     static class HeaderViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
 
-        HeaderViewHolder(View itemView) {
+        HeaderViewHolder (View itemView) {
             super(itemView);
             textView = ViewUtil.findById(itemView, R.id.text);
         }
 
-        HeaderViewHolder(TextView textView) {
+        HeaderViewHolder (TextView textView) {
             super(textView);
             this.textView = textView;
         }
 
-        public void setText(CharSequence text) {
+        public void setText (CharSequence text) {
             textView.setText(text);
         }
     }
@@ -371,14 +378,14 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         private final ConversationAdapter adapter;
         private final long lastSeenTimestamp;
 
-        LastSeenHeader(ConversationAdapter adapter, long lastSeenTimestamp) {
+        LastSeenHeader (ConversationAdapter adapter, long lastSeenTimestamp) {
             super(adapter, false, false);
             this.adapter = adapter;
             this.lastSeenTimestamp = lastSeenTimestamp;
         }
 
         @Override
-        protected boolean hasHeader(RecyclerView parent, StickyHeaderAdapter stickyAdapter, int position) {
+        protected boolean hasHeader (RecyclerView parent, StickyHeaderAdapter stickyAdapter, int position) {
             if (!adapter.isActiveCursor()) {
                 return false;
             }
@@ -394,12 +401,12 @@ public class ConversationAdapter<V extends View & BindableConversationItem>
         }
 
         @Override
-        protected int getHeaderTop(RecyclerView parent, View child, View header, int adapterPos, int layoutPos) {
+        protected int getHeaderTop (RecyclerView parent, View child, View header, int adapterPos, int layoutPos) {
             return parent.getLayoutManager().getDecoratedTop(child);
         }
 
         @Override
-        protected HeaderViewHolder getHeader(RecyclerView parent, StickyHeaderAdapter stickyAdapter, int position) {
+        protected HeaderViewHolder getHeader (RecyclerView parent, StickyHeaderAdapter stickyAdapter, int position) {
             HeaderViewHolder viewHolder = adapter.onCreateLastSeenViewHolder(parent);
             adapter.onBindLastSeenViewHolder(viewHolder, position);
 
