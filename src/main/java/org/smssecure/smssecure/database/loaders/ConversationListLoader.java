@@ -46,7 +46,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
     @Override
     public Cursor getCursor (){
         if (query != null && query.trim().length() != 0) {
-            return getFilteredConversationList(query);
+            return getFilteredConversationList(query.trim().toLowerCase(locale));
         } else if (!archived) {
             return getUnarchivedConversationList();
         } else {

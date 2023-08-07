@@ -26,7 +26,6 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.collection.ArraySet;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -48,11 +47,12 @@ import org.whispersystems.libsignal.InvalidMessageException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 
 public class ThreadDatabase extends Database {
@@ -438,10 +438,19 @@ public class ThreadDatabase extends Database {
         return ids;
     }
 
-    private String buildEnhancedFilterSQL (String clause, int limit){
-        String SELECTION_CLAUSE = "";
-        if (!TextUtils.isEmpty(clause)) SELECTION_CLAUSE += clause;
+    private String buildEnhancedFilterSQL (Map<Long, Long> matches, int limit){
+        // Selection
+        StringBuilder THREADS_IDS = new StringBuilder();
+        StringBuilder MESSAGES_IDS = new StringBuilder();
+        for (Long msgId : matches.keySet()) {
+            THREADS_IDS.append(matches.get(msgId)).append(",");
+            MESSAGES_IDS.append(msgId).append(",");
+        }
+        // delete the comma at the end of statement
+        THREADS_IDS.deleteCharAt(THREADS_IDS.length() -1);
+        MESSAGES_IDS.deleteCharAt(MESSAGES_IDS.length() -1);
 
+        // Limit
         String LIMIT_CLAUSE = "";
         if (limit > 0) LIMIT_CLAUSE = " LIMIT " + limit;
 
@@ -459,14 +468,14 @@ public class ThreadDatabase extends Database {
                 "thr." + PINNED + ", " +
                 "thr." + STATUS + ", " +
                 "thr." + LAST_SEEN + ", " +
-                "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg.body " +
+                "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg." + SmsDatabase.BODY + " " +
                 "ELSE thr." + SNIPPET + " END AS " + SNIPPET + ", " +
-                "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg.date " +
+                "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg." + SmsDatabase.DATE_RECEIVED + " " +
                 "ELSE thr." + DATE + " END AS " + DATE + " " +
                 "FROM " + ThreadDatabase.TABLE_NAME + " thr " +
                 "LEFT JOIN " + SmsDatabase.TABLE_NAME + " msg ON thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " " +
                 "WHERE thr." + ID + " IN " + "(SELECT DISTINCT " + SmsDatabase.THREAD_ID + " FROM " +
-                SmsDatabase.TABLE_NAME + " " + SELECTION_CLAUSE + ") AND thr." + ARCHIVED + " = 0" + " ORDER BY " + SmsDatabase.THREAD_ID + LIMIT_CLAUSE + ";";
+                SmsDatabase.TABLE_NAME + " WHERE " + SmsDatabase.THREAD_ID + " IN (" + THREADS_IDS + ")) AND thr." + ARCHIVED + " = 0 AND msg." + SmsDatabase.ID + " IN (" + MESSAGES_IDS + ") ORDER BY " + SmsDatabase.THREAD_ID + LIMIT_CLAUSE + ";";
     }
 
     public Cursor enhancedFilterThreads (Locale locale, MasterSecret secret, String ready_query, int messagesLimit){
@@ -486,31 +495,25 @@ public class ThreadDatabase extends Database {
         }
 
         // Filter messages
-        final ArrayList<Long> matchingThreadsIds = new ArrayList<>();
+        final Map<Long, Long> matchingThreadsIds = new HashMap<>();
         for (Cursor messagesCursor : messagesCursors) {
             final EncryptingSmsDatabase.DecryptingReader msgReader = (EncryptingSmsDatabase.DecryptingReader) DatabaseFactory.getEncryptingSmsDatabase(context).readerFor(secret, messagesCursor);
             MessageRecord message;
             if (msgReader != null && (message = msgReader.getNext()) != null) {
                 long threadId = message.getThreadId();
-                boolean contained = message.getBody().getBody().toLowerCase(locale).contains(ready_query.toLowerCase(locale));
-                if (message.getBody().isPlaintext() && !matchingThreadsIds.contains(threadId) && contained) {
-                    matchingThreadsIds.add(threadId);
+                boolean found_match = message.getBody().getBody().toLowerCase(locale).contains(ready_query);
+                if (message.getBody().isPlaintext() && found_match) {
+                    matchingThreadsIds.put(message.getId(), threadId);
                     Log.v(TAG, "enhancedFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + threadId + " | content => " + message.getBody().getBody().replaceAll("\n", " ") + "]");
                 }
             }
         }
         threadsCursor.close();
-        Log.d(TAG, "enhancedFilterThreads: Filtered messages and results are contained " + matchingThreadsIds.size() + " threads with IDs [" + Arrays.toString(matchingThreadsIds.toArray()) + "]");
+        Log.d(TAG, "enhancedFilterThreads: Filtered messages and results are contained " + matchingThreadsIds.size() + " threads with IDs [" + Arrays.toString(matchingThreadsIds.values().toArray()) + "]");
 
-        // Get all messages by threadIds
-        if (matchingThreadsIds.size() >= 1) {
-            final StringBuilder OR_CLAUSE = new StringBuilder("WHERE " + SmsDatabase.THREAD_ID + " = " + matchingThreadsIds.get(0));
-            matchingThreadsIds.remove(0);
-            for (Long messageId : matchingThreadsIds) {
-                OR_CLAUSE.append(" OR " + SmsDatabase.THREAD_ID + " = ").append(messageId);
-            }
-
-            final String sql = buildEnhancedFilterSQL(OR_CLAUSE.toString(), -1);
+        // Get all messages by their threadIds
+        if (!matchingThreadsIds.isEmpty()) {
+            final String sql = buildEnhancedFilterSQL(matchingThreadsIds, -1);
             final Cursor resultCursor = db.rawQuery(sql, null);
             Log.d(TAG, "enhancedFilterThreads: SQL => " + sql);
 
