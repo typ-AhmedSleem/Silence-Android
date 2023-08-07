@@ -447,8 +447,8 @@ public class ThreadDatabase extends Database {
             MESSAGES_IDS.append(msgId).append(",");
         }
         // delete the comma at the end of statement
-        THREADS_IDS.deleteCharAt(THREADS_IDS.length() -1);
-        MESSAGES_IDS.deleteCharAt(MESSAGES_IDS.length() -1);
+        THREADS_IDS.deleteCharAt(THREADS_IDS.length() - 1);
+        MESSAGES_IDS.deleteCharAt(MESSAGES_IDS.length() - 1);
 
         // Limit
         String LIMIT_CLAUSE = "";
@@ -504,18 +504,18 @@ public class ThreadDatabase extends Database {
                 boolean found_match = message.getBody().getBody().toLowerCase(locale).contains(ready_query);
                 if (message.getBody().isPlaintext() && found_match) {
                     matchingThreadsIds.put(message.getId(), threadId);
-                    Log.v(TAG, "enhancedFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + threadId + " | content => " + message.getBody().getBody().replaceAll("\n", " ") + "]");
+//                    Log.v(TAG, "enhancedFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + threadId + " | content => " + message.getBody().getBody().replaceAll("\n", " ") + "]");
                 }
             }
         }
         threadsCursor.close();
-        Log.d(TAG, "enhancedFilterThreads: Filtered messages and results are contained " + matchingThreadsIds.size() + " threads with IDs [" + Arrays.toString(matchingThreadsIds.values().toArray()) + "]");
+//        Log.d(TAG, "enhancedFilterThreads: Filtered messages and results are contained " + matchingThreadsIds.size() + " threads with IDs [" + Arrays.toString(matchingThreadsIds.values().toArray()) + "]");
 
         // Get all messages by their threadIds
         if (!matchingThreadsIds.isEmpty()) {
             final String sql = buildEnhancedFilterSQL(matchingThreadsIds, -1);
             final Cursor resultCursor = db.rawQuery(sql, null);
-            Log.d(TAG, "enhancedFilterThreads: SQL => " + sql);
+//            Log.d(TAG, "enhancedFilterThreads: SQL => " + sql);
 
             setNotifyConverationListListeners(resultCursor);
             return resultCursor;
