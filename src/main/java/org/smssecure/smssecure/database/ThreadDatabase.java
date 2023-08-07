@@ -26,6 +26,7 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.collection.ArraySet;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -48,8 +49,10 @@ import org.whispersystems.libsignal.InvalidMessageException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 public class ThreadDatabase extends Database {
@@ -435,53 +438,9 @@ public class ThreadDatabase extends Database {
         return ids;
     }
 
-    public Cursor regularFilterThreads (MasterSecret secret, String query, int messagesLimit){
-        // Check if query is null or empty
-        if (query == null || query.trim().length() == 0) return null;
-//        Log.i(TAG, "filterThreads: query => " + query);
-
-        // Load all distinct threads and resolve their ids
-        final Cursor threadsCursor = loadAllDistinctThreads();
-        final List<Long> idsOfThreads = resolveIdsFromThreads(threadsCursor);
-//        Log.i(TAG, "filterThreads: idsOfThreads => " + Arrays.toString(idsOfThreads.toArray()));
-
-        // Load conversation for each threadId with given messages limit
-        final List<Cursor> conversations = new ArrayList<>();
-        for (long threadId : idsOfThreads) {
-            final Cursor msgsCursor = DatabaseFactory.getMmsSmsDatabase(context).getConversation(threadId, messagesLimit);
-            conversations.add(msgsCursor);
-//            Log.d(TAG, "filterThreads: threadId => " + threadId + " has " + msgsCursor.getCount() + " message.");
-        }
-
-        // Create results list
-        final ArrayList<Cursor> results = new ArrayList<>();
-
-        // Load messages from each conversation
-        for (Cursor cursor : conversations) {
-            if (!cursor.isClosed()) {
-                final EncryptingSmsDatabase.DecryptingReader msgReader = (EncryptingSmsDatabase.DecryptingReader) DatabaseFactory.getEncryptingSmsDatabase(context).readerFor(secret, cursor);
-                MessageRecord message;
-                if (msgReader != null && (message = msgReader.getNext()) != null) {
-                    final String recipient = message.getIndividualRecipient().toShortString();
-                    final String body = message.getDisplayBody().toString();
-                    if (body.contains(query)) {
-                        results.add(cursor);
-//                        Log.v(TAG, "regularFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + message.getThreadId() + "]");
-                    }
-                }
-            }
-        }
-
-        // Merge result cursors then return it
-        if (results.isEmpty()) return null;
-        final Cursor cursor = new MergeCursor(results.toArray(new Cursor[0]));
-        setNotifyConverationListListeners(cursor);
-        return cursor;
-    }
-
-    private String buildEnhancedFilterSQL (String threadsIds, int limit){
+    private String buildEnhancedFilterSQL (String clause, int limit){
         String SELECTION_CLAUSE = "";
-        if (!TextUtils.isEmpty(threadsIds)) SELECTION_CLAUSE += " WHERE thread_id = " + threadsIds;
+        if (!TextUtils.isEmpty(clause)) SELECTION_CLAUSE += clause;
 
         String LIMIT_CLAUSE = "";
         if (limit > 0) LIMIT_CLAUSE = " LIMIT " + limit;
@@ -501,15 +460,17 @@ public class ThreadDatabase extends Database {
                 "thr." + STATUS + ", " +
                 "thr." + LAST_SEEN + ", " +
                 "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg.body " +
-                "ELSE thr." + SNIPPET + " END AS " + SNIPPET + " " +
+                "ELSE thr." + SNIPPET + " END AS " + SNIPPET + ", " +
+                "CASE WHEN thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " THEN msg.date " +
+                "ELSE thr." + DATE + " END AS " + DATE + " " +
                 "FROM " + ThreadDatabase.TABLE_NAME + " thr " +
                 "LEFT JOIN " + SmsDatabase.TABLE_NAME + " msg ON thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " " +
                 "WHERE thr." + ID + " IN " + "(SELECT DISTINCT " + SmsDatabase.THREAD_ID + " FROM " +
-                SmsDatabase.TABLE_NAME + SELECTION_CLAUSE + ")" + " ORDER BY " + SmsDatabase.THREAD_ID + LIMIT_CLAUSE + ";";
+                SmsDatabase.TABLE_NAME + " " + SELECTION_CLAUSE + ") AND thr." + ARCHIVED + " = 0" + " ORDER BY " + SmsDatabase.THREAD_ID + LIMIT_CLAUSE + ";";
     }
 
-    public Cursor enhancedFilterThreads (MasterSecret secret, String query, int messagesLimit){
-        if (query == null || query.trim().length() == 0) return null;
+    public Cursor enhancedFilterThreads (Locale locale, MasterSecret secret, String ready_query, int messagesLimit){
+        if (ready_query == null || ready_query.trim().length() == 0) return null;
 
         final SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
@@ -520,33 +481,42 @@ public class ThreadDatabase extends Database {
         //Load all messages of each thread (CARING TO MESSAGES LIMIT FOR EACH THREAD OF COURSE)
         final List<Cursor> messagesCursors = new ArrayList<>();
         for (long threadId : idsOfThreads) {
-            final Cursor msgsCursor = DatabaseFactory.getMmsSmsDatabase(context).getConversation(threadId, messagesLimit);
+            final Cursor msgsCursor = DatabaseFactory.getMmsSmsDatabase(context).getConversation(threadId);
             messagesCursors.add(msgsCursor);
         }
 
         // Filter messages
-        final List<Long> matchingMessagesIds = new ArrayList<>();
+        final ArrayList<Long> matchingThreadsIds = new ArrayList<>();
         for (Cursor messagesCursor : messagesCursors) {
             final EncryptingSmsDatabase.DecryptingReader msgReader = (EncryptingSmsDatabase.DecryptingReader) DatabaseFactory.getEncryptingSmsDatabase(context).readerFor(secret, messagesCursor);
             MessageRecord message;
             if (msgReader != null && (message = msgReader.getNext()) != null) {
-                if (message.getBody().getBody().contains(query)) {
-                    matchingMessagesIds.add(message.getId());
-//                    Log.v(TAG, "enhancedFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + message.getThreadId() + "]");
+                long threadId = message.getThreadId();
+                boolean contained = message.getBody().getBody().toLowerCase(locale).contains(ready_query.toLowerCase(locale));
+                if (message.getBody().isPlaintext() && !matchingThreadsIds.contains(threadId) && contained) {
+                    matchingThreadsIds.add(threadId);
+                    Log.v(TAG, "enhancedFilterThreads: Found a message that matches query with id " + message.getId() + " at thread " + threadId + " | content => " + message.getBody().getBody().replaceAll("\n", " ") + "]");
                 }
             }
         }
         threadsCursor.close();
+        Log.d(TAG, "enhancedFilterThreads: Filtered messages and results are contained " + matchingThreadsIds.size() + " threads with IDs [" + Arrays.toString(matchingThreadsIds.toArray()) + "]");
 
         // Get all messages by threadIds
-        if (matchingMessagesIds.size() >= 1) {
-            final StringBuilder OR_CLAUSE = new StringBuilder(SmsDatabase.THREAD_ID + " = " + matchingMessagesIds.get(0));
-            matchingMessagesIds.remove(0);
-            for (Long messageId : matchingMessagesIds) OR_CLAUSE.append(" OR " + SmsDatabase.THREAD_ID + " = ").append(messageId);
-            final Cursor resultCursor = db.rawQuery(buildEnhancedFilterSQL(OR_CLAUSE.toString(), -1), null);
+        if (matchingThreadsIds.size() >= 1) {
+            final StringBuilder OR_CLAUSE = new StringBuilder("WHERE " + SmsDatabase.THREAD_ID + " = " + matchingThreadsIds.get(0));
+            matchingThreadsIds.remove(0);
+            for (Long messageId : matchingThreadsIds) {
+                OR_CLAUSE.append(" OR " + SmsDatabase.THREAD_ID + " = ").append(messageId);
+            }
+
+            final String sql = buildEnhancedFilterSQL(OR_CLAUSE.toString(), -1);
+            final Cursor resultCursor = db.rawQuery(sql, null);
+            Log.d(TAG, "enhancedFilterThreads: SQL => " + sql);
 
             setNotifyConverationListListeners(resultCursor);
             return resultCursor;
+
         } else return null; // No matches found.
     }
 

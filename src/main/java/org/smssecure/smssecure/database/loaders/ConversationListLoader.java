@@ -16,6 +16,7 @@ import org.smssecure.smssecure.util.AbstractCursorLoader;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class ConversationListLoader extends AbstractCursorLoader {
 
@@ -23,21 +24,23 @@ public class ConversationListLoader extends AbstractCursorLoader {
 
     private final String query;
     private final boolean archived;
-
     private final MasterSecret masterSecret;
+    private final Locale locale;
 
     public ConversationListLoader (Context context, String query, boolean archived){
         super(context);
         this.query = query;
         this.archived = archived;
-        masterSecret = null;
+        this.masterSecret = null;
+        this.locale = null;
     }
 
-    public ConversationListLoader (MasterSecret secret, Context context, String query, boolean archived){
+    public ConversationListLoader (MasterSecret secret, Locale locale, Context context, String query, boolean archived){
         super(context);
         this.query = query;
         this.archived = archived;
         this.masterSecret = secret;
+        this.locale = locale;
     }
 
     @Override
@@ -94,19 +97,21 @@ public class ConversationListLoader extends AbstractCursorLoader {
     private Cursor getFilteredConversationList (String query){
 
         // ============================ START: MY CODE ============================
-        final int MESSAGES_LIMIT_PER_THREAD = 2;
+        final int MESSAGES_LIMIT_PER_THREAD = 100;
         // Enhanced filter
         if (masterSecret != null) {
             try {
-                final Cursor enhancedFilterCursor = DatabaseFactory.getThreadDatabase(getContext()).enhancedFilterThreads(masterSecret, query, MESSAGES_LIMIT_PER_THREAD);
+                final Cursor enhancedFilterCursor = DatabaseFactory.getThreadDatabase(getContext()).enhancedFilterThreads(locale, masterSecret, query, MESSAGES_LIMIT_PER_THREAD);
                 if (enhancedFilterCursor != null && enhancedFilterCursor.getCount() > 0) {
                     Log.v(TAG, "enhancedFilterThreads: Found " + enhancedFilterCursor.getCount() + " messages that contain the given query.");
                     return enhancedFilterCursor;
                 } else {
                     Log.w(TAG, "enhancedFilterThreads: No messages found that contains query.");
+                    return null;
                 }
             } catch (Throwable e) {
                 Log.e(TAG, "enhancedFilterThreads:", e);
+                return null;
             }
         } else {
             Log.w(TAG, "enhancedFilterThreads: MasterSecret not provided.");

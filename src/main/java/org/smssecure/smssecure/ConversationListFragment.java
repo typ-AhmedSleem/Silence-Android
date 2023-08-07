@@ -432,7 +432,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader (int arg0, Bundle arg1){
-        return new ConversationListLoader(masterSecret, getActivity(), queryFilter, archive);
+        return new ConversationListLoader(masterSecret, locale, getActivity(), queryFilter, archive);
     }
 
     @Override
@@ -451,24 +451,26 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         if (actionMode == null) {
             handleCreateConversation(item.getThreadId(), item.getRecipients(), item.getDistributionType(), item.getLastSeen());
         } else {
+            if (isSearchActive()) return;
+
             ConversationListAdapter adapter = (ConversationListAdapter) rvConversations.getAdapter();
             adapter.toggleThreadInBatchSet(item.getThreadId());
             adapter.populateRecipients(item.getThreadId(), item.getRecipients());
 
-            if (adapter.getBatchSelections().size() == 0) {
-                actionMode.finish();
-            } else {
-                actionMode.setSubtitle(getString(R.string.conversation_fragment_cab__batch_selection_amount, adapter.getBatchSelections().size()));
-            }
+            if (adapter.getBatchSelections().size() == 0) actionMode.finish();
+            else actionMode.setSubtitle(getString(R.string.conversation_fragment_cab__batch_selection_amount, adapter.getBatchSelections().size()));
 
             adapter.notifyDataSetChanged();
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onItemLongClick (ConversationListItem item){
-        actionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(ConversationListFragment.this);
+        // Disable selection if search mode is active
+        if (this.isSearchActive()) return;
 
+        actionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(ConversationListFragment.this);
         getListAdapter().initializeBatchMode(true);
         getListAdapter().toggleThreadInBatchSet(item.getThreadId());
         getListAdapter().populateRecipients(item.getThreadId(), item.getRecipients());
@@ -478,6 +480,10 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     @Override
     public void onSwitchToArchive (){
         ((ConversationSelectedListener) getActivity()).onSwitchToArchive();
+    }
+
+    private boolean isSearchActive (){
+        return !TextUtils.isEmpty(queryFilter);
     }
 
     @Override

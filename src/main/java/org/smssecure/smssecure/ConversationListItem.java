@@ -82,18 +82,18 @@ public class ConversationListItem extends RelativeLayout
     private ThumbnailView thumbnailView;
     private int distributionType;
 
-    public ConversationListItem (Context context) {
+    public ConversationListItem (Context context){
         this(context, null);
     }
 
-    public ConversationListItem (Context context, AttributeSet attrs) {
+    public ConversationListItem (Context context, AttributeSet attrs){
         super(context, attrs);
         readBackground = ResUtil.getDrawableRes(context, R.attr.conversation_list_item_background_read);
         unreadBackround = ResUtil.getDrawableRes(context, R.attr.conversation_list_item_background_unread);
     }
 
     @Override
-    protected void onFinishInflate () {
+    protected void onFinishInflate (){
         super.onFinishInflate();
         this.subjectView = findViewById(R.id.subject);
         this.fromView = findViewById(R.id.from);
@@ -109,7 +109,7 @@ public class ConversationListItem extends RelativeLayout
         ViewUtil.setTextViewGravityStart(this.subjectView, getContext());
     }
 
-    public void bind (@NonNull MasterSecret masterSecret, @NonNull ThreadRecord thread, @NonNull Locale locale, @NonNull Set<Long> selectedThreads, boolean batchMode) {
+    public void bind (@NonNull MasterSecret masterSecret, @NonNull ThreadRecord thread, @NonNull Locale locale, @NonNull Set<Long> selectedThreads, boolean batchMode){
         this.selectedThreads = selectedThreads;
         this.recipients = thread.getRecipients();
         this.threadId = thread.getThreadId();
@@ -150,35 +150,35 @@ public class ConversationListItem extends RelativeLayout
     }
 
     @Override
-    public void unbind () {
+    public void unbind (){
         if (this.recipients != null) this.recipients.removeListener(this);
     }
 
-    private void setBatchState (boolean batch) {
+    private void setBatchState (boolean batch){
         setSelected(batch && selectedThreads.contains(threadId));
     }
 
-    public Recipients getRecipients () {
+    public Recipients getRecipients (){
         return recipients;
     }
 
-    public long getThreadId () {
+    public long getThreadId (){
         return threadId;
     }
 
-    public boolean getRead () {
+    public boolean getRead (){
         return read;
     }
 
-    public int getDistributionType () {
+    public int getDistributionType (){
         return distributionType;
     }
 
-    public long getLastSeen () {
+    public long getLastSeen (){
         return lastSeen;
     }
 
-    private void setThumbnailSnippet (MasterSecret masterSecret, ThreadRecord thread) {
+    private void setThumbnailSnippet (MasterSecret masterSecret, ThreadRecord thread){
         if (thread.getSnippetUri() != null) {
             this.thumbnailView.setVisibility(View.VISIBLE);
             this.thumbnailView.setImageResource(masterSecret, thread.getSnippetUri());
@@ -202,7 +202,7 @@ public class ConversationListItem extends RelativeLayout
         }
     }
 
-    private void setStatusIcons (ThreadRecord thread) {
+    private void setStatusIcons (ThreadRecord thread){
         if (!thread.isOutgoing()) {
             deliveryStatusIndicator.setNone();
             alertView.setNone();
@@ -212,16 +212,22 @@ public class ConversationListItem extends RelativeLayout
         } else {
             alertView.setNone();
 
-            if (thread.isPending()) {deliveryStatusIndicator.setPending();} else if (thread.isDelivered()) {deliveryStatusIndicator.setDelivered();} else deliveryStatusIndicator.setSent();
+            if (thread.isPending()) {
+                deliveryStatusIndicator.setPending();
+            } else if (thread.isDelivered()) {
+                deliveryStatusIndicator.setDelivered();
+            } else deliveryStatusIndicator.setSent();
         }
     }
 
-    private void setBackground (ThreadRecord thread) {
-        if (thread.isRead()) {setBackgroundResource(readBackground);} else setBackgroundResource(unreadBackround);
+    private void setBackground (ThreadRecord thread){
+        if (thread.isRead()) {
+            setBackgroundResource(readBackground);
+        } else setBackgroundResource(unreadBackround);
     }
 
     @TargetApi(VERSION_CODES.LOLLIPOP)
-    private void setRippleColor (Recipients recipients) {
+    private void setRippleColor (Recipients recipients){
         if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
             ((RippleDrawable) (getBackground()).mutate())
                     .setColor(ColorStateList.valueOf(recipients.getColor().toConversationColor(getContext())));
@@ -229,10 +235,10 @@ public class ConversationListItem extends RelativeLayout
     }
 
     @Override
-    public void onModified (final Recipients recipients) {
+    public void onModified (final Recipients recipients){
         handler.post(new Runnable() {
             @Override
-            public void run () {
+            public void run (){
                 fromView.setText(recipients, read);
                 contactPhotoImage.setAvatar(recipients, true);
                 setRippleColor(recipients);
@@ -247,7 +253,7 @@ public class ConversationListItem extends RelativeLayout
         private final View deliveryStatusView;
         private final View dateView;
 
-        public ThumbnailPositioner (View thumbnailView, View archivedView, View deliveryStatusView, View dateView) {
+        public ThumbnailPositioner (View thumbnailView, View archivedView, View deliveryStatusView, View dateView){
             this.thumbnailView = thumbnailView;
             this.archivedView = archivedView;
             this.deliveryStatusView = deliveryStatusView;
@@ -255,7 +261,7 @@ public class ConversationListItem extends RelativeLayout
         }
 
         @Override
-        public void run () {
+        public void run (){
             LayoutParams thumbnailParams = (RelativeLayout.LayoutParams) thumbnailView.getLayoutParams();
 
             if (archivedView.getVisibility() == View.VISIBLE &&
