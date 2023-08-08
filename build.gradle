@@ -50,7 +50,7 @@ android {
 
     defaultConfig {
         versionCode 212
-        versionName "0.16.0"
+        versionName "1.0.0"
         applicationId 'org.smssecure.smssecure'
         minSdkVersion 14
         //noinspection ExpiredTargetSdkVersion
