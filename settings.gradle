@@ -11,10 +11,12 @@ project(':org.whispersystems.libpastelog').projectDir = new File(rootDir, 'libs/
 
 include ':org.whispersystems.libsignal'
 project(':org.whispersystems.libsignal').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/java')
-//include ':tests'
-//project(':tests').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/tests')
+
 include ':org.whispersystems.libsignal.util'
 project(':org.whispersystems.libsignal.util').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/android')
+
+//include ':tests'
+//project(':tests').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/tests')
 
 //include ':org.greenrobot.eventbus'
 //project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')

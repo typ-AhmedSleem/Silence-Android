@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.smssecure.smssecure.ConversationListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:focusable="true"
+    android:nextFocusLeft="@+id/container"
+    android:nextFocusRight="@+id/fab">
+
+    <org.smssecure.smssecure.components.AvatarImageView
+        android:id="@+id/contact_photo_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="3dp"
+        android:contentDescription="@string/conversation_list_item_view__contact_photo_image"
+        android:cropToPadding="true"
+        android:foreground="@drawable/contact_photo_background"
+        app:inverted="true"
+        app:showBadge="true"
+        tools:src="@drawable/ic_contact_picture" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dip"
+        android:layout_marginLeft="4dip"
+        android:layout_marginEnd="8dip"
+        android:layout_marginRight="8dip"
+        android:layout_toEndOf="@id/contact_photo_image"
+        android:layout_toRightOf="@id/contact_photo_image"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <org.smssecure.smssecure.components.FromTextView
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/thumbnail"
+            android:layout_toLeftOf="@+id/thumbnail"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?attr/conversation_list_item_contact_color"
+            tools:text="Jules Bonnot" />
+
+        <org.smssecure.smssecure.components.AlertView
+            android:id="@+id/indicators_parent"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_below="@id/from"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:paddingTop="2dp"
+            android:visibility="gone"
+            app:useSmallIcon="true"
+            tools:visibility="visible" />
+
+        <org.smssecure.smssecure.components.emoji.EmojiTextView
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:layout_toStartOf="@+id/delivery_status"
+            android:layout_toLeftOf="@+id/delivery_status"
+            android:layout_toEndOf="@id/indicators_parent"
+            android:layout_toRightOf="@id/indicators_parent"
+            android:ellipsize="end"
+            android:paddingRight="1dp"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?attr/conversation_list_item_subject_color"
+            app:fontFamily="sans-serif-light"
+            tools:text="Wheels arrive at 3pm flat." />
+
+        <org.smssecure.smssecure.components.ThumbnailView
+            android:id="@+id/thumbnail"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_toStartOf="@+id/date"
+            android:layout_toLeftOf="@+id/date"
+            android:contentDescription="@string/conversation_activity__attachment_thumbnail"
+            android:visibility="gone"
+            app:backgroundColorHint="?conversation_background"
+            tools:src="@drawable/ic_video_light"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/subject"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="3dip"
+            android:layout_marginLeft="3dip"
+            android:fontFamily="sans-serif-light"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?attr/conversation_list_item_date_color"
+            tools:text="30 mins" />
+
+        <TextView
+            android:id="@+id/tv_conversation_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_alignBaseline="@id/subject"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/rounded_rectangle"
+            android:text="@string/conversation_list_item_view__archived"
+            android:textColor="#ffbbbbbb"
+            android:textSize="12sp" />
+
+        <org.smssecure.smssecure.components.DeliveryStatusView
+            android:id="@+id/delivery_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_below="@+id/date"
+            android:layout_toStartOf="@+id/tv_conversation_status"
+            android:layout_toLeftOf="@+id/tv_conversation_status"
+            app:iconColor="?attr/conversation_list_item_subject_color" />
+
+    </RelativeLayout>
+</org.smssecure.smssecure.ConversationListItem>

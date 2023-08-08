@@ -53,6 +53,7 @@ android {
         versionName "0.15.16"
         applicationId 'org.smssecure.smssecure'
         minSdkVersion 14
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 30
 
         multiDexEnabled true
@@ -89,15 +90,15 @@ android {
     }
 
     sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            resources.srcDirs = ['src']
-            aidl.srcDirs = ['src']
-            renderscript.srcDirs = ['src']
-            res.srcDirs = ['res']
-            assets.srcDirs = ['assets']
-        }
+//        main {
+//            manifest.srcFile 'AndroidManifest.xml'
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+//            res.srcDirs = ['res']
+//            assets.srcDirs = ['assets']
+//        }
 //        androidTest {
 //            java.srcDirs = ['test/androidTest/java']
 //        }
@@ -148,7 +149,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-v4'
     }
 
-    implementation ('com.google.protobuf:protobuf-java:3.19.3')
+    implementation('com.google.protobuf:protobuf-java:3.19.3')
     implementation("org.greenrobot:eventbus:3.3.1")
 //    implementation project(':org.greenrobot.eventbus')
     implementation project(':com.amulyakhare.textdrawable')
