@@ -21,3 +21,4 @@ signing.properties
 library/lib/
 library/obj/
 *.patch
+release
