@@ -1,3 +1,5 @@
+rootProject.name = "Silence-Android"
+
 include ':com.amulyakhare.textdrawable'
 project(':com.amulyakhare.textdrawable').projectDir = new File(rootDir, 'libs/com.amulyakhare.textdrawable')
 
@@ -7,11 +9,14 @@ project(':org.whispersystems.jobmanager').projectDir = new File(rootDir, 'libs/o
 include ':org.whispersystems.libpastelog'
 project(':org.whispersystems.libpastelog').projectDir = new File(rootDir, 'libs/org.whispersystems.libpastelog/library')
 
-include ':java', ':tests'
-project(':tests').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/tests')
-project(':java').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/java')
 include ':org.whispersystems.libsignal'
-project(':org.whispersystems.libsignal').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/android')
+project(':org.whispersystems.libsignal').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/java')
 
-include ':org.greenrobot.eventbus'
-project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')
+include ':org.whispersystems.libsignal.util'
+project(':org.whispersystems.libsignal.util').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/android')
+
+//include ':tests'
+//project(':tests').projectDir = new File(rootDir, 'libs/org.whispersystems.libsignal/tests')
+
+//include ':org.greenrobot.eventbus'
+//project(':org.greenrobot.eventbus').projectDir = new File(rootDir, 'libs/org.greenrobot.eventbus/EventBus')
