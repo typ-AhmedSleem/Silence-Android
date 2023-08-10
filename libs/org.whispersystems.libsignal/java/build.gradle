@@ -1,0 +1,113 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = "signal-protocol-java"
+version = "2.7.1"
+group = "org.whispersystems"
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+
+sourceSets {
+//    test {
+//        java {
+//            srcDirs = ['src/test/java/', project(':tests').file('src/test/java')]
+//        }
+//    }
+}
+
+dependencies {
+    implementation "org.whispersystems:curve25519-java:0.5.0"
+    implementation 'com.google.protobuf:protobuf-java:3.19.3'
+    testImplementation('junit:junit:3.8.2')
+}
+
+
+test {
+    testLogging {
+        events 'passed'
+        showStandardStreams = true
+    }
+
+    include 'org/whispersystems/**'
+}
+
+signing {
+    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+//uploadArchives {
+//    configuration = configurations.archives
+//    repositories.mavenDeployer {
+//        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//        repository(url: sonatypeRepo) {
+//            authentication(userName: whisperSonatypeUsername, password: whisperSonatypePassword)
+//        }
+//
+//        pom.project {
+//            name 'signal-protocol-java'
+//            packaging 'jar'
+//            description 'Signal Protocol cryptography library for Java'
+//            url 'https://github.com/WhisperSystems/libsignal-android'
+//
+//            scm {
+//                url 'scm:git@github.com:WhisperSystems/libsignal-android.git'
+//                connection 'scm:git@github.com:WhisperSystems/libsignal-android.git'
+//                developerConnection 'scm:git@github.com:WhisperSystems/libsignal-android.git'
+//            }
+//
+//            licenses {
+//                license {
+//                    name 'GPLv3'
+//                    url 'https://www.gnu.org/licenses/gpl-3.0.txt'
+//                    distribution 'repo'
+//                }
+//            }
+//
+//            developers {
+//                developer {
+//                    name 'Moxie Marlinspike'
+//                }
+//            }
+//        }
+//    }
+//}
+
+tasks.register('installArchives', Upload) {
+    description "Installs the artifacts to the local Maven repository."
+    configuration = configurations['archives']
+    repositories {
+        mavenDeployer {
+            repository url: "file://${System.properties['user.home']}/.m2/repository"
+        }
+    }
+}
+
+tasks.register('packageJavadoc', Jar) {
+    dependsOn 'javadoc'
+    from javadoc.destinationDir
+    archiveClassifier = 'javadoc'
+}
+
+tasks.register('packageSources', Jar) {
+    from sourceSets.main.allSource
+    archiveClassifier = 'sources'
+}
+
+artifacts {
+    archives(packageJavadoc) {
+        type = 'javadoc'
+    }
+
+    archives packageSources
+}
+

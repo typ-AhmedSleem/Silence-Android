@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdk 33
+    setBuildToolsVersion('33.0.1')
+
+    defaultConfig {
+        minSdkVersion 14
+        //noinspection EditedTargetSdkVersion
+        targetSdkVersion 33
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            resources.srcDirs = ['src']
+            res.srcDirs = ['res']
+            java.srcDirs = ['src']
+        }
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    compile project(':library')
+}

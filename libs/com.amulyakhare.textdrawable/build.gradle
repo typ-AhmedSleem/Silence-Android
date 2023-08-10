@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://repo1.maven.org/maven2"
+        }
+        // Required for the Gradle plugin
+        google()
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+repositories {
+    maven {
+        url "https://repo1.maven.org/maven2"
+    }
+    // Required for the Gradle plugin
+    google()
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+}
+
+android {
+    compileSdk 33
+    setBuildToolsVersion("33.0.1")
+    namespace "com.amulyakhare.textdrawable"
+
+    defaultConfig {
+        versionCode 2
+        versionName "1.1"
+        minSdkVersion 10
+        targetSdkVersion 33
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+}
+
+version = '1.0.1'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
