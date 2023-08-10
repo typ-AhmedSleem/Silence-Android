@@ -22,13 +22,17 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.Preference;
-import android.widget.Toast;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.preferences.AdvancedPreferenceFragment;
@@ -43,11 +47,12 @@ import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SilencePreferences;
 
+import java.util.Objects;
+
 /**
  * The Activity for application preference display and management.
  *
  * @author Moxie Marlinspike
- *
  */
 
 public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarActivity
@@ -62,7 +67,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
     private static final String PREFERENCE_CATEGORY_ADVANCED = "preference_category_advanced";
     private static final String PREFERENCE_ABOUT = "preference_about";
     private static final String PREFERENCE_PRIVACY_POLICY = "preference_privacy_policy";
-
+    private static final String PREFERENCE_SEARCH_LIMIT = "preference_search_limit";
     private static final String PUSH_MESSAGING_PREF = "pref_toggle_push_messaging";
 
     private final DynamicTheme dynamicTheme = new DynamicTheme();
@@ -146,12 +151,35 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
                     .setOnPreferenceClickListener(new CategoryClickListener(masterSecret, PREFERENCE_CATEGORY_ADVANCED));
 
             this.findPreference(PREFERENCE_PRIVACY_POLICY)
-                    .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                        @Override
-                        public boolean onPreferenceClick(Preference preference) {
-                            handlePrivacyPolicy();
-                            return true;
-                        }
+                    .setOnPreferenceClickListener(preference -> {
+                        handlePrivacyPolicy();
+                        return true;
+                    });
+
+            this.findPreference(PREFERENCE_SEARCH_LIMIT)
+                    .setOnPreferenceClickListener(preference -> {
+                        final SharedPreferences prefs = requireContext().getSharedPreferences("Silence_Global", MODE_PRIVATE);
+                        final SharedPreferences.Editor editor = prefs.edit();
+                        final int currentLimit = prefs.getInt("searchLimit", 250);
+
+                        final BottomSheetDialog bs = new BottomSheetDialog(requireContext());
+                        bs.setContentView(R.layout.bs_search_limit);
+                        final TextInputEditText inputLimit = bs.findViewById(R.id.input_search_limit);
+                        inputLimit.setText(String.valueOf(currentLimit));
+                        bs.findViewById(R.id.btn_set_search_limit).setOnClickListener(v -> {
+                            try {
+                                final int newLimit = Math.min(250, Math.abs(Integer.parseInt(Objects.requireNonNull(inputLimit.getText()).toString().trim())));
+                                editor.putInt("searchLimit", newLimit);
+                                if (editor.commit()) {
+                                    bs.cancel();
+                                    Toast.makeText(requireContext(), R.string.search_limit_applied, Toast.LENGTH_SHORT).show();
+                                } else throw new Exception("Can't set search limit");
+                            } catch (Throwable ignored) {
+                                Toast.makeText(requireContext(), "Invalid search limit", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        bs.show();
+                        return true;
                     });
         }
 
@@ -187,7 +215,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
             this.findPreference(PREFERENCE_CATEGORY_CHATS)
                     .setSummary(ChatsPreferenceFragment.getSummary(getActivity()));
 
-            String version = String.format(this.getString(R.string.preferences__about_version), "0.15.16");
+            String version = String.format(this.getString(R.string.preferences__about_version), "1.1.0-typ");
 
             this.findPreference(PREFERENCE_ABOUT)
                     .setSummary(version);

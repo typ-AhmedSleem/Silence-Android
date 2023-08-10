@@ -945,6 +945,11 @@
     <string name="conversation_list_batch__menu_pin">Pin</string>
     <string name="conversation_list_batch__menu_unpin">Unpin</string>
     <string name="conversation_list_batch__menu_toggle_pin">Toggle pin mode</string>
+    <string name="set_search_limit">Set Search Limit</string>
+    <string name="search_limit">Search limit</string>
+    <string name="apply_search_limit">Apply search limit</string>
+    <string name="message_per_thread">Message per Thread</string>
+    <string name="search_limit_applied">Search limit applied</string>
 
     <!-- EOF -->
 

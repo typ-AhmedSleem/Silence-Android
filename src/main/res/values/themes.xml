@@ -79,7 +79,7 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <style name="Silence.LightTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="Silence.LightTheme" parent="@style/Theme.MaterialComponents.Light.DarkActionBar">
         <item name="theme_type">light</item>
         <item name="actionBarStyle">@style/Silence.LightActionBar</item>
         <item name="actionBarTabBarStyle">@style/Silence.LightActionBar.TabBar</item>
@@ -196,7 +196,7 @@
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
     </style>
 
-    <style name="Silence.DarkTheme" parent="@style/Theme.AppCompat">
+    <style name="Silence.DarkTheme" parent="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="theme_type">dark</item>
         <item name="actionBarStyle">@style/Silence.DarkActionBar</item>
         <item name="actionBarTabBarStyle">@style/Silence.DarkActionBar.TabBar</item>

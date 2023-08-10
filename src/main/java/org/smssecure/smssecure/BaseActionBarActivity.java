@@ -3,10 +3,13 @@ package org.smssecure.smssecure;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -26,6 +29,7 @@ public abstract class BaseActionBarActivity extends AppCompatActivity {
         if (BaseActivity.isMenuWorkaroundRequired()) {
             forceOverflowMenu();
         }
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
     }
 
