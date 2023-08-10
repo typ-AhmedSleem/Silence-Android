@@ -1,8 +1,10 @@
 package org.smssecure.smssecure.database.loaders;
 
+import static android.content.Context.MODE_PRIVATE;
 import static org.smssecure.smssecure.database.ThreadDatabase.*;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
@@ -27,7 +29,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
     private final MasterSecret masterSecret;
     private final Locale locale;
 
-    public ConversationListLoader (Context context, String query, boolean archived){
+    public ConversationListLoader(Context context, String query, boolean archived) {
         super(context);
         this.query = query;
         this.archived = archived;
@@ -35,7 +37,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
         this.locale = null;
     }
 
-    public ConversationListLoader (MasterSecret secret, Locale locale, Context context, String query, boolean archived){
+    public ConversationListLoader(MasterSecret secret, Locale locale, Context context, String query, boolean archived) {
         super(context);
         this.query = query;
         this.archived = archived;
@@ -44,7 +46,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
     }
 
     @Override
-    public Cursor getCursor (){
+    public Cursor getCursor() {
         if (query != null && query.trim().length() != 0) {
             return getFilteredConversationList(query.trim().toLowerCase(locale));
         } else if (!archived) {
@@ -54,7 +56,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
         }
     }
 
-    private Cursor getUnarchivedConversationList (){
+    private Cursor getUnarchivedConversationList() {
         List<Cursor> cursorList = new LinkedList<>();
         cursorList.add(DatabaseFactory.getThreadDatabase(context).getConversationList());
 
@@ -82,7 +84,7 @@ public class ConversationListLoader extends AbstractCursorLoader {
                     System.currentTimeMillis(), archivedCount,
                     "-1", null, 1,
                     ThreadDatabase.DistributionTypes.ARCHIVE,
-                    0, null, 0, -1, 0 });
+                    0, null, 0, -1, 0});
 
             cursorList.add(switchToArchiveCursor);
         }
@@ -90,14 +92,14 @@ public class ConversationListLoader extends AbstractCursorLoader {
         return new MergeCursor(cursorList.toArray(new Cursor[0]));
     }
 
-    private Cursor getArchivedConversationList (){
+    private Cursor getArchivedConversationList() {
         return DatabaseFactory.getThreadDatabase(context).getArchivedConversationList();
     }
 
-    private Cursor getFilteredConversationList (String query){
+    private Cursor getFilteredConversationList(String query) {
 
         // ============================ START: MY CODE ============================
-        final int MESSAGES_LIMIT_PER_THREAD = 100;
+        final int MESSAGES_LIMIT_PER_THREAD = context.getSharedPreferences("Silence_Global", MODE_PRIVATE).getInt("searchLimit", 250);
         // Enhanced filter
         if (masterSecret != null) {
             try {
