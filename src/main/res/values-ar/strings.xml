@@ -761,4 +761,14 @@
     <string name="ConversationActivity_recipient_is_not_a_valid_sms_or_email_address_exclamation">المستلم ليس رقمًا صالحًا أو عنوان بريد إلكتروني!</string>
     <string name="NotificationChannel_failures">حالات الفشل</string>
     <string name="conversation_list_item_view__pinned">مثبت</string>
+    <string name="ConversationListFragment_conversation_pinned">تم تثبيت المحادثة</string>
+    <string name="ConversationListFragment_conversation_unpinned">تم الغاء تثبيت المحادثة</string>
+    <string name="conversation_list_batch__menu_pin">تثبيت</string>
+    <string name="conversation_list_batch__menu_unpin">الغاء التثبيت</string>
+    <string name="conversation_list_batch__menu_toggle_pin">تغيير تثبيت المحادثة</string>
+    <string name="set_search_limit">وضع حد لعدد الرسائل في البحث</string>
+    <string name="search_limit">الحد الأقصي لعدد الرسائل</string>
+    <string name="apply_search_limit">تطبيق حد عدد الرسائل</string>
+    <string name="message_per_thread">رسالة لكل محادثة</string>
+    <string name="search_limit_applied">تم تطبيق الحد الجديد لعدد الرسائل</string>
 </resources>
