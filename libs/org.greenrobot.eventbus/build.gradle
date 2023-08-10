@@ -1,0 +1,13 @@
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc).tap {
+            configureEach {
+                options.addStringOption('Xdoclint:none', '-quiet')
+            }
+        }
+    }
+}
+
+tasks.register('wrapper', Wrapper) {
+    gradleVersion = '8.1'
+}
