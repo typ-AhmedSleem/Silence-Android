@@ -144,7 +144,6 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         if (bsSearchOptions == null) bsSearchOptions = new SearchOptionsBottomSheet(requireContext(), this);
 
         fab.setOnClickListener(v -> {
-            Log.i(TAG, "fab::onClick: isSearchActive => " + isSearchActive);
             if (isSearchActive) bsSearchOptions.show();
             else startActivity(new Intent(requireActivity(), NewConversationActivity.class));
         });
@@ -465,10 +464,8 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         getListAdapter().changeCursor(cursor);
         if (getListAdapter().getItemCount() > 0) {
             // todo: Hide empty msg
-            Log.i(TAG, "onLoadFinished: ListAdapter isn't empty.");
         } else {
             // todo: Show empty msg
-            Log.i(TAG, "onLoadFinished: ListAdapter is empty.");
         }
     }
 

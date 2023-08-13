@@ -29,6 +29,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.smssecure.smssecure.AdvancedSearchOptions;
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -420,9 +421,9 @@ public class ThreadDatabase extends Database {
         return false;
     }
 
-    public Cursor loadAllDistinctThreads() {
+    public Cursor loadAllDistinctThreads(boolean includeArchived) {
         final SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        return db.rawQuery("SELECT DISTINCT " + ID + ", " + ARCHIVED + " FROM " + TABLE_NAME + " WHERE " + ARCHIVED + " = 0", null);
+        return db.rawQuery("SELECT DISTINCT " + ID + ", " + ARCHIVED + " FROM " + TABLE_NAME + " WHERE " + ARCHIVED + (includeArchived ? " IN (0,1)" : " = 0;"), null);
     }
 
     private List<Long> resolveIdsFromThreads(@NonNull Cursor cursor) {
@@ -436,7 +437,7 @@ public class ThreadDatabase extends Database {
         return ids;
     }
 
-    private String buildEnhancedFilterSQL(Map<Long, Long> matches, int limit) {
+    private String buildEnhancedFilterSQL(Map<Long, Long> matches, AdvancedSearchOptions opt) {
         // Selection
         StringBuilder THREADS_IDS = new StringBuilder();
         StringBuilder MESSAGES_IDS = new StringBuilder();
@@ -448,9 +449,14 @@ public class ThreadDatabase extends Database {
         THREADS_IDS.deleteCharAt(THREADS_IDS.length() - 1);
         MESSAGES_IDS.deleteCharAt(MESSAGES_IDS.length() - 1);
 
+        // Unread
+        final String UNREAD_CLAUSE = "thr." + READ + (opt.isUnreadOnly() ? " = 0" : " IN (0,1)");
+        // Archived
+        final String ARCHIVED_CLAUSE = "thr." + ARCHIVED + (opt.isIncludeArchived() ? " IN (0,1)" : " = 0");
+        // Pinned
+        final String PINNED_CLAUSE = "thr." + PINNED + (opt.isPinnedOnly() ? " = 1" : " IN (0,1)");
         // Limit
-        String LIMIT_CLAUSE = "";
-        if (limit > 0) LIMIT_CLAUSE = " LIMIT " + limit;
+        String LIMIT_CLAUSE = opt.getResultsLimit() > 0 ? "LIMIT " + opt.getResultsLimit() : "";
 
         return "SELECT thr." + ID + ", " +
                 "thr." + DATE + ", " +
@@ -473,24 +479,25 @@ public class ThreadDatabase extends Database {
                 "FROM " + ThreadDatabase.TABLE_NAME + " thr " +
                 "LEFT JOIN " + SmsDatabase.TABLE_NAME + " msg ON thr." + ID + " = msg." + SmsDatabase.THREAD_ID + " " +
                 "WHERE thr." + ID + " IN " + "(SELECT " + SmsDatabase.THREAD_ID + " FROM " +
-                SmsDatabase.TABLE_NAME + " WHERE " + SmsDatabase.THREAD_ID + " IN (" + THREADS_IDS + ")) AND thr." + ARCHIVED + " = 0 AND msg." + SmsDatabase.ID + " IN (" + MESSAGES_IDS + ") ORDER BY " + SmsDatabase.THREAD_ID + LIMIT_CLAUSE + ";";
+                SmsDatabase.TABLE_NAME + " WHERE " + SmsDatabase.THREAD_ID + " IN (" + THREADS_IDS + ")) " + " AND msg." + SmsDatabase.ID + " IN (" + MESSAGES_IDS + ")" + " AND " + UNREAD_CLAUSE + " AND " + ARCHIVED_CLAUSE + " AND " +
+                PINNED_CLAUSE + " ORDER BY msg." + SmsDatabase.DATE_RECEIVED + " DESC " + LIMIT_CLAUSE + ";";
     }
 
-    public Cursor enhancedFilterThreads(Locale locale, MasterSecret secret, String ready_query, int messagesLimit) {
+    public Cursor enhancedFilterThreads(Locale locale, MasterSecret secret, String ready_query, AdvancedSearchOptions options) {
         if (ready_query == null || ready_query.trim().length() == 0) return null;
-//        Log.i(TAG, "enhancedFilterThreads: Query => " + ready_query + " | limit => " + messagesLimit);
+        Log.i(TAG, "enhancedFilterThreads: Query => " + ready_query + " | options => " + options);
 
         final SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
         // Load all distinct threads and resolve their ids
-        final Cursor threadsCursor = loadAllDistinctThreads();
+        final Cursor threadsCursor = loadAllDistinctThreads(options.isIncludeArchived());
         final List<Long> idsOfThreads = resolveIdsFromThreads(threadsCursor);
 //        Log.d(TAG, "enhancedFilterThreads: Resolved " + idsOfThreads.size() + " thread from " + threadsCursor.getCount() + " thread.");
 
         //Load all messages of each thread (CARING TO MESSAGES LIMIT FOR EACH THREAD OF COURSE)
         final List<Cursor> messagesCursors = new ArrayList<>();
         for (long threadId : idsOfThreads) {
-            final Cursor msgsCursor = DatabaseFactory.getMmsSmsDatabase(context).getConversation(threadId, messagesLimit);
+            final Cursor msgsCursor = DatabaseFactory.getMmsSmsDatabase(context).getConversation(threadId, options.getMsgLimit());
             messagesCursors.add(msgsCursor);
         }
 //        Log.d(TAG, "enhancedFilterThreads: Retrieved " + messagesCursors.size() + " conversation from resolved threads.");
@@ -517,7 +524,7 @@ public class ThreadDatabase extends Database {
 
         // Get all messages by their threadIds
         if (!matchingMessagesIds.isEmpty()) {
-            final String sql = buildEnhancedFilterSQL(matchingMessagesIds, 500);
+            final String sql = buildEnhancedFilterSQL(matchingMessagesIds, options);
             final Cursor resultCursor = db.rawQuery(sql, null);
 //            Log.d(TAG, "enhancedFilterThreads: SQL => " + sql);
 

@@ -93,9 +93,20 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
 
     private void resetOptions(Context context, Callback callback) {
         if (callback != null) {
-            options = loadLastOptions(context);
+            options = defaultSearchOptions();
             saveOptions(options);
+            callback.onSetSearchOptions(options);
+            cancel();
         }
+    }
+
+    private AdvancedSearchOptions defaultSearchOptions() {
+        return new AdvancedSearchOptions(
+                DEFAULT_RESULTS_LIMIT,
+                DEFAULT_MSG_LIMIT,
+                false,
+                false,
+                false);
     }
 
     private int getResultsLimit() {

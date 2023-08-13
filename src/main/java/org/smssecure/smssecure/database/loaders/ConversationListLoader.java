@@ -108,18 +108,18 @@ public class ConversationListLoader extends AbstractCursorLoader {
             try {
                 final Cursor enhancedFilterCursor = DatabaseFactory.getThreadDatabase(getContext()).enhancedFilterThreads(locale, masterSecret, query, searchOptions);
                 if (enhancedFilterCursor != null && enhancedFilterCursor.getCount() > 0) {
-                    Log.v(TAG, "enhancedFilterThreads: Found " + enhancedFilterCursor.getCount() + " messages that contain the given query.");
+//                    Log.v(TAG, "enhancedFilterThreads: Found " + enhancedFilterCursor.getCount() + " messages that contain the given query.");
                     return enhancedFilterCursor;
                 } else {
-                    Log.w(TAG, "enhancedFilterThreads: No messages found that contains query.");
+//                    Log.w(TAG, "enhancedFilterThreads: No messages found that contains query.");
                     return null;
                 }
             } catch (Throwable e) {
-                Log.e(TAG, "enhancedFilterThreads:", e);
+//                Log.e(TAG, "enhancedFilterThreads:", e);
                 return null;
             }
         } else {
-            Log.w(TAG, "enhancedFilterThreads: MasterSecret not provided.");
+//            Log.w(TAG, "enhancedFilterThreads: MasterSecret not provided.");
         }
         // ============================ FINISH: MY CODE ===========================
 
