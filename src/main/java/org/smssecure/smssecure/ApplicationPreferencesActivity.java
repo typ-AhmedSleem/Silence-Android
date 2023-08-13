@@ -210,7 +210,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
             this.findPreference(PREFERENCE_CATEGORY_CHATS)
                     .setSummary(ChatsPreferenceFragment.getSummary(getActivity()));
 
-            String version = String.format(this.getString(R.string.preferences__about_version), "1.1.0-typ");
+            String version = String.format(this.getString(R.string.preferences__about_version), SilenceVersion.CURRENT_VERSION);
 
             this.findPreference(PREFERENCE_ABOUT)
                     .setSummary(version);
