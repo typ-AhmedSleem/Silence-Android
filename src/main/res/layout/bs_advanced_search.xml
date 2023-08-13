@@ -13,7 +13,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/advanced_search"
+        android:text="@string/search_options"
         android:layout_marginTop="10dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         android:textAlignment="center"
@@ -21,58 +21,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_search_query"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/advanced_search_hint"
-        app:boxBackgroundColor="@color/transparent"
-        app:boxBackgroundMode="filled"
-        app:boxCollapsedPaddingTop="5dp"
-        app:boxCornerRadiusBottomEnd="5dp"
-        app:boxCornerRadiusBottomStart="5dp"
-        app:boxCornerRadiusTopEnd="5dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:boxStrokeErrorColor="@color/red"
-        app:boxStrokeWidth="1.5dp"
-        app:counterEnabled="true"
-        app:counterMaxLength="100"
-        app:counterOverflowTextColor="@color/red"
-        app:expandedHintEnabled="true"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-        app:layout_constraintTop_toBottomOf="@id/title">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxLength="100" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/filter_section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="@string/filter_section"
-        app:layout_constraintTop_toBottomOf="@id/til_search_query" />
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_results_limit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/limit_search_to"
         app:boxBackgroundColor="@color/transparent"
         app:boxBackgroundMode="filled"
-        app:layout_constraintTop_toBottomOf="@id/filter_section"
+        app:helperText="@string/max_is_9999"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:suffixText="@string/conversation">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
             tools:text="1000" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -80,6 +44,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_msg_limit"
         android:layout_width="match_parent"
+        app:helperText="@string/max_is_9999"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/messages_per_thread"
@@ -89,6 +54,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
             android:layout_height="match_parent"
             tools:text="100" />
 
@@ -185,15 +152,28 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reset"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/reset_search"
+        android:textAlignment="center"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_pinned_only"
+        app:rippleColor="@color/silence_primary_alpha33"
+        app:strokeColor="@color/silence_primary" />
+
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_perform_search"
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="match_parent"
-        android:text="@string/search"
+        android:layout_height="60dp"
         android:textAlignment="center"
-        android:layout_height="65dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_reset"
         app:backgroundTint="@color/silence_primary"
-        android:layout_marginTop="20dp"
         app:cornerRadius="10dp"
-        app:layout_constraintTop_toBottomOf="@id/card_pinned_only" />
+        android:text="@string/apply_search_options" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

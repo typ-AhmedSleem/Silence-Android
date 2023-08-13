@@ -782,4 +782,10 @@
     <string name="unread_only">Unread only</string>
     <string name="include_archived">Include archived</string>
     <string name="pinned_only">Pinned only</string>
+    <string name="max_is_9999">Max is 9999</string>
+    <string name="search_options">Search options</string>
+    <string name="reset_search">Reset search</string>
+    <string name="empty_query">Can\'t search using empty query</string>
+    <string name="clear_search">Clear search</string>
+    <string name="apply_search_options">Apply search options</string>
 </resources>

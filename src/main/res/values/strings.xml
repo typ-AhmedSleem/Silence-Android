@@ -950,7 +950,7 @@
     <string name="apply_search_limit">Apply search limit</string>
     <string name="message_per_thread">Message per Thread</string>
     <string name="search_limit_applied">Search limit applied</string>
-    <string name="search">Search</string>
+    <string name="search">Perform Search</string>
     <string name="advanced_search">Advanced Search</string>
     <string name="advanced_search_hint">You want to search for...</string>
     <string name="filter_section">Filter options</string>
@@ -961,6 +961,12 @@
     <string name="unread_only">Show unread messages only</string>
     <string name="include_archived">Include archived</string>
     <string name="pinned_only">Pinned only</string>
+    <string name="max_is_9999">Max is 9999</string>
+    <string name="search_options">Search options</string>
+    <string name="reset_search">Reset search</string>
+    <string name="empty_query">Can\'t search using empty query</string>
+    <string name="clear_search">Clear search</string>
+    <string name="apply_search_options">Apply search options</string>
 
     <!-- EOF -->
 
