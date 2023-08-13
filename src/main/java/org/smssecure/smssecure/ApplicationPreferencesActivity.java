@@ -62,7 +62,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
     private static final String PREFERENCE_CATEGORY_ADVANCED = "preference_category_advanced";
     private static final String PREFERENCE_ABOUT = "preference_about";
     private static final String PREFERENCE_PRIVACY_POLICY = "preference_privacy_policy";
-    private static final String PREFERENCE_SEARCH_LIMIT = "preference_search_limit";
+//    private static final String PREFERENCE_SEARCH_LIMIT = "preference_search_limit";
     private static final String PUSH_MESSAGING_PREF = "pref_toggle_push_messaging";
 
     private final DynamicTheme dynamicTheme = new DynamicTheme();

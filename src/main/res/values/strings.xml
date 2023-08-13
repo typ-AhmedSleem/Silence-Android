@@ -950,6 +950,17 @@
     <string name="apply_search_limit">Apply search limit</string>
     <string name="message_per_thread">Message per Thread</string>
     <string name="search_limit_applied">Search limit applied</string>
+    <string name="search">Search</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="advanced_search_hint">You want to search for...</string>
+    <string name="filter_section">Filter options</string>
+    <string name="limit_search_to">Limit search to</string>
+    <string name="conversation">conversation</string>
+    <string name="messages_per_thread">Messages limit per Conversation</string>
+    <string name="message">message</string>
+    <string name="unread_only">Show unread messages only</string>
+    <string name="include_archived">Include archived</string>
+    <string name="pinned_only">Pinned only</string>
 
     <!-- EOF -->
 

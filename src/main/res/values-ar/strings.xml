@@ -771,4 +771,15 @@
     <string name="apply_search_limit">تطبيق حد عدد الرسائل</string>
     <string name="message_per_thread">رسالة لكل محادثة</string>
     <string name="search_limit_applied">تم تطبيق الحد الجديد لعدد الرسائل</string>
+    <string name="search">Search</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="advanced_search_hint">What do you want to search for...</string>
+    <string name="filter_section">Filter options</string>
+    <string name="limit_search_to">Limit search to</string>
+    <string name="conversation">Conversation</string>
+    <string name="messages_per_thread">Messages limit per Thread</string>
+    <string name="message">message</string>
+    <string name="unread_only">Unread only</string>
+    <string name="include_archived">Include archived</string>
+    <string name="pinned_only">Pinned only</string>
 </resources>
