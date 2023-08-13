@@ -31,9 +31,9 @@
         android:key="preference_category_advanced"
         android:title="@string/preferences__advanced" />
 
-    <Preference
-        android:key="preference_search_limit"
-        android:title="@string/set_search_limit" />
+<!--    <Preference-->
+<!--        android:key="preference_search_limit"-->
+<!--        android:title="@string/set_search_limit" />-->
 
     <Preference
         android:key="preference_about"

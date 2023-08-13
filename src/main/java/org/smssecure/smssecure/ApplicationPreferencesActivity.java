@@ -31,9 +31,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.Preference;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.textfield.TextInputEditText;
-
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.preferences.AdvancedPreferenceFragment;
 import org.smssecure.smssecure.preferences.AppProtectionPreferenceFragment;
@@ -46,8 +43,6 @@ import org.smssecure.smssecure.service.KeyCachingService;
 import org.smssecure.smssecure.util.DynamicLanguage;
 import org.smssecure.smssecure.util.DynamicTheme;
 import org.smssecure.smssecure.util.SilencePreferences;
-
-import java.util.Objects;
 
 /**
  * The Activity for application preference display and management.
@@ -156,31 +151,31 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
                         return true;
                     });
 
-            this.findPreference(PREFERENCE_SEARCH_LIMIT)
-                    .setOnPreferenceClickListener(preference -> {
-                        final SharedPreferences prefs = requireContext().getSharedPreferences("Silence_Global", MODE_PRIVATE);
-                        final SharedPreferences.Editor editor = prefs.edit();
-                        final int currentLimit = prefs.getInt("searchLimit", 250);
-
-                        final BottomSheetDialog bs = new BottomSheetDialog(requireContext());
-                        bs.setContentView(R.layout.bs_search_limit);
-                        final TextInputEditText inputLimit = bs.findViewById(R.id.input_search_limit);
-                        inputLimit.setText(String.valueOf(currentLimit));
-                        bs.findViewById(R.id.btn_set_search_limit).setOnClickListener(v -> {
-                            try {
-                                final int newLimit = Math.min(250, Math.abs(Integer.parseInt(Objects.requireNonNull(inputLimit.getText()).toString().trim())));
-                                editor.putInt("searchLimit", newLimit);
-                                if (editor.commit()) {
-                                    bs.cancel();
-                                    Toast.makeText(requireContext(), R.string.search_limit_applied, Toast.LENGTH_SHORT).show();
-                                } else throw new Exception("Can't set search limit");
-                            } catch (Throwable ignored) {
-                                Toast.makeText(requireContext(), "Invalid search limit", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        bs.show();
-                        return true;
-                    });
+//            this.findPreference(PREFERENCE_SEARCH_LIMIT)
+//                    .setOnPreferenceClickListener(preference -> {
+//                        final SharedPreferences prefs = requireContext().getSharedPreferences("Silence_Global", MODE_PRIVATE);
+//                        final SharedPreferences.Editor editor = prefs.edit();
+//                        final int currentLimit = prefs.getInt("searchLimit", 250);
+//
+//                        final BottomSheetDialog bs = new BottomSheetDialog(requireContext());
+//                        bs.setContentView(R.layout.bs_search_limit);
+//                        final TextInputEditText inputLimit = bs.findViewById(R.id.input_search_limit);
+//                        inputLimit.setText(String.valueOf(currentLimit));
+//                        bs.findViewById(R.id.btn_set_search_limit).setOnClickListener(v -> {
+//                            try {
+//                                final int newLimit = Math.min(250, Math.abs(Integer.parseInt(Objects.requireNonNull(inputLimit.getText()).toString().trim())));
+//                                editor.putInt("searchLimit", newLimit);
+//                                if (editor.commit()) {
+//                                    bs.cancel();
+//                                    Toast.makeText(requireContext(), R.string.search_limit_applied, Toast.LENGTH_SHORT).show();
+//                                } else throw new Exception("Can't set search limit");
+//                            } catch (Throwable ignored) {
+//                                Toast.makeText(requireContext(), "Invalid search limit", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                        bs.show();
+//                        return true;
+//                    });
         }
 
         @Override
