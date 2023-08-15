@@ -23,17 +23,16 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-
-import androidx.annotation.NonNull;
-import androidx.core.view.MenuItemCompat;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.SearchView;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -94,7 +93,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     }
 
     @Override
-    public boolean onPrepareOptionsMenu (Menu menu){
+    public boolean onPrepareOptionsMenu(Menu menu) {
         MenuInflater inflater = this.getMenuInflater();
         menu.clear();
 
@@ -140,30 +139,28 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
             @Override
             public boolean onQueryTextSubmit (String query){
                 if (fragment != null) {
-                    fragment.setQueryFilter(query);
+                    fragment.performSearch(query);
                     return true;
                 }
-
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange (String newText){
-                return onQueryTextSubmit(newText);
+                return false;
             }
         });
 
-        MenuItemCompat.setOnActionExpandListener(searchViewItem, new MenuItemCompat.OnActionExpandListener() {
+        searchViewItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
-            public boolean onMenuItemActionExpand (MenuItem menuItem){
+            public boolean onMenuItemActionExpand(@NonNull MenuItem menuItem) {
+                if (fragment != null) fragment.openSearch();
                 return true;
             }
 
             @Override
-            public boolean onMenuItemActionCollapse (MenuItem menuItem){
-                if (fragment != null) {
-                    fragment.resetQueryFilter();
-                }
+            public boolean onMenuItemActionCollapse(@NonNull MenuItem menuItem) {
+                if (fragment != null) fragment.closeSearch();
 
                 return true;
             }
