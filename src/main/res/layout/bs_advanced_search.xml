@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_options"
+        android:layout_marginTop="10dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_results_limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/limit_search_to"
+        app:boxBackgroundColor="@color/transparent"
+        app:boxBackgroundMode="filled"
+        app:helperText="@string/max_is_9999"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:suffixText="@string/conversation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:text="1000" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_msg_limit"
+        android:layout_width="match_parent"
+        app:helperText="@string/max_is_9999"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/messages_per_thread"
+        app:boxBackgroundColor="@color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/til_results_limit"
+        app:suffixText="@string/message">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
+            android:layout_height="match_parent"
+            tools:text="100" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_read_only"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:contentPadding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/til_msg_limit"
+        app:rippleColor="@color/transparent">
+
+        <CheckBox
+            android:id="@+id/chk_unread_only"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/unread_only"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_include_archived"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:contentPadding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/card_read_only"
+        app:rippleColor="@color/transparent">
+
+        <CheckBox
+            android:id="@+id/chk_include_archived"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/include_archived"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_pinned_only"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        app:contentPadding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/card_include_archived"
+        app:rippleColor="@color/transparent">
+
+        <CheckBox
+            android:id="@+id/chk_pinned_only"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/pinned_only"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reset"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/reset_search"
+        android:textAlignment="center"
+        app:cornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_pinned_only"
+        app:rippleColor="@color/silence_primary_alpha33"
+        app:strokeColor="@color/silence_primary" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_perform_search"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/btn_reset"
+        app:backgroundTint="@color/silence_primary"
+        app:cornerRadius="10dp"
+        android:text="@string/apply_search_options" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

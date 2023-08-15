@@ -1,15 +1,14 @@
 package org.smssecure.smssecure.database.loaders;
 
-import static android.content.Context.MODE_PRIVATE;
-import static org.smssecure.smssecure.database.ThreadDatabase.*;
+import static org.smssecure.smssecure.database.ThreadDatabase.ID;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
 import android.util.Log;
 
+import org.smssecure.smssecure.AdvancedSearchOptions;
 import org.smssecure.smssecure.contacts.ContactAccessor;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
@@ -28,27 +27,33 @@ public class ConversationListLoader extends AbstractCursorLoader {
     private final boolean archived;
     private final MasterSecret masterSecret;
     private final Locale locale;
+    private final AdvancedSearchOptions searchOptions;
 
     public ConversationListLoader(Context context, String query, boolean archived) {
         super(context);
+
         this.query = query;
         this.archived = archived;
-        this.masterSecret = null;
+
         this.locale = null;
+        this.masterSecret = null;
+        this.searchOptions = null;
     }
 
-    public ConversationListLoader(MasterSecret secret, Locale locale, Context context, String query, boolean archived) {
+    public ConversationListLoader(MasterSecret secret, Locale locale, Context context, String query, AdvancedSearchOptions options, boolean archived) {
         super(context);
+
         this.query = query;
         this.archived = archived;
         this.masterSecret = secret;
         this.locale = locale;
+        this.searchOptions = options;
     }
 
     @Override
     public Cursor getCursor() {
         if (query != null && query.trim().length() != 0) {
-            return getFilteredConversationList(query.trim().toLowerCase(locale));
+            return getFilteredConversationList(query.trim().toLowerCase(locale), searchOptions);
         } else if (!archived) {
             return getUnarchivedConversationList();
         } else {
@@ -96,14 +101,12 @@ public class ConversationListLoader extends AbstractCursorLoader {
         return DatabaseFactory.getThreadDatabase(context).getArchivedConversationList();
     }
 
-    private Cursor getFilteredConversationList(String query) {
+    private Cursor getFilteredConversationList(String query, AdvancedSearchOptions searchOptions) {
 
         // ============================ START: MY CODE ============================
-        final int MESSAGES_LIMIT_PER_THREAD = context.getSharedPreferences("Silence_Global", MODE_PRIVATE).getInt("searchLimit", 250);
-        // Enhanced filter
         if (masterSecret != null) {
             try {
-                final Cursor enhancedFilterCursor = DatabaseFactory.getThreadDatabase(getContext()).enhancedFilterThreads(locale, masterSecret, query, MESSAGES_LIMIT_PER_THREAD);
+                final Cursor enhancedFilterCursor = DatabaseFactory.getThreadDatabase(getContext()).enhancedFilterThreads(locale, masterSecret, query, searchOptions);
                 if (enhancedFilterCursor != null && enhancedFilterCursor.getCount() > 0) {
 //                    Log.v(TAG, "enhancedFilterThreads: Found " + enhancedFilterCursor.getCount() + " messages that contain the given query.");
                     return enhancedFilterCursor;
