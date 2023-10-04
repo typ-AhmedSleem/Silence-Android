@@ -46,7 +46,7 @@ subprojects {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
     namespace "org.smssecure.smssecure"
     useLibrary 'org.apache.http.legacy'
     setBuildToolsVersion('33.0.1')
