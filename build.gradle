@@ -8,14 +8,17 @@ buildscript {
         jcenter()
         mavenCentral()
     }
+    ext.kotlin_version = '1.7.10'
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
         classpath files('libs/gradle-witness.jar')
+        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'witness'
+apply plugin: 'kotlin-android'
 
 repositories {
     maven {
@@ -190,6 +193,12 @@ dependencies {
         exclude group: 'org.hamcrest', module: 'hamcrest-core'
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+
+    // Kotlin
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2'
+
 }
 
 dependencyVerification {
