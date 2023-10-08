@@ -1,6 +1,7 @@
 package org.smssecure.smssecure;
 
 import static android.content.Context.MODE_PRIVATE;
+import static org.smssecure.smssecure.AdvancedSearchOptions.DEFAULT_CONTACTS_LIMIT;
 import static org.smssecure.smssecure.AdvancedSearchOptions.DEFAULT_MSG_LIMIT;
 import static org.smssecure.smssecure.AdvancedSearchOptions.DEFAULT_RESULTS_LIMIT;
 import static org.smssecure.smssecure.AdvancedSearchOptions.PREF_NAME;
@@ -18,9 +19,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Objects;
+
 public class SearchOptionsBottomSheet extends BottomSheetDialog {
 
     // Views
+    private final TextInputEditText inputContactsLimit;
     private final TextInputEditText inputResultsLimit;
     private final TextInputEditText inputMsgLimit;
     private final CheckBox chkUnreadOnly;
@@ -36,6 +40,7 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
         // Init views
         final View bsView = LayoutInflater.from(context).inflate(R.layout.bs_advanced_search, null);
         setContentView(bsView);
+        inputContactsLimit = (TextInputEditText) ((TextInputLayout) bsView.findViewById(R.id.til_contacts_limit)).getEditText();
         inputResultsLimit = (TextInputEditText) ((TextInputLayout) bsView.findViewById(R.id.til_results_limit)).getEditText();
         inputMsgLimit = (TextInputEditText) ((TextInputLayout) bsView.findViewById(R.id.til_msg_limit)).getEditText();
         chkUnreadOnly = bsView.findViewById(R.id.chk_unread_only);
@@ -53,6 +58,7 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
     private AdvancedSearchOptions loadLastOptions(Context ctx) {
         final SharedPreferences prefs = ctx.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         return new AdvancedSearchOptions.Builder()
+                .setContactsLimit(prefs.getInt(AdvancedSearchOptions.KEY_CONTACTS_LIMIT, DEFAULT_CONTACTS_LIMIT))
                 .setResultsLimit(prefs.getInt(AdvancedSearchOptions.KEY_RESULTS_LIMIT, DEFAULT_RESULTS_LIMIT))
                 .setMsgLimit(prefs.getInt(AdvancedSearchOptions.KEY_MSG_LIMIT, DEFAULT_MSG_LIMIT))
                 .setUnreadOnly(prefs.getBoolean(AdvancedSearchOptions.KEY_UNREAD_ONLY, false))
@@ -66,6 +72,7 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
         if (callback != null) {
             // Build options
             final AdvancedSearchOptions options = new AdvancedSearchOptions.Builder()
+                    .setContactsLimit(getContactsLimit())
                     .setResultsLimit(getResultsLimit())
                     .setMsgLimit(getMsgLimit())
                     .setUnreadOnly(chkUnreadOnly.isChecked())
@@ -83,6 +90,7 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
     private void saveOptions(AdvancedSearchOptions options) {
         if (options == null) return;
         final SharedPreferences.Editor editor = getContext().getSharedPreferences(PREF_NAME, MODE_PRIVATE).edit();
+        editor.putInt(AdvancedSearchOptions.KEY_CONTACTS_LIMIT, options.getContactsLimit());
         editor.putInt(AdvancedSearchOptions.KEY_RESULTS_LIMIT, options.getResultsLimit());
         editor.putInt(AdvancedSearchOptions.KEY_MSG_LIMIT, options.getMsgLimit());
         editor.putBoolean(AdvancedSearchOptions.KEY_UNREAD_ONLY, options.isUnreadOnly());
@@ -102,6 +110,7 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
 
     private AdvancedSearchOptions defaultSearchOptions() {
         return new AdvancedSearchOptions(
+                DEFAULT_CONTACTS_LIMIT,
                 DEFAULT_RESULTS_LIMIT,
                 DEFAULT_MSG_LIMIT,
                 false,
@@ -109,9 +118,17 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
                 false);
     }
 
+    private int getContactsLimit() {
+        try {
+            return Integer.parseInt(Objects.requireNonNull(inputContactsLimit.getText()).toString());
+        } catch (Throwable ignored) {
+            return DEFAULT_CONTACTS_LIMIT;
+        }
+    }
+
     private int getResultsLimit() {
         try {
-            return Integer.parseInt(inputResultsLimit.getText().toString());
+            return Integer.parseInt(Objects.requireNonNull(inputResultsLimit.getText()).toString());
         } catch (Throwable ignored) {
             return DEFAULT_RESULTS_LIMIT;
         }
@@ -119,13 +136,14 @@ public class SearchOptionsBottomSheet extends BottomSheetDialog {
 
     private int getMsgLimit() {
         try {
-            return Integer.parseInt(inputMsgLimit.getText().toString());
+            return Integer.parseInt(Objects.requireNonNull(inputMsgLimit.getText()).toString());
         } catch (Throwable ignored) {
             return DEFAULT_MSG_LIMIT;
         }
     }
 
     private void updateViews() {
+        inputContactsLimit.setText(String.valueOf(options != null ? options.getContactsLimit() : DEFAULT_CONTACTS_LIMIT));
         inputResultsLimit.setText(String.valueOf(options != null ? options.getResultsLimit() : DEFAULT_RESULTS_LIMIT));
         inputMsgLimit.setText(String.valueOf(options != null ? options.getMsgLimit() : DEFAULT_MSG_LIMIT));
         chkUnreadOnly.setChecked(options != null && options.isUnreadOnly());

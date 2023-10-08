@@ -6,11 +6,13 @@ import androidx.annotation.NonNull;
 public class AdvancedSearchOptions {
 
     // Defaults
+    public static final int DEFAULT_CONTACTS_LIMIT = 25;
     public static final int DEFAULT_RESULTS_LIMIT = 2500;
     public static final int DEFAULT_MSG_LIMIT = 250;
 
     // Preferences Keys
     public static final String PREF_NAME = "SearchOptions";
+    public static final String KEY_CONTACTS_LIMIT = "SearchOptContactsLimit";
     public static final String KEY_RESULTS_LIMIT = "SearchOptResultsLimit";
     public static final String KEY_MSG_LIMIT = "SearchOptMsgLimit";
     public static final String KEY_UNREAD_ONLY = "SearchOptUnreadOnly";
@@ -18,22 +20,29 @@ public class AdvancedSearchOptions {
     public static final String KEY_PINNED_ONLY = "SearchOptPinnedOnly";
 
     // Fields
+    private @IntRange(from = 1, to = 9999) int contactsLimit;
     private @IntRange(from = 1, to = 9999) int resultsLimit;
     private @IntRange(from = 1, to = 9999) int msgLimit;
     private boolean unreadOnly;
     private boolean includeArchived;
     private boolean pinnedOnly;
 
-    public AdvancedSearchOptions(int resultsLimit,
+    public AdvancedSearchOptions(int contactsLimit,
+                                 int resultsLimit,
                                  int msgLimit,
                                  boolean unreadOnly,
                                  boolean includeArchived,
                                  boolean pinnedOnly) {
+        this.contactsLimit = contactsLimit;
         this.resultsLimit = resultsLimit;
         this.msgLimit = msgLimit;
         this.unreadOnly = unreadOnly;
         this.includeArchived = includeArchived;
         this.pinnedOnly = pinnedOnly;
+    }
+
+    public int getContactsLimit() {
+        return contactsLimit;
     }
 
     public int getResultsLimit() {
@@ -58,6 +67,7 @@ public class AdvancedSearchOptions {
 
     public void update(AdvancedSearchOptions options) {
         if (options == null) return;
+        this.contactsLimit = options.contactsLimit;
         this.resultsLimit = options.resultsLimit;
         this.msgLimit = options.msgLimit;
         this.unreadOnly = options.unreadOnly;
@@ -69,7 +79,8 @@ public class AdvancedSearchOptions {
     @Override
     public String toString() {
         return "AdvancedSearchOptions{" +
-                "resultsLimit=" + resultsLimit +
+                "contactsLimit=" + contactsLimit +
+                ", resultsLimit=" + resultsLimit +
                 ", msgLimit=" + msgLimit +
                 ", unreadOnly=" + unreadOnly +
                 ", includeArchived=" + includeArchived +
@@ -78,11 +89,17 @@ public class AdvancedSearchOptions {
     }
 
     public static class Builder {
+        private int contactsLimit;
         private int resultsLimit;
         private int msgLimit;
         private boolean unreadOnly;
         private boolean includeArchived;
         private boolean pinnedOnly;
+
+        public Builder setContactsLimit(int contactsLimit) {
+            this.contactsLimit = contactsLimit;
+            return this;
+        }
 
         public Builder setResultsLimit(int resultsLimit) {
             this.resultsLimit = resultsLimit;
@@ -111,6 +128,7 @@ public class AdvancedSearchOptions {
 
         public AdvancedSearchOptions build() {
             return new AdvancedSearchOptions(
+                    contactsLimit,
                     resultsLimit,
                     msgLimit,
                     unreadOnly,

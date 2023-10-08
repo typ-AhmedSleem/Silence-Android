@@ -34,6 +34,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.view.MenuItemCompat;
 
+import org.smssecure.smssecure.crypto.MasterCipher;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.notifications.MessageNotifier;
@@ -62,13 +63,13 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     private List<SubscriptionInfoCompat> activeSubscriptions;
 
     @Override
-    protected void onPreCreate (){
+    protected void onPreCreate() {
         dynamicTheme.onCreate(this);
         dynamicLanguage.onCreate(this);
     }
 
     @Override
-    protected void onCreate (Bundle icicle, @NonNull MasterSecret masterSecret){
+    protected void onCreate(Bundle icicle, @NonNull MasterSecret masterSecret) {
         this.masterSecret = masterSecret;
         this.activeSubscriptions = SubscriptionManagerCompat.from(this).getActiveSubscriptionInfoList();
 
@@ -80,14 +81,14 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     }
 
     @Override
-    public void onResume (){
+    public void onResume() {
         super.onResume();
         dynamicTheme.onResume(this);
         dynamicLanguage.onResume(this);
     }
 
     @Override
-    public void onDestroy (){
+    public void onDestroy() {
         if (observer != null) getContentResolver().unregisterContentObserver(observer);
         super.onDestroy();
     }
@@ -104,14 +105,14 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         inflateViewIdentities(menu);
 
         inflater.inflate(R.menu.conversation_list, menu);
-        MenuItem menuItem = menu.findItem(R.id.menu_search);
-        initializeSearch(menuItem);
+        final MenuItem menuItemSearch = menu.findItem(R.id.menu_search);
+        initializeSearch(menuItemSearch);
 
         super.onPrepareOptionsMenu(menu);
         return true;
     }
 
-    private void inflateViewIdentities (Menu menu){
+    private void inflateViewIdentities(Menu menu) {
         if (Build.VERSION.SDK_INT >= 22 && activeSubscriptions.size() > 1) {
             menu.findItem(R.id.menu_my_identity).setVisible(false);
             MenuItem menuItem = menu.findItem(R.id.menu_my_identity_dual_sim);
@@ -119,25 +120,25 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
             for (SubscriptionInfoCompat subscriptionInfo : activeSubscriptions) {
                 final int subscriptionId = subscriptionInfo.getSubscriptionId();
                 identitiesMenu.add(Menu.NONE, Menu.NONE, Menu.NONE, subscriptionInfo.getDisplayName())
-                              .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                                  @Override
-                                  public boolean onMenuItemClick (MenuItem item){
-                                      handleMyIdentity(subscriptionId);
-                                      return true;
-                                  }
-                              });
+                        .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                handleMyIdentity(subscriptionId);
+                                return true;
+                            }
+                        });
             }
         } else {
             menu.findItem(R.id.menu_my_identity_dual_sim).setVisible(false);
         }
     }
 
-    private void initializeSearch (MenuItem searchViewItem){
+    private void initializeSearch(MenuItem searchViewItem) {
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
         searchView.setQueryHint(getString(R.string.ConversationListActivity_search));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit (String query){
+            public boolean onQueryTextSubmit(String query) {
                 if (fragment != null) {
                     fragment.performSearch(query);
                     return true;
@@ -146,7 +147,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
             }
 
             @Override
-            public boolean onQueryTextChange (String newText){
+            public boolean onQueryTextChange(String newText) {
                 return false;
             }
         });
@@ -168,7 +169,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
         int itemId = item.getItemId();
@@ -212,26 +213,26 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     }
 
     @Override
-    public void onSwitchToArchive (){
+    public void onSwitchToArchive() {
         Intent intent = new Intent(this, ConversationListArchiveActivity.class);
         startActivity(intent);
     }
 
-    private void createGroup (){
+    private void createGroup() {
         Intent intent = new Intent(this, GroupCreateActivity.class);
         startActivity(intent);
     }
 
-    private void handleSwitchToArchive (){
+    private void handleSwitchToArchive() {
         onSwitchToArchive();
     }
 
-    private void handleDisplaySettings (){
+    private void handleDisplaySettings() {
         Intent preferencesIntent = new Intent(this, ApplicationPreferencesActivity.class);
         startActivity(preferencesIntent);
     }
 
-    private void handleClearPassphrase (){
+    private void handleClearPassphrase() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
             Intent intent = new Intent(this, KeyCachingService.class);
             intent.setAction(KeyCachingService.CLEAR_KEY_ACTION);
@@ -239,28 +240,28 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         }
     }
 
-    private void handleImportExport (){
+    private void handleImportExport() {
         startActivity(new Intent(this, ImportExportActivity.class));
     }
 
-    private void handleMyIdentity (){
+    private void handleMyIdentity() {
         if (activeSubscriptions.size() < 2) {
             int subscriptionId = activeSubscriptions.get(0).getSubscriptionId();
             handleMyIdentity(subscriptionId);
         }
     }
 
-    private void handleMyIdentity (int subscriptionId){
+    private void handleMyIdentity(int subscriptionId) {
         Intent intent = new Intent(this, ViewIdentityActivity.class);
         intent.putExtra("subscription_id", subscriptionId);
         startActivity(intent);
     }
 
     @SuppressLint("StaticFieldLeak")
-    private void handleMarkAllRead (){
+    private void handleMarkAllRead() {
         new AsyncTask<Void, Void, Void>() {
             @Override
-            protected Void doInBackground (Void... params){
+            protected Void doInBackground(Void... params) {
                 DatabaseFactory.getThreadDatabase(ConversationListActivity.this).setAllThreadsRead();
                 MessageNotifier.updateNotification(ConversationListActivity.this, masterSecret);
                 return null;
@@ -268,16 +269,16 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         }.execute();
     }
 
-    private void initializeContactUpdatesReceiver (){
+    private void initializeContactUpdatesReceiver() {
         observer = new ContentObserver(null) {
             @Override
-            public void onChange (boolean selfChange){
+            public void onChange(boolean selfChange) {
                 super.onChange(selfChange);
                 Log.w(TAG, "Detected android contact data changed, refreshing cache");
                 RecipientFactory.clearCache();
                 ConversationListActivity.this.runOnUiThread(new Runnable() {
                     @Override
-                    public void run (){
+                    public void run() {
                         fragment.getListAdapter().notifyDataSetChanged();
                     }
                 });
@@ -285,11 +286,11 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         };
 
         getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI,
-                                                     true, observer);
+                true, observer);
     }
 
     @Override
-    public void onBackPressed (){
+    public void onBackPressed() {
         if (fragment != null) {
             if (fragment.getListAdapter().getBatchSelections().size() > 0) {
                 fragment.unselectAllThreads();
