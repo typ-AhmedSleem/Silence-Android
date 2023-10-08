@@ -53,6 +53,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
     <application
         android:name=".ApplicationContext"
@@ -138,7 +139,7 @@
         </activity>
 
         <activity
-            android:name="org.smssecure.smssecure.DummySplashScreen"
+            android:name="org.smssecure.smssecure.SplashScreenActivity"
             android:exported="true"
             android:label="@string/app_name">
 
@@ -344,7 +345,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ExitActivity" /> <!-- android:theme="@android:style/Theme.NoDisplay" -->
+        <activity android:name=".ExitActivity" />
+
+        <activity
+            android:name="org.smssecure.smssecure.BiometricLockActivity"
+            android:theme="@style/Silence.LightTheme" /> <!-- android:theme="@android:style/Theme.NoDisplay" -->
 
         <service
             android:name=".service.ApplicationMigrationService"
