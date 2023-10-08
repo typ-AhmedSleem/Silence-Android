@@ -795,4 +795,10 @@
     <string name="contacts">Contacts</string>
     <string name="limit_contacts_to">Limit contacts to</string>
     <string name="contact">contact</string>
+    <string name="biometric_lock">Biometric Lock</string>
+    <string name="use_your_fingerprint_to_unlock_the_app">Use your fingerprint to unlock the app</string>
+    <string name="can_t_use_fingerprint_right_now_try_again_later">Can\'t use fingerprint right now\nTry again later</string>
+    <string name="fingerprint_auth_failed">Fingerprint auth failed</string>
+    <string name="msg_biometric_prompt">Use your biometric data or try other method to unlock the app</string>
+    <string name="biometric_login_required">Biometric login required</string>
 </resources>
