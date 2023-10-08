@@ -1,7 +1,9 @@
 package org.smssecure.smssecure
 
+import android.app.KeyguardManager
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +23,10 @@ class SplashScreenActivity : AppCompatActivity() {
 		GlobalScope.launch(Dispatchers.IO) {
 			delay(2.seconds)
 			withContext(Dispatchers.Main) {
-				startActivity(Intent(this@SplashScreenActivity, BiometricLockActivity::class.java))
+				val keyguardManager = getSystemService(KEYGUARD_SERVICE) as KeyguardManager
+				val target = if (keyguardManager.isKeyguardSecure) BiometricLockActivity::class.java
+				else ConversationListActivity::class.java
+				startActivity(Intent(this@SplashScreenActivity, target))
 				finish()
 			}
 		}
