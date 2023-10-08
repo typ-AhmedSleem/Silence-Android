@@ -43,7 +43,7 @@ object SearchManager {
 				}.await()
 
 				async {
-					resolvedThreads(
+					getThreadsResolved(
 						DatabaseFactory.getThreadDatabase(context),
 						locale,
 						secret,
@@ -60,7 +60,7 @@ object SearchManager {
 		}
 	}
 
-	private fun resolvedThreads(
+	private fun getThreadsResolved(
 		db: ThreadDatabase,
 		locale: Locale,
 		secret: MasterSecret,

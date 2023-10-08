@@ -41,7 +41,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -156,12 +155,10 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
             if (result instanceof GlobalSearchResult.ContactSearchResult) {
                 // Show contact at AddressBook
                 final ContactRecord contact = ((GlobalSearchResult.ContactSearchResult) result).getContact();
-                final @Nullable Uri contactUri = ContactsContract.Contacts.getLookupUri(contact.getId(), ContactsContract.Contacts.LOOKUP_KEY);
-                if (contactUri == null) return;
-                final Intent intent = new Intent(Intent.ACTION_VIEW, contactUri);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                if (intent.resolveActivity(requireContext().getPackageManager()) != null) startActivity(intent);
-                else Toast.makeText(requireContext(), "Contacts app isn't available", Toast.LENGTH_SHORT).show();
+                final Intent intent = new Intent(Intent.ACTION_VIEW);
+                final Uri uri = Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_URI, String.valueOf(contact.getId()));
+                intent.setData(uri);
+                startActivity(intent);
             } else {
                 // Open or create a conversation
                 final ThreadRecord thread = ((GlobalSearchResult.MessageSearchResult) result).getConversation().getRecord();
