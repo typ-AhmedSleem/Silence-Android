@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="20dp"
     android:paddingTop="10dp"
@@ -13,23 +13,44 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/search_options"
         android:layout_marginTop="10dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:text="@string/search_options"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_contacts_limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/limit_contacts_to"
+        app:boxBackgroundColor="@color/transparent"
+        app:boxBackgroundMode="filled"
+        app:helperText="@string/max_is_9999"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:suffixText="@string/contact">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="4"
+            tools:text="25" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_results_limit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/limit_search_to"
         app:boxBackgroundColor="@color/transparent"
         app:boxBackgroundMode="filled"
         app:helperText="@string/max_is_9999"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/til_contacts_limit"
         app:suffixText="@string/conversation">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -44,19 +65,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_msg_limit"
         android:layout_width="match_parent"
-        app:helperText="@string/max_is_9999"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/messages_per_thread"
         app:boxBackgroundColor="@color/transparent"
+        app:helperText="@string/max_is_9999"
         app:layout_constraintTop_toBottomOf="@id/til_results_limit"
         app:suffixText="@string/message">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:inputType="number"
             android:maxLength="4"
-            android:layout_height="match_parent"
             tools:text="100" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -170,10 +191,10 @@
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:text="@string/apply_search_options"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/btn_reset"
         app:backgroundTint="@color/silence_primary"
         app:cornerRadius="10dp"
-        android:text="@string/apply_search_options" />
+        app:layout_constraintTop_toBottomOf="@id/btn_reset" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
