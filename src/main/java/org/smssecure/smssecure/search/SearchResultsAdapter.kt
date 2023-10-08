@@ -13,8 +13,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.smssecure.smssecure.ConversationListItem
 import org.smssecure.smssecure.R
-import org.smssecure.smssecure.color.MaterialColor
 import org.smssecure.smssecure.components.AvatarImageView
+import org.smssecure.smssecure.contacts.avatars.ContactColors
 import org.smssecure.smssecure.contacts.avatars.ContactPhotoFactory
 import org.smssecure.smssecure.crypto.MasterSecret
 import java.util.Locale
@@ -44,9 +44,9 @@ class SearchResultsAdapter(
 		override fun setData(result: GlobalSearchResult.ContactSearchResult) {
 			tvName.text = result.contact.name
 			tvNumber.text = result.contact.number
+//			itemView.setOnClickListener { aivAvatar.performClick() }
 
 			GlobalScope.launch(Dispatchers.IO) {
-				val bgColor = MaterialColor.AMBER
 				val contactPhoto = async {
 					ContactPhotoFactory.getContactPhoto(
 						context,
@@ -54,7 +54,7 @@ class SearchResultsAdapter(
 						result.contact.name
 					).asDrawable(
 						context,
-						bgColor.toConversationColor(context)
+						ContactColors.generateFor(result.contact.name).toConversationColor(context)
 					)
 				}
 				withContext(Dispatchers.Main) { aivAvatar.setImageDrawable(contactPhoto.await()) }
