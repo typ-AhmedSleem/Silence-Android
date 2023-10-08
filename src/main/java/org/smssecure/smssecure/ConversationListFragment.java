@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +41,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,12 +51,16 @@ import androidx.appcompat.view.ActionMode;
 import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.jude.easyrecyclerview.EasyRecyclerView;
+import com.jude.easyrecyclerview.decoration.StickyHeaderDecoration;
 
 import org.smssecure.smssecure.ConversationListAdapter.ItemClickListener;
 import org.smssecure.smssecure.attachments.Attachment;
@@ -73,10 +79,16 @@ import org.smssecure.smssecure.database.DatabaseFactory;
 import org.smssecure.smssecure.database.DraftDatabase;
 import org.smssecure.smssecure.database.ThreadDatabase;
 import org.smssecure.smssecure.database.loaders.ConversationListLoader;
+import org.smssecure.smssecure.database.model.ThreadRecord;
 import org.smssecure.smssecure.mms.OutgoingMediaMessage;
 import org.smssecure.smssecure.mms.OutgoingSecureMediaMessage;
 import org.smssecure.smssecure.notifications.MessageNotifier;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.search.GlobalSearchResult;
+import org.smssecure.smssecure.search.SearchManager;
+import org.smssecure.smssecure.search.SearchResultsAdapter;
+import org.smssecure.smssecure.search.SearchStickyHeaderAdapter;
+import org.smssecure.smssecure.search.contacts.ContactRecord;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
@@ -99,6 +111,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     private MasterSecret masterSecret;
     private ActionMode actionMode;
     private RecyclerView rvConversations;
+    private EasyRecyclerView ervSearch;
     private ReminderView reminderView;
     private FloatingActionButton fab;
     private SearchOptionsBottomSheet bsSearchOptions;
@@ -119,16 +132,50 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     }
 
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle bundle){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         final View view = inflater.inflate(R.layout.conversation_list_fragment, container, false);
         reminderView = ViewUtil.findById(view, R.id.reminder);
-        rvConversations = ViewUtil.findById(view, R.id.list);
+        rvConversations = ViewUtil.findById(view, R.id.rv_conversations);
+        ervSearch = ViewUtil.findById(view, R.id.erv_search);
         fab = ViewUtil.findById(view, R.id.fab);
 
         fab.setVisibility(isShowingArchive ? View.GONE : View.VISIBLE);
 
         rvConversations.setHasFixedSize(true);
+        rvConversations.setItemAnimator(new DefaultItemAnimator());
         rvConversations.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        rvConversations.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+
+        ervSearch.setItemAnimator(new DefaultItemAnimator());
+        ervSearch.setLayoutManager(new LinearLayoutManager(requireContext()));
+        ervSearch.setAdapter(new SearchResultsAdapter(requireContext(), masterSecret, locale));
+        ervSearch.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+        ervSearch.addItemDecoration(new StickyHeaderDecoration(new SearchStickyHeaderAdapter(requireContext(), getSearchResultsAdapter())));
+        getSearchResultsAdapter().setOnItemClickListener(position -> {
+            final GlobalSearchResult result = getSearchResultsAdapter().getItem(position);
+            if (result instanceof GlobalSearchResult.ContactSearchResult) {
+                // Show contact at AddressBook
+                final ContactRecord contact = ((GlobalSearchResult.ContactSearchResult) result).getContact();
+                final @Nullable Uri contactUri = ContactsContract.Contacts.getLookupUri(contact.getId(), ContactsContract.Contacts.LOOKUP_KEY);
+                if (contactUri == null) return;
+                final Intent intent = new Intent(Intent.ACTION_VIEW, contactUri);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (intent.resolveActivity(requireContext().getPackageManager()) != null) startActivity(intent);
+                else Toast.makeText(requireContext(), "Contacts app isn't available", Toast.LENGTH_SHORT).show();
+            } else {
+                // Open or create a conversation
+                final ThreadRecord thread = ((GlobalSearchResult.MessageSearchResult) result).getConversation().getRecord();
+                final Intent intent = new Intent(getContext(), ConversationActivity.class);
+                intent.putExtra(ConversationActivity.RECIPIENTS_EXTRA, thread.getRecipients().getIds());
+                intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, thread.getThreadId());
+                intent.putExtra(ConversationActivity.DISTRIBUTION_TYPE_EXTRA, thread.getDistributionType());
+                intent.putExtra(ConversationActivity.TIMING_EXTRA, System.currentTimeMillis());
+                intent.putExtra(ConversationActivity.LAST_SEEN_EXTRA, thread.getLastSeen());
+
+                startActivity(intent);
+                requireActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
+            }
+        });
 
         new ItemTouchHelper(new ArchiveListenerCallback()).attachToRecyclerView(rvConversations);
 
@@ -175,20 +222,54 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
     // ============== START: Search ============== //
     public void performSearch(String query) {
+        if (searchQuery.equals(query)) return;
         searchQuery = query;
-        LoaderManager.getInstance(this).restartLoader(0, null, this);
+        if (isSearchActive) {
+            ervSearch.showProgress();
+            SearchManager.performGlobalSearch(requireContext(),
+                    locale,
+                    masterSecret,
+                    searchOptions,
+                    searchQuery,
+                    results -> {
+                        if (results.isEmpty()) {
+                            ervSearch.showEmpty();
+                            return;
+                        }
+                        final SearchResultsAdapter adapter = getSearchResultsAdapter();
+                        if (adapter == null) return;
+                        adapter.clear();
+                        ervSearch.showRecycler();
+                        adapter.addAll(results);
+                    });
+        }
+//        LoaderManager.getInstance(this).restartLoader(0, null, this);
+    }
+
+    private SearchResultsAdapter getSearchResultsAdapter() {
+        return ((SearchResultsAdapter) ervSearch.getAdapter());
     }
 
     public void openSearch() {
+        searchQuery = "";
         isSearchActive = true;
-        this.fab.setImageResource(R.drawable.ic_search_options);
+
+        fab.setImageResource(R.drawable.ic_search_options);
+        rvConversations.setVisibility(View.GONE);
+        ervSearch.setVisibility(View.VISIBLE);
+        getSearchResultsAdapter().clear();
+        ervSearch.showRecycler();
     }
 
     public void closeSearch() {
         searchQuery = "";
         isSearchActive = false;
-        performSearch(searchQuery);
-        this.fab.setImageResource(R.drawable.ic_create_white_24dp);
+
+        fab.setImageResource(R.drawable.ic_create_white_24dp);
+        rvConversations.setVisibility(View.VISIBLE);
+        ervSearch.setVisibility(View.GONE);
+        getSearchResultsAdapter().clear();
+        ervSearch.showRecycler();
     }
 
     @Override
@@ -199,7 +280,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     @Override
     public void onSetSearchOptions(AdvancedSearchOptions searchOptions) {
         this.searchOptions = searchOptions;
-        this.performSearch(searchQuery);
+        if (isSearchActive) performSearch(searchQuery);
     }
     // ============== END: Search ============== //
 
@@ -256,7 +337,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         new SnackbarAsyncTask<Void>(getView(), snackBarTitle, getString(R.string.ConversationListFragment_undo), getResources().getColor(R.color.amber_500), Snackbar.LENGTH_LONG, true) {
 
             @Override
-            protected void onPostExecute (Void result){
+            protected void onPostExecute(Void result) {
                 super.onPostExecute(result);
 
                 if (actionMode != null) {
@@ -267,7 +348,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
             @SuppressLint("StaticFieldLeak")
             @Override
-            protected void executeAction (@Nullable Void parameter){
+            protected void executeAction(@Nullable Void parameter) {
                 for (long threadId : selectedConversations) {
                     if (!archive) {
                         DatabaseFactory.getThreadDatabase(requireActivity()).archiveConversation(threadId);
@@ -278,7 +359,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
             }
 
             @Override
-            protected void reverseAction (@Nullable Void parameter){
+            protected void reverseAction(@Nullable Void parameter) {
                 for (long threadId : selectedConversations) {
                     if (!archive) {
                         DatabaseFactory.getThreadDatabase(requireActivity()).unarchiveConversation(threadId);
@@ -307,7 +388,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                     private ProgressDialog dialog;
 
                     @Override
-                    protected void onPreExecute (){
+                    protected void onPreExecute() {
                         dialog = ProgressDialog.show(requireActivity(), requireActivity().getString(R.string.ConversationListFragment_deleting), requireActivity().getString(R.string.ConversationListFragment_deleting_selected_conversations), true, false);
                     }
 
@@ -319,7 +400,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                     }
 
                     @Override
-                    protected void onPostExecute (Void result){
+                    protected void onPostExecute(Void result) {
                         dialog.dismiss();
                         if (actionMode != null) {
                             actionMode.finish();
@@ -334,7 +415,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         alert.show();
     }
 
-    private void handleTogglePinAllSelected (){
+    private void handleTogglePinAllSelected() {
         final Set<Long> selectedConversations = new HashSet<>(getListAdapter().getBatchSelections());
         for (long threadId : selectedConversations) {
             DatabaseFactory.getThreadDatabase(requireActivity()).toggleThreadPin(threadId);
@@ -346,17 +427,17 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     }
 
     @SuppressLint("StringFormatMatches")
-    private void handleSelectAllThreads (){
+    private void handleSelectAllThreads() {
         getListAdapter().selectAllThreads();
         actionMode.setSubtitle(getString(R.string.conversation_fragment_cab__batch_selection_amount, getListAdapter().getBatchSelections().size()));
     }
 
-    private void handleCreateConversation (long threadId, Recipients recipients, int distributionType, long lastSeen){
+    private void handleCreateConversation(long threadId, Recipients recipients, int distributionType, long lastSeen) {
         ((ConversationSelectedListener) requireActivity()).onCreateConversation(threadId, recipients, distributionType, lastSeen);
     }
 
     @SuppressLint("StaticFieldLeak")
-    private void handleSendDrafts (){
+    private void handleSendDrafts() {
         AlertDialog.Builder alert = new AlertDialog.Builder(requireActivity());
         alert.setIconAttribute(R.attr.dialog_alert_icon);
         alert.setTitle(getString(R.string.ConversationListFragment_send_drafts));
@@ -378,12 +459,12 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                     private Recipients recipients;
 
                     @Override
-                    protected void onPreExecute (){
+                    protected void onPreExecute() {
                         dialog = ProgressDialog.show(context, context.getString(R.string.ConversationListFragment_sending), context.getString(R.string.ConversationListFragment_sending_selected_drafts), true, false);
                     }
 
                     @Override
-                    protected Void doInBackground (Void... params){
+                    protected Void doInBackground(Void... params) {
                         draftDatabase = DatabaseFactory.getDraftDatabase(context);
 
                         for (long threadId : selectedConversations) {
@@ -416,7 +497,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                     }
 
                     @Override
-                    protected void onPostExecute (Void result){
+                    protected void onPostExecute(Void result) {
                         dialog.dismiss();
                         if (actionMode != null) {
                             actionMode.finish();
@@ -424,7 +505,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                         }
                     }
 
-                    private void sendTextDraft (DraftDatabase.Draft draft, long threadId){
+                    private void sendTextDraft(DraftDatabase.Draft draft, long threadId) {
                         OutgoingTextMessage message;
                         if (isSecureDestination) {
                             message = new OutgoingEncryptedMessage(recipients, draft.getValue(), recipients.getDefaultSubscriptionId());
@@ -434,7 +515,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                         MessageSender.send(context, masterSecret, message, threadId, false);
                     }
 
-                    private void sendMediaDraft (DraftDatabase.Draft draft, long threadId, @Nullable String forcedValue){
+                    private void sendMediaDraft(DraftDatabase.Draft draft, long threadId, @Nullable String forcedValue) {
                         List<Attachment> attachment = new LinkedList<Attachment>();
                         attachment.add(new UriAttachment(Uri.parse(draft.getValue()), draft.getType() + "/*", AttachmentDatabase.TRANSFER_PROGRESS_DONE, 0));
 
@@ -455,7 +536,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
     @NonNull
     @Override
-    public Loader<Cursor> onCreateLoader (int arg0, Bundle arg1){
+    public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
         return new ConversationListLoader(masterSecret, locale, requireActivity(), searchQuery, searchOptions, isShowingArchive);
     }
 
@@ -476,7 +557,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
     @SuppressLint("StringFormatMatches")
     @Override
-    public void onItemClick (ConversationListItem item){
+    public void onItemClick(ConversationListItem item) {
         if (actionMode == null) {
             handleCreateConversation(item.getThreadId(), item.getRecipients(), item.getDistributionType(), item.getLastSeen());
         } else {
@@ -495,7 +576,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
-    public void onItemLongClick (ConversationListItem item){
+    public void onItemLongClick(ConversationListItem item) {
         // Disable selection if search mode is active
         if (isSearchActive) return;
 
@@ -537,12 +618,12 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     }
 
     @Override
-    public boolean onPrepareActionMode (ActionMode mode, Menu menu){
+    public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onActionItemClicked (ActionMode mode, MenuItem item){
+    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.menu_select_all) {
             handleSelectAllThreads();
@@ -565,7 +646,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
     }
 
     @Override
-    public void onDestroyActionMode (ActionMode mode){
+    public void onDestroyActionMode(ActionMode mode) {
         getListAdapter().initializeBatchMode(false);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -592,15 +673,15 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         }
 
         @Override
-        public boolean onMove (
+        public boolean onMove(
                 @NonNull RecyclerView recyclerView,
                 @NonNull RecyclerView.ViewHolder viewHolder,
-                @NonNull RecyclerView.ViewHolder target){
+                @NonNull RecyclerView.ViewHolder target) {
             return false;
         }
 
         @Override
-        public int getSwipeDirs (@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder){
+        public int getSwipeDirs(@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
             if (viewHolder.itemView instanceof ConversationListItemAction) return 0;
 
             if (actionMode != null) return 0;
@@ -612,7 +693,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
 
         @SuppressLint("StaticFieldLeak")
         @Override
-        public void onSwiped (RecyclerView.ViewHolder viewHolder, int direction){
+        public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
             final long threadId = ((ConversationListItem) viewHolder.itemView).getThreadId();
             final boolean read = ((ConversationListItem) viewHolder.itemView).getRead();
 
@@ -632,7 +713,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                 } else {
                     new SnackbarAsyncTask<Long>(getView(), getResources().getQuantityString(R.plurals.ConversationListFragment_conversations_archived, 1, 1), getString(R.string.ConversationListFragment_undo), getResources().getColor(R.color.amber_500), Snackbar.LENGTH_LONG, false) {
                         @Override
-                        protected void executeAction (@Nullable Long parameter){
+                        protected void executeAction(@Nullable Long parameter) {
                             DatabaseFactory.getThreadDatabase(requireActivity()).archiveConversation(threadId);
 
                             if (!read) {
@@ -642,7 +723,7 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                         }
 
                         @Override
-                        protected void reverseAction (@Nullable Long parameter){
+                        protected void reverseAction(@Nullable Long parameter) {
                             DatabaseFactory.getThreadDatabase(requireActivity()).unarchiveConversation(threadId);
 
                             if (!read) {
@@ -670,13 +751,13 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
         }
 
         @Override
-        public void onChildDraw (
+        public void onChildDraw(
                 @NonNull Canvas c, @NonNull RecyclerView recyclerView,
                 @NonNull RecyclerView.ViewHolder viewHolder,
                 float dX,
                 float dY,
                 int actionState,
-                boolean isCurrentlyActive){
+                boolean isCurrentlyActive) {
 
             if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
                 View itemView = viewHolder.itemView;
