@@ -155,4 +155,20 @@ public class ThreadRecord extends DisplayRecord {
     public long getLastSeen() {
         return lastSeen;
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "ThreadRecord{" +
+                "snippetUri=" + snippetUri +
+                ", count=" + count +
+                ", read=" + read +
+                ", distributionType=" + distributionType +
+                ", archived=" + archived +
+                ", pinned=" + pinned +
+                ", lastSeen=" + lastSeen +
+                ", type=" + type +
+                ", body=" + getDisplayBody() +
+                '}';
+    }
 }

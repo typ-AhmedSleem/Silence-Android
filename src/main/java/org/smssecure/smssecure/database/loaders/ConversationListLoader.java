@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.MergeCursor;
-import android.util.Log;
 
 import org.smssecure.smssecure.AdvancedSearchOptions;
 import org.smssecure.smssecure.contacts.ContactAccessor;
@@ -102,7 +101,6 @@ public class ConversationListLoader extends AbstractCursorLoader {
     }
 
     private Cursor getFilteredConversationList(String query, AdvancedSearchOptions searchOptions) {
-
         // ============================ START: MY CODE ============================
         if (masterSecret != null) {
             try {

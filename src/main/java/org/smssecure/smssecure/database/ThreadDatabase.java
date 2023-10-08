@@ -741,6 +741,7 @@ public class ThreadDatabase extends Database {
             this.masterCipher = masterCipher;
         }
 
+        @Nullable
         public ThreadRecord getNext() {
             if (cursor == null || !cursor.moveToNext()) {
                 return null;
