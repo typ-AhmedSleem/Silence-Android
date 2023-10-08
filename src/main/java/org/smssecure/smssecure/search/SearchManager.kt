@@ -1,8 +1,7 @@
-package org.smssecure.smssecure.search.threads
+package org.smssecure.smssecure.search
 
 import android.content.Context
 import android.database.Cursor
-import android.util.Log
 import androidx.core.database.getStringOrNull
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -16,8 +15,9 @@ import org.smssecure.smssecure.crypto.MasterSecret
 import org.smssecure.smssecure.database.DatabaseFactory
 import org.smssecure.smssecure.database.ThreadDatabase
 import org.smssecure.smssecure.database.model.ThreadRecord
-import org.smssecure.smssecure.search.GlobalSearchResult
 import org.smssecure.smssecure.search.contacts.Contacts
+import org.smssecure.smssecure.search.threads.ConversationRecord
+import org.smssecure.smssecure.util.takeUntil
 import java.util.Locale
 
 object SearchManager {
@@ -35,8 +35,11 @@ object SearchManager {
 		GlobalScope.launch(Dispatchers.IO) {
 			val job = runCatching {
 				async {
-					val contacts = Contacts.queryContacts(context, query)
-					contacts.forEach { results.add(GlobalSearchResult.ContactSearchResult(it)) }
+					Contacts.queryContacts(context, query)
+						.takeUntil(options.contactsLimit)
+						.forEach {
+							results.add(GlobalSearchResult.ContactSearchResult(it))
+						}
 				}.await()
 
 				async {
@@ -68,7 +71,6 @@ object SearchManager {
 		val threadsCursor: Cursor = db.enhancedFilterThreads(locale, secret, query, options) ?: return emptyList()
 
 		return threadsCursor.use { cursor ->
-			Log.i("SearchManager", "threadsListFromCursor: ${cursor.count}")
 			val threads = mutableListOf<ConversationRecord>()
 			val reader = db.readerFor(threadsCursor, MasterCipher(secret))
 			var record: ThreadRecord?
@@ -78,7 +80,6 @@ object SearchManager {
 					record = record!!
 				)
 				threads.add(conversation)
-				Log.d("SearchManager", "\t$conversation")
 			}
 			return@use threads
 		}

@@ -1,12 +1,12 @@
 package org.smssecure.smssecure.search
 
-import org.smssecure.smssecure.database.model.MessageRecord
-import org.smssecure.smssecure.search.contacts.Contact
+import org.smssecure.smssecure.search.contacts.ContactRecord
+import org.smssecure.smssecure.search.threads.ConversationRecord
 
-abstract class SearchResult {
+abstract class GlobalSearchResult {
 
-	data class ContactSearchResult(val contact: Contact) : SearchResult()
+	data class ContactSearchResult(val contact: ContactRecord) : GlobalSearchResult()
 
-	class MessageSearchResult constructor(val record: MessageRecord) : SearchResult()
+	data class MessageSearchResult constructor(val conversation: ConversationRecord) : GlobalSearchResult()
 
 }
