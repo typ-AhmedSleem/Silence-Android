@@ -20,6 +20,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.MergeCursor;
 import androidx.loader.content.CursorLoader;
+
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 
 import org.smssecure.smssecure.database.DatabaseFactory;
