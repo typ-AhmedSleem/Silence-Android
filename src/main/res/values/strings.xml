@@ -980,6 +980,8 @@
     <string name="fingerprint_auth_failed">Fingerprint auth failed</string>
     <string name="msg_biometric_prompt">Use your biometric data or try other method to unlock the app</string>
     <string name="biometric_login_required">Biometric login required</string>
+    <string name="preferences__biometric_lock">Biometric Lock</string>
+    <string name="preferences__lock_app_with_fingerprint_or_pin">Lock app with your Fingerprint or device PIN</string>
 
     <!-- EOF -->
 

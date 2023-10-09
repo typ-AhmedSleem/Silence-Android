@@ -25,18 +25,6 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
-
 import android.text.ClipboardManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -53,6 +41,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ActionMode;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
+
 import org.smssecure.smssecure.ConversationAdapter.HeaderViewHolder;
 import org.smssecure.smssecure.ConversationAdapter.ItemClickListener;
 import org.smssecure.smssecure.crypto.MasterSecret;
@@ -64,6 +64,7 @@ import org.smssecure.smssecure.database.model.MessageRecord;
 import org.smssecure.smssecure.mms.Slide;
 import org.smssecure.smssecure.recipients.RecipientFactory;
 import org.smssecure.smssecure.recipients.Recipients;
+import org.smssecure.smssecure.search.MessagePositioner;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.util.SaveAttachmentTask;
 import org.smssecure.smssecure.util.SaveAttachmentTask.Attachment;
@@ -94,6 +95,7 @@ public class ConversationFragment extends Fragment
     private Recipients recipients;
     private long threadId;
     private long lastSeen;
+    private @Nullable String msgToHighlight;
     private boolean firstLoad;
     private ActionMode actionMode;
     private Locale locale;
@@ -183,6 +185,7 @@ public class ConversationFragment extends Fragment
         this.recipients = RecipientFactory.getRecipientsForIds(getActivity(), getActivity().getIntent().getLongArrayExtra("recipients"), true);
         this.threadId = this.getActivity().getIntent().getLongExtra("thread_id", -1);
         this.lastSeen = this.getActivity().getIntent().getLongExtra(ConversationActivity.LAST_SEEN_EXTRA, -1);
+        this.msgToHighlight = this.getActivity().getIntent().getStringExtra(ConversationActivity.MESSAGE_TO_HIGHLIGHT);
         this.firstLoad = true;
 
         OnScrollListener scrollListener = new ConversationScrollListener(getActivity());
@@ -196,7 +199,7 @@ public class ConversationFragment extends Fragment
             rvMessages.addItemDecoration(new StickyHeaderDecoration(adapter, false, false));
 
             setLastSeen(lastSeen);
-            getLoaderManager().restartLoader(0, Bundle.EMPTY, this);
+            LoaderManager.getInstance(this).restartLoader(0, Bundle.EMPTY, this);
             rvMessages.getItemAnimator().setMoveDuration(120);
         }
     }
@@ -429,6 +432,22 @@ public class ConversationFragment extends Fragment
             if (lastSeenPosition <= 0) {
                 setLastSeen(0);
             }
+
+            // * Try scroll to (messageToHighlight) position in chat (if not highlighted yet)
+            try {
+                MessagePositioner.positionMessage(
+                        requireContext(),
+                        threadId,
+                        msgToHighlight,
+                        position -> {
+                            rvMessages.scrollToPosition(position);
+                            msgToHighlight = null;
+                        }
+                );
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+
         }
     }
 

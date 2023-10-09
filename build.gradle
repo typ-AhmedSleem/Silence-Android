@@ -52,8 +52,8 @@ android {
     setBuildToolsVersion('33.0.1')
 
     defaultConfig {
-        versionCode 212
-        versionName "1.2.0"
+        versionCode 220
+        versionName "2.1"
         applicationId 'org.smssecure.smssecure'
         minSdkVersion 16
         //noinspection ExpiredTargetSdkVersion

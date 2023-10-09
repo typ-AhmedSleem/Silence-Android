@@ -31,6 +31,7 @@ public class SilencePreferences {
     public static final String ALL_SMS_PREF = "pref_all_sms";
     public static final String PASSPHRASE_TIMEOUT_INTERVAL_PREF = "pref_timeout_interval";
     public static final String SCREEN_SECURITY_PREF = "pref_screen_security";
+    public static final String BIOMETRIC_LOCK_PREF = "pref_biometric_lock";
     public static final String ENTER_KEY_TYPE = "pref_enter_key_type";
     public static final String MMS_USER_AGENT = "pref_mms_user_agent";
     public static final String REGISTERED_GCM_PREF = "pref_gcm_registered";
@@ -367,6 +368,14 @@ public class SilencePreferences {
 
     public static boolean isScreenSecurityEnabled(Context context) {
         return getBooleanPreference(context, SCREEN_SECURITY_PREF, true);
+    }
+
+    public static boolean isBiometricLockEnabled(Context context) {
+        return getBooleanPreference(context, BIOMETRIC_LOCK_PREF, true);
+    }
+
+    public static void setBiometricLock(Context context, boolean enable) {
+        setBooleanPreference(context, BIOMETRIC_LOCK_PREF, enable);
     }
 
     public static boolean isLegacyUseLocalApnsEnabled(Context context) {

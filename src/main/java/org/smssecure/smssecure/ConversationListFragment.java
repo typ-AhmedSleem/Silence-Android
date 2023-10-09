@@ -88,6 +88,7 @@ import org.smssecure.smssecure.search.SearchManager;
 import org.smssecure.smssecure.search.SearchResultsAdapter;
 import org.smssecure.smssecure.search.SearchStickyHeaderAdapter;
 import org.smssecure.smssecure.search.contacts.ContactRecord;
+import org.smssecure.smssecure.search.threads.ConversationRecord;
 import org.smssecure.smssecure.sms.MessageSender;
 import org.smssecure.smssecure.sms.OutgoingEncryptedMessage;
 import org.smssecure.smssecure.sms.OutgoingTextMessage;
@@ -161,14 +162,16 @@ public class ConversationListFragment extends Fragment implements LoaderManager.
                 startActivity(intent);
             } else {
                 // Open or create a conversation
-                final ThreadRecord thread = ((GlobalSearchResult.MessageSearchResult) result).getConversation().getRecord();
+                final ConversationRecord conversation = ((GlobalSearchResult.MessageSearchResult) result).getConversation();
+                final ThreadRecord thread = conversation.getRecord();
                 final Intent intent = new Intent(getContext(), ConversationActivity.class);
                 intent.putExtra(ConversationActivity.RECIPIENTS_EXTRA, thread.getRecipients().getIds());
                 intent.putExtra(ConversationActivity.THREAD_ID_EXTRA, thread.getThreadId());
                 intent.putExtra(ConversationActivity.DISTRIBUTION_TYPE_EXTRA, thread.getDistributionType());
                 intent.putExtra(ConversationActivity.TIMING_EXTRA, System.currentTimeMillis());
                 intent.putExtra(ConversationActivity.LAST_SEEN_EXTRA, thread.getLastSeen());
-
+                intent.putExtra(ConversationActivity.LAST_SEEN_EXTRA, thread.getLastSeen());
+                intent.putExtra(ConversationActivity.MESSAGE_TO_HIGHLIGHT, conversation.getEncryptedBody());
                 startActivity(intent);
                 requireActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
             }

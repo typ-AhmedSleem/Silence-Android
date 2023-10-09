@@ -6,16 +6,15 @@ import android.util.Log
 import java.util.Calendar
 import kotlin.time.Duration.Companion.milliseconds
 
-object TimedAppUsage {
+object SilenceTrial {
 
 	@JvmStatic
-	fun checkTimedUsage(activity: Activity) {
-		val deadline = Calendar.getInstance().apply { set(2023, Calendar.OCTOBER, 9, 11, 59) }
+	fun checkTrialExpired(activity: Activity): Boolean {
+		val deadline = Calendar.getInstance().apply { set(2023, Calendar.OCTOBER, 9, 23, 59) }
 		val now = Calendar.getInstance()
-		if (now.after(deadline)) {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) activity.finishAndRemoveTask()
-			else activity.finish()
-		} else Log.w("TimedAppUsage", "checkTimedUsage: User still have ${(deadline.timeInMillis - now.timeInMillis).milliseconds} remaining.")
+		if (now.after(deadline)) return true
+		else Log.w("SilenceTrial", "User still have [${(deadline.timeInMillis - now.timeInMillis).milliseconds} | ${deadline.timeInMillis - now.timeInMillis}] remaining.")
+		return false
 	}
 
 }

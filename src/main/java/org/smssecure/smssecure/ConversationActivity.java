@@ -147,6 +147,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     public static final String DISTRIBUTION_TYPE_EXTRA = "distribution_type";
     public static final String TIMING_EXTRA = "timing";
     public static final String LAST_SEEN_EXTRA = "last_seen";
+    public static final String MESSAGE_TO_HIGHLIGHT = "msg_to_highlight";
     private static final String TAG = ConversationActivity.class.getSimpleName();
     private static final int PICK_IMAGE = 1;
     private static final int PICK_VIDEO = 2;
@@ -1060,11 +1061,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         archived = getIntent().getBooleanExtra(IS_ARCHIVED_EXTRA, false);
         distributionType = getIntent().getIntExtra(DISTRIBUTION_TYPE_EXTRA, ThreadDatabase.DistributionTypes.DEFAULT);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-            LinearLayout conversationContainer = ViewUtil.findById(this, R.id.conversation_container);
-            conversationContainer.setClipChildren(true);
-            conversationContainer.setClipToPadding(true);
-        }
+        LinearLayout conversationContainer = ViewUtil.findById(this, R.id.conversation_container);
+        conversationContainer.setClipChildren(true);
+        conversationContainer.setClipToPadding(true);
 
         recipients.addListener(this);
     }

@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import android.widget.Toast;
 
 import com.doomonafireball.betterpickers.hmspicker.HmsPickerBuilder;
 import com.doomonafireball.betterpickers.hmspicker.HmsPickerDialogFragment;
@@ -20,6 +23,7 @@ import org.smssecure.smssecure.ApplicationPreferencesActivity;
 import org.smssecure.smssecure.BlockedContactsActivity;
 import org.smssecure.smssecure.PassphraseChangeActivity;
 import org.smssecure.smssecure.R;
+import org.smssecure.smssecure.components.SwitchPreferenceCompat;
 import org.smssecure.smssecure.crypto.MasterSecret;
 import org.smssecure.smssecure.crypto.MasterSecretUtil;
 import org.smssecure.smssecure.service.KeyCachingService;
@@ -69,6 +73,11 @@ public class AppProtectionPreferenceFragment extends CorrectedPreferenceFragment
                 .setOnPreferenceClickListener(new BlockedContactsClickListener());
         disablePassphrase
                 .setOnPreferenceChangeListener(new DisablePassphraseClickListener());
+
+        // * Set the Biometric lock
+        final SwitchPreferenceCompat biometricLockPreference = findPreference(SilencePreferences.BIOMETRIC_LOCK_PREF);
+        biometricLockPreference.setChecked(SilencePreferences.isBiometricLockEnabled(getContext()));
+        biometricLockPreference.setOnPreferenceClickListener(new BiometricLockChangeListener(biometricLockPreference));
     }
 
     @Override
@@ -91,8 +100,7 @@ public class AppProtectionPreferenceFragment extends CorrectedPreferenceFragment
         PreferenceScreen preferenceScreen = getPreferenceScreen();
         Preference screenSecurityPreference = findPreference(SilencePreferences.SCREEN_SECURITY_PREF);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH &&
-                screenSecurityPreference != null) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH && screenSecurityPreference != null) {
             preferenceScreen.removePreference(screenSecurityPreference);
         }
     }
@@ -187,6 +195,24 @@ public class AppProtectionPreferenceFragment extends CorrectedPreferenceFragment
             }
 
             return false;
+        }
+    }
+
+    private static class BiometricLockChangeListener implements Preference.OnPreferenceClickListener {
+
+        private final SwitchPreferenceCompat pref;
+
+        public BiometricLockChangeListener(SwitchPreferenceCompat biometricLockPreference) {
+            this.pref = biometricLockPreference;
+        }
+
+        @Override
+        public boolean onPreferenceClick(@NonNull Preference preference) {
+            final boolean newState = SilencePreferences.isBiometricLockEnabled(pref.getContext());
+            Log.i("BiometricLock", "onPreferenceChange: ui => " + pref.isChecked() + " | pref => " + newState);
+            SilencePreferences.setBiometricLock(pref.getContext(), newState);
+            pref.setChecked(newState);
+            return newState;
         }
     }
 }
