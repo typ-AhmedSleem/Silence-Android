@@ -48,7 +48,7 @@ class BiometricLockActivity : AppCompatActivity(R.layout.activity_biometric_lock
 						tvPrompt.visibility = View.INVISIBLE
 						playLottieAnimation(R.raw.lottie_fingerprint_to_success)
 						GlobalScope.launch(Dispatchers.IO) {
-							delay(2.seconds)
+							delay((1.25).seconds)
 							withContext(Dispatchers.Main) { proceedToMain() }
 						}
 					}
